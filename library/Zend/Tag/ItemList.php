@@ -1,238 +1,79 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Tag
- * @subpackage ItemList
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: ItemList.php 15457 2009-05-09 15:19:13Z dasprid $
- */
-
-/**
- * @see Zend_Tag_Taggable
- */
-require_once 'Zend/Tag/Taggable.php';
-
-/**
- * @category   Zend
- * @package    Zend_Tag
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Tag_ItemList implements Countable, SeekableIterator, ArrayAccess
-{
-    /**
-     * Items in this list
-     *
-     * @var array
-     */
-    protected $_items = array();
-    
-    /**
-     * Count all items
-     *
-     * @return integer
-     */
-    public function count()
-    {
-        return count($this->_items);
-    }
-    
-    /**
-     * Spread values in the items relative to their weight
-     *
-     * @param  array $values
-     * @throws Zend_Tag_Exception When value list is empty
-     * @return void
-     */
-    public function spreadWeightValues(array $values)
-    {
-        // Don't allow an empty value list
-        if (count($values) === 0) {
-            require_once 'Zend/Tag/Exception.php';
-            throw new Zend_Tag_Exception('Value list may not be empty');
-        }
-        
-        // Re-index the array
-        $values = array_values($values);
-        
-        // If just a single value is supplied simply assign it to to all tags
-        if (count($values) === 1) {
-            foreach ($this->_items as $item) {
-                $item->setParam('weightValue', $values[0]);
-            }
-        } else {
-            // Calculate min- and max-weight
-            $minWeight = null;
-            $maxWeight = null;
-            
-            foreach ($this->_items as $item) {
-                if ($minWeight === null && $maxWeight === null) {
-                    $minWeight = $item->getWeight();
-                    $maxWeight = $item->getWeight();
-                } else {
-                    $minWeight = min($minWeight, $item->getWeight());
-                    $maxWeight = max($maxWeight, $item->getWeight());                
-                }
-            }
-            
-            // Calculate the thresholds
-            $steps      = count($values);
-            $delta      = ($maxWeight - $minWeight) / ($steps - 1);
-            $thresholds = array();
-            
-            for ($i = 0; $i < $steps; $i++) {
-                $thresholds[$i] = floor(100 * log(($minWeight + $i * $delta) + 2));
-            }
-    
-            // Then assign the weight values 
-            foreach ($this->_items as $item) {
-                $threshold = floor(100 * log($item->getWeight() + 2));
-                 
-                for ($i = 0; $i < $steps; $i++) {
-                    if ($threshold <= $thresholds[$i]) {
-                        $item->setParam('weightValue', $values[$i]);
-                        break;
-                    }
-                }
-            }
-        }
-    }
-    
-    /**
-     * Seek to an absolute positio
-     *
-     * @param  integer $index
-     * @throws OutOfBoundsException When the seek position is invalid
-     * @return void
-     */
-    public function seek($index)
-    {
-        $this->rewind();
-        $position = 0;
-        
-        while ($position < $index && $this->valid()) {
-            $this->next();
-            $position++;
-        }
-        
-        if (!$this->valid()) {
-            throw new OutOfBoundsException('Invalid seek position');
-        }       
-    }
-    
-    /**
-     * Return the current element
-     *
-     * @return mixed
-     */
-    public function current()
-    {
-        return current($this->_items);
-    }
-    
-    /**
-     * Move forward to next element
-     *
-     * @return mixed
-     */
-    public function next()
-    {
-        return next($this->_items);
-    }
-    
-    /**
-     * Return the key of the current element
-     *
-     * @return mixed
-     */
-    public function key()
-    {
-        return key($this->_items);
-    }
-
-    /**
-     * Check if there is a current element after calls to rewind() or next()
-     *
-     * @return boolean
-     */
-    public function valid()
-    {
-        return ($this->current() !== false);
-    }
-    
-    /**
-     * Rewind the Iterator to the first element
-     *
-     * @return void
-     */
-    public function rewind()
-    {
-        reset($this->_items);
-    }
-    
-    /**
-     * Check if an offset exists
-     *
-     * @param  mixed $offset
-     * @return boolean
-     */
-    public function offsetExists($offset) {
-        return array_key_exists($offset, $this->_items);
-    }
- 
-    /**
-     * Get the value of an offset
-     *
-     * @param  mixed $offset
-     * @return Zend_Tag_Taggable
-     */
-    public function offsetGet($offset) {
-        return $this->_items[$offset];
-    }
- 
-    /**
-     * Append a new item
-     *
-     * @param  mixed          $offset
-     * @param  Zend_Tag_Taggable $item
-     * @throws OutOfBoundsException When item does not implement Zend_Tag_Taggable
-     * @return void
-     */
-    public function offsetSet($offset, $item) {
-        // We need to make that check here, as the method signature must be
-        // compatible with ArrayAccess::offsetSet()
-        if (!($item instanceof Zend_Tag_Taggable)) {
-            require_once 'Zend/Tag/Exception.php';
-            throw new Zend_Tag_Exception('Item must implement Zend_Tag_Taggable');
-        }
-    
-        if ($offset === null) {
-            $this->_items[] = $item;
-        } else {
-            $this->_items[$offset] = $item;
-        }
-    }
- 
-    /**
-     * Unset an item
-     *
-     * @param  mixed $offset
-     * @return void
-     */
-    public function offsetUnset($offset) {
-        unset($this->_items[$offset]);
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+0s+zBTxbKW==

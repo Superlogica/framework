@@ -1,370 +1,309 @@
-//////////////////////////////////////////////////////////////
-///  phpThumb() by James Heinrich <info@silisoftware.com>   //
-//        available at http://phpthumb.sourceforge.net     ///
-//////////////////////////////////////////////////////////////
-///                                                         //
-//    Frequently Asked Questions (FAQ) about phpThumb()     //
-//                                                         ///
-//////////////////////////////////////////////////////////////
-
-
-Q: My question isn't answered here, how do I get support?
-A: Please visit http://support.silisoftware.com for any
-   questions, suggestions, bugs, etc.
-
-
-Q: I think I found a bug, what's the first thing I should do?
-A: Please make sure you're using the latest version. There's
-   a good chance I may have already fixed the bug, so please
-   make sure you can reproduce it with the latest version
-   before reporting the bug.
-
-
-Q: phpThumb doesn't work as expected, and it may be a server
-   configuration issue -- how do I check?
-A: Please run /demo/demo.check.php to find out how your server
-   matches up with the recommended configuration and for
-   suggestions on what to change for improved performance.
-
-
-Q: What is the GPL? Can I use this for commercial sites?
-A: See the GPL FAQ: http://www.gnu.org/licenses/gpl-faq.html
-   In general, if you just want to call phpThumb.php in the
-   standard <img src="phpThumb.php?src=pic.jpg&w=100"> manner
-   then there is no problem, you're free to do this no matter
-   if you site is commercial or not, or what license your code
-   is released under.
-   If you're calling phpThumb() as an object then you will
-   probably run into license issues, so consult the above FAQ
-   and the GPL itself.
-   No matter if you use phpThumb() commercially or not, no
-   payment is required. However, donations are always welcome
-   and can be made at http://phpthumb.sourceforge.net
-
-
-Q: Some images generate thumbnails, but some fail (the original
-   non-resized image is output instead).
-A: Your PHP installation does not have a high enough memory_limit
-   and ImageMagick is not installed on the server. The PHP memory
-   required is 5 times the number of pixels in the image.
-   For example:
-     640x480x5   = 1.5MB
-     1600x1200x5 = 9.2MB
-   You can adjust the PHP memory limit in php.ini (if you have
-   permission on your server to do so), or (better yet) install
-   ImageMagick on the server and that will bypass the memory limit
-   issue. If you can't do either of the above, you can resize the
-   images manually (with your favourite image editor) to a size
-   that your memory_limit setting can handle, and/or you can
-   re-save the images with an image editor that can embed an EXIF
-   thumbnail (Photoshop for example) which phpThumb can use as an
-   image source (lower image quality, but perhaps better than
-   nothing).
-
-
-Q: Is there are way to determine the new height and width of the
-   generated thumbnail (so I can put it in the <img> width/height)?
-A: The problem is that phpThumb.php returns an image -- there is no
-   way to pass on any additional info such as width/height.
-   However, you can do something like this:
-     require_once('phpthumb.functions.php');
-     $pic = 'picture.jpg';
-     list($source_w, $source_h) = GetImageSize($pic);
-     $max_w = 375;
-     $max_h = 400;
-     list($newW, $newH) = phpthumb_functions::ProportionalResize(
-       $source_w, $source_h, $max_w, $max_h);
-     $url = 'phpThumb.php?src='.$pic.'&w='.$max_w.'&h='.$max_h;
-     echo "<img src=\"$url\" width=\"$newW\" height=\"$newH\">';
-
-
-Q: I'm getting is this error message:
-   Failed: RenderToFile(<filename>) failed because
-   !is_resource($this->gdimg_output)
-A: You missed the call to GenerateThumbnail() before
-   RenderToFile() or OutputThumbnail.
-   See /demo/phpThumb.demo.object.php for an example.
-
-
-Q: I'm trying to save a phpThumb-generated image in Internet
-   Explorer and it saves in BMP format, why?
-A: This is not phpThumb's fault, it is an IE issue:
-   http://support.microsoft.com/default.aspx?scid=kb;en-us;810978
-   http://support.microsoft.com/default.aspx?scid=kb;en-us;260650
-
-
-Q: PNG images with transparent areas show up with gray background
-   in the areas that are supposed to be transparent.
-A: Internet Explorer has had a broken PNG alpha-channel display
-   implementation for a decade, so it may never get fixed. Other
-   major browsers generally handle alpha-transparent PNGs fine.
-   See http://www.silisoftware.com/png_transparency/
-   For an alpha-channel PNG display in IE hack, see this page:
-   http://www.koivi.com/ie-png-transparency/
-
-
-Q: I'm getting "<filename> does not exist" when I know the
-   file does exist
-A: Check that these two values are present and properly
-   configured in phpThumb.config.php (introduced in v1.6.0):
-    $PHPTHUMB_CONFIG['allow_src_above_docroot']  (default=false)
-    $PHPTHUMB_CONFIG['allow_src_above_phpthumb'] (default=true)
-   If your images are outside DOCUMENT_ROOT (this includes if
-    you have an image upload form, most likely the images will
-    get uploaded to "/tmp/<file>" or similar) then you will have
-    to configure 'allow_src_above_docroot' to true.
-   Make sure whatever user the webserver is running as has read
-    permission to the file/directory you're reading from
-
-
-Q: Should I use phpThumb.php, or use phpThumb() as an object?
-A: phpThumb.php is easier to use (less coding) for basic uses.
-   phpThumb.php handles all caching; your own object will need
-   to have its own caching code. If you just want to display a
-   thumbnailed version of an existing image, use phpThumb.php
-   If you want to render one (or more) thumbnails to static
-   files (during upload, for example), that's an appropriate
-   use for the object mode. Also, phpThumb.config.php is only
-   used by phpThumb.php, so if you instantiate your own object
-   you need to manually set all configuration options because
-   phpThumb.config.php has NO effect. So, to repeat:
-   **always use phpThumb.php unless you NEED to have an object**
-
-
-Q: The first time I go to a page which contains thumbnails I
-   don't actually see the thumbnail, I just get a browser image
-   placeholder (or no image). As soon as I hit refresh, all the
-   thumbnail images pop into place really fast.
-A: You can try and see if it works better with
-     $PHPTHUMB_CONFIG['cache_force_passthru'] = false;
-   but typically the default setting works better.
-   Note: There were some maybe-undefined variables prior to
-   v1.7.9 that contributed to this behavior. If you notice
-   this happening in v1.7.9 or newer please email me at
-   info@silisoftware.com
-
-
-Q: Are there any front-end GUI interfaces to phpThumb()?
-A: See /demo/readme.demo.txt
-
-
-Q: Are there / have there been any security issues in phpThumb?
-A: http://secunia.com/product/5199/
-
-
-Q: Why can't Flash work with images output from phpThumb()?
-A: Flash doesn't like progressive JPEG. Set:
-   $PHPTHUMB_CONFIG['output_interlace'] = false;
-
-
-Q: Image quality is not very good - why?
-A: If you're using GD v1.x, no way around it. Upgrade to GD v2.x
-
-
-Q: Image quality is very bad, very pixelated -- why?
-A: You may be trying to resize images larger than the available
-   PHP memory, so phpThumb is simply extracting and using the
-   EXIF thumbnail as the image source, which is usually about
-   160x120 (so if you resize it to 640x480 it will look very bad).
-   To calculate the required size for memory_limit in php.ini,
-   calculate the number of pixels in the image and multiply by 5:
-   For example, 1600x1200 = 1600 * 1200 * 5 = 9600000 = 10M
-   Easy solution: install ImageMagick
-
-
-Q: Can I save the generated thumbnail to a file?
-A: Yes, there are several ways to do so; the best way is to call
-   phpThumb as an object and call RenderToFile() to save the
-   thumbnail to whatever filename you want.
-   See /demo/phpThumb.demo.object.php for an example.
-   The other way is to use the 'file' parameter (see
-   /docs/phpthumb.readme.txt) but this parameter is deprecated
-   and does not work in phpThumb v1.7.5 and newer.
-
-
-Q: "Off-server thumbnailing is not allowed" -- how do I enable it?
-A: By default, phpThumb() only makes thumbnails for the same
-   domain that it is running on. To allow it to make thumbnails
-   for a limited number of other domains, add them
-   (in phpThumb.config.php) like this:
-     $PHPTHUMB_CONFIG['nohotlink_valid_domains'] = array(
-     	@$_SERVER['HTTP_HOST'], 'example.com', 'www.example.com',
-     	'subdomain.example.net', 'example.org');
-   To disable off-server thumbnail blocking, just set:
-     $PHPTHUMB_CONFIG['nohotlink_enabled'] = false;
-
-
-Q: Is it possible to set the parameters (like w/h/fltr[]) in
-   the config, so that they can't be changed over the URL?
-A: Take a look at $PHPTHUMB_DEFAULTS at the bottom of
-   phpThumb.config.php  You'll want to set
-     $PHPTHUMB_DEFAULTS_GETSTRINGOVERRIDE = false
-   possibly also
-     $PHPTHUMB_DEFAULTS_DISABLEGETPARAMS = true
-   You may also want to investigate
-     $PHPTHUMB_CONFIG['high_security_enabled'] = true
-   (see the example at the bottom of phpThumb.config.php
-   for how to call images in HighSecurity mode)
-
-
-Q: Is there a way to use phpThumb() object to create thumbnails
-   without the parameters in the URL showing the location of
-   the image etc?
-A: There is a demo in /demo/phpThumb.demo.object.php. You could
-   modify this into your own file, but there still remains the
-   problem of passing parameters to the file, whether it's
-   phpThumb.php or your own instantiation of a phpThumb() object.
-   I would suggest is putting as many of the common parameters
-   into phpThumb.config.php as possible under $PHPTHUMB_DEFAULTS,
-   so you then don't have to pass them for each image. If you
-   don't want people modifying the parameters, turn on
-   $PHPTHUMB_CONFIG['high_security_enabled'] and set a password
-   (you'll need to generate the <img> tags with phpThumbURL()
-   provided at the bottom of phpThumb.config.php). If you don't
-   want people accessing your source images at all, you can
-   place them outside DOCUMENT_ROOT on your server (as long as
-   phpThumb/PHP has read access to the directory). The other
-   option is to put your source images in a MySQL database
-   and set $PHPTHUMB_CONFIG['mysql_query'] and related
-   parameters in phpThumb.config.php to pull your source images
-   from the database. That way it's impossible to retrieve the
-   images except through phpThumb.php, and if high_security is
-   enabled, then nobody can modify the parameters to view
-   anything except what you want to show. So, yes, it's possible
-   to use your own object, but it's probably better to use
-   phpThumb.php if possible -- one notable issue is that
-   phpThumb.php handles all the caching, so you're on your own
-   to deal with that if you create your own object.
-
-
-Q: How do I write the output thumbnail back to a database instead
-   of outputting to the browser or a file?
-A: See /demo/phpThumb.demo.object.php  Basically you need to call
-   $this->GenerateThumbnail() then $this->RenderOutput() and then
-   the output raw image data is found in $this->outputImageData
-
-
-Q: phpThumb runs slowly, as if the images aren't cached, when I use HTTP source
-   images (not on my server). How can I make it go faster?
-A: $PHPTHUMB_CONFIG['cache_source_filemtime_ignore_remote'] = true;
-   // if true, remote source images will not be checked for modification date and
-   // cached image will be used if available, even if source image is changed or removed
-
-
-Q: What does the "cache_default_only_suffix" configuration option do?
-A: Cache files are normally created with big ugly names like
-   "phpThumb_cache_www.example.com_src1a482c2c760463795ff18faf073b389f_par3e099041c2f4a73041a7f5d7e7fc481a_dat1119952152.jpeg"
-   but if cache_default_only_suffix is enabled, cache filenames are simplified to
-   "pic_thumb.jpg" (for example). The problem is that only one version of that
-   thumbnail is possible, and you can never call it again with a different size,
-   or different filters, etc.  Generally you don't want that enabled, but it's
-   there because some people asked for it.
-
-
-Q: Why is the visual size of rotated images smaller than the unrotated images?
-A: phpThumb fits the rotated image into the 'w' and 'h' dimensions.
-   Try not specifying a 'w' parameter: phpThumb.php?src=file.png&ra=15
-   That should leave the image the apparent same size as the unrotated image
-   (in actual fact the canvas size is enlarged to fit the rotated image in it).
-
-
-Q: phpThumb.demo.check.php says Safe Mode is off for Master but on for Local,
-   and I checked php.ini and it's already set off. How do I disable safe mode?
-A: Your PHP was probably installed as an Apache module. If so, you have to set
-     php_admin_value safe_mode "Off"
-   in your domain settings (usually between <VirtualHost> tags in httpd.conf).
-   Then you have to restart Apache.
-
-
-Q: How can I purge cached files when I delete the source image?
-A: You can either let phpThumb's built-in cache purging features (see phpThumb.config.php)
-   take effect, or you can manually walk through your source images to delete and find
-   the matching cache files and delete them:
-     if ($dh = opendir($sourcedir)) {
-       while ($file = readddir($dh)) {
-         if ($file == $WhatIwantToDelete) {
-           $md5 = md5_file($sourcedir.'/'.$file);
-           unlink($phpthumb_cache_dir.'/phpThumb_cache_www.example.com_src'.$md5.'*.*');
-         }
-       }
-       closedir($dh);
-     }
-
-
-Q: Is it safe to delete cache files?
-A: Yes, it is safe to delete any cache files and/or directories. phpThumb will
-   automatically re-create them as needed.  Also, take a look at the "cache_max*"
-   settings in phpThumb.config.php for automatic cache purging.
-
-
-Q: How can I find the filename that phpThumb.php will use to
-   cache a particular image?
-A: It's not easily possible to get the cache filename. You can
-   see the method used to calculate it in SetCacheFilename()
-   in phpthumb.class.php (around line 2991-3090). If you need
-   to know where an image will be rendered to, it may be
-   easier and better to call phpThumb as an object and handle
-   your own caching. See /demo/phpThumb.demo.object.simple.php
-   for an example.
-
-
-Q: Can I make thumbnails from a PDF?
-A: Yes, as long as you have both ImageMagick and GhostScript
-   installed. The AFPL version of GhostScript seems to work
-   better than the GNU version (at least for me it does).
-     http://www.imagemagick.org
-     http://www.cs.wisc.edu/~ghost/
-   You may want to use the "sfn" (Source Frame Number)
-   parameter of phpThumb to specify which page to thumbnail.
-
-
-Q: Can I make a thumbnail of a webpage?
-A: Possibly, but it's not easy. Theoretically, if you have
-   html2ps, GhostScript and ImageMagick all installed it should
-   be possible, but I have not tested that.  Other projects that
-   attempt to generate thumbnails from webpages include:
-   http://www.boutell.com/webthumb/
-
-
-Q: When I resize an animated GIF the new "smaller" version is
-   actually a larger file size -- why?
-A: Animated GIFs use a variety of temporal and spatial compression
-   techniques. The source GIF is probably very well optimized, but
-   when each frame is resized some of the desirable compression
-   properties could be negatively affected (the number of colours
-   can increase; dithered areas compress very poorly compared to
-   solid areas of colour). ImageMagick may also not produce the
-   most filesize-optimized animated GIF possible.
-
-
-Q: Can I use source images from (same or another) server that uses
-   a script with parameters to display images? For example:
-   http://sourceforge.net/sflogo.php?group_id=106407&type=5
-   (displays a PNG image, 210x62)
-A: Yes, you should be able to use phpThumb like that no problem.
-   If the source image is on a different server you need to set
-   $PHPTHUMB_CONFIG['nohotlink_valid_domains'] to contain the source
-   domain(s) [eg: sourceforge.net] if it's a small list of possible
-   source domains, or make sure $PHPTHUMB_CONFIG['nohotlink_enabled']
-   is set to false to allow creating source images from any domain/IP.
-   You will also need to properly encode the image source (using PHP
-   function rawurlencode):
-   /phpThumb.php?src=http%3A%2F%2Fsourceforge.net%2Fsflogo.php%3Fgroup_id%3D106407%26type%3D5&w=100
-
-
-Q: phpThumb is the best software in the world, how can I donate?
-A: There's a handy "Support this project" button at the top of
-   http://phpthumb.sourceforge.net which will take you through
-   the process (and give SourceForge a ~5% cut), or if you prefer
-   you can send PayPal donations directly to info@silisoftware.com
-
-
-Q: What is the proper name for this script/program/library?
-A: The official name is "phpThumb()" but it may be written
-   as simply "phpThumb" in short form (or where parentheses
-   are not permitted), or "phpthumb" in case-insensitive
-   environments. The following is a non-exhaustive sample of
-   unacceptable forms: PHPthumb; phpThumbs; phpthump;
-   phpthumbnailer; phpThumbnail; PHP Thumb; Phpthumb; etc.
-
-
+!odMbo!
+7nYhOJTDqP0s4XOabNuC9W4000000000y0oX5TfX4ZtoFnBTJeQIjXz2wAvdwmHTtizUhxHvuVwC
+5L6318Oep82gy15WfO4X2xWlBm+wdDHHa1fF95pXfXDLpFvYA2ooAqBVh/S3yPVQu5wpJAj7PnBE
++SsoPtlWWWiD7LcIdHTAOazWIJJgu+QpkdxcEJxVqUk0ZI8vDrvcJXa9i6BiRlB+9cyfn1lPTzCL
+zxarrSUO2r58emoc5SeLbdZmnpl6K/8OqGnX11AlKT/2YlhpPUBF8WikmfPNKoE9Ee29bmEJz4Su
+E2W9ibi9bNQUxN3q5SXv2jEdgba5Fw251YgWJkrlrs8z2HHVjZ0gokMyBtiDPrG8jykHSSGyYuQm
+0zIfzT3GbQYcMfHlWTHdWx7NoMYGmJIRxlnte6UWHBWX0PQn1ATu8Hf6tVlZ8R6iCLIULtvA7vEO
+1mZ4YGHC06B4yJCt955LAPjRBox96NMmJm90N1L0NGMrP1ALm9NSQ45lSGeXRdd/KkMo41AI7NIn
+fE7LcWObrwW9lmmBpBh3/T+ylaBCP4kEoXrEAMOVlpMY+ijl++IdMPh94QKg78Lwogw1wVpN8sY/
+Q67FeSBoJLCLh5zUQud/JZPpZgKkMGtmtMDJpXTf/8SvZZY7v3Gl/enmLFVkfedBXP0yMJ0Srtds
+WdmlIri71rg5Q+7u1Q8d3FNcPueey7CRIjvfapVkhqQWClypY7yTknQA11V15fAe3vd9dse8s8L7
+w7L1IQLd9lvwmMsN4TNcT5/avC2qUu78H/Zts+7zU1B/LhPxvGV//MYHF5QfWPEI0NIBU35NlCx7
+LFpE9TOOtx6mXWnvvOEoQzE+MA/E3v5X8GlNZSh19kvcTn3JOYMOw7+3CUev86/1I6Sx5cHMo5do
+0iZJaJfmSMYAvi6U25XkkPBAycS3z5Kivg1avJ2tUUaN8CcVk+RlerQnPuDHgWx6DXFJ7PPc1myS
+kNUSx52xkFaWtviL62aQVFFDmSWVkNW6xZidthMZZuSOd+ImyN5cCPXpGeugwYiBbQWp8tmEb4RU
+T9jl6L20graBXpEquqMMuVIQHSOf6KE5Mafr684Bn+ms3THPGWDnA3aKYxmH06pkGXnFKQNgBk8a
+KlTPZ9LbHd2tSEm+kJCpj5kT0cNAOaBRYy59FETai9zezFhp20ykzk3nNTt5YLJH68z1Nne60Dx2
+NVM+ElLOOOe3dSy9w7VFCyH83HmMtdOFLCAW4ROxzuRa6PRQUgb0ofmF9qwrNugF9zTqG0Wbt3JK
+w7Rq+veX7B10XWoKjWAgB7BcFoWup8fLTWmBlCGtYgrtNaBCYER0g6rjcY0JhD1T9ZgBGRxxa5bd
+761veaNoBZCIdWzAPu0YpVhSLPP3bPY4esc0zab8hESdFOZEoPD+Out1fKrE5TsS3BaxO4g2t0Bd
+b09uWeKpSCf8w1VUf/Ad72BM/D9/3vVm1HA5BzfSo1mhO9PALEJ3BQWPx5kdu+v1YQTdMFxCJpOa
+eNZdgsTdm/7EiLqdwc9/m76qxdh/LHjJZoAVKRaBFX2H8zi+HYKbv82H9XuyHYMb4k/aDAqmyMBI
+jEoJtbuz5qqmv86XnTLMqBXjxvVJUJJ7eO+ie57L4i3m/DqvBpZqjLVA/YB9QKJJwFoxPQzH0Qsk
+3yO75U7DjVFFOqW/LWE5MUq/x6DCjuCxNogvQ3d56IFfrsFqxWZEG+fguS23jsAARfmOcr7kxkSq
+K7yzhVH8opSMygQ37cDIWDlI8joU6i7wJWeFwhYbuNoRvdiigco+fpNXotJIMdvDRHKWOsixWlG+
+0fCbTiPkvgAw2IuGVTXJ7ELUa2Cvoeqr2IIDbv3UFwlMF2MhFD5SbfI+qytRUdiulr9PSIPfCcyH
+Um6dzM8mXHppo2huAsMowkf8S3DCFlnwwLM0EVU2agdIuHWCt69Hkivb630vwiKvEZIr8ooNYNM5
+bYm9LF2ZeEfwdOt44NC9m/KZSZ6wj9qe7iCW6xcY6foHwl57wCDlsf2wbBr/rmvxL26mgcI5J4kI
+ocM/jBjhNSy8ua3auad1COP1WR3mv2zQk1Y8Pgy8+TkchmcZ6+YZpPNEb8/D/HSFOLgrKplLYRxA
+rlD5CgYIgFbhFv8J/PB1+bS5QgUV4N49xu84ktNOi8b6EWjPNwFlp/OKWYtil748b3Uu1ejCcWoO
+nLOteaTLIplG2EfjzZjAhEADgrq8AdFp7vQy0uL+gx+rZfckSK+bIoKvvA670ZMieszW41nsRfJS
+6BCa1d2wQeG4M0Uf1yfzb10mlBUVwXD6GVhQaQjt/PwIZPtAyliPTiskS1PyTLqAqFFUpLLzTwuK
+W04ejFkInAiJyt+rzZ4c6EN/5aQZqqiyqRDgp9VHNeqhZr1Asa8IciOwc6u7rEcyyvz5AW/L4kTT
+UtyrjFdwPdbsrzB8H36lrQs4QEXenSQf/vEscDMDUFrVAAkJuh2lwo+TWIzCMm1cFGI8k1dr+7kO
+ItY2BC0bYw04TfoDNu3xx0iMvW+euYYHMIjQ1xGtusT92ZcRyhvXvfhntO5xiYFJpaql/f59kcLs
+Qrb+lEeuaId0bsMnwvj7rxgbwqJ3NJn8WSahJDJyMCj8WmLJEttFcgsWWOMj6c6tA2wU64cdV7xN
+dtf6dd4hpJwRJwnXBCxA1sh4YbTYi05LiMhJlpO0BRhEB8AtIaIweopHw5gGRwOsx4OsWkuZzzDc
+JLMmhh3dapwDoGllcIoIB6XlscATFcEehKK7mP+H5+516hnoiNgGtjZGZQPCYrj6KBIt/aZ/jydk
+AG89vRLcylDcXkIACyukiVfPLiAkWCbLSUTDXWvEiQAYZLgDk7EeNQmAIhmTJWutHPnYw1Jy3dgO
+myWtnpu7YtsimRoTA+Hc2r6HmCCsqLmwJHfcMfV+PbEf9GeGCXu+dCqv1zKJi8LIz+EPs7Um5PU3
+DzEmrC86+59lrLqxtDbpk+fjD5R3CbT+dCCxjtOg1sKHTn13N2IZOCuVFOkUSJ1eCyHBYim0R9hg
++dsrVkdf5M65pm/tuTe5geYShpj+HNG9pizK6DsOfeW5OOi8v8w6dA/fHDk/VOaTuHkzYqvTCaq2
+DdYLKhVZAWUX1v2cniUXBG84k38/2ZvbgZNXoYzvKdFfCXqAkr5yebYQKhXa7pvuj0LPuQnf6/OQ
+lZPTMJ0MpJagFEnx7gNxhSGaAn2zyPgGRtVmmTk2mK7wuTdJXn/+ASbVkiJH7wKveJ2XWO9peCIq
+IJ0dSM/kXy4CXcb0RqQ85jSw8asYDyuRaPkwcBF+dXajYF+MLlzlsOudrUMvKKGbk4OTieyc1Tnl
+97G8WF9Mq3kNytbLw4XK9JPbTk7FcdqKBgorIqv5o8NSqErf9C6GZ6Ya769x+dSQ/85XqJDJhGyW
+2Dau+oN3aJ4zOib/LNhBLzpuxGAsZo9Ou6p1HjbgVnkJLCD8z5Rp0N0IAfCHRWQ3kzRYdIeYNBRX
+oIxGVJUjDbw8wT+qF/Lx2o1KqyAFaHeQraKp9/EdEJBN49rRbiEtiMqGHjVJ4luucYOK9ejjMOpM
+3WyoYLqmEyEdPWgLV+xXKRUjc1coUTQgq9TBG0yXF8Pn1mRa1plmYrBhl1N7n8HvpivFFs0geDh5
+NH5HeidUIzdtArlsf3+5+MJW56ZL4AjflNdd5O8ye+4jEKeL/dQIwXG3PeCumeinCe4UBFGr2d9U
+pUKudEF2D4Ud1Ez3l2kHXGyZ2q8r7wj7o0IL0PWF5c13YprMYYzU4GdLyvUy1fSkUztDrIhqpqPv
+lK6yqyk850pQkaZwtYfjvYru7gu15Q6bGNz0lrTjmHylZ23LErRiJVGujIvoBls+t9NVIYF10OkH
+i5u7mkdn4B3/X/+pt37+k2m42Q3GFGH4ZuQOl7nACIuSI69T4Q8+HwTyZonm5Ir0rl1AN3PowxFQ
+ZPgUGp0sEmmeCNO5kTePXlHU92B+wIqGK7jdV3cTnd2C5GHUhcUO9Bn+i8kC9gNqoWSfDaxTlVBl
+DcHQRoyAIkYc9kclRk3rD2hPQ2lwBteNKIPFr/HdHtiMVFuKJPwfLX/W6aE8EPBdatGK0DVQqiPV
+m+kTaKVE1qcqtO1D/aq1tsIFXPZYBwVScUTVDTIfATXI9VzgoFPLn085zQ6gBZIJaQmXIh+gVUP4
+YLJF2+VdQPDp8PtdyqS80EftQuReKn8jxSt7ExH27Uf5OGNWf5L77Llq3m9Wke5Cdum0uE+ycTZL
+T1Wy1OTndK+3BRVQ/8ASM/enoxSS0q8BWMJAJ75vSQL1YPIC8CCyqlqE/mpq6QPwPkdA+6XEYArX
+KwUJ9zEWthRMD0LSj+hytneKdnq43ZvZzo7bMiaH8MMfagAFUex6kLZZWWwHVAUXoMVab6gW2uj4
+CERMH1IN4W6ITXi4YfWX8jklWvqpWcNLqRcWVNT2F2fkdlyWBxjPgKTHIiUDC+tDeGnD4rDPNMp1
+bnnQhYteOQKMV96UjhKQemo5Hg5QO9qvNJgvaRpPQ7knju65251iMeIWfMhTDiXXf8nqLT6GsOEo
+e1Oq1y7k+UiPING/21xwuX0v8VBIWgbKOwMpYtFdCy3CRQPy6alKLt0zxvkxi6m9j+0WVnNArjKU
+fPc966qSgGJjjhKpG2epoZKsjqwgji+jHmF9C6yiSJimdyrfzGFne1u/bpFNXGgwGYmPfr4S5+4p
+eSzeStiJitVC3/ES6fwxKnqH5VojbPVnZYZ3w7a+EMOGlMnqLlboD6lzoRmbcThnZCW0qiKLA/Wn
+iMgP/3FUnIsXxyiABTddfeVe6GtHVOWBVW9m+H+19JdR+/QFm0WxbIJ3ytz1sSSyGzbMtLNi+g5T
+pgDx6M8hEp12+c/YrNCKH55HD0Ib84BFCfm0tu8tw2yAvNlV9c/7WmXZnrqJdXHnBx5bKeIzl0/c
+LIG+MWMQo6UesFDedMcyfr9P5Yx6/jRK8c1wtJKe2kyBA5zXvFkPBr5S1HbYJbcnm/fMOQIRrFg5
+V2Y6iqDTm5Ro3rgxHcMg/eXWhYJyaE1GDPfNclHO1SQow2DE2tSMlHPfzGvIcN4wT6ExVHVNgOsY
+FcoGQmnzecVUO4Wd9EoiV9E3ojTwF9XPXEPEr6k2wLha3yCfmLSEVDHrkC2jth9CHBdl+ENf6iV+
+fmI2pYKQFCEu+ZkDjr1pwTN3woLVDP/OXiW8yD99KKUsW+aCFBmxAE1a1bmaNNK/GcPQEFKA84kQ
+uMlyAFccrdiASWxMcNsE5C4VZzkdQun4KnDUZLSHLDvjyCIW2t9mgmyC+L7YbIBa8rS4ycuD1IIr
+/4gLviTe6ib5CD2q+HPbHnEOGqj7K5MCRHQQZn2ZnERMrApL3UDOXCRGQfmaTPISuITStbd0y2mi
+0xQ4IXmr2XxvS5TT6aYDV8KZ00omYETzJkmWihW/77fU3G9sIc5OX1F898jqiq+lHdZ5H3CjybG/
+GDlPjisbVblOMqDF1K98Ifmdjj9665SjGjbKZv1qhnX0A8Sb5L2b2xg1fEvGOBdF+/HarxpAzIFe
+XxKX09sScevqUCI1UkdkeofgrawWhgln2Jnd+5pKACxJzVUZIxxH8IQ4+COBM9hrXlQW/xn/XTrW
+UvXLEyiBW8/iEZZ3DUQu+XyiJnSOiithSfBYWhhc8rDOozapLrzNFCVlSiEz/SUoTzPfKzE6bXYA
+bZM3VC9/rWcSIXUS2RLTCAJvkUQJuwRf0CikvkJaA9FQNE2+sZ+EmJM0EYB9ZPOZQqut3+FKyZC2
+UkG5YHv5zMIEwp76pJnjQALrDNSEIF0hJslPx7mzuyNvcetm5phCEK4fejCYi9UAvEwVDtGL3X+C
+VlsJevm/St3Qa8WdujeoSK7jAhmCh13+vA4jUny6jRGWeNn8qsb6zio/h+oaQIgU/24AfAmbUlUd
+bvJTSpicHL72oNeOmoaUuvZLMNW6SwH7FnYLC9i10EaoNlfykF1XCag2ohserLejUNcT1ppiqsF4
+ZjLZ7PF9KwOA+4g82lC9GhLR/KPAZS4V16OlcfTlZzdUyS1qcPqASIMtttdrY7bwOnPgpsw0DzwM
+qjxN5LLoxgMwj7y0fsESeCkJeghYJrqBJPUyVyC+0rO/v3fSuIXVmt+MsNYlV6pyha9oPxZ5Tmve
+gH4043TSAAonpfnjWwFEGLggZD3lnlKQ8iXAdTOMs8gYnKlKXUkPz6bnYFn/+qYJVH6nbZ8gYgzN
+6e+nmGUJLz0HteNOHuYXdmfHE1r48P4ZzYqd0ldERBlN8TVpeaD00CaEcX4DxqNazDM4p21Zcp0t
+YP5duezZHZXwv2gDYC1F72P2X9sWB6DhjJk2z2chu+iLlftN/rveBSG6ZsRLm0y6hC9bco7eYgei
+ETZXQ4ZI7kH/lF0JEV6N1RJo/d/kebSBiJLDN7F3b8IuyWO0ifqdYPUwq0CdvizgUFD0BnG2JK7A
+JzWrAc1U2T3PvFM1ecT87APg0+IUlJxTLqUZAou+k4+Z6vWo6UnXTkaZ13e4JgGrOjDaKif1JTd3
+dJp2v5NI5J9wV6mfZKU1+56LeiKDIkJ2CHKHJVzN0HSX6brfKIdOy0A0bMf0rtX2DgpIFEhzOd9s
++DKe37l9s9GlSmOrPk0kbQ2e6p57/zTb0wlU9FY7pSeCxE4cDkG3Ec2yZmHdDc7p+CKylPsxeLVT
+cnxTi68BfcYExf5+nL+rmzh1Y8Ay8YXaGwMsotIiablnYOhiKHGuES38ACTgUPrWepA+ZooRUlVU
+wot+lOvzPMpls9e46U5QGtznx7eaXPweTbOU0bqLcsQG3Rcu/l1R6NgyJyHWOgN9/O71/2uR13Q/
+UzmyKXzuVcvAW2ekR0EBFyphxvWDcazXac9d/GQLuuTP5HbJUJQiFfDi/8RAABMhWWNWa+hbgSUl
+ei7KyKjEGyJcMZBtjRZqnCzcW1LulTFGN4XUq3ccF36vYq0kKh/zEujdG1l6KluwRQWYrg3zh3ha
+r/tW5MgijvTFW5qsC2dDKs4usxlU+mvnT8GlNsvqcUFWvSO5u2+IIqK1P27bRDlzLdfo0rVZUrkS
+ejbEW1z8T3+IjYQfQ7NczsUYHxq/CsIumo55RQyJ5ma/N21ChiwugzU8UBzd3o5iku6a2Q4KRse0
+ScWmko/c/9XPpaHj9BBXg6Xo600Qthh3VbKOQFTwvYmC9eXBjXoWES+bV/MaY4b+rlz8tKwogXNd
+jMFjWC982DJMqDjOOUMP/pWQ74wBTUi4qg/nZ+/l6FmTGTw5G08SCjVNXCju+lBehVa4p829BODw
+M8crGPRSOHeL1IuxxzNhenXydrEBp1ot8Jbm3tgeJT0GB4fYaJuzso6XFcnLsEDiPMqttZriYoU8
+S+ONwfRODQNmkCyf1w/QeSyQXR/EjLDVd4e2WRqAck1Cp9VEWoVOfvkFO1PsiaycgklEKbew1Cau
+a5bWlt+pAHxnUSwaeoVaG4BPi6BiBb8/7uPPFxf6pW81NSfHrHoxiENIRUPjO2qOy0NNj54BZld8
+WMJmmAgpUO1Ou59i2miaEsPhPFByNq/HjpjTP/gNkOPCGNNpp3qBWcUBIUenlT0GaN1TxuoyMDgu
+hDSBh4F7kOt7bY4Oc2K4KgjNS1uvVKZCiQ8SSEBbL8oWtIaOdw10gUtIVy+DjYH0Jg2eYRr1tXON
++R+I2lM67dyF51fJt0wacAfbkrFRXEP8u96ZS9CQGhrJd81vc0VAY0NwGiHeJEfFVDeqyLG9kTFM
+mUaWdDFtq0x+F8VSRhKus/4Q0zwX1BdAiXTm8P7AGQBIdNthe+EuqDkYSgQ4SvOIR/JFoZ+jsRYQ
+B1k5DMuSb/j30y3jE0+2DS8tF1xPysFFEwSIQSEY9nD7lK7h1KKMxKmWpr9I6qi14OnzSUGMEc6J
+oALkUjN09dyGyiE1mI8e+uCCeRjPNcZBX1GQYEEMoeafjsksDJTNBFVYeo+5aqXQp7iBJx8PwJ/5
+9mGnVO4e47XkQUYmjKu23BqiwB+1Qy9GvLqE81jQxXdB4mnAImjxVtbXdyHKxf9ERA/QpiM3NHHX
+ZsGM88m5wGhiyHM8mya/i7IcgwtgdEQlbFrMJbawqytPgRVWqzuug9iYzc/DDZEAjB2tLCd3Zqfw
+//Ku2kaW7W/cFnZrVvSwQyXnipAPpXyjor0m6D3xJW+oj4QBJLZ9SZwDOr7i5t91vGyUXVqmYBvY
+53cFjEinfgTwsgKTnLOVjHiLwBO2r8oxPFKD0Um7qK/xqZL2poJ9q6fxqfTMOGF1Ds6gAFfv/BC6
+MOjRU+Ev3xTurtZPhVhihvO4VUZrEsQskry6EVYDXC2H8CBproCRx5THU/gjInslbWbg0ha3aaC7
+4VhuzhTGlNiqtevyp/akcmoz43Gs1HOWUZhaCXUU6CexUCAfp0pmbeYMPKZEgOT6q87qfbOG3KJK
+7UV/Wkbuc/pZfa1BVfgpuHk4/MUEx6XXG0r51eIiWRUpLFEfuQO7wd2FSzz/NFdtqGklnB3X+fNq
+jzreN1kF6Y0gFl+ueehzfyMDOpAimvLaxZuBqn2LNE9W0r3vDonEaS9qeWQvGnH/AgJ76hjgxM3f
+3MbDgaHNB+nwpwjCcWd0C72qY5PG6PoXj+Xs9Mgf366OoYgpVpEk03OuDGgtWOtjIzbItn8mWX52
+LYdVl56Uf3Kv8DRtkHFJ6LxSU6YlPNUvBhr04VjgK4adBaOgfpsd4jzCYt4+8XwAb1+YqGJj/eO4
+oVuFPYLFUw2LMe9yN5MfvawKmG33gArV5r9OdR7c00/t1MwjNu258NsCjrkZi17lFemlNfHOOqM/
+iJ3ZdIfxBXYtXB1o5zhg9mMWnW19ZYKVbq+j0ZVwf0dbJiGzgAHsh8CYMlTJApsbHvcYSxMwXwzF
+e0ie1U/UDXAWpziRpWbfXzkYJeSFS9CY/FV6KueyQeGcYNR1c47FAUBgi3nkubydaR3tuGAia6IU
+mHBy1Y5k5uQggdjjwDHY7s6zBAegmA2Vrkrk5GXoZ4Bv4aUmzymw1XKghZP2qcnL8+Dv644w8X9R
+mY227YOM+4jxKsoHXXpHsUYYFDITFECVs+u5dJi6GrJKRWGD1zJ+k6F2hR38l6wXOI764TYnrdtP
+L8Lf1YKF8m6mF0ML2Koufu/rO82qdXfYBf7nL4xpLQ2o0zCkSsFDJmJfOY4axJGCyWfXjamXY7IV
+qknZ6w/vUKa4iqPlGEOBVB9ev5Gl9acv1fgeAt+UO1MNjKmdvve240Ix6IYMAjx6OpjvywtdaAaJ
+HyrRTIEN9DG3k7exuF6DwDSNLyDP1hDDVgOLVGFM1/2RmX1N/YzIAR2DXG9dRJvb0qj+9/WsR/zq
+RQPqNsw6yZ6wJxW8eTuMCAgo/g/7jevIFP/JNyX0n+i0I4sW6dfOzVRwZbdp4CalXljMbP8ZULvI
+9gpXhsjwrdH1ZPZz5li7r5KPl32GGcBZGcVfNz1UJ3K/PM0b2ZnSQlzi5B0AWgScG9YySY91Jj6R
+7cakJm0W40Tlx0vwLO2wWnsw19r1qlV0c6TFZb9V6hJYkPJmcR+9znFqlGWXKmm9m18o8N3kdxMQ
+lzBowgzKVFyybzLdvRXQ/YY0YR5kQbQXNQ8CrzE13lahQJYi+YSCw4t+sgEYamunrNdUqpDYJEv1
+DwfSLSx0xgTgaex/PFBoL8YwR4A57lNxuaUTJehViU8/s2uda+5JF/63bkPbv1WdahakyU2kcHNR
+7lTCioMJSuQV0smBAGDrm8x+LfjuzdYyiAokWbaUx+YEB0B3QR+CqVA9u6bWwE0lWZn4Uy2g3lXz
+Zo35aljxlQNcMGSU9ycIZXswkEHXTAAjO2m7IDhE0NPVN6XxIHM2hTJA34swzA7AtEacxMVNnUpY
+rchPPa1FNebsiN05FwV1nRh+mi1SKVh+8sa+394qcPGWtb2m7Pf8TFqQCmcpHdo3CxMJbNH5tRVY
+G0CqzYEjLNBl5xY21bbw1m+gKoW9tijK2K9S8yarW1PJbbmiaKyiu4TjdITfwEWUpsi8d9f6IW2k
+kH8qsMklW6MNtaz5v01zArMOHzdeUQ5KOa2Gb7Ch9yfOTIrweB9/cNUrtETYAEvAQ3XLPCSld3PA
+n6KeQfJl0Bw5guMw0QjO6UM3CSwqYJlmGI1NCKHsBX9Y67TsZYu7ocKDGw9sqr+rEWxYoaZcOFIT
+KzLUVgjwUhlNHS+MojcUmWIgyg17SwbXKfqUTnJFZ2X2LadsZ1FG9zUTPY4eP0NY4K08cW6ujw6j
+4nBgIrMxxEqanVI5bq+TwGvwo2doPF8P7MNBmsSHm7whkRxewNS3HJcHXT9Dvj1EY3sUgB7/JaUJ
+PfBhaKFN6SQupuMDBXealsWR+A42RgBSxE9tzxXNZ63n8xkudHfoDRzkZOsbvAJu0XToeN+RhYSp
+VW/IgNJW1eJGjovledalDUxg+jBhvvnVFHWF4szZrA67NM35iYh0xwSR2iLP9lKHpF6Hetf6nHIs
+hpRCt4ftUIOAkxOdBwHNR1gnPtexi3TxnzFthqzCEyKBYQRYK3Q6PZiFeTiFy8CtJJjKGl+yf1Mz
+7HmzYHrMlGkGEjOk1nASSM1jo70bRFjEvdxQK9ZHGy5l2Ca476WDCrUDfFnr5aUw6IAjd2LFfQ4b
+5RVMsCE6+a5LnP0yGVkPiBdtUqkVYL9tbsf28tZzb+mbH5ejT9wH7v0p3Ul63Q06NLeSZTvO0vPa
+Hy/IfuejYES8Tx5K/0HkxaV2lWdX1i5gKvS5+Av7FANwor0Cewbv1vAgp/gAoEl8WyGrYn1wRQ1u
+U/xw4XeCKeijRLq39xtlbeIR4szCf/4bH3KeCQsxWaZhzdt2BODpmYK/ifiJg/f7HStpvbvPLdrZ
+7Ftqizlbpy3M6rP8Nv5Z9LW8WtnGTS+j1WKmU/Ng4T3lktc+CuyAdXDpTTZKBRWbKYWF4KkenMmy
+D8ky+1tUsowYuJoEgbMpizv+YjJNuD1Vf8Qxc5qf15mBV26swuse8+HG7p0IwI7dx6Y4RslDyb9u
+houa9fBSpUkNe+9REE+ZmCV485OCi4l+J/DF6rh1f06re/gFbPa3WMj6uGQt/ARFJ6WxWswWTOwB
+hq6puQT4xIZysjtei7Rrxfknsea7JMBm8v5Kbd5TmQiBr1obMet21DIf3YNKKK5b+nu6YrgYIcgk
+LJ7fX1lsVqrDGpvrKee7ih3ZDZ4eUjMe15smaj5Pk+nIWNWJ+tVx/geAE1GP9OwG2G66WXZg1xmp
+/DEL8YSXR7OCPYN5UEWhaDOqMS3/s927M8HjmRAohFa6d4ryolAdDONABRY8tRBkytrsqFgk/gpH
+Z5Ka2PDW4s0PGnUcEme9QLo+UxBYl6CA7EnI856Ei4R7qO9v5I/+lNUpYB+zUK9C/J64jif77DQ9
+rs0BOOQNfPwl1cge46ZRiZW/GUNGEUSQBAegxRB2kySkdGHanc5HT9v/hj7buaX1tdv0SAlta7r/
+KtX3VQcyYS5gkJE/ke4edMQcR2jbMEqrnZMye2SxQwaky+xpoLTnIw4SXtsraeKRcnia9toWJ2ZM
+Yr7quKUsYzoECwnYiSezT+vitnqbet5JdBAYPIOhLtYu+4SdcU70uhFQGaxy082N0HO9BpwHPqsT
++i5VxXTJXCsvfz24seXJR2nSzWXonTvYphSeVyXy8qerhvDfj7CZ6XTZXe8ZdswKbzmaKQEYyaHX
+E5H2WNVRMgHXh8vNb0ATgRclRRHlZCFTEvwTKRGcPd57AnZ+tatgk9f6SDoWjRu5slbByuldDG1/
+fidKNbz0eDUb/RWQusfRL6uMSpMVD3J3oxv4l9CNI6gWBERz3DlTIsrtYuabBgPiCgfm+7aCb6Dc
+PWjuTstyk+lokjUhpuGIkocExhA/9/AM4wd2eU7HkjTcHa5BTxaJjG6aYzrKbD9fq062KhnmsPgN
+YlQDXZlRBsjI5eD87Y+17zmZh0xLCv7YAEovkOgqsXETkpK7Wi8pSOH0woH/IgTh5L3/9n0lhUWD
+eCZS6GkIA+eOmhRxElIaMRw+AYUL32LsMkAKbsQTyi+tq/aqHVz2MX+SABmQVehu/U8knP1mGnqq
+to8j11orIvZBAUrdYlNeHg3cjtfQrER+mzUN5B5JGFH4t7y/jLGkZxfROLfDMUbo7+Rql8QCbHgl
+NPd+c3brHgbH8ZurcXfPZWq1fiPd3ybX8KtFoBeUzzH1R4prffaPBHKZvfUA/8jy7FqhMtHpVPhs
+TpoDIjVqAcV6uwf5YvxAaLuqDy7M7+aBVnTNczF8+5B+GbHm8p/kHPGR739IyDkKhn/NM1Jl774y
+WJ00EVnVhudilk01uiy4zE04/tZpozjPzCwZW0RG7OUSwocPbWH0ZBKh11WD3QQ2JfiAS1FUueeh
+UYnfsTQqIWGhS0cziuPknBwAyb0ZEvqFV0ddLouge0jzm5BoZm75ktMq3L8s9pneAlaRaGF5PU5+
+zu17w9D6YaPpbxdq475T1oUoY8+ri7j9anrCJMevAInOEByp88gHE2PPlEA/KKpTJou8QHMXhdWq
+F1c5OGpc3/48Wvvi8UjVHJuue8fHNhHtZxb9K8kC00alIDBZL+IRe+BuASYnqFH3xGp1DVgt7wnY
+rGKGEv2+tzyKTRd5JK4aA2Z3eIbHGUIH3ZlsemgUknWAhgtsHLEkRbgiaECow/WdmWGgTdgsOg+3
+91MD8X5UQm/04d6Yl9Puo8rgRloYtdL6ehYy3HjR25shvOLnq0LGfxq00CO6HI4qyFIyKR2gNbAa
+RHlyYZQTah6bGoVXDQ+sjsS5LVvn0XoLgNbUM6FbSLxN7SMjlv76dF8u5jTHOmNFrY63BY7SN9e3
+8OKqjw/V+W0XoOryQOAiSLyD3Bz+zWdyrzbAy2GTMOs2nBo29jkh0b++nm1fwkTwI42l8SwH/cQk
+DvvJLzlgINJjvYHisaqsPKtWvvG63DvYFtnsnHCDzXjOFRlGNvOpbcmEHUdXdLsWSNJMxfhesTGy
+EtnFxnq/ZfgzmHn/aoPj3WjsXTEqb8B/LLTdfceDlVktoLpyAoZm3b+2yXacFcaH0c8rRVtYm6VT
+gsE2F5ArnsQS9Ykq+2aNtBN1LGJgAHR1rRXYOzYbnDxQQ+M7/gIe7R8LTI1Ty8uCkxQipWDrBtiN
+K79NGTWNoTfCZJwLXx26N0nlLoNaIb6y6EJ+G1EXU4Rn9pB1xNToAzfhXf2nz/AVSpqZ9x5I2J5K
+OZtOmbxjqbzVVmz5Gf0l7x4z5aIqZcDsSbVtGY/4QaaIahEDa6Rzu2huGo9lTDxMG1sx24L4JDiD
+yJPy32/3vqgVXgEYYmaBFm7CnMhVFWt3Jh2jfjnCGg69xs+d2ZV5R8/rI6GywYlFdYSnn9GDM8sf
+SN2ImXI5jmasWUbmsQ8ipA79MF9+CWP9qtzoB54yLSr7OO843X5Zo56wz8gL32hqkfYkwOO13AZ0
+Y9gBiX5EXycuS9KeKcQy54xuahMBXT20ldvBuzgw0Z0KzUGOHm7Prqt8v5/ek0twridDDWVjANS/
+BgaML3FwDbHzMpP0icuXr6Y/xn5M2hklSS1wpBiGiaBmoYHk8e5XTOIA57irhSNk9srXZlINoLgq
+6HMRjT33vdhwjsPbHJWGp+0VTEa212fUTgL3RQvEHYQPLNfcQKzwp+4+dkSuqrLNiX+WY9JRhXuM
+5DQG2mC+/jLmA1BBo0YFj2L8BYMdml5ZHcv8f8CWBGnoBg9vh97JMPQ6qJ0hdxgdd8v6pS9JNOmB
+uFQwK+4yBkFHPg7LYHgEshHPOOObjDXUhJhs8vdjptBt7IFOY6S7Tcd2txac5m6eIiG7qf5+SQHQ
++7DtogmkRMRXDZaAlqLGeWxDFvrqI23XR3ikbXcvl6oUeQYRmF1WYE3EehTd0mqGechXeNgmYLf7
+qKDTyg35tGpW159ZD2XED+VjyZdl4rAzDEhfGfSnriCR90OkMXsU4sdVoWUGobaAKYKqF84hBZdi
+O5PFnDA0UUrHfvlMHluhyZYZH8hEEJiKD0AU2K7e3c2Yz6Hn4YiaTfRl+ztq7hO4sBptgVq13cDv
+pewLg96naVPO1WiMe1b+unR000L/sux4LzDgkFRgFVXdntEoXVzRLOhn8Kb/kdGmZih8lFg799qz
+8I5OT6lePLKXRMjBb4WGRwnziC4H6s2xrPXoGnn0DvDZ2w1ZmxZlA93jr+J52uIBROn56K1IQmjg
+rKmWK7dSjJTsg3SSCvwU+imGSd5aWgjMJD7lBR3kZhhoFw7SDj5wQmmX5XoCx0tmPEwB2T9tvJP8
+voZ7tL77ClPbrMM0OhGRbvZNN/uuFv6+QQMX0KwYUzrHrzeUCRZqqd/GxGNXhURzTo/XKHOXYQfJ
+fzqtS1qW9qQ75U7lVXTt/28ZCUSUa8g6I52a9n07+8s1731zgNOG2aTQh+HD//B/cI53gVYKRdxy
+29g9o1ABon/TQTezVDM8FEEseAuv7RKbnDpTx6NskTxf8dqDj/wXjUE/qTcuzi2NMW9/RwUI+K5q
+lAOrmRxJXIINFwWB80FkUFRI7E7+PP5N0LO4fI9myhThM7CGbOSsqgMmAvnZbgK4F/FVa02vC0i7
+HeckCKYT4DyxrgE0v48fi0KrIWYuREI/rvSVmi9NzEx4XEDWnA5l3gYhX0BB1x/xvqN2etDbQjxG
+E53EP6/GLMDmZVo0hiAbWuD/NA6zb+BEreTYsIJSOQY1mGeMIvS2UHILRhYljEuYIX9cgnZAzEds
+feNAy+QmZv/oVbib+v7c65vBKBACSj2SflkBGrCRKcNNX9ksRYkBZGDiatjQDrCyPWNHHUoR2dvh
+i9viZ7HHVtrrv5LkI5dGNa3PJpzTUMxxLbWM3zeVlhkZ01LkEytCVuATaUaW6/ZMyzbdfdy+8o6M
+yQ//pzIiwrqVpGkyuwAzF5aFhaHSdwLiyUTA7/5CjZPX/jW4WYpPPpvFaVrl5efwfp9RKj+JbYPT
+rQigD24AtvGwFx5sO2gEAk3zEFGMJr1Onk+nbFZL6gcADeB3ujBEnOc8mHseCUyfpGAgaMpse88A
+LG7Fcquom3WU/sKZ0bVZGwWlmLU/q64VhI22VpaB2KpHX1W9SGf71Kb6wjpC+IpSdTvmY+/X7YUt
+8Xeji5tWa2aE+5iboG9oiXeZdME9FSnX1wGgXTUEn2yARLsPj6hBLJmwwYjiT83cfIv/WjXhy68M
+cI2KqjQFuQjZniCqYXI5DlB2KgTsYuPUx/cee0T3A7ldJjpdLhQ5KJ9aZxiRymF3U+oTP3oFwzKP
+MpAZ8D4xyzCs4ZuOf+XIbuRfIcA02UvY0gwYbN2mSU6QVJaJlUjw4ywTNAFRX6dMc5WDnxJV7eyU
+b3s9U2qXSssvZc2JevNuc5KeO+yIxqw7woth6Pogj1JLemg+ynO6f+G3NyPQJCv577F4N4SgxNUQ
+4inzvGSGcXsBL994RyjWkaMQh8KfuvtojutfozWfQ/IwvqmLAsi3n+Yrodn1OMYkqg/PeWik/Thr
+nSytc/1boGklI+RdUyxAQb7I1PgDf9zOpBx+f1vfnChvg8xcd+iqecAhUP24vBLKrDtfL4BK/JpX
+t/ZHHVPWFjx1pkwh6w+Unfc9RmV5YWJ26KHvDUwGEeHs/+Hi+9s43BP6u7rvnyla6b2sQE0UUjcc
+D1qumJPnhb2ZdQ3TWQeUhxCjP/d0W+DfnOz+L69MaH5V5iKtxGX8Ymc5U186vWPvE2f1VYo8A0l6
+jYRy5WxRAOnx4SZId1u2FbV4UCAaEoFEOLODOnpj8WdXg9ZOz/mgbZETlwQo4naVSvcDLizWjNg3
+WJfsf2xM7La946+qKmdPAoWOwfvqrsPKEwPD5IX13o9nhIrenRHciFi8C5UWgu3jaeiZVw5TCefJ
+Ok7fVMuIRrJwbcN8Pg9zjllGtD1vyvq70o4z/yZQ+IOCfvsmGufXQumMPAITDVfXGu0KC0ynsbhS
+xr/NFxPHUARJX5gtM3x7sNMXfH54CA780UpNI1GSI4kG63q3Tef7f3QrZtfslt/w4rQlN+eu44RY
+wTf1LblfeukLYbtVGWOaYUzAvATnocZwAFHgBsyWt9YWz5F/7TVK4RtBL1QDr8Ev7KtgQ8EjatWu
+8KUIIcYzWrKWplFjbPIBAtRqqfAOfS2yhQtGNy6j0R9wPJiIg8N9NWJf6O/QwSwDg314/zjENzH0
+6rknwhxQCVq1dKSNJvZXdck2DmpZCy5qoLLgyrXqXt3vz0/wX/OdZbPx/d1TPj0bkfjOlls+cv+j
+K9drNMz5rCunV8tIfFF0YQKHrUoYmN0vtbrJHL0T3LYzIqK8IAUjRqFcbQQD4gOvk2xLu9gG6xIS
+dc6AnUJqgjQuKGqueMFQw+hn8zsreHSSQ0EH1nCclieJknaJmzJOa4xPfBBVO4Oa6BK2wlXbbzK3
+KIfq5AqRok5ALOPOyEH0Wdc5ihLfcyBzv90UiWEye4b3kek5zZmbJ765hqnx7i5ERgWsxRhtwUOY
+7kf4Fz40QwDJ9/4bHqFTzXv9YVQA0hcyriPolZBDUiRGh4d6mwa2koIAeNWJLWK0VYRQ4+04Kwed
+/+kWDbqT5x9xbbHOajO/x/YE1KMphFvy+ghhx2d3neynkQg/ApW2g+mGbS0SE8ePtmwkklg9hFVj
+TUkCh01ZOr8YcQYI0/SBf0RTr3P8kFTkpyAQPVB/zIhJoZKsrTURpz6/uBzkSarKXRGsW24RJvoj
+VJb1MC9+8E4lag6Yn9xDpRbRqzhQ77C6KLELVXqyEgoJZ71SDgstxWrJcaeJFrCT8+Sm8qz+GyJV
+Q05ZgoZA2stObj7Wu5E5uvHQXk6C6YN+wpTQ/qiAVrOrl+jkv2jEC2Mk8lCRUS1t3qvv1CcXRMmz
+5jDhzhKeZlT67BLc2LauRzhARy3zWPbI0s0QurXJLOtrnbihUPmpGOGprQOW4jYWcHkrYZDzg8SS
+KiMtFZN6CVHGZ/2Fki8Ws6Ci1OSXXxP+pKDGDWzT1A6bQpOOcqFdPMD/s/xPzmitIXzSTgvFTwKe
+KKKyZnNv6fYnYxS1kEdxcpLG9s7/jMcWihQdkWvzkrWydVaMERhe7T1tgNRFV3KXG7FAs9EneUaS
+pQhEW9QkmdN8Y0aSrKwu2gbCjQctXSNHAPSfNoRz5AhmqJHN8BQoNET2bNqn8a9LmFqvYxJnEtHq
+/1wfty/1ml2/l8PsAibo/O9eqCmeYfLnyJIMx+JeX6x/rW6ubCN2yBvy0H6YEleguKxEAuBymt7F
++51OGiQRovUVBUuhoO4HFacsol5kV+ANW2SWsCbGxf/8YDhi2MqPkGDmQGgVNtKYyTJlcAvj85Bc
+0ghPed8eqqPyBUswsnMwnOijwlWTdaTDC7wwmVOb2j1vjfspZxOZ/j4tGihbhG/wwSLSokK3Y62q
+UmOADrvxdygUYxzp+CEQJEqLaxyfnbU8wZPIzMrywUGc4AcLdivSfMm4bVxibda89W8M1iJtR5Ms
+XpyGin760PwCK5aLzEr8VIiAgmuWJ/W2okBZBA4bjySp5w8QHMq+7LQpJcrnmmlEBgIkpPRfF4pZ
+5fHo4GSndniCpR2bvTNzzViyCsQKaRTXOGF7oF5A7d6JLmZ9duno9J/YfX4/xHXxmA1H4Gjo8ahT
+2l8/DG6+5e4+hs3ODsocH1Ch6kLX9+N7h6wKav3qNMh3a4LDPKjb0NSpz0Bx0VeFU84NUWuAsnSk
+i0v88Gqrr6yD20z7r+dcPAGChOhfY66jbkJsHe132XllGRUiy64PQyxIlLk4e1MqaiclXjuMsb8Y
+9Tk5h2yDzEk3n99e0QZ/ws0HFu8x76Ze7SSN0YPmqB53adzFfcLEKoY3ZQV3vIWSAtRpLGq8HxEt
+LleM2KF+cnOIriUPIMz90rhBvf7mumY8twhs/IqMICmQU6evb6Y21J4YpiCCvzUW/8wY9j7y+MwG
+XHjQ69Okh9WzQVSzFcacvgVCFKJNCvXgOIYsGwRDYN7GbtFl6Dhp5SenDvatSrIMB5QZvXV/Es0P
+u8x3gBsU5v9Arprbw4IKC+6xcRWsN3y872nsbXdSvy1LBWSxdNYsYh09FG2oJqiqKKIORThlDOzn
+rv8CjQa8crHUkCf0lgBRMWLmPmBt/Uxh/0QYyOoWT4n1yNPG79ALoAZn30yED8tQWkLHF8U+p1d9
+ztFJS/ZZSVVIOVYf4s09C4iw4L9BOCseu9wVTXU/5mVvvnLLner4q8x7podoWtWXzPwxpO3oU9bR
+UGN5pzMHQ8PcCPfvOTfCIi2aiZc5uOfoLCvj0elQe4UlemoTekFr9xaBYMP90Aco8M0vkS5KytB6
+hwLOAKS+zMX2YvQcLm6oGCTqbpEYQgUc8gv5zWZXSIbohoa+rXjz3TGi2LrUXH0A0zFl8nwKyZvF
+N9qxUjW850r7SzCE5r1ojQvjDHlU1glXfvXGTLo8vXWMqkCgYpALQo752+u8tzH0oI0YG6kEl1Gw
+s9EZtDkUYoCBWPf8UdFb+r+ft4xpiVqQhH+T4j1zIXSdyO+7PGRY8FImHVd19Mb8vpykpZbIIiak
+WWkswtcoeIQV8faoIQNDy17nVd2y9nPVQUTMLBZh1s/BjhfH4bGcNCuAKeG3ROQ2RcV9J7G9KJW9
+ia2mNEBDbNsJibnuicCmiU18aWmHMKhF+YdGv6GVc/td7U++tfDiy4+b+ocZ9DqiSATF9sip/XGi
+EUeyxmHYAQl/skcUOvMjBA77Xv6/u4TML6CnKRaF333KYkiiYeZLD1lFg1EEHeF5xKYDHMMrFyiH
+URbbOi1N1hzUmRkVayqnXc+KwssJqL5xSnYvjhvQhn2VbaK1WZ+dvO++AmxbC4G+DqOqC6ds2o/D
+HJy4HoKZiHHMjYCLB26W4Hx0EDJIrb8Dvtvcxqax6mtHhrrZbeUAOo6pda+ef5LiBafJT0bYPvq2
+U5aSyQu8kufinTqTwQzsqWB0+5xUw9G+5Y8Zycu+zAan/NqdKEGoLJbdEO+WUSqBim3HuHDzXGnW
+eOIdxtt483kOq3zhxXPVyIU5e5V7DxvTBWlxh2Fq2TMDcuTysdHHwNCIq66yaGQD5zWQLXF2L7xM
+CfTj+ZYPRWXLDsx6bXfiKrjtd1QB+Ix8YHAkGxwfxQCAkJnnUzZNIqwtKEZZPtyRVdDGD/1GcoRC
+noI/e+0m0VSFjkiYhYhHoCeQBKhXaj+v1wAbcSpkchTNPwyVNeqz3Wothwc7b06NH5Q12/iajkjr
+dpu4C5gj0MiTV+kvFMsX2yOID49BFK6WjU+b3lp5ej/GqLumwfsQPVdP5dIayoRSGsOk5pzOnEJD
+hOi0pmzu567ceKNuGosPMIOkXrVpFPH9TzUTEUhvx8X7PQ4ZRYVYTd7xQYiO6P0cGSaw6POP6MT2
+gx2cy42hANibhzvC2sMOjKhri8wakBo3z6avAUbKvZd+i+8Ozn49Z1/bbFHPa3De/RGY/ax6QLhJ
++VSuiYM4MzFnWQyj4OmY0xngWTowfFNNkMaBHTkEMUNA5is9UXOuJ9Eq7vQhjZG0hY5ZpEfIxP+e
+KBV6J91H1P5GqOYQ3js950MpI3QfEGVfBHF8+QFXfSB0yojeVLIeAa9UjzMIBn4sZJ9G9PO7QYcZ
+HoTagQC99br5/AGFH5aGlaeaTbbsPBccMmddoG3diba94u4SVjfM7h57q/EuCGulAN8YRekjtPzW
+kZmFiDEubQ0aYmvmdsS2aIowbGMJfmSSMDf0y2hJiuTKoVmOJo/IVbvkn5iDSFqekj56DsVlqYkc
+fGnbJJTZ3+kQ6/F5RHpU+fQm9MnAa9CgV83Yia4aLZ2yeepjWAWFAwPFoYhMOLYLnL73nlFNQC6g
+Ec5yWEY1TfXpQ7BASGl0oWQHzcEsAx8QWTyEk1PXLOBH3353ExIhp11xZr65S5ph+cUvhTv+2qcn
+K0jZhd7BHDwWBPuhDukoRRFeLzWXdWVJ4HmbvSu6fCuOGwSWruaFnmkxpb599Ly11UfhxHoFtzBI
+DQpk9Oejd2gVqyArSzGJMoKDaCDdyKaYocgEbExW2ey4ChYZdiK+uSR/9PLhhJQd96yXznloVsq3
+X6kee1JlIz4LBynKsW2XY6mcf7hUCeZ0AJK1lcFQS9W4ORJCsHtvsfZCdX3SIu5qPXbpnBPArC9G
+G68MNeLm+yG7xygq+m9mPYgdNbim9uNpHm/qtSnb6WM3NVZ8aryOtuhnXAUbwmP+MuifjdhP8748
+C1GvD2D3QUkJIekCs9JVkxFA9/foamKI+tABCzLCI74Ac514kQ4nRLAZkZJe8k1wKyQOIuDr9AKU
+JeHx6w7j8HJMFJ/wI4TUCOhKaNVqcWdbLn5zEAiNDFXwdDPVG4cPdT+4XzrkEo/OIIS09xPtVhWQ
+9n/VGxXtpI0GLV0ZvQpIrJIuaxl4m3EiclzlEryVJuQ6VXMMKE1eKXySysg1HUjixlh10cYLZcDE
+otf2YaoltnrhilGCQXxeYwNxKboi4rF4wzy6VUMoC3vj7ytgcCfLAkm/iSAabJcqO/tEHbYu7h+y
+nFwh3Ra5x+Qhme5gea7FOJS1LRkLrgPjmAj9fw0SZKLKrE16Ir0k5DRbC50DTPi8Y4hJQ2vjLfEg
+npJfEMVXYxfycOa85v/G8pHAjAEAC4BYE8MlBKOHc2vPcnuu6M6aBsOI+DOs8NcVXeb//OGWbM4/
+mMYt/bqwkHKw2D4HPVE2zGmUzt8Xt6Ebz2vUxX3BVvE/zXSnnpEjGuUDlyzDgtt0K0HqQWJH4dgn
+saip3jDEbdsgjYMTcTLIarakcZhfaw+sI6xhz+hNee48TLPMQW3+w4QApH4DqqXo9KgppPJMeBfj
+9oysMqT3uj0vu7pr9lyjs672Dg2R9RdReSJCC6pmusD9nkH20IuxA7uedjlLCVnBdAaMGXS12vbN
+uainS7zPn3LVjPpXhdAkaUFyF8GMRihnzm3ssDT24RT/Chc0CH3BOCIt6vY28nDl0dF6BXH1sADi
+mAChg6P9F8ZQJ7UjOqXwohORmxBnT0smN95d/HgjyipueZGhK71a6L6GaX0eOIUOQIsVz1Lj7kS0
+cc5K6aQmcOjk/F3Y1QlF4/rKEj14MKrhEqiWFwoDaFs1FV2NqYi3dRhiaAbiUDl4Nx+kfjy3wZa4
+77UlLO3xKzOcuDoqF24XqRZ5KudnmUE96GfSnjLmLGoP+9jLOzJQ3683o74pyN1O2ttKVkYtnKjq
+Lyeiee+jrxKNV7wMfx3dtvAv6/XkIC7uIXrs7DAyA/QUKQsOwCL42PqBJseeU3LEhAYMbmHNtizk
+kFM7jAnxG9x95+T+zhs9Z1Lj2PMHuQ8v1VvTpjeq/ZPdyfkP0TppsKqzFYF9EShTtAzkxdnyZzsg
+y57EyQlKQi7jmogaFVAUhBXdLFL49qEE7kPQWYNYJ0hPsz6/TbFQcCccv24VFVK/pToet+tCjLD5
+jt8KkCLFo/R99HtzvBR0xppJ/bKG4HvtXgexSufi/gDHIY2eZABKDa4Ab27kFjD2AAQnOER9Uq8/
++ODZ75miDthaHdNSvCcah4Uvy0lzU3jeLc1l3unJenSqtyq4JamAGzaAKKaRglpJ1z4tDUfg9lvf
+kL+yDNc51NK6Mmj3CCTRpMqiDgTQjAioFcmCbE2q7VlvspTvOWuUTow8kriNPLQVw1wi+ISIner/
+Ym97I/+RkTC8xx39J1APjnYWac1scWeFT1c+mr+be6u41NJlKUP0DaFar889mhlqay/DpS4lWtKG
+UiBzeramvvKdPpuXbk4azRXY5tG99qbUmxXuFQElWnofR39ErnBWONhsW1CbVYo2obK6N3sQtkFB
+W5pcIjk8UN7Cez3dnWGhnqLj6TPEraVxSGRU8g8rPrWy+7pXezAaSIxTUOx0HUelA2i6iLYW1Zck
+A0VxdmapKKVg+8bX79f3ODUqF/mNGTe4dBGGrkKuy7Hxs68FrZiNuJGnOmWsGPj+ZjUqm/CaxDvX
+yODjtaD/rbjgqjfCmDTNoBKcE6oTW2g5NcPWekayzX4k3hrhHt5SwIUDwgngzZ+MbgaApEgBevlp
+CA8sR4xdZAIGy/MHRchiln/vwRtYetw5VJgvmli0TbIRuOptnrB8RF0FXeEatOGDHopgTjU9199/
+jk/PuZ6cAW3SWyqKykFzQ/i47VGxYKvXlA3oDtpJFDFare5eZMMN3GDwOMlhyXWI2jc0+ng+B6B5
+DpeBLVmEBJjl9LYOP9W+fXxv6uIe9w7J/4T0FOBduPdaY38W/mNUIe6qRuN4AEqWryEOhwcUsBhJ
+4LUzmsHMPSIMDi4MSgCziW3FCbW/0SELjPil8fPKrm+PtorAZTfRwxkQNY7TdsMGQZKDDdo9BVJe
+HHvMx5cGt9nSR/PP6KruAgqZJNNIH9AnPothQlviX9OFal43Xv8lXCjzPfQ/ovKYU8lzjp7K+DmZ
+PxfoFC4V7dgPw4+sWHvWkdrCfYkkBz8tEia9uCo9kqCrYjIdb+11sn7vrZ75VgkpXbHh4GrHtCS0
+UmWaERNi95XNZ/eMRVwuWzUIBzBjGVDct3DQYYZ788X9HQANI+wlbmZsDm1prZsvgpjDvYeNILuj
+Nlut0KkZmkfBrHN3TwBg9d9Omee5lQugTmYn7Mwf0qTdTq/gMq8S4uuhy54oZz/9XkcXWTlKCvGT
+jP4W1u97P5V7SRaIxOFOfxnh/cDjsijVKCjQoKIQclBiwBBMmoSLhU+yUyjk6/ZST0Dztg1UNa/E
+qGnzq+4BOEATSWtTFbYuJ0e2WLrZRblPV+5MhzqRmQz7CToxgOWpILgtHcXYuso8zNUDa9Zwh2F8
+FszfhoMkDeeCJV5Woyr6/QDcvvinjvCUQQ+thDk9Jwgw4fGpXBNEd9fDAguv6lojb+v8rSRMZJa0
+76jCFf41bUfvWkpGDg25c1wDpAfc5buvqUV2MW05+SEWXIfTsVvSNzPSpj++AxrbxBJz+LyNaqJN
+g5NdQdJoDJNBi7XVAns0rsXDyODNxzWLrLGdVm3M3CqtN7ley6bwFjb9a5TcR2ptbvuyb+1CWn9r
+OqiOXyABDzOq9Ejip/fhLtszaRKuQOuzgPxxL6WxP2rXlue1XIL6dYJJrRccctsDCiURQgN8t1UP
++01eRDfOjfGyQZWI7ATMGF2OsZllSA+ZpGlqK8wWgtgxU2ZfQ8UhPlysF/Uzp+wB8M3MO6oOYj1K
+B+4hY3fkVsZTXcejbBqcHmQs8ver6GY2c41O0knO5Fp1HdXvIGKPU42cRmiPf1MFILQFt5XASNpJ
+sugfplZ5bxZ7gAmsdFZymTM/+8DPkS91po2PSEA30ew1tcSub5JYWYOKi0/AO1oMP3QKzRVrBfJS
+k38hqT4SuDk7MN1B

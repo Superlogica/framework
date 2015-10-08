@@ -1,0 +1,737 @@
+html {
+	display: table;
+}
+
+html, body {
+	width: 100%;
+	height: 100%;
+	background: transparent;
+}
+
+body {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+h1{
+	color: rgb(51, 51, 51);
+	
+	font-size: 36px;
+	font-weight: 800;
+	/*height: 39px;
+	line-height: 39px;	*/
+	margin: 20px 0 10px 0;
+	padding: 0;		
+}
+
+.tile-box, h1{
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+.blocoDestaquePersonalizado {
+	text-align: left;
+	padding: 30px;
+	padding-bottom: 60px;
+	margin-top: 60px;
+	margin-bottom: 60px;
+	width: 80%;
+	border: 0;
+	position: relative;
+	background: rgba(255, 255, 255, 0.8);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#77000000, endColorstr=#77000000);
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#77000000, endColorstr=#77000000)";
+	box-shadow: 0 0 5px rgba(255,255,255,0.8);
+	-moz-box-shadow: 0 0 5px rgba(255,255,255,0.8);
+	-webkit-box-shadow: 0 0 5px rgba(255,255,255,0.8);
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+}
+
+.background {
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	background-position: bottom right;
+	background-size: cover;
+	width: 100%;
+	position: fixed;
+	min-height: 100px;
+	height: 100%;
+	top: 0;
+}
+
+a.tile, .tile p{
+  	color: white;
+}
+
+.tile-big, .tile-small {
+  	height: 115px;
+}
+
+.tile p{
+  	font-size: 16px;
+ }
+
+a.tile {
+  	vertical-align: bottom;
+  	display: inline-table;
+}
+
+a.tile.tile-big {
+  	padding-top: 34px;
+}
+
+a.tile.tile-small {
+  padding-top: 19px;
+}
+
+.tile i.fa{
+	width: 46%;
+	margin: 0px;
+}
+
+a.tile:hover{
+  text-decoration: none;
+  border: 1px solid #ddd;
+}
+
+.tile span.contador {
+	position: relative;
+	text-align: left;
+	left: -3px;
+	top: -5px;
+	font-size: 3.3em;
+}
+
+.tile-big p {
+  font-size: 16px;  
+  vertical-align: middle;
+  display: table-caption;
+  position: relative;
+}
+
+.tile-big.tem-contador p{
+  text-align: left;
+}
+
+.tile-big i.fa {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 40px;
+}
+
+.thumbnail.tile {
+  display: block;
+  cursor: pointer;
+  -webkit-perspective: 0;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transition: -webkit-transform .2s;
+  float: left;
+  width: 100%;
+  text-align: center;
+  opacity: .80;
+  border: 0;
+  min-width: 50%;
+}
+
+ .tile-box .thumbnail {
+  display: block;
+  padding: 4px;
+  margin-bottom: 0px;
+  line-height: 1.428571429;
+  border: 1px solid #ddd;
+  border-radius: 0;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+ .tile-box div.col-lg-6{
+    margin: 0px;
+    padding: 0px
+  }
+  .tile-box div.col-lg-12 {
+    margin: 0px;
+    padding: 0px
+  }
+
+@media (max-width: 991px){
+  
+  .tile-box div.col-sm-6.col-md-6.col-lg-6 {
+    margin: 0px;
+    padding: 0px
+  }
+  .tile-box div.col-sm-12.col-md-12.col-lg-12 {
+    margin: 0px;
+    padding: 0px
+  }
+
+}
+
+#publico_carrinho .subForm legend,#publico_carrinho .formDisplayGroup legend,#publico_carrinho .subForm legend button,#publico_carrinho .formDisplayGroup legend button
+#publico_carrinho fieldset > div.quebraDeLinha,#publico_carrinho .subForm > div,#publico_carrinho fieldset legend + div,#publico_carrinho legend,#publico_carrinho fieldset > div.quebraDeLinha{
+  border-color: #ddd;
+}
+
+
+
+#containerAlterarSacado, #containerAlterarCondominio, #containerAlterarContato{
+  height: 10px;
+  font-weight: 900;
+  padding: 5px;
+}
+#containerAlterarSacado a, #containerAlterarContato a{
+  color: #767676;
+  /*padding-bottom: 15px;*/
+  padding-top: 5px;
+  display: block;
+}
+#containerAlterarCondominio a {
+  color: #767676;
+  /*padding-bottom: 15px;*/
+  padding-top: 5px;
+  display: block;
+  text-align: left;
+}
+
+#containerAlterarCondominio a, #containerAlterarContato a{
+  display: inline-block;
+}
+
+a.sair {
+  text-align: right;
+  display: block;
+  height: 10px;
+  font-weight: 300;
+  padding: 5px 5px 15px 5px;
+  float: right; 
+}
+
+.embedded .background{
+  display:none;
+}
+
+.embedded .container,
+.embedded .blocoDestaquePersonalizado{
+  padding:0;
+  margin:0;
+}
+
+.embedded .row{
+    margin:0;
+}
+
+.embedded .container,
+.embedded .row,
+.embedded .content,
+.embedded .col-xs-height{
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (max-width: 990px){
+    .embedded .item{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.embedded .botoesPadroes .item{
+  width: auto;  
+}
+
+body.embedded{
+  display:block;
+  vertical-align:none;
+}
+
+.login_container .bricks ul li{
+  width:219px;
+}
+
+.login_container .coluna-form{
+  border-right: 1px solid rgba(255, 255, 255, 0.8);
+  padding-right: 40px;
+}
+
+.login_container .coluna-social{
+  padding-left: 20px;
+  text-align: center;
+}
+
+
+/**
+ *Sobrescreve os seletores placeholders padrões 
+ */
+.form-control::-moz-placeholder {
+  color: black;
+  opacity: 1;
+}
+
+.form-control:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: black;
+    opacity: 1;
+}
+
+.form-control:-ms-input-placeholder { /* Internet Explorer 10+ */
+  color: black;
+}
+
+.form-control::-webkit-input-placeholder { /* WebKit browsers */
+  color: black;
+}
+
+.form-control:focus::-moz-placeholder {
+  color: #CCC;
+  opacity: 1;
+}
+
+/* QUANDO FOCO */
+:focus:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #CCC;
+    opacity: 1;
+}
+
+.form-control:focus:-ms-input-placeholder { /* Internet Explorer 10+ */
+  color: #CCC;
+}
+
+.form-control:focus::-webkit-input-placeholder { /* WebKit browsers */
+  color: #CCC;
+}
+/*************/
+
+h1 .subtitulo{
+  font-size: 50%;
+  font-weight: 600;
+  margin-top: 5px;
+}
+
+/* FORMAS DE PAGAMENTO */
+#formasDePagamento .forma-pagamento{
+  margin-bottom: 10px;
+  padding-left:5px;
+  padding-right: 5px;
+}
+
+#formasDePagamento .forma-pagamento a,
+.formas_pagamento_onestep label{
+  background-color:#FFF;
+  padding: 10px 0;
+  border-radius:10px;
+  width: 100%;
+  display: block;
+}
+
+#formasDePagamento .forma-pagamento a:hover,
+.formas_pagamento_onestep label:hover,
+.formas_pagamento_onestep label.ativo{
+  background-color: #a9c100;
+  border-color:#a9c100;
+}
+
+/* quando for display xs */
+@media screen and (max-width: 767px) {
+  
+  .container {
+    width: 100%;
+  }
+  
+  .blocoDestaquePersonalizado.container-fluid.content{
+    margin-top:15px;
+    width:98%;
+    padding:10px;
+    padding-bottom:30px;
+  }
+
+}
+
+/* quando for display xs ou sm */
+@media screen and (max-width: 992px) {
+
+  .login_container .coluna-form{
+    border-right: none;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+  }
+
+  .login_container .coluna-social{
+    padding-top: 15px;
+  }
+
+}
+
+@media (min-width: 992px){
+  .col-md-offset-1-2 {
+    margin-left: 12.66667%;
+  }
+}
+.amber{
+  background-color: #f79f00;
+}
+
+.brow{
+  background-color: #855829;
+}
+
+.cobalt{
+  background-color:#005ff3;
+}
+
+.crimson{
+  background-color:#005ff3;
+}
+
+.cyan{
+  background-color:#00a5e4;
+}
+
+.magenta{
+  background-color:#db0073;
+}
+
+.lime{
+  background-color:#a9c100;
+}
+
+.indigo{
+  background-color:#5037ff;
+}
+
+.green{
+  background-color:#64a600;
+}
+
+.emerald{
+  background-color:#0b8800;
+}
+
+.mauve{
+ background-color:#74618b;
+}
+
+.olive{
+ background-color:#6e8663;
+}
+
+.orange{
+ background-color:#ff6200;
+}
+
+.pink{
+ background-color:#f575d2;
+}
+
+.red{
+ background-color:#eb0000;
+}
+
+.sienna{
+ background-color:#7c3a3e;
+}
+
+.steel{
+ background-color:#617788;
+}
+
+.teal{
+ background-color:#00acaa;
+}
+
+.violet{
+ background-color:#a035ff;
+}
+
+.yellow{
+ background-color:#dfbd00;
+}
+
+
+.btn-lg{
+  padding:10px 45px;
+}
+
+.gradeplanos .btn-lg{
+  padding:10px 16px;
+}
+
+.gradeplanos .panel {
+  -webkit-transition-property : scale; 
+  -webkit-transition-duration : 0.1s; 
+  -webkit-transition-timing-function : ease-in-out; 
+  -moz-transition : all 0.1s ease-in-out;  
+}
+
+.gradeplanos .panel:hover {
+  box-shadow: 0 0 10px rgba(0,0,0,.5);
+  -moz-box-shadow: 0 0 10px rgba(0,0,0,.5);
+  -webkit-box-shadow: 0 0 10px rgba(0,0,0,.5);
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+}
+
+/* Estilização das formas de pagamento no onestep checkout */
+
+form .formas_pagamento_onestep.item{
+  float:none;
+  margin-bottom: 10px;
+}
+
+.formas_pagamento_onestep br{
+  display: none;
+}
+
+.formas_pagamento_onestep label{
+  float:left;
+  display: block;
+  width:22%;
+  height: 60px;
+  margin-right: 10px;
+  text-indent: -9999px;
+  border:1px solid #fff;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 90%;
+  cursor: pointer;
+}
+
+.formas_pagamento_onestep label[for="FL_FORMAPAGAMENTO-0"],
+.formas_pagamento_onestep label[for="FL_FORMAPAGAMENTO-visa"]{
+  background-image: url('/temas/default/img/formaspagamento/visa.png');
+}
+
+.formas_pagamento_onestep label[for="FL_FORMAPAGAMENTO-1"],
+.formas_pagamento_onestep label[for="FL_FORMAPAGAMENTO-mastercard"]{
+  background-image: url('/temas/default/img/formaspagamento/mastercard.png');
+}
+
+.formas_pagamento_onestep label[for="FL_FORMAPAGAMENTO-diners"]{
+  background-image: url('/temas/default/img/formaspagamento/diners.png');
+}
+
+.formas_pagamento_onestep label[for="FL_FORMAPAGAMENTO-amex"]{
+  background-image: url('/temas/default/img/formaspagamento/amex.png');
+}
+
+.formas_pagamento_onestep label[for="FL_FORMAPAGAMENTO-2"],
+.formas_pagamento_onestep label[for="FL_FORMAPAGAMENTO-elo"]{
+  background-image: url('/temas/default/img/formaspagamento/elo.png');
+}
+
+.formas_pagamento_onestep label[for="FL_FORMAPAGAMENTO-hipercard"]{
+  background-image: url('/temas/default/img/formaspagamento/hipercard.png');
+}
+
+.formas_pagamento_onestep label[for="FL_FORMAPAGAMENTO-"]{
+  background-image: url('/temas/default/img/formaspagamento/boleto.png');
+}
+
+.formas_pagamento_onestep .formElement :last-child{
+  margin-right: 0;
+}
+
+ul.emBloco li.coluna-adicionais{
+  background-color:rgba(51, 83, 151, 0.8);
+  color:#FFF;
+}
+
+.coluna-plano-onestep,
+.coluna-adicionais-checkout{
+  background-color:rgba(51, 83, 151, 0.8);
+  color:#FFF;
+  padding-bottom: 20px;
+  border-radius: 10px;
+}
+
+.coluna-plano-onestep select,
+.coluna-adicionais-checkout select{
+  color:#000;
+}
+
+.coluna-plano-onestep input,
+.coluna-adicionais-checkout input{
+  color:#000;
+}
+
+.resumo-onestep{
+  width: 100%;
+}
+
+.resumo-onestep td{
+  padding-bottom: 15px;
+}
+
+#container_aceite_contrato{
+  text-align: center;
+}
+
+.descricao-lista, 
+.descricao-lista .item{
+  list-style: none;
+  padding:0;
+  margin: 0;
+}
+
+.descricao-lista{
+  margin: 20px 0;
+  margin-bottom: 10px;
+  text-align: center;
+  color: #000;
+}
+
+.descricao-lista .item{
+  /*border-bottom: 1px dotted #000;*/
+  padding: 5px 0 ;
+}
+
+fieldset > div.quebraDeLinha, 
+.subForm > div,
+fieldset legend + div,
+legend{
+  border-color: #000;
+  border-width: 1px;
+}
+
+form .item.bandeira-cartao-pequena{
+  margin-right: 0;
+  padding-top: 3px;
+}
+
+.bandeira-cartao-pequena br{
+  display: none;
+}
+
+.text-big{
+    font-size: 140%;
+}
+
+.carrinho-total{
+  float:right;
+  font-weight: bold;
+}
+
+#publico_carrinho table{
+  margin-bottom:0;
+}
+
+#publico_carrinho #Clients_Areadocliente_Grids_Carrinho0{
+  margin-bottom:50px;
+}
+
+#Areadocliente_Forms_Sacados_Endereco .botoesPadroes,
+#Areadocliente_Forms_Sacados_Endereco .botoesPadroes fieldset{
+  padding-bottom: 0;
+  margin-bottom:0;
+}
+
+
+#containerLogin .containerApenasBotao,
+#containerLogin .containerNaoCliente{
+  padding-top:40px;
+}
+
+#containerLogin .containerSeparador{
+  padding-top:50px; 
+  text-align: center;
+}
+
+#containerLogin .containerJaSouCliente h3{
+  margin-top:0;
+  padding-top:0;
+}
+
+#containerLogin .containerJaSouCliente form{
+  width:300px;
+}
+
+#publico_onestepcheckout #containerLogin .containerJaSouCliente form{
+  width:100%; 
+}
+
+#publico_onestepcheckout #containerLogin .containerJaSouCliente form .panel-body{
+  padding-left:0;
+  padding-right: 0;
+}
+
+#containerLogin .containerJaSouCliente form input{
+  margin-bottom: 10px;
+}
+
+#publico_onestepcheckout #containerLogin{
+  margin-top:40px;
+  padding-left:0;
+}
+
+.precoPromocional{
+  text-decoration: line-through;
+}
+
+#clientes_formadepagamento #formaDePagamento{
+  margin-top:40px;
+}
+
+/**
+ * CSS para o container da forma de pagamento
+ * Tanto CARRINHO quanto ONE STEP Checkout
+ */
+#container-forma-cartao{
+  margin:20px 10px;
+}
+
+.containerFormasPagamento input,
+.containerFormasPagamento select{
+  margin-bottom:10px;
+}
+
+.containerFormasPagamento .combo-mes-validade{
+  margin-right: 6.4%;
+}
+.containerFormasPagamento .combo-mes-validade,
+.containerFormasPagamento .combo-ano-validade{
+  float:left;
+}
+
+.containerFormasPagamento .cartao-numero,
+.containerFormasPagamento .combo-ano-validade,
+.containerFormasPagamento .cartao-seguranca{
+  margin-right:0;
+}
+
+.containerFormasPagamento .combo-mes-validade,
+.containerFormasPagamento .combo-ano-validade,
+.containerFormasPagamento .cartao-seguranca{
+  width:46.8%;
+}
+
+.containerFormasPagamento .cartao-seguranca{
+  clear:left;
+}
+
+.containerFormasPagamento .cartao-numero{
+  width:100%;
+}
+
+.containerFormasPagamento .cartao-seguranca,
+.containerFormasPagamento .cartao-numero{
+  text-align: left !important;
+}
+
+.containerTotalCompra td{
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+}
+
+.containerLinhaTotal td{
+  border:none;
+  padding-top:15px;
+}
+
+#planos_put .coluna-adicionais-checkout,
+#planos_post .coluna-adicionais-checkout{
+  margin:40px 0;
+}
+
+.ui-accordion .panel-body{
+  overflow: auto;
+}

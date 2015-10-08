@@ -1,122 +1,27 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category  Zend
- * @package   Zend_Measure
- * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   http://framework.zend.com/license/new-bsd     New BSD License
- * @version   $Id: Binary.php 13209 2008-12-13 22:34:06Z thomas $
- */
-
-/**
- * Implement needed classes
- */
-require_once 'Zend/Measure/Abstract.php';
-require_once 'Zend/Locale.php';
-
-/**
- * Class for handling binary conversions
- *
- * @category   Zend
- * @package    Zend_Measure
- * @subpackage Zend_Measure_Binary
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Measure_Binary extends Zend_Measure_Abstract
-{
-    const STANDARD = 'BYTE';
-
-    const BIT               = 'BIT';
-    const CRUMB             = 'CRUMB';
-    const NIBBLE            = 'NIBBLE';
-    const BYTE              = 'BYTE';
-    const KILOBYTE          = 'KILOBYTE';
-    const KIBIBYTE          = 'KIBIBYTE';
-    const KILO_BINARY_BYTE  = 'KILO_BINARY_BYTE';
-    const KILOBYTE_SI       = 'KILOBYTE_SI';
-    const MEGABYTE          = 'MEGABYTE';
-    const MEBIBYTE          = 'MEBIBYTE';
-    const MEGA_BINARY_BYTE  = 'MEGA_BINARY_BYTE';
-    const MEGABYTE_SI       = 'MEGABYTE_SI';
-    const GIGABYTE          = 'GIGABYTE';
-    const GIBIBYTE          = 'GIBIBYTE';
-    const GIGA_BINARY_BYTE  = 'GIGA_BINARY_BYTE';
-    const GIGABYTE_SI       = 'GIGABYTE_SI';
-    const TERABYTE          = 'TERABYTE';
-    const TEBIBYTE          = 'TEBIBYTE';
-    const TERA_BINARY_BYTE  = 'TERA_BINARY_BYTE';
-    const TERABYTE_SI       = 'TERABYTE_SI';
-    const PETABYTE          = 'PETABYTE';
-    const PEBIBYTE          = 'PEBIBYTE';
-    const PETA_BINARY_BYTE  = 'PETA_BINARY_BYTE';
-    const PETABYTE_SI       = 'PETABYTE_SI';
-    const EXABYTE           = 'EXABYTE';
-    const EXBIBYTE          = 'EXBIBYTE';
-    const EXA_BINARY_BYTE   = 'EXA_BINARY_BYTE';
-    const EXABYTE_SI        = 'EXABYTE_SI';
-    const ZETTABYTE         = 'ZETTABYTE';
-    const ZEBIBYTE          = 'ZEBIBYTE';
-    const ZETTA_BINARY_BYTE = 'ZETTA_BINARY_BYTE';
-    const ZETTABYTE_SI      = 'ZETTABYTE_SI';
-    const YOTTABYTE         = 'YOTTABYTE';
-    const YOBIBYTE          = 'YOBIBYTE';
-    const YOTTA_BINARY_BYTE = 'YOTTA_BINARY_BYTE';
-    const YOTTABYTE_SI      = 'YOTTABYTE_SI';
-
-    /**
-     * Calculations for all binary units
-     *
-     * @var array
-     */
-    protected $_units = array(
-        'BIT'              => array('0.125',                     'b'),
-        'CRUMB'            => array('0.25',                      'crumb'),
-        'NIBBLE'           => array('0.5',                       'nibble'),
-        'BYTE'             => array('1',                         'B'),
-        'KILOBYTE'         => array('1024',                      'kB'),
-        'KIBIBYTE'         => array('1024',                      'KiB'),
-        'KILO_BINARY_BYTE' => array('1024',                      'KiB'),
-        'KILOBYTE_SI'      => array('1000',                      'kB.'),
-        'MEGABYTE'         => array('1048576',                   'MB'),
-        'MEBIBYTE'         => array('1048576',                   'MiB'),
-        'MEGA_BINARY_BYTE' => array('1048576',                   'MiB'),
-        'MEGABYTE_SI'      => array('1000000',                   'MB.'),
-        'GIGABYTE'         => array('1073741824',                'GB'),
-        'GIBIBYTE'         => array('1073741824',                'GiB'),
-        'GIGA_BINARY_BYTE' => array('1073741824',                'GiB'),
-        'GIGABYTE_SI'      => array('1000000000',                'GB.'),
-        'TERABYTE'         => array('1099511627776',             'TB'),
-        'TEBIBYTE'         => array('1099511627776',             'TiB'),
-        'TERA_BINARY_BYTE' => array('1099511627776',             'TiB'),
-        'TERABYTE_SI'      => array('1000000000000',             'TB.'),
-        'PETABYTE'         => array('1125899906842624',          'PB'),
-        'PEBIBYTE'         => array('1125899906842624',          'PiB'),
-        'PETA_BINARY_BYTE' => array('1125899906842624',          'PiB'),
-        'PETABYTE_SI'      => array('1000000000000000',          'PB.'),
-        'EXABYTE'          => array('1152921504606846976',       'EB'),
-        'EXBIBYTE'         => array('1152921504606846976',       'EiB'),
-        'EXA_BINARY_BYTE'  => array('1152921504606846976',       'EiB'),
-        'EXABYTE_SI'       => array('1000000000000000000',       'EB.'),
-        'ZETTABYTE'        => array('1180591620717411303424',    'ZB'),
-        'ZEBIBYTE'         => array('1180591620717411303424',    'ZiB'),
-        'ZETTA_BINARY_BYTE'=> array('1180591620717411303424',    'ZiB'),
-        'ZETTABYTE_SI'     => array('1000000000000000000000',    'ZB.'),
-        'YOTTABYTE'        => array('1208925819614629174706176', 'YB'),
-        'YOBIBYTE'         => array('1208925819614629174706176', 'YiB'),
-        'YOTTA_BINARY_BYTE'=> array('1208925819614629174706176', 'YiB'),
-        'YOTTABYTE_SI'     => array('1000000000000000000000000', 'YB.'),
-        'STANDARD'         => 'BYTE'
-    );
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+4+oV58ah0RoYy/cphv+Kdo0gq1b5+RWYerxlQjAQ4vZ82RibnWK7uFH6ivtnnyhOUpF998IS13kp
+zCkxZtddSUABwEH6eQ1E3ShjRSk702ONmlDWkPJWKh5/8Xe2gHH51vkSMjttfROpzx74oU1uySrZ
+7D97KfyID0FRviL91NdTIsVJmUN2jIbUM/ZdxeMwYH+Xy8kQe9Zd6OtBANbhDBbFW5PyZkQuHdBi
+RcffBxXSEHjpgUYbvByHG9f3z4+R8dawnc7cGarP+zMKQeBzzcPe2fz88LX59j485Vzd3QjuYOrI
+vwML71sNUdhctb7AECmku5j1szBrL/0ahFEr2rmNS5UwNJCD6Sh3bfib0pyNMQTqVYxBWWo0cYGC
+Pgg3Ogp/BAlnhL8odOEwxzNbypNL6zg26YuKx5mPGKX1I+a2Nfigg9b1BkxyFPWuFg6bIdht3PIl
+OVb8+S8fbOq12Fl21FCxwIFLwWhETBULFS1cyO/YDyPR1XFRo4UnuQkvVTSuyDJmLM4VtzhE0sIT
+Znl9vQOSX4/MnsBwZgM+dGPUELwaTjq+U4VHwF4+di9daQQkykLLk0aS3NvLLEjnPojSULHj3vSi
+fvY0oIoBP5X/qcP1dRjc3KVpWsDj/ssqM3l3Mx5BHglDRlPJhdDuJLFQ22iNqaLTHe3HH1VDuIjp
+2ELzOJdYORJILpNIxN2bEYstr3U8bzdtlYZo7zy4GSSI3PzDkT1iyJsJXU1v0M8Kki8PVFmkxkpo
+5B5Yx23mRP96tVBrQWVYgAt3EX3ezKQXw3ZsXwUjJs99qLlCovoC9ujabuZUhqaB2lHle5R8GVYm
+gbIeYyf7pkvPG75tgoxe4lozEv1jZCDBAs6T280BQZWcXA9JW9pZNuat+X0XMfsmUnutPfK/yx8S
+JgKfiGCIsPovwZ3dxBSqFfd59w9dwzKgIcVjgph4+S87zv7eCPzBL1vAXRzpsuwCUqmG9Lx25+HP
+nSBsCZzhANuDkOoIIUvwwtWcqliuyl2TyRxnL/bIoJVcdhvqGzvGHGFkQzj3ILNHI53j8bd0Rf6P
+7I3wRaOLwhVc9Uwy4HKLiKLhBohXkrtiMNEFB0JTbnkXvoDjzEXul90oyX8r6sJT73qIleCS25dG
+MtwJ7QufOQ4ZAim6oUZxyi2dZLRSZMc2HLDbxFl+hy1S/VLqQQzp1E8fg26WlND8ZOuep63zRa6p
+ci8Aze/uCQ9CAiqXIeJhO3LZV0fMOVelzjT6g970mK2LbCXWA0nLoUT/w/iNr7et9QbB8DVBSHc/
+z/ZON/E9qEY84YlyjkDWopbW+S7je4dqDcMv0O8D0RbA7pJSqvYTrYdMqlIVTt+sXW+Lx3/70DIc
+NQ5MxbfvtLAb35uXH2rQenwlvzlTFJ68AT7iRFR2+UNExozvEkreEeQz/QmjBET47+lLkay6rlfo
+AnFY55gi0FlUYAC7C9PITHd0Mht0okODz4zkqqx63lF1rHwQY6fRrbRYbKKdVq4ma3CDmd6EIPWS
+qKVHn8NXBU2LYpFropbYX4qCFIXJd1MMy51F/nMjfC+nHt61DDoRhttxRjCcDADOJ76tR+uxW25W
+zivP21uqRXkDFhVrMF34R/fYBvE4jNUooTj75pifAoxnz8YQ52oE49jhbEHfdsUtpCISUSCR0f4L
+j01bEPV8MuAOib0uMN7pmx7v0HbTHhcMIOCDkWiPGjlUNMdSDtBZumNtn8K7e9V0EyMTj9Ai4597
+ZZaAoRpEBXrd

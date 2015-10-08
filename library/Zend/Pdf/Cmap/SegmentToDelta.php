@@ -1,401 +1,130 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @package    Zend_Pdf
- * @subpackage Fonts
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_Pdf_Cmap */
-require_once 'Zend/Pdf/Cmap.php';
-
-
-/**
- * Implements the "segment mapping to delta values" character map (type 4).
- *
- * This is the Microsoft standard mapping table type for OpenType fonts. It
- * provides the ability to cover multiple contiguous ranges of the Unicode
- * character set, with the exception of Unicode Surrogates (U+D800 - U+DFFF).
- *
- * @package    Zend_Pdf
- * @subpackage Fonts
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Pdf_Cmap_SegmentToDelta extends Zend_Pdf_Cmap
-{
-  /**** Instance Variables ****/
-
-
-    /**
-     * The number of segments in the table.
-     * @var integer
-     */
-    protected $_segmentCount = 0;
-
-    /**
-     * The size of the binary search range for segments.
-     * @var integer
-     */
-    protected $_searchRange = 0;
-
-    /**
-     * The number of binary search steps required to cover the entire search
-     * range.
-     * @var integer
-     */
-    protected $_searchIterations = 0;
-
-    /**
-     * Array of ending character codes for each segment.
-     * @var array
-     */
-    protected $_segmentTableEndCodes = array();
-
-    /**
-     * The ending character code for the segment at the end of the low search
-     * range.
-     * @var integer
-     */
-    protected $_searchRangeEndCode = 0;
-
-    /**
-     * Array of starting character codes for each segment.
-     * @var array
-     */
-    protected $_segmentTableStartCodes = array();
-
-    /**
-     * Array of character code to glyph delta values for each segment.
-     * @var array
-     */
-    protected $_segmentTableIdDeltas = array();
-
-    /**
-     * Array of offsets into the glyph index array for each segment.
-     * @var array
-     */
-    protected $_segmentTableIdRangeOffsets = array();
-
-    /**
-     * Glyph index array. Stores glyph numbers, used with range offset.
-     * @var array
-     */
-    protected $_glyphIndexArray = array();
-
-
-
-  /**** Public Interface ****/
-
-
-  /* Concrete Class Implementation */
-
-    /**
-     * Returns an array of glyph numbers corresponding to the Unicode characters.
-     *
-     * If a particular character doesn't exist in this font, the special 'missing
-     * character glyph' will be substituted.
-     *
-     * See also {@link glyphNumberForCharacter()}.
-     *
-     * @param array $characterCodes Array of Unicode character codes (code points).
-     * @return array Array of glyph numbers.
-     */
-    public function glyphNumbersForCharacters($characterCodes)
-    {
-        $glyphNumbers = array();
-        foreach ($characterCodes as $key => $characterCode) {
-
-            /* These tables only cover the 16-bit character range.
-             */
-            if ($characterCode > 0xffff) {
-                $glyphNumbers[$key] = Zend_Pdf_Cmap::MISSING_CHARACTER_GLYPH;
-                continue;
-            }
-
-            /* Determine where to start the binary search. The segments are
-             * ordered from lowest-to-highest. We are looking for the first
-             * segment whose end code is greater than or equal to our character
-             * code.
-             *
-             * If the end code at the top of the search range is larger, then
-             * our target is probably below it.
-             *
-             * If it is smaller, our target is probably above it, so move the
-             * search range to the end of the segment list.
-             */
-            if ($this->_searchRangeEndCode >= $characterCode) {
-                $searchIndex = $this->_searchRange;
-            } else {
-                $searchIndex = $this->_segmentCount;
-            }
-
-            /* Now do a binary search to find the first segment whose end code
-             * is greater or equal to our character code. No matter the number
-             * of segments (there may be hundreds in a large font), we will only
-             * need to perform $this->_searchIterations.
-             */
-            for ($i = 1; $i <= $this->_searchIterations; $i++) {
-                if ($this->_segmentTableEndCodes[$searchIndex] >= $characterCode) {
-                    $subtableIndex = $searchIndex;
-                    $searchIndex -= $this->_searchRange >> $i;
-                } else {
-                    $searchIndex += $this->_searchRange >> $i;
-                }
-            }
-
-            /* If the segment's start code is greater than our character code,
-             * that character is not represented in this font. Move on.
-             */
-            if ($this->_segmentTableStartCodes[$subtableIndex] > $characterCode) {
-                $glyphNumbers[$key] = Zend_Pdf_Cmap::MISSING_CHARACTER_GLYPH;
-                continue;
-            }
-
-            if ($this->_segmentTableIdRangeOffsets[$subtableIndex] == 0) {
-                /* This segment uses a simple mapping from character code to
-                 * glyph number.
-                 */
-                $glyphNumbers[$key] = ($characterCode + $this->_segmentTableIdDeltas[$subtableIndex]) % 65536;
-
-            } else {
-                /* This segment relies on the glyph index array to determine the
-                 * glyph number. The calculation below determines the correct
-                 * index into that array. It's a little odd because the range
-                 * offset in the font file is designed to quickly provide an
-                 * address of the index in the raw binary data instead of the
-                 * index itself. Since we've parsed the data into arrays, we
-                 * must process it a bit differently.
-                 */
-                $glyphIndex = ($characterCode - $this->_segmentTableStartCodes[$subtableIndex] +
-                               $this->_segmentTableIdRangeOffsets[$subtableIndex] - $this->_segmentCount +
-                               $subtableIndex - 1);
-                $glyphNumbers[$key] = $this->_glyphIndexArray[$glyphIndex];
-
-            }
-
-        }
-        return $glyphNumbers;
-    }
-
-    /**
-     * Returns the glyph number corresponding to the Unicode character.
-     *
-     * If a particular character doesn't exist in this font, the special 'missing
-     * character glyph' will be substituted.
-     *
-     * See also {@link glyphNumbersForCharacters()} which is optimized for bulk
-     * operations.
-     *
-     * @param integer $characterCode Unicode character code (code point).
-     * @return integer Glyph number.
-     */
-    public function glyphNumberForCharacter($characterCode)
-    {
-        /* This code is pretty much a copy of glyphNumbersForCharacters().
-         * See that method for inline documentation.
-         */
-
-        if ($characterCode > 0xffff) {
-            return Zend_Pdf_Cmap::MISSING_CHARACTER_GLYPH;
-        }
-
-        if ($this->_searchRangeEndCode >= $characterCode) {
-            $searchIndex = $this->_searchRange;
-        } else {
-            $searchIndex = $this->_segmentCount;
-        }
-
-        for ($i = 1; $i <= $this->_searchIterations; $i++) {
-            if ($this->_segmentTableEndCodes[$searchIndex] >= $characterCode) {
-                $subtableIndex = $searchIndex;
-                $searchIndex -= $this->_searchRange >> $i;
-            } else {
-                $searchIndex += $this->_searchRange >> $i;
-            }
-        }
-
-        if ($this->_segmentTableStartCodes[$subtableIndex] > $characterCode) {
-            return Zend_Pdf_Cmap::MISSING_CHARACTER_GLYPH;
-        }
-
-        if ($this->_segmentTableIdRangeOffsets[$subtableIndex] == 0) {
-            $glyphNumber = ($characterCode + $this->_segmentTableIdDeltas[$subtableIndex]) % 65536;
-        } else {
-            $glyphIndex = ($characterCode - $this->_segmentTableStartCodes[$subtableIndex] +
-                           $this->_segmentTableIdRangeOffsets[$subtableIndex] - $this->_segmentCount +
-                           $subtableIndex - 1);
-            $glyphNumber = $this->_glyphIndexArray[$glyphIndex];
-        }
-        return $glyphNumber;
-    }
-
-    /**
-     * Returns an array containing the Unicode characters that have entries in
-     * this character map.
-     *
-     * @return array Unicode character codes.
-     */
-    public function getCoveredCharacters()
-    {
-        $characterCodes = array();
-        for ($i = 1; $i <= $this->_segmentCount; $i++) {
-            for ($code = $this->_segmentTableStartCodes[$i]; $code <= $this->_segmentTableEndCodes[$i]; $code++) {
-                $characterCodes[] = $code;
-            }
-        }
-        return $characterCodes;
-    }
-
-    
-    /**
-     * Returns an array containing the glyphs numbers that have entries in this character map.
-     * Keys are Unicode character codes (integers)
-     * 
-     * This functionality is partially covered by glyphNumbersForCharacters(getCoveredCharacters())
-     * call, but this method do it in more effective way (prepare complete list instead of searching 
-     * glyph for each character code).
-     *
-     * @internal
-     * @return array Array representing <Unicode character code> => <glyph number> pairs.
-     */
-    public function getCoveredCharactersGlyphs()
-    {
-        $glyphNumbers = array();
-        
-        for ($segmentNum = 1; $segmentNum <= $this->_segmentCount; $segmentNum++) {
-            if ($this->_segmentTableIdRangeOffsets[$segmentNum] == 0) {
-                $delta = $this->_segmentTableIdDeltas[$segmentNum];
-
-                for ($code =  $this->_segmentTableStartCodes[$segmentNum];
-                     $code <= $this->_segmentTableEndCodes[$segmentNum];
-                     $code++) {
-                    $glyphNumbers[$code] = ($code + $delta) % 65536;
-                }
-            } else {
-                $code       = $this->_segmentTableStartCodes[$segmentNum];
-                $glyphIndex = $this->_segmentTableIdRangeOffsets[$segmentNum] - ($this->_segmentCount - $segmentNum) - 1;
-
-                while ($code <= $this->_segmentTableEndCodes[$segmentNum]) {
-                    $glyphNumbers[$code] = $this->_glyphIndexArray[$glyphIndex];
-
-                    $code++;
-                    $glyphIndex++;
-                }
-            }
-        }
-        
-        return $glyphNumbers;
-    }
-
-
-
-  /* Object Lifecycle */
-
-    /**
-     * Object constructor
-     *
-     * Parses the raw binary table data. Throws an exception if the table is
-     * malformed.
-     *
-     * @param string $cmapData Raw binary cmap table data.
-     * @throws Zend_Pdf_Exception
-     */
-    public function __construct($cmapData)
-    {
-        /* Sanity check: The table should be at least 23 bytes in size.
-         */
-        $actualLength = strlen($cmapData);
-        if ($actualLength < 23) {
-            throw new Zend_Pdf_Exception('Insufficient table data',
-                                         Zend_Pdf_Exception::CMAP_TABLE_DATA_TOO_SMALL);
-        }
-
-        /* Sanity check: Make sure this is right data for this table type.
-         */
-        $type = $this->_extractUInt2($cmapData, 0);
-        if ($type != Zend_Pdf_Cmap::TYPE_SEGMENT_TO_DELTA) {
-            throw new Zend_Pdf_Exception('Wrong cmap table type',
-                                         Zend_Pdf_Exception::CMAP_WRONG_TABLE_TYPE);
-        }
-
-        $length = $this->_extractUInt2($cmapData, 2);
-        if ($length != $actualLength) {
-            throw new Zend_Pdf_Exception("Table length ($length) does not match actual length ($actualLength)",
-                                         Zend_Pdf_Exception::CMAP_WRONG_TABLE_LENGTH);
-        }
-
-        /* Mapping tables should be language-independent. The font may not work
-         * as expected if they are not. Unfortunately, many font files in the
-         * wild incorrectly record a language ID in this field, so we can't
-         * call this a failure.
-         */
-        $language = $this->_extractUInt2($cmapData, 4);
-        if ($language != 0) {
-            // Record a warning here somehow?
-        }
-
-        /* These two values are stored premultiplied by two which is convienent
-         * when using the binary data directly, but we're parsing it out to
-         * native PHP data types, so divide by two.
-         */
-        $this->_segmentCount = $this->_extractUInt2($cmapData, 6) >> 1;
-        $this->_searchRange  = $this->_extractUInt2($cmapData, 8) >> 1;
-
-        $this->_searchIterations = $this->_extractUInt2($cmapData, 10) + 1;
-
-        $offset = 14;
-        for ($i = 1; $i <= $this->_segmentCount; $i++, $offset += 2) {
-            $this->_segmentTableEndCodes[$i] = $this->_extractUInt2($cmapData, $offset);
-        }
-
-        $this->_searchRangeEndCode = $this->_segmentTableEndCodes[$this->_searchRange];
-
-        $offset += 2;    // reserved bytes
-
-        for ($i = 1; $i <= $this->_segmentCount; $i++, $offset += 2) {
-            $this->_segmentTableStartCodes[$i] = $this->_extractUInt2($cmapData, $offset);
-        }
-
-        for ($i = 1; $i <= $this->_segmentCount; $i++, $offset += 2) {
-            $this->_segmentTableIdDeltas[$i] = $this->_extractInt2($cmapData, $offset);    // signed
-        }
-
-        /* The range offset helps determine the index into the glyph index array.
-         * Like the segment count and search range above, it's stored as a byte
-         * multiple in the font, so divide by two as we extract the values.
-         */
-        for ($i = 1; $i <= $this->_segmentCount; $i++, $offset += 2) {
-            $this->_segmentTableIdRangeOffsets[$i] = $this->_extractUInt2($cmapData, $offset) >> 1;
-        }
-
-        /* The size of the glyph index array varies by font and depends on the
-         * extent of the usage of range offsets versus deltas. Some fonts may
-         * not have any entries in this array.
-         */
-        for (; $offset < $length; $offset += 2) {
-            $this->_glyphIndexArray[] = $this->_extractUInt2($cmapData, $offset);
-        }
-
-        /* Sanity check: After reading all of the data, we should be at the end
-         * of the table.
-         */
-        if ($offset != $length) {
-            throw new Zend_Pdf_Exception("Ending offset ($offset) does not match length ($length)",
-                                         Zend_Pdf_Exception::CMAP_FINAL_OFFSET_NOT_LENGTH);
-        }
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

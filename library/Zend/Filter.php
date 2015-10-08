@@ -1,115 +1,44 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Filter
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Filter.php 15577 2009-05-14 12:43:34Z matthew $
- */
-
-/**
- * @see Zend_Filter_Interface
- */
-require_once 'Zend/Filter/Interface.php';
-
-/**
- * @category   Zend
- * @package    Zend_Filter
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Filter implements Zend_Filter_Interface
-{
-    /**
-     * Filter chain
-     *
-     * @var array
-     */
-    protected $_filters = array();
-
-    /**
-     * Adds a filter to the end of the chain
-     *
-     * @param  Zend_Filter_Interface $filter
-     * @return Zend_Filter Provides a fluent interface
-     */
-    public function addFilter(Zend_Filter_Interface $filter)
-    {
-        $this->_filters[] = $filter;
-        return $this;
-    }
-
-    /**
-     * Returns $value filtered through each filter in the chain
-     *
-     * Filters are run in the order in which they were added to the chain (FIFO)
-     *
-     * @param  mixed $value
-     * @return mixed
-     */
-    public function filter($value)
-    {
-        $valueFiltered = $value;
-        foreach ($this->_filters as $filter) {
-            $valueFiltered = $filter->filter($valueFiltered);
-        }
-        return $valueFiltered;
-    }
-
-    /**
-     * Returns a value filtered through a specified filter class, without requiring separate
-     * instantiation of the filter object.
-     *
-     * The first argument of this method is a data input value, that you would have filtered.
-     * The second argument is a string, which corresponds to the basename of the filter class,
-     * relative to the Zend_Filter namespace. This method automatically loads the class,
-     * creates an instance, and applies the filter() method to the data input. You can also pass
-     * an array of constructor arguments, if they are needed for the filter class.
-     *
-     * @param  mixed        $value
-     * @param  string       $classBaseName
-     * @param  array        $args          OPTIONAL
-     * @param  array|string $namespaces    OPTIONAL
-     * @return mixed
-     * @throws Zend_Filter_Exception
-     */
-    public static function get($value, $classBaseName, array $args = array(), $namespaces = array())
-    {
-        require_once 'Zend/Loader.php';
-        $namespaces = array_merge((array) $namespaces, array('Zend_Filter'));
-        foreach ($namespaces as $namespace) {
-            $className = $namespace . '_' . ucfirst($classBaseName);
-            if (!class_exists($className)) {
-                try {
-                    require_once 'Zend/Loader.php';
-                    Zend_Loader::loadClass($className);
-                } catch (Zend_Exception $ze) {
-                    continue;
-                }
-            }
-            $class = new ReflectionClass($className);
-            if ($class->implementsInterface('Zend_Filter_Interface')) {
-                if ($class->hasMethod('__construct')) {
-                    $object = $class->newInstanceArgs($args);
-                } else {
-                    $object = $class->newInstance();
-                }
-                return $object->filter($value);
-            }
-        }
-        require_once 'Zend/Filter/Exception.php';
-        throw new Zend_Filter_Exception("Filter class not found from basename '$classBaseName'");
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+r5km8jdWvxHsZtl26oJoNmgzrGtNiG==

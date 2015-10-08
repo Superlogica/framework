@@ -1,201 +1,64 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Tool
- * @subpackage Framework
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id$
- */
-
-/**
- * @see Zend_Tool_Project_Profile
- */
-require_once 'Zend/Tool/Project/Profile.php';
-
-/**
- * @see Zend_Tool_Framework_Provider_Abstract
- */
-require_once 'Zend/Tool/Framework/Provider/Abstract.php';
-
-/**
- * @see Zend_Tool_Project_Context_Repository
- */
-require_once 'Zend/Tool/Project/Context/Repository.php';
-
-/**
- * @see Zend_Tool_Project_Profile_FileParser_Xml
- */
-require_once 'Zend/Tool/Project/Profile/FileParser/Xml.php';
-
-/**
- * @see Zend_Tool_Framework_Registry
- */
-require_once 'Zend/Tool/Framework/Registry.php';
-
-/**
- * @category   Zend
- * @package    Zend_Tool
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-abstract class Zend_Tool_Project_Provider_Abstract extends Zend_Tool_Framework_Provider_Abstract
-{
-
-    const NO_PROFILE_THROW_EXCEPTION = true;
-    const NO_PROFILE_RETURN_FALSE    = false;
-
-    /**
-     * @var bool
-     */
-    protected static $_isInitialized = false;
-
-    protected $_projectPath = null;
-    
-    /**
-     * @var Zend_Tool_Project_Profile
-     */
-    protected $_loadedProfile = null;
-
-    /**
-     * constructor
-     *
-     * YOU SHOULD NOT OVERRIDE THIS, unless you know what you are doing
-     * 
-     */
-    public function __construct()
-    {
-        // initialize the ZF Contexts (only once per php request)
-        if (!self::$_isInitialized) {
-            $contextRegistry = Zend_Tool_Project_Context_Repository::getInstance();
-            $contextRegistry->addContextsFromDirectory(
-                dirname(dirname(__FILE__)) . '/Context/Zf/', 'Zend_Tool_Project_Context_Zf_'
-            );
-            self::$_isInitialized = true;
-        }
-
-        // load up the extending providers required context classes
-        if ($contextClasses = $this->getContextClasses()) {
-            $this->_loadContextClassesIntoRegistry($contextClasses);
-        }
-
-    }
-
-    public function getContextClasses()
-    {
-        return array();
-    }
-
-    /**
-     * _getProject is designed to find if there is project file in the context of where
-     * the client has been called from..   The search order is as follows..
-     *    - traversing downwards from (PWD) - current working directory
-     *    - if an enpoint variable has been registered in teh client registry - key=workingDirectory
-     *    - if an ENV variable with the key ZFPROJECT_PATH is found
-     *
-     * @
-     * @return Zend_Tool_Project_Profile
-     */
-    protected function _loadProfile($loadProfileFlag = self::NO_PROFILE_THROW_EXCEPTION, $projectDirectory = null)
-    {
-
-        
-        if ($projectDirectory == null) {
-            $projectDirectory = getcwd();
-        }
-
-        $profile = new Zend_Tool_Project_Profile();
-        $profile->setAttribute('projectDirectory', $projectDirectory);
-
-        if ($profile->isLoadableFromFile()) {
-            $profile->loadFromFile();
-            $this->_loadedProfile = $profile;
-        }
-
-        if ($this->_loadedProfile == null) {
-            if ($loadProfileFlag == self::NO_PROFILE_THROW_EXCEPTION) {
-                throw new Zend_Tool_Project_Provider_Exception('A project profile was not found.');
-            } elseif ($loadProfileFlag == self::NO_PROFILE_RETURN_FALSE) {
-                return false;
-            }
-        }
-
-        return true;
-    }
-
-    /**
-     * Load the project profile from the current working directory, if not throw exception
-     *
-     * @return Zend_Tool_Project_Profile
-     */
-    protected function _loadProfileRequired()
-    {
-        $profile = $this->_loadProfile();
-        if ($profile === false) {
-            require_once 'Zend/Tool/Project/Provider/Exception.php';
-            throw new Zend_Tool_Project_Provider_Exception('A project profile was not found in the current working directory.');
-        }
-        return $profile;
-    }
-    
-    /**
-     * Return the currently loaded profile
-     *
-     * @return Zend_Tool_Project_Profile
-     */
-    protected function _getProfile($loadProfileFlag = self::NO_PROFILE_THROW_EXCEPTION)
-    {
-        if (!$this->_loadedProfile) {
-            if (($this->_loadProfile($loadProfileFlag) === false) && ($loadProfileFlag === self::NO_PROFILE_RETURN_FALSE)) {
-                return false;
-            }
-        }
-        
-        return $this->_loadedProfile;
-    }
-
-    /**
-     * _storeProfile()
-     *
-     * This method will store the profile into its proper location
-     * 
-     */
-    protected function _storeProfile()
-    {
-        $projectProfileFile = $this->_loadedProfile->search('ProjectProfileFile');
-        
-        $name = $projectProfileFile->getContext()->getPath();
-
-        $this->_registry->getResponse()->appendContent('Updating project profile \'' . $name . '\'');
-
-        $projectProfileFile->getContext()->save();
-    }
-
-    /**
-     * _loadContextClassesIntoRegistry() - This is called by the constructor
-     * so that child providers can provide a list of contexts to load into the
-     * context repository
-     *
-     * @param array $contextClasses
-     */
-    private function _loadContextClassesIntoRegistry($contextClasses)
-    {
-        $registry = Zend_Tool_Project_Context_Repository::getInstance();
-
-        foreach ($contextClasses as $contextClass) {
-            $registry->addContextClass($contextClass);
-        }
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

@@ -1,73 +1,31 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category    ZendX
- * @package     ZendX_JQuery
- * @subpackage  View
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
- * @license     http://framework.zend.com/license/new-bsd     New BSD License
- * @version     $Id: ColorPicker.php 20165 2010-01-09 18:57:56Z bkarwin $
- */
-
-/**
- * @see ZendX_JQuery_View_Helper_UiWidget
- */
-require_once "ZendX/JQuery/View/Helper/UiWidget.php";
-
-/**
- * jQuery Color Picker View Helper
- *
- * @uses 	   Zend_View_Helper_FormText
- * @package    ZendX_JQuery
- * @subpackage View
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class ZendX_JQuery_View_Helper_ColorPicker extends ZendX_JQuery_View_Helper_UiWidget
-{
-	/**
-	 * Render a Color Picker in an FormText field.
-	 *
-	 * @link   http://docs.jquery.com/UI/ColorPicker
-	 * @param  string $id
-	 * @param  string $value
-	 * @param  array  $params
-	 * @param  array  $attribs
-	 * @return string
-	 */
-    public function colorPicker($id, $value='', array $params=array(), array $attribs=array())
-    {
-	    $attribs = $this->_prepareAttributes($id, $value, $attribs);
-
-	    if(strlen($value) >= 6) {
-	        $params['color'] = $value;
-	    }
-
-	    if(count($params) > 0) {
-            $params = ZendX_JQuery::encodeJson($params);
-	    } else {
-	        $params = "{}";
-	    }
-
-        $js = sprintf('%s("#%s").colorpicker(%s);',
-            ZendX_JQuery_View_Helper_JQuery::getJQueryHandler(),
-            $attribs['id'],
-            $params
-        );
-
-        $this->jquery->addOnLoad($js);
-
-	    return $this->view->formText($id, $value, $attribs);
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+W0==

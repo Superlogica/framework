@@ -1,198 +1,51 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Server
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * Zend_Server_Reflection_Method
- */
-require_once 'Zend/Server/Reflection/Method.php';
-
-/**
- * Class/Object reflection
- *
- * Proxies calls to a ReflectionClass object, and decorates getMethods() by
- * creating its own list of {@link Zend_Server_Reflection_Method}s.
- *
- * @category   Zend
- * @package    Zend_Server
- * @subpackage Reflection
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version $Id: Class.php 13217 2008-12-14 11:09:37Z thomas $
- */
-class Zend_Server_Reflection_Class
-{
-    /**
-     * Optional configuration parameters; accessible via {@link __get} and
-     * {@link __set()}
-     * @var array
-     */
-    protected $_config = array();
-
-    /**
-     * Array of {@link Zend_Server_Reflection_Method}s
-     * @var array
-     */
-    protected $_methods = array();
-
-    /**
-     * Namespace
-     * @var string
-     */
-    protected $_namespace = null;
-
-    /**
-     * ReflectionClass object
-     * @var ReflectionClass
-     */
-    protected $_reflection;
-
-    /**
-     * Constructor
-     *
-     * Create array of dispatchable methods, each a
-     * {@link Zend_Server_Reflection_Method}. Sets reflection object property.
-     *
-     * @param ReflectionClass $reflection
-     * @param string $namespace
-     * @param mixed $argv
-     * @return void
-     */
-    public function __construct(ReflectionClass $reflection, $namespace = null, $argv = false)
-    {
-        $this->_reflection = $reflection;
-        $this->setNamespace($namespace);
-
-        foreach ($reflection->getMethods() as $method) {
-            // Don't aggregate magic methods
-            if ('__' == substr($method->getName(), 0, 2)) {
-                continue;
-            }
-
-            if ($method->isPublic()) {
-                // Get signatures and description
-                $this->_methods[] = new Zend_Server_Reflection_Method($this, $method, $this->getNamespace(), $argv);
-            }
-        }
-    }
-
-    /**
-     * Proxy reflection calls
-     *
-     * @param string $method
-     * @param array $args
-     * @return mixed
-     */
-    public function __call($method, $args)
-    {
-        if (method_exists($this->_reflection, $method)) {
-            return call_user_func_array(array($this->_reflection, $method), $args);
-        }
-
-        require_once 'Zend/Server/Reflection/Exception.php';
-        throw new Zend_Server_Reflection_Exception('Invalid reflection method');
-    }
-
-    /**
-     * Retrieve configuration parameters
-     *
-     * Values are retrieved by key from {@link $_config}. Returns null if no
-     * value found.
-     *
-     * @param string $key
-     * @return mixed
-     */
-    public function __get($key)
-    {
-        if (isset($this->_config[$key])) {
-            return $this->_config[$key];
-        }
-
-        return null;
-    }
-
-    /**
-     * Set configuration parameters
-     *
-     * Values are stored by $key in {@link $_config}.
-     *
-     * @param string $key
-     * @param mixed $value
-     * @return void
-     */
-    public function __set($key, $value)
-    {
-        $this->_config[$key] = $value;
-    }
-
-    /**
-     * Return array of dispatchable {@link Zend_Server_Reflection_Method}s.
-     *
-     * @access public
-     * @return array
-     */
-    public function getMethods()
-    {
-        return $this->_methods;
-    }
-
-    /**
-     * Get namespace for this class
-     *
-     * @return string
-     */
-    public function getNamespace()
-    {
-        return $this->_namespace;
-    }
-
-    /**
-     * Set namespace for this class
-     *
-     * @param string $namespace
-     * @return void
-     */
-    public function setNamespace($namespace)
-    {
-        if (empty($namespace)) {
-            $this->_namespace = '';
-            return;
-        }
-
-        if (!is_string($namespace) || !preg_match('/[a-z0-9_\.]+/i', $namespace)) {
-            require_once 'Zend/Server/Reflection/Exception.php';
-            throw new Zend_Server_Reflection_Exception('Invalid namespace');
-        }
-
-        $this->_namespace = $namespace;
-    }
-
-    /**
-     * Wakeup from serialization
-     *
-     * Reflection needs explicit instantiation to work correctly. Re-instantiate
-     * reflection object on wakeup.
-     *
-     * @return void
-     */
-    public function __wakeup()
-    {
-        $this->_reflection = new ReflectionClass($this->getName());
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

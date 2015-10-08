@@ -1,245 +1,52 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Dojo
- * @subpackage Form_Element
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_Dojo_Form_Element_ValidationTextBox */
-require_once 'Zend/Dojo/Form/Element/ValidationTextBox.php';
-
-/**
- * NumberSpinner dijit
- * 
- * @uses       Zend_Dojo_Form_Element_ValidationTextBox
- * @package    Zend_Dojo
- * @subpackage Form_Element
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: NumberSpinner.php 10069 2008-07-12 23:48:03Z matthew $
- */
-class Zend_Dojo_Form_Element_NumberSpinner extends Zend_Dojo_Form_Element_ValidationTextBox
-{
-    /**
-     * Use NumberSpinner dijit view helper
-     * @var string
-     */
-    public $helper = 'NumberSpinner';
-
-    /**
-     * Set defaultTimeout
-     *
-     * @param  int $timeout
-     * @return Zend_Dojo_Form_Element_NumberSpinner
-     */
-    public function setDefaultTimeout($timeout)
-    {
-        $this->setDijitParam('defaultTimeout', (int) $timeout);
-        return $this;
-    }
-
-    /**
-     * Retrieve defaultTimeout
-     *
-     * @return int|null
-     */
-    public function getDefaultTimeout()
-    {
-        return $this->getDijitParam('defaultTimeout');
-    }
-
-    /**
-     * Set timeoutChangeRate
-     *
-     * @param  int $rate
-     * @return Zend_Dojo_Form_Element_NumberSpinner
-     */
-    public function setTimeoutChangeRate($rate)
-    {
-        $this->setDijitParam('timeoutChangeRate', (int) $rate);
-        return $this;
-    }
-
-    /**
-     * Retrieve timeoutChangeRate
-     *
-     * @return int|null
-     */
-    public function getTimeoutChangeRate()
-    {
-        return $this->getDijitParam('timeoutChangeRate');
-    }
-
-    /**
-     * Set largeDelta
-     *
-     * @param  int $delta
-     * @return Zend_Dojo_Form_Element_NumberSpinner
-     */
-    public function setLargeDelta($delta)
-    {
-        $this->setDijitParam('largeDelta', (int) $delta);
-        return $this;
-    }
-
-    /**
-     * Retrieve largeDelta
-     *
-     * @return int|null
-     */
-    public function getLargeDelta()
-    {
-        return $this->getDijitParam('largeDelta');
-    }
-
-    /**
-     * Set smallDelta
-     *
-     * @param  int $delta
-     * @return Zend_Dojo_Form_Element_NumberSpinner
-     */
-    public function setSmallDelta($delta)
-    {
-        $this->setDijitParam('smallDelta', (int) $delta);
-        return $this;
-    }
-
-    /**
-     * Retrieve smallDelta
-     *
-     * @return int|null
-     */
-    public function getSmallDelta()
-    {
-        return $this->getDijitParam('smallDelta');
-    }
-
-    /**
-     * Set intermediateChanges flag
-     *
-     * @param  bool $flag
-     * @return Zend_Dojo_Form_Element_TextBox
-     */
-    public function setIntermediateChanges($flag)
-    {
-        $this->setDijitParam('intermediateChanges', (bool) $flag);
-        return $this;
-    }
-
-    /**
-     * Retrieve intermediateChanges flag
-     *
-     * @return bool
-     */
-    public function getIntermediateChanges()
-    {
-        if (!$this->hasDijitParam('intermediateChanges')) {
-            return false;
-        }
-        return $this->getDijitParam('intermediateChanges');
-    }
-
-    /**
-     * Set rangeMessage
-     *
-     * @param  string $message
-     * @return Zend_Dojo_Form_Element_NumberSpinner
-     */
-    public function setRangeMessage($message)
-    {
-        $this->setDijitParam('rangeMessage', (string) $message);
-        return $this;
-    }
-
-    /**
-     * Retrieve rangeMessage
-     *
-     * @return string|null
-     */
-    public function getRangeMessage()
-    {
-        return $this->getDijitParam('rangeMessage');
-    }
-
-    /**
-     * Set minimum value
-     * 
-     * @param  int $value 
-     * @return Zend_Dojo_Form_Element_NumberSpinner
-     */
-    public function setMin($value)
-    {
-        $constraints = array();
-        if ($this->hasDijitParam('constraints')) {
-            $constraints = $this->getDijitParam('constraints');
-        }
-        $constraints['min'] = (int) $value;
-        $this->setDijitParam('constraints', $constraints);
-        return $this;
-    }
-
-    /**
-     * Get minimum value
-     * 
-     * @return null|int
-     */
-    public function getMin()
-    {
-        if (!$this->hasDijitParam('constraints')) {
-            return null;
-        }
-        $constraints = $this->getDijitParam('constraints');
-        if (!array_key_exists('min', $constraints)) {
-            return null;
-        }
-        return $constraints['min'];
-    }
-
-    /**
-     * Set maximum value
-     * 
-     * @param  int $value 
-     * @return Zend_Dojo_Form_Element_NumberSpinner
-     */
-    public function setMax($value)
-    {
-        $constraints = array();
-        if ($this->hasDijitParam('constraints')) {
-            $constraints = $this->getDijitParam('constraints');
-        }
-        $constraints['max'] = (int) $value;
-        $this->setDijitParam('constraints', $constraints);
-        return $this;
-    }
-
-    /**
-     * Get maximum value
-     * 
-     * @return null|int
-     */
-    public function getMax()
-    {
-        if (!$this->hasDijitParam('constraints')) {
-            return null;
-        }
-        $constraints = $this->getDijitParam('constraints');
-        if (!array_key_exists('max', $constraints)) {
-            return null;
-        }
-        return $constraints['max'];
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

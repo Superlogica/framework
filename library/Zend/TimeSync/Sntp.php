@@ -1,119 +1,35 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category  Zend
- * @package   Zend_TimeSync
- * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   http://framework.zend.com/license/new-bsd     New BSD License
- * @version   $Id: Sntp.php 13522 2009-01-06 16:35:55Z thomas $
- */
-
-/**
- * Zend_TimeSync_Protocol
- */
-require_once 'Zend/TimeSync/Protocol.php';
-
-/**
- * SNTP Protocol handling class
- *
- * @category  Zend
- * @package   Zend_TimeSync
- * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_TimeSync_Sntp extends Zend_TimeSync_Protocol
-{
-    /**
-     * Port number for this timeserver
-     *
-     * @var integer
-     */
-    protected $_port = 37;
-
-    /**
-     * Socket delay
-     *
-     * @var integer
-     */
-    private $_delay;
-
-    /**
-     * Class constructor, sets the timeserver and port number
-     *
-     * @param string  $timeserver Timeserver to connect to
-     * @param integer $port       Port of the timeserver when it differs from the default port
-     */
-    public function __construct($timeserver, $port)
-    {
-        $this->_timeserver = 'udp://' . $timeserver;
-        if ($port !== null) {
-            $this->_port = $port;
-        }
-    }
-
-    /**
-     * Prepares the data that will be send to the timeserver
-     *
-     * @return array
-     */
-    protected function _prepare()
-    {
-        return "\n";
-    }
-
-    /**
-     * Reads the data returned from the timeserver
-     *
-     * @return string
-     */
-    protected function _read()
-    {
-        $result       = fread($this->_socket, 49);
-        $this->_delay = (($this->_delay - time()) / 2);
-
-        return $result;
-    }
-
-    /**
-     * Writes data to to the timeserver
-     *
-     * @param  string $data Data to write to the timeserver
-     * @return void
-     */
-    protected function _write($data)
-    {
-        $this->_connect();
-        $this->_delay = time();
-        fputs($this->_socket, $data);
-    }
-
-    /**
-     * Extracts the data returned from the timeserver
-     *
-     * @param  string $result Data to extract
-     * @return integer
-     */
-    protected function _extract($result)
-    {
-        $dec   = hexdec('7fffffff');
-        $time  = abs(($dec - hexdec(bin2hex($result))) - $dec);
-        $time -= 2208988800;
-        // Socket delay
-        $time -= $this->_delay;
-
-        $this->_info['offset'] = $this->_delay;
-
-        return $time;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+4+oV58FSgX3692ydYse/Cy5Brn/ddABpqWTvqU4UGcWCyxUzG5zQqhI6/SKrUTsGtUhOVN4FG0DD
+bAr7pr3o4tPAuca3fzB5eiZtoUeCsdgn0+k/flkZScARBLr6mcRXq8UVlzsTdOe3fntczh9+6xkL
+vU8WX7ax0deN0oS7LvoLnDZ2taGwWH1UazMnmeKxU8ynsZRl5jEUWnKJCIF03FmkVYOgJxWeI/cl
+2DQL6eKpsw7yEXvZYZwUdYQQG/HFco9vEiPXva9DMVkW0TKCPXYoZvUgIziahin5RY94JVy0Z5BG
+qqFKjTzjPS3FUac7xkQlCfg7OKLf+oLzAnrOkKBnSUCAzpHxD9fhqYgkrSvlaB6d5Wkqb6cXBvoV
+rFMCxJdLlGCAhiBfJ8CNmN9dohcrKolurXYSSjoDU1la8e5W262Cgnnv93QSzC5s9caxsuxqfJIp
+rvoAxklYU1k91bdPZuPFYBh4TXf4iNkLP/AYFvGWrkit7YEJJSCrYWAy24uepQtpUS66JYhuv528
+PIQvNhv6xBXaxpzVPHS+3shy4sApA6gT2v1Ch6EmXi7lg1uzRGIDb1wX+lE8ZPLgTq77a6lDhoK7
+3SI68X4i0lO3ePgGH6ae0TDzFd/rS4XqUIL3CiUcXfPRH+DGcM62q/Wuo6MV47aoTxi597RSG27j
+zy+4SEYL9BPz8YhaRs9VpEj8Gndew6bJx9LZwiyPoDsUOMXfKfwZUSh1YLxd4uyromzDGR/V4ggP
+J0ySv8Y5X/a3AfgpOMy68VlmPpeD1vAVbQKuVKDvuvAKCriXl9G1WYqoU44eOW6VfO2REpDJesT7
+osAGTCP/3eVVWa53cuv7OnsVBjkEL7J8ZahZMHgVfAw2RJg/rMHyV2tDCp4l6eWVRCZEnOZ6gLuI
+j7EikRt2zmxSc+a1q3Qkb5+hKFA8kuQWenUpsu0QPgkpZpgHWxjgQ71+V0nBHVb274VnI/ymXicu
+kXx/d2yb79ULpRyXvV5u3zP5QlGhxIJmgcHXzY+kLv0V6Ok3NKQj5oXANyHHjKUOO/YRkIuuGhDf
+hf25rUAOfzlCta19yWAWTUlkS+XEdnNQzdlZyOUs4E7W2kk/brE2/rmUrEINwNGvy06m27NUU0Tn
+8JLOhkOTYs/KKIwd00xQ1S4UK0xY30hOnJwermrKNibSOFCWtj8lfjkH0fPdi9TuBM3r//y45kU9
+2rX5zLL3b7u8i51wqLcpJP6Gr36Z59jSYkRoKPgeS4rCtXmuNYexkEyc6IgTueC9AH6nTuY/t7b/
+MKViGpq3BldzvIqdjZ3NXlWDovT+ct8WhxOBZre9ONuLk0MPstucHCJ86cqBUjOCmxquZggIoFiE
+W/X1Y2kb6gnbqvsXvkqMe8DRAiaZCUJnNZcmWkxaJb0Xxk23R3suLh+23XpA6Vy8ziGxyi2gGhYP
+lpcIFV3+JGYoYQah0P82hwg0UyxBvquIN+I4cwoaE+vdDodUxUyW8EFGekI1Dds0M9Kjo53iFnDu
+nMh9aeDlsrVaHqsUcKN5X40EV4a+9kcT9MolwLESGYNWeZLKd5AXeLTdJiq4X+cFswM/QFuJ9pU5
+hD3QrL9GlFw+EDSSjuALTBiVJwuuovn2b7Ggf6HTOL6/HdII5e+Kj4AkgdLitVpg78Ug44Qq12it
+Z0AX+yiV6n3y8zM7cOcbRC2RSRpYWvcD7xS681fcdfOIwPzEPGxHmuy1rFf9/M3w1taFAONmTjJ8
+7bgR2eFHVZLjmMzVqXE2KTm8akfHqtt8udB9kkTIPjzaNbFRJ7Ha65oCihuzOn9Mg653yP0gWgjN
+WssPhjWdRlnnwVQ5jAMB0aDxnKqfNH4YvtOwx2K0ElpycXwGgQoQwl5hGQVvWH6IW6SiQyP2tqqU
+aMBymgI907X+NBck8JCKL2asnxgnAuCht8DTWd4dCJGz117cp2fmdkCL4dFsXi/MCAUhdRP+whFq
+7q/bJKrIArAg0q6nqOrp5egpDFyUrKdj9q9qtCG9Nxj7wnKhElEUmL7Kb+/HXEhHIIxnTs2kcecn
+pZ73Igjh45xAC0PT9jl95s40kczc7mc5VavEdgXEWT8qS5wr1kWpKPca05lw7ZlW3t2OTqTwFuYG
+s/2d1p78q8uczfU/kgZweZioG0htZtmdAvR13hgLalQn39euzAOOm/21GdRZdZdMv1v+4aeVxQfU
++lLB5jB2V+hpNhPaC1gP5SGSKeuNutHad+wsPTdfSZhoJgu/qLf8q/tiT7+ptDW9dQ7yOcLVaLvo
+e1Xps1vAzfJZ9fHyN4N03K7h3IcH4oeqZ0kHYnegY4lxr4ASY4l+7PGHhtBf8P5IlGDDDJvbRz6J
+i9MjRFd1Yo+jaw/D1m1gEmcHSrA9iKO9dEoyc0llEW==

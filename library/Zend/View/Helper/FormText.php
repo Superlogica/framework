@@ -1,83 +1,33 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_View
- * @subpackage Helper
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-
-/**
- * Abstract class for extension
- */
-require_once 'Zend/View/Helper/FormElement.php';
-
-
-/**
- * Helper to generate a "text" element
- *
- * @category   Zend
- * @package    Zend_View
- * @subpackage Helper
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_View_Helper_FormText extends Zend_View_Helper_FormElement
-{
-    /**
-     * Generates a 'text' element.
-     *
-     * @access public
-     *
-     * @param string|array $name If a string, the element name.  If an
-     * array, all other parameters are ignored, and the array elements
-     * are used in place of added parameters.
-     *
-     * @param mixed $value The element value.
-     *
-     * @param array $attribs Attributes for the element tag.
-     *
-     * @return string The element XHTML.
-     */
-    public function formText($name, $value = null, $attribs = null)
-    {
-        $info = $this->_getInfo($name, $value, $attribs);
-        extract($info); // name, value, attribs, options, listsep, disable
-
-        // build the element
-        $disabled = '';
-        if ($disable) {
-            // disabled
-            $disabled = ' disabled="disabled"';
-        }
-        
-        // XHTML or HTML end tag?
-        $endTag = ' />';
-        if (($this->view instanceof Zend_View_Abstract) && !$this->view->doctype()->isXhtml()) {
-            $endTag= '>';
-        }
-
-        $xhtml = '<input type="text"'
-                . ' name="' . $this->view->escape($name) . '"'
-                . ' id="' . $this->view->escape($id) . '"'
-                . ' value="' . $this->view->escape($value) . '"'
-                . $disabled
-                . $this->_htmlAttribs($attribs)
-                . $endTag;
-
-        return $xhtml;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

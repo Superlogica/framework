@@ -1,131 +1,42 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage YouTube
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * @see Zend_Gdata_YouTube_VideoEntry
- */
-require_once 'Zend/Gdata/YouTube/VideoEntry.php';
-
-/**
- * @see Zend_Gdata_YouTube_Extension_Position
- */
-require_once 'Zend/Gdata/YouTube/Extension/Position.php';
-
-/**
- * Represents the YouTube video playlist flavor of an Atom entry
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage YouTube
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Gdata_YouTube_PlaylistVideoEntry extends Zend_Gdata_YouTube_VideoEntry
-{
-
-    protected $_entryClassName = 'Zend_Gdata_YouTube_PlaylistVideoEntry';
-
-    /**
-     * Position of the entry in the feed, as specified by the user
-     *
-     * @var Zend_Gdata_YouTube_Extension_Position
-     */
-    protected $_position = null;
-
-    /**
-     * Creates a Playlist video entry, representing an individual video
-     * in a list of videos contained within a specific playlist
-     *
-     * @param DOMElement $element (optional) DOMElement from which this
-     *          object should be constructed.
-     */
-    public function __construct($element = null)
-    {
-        $this->registerAllNamespaces(Zend_Gdata_YouTube::$namespaces);
-        parent::__construct($element);
-    }
-
-    /**
-     * Retrieves a DOMElement which corresponds to this element and all
-     * child properties.  This is used to build an entry back into a DOM
-     * and eventually XML text for sending to the server upon updates, or
-     * for application storage/persistence.
-     *
-     * @param DOMDocument $doc The DOMDocument used to construct DOMElements
-     * @return DOMElement The DOMElement representing this element and all
-     * child properties.
-     */
-    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
-    {
-        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
-        if ($this->_position !== null) {
-            $element->appendChild($this->_position->getDOM($element->ownerDocument));
-        }
-        return $element;
-    }
-
-    /**
-     * Creates individual Entry objects of the appropriate type and
-     * stores them in the $_entry array based upon DOM data.
-     *
-     * @param DOMNode $child The DOMNode to process
-     */
-    protected function takeChildFromDOM($child)
-    {
-        $absoluteNodeName = $child->namespaceURI . ':' . $child->localName;
-        switch ($absoluteNodeName) {
-        case $this->lookupNamespace('yt') . ':' . 'position':
-            $position = new Zend_Gdata_YouTube_Extension_Position();
-            $position->transferFromDOM($child);
-            $this->_position = $position;
-            break;
-        default:
-            parent::takeChildFromDOM($child);
-            break;
-        }
-    }
-
-
-    /**
-     * Sets the array of embedded feeds related to the video
-     *
-     * @param Zend_Gdata_YouTube_Extension_Position $position
-     *     The position of the entry in the feed, as specified by the user.
-     * @return Zend_Gdata_YouTube_PlaylistVideoEntry Provides a fluent interface
-     */
-    public function setPosition($position = null)
-    {
-        $this->_position = $position;
-        return $this;
-    }
-
-    /**
-     * Returns the position of the entry in the feed, as specified by the user
-     *
-     * @return Zend_Gdata_YouTube_Extension_Position The position
-     */
-    public function getPosition()
-    {
-        return $this->_position;
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

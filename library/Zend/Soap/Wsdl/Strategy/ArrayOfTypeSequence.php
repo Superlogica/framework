@@ -1,150 +1,71 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Soap
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id$
- */
-
-require_once "Abstract.php";
-
-class Zend_Soap_Wsdl_Strategy_ArrayOfTypeSequence extends Zend_Soap_Wsdl_Strategy_Abstract
-{
-    /**
-     * Add an unbounded ArrayOfType based on the xsd:sequence syntax if type[] is detected in return value doc comment.
-     *
-     * @param string $type
-     * @return string tns:xsd-type
-     */
-    public function addComplexType($type)
-    {
-        $nestedCounter = $this->_getNestedCount($type);
-
-        if($nestedCounter > 0) {
-            $singularType = $this->_getSingularType($type);
-
-            for($i = 1; $i <= $nestedCounter; $i++) {
-                $complexTypeName = $this->_getTypeNameBasedOnNestingLevel($singularType, $i);
-                $childTypeName = $this->_getTypeNameBasedOnNestingLevel($singularType, $i-1);
-
-                $this->_addElementFromWsdlAndChildTypes($complexTypeName, $childTypeName);
-            }
-            // adding the PHP type which is resolved to a nested XSD type. therefore add only once.
-            $this->getContext()->addType($complexTypeName);
-
-            return "tns:$complexTypeName";
-        } else {
-            require_once "Zend/Soap/Wsdl/Exception.php";
-            throw new Zend_Soap_Wsdl_Exception(sprintf(
-                'ArrayOfTypeSequence Strategy does not allow for complex types that are not in @return type[] syntax. "%s" type was specified.', $type
-            ));
-        }
-    }
-
-    /**
-     * Return the ArrayOf or simple type name based on the singular xsdtype and the nesting level
-     *
-     * @param  string $singularType
-     * @param  int    $level
-     * @return string
-     */
-    protected function _getTypeNameBasedOnNestingLevel($singularType, $level)
-    {
-        if($level == 0) {
-            // This is not an Array anymore, return the xsd simple type
-            return $singularType;
-        } else {
-            $prefix = str_repeat("ArrayOf", $level);
-            $xsdType = $this->_getStrippedXsdType($singularType);
-            $arrayType = $prefix.$xsdType;
-            return $arrayType;
-        }
-    }
-
-    /**
-     * Strip the xsd: from a singularType and Format it nice for ArrayOf<Type> naming
-     *
-     * @param  string $singularType
-     * @return string
-     */
-    protected function _getStrippedXsdType($singularType)
-    {
-        return ucfirst(substr(strtolower($singularType), 4));
-    }
-
-    /**
-     * From a nested defintion with type[], get the singular xsd:type
-     *
-     * @throws Zend_Soap_Wsdl_Exception When no xsd:simpletype can be detected.
-     * @param  string $type
-     * @return string
-     */
-    protected function _getSingularType($type)
-    {
-        $singulartype = $this->getContext()->getType(str_replace("[]", "", $type));
-
-        if(substr($singulartype, 0, 4) != "xsd:") {
-            require_once "Zend/Soap/Wsdl/Exception.php";
-            throw new Zend_Soap_Wsdl_Exception(sprintf(
-                'ArrayOfTypeSequence Strategy works only with arrays of simple types like int, string, boolean, not with "%s".'.
-                'You may use Zend_Soap_Wsdl_Strategy_ArrayOfTypeComplex for more complex types.', $type
-            ));
-        }
-        return $singulartype;
-    }
-
-    /**
-     * Return the array nesting level based on the type name
-     *
-     * @param  string $type
-     * @return integer
-     */
-    protected function _getNestedCount($type)
-    {
-        return substr_count($type, "[]");
-    }
-
-    /**
-     * Append the complex type definition to the WSDL via the context access
-     *
-     * @param  string $arrayType
-     * @param  string $childTypeName
-     * @return void
-     */
-    protected function _addElementFromWsdlAndChildTypes($arrayType, $childTypeName)
-    {
-        if (!in_array($arrayType, $this->getContext()->getTypes())) {
-            $dom = $this->getContext()->toDomDocument();
-
-            $complexType = $dom->createElement('xsd:complexType');
-            $complexType->setAttribute('name', $arrayType);
-
-            $sequence = $dom->createElement('xsd:sequence');
-
-            $element = $dom->createElement('xsd:element');
-            $element->setAttribute('name',      'item');
-            $element->setAttribute('type',      $childTypeName);
-            $element->setAttribute('minOccurs', 0);
-            $element->setAttribute('maxOccurs', 'unbounded');
-            $sequence->appendChild($element);
-
-            $complexType->appendChild($sequence);
-
-            $this->getContext()->getSchema()->appendChild($complexType);
-            $this->getContext()->addType($arrayType);
-        }
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+8Om6lbhJu8yaqC3rVDhuxd278brefRL+y92f

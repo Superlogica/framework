@@ -1,78 +1,30 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Dojo
- * @subpackage View
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: $
- */
-
-/** Zend_Dojo_View_Helper_Dijit */
-require_once 'Zend/Dojo/View/Helper/Dijit.php';
-
-/**
- * dijit.form.SimpleTextarea view helper
- * 
- * @uses       Zend_Dojo_View_Helper_Dijit
- * @package    Zend_Dojo
- * @subpackage View
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    New BSD {@link http://framework.zend.com/license/new-bsd}
- * @version    $Id: $
- */
-class Zend_Dojo_View_Helper_SimpleTextarea extends Zend_Dojo_View_Helper_Dijit
-{
-    /**
-     * @var string Dijit type
-     */
-    protected $_dijit  = 'dijit.form.SimpleTextarea';
-
-    /**
-     * @var string HTML element type
-     */
-    protected $_elementType = 'textarea';
-
-    /**
-     * @var string Dojo module
-     */
-    protected $_module = 'dijit.form.SimpleTextarea';
-
-    /**
-     * dijit.form.SimpleTextarea
-     * 
-     * @param  string $id 
-     * @param  string $value 
-     * @param  array $params  Parameters to use for dijit creation
-     * @param  array $attribs HTML attributes
-     * @return string
-     */
-    public function simpleTextarea($id, $value = null, array $params = array(), array $attribs = array())
-    {
-        if (!array_key_exists('id', $attribs)) {
-            $attribs['id']    = $id;
-        }
-        $attribs['name']  = $id;
-        $attribs['type']  = $this->_elementType;
-
-        $attribs = $this->_prepareDijit($attribs, $params, 'textarea');
-
-        $html = '<textarea' . $this->_htmlAttribs($attribs) . '>'
-              . $this->view->escape($value)
-              . "</textarea>\n";
-
-        return $html;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+1mUeB79rKm==

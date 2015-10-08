@@ -1,0 +1,13 @@
+<?php
+
+$response = Superlogica_Response::getResponse();
+$params = Zend_Controller_Front::getInstance()->getRequest()->getParams();
+
+$this->assign('titulo', ' ');
+?>
+
+<div comportamentos="processarModelos"  id="statusProcessamentoModelo" data='<?php echo htmlentities( Zend_Json::encode( Superlogica_Utf8::encode( $response ) ), ENT_QUOTES ) ?>'> </div>
+
+<script language="javascript">
+    new Superlogica_Js_Elemento('#statusProcessamentoModelo').conteudo('Gerando' + ' <img alt="Gerando" src="' + APPLICATION_CONF['APPLICATION_CLIENT_TEMA_URL'] + '/img/load.gif"/>');
+</script>

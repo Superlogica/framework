@@ -1,5 +1,7 @@
 <?php
 
+$this->titulo="Cancelar app";
+
 $url = Application_Helpers_Pagamento::verificarDesinstalacao();
 if ( $url === true )
     echo "App ainda não contratado.";

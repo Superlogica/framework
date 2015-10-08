@@ -1,120 +1,37 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_CodeGenerator
- * @subpackage PHP
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id$
- */
-
-/**
- * @see Zend_CodeGenerator_Php_Member_Abstract
- */
-require_once 'Zend/CodeGenerator/Php/Member/Abstract.php';
-
-/**
- * @category   Zend
- * @package    Zend_CodeGenerator
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_CodeGenerator_Php_Property extends Zend_CodeGenerator_Php_Member_Abstract 
-{
-    /**
-     * @var bool
-     */
-    protected $_isConst = null;
-    
-    /**
-     * @var string
-     */
-    protected $_defaultValue = null;
-
-    /**
-     * fromReflection()
-     *
-     * @param Zend_Reflection_Property $reflectionProperty
-     * @return Zend_CodeGenerator_Php_Property
-     */
-    public static function fromReflection(Zend_Reflection_Property $reflectionProperty) {
-        $property = new self();
-        $property->setSourceDirty(false);
-        
-        return $property;
-    }
-    
-    /**
-     * setConst()
-     *
-     * @param bool $const
-     * @return Zend_CodeGenerator_Php_Property
-     */
-    public function setConst($const)
-    {
-        $this->_isConst = $const;
-        return $this;
-    }
-    
-    /**
-     * isConst()
-     *
-     * @return bool
-     */
-    public function isConst()
-    {
-        return ($this->_isConst) ? true : false;
-    }
-    
-    /**
-     * setDefaultValue()
-     *
-     * @param string $defaultValue
-     * @return Zend_CodeGenerator_Php_Property
-     */
-    public function setDefaultValue($defaultValue)
-    {
-        $this->_defaultValue = $defaultValue;
-        return $this;
-    }
-    
-    /**
-     * getDefaultValue()
-     *
-     * @return string
-     */
-    public function getDefaultValue()
-    {
-        return $this->_defaultValue;
-    }
-    
-    /**
-     * generate()
-     *
-     * @return string
-     */
-    public function generate()
-    {
-        $name         = $this->getName();
-        $defaultValue = $this->getDefaultValue();
-        if ($this->isConst()) {
-            $string = '    ' . 'const ' . $name . ' = \'' . $defaultValue . '\';';
-        } else {
-            $string = '    ' . $this->getVisibility() . ' $' . $name . ' = ' . ((null !== $defaultValue) ? '\'' . $defaultValue . '\'' : 'null') . ';';
-        }
-        return $string; 
-    }
-    
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

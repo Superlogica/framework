@@ -37,11 +37,15 @@ img{
 
 .bg-superlogica{
     background-color: #13b5ea;
-    color: white;
+    col: white;
 }
 
 .bg-innactive {
   background-color: #eee;
+}
+
+.bg-ticketInterno{
+    background-color: #FCF8EC;
 }
 
 /*Não coloca underline nas imagens*/
@@ -234,6 +238,46 @@ body#filadeemails_index .descricao{
     /*margin: -5px 0 10px 0;*/
 }
 
+
+
+.btn-link.disabled{
+    background-color: transparent;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    border: none;
+}
+
+.btn-to-link {
+  color: #333333 ;
+  font-weight: normal;
+  cursor: pointer;
+  border-radius: 0;
+}
+.btn-to-link, .btn-to-link:active, .btn-to-link[disabled], fieldset[disabled] .btn-to-link {
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.btn-to-link, .btn-to-link:hover, .btn-to-link:focus, .btn-to-link:active {
+  border-color: transparent;
+}
+.btn-to-link:hover, .btn-to-link:focus {
+  color: #0d0d0d;
+  text-decoration: underline;
+  background-color: transparent;
+}
+.btn-to-link[disabled]:hover, .btn-to-link[disabled]:focus, fieldset[disabled] .btn-to-link:hover, fieldset[disabled] .btn-to-link:focus {
+  color: #999999;
+  text-decoration: none;
+}
+
+.btn-arredondado{
+    border-top-left-radius: 6px !important;
+    border-top-right-radius:6px !important;
+    border-bottom-left-radius: 6px !important;
+    border-bottom-right-radius:6px !important;
+}
 
 
 .descricao a{
@@ -520,6 +564,10 @@ caption{
     border-spacing: 1px;
     margin-bottom: 80px;
 }
+
+.modal .Superlogica_Js_Grid{
+    margin-bottom: 30px;
+}
 .Superlogica_Js_Grid th,  .Superlogica_Js_Grid td{
     /*border-style:solid;
     border-color:#ddd;
@@ -544,8 +592,12 @@ caption{
     /*background:#eee;*/
 }
 
+.marcacaoAreaDoAluno{
+    font-size:10px!important;
+}
+
 .Superlogica_Js_Grid table thead{
-    font-size:13px;
+    font-size:1px;
     color: #999;
 }
 
@@ -1052,7 +1104,8 @@ span.currency {
     color: red;
 }
 
-.Clients_Financeiro_Grids_Cobrancas .comErro{
+.Clients_Financeiro_Grids_Cobrancas .comErro,
+span.comErro{
     color: red;
 }
 
@@ -1904,6 +1957,14 @@ a.combo.active{
     background-repeat: no-repeat;
 }
 
+.btn-icone{
+    font-size: 16px;
+    
+}
+.btn-icone:hover{
+    text-decoration: none;
+}
+
 .maisopcoes{
     float : right;
     width: 240px;
@@ -1954,6 +2015,10 @@ a.combo.active{
 
 .areadocliente #Areadocliente_Forms_Auth_Login input[type=text],
 .areadocliente #Areadocliente_Forms_Auth_Login input[type=password],
+
+.areadocliente #Areadofornecedor_Forms_Auth_Login input[type=text],
+.areadocliente #Areadofornecedor_Forms_Auth_Login input[type=password],
+
 .areadocondomino #Areadocondomino_Forms_Auth_Login input[type=text],
 .areadocondomino #Areadocondomino_Forms_Auth_Login input[type=password]{
     width:100%;
@@ -2372,12 +2437,13 @@ div#dashboard #barradeferramentas a{
 td.Clients_Financeiro_Grids_Caixa_Status img,
 td.Clients_Financeiro_Grids_Caixa_Botoes img,
 .Clients_Financeiro_Grids_Cobrancas_Botoes a img,
-div.formElement img,
+td.Grids_Repasses_Status a img,
+/*div.formElement img,*/
 button.linkNovoAutocomplete,
 td.Clients_Financeiro_Grids_Caixa_Virtual img,
 span.btAcoes a img{
-    height: 18px;
-    width: 18px;
+    height: 18px !important;
+    width: 18px !important;
 }
 
 
@@ -2541,6 +2607,13 @@ a.sl-combo-handler.bgPublicadoConselho, a.sl-combo-handler-clicked.bgPublicadoCo
 
 a.sl-combo-handler.bgPublicadoSindico, a.sl-combo-handler-clicked.bgPublicadoSindico{
     background-color: #73006e !important;
+    padding: 5px;
+    color : white;
+    text-decoration: none;    
+}
+
+a.sl-combo-handler.bgNaoVisivel, a.sl-combo-handler-clicked.bgNaoVisivel{
+    background-color: #8c0000 !important;
     padding: 5px;
     color : white;
     text-decoration: none;    
@@ -2966,6 +3039,10 @@ background-color: transparent;
     display : none;
 }
 
+.embedded.exibirTituloIframe div#conteudo h1{
+    display : block;
+}
+
 .checked{
     background-image: url(/temas/default/img/checked.png) !important; 
     background-repeat: no-repeat !important; 
@@ -3132,6 +3209,7 @@ form .item{
 
 .formDisplayGroupInLine .item{
     float: none;
+    margin-right: 0px;
 }
 
 form .Superlogica_Js_Template_Row label{
@@ -3140,6 +3218,7 @@ form .Superlogica_Js_Template_Row label{
 
 label.ui-checkbox{
     margin-top:21px;
+    margin-right:0;
 }
 
 label .checkbox-trigger{
@@ -3239,10 +3318,14 @@ form .linkAjuda{
     font-size: 14px;
 }
 
+form.noTitleWizard .titleWizard{
+    display: none!important;
+}
+
 .modal-body .corpoDoForm{
     /*height: 430px;*/
     overflow-y: auto;   
-    padding: 0 0 0 20px;
+    padding: 0 20px 0 20px;
 }
 
 .modal-body form{
@@ -4032,7 +4115,7 @@ input[type=text],input[type=password], input.desabilitado{
 }
 
 /*!
-* Author: Åukasz Holeczek
+* Author: Å?ukasz Holeczek
 * Template: cleverAdmin - Bootstrap Admin Template
 * Version: 1.0.0
 * Bootstrap version: 3.1.1
@@ -5460,4 +5543,645 @@ background-color: rgba(255, 120, 87, 0.5);
 
 .link-voltar .fa{
     font-size: 14px;
+}
+
+.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
+cursor: default !important;
+background-color: #eeeeee;
+opacity: 1;
+}
+
+
+fieldset.display_assistente{
+    text-align: center;
+}
+
+fieldset.display_assistente > div.item{    
+    padding-left: 0;
+}
+
+fieldset.display_assistente .quebraDeLinha{
+    border-left: none;
+}
+
+fieldset.display_assistente .item{
+    float: none;
+}
+
+.panel-profile .profile .img-fotodoaluno {
+    border-radius: 0%;
+}
+
+thead.salas tr {
+background-color: rgb(219, 219, 219);
+}
+
+td.horarios {
+background-color: rgb(240, 240, 240) !important;
+vertical-align: middle !important;
+text-align: center;
+font-weight: 900;
+}
+
+thead.salas tr td:first-child {
+border-radius: 12px 0px 0px 0px;
+border: none !important;
+}
+
+tbody.marcarAulas tr td {
+border-right: 1px dotted #ddd;
+overflow-x: hidden;
+
+}
+
+div.aulaMarcada {
+border-radius: 5px 5px 4px 15px;
+border-right: 3px solid rgba(0, 0, 0, 0.16);
+border-bottom: 3px solid rgba(0, 0, 0, 0.16);
+}
+
+div.aulaMarcada :active{
+border-radius: 5px 5px 4px 15px;
+border-right: 0px solid rgba(0, 0, 0, 0);
+border-bottom: 0px solid rgba(0, 0, 0, 0);
+box-shadow: 100px 100px 1px rgba(0, 0, 0, 0.15) inset;
+}
+
+div.aulaMarcada:hover {
+border-radius: 5px 5px 4px 15px;
+border-right: 0px solid rgba(0, 0, 0, 0);
+border-bottom: 0px solid rgba(0, 0, 0, 0);
+box-shadow: 100px 100px 1px rgba(0, 0, 0, 0.08) inset;
+}
+
+td.aulasVazias {
+border-right: 3px solid rgba(0, 0, 0, 0.16);
+}
+
+td.aulaPadrao {
+background-color: #f1f2f3!important;
+}
+
+td.aulasVazias :active{
+border-right: 0px solid rgba(0, 0, 0, 0);
+box-shadow: 100px 100px 1px rgba(0, 0, 0, 0.15) inset;
+}
+
+td.aulasVazias:hover {
+border-right: 0px solid rgba(0, 0, 0, 0);
+box-shadow: 100px 100px 1px rgba(0, 0, 0, 0.08) inset;
+}
+
+.opcao5484ed{   
+    border-radius: 5px;
+    background: #5484ED;
+    height: 30px;
+    width: 30px;
+}
+
+.bg-5484ed{
+    background-color: #5484ED;
+    color: white;
+}
+
+.opcaoa4bdfc{  
+    border-radius: 5px;
+    background: #A4BDFC;
+    height: 30px;
+    width: 30px;
+}
+
+.bg-a4bdfc{
+    background-color: #A4BDFC;
+    color: white;    
+}
+
+.opcao46d6db{ 
+    border-radius: 5px;
+    background: #46D6DB;
+    height: 30px;
+    width: 30px;
+    color: white;    
+}
+
+.bg-46d6db{
+    background-color: #46D6DB;
+    color: white;    
+}
+
+.opcao7ae7bf{   
+    border-radius: 5px;
+    background: #7AE7BF;
+    height: 30px;
+    width: 30px;
+}
+
+.bg-7ae7bf{
+    background-color: #7AE7BF;
+    color: white;
+}
+
+.opcao51b749{   
+    border-radius: 5px;
+    background: #51B749;
+    height: 30px;
+    width: 30px;
+}
+
+.bg-51b749{
+    background-color: #51B749;
+    color: white;    
+}
+
+.opcaofbd75b{ 
+    border-radius: 5px;
+    background: #FBD75B;
+    height: 30px;
+    width: 30px;
+}
+
+.bg-fbd75b{
+    background-color: #FBD75B;
+    color: white;    
+}
+
+.opcaoffb878{  
+    border-radius: 5px;
+    background: #FFB878;
+    height: 30px;
+    width: 30px;
+}
+
+.bg-ffb878{
+    background-color: #FFB878;
+    color: white;    
+}
+
+.opcaoff887c{   
+    border-radius: 5px;
+    background: #FF887C;
+    height: 30px;
+    width: 30px;
+}
+
+.bg-ff887c{
+    background-color: #FF887C;
+    color: white;    
+}
+
+.opcaodc2127{  
+    border-radius: 5px;
+    background: #DC2127;
+    height: 30px;
+    width: 30px;
+}
+
+.bg-dc2127{
+    background-color: #DC2127;
+    color: white;    
+}
+
+.opcaodbadff{  
+    border-radius: 5px;
+    background: #DBADFF;
+    height: 30px;
+    width: 30px;
+}
+
+.bg-dbadff{
+    background-color: #DBADFF;
+    color: white;    
+}
+
+.opcaoe1e1e1{
+    border-radius: 5px;
+    background: #E1E1E1;
+    height: 30px;
+    width: 30px;
+}
+
+.bg-e1e1e1{
+    background-color: #E1E1E1;
+}
+
+.opcaoCores {
+    margin: 9px 9px 9px!important;    
+}
+.clearleft{
+    clear:left;
+}
+.logo-sistemaGaiaAdm{
+    height: 70px;
+    max-width: 220px;
+}
+.logo-sistemaGaiaAdm a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.logo-sistemaGaiaAdm img{
+    padding-top: 15px;
+}
+
+.logo-sistemaGaiaAdm{
+    background-image: url('/temas/default/img/gaiaadm.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    background-color: #0056A6;
+    color: white;
+}
+.sidebar.minified ul.nav.nav-sidebar > li:hover > a.logo-sistemaGaiaAdm .text {
+  display: none !important;
+}
+.sidebar.minified ul.nav.nav-sidebar li.primeiro-li-nav a.logo-sistemaGaiaAdm:hover,
+.nav .primeiro-li-nav.open > a.logo-sistemaGaiaAdm {
+    background-image: url('/temas/default/img/gaiaadm.png') !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    text-align: center !important;
+    background-color: #0056A6 !important;
+ }
+.ambienteTeste .logo-sistemaGaiaAdm{
+    background-color: red !important;
+}
+
+.logo-sistemaMestreduca{
+    height: 70px;
+    max-width: 220px;
+}
+.logo-sistemaMestreduca a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.logo-sistemaMestreduca img{
+    padding-top: 15px;
+}
+
+.logo-sistemaMestreduca{
+    background-image: url('/temas/default/img/mestreduca.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    background-color: #0056A6;
+    color: white;
+}
+.sidebar.minified ul.nav.nav-sidebar > li:hover > a.logo-sistemaMestreduca .text {
+  display: none !important;
+}
+.sidebar.minified ul.nav.nav-sidebar li.primeiro-li-nav a.logo-sistemaMestreduca:hover,
+.nav .primeiro-li-nav.open > a.logo-sistemaMestreduca {
+    background-image: url('/temas/default/img/mestreduca.png') !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    text-align: center !important;
+    background-color: #0056A6 !important;
+ }
+.ambienteTeste .logo-sistemaMestreduca{
+    background-color: red !important;
+}
+
+.modal-body .jumbotron{
+    background-color:#FFF;
+}
+
+.jumbotron a.btn{
+    color:white;
+}
+
+#modal-backdrop-container{
+    background-color: black;    
+    z-index: 2;
+    content: ".";
+    position: absolute;
+    opacity: 0.5;
+
+    /*
+    Todos atributos são dinamicos:
+    width: 100%;
+    height: 100%;
+    top: -10px;
+    left: 8%;
+    */
+   
+}
+
+.block-conteudo.modal-backdrop{
+    z-index:2 !important;
+}
+
+.block-conteudo.modal{
+    z-index:3 !important;   
+}
+.block-conteudo .modal-dialog{
+    margin-top:200px;
+}
+
+@media (min-width: 768px){
+    .block-conteudo .modal-dialog{
+        margin-top:90px;
+    }
+}
+
+.block-conteudo .modal-header{
+    background-color: white;
+    border-bottom-color: transparent;
+    text-align: center;
+    font-weight: bold;
+    padding-bottom: 0;
+}
+
+.block-conteudo .modal-header h4{
+    font-size: 26px;
+    color: black;
+    padding-top:40px;
+}
+
+.block-conteudo .jumbotron{
+    padding-top: 0;
+    padding-bottom: 5px;
+    text-align: center;
+}
+
+.jumbotron .ajuda-descricao{
+    margin-bottom: 50px;
+    font-style: normal;
+}
+
+.ajuda-video{
+    margin-bottom: 50px;
+}
+
+.foobar-container-center{
+    text-align: left; /* não tem opção no plugin para não centralizar*/
+}
+
+.foobar-message-wrapper{
+    width:100% !important;
+    display:block !important;
+    white-space: normal;
+}
+
+.foobar-message-wrapper .box-icon{
+    border-radius: 50%;
+    text-align: center;
+    width: 70px;
+    height: 70px;
+   
+}
+
+.foobar-message-wrapper .box-icon .fa{
+    line-height: 70px;
+    font-size:40px;
+    color:rgb(58, 58, 58);
+}
+
+.box-btns-ajuda{
+    padding-top: 20px;
+}
+
+.foobar-container-row .btn{
+    text-decoration: none !important;
+}
+
+.foobar-container-row .descricao{
+    font-style: normal;
+}
+
+@media screen and (max-width: 768px) {
+    .foobar-wrapper{
+        display:none;
+    }
+}
+
+.bg-icone-ajuda{
+    padding: 40px;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin: 50px !important;
+}
+
+.bg-imagem-ajuda{
+    margin: 50px !important;
+}
+
+.containerImprimir{
+    float : right !important;
+    clear : right;
+    background-color: #F7F7F7;
+    width: 25%;   
+    padding: 5px 0px !important;    
+}
+
+.subFormInline .clearFix{
+    clear:none;
+}
+
+.subFormInline .Superlogica_Js_Template_Row{
+    float:left;
+    margin-right: 40px;
+    height: 150px;
+    width: 150px !important;
+    position: relative;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.subFormInline .containerSubFormExcluir{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.subFormInline .containerSubFormExcluir br{
+    display: none;
+}
+
+.subFormInline  .subFormExcluir{
+    margin: 0;
+    display: none;
+    background-color: white;
+    padding: 3px;
+    border-radius: 3px;
+}
+
+.subFormInline .Superlogica_Js_Template_Row:hover  .subFormExcluir{
+    display: block;
+}
+
+.subFormHideDelimiters.subForm > div {
+    border: none;
+}
+
+.subFormHideDelimiters legend{
+    visibility: hidden;
+}
+
+.containerHelp{
+    cursor: help;
+    margin-left: 5px;
+}
+
+.bg-amber{
+  background-color: #f79f00;
+}
+.amber{
+  color: #f79f00;
+}
+
+.bg-brow{
+  background-color: #855829;
+}
+.brow{
+  color: #855829;
+}
+
+bg-cobalt{
+  background-color:#005ff3;
+}
+.cobalt{
+  color:#005ff3;
+}
+
+.bg-crimson{
+  background-color:#005ff3;
+}
+.crimson{
+  color:#005ff3;
+}
+
+.bg-cyan{
+  background-color:#00a5e4;
+}
+.cyan{
+  color:#00a5e4;
+}
+
+.bg-magenta{
+  background-color:#db0073;
+}
+.magenta{
+  color:#db0073;
+}
+
+.bg-lime{
+  background-color:#a9c100;
+}
+.lime{
+  background-color:#a9c100;
+}
+
+.bg-indigo{
+  background-color:#5037ff;
+}
+.indigo{
+  color:#5037ff;
+}
+
+.bg-green{
+  background-color:#64a600;
+}
+.green{
+  color:#64a600;
+}
+
+.bg-emerald{
+  background-color:#0b8800;
+}
+.emerald{
+  color:#0b8800;
+}
+
+.bg-mauve{
+ background-color:#74618b;
+}
+.mauve{
+ color:#74618b;
+}
+
+.bg-olive{
+ background-color:#6e8663;
+}
+.olive{
+ color:#6e8663;
+}
+
+.bg-orange{
+ background-color:#ff6200;
+}
+.orange{
+ color:#ff6200;
+}
+
+.bg-pink{
+ background-color:#f575d2;
+}
+.pink{
+ color:#f575d2;
+}
+
+.bg-red{
+ background-color:#eb0000;
+}
+.red{
+ color:#eb0000;
+}
+
+.bg-sienna{
+ background-color:#7c3a3e;
+}
+.sienna{
+ color:#7c3a3e;
+}
+
+.bg-steel{
+ background-color:#617788;
+}
+.steel{
+ color:#617788;
+}
+
+.bg-teal{
+ background-color:#00acaa;
+}
+.teal{
+ color:#00acaa;
+}
+
+.bg-violet{
+ background-color:#a035ff;
+}
+.violet{
+ color:#a035ff;
+}
+
+.bg-yellow{
+ background-color:#dfbd00;
+}
+.yellow{
+ color:#dfbd00;
+}
+.yellow-warning{
+ color:#fdd761;
+}
+
+span.badge.badge-notify {
+    border-radius: 2px;
+    padding: 4px 4px;
+    background: #e04c4c;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.75);
+}
+
+h1:hover .Superlogica_Js_Template_Row a, 
+.h1:hover .Superlogica_Js_Template_Row a,
+h1:hover a#selecionarPeriodo{
+  text-decoration:  underline;
+}
+
+.tamanhoPadraoBotaoAjuda{
+    min-width: 220px;
 }

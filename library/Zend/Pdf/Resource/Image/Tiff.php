@@ -1,440 +1,233 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @package    Zend_Pdf
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_Pdf_Resource_Image */
-require_once 'Zend/Pdf/Resource/Image.php';
-
-/** Zend_Pdf_Element_Numeric */
-require_once 'Zend/Pdf/Element/Numeric.php';
-
-/** Zend_Pdf_Element_Name */
-require_once 'Zend/Pdf/Element/Name.php';
-
-/**
- * TIFF image
- *
- * @package    Zend_Pdf
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Pdf_Resource_Image_Tiff extends Zend_Pdf_Resource_Image
-{
-    const TIFF_FIELD_TYPE_BYTE=1;
-    const TIFF_FIELD_TYPE_ASCII=2;
-    const TIFF_FIELD_TYPE_SHORT=3;
-    const TIFF_FIELD_TYPE_LONG=4;
-    const TIFF_FIELD_TYPE_RATIONAL=5;
-
-    const TIFF_TAG_IMAGE_WIDTH=256;
-    const TIFF_TAG_IMAGE_LENGTH=257; //Height
-    const TIFF_TAG_BITS_PER_SAMPLE=258;
-    const TIFF_TAG_COMPRESSION=259;
-    const TIFF_TAG_PHOTOMETRIC_INTERPRETATION=262;
-    const TIFF_TAG_STRIP_OFFSETS=273;
-    const TIFF_TAG_SAMPLES_PER_PIXEL=277;
-    const TIFF_TAG_STRIP_BYTE_COUNTS=279;
-
-    const TIFF_COMPRESSION_UNCOMPRESSED = 1;
-    const TIFF_COMPRESSION_CCITT1D = 2;
-    const TIFF_COMPRESSION_GROUP_3_FAX = 3;
-    const TIFF_COMPRESSION_GROUP_4_FAX  = 4;
-    const TIFF_COMPRESSION_LZW = 5;
-    const TIFF_COMPRESSION_JPEG = 6;
-    const TIFF_COMPRESSION_FLATE = 8;
-    const TIFF_COMPRESSION_FLATE_OBSOLETE_CODE = 32946;
-    const TIFF_COMPRESSION_PACKBITS = 32773;
-
-    const TIFF_PHOTOMETRIC_INTERPRETATION_WHITE_IS_ZERO=0;
-    const TIFF_PHOTOMETRIC_INTERPRETATION_BLACK_IS_ZERO=1;
-    const TIFF_PHOTOMETRIC_INTERPRETATION_RGB=2;
-    const TIFF_PHOTOMETRIC_INTERPRETATION_RGB_INDEXED=3;
-    const TIFF_PHOTOMETRIC_INTERPRETATION_CMYK=5;
-    const TIFF_PHOTOMETRIC_INTERPRETATION_YCBCR=6;
-    const TIFF_PHOTOMETRIC_INTERPRETATION_CIELAB=8;
-
-    protected $_width;
-    protected $_height;
-    protected $_imageProperties;
-    protected $_endianType;
-    protected $_fileSize;
-    protected $_bitsPerSample;
-    protected $_compression;
-    protected $_filter;
-    protected $_colorCode;
-    protected $_whiteIsZero;
-    protected $_blackIsZero;
-    protected $_colorSpace;
-    protected $_imageDataOffset;
-    protected $_imageDataLength;
-
-    const TIFF_ENDIAN_BIG=0;
-    const TIFF_ENDIAN_LITTLE=1;
-
-    const UNPACK_TYPE_BYTE=0;
-    const UNPACK_TYPE_SHORT=1;
-    const UNPACK_TYPE_LONG=2;
-    const UNPACK_TYPE_RATIONAL=3;
-
-    /**
-     * Byte unpacking function
-     *
-     * Makes it possible to unpack bytes in one statement for enhanced logic readability.
-     *
-     * @param int $type
-     * @param string $bytes
-     * @throws Zend_Pdf_Exception
-     */
-    protected function unpackBytes($type, $bytes) {
-        if(!isset($this->_endianType)) {
-            require_once 'Zend/Pdf/Exception.php';
-            throw new Zend_Pdf_Exception("The unpackBytes function can only be used after the endianness of the file is known");
-        }
-        switch($type) {
-            case Zend_Pdf_Resource_Image_Tiff::UNPACK_TYPE_BYTE:
-                $format = 'C';
-                $unpacked = unpack($format, $bytes);
-                return $unpacked[1];
-                break;
-            case Zend_Pdf_Resource_Image_Tiff::UNPACK_TYPE_SHORT:
-                $format = ($this->_endianType == Zend_Pdf_Resource_Image_Tiff::TIFF_ENDIAN_LITTLE)?'v':'n';
-                $unpacked = unpack($format, $bytes);
-                return $unpacked[1];
-                break;
-            case Zend_Pdf_Resource_Image_Tiff::UNPACK_TYPE_LONG:
-                $format = ($this->_endianType == Zend_Pdf_Resource_Image_Tiff::TIFF_ENDIAN_LITTLE)?'V':'N';
-                $unpacked = unpack($format, $bytes);
-                return $unpacked[1];
-                break;
-            case Zend_Pdf_Resource_Image_Tiff::UNPACK_TYPE_RATIONAL:
-                $format = ($this->_endianType == Zend_Pdf_Resource_Image_Tiff::TIFF_ENDIAN_LITTLE)?'V2':'N2';
-                $unpacked = unpack($format, $bytes);
-                return ($unpacked[1]/$unpacked[2]);
-                break;
-        }
-    }
-
-    /**
-     * Object constructor
-     *
-     * @param string $imageFileName
-     * @throws Zend_Pdf_Exception
-     */
-    public function __construct($imageFileName)
-    {
-        if (($imageFile = @fopen($imageFileName, 'rb')) === false ) {
-            require_once 'Zend/Pdf/Exception.php';
-            throw new Zend_Pdf_Exception( "Can not open '$imageFileName' file for reading." );
-        }
-
-        $byteOrderIndicator = fread($imageFile, 2);
-        if($byteOrderIndicator == 'II') {
-            $this->_endianType = Zend_Pdf_Resource_Image_Tiff::TIFF_ENDIAN_LITTLE;
-        } else if($byteOrderIndicator == 'MM') {
-            $this->_endianType = Zend_Pdf_Resource_Image_Tiff::TIFF_ENDIAN_BIG;
-        } else {
-            require_once 'Zend/Pdf/Exception.php';
-            throw new Zend_Pdf_Exception( "Not a tiff file or Tiff corrupt. No byte order indication found" );
-        }
-
-        $version = $this->unpackBytes(Zend_Pdf_Resource_Image_Tiff::UNPACK_TYPE_SHORT, fread($imageFile, 2));
-
-        if($version != 42) {
-            require_once 'Zend/Pdf/Exception.php';
-            throw new Zend_Pdf_Exception( "Not a tiff file or Tiff corrupt. Incorrect version number." );
-        }
-        $ifdOffset = $this->unpackBytes(Zend_Pdf_Resource_Image_Tiff::UNPACK_TYPE_LONG, fread($imageFile, 4));
-
-        $fileStats = fstat($imageFile);
-        $this->_fileSize = $fileStats['size'];
-
-        /*
-         * Tiff files are stored as a series of Image File Directories (IFD) each direcctory
-         * has a specific number of entries each 12 bytes in length. At the end of the directories
-         * is four bytes pointing to the offset of the next IFD.
-         */
-
-        while($ifdOffset > 0) {
-            if(fseek($imageFile, $ifdOffset, SEEK_SET) == -1 || $ifdOffset+2 >= $this->_fileSize) {
-                require_once 'Zend/Pdf/Exception.php';
-                throw new Zend_Pdf_Exception("Could not seek to the image file directory as indexed by the file. Likely cause is TIFF corruption. Offset: ". $ifdOffset);
-            }
-
-            $numDirEntries = $this->unpackBytes(Zend_Pdf_Resource_Image_Tiff::UNPACK_TYPE_SHORT, fread($imageFile, 2));
-
-            /*
-             * Since we now know how many entries are in this (IFD) we can extract the data.
-             * The format of a TIFF directory entry is:
-             *
-             * 2 bytes (short) tag code; See TIFF_TAG constants at the top for supported values. (There are many more in the spec)
-             * 2 bytes (short) field type
-             * 4 bytes (long) number of values, or value count.
-             * 4 bytes (mixed) data if the data will fit into 4 bytes or an offset if the data is too large.
-             */
-            for($dirEntryIdx = 1; $dirEntryIdx <= $numDirEntries; $dirEntryIdx++) {
-                $tag         = $this->unpackBytes(Zend_Pdf_Resource_Image_Tiff::UNPACK_TYPE_SHORT, fread($imageFile, 2));
-                $fieldType   = $this->unpackBytes(Zend_Pdf_Resource_Image_Tiff::UNPACK_TYPE_SHORT, fread($imageFile, 2));
-                $valueCount  = $this->unpackBytes(Zend_Pdf_Resource_Image_Tiff::UNPACK_TYPE_LONG, fread($imageFile, 4));
-
-                switch($fieldType) {
-                    case Zend_Pdf_Resource_Image_Tiff::TIFF_FIELD_TYPE_BYTE:
-                        $fieldLength = $valueCount;
-                        break;
-                    case Zend_Pdf_Resource_Image_Tiff::TIFF_FIELD_TYPE_ASCII:
-                        $fieldLength = $valueCount;
-                        break;
-                    case Zend_Pdf_Resource_Image_Tiff::TIFF_FIELD_TYPE_SHORT:
-                        $fieldLength = $valueCount * 2;
-                        break;
-                    case Zend_Pdf_Resource_Image_Tiff::TIFF_FIELD_TYPE_LONG:
-                        $fieldLength = $valueCount * 4;
-                        break;
-                    case Zend_Pdf_Resource_Image_Tiff::TIFF_FIELD_TYPE_RATIONAL:
-                        $fieldLength = $valueCount * 8;
-                        break;
-                    default:
-                        $fieldLength = $valueCount;
-                }
-
-                $offsetBytes = fread($imageFile, 4);
-
-                if($fieldLength <= 4) {
-                    switch($fieldType) {
-                        case Zend_Pdf_Resource_Image_Tiff::TIFF_FIELD_TYPE_BYTE:
-                            $value = $this->unpackBytes(Zend_Pdf_Resource_Image_Tiff::UNPACK_TYPE_BYTE, $offsetBytes);
-                            break;
-                        case Zend_Pdf_Resource_Image_Tiff::TIFF_FIELD_TYPE_ASCII:
-                            //Fall through to next case
-                        case Zend_Pdf_Resource_Image_Tiff::TIFF_FIELD_TYPE_LONG:
-                            $value = $this->unpackBytes(Zend_Pdf_Resource_Image_Tiff::UNPACK_TYPE_LONG, $offsetBytes);
-                            break;
-                        case Zend_Pdf_Resource_Image_Tiff::TIFF_FIELD_TYPE_SHORT:
-                            //Fall through to next case
-                        default:
-                            $value = $this->unpackBytes(Zend_Pdf_Resource_Image_Tiff::UNPACK_TYPE_SHORT, $offsetBytes);
-                    }
-                } else {
-                    $refOffset = $this->unpackBytes(Zend_Pdf_Resource_Image_Tiff::UNPACK_TYPE_LONG, $offsetBytes);
-                }
-                /*
-                 * Linear tag processing is probably not the best way to do this. I've processed the tags according to the
-                 * Tiff 6 specification and make some assumptions about when tags will be < 4 bytes and fit into $value and when
-                 * they will be > 4 bytes and require seek/extraction of the offset. Same goes for extracting arrays of data, like
-                 * the data offsets and length. This should be fixed in the future.
-                 */
-                switch($tag) {
-                    case Zend_Pdf_Resource_Image_Tiff::TIFF_TAG_IMAGE_WIDTH:
-                        $this->_width = $value;
-                        break;
-                    case Zend_Pdf_Resource_Image_Tiff::TIFF_TAG_IMAGE_LENGTH:
-                        $this->_height = $value;
-                        break;
-                    case Zend_Pdf_Resource_Image_Tiff::TIFF_TAG_BITS_PER_SAMPLE:
-                        if($valueCount>1) {
-                            $fp = ftell($imageFile);
-                            fseek($imageFile, $refOffset, SEEK_SET);
-                            $this->_bitsPerSample = $this->unpackBytes(Zend_Pdf_Resource_Image_Tiff::UNPACK_TYPE_SHORT, fread($imageFile, 2));
-                            fseek($imageFile, $fp, SEEK_SET);
-                        } else {
-                            $this->_bitsPerSample = $value;
-                        }
-                        break;
-                    case Zend_Pdf_Resource_Image_Tiff::TIFF_TAG_COMPRESSION:
-                        $this->_compression = $value;
-                        switch($value) {
-                            case Zend_Pdf_Resource_Image_Tiff::TIFF_COMPRESSION_UNCOMPRESSED:
-                                $this->_filter = 'None';
-                                break;
-                            case Zend_Pdf_Resource_Image_Tiff::TIFF_COMPRESSION_CCITT1D:
-                                //Fall through to next case
-                            case Zend_Pdf_Resource_Image_Tiff::TIFF_COMPRESSION_GROUP_3_FAX:
-                                //Fall through to next case
-                            case Zend_Pdf_Resource_Image_Tiff::TIFF_COMPRESSION_GROUP_4_FAX:
-                                $this->_filter = 'CCITTFaxDecode';
-                                require_once 'Zend/Pdf/Exception.php';
-                                throw new Zend_Pdf_Exception("CCITTFaxDecode Compression Mode Not Currently Supported");
-                                break;
-                            case Zend_Pdf_Resource_Image_Tiff::TIFF_COMPRESSION_LZW:
-                                $this->_filter = 'LZWDecode';
-                                require_once 'Zend/Pdf/Exception.php';
-                                throw new Zend_Pdf_Exception("LZWDecode Compression Mode Not Currently Supported");
-                                break;
-                            case Zend_Pdf_Resource_Image_Tiff::TIFF_COMPRESSION_JPEG:
-                                $this->_filter = 'DCTDecode'; //Should work, doesnt...
-                                require_once 'Zend/Pdf/Exception.php';
-                                throw new Zend_Pdf_Exception("JPEG Compression Mode Not Currently Supported");
-                                break;
-                            case Zend_Pdf_Resource_Image_Tiff::TIFF_COMPRESSION_FLATE:
-                                //fall through to next case
-                            case Zend_Pdf_Resource_Image_Tiff::TIFF_COMPRESSION_FLATE_OBSOLETE_CODE:
-                                $this->_filter = 'FlateDecode';
-                                require_once 'Zend/Pdf/Exception.php';
-                                throw new Zend_Pdf_Exception("ZIP/Flate Compression Mode Not Currently Supported");
-                                break;
-                            case Zend_Pdf_Resource_Image_Tiff::TIFF_COMPRESSION_PACKBITS:
-                                $this->_filter = 'RunLengthDecode';
-                                break;
-                        }
-                        break;
-                    case Zend_Pdf_Resource_Image_Tiff::TIFF_TAG_PHOTOMETRIC_INTERPRETATION:
-                        $this->_colorCode = $value;
-                        $this->_whiteIsZero = false;
-                        $this->_blackIsZero = false;
-                        switch($value) {
-                            case Zend_Pdf_Resource_Image_Tiff::TIFF_PHOTOMETRIC_INTERPRETATION_WHITE_IS_ZERO:
-                                $this->_whiteIsZero = true;
-                                $this->_colorSpace = 'DeviceGray';
-                                break;
-                            case Zend_Pdf_Resource_Image_Tiff::TIFF_PHOTOMETRIC_INTERPRETATION_BLACK_IS_ZERO:
-                                $this->_blackIsZero = true;
-                                $this->_colorSpace = 'DeviceGray';
-                                break;
-                            case Zend_Pdf_Resource_Image_Tiff::TIFF_PHOTOMETRIC_INTERPRETATION_YCBCR:
-                                //fall through to next case
-                            case Zend_Pdf_Resource_Image_Tiff::TIFF_PHOTOMETRIC_INTERPRETATION_RGB:
-                                $this->_colorSpace = 'DeviceRGB';
-                                break;
-                            case Zend_Pdf_Resource_Image_Tiff::TIFF_PHOTOMETRIC_INTERPRETATION_RGB_INDEXED:
-                                $this->_colorSpace = 'Indexed';
-                                break;
-                            case Zend_Pdf_Resource_Image_Tiff::TIFF_PHOTOMETRIC_INTERPRETATION_CMYK:
-                                $this->_colorSpace = 'DeviceCMYK';
-                                break;
-                            case Zend_Pdf_Resource_Image_Tiff::TIFF_PHOTOMETRIC_INTERPRETATION_CIELAB:
-                                $this->_colorSpace = 'Lab';
-                                break;
-                            default:
-                                require_once 'Zend/Pdf/Exception.php';
-                                throw new Zend_Pdf_Exception('TIFF: Unknown or Unsupported Color Type: '. $value);
-                        }
-                        break;
-                    case Zend_Pdf_Resource_Image_Tiff::TIFF_TAG_STRIP_OFFSETS:
-                        if($valueCount>1) {
-                            $format = ($this->_endianType == Zend_Pdf_Resource_Image_Tiff::TIFF_ENDIAN_LITTLE)?'V*':'N*';
-                            $fp = ftell($imageFile);
-                            fseek($imageFile, $refOffset, SEEK_SET);
-                            $stripOffsetsBytes = fread($imageFile, $fieldLength);
-                            $this->_imageDataOffset = unpack($format, $stripOffsetsBytes);
-                            fseek($imageFile, $fp, SEEK_SET);
-                        } else {
-                            $this->_imageDataOffset = $value;
-                        }
-                        break;
-                   case Zend_Pdf_Resource_Image_Tiff::TIFF_TAG_STRIP_BYTE_COUNTS:
-                        if($valueCount>1) {
-                            $format = ($this->_endianType == Zend_Pdf_Resource_Image_Tiff::TIFF_ENDIAN_LITTLE)?'V*':'N*';
-                            $fp = ftell($imageFile);
-                            fseek($imageFile, $refOffset, SEEK_SET);
-                            $stripByteCountsBytes = fread($imageFile, $fieldLength);
-                            $this->_imageDataLength = unpack($format, $stripByteCountsBytes);
-                            fseek($imageFile, $fp, SEEK_SET);
-                        } else {
-                            $this->_imageDataLength = $value;
-                        }
-                        break;
-                    default:
-                        //For debugging. It should be harmless to ignore unknown tags, though there is some good info in them.
-                        //echo "Unknown tag detected: ". $tag . " value: ". $value;
-                }
-            }
-            $ifdOffset = $this->unpackBytes(Zend_Pdf_Resource_Image_Tiff::UNPACK_TYPE_LONG, fread($imageFile, 4));
-        }
-
-        if(!isset($this->_imageDataOffset) || !isset($this->_imageDataLength)) {
-            require_once 'Zend/Pdf/Exception.php';
-            throw new Zend_Pdf_Exception("TIFF: The image processed did not contain image data as expected.");
-        }
-
-        $imageDataBytes = '';
-        if(is_array($this->_imageDataOffset)) {
-            if(!is_array($this->_imageDataLength)) {
-                require_once 'Zend/Pdf/Exception.php';
-                throw new Zend_Pdf_Exception("TIFF: The image contained multiple data offsets but not multiple data lengths. Tiff may be corrupt.");
-            }
-            foreach($this->_imageDataOffset as $idx => $offset) {
-                fseek($imageFile, $this->_imageDataOffset[$idx], SEEK_SET);
-                $imageDataBytes .= fread($imageFile, $this->_imageDataLength[$idx]);
-            }
-        } else {
-            fseek($imageFile, $this->_imageDataOffset, SEEK_SET);
-            $imageDataBytes = fread($imageFile, $this->_imageDataLength);
-        }
-        if($imageDataBytes === '') {
-            require_once 'Zend/Pdf/Exception.php';
-            throw new Zend_Pdf_Exception("TIFF: No data. Image Corruption");
-        }
-
-        fclose($imageFile);
-
-        parent::__construct();
-
-        $imageDictionary = $this->_resource->dictionary;
-        if(!isset($this->_width) || !isset($this->_width)) {
-            require_once 'Zend/Pdf/Exception.php';
-            throw new Zend_Pdf_Exception("Problem reading tiff file. Tiff is probably corrupt.");
-        }
-
-        $this->_imageProperties = array();
-        $this->_imageProperties['bitDepth'] = $this->_bitsPerSample;
-        $this->_imageProperties['fileSize'] = $this->_fileSize;
-        $this->_imageProperties['TIFFendianType'] = $this->_endianType;
-        $this->_imageProperties['TIFFcompressionType'] = $this->_compression;
-        $this->_imageProperties['TIFFwhiteIsZero'] = $this->_whiteIsZero;
-        $this->_imageProperties['TIFFblackIsZero'] = $this->_blackIsZero;
-        $this->_imageProperties['TIFFcolorCode'] = $this->_colorCode;
-        $this->_imageProperties['TIFFimageDataOffset'] = $this->_imageDataOffset;
-        $this->_imageProperties['TIFFimageDataLength'] = $this->_imageDataLength;
-        $this->_imageProperties['PDFfilter'] = $this->_filter;
-        $this->_imageProperties['PDFcolorSpace'] = $this->_colorSpace;
-
-        $imageDictionary->Width            = new Zend_Pdf_Element_Numeric($this->_width);
-        if($this->_whiteIsZero === true) {
-            $imageDictionary->Decode       = new Zend_Pdf_Element_Array(array(new Zend_Pdf_Element_Numeric(1), new Zend_Pdf_Element_Numeric(0)));
-        }
-        $imageDictionary->Height           = new Zend_Pdf_Element_Numeric($this->_height);
-        $imageDictionary->ColorSpace       = new Zend_Pdf_Element_Name($this->_colorSpace);
-        $imageDictionary->BitsPerComponent = new Zend_Pdf_Element_Numeric($this->_bitsPerSample);
-        if(isset($this->_filter) && $this->_filter != 'None') {
-            $imageDictionary->Filter = new Zend_Pdf_Element_Name($this->_filter);
-        }
-
-        $this->_resource->value = $imageDataBytes;
-        $this->_resource->skipFilters();
-    }
-    /**
-     * Image width (defined in Zend_Pdf_Resource_Image_Interface)
-     */
-    public function getPixelWidth() {
-        return $this->_width;
-    }
-
-    /**
-     * Image height (defined in Zend_Pdf_Resource_Image_Interface)
-     */
-    public function getPixelHeight() {
-        return $this->_height;
-    }
-
-    /**
-     * Image properties (defined in Zend_Pdf_Resource_Image_Interface)
-     */
-    public function getProperties() {
-        return $this->_imageProperties;
-    }
-}
-
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+ZhgzlvSF

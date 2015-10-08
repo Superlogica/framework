@@ -1,387 +1,93 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Service
- * @subpackage Akismet
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Akismet.php 8502 2008-03-01 19:56:46Z weppos $
- */
-
-
-/**
- * @see Zend_Version
- */
-require_once 'Zend/Version.php';
-
-/**   
- * @see Zend_Service_Abstract
- */
-require_once 'Zend/Service/Abstract.php';
-
-
-/**
- * Akismet REST service implementation
- *
- * @uses       Zend_Service_Abstract
- * @category   Zend
- * @package    Zend_Service
- * @subpackage Akismet
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Service_Akismet extends Zend_Service_Abstract
-{
-    /**
-     * Akismet API key
-     * @var string
-     */
-    protected $_apiKey;
-
-    /**
-     * Blog URL
-     * @var string
-     */
-    protected $_blogUrl;
-
-    /**
-     * Charset used for encoding
-     * @var string
-     */
-    protected $_charset = 'UTF-8';
-
-    /**
-     * TCP/IP port to use in requests
-     * @var int
-     */
-    protected $_port = 80;
-
-    /**
-     * User Agent string to send in requests
-     * @var string
-     */
-    protected $_userAgent;
-
-    /**
-     * Constructor
-     *
-     * @param string $apiKey Akismet API key
-     * @param string $blog Blog URL
-     * @return void
-     */
-    public function __construct($apiKey, $blog)
-    {
-        $this->setBlogUrl($blog)
-             ->setApiKey($apiKey)
-             ->setUserAgent('Zend Framework/' . Zend_Version::VERSION . ' | Akismet/1.11');
-    }
-
-    /**
-     * Retrieve blog URL
-     *
-     * @return string
-     */
-    public function getBlogUrl()
-    {
-        return $this->_blogUrl;
-    }
-
-    /**
-     * Set blog URL
-     *
-     * @param string $blogUrl
-     * @return Zend_Service_Akismet
-     * @throws Zend_Service_Exception if invalid URL provided
-     */
-    public function setBlogUrl($blogUrl)
-    {
-        require_once 'Zend/Uri.php';
-        if (!Zend_Uri::check($blogUrl)) {
-            require_once 'Zend/Service/Exception.php';
-            throw new Zend_Service_Exception('Invalid url provided for blog');
-        }
-
-        $this->_blogUrl = $blogUrl;
-        return $this;
-    }
-
-    /**
-     * Retrieve API key
-     *
-     * @return string
-     */
-    public function getApiKey()
-    {
-        return $this->_apiKey;
-    }
-
-    /**
-     * Set API key
-     *
-     * @param string $apiKey
-     * @return Zend_Service_Akismet
-     */
-    public function setApiKey($apiKey)
-    {
-        $this->_apiKey = $apiKey;
-        return $this;
-    }
-
-    /**
-     * Retrieve charset
-     *
-     * @return string
-     */
-    public function getCharset()
-    {
-        return $this->_charset;
-    }
-
-    /**
-     * Set charset
-     *
-     * @param string $charset
-     * @return Zend_Service_Akismet
-     */
-    public function setCharset($charset)
-    {
-        $this->_charset = $charset;
-        return $this;
-    }
-
-    /**
-     * Retrieve TCP/IP port
-     *
-     * @return int
-     */
-    public function getPort()
-    {
-        return $this->_port;
-    }
-
-    /**
-     * Set TCP/IP port
-     *
-     * @param int $port
-     * @return Zend_Service_Akismet
-     * @throws Zend_Service_Exception if non-integer value provided
-     */
-    public function setPort($port)
-    {
-        if (!is_int($port)) {
-            require_once 'Zend/Service/Exception.php';
-            throw new Zend_Service_Exception('Invalid port');
-        }
-
-        $this->_port = $port;
-        return $this;
-    }
-
-    /**
-     * Retrieve User Agent string
-     *
-     * @return string
-     */
-    public function getUserAgent()
-    {
-        return $this->_userAgent;
-    }
-
-    /**
-     * Set User Agent
-     *
-     * Should be of form "Some user agent/version | Akismet/version"
-     *
-     * @param string $userAgent
-     * @return Zend_Service_Akismet
-     * @throws Zend_Service_Exception with invalid user agent string
-     */
-    public function setUserAgent($userAgent)
-    {
-        if (!is_string($userAgent)
-            || !preg_match(":^[^\n/]*/[^ ]* \| Akismet/[0-9\.]*$:i", $userAgent))
-        {
-            require_once 'Zend/Service/Exception.php';
-            throw new Zend_Service_Exception('Invalid User Agent string; must be of format "Application name/version | Akismet/version"');
-        }
-
-        $this->_userAgent = $userAgent;
-        return $this;
-    }
-
-    /**
-     * Post a request
-     *
-     * @param string $host
-     * @param string $path
-     * @param array  $params
-     * @return mixed
-     */
-    protected function _post($host, $path, array $params)
-    {
-        $uri    = 'http://' . $host . ':' . $this->getPort() . $path;
-        $client = self::getHttpClient();
-        $client->setUri($uri);
-        $client->setConfig(array(
-            'useragent'    => $this->getUserAgent(),
-        ));
-
-        $client->setHeaders(array(
-            'Host'         => $host,
-            'Content-Type' => 'application/x-www-form-urlencoded; charset=' . $this->getCharset()
-        ));
-        $client->setParameterPost($params);
-
-        $client->setMethod(Zend_Http_Client::POST);
-        return $client->request();
-    }
-
-    /**
-     * Verify an API key
-     *
-     * @param string $key Optional; API key to verify
-     * @param string $blog Optional; blog URL against which to verify key
-     * @return boolean
-     */
-    public function verifyKey($key = null, $blog = null)
-    {
-        if (null === $key) {
-            $key = $this->getApiKey();
-        }
-
-        if (null === $blog) {
-            $blog = $this->getBlogUrl();
-        }
-
-        $response = $this->_post('rest.akismet.com', '/1.1/verify-key', array(
-            'key'  => $key,
-            'blog' => $blog
-        ));
-
-        return ('valid' == $response->getBody());
-    }
-
-    /**
-     * Perform an API call
-     *
-     * @param string $path
-     * @param array $params
-     * @return Zend_Http_Response
-     * @throws Zend_Service_Exception if missing user_ip or user_agent fields
-     */
-    protected function _makeApiCall($path, $params)
-    {
-        if (empty($params['user_ip']) || empty($params['user_agent'])) {
-            require_once 'Zend/Service/Exception.php';
-            throw new Zend_Service_Exception('Missing required Akismet fields (user_ip and user_agent are required)');
-        }
-
-        if (!isset($params['blog'])) {
-            $params['blog'] = $this->getBlogUrl();
-        }
-
-        return $this->_post($this->getApiKey() . '.rest.akismet.com', $path, $params);
-    }
-
-    /**
-     * Check a comment for spam
-     *
-     * Checks a comment to see if it is spam. $params should be an associative
-     * array with one or more of the following keys (unless noted, all keys are
-     * optional):
-     * - blog: URL of the blog. If not provided, uses value returned by {@link getBlogUrl()}
-     * - user_ip (required): IP address of comment submitter
-     * - user_agent (required): User Agent used by comment submitter
-     * - referrer: contents of HTTP_REFERER header
-     * - permalink: location of the entry to which the comment was submitted
-     * - comment_type: typically, one of 'blank', 'comment', 'trackback', or 'pingback', but may be any value
-     * - comment_author: name submitted with the content
-     * - comment_author_email: email submitted with the content
-     * - comment_author_url: URL submitted with the content
-     * - comment_content: actual content
-     *
-     * Additionally, Akismet suggests returning the key/value pairs in the
-     * $_SERVER array, and these may be included in the $params.
-     *
-     * This method implements the Akismet comment-check REST method.
-     *
-     * @param array $params
-     * @return boolean
-     * @throws Zend_Service_Exception with invalid API key
-     */
-    public function isSpam($params)
-    {
-        $response = $this->_makeApiCall('/1.1/comment-check', $params);
-
-        $return = trim($response->getBody());
-
-        if ('invalid' == $return) {
-            require_once 'Zend/Service/Exception.php';
-            throw new Zend_Service_Exception('Invalid API key');
-        }
-
-        if ('true' == $return) {
-            return true;
-        }
-
-        return false;
-    }
-
-    /**
-     * Submit spam
-     *
-     * Takes the same arguments as {@link isSpam()}.
-     *
-     * Submits known spam content to Akismet to help train it.
-     *
-     * This method implements Akismet's submit-spam REST method.
-     *
-     * @param array $params
-     * @return void
-     * @throws Zend_Service_Exception with invalid API key
-     */
-    public function submitSpam($params)
-    {
-        $response = $this->_makeApiCall('/1.1/submit-spam', $params);
-        $value    = trim($response->getBody());
-        if ('invalid' == $value) {
-            require_once 'Zend/Service/Exception.php';
-            throw new Zend_Service_Exception('Invalid API key');
-        }
-    }
-
-    /**
-     * Submit ham
-     *
-     * Takes the same arguments as {@link isSpam()}.
-     *
-     * Submits a comment that has been falsely categorized as spam by Akismet
-     * as a false positive, telling Akismet's filters not to filter such
-     * comments as spam in the future.
-     *
-     * Unlike {@link submitSpam()} and {@link isSpam()}, a valid API key is
-     * never necessary; as a result, this method never throws an exception
-     * (unless an exception happens with the HTTP client layer).
-     *
-     * this method implements Akismet's submit-ham REST method.
-     *
-     * @param array $params
-     * @return void
-     */
-    public function submitHam($params)
-    {
-        $response = $this->_makeApiCall('/1.1/submit-ham', $params);
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+9uXTJ0vI2IUfhpgYlAXkj3C=

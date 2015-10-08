@@ -1,447 +1,131 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- * 
- * @category   Zend
- * @package    Zend_Mail
- * @subpackage Storage
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Mbox.php 12519 2008-11-10 18:41:24Z alexander $
- */
-
-
-/**
- * @see Zend_Loader
- * May be used in constructor, but commented out for now
- */
-// require_once 'Zend/Loader.php';
-
-/**
- * @see Zend_Mail_Storage_Abstract
- */
-require_once 'Zend/Mail/Storage/Abstract.php';
-
-/**
- * @see Zend_Mail_Message_File
- */
-require_once 'Zend/Mail/Message/File.php';
-
-
-/**
- * @category   Zend
- * @package    Zend_Mail
- * @subpackage Storage
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Mail_Storage_Mbox extends Zend_Mail_Storage_Abstract
-{
-    /**
-     * file handle to mbox file
-     * @var null|resource
-     */
-    protected $_fh;
-
-    /**
-     * filename of mbox file for __wakeup
-     * @var string
-     */
-    protected $_filename;
-
-    /**
-     * modification date of mbox file for __wakeup
-     * @var int
-     */
-    protected $_filemtime;
-
-    /**
-     * start and end position of messages as array('start' => start, 'seperator' => headersep, 'end' => end)
-     * @var array
-     */
-    protected $_positions;
-
-    /**
-     * used message class, change it in an extened class to extend the returned message class
-     * @var string
-     */
-    protected $_messageClass = 'Zend_Mail_Message_File';
-
-    /**
-     * Count messages all messages in current box
-     *
-     * @return int number of messages
-     * @throws Zend_Mail_Storage_Exception
-     */
-    public function countMessages()
-    {
-        return count($this->_positions);
-    }
-
-
-    /**
-     * Get a list of messages with number and size
-     *
-     * @param  int|null $id  number of message or null for all messages
-     * @return int|array size of given message of list with all messages as array(num => size)
-     */
-    public function getSize($id = 0)
-    {
-        if ($id) {
-            $pos = $this->_positions[$id - 1];
-            return $pos['end'] - $pos['start'];
-        }
-
-        $result = array();
-        foreach ($this->_positions as $num => $pos) {
-            $result[$num + 1] = $pos['end'] - $pos['start'];
-        }
-
-        return $result;
-    }
-
-
-    /**
-     * Get positions for mail message or throw exeption if id is invalid
-     *
-     * @param int $id number of message
-     * @return array positions as in _positions
-     * @throws Zend_Mail_Storage_Exception
-     */
-    protected function _getPos($id)
-    {
-        if (!isset($this->_positions[$id - 1])) {
-            /**
-             * @see Zend_Mail_Storage_Exception
-             */
-            require_once 'Zend/Mail/Storage/Exception.php';
-            throw new Zend_Mail_Storage_Exception('id does not exist');
-        }
-
-        return $this->_positions[$id - 1];
-    }
-
-
-    /**
-     * Fetch a message
-     *
-     * @param  int $id number of message
-     * @return Zend_Mail_Message_File
-     * @throws Zend_Mail_Storage_Exception
-     */
-    public function getMessage($id)
-    {
-        // TODO that's ugly, would be better to let the message class decide
-        if (strtolower($this->_messageClass) == 'zend_mail_message_file' || is_subclass_of($this->_messageClass, 'zend_mail_message_file')) {
-            // TODO top/body lines
-            $messagePos = $this->_getPos($id);
-            return new $this->_messageClass(array('file' => $this->_fh, 'startPos' => $messagePos['start'],
-                                                  'endPos' => $messagePos['end']));
-        }
-
-        $bodyLines = 0; // TODO: need a way to change that
-
-        $message = $this->getRawHeader($id);
-        // file pointer is after headers now
-        if ($bodyLines) {
-            $message .= "\n";
-            while ($bodyLines-- && ftell($this->_fh) < $this->_positions[$id - 1]['end']) {
-                $message .= fgets($this->_fh);
-            }
-        }
-
-        return new $this->_messageClass(array('handler' => $this, 'id' => $id, 'headers' => $message));
-    }
-
-    /*
-     * Get raw header of message or part
-     *
-     * @param  int               $id       number of message
-     * @param  null|array|string $part     path to part or null for messsage header
-     * @param  int               $topLines include this many lines with header (after an empty line)
-     * @return string raw header
-     * @throws Zend_Mail_Protocol_Exception
-     * @throws Zend_Mail_Storage_Exception
-     */
-    public function getRawHeader($id, $part = null, $topLines = 0)
-    {
-        if ($part !== null) {
-            // TODO: implement
-            /**
-             * @see Zend_Mail_Storage_Exception
-             */
-            require_once 'Zend/Mail/Storage/Exception.php';
-            throw new Zend_Mail_Storage_Exception('not implemented');
-        }
-        $messagePos = $this->_getPos($id);
-        // TODO: toplines
-        return stream_get_contents($this->_fh, $messagePos['separator'] - $messagePos['start'], $messagePos['start']);
-    }
-
-    /*
-     * Get raw content of message or part
-     *
-     * @param  int               $id   number of message
-     * @param  null|array|string $part path to part or null for messsage content
-     * @return string raw content
-     * @throws Zend_Mail_Protocol_Exception
-     * @throws Zend_Mail_Storage_Exception
-     */
-    public function getRawContent($id, $part = null)
-    {
-        if ($part !== null) {
-            // TODO: implement
-            /**
-             * @see Zend_Mail_Storage_Exception
-             */
-            require_once 'Zend/Mail/Storage/Exception.php';
-            throw new Zend_Mail_Storage_Exception('not implemented');
-        }
-        $messagePos = $this->_getPos($id);
-        return stream_get_contents($this->_fh, $messagePos['end'] - $messagePos['separator'], $messagePos['separator']);
-    }
-
-    /**
-     * Create instance with parameters
-     * Supported parameters are:
-     *   - filename filename of mbox file
-     *
-     * @param  $params array mail reader specific parameters
-     * @throws Zend_Mail_Storage_Exception
-     */
-    public function __construct($params)
-    {
-        if (is_array($params)) {
-            $params = (object)$params;
-        }
-    
-        if (!isset($params->filename) /* || Zend_Loader::isReadable($params['filename']) */) {
-            /**
-             * @see Zend_Mail_Storage_Exception
-             */
-            require_once 'Zend/Mail/Storage/Exception.php';
-            throw new Zend_Mail_Storage_Exception('no valid filename given in params');
-        }
-
-        $this->_openMboxFile($params->filename);
-        $this->_has['top']      = true;
-        $this->_has['uniqueid'] = false;
-    }
-
-    /**
-     * check if given file is a mbox file
-     *
-     * if $file is a resource its file pointer is moved after the first line
-     *
-     * @param  resource|string $file stream resource of name of file
-     * @param  bool $fileIsString file is string or resource
-     * @return bool file is mbox file
-     */
-    protected function _isMboxFile($file, $fileIsString = true)
-    {
-        if ($fileIsString) {
-            $file = @fopen($file, 'r');
-            if (!$file) {
-                return false;
-            }
-        } else {
-            fseek($file, 0);
-        }
-
-        $result = false;
-
-        $line = fgets($file);
-        if (strpos($line, 'From ') === 0) {
-            $result = true;
-        }
-
-        if ($fileIsString) {
-            @fclose($file);
-        }
-
-        return $result;
-    }
-
-    /**
-     * open given file as current mbox file
-     *
-     * @param  string $filename filename of mbox file
-     * @return null
-     * @throws Zend_Mail_Storage_Exception
-     */
-    protected function _openMboxFile($filename)
-    {
-        if ($this->_fh) {
-            $this->close();
-        }
-
-        $this->_fh = @fopen($filename, 'r');
-        if (!$this->_fh) {
-            /**
-             * @see Zend_Mail_Storage_Exception
-             */
-            require_once 'Zend/Mail/Storage/Exception.php';
-            throw new Zend_Mail_Storage_Exception('cannot open mbox file');
-        }
-        $this->_filename = $filename;
-        $this->_filemtime = filemtime($this->_filename);
-
-        if (!$this->_isMboxFile($this->_fh, false)) {
-            @fclose($this->_fh);
-            /**
-             * @see Zend_Mail_Storage_Exception
-             */
-            require_once 'Zend/Mail/Storage/Exception.php';
-            throw new Zend_Mail_Storage_Exception('file is not a valid mbox format');
-        }
-
-        $messagePos = array('start' => ftell($this->_fh), 'separator' => 0, 'end' => 0);
-        while (($line = fgets($this->_fh)) !== false) {
-            if (strpos($line, 'From ') === 0) {
-                $messagePos['end'] = ftell($this->_fh) - strlen($line) - 2; // + newline
-                if (!$messagePos['separator']) {
-                    $messagePos['separator'] = $messagePos['end'];
-                }
-                $this->_positions[] = $messagePos;
-                $messagePos = array('start' => ftell($this->_fh), 'separator' => 0, 'end' => 0);
-            }
-            if (!$messagePos['separator'] && !trim($line)) {
-                $messagePos['separator'] = ftell($this->_fh);
-            }
-        }
-
-        $messagePos['end'] = ftell($this->_fh);
-        if (!$messagePos['separator']) {
-            $messagePos['separator'] = $messagePos['end'];
-        }
-        $this->_positions[] = $messagePos;
-    }
-
-    /**
-     * Close resource for mail lib. If you need to control, when the resource
-     * is closed. Otherwise the destructor would call this.
-     *
-     * @return void
-     */
-    public function close()
-    {
-        @fclose($this->_fh);
-        $this->_positions = array();
-    }
-
-
-    /**
-     * Waste some CPU cycles doing nothing.
-     *
-     * @return void
-     */
-    public function noop()
-    {
-        return true;
-    }
-
-
-    /**
-     * stub for not supported message deletion
-     *
-     * @return null
-     * @throws Zend_Mail_Storage_Exception
-     */
-    public function removeMessage($id)
-    {
-        /**
-         * @see Zend_Mail_Storage_Exception
-         */
-        require_once 'Zend/Mail/Storage/Exception.php';
-        throw new Zend_Mail_Storage_Exception('mbox is read-only');
-    }
-
-    /**
-     * get unique id for one or all messages
-     *
-     * Mbox does not support unique ids (yet) - it's always the same as the message number.
-     * That shouldn't be a problem, because we can't change mbox files. Therefor the message
-     * number is save enough.
-     *
-     * @param int|null $id message number
-     * @return array|string message number for given message or all messages as array
-     * @throws Zend_Mail_Storage_Exception
-     */
-    public function getUniqueId($id = null)
-    {
-        if ($id) {
-            // check if id exists
-            $this->_getPos($id);
-            return $id;
-        }
-
-        $range = range(1, $this->countMessages());
-        return array_combine($range, $range);
-    }
-
-    /**
-     * get a message number from a unique id
-     *
-     * I.e. if you have a webmailer that supports deleting messages you should use unique ids
-     * as parameter and use this method to translate it to message number right before calling removeMessage()
-     *
-     * @param string $id unique id
-     * @return int message number
-     * @throws Zend_Mail_Storage_Exception
-     */
-    public function getNumberByUniqueId($id)
-    {
-        // check if id exists
-        $this->_getPos($id);
-        return $id;
-    }
-
-    /**
-     * magic method for serialize()
-     *
-     * with this method you can cache the mbox class
-     *
-     * @return array name of variables
-     */
-    public function __sleep()
-    {
-        return array('_filename', '_positions', '_filemtime');
-    }
-
-    /**
-     * magic method for unserialize()
-     *
-     * with this method you can cache the mbox class
-     * for cache validation the mtime of the mbox file is used
-     *
-     * @return null
-     * @throws Zend_Mail_Storage_Exception
-     */
-    public function __wakeup()
-    {
-        if ($this->_filemtime != @filemtime($this->_filename)) {
-            $this->close();
-            $this->_openMboxFile($this->_filename);
-        } else {
-            $this->_fh = @fopen($this->_filename, 'r');
-            if (!$this->_fh) {
-                /**
-                 * @see Zend_Mail_Storage_Exception
-                 */
-                require_once 'Zend/Mail/Storage/Exception.php';
-                throw new Zend_Mail_Storage_Exception('cannot open mbox file');
-            }
-        }
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

@@ -1,212 +1,75 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Config
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Ini.php 14175 2009-02-26 22:14:58Z dasprid $
- */
-
-/**
- * @see Zend_Config_Writer
- */
-require_once 'Zend/Config/Writer.php';
-
-/**
- * @category   Zend
- * @package    Zend_Config
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Config_Writer_Ini extends Zend_Config_Writer
-{
-    /**
-     * Filename to write to
-     *
-     * @var string
-     */
-    protected $_filename = null;
-        
-    /**
-     * Wether to exclusively lock the file or not
-     *
-     * @var boolean
-     */
-    protected $_exclusiveLock = false;
-    
-    /**
-     * String that separates nesting levels of configuration data identifiers
-     *
-     * @var string
-     */
-    protected $_nestSeparator = '.';
-    
-    /**
-     * Set the target filename
-     *
-     * @param  string $filename
-     * @return Zend_Config_Writer_Xml
-     */
-    public function setFilename($filename)
-    {
-        $this->_filename = $filename;
-        
-        return $this;
-    }
-    
-    /**
-     * Set wether to exclusively lock the file or not
-     *
-     * @param  boolean     $exclusiveLock
-     * @return Zend_Config_Writer_Array
-     */
-    public function setExclusiveLock($exclusiveLock)
-    {
-        $this->_exclusiveLock = $exclusiveLock;
-        
-        return $this;
-    }
-    
-    /**
-     * Set the nest separator
-     *
-     * @param  string $filename
-     * @return Zend_Config_Writer_Ini
-     */
-    public function setNestSeparator($separator)
-    {
-        $this->_nestSeparator = $separator;
-        
-        return $this;
-    }
-    
-    /**
-     * Defined by Zend_Config_Writer
-     *
-     * @param  string      $filename
-     * @param  Zend_Config $config
-     * @param  boolean     $exclusiveLock
-     * @throws Zend_Config_Exception When filename was not set
-     * @throws Zend_Config_Exception When filename is not writable
-     * @return void
-     */
-    public function write($filename = null, Zend_Config $config = null, $exclusiveLock = null)
-    {
-        if ($filename !== null) {
-            $this->setFilename($filename);
-        }
-        
-        if ($config !== null) {
-            $this->setConfig($config);
-        }
-        
-        if ($exclusiveLock !== null) {
-            $this->setExclusiveLock($exclusiveLock);
-        }
-        
-        if ($this->_filename === null) {
-            require_once 'Zend/Config/Exception.php';
-            throw new Zend_Config_Exception('No filename was set');
-        }
-        
-        if ($this->_config === null) {
-            require_once 'Zend/Config/Exception.php';
-            throw new Zend_Config_Exception('No config was set');
-        }
-        
-        $iniString   = '';
-        $extends     = $this->_config->getExtends();
-        $sectionName = $this->_config->getSectionName();
-        
-        if (is_string($sectionName)) {
-            $iniString .= '[' . $sectionName . ']' . "\n"
-                       .  $this->_addBranch($this->_config)
-                       .  "\n";
-        } else {
-            foreach ($this->_config as $sectionName => $data) {
-                if (!($data instanceof Zend_Config)) {
-                    $iniString .= $sectionName
-                               .  ' = '
-                               .  $this->_prepareValue($data)
-                               .  "\n";
-                } else {
-                    if (isset($extends[$sectionName])) {
-                        $sectionName .= ' : ' . $extends[$sectionName];
-                    }
-                    
-                    $iniString .= '[' . $sectionName . ']' . "\n"
-                               .  $this->_addBranch($data)
-                               .  "\n";
-                }
-            }
-        }
-       
-        $flags = 0;
-        
-        if ($this->_exclusiveLock) {
-            $flags |= LOCK_EX;
-        }
-        
-        $result = @file_put_contents($this->_filename, $iniString, $flags);
-
-        if ($result === false) {
-            require_once 'Zend/Config/Exception.php';
-            throw new Zend_Config_Exception('Could not write to file "' . $this->_filename . '"');
-        }
-    }
-    
-    /**
-     * Add a branch to an INI string recursively
-     *
-     * @param  Zend_Config $config
-     * @return void
-     */
-    protected function _addBranch(Zend_Config $config, $parents = array())
-    {
-        $iniString = '';
-
-        foreach ($config as $key => $value) {
-            $group = array_merge($parents, array($key));
-            
-            if ($value instanceof Zend_Config) {
-                $iniString .= $this->_addBranch($value, $group);
-            } else {
-                $iniString .= implode($this->_nestSeparator, $group)
-                           .  ' = '
-                           .  $this->_prepareValue($value)
-                           .  "\n";
-            }
-        }
-        
-        return $iniString;
-    }
-    
-    /**
-     * Prepare a value for INI
-     *
-     * @param  mixed $value
-     * @return string
-     */
-    protected function _prepareValue($value)
-    {
-        if (is_integer($value) || is_float($value)) {
-            return $value;
-        } elseif (is_bool($value)) {
-            return ($value ? 'true' : 'false');
-        } else {
-            return '"' . addslashes($value) .  '"';
-        }
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

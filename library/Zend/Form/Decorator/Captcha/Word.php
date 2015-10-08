@@ -1,73 +1,35 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Form
- * @subpackage Decorator
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_Form_Decorator_Abstract */
-require_once 'Zend/Form/Decorator/Abstract.php';
-
-/**
- * Word-based captcha decorator
- * 
- * Adds hidden field for ID and text input field for captcha text
- *
- * @category   Zend
- * @package    Zend_Form
- * @subpackage Element
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: $
- */
-class Zend_Form_Decorator_Captcha_Word extends Zend_Form_Decorator_Abstract
-{
-    /**
-     * Render captcha
-     * 
-     * @param  string $content 
-     * @return string
-     */
-    public function render($content)
-    {
-        $element = $this->getElement();
-        $view    = $element->getView();
-        if (null === $view) {
-            return $content;
-        }
-
-        $name = $element->getFullyQualifiedName();
-
-        $hiddenName = $name . '[id]';
-        $textName   = $name . '[input]';
-
-        $placement = $this->getPlacement();
-        $separator = $this->getSeparator();
-
-        $hidden = $view->formHidden($hiddenName, $element->getValue(), $element->getAttribs());
-        $text   = $view->formText($textName, '', $element->getAttribs());
-        switch ($placement) {
-            case 'PREPEND':
-                $content = $hidden . $separator . $text . $separator . $content;
-                break;
-            case 'APPEND':
-            default:
-                $content = $content . $separator . $hidden . $separator . $text;
-        }
-        return $content;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

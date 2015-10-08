@@ -1,209 +1,74 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Tool
- * @subpackage Framework
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id$
- */
-
-/**
- * @see Zend_Tool_Framework_Manifest_MetadataManifestable
- */
-require_once 'Zend/Tool/Framework/Manifest/MetadataManifestable.php';
-
-/**
- * @see Zend_Filter
- */
-require_once 'Zend/Filter.php';
-
-/**
- * @see Zend_Filter_Word_CamelCaseToDash
- */
-require_once 'Zend/Filter/Word/CamelCaseToDash.php';
-
-/**
- * @see Zend_Filter_StringToLower
- */
-require_once 'Zend/Filter/StringToLower.php';
-
-/**
- * @see Zend_Tool_Framework_Metadata_Tool
- */
-require_once 'Zend/Tool/Framework/Metadata/Tool.php';
-
-/**
- * @see Zend_Tool_Framework_Registry_EnabledInterface
- */
-require_once 'Zend/Tool/Framework/Registry/EnabledInterface.php';
-
-/**
- * Zend_Tool_Framework_Client_ConsoleClient_Manifest
- * @category   Zend
- * @package    Zend_Tool
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Tool_Framework_Client_Console_Manifest
-    implements Zend_Tool_Framework_Registry_EnabledInterface, 
-               Zend_Tool_Framework_Manifest_MetadataManifestable
-{
-
-    /**
-     * @var Zend_Tool_Framework_Registry_Interface
-     */
-    protected $_registry = null;
-    
-    /**
-     * setRegistry() - Required for the Zend_Tool_Framework_Registry_EnabledInterface interface
-     *
-     * @param Zend_Tool_Framework_Registry_Interface $registry
-     * @return Zend_Tool_Framework_Client_Console_Manifest
-     */
-    public function setRegistry(Zend_Tool_Framework_Registry_Interface $registry)
-    {
-        $this->_registry = $registry;
-        return $this;
-    }
-    
-    /**
-     * getMetadata() is required by the Manifest Interface.
-     * 
-     * These are the following metadatas that will be setup:
-     * 
-     * actionName
-     *   - metadata for actions
-     *   - value will be a dashed name for the action named in 'actionName'
-     * providerName
-     *   - metadata for providers
-     *   - value will be a dashed-name for the provider named in 'providerName'
-     * providerSpecialtyNames
-     *   - metadata for providers
-     * actionableMethodLongParameters
-     *   - metadata for providers
-     * actionableMethodShortParameters
-     *   - metadata for providers
-     *
-     * @return array Array of Metadatas
-     */
-    public function getMetadata()
-    {
-        $metadatas = array();
-        
-        // setup the camelCase to dashed filter to use since cli expects dashed named
-        $ccToDashedFilter = new Zend_Filter();
-        $ccToDashedFilter
-            ->addFilter(new Zend_Filter_Word_CamelCaseToDash())
-            ->addFilter(new Zend_Filter_StringToLower());
-        
-        // get the registry to get the action and provider repository
-        $actionRepository   = $this->_registry->getActionRepository();
-        $providerRepository = $this->_registry->getProviderRepository();
-        
-        // loop through all actions and create a metadata for each
-        foreach ($actionRepository->getActions() as $action) {
-            // each action metadata will be called
-            $metadatas[] = new Zend_Tool_Framework_Metadata_Tool(array(
-                'name'            => 'actionName',
-                'value'           => $ccToDashedFilter->filter($action->getName()),
-                'reference'       => $action,
-                'actionName'      => $action->getName(),
-                'clientName'      => 'console',
-                'clientReference' => $this->_registry->getClient()
-                ));
-        }
-
-        foreach ($providerRepository->getProviderSignatures() as $providerSignature) {
-
-            // create the metadata for the provider's cliProviderName
-            $metadatas[] = new Zend_Tool_Framework_Metadata_Tool(array(
-                'name'            => 'providerName',
-                'value'           => $ccToDashedFilter->filter($providerSignature->getName()),
-                'reference'       => $providerSignature,
-                'clientName'      => 'console',
-                'providerName'    => $providerSignature->getName(),
-                'clientReference' => $this->_registry->getClient()
-                ));
-
-            // create the metadatas for the per provider specialites in providerSpecaltyNames
-            foreach ($providerSignature->getSpecialties() as $specialty) {
-                                
-                $metadatas[] = new Zend_Tool_Framework_Metadata_Tool(array(
-                    'name'            => 'specialtyName',
-                    'value'           =>  $ccToDashedFilter->filter($specialty),
-                    'reference'       => $providerSignature,
-                    'clientName'      => 'console',
-                    'providerName'    => $providerSignature->getName(),
-                    'specialtyName'   => $specialty,
-                    'clientReference' => $this->_registry->getClient()
-                    ));                
-                
-            }
-
-            // $actionableMethod is keyed by the methodName (but not used)
-            foreach ($providerSignature->getActionableMethods() as $actionableMethodData) {
-                
-                $methodLongParams  = array();
-                $methodShortParams = array();
-                
-                // $actionableMethodData get both the long and short names
-                foreach ($actionableMethodData['parameterInfo'] as $parameterInfoData) {
-                    
-                    // filter to dashed
-                    $methodLongParams[$parameterInfoData['name']] = $ccToDashedFilter->filter($parameterInfoData['name']);
-                    
-                    // simply lower the character, (its only 1 char after all)
-                    $methodShortParams[$parameterInfoData['name']] = strtolower($parameterInfoData['name'][0]);
-                    
-                }
-
-                // create metadata for the long name cliActionableMethodLongParameters
-                $metadatas[] = new Zend_Tool_Framework_Metadata_Tool(array(
-                    'name'            => 'actionableMethodLongParams',
-                    'value'           => $methodLongParams,
-                    'clientName'      => 'console',
-                    'providerName'    => $providerSignature->getName(),
-                    'specialtyName'   => $actionableMethodData['specialty'],
-                    'actionName'      => $actionableMethodData['actionName'],
-                    'reference'       => &$actionableMethodData,
-                    'clientReference' => $this->_registry->getClient()
-                    ));
-                    
-                // create metadata for the short name cliActionableMethodShortParameters
-                $metadatas[] = new Zend_Tool_Framework_Metadata_Tool(array(
-                    'name'            => 'actionableMethodShortParams',
-                    'value'           => $methodShortParams,
-                    'clientName'      => 'console',
-                    'providerName'    => $providerSignature->getName(),
-                    'specialtyName'   => $actionableMethodData['specialty'],
-                    'actionName'      => $actionableMethodData['actionName'],
-                    'reference'       => &$actionableMethodData,
-                    'clientReference' => $this->_registry->getClient()
-                    ));
-
-            }
-
-        }
-        
-        return $metadatas;
-    }
-    
-    public function getIndex()
-    {
-        return 10000;
-    }
-    
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

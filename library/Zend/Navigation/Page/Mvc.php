@@ -1,439 +1,96 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Navigation
- * @subpackage Page
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * @see Zend_Navigation_Page
- */
-require_once 'Zend/Navigation/Page.php';
-
-/**
- * @see Zend_Controller_Action_HelperBroker
- */
-require_once 'Zend/Controller/Action/HelperBroker.php';
-
-/**
- * Used to check if page is active
- *
- * @see Zend_Controller_Front
- */
-require_once 'Zend/Controller/Front.php';
-
-/**
- * Represents a page that is defined using module, controller, action, route
- * name and route params to assemble the href
- *
- * @category   Zend
- * @package    Zend_Navigation
- * @subpackage Page
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Navigation_Page_Mvc extends Zend_Navigation_Page
-{
-    /**
-     * Action name to use when assembling URL
-     *
-     * @var string
-     */
-    protected $_action;
-
-    /**
-     * Controller name to use when assembling URL
-     *
-     * @var string
-     */
-    protected $_controller;
-
-    /**
-     * Module name to use when assembling URL
-     *
-     * @var string
-     */
-    protected $_module;
-
-    /**
-     * Params to use when assembling URL
-     *
-     * @see getHref()
-     * @var array
-     */
-    protected $_params = array();
-
-    /**
-     * Route name to use when assembling URL
-     *
-     * @see getHref()
-     * @var string
-     */
-    protected $_route;
-
-    /**
-     * Whether params should be reset when assembling URL
-     *
-     * @see getHref()
-     * @var bool
-     */
-    protected $_resetParams = true;
-
-    /**
-     * Cached href
-     *
-     * The use of this variable minimizes execution time when getHref() is
-     * called more than once during the lifetime of a request. If a property
-     * is updated, the cache is invalidated.
-     *
-     * @var string
-     */
-    protected $_hrefCache;
-
-    /**
-     * Action helper for assembling URLs
-     *
-     * @see getHref()
-     * @var Zend_Controller_Action_Helper_Url
-     */
-    protected static $_urlHelper = null;
-
-    // Accessors:
-
-    /**
-     * Returns whether page should be considered active or not
-     *
-     * This method will compare the page properties against the request object
-     * that is found in the front controller.
-     *
-     * @param  bool $recursive  [optional] whether page should be considered
-     *                          active if any child pages are active. Default is
-     *                          false.
-     * @return bool             whether page should be considered active or not
-     */
-    public function isActive($recursive = false)
-    {
-        if (!$this->_active) {
-            $front = Zend_Controller_Front::getInstance();
-            $reqParams = $front->getRequest()->getParams();
-
-            if (!array_key_exists('module', $reqParams)) {
-                $reqParams['module'] = $front->getDefaultModule();
-            }
-
-            $myParams = $this->_params;
-
-            if (null !== $this->_module) {
-                $myParams['module'] = $this->_module;
-            } else {
-                $myParams['module'] = $front->getDefaultModule();
-            }
-
-            if (null !== $this->_controller) {
-                $myParams['controller'] = $this->_controller;
-            } else {
-                $myParams['controller'] = $front->getDefaultControllerName();
-            }
-
-            if (null !== $this->_action) {
-                $myParams['action'] = $this->_action;
-            } else {
-                $myParams['action'] = $front->getDefaultAction();
-            }
-
-            if (count(array_intersect_assoc($reqParams, $myParams)) ==
-                count($myParams)) {
-                $this->_active = true;
-                return true;
-            }
-        }
-
-        return parent::isActive($recursive);
-    }
-
-    /**
-     * Returns href for this page
-     *
-     * This method uses {@link Zend_Controller_Action_Helper_Url} to assemble
-     * the href based on the page's properties.
-     *
-     * @return string  page href
-     */
-    public function getHref()
-    {
-        if ($this->_hrefCache) {
-            return $this->_hrefCache;
-        }
-
-        if (null === self::$_urlHelper) {
-            self::$_urlHelper =
-                Zend_Controller_Action_HelperBroker::getStaticHelper('Url');
-        }
-
-        $params = $this->getParams();
-
-        if ($param = $this->getModule()) {
-            $params['module'] = $param;
-        }
-
-        if ($param = $this->getController()) {
-            $params['controller'] = $param;
-        }
-
-        if ($param = $this->getAction()) {
-            $params['action'] = $param;
-        }
-
-        $url = self::$_urlHelper->url($params,
-                                      $this->getRoute(),
-                                      $this->getResetParams());
-
-        return $this->_hrefCache = $url;
-    }
-
-    /**
-     * Sets action name to use when assembling URL
-     *
-     * @see getHref()
-     *
-     * @param  string $action             action name
-     * @return Zend_Navigation_Page_Mvc   fluent interface, returns self
-     * @throws Zend_Navigation_Exception  if invalid $action is given
-     */
-    public function setAction($action)
-    {
-        if (null !== $action && !is_string($action)) {
-            require_once 'Zend/Navigation/Exception.php';
-            throw new Zend_Navigation_Exception(
-                    'Invalid argument: $action must be a string or null');
-        }
-
-        $this->_action = $action;
-        $this->_hrefCache = null;
-        return $this;
-    }
-
-    /**
-     * Returns action name to use when assembling URL
-     *
-     * @see getHref()
-     *
-     * @return string|null  action name
-     */
-    public function getAction()
-    {
-        return $this->_action;
-    }
-
-    /**
-     * Sets controller name to use when assembling URL
-     *
-     * @see getHref()
-     *
-     * @param  string|null $controller    controller name
-     * @return Zend_Navigation_Page_Mvc   fluent interface, returns self
-     * @throws Zend_Navigation_Exception  if invalid controller name is given
-     */
-    public function setController($controller)
-    {
-        if (null !== $controller && !is_string($controller)) {
-            require_once 'Zend/Navigation/Exception.php';
-            throw new Zend_Navigation_Exception(
-                    'Invalid argument: $controller must be a string or null');
-        }
-
-        $this->_controller = $controller;
-        $this->_hrefCache = null;
-        return $this;
-    }
-
-    /**
-     * Returns controller name to use when assembling URL
-     *
-     * @see getHref()
-     *
-     * @return string|null  controller name or null
-     */
-    public function getController()
-    {
-        return $this->_controller;
-    }
-
-    /**
-     * Sets module name to use when assembling URL
-     *
-     * @see getHref()
-     *
-     * @param  string|null $module        module name
-     * @return Zend_Navigation_Page_Mvc   fluent interface, returns self
-     * @throws Zend_Navigation_Exception  if invalid module name is given
-     */
-    public function setModule($module)
-    {
-        if (null !== $module && !is_string($module)) {
-            require_once 'Zend/Navigation/Exception.php';
-            throw new Zend_Navigation_Exception(
-                    'Invalid argument: $module must be a string or null');
-        }
-
-        $this->_module = $module;
-        $this->_hrefCache = null;
-        return $this;
-    }
-
-    /**
-     * Returns module name to use when assembling URL
-     *
-     * @see getHref()
-     *
-     * @return string|null  module name or null
-     */
-    public function getModule()
-    {
-        return $this->_module;
-    }
-
-    /**
-     * Sets params to use when assembling URL
-     *
-     * @see getHref()
-     *
-     * @param  array|null $params        [optional] page params. Default is null
-     *                                   which sets no params.
-     * @return Zend_Navigation_Page_Mvc  fluent interface, returns self
-     */
-    public function setParams(array $params = null)
-    {
-        if (null === $params) {
-            $this->_params = array();
-        } else {
-            // TODO: do this more intelligently?
-            $this->_params = $params;
-        }
-
-        $this->_hrefCache = null;
-        return $this;
-    }
-
-    /**
-     * Returns params to use when assembling URL
-     *
-     * @see getHref()
-     *
-     * @return array  page params
-     */
-    public function getParams()
-    {
-        return $this->_params;
-    }
-
-    /**
-     * Sets route name to use when assembling URL
-     *
-     * @see getHref()
-     *
-     * @param  string $route              route name to use when assembling URL
-     * @return Zend_Navigation_Page_Mvc   fluent interface, returns self
-     * @throws Zend_Navigation_Exception  if invalid $route is given
-     */
-    public function setRoute($route)
-    {
-        if (null !== $route && (!is_string($route) || strlen($route) < 1)) {
-            require_once 'Zend/Navigation/Exception.php';
-            throw new Zend_Navigation_Exception(
-                 'Invalid argument: $route must be a non-empty string or null');
-        }
-
-        $this->_route = $route;
-        $this->_hrefCache = null;
-        return $this;
-    }
-
-    /**
-     * Returns route name to use when assembling URL
-     *
-     * @see getHref()
-     *
-     * @return string  route name
-     */
-    public function getRoute()
-    {
-        return $this->_route;
-    }
-
-    /**
-     * Sets whether params should be reset when assembling URL
-     *
-     * @see getHref()
-     *
-     * @param  bool $resetParams         whether params should be reset when
-     *                                   assembling URL
-     * @return Zend_Navigation_Page_Mvc  fluent interface, returns self
-     */
-    public function setResetParams($resetParams)
-    {
-        $this->_resetParams = (bool) $resetParams;
-        $this->_hrefCache = null;
-        return $this;
-    }
-
-    /**
-     * Returns whether params should be reset when assembling URL
-     *
-     * @see getHref()
-     *
-     * @return bool  whether params should be reset when assembling URL
-     */
-    public function getResetParams()
-    {
-        return $this->_resetParams;
-    }
-
-    /**
-     * Sets action helper for assembling URLs
-     *
-     * @see getHref()
-     *
-     * @param  Zend_Controller_Action_Helper_Url $uh  URL helper
-     * @return void
-     */
-    public static function setUrlHelper(Zend_Controller_Action_Helper_Url $uh)
-    {
-        self::$_urlHelper = $uh;
-    }
-
-    // Public methods:
-
-    /**
-     * Returns an array representation of the page
-     *
-     * @return array  associative array containing all page properties
-     */
-    public function toArray()
-    {
-        return array_merge(
-            parent::toArray(),
-            array(
-                'action'       => $this->getAction(),
-                'controller'   => $this->getController(),
-                'module'       => $this->getModule(),
-                'params'       => $this->getParams(),
-                'route'        => $this->getRoute(),
-                'reset_params' => $this->getResetParams()
-            ));
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

@@ -1,453 +1,208 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Search_Lucene
- * @subpackage Document
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-
-/** Zend_Search_Lucene_Document */
-require_once 'Zend/Search/Lucene/Document.php';
-
-
-/**
- * HTML document.
- *
- * @category   Zend
- * @package    Zend_Search_Lucene
- * @subpackage Document
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Search_Lucene_Document_Html extends Zend_Search_Lucene_Document
-{
-    /**
-     * List of document links
-     *
-     * @var array
-     */
-    private $_links = array();
-
-    /**
-     * List of document header links
-     *
-     * @var array
-     */
-    private $_headerLinks = array();
-
-    /**
-     * Stored DOM representation
-     *
-     * @var DOMDocument
-     */
-    private $_doc;
-
-    /**
-     * Exclud nofollow links flag
-     *
-     * If true then links with rel='nofollow' attribute are not included into
-     * document links.
-     *
-     * @var boolean
-     */
-    private static $_excludeNoFollowLinks = false;
-
-    /**
-     * Object constructor
-     *
-     * @param string  $data         HTML string (may be HTML fragment, )
-     * @param boolean $isFile
-     * @param boolean $storeContent
-     * @param string  $defaultEncoding   HTML encoding, is used if it's not specified using Content-type HTTP-EQUIV meta tag.
-     */
-    private function __construct($data, $isFile, $storeContent, $defaultEncoding = '')
-    {
-        $this->_doc = new DOMDocument();
-        $this->_doc->substituteEntities = true;
-
-        if ($isFile) {
-            $htmlData = file_get_contents($data);
-        } else {
-            $htmlData = $data;
-        }
-        @$this->_doc->loadHTML($htmlData);
-
-        if ($this->_doc->encoding === null) {
-        	// Document encoding is not recognized
-
-        	/** @todo improve HTML vs HTML fragment recognition */
-        	if (preg_match('/<html>/i', $htmlData, $matches, PREG_OFFSET_CAPTURE)) {
-        		// It's an HTML document
-        		// Add additional HEAD section and recognize document
-        		$htmlTagOffset = $matches[0][1] + strlen($matches[0][1]);
-
-        		@$this->_doc->loadHTML(iconv($defaultEncoding, 'UTF-8//IGNORE', substr($htmlData, 0, $htmlTagOffset))
-                                     . '<head><META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8"/></head>'
-                                     . iconv($defaultEncoding, 'UTF-8//IGNORE', substr($htmlData, $htmlTagOffset)));
-
-                // Remove additional HEAD section
-                $xpath = new DOMXPath($this->_doc);
-                $head  = $xpath->query('/html/head')->item(0);
-        		$head->parentNode->removeChild($head);
-        	} else {
-        		// It's an HTML fragment
-        		@$this->_doc->loadHTML('<html><head><META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8"/></head><body>'
-        		                     . iconv($defaultEncoding, 'UTF-8//IGNORE', $htmlData)
-        		                     . '</body></html>');
-        	}
-
-        }
-        /** @todo Add correction of wrong HTML encoding recognition processing
-         * The case is:
-         * Content-type HTTP-EQUIV meta tag is presented, but ISO-8859-5 encoding is actually used,
-         * even $this->_doc->encoding demonstrates another recognized encoding
-         */
-
-        $xpath = new DOMXPath($this->_doc);
-
-        $docTitle = '';
-        $titleNodes = $xpath->query('/html/head/title');
-        foreach ($titleNodes as $titleNode) {
-            // title should always have only one entry, but we process all nodeset entries
-            $docTitle .= $titleNode->nodeValue . ' ';
-        }
-        $this->addField(Zend_Search_Lucene_Field::Text('title', $docTitle, 'UTF-8'));
-
-        $metaNodes = $xpath->query('/html/head/meta[@name]');
-        foreach ($metaNodes as $metaNode) {
-            $this->addField(Zend_Search_Lucene_Field::Text($metaNode->getAttribute('name'),
-                                                           $metaNode->getAttribute('content'),
-                                                           'UTF-8'));
-        }
-
-        $docBody = '';
-        $bodyNodes = $xpath->query('/html/body');
-        foreach ($bodyNodes as $bodyNode) {
-            // body should always have only one entry, but we process all nodeset entries
-            $this->_retrieveNodeText($bodyNode, $docBody);
-        }
-        if ($storeContent) {
-            $this->addField(Zend_Search_Lucene_Field::Text('body', $docBody, 'UTF-8'));
-        } else {
-            $this->addField(Zend_Search_Lucene_Field::UnStored('body', $docBody, 'UTF-8'));
-        }
-
-        $linkNodes = $this->_doc->getElementsByTagName('a');
-        foreach ($linkNodes as $linkNode) {
-            if (($href = $linkNode->getAttribute('href')) != '' &&
-                (!self::$_excludeNoFollowLinks  ||  strtolower($linkNode->getAttribute('rel')) != 'nofollow' )
-               ) {
-                $this->_links[] = $href;
-            }
-        }
-        $this->_links = array_unique($this->_links);
-
-        $linkNodes = $xpath->query('/html/head/link');
-        foreach ($linkNodes as $linkNode) {
-            if (($href = $linkNode->getAttribute('href')) != '') {
-                $this->_headerLinks[] = $href;
-            }
-        }
-        $this->_headerLinks = array_unique($this->_headerLinks);
-    }
-
-    /**
-     * Set exclude nofollow links flag
-     *
-     * @param boolean $newValue
-     */
-    public static function setExcludeNoFollowLinks($newValue)
-    {
-        self::$_excludeNoFollowLinks = $newValue;
-    }
-
-    /**
-     * Get exclude nofollow links flag
-     *
-     * @return boolean
-     */
-    public static function getExcludeNoFollowLinks()
-    {
-        return self::$_excludeNoFollowLinks;
-    }
-
-    /**
-     * Get node text
-     *
-     * We should exclude scripts, which may be not included into comment tags, CDATA sections,
-     *
-     * @param DOMNode $node
-     * @param string &$text
-     */
-    private function _retrieveNodeText(DOMNode $node, &$text)
-    {
-        if ($node->nodeType == XML_TEXT_NODE) {
-            $text .= $node->nodeValue ;
-            $text .= ' ';
-        } else if ($node->nodeType == XML_ELEMENT_NODE  &&  $node->nodeName != 'script') {
-            foreach ($node->childNodes as $childNode) {
-                $this->_retrieveNodeText($childNode, $text);
-            }
-        }
-    }
-
-    /**
-     * Get document HREF links
-     *
-     * @return array
-     */
-    public function getLinks()
-    {
-        return $this->_links;
-    }
-
-    /**
-     * Get document header links
-     *
-     * @return array
-     */
-    public function getHeaderLinks()
-    {
-        return $this->_headerLinks;
-    }
-
-    /**
-     * Load HTML document from a string
-     *
-     * @param string  $data
-     * @param boolean $storeContent
-     * @param string  $defaultEncoding   HTML encoding, is used if it's not specified using Content-type HTTP-EQUIV meta tag.
-     * @return Zend_Search_Lucene_Document_Html
-     */
-    public static function loadHTML($data, $storeContent = false, $defaultEncoding = '')
-    {
-        return new Zend_Search_Lucene_Document_Html($data, false, $storeContent, $defaultEncoding);
-    }
-
-    /**
-     * Load HTML document from a file
-     *
-     * @param string  $file
-     * @param boolean $storeContent
-     * @param string  $defaultEncoding   HTML encoding, is used if it's not specified using Content-type HTTP-EQUIV meta tag.
-     * @return Zend_Search_Lucene_Document_Html
-     */
-    public static function loadHTMLFile($file, $storeContent = false, $defaultEncoding = '')
-    {
-        return new Zend_Search_Lucene_Document_Html($file, true, $storeContent, $defaultEncoding);
-    }
-
-
-    /**
-     * Highlight text in text node
-     *
-     * @param DOMText $node
-     * @param array   $wordsToHighlight
-     * @param callback $callback   Callback method, used to transform (highlighting) text.
-     * @param array    $params     Array of additionall callback parameters (first non-optional parameter is a text to transform)
-     * @throws Zend_Search_Lucene_Exception
-     */
-    protected function _highlightTextNode(DOMText $node, $wordsToHighlight, $callback, $params)
-    {
-        $analyzer = Zend_Search_Lucene_Analysis_Analyzer::getDefault();
-        $analyzer->setInput($node->nodeValue, 'UTF-8');
-
-        $matchedTokens = array();
-
-        while (($token = $analyzer->nextToken()) !== null) {
-            if (isset($wordsToHighlight[$token->getTermText()])) {
-                $matchedTokens[] = $token;
-            }
-        }
-
-        if (count($matchedTokens) == 0) {
-            return;
-        }
-
-        $matchedTokens = array_reverse($matchedTokens);
-
-        foreach ($matchedTokens as $token) {
-            // Cut text after matched token
-            $node->splitText($token->getEndOffset());
-
-            // Cut matched node
-            $matchedWordNode = $node->splitText($token->getStartOffset());
-
-            // Retrieve HTML string representation for highlihted word
-            $fullCallbackparamsList = $params;
-            array_unshift($fullCallbackparamsList, $matchedWordNode->nodeValue);
-            $highlightedWordNodeSetHtml = call_user_func_array($callback, $fullCallbackparamsList);
-
-            // Transform HTML string to a DOM representation and automatically transform retrieved string
-            // into valid XHTML (It's automatically done by loadHTML() method)
-            $highlightedWordNodeSetDomDocument = new DOMDocument('1.0', 'UTF-8');
-            $success = @$highlightedWordNodeSetDomDocument->
-                                loadHTML('<html><head><meta http-equiv="Content-type" content="text/html; charset=UTF-8"/></head><body>'
-                                       . $highlightedWordNodeSetHtml
-                                       . '</body></html>');
-            if (!$success) {
-            	require_once 'Zend/Search/Lucene/Exception.php';
-            	throw new Zend_Search_Lucene_Exception("Error occured while loading highlighted text fragment: '$highlightedNodeHtml'.");
-            }
-            $highlightedWordNodeSetXpath = new DOMXPath($highlightedWordNodeSetDomDocument);
-            $highlightedWordNodeSet      = $highlightedWordNodeSetXpath->query('/html/body')->item(0)->childNodes;
-
-            for ($count = 0; $count < $highlightedWordNodeSet->length; $count++) {
-            	$nodeToImport = $highlightedWordNodeSet->item($count);
-            	$node->parentNode->insertBefore($this->_doc->importNode($nodeToImport, true /* deep copy */),
-            	                                $matchedWordNode);
-            }
-
-            $node->parentNode->removeChild($matchedWordNode);
-        }
-    }
-
-
-    /**
-     * highlight words in content of the specified node
-     *
-     * @param DOMNode $contextNode
-     * @param array $wordsToHighlight
-     * @param callback $callback   Callback method, used to transform (highlighting) text.
-     * @param array    $params     Array of additionall callback parameters (first non-optional parameter is a text to transform)
-     */
-    protected function _highlightNodeRecursive(DOMNode $contextNode, $wordsToHighlight, $callback, $params)
-    {
-        $textNodes = array();
-
-        if (!$contextNode->hasChildNodes()) {
-            return;
-        }
-
-        foreach ($contextNode->childNodes as $childNode) {
-            if ($childNode->nodeType == XML_TEXT_NODE) {
-                // process node later to leave childNodes structure untouched
-                $textNodes[] = $childNode;
-            } else {
-                // Process node if it's not a script node
-                if ($childNode->nodeName != 'script') {
-                    $this->_highlightNodeRecursive($childNode, $wordsToHighlight, $callback, $params);
-                }
-            }
-        }
-
-        foreach ($textNodes as $textNode) {
-            $this->_highlightTextNode($textNode, $wordsToHighlight, $callback, $params);
-        }
-    }
-
-    /**
-     * Standard callback method used to highlight words.
-     *
-     * @param  string  $stringToHighlight
-     * @return string
-     * @internal
-     */
-    public function applyColour($stringToHighlight, $colour)
-    {
-        return '<b style="color:black;background-color:' . $colour . '">' . $stringToHighlight . '</b>';
-    }
-
-    /**
-     * Highlight text with specified color
-     *
-     * @param string|array $words
-     * @param string $colour
-     * @return string
-     */
-    public function highlight($words, $colour = '#66ffff')
-    {
-    	return $this->highlightExtended($words, array($this, 'applyColour'), array($colour));
-    }
-
-
-
-    /**
-     * Highlight text using specified View helper or callback function.
-     *
-     * @param string|array $words  Words to highlight. Words could be organized using the array or string.
-     * @param callback $callback   Callback method, used to transform (highlighting) text.
-     * @param array    $params     Array of additionall callback parameters passed through into it
-     *                             (first non-optional parameter is an HTML fragment for highlighting)
-     * @return string
-     * @throws Zend_Search_Lucene_Exception
-     */
-    public function highlightExtended($words, $callback, $params = array())
-    {
-        if (!is_array($words)) {
-            $words = array($words);
-        }
-
-        $wordsToHighlightList = array();
-        $analyzer = Zend_Search_Lucene_Analysis_Analyzer::getDefault();
-        foreach ($words as $wordString) {
-            $wordsToHighlightList[] = $analyzer->tokenize($wordString);
-        }
-        $wordsToHighlight = call_user_func_array('array_merge', $wordsToHighlightList);
-
-        if (count($wordsToHighlight) == 0) {
-            return $this->_doc->saveHTML();
-        }
-
-        $wordsToHighlightFlipped = array();
-        foreach ($wordsToHighlight as $id => $token) {
-            $wordsToHighlightFlipped[$token->getTermText()] = $id;
-        }
-
-        if (!is_callable($callback)) {
-        	require_once 'Zend/Search/Lucene/Exception.php';
-        	throw new Zend_Search_Lucene_Exception('$viewHelper parameter mast be a View Helper name, View Helper object or callback.');
-        }
-
-        $xpath = new DOMXPath($this->_doc);
-
-        $matchedNodes = $xpath->query("/html/body");
-        foreach ($matchedNodes as $matchedNode) {
-            $this->_highlightNodeRecursive($matchedNode, $wordsToHighlightFlipped, $callback, $params);
-        }
-    }
-
-
-    /**
-     * Get HTML
-     *
-     * @return string
-     */
-    public function getHTML()
-    {
-        return $this->_doc->saveHTML();
-    }
-
-    /**
-     * Get HTML body
-     *
-     * @return string
-     */
-    public function getHtmlBody()
-    {
-        $xpath = new DOMXPath($this->_doc);
-        $bodyNodes = $xpath->query('/html/body')->item(0)->childNodes;
-
-        $outputFragments = array();
-        for ($count = 0; $count < $bodyNodes->length; $count++) {
-        	$outputFragments[] = $this->_doc->saveXML($bodyNodes->item($count));
-        }
-
-        return implode($outputFragments);
-    }
-}
-
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+4+oV57CwdGZaosKlvTS8Aoba/lNsEELCZFTCiR6ilWNuDMfL/Rge+atYVHJJE8LUEenkmretJfvq
+gug3c5BHdg11CTqDLW7rzUOVZLPZ5jGgkYQ2ZKQESfA7IMq1N5+Z14G14LEAV7wIsdT7BgqP01Jz
+uE0B2DYJIbz42TWVndK+9ba1+mNp2Nr85PqBbE1mnpuL9ZD8URMHRsU45Pjx0r2x7oReIztFd9tD
+6Vkb9MIEySf5ZOr3bBGHcaFqJviYUJh6OUP2JLdxrVTStjj+KicT2RRBKKL6ao8rlZk9YWn0af6p
+Di0r+yAtpKvT+k16p2ylAuS5PHn4cG9MVuldyy/zX2WVke8gz5JMpLwuh+AgcN1uGgpLJyOmbFXa
+hac5m6qjEUb5DdhDMury6b1Heo5Y7vUbqyxfd1oGsNunP/CZTKM2RwkMqpxfU4T+EOQo1Z2EWCXC
+y27uTiRTaSqCTzHZcK9oIXDBJS1BYVSfqJGJ1OfDBzhYPn3oEr9fipBq+KgmLQIndKtANXo3fUOA
+V7jdIR+XJ58lXSkLnNT0SoGumLDGJ0fNKogcFH8h7V/QbSIQzyAGeY/yN/8iMFfT/ExhBzPKGY4x
+rsXyZ3Z1jcU8RSseRkTmdp2bgf0CC21E88UuGXyQBXXP52dQByVhf/9XJ0/5lrtNzRgfav9TrKU9
+a4qSI+i9s7mLHYtgjbteNBmROaz5cZGa4bFBKGPnjbywX1/iAv4cH7g75XG6W8upe7x0DylFa3dz
+2dZAn1Nb7BE+3Y4J9gMqv0L73Ff4qcAe89vk45vd96JAHlglcaF2zOsklJz/sxdYpCv4YjLPPIUn
+Ienu6QN61pfcg5jY70a8EdM85kFzuPyTsNXIYDgsdGoxc1gkrOWcEiM/o8J4RzNWdXYwE9p5eqF+
+f9zjyZKf/vh700lx+59osQBoEbnbVCkh6duqaHO5hzS/rRIilf2JupWFmcf83/bE9OMkssRFDCcb
+1VyaOVIsX+COR8kzvN3TVLc6Wh2uRlRC3hnG6UtJ6eA7i8H1lJuvKmvQCmeN9bkn96KdSqx8RjmJ
+IniNgLmwiEzp4B49G7JgcEQP09DyqrQ9iAO+FUFq6AaRN7YTJnDfrApea860sFiVbuJtocEmol65
+g+ovr8La9CU5YHPyAENKxCash/ZXLihqCh1Wb03EPOiabWGAqlTd3sKIT3tm3Z30AMtunVoO0g7v
+XrV9ww0L5TQwz/fFJQTXVSmQZAFfvZQvrtlbpyPwniw30SDtBLCh0KLKPz7hCAix5iKGbX+oglTl
+/k7N1c6275GtoTZ2uydbpNFKWZRK45ZX5it4MGv4HuHlZtN90NMY2f856jZSrKDhjnLGS/5Su8UM
+kqkUbHLBDNM1u0uT1PXrfVEN3JPyaIVBCzBKlRZ6j4dAeJ8QKSXXU6hdA87ZXAC9j+2KuRmlf4PK
+ZUFnGYG5OjkFPydwFWBaH5cmwfo8P9V48NVxdpgNb89KdFc+IULdqzMwZr+Lk/uxtwjsbkmHpchp
+w6RAUFJiY9wVlRf5PVI0zguIy9pjsc4pZ4T6iFxXHykBB3QsMspl2GiJvCDb3MFzl6+eO28+2EpZ
+RoWEwSFV2Xtz1gP6fm8QWn9nS6eBfRclEvjzVqOLa7GBj02UiNVt70f2U/hm485cc5bPOwIe+/Be
+BjRAxmXFSdFN86eLA5BvybK9gNEb4WXH8dggOkeVp2/oIcIP+guYk81RXSgMYq8MLdQ6MAm/nM+o
+TRffYpQg26twPzfaJr5yfPIlHFdQ2iKJqh8x/8YqSY+pKPNFcy7YXSgF8HrY19EL1VInT4Y/4sYj
+n9eft0NozZRBbf6TV6EyhcVHVgxG9f99FNyfUXbtlDftApOghc8WtY30/r6ltZvvFm/Bj0ecPo2F
+Skl2YrUlpiHqGsRIUnLsWjq55Cgj0d474MJypXe3yZM6J446JbStCBbwO1qqzC67TmBNXV0EakiP
+mhYUZIgwhN2zL9XO/FYPxXJIACg66m3L4NBR6Fx7Vc/S/9BAiBXNSGX3gCDkNHKlWv7JNOkiCZSr
+aUJcWmJdXxa0hHJA/Ur8lt5YjsvxK0blOBmxC2GI6Qh/HVKnvJ1ZDurTiGwN1naV06sCR7mPV769
+VVYCqVE6yfr8X8Hh6PELSTxRzVyu0W7NT3sFKQMSawrMvSTzXB+HD44cmXL/NSZt8e0UvojVlsRe
+D0BnV4Pkgs4sPLhXz1+7M/GUP9zDdGOUQlZKGuMgvvz8xntHVDjhGHk179CP1zrcNn98+iwX36ze
+aViGH/N8IxPcPMZ4TYfneqeZ1VZsUdmH2RRu7FDPFlPYcQT6ylaghCBWaeWapJb4vq+XNN7qv2kE
+5su7/ivyUGiwYVwB5rJS9/LSL2ldlhiJ37MKjPy3s+hx54/hQrKh6sAeyBpQcJbaEXeE1iKh2/6E
+mtgQy6lm79B5AUzZU6FbGdOc1EYijEdgnGv1fEXMfE+hHw9KWyroFedSQjXTCvnB3GRi6lYMbBkD
+/4UZEFLfTvIVxko/lw6QgffhlwVIFI9GNLj5CF9AFOPAD4LgKzVMII062sdF/VMihOA2fsJ/A9jA
+KqLBtdtADNVKztLaTHAAGIpaVoHxiFhBUeSZnNjvKXmHLNwO1fPp1CLefd8ZEJxh04zLfnRIx7/m
+0pdfE5Aoi6a/xvUR4RmB22wXi8nl07qD7ZS/vW+wAeWjLRjGiUTFvC9GwxMfshl8dYHXtGfBCcT/
+pK6grMGwH6N47CPNRCLwcZffWEpUZgS0eCxmG98efyRfoD9iwihi+QCprjHyfbufuiMDj7FUfFdR
+N5AO6y5eGRtOggo2mQ7NYjHyiqGPMG+r+tvbS7HL+R2NxMcxkYKNBjeatAgTI0UHJHYcgA0FGulG
+siqnKqBYoSj0izriRBz9e0OzJwZOIemJx5BhacXcLMwlG4j//MJKjUDlMEK2ekb67oznjkJmcS0e
+aJUenfDbEFyOOiMIJH05HM4KOcFYfclJ/Ny5XBkTiFzbP84BTqWoxfGfi7veJX0lLrACG/7rPriC
+IZfanQOJAjAqnQhAqnnWIP7KzC32lES9nMMDS5AM3kSsa9mJg/Mv2KYUj13T6Gews2eW/Q+rZbDI
+kiMNasdBqpuUsqekzjj3/m0w+HyVv7Xc+PrgArWZ0Pmo3F3fVoiCEZlEi5TPntAPt9MoREHpaFj3
+1Gmtj1OlW/HIM+49jBJi3u2ELfQqY4I5EbGuJh8dc1Tze7a7HqtZIRzHjxiqnWixkiVFceQi/4cU
+v8tQMrH2ML14V+WPUb1HotSALatmQZ7EESWqL5UrFgjgbjJHvyXDRVkxm3QIf4zAstY5AjqewVxh
+S6x/0+qvnDpoP2vLUi70pE97kseD/9CSVvf2gV8eiA9j/u/G/Uyqq5X6B/rZbwsIGTWBLUV7Se3Y
+XmpgN9BLPMGp/y1Pb4diMRlc3a6knLg6/pvC3AjT5o6hIyA3Y7LermU3Rii+poudK14cJXHD8LrV
+quKeyGkYQRJTlfo5hQkdq4XX16EsHY4hyhwNKiIAOwRUh44YKGfKyqvRYBLMa1+Q+DDuMk8szxvF
+Fni3AsVjCYrWVUjI8jqc976xR8Zd8dLC7hcQ2AefdOLfQKbSgBJGM4wzlXmxCG/E85dUteOnskJ+
+tQMq9vtDrb7P/U6urOAhbM2ypxVrbDs+Z6Ux1rXF6323J5hL0jCKOc3rVt7F8F5GKuszs0YtZnk1
+GexOthnjaOWBXB6wriW2vAdFFVNQN4u+fWzHgpv6baBILsZ1X3x/enUrXOz1KA6tCrIWCIwE2VIe
+J22AjWhayQFrs7Up2Gpn3Zw0m3ZA/eTkrRuWL3wrcfNElhVOEkR3uchDfUmjXAwAuCdRDo6eXfvP
+xv/TJ/BfeJRi/MA7quGJol4bcO9qkhXif3B21ibGYficDGc2MClIfa40JE4KQ51xM/O6OR5oGa+X
+e1UXylH2/elJSG4JgzUbDN0MPiKoQzYHyRPU++0AqbrDoFz6f5eqRH9SVmLZn3GJMkQWX/VvX4Lv
+sJLBrl67o8QlLT5Z4PAzYshe5+x32IbFamZSCSlO9ie49nUQEIzVf+PfCvr3GcTp7DTEbAale6o4
+E1psBZgJzzNXL9TNPxlEB9S6FiVjNWa2qCcF4LENKhXv1l+5m4qCDYlrK4fmyre7w1fq149aoxLz
+o+iK5MO/tV2/pIuhPVMHG1pgO0yM6uhwpDLKNDhhMm0On8jZ2fqjmE1NKuJnTfm5q9FhaLtGbB3I
+mn4St73GOqheRLodhfFKHaUML89kHYPcJMeE04CcxEpNr9cL9KvJ4hXRPevXiD/Kb1zzPyUp29Gw
+ZRAiaNTRngEKwMK5N12Ym+qQuQ7zb41JU4F2LXppU5TjWKJs5ULUyYpUs0+Q38aDobrF3QU6jQ+I
+czpyd9nsreJwjS1Oy7uomJsPbFJ9rGWGS4Q8cr67nSRtQdfc/B2b46WrZNQUhBgLQlaG3EVUQHRC
+bHvs6QCpenAmhAzg/lh/YG5ph/9JDZlz1C7bb11Qev0K8kBtAiGEji1HWedQoyPMpsSeZcFSto0m
+5K2YCCQrdm3cQnpLlh/a2pSahbPZU2pt2YIaRFUa6xllMUo7VSYhQ62B590sJX8Xm90d9O4G2lMU
+tRQRpBsT1qnUqiV5hfMS9N5H7vhN6f+oc5yePL1kf0fhSbkhnqaHoYahQpS8YLoYkMH+3TFfRKmB
+BWBK01o3MK5VxK1vgIi2z3VpZIWfHA1DbRkM5Xi1h76P7Fi1baIixHh82DyL/TL9nmpW4nBQrUWU
+fx+EdlFnV0ABxofBAko3utmC8W/ArSUtqx4hIgxtd90h0vfc+8lP97IYvXaSpbPGhnuXr3VoJmtf
+JzeNrX7Lym5q7/0xzSoY/d++yQ/JJcPiUnjnQVzxxzIpTOyqHiIGMIb2UXSVOzbnHDkXZJdWWafN
+ExFN2f8AjlnACC3MW9QJ4VxUJEhPUeNmZGj4v/MOWB9tLX8hQ1UY98bYPuIN2XEpdc3fZGiVk8vM
+SalEuwmBnF9LYiLjPLQ2qLpc1Z+EuWZm+VCrbodM352K0MNIQTubp6s5ocA3emc6YPHILwUYwUhq
+KWzv2euShbEeAsm3gXk6fI8Qw6mhzfQa0a8KLBOd7aVIDeDV1I83JdPlEAdGCqGKa7/FLOyaj9ak
+Sglb3BSsBAa0EEmzwyGPLiy28+6IpF6Ek6NBiMly//V1KNt+EZWiO5lz33RaXhriWyXCDX1vgJG0
+lLnOIQX9stjOME120atWJ/WVefeqWCwnFKGsJsdfnoc5218ivOH4biTTPELmI42KXWZkY7KmTa4W
+XWTHrGr1JLGMTkjEAMTE8shuyBBlTENYH5a21xkr0a7fl+el2Mp9k/3mHA6+jbVaIyXvzFoO0/6r
+xqMIDXDJtKPth9phwML6jb+bObEEjiKEFksV/o5DCZT8cb9OVzxLQOdZTUV6XNt3JjJ7zLl4B02k
+zGK2RURUwRLR6e5pPqFfR9x46/oTRO3AlqfF0jK2yqTnZXisXHJEv+yXykBohxYwGauooZXok9B7
+pCQ7eWnqREf7ixv2XLHksIoNQwZ6zYRtw389KM8SBIMC9Y/WlFBAfLV2uOHji51/XB7VH73z//nE
+2r7JpVNMTJwthJ2vgiWs7QoCrrutdcsVYANNi+o59XjuvBd54jGOgJ7/MQlPsof5gQZ5PHgTZks8
+UfQo3T2HpONDVsypxxBBx2v4RuliwOPp9pRWNTPDSWvBbrsT6kgLvqHI59tCl5D0yrMF4yzU8ajD
+rD8nomYHJTq3ntSGRH/oAOPgzLzSxSixBaDT5ius0W3tYG8rEExdTx/8VU7UcOlFmq62JTfb9S2W
+4XxkDf24UwTxWSb/APVhMrZlAwsgkZzx0jm8RKzjegItmlIyjUUqumbtfDwAxhVadKTkXY+htxu1
+8yTX4MN++UsjSe6O0BN6oG+TnoWNafu5DB9gqFJs6UddBMmXSrd2rUOPUDTcAGZY9+JQPLxJvS/N
+mi24NnASzJeS3bvMctv0U8iRiMLHqBIYU9idPrNz+1oIKHLleDqRwcgO9LurB9iEEXXxG62yTCDK
+vf3eFp+rw6JwyHF/HdA41MWCpalTMe8skuQ9WZZtpDEk3zKD+4NAJrCQAo1uK8WB7r0Zu/D7br2t
+X/rQ9xdKcf5GzF1thV5N70HCfNZ1Y0WhGLOLE04FljAb9rmBpDdLU4xFM3OCIDXkAzagQI1txKU6
+bi1FZ9pcvfJLZ1m2ze1HI7I7y8E2Y2E+m3RNSwNt64PxZEJLar8HuedRYr/wakxKQY3Cj5tR8UDp
+k4CM21u+6fROmF4XRC7lncaU8Fpbl/NoCTNr14F7fdA6C1H1Bbm5Pe/H52skZ+AtgjIL4t1iq5eD
+aeDzDTwfLGQZeWeRJOr+IYfXrttj39R9djdHyeOVZrizPUvVgMJxWlW/lgNJeNR+glWhZtM+og7/
+ium0gEyAQE3rmX3l1Ay9mfBvetJ6hhBndzrZBCtmIDUcDjescHZXthJEJHEntTFcNkc0VzxHzQ9P
+Vri0EO6Rnuk/6YqeeWXBnkMnMp+QD3/YrNkJ/68HibCT1fj3ZDAw/6FnP3q2EHaE1+KfYhb0JY+/
+mO3I6BupsCnA6I8R3a3tbv2ftV7P07jTLmI9vBIKrbM/9vZDQ8TKQPeQWcs3G55dtWUchSSlVbqa
+4u/2p5OmD7aoPRnEBluXB935A/aEHkLtgCyho6K+AgErjPVB1LRGs82zKU0chshRA14zcWJZJMMB
+utS9HjTRoDUXfJ6nGLfoMtEb/cL3b5RB3GaYAeZiAs6Y+sfVzAYOFVvon794Q16lrp+f5M1LRbt4
+Nw+CEDKg65pd86MMu61LlhNeWf8vO+ISZulOgfQdN9PhzEruq6DlCd1f5rfJ4YvliypVDEym/n5x
+2UgqHwvLCjRJpHvurgHAxdwasAEEuoZ57d/RGohUANbrfLlm6LyFugU7CTjMZ++h1WFusRsacxWp
+oIJRZpBMXPE8EG2aoQNG3P+3n6f5zoruyvfCJeercmwz2EJSi8EiEHO/OCkv7KcEvIxaXWMVO6cj
+4fyA3O5skr78phFtKWxA5SQxdk8Exux/ag/MGu7f7cSJk5hvmwIjdRkEkbwUItVFzAmWQDHc5tgK
+1jm5d93Q7Cn7Ls4bb2bBjMSqki8hxIfqZa3kVribGrf04bxzNYLI1IeL5EGMP6UaM4hy7sDPn3Ck
+/9WiygsXFmurG/VTj89twySz0+wjBKv0StJ/znN1rIZyKWsoitGBjRB/TIf37q1hfTKO15TBejJ+
+Xfb8bpFKlD2M3lD17xef/GxN+u60K9KzdgOjGpv2RrdavkyJAVqStiLLCGRkBqeHERAXrR0qoeFQ
+KfVUph7VuY/atc5V9vjww+3LYav7hk+ys6UvHkm9mReh7iffKmRhnMLOp9Snobe3I9//basWvxz8
+q+O8g9LgqWs50M0hhVTwOBUBWHkMloyI/jygVE9LrloCNeUsRqT101Y2FaPMJ57YxMkRCiRyafUm
+j+H/61qF7aY/TtiFfQzIKpHhE9Yz34EsjzQlyWCQphUxOElPpGEourPXnVnhnJkhQCAqbBMyAc9k
+Ti/hG9nqRv4tpV91Qre4d/wqmOeR5P52NK4H93Od0yzxNTWkOvhvRWXQwOXNdutndQZUWnwqEY41
+gjc6lU0s1UbmmX6pQd0OVxXv6IRNOcU9UiON3X6MoXl2q/MkXcTxMuh9D9pk4sEbcPDcW74pgVSc
+3C85WUa5lfzpM2eEmQdDejWbz6uNUeKKC8zcqY2rc8wNN2YslbfGjpfTKtOI8G5itWt5VHtgPUQi
+9JFXSlq3LchXDKlkkb+y27eUCJa8OfQHcXXUkisdngWBL9V3bAqEdXTVIkTYdULMn2MYb4s41Y5Z
+Plc1uCKuGZwEtuhZ941p3ktlztnTWqk2qz0dG4WX4JVARBXwMKEM2QZ2+5NQDjtEWTTwsBpkZxFA
+AvqLIcUP/L6Ooa4dXYkxO2tf5B2qpLA8rWDZkRtccq4Vt78Ybp4NXdIOFc14OK1tPABLMAOvOmPh
+59dTam22+v9ZM7gbuxbv6LWQH7sTHm3B5cJlr1TBqaTT6iGkEQe/XBhP+ApR/BR5wYn/fqdMBgsp
+rcKHBqDzjaSANYPcsAXtm5bVt3PpjiHVBMsSO83yqWj2SrK6EeRMH+maJd8Lv6VmuomfOmVM4V/Y
+D5U60K74vvCUNBqtpqJTGEQzdBFD00Czaq63+cpiVeypjH59l/8eH9fqKnH3Vf1J+qTIeHRttIj2
+NMItooIh91LiEG4VB1VjRajXKapibbcFVZwrIbXQgcPYuKrvZfOCxJFRCDx4rDso7g6ltLwmKcMd
+lj3lLZWMeMm8aYS1LGAroH74v5alYy2WP38e66klPx7H7UIBWjwLhgCYWDNR2HV7CLsJVCe9yvWP
+aMiTbMnuA/pmxC1LE6uXUXeDljII3MylbSG0LloTZTwJXSJ6cDzxTK9cgc6eY/hk4EkOR4ncQlNU
++KvhRSfMFhfOW8Gnk8K/cDHMGdVHzIjR7+SO/+DtwwblocyL0sUj34t/JisqO7ChQ7oBbjVRoz7c
+D6ssWCb1fY4FZw0Its3W54zOBblLJV8ooD7JMJIZR3DhQhLvIozdKNtSQ/zi9mfxHpaxVxs3sG3S
+BZTkMqI2IF+DGg3szsMUvz1CBh0TIR9LZ6gmYR70U3WRQjp11lXEpE7luddSdl+BG1uwuESTtblD
+MAfiMz8j/GTfXhmiMAHDHEYN0PDIGqjOOSNBRAXBxFmjM7gZNkGVcShd0GSfu3XFGwajT19Fagi8
+OMjCwzGsCcz+57SmS0bO+iC4pWMzcpAdfqF948yN3sOdp0i5frWB/PXA7eXmqk5jMlgv65rw+cNa
+eduUAv8BpKpKY/HcidwwkMx+X/XWNcNG2MYKg+sH8/OSypHyjabJTXITCS+9Y7ydVZrUcpO639u5
++HO2TGNkWJskuwADEgigLQQG2cgsVyLY1ooHdK5d2i3Ra18OfPjSyMQdmVcLP7KcTioHN3PMbelE
+gKtVlWfcXyYgCI9jt3Z7uY+qvbscfMP0OA/dtDIPUiq3MdEqLbMarupTEMgA3KYfAr87XUwmqFaD
+vQNsELO0S4M4ae+2PVoeoRNESwwDaDsMyzPM5OGY6GUeh2GjA4fO9ngfM/R9Qb38gRrlpHwIupzQ
+0T4dMzcGfe+VN8oUyPMJy9uOGGGNe7CfBNmEKHpL7c4OwnMe+ZHpLG2p7ssL+H6MUUbk2qyb1wj4
+a9VXf+g3mTWWnQvuNLzcsRtx1cl9ciZK0VbRwkRvOlmSnOlau2Uza5PKgh8w3bJ/dLM4BMpVBZFg
+4Fu+JC9w/qGPndzPNtGWdN9gh1BcnO2ul1kBgF3ykNrrss4cK2soMIip4yl/6hA5gymEiT9xDM4n
+7HD+W2UHg51VA3LFIF8tuzXgVbx9zqtKDkxDYs2evqGMvGDpvEwoTU+YlU/EzBJPL+5Q5ukybvOa
+zP3u+Ptj6zmsViRfd2qotBEbBGBw3j5LY4S+AMXOQIAj7akJv9xHU0nZRvlgUwRCbTg2w9Qr7qrj
+P0ntos2OpnLDVts1h3gzjDURMKwdUpTOQfc+Q7PJCuhwD9+RrP1dkQfV/HPhnPsg0GNou2NY/aBQ
+iq3JpXm7j0jpos5AQf9piVuA7wVN68n4AoVoMiV+QAPh4x3Z9q5y63OmID0fozl3zm+IWQQ3sqZ2
+klJeQ6FdcB/A8D20AtIJmvpY78rGO6jmm27zbrKc4ubuCgusWD73eKcbUQFa3+OzaTPFy96Cw8iT
+428Fozn0ILkKCoC1Sx/Vijqj2uATqw43ydY+Z57vXQpajoRtJdq9KODJNmau0P2HpN9dBuglwSL8
+wic5YMK0I9l5nwS73Ri2XP/GO5SHxGAia2lyJFM5aOtNNH40+jahbXNjdqvnszE6JwwM2w+gElCB
+WA3z0Zkxdm+yHxcH1edevHiP8uw1eFQnC4HKXV6AJQ8nynwW79+bEVxDNDCm9EjawNeC/mv6TKW+
+OBu1gmYN8QAGOtHorF58Fdyaq1Dcq/1Z5RTgcqTw5Xs5GoEg9b5H5sIEPskG5OjVUjrxs4mZ2r6g
+pZCiGb8tl9DvDKcC++0r243pKw7GTrZhrmRFS2C+D2G5AUGf9qXHfd1adVt2AUhgjccONDehx/lM
++ZxnkBx5VPXtqDKsGePEoR+/Y1spHiaQ03MGJicg+qiJO6W4+xNDYV4nv5roLVLGNOvUiATixJRr
+kD8sgYywehYSHS2S9t25dPaOuodFGlvl6CxhmdP09Z4Vlw7ELOY2w1/mG0c/o2OohWmikUygLyzS
+42pNKKfpHuvwVAArItBNtp1bNXUkBqXTX2SJGwXGb4+VaYkQLoQ2aKrT9h1HmgJ2Qt4GOpVWbUwx
+hFmveVjQZ0HndsAss37h2F0YP98iAx4P6GZxmAerFr1FJLIjThbRe88fgzv0yxvaDwG3Grk1k/L7
+LfT3Y6i3eV3TVsoPgSGmVawi/mP4HPjSalzSVXDXn4t2U1ZsIrkHmGML+ZR0UAAUCQCr9Fo1bbMe
+TK0LTEtwnD7/D4MjdkBaRtdmTK18OcwneQyHzJC4SaDDHfli4eFgJK+C2RMQo+uj5SCpODOUksBv
+ETQm9IsuYbt5mr0lwcUZ2R6rzmiITg5cGuAkDgDNyjc/mw5Hv/PPLBgVy9NQGElqDrMKmL3+Q//T
+R9OnaXapelsGHCRZLM3jeIXu5CTMhbFvuLGWZ1dlso0NvWvSbiZJLQ7ehaJybjLG3aViswxoskAD
+ey23E/ro9stgUG5PBOtL2DDq+uEzMS9XQx9NoRd/xmOhuzo5iwrQmd03ZEN/qkqF/7pigrxDhwGP
+mIpgX2VrPX4YiQ0aWWbh5okm1Wa6U5PtXYnKISKCZM678vOp5ayY7z6COg9jkyl2R9i9iX7qtm+b
+sEYgQlALI3JLFN/l/jIAlAzpopMrgWH6EJygtzrBOYBbCcYF+owJmqtUeN1UOCdVyEPz/bGu8wji
+tnqJIlXZsLHZpKwsSy47a8Ovy+vBVUtR8vQhhiuwK3t/2fJImU9OI7SfdHWxsymfCxcBE2Xv+lGu
+8vZhzvhv3idd9oOiAaOI12UQeTuZOQ2CeRlzv3zlKstmlzfNZxGmO4f2IU2L/nDYaxFhirgx3epb
+iZ8dWm28//be/IwFEUIeOs6IXLiLiL9yNPxtgiiNb6y9vC4/HrmRi4WZoiIomTdwum0bz4fQ6729
+qFhmaxBHATHLvi8F/RuujlF5VYhE61HU8S6OPo6MozUhtqJiTLM0BZI8z77ymVzMi0fCQl+7JO31
+qJ1fJCLUAW2j6ozW2NZ6N5gU9/2WYaxpawiOM8t8y0TiLGSCU0BP/NyNCHi9oB3sy494WMDQg0S5
+n71wGlzo4b5x4sCJE9gj6Vzw6zIJLla1ubTUuHe3ZRhXqt/QWR7yGpLAlZASAVKVabVTErjwwJxB
+RziF6iQhIRRdtH/f5NjUepaUNtt9fKUwuMtTB5JNeWgdVWdbh5zxd1sSccEy2gtZ+M3Du/gBamfH
+74VtkeglKEmSb+AwqcebOgBN6314+nbfov17yRbBcw938hnkrgoIkavClvUrOfhPeD8th/kSg/MV
+9IAwZU+Ld3kTisGmcftwOftu6RF+Qs0xNqTkQWzTOht4iEpCV3YprbjRtvW493CY67SKIX0wAVBX
+N8YRK0ZDk0b2bc/UOgdwU4AszhmwfYyqDp57MkyoNCH7Fk9WdQj5/RTRNclM7VRdYwlOpMlJ1oEN
+dsptZrxLZVKXeunYO14dLtONU97y1o2pmg1PmHEfgits3zOk4fH5Xs4Nm8XaFSPKV4wntq7szmZH
+upuFI3waIgo93cqQYANaM0DrE8F44uiGoz/hunEM5v5PzOEUkE7uMdMjtw0No8LobwiU23T5wFc3
+TBr6brxs9Q7D4/Re5hMdKD6GuuBjGGFaRM7IWbmDDIn1b/CgMT6mRstuLulIjka+MpPtpBLwaRms
+4HNlZV0ljWBxphOuMsD4zStlvRaCiVizZux+/9lmrmu37LT1f9Q74VkLYUKafMAttJfOgqc05nh/
+SsGQ3AUfXYyr0EnEEGeaHhUBA30/3SpWsq4ZhmW+I4sJOT8kp9cJNyrIk+/802+l0wqImfUOHWtQ
+iExwwpMFo6P3nD0uPSxWjqpxY6Iy+qMOtwUG9tlZ7P1agtwD38AB8bgmfKDPWVRD3yuidL8EZAOZ
+4NZJQs5+eYGYPRiMvoRUnriY9eQE98KBu1L4zCAgUgejg4kjamqq3Tb7NtEb/dopTVwlM2H26CZ3
+BqNz/Sc2/1rcZHqG+f5B42q/Y8dr5glzfWKadrLYYc3DDdHbpbX2Re6Q5IE1OF/LPJOQx7YnuSPF
+DZ5HqajQnG5tihVwbusP0MR5/ZegKBlAtGOrM+jLdxK2/s6CwFrCqZPp8l+gd2QfaacBY6ujfgyc
+fq8/WWo06IAKq/Gn/9n3oX/95+js9aUiffvFhQD7ADexRywEXIgm1C5n2vlIv2Sx+dTDoPZeU3gC
+AEwNE/LgDKN9IPK7UkZhfJS7Gb9Xs0x+p/jMMk3retp3wZK99kLReuM6TmtDu26lepgbMGPYt5cH
+OU/kKhLfo0Nzd9RRCEi+mS9TrzRZKDuvzhoq5Z4UQKf57lWP6X3KDM9lJp6UHZjC2Abq5leZQFsx
+lQOq/ejxbWljwN2eB0O2IapmT/VXnM08TGoe7apIio8e9RI7C8mBBs2jMjW5Kw4CRofvox3O5217
+wtsynjYNvM0txMl+riHJeIMcSfuYp4MX25wZ9HLZ4XU6XzJ+GrpAqk7y+ogLYzb/BKWlI9aODbAI
+D08zjzHexvNvrM/UGADLMMULqju8PufjzVBtlrlPfKCx/9xAG+SKUQS19vHsaHGdmIH/m6J4kX/L
+vIFhYjQq4k5Gh3J7oVV2q7UDP9q6QNrEibdlnlsXnX9PItec22rxRJNSzUDT7olMaykTDg4Ckp5C
+gE5fFV9FamvaNRBM7Tu9Jxzi6H3OfKAR3GFBVXH/beaW+lVXQDkbw4msJK8nzZVcS7RuMBIqDraX
+Sf7lNCwX/yeMuJjqlCGRLqyDiTXRd87zT9BEZKj/P0CdSXjz7gUjC08Gp7DrH1+9UPI+txQiAVJd
+ToqwEc+4E3C02smlwIBYFZfIYgPVVQgdUlO0HOiYBscuBOaJ1DAvknphlrt3nIq8N+HJH1wU/8AL
+8DlkU3X/k1UcvTP7E5RJeyoyq1RR9en5LWhQEatADbmbUo07nXdiAucUcmrAFeUDbujs0/JsuFBC
+gCkX+y4V9ZDoTFhQl7YVkrWrvvP0JgJ6qq7rmVxDfPAYfKGY2wfg+TjTyd/znrMm/8jqXArMOlu4
+aZNvwXm2LdolQxK7Ds2OlJO774jsFsn61PPR0ZSabFu6wxTZQzysQQ5eXk5/bs+1djYUl274Wojn
+K4aeEoheU878Id5bOnSXsFeRvyrs1s4CvuKx3/+ZKmFqXeX4wVkFNfLmWa6fvxohJMVRX7i0q5vl
+OHuS0kU/xNQZggFyrmEi9vCZvssih/JFgZDNWZcbnioCxnYYdysMroWCXD7jC/nhh5lINkQVGJT7
+DSOHtT+8+wISArjG2B/pnaaLf2F/LALCRSzAQD2cQdpWCyE5s6Q67EBx/YK1lgyHil/2r10dFjNE
+axN4kJDaJ1I80gGzvTBVGJhuDBcWboQeoOtwnMYkpj038TYii3ULSa70+m6n3FSqlkhImULCjY4n
+/zRMfOaWYRDKL9kyJLptZjmrldrqdqqG8JkVTXTreHfYxvmH/QtNBvhvu2e+A8CAPdPVlP3etLz+
+/rSak8UU/O8IZ28qv0SFSy77u8sNcSbEqPEcwykE/mctxiYFVAPeQKVJojESlqQtbcS/pa9Cb+XO
+45qkcHTc1dlxBGGa9FL5pfh1H/ExXoevSaorXML2//LakNiOcxXtbs5A28Gtkgbu8cy+7Ic1+L0T
+gTCXqsUFMDt7t9AqlNhL9LmHpdUbAquciHrs3/XTR40pN2l/YynhVdPuIRML6+wqI6q7qbrCec3Q
+kEsmGNg0HNrE5obPUCkbKW26JYlZrNr7yL/3UDzs0EeTAJRT4Q4O5m/MEBJ0j0w93qY+XBGvWtO7
+aCeWaGt0Utj/zgUFLHQGf8uLcGK7Jfqq5lW6wKxbaj/x1vsG7MqcMaCc6Vy/PHzS8MrkSLAzObCd
+YUSUNENCmgv9XBxcxDirdJrtejARvm+c0qDRJSVH4Oe9ZzHbiEc64JCEPdBDislSBdEjHQ2tEeAi
+6VZdG966vDbSEv9CjW6bOcE0sUPerDCxmYq03ACC8oN8q+5SIc5PEue5ySTGs8G8GbBIjRR+ChY5
+NsSr42wtckKEzHUFehg+yteOK64ETcWBO0updoc749tL/S0Ju1pkOGW4f5AofkGlqPmabNKk/YPA
+Fq21cb6W8rvyzwgR2sDDVpV7fcLKpjTokWD0m6+MOOwaM1dcNAVHA+NGlDWbCJhbH9JkMFT8Lot3
+eszSTLlrnvjUpLOVJ34Vbb52PMMMeMmYqIkKCVIsmAqPsC0MFUwWrjP6Sy38lxg1fwL1DCT1h6ap
+z2aoMOeLKIF02kGzzCmUguQ48iIxXD01LO9Fm3sdPIx8n8txRQfWbPuCepZ48qmjAXtD38QIuQkN
+oovPQS+CCYh+mF0NknlL/ClY0RSnNda66TptyW1o/U/t2PwXjPeAckZ5E2DXdNmz+jB/xJZ+613U
+r/rPov6If3BbKdSsC9i0KoL6RN6jfHOxIQcLe83I35eSryoQAqLHCd0jkfCUUzM4v8fcPhf8pSpt
+xjjtFzVw5xHZ0zOzYfZAypj1he1QPPrFEBjOQCbhRg+1ge4zcIIHrPz5+4eOt7jJx2KJTkkuqMc3
+dJibJXIRFThBmdBpBgJ726wvwr/YPZMVOG0meyN/ewuRf48KVeDQR/a72ED5Aeo7u1z5fHP+QG3v
+U2186/1Hab8/dKX2NQrkmaAJaoQpIcEGib2TaKOEFarW0BZzuir+akOUU0i4bur/ZNJ9SPWMHsrs
+Je68VXzVo+kFOWJbURIJFx19+Pq29cLPZ1DFqRBnVgbLFaAFo07B3onKrAR7v9NjEHIFtaHSkWHT
+Zh+kIwEXvs8I8/RL1+DeEiW+P97He3kwR1xvIItYpJOdV3P+QPFT/eneqKc7oC46U0nDub8VlBcp
+bTxaYhKQwkNlrLyxELrajSwqpKw0UwQhqWHcrgi/1TI9o2s2ygwU5RqAdtGQW7axIzlai6JuKfWK
+3i/2HURypvnvTtD3P4fC0JQC0tMTK7IelVtIW79jrKG8VMEFHoUMlmjHwSrSAPxrP24YYdWLvjgO
+VxiskzHv78SCdmu76X3IHNAEJFxRkRBUR555NfRYUUYLUer5rt4qydHwo1Ez+bJcztFIRikXu+Zo
+DXYTxogfYRnOVmgFfWOkPn9yBjHihdyAcC5rNsZvypLBAuv0uIjBYBkQOJkN7fbqsUdQ6t2rDZqq
+sW1mCCqmhhUkKC6s

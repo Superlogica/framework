@@ -1,125 +1,35 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_CodeGenerator
- * @subpackage PHP
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id$
- */
-
-/**
- * @see Zend_CodeGenerator_Php_Docblock_Tag
- */
-require_once 'Zend/CodeGenerator/Php/Docblock/Tag.php';
-
-/**
- * @category   Zend
- * @package    Zend_CodeGenerator
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_CodeGenerator_Php_Docblock_Tag_Param extends Zend_CodeGenerator_Php_Docblock_Tag
-{
-    
-    /**
-     * @var string
-     */
-    protected $_datatype = null;
-    
-    /**
-     * @var string
-     */
-    protected $_paramName = null;
-    
-    /**
-     * @var string
-     */
-    protected $_description = null;
-    
-    /**
-     * fromReflection()
-     *
-     * @param Zend_Reflection_Docblock_Tag $reflectionTagParam
-     * @return Zend_CodeGenerator_Php_Docblock_Tag_Param
-     */
-    public static function fromReflection(Zend_Reflection_Docblock_Tag $reflectionTagParam)
-    {
-        $paramTag = new self();
-
-        $paramTag->setName('param');
-        $paramTag->setDatatype($reflectionTagParam->getType()); // @todo rename
-        $paramTag->setParamName($reflectionTagParam->getVariableName());
-        $paramTag->setDescription($reflectionTagParam->getDescription());
-        
-        return $paramTag;
-    }
-
-    /**
-     * setDatatype()
-     *
-     * @param string $datatype
-     * @return Zend_CodeGenerator_Php_Docblock_Tag_Param
-     */
-    public function setDatatype($datatype)
-    {
-        $this->_datatype = $datatype;
-        return $this;
-    }
-    
-    /**
-     * getDatatype
-     *
-     * @return string
-     */
-    public function getDatatype()
-    {
-        return $this->_datatype;
-    }
-    
-    /**
-     * setParamName()
-     *
-     * @param string $paramName
-     * @return Zend_CodeGenerator_Php_Docblock_Tag_Param
-     */
-    public function setParamName($paramName)
-    {
-        $this->_paramName = $paramName;
-        return $this;
-    }
-    
-    /**
-     * getParamName()
-     *
-     * @return string
-     */
-    public function getParamName()
-    {
-        return $this->_paramName;
-    }
-    
-    /**
-     * generate()
-     *
-     * @return string
-     */
-    public function generate()
-    {
-        $output = '@param ' . $this->_datatype . ' ' . $this->_paramName . ' ' . $this->_description . PHP_EOL;
-        return $output;
-    }
-    
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+jsXAEGIwcjV6fUS2XFu=

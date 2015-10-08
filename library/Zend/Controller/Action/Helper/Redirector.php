@@ -1,530 +1,161 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Controller
- * @subpackage Zend_Controller_Action_Helper
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * @see Zend_Controller_Action_Helper_Abstract
- */
-require_once 'Zend/Controller/Action/Helper/Abstract.php';
-
-/**
- * @category   Zend
- * @package    Zend_Controller
- * @subpackage Zend_Controller_Action_Helper
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Controller_Action_Helper_Redirector extends Zend_Controller_Action_Helper_Abstract
-{
-    /**
-     * HTTP status code for redirects
-     * @var int
-     */
-    protected $_code = 302;
-
-    /**
-     * Whether or not calls to _redirect() should exit script execution
-     * @var boolean
-     */
-    protected $_exit = true;
-
-    /**
-     * Whether or not _redirect() should attempt to prepend the base URL to the
-     * passed URL (if it's a relative URL)
-     * @var boolean
-     */
-    protected $_prependBase = true;
-
-    /**
-     * Url to which to redirect
-     * @var string
-     */
-    protected $_redirectUrl = null;
-
-    /**
-     * Whether or not to use an absolute URI when redirecting
-     * @var boolean
-     */
-    protected $_useAbsoluteUri = false;
-
-    /**
-     * Whether or not to close the session before exiting
-     * @var boolean
-     */
-    protected $_closeSessionOnExit = true;
-
-    /**
-     * Retrieve HTTP status code to emit on {@link _redirect()} call
-     *
-     * @return int
-     */
-    public function getCode()
-    {
-        return $this->_code;
-    }
-
-    /**
-     * Validate HTTP status redirect code
-     *
-     * @param  int $code
-     * @throws Zend_Controller_Action_Exception on invalid HTTP status code
-     * @return true
-     */
-    protected function _checkCode($code)
-    {
-        $code = (int)$code;
-        if ((300 > $code) || (307 < $code) || (304 == $code) || (306 == $code)) {
-            require_once 'Zend/Controller/Action/Exception.php';
-            throw new Zend_Controller_Action_Exception('Invalid redirect HTTP status code (' . $code  . ')');
-        }
-
-        return true;
-    }
-
-    /**
-     * Retrieve HTTP status code for {@link _redirect()} behaviour
-     *
-     * @param  int $code
-     * @return Zend_Controller_Action_Helper_Redirector Provides a fluent interface
-     */
-    public function setCode($code)
-    {
-        $this->_checkCode($code);
-        $this->_code = $code;
-        return $this;
-    }
-
-    /**
-     * Retrieve flag for whether or not {@link _redirect()} will exit when finished.
-     *
-     * @return boolean
-     */
-    public function getExit()
-    {
-        return $this->_exit;
-    }
-
-    /**
-     * Retrieve exit flag for {@link _redirect()} behaviour
-     *
-     * @param  boolean $flag
-     * @return Zend_Controller_Action_Helper_Redirector Provides a fluent interface
-     */
-    public function setExit($flag)
-    {
-        $this->_exit = ($flag) ? true : false;
-        return $this;
-    }
-
-    /**
-     * Retrieve flag for whether or not {@link _redirect()} will prepend the
-     * base URL on relative URLs
-     *
-     * @return boolean
-     */
-    public function getPrependBase()
-    {
-        return $this->_prependBase;
-    }
-
-    /**
-     * Retrieve 'prepend base' flag for {@link _redirect()} behaviour
-     *
-     * @param  boolean $flag
-     * @return Zend_Controller_Action_Helper_Redirector Provides a fluent interface
-     */
-    public function setPrependBase($flag)
-    {
-        $this->_prependBase = ($flag) ? true : false;
-        return $this;
-    }
-
-    /**
-     * Retrieve flag for whether or not {@link redirectAndExit()} shall close the session before
-     * exiting.
-     *
-     * @return boolean
-     */
-    public function getCloseSessionOnExit()
-    {
-        return $this->_closeSessionOnExit;
-    }
-
-    /**
-     * Set flag for whether or not {@link redirectAndExit()} shall close the session before exiting.
-     *
-     * @param  boolean $flag
-     * @return Zend_Controller_Action_Helper_Redirector Provides a fluent interface
-     */
-    public function setCloseSessionOnExit($flag)
-    {
-        $this->_closeSessionOnExit = ($flag) ? true : false;
-        return $this;
-    }
-
-    /**
-     * Return use absolute URI flag
-     *
-     * @return boolean
-     */
-    public function getUseAbsoluteUri()
-    {
-        return $this->_useAbsoluteUri;
-    }
-
-    /**
-     * Set use absolute URI flag
-     *
-     * @param  boolean $flag
-     * @return Zend_Controller_Action_Helper_Redirector Provides a fluent interface
-     */
-    public function setUseAbsoluteUri($flag = true)
-    {
-        $this->_useAbsoluteUri = ($flag) ? true : false;
-        return $this;
-    }
-
-    /**
-     * Set redirect in response object
-     *
-     * @return void
-     */
-    protected function _redirect($url)
-    {
-        if ($this->getUseAbsoluteUri() && !preg_match('#^(https?|ftp)://#', $url)) {
-            $host  = (isset($_SERVER['HTTP_HOST'])?$_SERVER['HTTP_HOST']:'');
-            $proto = (isset($_SERVER['HTTPS'])&&$_SERVER['HTTPS']!=="off") ? 'https' : 'http';
-            $port  = (isset($_SERVER['SERVER_PORT'])?$_SERVER['SERVER_PORT']:80);
-            $uri   = $proto . '://' . $host;
-            if ((('http' == $proto) && (80 != $port)) || (('https' == $proto) && (443 != $port))) {
-                $uri .= ':' . $port;
-            }
-            $url = $uri . '/' . ltrim($url, '/');
-        }
-        $this->_redirectUrl = $url;
-        $this->getResponse()->setRedirect($url, $this->getCode());
-    }
-
-    /**
-     * Retrieve currently set URL for redirect
-     *
-     * @return string
-     */
-    public function getRedirectUrl()
-    {
-        return $this->_redirectUrl;
-    }
-
-    /**
-     * Determine if the baseUrl should be prepended, and prepend if necessary
-     *
-     * @param  string $url
-     * @return string
-     */
-    protected function _prependBase($url)
-    {
-        if ($this->getPrependBase()) {
-            $request = $this->getRequest();
-            if ($request instanceof Zend_Controller_Request_Http) {
-                $base = rtrim($request->getBaseUrl(), '/');
-                if (!empty($base) && ('/' != $base)) {
-                    $url = $base . '/' . ltrim($url, '/');
-                } else {
-                    $url = '/' . ltrim($url, '/');
-                }
-            }
-        }
-
-        return $url;
-    }
-
-    /**
-     * Set a redirect URL of the form /module/controller/action/params
-     *
-     * @param  string $action
-     * @param  string $controller
-     * @param  string $module
-     * @param  array  $params
-     * @return void
-     */
-    public function setGotoSimple($action, $controller = null, $module = null, array $params = array())
-    {
-        $dispatcher = $this->getFrontController()->getDispatcher();
-        $request    = $this->getRequest();
-        $curModule  = $request->getModuleName();
-        $useDefaultController = false;
-
-        if (null === $controller && null !== $module) {
-            $useDefaultController = true;
-        }
-
-        if (null === $module) {
-            $module = $curModule;
-        }
-
-        if ($module == $dispatcher->getDefaultModule()) {
-            $module = '';
-        }
-
-        if (null === $controller && !$useDefaultController) {
-            $controller = $request->getControllerName();
-            if (empty($controller)) {
-                $controller = $dispatcher->getDefaultControllerName();
-            }
-        }
-
-        $params['module']     = $module;
-        $params['controller'] = $controller;
-        $params['action']     = $action;
-
-        $router = $this->getFrontController()->getRouter();
-        $url    = $router->assemble($params, 'default', true);
-
-        $this->_redirect($url);
-    }
-
-    /**
-     * Build a URL based on a route
-     *
-     * @param  array   $urlOptions
-     * @param  string  $name Route name
-     * @param  boolean $reset
-     * @param  boolean $encode
-     * @return void
-     */
-    public function setGotoRoute(array $urlOptions = array(), $name = null, $reset = false, $encode = true)
-    {
-        $router = $this->getFrontController()->getRouter();
-        $url    = $router->assemble($urlOptions, $name, $reset, $encode);
-
-        $this->_redirect($url);
-    }
-
-    /**
-     * Set a redirect URL string
-     *
-     * By default, emits a 302 HTTP status header, prepends base URL as defined
-     * in request object if url is relative, and halts script execution by
-     * calling exit().
-     *
-     * $options is an optional associative array that can be used to control
-     * redirect behaviour. The available option keys are:
-     * - exit: boolean flag indicating whether or not to halt script execution when done
-     * - prependBase: boolean flag indicating whether or not to prepend the base URL when a relative URL is provided
-     * - code: integer HTTP status code to use with redirect. Should be between 300 and 307.
-     *
-     * _redirect() sets the Location header in the response object. If you set
-     * the exit flag to false, you can override this header later in code
-     * execution.
-     *
-     * If the exit flag is true (true by default), _redirect() will write and
-     * close the current session, if any.
-     *
-     * @param  string $url
-     * @param  array  $options
-     * @return void
-     */
-    public function setGotoUrl($url, array $options = array())
-    {
-        // prevent header injections
-        $url = str_replace(array("\n", "\r"), '', $url);
-
-        if (null !== $options) {
-            if (isset($options['exit'])) {
-                $this->setExit(($options['exit']) ? true : false);
-            }
-            if (isset($options['prependBase'])) {
-                $this->setPrependBase(($options['prependBase']) ? true : false);
-            }
-            if (isset($options['code'])) {
-                $this->setCode($options['code']);
-            }
-        }
-
-        // If relative URL, decide if we should prepend base URL
-        if (!preg_match('|^[a-z]+://|', $url)) {
-            $url = $this->_prependBase($url);
-        }
-
-        $this->_redirect($url);
-    }
-
-    /**
-     * Perform a redirect to an action/controller/module with params
-     *
-     * @param  string $action
-     * @param  string $controller
-     * @param  string $module
-     * @param  array  $params
-     * @return void
-     */
-    public function gotoSimple($action, $controller = null, $module = null, array $params = array())
-    {
-        $this->setGotoSimple($action, $controller, $module, $params);
-
-        if ($this->getExit()) {
-            $this->redirectAndExit();
-        }
-    }
-
-    /**
-     * Perform a redirect to an action/controller/module with params, forcing an immdiate exit
-     *
-     * @param  mixed $action
-     * @param  mixed $controller
-     * @param  mixed $module
-     * @param  array $params
-     * @return void
-     */
-    public function gotoSimpleAndExit($action, $controller = null, $module = null, array $params = array())
-    {
-        $this->setGotoSimple($action, $controller, $module, $params);
-        $this->redirectAndExit();
-    }
-
-    /**
-     * Redirect to a route-based URL
-     *
-     * Uses route's assemble method tobuild the URL; route is specified by $name;
-     * default route is used if none provided.
-     *
-     * @param  array   $urlOptions Array of key/value pairs used to assemble URL
-     * @param  string  $name
-     * @param  boolean $reset
-     * @param  boolean $encode
-     * @return void
-     */
-    public function gotoRoute(array $urlOptions = array(), $name = null, $reset = false, $encode = true)
-    {
-        $this->setGotoRoute($urlOptions, $name, $reset, $encode);
-
-        if ($this->getExit()) {
-            $this->redirectAndExit();
-        }
-    }
-
-    /**
-     * Redirect to a route-based URL, and immediately exit
-     *
-     * Uses route's assemble method tobuild the URL; route is specified by $name;
-     * default route is used if none provided.
-     *
-     * @param  array   $urlOptions Array of key/value pairs used to assemble URL
-     * @param  string  $name
-     * @param  boolean $reset
-     * @return void
-     */
-    public function gotoRouteAndExit(array $urlOptions = array(), $name = null, $reset = false)
-    {
-        $this->setGotoRoute($urlOptions, $name, $reset);
-        $this->redirectAndExit();
-    }
-
-    /**
-     * Perform a redirect to a url
-     *
-     * @param  string $url
-     * @param  array  $options
-     * @return void
-     */
-    public function gotoUrl($url, array $options = array())
-    {
-        $this->setGotoUrl($url, $options);
-
-        if ($this->getExit()) {
-            $this->redirectAndExit();
-        }
-    }
-
-    /**
-     * Set a URL string for a redirect, perform redirect, and immediately exit
-     *
-     * @param  string $url
-     * @param  array  $options
-     * @return void
-     */
-    public function gotoUrlAndExit($url, array $options = array())
-    {
-        $this->gotoUrl($url, $options);
-        $this->redirectAndExit();
-    }
-
-    /**
-     * exit(): Perform exit for redirector
-     *
-     * @return void
-     */
-    public function redirectAndExit()
-    {
-        if ($this->getCloseSessionOnExit()) {
-            // Close session, if started
-            if (class_exists('Zend_Session', false) && Zend_Session::isStarted()) {
-                Zend_Session::writeClose();
-            } elseif (isset($_SESSION)) {
-                session_write_close();
-            }
-        }
-
-        $this->getResponse()->sendHeaders();
-        exit();
-    }
-
-    /**
-     * direct(): Perform helper when called as
-     * $this->_helper->redirector($action, $controller, $module, $params)
-     *
-     * @param  string $action
-     * @param  string $controller
-     * @param  string $module
-     * @param  array  $params
-     * @return void
-     */
-    public function direct($action, $controller = null, $module = null, array $params = array())
-    {
-        $this->gotoSimple($action, $controller, $module, $params);
-    }
-
-    /**
-     * Overloading
-     *
-     * Overloading for old 'goto', 'setGoto', and 'gotoAndExit' methods
-     *
-     * @param  string $method
-     * @param  array $args
-     * @return mixed
-     * @throws Zend_Controller_Action_Exception for invalid methods
-     */
-    public function __call($method, $args)
-    {
-        $method = strtolower($method);
-        if ('goto' == $method) {
-            return call_user_func_array(array($this, 'gotoSimple'), $args);
-        }
-        if ('setgoto' == $method) {
-            return call_user_func_array(array($this, 'setGotoSimple'), $args);
-        }
-        if ('gotoandexit' == $method) {
-            return call_user_func_array(array($this, 'gotoSimpleAndExit'), $args);
-        }
-
-        require_once 'Zend/Controller/Action/Exception.php';
-        throw new Zend_Controller_Action_Exception(sprintf('Invalid method "%s" called on redirector', $method));
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

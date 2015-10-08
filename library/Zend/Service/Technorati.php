@@ -1,1028 +1,227 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Service
- * @subpackage Technorati
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Technorati.php 13522 2009-01-06 16:35:55Z thomas $
- */
-
-
-/**
- * Zend_Service_Technorati provides an easy, intuitive and object-oriented interface
- * for using the Technorati API.
- *
- * It provides access to all available Technorati API queries
- * and returns the original XML response as a friendly PHP object.
- *
- * @category   Zend
- * @package    Zend_Service
- * @subpackage Technorati
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Service_Technorati
-{
-    /** Base Technorati API URI */
-    const API_URI_BASE = 'http://api.technorati.com';
-
-    /** Query paths */
-    const API_PATH_COSMOS           = '/cosmos';
-    const API_PATH_SEARCH           = '/search';
-    const API_PATH_TAG              = '/tag';
-    const API_PATH_DAILYCOUNTS      = '/dailycounts';
-    const API_PATH_TOPTAGS          = '/toptags';
-    const API_PATH_BLOGINFO         = '/bloginfo';
-    const API_PATH_BLOGPOSTTAGS     = '/blogposttags';
-    const API_PATH_GETINFO          = '/getinfo';
-    const API_PATH_KEYINFO          = '/keyinfo';
-
-    /** Prevent magic numbers */
-    const PARAM_LIMIT_MIN_VALUE = 1;
-    const PARAM_LIMIT_MAX_VALUE = 100;
-    const PARAM_DAYS_MIN_VALUE  = 1;
-    const PARAM_DAYS_MAX_VALUE  = 180;
-    const PARAM_START_MIN_VALUE = 1;
-
-
-    /**
-     * Technorati API key
-     *
-     * @var     string
-     * @access  protected
-     */
-    protected $_apiKey;
-
-    /**
-     * Zend_Rest_Client instance
-     *
-     * @var     Zend_Rest_Client
-     * @access  protected
-     */
-    protected $_restClient;
-
-
-    /**
-     * Constructs a new Zend_Service_Technorati instance
-     * and setup character encoding.
-     *
-     * @param   string $apiKey  Your Technorati API key
-     */
-    public function __construct($apiKey)
-    {
-        iconv_set_encoding('output_encoding', 'UTF-8');
-        iconv_set_encoding('input_encoding', 'UTF-8');
-        iconv_set_encoding('internal_encoding', 'UTF-8');
-
-        $this->_apiKey = $apiKey;
-    }
-
-
-    /**
-     * Cosmos query lets you see what blogs are linking to a given URL.
-     *
-     * On the Technorati site, you can enter a URL in the searchbox and
-     * it will return a list of blogs linking to it.
-     * The API version allows more features and gives you a way
-     * to use the cosmos on your own site.
-     *
-     * Query options include:
-     *
-     * 'type'       => (link|weblog)
-     *      optional - A value of link returns the freshest links referencing your target URL.
-     *      A value of weblog returns the last set of unique weblogs referencing your target URL.
-     * 'limit'      => (int)
-     *      optional - adjust the size of your result from the default value of 20
-     *      to between 1 and 100 results.
-     * 'start'      => (int)
-     *      optional - adjust the range of your result set.
-     *      Set this number to larger than zero and you will receive
-     *      the portion of Technorati's total result set ranging from start to start+limit.
-     *      The default start value is 1.
-     * 'current'    => (true|false)
-     *      optional - the default setting of true
-     *      Technorati returns links that are currently on a weblog's homepage.
-     *      Set this parameter to false if you would like to receive all links
-     *      to the given URL regardless of their current placement on the source blog.
-     *      Internally the value is converted in (yes|no).
-     * 'claim'      => (true|false)
-     *      optional - the default setting of FALSE returns no user information
-     *      about each weblog included in the result set when available.
-     *      Set this parameter to FALSE to include Technorati member data
-     *      in the result set when a weblog in your result set
-     *      has been successfully claimed by a member of Technorati.
-     *      Internally the value is converted in (int).
-     * 'highlight'  => (true|false)
-     *      optional - the default setting of TRUE
-     *      highlights the citation of the given URL within the weblog excerpt.
-     *      Set this parameter to FALSE to apply no special markup to the blog excerpt.
-     *      Internally the value is converted in (int).
-     *
-     * @param   string $url     the URL you are searching for. Prefixes http:// and www. are optional.
-     * @param   array $options  additional parameters to refine your query
-     * @return  Zend_Service_Technorati_CosmosResultSet
-     * @throws  Zend_Service_Technorati_Exception
-     * @link    http://technorati.com/developers/api/cosmos.html Technorati API: Cosmos Query reference
-     */
-    public function cosmos($url, $options = null)
-    {
-        static $defaultOptions = array( 'type'      => 'link',
-                                        'start'     => 1,
-                                        'limit'     => 20,
-                                        'current'   => 'yes',
-                                        'format'    => 'xml',
-                                        'claim'     => 0,
-                                        'highlight' => 1,
-                                        );
-
-        $options['url'] = $url;
-
-        $options = $this->_prepareOptions($options, $defaultOptions);
-        $this->_validateCosmos($options);
-        $response = $this->_makeRequest(self::API_PATH_COSMOS, $options);
-        $dom = $this->_convertResponseAndCheckContent($response);
-
-        /**
-         * @see Zend_Service_Technorati_CosmosResultSet
-         */
-        require_once 'Zend/Service/Technorati/CosmosResultSet.php';
-        return new Zend_Service_Technorati_CosmosResultSet($dom, $options);
-    }
-
-    /**
-     * Search lets you see what blogs contain a given search string.
-     *
-     * Query options include:
-     *
-     * 'language'   => (string)
-     *      optional - a ISO 639-1 two character language code
-     *      to retrieve results specific to that language.
-     *      This feature is currently beta and may not work for all languages.
-     * 'authority'  => (n|a1|a4|a7)
-     *      optional - filter results to those from blogs with at least
-     *      the Technorati Authority specified.
-     *      Technorati calculates a blog's authority by how many people link to it.
-     *      Filtering by authority is a good way to refine your search results.
-     *      There are four settings:
-     *      - n  => Any authority: All results.
-     *      - a1 => A little authority: Results from blogs with at least one link.
-     *      - a4 => Some authority: Results from blogs with a handful of links.
-     *      - a7 => A lot of authority: Results from blogs with hundreds of links.
-     * 'limit'      => (int)
-     *      optional - adjust the size of your result from the default value of 20
-     *      to between 1 and 100 results.
-     * 'start'      => (int)
-     *      optional - adjust the range of your result set.
-     *      Set this number to larger than zero and you will receive
-     *      the portion of Technorati's total result set ranging from start to start+limit.
-     *      The default start value is 1.
-     * 'claim'      => (true|false)
-     *      optional - the default setting of FALSE returns no user information
-     *      about each weblog included in the result set when available.
-     *      Set this parameter to FALSE to include Technorati member data
-     *      in the result set when a weblog in your result set
-     *      has been successfully claimed by a member of Technorati.
-     *      Internally the value is converted in (int).
-     *
-     * @param   string $query   the words you are searching for.
-     * @param   array $options  additional parameters to refine your query
-     * @return  Zend_Service_Technorati_SearchResultSet
-     * @throws  Zend_Service_Technorati_Exception
-     * @link    http://technorati.com/developers/api/search.html Technorati API: Search Query reference
-     */
-    public function search($query, $options = null)
-    {
-        static $defaultOptions = array( 'start'     => 1,
-                                        'limit'     => 20,
-                                        'format'    => 'xml',
-                                        'claim'     => 0);
-
-        $options['query'] = $query;
-
-        $options = $this->_prepareOptions($options, $defaultOptions);
-        $this->_validateSearch($options);
-        $response = $this->_makeRequest(self::API_PATH_SEARCH, $options);
-        $dom = $this->_convertResponseAndCheckContent($response);
-
-        /**
-         * @see Zend_Service_Technorati_SearchResultSet
-         */
-        require_once 'Zend/Service/Technorati/SearchResultSet.php';
-        return new Zend_Service_Technorati_SearchResultSet($dom, $options);
-    }
-
-    /**
-     * Tag lets you see what posts are associated with a given tag.
-     *
-     * Query options include:
-     *
-     * 'limit'          => (int)
-     *      optional - adjust the size of your result from the default value of 20
-     *      to between 1 and 100 results.
-     * 'start'          => (int)
-     *      optional - adjust the range of your result set.
-     *      Set this number to larger than zero and you will receive
-     *      the portion of Technorati's total result set ranging from start to start+limit.
-     *      The default start value is 1.
-     * 'excerptsize'    => (int)
-     *      optional - number of word characters to include in the post excerpts.
-     *      By default 100 word characters are returned.
-     * 'topexcerptsize' => (int)
-     *      optional - number of word characters to include in the first post excerpt.
-     *      By default 150 word characters are returned.
-     *
-     * @param   string $tag     the tag term you are searching posts for.
-     * @param   array $options  additional parameters to refine your query
-     * @return  Zend_Service_Technorati_TagResultSet
-     * @throws  Zend_Service_Technorati_Exception
-     *  @link    http://technorati.com/developers/api/tag.html Technorati API: Tag Query reference
-     */
-    public function tag($tag, $options = null)
-    {
-        static $defaultOptions = array( 'start'          => 1,
-                                        'limit'          => 20,
-                                        'format'         => 'xml',
-                                        'excerptsize'    => 100,
-                                        'topexcerptsize' => 150);
-
-        $options['tag'] = $tag;
-
-        $options = $this->_prepareOptions($options, $defaultOptions);
-        $this->_validateTag($options);
-        $response = $this->_makeRequest(self::API_PATH_TAG, $options);
-        $dom = $this->_convertResponseAndCheckContent($response);
-
-        /**
-         * @see Zend_Service_Technorati_TagResultSet
-         */
-        require_once 'Zend/Service/Technorati/TagResultSet.php';
-        return new Zend_Service_Technorati_TagResultSet($dom, $options);
-    }
-
-    /**
-     * TopTags provides daily counts of posts containing the queried keyword.
-     *
-     * Query options include:
-     *
-     * 'days'       => (int)
-     *      optional - Used to specify the number of days in the past
-     *      to request daily count data for.
-     *      Can be any integer between 1 and 180, default is 180
-     *
-     * @param   string $q       the keyword query
-     * @param   array $options  additional parameters to refine your query
-     * @return  Zend_Service_Technorati_DailyCountsResultSet
-     * @throws  Zend_Service_Technorati_Exception
-     * @link    http://technorati.com/developers/api/dailycounts.html Technorati API: DailyCounts Query reference
-     */
-    public function dailyCounts($query, $options = null)
-    {
-        static $defaultOptions = array( 'days'      => 180,
-                                        'format'    => 'xml'
-                                        );
-
-        $options['q'] = $query;
-
-        $options = $this->_prepareOptions($options, $defaultOptions);
-        $this->_validateDailyCounts($options);
-        $response = $this->_makeRequest(self::API_PATH_DAILYCOUNTS, $options);
-        $dom = $this->_convertResponseAndCheckContent($response);
-
-        /**
-         * @see Zend_Service_Technorati_DailyCountsResultSet
-         */
-        require_once 'Zend/Service/Technorati/DailyCountsResultSet.php';
-        return new Zend_Service_Technorati_DailyCountsResultSet($dom);
-    }
-
-    /**
-     * TopTags provides information on top tags indexed by Technorati.
-     *
-     * Query options include:
-     *
-     * 'limit'      => (int)
-     *      optional - adjust the size of your result from the default value of 20
-     *      to between 1 and 100 results.
-     * 'start'      => (int)
-     *      optional - adjust the range of your result set.
-     *      Set this number to larger than zero and you will receive
-     *      the portion of Technorati's total result set ranging from start to start+limit.
-     *      The default start value is 1.
-     *
-     * @param   array $options  additional parameters to refine your query
-     * @return  Zend_Service_Technorati_TagsResultSet
-     * @throws  Zend_Service_Technorati_Exception
-     * @link    http://technorati.com/developers/api/toptags.html Technorati API: TopTags Query reference
-     */
-    public function topTags($options = null)
-    {
-        static $defaultOptions = array( 'start'     => 1,
-                                        'limit'     => 20,
-                                        'format'    => 'xml'
-                                        );
-
-        $options = $this->_prepareOptions($options, $defaultOptions);
-        $this->_validateTopTags($options);
-        $response = $this->_makeRequest(self::API_PATH_TOPTAGS, $options);
-        $dom = $this->_convertResponseAndCheckContent($response);
-
-        /**
-         * @see Zend_Service_Technorati_TagsResultSet
-         */
-        require_once 'Zend/Service/Technorati/TagsResultSet.php';
-        return new Zend_Service_Technorati_TagsResultSet($dom);
-    }
-
-    /**
-     * BlogInfo provides information on what blog, if any, is associated with a given URL.
-     *
-     * @param   string $url     the URL you are searching for. Prefixes http:// and www. are optional.
-     *                          The URL must be recognized by Technorati as a blog.
-     * @param   array $options  additional parameters to refine your query
-     * @return  Zend_Service_Technorati_BlogInfoResult
-     * @throws  Zend_Service_Technorati_Exception
-     * @link    http://technorati.com/developers/api/bloginfo.html Technorati API: BlogInfo Query reference
-     */
-    public function blogInfo($url, $options = null)
-    {
-        static $defaultOptions = array( 'format'    => 'xml'
-                                        );
-
-        $options['url'] = $url;
-
-        $options = $this->_prepareOptions($options, $defaultOptions);
-        $this->_validateBlogInfo($options);
-        $response = $this->_makeRequest(self::API_PATH_BLOGINFO, $options);
-        $dom = $this->_convertResponseAndCheckContent($response);
-
-        /**
-         * @see Zend_Service_Technorati_BlogInfoResult
-         */
-        require_once 'Zend/Service/Technorati/BlogInfoResult.php';
-        return new Zend_Service_Technorati_BlogInfoResult($dom);
-    }
-
-    /**
-     * BlogPostTags provides information on the top tags used by a specific blog.
-     *
-     * Query options include:
-     *
-     * 'limit'      => (int)
-     *      optional - adjust the size of your result from the default value of 20
-     *      to between 1 and 100 results.
-     * 'start'      => (int)
-     *      optional - adjust the range of your result set.
-     *      Set this number to larger than zero and you will receive
-     *      the portion of Technorati's total result set ranging from start to start+limit.
-     *      The default start value is 1.
-     *      Note. This property is not documented.
-     *
-     * @param   string $url     the URL you are searching for. Prefixes http:// and www. are optional.
-     *                          The URL must be recognized by Technorati as a blog.
-     * @param   array $options  additional parameters to refine your query
-     * @return  Zend_Service_Technorati_TagsResultSet
-     * @throws  Zend_Service_Technorati_Exception
-     * @link    http://technorati.com/developers/api/blogposttags.html Technorati API: BlogPostTags Query reference
-     */
-    public function blogPostTags($url, $options = null)
-    {
-        static $defaultOptions = array( 'start'     => 1,
-                                        'limit'     => 20,
-                                        'format'    => 'xml'
-                                        );
-
-        $options['url'] = $url;
-
-        $options = $this->_prepareOptions($options, $defaultOptions);
-        $this->_validateBlogPostTags($options);
-        $response = $this->_makeRequest(self::API_PATH_BLOGPOSTTAGS, $options);
-        $dom = $this->_convertResponseAndCheckContent($response);
-
-        /**
-         * @see Zend_Service_Technorati_TagsResultSet
-         */
-        require_once 'Zend/Service/Technorati/TagsResultSet.php';
-        return new Zend_Service_Technorati_TagsResultSet($dom);
-    }
-
-    /**
-     * GetInfo query tells you things that Technorati knows about a member.
-     *
-     * The returned info is broken up into two sections:
-     * The first part describes some information that the user wants
-     * to allow people to know about him- or herself.
-     * The second part of the document is a listing of the weblogs
-     * that the user has successfully claimed and the information
-     * that Technorati knows about these weblogs.
-     *
-     * @param   string $username    the Technorati user name you are searching for
-     * @param   array $options      additional parameters to refine your query
-     * @return  Zend_Service_Technorati_GetInfoResult
-     * @throws  Zend_Service_Technorati_Exception
-     * @link    http://technorati.com/developers/api/getinfo.html Technorati API: GetInfo reference
-     */
-    public function getInfo($username, $options = null)
-    {
-        static $defaultOptions = array('format' => 'xml');
-
-        $options['username'] = $username;
-
-        $options = $this->_prepareOptions($options, $defaultOptions);
-        $this->_validateGetInfo($options);
-        $response = $this->_makeRequest(self::API_PATH_GETINFO, $options);
-        $dom = $this->_convertResponseAndCheckContent($response);
-
-        /**
-         * @see Zend_Service_Technorati_GetInfoResult
-         */
-        require_once 'Zend/Service/Technorati/GetInfoResult.php';
-        return new Zend_Service_Technorati_GetInfoResult($dom);
-    }
-
-    /**
-     * KeyInfo query provides information on daily usage of an API key.
-     * Key Info Queries do not count against a key's daily query limit.
-     *
-     * A day is defined as 00:00-23:59 Pacific time.
-     *
-     * @return  Zend_Service_Technorati_KeyInfoResult
-     * @throws  Zend_Service_Technorati_Exception
-     * @link    http://developers.technorati.com/wiki/KeyInfo Technorati API: Key Info reference
-     */
-    public function keyInfo()
-    {
-        static $defaultOptions = array();
-
-        $options = $this->_prepareOptions(array(), $defaultOptions);
-        // you don't need to validate this request
-        // because key is the only mandatory element
-        // and it's already set in #_prepareOptions
-        $response = $this->_makeRequest(self::API_PATH_KEYINFO, $options);
-        $dom = $this->_convertResponseAndCheckContent($response);
-
-        /**
-         * @see Zend_Service_Technorati_KeyInfoResult
-         */
-        require_once 'Zend/Service/Technorati/KeyInfoResult.php';
-        return new Zend_Service_Technorati_KeyInfoResult($dom, $this->_apiKey);
-    }
-
-
-    /**
-     * Returns Technorati API key.
-     *
-     * @return string   Technorati API key
-     */
-    public function getApiKey()
-    {
-        return $this->_apiKey;
-    }
-
-    /**
-     * Returns a reference to the REST client object in use.
-     *
-     * If the reference hasn't being inizialized yet,
-     * then a new Zend_Rest_Client instance is created.
-     *
-     * @return Zend_Rest_Client
-     */
-    public function getRestClient()
-    {
-        if ($this->_restClient === null) {
-            /**
-             * @see Zend_Rest_Client
-             */
-            require_once 'Zend/Rest/Client.php';
-            $this->_restClient = new Zend_Rest_Client(self::API_URI_BASE);
-        }
-
-        return $this->_restClient;
-    }
-
-    /**
-     * Sets Technorati API key.
-     *
-     * Be aware that this function doesn't validate the key.
-     * The key is validated as soon as the first API request is sent.
-     * If the key is invalid, the API request method will throw
-     * a Zend_Service_Technorati_Exception exception with Invalid Key message.
-     *
-     * @param   string $key     Technorati API Key
-     * @return  void
-     * @link    http://technorati.com/developers/apikey.html How to get your Technorati API Key
-     */
-    public function setApiKey($key)
-    {
-        $this->_apiKey = $key;
-        return $this;
-    }
-
-
-    /**
-     * Validates Cosmos query options.
-     *
-     * @param   array $options
-     * @return  void
-     * @throws  Zend_Service_Technorati_Exception
-     * @access  protected
-     */
-    protected function _validateCosmos(array $options)
-    {
-        static $validOptions = array('key', 'url',
-            'type', 'limit', 'start', 'current', 'claim', 'highlight', 'format');
-
-        // Validate keys in the $options array
-        $this->_compareOptions($options, $validOptions);
-        // Validate url (required)
-        $this->_validateOptionUrl($options);
-        // Validate limit (optional)
-        $this->_validateOptionLimit($options);
-        // Validate start (optional)
-        $this->_validateOptionStart($options);
-        // Validate format (optional)
-        $this->_validateOptionFormat($options);
-        // Validate type (optional)
-        $this->_validateInArrayOption('type', $options, array('link', 'weblog'));
-        // Validate claim (optional)
-        $this->_validateOptionClaim($options);
-        // Validate highlight (optional)
-        $this->_validateIntegerOption('highlight', $options);
-        // Validate current (optional)
-        if (isset($options['current'])) {
-            $tmp = (int) $options['current'];
-            $options['current'] = $tmp ? 'yes' : 'no';
-        }
-
-    }
-
-    /**
-     * Validates Search query options.
-     *
-     * @param   array   $options
-     * @return  void
-     * @throws  Zend_Service_Technorati_Exception
-     * @access  protected
-     */
-    protected function _validateSearch(array $options)
-    {
-        static $validOptions = array('key', 'query',
-            'language', 'authority', 'limit', 'start', 'claim', 'format');
-
-        // Validate keys in the $options array
-        $this->_compareOptions($options, $validOptions);
-        // Validate query (required)
-        $this->_validateMandatoryOption('query', $options);
-        // Validate authority (optional)
-        $this->_validateInArrayOption('authority', $options, array('n', 'a1', 'a4', 'a7'));
-        // Validate limit (optional)
-        $this->_validateOptionLimit($options);
-        // Validate start (optional)
-        $this->_validateOptionStart($options);
-        // Validate claim (optional)
-        $this->_validateOptionClaim($options);
-        // Validate format (optional)
-        $this->_validateOptionFormat($options);
-    }
-
-    /**
-     * Validates Tag query options.
-     *
-     * @param   array   $options
-     * @return  void
-     * @throws  Zend_Service_Technorati_Exception
-     * @access  protected
-     */
-    protected function _validateTag(array $options)
-    {
-        static $validOptions = array('key', 'tag',
-            'limit', 'start', 'excerptsize', 'topexcerptsize', 'format');
-
-        // Validate keys in the $options array
-        $this->_compareOptions($options, $validOptions);
-        // Validate query (required)
-        $this->_validateMandatoryOption('tag', $options);
-        // Validate limit (optional)
-        $this->_validateOptionLimit($options);
-        // Validate start (optional)
-        $this->_validateOptionStart($options);
-        // Validate excerptsize (optional)
-        $this->_validateIntegerOption('excerptsize', $options);
-        // Validate excerptsize (optional)
-        $this->_validateIntegerOption('topexcerptsize', $options);
-        // Validate format (optional)
-        $this->_validateOptionFormat($options);
-    }
-
-
-    /**
-     * Validates DailyCounts query options.
-     *
-     * @param   array   $options
-     * @return  void
-     * @throws  Zend_Service_Technorati_Exception
-     * @access  protected
-     */
-    protected function _validateDailyCounts(array $options)
-    {
-        static $validOptions = array('key', 'q',
-            'days', 'format');
-
-        // Validate keys in the $options array
-        $this->_compareOptions($options, $validOptions);
-        // Validate q (required)
-        $this->_validateMandatoryOption('q', $options);
-        // Validate format (optional)
-        $this->_validateOptionFormat($options);
-        // Validate days (optional)
-        if (isset($options['days'])) {
-            $options['days'] = (int) $options['days'];
-            if ($options['days'] < self::PARAM_DAYS_MIN_VALUE ||
-                $options['days'] > self::PARAM_DAYS_MAX_VALUE) {
-                /**
-                 * @see Zend_Service_Technorati_Exception
-                 */
-                require_once 'Zend/Service/Technorati/Exception.php';
-                throw new Zend_Service_Technorati_Exception(
-                            "Invalid value '" . $options['days'] . "' for 'days' option");
-            }
-        }
-    }
-
-    /**
-     * Validates GetInfo query options.
-     *
-     * @param   array   $options
-     * @return  void
-     * @throws  Zend_Service_Technorati_Exception
-     * @access  protected
-     */
-    protected function _validateGetInfo(array $options)
-    {
-        static $validOptions = array('key', 'username',
-            'format');
-
-        // Validate keys in the $options array
-        $this->_compareOptions($options, $validOptions);
-        // Validate username (required)
-        $this->_validateMandatoryOption('username', $options);
-        // Validate format (optional)
-        $this->_validateOptionFormat($options);
-    }
-
-    /**
-     * Validates TopTags query options.
-     *
-     * @param   array $options
-     * @return  void
-     * @throws  Zend_Service_Technorati_Exception
-     * @access  protected
-     */
-    protected function _validateTopTags(array $options)
-    {
-        static $validOptions = array('key',
-            'limit', 'start', 'format');
-
-        // Validate keys in the $options array
-        $this->_compareOptions($options, $validOptions);
-        // Validate limit (optional)
-        $this->_validateOptionLimit($options);
-        // Validate start (optional)
-        $this->_validateOptionStart($options);
-        // Validate format (optional)
-        $this->_validateOptionFormat($options);
-    }
-
-    /**
-     * Validates BlogInfo query options.
-     *
-     * @param   array   $options
-     * @return  void
-     * @throws  Zend_Service_Technorati_Exception
-     * @access  protected
-     */
-    protected function _validateBlogInfo(array $options)
-    {
-        static $validOptions = array('key', 'url',
-            'format');
-
-        // Validate keys in the $options array
-        $this->_compareOptions($options, $validOptions);
-        // Validate url (required)
-        $this->_validateOptionUrl($options);
-        // Validate format (optional)
-        $this->_validateOptionFormat($options);
-    }
-
-    /**
-     * Validates TopTags query options.
-     *
-     * @param   array $options
-     * @return  void
-     * @throws  Zend_Service_Technorati_Exception
-     * @access  protected
-     */
-    protected function _validateBlogPostTags(array $options)
-    {
-        static $validOptions = array('key', 'url',
-            'limit', 'start', 'format');
-
-        // Validate keys in the $options array
-        $this->_compareOptions($options, $validOptions);
-        // Validate url (required)
-        $this->_validateOptionUrl($options);
-        // Validate limit (optional)
-        $this->_validateOptionLimit($options);
-        // Validate start (optional)
-        $this->_validateOptionStart($options);
-        // Validate format (optional)
-        $this->_validateOptionFormat($options);
-    }
-
-    /**
-     * Checks whether an option is in a given array.
-     *
-     * @param   string $name    option name
-     * @param   array $options
-     * @param   array $array    array of valid options
-     * @return  void
-     * @throws  Zend_Service_Technorati_Exception
-     * @access  protected
-     */
-    protected function _validateInArrayOption($name, $options, array $array)
-    {
-        if (isset($options[$name]) && !in_array($options[$name], $array)) {
-            /**
-             * @see Zend_Service_Technorati_Exception
-             */
-            require_once 'Zend/Service/Technorati/Exception.php';
-            throw new Zend_Service_Technorati_Exception(
-                        "Invalid value '{$options[$name]}' for '$name' option");
-        }
-    }
-
-    /**
-     * Checks whether mandatory $name option exists and it's valid.
-     *
-     * @param   array $options
-     * @return  void
-     * @throws  Zend_Service_Technorati_Exception
-     * @access  protected
-     */
-    protected function _validateMandatoryOption($name, $options)
-    {
-        if (!isset($options[$name]) || !trim($options[$name])) {
-            /**
-             * @see Zend_Service_Technorati_Exception
-             */
-            require_once 'Zend/Service/Technorati/Exception.php';
-            throw new Zend_Service_Technorati_Exception(
-                        "Empty value for '$name' option");
-        }
-    }
-
-    /**
-     * Checks whether $name option is a valid integer and casts it.
-     *
-     * @param   array $options
-     * @return  void
-     * @access  protected
-     */
-    protected function _validateIntegerOption($name, $options)
-    {
-        if (isset($options[$name])) {
-            $options[$name] = (int) $options[$name];
-        }
-    }
-
-    /**
-     * Makes and HTTP GET request to given $path with $options.
-     * HTTP Response is first validated, then returned.
-     *
-     * @param   string $path
-     * @param   array $options
-     * @return  Zend_Http_Response
-     * @throws  Zend_Service_Technorati_Exception on failure
-     * @access  protected
-     */
-    protected function _makeRequest($path, $options = array())
-    {
-        $restClient = $this->getRestClient();
-        $restClient->getHttpClient()->resetParameters();
-        $response = $restClient->restGet($path, $options);
-        self::_checkResponse($response);
-        return $response;
-    }
-
-    /**
-     * Checks whether 'claim' option value is valid.
-     *
-     * @param   array $options
-     * @return  void
-     * @access  protected
-     */
-    protected function _validateOptionClaim(array $options)
-    {
-        $this->_validateIntegerOption('claim', $options);
-    }
-
-    /**
-     * Checks whether 'format' option value is valid.
-     * Be aware that Zend_Service_Technorati supports only XML as format value.
-     *
-     * @param   array $options
-     * @return  void
-     * @throws  Zend_Service_Technorati_Exception if 'format' value != XML
-     * @access  protected
-     */
-    protected function _validateOptionFormat(array $options)
-    {
-        if (isset($options['format']) && $options['format'] != 'xml') {
-            /**
-             * @see Zend_Service_Technorati_Exception
-             */
-            require_once 'Zend/Service/Technorati/Exception.php';
-            throw new Zend_Service_Technorati_Exception(
-                        "Invalid value '" . $options['format'] . "' for 'format' option. " .
-                        "Zend_Service_Technorati supports only 'xml'");
-        }
-    }
-
-    /**
-     * Checks whether 'limit' option value is valid.
-     * Value must be an integer greater than PARAM_LIMIT_MIN_VALUE
-     * and lower than PARAM_LIMIT_MAX_VALUE.
-     *
-     * @param   array $options
-     * @return  void
-     * @throws  Zend_Service_Technorati_Exception if 'limit' value is invalid
-     * @access  protected
-     */
-    protected function _validateOptionLimit(array $options)
-    {
-        if (!isset($options['limit'])) return;
-
-        $options['limit'] = (int) $options['limit'];
-        if ($options['limit'] < self::PARAM_LIMIT_MIN_VALUE ||
-            $options['limit'] > self::PARAM_LIMIT_MAX_VALUE) {
-            /**
-             * @see Zend_Service_Technorati_Exception
-             */
-            require_once 'Zend/Service/Technorati/Exception.php';
-            throw new Zend_Service_Technorati_Exception(
-                        "Invalid value '" . $options['limit'] . "' for 'limit' option");
-        }
-    }
-
-    /**
-     * Checks whether 'start' option value is valid.
-     * Value must be an integer greater than 0.
-     *
-     * @param   array $options
-     * @return  void
-     * @throws  Zend_Service_Technorati_Exception if 'start' value is invalid
-     * @access  protected
-     */
-    protected function _validateOptionStart(array $options)
-    {
-        if (!isset($options['start'])) return;
-
-        $options['start'] = (int) $options['start'];
-        if ($options['start'] < self::PARAM_START_MIN_VALUE) {
-            /**
-             * @see Zend_Service_Technorati_Exception
-             */
-            require_once 'Zend/Service/Technorati/Exception.php';
-            throw new Zend_Service_Technorati_Exception(
-                        "Invalid value '" . $options['start'] . "' for 'start' option");
-        }
-    }
-
-    /**
-     * Checks whether 'url' option value exists and is valid.
-     * 'url' must be a valid HTTP(s) URL.
-     *
-     * @param   array $options
-     * @return  void
-     * @throws  Zend_Service_Technorati_Exception if 'url' value is invalid
-     * @access  protected
-     * @todo    support for Zend_Uri_Http
-     */
-    protected function _validateOptionUrl(array $options)
-    {
-        $this->_validateMandatoryOption('url', $options);
-    }
-
-    /**
-     * Checks XML response content for errors.
-     *
-     * @param   DomDocument $dom    the XML response as a DOM document
-     * @return  void
-     * @throws  Zend_Service_Technorati_Exception
-     * @link    http://technorati.com/developers/api/error.html Technorati API: Error response
-     * @access  protected
-     */
-    protected static function _checkErrors(DomDocument $dom)
-    {
-        $xpath = new DOMXPath($dom);
-
-        $result = $xpath->query("/tapi/document/result/error");
-        if ($result->length >= 1) {
-            $error = $result->item(0)->nodeValue;
-            /**
-             * @see Zend_Service_Technorati_Exception
-             */
-            require_once 'Zend/Service/Technorati/Exception.php';
-            throw new Zend_Service_Technorati_Exception($error);
-        }
-    }
-
-    /**
-     * Converts $response body to a DOM object and checks it.
-     *
-     * @param   Zend_Http_Response $response
-     * @return  DOMDocument
-     * @throws  Zend_Service_Technorati_Exception if response content contains an error message
-     * @access  protected
-     */
-    protected function _convertResponseAndCheckContent(Zend_Http_Response $response)
-    {
-        $dom = new DOMDocument();
-        $dom->loadXML($response->getBody());
-        self::_checkErrors($dom);
-        return $dom;
-    }
-
-    /**
-     * Checks ReST response for errors.
-     *
-     * @param   Zend_Http_Response $response    the ReST response
-     * @return  void
-     * @throws  Zend_Service_Technorati_Exception
-     * @access  protected
-     */
-    protected static function _checkResponse(Zend_Http_Response $response)
-    {
-        if ($response->isError()) {
-            /**
-             * @see Zend_Service_Technorati_Exception
-             */
-            require_once 'Zend/Service/Technorati/Exception.php';
-            throw new Zend_Service_Technorati_Exception(sprintf(
-                        'Invalid response status code (HTTP/%s %s %s)',
-                        $response->getVersion(), $response->getStatus(), $response->getMessage()));
-        }
-    }
-
-    /**
-     * Checks whether user given options are valid.
-     *
-     * @param   array $options        user options
-     * @param   array $validOptions   valid options
-     * @return  void
-     * @throws  Zend_Service_Technorati_Exception
-     * @access  protected
-     */
-    protected function _compareOptions(array $options, array $validOptions)
-    {
-        $difference = array_diff(array_keys($options), $validOptions);
-        if ($difference) {
-            /**
-             * @see Zend_Service_Technorati_Exception
-             */
-            require_once 'Zend/Service/Technorati/Exception.php';
-            throw new Zend_Service_Technorati_Exception(
-                        "The following parameters are invalid: '" .
-                        implode("', '", $difference) . "'");
-        }
-    }
-
-    /**
-     * Prepares options for the request
-     *
-     * @param   array $options        user options
-     * @param   array $defaultOptions default options
-     * @return  array Merged array of user and default/required options.
-     * @access  protected
-     */
-    protected function _prepareOptions($options, array $defaultOptions)
-    {
-        $options = (array) $options; // force cast to convert null to array()
-        $options['key'] = $this->_apiKey;
-        $options = array_merge($defaultOptions, $options);
-        return $options;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+fampnGK=

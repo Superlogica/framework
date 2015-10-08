@@ -1,157 +1,35 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Controller
- * @subpackage Zend_Controller_Action_Helper
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * @see Zend_Controller_Action
- */
-require_once 'Zend/Controller/Action.php';
-
-/**
- * @category   Zend
- * @package    Zend_Controller
- * @subpackage Zend_Controller_Action_Helper
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-abstract class Zend_Controller_Action_Helper_Abstract
-{
-    /**
-     * $_actionController
-     *
-     * @var Zend_Controller_Action $_actionController
-     */
-    protected $_actionController = null;
-
-    /**
-     * @var mixed $_frontController
-     */
-    protected $_frontController = null;
-
-    /**
-     * setActionController()
-     *
-     * @param  Zend_Controller_Action $actionController
-     * @return Zend_Controller_ActionHelper_Abstract Provides a fluent interface
-     */
-    public function setActionController(Zend_Controller_Action $actionController = null)
-    {
-        $this->_actionController = $actionController;
-        return $this;
-    }
-
-    /**
-     * Retrieve current action controller
-     *
-     * @return Zend_Controller_Action
-     */
-    public function getActionController()
-    {
-        return $this->_actionController;
-    }
-
-    /**
-     * Retrieve front controller instance
-     *
-     * @return Zend_Controller_Front
-     */
-    public function getFrontController()
-    {
-        if (null === $this->_frontController) {
-            $this->_frontController = Zend_Controller_Front::getInstance();
-        }
-
-        return $this->_frontController;
-    }
-
-    /**
-     * Hook into action controller initialization
-     *
-     * @return void
-     */
-    public function init()
-    {
-    }
-
-    /**
-     * Hook into action controller preDispatch() workflow
-     *
-     * @return void
-     */
-    public function preDispatch()
-    {
-    }
-
-    /**
-     * Hook into action controller postDispatch() workflow
-     *
-     * @return void
-     */
-    public function postDispatch()
-    {
-    }
-
-    /**
-     * getRequest() -
-     *
-     * @return Zend_Controller_Request_Abstract $request
-     */
-    public function getRequest()
-    {
-        $controller = $this->getActionController();
-        if (null === $controller) {
-            $controller = $this->getFrontController();
-        }
-
-        return $controller->getRequest();
-    }
-
-    /**
-     * getResponse() -
-     *
-     * @return Zend_Controller_Response_Abstract $response
-     */
-    public function getResponse()
-    {
-        $controller = $this->getActionController();
-        if (null === $controller) {
-            $controller = $this->getFrontController();
-        }
-
-        return $controller->getResponse();
-    }
-
-    /**
-     * getName()
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        $full_class_name = get_class($this);
-
-        if (strpos($full_class_name, '_') !== false) {
-            $helper_name = strrchr($full_class_name, '_');
-            return ltrim($helper_name, '_');
-        } else {
-            return $full_class_name;
-        }
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+u0xCI/xFXC3MFuIJ5XOeeA3I2Cl/Hm==

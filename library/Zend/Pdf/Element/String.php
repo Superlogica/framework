@@ -1,246 +1,66 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Pdf
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-
-/** Zend_Pdf_Element */
-require_once 'Zend/Pdf/Element.php';
-
-
-/**
- * PDF file 'string' element implementation
- *
- * @category   Zend
- * @package    Zend_Pdf
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Pdf_Element_String extends Zend_Pdf_Element
-{
-    /**
-     * Object value
-     *
-     * @var string
-     */
-    public $value;
-
-    /**
-     * Object constructor
-     *
-     * @param string $val
-     */
-    public function __construct($val)
-    {
-        $this->value   = (string)$val;
-    }
-
-
-    /**
-     * Return type of the element.
-     *
-     * @return integer
-     */
-    public function getType()
-    {
-        return Zend_Pdf_Element::TYPE_STRING;
-    }
-
-
-    /**
-     * Return object as string
-     *
-     * @param Zend_Pdf_Factory $factory
-     * @return string
-     */
-    public function toString($factory = null)
-    {
-        return '(' . self::escape((string)$this->value) . ')';
-    }
-
-
-    /**
-     * Escape string according to the PDF rules
-     *
-     * @param string $inStr
-     * @return string
-     */
-    public static function escape($inStr)
-    {
-        $outStr = '';
-        $lastNL = 0;
-
-        for ($count = 0; $count < strlen($inStr); $count++) {
-            if (strlen($outStr) - $lastNL > 128)  {
-                $outStr .= "\\\n";
-                $lastNL = strlen($outStr);
-            }
-
-            $nextCode = ord($inStr[$count]);
-            switch ($nextCode) {
-                // "\n" - line feed (LF)
-                case 10:
-                    $outStr .= '\\n';
-                    break;
-
-                // "\r" - carriage return (CR)
-                case 13:
-                    $outStr .= '\\r';
-                    break;
-
-                // "\t" - horizontal tab (HT)
-                case 9:
-                    $outStr .= '\\t';
-                    break;
-
-                // "\b" - backspace (BS)
-                case 8:
-                    $outStr .= '\\b';
-                    break;
-
-                // "\f" - form feed (FF)
-                case 12:
-                    $outStr .= '\\f';
-                    break;
-
-                // '(' - left paranthesis
-                case 40:
-                    $outStr .= '\\(';
-                    break;
-
-                // ')' - right paranthesis
-                case 41:
-                    $outStr .= '\\)';
-                    break;
-
-                // '\' - backslash
-                case 92:
-                    $outStr .= '\\\\';
-                    break;
-
-                default:
-                    // Don't use non-ASCII characters escaping
-                    // if ($nextCode >= 32 && $nextCode <= 126 ) {
-                    //     // Visible ASCII symbol
-                    //     $outStr .= $inStr[$count];
-                    // } else {
-                    //     $outStr .= sprintf('\\%03o', $nextCode);
-                    // }
-                    $outStr .= $inStr[$count];
-
-                    break;
-            }
-        }
-
-        return $outStr;
-    }
-
-
-    /**
-     * Unescape string according to the PDF rules
-     *
-     * @param string $inStr
-     * @return string
-     */
-    public static function unescape($inStr)
-    {
-        $outStr = '';
-
-        for ($count = 0; $count < strlen($inStr); $count++) {
-            if ($inStr[$count] != '\\' || $count == strlen($inStr)-1)  {
-                $outStr .= $inStr[$count];
-            } else { // Escape sequence
-                switch ($inStr{++$count}) {
-                    // '\\n' - line feed (LF)
-                    case 'n':
-                        $outStr .= "\n";
-                        break;
-
-                    // '\\r' - carriage return (CR)
-                    case 'r':
-                        $outStr .= "\r";
-                        break;
-
-                    // '\\t' - horizontal tab (HT)
-                    case 't':
-                        $outStr .= "\t";
-                        break;
-
-                    // '\\b' - backspace (BS)
-                    case 'b':
-                        $outStr .= "\x08";
-                        break;
-
-                    // '\\f' - form feed (FF)
-                    case 'f':
-                        $outStr .= "\x0C";
-                        break;
-
-                    // '\\(' - left paranthesis
-                    case '(':
-                        $outStr .= '(';
-                        break;
-
-                    // '\\)' - right paranthesis
-                    case ')':
-                        $outStr .= ')';
-                        break;
-
-                    // '\\\\' - backslash
-                    case '\\':
-                        $outStr .= '\\';
-                        break;
-
-                    // "\\\n" or "\\\n\r"
-                    case "\n":
-                        // skip new line symbol
-                        if ($inStr[$count+1] == "\r") {
-                            $count++;
-                        }
-                        break;
-
-                    default:
-                        if (ord($inStr[$count]) >= ord('0') &&
-                            ord($inStr[$count]) <= ord('9')) {
-                            // Character in octal representation
-                            // '\\xxx'
-                            $nextCode = '0' . $inStr[$count];
-
-                            if (ord($inStr[$count+1]) >= ord('0') &&
-                                ord($inStr[$count+1]) <= ord('9')) {
-                                $nextCode .= $inStr{++$count};
-
-                                if (ord($inStr[$count+1]) >= ord('0') &&
-                                    ord($inStr[$count+1]) <= ord('9')) {
-                                    $nextCode .= $inStr{++$count};
-                                }
-                            }
-
-                            $outStr .= chr($nextCode);
-                        } else {
-                            $outStr .= $inStr[$count];
-                        }
-                        break;
-                }
-            }
-        }
-
-        return $outStr;
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

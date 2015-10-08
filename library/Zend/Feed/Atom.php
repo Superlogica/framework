@@ -1,390 +1,179 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Feed
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Atom.php 11654 2008-10-03 16:03:35Z yoshida@zend.co.jp $
- */
-
-
-/**
- * @see Zend_Feed_Abstract
- */
-require_once 'Zend/Feed/Abstract.php';
-
-/**
- * @see Zend_Feed_Entry_Atom
- */
-require_once 'Zend/Feed/Entry/Atom.php';
-
-
-/**
- * Atom feed class
- *
- * The Zend_Feed_Atom class is a concrete subclass of the general
- * Zend_Feed_Abstract class, tailored for representing an Atom
- * feed. It shares all of the same methods with its abstract
- * parent. The distinction is made in the format of data that
- * Zend_Feed_Atom expects, and as a further pointer for users as to
- * what kind of feed object they have been passed.
- *
- * @category   Zend
- * @package    Zend_Feed
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Feed_Atom extends Zend_Feed_Abstract
-{
-
-    /**
-     * The classname for individual feed elements.
-     *
-     * @var string
-     */
-    protected $_entryClassName = 'Zend_Feed_Entry_Atom';
-
-    /**
-     * The element name for individual feed elements (Atom <entry>
-     * elements).
-     *
-     * @var string
-     */
-    protected $_entryElementName = 'entry';
-
-    /**
-     * The default namespace for Atom feeds.
-     *
-     * @var string
-     */
-    protected $_defaultNamespace = 'atom';
-
-
-    /**
-     * Override Zend_Feed_Abstract to set up the $_element and $_entries aliases.
-     *
-     * @return void
-     * @throws Zend_Feed_Exception
-     */
-    public function __wakeup()
-    {
-        parent::__wakeup();
-
-        // Find the base feed element and create an alias to it.
-        $element = $this->_element->getElementsByTagName('feed')->item(0);
-        if (!$element) {
-            // Try to find a single <entry> instead.
-            $element = $this->_element->getElementsByTagName($this->_entryElementName)->item(0);
-            if (!$element) {
-                /** 
-                 * @see Zend_Feed_Exception
-                 */
-                require_once 'Zend/Feed/Exception.php';
-                throw new Zend_Feed_Exception('No root <feed> or <' . $this->_entryElementName
-                                              . '> element found, cannot parse feed.');
-            }
-
-            $doc = new DOMDocument($this->_element->version,
-                                   $this->_element->actualEncoding);
-            $feed = $doc->appendChild($doc->createElement('feed'));
-            $feed->appendChild($doc->importNode($element, true));
-            $element = $feed;
-        }
-
-        $this->_element = $element;
-
-        // Find the entries and save a pointer to them for speed and
-        // simplicity.
-        $this->_buildEntryCache();
-    }
-
-
-    /**
-     * Easy access to <link> tags keyed by "rel" attributes.
-     *
-     * If $elt->link() is called with no arguments, we will attempt to
-     * return the value of the <link> tag(s) like all other
-     * method-syntax attribute access. If an argument is passed to
-     * link(), however, then we will return the "href" value of the
-     * first <link> tag that has a "rel" attribute matching $rel:
-     *
-     * $elt->link(): returns the value of the link tag.
-     * $elt->link('self'): returns the href from the first <link rel="self"> in the entry.
-     *
-     * @param  string $rel The "rel" attribute to look for.
-     * @return mixed
-     */
-    public function link($rel = null)
-    {
-        if ($rel === null) {
-            return parent::__call('link', null);
-        }
-
-        // index link tags by their "rel" attribute.
-        $links = parent::__get('link');
-        if (!is_array($links)) {
-            if ($links instanceof Zend_Feed_Element) {
-                $links = array($links);
-            } else {
-                return $links;
-            }
-        }
-
-        foreach ($links as $link) {
-            if (empty($link['rel'])) {
-                continue;
-            }
-            if ($rel == $link['rel']) {
-                return $link['href'];
-            }
-        }
-
-        return null;
-    }
-
-
-    /**
-     * Make accessing some individual elements of the feed easier.
-     *
-     * Special accessors 'entry' and 'entries' are provided so that if
-     * you wish to iterate over an Atom feed's entries, you can do so
-     * using foreach ($feed->entries as $entry) or foreach
-     * ($feed->entry as $entry).
-     *
-     * @param  string $var The property to access.
-     * @return mixed
-     */
-    public function __get($var)
-    {
-        switch ($var) {
-            case 'entry':
-                // fall through to the next case
-            case 'entries':
-                return $this;
-
-            default:
-                return parent::__get($var);
-        }
-    }
-
-    /**
-     * Generate the header of the feed when working in write mode
-     *
-     * @param  array $array the data to use
-     * @return DOMElement root node
-     */
-    protected function _mapFeedHeaders($array)
-    {
-        $feed = $this->_element->createElement('feed');
-        $feed->setAttribute('xmlns', 'http://www.w3.org/2005/Atom');
-
-        $id = $this->_element->createElement('id', $array->link);
-        $feed->appendChild($id);
-
-        $title = $this->_element->createElement('title');
-        $title->appendChild($this->_element->createCDATASection($array->title));
-        $feed->appendChild($title);
-
-        if (isset($array->author)) {
-            $author = $this->_element->createElement('author');
-            $name = $this->_element->createElement('name', $array->author);
-            $author->appendChild($name);
-            if (isset($array->email)) {
-                $email = $this->_element->createElement('email', $array->email);
-                $author->appendChild($email);
-            }
-            $feed->appendChild($author);
-        }
-
-        $updated = isset($array->lastUpdate) ? $array->lastUpdate : time();
-        $updated = $this->_element->createElement('updated', date(DATE_ATOM, $updated));
-        $feed->appendChild($updated);
-
-        if (isset($array->published)) {
-            $published = $this->_element->createElement('published', date(DATE_ATOM, $array->published));
-            $feed->appendChild($published);
-        }
-
-        $link = $this->_element->createElement('link');
-        $link->setAttribute('rel', 'self');
-        $link->setAttribute('href', $array->link);
-        if (isset($array->language)) {
-            $link->setAttribute('hreflang', $array->language);
-        }
-        $feed->appendChild($link);
-
-        if (isset($array->description)) {
-            $subtitle = $this->_element->createElement('subtitle');
-            $subtitle->appendChild($this->_element->createCDATASection($array->description));
-            $feed->appendChild($subtitle);
-        }
-
-        if (isset($array->copyright)) {
-            $copyright = $this->_element->createElement('rights', $array->copyright);
-            $feed->appendChild($copyright);
-        }
-
-        if (isset($array->image)) {
-            $image = $this->_element->createElement('logo', $array->image);
-            $feed->appendChild($image);
-        }
-
-        $generator = !empty($array->generator) ? $array->generator : 'Zend_Feed';
-        $generator = $this->_element->createElement('generator', $generator);
-        $feed->appendChild($generator);
-
-        return $feed;
-    }
-
-    /**
-     * Generate the entries of the feed when working in write mode
-     *
-     * The following nodes are constructed for each feed entry
-     * <entry>
-     *    <id>url to feed entry</id>
-     *    <title>entry title</title>
-     *    <updated>last update</updated>
-     *    <link rel="alternate" href="url to feed entry" />
-     *    <summary>short text</summary>
-     *    <content>long version, can contain html</content>
-     * </entry>
-     *
-     * @param  array      $array the data to use
-     * @param  DOMElement $root  the root node to use
-     * @return void
-     */
-    protected function _mapFeedEntries(DOMElement $root, $array)
-    {
-        foreach ($array as $dataentry) {
-            $entry = $this->_element->createElement('entry');
-
-            $id = $this->_element->createElement('id', isset($dataentry->guid) ? $dataentry->guid : $dataentry->link);
-            $entry->appendChild($id);
-
-            $title = $this->_element->createElement('title');
-            $title->appendChild($this->_element->createCDATASection($dataentry->title));
-            $entry->appendChild($title);
-
-            $updated = isset($dataentry->lastUpdate) ? $dataentry->lastUpdate : time();
-            $updated = $this->_element->createElement('updated', date(DATE_ATOM, $updated));
-            $entry->appendChild($updated);
-
-            $link = $this->_element->createElement('link');
-            $link->setAttribute('rel', 'alternate');
-            $link->setAttribute('href', $dataentry->link);
-            $entry->appendChild($link);
-
-            $summary = $this->_element->createElement('summary');
-            $summary->appendChild($this->_element->createCDATASection($dataentry->description));
-            $entry->appendChild($summary);
-
-            if (isset($dataentry->content)) {
-                $content = $this->_element->createElement('content');
-                $content->setAttribute('type', 'html');
-                $content->appendChild($this->_element->createCDATASection($dataentry->content));
-                $entry->appendChild($content);
-            }
-
-            if (isset($dataentry->category)) {
-                foreach ($dataentry->category as $category) {
-                    $node = $this->_element->createElement('category');
-                    $node->setAttribute('term', $category['term']);
-                    if (isset($category['scheme'])) {
-                        $node->setAttribute('scheme', $category['scheme']);
-                    }
-                    $entry->appendChild($node);
-                }
-            }
-
-            if (isset($dataentry->source)) {
-                $source = $this->_element->createElement('source');
-                $title = $this->_element->createElement('title', $dataentry->source['title']);
-                $source->appendChild($title);
-                $link = $this->_element->createElement('link', $dataentry->source['title']);
-                $link->setAttribute('rel', 'alternate');
-                $link->setAttribute('href', $dataentry->source['url']);
-                $source->appendChild($link);
-            }
-
-            if (isset($dataentry->enclosure)) {
-                foreach ($dataentry->enclosure as $enclosure) {
-                    $node = $this->_element->createElement('link');
-                    $node->setAttribute('rel', 'enclosure');
-                    $node->setAttribute('href', $enclosure['url']);
-                    if (isset($enclosure['type'])) {
-                        $node->setAttribute('type', $enclosure['type']);
-                    }
-                    if (isset($enclosure['length'])) {
-                        $node->setAttribute('length', $enclosure['length']);
-                    }
-                    $entry->appendChild($node);
-                }
-            }
-
-            if (isset($dataentry->comments)) {
-                $comments = $this->_element->createElementNS('http://wellformedweb.org/CommentAPI/',
-                                                             'wfw:comment',
-                                                             $dataentry->comments);
-                $entry->appendChild($comments);
-            }
-            if (isset($dataentry->commentRss)) {
-                $comments = $this->_element->createElementNS('http://wellformedweb.org/CommentAPI/',
-                                                             'wfw:commentRss',
-                                                             $dataentry->commentRss);
-                $entry->appendChild($comments);
-            }
-
-            $root->appendChild($entry);
-        }
-    }
-
-    /**
-     * Override Zend_Feed_Element to allow formated feeds
-     *
-     * @return string
-     */
-    public function saveXml()
-    {
-        // Return a complete document including XML prologue.
-        $doc = new DOMDocument($this->_element->ownerDocument->version,
-                               $this->_element->ownerDocument->actualEncoding);
-        $doc->appendChild($doc->importNode($this->_element, true));
-        $doc->formatOutput = true;
-
-        return $doc->saveXML();
-    }
-
-    /**
-     * Send feed to a http client with the correct header
-     *
-     * @return void
-     * @throws Zend_Feed_Exception if headers have already been sent
-     */
-    public function send()
-    {
-        if (headers_sent()) {
-            /** 
-             * @see Zend_Feed_Exception
-             */
-            require_once 'Zend/Feed/Exception.php';
-            throw new Zend_Feed_Exception('Cannot send ATOM because headers have already been sent.');
-        }
-
-        header('Content-Type: application/atom+xml; charset=' . $this->_element->ownerDocument->actualEncoding);
-
-        echo $this->saveXML();
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

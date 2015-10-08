@@ -1,501 +1,169 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Cache
- * @subpackage Zend_Cache_Backend
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-
-/**
- * @see Zend_Cache_Backend_ExtendedInterface
- */
-require_once 'Zend/Cache/Backend/ExtendedInterface.php';
-
-/**
- * @see Zend_Cache_Backend
- */
-require_once 'Zend/Cache/Backend.php';
-
-
-/**
- * @package    Zend_Cache
- * @subpackage Zend_Cache_Backend
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-class Zend_Cache_Backend_TwoLevels extends Zend_Cache_Backend implements Zend_Cache_Backend_ExtendedInterface
-{
-    /**
-     * Available options
-     *
-     * =====> (string) slow_backend :
-     * - Slow backend name
-     * - Must implement the Zend_Cache_Backend_ExtendedInterface
-     * - Should provide a big storage
-     *
-     * =====> (string) fast_backend :
-     * - Flow backend name
-     * - Must implement the Zend_Cache_Backend_ExtendedInterface
-     * - Must be much faster than slow_backend
-     *
-     * =====> (array) slow_backend_options :
-     * - Slow backend options (see corresponding backend)
-     *
-     * =====> (array) fast_backend_options :
-     * - Fast backend options (see corresponding backend)
-     *
-     * =====> (int) stats_update_factor :
-     * - Disable / Tune the computation of the fast backend filling percentage
-     * - When saving a record into cache :
-     *     1               => systematic computation of the fast backend filling percentage
-     *     x (integer) > 1 => computation of the fast backend filling percentage randomly 1 times on x cache write
-     *
-     * =====> (boolean) slow_backend_custom_naming :
-     * =====> (boolean) fast_backend_custom_naming :
-     * =====> (boolean) slow_backend_autoload :
-     * =====> (boolean) fast_backend_autoload :
-     * - See Zend_Cache::factory() method
-     *
-     * =====> (boolean) auto_refresh_fast_cache
-     * - If true, auto refresh the fast cache when a cache record is hit
-     *
-     * @var array available options
-     */
-    protected $_options = array(
-        'slow_backend' => 'File',
-        'fast_backend' => 'Apc',
-        'slow_backend_options' => array(),
-        'fast_backend_options' => array(),
-        'stats_update_factor' => 10,
-        'slow_backend_custom_naming' => false,
-        'fast_backend_custom_naming' => false,
-        'slow_backend_autoload' => false,
-        'fast_backend_autoload' => false,
-        'auto_refresh_fast_cache' => true
-    );
-
-    /**
-     * Slow Backend
-     *
-     * @var Zend_Cache_Backend
-     */
-    private $_slowBackend;
-
-    /**
-     * Fast Backend
-     *
-     * @var Zend_Cache_Backend
-     */
-    private $_fastBackend;
-
-    /**
-     * Cache for the fast backend filling percentage
-     *
-     * @var int
-     */
-    private $_fastBackendFillingPercentage = null;
-
-    /**
-     * Constructor
-     *
-     * @param  array $options Associative array of options
-     * @throws Zend_Cache_Exception
-     * @return void
-     */
-    public function __construct(array $options = array())
-    {
-        parent::__construct($options);
-        if ($this->_options['slow_backend'] === null) {
-            Zend_Cache::throwException('slow_backend option has to set');
-        }
-        if ($this->_options['fast_backend'] === null) {
-            Zend_Cache::throwException('fast_backend option has to set');
-        }
-        $this->_slowBackend = Zend_Cache::_makeBackend($this->_options['slow_backend'], $this->_options['slow_backend_options'], $this->_options['slow_backend_custom_naming'], $this->_options['slow_backend_autoload']);
-        $this->_fastBackend = Zend_Cache::_makeBackend($this->_options['fast_backend'], $this->_options['fast_backend_options'], $this->_options['fast_backend_custom_naming'], $this->_options['fast_backend_autoload']);
-        if (!in_array('Zend_Cache_Backend_ExtendedInterface', class_implements($this->_slowBackend))) {
-            Zend_Cache::throwException('slow_backend must implement the Zend_Cache_Backend_ExtendedInterface interface');
-        }
-        if (!in_array('Zend_Cache_Backend_ExtendedInterface', class_implements($this->_fastBackend))) {
-            Zend_Cache::throwException('fast_backend must implement the Zend_Cache_Backend_ExtendedInterface interface');
-        }
-        $this->_slowBackend->setDirectives($this->_directives);
-        $this->_fastBackend->setDirectives($this->_directives);
-    }
-
-    /**
-     * Test if a cache is available or not (for the given id)
-     *
-     * @param  string $id cache id
-     * @return mixed|false (a cache is not available) or "last modified" timestamp (int) of the available cache record
-     */
-    public function test($id)
-    {
-        $fastTest = $this->_fastBackend->test($id);
-        if ($fastTest) {
-            return $fastTest;
-        } else {
-            return $this->_slowBackend->test($id);
-        }
-    }
-
-    /**
-     * Save some string datas into a cache record
-     *
-     * Note : $data is always "string" (serialization is done by the
-     * core not by the backend)
-     *
-     * @param  string $data            Datas to cache
-     * @param  string $id              Cache id
-     * @param  array $tags             Array of strings, the cache record will be tagged by each string entry
-     * @param  int   $specificLifetime If != false, set a specific lifetime for this cache record (null => infinite lifetime)
-     * @param  int   $priority         integer between 0 (very low priority) and 10 (maximum priority) used by some particular backends
-     * @return boolean true if no problem
-     */
-    public function save($data, $id, $tags = array(), $specificLifetime = false, $priority = 8)
-    {
-        $usage = $this->_getFastFillingPercentage('saving');
-        $boolFast = true;
-        $lifetime = $this->getLifetime($specificLifetime);
-        $preparedData = $this->_prepareData($data, $lifetime, $priority);
-        if (($priority > 0) && (10 * $priority >= $usage)) {
-            $fastLifetime = $this->_getFastLifetime($lifetime, $priority);
-            $boolFast = $this->_fastBackend->save($preparedData, $id, array(), $fastLifetime);
-        }
-        $boolSlow = $this->_slowBackend->save($preparedData, $id, $tags, $lifetime);
-        return ($boolFast && $boolSlow);
-    }
-
-    /**
-     * Test if a cache is available for the given id and (if yes) return it (false else)
-     *
-     * Note : return value is always "string" (unserialization is done by the core not by the backend)
-     *
-     * @param  string  $id                     Cache id
-     * @param  boolean $doNotTestCacheValidity If set to true, the cache validity won't be tested
-     * @return string|false cached datas
-     */
-    public function load($id, $doNotTestCacheValidity = false)
-    {
-        $res = $this->_fastBackend->load($id, $doNotTestCacheValidity);
-        if ($res === false) {
-            $res = $this->_slowBackend->load($id, $doNotTestCacheValidity);
-            if ($res === false) {
-                // there is no cache at all for this id
-                return false;
-            }
-        }
-        $array = unserialize($res);
-        // maybe, we have to refresh the fast cache ?
-        if ($this->_options['auto_refresh_fast_cache']) {
-            if ($array['priority'] == 10) {
-                // no need to refresh the fast cache with priority = 10
-                return $array['data'];
-            }
-            $newFastLifetime = $this->_getFastLifetime($array['lifetime'], $array['priority'], time() - $array['expire']);
-            // we have the time to refresh the fast cache
-            $usage = $this->_getFastFillingPercentage('loading');
-            if (($array['priority'] > 0) && (10 * $array['priority'] >= $usage)) {
-                // we can refresh the fast cache
-                $preparedData = $this->_prepareData($array['data'], $array['lifetime'], $array['priority']);
-                $this->_fastBackend->save($preparedData, $id, array(), $newFastLifetime);
-            }
-        }
-        return $array['data'];
-    }
-
-    /**
-     * Remove a cache record
-     *
-     * @param  string $id Cache id
-     * @return boolean True if no problem
-     */
-    public function remove($id)
-    {
-        $this->_fastBackend->remove($id);
-        return $this->_slowBackend->remove($id);
-    }
-
-    /**
-     * Clean some cache records
-     *
-     * Available modes are :
-     * Zend_Cache::CLEANING_MODE_ALL (default)    => remove all cache entries ($tags is not used)
-     * Zend_Cache::CLEANING_MODE_OLD              => remove too old cache entries ($tags is not used)
-     * Zend_Cache::CLEANING_MODE_MATCHING_TAG     => remove cache entries matching all given tags
-     *                                               ($tags can be an array of strings or a single string)
-     * Zend_Cache::CLEANING_MODE_NOT_MATCHING_TAG => remove cache entries not {matching one of the given tags}
-     *                                               ($tags can be an array of strings or a single string)
-     * Zend_Cache::CLEANING_MODE_MATCHING_ANY_TAG => remove cache entries matching any given tags
-     *                                               ($tags can be an array of strings or a single string)
-     *
-     * @param  string $mode Clean mode
-     * @param  array  $tags Array of tags
-     * @throws Zend_Cache_Exception
-     * @return boolean true if no problem
-     */
-    public function clean($mode = Zend_Cache::CLEANING_MODE_ALL, $tags = array())
-    {
-        switch($mode) {
-            case Zend_Cache::CLEANING_MODE_ALL:
-                $boolFast = $this->_fastBackend->clean(Zend_Cache::CLEANING_MODE_ALL);
-                $boolSlow = $this->_slowBackend->clean(Zend_Cache::CLEANING_MODE_ALL);
-                return $boolFast && $boolSlow;
-                break;
-            case Zend_Cache::CLEANING_MODE_OLD:
-                return $this->_slowBackend->clean(Zend_Cache::CLEANING_MODE_OLD);
-            case Zend_Cache::CLEANING_MODE_MATCHING_TAG:
-                $ids = $this->_slowBackend->getIdsMatchingTags($tags);
-                $res = true;
-                foreach ($ids as $id) {
-                    $res = $res && $this->_slowBackend->remove($id) && $this->_fastBackend->remove($id);
-                }
-                return $res;
-                break;
-            case Zend_Cache::CLEANING_MODE_NOT_MATCHING_TAG:
-                $ids = $this->_slowBackend->getIdsNotMatchingTags($tags);
-                $res = true;
-                foreach ($ids as $id) {
-                    $res = $res && $this->_slowBackend->remove($id) && $this->_fastBackend->remove($id);
-                }
-                return $res;
-                break;
-            case Zend_Cache::CLEANING_MODE_MATCHING_ANY_TAG:
-                $ids = $this->_slowBackend->getIdsMatchingAnyTags($tags);
-                $res = true;
-                foreach ($ids as $id) {
-                    $res = $res && $this->_slowBackend->remove($id) && $this->_fastBackend->remove($id);
-                }
-                return $res;
-                break;
-            default:
-                Zend_Cache::throwException('Invalid mode for clean() method');
-                break;
-        }
-    }
-
-    /**
-     * Return an array of stored cache ids
-     *
-     * @return array array of stored cache ids (string)
-     */
-    public function getIds()
-    {
-        return $this->_slowBackend->getIds();
-    }
-
-    /**
-     * Return an array of stored tags
-     *
-     * @return array array of stored tags (string)
-     */
-    public function getTags()
-    {
-        return $this->_slowBackend->getTags();
-    }
-
-    /**
-     * Return an array of stored cache ids which match given tags
-     *
-     * In case of multiple tags, a logical AND is made between tags
-     *
-     * @param array $tags array of tags
-     * @return array array of matching cache ids (string)
-     */
-    public function getIdsMatchingTags($tags = array())
-    {
-        return $this->_slowBackend->getIdsMatchingTags($tags);
-    }
-
-    /**
-     * Return an array of stored cache ids which don't match given tags
-     *
-     * In case of multiple tags, a logical OR is made between tags
-     *
-     * @param array $tags array of tags
-     * @return array array of not matching cache ids (string)
-     */
-    public function getIdsNotMatchingTags($tags = array())
-    {
-        return $this->_slowBackend->getIdsNotMatchingTags($tags);
-    }
-
-    /**
-     * Return an array of stored cache ids which match any given tags
-     *
-     * In case of multiple tags, a logical AND is made between tags
-     *
-     * @param array $tags array of tags
-     * @return array array of any matching cache ids (string)
-     */
-    public function getIdsMatchingAnyTags($tags = array())
-    {
-        return $this->_slowBackend->getIdsMatchingAnyTags($tags);
-    }
-
-
-    /**
-     * Return the filling percentage of the backend storage
-     *
-     * @return int integer between 0 and 100
-     */
-    public function getFillingPercentage()
-    {
-        return $this->_slowBackend->getFillingPercentage();
-    }
-
-    /**
-     * Return an array of metadatas for the given cache id
-     *
-     * The array must include these keys :
-     * - expire : the expire timestamp
-     * - tags : a string array of tags
-     * - mtime : timestamp of last modification time
-     *
-     * @param string $id cache id
-     * @return array array of metadatas (false if the cache id is not found)
-     */
-    public function getMetadatas($id)
-    {
-        return $this->_slowBackend->getMetadatas($id);
-    }
-
-    /**
-     * Give (if possible) an extra lifetime to the given cache id
-     *
-     * @param string $id cache id
-     * @param int $extraLifetime
-     * @return boolean true if ok
-     */
-    public function touch($id, $extraLifetime)
-    {
-        return $this->_slowBackend->touch($id, $extraLifetime);
-    }
-
-    /**
-     * Return an associative array of capabilities (booleans) of the backend
-     *
-     * The array must include these keys :
-     * - automatic_cleaning (is automating cleaning necessary)
-     * - tags (are tags supported)
-     * - expired_read (is it possible to read expired cache records
-     *                 (for doNotTestCacheValidity option for example))
-     * - priority does the backend deal with priority when saving
-     * - infinite_lifetime (is infinite lifetime can work with this backend)
-     * - get_list (is it possible to get the list of cache ids and the complete list of tags)
-     *
-     * @return array associative of with capabilities
-     */
-    public function getCapabilities()
-    {
-        $slowBackendCapabilities = $this->_slowBackend->getCapabilities();
-        return array(
-            'automatic_cleaning' => $slowBackendCapabilities['automatic_cleaning'],
-            'tags' => $slowBackendCapabilities['tags'],
-            'expired_read' => $slowBackendCapabilities['expired_read'],
-            'priority' => $slowBackendCapabilities['priority'],
-            'infinite_lifetime' => $slowBackendCapabilities['infinite_lifetime'],
-            'get_list' => $slowBackendCapabilities['get_list']
-        );
-    }
-
-    /**
-     * Prepare a serialized array to store datas and metadatas informations
-     *
-     * @param string $data data to store
-     * @param int $lifetime original lifetime
-     * @param int $priority priority
-     * @return string serialize array to store into cache
-     */
-    private function _prepareData($data, $lifetime, $priority)
-    {
-        $lt = $lifetime;
-        if ($lt === null) {
-            $lt = 9999999999;
-        }
-        return serialize(array(
-            'data' => $data,
-            'lifetime' => $lifetime,
-            'expire' => time() + $lt,
-            'priority' => $priority
-        ));
-    }
-
-    /**
-     * Compute and return the lifetime for the fast backend
-     *
-     * @param int $lifetime original lifetime
-     * @param int $priority priority
-     * @param int $maxLifetime maximum lifetime
-     * @return int lifetime for the fast backend
-     */
-    private function _getFastLifetime($lifetime, $priority, $maxLifetime = null)
-    {
-        if ($lifetime === null) {
-            // if lifetime is null, we have an infinite lifetime
-            // we need to use arbitrary lifetimes
-            $fastLifetime = (int) (2592000 / (11 - $priority));
-        } else {
-            $fastLifetime = (int) ($lifetime / (11 - $priority));
-        }
-        if (($maxLifetime !== null) && ($maxLifetime >= 0)) {
-            if ($fastLifetime > $maxLifetime) {
-                return $maxLifetime;
-            }
-        }
-        return $fastLifetime;
-    }
-
-    /**
-     * PUBLIC METHOD FOR UNIT TESTING ONLY !
-     *
-     * Force a cache record to expire
-     *
-     * @param string $id cache id
-     */
-    public function ___expire($id)
-    {
-        $this->_fastBackend->remove($id);
-        $this->_slowBackend->___expire($id);
-    }
-
-    private function _getFastFillingPercentage($mode)
-    {
-
-        if ($mode == 'saving') {
-            // mode saving
-            if ($this->_fastBackendFillingPercentage === null) {
-                $this->_fastBackendFillingPercentage = $this->_fastBackend->getFillingPercentage();
-            } else {
-                $rand = rand(1, $this->_options['stats_update_factor']);
-                if ($rand == 1) {
-                    // we force a refresh
-                    $this->_fastBackendFillingPercentage = $this->_fastBackend->getFillingPercentage();
-                }
-            }
-        } else {
-            // mode loading
-            // we compute the percentage only if it's not available in cache
-            if ($this->_fastBackendFillingPercentage === null) {
-                $this->_fastBackendFillingPercentage = $this->_fastBackend->getFillingPercentage();
-            }
-        }
-        return $this->_fastBackendFillingPercentage;
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

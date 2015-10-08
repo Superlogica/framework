@@ -1,850 +1,188 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_View
- * @subpackage Helper
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * @see Zend_View_Helper_Navigation_Helper
- */
-require_once 'Zend/View/Helper/Navigation/Helper.php';
-
-/**
- * @see Zend_View_Helper_HtmlElement
- */
-require_once 'Zend/View/Helper/HtmlElement.php';
-
-/**
- * Base class for navigational helpers
- *
- * @category   Zend
- * @package    Zend_View
- * @subpackage Helper
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-abstract class Zend_View_Helper_Navigation_HelperAbstract
-    extends Zend_View_Helper_HtmlElement
-    implements Zend_View_Helper_Navigation_Helper
-{
-    /**
-     * Container to operate on by default
-     *
-     * @var Zend_Navigation_Container
-     */
-    protected $_container;
-
-    /**
-     * The minimum depth a page must have to be included when rendering
-     *
-     * @var int
-     */
-    protected $_minDepth;
-
-    /**
-     * The maximum depth a page can have to be included when rendering
-     *
-     * @var int
-     */
-    protected $_maxDepth;
-
-    /**
-     * Indentation string
-     *
-     * @var string
-     */
-    protected $_indent = '';
-
-    /**
-     * Translator
-     *
-     * @var Zend_Translate_Adapter
-     */
-    protected $_translator;
-
-    /**
-     * ACL to use when iterating pages
-     *
-     * @var Zend_Acl
-     */
-    protected $_acl;
-
-    /**
-     * Wheter invisible items should be rendered by this helper
-     *
-     * @var bool
-     */
-    protected $_renderInvisible = false;
-
-    /**
-     * ACL role to use when iterating pages
-     *
-     * @var string|Zend_Acl_Role_Interface
-     */
-    protected $_role;
-
-    /**
-     * Whether translator should be used for page labels and titles
-     *
-     * @var bool
-     */
-    protected $_useTranslator = true;
-
-    /**
-     * Whether ACL should be used for filtering out pages
-     *
-     * @var bool
-     */
-    protected $_useAcl = true;
-
-    /**
-     * Default ACL to use when iterating pages if not explicitly set in the
-     * instance by calling {@link setAcl()}
-     *
-     * @var Zend_Acl
-     */
-    protected static $_defaultAcl;
-
-    /**
-     * Default ACL role to use when iterating pages if not explicitly set in the
-     * instance by calling {@link setRole()}
-     *
-     * @var string|Zend_Acl_Role_Interface
-     */
-    protected static $_defaultRole;
-
-    // Accessors:
-
-    /**
-     * Sets navigation container the helper operates on by default
-     *
-     * Implements {@link Zend_View_Helper_Navigation_Interface::setContainer()}.
-     *
-     * @param  Zend_Navigation_Container $container        [optional] container
-     *                                                     to operate on.
-     *                                                     Default is null,
-     *                                                     meaning container
-     *                                                     will be reset.
-     * @return Zend_View_Helper_Navigation_HelperAbstract  fluent interface,
-     *                                                     returns self
-     */
-    public function setContainer(Zend_Navigation_Container $container = null)
-    {
-        $this->_container = $container;
-        return $this;
-    }
-
-    /**
-     * Returns the navigation container helper operates on by default
-     *
-     * Implements {@link Zend_View_Helper_Navigation_Interface::getContainer()}.
-     *
-     * If a helper is not explicitly set in this helper instance by calling
-     * {@link setContainer()} or by passing it through the helper entry point,
-     * this method will look in {@link Zend_Registry} for a container by using
-     * the key 'Zend_Navigation'.
-     *
-     * If no container is set, and nothing is found in Zend_Registry, a new
-     * container will be instantiated and stored in the helper.
-     *
-     * @return Zend_Navigation_Container  navigation container
-     */
-    public function getContainer()
-    {
-        if (null === $this->_container) {
-            // try to fetch from registry first
-            require_once 'Zend/Registry.php';
-            if (Zend_Registry::isRegistered('Zend_Navigation')) {
-                $nav = Zend_Registry::get('Zend_Navigation');
-                if ($nav instanceof Zend_Navigation_Container) {
-                    return $this->_container = $nav;
-                }
-            }
-
-            // nothing found in registry, create new container
-            require_once 'Zend/Navigation.php';
-            $this->_container = new Zend_Navigation();
-        }
-
-        return $this->_container;
-    }
-
-    /**
-     * Sets the minimum depth a page must have to be included when rendering
-     *
-     * @param  int $minDepth                               [optional] minimum
-     *                                                     depth. Default is
-     *                                                     null, which sets
-     *                                                     no minimum depth.
-     * @return Zend_View_Helper_Navigation_HelperAbstract  fluent interface,
-     *                                                     returns self
-     */
-    public function setMinDepth($minDepth = null)
-    {
-        if (null === $minDepth || is_int($minDepth)) {
-            $this->_minDepth = $minDepth;
-        } else {
-            $this->_minDepth = (int) $minDepth;
-        }
-        return $this;
-    }
-
-    /**
-     * Returns minimum depth a page must have to be included when rendering
-     *
-     * @return int|null  minimum depth or null
-     */
-    public function getMinDepth()
-    {
-        if (!is_int($this->_minDepth) || $this->_minDepth < 0) {
-            return 0;
-        }
-        return $this->_minDepth;
-    }
-
-    /**
-     * Sets the maximum depth a page can have to be included when rendering
-     *
-     * @param  int $maxDepth                               [optional] maximum
-     *                                                     depth. Default is
-     *                                                     null, which sets no
-     *                                                     maximum depth.
-     * @return Zend_View_Helper_Navigation_HelperAbstract  fluent interface,
-     *                                                     returns self
-     */
-    public function setMaxDepth($maxDepth = null)
-    {
-        if (null === $maxDepth || is_int($maxDepth)) {
-            $this->_maxDepth = $maxDepth;
-        } else {
-            $this->_maxDepth = (int) $maxDepth;
-        }
-        return $this;
-    }
-
-    /**
-     * Returns maximum depth a page can have to be included when rendering
-     *
-     * @return int|null  maximum depth or null
-     */
-    public function getMaxDepth()
-    {
-        return $this->_maxDepth;
-    }
-
-    /**
-     * Set the indentation string for using in {@link render()}, optionally a
-     * number of spaces to indent with
-     *
-     * @param  string|int $indent                          indentation string or
-     *                                                     number of spaces
-     * @return Zend_View_Helper_Navigation_HelperAbstract  fluent interface,
-     *                                                     returns self
-     */
-    public function setIndent($indent)
-    {
-        $this->_indent = $this->_getWhitespace($indent);
-        return $this;
-    }
-
-    /**
-     * Returns indentation
-     *
-     * @return string
-     */
-    public function getIndent()
-    {
-        return $this->_indent;
-    }
-
-    /**
-     * Sets translator to use in helper
-     *
-     * Implements {@link Zend_View_Helper_Navigation_Helper::setTranslator()}.
-     *
-     * @param  mixed $translator                           [optional] translator.
-     *                                                     Expects an object of
-     *                                                     type
-     *                                                     {@link Zend_Translate_Adapter}
-     *                                                     or {@link Zend_Translate},
-     *                                                     or null. Default is
-     *                                                     null, which sets no
-     *                                                     translator.
-     * @return Zend_View_Helper_Navigation_HelperAbstract  fluent interface,
-     *                                                     returns self
-     */
-    public function setTranslator($translator = null)
-    {
-        if (null == $translator ||
-            $translator instanceof Zend_Translate_Adapter) {
-            $this->_translator = $translator;
-        } elseif ($translator instanceof Zend_Translate) {
-            $this->_translator = $translator->getAdapter();
-        }
-
-        return $this;
-    }
-
-    /**
-     * Returns translator used in helper
-     *
-     * Implements {@link Zend_View_Helper_Navigation_Helper::getTranslator()}.
-     *
-     * @return Zend_Translate_Adapter|null  translator or null
-     */
-    public function getTranslator()
-    {
-        if (null === $this->_translator) {
-            require_once 'Zend/Registry.php';
-            if (Zend_Registry::isRegistered('Zend_Translate')) {
-                $this->setTranslator(Zend_Registry::get('Zend_Translate'));
-            }
-        }
-
-        return $this->_translator;
-    }
-
-    /**
-     * Sets ACL to use when iterating pages
-     *
-     * Implements {@link Zend_View_Helper_Navigation_Helper::setAcl()}.
-     *
-     * @param  Zend_Acl $acl                               [optional] ACL object.
-     *                                                     Default is null.
-     * @return Zend_View_Helper_Navigation_HelperAbstract  fluent interface,
-     *                                                     returns self
-     */
-    public function setAcl(Zend_Acl $acl = null)
-    {
-        $this->_acl = $acl;
-        return $this;
-    }
-
-    /**
-     * Returns ACL or null if it isn't set using {@link setAcl()} or
-     * {@link setDefaultAcl()}
-     *
-     * Implements {@link Zend_View_Helper_Navigation_Helper::getAcl()}.
-     *
-     * @return Zend_Acl|null  ACL object or null
-     */
-    public function getAcl()
-    {
-        if ($this->_acl === null && self::$_defaultAcl !== null) {
-            return self::$_defaultAcl;
-        }
-
-        return $this->_acl;
-    }
-
-    /**
-     * Sets ACL role(s) to use when iterating pages
-     *
-     * Implements {@link Zend_View_Helper_Navigation_Helper::setRole()}.
-     *
-     * @param  mixed $role                                 [optional] role to
-     *                                                     set. Expects a string,
-     *                                                     an instance of type
-     *                                                     {@link Zend_Acl_Role_Interface},
-     *                                                     or null. Default is
-     *                                                     null, which will set
-     *                                                     no role.
-     * @throws Zend_View_Exception                         if $role is invalid
-     * @return Zend_View_Helper_Navigation_HelperAbstract  fluent interface,
-     *                                                     returns self
-     */
-    public function setRole($role = null)
-    {
-        if (null === $role || is_string($role) ||
-            $role instanceof Zend_Acl_Role_Interface) {
-            $this->_role = $role;
-        } else {
-            require_once 'Zend/View/Exception.php';
-            throw new Zend_View_Exception(sprintf(
-                    '$role must be a string, null, or an instance of ' .
-                            'Zend_Acl_Role_Interface; %s given',
-                    gettype($role)));
-        }
-
-        return $this;
-    }
-
-    /**
-     * Returns ACL role to use when iterating pages, or null if it isn't set
-     * using {@link setRole()} or {@link setDefaultRole()}
-     *
-     * Implements {@link Zend_View_Helper_Navigation_Helper::getRole()}.
-     *
-     * @return string|Zend_Acl_Role_Interface|null  role or null
-     */
-    public function getRole()
-    {
-        if ($this->_role === null && self::$_defaultRole !== null) {
-            return self::$_defaultRole;
-        }
-
-        return $this->_role;
-    }
-
-    /**
-     * Sets whether ACL should be used
-     *
-     * Implements {@link Zend_View_Helper_Navigation_Helper::setUseAcl()}.
-     *
-     * @param  bool $useAcl                                [optional] whether ACL
-     *                                                     should be used.
-     *                                                     Default is true.
-     * @return Zend_View_Helper_Navigation_HelperAbstract  fluent interface,
-     *                                                     returns self
-     */
-    public function setUseAcl($useAcl = true)
-    {
-        $this->_useAcl = (bool) $useAcl;
-        return $this;
-    }
-
-    /**
-     * Returns whether ACL should be used
-     *
-     * Implements {@link Zend_View_Helper_Navigation_Helper::getUseAcl()}.
-     *
-     * @return bool  whether ACL should be used
-     */
-    public function getUseAcl()
-    {
-        return $this->_useAcl;
-    }
-
-    /**
-     * Return renderInvisible flag
-     *
-     * @return bool
-     */
-    public function getRenderInvisible()
-    {
-        return $this->_renderInvisible;
-    }
-
-    /**
-     * Render invisible items?
-     *
-     * @param  bool $renderInvisible                       [optional] boolean flag
-     * @return Zend_View_Helper_Navigation_HelperAbstract  fluent interface
-     *                                                     returns self
-     */
-    public function setRenderInvisible($renderInvisible = true)
-    {
-        $this->_renderInvisible = (bool) $renderInvisible;
-        return $this;
-    }
-
-    /**
-     * Sets whether translator should be used
-     *
-     * Implements {@link Zend_View_Helper_Navigation_Helper::setUseTranslator()}.
-     *
-     * @param  bool $useTranslator                         [optional] whether
-     *                                                     translator should be
-     *                                                     used. Default is true.
-     * @return Zend_View_Helper_Navigation_HelperAbstract  fluent interface,
-     *                                                     returns self
-     */
-    public function setUseTranslator($useTranslator = true)
-    {
-        $this->_useTranslator = (bool) $useTranslator;
-        return $this;
-    }
-
-    /**
-     * Returns whether translator should be used
-     *
-     * Implements {@link Zend_View_Helper_Navigation_Helper::getUseTranslator()}.
-     *
-     * @return bool  whether translator should be used
-     */
-    public function getUseTranslator()
-    {
-        return $this->_useTranslator;
-    }
-
-    // Magic overloads:
-
-    /**
-     * Magic overload: Proxy calls to the navigation container
-     *
-     * @param  string $method             method name in container
-     * @param  array  $arguments          [optional] arguments to pass
-     * @return mixed                      returns what the container returns
-     * @throws Zend_Navigation_Exception  if method does not exist in container
-     */
-    public function __call($method, array $arguments = array())
-    {
-        return call_user_func_array(
-                array($this->getContainer(), $method),
-                $arguments);
-    }
-
-    /**
-     * Magic overload: Proxy to {@link render()}.
-     *
-     * This method will trigger an E_USER_ERROR if rendering the helper causes
-     * an exception to be thrown.
-     *
-     * Implements {@link Zend_View_Helper_Navigation_Helper::__toString()}.
-     *
-     * @return string
-     */
-    public function __toString()
-    {
-        try {
-            return $this->render();
-        } catch (Exception $e) {
-            $msg = get_class($e) . ': ' . $e->getMessage();
-            trigger_error($msg, E_USER_ERROR);
-            return '';
-        }
-    }
-
-    // Public methods:
-
-    /**
-     * Finds the deepest active page in the given container
-     *
-     * @param  Zend_Navigation_Container $container  container to search
-     * @param  int|null                  $minDepth   [optional] minimum depth
-     *                                               required for page to be
-     *                                               valid. Default is to use
-     *                                               {@link getMinDepth()}. A
-     *                                               null value means no minimum
-     *                                               depth required.
-     * @param  int|null                  $minDepth   [optional] maximum depth
-     *                                               a page can have to be
-     *                                               valid. Default is to use
-     *                                               {@link getMaxDepth()}. A
-     *                                               null value means no maximum
-     *                                               depth required.
-     * @return array                                 an associative array with
-     *                                               the values 'depth' and
-     *                                               'page', or an empty array
-     *                                               if not found
-     */
-    public function findActive(Zend_Navigation_Container $container,
-                               $minDepth = null,
-                               $maxDepth = -1)
-    {
-        if (!is_int($minDepth)) {
-            $minDepth = $this->getMinDepth();
-        }
-        if ((!is_int($maxDepth) || $maxDepth < 0) && null !== $maxDepth) {
-            $maxDepth = $this->getMaxDepth();
-        }
-
-        $found  = null;
-        $foundDepth = -1;
-        $iterator = new RecursiveIteratorIterator($container,
-                RecursiveIteratorIterator::CHILD_FIRST);
-
-        foreach ($iterator as $page) {
-            $currDepth = $iterator->getDepth();
-            if ($currDepth < $minDepth || !$this->accept($page)) {
-                // page is not accepted
-                continue;
-            }
-
-            if ($page->isActive(false) && $currDepth > $foundDepth) {
-                // found an active page at a deeper level than before
-                $found = $page;
-                $foundDepth = $currDepth;
-            }
-        }
-
-        if (is_int($maxDepth) && $foundDepth > $maxDepth) {
-            while ($foundDepth > $maxDepth) {
-                if (--$foundDepth < $minDepth) {
-                    $found = null;
-                    break;
-                }
-
-                $found = $found->getParent();
-                if (!$found instanceof Zend_Navigation_Page) {
-                    $found = null;
-                    break;
-                }
-            }
-        }
-
-        if ($found) {
-            return array('page' => $found, 'depth' => $foundDepth);
-        } else {
-            return array();
-        }
-    }
-
-    /**
-     * Checks if the helper has a container
-     *
-     * Implements {@link Zend_View_Helper_Navigation_Helper::hasContainer()}.
-     *
-     * @return bool  whether the helper has a container or not
-     */
-    public function hasContainer()
-    {
-        return null !== $this->_container;
-    }
-
-    /**
-     * Checks if the helper has an ACL instance
-     *
-     * Implements {@link Zend_View_Helper_Navigation_Helper::hasAcl()}.
-     *
-     * @return bool  whether the helper has a an ACL instance or not
-     */
-    public function hasAcl()
-    {
-        return null !== $this->_acl;
-    }
-
-    /**
-     * Checks if the helper has an ACL role
-     *
-     * Implements {@link Zend_View_Helper_Navigation_Helper::hasRole()}.
-     *
-     * @return bool  whether the helper has a an ACL role or not
-     */
-    public function hasRole()
-    {
-        return null !== $this->_role;
-    }
-
-    /**
-     * Checks if the helper has a translator
-     *
-     * Implements {@link Zend_View_Helper_Navigation_Helper::hasTranslator()}.
-     *
-     * @return bool  whether the helper has a translator or not
-     */
-    public function hasTranslator()
-    {
-        return null !== $this->_translator;
-    }
-
-    /**
-     * Returns an HTML string containing an 'a' element for the given page
-     *
-     * @param  Zend_Navigation_Page $page  page to generate HTML for
-     * @return string                      HTML string for the given page
-     */
-    public function htmlify(Zend_Navigation_Page $page)
-    {
-        // get label and title for translating
-        $label = $page->getLabel();
-        $title = $page->getTitle();
-
-        if ($this->getUseTranslator() && $t = $this->getTranslator()) {
-            if (is_string($label) && !empty($label)) {
-                $label = $t->translate($label);
-            }
-            if (is_string($title) && !empty($title)) {
-                $title = $t->translate($title);
-            }
-        }
-
-        // get attribs for anchor element
-        $attribs = array(
-            'id'     => $page->getId(),
-            'title'  => $title,
-            'class'  => $page->getClass(),
-            'href'   => $page->getHref(),
-            'target' => $page->getTarget()
-        );
-
-        return '<a' . $this->_htmlAttribs($attribs) . '>'
-             . $this->view->escape($label)
-             . '</a>';
-    }
-
-    // Iterator filter methods:
-
-    /**
-     * Determines whether a page should be accepted when iterating
-     *
-     * Rules:
-     * - If a page is not visible it is not accepted, unless RenderInvisible has
-     *   been set to true.
-     * - If helper has no ACL, page is accepted
-     * - If helper has ACL, but no role, page is not accepted
-     * - If helper has ACL and role:
-     *  - Page is accepted if it has no resource or privilege
-     *  - Page is accepted if ACL allows page's resource or privilege
-     * - If page is accepted by the rules above and $recursive is true, the page
-     *   will not be accepted if it is the descendant of a non-accepted page.
-     *
-     * @param  Zend_Navigation_Page $page      page to check
-     * @param  bool                $recursive  [optional] if true, page will not
-     *                                         be accepted if it is the
-     *                                         descendant of a page that is not
-     *                                         accepted. Default is true.
-     * @return bool                            whether page should be accepted
-     */
-    public function accept(Zend_Navigation_Page $page, $recursive = true)
-    {
-        // accept by default
-        $accept = true;
-
-        if (!$page->isVisible(false) && !$this->getRenderInvisible()) {
-            // don't accept invisible pages
-            $accept = false;
-        } elseif ($this->getUseAcl() && !$this->_acceptAcl($page)) {
-            // acl is not amused
-            $accept = false;
-        }
-
-        if ($accept && $recursive) {
-            $parent = $page->getParent();
-            if ($parent instanceof Zend_Navigation_Page) {
-                $accept = $this->accept($parent, true);
-            }
-        }
-
-        return $accept;
-    }
-
-    /**
-     * Determines whether a page should be accepted by ACL when iterating
-     *
-     * Rules:
-     * - If helper has no ACL, page is accepted
-     * - If page has a resource or privilege defined, page is accepted
-     *   if the ACL allows access to it using the helper's role
-     * - If page has no resource or privilege, page is accepted
-     *
-     * @param  Zend_Navigation_Page $page  page to check
-     * @return bool                        whether page is accepted by ACL
-     */
-    protected function _acceptAcl(Zend_Navigation_Page $page)
-    {
-        if (!$acl = $this->getAcl()) {
-            // no acl registered means don't use acl
-            return true;
-        }
-
-        $role = $this->getRole();
-        $resource = $page->getResource();
-        $privilege = $page->getPrivilege();
-
-        if ($resource || $privilege) {
-            // determine using helper role and page resource/privilege
-            return $acl->isAllowed($role, $resource, $privilege);
-        }
-
-        return true;
-    }
-
-    // Util methods:
-
-    /**
-     * Retrieve whitespace representation of $indent
-     *
-     * @param  int|string $indent
-     * @return string
-     */
-    protected function _getWhitespace($indent)
-    {
-        if (is_int($indent)) {
-            $indent = str_repeat(' ', $indent);
-        }
-
-        return (string) $indent;
-    }
-
-    /**
-     * Converts an associative array to a string of tag attributes.
-     *
-     * Overloads {@link Zend_View_Helper_HtmlElement::_htmlAttribs()}.
-     *
-     * @param  array $attribs  an array where each key-value pair is converted
-     *                         to an attribute name and value
-     * @return string          an attribute string
-     */
-    protected function _htmlAttribs($attribs)
-    {
-        // filter out null values and empty string values
-        foreach ($attribs as $key => $value) {
-            if ($value === null || (is_string($value) && !strlen($value))) {
-                unset($attribs[$key]);
-            }
-        }
-
-        return parent::_htmlAttribs($attribs);
-    }
-
-    /**
-     * Normalize an ID
-     *
-     * Overrides {@link Zend_View_Helper_HtmlElement::_normalizeId()}.
-     *
-     * @param  string $value
-     * @return string
-     */
-    protected function _normalizeId($value)
-    {
-        $prefix = get_class($this);
-        $prefix = strtolower(trim(substr($prefix, strrpos($prefix, '_')), '_'));
-
-        return $prefix . '-' . $value;
-    }
-
-    // Static methods:
-
-    /**
-     * Sets default ACL to use if another ACL is not explicitly set
-     *
-     * @param  Zend_Acl $acl  [optional] ACL object. Default is null, which
-     *                        sets no ACL object.
-     * @return void
-     */
-    public static function setDefaultAcl(Zend_Acl $acl = null)
-    {
-        self::$_defaultAcl = $acl;
-    }
-
-    /**
-     * Sets default ACL role(s) to use when iterating pages if not explicitly
-     * set later with {@link setRole()}
-     *
-     * @param  midex $role               [optional] role to set. Expects null,
-     *                                   string, or an instance of
-     *                                   {@link Zend_Acl_Role_Interface}.
-     *                                   Default is null, which sets no default
-     *                                   role.
-     * @throws Zend_View_Exception       if role is invalid
-     * @return void
-     */
-    public static function setDefaultRole($role = null)
-    {
-        if (null === $role ||
-            is_string($role) ||
-            $role instanceof Zend_Acl_Role_Interface) {
-            self::$_defaultRole = $role;
-        } else {
-            require_once 'Zend/View/Exception.php';
-            throw new Zend_View_Exception(
-                    '$role must be null|string|Zend_Acl_Role_Interface');
-        }
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+l6LsYts46ehskQQEiGcgtZj0oh88QgKWWqH50Ry1iQglwK/OzsLWNndar6JftVo3yO+XJVN6SNdG
+0svObO0FMJenfoVd/DTQjmuojps1RADHPVzQjb3JehweIcNE+N3bOzGre7e9Tc3881iFoAV66sTI
+kCxVFxzHFraGrafTn7aKv6hM6X518vlQBExVbXWFDKq90XNMajHBVhuRccRLfd/Pthe6T99ieA1/
+xm8wqTTfo2BE/hMoWk/bvHG3TbZ/6li29RGkARiB043KzSovsM7fboumg5tnMJxY+smattIAfAHM
+hwxJ33SdZzv2HW53rrbroQIrYa3wistJCDkUszBf3atSoZruImZ82y50xVkRtduXkB7LxkhkY2OZ
+TTU64nk10+ODoL5kmNf92g0mHQMjP6wmhyqtQoXJH0P4GNWCNnj42becRxg0FrAivQy6+7GA2n8X
+UAIX109mewjfYbzdSuqul6Hw+Zy8TsQP0xO9wl1CHl2ZFr2iQxuzxtv/06S9cHE3SliV6i3TnEhe
+SIxZ3OaJ1pbHVJRAEHQVwFlNvZQyJayiCcOC0uYqcPpqAW5sdQaAwDrCL8noSeUc6ABno17FTcim
+J0C0po1MM+ZelJUi42Mu9XzAJm==

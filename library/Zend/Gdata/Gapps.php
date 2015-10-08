@@ -1,1094 +1,258 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Gapps
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * @see Zend_Gdata
- */
-require_once 'Zend/Gdata.php';
-
-/**
- * @see Zend_Gdata_Gapps_UserFeed
- */
-require_once 'Zend/Gdata/Gapps/UserFeed.php';
-
-/**
- * @see Zend_Gdata_Gapps_NicknameFeed
- */
-require_once 'Zend/Gdata/Gapps/NicknameFeed.php';
-
-/**
- * @see Zend_Gdata_Gapps_EmailListFeed
- */
-require_once 'Zend/Gdata/Gapps/EmailListFeed.php';
-
-/**
- * @see Zend_Gdata_Gapps_EmailListRecipientFeed
- */
-require_once 'Zend/Gdata/Gapps/EmailListRecipientFeed.php';
-
-
-/**
- * Service class for interacting with the Google Apps Provisioning API.
- *
- * Like other service classes in this module, this class provides access via
- * an HTTP client to Google servers for working with entries and feeds.
- *
- * Because of the nature of this API, all access must occur over an
- * authenticated connection.
- *
- * @link http://code.google.com/apis/apps/gdata_provisioning_api_v2.0_reference.html
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Gapps
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Gdata_Gapps extends Zend_Gdata
-{
-
-    const APPS_BASE_FEED_URI = 'https://apps-apis.google.com/a/feeds';
-    const AUTH_SERVICE_NAME = 'apps';
-
-    /**
-     * Path to user feeds on the Google Apps server.
-     */
-    const APPS_USER_PATH = '/user/2.0';
-
-    /**
-     * Path to nickname feeds on the Google Apps server.
-     */
-    const APPS_NICKNAME_PATH = '/nickname/2.0';
-
-    /**
-     * Path to email list feeds on the Google Apps server.
-     */
-    const APPS_EMAIL_LIST_PATH = '/emailList/2.0';
-
-    /**
-     * Path to email list recipient feeds on the Google Apps server.
-     */
-    const APPS_EMAIL_LIST_RECIPIENT_POSTFIX = '/recipient';
-
-    /**
-     * The domain which is being administered via the Provisioning API.
-     *
-     * @var string
-     */
-    protected $_domain = null;
-
-    /**
-     * Namespaces used for Zend_Gdata_Gapps
-     *
-     * @var array
-     */
-    public static $namespaces = array(
-        array('apps', 'http://schemas.google.com/apps/2006', 1, 0)
-    );
-
-    /**
-     * Create Gdata_Gapps object
-     *
-     * @param Zend_Http_Client $client (optional) The HTTP client to use when
-     *          when communicating with the Google Apps servers.
-     * @param string $domain (optional) The Google Apps domain which is to be
-     *          accessed.
-     * @param string $applicationId The identity of the app in the form of Company-AppName-Version
-     */
-    public function __construct($client = null, $domain = null, $applicationId = 'MyCompany-MyApp-1.0')
-    {
-        $this->registerPackage('Zend_Gdata_Gapps');
-        $this->registerPackage('Zend_Gdata_Gapps_Extension');
-        parent::__construct($client, $applicationId);
-        $this->_httpClient->setParameterPost('service', self::AUTH_SERVICE_NAME);
-        $this->_domain = $domain;
-    }
-
-    /**
-     * Convert an exception to an ServiceException if an AppsForYourDomain
-     * XML document is contained within the original exception's HTTP
-     * response. If conversion fails, throw the original error.
-     *
-     * @param Zend_Gdata_Exception $e The exception to convert.
-     * @throws Zend_Gdata_Gapps_ServiceException
-     * @throws mixed
-     */
-    public static function throwServiceExceptionIfDetected($e) {
-        // Check to make sure that there actually response!
-        // This can happen if the connection dies before the request
-        // completes. (See ZF-5949)
-        $response = $e->getResponse();
-        if (!$response) {
-          require_once('Zend/Gdata/App/IOException.php');
-          throw new Zend_Gdata_App_IOException('No HTTP response received (possible connection failure)');
-        }
-
-        try {
-            // Check to see if there is an AppsForYourDomainErrors
-            // datastructure in the response. If so, convert it to
-            // an exception and throw it.
-            require_once 'Zend/Gdata/Gapps/ServiceException.php';
-            $error = new Zend_Gdata_Gapps_ServiceException();
-            $error->importFromString($response->getBody());
-            throw $error;
-        } catch (Zend_Gdata_App_Exception $e2) {
-            // Unable to convert the response to a ServiceException,
-            // most likely because the server didn't return an
-            // AppsForYourDomainErrors document. Throw the original
-            // exception.
-            throw $e;
-        }
-    }
-
-    /**
-     * Imports a feed located at $uri.
-     * This method overrides the default behavior of Zend_Gdata_App,
-     * providing support for Zend_Gdata_Gapps_ServiceException.
-     *
-     * @param  string $uri
-     * @param  Zend_Http_Client $client (optional) The client used for
-     *          communication
-     * @param  string $className (optional) The class which is used as the
-     *          return type
-     * @throws Zend_Gdata_App_Exception
-     * @throws Zend_Gdata_App_HttpException
-     * @throws Zend_Gdata_Gapps_ServiceException
-     * @return Zend_Gdata_App_Feed
-     */
-    public static function import($uri, $client = null, $className='Zend_Gdata_App_Feed')
-    {
-        try {
-            return parent::import($uri, $client, $className);
-        } catch (Zend_Gdata_App_HttpException $e) {
-            self::throwServiceExceptionIfDetected($e);
-        }
-    }
-
-    /**
-     * GET a URI using client object.
-     * This method overrides the default behavior of Zend_Gdata_App,
-     * providing support for Zend_Gdata_Gapps_ServiceException.
-     *
-     * @param string $uri GET URI
-     * @param array $extraHeaders Extra headers to add to the request, as an
-     *        array of string-based key/value pairs.
-     * @throws Zend_Gdata_App_HttpException
-     * @throws Zend_Gdata_Gapps_ServiceException
-     * @return Zend_Http_Response
-     */
-    public function get($uri, $extraHeaders = array())
-    {
-        try {
-            return parent::get($uri, $extraHeaders);
-        } catch (Zend_Gdata_App_HttpException $e) {
-            self::throwServiceExceptionIfDetected($e);
-        }
-    }
-
-    /**
-     * POST data with client object.
-     * This method overrides the default behavior of Zend_Gdata_App,
-     * providing support for Zend_Gdata_Gapps_ServiceException.
-     *
-     * @param mixed $data The Zend_Gdata_App_Entry or XML to post
-     * @param string $uri (optional) POST URI
-     * @param integer $remainingRedirects (optional)
-     * @param string $contentType Content-type of the data
-     * @param array $extraHaders Extra headers to add tot he request
-     * @return Zend_Http_Response
-     * @throws Zend_Gdata_App_HttpException
-     * @throws Zend_Gdata_App_InvalidArgumentException
-     * @throws Zend_Gdata_Gapps_ServiceException
-     */
-    public function post($data, $uri = null, $remainingRedirects = null,
-            $contentType = null, $extraHeaders = null)
-    {
-        try {
-            return parent::post($data, $uri, $remainingRedirects, $contentType, $extraHeaders);
-        } catch (Zend_Gdata_App_HttpException $e) {
-            self::throwServiceExceptionIfDetected($e);
-        }
-    }
-
-    /**
-     * PUT data with client object
-     * This method overrides the default behavior of Zend_Gdata_App,
-     * providing support for Zend_Gdata_Gapps_ServiceException.
-     *
-     * @param mixed $data The Zend_Gdata_App_Entry or XML to post
-     * @param string $uri (optional) PUT URI
-     * @param integer $remainingRedirects (optional)
-     * @param string $contentType Content-type of the data
-     * @param array $extraHaders Extra headers to add tot he request
-     * @return Zend_Http_Response
-     * @throws Zend_Gdata_App_HttpException
-     * @throws Zend_Gdata_App_InvalidArgumentException
-     * @throws Zend_Gdata_Gapps_ServiceException
-     */
-    public function put($data, $uri = null, $remainingRedirects = null,
-            $contentType = null, $extraHeaders = null)
-    {
-        try {
-            return parent::put($data, $uri, $remainingRedirects, $contentType, $extraHeaders);
-        } catch (Zend_Gdata_App_HttpException $e) {
-            self::throwServiceExceptionIfDetected($e);
-        }
-    }
-
-    /**
-     * DELETE entry with client object
-     * This method overrides the default behavior of Zend_Gdata_App,
-     * providing support for Zend_Gdata_Gapps_ServiceException.
-     *
-     * @param mixed $data The Zend_Gdata_App_Entry or URL to delete
-     * @param integer $remainingRedirects (optional)
-     * @return void
-     * @throws Zend_Gdata_App_HttpException
-     * @throws Zend_Gdata_App_InvalidArgumentException
-     * @throws Zend_Gdata_Gapps_ServiceException
-     */
-    public function delete($data, $remainingRedirects = null)
-    {
-        try {
-            return parent::delete($data, $remainingRedirects);
-        } catch (Zend_Gdata_App_HttpException $e) {
-            self::throwServiceExceptionIfDetected($e);
-        }
-    }
-
-    /**
-     * Set domain for this service instance. This should be a fully qualified
-     * domain, such as 'foo.example.com'.
-     *
-     * This value is used when calculating URLs for retrieving and posting
-     * entries. If no value is specified, a URL will have to be manually
-     * constructed prior to using any methods which interact with the Google
-     * Apps provisioning service.
-     *
-     * @param string $value The domain to be used for this session.
-     */
-    public function setDomain($value)
-    {
-        $this->_domain = $value;
-    }
-
-    /**
-     * Get domain for this service instance. This should be a fully qualified
-     * domain, such as 'foo.example.com'. If no domain is set, null will be
-     * returned.
-     *
-     * @return string The domain to be used for this session, or null if not
-     *          set.
-     */
-    public function getDomain()
-    {
-        return $this->_domain;
-    }
-
-    /**
-     * Returns the base URL used to access the Google Apps service, based
-     * on the current domain. The current domain can be temporarily
-     * overridden by providing a fully qualified domain as $domain.
-     *
-     * @param string $domain (optional) A fully-qualified domain to use
-     *          instead of the default domain for this service instance.
-     * @throws Zend_Gdata_App_InvalidArgumentException
-     */
-     public function getBaseUrl($domain = null)
-     {
-         if ($domain !== null) {
-             return self::APPS_BASE_FEED_URI . '/' . $domain;
-         } else if ($this->_domain !== null) {
-             return self::APPS_BASE_FEED_URI . '/' . $this->_domain;
-         } else {
-             require_once 'Zend/Gdata/App/InvalidArgumentException.php';
-             throw new Zend_Gdata_App_InvalidArgumentException(
-                     'Domain must be specified.');
-         }
-     }
-
-    /**
-     * Retrieve a UserFeed containing multiple UserEntry objects.
-     *
-     * @param mixed $location (optional) The location for the feed, as a URL
-     *          or Query.
-     * @return Zend_Gdata_Gapps_UserFeed
-     * @throws Zend_Gdata_App_Exception
-     * @throws Zend_Gdata_App_HttpException
-     * @throws Zend_Gdata_Gapps_ServiceException
-     */
-    public function getUserFeed($location = null)
-    {
-        if ($location === null) {
-            $uri = $this->getBaseUrl() . self::APPS_USER_PATH;
-        } else if ($location instanceof Zend_Gdata_Query) {
-            $uri = $location->getQueryUrl();
-        } else {
-            $uri = $location;
-        }
-        return parent::getFeed($uri, 'Zend_Gdata_Gapps_UserFeed');
-    }
-
-    /**
-     * Retreive NicknameFeed object containing multiple NicknameEntry objects.
-     *
-     * @param mixed $location (optional) The location for the feed, as a URL
-     *          or Query.
-     * @return Zend_Gdata_Gapps_NicknameFeed
-     * @throws Zend_Gdata_App_Exception
-     * @throws Zend_Gdata_App_HttpException
-     * @throws Zend_Gdata_Gapps_ServiceException
-     */
-    public function getNicknameFeed($location = null)
-    {
-        if ($location === null) {
-            $uri = $this->getBaseUrl() . self::APPS_NICKNAME_PATH;
-        } else if ($location instanceof Zend_Gdata_Query) {
-            $uri = $location->getQueryUrl();
-        } else {
-            $uri = $location;
-        }
-        return parent::getFeed($uri, 'Zend_Gdata_Gapps_NicknameFeed');
-    }
-
-    /**
-     * Retreive EmailListFeed object containing multiple EmailListEntry
-     * objects.
-     *
-     * @param mixed $location (optional) The location for the feed, as a URL
-     *          or Query.
-     * @return Zend_Gdata_Gapps_EmailListFeed
-     * @throws Zend_Gdata_App_Exception
-     * @throws Zend_Gdata_App_HttpException
-     * @throws Zend_Gdata_Gapps_ServiceException
-     */
-    public function getEmailListFeed($location = null)
-    {
-        if ($location === null) {
-            $uri = $this->getBaseUrl() . self::APPS_NICKNAME_PATH;
-        } else if ($location instanceof Zend_Gdata_Query) {
-            $uri = $location->getQueryUrl();
-        } else {
-            $uri = $location;
-        }
-        return parent::getFeed($uri, 'Zend_Gdata_Gapps_EmailListFeed');
-    }
-
-    /**
-     * Retreive EmailListRecipientFeed object containing multiple
-     * EmailListRecipientEntry objects.
-     *
-     * @param mixed $location The location for the feed, as a URL or Query.
-     * @return Zend_Gdata_Gapps_EmailListRecipientFeed
-     * @throws Zend_Gdata_App_Exception
-     * @throws Zend_Gdata_App_HttpException
-     * @throws Zend_Gdata_Gapps_ServiceException
-     */
-    public function getEmailListRecipientFeed($location)
-    {
-        if ($location === null) {
-            require_once 'Zend/Gdata/App/InvalidArgumentException.php';
-            throw new Zend_Gdata_App_InvalidArgumentException(
-                    'Location must not be null');
-        } else if ($location instanceof Zend_Gdata_Query) {
-            $uri = $location->getQueryUrl();
-        } else {
-            $uri = $location;
-        }
-        return parent::getFeed($uri, 'Zend_Gdata_Gapps_EmailListRecipientFeed');
-    }
-
-    /**
-     * Retreive a single UserEntry object.
-     *
-     * @param mixed $location The location for the feed, as a URL or Query.
-     * @return Zend_Gdata_Gapps_UserEntry
-     * @throws Zend_Gdata_App_Exception
-     * @throws Zend_Gdata_App_HttpException
-     * @throws Zend_Gdata_Gapps_ServiceException
-     */
-    public function getUserEntry($location)
-    {
-        if ($location === null) {
-            require_once 'Zend/Gdata/App/InvalidArgumentException.php';
-            throw new Zend_Gdata_App_InvalidArgumentException(
-                    'Location must not be null');
-        } else if ($location instanceof Zend_Gdata_Query) {
-            $uri = $location->getQueryUrl();
-        } else {
-            $uri = $location;
-        }
-        return parent::getEntry($uri, 'Zend_Gdata_Gapps_UserEntry');
-    }
-
-    /**
-     * Retreive a single NicknameEntry object.
-     *
-     * @param mixed $location The location for the feed, as a URL or Query.
-     * @return Zend_Gdata_Gapps_NicknameEntry
-     * @throws Zend_Gdata_App_Exception
-     * @throws Zend_Gdata_App_HttpException
-     * @throws Zend_Gdata_Gapps_ServiceException
-     */
-    public function getNicknameEntry($location)
-    {
-        if ($location === null) {
-            require_once 'Zend/Gdata/App/InvalidArgumentException.php';
-            throw new Zend_Gdata_App_InvalidArgumentException(
-                    'Location must not be null');
-        } else if ($location instanceof Zend_Gdata_Query) {
-            $uri = $location->getQueryUrl();
-        } else {
-            $uri = $location;
-        }
-        return parent::getEntry($uri, 'Zend_Gdata_Gapps_NicknameEntry');
-    }
-
-    /**
-     * Retreive a single EmailListEntry object.
-     *
-     * @param mixed $location The location for the feed, as a URL or Query.
-     * @return Zend_Gdata_Gapps_EmailListEntry
-     * @throws Zend_Gdata_App_Exception
-     * @throws Zend_Gdata_App_HttpException
-     * @throws Zend_Gdata_Gapps_ServiceException
-     */
-    public function getEmailListEntry($location)
-    {
-        if ($location === null) {
-            require_once 'Zend/Gdata/App/InvalidArgumentException.php';
-            throw new Zend_Gdata_App_InvalidArgumentException(
-                    'Location must not be null');
-        } else if ($location instanceof Zend_Gdata_Query) {
-            $uri = $location->getQueryUrl();
-        } else {
-            $uri = $location;
-        }
-        return parent::getEntry($uri, 'Zend_Gdata_Gapps_EmailListEntry');
-    }
-
-    /**
-     * Retreive a single EmailListRecipientEntry object.
-     *
-     * @param mixed $location The location for the feed, as a URL or Query.
-     * @return Zend_Gdata_Gapps_EmailListRecipientEntry
-     * @throws Zend_Gdata_App_Exception
-     * @throws Zend_Gdata_App_HttpException
-     * @throws Zend_Gdata_Gapps_ServiceException
-     */
-    public function getEmailListRecipientEntry($location)
-    {
-        if ($location === null) {
-            require_once 'Zend/Gdata/App/InvalidArgumentException.php';
-            throw new Zend_Gdata_App_InvalidArgumentException(
-                    'Location must not be null');
-        } else if ($location instanceof Zend_Gdata_Query) {
-            $uri = $location->getQueryUrl();
-        } else {
-            $uri = $location;
-        }
-        return parent::getEntry($uri, 'Zend_Gdata_Gapps_EmailListRecipientEntry');
-    }
-
-    /**
-     * Create a new user from a UserEntry.
-     *
-     * @param Zend_Gdata_Gapps_UserEntry $user The user entry to insert.
-     * @param string $uri (optional) The URI where the user should be
-     *          uploaded to. If null, the default user creation URI for
-     *          this domain will be used.
-     * @return Zend_Gdata_Gapps_UserEntry The inserted user entry as
-     *          returned by the server.
-     * @throws Zend_Gdata_App_Exception
-     * @throws Zend_Gdata_App_HttpException
-     * @throws Zend_Gdata_Gapps_ServiceException
-     */
-    public function insertUser($user, $uri = null)
-    {
-        if ($uri === null) {
-            $uri = $this->getBaseUrl() . self::APPS_USER_PATH;
-        }
-        $newEntry = $this->insertEntry($user, $uri, 'Zend_Gdata_Gapps_UserEntry');
-        return $newEntry;
-    }
-
-    /**
-     * Create a new nickname from a NicknameEntry.
-     *
-     * @param Zend_Gdata_Gapps_NicknameEntry $nickname The nickname entry to
-     *          insert.
-     * @param string $uri (optional) The URI where the nickname should be
-     *          uploaded to. If null, the default nickname creation URI for
-     *          this domain will be used.
-     * @return Zend_Gdata_Gapps_NicknameEntry The inserted nickname entry as
-     *          returned by the server.
-     * @throws Zend_Gdata_App_Exception
-     * @throws Zend_Gdata_App_HttpException
-     * @throws Zend_Gdata_Gapps_ServiceException
-     */
-    public function insertNickname($nickname, $uri = null)
-    {
-        if ($uri === null) {
-            $uri = $this->getBaseUrl() . self::APPS_NICKNAME_PATH;
-        }
-        $newEntry = $this->insertEntry($nickname, $uri, 'Zend_Gdata_Gapps_NicknameEntry');
-        return $newEntry;
-    }
-
-    /**
-     * Create a new email list from an EmailListEntry.
-     *
-     * @param Zend_Gdata_Gapps_EmailListEntry $emailList The email list entry
-     *          to insert.
-     * @param string $uri (optional) The URI where the email list should be
-     *          uploaded to. If null, the default email list creation URI for
-     *          this domain will be used.
-     * @return Zend_Gdata_Gapps_EmailListEntry The inserted email list entry
-     *          as returned by the server.
-     * @throws Zend_Gdata_App_Exception
-     * @throws Zend_Gdata_App_HttpException
-     * @throws Zend_Gdata_Gapps_ServiceException
-     */
-    public function insertEmailList($emailList, $uri = null)
-    {
-        if ($uri === null) {
-            $uri = $this->getBaseUrl() . self::APPS_EMAIL_LIST_PATH;
-        }
-        $newEntry = $this->insertEntry($emailList, $uri, 'Zend_Gdata_Gapps_EmailListEntry');
-        return $newEntry;
-    }
-
-    /**
-     * Create a new email list recipient from an EmailListRecipientEntry.
-     *
-     * @param Zend_Gdata_Gapps_EmailListRecipientEntry $recipient The recipient
-     *          entry to insert.
-     * @param string $uri (optional) The URI where the recipient should be
-     *          uploaded to. If null, the default recipient creation URI for
-     *          this domain will be used.
-     * @return Zend_Gdata_Gapps_EmailListRecipientEntry The inserted
-     *          recipient entry as returned by the server.
-     * @throws Zend_Gdata_App_Exception
-     * @throws Zend_Gdata_App_HttpException
-     * @throws Zend_Gdata_Gapps_ServiceException
-     */
-    public function insertEmailListRecipient($recipient, $uri = null)
-    {
-        if ($uri === null) {
-            require_once 'Zend/Gdata/App/InvalidArgumentException.php';
-            throw new Zend_Gdata_App_InvalidArgumentException(
-                    'URI must not be null');
-        } elseif ($uri instanceof Zend_Gdata_Gapps_EmailListEntry) {
-            $uri = $uri->getLink('edit')->href;
-        }
-        $newEntry = $this->insertEntry($recipient, $uri, 'Zend_Gdata_Gapps_EmailListRecipientEntry');
-        return $newEntry;
-    }
-
-    /**
-     * Provides a magic factory method to instantiate new objects with
-     * shorter syntax than would otherwise be required by the Zend Framework
-     * naming conventions. For more information, see Zend_Gdata_App::__call().
-     *
-     * This overrides the default behavior of __call() so that query classes
-     * do not need to have their domain manually set when created with
-     * a magic factory method.
-     *
-     * @see Zend_Gdata_App::__call()
-     * @param string $method The method name being called
-     * @param array $args The arguments passed to the call
-     * @throws Zend_Gdata_App_Exception
-     */
-    public function __call($method, $args) {
-        if (preg_match('/^new(\w+Query)/', $method, $matches)) {
-            $class = $matches[1];
-            $foundClassName = null;
-            foreach ($this->_registeredPackages as $name) {
-                 try {
-                     if (!class_exists($name . '_' . $class)) {
-                        require_once 'Zend/Loader.php';
-                        @Zend_Loader::loadClass($name . '_' . $class);
-                     }
-                     $foundClassName = $name . '_' . $class;
-                     break;
-                 } catch (Zend_Exception $e) {
-                     // package wasn't here- continue searching
-                 }
-            }
-            if ($foundClassName != null) {
-                $reflectionObj = new ReflectionClass($foundClassName);
-                // Prepend the domain to the query
-                $args = array_merge(array($this->getDomain()), $args);
-                return $reflectionObj->newInstanceArgs($args);
-            } else {
-                require_once 'Zend/Gdata/App/Exception.php';
-                throw new Zend_Gdata_App_Exception(
-                        "Unable to find '${class}' in registered packages");
-            }
-        } else {
-            return parent::__call($method, $args);
-        }
-
-    }
-
-    // Convenience methods
-    // Specified at http://code.google.com/apis/apps/gdata_provisioning_api_v2.0_reference.html#appendix_e
-
-    /**
-     * Create a new user entry and send it to the Google Apps servers.
-     *
-     * @param string $username The username for the new user.
-     * @param string $givenName The given name for the new user.
-     * @param string $familyName The family name for the new user.
-     * @param string $password The password for the new user as a plaintext string
-     *                 (if $passwordHashFunction is null) or a SHA-1 hashed
-     *                 value (if $passwordHashFunction = 'SHA-1').
-     * @param string $quotaLimitInMB (optional) The quota limit for the new user in MB.
-     * @return Zend_Gdata_Gapps_UserEntry (optional) The new user entry as returned by
-     *                 server.
-     * @throws Zend_Gdata_App_Exception
-     * @throws Zend_Gdata_App_HttpException
-     * @throws Zend_Gdata_Gapps_ServiceException
-     */
-    public function createUser ($username, $givenName, $familyName, $password,
-            $passwordHashFunction = null, $quotaLimitInMB = null) {
-        $user = $this->newUserEntry();
-        $user->login = $this->newLogin();
-        $user->login->username = $username;
-        $user->login->password = $password;
-        $user->login->hashFunctionName = $passwordHashFunction;
-        $user->name = $this->newName();
-        $user->name->givenName = $givenName;
-        $user->name->familyName = $familyName;
-        if ($quotaLimitInMB !== null) {
-            $user->quota = $this->newQuota();
-            $user->quota->limit = $quotaLimitInMB;
-        }
-        return $this->insertUser($user);
-    }
-
-    /**
-     * Retrieve a user based on their username.
-     *
-     * @param string $username The username to search for.
-     * @return Zend_Gdata_Gapps_UserEntry The username to search for, or null
-     *              if no match found.
-     * @throws Zend_Gdata_App_InvalidArgumentException
-     * @throws Zend_Gdata_App_HttpException
-     */
-    public function retrieveUser ($username) {
-        $query = $this->newUserQuery($username);
-        try {
-            $user = $this->getUserEntry($query);
-        } catch (Zend_Gdata_Gapps_ServiceException $e) {
-            // Set the user to null if not found
-            if ($e->hasError(Zend_Gdata_Gapps_Error::ENTITY_DOES_NOT_EXIST)) {
-                $user = null;
-            } else {
-                throw $e;
-            }
-        }
-        return $user;
-    }
-
-    /**
-     * Retrieve a page of users in alphabetical order, starting with the
-     * provided username.
-     *
-     * @param string $startUsername (optional) The first username to retrieve.
-     *          If null or not declared, the page will begin with the first
-     *          user in the domain.
-     * @return Zend_Gdata_Gapps_UserFeed Collection of Zend_Gdata_UserEntry
-     *              objects representing all users in the domain.
-     * @throws Zend_Gdata_App_Exception
-     * @throws Zend_Gdata_App_HttpException
-     * @throws Zend_Gdata_Gapps_ServiceException
-     */
-    public function retrievePageOfUsers ($startUsername = null) {
-        $query = $this->newUserQuery();
-        $query->setStartUsername($startUsername);
-        return $this->getUserFeed($query);
-    }
-
-    /**
-     * Retrieve all users in the current domain. Be aware that
-     * calling this function on a domain with many users will take a
-     * signifigant amount of time to complete. On larger domains this may
-     * may cause execution to timeout without proper precautions in place.
-     *
-     * @return Zend_Gdata_Gapps_UserFeed Collection of Zend_Gdata_UserEntry
-     *              objects representing all users in the domain.
-     * @throws Zend_Gdata_App_Exception
-     * @throws Zend_Gdata_App_HttpException
-     * @throws Zend_Gdata_Gapps_ServiceException
-     */
-    public function retrieveAllUsers () {
-        return $this->retrieveAllEntriesForFeed($this->retrievePageOfUsers());
-    }
-
-    /**
-     * Overwrite a specified username with the provided UserEntry.  The
-     * UserEntry does not need to contain an edit link.
-     *
-     * This method is provided for compliance with the Google Apps
-     * Provisioning API specification. Normally users will instead want to
-     * call UserEntry::save() instead.
-     *
-     * @see Zend_Gdata_App_Entry::save
-     * @param string $username The username whose data will be overwritten.
-     * @param Zend_Gdata_Gapps_UserEntry $userEntry The user entry which
-     *          will be overwritten.
-     * @return Zend_Gdata_Gapps_UserEntry The UserEntry returned by the
-     *          server.
-     * @throws Zend_Gdata_App_Exception
-     * @throws Zend_Gdata_App_HttpException
-     * @throws Zend_Gdata_Gapps_ServiceException
-     */
-    public function updateUser($username, $userEntry) {
-        return $this->updateEntry($userEntry, $this->getBaseUrl() .
-            self::APPS_USER_PATH . '/' . $username);
-    }
-
-    /**
-     * Mark a given user as suspended.
-     *
-     * @param string $username The username associated with the user who
-     *          should be suspended.
-     * @return Zend_Gdata_Gapps_UserEntry The UserEntry for the modified
-     *          user.
-     * @throws Zend_Gdata_App_Exception
-     * @throws Zend_Gdata_App_HttpException
-     * @throws Zend_Gdata_Gapps_ServiceException
-     */
-    public function suspendUser($username) {
-        $user = $this->retrieveUser($username);
-        $user->login->suspended = true;
-        return $user->save();
-    }
-
-    /**
-     * Mark a given user as not suspended.
-     *
-     * @param string $username The username associated with the user who
-     *          should be restored.
-     * @return Zend_Gdata_Gapps_UserEntry The UserEntry for the modified
-     *          user.
-     * @throws Zend_Gdata_App_Exception
-     * @throws Zend_Gdata_App_HttpException
-     * @throws Zend_Gdata_Gapps_ServiceException
-     */
-    public function restoreUser($username) {
-        $user = $this->retrieveUser($username);
-        $user->login->suspended = false;
-        return $user->save();
-    }
-
-    /**
-     * Delete a user by username.
-     *
-     * @param string $username The username associated with the user who
-     *          should be deleted.
-     * @throws Zend_Gdata_App_Exception
-     * @throws Zend_Gdata_App_HttpException
-     * @throws Zend_Gdata_Gapps_ServiceException
-     */
-    public function deleteUser($username) {
-        $this->delete($this->getBaseUrl() . self::APPS_USER_PATH . '/' .
-            $username);
-    }
-
-    /**
-     * Create a nickname for a given user.
-     *
-     * @param string $username The username to which the new nickname should
-     *          be associated.
-     * @param string $nickname The new nickname to be created.
-     * @return Zend_Gdata_Gapps_NicknameEntry The nickname entry which was
-     *          created by the server.
-     * @throws Zend_Gdata_App_Exception
-     * @throws Zend_Gdata_App_HttpException
-     * @throws Zend_Gdata_Gapps_ServiceException
-     */
-    public function createNickname($username, $nickname) {
-        $entry = $this->newNicknameEntry();
-        $nickname = $this->newNickname($nickname);
-        $login = $this->newLogin($username);
-        $entry->nickname = $nickname;
-        $entry->login = $login;
-        return $this->insertNickname($entry);
-    }
-
-    /**
-     * Retrieve the entry for a specified nickname.
-     *
-     * @param string $nickname The nickname to be retrieved.
-     * @return Zend_Gdata_Gapps_NicknameEntry The requested nickname entry.
-     * @throws Zend_Gdata_App_Exception
-     * @throws Zend_Gdata_App_HttpException
-     * @throws Zend_Gdata_Gapps_ServiceException
-     */
-    public function retrieveNickname($nickname) {
-        $query = $this->newNicknameQuery();
-        $query->setNickname($nickname);
-        try {
-            $nickname = $this->getNicknameEntry($query);
-        } catch (Zend_Gdata_Gapps_ServiceException $e) {
-            // Set the nickname to null if not found
-            if ($e->hasError(Zend_Gdata_Gapps_Error::ENTITY_DOES_NOT_EXIST)) {
-                $nickname = null;
-            } else {
-                throw $e;
-            }
-        }
-        return $nickname;
-    }
-
-    /**
-     * Retrieve all nicknames associated with a specific username.
-     *
-     * @param string $username The username whose nicknames should be
-     *          returned.
-     * @return Zend_Gdata_Gapps_NicknameFeed A feed containing all nicknames
-     *          for the given user, or null if
-     * @throws Zend_Gdata_App_Exception
-     * @throws Zend_Gdata_App_HttpException
-     * @throws Zend_Gdata_Gapps_ServiceException
-     */
-    public function retrieveNicknames($username) {
-        $query = $this->newNicknameQuery();
-        $query->setUsername($username);
-        $nicknameFeed = $this->retrieveAllEntriesForFeed(
-            $this->getNicknameFeed($query));
-        return $nicknameFeed;
-    }
-
-    /**
-     * Retrieve a page of nicknames in alphabetical order, starting with the
-     * provided nickname.
-     *
-     * @param string $startNickname (optional) The first nickname to
-     *          retrieve. If null or not declared, the page will begin with
-     *          the first nickname in the domain.
-     * @return Zend_Gdata_Gapps_NicknameFeed Collection of Zend_Gdata_NicknameEntry
-     *              objects representing all nicknames in the domain.
-     * @throws Zend_Gdata_App_Exception
-     * @throws Zend_Gdata_App_HttpException
-     * @throws Zend_Gdata_Gapps_ServiceException
-     */
-    public function retrievePageOfNicknames ($startNickname = null) {
-        $query = $this->newNicknameQuery();
-        $query->setStartNickname($startNickname);
-        return $this->getNicknameFeed($query);
-    }
-
-    /**
-     * Retrieve all nicknames in the current domain. Be aware that
-     * calling this function on a domain with many nicknames will take a
-     * signifigant amount of time to complete. On larger domains this may
-     * may cause execution to timeout without proper precautions in place.
-     *
-     * @return Zend_Gdata_Gapps_NicknameFeed Collection of Zend_Gdata_NicknameEntry
-     *              objects representing all nicknames in the domain.
-     * @throws Zend_Gdata_App_Exception
-     * @throws Zend_Gdata_App_HttpException
-     * @throws Zend_Gdata_Gapps_ServiceException
-     */
-    public function retrieveAllNicknames () {
-        return $this->retrieveAllEntriesForFeed($this->retrievePageOfNicknames());
-    }
-
-    /**
-     * Delete a specified nickname.
-     *
-     * @param string $nickname The name of the nickname to be deleted.
-     * @throws Zend_Gdata_App_Exception
-     * @throws Zend_Gdata_App_HttpException
-     * @throws Zend_Gdata_Gapps_ServiceException
-     */
-    public function deleteNickname($nickname) {
-        $this->delete($this->getBaseUrl() . self::APPS_NICKNAME_PATH . '/' . $nickname);
-    }
-
-    /**
-     * Create a new email list.
-     *
-     * @param string $emailList The name of the email list to be created.
-     * @return Zend_Gdata_Gapps_EmailListEntry The email list entry
-     *          as created on the server.
-     * @throws Zend_Gdata_App_Exception
-     * @throws Zend_Gdata_App_HttpException
-     * @throws Zend_Gdata_Gapps_ServiceException
-     */
-    public function createEmailList($emailList) {
-        $entry = $this->newEmailListEntry();
-        $list = $this->newEmailList();
-        $list->name = $emailList;
-        $entry->emailList = $list;
-        return $this->insertEmailList($entry);
-    }
-
-    /**
-     * Retrieve all email lists associated with a recipient.
-     *
-     * @param string $username The recipient whose associated email lists
-     *          should be returned.
-     * @return Zend_Gdata_Gapps_EmailListFeed The list of email lists found as
-     *          Zend_Gdata_EmailListEntry objects.
-     * @throws Zend_Gdata_App_Exception
-     * @throws Zend_Gdata_App_HttpException
-     * @throws Zend_Gdata_Gapps_ServiceException
-     */
-    public function retrieveEmailLists($recipient) {
-        $query = $this->newEmailListQuery();
-        $query->recipient = $recipient;
-        return $this->getEmailListFeed($query);
-    }
-
-    /**
-     * Retrieve a page of email lists in alphabetical order, starting with the
-     * provided email list.
-     *
-     * @param string $startEmailListName (optional) The first list to
-     *              retrieve. If null or not defined, the page will begin
-     *              with the first email list in the domain.
-     * @return Zend_Gdata_Gapps_EmailListFeed Collection of Zend_Gdata_EmailListEntry
-     *              objects representing all nicknames in the domain.
-     * @throws Zend_Gdata_App_Exception
-     * @throws Zend_Gdata_App_HttpException
-     * @throws Zend_Gdata_Gapps_ServiceException
-     */
-    public function retrievePageOfEmailLists ($startNickname = null) {
-        $query = $this->newEmailListQuery();
-        $query->setStartEmailListName($startNickname);
-        return $this->getEmailListFeed($query);
-    }
-
-    /**
-     * Retrieve all email lists associated with the curent domain. Be aware that
-     * calling this function on a domain with many email lists will take a
-     * signifigant amount of time to complete. On larger domains this may
-     * may cause execution to timeout without proper precautions in place.
-     *
-     * @return Zend_Gdata_Gapps_EmailListFeed The list of email lists found
-     *              as Zend_Gdata_Gapps_EmailListEntry objects.
-     * @throws Zend_Gdata_App_Exception
-     * @throws Zend_Gdata_App_HttpException
-     * @throws Zend_Gdata_Gapps_ServiceException
-     */
-    public function retrieveAllEmailLists() {
-        return $this->retrieveAllEntriesForFeed($this->retrievePageOfEmailLists());
-    }
-
-    /**
-     * Delete a specified email list.
-     *
-     * @param string $emailList The name of the emailList to be deleted.
-     * @throws Zend_Gdata_App_Exception
-     * @throws Zend_Gdata_App_HttpException
-     * @throws Zend_Gdata_Gapps_ServiceException
-     */
-    public function deleteEmailList($emailList) {
-        $this->delete($this->getBaseUrl() . self::APPS_EMAIL_LIST_PATH . '/'
-            . $emailList);
-    }
-
-    /**
-     * Add a specified recipient to an existing emailList.
-     *
-     * @param string $recipientAddress The address of the recipient to be
-     *              added to the email list.
-     * @param string $emailList The name of the email address to which the
-     *              recipient should be added.
-     * @return Zend_Gdata_Gapps_EmailListRecipientEntry The recipient entry
-     *              created by the server.
-     * @throws Zend_Gdata_App_Exception
-     * @throws Zend_Gdata_App_HttpException
-     * @throws Zend_Gdata_Gapps_ServiceException
-     */
-    public function addRecipientToEmailList($recipientAddress, $emailList) {
-        $entry = $this->newEmailListRecipientEntry();
-        $who = $this->newWho();
-        $who->email = $recipientAddress;
-        $entry->who = $who;
-        $address = $this->getBaseUrl() .  self::APPS_EMAIL_LIST_PATH . '/' .
-            $emailList . self::APPS_EMAIL_LIST_RECIPIENT_POSTFIX . '/';
-        return $this->insertEmailListRecipient($entry, $address);
-    }
-
-    /**
-     * Retrieve a page of email list recipients in alphabetical order,
-     * starting with the provided email list recipient.
-     *
-     * @param string $emaiList The email list which should be searched.
-     * @param string $startRecipient (optinal) The address of the first
-     *              recipient, or null to start with the first recipient in
-     *              the list.
-     * @return Zend_Gdata_Gapps_EmailListRecipientFeed Collection of
-     *              Zend_Gdata_EmailListRecipientEntry objects representing all
-     *              recpients in the specified list.
-     * @throws Zend_Gdata_App_Exception
-     * @throws Zend_Gdata_App_HttpException
-     * @throws Zend_Gdata_Gapps_ServiceException
-     */
-    public function retrievePageOfRecipients ($emailList,
-            $startRecipient = null) {
-        $query = $this->newEmailListRecipientQuery();
-        $query->setEmailListName($emailList);
-        $query->setStartRecipient($startRecipient);
-        return $this->getEmailListRecipientFeed($query);
-    }
-
-    /**
-     * Retrieve all recipients associated with an email list. Be aware that
-     * calling this function on a domain with many email lists will take a
-     * signifigant amount of time to complete. On larger domains this may
-     * may cause execution to timeout without proper precautions in place.
-     *
-     * @param string $emaiList The email list which should be searched.
-     * @return Zend_Gdata_Gapps_EmailListRecipientFeed The list of email lists
-     *              found as Zend_Gdata_Gapps_EmailListRecipientEntry objects.
-     * @throws Zend_Gdata_App_Exception
-     * @throws Zend_Gdata_App_HttpException
-     * @throws Zend_Gdata_Gapps_ServiceException
-     */
-    public function retrieveAllRecipients($emailList) {
-        return $this->retrieveAllEntriesForFeed(
-                $this->retrievePageOfRecipients($emailList));
-    }
-
-    /**
-     * Remove a specified recipient from an email list.
-     *
-     * @param string $recipientAddress The recipient to be removed.
-     * @param string $emailList The list from which the recipient should
-     *              be removed.
-     * @throws Zend_Gdata_App_Exception
-     * @throws Zend_Gdata_App_HttpException
-     * @throws Zend_Gdata_Gapps_ServiceException
-     */
-    public function removeRecipientFromEmailList($recipientAddress, $emailList) {
-        $this->delete($this->getBaseUrl() . self::APPS_EMAIL_LIST_PATH . '/'
-            . $emailList . self::APPS_EMAIL_LIST_RECIPIENT_POSTFIX . '/'
-            . $recipientAddress);
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

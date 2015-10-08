@@ -1,0 +1,274 @@
+<?php
+
+$session = Application_Helpers_Session::getInstance();
+$request = Zend_Controller_Front::getInstance()->getRequest();
+
+Superlogica_Js::adicionarCodigo('
+    if ( document == window.parent.document )
+        new Superlogica_Js_Elemento("body").removerClasse("embedded");        
+', 0 , true, true );
+
+
+//$this->indisponibilizarDadosCadastrais = Financeiro_Helpers_EmpresaConf::get(1, 'areadocliente.indisponibilizar.dadoscadastrais');
+//$this->indisponibilizarPlanos = Financeiro_Helpers_EmpresaConf::get(1, 'areadocliente.indisponibilizar.planos');
+//$this->indisponibilizarCobrancas = Financeiro_Helpers_EmpresaConf::get(1, 'areadocliente.indisponibilizar.cobrancas');
+//$this->indisponibilizarFormasPagamento = Financeiro_Helpers_EmpresaConf::get(1, 'areadocliente.indisponibilizar.formadepagamento');
+
+
+//$configVertical = Shared_Helpers_Vertical::getConfigs();
+//$tituloArea = $configVertical['titulo']['areadocliente'];
+//$backgroundDefault = $configVertical['background']['areadocliente'] ? $configVertical['background']['areadocliente'] : 'bg_areadocliente.jpg' ;
+//$botoesCompactos = $configVertical['botoescompactos'];
+//
+//$registry = new Zend_Registry();
+//if ($registry->isRegistered('dbMaster')) {
+//    
+//$apps = new Shared_Models_Apps();
+//$idsApps = array();
+//foreach ($apps->encontrar() as $app) {
+//    if ($app->ID_APPLOJA_APP <= 0){
+//        continue;
+//    }
+//    $idsApps[] = $app->ID_APPLOJA_APP;
+//}
+//
+//$qtdAppsComplementos = count(Shared_Helpers_AppsComplementos::getComplementos($idsApps, Shared_Models_AppsComplementos::AREA_CLIENTE));
+//
+//}
+
+//$this->mostrarFacilidades = true;
+
+
+//$this->exibirMenu = Areadocliente_Helpers_Menu::exibirMenu($this->exibirMenu, $this->ocultarMenu);
+
+//$areadDoCliente= 'https://'.$session->licenca.'.superlogica.net/clients/areadocliente/';
+//$config = Zend_Registry::get('config');     
+$locationBackground = new Superlogica_Location();
+$licenca = $locationBackground->getParam('licenca') ? $locationBackground->getParam('licenca') : $locationBackground->getParam('filename');
+
+if (Application_Helpers_Empresa::get('areadocliente_background')){
+    $hashBackground = 'https://'.$licenca.'.superlogica.net/clients/areadocliente/publico/background';
+}else{
+    $hashBackground = 'https://'.$licenca.'.superlogica.net/temas/default/img/bg_areadocliente.jpg';;
+}
+
+
+
+//if ( $hashBackground ){
+    
+    
+    $locationBackground->setController("publico")->setAction('background')->viaProxy(true)->setParams(array());
+    
+    
+    
+//    if ( !Superlogica_App::isCloud() ){
+//        $locationBackground->setParam('filename', $licenca );
+//    }
+//}
+
+    
+    
+
+
+Superlogica_Js::adicionarCodigo('Superlogica_Js_Elemento.implement({
+        __inserirInput : function(){
+            var inputBusca = new Superlogica_Js_Elemento("'."<input id='inputPesquisa' type='text' name='pesquisa' comportamentos='Form_Elementos.popularBusca Form_Elementos.esconderFormBusca Form_Elementos.simularCliqueBuscar' class='form-control' />".'");
+
+            inputBusca.inserirAntesDe(  new Superlogica_Js_Elemento("#buscar") );
+        }, 
+
+        __simularCliqueBuscar : function(){
+            this.bind("keyup", function(evento){ 
+                if (evento.keyCode == "13") {            
+                    new Superlogica_Js_Elemento("#buscar").simularClique();
+                }
+            });
+        },
+
+        __exibirFormBusca : function(){
+            this.bind("click", function(evento){                       
+                evento.preventDefault();    
+                var input = new Superlogica_Js_Elemento("#inputPesquisa");
+                var botoes = new Superlogica_Js_Elemento("#botoesTopo");
+                var form = new Superlogica_Js_Elemento("#formBuscaDiv");
+                botoes.esconder();                
+                form.mostrar();
+                input.focar();
+            });
+        }, 
+        
+        __esconderFormBusca: function(){
+            var elemento = this;
+            this.bind("blur", function(event){      
+                
+                if(!elemento.getValue()){                
+                    var botoes = new Superlogica_Js_Elemento("#botoesTopo");
+                    var form = new Superlogica_Js_Elemento("#formBuscaDiv"); 
+                    botoes.mostrar();                
+                    form.esconder();
+                                      
+                }
+            });
+        },
+        
+    });'
+,0,false,true); 
+
+if ( $this->comAjuda ){
+    Shared_Helpers_Ajuda::setController($this->comAjuda);
+    Shared_Helpers_Ajuda::adicionarJs();
+}
+
+$form = new Superlogica_Js_Form();
+?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html>
+    <head>
+        <?php
+        echo $this->render('head.phtml'); // Está dentro da pasta de layouts
+        $baseUrl = Zend_Controller_Front::getInstance()->getBaseUrl();
+
+        if ( $this->titulo ){
+            $this->headTitle($this->titulo);
+        }
+        
+        
+        echo $this->headTitle(" :: " . ucwords( $tituloArea ?  $tituloArea : '') );
+
+        $colunaPrincipal = $this->exibirMenu ? ($botoesCompactos ? '10' : '8') : '12';
+
+//        $cssPersonzalido = Financeiro_Helpers_EmpresaConf::get(1, 'css_externo_area_do_cliente');
+//        if ( $cssPersonzalido ){
+//            echo '<style type="text/css">'.$cssPersonzalido.'</style>';
+//        }
+        
+
+
+        ?>
+    </head>
+    <body data-ng-app="app" id="<?=$request->getControllerName().'_'.$request->getActionName()?>" class="embedded module_id_<?=''?> <?=(APPLICATION_ENV == 'testing') ? ' ambienteTeste' : ''?>">
+        
+        <?php //echo Shared_Helpers_TrackingAreas::getCodes(); ?>
+        
+        <div class="background" style="background-image: url(<?php  echo $hashBackground ?>);"></div>
+
+       <!--  <div class="background">
+            <div class="container">
+                <main role="main" itemprop="mainContentOfPage" class="template-page content  twelve alpha units">
+                    <div>
+                        <div class="entry-content-wrapper clearfix">
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div> -->
+
+        <!-- <div class="bgFundoSoftware"><img src="<?php echo $hashBackground  ?>" alt="" /></div> -->
+
+        <div class="container container-xs-height">
+
+            <div class="row row-xs-height">
+
+                <div class="col-xs-12 col-md-12 col-lg-12 col-xs-height">
+
+                    <div class="item">
+                    
+                        <div class="content blocoDestaquePersonalizado container-fluid">
+
+                            <div class="col-xs-12 col-sm-<?php echo $colunaPrincipal;?> col-md-<?php echo $colunaPrincipal;?> col-lg-<?php echo $colunaPrincipal;?>">
+
+                                <?php
+                                
+                                if ( $this->titulo ){                                    
+
+                                    if ( $this->subtitulo )
+                                        $subtitulo = '<div class="subtitulo">'.$this->subtitulo.'</div>';
+                                    echo '<h1>'.$this->titulo.$subtitulo.'</h1>';
+                                }
+                                
+                                
+                                $botao= new Superlogica_Button();
+                                
+                                
+                                if($this->comBusca){   
+                                                                                                
+                                                $request = Zend_Controller_Front::getInstance()->getRequest();
+                                                $pesquisa = $request->getParam( 'pesquisaEmTudo', '' );
+                                                if( $pesquisa === '' )
+                                                    $pesquisa = $request->getParam('pesquisa','');
+
+                                                
+                                                $botao->addLink( 'Busca', '', '', 'glyphicon glyphicon-search', 'exibirFormBusca', array('class'=>'btn-warning')); 
+    
+                                                
+                                                $btBuscar =  new Superlogica_Button();
+                                                $btBuscar->addLink( 'Buscar', '', true, '', 'Form_Elementos.submeterBusca ', array('id'=>'buscar')); 
+                                                $btBuscar->addLink( '', '', false, 'fa fa-times', 'Form_Elementos.limparBusca');
+                                        ?>
+                                        
+
+                                        <span <?php if ( $pesquisa === '' ) { ?>class="blocoEscondido"<?php } ?> id="formBuscaDiv" comportamentos="">
+                                            <form id="formBusca" action="">
+
+                                                <span class="pull-right">
+                                                    <span class="input-group" comportamentos="inserirInput">
+                                                            <?php echo $btBuscar->toString();?>
+                                                    </span>
+                                                </span>
+                                            </form>
+                                        </span>                                        
+                                        
+                                        <?php
+                                        
+                                        }
+                                        if( $pesquisa != '' )
+                                                echo '<span id="botoesTopo" class="pull-right blocoEscondido">' . $botao->toString() . '</span>'; 
+                                            else
+                                                echo '<span id="botoesTopo" class="pull-right">' . $botao->toString() . '</span>';                                                 
+
+                                echo $this->layout()->content;
+                                ?>
+                            </div>
+                            <?php 
+//                            if ( $this->exibirMenu || $this->mostrarFacilidades ){
+//                                echo $this->render('menu.phtml');
+//                            }
+                            ?>
+                        </div>
+           
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        
+        <?php
+        
+        if ( $this->comAjuda )
+            echo Shared_Helpers_Ajuda::getHtml();
+        
+        //if( Superlogica_App::isCloud() ){
+        ?>
+            <!-- Google analytics -->
+<!--            <script type="text/javascript">
+
+              var _gaq = _gaq || [];
+              _gaq.push(['_setAccount', 'UA-33202533-2']);
+              _gaq.push(['_setDomainName', 'superlogica.net']);
+              _gaq.push(['_trackPageview']);
+
+              (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+              })();
+
+            </script>        -->
+        <?php
+       // } 
+        ?>
+
+    </body>
+
+</html>

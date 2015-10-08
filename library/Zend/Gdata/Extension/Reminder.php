@@ -1,170 +1,71 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Gdata
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * @see Zend_Gdata_Extension
- */
-require_once 'Zend/Gdata/Extension.php';
-
-/**
- * Implements the gd:reminder element used to set/retrieve notifications
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Gdata
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Gdata_Extension_Reminder extends Zend_Gdata_Extension
-{
-
-    protected $_rootElement = 'reminder';
-    protected $_absoluteTime = null;
-    protected $_method = null;
-    protected $_days = null;
-    protected $_hours = null;
-    protected $_minutes = null;
-
-    public function __construct($absoluteTime = null, $method = null, $days = null,
-            $hours = null, $minutes = null)
-    {
-        parent::__construct();
-        $this->_absoluteTime = $absoluteTime;
-        $this->_method = $method;
-        $this->_days = $days;
-        $this->_hours = $hours;
-        $this->_minutes = $minutes;
-    }
-
-    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
-    {
-        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
-        if ($this->_absoluteTime !== null) {
-            $element->setAttribute('absoluteTime', $this->_absoluteTime);
-        }
-        if ($this->_method !== null) {
-            $element->setAttribute('method', $this->_method);
-        }
-        if ($this->_days !== null) {
-            $element->setAttribute('days', $this->_days);
-        }
-        if ($this->_hours !== null) {
-            $element->setAttribute('hours', $this->_hours);
-        }
-        if ($this->_minutes !== null) {
-            $element->setAttribute('minutes', $this->_minutes);
-        }
-        return $element;
-    }
-
-    protected function takeAttributeFromDOM($attribute)
-    {
-        switch ($attribute->localName) {
-            case 'absoluteTime':
-                $this->_absoluteTime = $attribute->nodeValue;
-                break;
-            case 'method':
-                $this->_method = $attribute->nodeValue;
-                break;
-            case 'days':
-                $this->_days = $attribute->nodeValue;
-                break;
-            case 'hours':
-                $this->_hours = $attribute->nodeValue;
-                break;
-            case 'minutes':
-                $this->_minutes = $attribute->nodeValue;
-                break;
-            default:
-                parent::takeAttributeFromDOM($attribute);
-        }
-    }
-
-    public function __toString()
-    {
-        $s;
-        if ($absoluteTime)
-            $s = "at" . $absoluteTime;
-        else if ($days)
-            $s = "in" . $days . "days";
-        else if ($hours)
-            $s = "in" . $hours . "hours";
-        else if ($minutes)
-            $s = "in" . $minutes . "minutes";
-        return $method . $s;
-    }
-
-    public function getAbsoluteTime()
-    {
-        return $this->_absoluteTime;
-    }
-
-    public function setAbsoluteTime($value)
-    {
-        $this->_absoluteTime = $value;
-        return $this;
-    }
-
-    public function getDays()
-    {
-        return $this->_days;
-    }
-
-    public function setDays($value)
-    {
-        $this->_days = $value;
-        return $this;
-    }
-    public function getHours()
-    {
-        return $this->_hours;
-    }
-
-    public function setHours($value)
-    {
-        $this->_hours = $value;
-        return $this;
-    }
-
-    public function getMinutes()
-    {
-        return $this->_minutes;
-    }
-
-    public function setMinutes($value)
-    {
-        $this->_minutes = $value;
-        return $this;
-    }
-
-    public function getMethod()
-    {
-        return $this->_method;
-    }
-
-    public function setMethod($value)
-    {
-        $this->_method = $value;
-        return $this;
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

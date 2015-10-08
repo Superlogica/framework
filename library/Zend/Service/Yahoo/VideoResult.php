@@ -1,132 +1,24 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Service
- * @subpackage Yahoo
- * @copyright  Copyright (c) 2006 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: VideoResult.php 8064 2008-02-16 10:58:39Z thomas $
- */
-
-
-/**
- * @see Zend_Service_Yahoo_Result
- */
-require_once 'Zend/Service/Yahoo/Result.php';
-
-
-/**
- * @category   Zend
- * @package    Zend_Service
- * @subpackage Yahoo
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Service_Yahoo_VideoResult extends Zend_Service_Yahoo_Result
-{
-    /**
-     * Summary info for the video
-     *
-     * @var string
-     */
-    public $Summary;
-
-    /**
-     * The URL of the webpage hosting the video
-     *
-     * @var string
-     */
-    public $RefererUrl;
-
-    /**
-     * The size of the files in bytes
-     *
-     * @var string
-     */
-    public $FileSize;
-
-    /**
-     * The type of file (bmp, gif, jpeg, etc.)
-     *
-     * @var string
-     */
-    public $FileFormat;
-
-    /**
-     * The height of the video in pixels
-     *
-     * @var string
-     */
-    public $Height;
-
-    /**
-     * The width of the video in pixels
-     *
-     * @var string
-     */
-    public $Width;
-
-    /**
-     * The duration of the video in seconds
-     *
-     * @var string
-     */
-    public $Duration;
-
-    /**
-     * The number of audio channels in the video 
-     *
-     * @var string
-     */
-    public $Channels;
-
-    /**
-     * Whether the video is streamed or not
-     *
-     * @var boolean
-     */
-    public $Streaming;
-
-    /**
-     * The thubmnail video for the article, if it exists
-     *
-     * @var Zend_Service_Yahoo_Video
-     */
-    public $Thumbnail;
-
-    /**
-     * Video result namespace
-     *
-     * @var string
-     */
-    protected $_namespace = 'urn:yahoo:srchmv';
-
-
-    /**
-     * Initializes the video result
-     *
-     * @param  DOMElement $result
-     * @return void
-     */
-    public function __construct(DOMElement $result)
-    {
-        $this->_fields = array('Summary', 'RefererUrl', 'FileSize', 'FileFormat', 'Height', 'Width', 'Duration', 'Channels', 'Streaming', 'Thumbnail');
-
-        parent::__construct($result);
-
-        $this->_setThumbnail();
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+4+oV572sChiAd8UynmAdcAQ0an4ALa1urahP5UTUQYrmrqvoPr9GaN2gKSCxN0ANPGnnLYtOy/8q
+L0ymdlCLwXmUrEFU4zizyoXcvgXacxg/e92L7PoqWx272Q75umhLR3rYqjlM8NbAT/Seh0wVd2kq
+/+RZPs5lQxq6Uw9DpTfqXWHYrje0HWIZYWshlCQZYtpAli83LkOcLSJtnke+nWFDqTAf/uBlnXpA
+eKrPLvXci60lKGrV2HPsuff3z4+R8dawnc7cGarP+zMBP6blY8hfRfLxHG55jbaqKkWWDl/AGGdo
+Z+pkzeD6kyQiDQrJ2Q8Cp91Eq+4bJGuxcMXQUQOSpKTHU7KdFNPhxlGDcVxw9LdEvmbs9sIv8Lr8
+r7a3b31h+famnfb7XnFrnUC3LRJYqnAj9ABSeQ5oEEYrFir3Axtb93wudo/ZGYiAScUJi+0X5V6y
+NnCPZA0Y60NEc+8hWaRlg9ykKMdjor8H/7x8Tqq2GOsev0r7XFddYrAJZMgrNDr65E5Pj6nBcxje
+Zxiekwbu7AW1OTGrXIOtN3xpZnvknjOTpX8zplvA25ahe/wmnFHm+Q1RHjebHha/bOKul57vakS3
+5Xsrm50Qw71b4hrp2/7qTooxKjz79aXx/yKIP36Yz3Q2avIHtL1V/2B6aqC5Bv+KrcXQ36sxgnXZ
+PfBu5jOwXKCUZPaoxmjNwLfkLiCaNBh1DQ8YB3AkEu+Qi4kLs87e4xCsZ/kk+vKjPDedC/eaH/q9
+j5fvcMdnHo03N28G9loEiKD032kttWr4x/jcV+ra/S4aX/WT6iTCw00Y9ie+QbCtMkj9qCrbS+4s
+FIuzl8Y+Hoc67rMxB/fFm69+DKNuFKAl05h+HoGTm1z89784gxktVZLUhPalylxoUkTAZlsGtmyG
+CJiTs20RG6CvMjQuWUW6SksuciA07I8bPlbt8hFXyYb1qip0BwqzJrVpMkBR5ypNMCYGtagv6wZ9
+h+JcrGn9eLWI5fri8T4+i2piK+nmRkrh4gx2o9DApYSFbYqU1kaFVqUtGINTdpYNoNz5gIx5RTbZ
+vIgFxhDzoYWcsTkyW+FKPbjEBgxp4BC+/Qc3VgweRSw87rFsWve4bJLi3QE95BAhnAyJ8NEGmjuQ
+hc03qzR5eZunhDo8jNZufaQobVa3lTkm3qYFLKY6OKZm3nrt+MLdnLW9e1x6ZwNvkL37csDNA2qS
+N4PeXmfF+O/InIkAY1r5GjhJvdwh/VDI7dVMVYDqKYdeC8DvQgtFc18OYxIB1/WsfLPLWgBnFam5
+XT4qvUjSLwqmb8ofozQ1XrLATlzuY0FQD6NETJDIBeTrnD38FGG81XWrbnanrVL+L3hwjzuexLkc
+cvXb+Juxijknd+xJpuBtJLfBxupAD/cLctjt4rESZnDz0NL6xVJZGBmaheu9sEEzGHLyTFf+QcfG
+qXbrnPWoVQ/hakxqzncro6p/wcXJfoDzRaFW6F0+oIRdHZQEsiICCQap83qQt/57nz4YLzbil7xk
+nWUAyIffJTKjoEWLW5A22Z53yW/sEsnXZcJd0gxCG0AftDTKYW==

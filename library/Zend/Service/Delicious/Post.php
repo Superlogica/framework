@@ -1,292 +1,75 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Service
- * @subpackage Delicious
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Post.php 8064 2008-02-16 10:58:39Z thomas $
- */
-
-
-/**
- * @see Zend_Date
- */
-require_once 'Zend/Date.php';
-
-/**
- * @see Zend_Service_Delicious_SimplePost
- */
-require_once 'Zend/Service/Delicious/SimplePost.php';
-
-
-/**
- * Zend_Service_Delicious_Post represents a post of a user that can be edited
- *
- * @category   Zend
- * @package    Zend_Service
- * @subpackage Delicious
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Service_Delicious_Post extends Zend_Service_Delicious_SimplePost
-{
-    /**
-     * Service that has downloaded the post
-     *
-     * @var Zend_Service_Delicious
-     */
-    protected $_service;
-
-    /**
-     * @var int Number of people that have the same post
-     */
-    protected $_others;
-
-    /**
-     * @var Zend_Date Post date
-     */
-    protected $_date;
-
-    /**
-     * @var bool Post share
-     */
-    protected $_shared = true;
-
-    /**
-     * @var string Post hash
-     */
-    protected $_hash;
-
-    /**
-     * Constructs a new del.icio.us post
-     *
-     * @param  Zend_Service_Delicious $service Service that has downloaded the post
-     * @param  DOMElement|array       $values  Post content
-     * @throws Zend_Service_Delicious_Exception
-     * @return void
-     */
-    public function __construct(Zend_Service_Delicious $service, $values)
-    {
-        $this->_service = $service;
-
-        if ($values instanceof DOMElement) {
-            $values = self::_parsePostNode($values);
-        }
-
-        if (!is_array($values) || !isset($values['url']) || !isset($values['title'])) {
-            /**
-             * @see Zend_Service_Delicious_Exception
-             */
-            require_once 'Zend/Service/Delicious/Exception.php';
-            throw new Zend_Service_Delicious_Exception("Second argument must be array with at least 2 keys ('url' and"
-                                                     . " 'title')");
-        }
-
-        if (isset($values['date']) && ! $values['date'] instanceof Zend_Date) {
-            /**
-             * @see Zend_Service_Delicious_Exception
-             */
-            require_once 'Zend/Service/Delicious/Exception.php';
-            throw new Zend_Service_Delicious_Exception("Date has to be an instance of Zend_Date");
-        }
-
-        foreach (array('url', 'title', 'notes', 'others', 'tags', 'date', 'shared', 'hash') as $key) {
-            if (isset($values[$key])) {
-                $this->{"_$key"}  = $values[$key];
-            }
-        }
-    }
-
-    /**
-     * Setter for title
-     *
-     * @param  string $newTitle
-     * @return Zend_Service_Delicious_Post
-     */
-    public function setTitle($newTitle)
-    {
-        $this->_title = (string) $newTitle;
-
-        return $this;
-    }
-
-    /**
-     * Setter for notes
-     *
-     * @param  string $newNotes
-     * @return Zend_Service_Delicious_Post
-     */
-    public function setNotes($newNotes)
-    {
-        $this->_notes = (string) $newNotes;
-
-        return $this;
-    }
-
-    /**
-     * Setter for tags
-     *
-     * @param  array $tags
-     * @return Zend_Service_Delicious_Post
-     */
-    public function setTags(array $tags)
-    {
-        $this->_tags = $tags;
-
-        return $this;
-    }
-
-    /**
-     * Add a tag
-     *
-     * @param  string $tag
-     * @return Zend_Service_Delicious_Post
-     */
-    public function addTag($tag)
-    {
-        $this->_tags[] = (string) $tag;
-
-        return $this;
-    }
-
-    /**
-     * Remove a tag
-     *
-     * @param  string $tag
-     * @return Zend_Service_Delicious_Post
-     */
-    public function removeTag($tag)
-    {
-        $this->_tags = array_diff($this->_tags, array((string) $tag));
-
-        return $this;
-    }
-
-    /**
-     * Getter for date
-     *
-     * @return Zend_Date
-     */
-    public function getDate()
-    {
-        return $this->_date;
-    }
-
-    /**
-     * Getter for others
-     *
-     * This property is only populated when posts are retrieved
-     * with getPosts() method. The getAllPosts() and getRecentPosts()
-     * methods will not populate this property.
-     *
-     * @return int
-     */
-    public function getOthers()
-    {
-        return $this->_others;
-    }
-
-    /**
-     * Getter for hash
-     *
-     * @return string
-     */
-    public function getHash()
-    {
-        return $this->_hash;
-    }
-
-    /**
-     * Getter for shared
-     *
-     * @return bool
-     */
-    public function getShared()
-    {
-        return $this->_shared;
-    }
-
-    /**
-     * Setter for shared
-     *
-     * @param  bool $isShared
-     * @return Zend_Service_Delicious_Post
-     */
-    public function setShared($isShared)
-    {
-        $this->_shared = (bool) $isShared;
-
-        return $this;
-    }
-
-    /**
-     * Deletes post
-     *
-     * @return Zend_Service_Delicious
-     */
-    public function delete()
-    {
-        return $this->_service->deletePost($this->_url);
-    }
-
-    /**
-     * Saves post
-     *
-     * @return DOMDocument
-     */
-    public function save()
-    {
-        $parms = array(
-            'url'        => $this->_url,
-            'description'=> $this->_title,
-            'extended'   => $this->_notes,
-            'shared'     => ($this->_shared ? 'yes' : 'no'),
-            'tags'       => implode(' ', (array) $this->_tags),
-            'replace'    => 'yes'
-        );
-        /*
-        if ($this->_date instanceof Zend_Date) {
-            $parms['dt'] = $this->_date->get('Y-m-d\TH:i:s\Z');
-        }
-        */
-
-        return $this->_service->makeRequest(Zend_Service_Delicious::PATH_POSTS_ADD, $parms);
-    }
-
-    /**
-     * Extracts content from the DOM element of a post
-     *
-     * @param  DOMElement $node
-     * @return array
-     */
-    protected static function _parsePostNode(DOMElement $node)
-    {
-        return array(
-            'url'    => $node->getAttribute('href'),
-            'title'  => $node->getAttribute('description'),
-            'notes'  => $node->getAttribute('extended'),
-            'others' => (int) $node->getAttribute('others'),
-            'tags'   => explode(' ', $node->getAttribute('tag')),
-            /**
-             * @todo replace strtotime() with Zend_Date equivalent
-             */
-            'date'   => new Zend_Date(strtotime($node->getAttribute('time'))),
-            'shared' => ($node->getAttribute('shared') == 'no' ? false : true),
-            'hash'   => $node->getAttribute('hash')
-        );
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

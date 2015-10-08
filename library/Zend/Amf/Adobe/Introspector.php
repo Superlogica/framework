@@ -1,308 +1,118 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Amf
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_Amf_Parse_TypeLoader */
-require_once 'Zend/Amf/Parse/TypeLoader.php';
-
-/** Zend_Reflection_Class */
-require_once 'Zend/Reflection/Class.php';
-
-/** Zend_Server_Reflection */
-require_once 'Zend/Server/Reflection.php';
-
-/**
- * This class implements a service for generating AMF service descriptions as XML.
- *
- * @package    Zend_Amf
- * @subpackage Adobe
- * @copyright  Copyright (c) 2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Amf_Adobe_Introspector 
-{
-    /**
-     * Options used:
-     * - server: instance of Zend_Amf_Server to use
-     * - directories: directories where class files may be looked up
-     *
-     * @var array Introspector options
-     */
-    protected $_options;
-
-    /**
-     * @var DOMElement DOM element to store types
-     */
-    protected $_types;
-
-    /**
-     * @var array Map of the known types
-     */
-    protected $_typesMap = array();
-
-    /**
-     * @var DOMDocument XML document to store data
-     */
-    protected $_xml;
-   
-    /**
-     * Constructor
-     * 
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->_xml = new DOMDocument('1.0', 'utf-8');
-    }
-    
-    /**
-     * Create XML definition on an AMF service class
-     * 
-     * @param  string $serviceClass Service class name
-     * @param  array $options invocation options
-     * @return string XML with service class introspection
-     */
-    public function introspect($serviceClass, $options = array()) 
-    {
-        $this->_options = $options;
-        
-        if (strpbrk($serviceClass, '\\/<>')) {
-            return $this->_returnError('Invalid service name');
-        }
-
-        // Transform com.foo.Bar into com_foo_Bar
-        $serviceClass = str_replace('.' , '_', $serviceClass);
-
-        // Introspect!
-        if (!class_exists($serviceClass)) {
-            require_once 'Zend/Loader.php';
-            Zend_Loader::loadClass($serviceClass, $this->_getServicePath());
-        }
-        
-        $serv = $this->_xml->createElement('service-description');
-        $serv->setAttribute('xmlns', 'http://ns.adobe.com/flex/service-description/2008');
-
-        $this->_types = $this->_xml->createElement('types');
-        $this->_ops   = $this->_xml->createElement('operations');
-
-        $r = Zend_Server_Reflection::reflectClass($serviceClass);
-        $this->_addService($r, $this->_ops);
-    
-        $serv->appendChild($this->_types);
-        $serv->appendChild($this->_ops);
-        $this->_xml->appendChild($serv);
-
-        return $this->_xml->saveXML();
-    }
-    
-    /**
-     * Authentication handler
-     * 
-     * @param  Zend_Acl $acl
-     * @return unknown_type
-     */
-    public function initAcl(Zend_Acl $acl)
-    {
-        return false; // we do not need auth for this class
-    }
-
-    /**
-     * Generate map of public class attributes
-     * 
-     * @param  string $typename type name
-     * @param  DOMElement $typexml target XML element 
-     * @return void
-     */
-    protected function _addClassAttributes($typename, DOMElement $typexml)
-    {
-        // Do not try to autoload here because _phpTypeToAS should 
-        // have already attempted to load this class
-        if (!class_exists($typename, false)) {
-            return;
-        }
-
-        $rc = new Zend_Reflection_Class($typename);
-        foreach ($rc->getProperties() as $prop) {
-            if (!$prop->isPublic()) {
-                continue;
-            }
-
-            $propxml = $this->_xml->createElement('property');
-            $propxml->setAttribute('name', $prop->getName());
-
-            $type = $this->_registerType($this->_getPropertyType($prop));
-            $propxml->setAttribute('type', $type);
-
-            $typexml->appendChild($propxml);
-        }
-    }
-
-    /**
-     * Build XML service description from reflection class
-     * 
-     * @param  Zend_Server_Reflection_Class $refclass  
-     * @param  DOMElement $target target XML element
-     * @return void
-     */
-    protected function _addService(Zend_Server_Reflection_Class $refclass, DOMElement $target)
-    {
-        foreach ($refclass->getMethods() as $method) {
-            if (!$method->isPublic() 
-                || $method->isConstructor()
-                || ('__' == substr($method->name, 0, 2))
-            ) {
-                continue;
-            }
-
-            foreach ($method->getPrototypes() as $proto) {
-                $op = $this->_xml->createElement('operation');
-                $op->setAttribute('name', $method->getName());
-
-                $rettype = $this->_registerType($proto->getReturnType());
-                $op->setAttribute('returnType', $rettype);
-
-                foreach ($proto->getParameters() as $param) {
-                    $arg = $this->_xml->createElement('argument');
-                    $arg->setAttribute('name', $param->getName());
-
-                    $type = $param->getType();
-                    if ($type == 'mixed' && ($pclass = $param->getClass())) {
-                        $type = $pclass->getName();
-                    }
-
-                    $ptype = $this->_registerType($type);
-                    $arg->setAttribute('type', $ptype);
-
-                    $op->appendChild($arg);
-                }
-
-                $target->appendChild($op);
-            }
-        }
-    }
-    
-    /**
-     * Extract type of the property from DocBlock
-     * 
-     * @param  Zend_Reflection_Property $prop reflection property object
-     * @return string Property type
-     */
-    protected function _getPropertyType(Zend_Reflection_Property $prop)
-    {
-        $docBlock = $prop->getDocComment();
-
-        if (!$docBlock) {
-            return 'Unknown';
-        }
-
-        if (!$docBlock->hasTag('var')) {
-            return 'Unknown';
-        }
-
-        $tag = $docBlock->getTag('var');
-        return trim($tag->getDescription());
-    }
-    
-    /**
-     * Get the array of service directories
-     * 
-     * @return array Service class directories
-     */
-    protected function _getServicePath() 
-    {
-        if (isset($this->_options['server'])) {
-            return $this->_options['server']->getDirectory();
-        }
-
-        if (isset($this->_options['directories'])) {
-            return $this->_options['directories'];
-        }
-
-        return array();
-    }
-
-    /**
-     * Map from PHP type name to AS type name
-     * 
-     * @param  string $typename PHP type name
-     * @return string AS type name
-     */
-    protected function _phpTypeToAS($typename)
-    {
-        if (class_exists($typename)) {
-            $vars = get_class_vars($typename);
-
-            if (isset($vars['_explicitType'])) {
-                return $vars['_explicitType'];
-            }
-        }
-
-        if (false !== ($asname = Zend_Amf_Parse_TypeLoader::getMappedClassName($typename))) {
-            return $asname;
-        }
-
-        return $typename;
-    }
-
-    /**
-     * Register new type on the system
-     * 
-     * @param  string $typename type name
-     * @return string New type name
-     */
-    protected function _registerType($typename) 
-    {
-        // Known type - return its AS name
-        if (isset($this->_typesMap[$typename])) {
-            return $this->_typesMap[$typename];
-        }
-
-        // Standard types
-        if (in_array($typename, array('void', 'null', 'mixed', 'unknown_type'))) {
-            return 'Unknown';
-        }
-
-        if (in_array($typename, array('string', 'object', 'Unknown', 'stdClass', 'array'))) {
-            return $typename;
-        }
-
-        // Resolve and store AS name
-        $asTypeName = $this->_phpTypeToAS($typename);
-        $this->_typesMap[$typename] = $asTypeName;
-
-        // Create element for the name
-        $typeEl = $this->_xml->createElement('type');
-        $typeEl->setAttribute('name', $asTypeName);
-        $this->_addClassAttributes($typename, $typeEl);
-        $this->_types->appendChild($typeEl);    
-
-        return $asTypeName;
-    }
-    
-   /**
-     * Return error with error message
-     * 
-     * @param  string $msg Error message
-     * @return string 
-     */
-    protected function _returnError($msg) 
-    {
-        return 'ERROR: $msg';    
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+q8dqpV5Wim0aHMe=

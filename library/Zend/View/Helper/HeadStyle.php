@@ -1,399 +1,148 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @package    Zend_View
- * @subpackage Helper
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @version    $Id: Placeholder.php 7078 2007-12-11 14:29:33Z matthew $
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_View_Helper_Placeholder_Container_Standalone */
-require_once 'Zend/View/Helper/Placeholder/Container/Standalone.php';
-
-/**
- * Helper for setting and retrieving stylesheets
- *
- * @uses       Zend_View_Helper_Placeholder_Container_Standalone
- * @package    Zend_View
- * @subpackage Helper
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_View_Helper_HeadStyle extends Zend_View_Helper_Placeholder_Container_Standalone
-{
-    /**
-     * Registry key for placeholder
-     * @var string
-     */
-    protected $_regKey = 'Zend_View_Helper_HeadStyle';
-
-    /**
-     * Allowed optional attributes
-     * @var array
-     */
-    protected $_optionalAttributes = array('lang', 'title', 'media', 'dir');
-
-    /**
-     * Allowed media types
-     * @var array
-     */
-    protected $_mediaTypes = array(
-        'all', 'aural', 'braille', 'handheld', 'print',
-        'projection', 'screen', 'tty', 'tv'
-    );
-
-    /**
-     * Capture type and/or attributes (used for hinting during capture)
-     * @var string
-     */
-    protected $_captureAttrs = null;
-
-    /**
-     * Capture lock
-     * @var bool
-     */
-    protected $_captureLock;
-
-    /**
-     * Capture type (append, prepend, set)
-     * @var string
-     */
-    protected $_captureType;
-
-    /**
-     * Constructor
-     *
-     * Set separator to PHP_EOL.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        parent::__construct();
-        $this->setSeparator(PHP_EOL);
-    }
-
-    /**
-     * Return headStyle object
-     *
-     * Returns headStyle helper object; optionally, allows specifying
-     *
-     * @param  string $content Stylesheet contents
-     * @param  string $placement Append, prepend, or set
-     * @param  string|array $attributes Optional attributes to utilize
-     * @return Zend_View_Helper_HeadStyle
-     */
-    public function headStyle($content = null, $placement = 'APPEND', $attributes = array())
-    {
-        if ((null !== $content) && is_string($content)) {
-            switch (strtoupper($placement)) {
-                case 'SET':
-                    $action = 'setStyle';
-                    break;
-                case 'PREPEND':
-                    $action = 'prependStyle';
-                    break;
-                case 'APPEND':
-                default:
-                    $action = 'appendStyle';
-                    break;
-            }
-            $this->$action($content, $attributes);
-        }
-
-        return $this;
-    }
-
-    /**
-     * Overload method calls
-     *
-     * Allows the following method calls:
-     * - appendStyle($content, $attributes = array())
-     * - offsetSetStyle($index, $content, $attributes = array())
-     * - prependStyle($content, $attributes = array())
-     * - setStyle($content, $attributes = array())
-     *
-     * @param  string $method
-     * @param  array $args
-     * @return void
-     * @throws Zend_View_Exception When no $content provided or invalid method
-     */
-    public function __call($method, $args)
-    {
-        if (preg_match('/^(?P<action>set|(ap|pre)pend|offsetSet)(Style)$/', $method, $matches)) {
-            $index  = null;
-            $argc   = count($args);
-            $action = $matches['action'];
-
-            if ('offsetSet' == $action) {
-                if (0 < $argc) {
-                    $index = array_shift($args);
-                    --$argc;
-                }
-            }
-
-            if (1 > $argc) {
-                require_once 'Zend/View/Exception.php';
-                throw new Zend_View_Exception(sprintf('Method "%s" requires minimally content for the stylesheet', $method));
-            }
-
-            $content = $args[0];
-            $attrs   = array();
-            if (isset($args[1])) {
-                $attrs = (array) $args[1];
-            }
-
-            $item = $this->createData($content, $attrs);
-
-            if ('offsetSet' == $action) {
-                $this->offsetSet($index, $item);
-            } else {
-                $this->$action($item);
-            }
-
-            return $this;
-        }
-
-        return parent::__call($method, $args);
-    }
-
-    /**
-     * Determine if a value is a valid style tag
-     *
-     * @param  mixed $value
-     * @param  string $method
-     * @return boolean
-     */
-    protected function _isValid($value)
-    {
-        if ((!$value instanceof stdClass)
-            || !isset($value->content)
-            || !isset($value->attributes))
-        {
-            return false;
-        }
-
-        return true;
-    }
-
-    /**
-     * Override append to enforce style creation
-     *
-     * @param  mixed $value
-     * @return void
-     */
-    public function append($value)
-    {
-        if (!$this->_isValid($value)) {
-            require_once 'Zend/View/Exception.php';
-            throw new Zend_View_Exception('Invalid value passed to append; please use appendStyle()');
-        }
-
-        return $this->getContainer()->append($value);
-    }
-
-    /**
-     * Override offsetSet to enforce style creation
-     *
-     * @param  string|int $index
-     * @param  mixed $value
-     * @return void
-     */
-    public function offsetSet($index, $value)
-    {
-        if (!$this->_isValid($value)) {
-            require_once 'Zend/View/Exception.php';
-            throw new Zend_View_Exception('Invalid value passed to offsetSet; please use offsetSetStyle()');
-        }
-
-        return $this->getContainer()->offsetSet($index, $value);
-    }
-
-    /**
-     * Override prepend to enforce style creation
-     *
-     * @param  mixed $value
-     * @return void
-     */
-    public function prepend($value)
-    {
-        if (!$this->_isValid($value)) {
-            require_once 'Zend/View/Exception.php';
-            throw new Zend_View_Exception('Invalid value passed to prepend; please use prependStyle()');
-        }
-
-        return $this->getContainer()->prepend($value);
-    }
-
-    /**
-     * Override set to enforce style creation
-     *
-     * @param  mixed $value
-     * @return void
-     */
-    public function set($value)
-    {
-        if (!$this->_isValid($value)) {
-            require_once 'Zend/View/Exception.php';
-            throw new Zend_View_Exception('Invalid value passed to set; please use setStyle()');
-        }
-
-        return $this->getContainer()->set($value);
-    }
-
-    /**
-     * Start capture action
-     *
-     * @param  mixed $captureType
-     * @param  string $typeOrAttrs
-     * @return void
-     */
-    public function captureStart($type = Zend_View_Helper_Placeholder_Container_Abstract::APPEND, $attrs = null)
-    {
-        if ($this->_captureLock) {
-            require_once 'Zend/View/Helper/Placeholder/Container/Exception.php';
-            throw new Zend_View_Helper_Placeholder_Container_Exception('Cannot nest headStyle captures');
-        }
-
-        $this->_captureLock        = true;
-        $this->_captureAttrs       = $attrs;
-        $this->_captureType        = $type;
-        ob_start();
-    }
-
-    /**
-     * End capture action and store
-     *
-     * @return void
-     */
-    public function captureEnd()
-    {
-        $content             = ob_get_clean();
-        $attrs               = $this->_captureAttrs;
-        $this->_captureAttrs = null;
-        $this->_captureLock  = false;
-
-        switch ($this->_captureType) {
-            case Zend_View_Helper_Placeholder_Container_Abstract::SET:
-                $this->setStyle($content, $attrs);
-                break;
-            case Zend_View_Helper_Placeholder_Container_Abstract::PREPEND:
-                $this->prependStyle($content, $attrs);
-                break;
-            case Zend_View_Helper_Placeholder_Container_Abstract::APPEND:
-            default:
-                $this->appendStyle($content, $attrs);
-                break;
-        }
-    }
-
-    /**
-     * Convert content and attributes into valid style tag
-     *
-     * @param  stdClass $item Item to render
-     * @param  string $indent Indentation to use
-     * @return string
-     */
-    public function itemToString(stdClass $item, $indent)
-    {
-        $attrString = '';
-        if (!empty($item->attributes)) {
-            foreach ($item->attributes as $key => $value) {
-                if (!in_array($key, $this->_optionalAttributes)) {
-                    continue;
-                }
-                if ('media' == $key) {
-                    if(false === strpos($value, ',')) {
-                        if (!in_array($value, $this->_mediaTypes)) {
-                            continue;
-                        }
-                    } else {
-                        $media_types = explode(',', $value);
-                        $value = '';
-                        foreach($media_types as $type) {
-                            if (!in_array($type, $this->_mediaTypes)) {
-                                continue;
-                            }
-                            $value .= $type .',';
-                        }
-                        $value = substr($value, 0, -1);
-                    }
-                }
-                $attrString .= sprintf(' %s="%s"', $key, htmlspecialchars($value));
-            }
-        }
-
-        $html = '<style type="text/css"' . $attrString . '>' . PHP_EOL
-              . $indent . '<!--' . PHP_EOL . $indent . $item->content . PHP_EOL . $indent . '-->' . PHP_EOL
-              . '</style>';
-
-        if (isset($item->attributes['conditional'])
-            && !empty($item->attributes['conditional'])
-            && is_string($item->attributes['conditional']))
-        {
-            $html = '<!--[if ' . $item->attributes['conditional'] . ']> ' . $html . '<![endif]-->';
-        }
-
-        return $html;
-    }
-
-    /**
-     * Create string representation of placeholder
-     *
-     * @param  string|int $indent
-     * @return string
-     */
-    public function toString($indent = null)
-    {
-        $indent = (null !== $indent)
-                ? $this->getWhitespace($indent)
-                : $this->getIndent();
-
-        $items = array();
-        $this->getContainer()->ksort();
-        foreach ($this as $item) {
-            if (!$this->_isValid($item)) {
-                continue;
-            }
-            $items[] = $this->itemToString($item, $indent);
-        }
-
-        $return = $indent . implode($this->getSeparator() . $indent, $items);
-        $return = preg_replace("/(\r\n?|\n)/", '$1' . $indent, $return);
-        return $return;
-    }
-
-    /**
-     * Create data item for use in stack
-     *
-     * @param  string $content
-     * @param  array $attributes
-     * @return stdClass
-     */
-    public function createData($content, array $attributes)
-    {
-        if (!isset($attributes['media'])) {
-            $attributes['media'] = 'screen';
-        } else if(is_array($attributes['media'])) {
-            $attributes['media'] = implode(',', $attributes['media']);
-        }
-
-        $data = new stdClass();
-        $data->content    = $content;
-        $data->attributes = $attributes;
-
-        return $data;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+FSvo9QMBgGcZ2O0=

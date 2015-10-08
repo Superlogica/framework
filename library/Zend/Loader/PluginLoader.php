@@ -1,473 +1,174 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Loader
- * @subpackage PluginLoader
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_Loader_PluginLoader_Interface */
-require_once 'Zend/Loader/PluginLoader/Interface.php';
-
-/** Zend_Loader */
-require_once 'Zend/Loader.php';
-
-/**
- * Generic plugin class loader
- *
- * @category   Zend
- * @package    Zend_Loader
- * @subpackage PluginLoader
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Loader_PluginLoader implements Zend_Loader_PluginLoader_Interface
-{
-    /**
-     * Class map cache file
-     * @var string
-     */
-    protected static $_includeFileCache;
-
-    /**
-     * Instance loaded plugin paths
-     *
-     * @var array
-     */
-    protected $_loadedPluginPaths = array();
-
-    /**
-     * Instance loaded plugins
-     *
-     * @var array
-     */
-    protected $_loadedPlugins = array();
-
-    /**
-     * Instance registry property
-     *
-     * @var array
-     */
-    protected $_prefixToPaths = array();
-
-    /**
-     * Statically loaded plugin path mappings
-     *
-     * @var array
-     */
-    protected static $_staticLoadedPluginPaths = array();
-
-    /**
-     * Statically loaded plugins
-     *
-     * @var array
-     */
-    protected static $_staticLoadedPlugins = array();
-
-    /**
-     * Static registry property
-     *
-     * @var array
-     */
-    protected static $_staticPrefixToPaths = array();
-
-    /**
-     * Whether to use a statically named registry for loading plugins
-     *
-     * @var string|null
-     */
-    protected $_useStaticRegistry = null;
-
-    /**
-     * Constructor
-     *
-     * @param array $prefixToPaths
-     * @param string $staticRegistryName OPTIONAL
-     */
-    public function __construct(Array $prefixToPaths = array(), $staticRegistryName = null)
-    {
-        if (is_string($staticRegistryName) && !empty($staticRegistryName)) {
-            $this->_useStaticRegistry = $staticRegistryName;
-            if(!isset(self::$_staticPrefixToPaths[$staticRegistryName])) {
-                self::$_staticPrefixToPaths[$staticRegistryName] = array();
-            }
-            if(!isset(self::$_staticLoadedPlugins[$staticRegistryName])) {
-                self::$_staticLoadedPlugins[$staticRegistryName] = array();
-            }
-        }
-
-        foreach ($prefixToPaths as $prefix => $path) {
-            $this->addPrefixPath($prefix, $path);
-        }
-    }
-
-    /**
-     * Format prefix for internal use
-     *
-     * @param  string $prefix
-     * @return string
-     */
-    protected function _formatPrefix($prefix)
-    {
-        return rtrim($prefix, '_') . '_';
-    }
-
-    /**
-     * Add prefixed paths to the registry of paths
-     *
-     * @param string $prefix
-     * @param string $path
-     * @return Zend_Loader_PluginLoader
-     */
-    public function addPrefixPath($prefix, $path)
-    {
-        if (!is_string($prefix) || !is_string($path)) {
-            require_once 'Zend/Loader/PluginLoader/Exception.php';
-            throw new Zend_Loader_PluginLoader_Exception('Zend_Loader_PluginLoader::addPrefixPath() method only takes strings for prefix and path.');
-        }
-
-        $prefix = $this->_formatPrefix($prefix);
-        $path   = rtrim($path, '/\\') . '/';
-
-        if ($this->_useStaticRegistry) {
-            self::$_staticPrefixToPaths[$this->_useStaticRegistry][$prefix][] = $path;
-        } else {
-            $this->_prefixToPaths[$prefix][] = $path;
-        }
-        return $this;
-    }
-
-    /**
-     * Get path stack
-     *
-     * @param  string $prefix
-     * @return false|array False if prefix does not exist, array otherwise
-     */
-    public function getPaths($prefix = null)
-    {
-        if ((null !== $prefix) && is_string($prefix)) {
-            $prefix = $this->_formatPrefix($prefix);
-            if ($this->_useStaticRegistry) {
-                if (isset(self::$_staticPrefixToPaths[$this->_useStaticRegistry][$prefix])) {
-                    return self::$_staticPrefixToPaths[$this->_useStaticRegistry][$prefix];
-                }
-
-                return false;
-            }
-
-            if (isset($this->_prefixToPaths[$prefix])) {
-                return $this->_prefixToPaths[$prefix];
-            }
-
-            return false;
-        }
-
-        if ($this->_useStaticRegistry) {
-            return self::$_staticPrefixToPaths[$this->_useStaticRegistry];
-        }
-
-        return $this->_prefixToPaths;
-    }
-
-    /**
-     * Clear path stack
-     *
-     * @param  string $prefix
-     * @return bool False only if $prefix does not exist
-     */
-    public function clearPaths($prefix = null)
-    {
-        if ((null !== $prefix) && is_string($prefix)) {
-            $prefix = $this->_formatPrefix($prefix);
-            if ($this->_useStaticRegistry) {
-                if (isset(self::$_staticPrefixToPaths[$this->_useStaticRegistry][$prefix])) {
-                    unset(self::$_staticPrefixToPaths[$this->_useStaticRegistry][$prefix]);
-                    return true;
-                }
-
-                return false;
-            }
-
-            if (isset($this->_prefixToPaths[$prefix])) {
-                unset($this->_prefixToPaths[$prefix]);
-                return true;
-            }
-
-            return false;
-        }
-
-        if ($this->_useStaticRegistry) {
-            self::$_staticPrefixToPaths[$this->_useStaticRegistry] = array();
-        } else {
-            $this->_prefixToPaths = array();
-        }
-
-        return true;
-    }
-
-    /**
-     * Remove a prefix (or prefixed-path) from the registry
-     *
-     * @param string $prefix
-     * @param string $path OPTIONAL
-     * @return Zend_Loader_PluginLoader
-     */
-    public function removePrefixPath($prefix, $path = null)
-    {
-        $prefix = $this->_formatPrefix($prefix);
-        if ($this->_useStaticRegistry) {
-            $registry =& self::$_staticPrefixToPaths[$this->_useStaticRegistry];
-        } else {
-            $registry =& $this->_prefixToPaths;
-        }
-
-        if (!isset($registry[$prefix])) {
-            require_once 'Zend/Loader/PluginLoader/Exception.php';
-            throw new Zend_Loader_PluginLoader_Exception('Prefix ' . $prefix . ' was not found in the PluginLoader.');
-        }
-
-        if ($path != null) {
-            $pos = array_search($path, $registry[$prefix]);
-            if ($pos === null) {
-                require_once 'Zend/Loader/PluginLoader/Exception.php';
-                throw new Zend_Loader_PluginLoader_Exception('Prefix ' . $prefix . ' / Path ' . $path . ' was not found in the PluginLoader.');
-            }
-            unset($registry[$prefix][$pos]);
-        } else {
-            unset($registry[$prefix]);
-        }
-
-        return $this;
-    }
-
-    /**
-     * Normalize plugin name
-     *
-     * @param  string $name
-     * @return string
-     */
-    protected function _formatName($name)
-    {
-        return ucfirst((string) $name);
-    }
-
-    /**
-     * Whether or not a Plugin by a specific name is loaded
-     *
-     * @param string $name
-     * @return Zend_Loader_PluginLoader
-     */
-    public function isLoaded($name)
-    {
-        $name = $this->_formatName($name);
-        if ($this->_useStaticRegistry) {
-            return isset(self::$_staticLoadedPlugins[$this->_useStaticRegistry][$name]);
-        }
-
-        return isset($this->_loadedPlugins[$name]);
-    }
-
-    /**
-     * Return full class name for a named plugin
-     *
-     * @param string $name
-     * @return string|false False if class not found, class name otherwise
-     */
-    public function getClassName($name)
-    {
-        $name = $this->_formatName($name);
-        if ($this->_useStaticRegistry 
-            && isset(self::$_staticLoadedPlugins[$this->_useStaticRegistry][$name])
-        ) {
-            return self::$_staticLoadedPlugins[$this->_useStaticRegistry][$name];
-        } elseif (isset($this->_loadedPlugins[$name])) {
-            return $this->_loadedPlugins[$name];
-        }
-
-        return false;
-    }
-
-    /**
-     * Get path to plugin class
-     * 
-     * @param  mixed $name 
-     * @return string|false False if not found
-     */
-    public function getClassPath($name)
-    {
-        $name = $this->_formatName($name);
-        if ($this->_useStaticRegistry 
-            && !empty(self::$_staticLoadedPluginPaths[$this->_useStaticRegistry][$name])
-        ) {
-            return self::$_staticLoadedPluginPaths[$this->_useStaticRegistry][$name];
-        } elseif (!empty($this->_loadedPluginPaths[$name])) {
-            return $this->_loadedPluginPaths[$name];
-        }
-
-        if ($this->isLoaded($name)) {
-            $class = $this->getClassName($name);
-            $r     = new ReflectionClass($class);
-            $path  = $r->getFileName();
-            if ($this->_useStaticRegistry) {
-                self::$_staticLoadedPluginPaths[$this->_useStaticRegistry][$name] = $path;
-            } else {
-                $this->_loadedPluginPaths[$name] = $path;
-            }
-            return $path;
-        }
-
-        return false;
-    }
-
-    /**
-     * Load a plugin via the name provided
-     *
-     * @param  string $name
-     * @param  bool $throwExceptions Whether or not to throw exceptions if the 
-     * class is not resolved
-     * @return string|false Class name of loaded class; false if $throwExceptions 
-     * if false and no class found
-     * @throws Zend_Loader_Exception if class not found
-     */
-    public function load($name, $throwExceptions = true)
-    {
-        $name = $this->_formatName($name);
-        if ($this->isLoaded($name)) {
-            return $this->getClassName($name);
-        }
-
-        if ($this->_useStaticRegistry) {
-            $registry = self::$_staticPrefixToPaths[$this->_useStaticRegistry];
-        } else {
-            $registry = $this->_prefixToPaths;
-        }
-
-        $registry  = array_reverse($registry, true);
-        $found     = false;
-        $classFile = str_replace('_', DIRECTORY_SEPARATOR, $name) . '.php';
-        $incFile   = self::getIncludeFileCache();
-        foreach ($registry as $prefix => $paths) {
-            $className = $prefix . $name;
-
-            if (class_exists($className, false)) {
-                $found = true;
-                break;
-            }
-
-            $paths     = array_reverse($paths, true);
-
-            foreach ($paths as $path) {
-                $loadFile = $path . $classFile;
-                if (Zend_Loader::isReadable($loadFile)) {
-                    include_once $loadFile;
-                    if (class_exists($className, false)) {
-                        if (null !== $incFile) {
-                            self::_appendIncFile($loadFile);
-                        }
-                        $found = true;
-                        break 2;
-                    }
-                }
-            }
-        }
-
-        if (!$found) {
-            if (!$throwExceptions) {
-                return false;
-            }
-
-            $message = "Plugin by name '$name' was not found in the registry; used paths:";
-            foreach ($registry as $prefix => $paths) {
-                $message .= "\n$prefix: " . implode(PATH_SEPARATOR, $paths);
-            }
-            require_once 'Zend/Loader/PluginLoader/Exception.php';
-            throw new Zend_Loader_PluginLoader_Exception($message);
-       }
-
-        if ($this->_useStaticRegistry) {
-            self::$_staticLoadedPlugins[$this->_useStaticRegistry][$name]     = $className;
-            self::$_staticLoadedPluginPaths[$this->_useStaticRegistry][$name] = (isset($loadFile) ? $loadFile : '');
-        } else {
-            $this->_loadedPlugins[$name]     = $className;
-            $this->_loadedPluginPaths[$name] = (isset($loadFile) ? $loadFile : '');
-        }
-        return $className;
-    }
-
-    /**
-     * Set path to class file cache
-     *
-     * Specify a path to a file that will add include_once statements for each 
-     * plugin class loaded. This is an opt-in feature for performance purposes.
-     * 
-     * @param  string $file 
-     * @return void
-     * @throws Zend_Loader_PluginLoader_Exception if file is not writeable or path does not exist
-     */
-    public static function setIncludeFileCache($file)
-    {
-        if (null === $file) {
-            self::$_includeFileCache = null;
-            return;
-        }
-
-        if (!file_exists($file) && !file_exists(dirname($file))) {
-            require_once 'Zend/Loader/PluginLoader/Exception.php';
-            throw new Zend_Loader_PluginLoader_Exception('Specified file does not exist and/or directory does not exist (' . $file . ')');
-        }
-        if (file_exists($file) && !is_writable($file)) {
-            require_once 'Zend/Loader/PluginLoader/Exception.php';
-            throw new Zend_Loader_PluginLoader_Exception('Specified file is not writeable (' . $file . ')');
-        }
-        if (!file_exists($file) && file_exists(dirname($file)) && !is_writable(dirname($file))) {
-            require_once 'Zend/Loader/PluginLoader/Exception.php';
-            throw new Zend_Loader_PluginLoader_Exception('Specified file is not writeable (' . $file . ')');
-        }
-
-        self::$_includeFileCache = $file;
-    }
-
-    /**
-     * Retrieve class file cache path
-     * 
-     * @return string|null
-     */
-    public static function getIncludeFileCache()
-    {
-        return self::$_includeFileCache;
-    }
-
-    /**
-     * Append an include_once statement to the class file cache
-     * 
-     * @param  string $incFile 
-     * @return void
-     */
-    protected static function _appendIncFile($incFile)
-    {
-        // Solução e o bug podem ser entendidos neste link http://framework.zend.com/issues/browse/ZF-8554
-        if (file_exists(self::$_includeFileCache)){
-            $file = file_get_contents(self::$_includeFileCache);
-        }
-        if (!isset($file) || (!$file)) {
-            $file = '<?php';
-        }
-        if (!strstr($file, $incFile)) {
-            $file .= "\ninclude_once '$incFile';";
-            file_put_contents(self::$_includeFileCache, $file);
-        }
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

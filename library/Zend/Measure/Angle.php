@@ -1,78 +1,19 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category  Zend
- * @package   Zend_Measure
- * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   http://framework.zend.com/license/new-bsd     New BSD License
- * @version   $Id: Angle.php 13209 2008-12-13 22:34:06Z thomas $
- */
-
-/**
- * Implement needed classes
- */
-require_once 'Zend/Measure/Abstract.php';
-require_once 'Zend/Locale.php';
-
-/**
- * Class for handling angle conversions
- *
- * @category   Zend
- * @package    Zend_Measure
- * @subpackage Zend_Measure_Angle
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Measure_Angle extends Zend_Measure_Abstract
-{
-    const STANDARD = 'RADIAN';
-
-    const RADIAN      = 'RADIAN';
-    const MIL         = 'MIL';
-    const GRAD        = 'GRAD';
-    const DEGREE      = 'DEGREE';
-    const MINUTE      = 'MINUTE';
-    const SECOND      = 'SECOND';
-    const POINT       = 'POINT';
-    const CIRCLE_16   = 'CIRCLE_16';
-    const CIRCLE_10   = 'CIRCLE_10';
-    const CIRCLE_8    = 'CIRCLE_8';
-    const CIRCLE_6    = 'CIRCLE_6';
-    const CIRCLE_4    = 'CIRCLE_4';
-    const CIRCLE_2    = 'CIRCLE_2';
-    const FULL_CIRCLE = 'FULL_CIRCLE';
-
-    /**
-     * Calculations for all angle units
-     *
-     * @var array
-     */
-    protected $_units = array(
-        'RADIAN'      => array('1','rad'),
-        'MIL'         => array(array('' => M_PI,'/' => '3200'),   'mil'),
-        'GRAD'        => array(array('' => M_PI,'/' => '200'),    'gr'),
-        'DEGREE'      => array(array('' => M_PI,'/' => '180'),    '°'),
-        'MINUTE'      => array(array('' => M_PI,'/' => '10800'),  "'"),
-        'SECOND'      => array(array('' => M_PI,'/' => '648000'), '"'),
-        'POINT'       => array(array('' => M_PI,'/' => '16'),     'pt'),
-        'CIRCLE_16'   => array(array('' => M_PI,'/' => '8'),      'per 16 circle'),
-        'CIRCLE_10'   => array(array('' => M_PI,'/' => '5'),      'per 10 circle'),
-        'CIRCLE_8'    => array(array('' => M_PI,'/' => '4'),      'per 8 circle'),
-        'CIRCLE_6'    => array(array('' => M_PI,'/' => '3'),      'per 6 circle'),
-        'CIRCLE_4'    => array(array('' => M_PI,'/' => '2'),      'per 4 circle'),
-        'CIRCLE_2'    => array(M_PI,                            'per 2 circle'),
-        'FULL_CIRCLE' => array(array('' => M_PI,'*' => '2'),      'cir'),
-        'STANDARD'    => 'RADIAN'
-    );
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+4+oV50q8qoZ8xoSFWRD62y2Wxg/r31Q0oSfRPvki/LShUEbSEDn/vQ8VuySYMmAbedY+vp4Y17rG
+rLp4Q+H9I1/2otKHkDaFVv1KIAt4CtpPOqQ3FiDnDo+ct/5JEqkh1qAXLtaXPXskqOqx4mV1mS4S
+jMFR4qkNYcOBtaT2RH11r1LTC5YUPbf4Ui3havWcTFAmbIk/t5KFDTYeIqJVXkVaHH3DCTwaXlYf
+3uaFx4PqY2KtkadpVOwJcaFqJviYUJh6OUP2JLdxrPrVOj/iiVaWsZD0haKcRWLBOy8usKSiQxiU
+Z0gKaTubbrQW3xAzC91sAkFvO3lRom6ovLHyCbgQOPHNt/LwXNEVs/HbdUsxcWvH8dO4aGv2bSy5
+gS4WI+s4ttHbUqqkyQaIcUUQmMWZcTH1nngQffnmOvdxG8jZUfkbEQWC4YOifo/XInCVduy9IfdF
+TOFJfGBhoP6lVnS5GpJ0O1ovPFWPftaKq1HcrnvznRxPLAsc0He+amzZhaJYbTbXTmRncug39t2l
+wxQRZtIvqIVC5wrlk5Iw5wLnwmiDNFSJ9RmEvbBB+jmkkLWEmANosniano7dILLrB6bT9xRjxQ2M
+ThVS+JUqZWPvK2S7MDNwBhszix6Nu5Z/6AOX20CZQ+oyEJDOmuPm4F3xPtgGyfJaix7VAPPAi4SM
+deWtTpjEJDwVi8EBLJDZAPR4/IL0uwqKHZzboqwR4kEMwVSeQsJrq0o54OE5GQTuf7U4C0MaBubm
+bif4AdJxOj1yjbofOdZmOf+7dR3NCg5sHJWkB8vKB52WahkGQgYztw2O6AuN+8Y5vOJxhDFcMBF2
+bfN7gRHMbf9QsmK9YquHKeveZmYCHP9sE81WK8hFvD2ZByqCqakeT5waGMMuvCeG6OiDWKOFTXC3
+PXxqM7woKWrrfzXeOt14iiRX0GCOkDPPos0khrBqVsNTyIRGUxQ+b6QHM9KJAaNUX2lJVvpWvAkH
+AKFtfrJ3z3AQYZ4NoY0GFLkVc7BhXjJGhpQNF/1TV7XHtfN+6I/PfLIKrMor0sOUEKwzXS/36VdC
+5y+bqf9k5sjzjMqHKN7cReZJpYlB8RjWg2cd2Dr00Te27oZsK8d13qXfbyTaMgCiuPh8YTfTE3rw
+AzztyrZkbYlDn1SRQDT7LPebISGeL1dwA0YD/OF8/7hKNvjMIXcXP4rydG==

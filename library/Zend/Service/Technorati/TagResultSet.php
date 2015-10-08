@@ -1,110 +1,36 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Service
- * @subpackage Technorati
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: TagResultSet.php 8064 2008-02-16 10:58:39Z thomas $
- */
-
-
-/** 
- * @see Zend_Service_Technorati_ResultSet 
- */
-require_once 'Zend/Service/Technorati/ResultSet.php';
-
-
-/**
- * Represents a Technorati Tag query result set.
- * 
- * @category   Zend
- * @package    Zend_Service
- * @subpackage Technorati
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Service_Technorati_TagResultSet extends Zend_Service_Technorati_ResultSet
-{
-    /**
-     * Number of posts that match the tag.
-     *
-     * @var     int
-     * @access  protected
-     */
-    protected $_postsMatched;
-
-    /**
-     * Number of blogs that match the tag.
-     *
-     * @var     int
-     * @access  protected
-     */
-    protected $_blogsMatched;
-
-    /**
-     * Parses the search response and retrieve the results for iteration.
-     *
-     * @param   DomDocument $dom    the ReST fragment for this object
-     * @param   array $options      query options as associative array
-     */
-    public function __construct(DomDocument $dom, $options = array())
-    {
-        parent::__construct($dom, $options);
-
-        $result = $this->_xpath->query('/tapi/document/result/postsmatched/text()');
-        if ($result->length == 1) $this->_postsMatched = (int) $result->item(0)->data;
-
-        $result = $this->_xpath->query('/tapi/document/result/blogsmatched/text()');
-        if ($result->length == 1) $this->_blogsMatched = (int) $result->item(0)->data;
-
-        $this->_totalResultsReturned  = (int) $this->_xpath->evaluate("count(/tapi/document/item)");
-        /** @todo Validate the following assertion */
-        $this->_totalResultsAvailable = (int) $this->getPostsMatched();
-    }
-
-
-    /**
-     * Returns the number of posts that match the tag.
-     * 
-     * @return  int
-     */
-    public function getPostsMatched() {
-        return $this->_postsMatched;
-    }
-
-    /**
-     * Returns the number of blogs that match the tag.
-     * 
-     * @return  int
-     */
-    public function getBlogsMatched() {
-        return $this->_blogsMatched;
-    }
-
-    /**
-     * Implements Zend_Service_Technorati_ResultSet::current().
-     *
-     * @return Zend_Service_Technorati_TagResult current result
-     */
-    public function current()
-    {
-        /**
-         * @see Zend_Service_Technorati_TagResult
-         */
-        require_once 'Zend/Service/Technorati/TagResult.php';
-        return new Zend_Service_Technorati_TagResult($this->_results->item($this->_currentIndex));
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+obE/L1ALqW==

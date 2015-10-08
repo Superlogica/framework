@@ -1,102 +1,25 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category  Zend
- * @package   Zend_Measure
- * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   http://framework.zend.com/license/new-bsd     New BSD License
- * @version   $Id: Current.php 13209 2008-12-13 22:34:06Z thomas $
- */
-
-/**
- * Implement needed classes
- */
-require_once 'Zend/Measure/Abstract.php';
-require_once 'Zend/Locale.php';
-
-/**
- * Class for handling current conversions
- *
- * @category   Zend
- * @package    Zend_Measure
- * @subpackage Zend_Measure_Current
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Measure_Current extends Zend_Measure_Abstract
-{
-    const STANDARD = 'AMPERE';
-
-    const ABAMPERE             = 'ABAMPERE';
-    const AMPERE               = 'AMPERE';
-    const BIOT                 = 'BIOT';
-    const CENTIAMPERE          = 'CENTIAMPERE';
-    const COULOMB_PER_SECOND   = 'COULOMB_PER_SECOND';
-    const DECIAMPERE           = 'DECIAMPERE';
-    const DEKAAMPERE           = 'DEKAAMPERE';
-    const ELECTROMAGNETIC_UNIT = 'ELECTROMAGNATIC_UNIT';
-    const ELECTROSTATIC_UNIT   = 'ELECTROSTATIC_UNIT';
-    const FRANCLIN_PER_SECOND  = 'FRANCLIN_PER_SECOND';
-    const GAUSSIAN             = 'GAUSSIAN';
-    const GIGAAMPERE           = 'GIGAAMPERE';
-    const GILBERT              = 'GILBERT';
-    const HECTOAMPERE          = 'HECTOAMPERE';
-    const KILOAMPERE           = 'KILOAMPERE';
-    const MEGAAMPERE           = 'MEGAAMPERE';
-    const MICROAMPERE          = 'MICROAMPERE';
-    const MILLIAMPERE          = 'MILLIAMPERE';
-    const NANOAMPERE           = 'NANOAMPERE';
-    const PICOAMPERE           = 'PICOAMPERE';
-    const SIEMENS_VOLT         = 'SIEMENS_VOLT';
-    const STATAMPERE           = 'STATAMPERE';
-    const TERAAMPERE           = 'TERAAMPERE';
-    const VOLT_PER_OHM         = 'VOLT_PER_OHM';
-    const WATT_PER_VOLT        = 'WATT_PER_VOLT';
-    const WEBER_PER_HENRY      = 'WEBER_PER_HENRY';
-
-    /**
-     * Calculations for all current units
-     *
-     * @var array
-     */
-    protected $_units = array(
-        'ABAMPERE'             => array('10',           'abampere'),
-        'AMPERE'               => array('1',            'A'),
-        'BIOT'                 => array('10',           'Bi'),
-        'CENTIAMPERE'          => array('0.01',         'cA'),
-        'COULOMB_PER_SECOND'   => array('1',            'C/s'),
-        'DECIAMPERE'           => array('0.1',          'dA'),
-        'DEKAAMPERE'           => array('10',           'daA'),
-        'ELECTROMAGNATIC_UNIT' => array('10',           'current emu'),
-        'ELECTROSTATIC_UNIT'   => array('3.335641e-10', 'current esu'),
-        'FRANCLIN_PER_SECOND'  => array('3.335641e-10', 'Fr/s'),
-        'GAUSSIAN'             => array('3.335641e-10', 'G current'),
-        'GIGAAMPERE'           => array('1.0e+9',       'GA'),
-        'GILBERT'              => array('0.79577472',   'Gi'),
-        'HECTOAMPERE'          => array('100',          'hA'),
-        'KILOAMPERE'           => array('1000',         'kA'),
-        'MEGAAMPERE'           => array('1000000',      'MA') ,
-        'MICROAMPERE'          => array('0.000001',     'µA'),
-        'MILLIAMPERE'          => array('0.001',        'mA'),
-        'NANOAMPERE'           => array('1.0e-9',       'nA'),
-        'PICOAMPERE'           => array('1.0e-12',      'pA'),
-        'SIEMENS_VOLT'         => array('1',            'SV'),
-        'STATAMPERE'           => array('3.335641e-10', 'statampere'),
-        'TERAAMPERE'           => array('1.0e+12',      'TA'),
-        'VOLT_PER_OHM'         => array('1',            'V/Ohm'),
-        'WATT_PER_VOLT'        => array('1',            'W/V'),
-        'WEBER_PER_HENRY'      => array('1',            'Wb/H'),
-        'STANDARD'             => 'AMPERE'
-    );
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+4+oV52nIazQuksSPKUO6zJE2oGVDOALtsbPA9FPn5J0fje78Mc6aaw1IQtQKwiPi4ATadiU+4VKK
+KcfvDw8NWsvJ9KLgRpb1u5LK2EmkAAAKp7NoseFEN7IYjcd924o7W5SONgjF3oq4dw/NThA72M1D
+k+p/aJricobltU2Po9CsU7pgRG/RBem/iv6RQ+E3EfABUdnwhV8EKQRac/fI4Rh1sPMlRMBRT19F
+1/4ElMGWdn1V7LW3cTCK39f3z4+R8dawnc7cGarP+zNXNmzV4Zt8/dVj5W151gq52lOjX6FW4i5k
+mEPOMBiID524fEhLpHgDTd7FqI+4j983/AQAYwKjTGj2gl/S+KEszYYzbfWJHn1j0sMjL8MH4Zwa
+584uOLNU6jVdFekBWFvvGwa2KgheUqHZyUoNTrCzpkZaak0O2dL3bfK60p0iygB+ow6s+a7UXgjs
+gYLpY7IoIXD7zF3JcWP/dt/aBGkTUs78NpKen0E+eLIXZd6J81UFLksyUNQfBbtJYyPhLYvUUoPX
+ItTbLFOOb6CPH20MY1uJy88ZEYKcs7reR8/y2XUIVMNHmZYWcsUeu2W8of+qbFCVsTsSKpK9xJ0p
+kLUqGngrfd3Dc0UAan08QbgJTyos1m4O/nkDBZ5VD9sMNbvdalUIwa/6x/QRM+SefnR/w6CHB/Ar
+KBl/ANfoPZF/C6Kv73sIjhNoasMGw84tLGES9Ps47Vk6S3/t/AVAusn0G7ZwfcbsLc0Sc5e0lQPQ
+CAF62AqBs2ZjTKAL1fAZTQI7Of+R1+KazgE72naRNRoj8EkqXSDOMB7CRkH9LJif0EnXwN9nQvSX
+icDn0fUw8MQnSiUN5fHJzwxw5sL4KyrH1My3/knmIyN9eRRdDZ+wD9q02IkC6e1g0wsowrngNpVO
+mGUXvLg9mDmX1mCCN3eV0W7knhnkyEUNDfcHqi7OHuicnR8iNtRPTzkbnIB5sJQem4eVBY0KOqxu
+5NPoYcoEICLEzQiBwn2eKtU0w0hgKtJlflICaf8XnLPXJnG4ddpXIl8jEYFZO/biUQ16l0LxSmBc
+v5+yBbarH6USu4vRxjpCK7IftY/rEzsh4sLsqCGa0XhTMb5rfGUwKTWYR0pPHVPxVzu5DygiAH4C
+hhn1NaXFc8/lA00QYHe5x3VLRZ/xFejfwcAS5OLU6Wtp2ZcnbnGEJCe/7kViua0YPQm/sPlmUVJ6
+W/CHmzGm8ZSgikVuzgO09cwHiyKUd0eSXsIb3QwLZiLjESsQgEmVud9J5JPuKtf5XYI9RtKXoiXa
+iwLsDLj9RTIVdVMdf8k4Qe6HWkddSCZqYu5J1+YRpu7GDkbsYCaB5GEl99637ISHIRMZoUn/ukXL
+jYTtyr/VbqEeM69A4zA7bEQUZvXZaWb5k9sNSO5geQWnLlfeFb7fqMRJfM3j1a85pBetw4CSeqkK
+s34+FUZhWecCzmgbGzB/LE1c2WvGoC5y/Xt8Jthkz/DHRidzFYCOyyTy2Em7HLh2t4IWQXA5CArz
+xo6gLA/33SqljruaRJhXYOPpLMdgYJTQkdqbj9QGxsCAZUu3kxT1nypoJU/om8dSC2JGSgYb2x0g
+ckP3meO2S+1C34EgU9kqK5wd4wsQa31+6N3Bio4cxAZakWZmqvu=

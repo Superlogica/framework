@@ -1,335 +1,76 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_View
- * @subpackage Helper
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * @see Zend_View_Helper_Navigation_HelperAbstract
- */
-require_once 'Zend/View/Helper/Navigation/HelperAbstract.php';
-
-/**
- * Proxy helper for retrieving navigational helpers and forwarding calls
- *
- * @category   Zend
- * @package    Zend_View
- * @subpackage Helper
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_View_Helper_Navigation
-    extends Zend_View_Helper_Navigation_HelperAbstract
-{
-    /**
-     * View helper namespace
-     *
-     * @var string
-     */
-    const NS = 'Zend_View_Helper_Navigation';
-
-    /**
-     * Default proxy to use in {@link render()}
-     *
-     * @var string
-     */
-    protected $_defaultProxy = 'menu';
-
-    /**
-     * Contains references to proxied helpers
-     *
-     * @var array
-     */
-    protected $_helpers = array();
-
-    /**
-     * Whether container should be injected when proxying
-     *
-     * @var bool
-     */
-    protected $_injectContainer = true;
-
-    /**
-     * Whether ACL should be injected when proxying
-     *
-     * @var bool
-     */
-    protected $_injectAcl = true;
-
-    /**
-     * Whether translator should be injected when proxying
-     *
-     * @var bool
-     */
-    protected $_injectTranslator = true;
-
-    /**
-     * Helper entry point
-     *
-     * @param  Zend_Navigation_Container $container  [optional] container to
-     *                                               operate on
-     * @return Zend_View_Helper_Navigation           fluent interface, returns
-     *                                               self
-     */
-    public function navigation(Zend_Navigation_Container $container = null)
-    {
-        if (null !== $container) {
-            $this->setContainer($container);
-        }
-
-        return $this;
-    }
-
-    /**
-     * Magic overload: Proxy to other navigation helpers or the container
-     *
-     * Examples of usage from a view script or layout:
-     * <code>
-     * // proxy to Menu helper and render container:
-     * echo $this->navigation()->menu();
-     *
-     * // proxy to Breadcrumbs helper and set indentation:
-     * $this->navigation()->breadcrumbs()->setIndent(8);
-     *
-     * // proxy to container and find all pages with 'blog' route:
-     * $blogPages = $this->navigation()->findAllByRoute('blog');
-     * </code>
-     *
-     * @param  string $method             helper name or method name in
-     *                                    container
-     * @param  array  $arguments          [optional] arguments to pass
-     * @return mixed                      returns what the proxied call returns
-     * @throws Zend_View_Exception        if proxying to a helper, and the
-     *                                    helper is not an instance of the
-     *                                    interface specified in
-     *                                    {@link findHelper()}
-     * @throws Zend_Navigation_Exception  if method does not exist in container
-     */
-    public function __call($method, array $arguments = array())
-    {
-        // check if call should proxy to another helper
-        if ($helper = $this->findHelper($method, false)) {
-            return call_user_func_array(array($helper, $method), $arguments);
-        }
-
-        // default behaviour: proxy call to container
-        return parent::__call($method, $arguments);
-    }
-
-    /**
-     * Returns the helper matching $proxy
-     *
-     * The helper must implement the interface
-     * {@link Zend_View_Helper_Navigation_Helper}.
-     *
-     * @param string $proxy                        helper name
-     * @param bool   $strict                       [optional] whether
-     *                                             exceptions should be
-     *                                             thrown if something goes
-     *                                             wrong. Default is true.
-     * @return Zend_View_Helper_Navigation_Helper  helper instance
-     * @throws Zend_Loader_PluginLoader_Exception  if $strict is true and
-     *                                             helper cannot be found
-     * @throws Zend_View_Exception                 if $strict is true and
-     *                                             helper does not implement
-     *                                             the specified interface
-     */
-    public function findHelper($proxy, $strict = true)
-    {
-        if (isset($this->_helpers[$proxy])) {
-            return $this->_helpers[$proxy];
-        }
-
-        if (!$this->view->getPluginLoader('helper')->getPaths(self::NS)) {
-            $this->view->addHelperPath(
-                    str_replace('_', '/', self::NS),
-                    self::NS);
-        }
-
-        if ($strict) {
-            $helper = $this->view->getHelper($proxy);
-        } else {
-            try {
-                $helper = $this->view->getHelper($proxy);
-            } catch (Zend_Loader_PluginLoader_Exception $e) {
-                return null;
-            }
-        }
-
-        if (!$helper instanceof Zend_View_Helper_Navigation_Helper) {
-            if ($strict) {
-                require_once 'Zend/View/Exception.php';
-                throw new Zend_View_Exception(sprintf(
-                        'Proxy helper "%s" is not an instance of ' .
-                        'Zend_View_Helper_Navigation_Helper',
-                        get_class($helper)));
-            }
-
-            return null;
-        }
-
-        $this->_inject($helper);
-        $this->_helpers[$proxy] = $helper;
-
-        return $helper;
-    }
-
-    /**
-     * Injects container, ACL, and translator to the given $helper if this
-     * helper is configured to do so
-     *
-     * @param  Zend_View_Helper_Navigation_Helper $helper  helper instance
-     * @return void
-     */
-    protected function _inject(Zend_View_Helper_Navigation_Helper $helper)
-    {
-        if ($this->getInjectContainer() && !$helper->hasContainer()) {
-            $helper->setContainer($this->getContainer());
-        }
-
-        if ($this->getInjectAcl()) {
-            if (!$helper->hasAcl()) {
-                $helper->setAcl($this->getAcl());
-            }
-            if (!$helper->hasRole()) {
-                $helper->setRole($this->getRole());
-            }
-        }
-
-        if ($this->getInjectTranslator() && !$helper->hasTranslator()) {
-            $helper->setTranslator($this->getTranslator());
-        }
-    }
-
-    // Accessors:
-
-    /**
-     * Sets the default proxy to use in {@link render()}
-     *
-     * @param  string $proxy                default proxy
-     * @return Zend_View_Helper_Navigation  fluent interface, returns self
-     */
-    public function setDefaultProxy($proxy)
-    {
-        $this->_defaultProxy = (string) $proxy;
-        return $this;
-    }
-
-    /**
-     * Returns the default proxy to use in {@link render()}
-     *
-     * @return string  the default proxy to use in {@link render()}
-     */
-    public function getDefaultProxy()
-    {
-        return $this->_defaultProxy;
-    }
-
-    /**
-     * Sets whether container should be injected when proxying
-     *
-     * @param bool $injectContainer         [optional] whether container should
-     *                                      be injected when proxying. Default
-     *                                      is true.
-     * @return Zend_View_Helper_Navigation  fluent interface, returns self
-     */
-    public function setInjectContainer($injectContainer = true)
-    {
-        $this->_injectContainer = (bool) $injectContainer;
-        return $this;
-    }
-
-    /**
-     * Returns whether container should be injected when proxying
-     *
-     * @return bool  whether container should be injected when proxying
-     */
-    public function getInjectContainer()
-    {
-        return $this->_injectContainer;
-    }
-
-    /**
-     * Sets whether ACL should be injected when proxying
-     *
-     * @param  bool $injectAcl              [optional] whether ACL should be
-     *                                      injected when proxying. Default is
-     *                                      true.
-     * @return Zend_View_Helper_Navigation  fluent interface, returns self
-     */
-    public function setInjectAcl($injectAcl = true)
-    {
-        $this->_injectAcl = (bool) $injectAcl;
-        return $this;
-    }
-
-    /**
-     * Returns whether ACL should be injected when proxying
-     *
-     * @return bool  whether ACL should be injected when proxying
-     */
-    public function getInjectAcl()
-    {
-        return $this->_injectAcl;
-    }
-
-    /**
-     * Sets whether translator should be injected when proxying
-     *
-     * @param  bool $injectTranslator       [optional] whether translator should
-     *                                      be injected when proxying. Default
-     *                                      is true.
-     * @return Zend_View_Helper_Navigation  fluent interface, returns self
-     */
-    public function setInjectTranslator($injectTranslator = true)
-    {
-        $this->_injectTranslator = (bool) $injectTranslator;
-        return $this;
-    }
-
-    /**
-     * Returns whether translator should be injected when proxying
-     *
-     * @return bool  whether translator should be injected when proxying
-     */
-    public function getInjectTranslator()
-    {
-        return $this->_injectTranslator;
-    }
-
-    // Zend_View_Helper_Navigation_Helper:
-
-    /**
-     * Renders helper
-     *
-     * @param  Zend_Navigation_Container $container  [optional] container to
-     *                                               render. Default is to
-     *                                               render the container
-     *                                               registered in the helper.
-     * @return string                                helper output
-     * @throws Zend_Loader_PluginLoader_Exception    if helper cannot be found
-     * @throws Zend_View_Exception                   if helper doesn't implement
-     *                                               the interface specified in
-     *                                               {@link findHelper()}
-     */
-    public function render(Zend_Navigation_Container $container = null)
-    {
-        $helper = $this->findHelper($this->getDefaultProxy());
-        return $helper->render($container);
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+0ydMZca=

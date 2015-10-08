@@ -1,1398 +1,456 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Db
- * @subpackage Table
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Abstract.php 6320 2007-09-12 00:27:22Z bkarwin $
- */
-
-/**
- * @see Zend_Db_Adapter_Abstract
- */
-require_once 'Zend/Db/Adapter/Abstract.php';
-
-/**
- * @see Zend_Db_Adapter_Abstract
- */
-require_once 'Zend/Db/Select.php';
-
-/**
- * @see Zend_Db
- */
-require_once 'Zend/Db.php';
-
-/**
- * Class for SQL table interface.
- *
- * @category   Zend
- * @package    Zend_Db
- * @subpackage Table
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-abstract class Zend_Db_Table_Abstract
-{
-
-    const ADAPTER          = 'db';
-    const SCHEMA           = 'schema';
-    const NAME             = 'name';
-    const PRIMARY          = 'primary';
-    const COLS             = 'cols';
-    const METADATA         = 'metadata';
-    const METADATA_CACHE   = 'metadataCache';
-    const METADATA_CACHE_IN_CLASS = 'metadataCacheInClass';
-    const ROW_CLASS        = 'rowClass';
-    const ROWSET_CLASS     = 'rowsetClass';
-    const REFERENCE_MAP    = 'referenceMap';
-    const DEPENDENT_TABLES = 'dependentTables';
-    const SEQUENCE         = 'sequence';
-
-    const COLUMNS          = 'columns';
-    const REF_TABLE_CLASS  = 'refTableClass';
-    const REF_COLUMNS      = 'refColumns';
-    const ON_DELETE        = 'onDelete';
-    const ON_UPDATE        = 'onUpdate';
-
-    const CASCADE          = 'cascade';
-    const RESTRICT         = 'restrict';
-    const SET_NULL         = 'setNull';
-
-    const DEFAULT_NONE     = 'defaultNone';
-    const DEFAULT_CLASS    = 'defaultClass';
-    const DEFAULT_DB       = 'defaultDb';
-
-    /**
-     * Default Zend_Db_Adapter_Abstract object.
-     *
-     * @var Zend_Db_Adapter_Abstract
-     */
-    protected static $_defaultDb;
-
-    /**
-     * Default cache for information provided by the adapter's describeTable() method.
-     *
-     * @var Zend_Cache_Core
-     */
-    protected static $_defaultMetadataCache = null;
-
-    /**
-     * Zend_Db_Adapter_Abstract object.
-     *
-     * @var Zend_Db_Adapter_Abstract
-     */
-    protected $_db;
-
-    /**
-     * The schema name (default null means current schema)
-     *
-     * @var array
-     */
-    protected $_schema = null;
-
-    /**
-     * The table name.
-     *
-     * @var array
-     */
-    protected $_name = null;
-
-    /**
-     * The table column names derived from Zend_Db_Adapter_Abstract::describeTable().
-     *
-     * @var array
-     */
-    protected $_cols;
-
-    /**
-     * The primary key column or columns.
-     * A compound key should be declared as an array.
-     * You may declare a single-column primary key
-     * as a string.
-     *
-     * @var mixed
-     */
-    protected $_primary = null;
-
-    /**
-     * If your primary key is a compound key, and one of the columns uses
-     * an auto-increment or sequence-generated value, set _identity
-     * to the ordinal index in the $_primary array for that column.
-     * Note this index is the position of the column in the primary key,
-     * not the position of the column in the table.  The primary key
-     * array is 1-based.
-     *
-     * @var integer
-     */
-    protected $_identity = 1;
-
-    /**
-     * Define the logic for new values in the primary key.
-     * May be a string, boolean true, or boolean false.
-     *
-     * @var mixed
-     */
-    protected $_sequence = true;
-
-    /**
-     * Information provided by the adapter's describeTable() method.
-     *
-     * @var array
-     */
-    protected $_metadata = array();
-
-    /**
-     * Cache for information provided by the adapter's describeTable() method.
-     *
-     * @var Zend_Cache_Core
-     */
-    protected $_metadataCache = null;
-
-    /**
-     * Flag: whether or not to cache metadata in the class
-     * @var bool
-     */
-    protected $_metadataCacheInClass = true;
-
-    /**
-     * Classname for row
-     *
-     * @var string
-     */
-    protected $_rowClass = 'Zend_Db_Table_Row';
-
-    /**
-     * Classname for rowset
-     *
-     * @var string
-     */
-    protected $_rowsetClass = 'Zend_Db_Table_Rowset';
-
-    /**
-     * Associative array map of declarative referential integrity rules.
-     * This array has one entry per foreign key in the current table.
-     * Each key is a mnemonic name for one reference rule.
-     *
-     * Each value is also an associative array, with the following keys:
-     * - columns       = array of names of column(s) in the child table.
-     * - refTableClass = class name of the parent table.
-     * - refColumns    = array of names of column(s) in the parent table,
-     *                   in the same order as those in the 'columns' entry.
-     * - onDelete      = "cascade" means that a delete in the parent table also
-     *                   causes a delete of referencing rows in the child table.
-     * - onUpdate      = "cascade" means that an update of primary key values in
-     *                   the parent table also causes an update of referencing
-     *                   rows in the child table.
-     *
-     * @var array
-     */
-    protected $_referenceMap = array();
-
-    /**
-     * Simple array of class names of tables that are "children" of the current
-     * table, in other words tables that contain a foreign key to this one.
-     * Array elements are not table names; they are class names of classes that
-     * extend Zend_Db_Table_Abstract.
-     *
-     * @var array
-     */
-    protected $_dependentTables = array();
-
-
-    protected $_defaultSource = self::DEFAULT_NONE;
-    protected $_defaultValues = array();
-
-    /**
-     * Constructor.
-     *
-     * Supported params for $config are:
-     * - db              = user-supplied instance of database connector,
-     *                     or key name of registry instance.
-     * - name            = table name.
-     * - primary         = string or array of primary key(s).
-     * - rowClass        = row class name.
-     * - rowsetClass     = rowset class name.
-     * - referenceMap    = array structure to declare relationship
-     *                     to parent tables.
-     * - dependentTables = array of child tables.
-     * - metadataCache   = cache for information from adapter describeTable().
-     *
-     * @param  mixed $config Array of user-specified config options, or just the Db Adapter.
-     * @return void
-     */
-    public function __construct($config = array())
-    {
-        /**
-         * Allow a scalar argument to be the Adapter object or Registry key.
-         */
-        if (!is_array($config)) {
-            $config = array(self::ADAPTER => $config);
-        }
-
-        foreach ($config as $key => $value) {
-            switch ($key) {
-                case self::ADAPTER:
-                    $this->_setAdapter($value);
-                    break;
-                case self::SCHEMA:
-                    $this->_schema = (string) $value;
-                    break;
-                case self::NAME:
-                    $this->_name = (string) $value;
-                    break;
-                case self::PRIMARY:
-                    $this->_primary = (array) $value;
-                    break;
-                case self::ROW_CLASS:
-                    $this->setRowClass($value);
-                    break;
-                case self::ROWSET_CLASS:
-                    $this->setRowsetClass($value);
-                    break;
-                case self::REFERENCE_MAP:
-                    $this->setReferences($value);
-                    break;
-                case self::DEPENDENT_TABLES:
-                    $this->setDependentTables($value);
-                    break;
-                case self::METADATA_CACHE:
-                    $this->_setMetadataCache($value);
-                    break;
-                case self::METADATA_CACHE_IN_CLASS:
-                    $this->setMetadataCacheInClass($value);
-                    break;
-                case self::SEQUENCE:
-                    $this->_setSequence($value);
-                    break;
-                default:
-                    // ignore unrecognized configuration directive
-                    break;
-            }
-        }
-
-        $this->_setup();
-        $this->init();
-    }
-
-    /**
-     * @param  string $classname
-     * @return Zend_Db_Table_Abstract Provides a fluent interface
-     */
-    public function setRowClass($classname)
-    {
-        $this->_rowClass = (string) $classname;
-
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getRowClass()
-    {
-        return $this->_rowClass;
-    }
-
-    /**
-     * @param  string $classname
-     * @return Zend_Db_Table_Abstract Provides a fluent interface
-     */
-    public function setRowsetClass($classname)
-    {
-        $this->_rowsetClass = (string) $classname;
-
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getRowsetClass()
-    {
-        return $this->_rowsetClass;
-    }
-
-    /**
-     * Add a reference to the reference map
-     *
-     * @param string $ruleKey
-     * @param string|array $columns
-     * @param string $refTableClass
-     * @param string|array $refColumns
-     * @param string $onDelete
-     * @param string $onUpdate
-     * @return Zend_Db_Table_Abstract
-     */
-    public function addReference($ruleKey, $columns, $refTableClass, $refColumns,
-                                 $onDelete = null, $onUpdate = null)
-    {
-        $reference = array(self::COLUMNS         => (array) $columns,
-                           self::REF_TABLE_CLASS => $refTableClass,
-                           self::REF_COLUMNS     => (array) $refColumns);
-
-        if (!empty($onDelete)) {
-            $reference[self::ON_DELETE] = $onDelete;
-        }
-
-        if (!empty($onUpdate)) {
-            $reference[self::ON_UPDATE] = $onUpdate;
-        }
-
-        $this->_referenceMap[$ruleKey] = $reference;
-
-        return $this;
-    }
-
-    /**
-     * @param array $referenceMap
-     * @return Zend_Db_Table_Abstract Provides a fluent interface
-     */
-    public function setReferences(array $referenceMap)
-    {
-        $this->_referenceMap = $referenceMap;
-
-        return $this;
-    }
-
-    /**
-     * @param string $tableClassname
-     * @param string $ruleKey OPTIONAL
-     * @return array
-     * @throws Zend_Db_Table_Exception
-     */
-    public function getReference($tableClassname, $ruleKey = null)
-    {
-        $thisClass = get_class($this);
-        $refMap = $this->_getReferenceMapNormalized();
-        if ($ruleKey !== null) {
-            if (!isset($refMap[$ruleKey])) {
-                require_once "Zend/Db/Table/Exception.php";
-                throw new Zend_Db_Table_Exception("No reference rule \"$ruleKey\" from table $thisClass to table $tableClassname");
-            }
-            if ($refMap[$ruleKey][self::REF_TABLE_CLASS] != $tableClassname) {
-                require_once "Zend/Db/Table/Exception.php";
-                throw new Zend_Db_Table_Exception("Reference rule \"$ruleKey\" does not reference table $tableClassname");
-            }
-            return $refMap[$ruleKey];
-        }
-        foreach ($refMap as $reference) {
-            if ($reference[self::REF_TABLE_CLASS] == $tableClassname) {
-                return $reference;
-            }
-        }
-        require_once "Zend/Db/Table/Exception.php";
-        throw new Zend_Db_Table_Exception("No reference from table $thisClass to table $tableClassname");
-    }
-
-    /**
-     * @param  array $dependentTables
-     * @return Zend_Db_Table_Abstract Provides a fluent interface
-     */
-    public function setDependentTables(array $dependentTables)
-    {
-        $this->_dependentTables = $dependentTables;
-
-        return $this;
-    }
-
-    /**
-     * @return array
-     */
-    public function getDependentTables()
-    {
-        return $this->_dependentTables;
-    }
-
-    /**
-     * set the defaultSource property - this tells the table class where to find default values
-     *
-     * @param string $defaultSource
-     * @return Zend_Db_Table_Abstract
-     */
-    public function setDefaultSource($defaultSource = self::DEFAULT_NONE)
-    {
-        if (!in_array($defaultSource, array(self::DEFAULT_CLASS, self::DEFAULT_DB, self::DEFAULT_NONE))) {
-            $defaultSource = self::DEFAULT_NONE;
-        }
-
-        $this->_defaultSource = $defaultSource;
-        return $this;
-    }
-
-    /**
-     * returns the default source flag that determines where defaultSources come from
-     *
-     * @return unknown
-     */
-    public function getDefaultSource()
-    {
-        return $this->_defaultSource;
-    }
-
-    /**
-     * set the default values for the table class
-     *
-     * @param array $defaultValues
-     * @return Zend_Db_Table_Abstract
-     */
-    public function setDefaultValues(Array $defaultValues)
-    {
-        foreach ($defaultValues as $defaultName => $defaultValue) {
-            if (array_key_exists($defaultName, $this->_metadata)) {
-                $this->_defaultValues[$defaultName] = $defaultValue;
-            }
-        }
-        return $this;
-    }
-
-    public function getDefaultValues()
-    {
-        return $this->_defaultValues;
-    }
-
-
-    /**
-     * Sets the default Zend_Db_Adapter_Abstract for all Zend_Db_Table objects.
-     *
-     * @param  mixed $db Either an Adapter object, or a string naming a Registry key
-     * @return void
-     */
-    public static function setDefaultAdapter($db = null)
-    {
-        self::$_defaultDb = self::_setupAdapter($db);
-    }
-
-    /**
-     * Gets the default Zend_Db_Adapter_Abstract for all Zend_Db_Table objects.
-     *
-     * @return Zend_Db_Adapter_Abstract or null
-     */
-    public static function getDefaultAdapter()
-    {
-        return self::$_defaultDb;
-    }
-
-    /**
-     * @param  mixed $db Either an Adapter object, or a string naming a Registry key
-     * @return Zend_Db_Table_Abstract Provides a fluent interface
-     */
-    protected function _setAdapter($db)
-    {
-        $this->_db = self::_setupAdapter($db);
-        return $this;
-    }
-
-    /**
-     * Gets the Zend_Db_Adapter_Abstract for this particular Zend_Db_Table object.
-     *
-     * @return Zend_Db_Adapter_Abstract
-     */
-    public function getAdapter()
-    {
-        return $this->_db;
-    }
-
-    /**
-     * @param  mixed $db Either an Adapter object, or a string naming a Registry key
-     * @return Zend_Db_Adapter_Abstract
-     * @throws Zend_Db_Table_Exception
-     */
-    protected static function _setupAdapter($db)
-    {
-        if ($db === null) {
-            return null;
-        }
-        if (is_string($db)) {
-            require_once 'Zend/Registry.php';
-            $db = Zend_Registry::get($db);
-        }
-        if (!$db instanceof Zend_Db_Adapter_Abstract) {
-            require_once 'Zend/Db/Table/Exception.php';
-            throw new Zend_Db_Table_Exception('Argument must be of type Zend_Db_Adapter_Abstract, or a Registry key where a Zend_Db_Adapter_Abstract object is stored');
-        }
-        return $db;
-    }
-
-    /**
-     * Sets the default metadata cache for information returned by Zend_Db_Adapter_Abstract::describeTable().
-     *
-     * If $defaultMetadataCache is null, then no metadata cache is used by default.
-     *
-     * @param  mixed $metadataCache Either a Cache object, or a string naming a Registry key
-     * @return void
-     */
-    public static function setDefaultMetadataCache($metadataCache = null)
-    {
-        self::$_defaultMetadataCache = self::_setupMetadataCache($metadataCache);
-    }
-
-    /**
-     * Gets the default metadata cache for information returned by Zend_Db_Adapter_Abstract::describeTable().
-     *
-     * @return Zend_Cache_Core or null
-     */
-    public static function getDefaultMetadataCache()
-    {
-        return self::$_defaultMetadataCache;
-    }
-
-    /**
-     * Sets the metadata cache for information returned by Zend_Db_Adapter_Abstract::describeTable().
-     *
-     * If $metadataCache is null, then no metadata cache is used. Since there is no opportunity to reload metadata
-     * after instantiation, this method need not be public, particularly because that it would have no effect
-     * results in unnecessary API complexity. To configure the metadata cache, use the metadataCache configuration
-     * option for the class constructor upon instantiation.
-     *
-     * @param  mixed $metadataCache Either a Cache object, or a string naming a Registry key
-     * @return Zend_Db_Table_Abstract Provides a fluent interface
-     */
-    protected function _setMetadataCache($metadataCache)
-    {
-        $this->_metadataCache = self::_setupMetadataCache($metadataCache);
-        return $this;
-    }
-
-    /**
-     * Gets the metadata cache for information returned by Zend_Db_Adapter_Abstract::describeTable().
-     *
-     * @return Zend_Cache_Core or null
-     */
-    public function getMetadataCache()
-    {
-        return $this->_metadataCache;
-    }
-
-    /**
-     * Indicate whether metadata should be cached in the class for the duration
-     * of the instance
-     *
-     * @param  bool $flag
-     * @return Zend_Db_Table_Abstract
-     */
-    public function setMetadataCacheInClass($flag)
-    {
-        $this->_metadataCacheInClass = (bool) $flag;
-        return $this;
-    }
-
-    /**
-     * Retrieve flag indicating if metadata should be cached for duration of
-     * instance
-     *
-     * @return bool
-     */
-    public function metadataCacheInClass()
-    {
-        return $this->_metadataCacheInClass;
-    }
-
-    /**
-     * @param mixed $metadataCache Either a Cache object, or a string naming a Registry key
-     * @return Zend_Cache_Core
-     * @throws Zend_Db_Table_Exception
-     */
-    protected static function _setupMetadataCache($metadataCache)
-    {
-        if ($metadataCache === null) {
-            return null;
-        }
-        if (is_string($metadataCache)) {
-            require_once 'Zend/Registry.php';
-            $metadataCache = Zend_Registry::get($metadataCache);
-        }
-        if (!$metadataCache instanceof Zend_Cache_Core) {
-            require_once 'Zend/Db/Table/Exception.php';
-            throw new Zend_Db_Table_Exception('Argument must be of type Zend_Cache_Core, or a Registry key where a Zend_Cache_Core object is stored');
-        }
-        return $metadataCache;
-    }
-
-    /**
-     * Sets the sequence member, which defines the behavior for generating
-     * primary key values in new rows.
-     * - If this is a string, then the string names the sequence object.
-     * - If this is boolean true, then the key uses an auto-incrementing
-     *   or identity mechanism.
-     * - If this is boolean false, then the key is user-defined.
-     *   Use this for natural keys, for example.
-     *
-     * @param mixed $sequence
-     * @return Zend_Db_Table_Adapter_Abstract Provides a fluent interface
-     */
-    protected function _setSequence($sequence)
-    {
-        $this->_sequence = $sequence;
-
-        return $this;
-    }
-
-    /**
-     * Turnkey for initialization of a table object.
-     * Calls other protected methods for individual tasks, to make it easier
-     * for a subclass to override part of the setup logic.
-     *
-     * @return void
-     */
-    protected function _setup()
-    {
-        $this->_setupDatabaseAdapter();
-        $this->_setupTableName();
-    }
-
-    /**
-     * Initialize database adapter.
-     *
-     * @return void
-     */
-    protected function _setupDatabaseAdapter()
-    {
-        if (! $this->_db) {
-            $this->_db = self::getDefaultAdapter();
-            if (!$this->_db instanceof Zend_Db_Adapter_Abstract) {
-                require_once 'Zend/Db/Table/Exception.php';
-                throw new Zend_Db_Table_Exception('No adapter found for ' . get_class($this));
-            }
-        }
-    }
-
-    /**
-     * Initialize table and schema names.
-     *
-     * If the table name is not set in the class definition,
-     * use the class name itself as the table name.
-     *
-     * A schema name provided with the table name (e.g., "schema.table") overrides
-     * any existing value for $this->_schema.
-     *
-     * @return void
-     */
-    protected function _setupTableName()
-    {
-        if (! $this->_name) {
-            $this->_name = get_class($this);
-        } else if (strpos($this->_name, '.')) {
-            list($this->_schema, $this->_name) = explode('.', $this->_name);
-        }
-    }
-
-    /**
-     * Initializes metadata.
-     *
-     * If metadata cannot be loaded from cache, adapter's describeTable() method is called to discover metadata
-     * information. Returns true if and only if the metadata are loaded from cache.
-     *
-     * @return boolean
-     * @throws Zend_Db_Table_Exception
-     */
-    protected function _setupMetadata()
-    {
-        if ($this->metadataCacheInClass() && (count($this->_metadata) > 0)) {
-            return true;
-        }
-
-        // Assume that metadata will be loaded from cache
-        $isMetadataFromCache = true;
-
-        // If $this has no metadata cache but the class has a default metadata cache
-        if (null === $this->_metadataCache && null !== self::$_defaultMetadataCache) {
-            // Make $this use the default metadata cache of the class
-            $this->_setMetadataCache(self::$_defaultMetadataCache);
-        }
-
-        // If $this has a metadata cache
-        if (null !== $this->_metadataCache) {
-            // Define the cache identifier where the metadata are saved
-            $cacheId = md5("$this->_schema.$this->_name");
-        }
-
-        // If $this has no metadata cache or metadata cache misses
-        if (null === $this->_metadataCache || !($metadata = $this->_metadataCache->load($cacheId))) {
-            // Metadata are not loaded from cache
-            $isMetadataFromCache = false;
-            // Fetch metadata from the adapter's describeTable() method
-            $metadata = $this->_db->describeTable($this->_name, $this->_schema);
-            // If $this has a metadata cache, then cache the metadata
-            if (null !== $this->_metadataCache && !$this->_metadataCache->save($metadata, $cacheId)) {
-                /**
-                 * @see Zend_Db_Table_Exception
-                 */
-                require_once 'Zend/Db/Table/Exception.php';
-                throw new Zend_Db_Table_Exception('Failed saving metadata to metadataCache');
-            }
-        }
-
-        // Assign the metadata to $this
-        $this->_metadata = $metadata;
-
-        // Return whether the metadata were loaded from cache
-        return $isMetadataFromCache;
-    }
-
-    /**
-     * Retrieve table columns
-     *
-     * @return array
-     */
-    protected function _getCols()
-    {
-        if (null === $this->_cols) {
-            $this->_setupMetadata();
-            $this->_cols = array_keys($this->_metadata);
-        }
-        return $this->_cols;
-    }
-
-    /**
-     * Initialize primary key from metadata.
-     * If $_primary is not defined, discover primary keys
-     * from the information returned by describeTable().
-     *
-     * @return void
-     * @throws Zend_Db_Table_Exception
-     */
-    protected function _setupPrimaryKey()
-    {
-        if (!$this->_primary) {
-            $this->_setupMetadata();
-            $this->_primary = array();
-            foreach ($this->_metadata as $col) {
-                if ($col['PRIMARY']) {
-                    $this->_primary[ $col['PRIMARY_POSITION'] ] = $col['COLUMN_NAME'];
-                    if ($col['IDENTITY']) {
-                        $this->_identity = $col['PRIMARY_POSITION'];
-                    }
-                }
-            }
-            // if no primary key was specified and none was found in the metadata
-            // then throw an exception.
-            if (empty($this->_primary)) {
-                require_once 'Zend/Db/Table/Exception.php';
-                throw new Zend_Db_Table_Exception('A table must have a primary key, but none was found');
-            }
-        } else if (!is_array($this->_primary)) {
-            $this->_primary = array(1 => $this->_primary);
-        } else if (isset($this->_primary[0])) {
-            array_unshift($this->_primary, null);
-            unset($this->_primary[0]);
-        }
-
-        $cols = $this->_getCols();
-        if (! array_intersect((array) $this->_primary, $cols) == (array) $this->_primary) {
-            require_once 'Zend/Db/Table/Exception.php';
-            throw new Zend_Db_Table_Exception("Primary key column(s) ("
-                . implode(',', (array) $this->_primary)
-                . ") are not columns in this table ("
-                . implode(',', $cols)
-                . ")");
-        }
-
-        $primary    = (array) $this->_primary;
-        $pkIdentity = $primary[(int) $this->_identity];
-
-        /**
-         * Special case for PostgreSQL: a SERIAL key implicitly uses a sequence
-         * object whose name is "<table>_<column>_seq".
-         */
-        if ($this->_sequence === true && $this->_db instanceof Zend_Db_Adapter_Pdo_Pgsql) {
-            $this->_sequence = "{$this->_name}_{$pkIdentity}_seq";
-            if ($this->_schema) {
-                $this->_sequence = $this->_schema . '.' . $this->_sequence;
-            }
-        }
-    }
-
-    /**
-     * Returns a normalized version of the reference map
-     *
-     * @return array
-     */
-    protected function _getReferenceMapNormalized()
-    {
-        $referenceMapNormalized = array();
-
-        foreach ($this->_referenceMap as $rule => $map) {
-
-            $referenceMapNormalized[$rule] = array();
-
-            foreach ($map as $key => $value) {
-                switch ($key) {
-
-                    // normalize COLUMNS and REF_COLUMNS to arrays
-                    case self::COLUMNS:
-                    case self::REF_COLUMNS:
-                        if (!is_array($value)) {
-                            $referenceMapNormalized[$rule][$key] = array($value);
-                        } else {
-                            $referenceMapNormalized[$rule][$key] = $value;
-                        }
-                        break;
-
-                    // other values are copied as-is
-                    default:
-                        $referenceMapNormalized[$rule][$key] = $value;
-                        break;
-                }
-            }
-        }
-
-        return $referenceMapNormalized;
-    }
-
-    /**
-     * Initialize object
-     *
-     * Called from {@link __construct()} as final step of object instantiation.
-     *
-     * @return void
-     */
-    public function init()
-    {
-    }
-
-    /**
-     * Returns table information.
-     *
-     * You can elect to return only a part of this information by supplying its key name,
-     * otherwise all information is returned as an array.
-     *
-     * @param  $key The specific info part to return OPTIONAL
-     * @return mixed
-     */
-    public function info($key = null)
-    {
-        $this->_setupPrimaryKey();
-
-        $info = array(
-            self::SCHEMA           => $this->_schema,
-            self::NAME             => $this->_name,
-            self::COLS             => $this->_getCols(),
-            self::PRIMARY          => (array) $this->_primary,
-            self::METADATA         => $this->_metadata,
-            self::ROW_CLASS        => $this->_rowClass,
-            self::ROWSET_CLASS     => $this->_rowsetClass,
-            self::REFERENCE_MAP    => $this->_referenceMap,
-            self::DEPENDENT_TABLES => $this->_dependentTables,
-            self::SEQUENCE         => $this->_sequence
-        );
-
-        if ($key === null) {
-            return $info;
-        }
-
-        if (!array_key_exists($key, $info)) {
-            require_once 'Zend/Db/Table/Exception.php';
-            throw new Zend_Db_Table_Exception('There is no table information for the key "' . $key . '"');
-        }
-
-        return $info[$key];
-    }
-
-    /**
-     * Returns an instance of a Zend_Db_Table_Select object.
-     *
-     * @return Zend_Db_Table_Select
-     */
-    public function select()
-    {
-        require_once 'Zend/Db/Table/Select.php';
-        return new Zend_Db_Table_Select($this);
-    }
-
-    /**
-     * Inserts a new row.
-     *
-     * @param  array  $data  Column-value pairs.
-     * @return mixed         The primary key of the row inserted.
-     */
-    public function insert(array $data)
-    {
-        $this->_setupPrimaryKey();
-
-        /**
-         * Zend_Db_Table assumes that if you have a compound primary key
-         * and one of the columns in the key uses a sequence,
-         * it's the _first_ column in the compound key.
-         */
-        $primary = (array) $this->_primary;
-        $pkIdentity = $primary[(int)$this->_identity];
-
-        /**
-         * If this table uses a database sequence object and the data does not
-         * specify a value, then get the next ID from the sequence and add it
-         * to the row.  We assume that only the first column in a compound
-         * primary key takes a value from a sequence.
-         */
-        if (is_string($this->_sequence) && !isset($data[$pkIdentity])) {
-            $data[$pkIdentity] = $this->_db->nextSequenceId($this->_sequence);
-        }
-
-        /**
-         * If the primary key can be generated automatically, and no value was
-         * specified in the user-supplied data, then omit it from the tuple.
-         */
-        if (array_key_exists($pkIdentity, $data) && $data[$pkIdentity] === null) {
-            unset($data[$pkIdentity]);
-        }
-
-        /**
-         * INSERT the new row.
-         */
-        $tableSpec = ($this->_schema ? $this->_schema . '.' : '') . $this->_name;
-        $this->_db->insert($tableSpec, $data);
-
-        /**
-         * Fetch the most recent ID generated by an auto-increment
-         * or IDENTITY column, unless the user has specified a value,
-         * overriding the auto-increment mechanism.
-         */
-        if ($this->_sequence === true && !isset($data[$pkIdentity])) {
-            $data[$pkIdentity] = $this->_db->lastInsertId();
-        }
-
-        /**
-         * Return the primary key value if the PK is a single column,
-         * else return an associative array of the PK column/value pairs.
-         */
-        $pkData = array_intersect_key($data, array_flip($primary));
-        if (count($primary) == 1) {
-            reset($pkData);
-            return current($pkData);
-        }
-
-        return $pkData;
-    }
-
-    /**
-     * Check if the provided column is an identity of the table
-     *
-     * @param  string $column
-     * @throws Zend_Db_Table_Exception
-     * @return boolean
-     */
-    public function isIdentity($column)
-    {
-        $this->_setupPrimaryKey();
-
-        if (!isset($this->_metadata[$column])) {
-            /**
-             * @see Zend_Db_Table_Exception
-             */
-            require_once 'Zend/Db/Table/Exception.php';
-
-            throw new Zend_Db_Table_Exception('Column "' . $column . '" not found in table.');
-        }
-
-        return (bool) $this->_metadata[$column]['IDENTITY'];
-    }
-
-    /**
-     * Updates existing rows.
-     *
-     * @param  array        $data  Column-value pairs.
-     * @param  array|string $where An SQL WHERE clause, or an array of SQL WHERE clauses.
-     * @return int          The number of rows updated.
-     */
-    public function update(array $data, $where)
-    {
-        $tableSpec = ($this->_schema ? $this->_schema . '.' : '') . $this->_name;
-        return $this->_db->update($tableSpec, $data, $where);
-    }
-
-    /**
-     * Called by a row object for the parent table's class during save() method.
-     *
-     * @param  string $parentTableClassname
-     * @param  array  $oldPrimaryKey
-     * @param  array  $newPrimaryKey
-     * @return int
-     */
-    public function _cascadeUpdate($parentTableClassname, array $oldPrimaryKey, array $newPrimaryKey)
-    {
-        $this->_setupMetadata();
-        $rowsAffected = 0;
-        foreach ($this->_getReferenceMapNormalized() as $map) {
-            if ($map[self::REF_TABLE_CLASS] == $parentTableClassname && isset($map[self::ON_UPDATE])) {
-                switch ($map[self::ON_UPDATE]) {
-                    case self::CASCADE:
-                        $newRefs = array();
-                        $where = array();
-                        for ($i = 0; $i < count($map[self::COLUMNS]); ++$i) {
-                            $col = $this->_db->foldCase($map[self::COLUMNS][$i]);
-                            $refCol = $this->_db->foldCase($map[self::REF_COLUMNS][$i]);
-                            if (array_key_exists($refCol, $newPrimaryKey)) {
-                                $newRefs[$col] = $newPrimaryKey[$refCol];
-                            }
-                            $type = $this->_metadata[$col]['DATA_TYPE'];
-                            $where[] = $this->_db->quoteInto(
-                                $this->_db->quoteIdentifier($col, true) . ' = ?',
-                                $oldPrimaryKey[$refCol], $type);
-                        }
-                        $rowsAffected += $this->update($newRefs, $where);
-                        break;
-                    default:
-                        // no action
-                        break;
-                }
-            }
-        }
-        return $rowsAffected;
-    }
-
-    /**
-     * Deletes existing rows.
-     *
-     * @param  array|string $where SQL WHERE clause(s).
-     * @return int          The number of rows deleted.
-     */
-    public function delete($where)
-    {
-        $tableSpec = ($this->_schema ? $this->_schema . '.' : '') . $this->_name;
-        return $this->_db->delete($tableSpec, $where);
-    }
-
-    /**
-     * Called by parent table's class during delete() method.
-     *
-     * @param  string $parentTableClassname
-     * @param  array  $primaryKey
-     * @return int    Number of affected rows
-     */
-    public function _cascadeDelete($parentTableClassname, array $primaryKey)
-    {
-        $this->_setupMetadata();
-        $rowsAffected = 0;
-        foreach ($this->_getReferenceMapNormalized() as $map) {
-            if ($map[self::REF_TABLE_CLASS] == $parentTableClassname && isset($map[self::ON_DELETE])) {
-                switch ($map[self::ON_DELETE]) {
-                    case self::CASCADE:
-                        $where = array();
-                        for ($i = 0; $i < count($map[self::COLUMNS]); ++$i) {
-                            $col = $this->_db->foldCase($map[self::COLUMNS][$i]);
-                            $refCol = $this->_db->foldCase($map[self::REF_COLUMNS][$i]);
-                            $type = $this->_metadata[$col]['DATA_TYPE'];
-                            $where[] = $this->_db->quoteInto(
-                                $this->_db->quoteIdentifier($col, true) . ' = ?',
-                                $primaryKey[$refCol], $type);
-                        }
-                        $rowsAffected += $this->delete($where);
-                        break;
-                    default:
-                        // no action
-                        break;
-                }
-            }
-        }
-        return $rowsAffected;
-    }
-
-    /**
-     * Fetches rows by primary key.  The argument specifies one or more primary
-     * key value(s).  To find multiple rows by primary key, the argument must
-     * be an array.
-     *
-     * This method accepts a variable number of arguments.  If the table has a
-     * multi-column primary key, the number of arguments must be the same as
-     * the number of columns in the primary key.  To find multiple rows in a
-     * table with a multi-column primary key, each argument must be an array
-     * with the same number of elements.
-     *
-     * The find() method always returns a Rowset object, even if only one row
-     * was found.
-     *
-     * @param  mixed $key The value(s) of the primary keys.
-     * @return Zend_Db_Table_Rowset_Abstract Row(s) matching the criteria.
-     * @throws Zend_Db_Table_Exception
-     */
-    public function find()
-    {
-        $this->_setupPrimaryKey();
-        $args = func_get_args();
-        $keyNames = array_values((array) $this->_primary);
-
-        if (count($args) < count($keyNames)) {
-            require_once 'Zend/Db/Table/Exception.php';
-            throw new Zend_Db_Table_Exception("Too few columns for the primary key");
-        }
-
-        if (count($args) > count($keyNames)) {
-            require_once 'Zend/Db/Table/Exception.php';
-            throw new Zend_Db_Table_Exception("Too many columns for the primary key");
-        }
-
-        $whereList = array();
-        $numberTerms = 0;
-        foreach ($args as $keyPosition => $keyValues) {
-            // Coerce the values to an array.
-            // Don't simply typecast to array, because the values
-            // might be Zend_Db_Expr objects.
-            if (!is_array($keyValues)) {
-                $keyValues = array($keyValues);
-            }
-            if ($numberTerms == 0) {
-                $numberTerms = count($keyValues);
-            } else if (count($keyValues) != $numberTerms) {
-                require_once 'Zend/Db/Table/Exception.php';
-                throw new Zend_Db_Table_Exception("Missing value(s) for the primary key");
-            }
-            for ($i = 0; $i < count($keyValues); ++$i) {
-                if (!isset($whereList[$i])) {
-                    $whereList[$i] = array();
-                }
-                $whereList[$i][$keyPosition] = $keyValues[$i];
-            }
-        }
-
-        $whereClause = null;
-        if (count($whereList)) {
-            $whereOrTerms = array();
-            $tableName = $this->_db->quoteTableAs($this->_name, null, true);
-            foreach ($whereList as $keyValueSets) {
-                $whereAndTerms = array();
-                foreach ($keyValueSets as $keyPosition => $keyValue) {
-                    $type = $this->_metadata[$keyNames[$keyPosition]]['DATA_TYPE'];
-                    $columnName = $this->_db->quoteIdentifier($keyNames[$keyPosition], true);
-                    $whereAndTerms[] = $this->_db->quoteInto(
-                        $tableName . '.' . $columnName . ' = ?',
-                        $keyValue, $type);
-                }
-                $whereOrTerms[] = '(' . implode(' AND ', $whereAndTerms) . ')';
-            }
-            $whereClause = '(' . implode(' OR ', $whereOrTerms) . ')';
-        }
-
-        return $this->fetchAll($whereClause);
-    }
-
-    /**
-     * Fetches all rows.
-     *
-     * Honors the Zend_Db_Adapter fetch mode.
-     *
-     * @param string|array|Zend_Db_Table_Select $where  OPTIONAL An SQL WHERE clause or Zend_Db_Table_Select object.
-     * @param string|array                      $order  OPTIONAL An SQL ORDER clause.
-     * @param int                               $count  OPTIONAL An SQL LIMIT count.
-     * @param int                               $offset OPTIONAL An SQL LIMIT offset.
-     * @return Zend_Db_Table_Rowset_Abstract The row results per the Zend_Db_Adapter fetch mode.
-     */
-    public function fetchAll($where = null, $order = null, $count = null, $offset = null)
-    {
-        if (!($where instanceof Zend_Db_Table_Select)) {
-            $select = $this->select();
-
-            if ($where !== null) {
-                $this->_where($select, $where);
-            }
-
-            if ($order !== null) {
-                $this->_order($select, $order);
-            }
-
-            if ($count !== null || $offset !== null) {
-                $select->limit($count, $offset);
-            }
-
-        } else {
-            $select = $where;
-        }
-
-        $rows = $this->_fetch($select);
-
-        $data  = array(
-            'table'    => $this,
-            'data'     => $rows,
-            'readOnly' => $select->isReadOnly(),
-            'rowClass' => $this->_rowClass,
-            'stored'   => true
-        );
-
-        if (!class_exists($this->_rowsetClass)) {
-            require_once 'Zend/Loader.php';
-            Zend_Loader::loadClass($this->_rowsetClass);
-        }
-        return new $this->_rowsetClass($data);
-    }
-
-    /**
-     * Fetches one row in an object of type Zend_Db_Table_Row_Abstract,
-     * or returns null if no row matches the specified criteria.
-     *
-     * @param string|array|Zend_Db_Table_Select $where  OPTIONAL An SQL WHERE clause or Zend_Db_Table_Select object.
-     * @param string|array                      $order  OPTIONAL An SQL ORDER clause.
-     * @return Zend_Db_Table_Row_Abstract|null The row results per the
-     *     Zend_Db_Adapter fetch mode, or null if no row found.
-     */
-    public function fetchRow($where = null, $order = null)
-    {
-        if (!($where instanceof Zend_Db_Table_Select)) {
-            $select = $this->select();
-
-            if ($where !== null) {
-                $this->_where($select, $where);
-            }
-
-            if ($order !== null) {
-                $this->_order($select, $order);
-            }
-
-            $select->limit(1);
-
-        } else {
-            $select = $where->limit(1);
-        }
-
-        $rows = $this->_fetch($select);
-
-        if (count($rows) == 0) {
-            return null;
-        }
-
-        $data = array(
-            'table'   => $this,
-            'data'     => $rows[0],
-            'readOnly' => $select->isReadOnly(),
-            'stored'  => true
-        );
-
-        if (!class_exists($this->_rowClass)) {
-            require_once 'Zend/Loader.php';
-            Zend_Loader::loadClass($this->_rowClass);
-        }
-        return new $this->_rowClass($data);
-    }
-
-    /**
-     * Fetches a new blank row (not from the database).
-     *
-     * @return Zend_Db_Table_Row_Abstract
-     * @deprecated since 0.9.3 - use createRow() instead.
-     */
-    public function fetchNew()
-    {
-        return $this->createRow();
-    }
-
-    /**
-     * Fetches a new blank row (not from the database).
-     *
-     * @param  array $data OPTIONAL data to populate in the new row.
-     * @param  string $defaultSource OPTIONAL flag to force default values into new row
-     * @return Zend_Db_Table_Row_Abstract
-     */
-    public function createRow(array $data = array(), $defaultSource = null)
-    {
-        $cols     = $this->_getCols();
-        $defaults = array_combine($cols, array_fill(0, count($cols), null));
-
-        // nothing provided at call-time, take the class value
-        if ($defaultSource == null) {
-            $defaultSource = $this->_defaultSource;
-        }
-
-        if (!in_array($defaultSource, array(self::DEFAULT_CLASS, self::DEFAULT_DB, self::DEFAULT_NONE))) {
-            $defaultSource = self::DEFAULT_NONE;
-        }
-
-        if ($defaultSource == self::DEFAULT_DB) {
-            foreach ($this->_metadata as $metadataName => $metadata) {
-                if (($metadata['DEFAULT'] != null) &&
-                    ($metadata['NULLABLE'] !== true || ($metadata['NULLABLE'] === true && isset($this->_defaultValues[$metadataName]) && $this->_defaultValues[$metadataName] === true)) &&
-                    (!(isset($this->_defaultValues[$metadataName]) && $this->_defaultValues[$metadataName] === false))) {
-                    $defaults[$metadataName] = $metadata['DEFAULT'];
-                }
-            }
-        } elseif ($defaultSource == self::DEFAULT_CLASS && $this->_defaultValues) {
-            foreach ($this->_defaultValues as $defaultName => $defaultValue) {
-                if (array_key_exists($defaultName, $defaults)) {
-                    $defaults[$defaultName] = $defaultValue;
-                }
-            }
-        }
-
-        $config = array(
-            'table'    => $this,
-            'data'     => $defaults,
-            'readOnly' => false,
-            'stored'   => false
-        );
-
-        if (!class_exists($this->_rowClass)) {
-            require_once 'Zend/Loader.php';
-            Zend_Loader::loadClass($this->_rowClass);
-        }
-        $row = new $this->_rowClass($config);
-        $row->setFromArray($data);
-        return $row;
-    }
-
-    /**
-     * Generate WHERE clause from user-supplied string or array
-     *
-     * @param  string|array $where  OPTIONAL An SQL WHERE clause.
-     * @return Zend_Db_Table_Select
-     */
-    protected function _where(Zend_Db_Table_Select $select, $where)
-    {
-        $where = (array) $where;
-
-        foreach ($where as $key => $val) {
-            // is $key an int?
-            if (is_int($key)) {
-                // $val is the full condition
-                $select->where($val);
-            } else {
-                // $key is the condition with placeholder,
-                // and $val is quoted into the condition
-                $select->where($key, $val);
-            }
-        }
-
-        return $select;
-    }
-
-    /**
-     * Generate ORDER clause from user-supplied string or array
-     *
-     * @param  string|array $order  OPTIONAL An SQL ORDER clause.
-     * @return Zend_Db_Table_Select
-     */
-    protected function _order(Zend_Db_Table_Select $select, $order)
-    {
-        if (!is_array($order)) {
-            $order = array($order);
-        }
-
-        foreach ($order as $val) {
-            $select->order($val);
-        }
-
-        return $select;
-    }
-
-    /**
-     * Support method for fetching rows.
-     *
-     * @param  Zend_Db_Table_Select $select  query options.
-     * @return array An array containing the row results in FETCH_ASSOC mode.
-     */
-    protected function _fetch(Zend_Db_Table_Select $select)
-    {
-        $stmt = $this->_db->query($select);
-        $data = $stmt->fetchAll(Zend_Db::FETCH_ASSOC);
-        return $data;
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+8UZ6tWLkKf0l1H9juLfrICGGkqt6b7i=

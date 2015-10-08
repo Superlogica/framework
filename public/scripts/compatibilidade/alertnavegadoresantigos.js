@@ -125,7 +125,8 @@
             }
         });
         $(window).resize(function () {
-            asn_resize()
+            if ( typeof asn_resize == 'function')
+                asn_resize();
         });
     }
     if (typeof jQuery == 'undefined') {

@@ -1,469 +1,139 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_View
- * @subpackage Helper
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * @see Zend_View_Helper_Navigation_HelperAbstract
- */
-require_once 'Zend/View/Helper/Navigation/HelperAbstract.php';
-
-/**
- * Helper for printing sitemaps
- *
- * @link http://www.sitemaps.org/protocol.php
- *
- * @category   Zend
- * @package    Zend_View
- * @subpackage Helper
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_View_Helper_Navigation_Sitemap
-    extends Zend_View_Helper_Navigation_HelperAbstract
-{
-    /**
-     * Namespace for the <urlset> tag
-     *
-     * @var string
-     */
-    const SITEMAP_NS = 'http://www.sitemaps.org/schemas/sitemap/0.9';
-
-    /**
-     * Schema URL
-     *
-     * @var string
-     */
-    const SITEMAP_XSD = 'http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd';
-
-    /**
-     * Whether XML output should be formatted
-     *
-     * @var bool
-     */
-    protected $_formatOutput = false;
-
-    /**
-     * Whether the XML declaration should be included in XML output
-     *
-     * @var bool
-     */
-    protected $_useXmlDeclaration = true;
-
-    /**
-     * Whether sitemap should be validated using Zend_Validate_Sitemap_*
-     *
-     * @var bool
-     */
-    protected $_useSitemapValidators = true;
-
-    /**
-     * Whether sitemap should be schema validated when generated
-     *
-     * @var bool
-     */
-    protected $_useSchemaValidation = false;
-
-    /**
-     * Server url
-     *
-     * @var string
-     */
-    protected $_serverUrl;
-
-    /**
-     * View helper entry point:
-     * Retrieves helper and optionally sets container to operate on
-     *
-     * @param  Zend_Navigation_Container $container  [optional] container to
-     *                                               operate on
-     * @return Zend_View_Helper_Navigation_Sitemap   fluent interface, returns
-     *                                               self
-     */
-    public function sitemap(Zend_Navigation_Container $container = null)
-    {
-        if (null !== $container) {
-            $this->setContainer($container);
-        }
-
-        return $this;
-    }
-
-    // Accessors:
-
-    /**
-     * Sets whether XML output should be formatted
-     *
-     * @param  bool $formatOutput                   [optional] whether output
-     *                                              should be formatted. Default
-     *                                              is true.
-     * @return Zend_View_Helper_Navigation_Sitemap  fluent interface, returns
-     *                                              self
-     */
-    public function setFormatOutput($formatOutput = true)
-    {
-        $this->_formatOutput = (bool) $formatOutput;
-        return $this;
-    }
-
-    /**
-     * Returns whether XML output should be formatted
-     *
-     * @return bool  whether XML output should be formatted
-     */
-    public function getFormatOutput()
-    {
-        return $this->_formatOutput;
-    }
-
-    /**
-     * Sets whether the XML declaration should be used in output
-     *
-     * @param  bool $useXmlDecl                     whether XML delcaration
-     *                                              should be rendered
-     * @return Zend_View_Helper_Navigation_Sitemap  fluent interface, returns
-     *                                              self
-     */
-    public function setUseXmlDeclaration($useXmlDecl)
-    {
-        $this->_useXmlDeclaration = (bool) $useXmlDecl;
-        return $this;
-    }
-
-    /**
-     * Returns whether the XML declaration should be used in output
-     *
-     * @return bool  whether the XML declaration should be used in output
-     */
-    public function getUseXmlDeclaration()
-    {
-        return $this->_useXmlDeclaration;
-    }
-
-    /**
-     * Sets whether sitemap should be validated using Zend_Validate_Sitemap_*
-     *
-     * @param  bool $useSitemapValidators           whether sitemap validators
-     *                                              should be used
-     * @return Zend_View_Helper_Navigation_Sitemap  fluent interface, returns
-     *                                              self
-     */
-    public function setUseSitemapValidators($useSitemapValidators)
-    {
-        $this->_useSitemapValidators = (bool) $useSitemapValidators;
-        return $this;
-    }
-
-    /**
-     * Returns whether sitemap should be validated using Zend_Validate_Sitemap_*
-     *
-     * @return bool  whether sitemap should be validated using validators
-     */
-    public function getUseSitemapValidators()
-    {
-        return $this->_useSitemapValidators;
-    }
-
-    /**
-     * Sets whether sitemap should be schema validated when generated
-     *
-     * @param  bool $schemaValidation               whether sitemap should
-     *                                              validated using XSD Schema
-     * @return Zend_View_Helper_Navigation_Sitemap  fluent interface, returns
-     *                                              self
-     */
-    public function setUseSchemaValidation($schemaValidation)
-    {
-        $this->_useSchemaValidation = (bool) $schemaValidation;
-        return $this;
-    }
-
-    /**
-     * Returns true if sitemap should be schema validated when generated
-     *
-     * @return bool
-     */
-    public function getUseSchemaValidation()
-    {
-        return $this->_useSchemaValidation;
-    }
-
-    /**
-     * Sets server url (scheme and host-related stuff without request URI)
-     *
-     * E.g. http://www.example.com
-     *
-     * @param  string $serverUrl                    server URL to set (only
-     *                                              scheme and host)
-     * @throws Zend_Uri_Exception                   if invalid server URL
-     * @return Zend_View_Helper_Navigation_Sitemap  fluent interface, returns
-     *                                              self
-     */
-    public function setServerUrl($serverUrl)
-    {
-        require_once 'Zend/Uri.php';
-        $uri = Zend_Uri::factory($serverUrl);
-        $uri->setFragment('');
-        $uri->setPath('');
-        $uri->setQuery('');
-
-        if ($uri->valid()) {
-            $this->_serverUrl = $uri->getUri();
-        } else {
-            require_once 'Zend/Uri/Exception.php';
-            throw new Zend_Uri_Exception(sprintf(
-                    'Invalid server URL: "%s"',
-                    $serverUrl));
-        }
-
-        return $this;
-    }
-
-    /**
-     * Returns server URL
-     *
-     * @return string  server URL
-     */
-    public function getServerUrl()
-    {
-        if (!isset($this->_serverUrl)) {
-            $this->_serverUrl = $this->view->serverUrl();
-        }
-
-        return $this->_serverUrl;
-    }
-
-    // Helper methods:
-
-    /**
-     * Escapes string for XML usage
-     *
-     * @param  string $string  string to escape
-     * @return string          escaped string
-     */
-    protected function _xmlEscape($string)
-    {
-        // TODO: remove check when minimum PHP version is >= 5.2.3
-        if (version_compare(PHP_VERSION, '5.2.3', '>=')) {
-            // do not encode existing HTML entities
-            return htmlspecialchars($string, ENT_QUOTES, 'UTF-8', false);
-        } else {
-            $string = preg_replace('/&(?!(?:#\d++|[a-z]++);)/ui', '&amp;', $string);
-            $string = str_replace(array('<', '>', '\'', '"'), array('&lt;', '&gt;', '&#39;', '&quot;'), $string);
-            return $string;
-        }
-    }
-
-    // Public methods:
-
-    /**
-     * Returns an escaped absolute URL for the given page
-     *
-     * @param  Zend_Navigation_Page $page  page to get URL from
-     * @return string
-     */
-    public function url(Zend_Navigation_Page $page)
-    {
-        $href = $page->getHref();
-
-        if (!isset($href{0})) {
-            // no href
-            return '';
-        } elseif ($href{0} == '/') {
-            // href is relative to root; use serverUrl helper
-            $url = $this->getServerUrl() . $href;
-        } elseif (preg_match('/^[a-z]+:/im', (string) $href)) {
-            // scheme is given in href; assume absolute URL already
-            $url = (string) $href;
-        } else {
-            // href is relative to current document; use url helpers
-            $url = $this->getServerUrl()
-                 . rtrim($this->view->url(), '/') . '/'
-                 . $href;
-        }
-
-        return $this->_xmlEscape($url);
-    }
-
-    /**
-     * Returns a DOMDocument containing the Sitemap XML for the given container
-     *
-     * @param  Zend_Navigation_Container $container  [optional] container to get
-     *                                               breadcrumbs from, defaults
-     *                                               to what is registered in the
-     *                                               helper
-     * @return DOMDocument                           DOM representation of the
-     *                                               container
-     * @throws Zend_View_Exception                   if schema validation is on
-     *                                               and the sitemap is invalid
-     *                                               according to the sitemap
-     *                                               schema, or if sitemap
-     *                                               validators are used and the
-     *                                               loc element fails validation
-     */
-    public function getDomSitemap(Zend_Navigation_Container $container = null)
-    {
-        if (null === $container) {
-            $container = $this->getContainer();
-        }
-
-        // check if we should validate using our own validators
-        if ($this->getUseSitemapValidators()) {
-            require_once 'Zend/Validate/Sitemap/Changefreq.php';
-            require_once 'Zend/Validate/Sitemap/Lastmod.php';
-            require_once 'Zend/Validate/Sitemap/Loc.php';
-            require_once 'Zend/Validate/Sitemap/Priority.php';
-
-            // create validators
-            $locValidator        = new Zend_Validate_Sitemap_Loc();
-            $lastmodValidator    = new Zend_Validate_Sitemap_Lastmod();
-            $changefreqValidator = new Zend_Validate_Sitemap_Changefreq();
-            $priorityValidator   = new Zend_Validate_Sitemap_Priority();
-        }
-
-        // create document
-        $dom = new DOMDocument('1.0', 'UTF-8');
-        $dom->formatOutput = $this->getFormatOutput();
-
-        // ...and urlset (root) element
-        $urlSet = $dom->createElementNS(self::SITEMAP_NS, 'urlset');
-        $dom->appendChild($urlSet);
-
-        // create iterator
-        $iterator = new RecursiveIteratorIterator($container,
-            RecursiveIteratorIterator::SELF_FIRST);
-
-        $maxDepth = $this->getMaxDepth();
-        if (is_int($maxDepth)) {
-            $iterator->setMaxDepth($maxDepth);
-        }
-        $minDepth = $this->getMinDepth();
-        if (!is_int($minDepth) || $minDepth < 0) {
-            $minDepth = 0;
-        }
-
-        // iterate container
-        foreach ($iterator as $page) {
-            if ($iterator->getDepth() < $minDepth || !$this->accept($page)) {
-                // page should not be included
-                continue;
-            }
-
-            // get absolute url from page
-            if (!$url = $this->url($page)) {
-                // skip page if it has no url (rare case)
-                continue;
-            }
-
-            // create url node for this page
-            $urlNode = $dom->createElementNS(self::SITEMAP_NS, 'url');
-            $urlSet->appendChild($urlNode);
-
-            if ($this->getUseSitemapValidators() &&
-                !$locValidator->isValid($url)) {
-                require_once 'Zend/View/Exception.php';
-                throw new Zend_View_Exception(sprintf(
-                        'Encountered an invalid URL for Sitemap XML: "%s"',
-                        $url));
-            }
-
-            // put url in 'loc' element
-            $urlNode->appendChild($dom->createElementNS(self::SITEMAP_NS,
-                                                        'loc', $url));
-
-            // add 'lastmod' element if a valid lastmod is set in page
-            if (isset($page->lastmod)) {
-                $lastmod = strtotime((string) $page->lastmod);
-
-                // prevent 1970-01-01...
-                if ($lastmod !== false) {
-                    $lastmod = date('c', $lastmod);
-                }
-
-                if (!$this->getUseSitemapValidators() ||
-                    $lastmodValidator->isValid($lastmod)) {
-                    $urlNode->appendChild(
-                        $dom->createElementNS(self::SITEMAP_NS, 'lastmod',
-                                              $lastmod)
-                    );
-                }
-            }
-
-            // add 'changefreq' element if a valid changefreq is set in page
-            if (isset($page->changefreq)) {
-                $changefreq = $page->changefreq;
-                if (!$this->getUseSitemapValidators() ||
-                    $changefreqValidator->isValid($changefreq)) {
-                    $urlNode->appendChild(
-                        $dom->createElementNS(self::SITEMAP_NS, 'changefreq',
-                                              $changefreq)
-                    );
-                }
-            }
-
-            // add 'priority' element if a valid priority is set in page
-            if (isset($page->priority)) {
-                $priority = $page->priority;
-                if (!$this->getUseSitemapValidators() ||
-                    $priorityValidator->isValid($priority)) {
-                    $urlNode->appendChild(
-                        $dom->createElementNS(self::SITEMAP_NS, 'priority',
-                                              $priority)
-                    );
-                }
-            }
-        }
-
-        // validate using schema if specified
-        if ($this->getUseSchemaValidation()) {
-            if (!@$dom->schemaValidate(self::SITEMAP_XSD)) {
-                require_once 'Zend/View/Exception.php';
-                throw new Zend_View_Exception(sprintf(
-                        'Sitemap is invalid according to XML Schema at "%s"',
-                        self::SITEMAP_XSD));
-            }
-        }
-
-        return $dom;
-    }
-
-    // Zend_View_Helper_Navigation_Helper:
-
-    /**
-     * Renders helper
-     *
-     * Implements {@link Zend_View_Helper_Navigation_Helper::render()}.
-     *
-     * @param  Zend_Navigation_Container $container  [optional] container to
-     *                                               render. Default is to
-     *                                               render the container
-     *                                               registered in the helper.
-     * @return string                                helper output
-     */
-    public function render(Zend_Navigation_Container $container = null)
-    {
-        $dom = $this->getDomSitemap($container);
-
-        $xml = $this->getUseXmlDeclaration() ?
-               $dom->saveXML() :
-               $dom->saveXML($dom->documentElement);
-
-        return rtrim($xml, PHP_EOL);
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

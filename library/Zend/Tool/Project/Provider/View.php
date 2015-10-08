@@ -1,118 +1,55 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Tool
- * @subpackage Framework
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id$
- */
-
-/**
- * @see Zend_Tool_Project_Provider_Abstract
- */
-require_once 'Zend/Tool/Project/Provider/Abstract.php';
-
-/**
- * @category   Zend
- * @package    Zend_Tool
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Tool_Project_Provider_View extends Zend_Tool_Project_Provider_Abstract
-{
-    
-    /**
-     * createResource()
-     *
-     * @param Zend_Tool_Project_Profile $profile
-     * @param string $controllerName
-     * @param string $actionName
-     * @param string $moduleName
-     * @return Zend_Tool_Project_Profile_Resource
-     */
-    public static function createResource(Zend_Tool_Project_Profile $profile, $actionName, $controllerName, $moduleName = null)
-    {
-        if (!is_string($actionName)) {
-            require_once 'Zend/Tool/Project/Provider/Exception.php';
-            throw new Zend_Tool_Project_Provider_Exception('Zend_Tool_Project_Provider_View::createResource() expects \"actionName\" is the name of a controller resource to create.');
-        }
-        
-        if (!is_string($controllerName)) {
-            require_once 'Zend/Tool/Project/Provider/Exception.php';
-            throw new Zend_Tool_Project_Provider_Exception('Zend_Tool_Project_Provider_View::createResource() expects \"controllerName\" is the name of a controller resource to create.');
-        }
-        
-        $profileSearchParams = array();
-        
-        if ($moduleName) {
-            $profileSearchParams = array('modulesDirectory', 'moduleDirectory' => array('moduleName' => $moduleName));
-            $noModuleSearch = null;
-        } else {
-            $noModuleSearch = array('ModulesDirectory');
-        }
-        
-        $profileSearchParams[] = 'viewsDirectory';
-        $profileSearchParams[] = 'viewScriptsDirectory';
-
-        if (($viewScriptsDirectory = $profile->search($profileSearchParams, $noModuleSearch)) === false) {
-            require_once 'Zend/Tool/Project/Provider/Exception.php';
-            throw new Zend_Tool_Project_Provider_Exception('This project does not have a viewScriptsDirectory resource.');
-        }
-        
-        $profileSearchParams['viewControllerScriptsDirectory'] = array('forControllerName' => $controllerName);
-        
-        // XXXXXXXXX below is failing b/c of above search params
-        if (($viewControllerScriptsDirectory = $viewScriptsDirectory->search($profileSearchParams)) === false) {
-            $viewControllerScriptsDirectory = $viewScriptsDirectory->createResource('viewControllerScriptsDirectory', array('forControllerName' => $controllerName));
-        }
-        
-        $newViewScriptFile = $viewControllerScriptsDirectory->createResource('ViewScriptFile', array('forActionName' => $actionName));
-
-        return $newViewScriptFile;
-    }
-
-    /**
-     * create()
-     *
-     * @param string $controllerName
-     * @param string $actionNameOrSimpleName
-     */
-    public function create($controllerName, $actionNameOrSimpleName)
-    {
-        
-        if ($controllerName == '' || $actionNameOrSimpleName == '') {
-            require_once 'Zend/Tool/Project/Provider/Exception.php';
-            throw new Zend_Tool_Project_Provider_Exception('ControllerName and/or ActionName are empty.');
-        }
-        
-        $profile = $this->_loadProfile();
-        
-        $view = self::createResource($profile, $controllerName, $actionNameOrSimpleName);
-        
-        if ($this->_registry->getRequest()->isPretend()) {
-            $this->_registry->getResponse(
-                'Would create a view script in location ' . $view->getContext()->getPath()
-                );
-        } else {
-            $this->_registry->getResponse(
-                'Creating a view script in location ' . $view->getContext()->getPath() 
-                );
-            $view->create();
-            $this->_storeProfile();
-        }
-
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

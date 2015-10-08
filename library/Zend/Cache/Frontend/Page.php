@@ -1,401 +1,147 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Cache
- * @subpackage Zend_Cache_Frontend
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-
-/**
- * @see Zend_Cache_Core
- */
-require_once 'Zend/Cache/Core.php';
-
-
-/**
- * @package    Zend_Cache
- * @subpackage Zend_Cache_Frontend
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Cache_Frontend_Page extends Zend_Cache_Core
-{
-    /**
-     * This frontend specific options
-     *
-     * ====> (boolean) http_conditional :
-     * - if true, http conditional mode is on
-     * WARNING : http_conditional OPTION IS NOT IMPLEMENTED FOR THE MOMENT (TODO)
-     *
-     * ====> (boolean) debug_header :
-     * - if true, a debug text is added before each cached pages
-     *
-     * ====> (boolean) content_type_memorization :
-     * - deprecated => use memorize_headers instead
-     * - if the Content-Type header is sent after the cache was started, the
-     *   corresponding value can be memorized and replayed when the cache is hit
-     *   (if false (default), the frontend doesn't take care of Content-Type header)
-     *
-     * ====> (array) memorize_headers :
-     * - an array of strings corresponding to some HTTP headers name. Listed headers
-     *   will be stored with cache datas and "replayed" when the cache is hit
-     *
-     * ====> (array) default_options :
-     * - an associative array of default options :
-     *     - (boolean) cache : cache is on by default if true
-     *     - (boolean) cacheWithXXXVariables  (XXXX = 'Get', 'Post', 'Session', 'Files' or 'Cookie') :
-     *       if true,  cache is still on even if there are some variables in this superglobal array
-     *       if false, cache is off if there are some variables in this superglobal array
-     *     - (boolean) makeIdWithXXXVariables (XXXX = 'Get', 'Post', 'Session', 'Files' or 'Cookie') :
-     *       if true, we have to use the content of this superglobal array to make a cache id
-     *       if false, the cache id won't be dependent of the content of this superglobal array
-     *     - (int) specific_lifetime : cache specific lifetime
-     *                                (false => global lifetime is used, null => infinite lifetime,
-     *                                 integer => this lifetime is used), this "lifetime" is probably only
-     *                                usefull when used with "regexps" array
-     *     - (array) tags : array of tags (strings)
-     *     - (int) priority : integer between 0 (very low priority) and 10 (maximum priority) used by
-     *                        some particular backends
-     *
-     * ====> (array) regexps :
-     * - an associative array to set options only for some REQUEST_URI
-     * - keys are (pcre) regexps
-     * - values are associative array with specific options to set if the regexp matchs on $_SERVER['REQUEST_URI']
-     *   (see default_options for the list of available options)
-     * - if several regexps match the $_SERVER['REQUEST_URI'], only the last one will be used
-     *
-     * @var array options
-     */
-    protected $_specificOptions = array(
-        'http_conditional' => false,
-        'debug_header' => false,
-        'content_type_memorization' => false,
-        'memorize_headers' => array(),
-        'default_options' => array(
-            'cache_with_get_variables' => false,
-            'cache_with_post_variables' => false,
-            'cache_with_session_variables' => false,
-            'cache_with_files_variables' => false,
-            'cache_with_cookie_variables' => false,
-            'make_id_with_get_variables' => true,
-            'make_id_with_post_variables' => true,
-            'make_id_with_session_variables' => true,
-            'make_id_with_files_variables' => true,
-            'make_id_with_cookie_variables' => true,
-            'cache' => true,
-            'specific_lifetime' => false,
-            'tags' => array(),
-            'priority' => null
-        ),
-        'regexps' => array()
-    );
-
-    /**
-     * Internal array to store some options
-     *
-     * @var array associative array of options
-     */
-    protected $_activeOptions = array();
-
-    /**
-     * If true, the page won't be cached
-     *
-     * @var boolean
-     */
-    protected $_cancel = false;
-
-    /**
-     * Constructor
-     *
-     * @param  array   $options                Associative array of options
-     * @param  boolean $doNotTestCacheValidity If set to true, the cache validity won't be tested
-     * @throws Zend_Cache_Exception
-     * @return void
-     */
-    public function __construct(array $options = array())
-    {
-        while (list($name, $value) = each($options)) {
-            $name = strtolower($name);
-            switch ($name) {
-                case 'regexps':
-                    $this->_setRegexps($value);
-                    break;
-                case 'default_options':
-                    $this->_setDefaultOptions($value);
-                    break;
-                case 'content_type_memorization':
-                    $this->_setContentTypeMemorization($value);
-                    break;
-                default:
-                    $this->setOption($name, $value);
-            }
-        }
-        if (isset($this->_specificOptions['http_conditional'])) {
-            if ($this->_specificOptions['http_conditional']) {
-                Zend_Cache::throwException('http_conditional is not implemented for the moment !');
-            }
-        }
-        $this->setOption('automatic_serialization', true);
-    }
-
-    /**
-     * Specific setter for the 'default_options' option (with some additional tests)
-     *
-     * @param  array $options Associative array
-     * @throws Zend_Cache_Exception
-     * @return void
-     */
-    protected function _setDefaultOptions($options)
-    {
-        if (!is_array($options)) {
-            Zend_Cache::throwException('default_options must be an array !');
-        }
-        foreach ($options as $key=>$value) {
-            if (!is_string($key)) {
-                Zend_Cache::throwException("invalid option [$key] !");
-            }
-            $key = strtolower($key);
-            if (isset($this->_specificOptions['default_options'][$key])) {
-                $this->_specificOptions['default_options'][$key] = $value;
-            }
-        }
-    }
-
-    /**
-     * Set the deprecated contentTypeMemorization option
-     *
-     * @param boolean $value value
-     * @return void
-     * @deprecated
-     */
-    protected function _setContentTypeMemorization($value)
-    {
-        $found = null;
-        foreach ($this->_specificOptions['memorize_headers'] as $key => $value) {
-            if (strtolower($value) == 'content-type') {
-                $found = $key;
-            }
-        }
-        if ($value) {
-            if (!$found) {
-                $this->_specificOptions['memorize_headers'][] = 'Content-Type';
-            }
-        } else {
-            if ($found) {
-                unset($this->_specificOptions['memorize_headers'][$found]);
-            }
-        }
-    }
-
-    /**
-     * Specific setter for the 'regexps' option (with some additional tests)
-     *
-     * @param  array $options Associative array
-     * @throws Zend_Cache_Exception
-     * @return void
-     */
-    protected function _setRegexps($regexps)
-    {
-        if (!is_array($regexps)) {
-            Zend_Cache::throwException('regexps option must be an array !');
-        }
-        foreach ($regexps as $regexp=>$conf) {
-            if (!is_array($conf)) {
-                Zend_Cache::throwException('regexps option must be an array of arrays !');
-            }
-            $validKeys = array_keys($this->_specificOptions['default_options']);
-            foreach ($conf as $key=>$value) {
-                if (!is_string($key)) {
-                    Zend_Cache::throwException("unknown option [$key] !");
-                }
-                $key = strtolower($key);
-                if (!in_array($key, $validKeys)) {
-                    unset($regexps[$regexp][$key]);
-                }
-            }
-        }
-        $this->setOption('regexps', $regexps);
-    }
-
-    /**
-     * Start the cache
-     *
-     * @param  string  $id       (optional) A cache id (if you set a value here, maybe you have to use Output frontend instead)
-     * @param  boolean $doNotDie For unit testing only !
-     * @return boolean True if the cache is hit (false else)
-     */
-    public function start($id = false, $doNotDie = false)
-    {
-        $this->_cancel = false;
-        $lastMatchingRegexp = null;
-        foreach ($this->_specificOptions['regexps'] as $regexp => $conf) {
-            if (preg_match("`$regexp`", $_SERVER['REQUEST_URI'])) {
-                $lastMatchingRegexp = $regexp;
-            }
-        }
-        $this->_activeOptions = $this->_specificOptions['default_options'];
-        if ($lastMatchingRegexp !== null) {
-            $conf = $this->_specificOptions['regexps'][$lastMatchingRegexp];
-            foreach ($conf as $key=>$value) {
-                $this->_activeOptions[$key] = $value;
-            }
-        }
-        if (!($this->_activeOptions['cache'])) {
-            return false;
-        }
-        if (!$id) {
-            $id = $this->_makeId();
-            if (!$id) {
-                return false;
-            }
-        }
-        $array = $this->load($id);
-        if ($array !== false) {
-            $data = $array['data'];
-            $headers = $array['headers'];
-            if (!headers_sent()) {
-                foreach ($headers as $key=>$headerCouple) {
-                    $name = $headerCouple[0];
-                    $value = $headerCouple[1];
-                    header("$name: $value");
-                }
-            }
-        	if ($this->_specificOptions['debug_header']) {
-                echo 'DEBUG HEADER : This is a cached page !';
-            }
-            echo $data;
-            if ($doNotDie) {
-                return true;
-            }
-            die();
-        }
-        ob_start(array($this, '_flush'));
-        ob_implicit_flush(false);
-        return false;
-    }
-
-    /**
-     * Cancel the current caching process
-     */
-    public function cancel()
-    {
-        $this->_cancel = true;
-    }
-
-    /**
-     * callback for output buffering
-     * (shouldn't really be called manually)
-     *
-     * @param  string $data Buffered output
-     * @return string Data to send to browser
-     */
-    public function _flush($data)
-    {
-        if ($this->_cancel) {
-            return $data;
-        }
-        $contentType = null;
-        $storedHeaders = array();
-        $headersList = headers_list();
-        foreach($this->_specificOptions['memorize_headers'] as $key=>$headerName) {
-            foreach ($headersList as $headerSent) {
-                $tmp = split(':', $headerSent);
-                $headerSentName = trim(array_shift($tmp));
-                if (strtolower($headerName) == strtolower($headerSentName)) {
-                    $headerSentValue = trim(implode(':', $tmp));
-                    $storedHeaders[] = array($headerSentName, $headerSentValue);
-                }
-            }
-        }
-        $array = array(
-            'data' => $data,
-            'headers' => $storedHeaders
-        );
-        $this->save($array, null, $this->_activeOptions['tags'], $this->_activeOptions['specific_lifetime'], $this->_activeOptions['priority']);
-        return $data;
-    }
-
-    /**
-     * Make an id depending on REQUEST_URI and superglobal arrays (depending on options)
-     *
-     * @return mixed|false a cache id (string), false if the cache should have not to be used
-     */
-    protected function _makeId()
-    {
-        $tmp = $_SERVER['REQUEST_URI'];
-        $array = explode('?', $tmp, 2);
-      	$tmp = $array[0];
-        foreach (array('Get', 'Post', 'Session', 'Files', 'Cookie') as $arrayName) {
-        	$tmp2 = $this->_makePartialId($arrayName, $this->_activeOptions['cache_with_' . strtolower($arrayName) . '_variables'], $this->_activeOptions['make_id_with_' . strtolower($arrayName) . '_variables']);
-            if ($tmp2===false) {
-                return false;
-            }
-            $tmp = $tmp . $tmp2;
-        }
-        return md5($tmp);
-    }
-
-    /**
-     * Make a partial id depending on options
-     *
-     * @param  string $arrayName Superglobal array name
-     * @param  bool   $bool1     If true, cache is still on even if there are some variables in the superglobal array
-     * @param  bool   $bool2     If true, we have to use the content of the superglobal array to make a partial id
-     * @return mixed|false Partial id (string) or false if the cache should have not to be used
-     */
-    protected function _makePartialId($arrayName, $bool1, $bool2)
-    {
-    	switch ($arrayName) {
-        case 'Get':
-            $var = $_GET;
-            break;
-        case 'Post':
-            $var = $_POST;
-            break;
-        case 'Session':
-            if (isset($_SESSION)) {
-                $var = $_SESSION;
-            } else {
-                $var = null;
-            }
-            break;
-        case 'Cookie':
-            if (isset($_COOKIE)) {
-                $var = $_COOKIE;
-            } else {
-                $var = null;
-            }
-            break;
-        case 'Files':
-            $var = $_FILES;
-            break;
-        default:
-            return false;
-        }
-        if ($bool1) {
-            if ($bool2) {
-                return serialize($var);
-            }
-            return '';
-        }
-        if (count($var) > 0) {
-            return false;
-        }
-        return '';
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+ZzzfbAQGr8oHcoXuIu6Bc8T0kdDXwta=

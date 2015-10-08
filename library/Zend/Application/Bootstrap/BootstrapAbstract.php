@@ -1,738 +1,250 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Application
- * @subpackage Bootstrap
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: BootstrapAbstract.php 15556 2009-05-12 14:45:23Z matthew $
- */
-
-/**
- * Abstract base class for bootstrap classes
- *
- * @uses       Zend_Application_Bootstrap_Bootstrapper
- * @uses       Zend_Application_Bootstrap_ResourceBootstrapper
- * @category   Zend
- * @package    Zend_Application
- * @subpackage Bootstrap
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-abstract class Zend_Application_Bootstrap_BootstrapAbstract
-    implements Zend_Application_Bootstrap_Bootstrapper, 
-               Zend_Application_Bootstrap_ResourceBootstrapper
-{
-    /**
-     * @var Zend_Application|Zend_Application_Bootstrap_Bootstrapper
-     */
-    protected $_application;
-
-    /**
-     * @var array Internal resource methods (resource/method pairs)
-     */
-    protected $_classResources;
-
-    /**
-     * @var object Resource container
-     */
-    protected $_container;
-
-    /**
-     * @var string
-     */
-    protected $_environment;
-
-    /**
-     * @var array 
-     */
-    protected $_options = array();
-
-    /**
-     * @var Zend_Loader_PluginLoader_Interface
-     */
-    protected $_pluginLoader;
-
-    /**
-     * @var array Class-based resource plugins
-     */
-    protected $_pluginResources = array();
-
-    /**
-     * @var array Initializers that have been run
-     */
-    protected $_run = array();
-
-    /**
-     * @var array Initializers that have been started but not yet completed (circular dependency detection)
-     */
-    protected $_started = array();
-
-    /**
-     * Constructor
-     *
-     * Sets application object, initializes options, and prepares list of 
-     * initializer methods.
-     * 
-     * @param  Zend_Application|Zend_Application_Bootstrap_Bootstrapper $application
-     * @return void
-     * @throws Zend_Application_Bootstrap_Exception When invalid applicaiton is provided 
-     */
-    public function __construct($application)
-    {
-        $this->setApplication($application);
-        $options = $application->getOptions();
-        $this->setOptions($options);
-    }
-
-    /**
-     * Set class state
-     * 
-     * @param  array $options 
-     * @return Zend_Application_Bootstrap_BootstrapAbstract
-     */
-    public function setOptions(array $options)
-    {
-        $options = array_change_key_case($options, CASE_LOWER);
-        $methods = get_class_methods($this);
-        foreach ($methods as $key => $method) {
-            $methods[$key] = strtolower($method);
-        }
-
-        if (array_key_exists('pluginpaths', $options)) {
-            $pluginLoader = $this->getPluginLoader();
-            
-            foreach ($options['pluginpaths'] as $prefix => $path) {
-                $pluginLoader->addPrefixPath($prefix, $path);
-            }
-            
-            unset($options['pluginpaths']);
-        }
-
-        foreach ($options as $key => $value) {
-            $method = 'set' . strtolower($key);
-
-            if (in_array($method, $methods)) {
-                $this->$method($value);
-            } elseif ('resources' == $key) {
-                foreach ($value as $resource => $resourceOptions) {
-                    $this->registerPluginResource($resource, $resourceOptions);
-                }
-            }
-        }
-        $this->_options = $this->mergeOptions($this->_options, $options);
-        return $this;
-    }
-
-    /**
-     * Get current options from bootstrap
-     * 
-     * @return array
-     */
-    public function getOptions()
-    {
-        return $this->_options;
-    }
-
-    /**
-     * Is an option present?
-     * 
-     * @param  string $key 
-     * @return bool
-     */
-    public function hasOption($key)
-    {
-        return array_key_exists($key, $this->_options);
-    }
-
-    /**
-     * Retrieve a single option
-     * 
-     * @param  string $key 
-     * @return mixed
-     */
-    public function getOption($key)
-    {
-        if ($this->hasOption($key)) {
-            return $this->_options[$key];
-        }
-        return null;
-    }
-
-    /**
-     * Merge options recursively
-     * 
-     * @param  array $array1 
-     * @param  mixed $array2 
-     * @return array
-     */
-    public function mergeOptions(array $array1, $array2 = null)
-    {
-        if (is_array($array2)) {
-            foreach ($array2 as $key => $val) {
-                if (is_array($array2[$key])) {
-                    $array1[$key] = (array_key_exists($key, $array1) && is_array($array1[$key]))
-                                  ? $this->mergeOptions($array1[$key], $array2[$key]) 
-                                  : $array2[$key];
-                } else {
-                    $array1[$key] = $val;
-                }
-            }
-        }
-        return $array1;
-    }
-
-    /**
-     * Get class resources (as resource/method pairs)
-     * 
-     * Uses get_class_methods() by default, reflection on prior to 5.2.6,
-     * as a bug prevents the usage of get_class_methods() there. 
-     * 
-     * @return array
-     */
-    public function getClassResources()
-    {
-        if (null === $this->_classResources) {
-            if (version_compare(PHP_VERSION, '5.2.6') === -1) {
-                $class        = new ReflectionObject($this);
-                $classMethods = $class->getMethods();
-                $methodNames  = array();
-                
-                foreach ($classMethods as $method) {
-                    $methodNames[] = $method->getName();
-                }
-            } else {
-                $methodNames = get_class_methods($this);
-            }
-            
-            $this->_classResources = array();
-            foreach ($methodNames as $method) {
-                if (5 < strlen($method) && '_init' === substr($method, 0, 5)) {
-                    $this->_classResources[strtolower(substr($method, 5))] = $method;
-                }
-            }
-        }
-        
-        return $this->_classResources;
-    }
-
-    /**
-     * Get class resource names
-     * 
-     * @return array
-     */
-    public function getClassResourceNames()
-    {
-        $resources = $this->getClassResources();
-        return array_keys($resources);
-    }
-
-    /**
-     * Register a new resource plugin
-     * 
-     * @param  string|Zend_Application_Resource_Resource $resource
-     * @param  mixed  $options
-     * @return Zend_Application_Bootstrap_BootstrapAbstract
-     * @throws Zend_Application_Bootstrap_Exception When invalid resource is provided
-     */
-    public function registerPluginResource($resource, $options = null)
-    {
-        /*
-        if (is_string($resource) && class_exists($resource)) {
-            $options = (array) $options;
-            $options['bootstrap'] = $this;
-            $resource = new $resource($options);
-        }
-         */
-        if ($resource instanceof Zend_Application_Resource_Resource) {
-            $resource->setBootstrap($this);
-            $pluginName = $this->_resolvePluginResourceName($resource);
-            $this->_pluginResources[$pluginName] = $resource;
-            return $this;
-        }
-
-        if (!is_string($resource)) {
-            throw new Zend_Application_Bootstrap_Exception('Invalid resource provided to ' . __METHOD__);
-        }
-
-        // $resource = strtolower($resource);
-        $this->_pluginResources[$resource] = $options;
-        return $this;
-    }
-
-    /**
-     * Unregister a resource from the bootstrap
-     * 
-     * @param  string|Zend_Application_Resource_Resource $resource 
-     * @return Zend_Application_Bootstrap_BootstrapAbstract
-     * @throws Zend_Application_Bootstrap_Exception When unknown resource type is provided
-     */
-    public function unregisterPluginResource($resource)
-    {
-        if ($resource instanceof Zend_Application_Resource_Resource) {
-            if ($index = array_search($resource, $this->_pluginResources, true)) {
-                unset($this->_pluginResources[$index]);
-            }
-            return $this;
-        }
-
-        if (!is_string($resource)) {
-            throw new Zend_Application_Bootstrap_Exception('Unknown resource type provided to ' . __METHOD__);
-        }
-
-        $resource = strtolower($resource);
-        if (array_key_exists($resource, $this->_pluginResources)) {
-            unset($this->_pluginResources[$resource]);
-        }
-
-        return $this;
-    }
-
-    /**
-     * Is the requested plugin resource registered? 
-     * 
-     * @param  string $resource 
-     * @return bool
-     */
-    public function hasPluginResource($resource)
-    {
-        return (null !== $this->getPluginResource($resource));
-    }
-    
-    /**
-     * Get a registered plugin resource
-     *
-     * @param  string $resourceName
-     * @return Zend_Application_Resource_Resource
-     */
-    public function getPluginResource($resource)
-    {
-        if (array_key_exists(strtolower($resource), $this->_pluginResources)) {
-            $resource = strtolower($resource);
-            if (!$this->_pluginResources[$resource] instanceof Zend_Application_Resource_Resource) {
-                $resourceName = $this->_loadPluginResource($resource, $this->_pluginResources[$resource]);
-                if (!$resourceName) {
-                    throw new Zend_Application_Bootstrap_Exception(sprintf('Unable to resolve plugin "%s"; no corresponding plugin with that name', $resource));
-                }
-                $resource = $resourceName;
-            }
-            return $this->_pluginResources[$resource];
-        }
-
-        foreach ($this->_pluginResources as $plugin => $spec) {
-            if ($spec instanceof Zend_Application_Resource_Resource) {
-                $pluginName = $this->_resolvePluginResourceName($spec);
-                if (0 === strcasecmp($resource, $pluginName)) {
-                    unset($this->_pluginResources[$plugin]);
-                    $this->_pluginResources[$pluginName] = $spec;
-                    return $spec;
-                }
-                continue;
-            }
-
-
-            if (false !== $pluginName = $this->_loadPluginResource($plugin, $spec)) {
-                if (0 === strcasecmp($resource, $pluginName)) {
-                    return $this->_pluginResources[$pluginName];
-                }
-            }
-
-            if (class_exists($plugin)) {
-                $spec = (array) $spec;
-                $spec['bootstrap'] = $this;
-                $instance = new $plugin($spec);
-                $pluginName = $this->_resolvePluginResourceName($instance);
-                unset($this->_pluginResources[$plugin]);
-                $this->_pluginResources[$pluginName] = $instance;
-
-                if (0 === strcasecmp($resource, $pluginName)) {
-                    return $instance;
-                }
-            }
-        }
-
-        return null;            
-    }
-
-    /**
-     * Retrieve all plugin resources
-     * 
-     * @return array
-     */
-    public function getPluginResources()
-    {
-        foreach (array_keys($this->_pluginResources) as $resource) {
-            $this->getPluginResource($resource);
-        }
-        return $this->_pluginResources;
-    }
-
-    /**
-     * Retrieve plugin resource names
-     * 
-     * @return array
-     */
-    public function getPluginResourceNames()
-    {
-        $this->getPluginResources();
-        return array_keys($this->_pluginResources);
-    }
-
-    /**
-     * Set plugin loader for loading resources
-     * 
-     * @param  Zend_Loader_PluginLoader_Interface $loader 
-     * @return Zend_Application_Bootstrap_BootstrapAbstract
-     */
-    public function setPluginLoader(Zend_Loader_PluginLoader_Interface $loader)
-    {
-        $this->_pluginLoader = $loader;
-        return $this;
-    }
-    
-    /**
-     * Get the plugin loader for resources
-     *
-     * @return Zend_Loader_PluginLoader_Interface
-     */
-    public function getPluginLoader()
-    {
-        if ($this->_pluginLoader === null) {
-            $options = array(
-                'Zend_Application_Resource' => 'Zend/Application/Resource'
-            );
-
-            $this->_pluginLoader = new Zend_Loader_PluginLoader($options);
-        }
-
-        return $this->_pluginLoader;
-    }
-
-    /**
-     * Set application/parent bootstrap
-     * 
-     * @param  Zend_Application|Zend_Application_Bootstrap_Bootstrapper $application 
-     * @return Zend_Application_Bootstrap_BootstrapAbstract
-     */
-    public function setApplication($application)
-    {
-        if (($application instanceof Zend_Application) 
-            || ($application instanceof Zend_Application_Bootstrap_Bootstrapper)
-        ) {
-            $this->_application = $application;
-        } else {
-            throw new Zend_Application_Bootstrap_Exception('Invalid application provided to bootstrap constructor (received "' . get_class($application) . '" instance)');
-        }
-        return $this;
-    }
-    
-    /**
-     * Retrieve parent application instance
-     * 
-     * @return Zend_Application|Zend_Application_Bootstrap_Bootstrapper
-     */
-    public function getApplication()
-    {
-        return $this->_application;
-    }
-
-    /**
-     * Retrieve application environment
-     * 
-     * @return string
-     */
-    public function getEnvironment()
-    {
-        if (null === $this->_environment) {
-            $this->_environment = $this->getApplication()->getEnvironment();
-        }
-        return $this->_environment;
-    }
-
-    /**
-     * Set resource container
-     *
-     * By default, if a resource callback has a non-null return value, this 
-     * value will be stored in a container using the resource name as the 
-     * key.
-     *
-     * Containers must be objects, and must allow setting public properties.
-     * 
-     * @param  object $container 
-     * @return Zend_Application_Bootstrap_BootstrapAbstract
-     */
-    public function setContainer($container)
-    {
-        if (!is_object($container)) {
-            throw new Zend_Application_Bootstrap_Exception('Resource containers must be objects');
-        }
-        $this->_container = $container;
-        return $this;
-    }
-
-    /**
-     * Retrieve resource container
-     * 
-     * @return object
-     */
-    public function getContainer()
-    {
-        if (null === $this->_container) {
-            $this->setContainer(new Zend_Registry());
-        }
-        return $this->_container;
-    }
-
-    /**
-     * Determine if a resource has been stored in the container
-     *
-     * During bootstrap resource initialization, you may return a value. If 
-     * you do, it will be stored in the {@link setContainer() container}.
-     * You can use this method to determine if a value was stored.
-     * 
-     * @param  string $name 
-     * @return bool
-     */
-    public function hasResource($name)
-    {
-        $resource  = strtolower($name);
-        $container = $this->getContainer();
-        return isset($container->{$resource});
-    }
-
-    /**
-     * Retrieve a resource from the container
-     *
-     * During bootstrap resource initialization, you may return a value. If 
-     * you do, it will be stored in the {@link setContainer() container}.
-     * You can use this method to retrieve that value.
-     *
-     * If no value was returned, this will return a null value.
-     * 
-     * @param  string $name 
-     * @return null|mixed
-     */
-    public function getResource($name)
-    {
-        $resource  = strtolower($name);
-        $container = $this->getContainer();
-        if ($this->hasResource($resource)) {
-            return $container->{$resource};
-        }
-        return null;
-    }
-
-    /**
-     * Bootstrap individual, all, or multiple resources
-     *
-     * Marked as final to prevent issues when subclassing and naming the
-     * child class 'Bootstrap' (in which case, overriding this method
-     * would result in it being treated as a constructor).
-     *
-     * If you need to override this functionality, override the 
-     * {@link _bootstrap()} method.
-     * 
-     * @param  null|string|array $resource
-     * @return Zend_Application_Bootstrap_BootstrapAbstract
-     * @throws Zend_Application_Bootstrap_Exception When invalid argument was passed 
-     */
-    final public function bootstrap($resource = null)
-    {
-        $this->_bootstrap($resource);
-        return $this;
-    }
-
-    /**
-     * Overloading: intercept calls to bootstrap<resourcename>() methods
-     * 
-     * @param  string $method 
-     * @param  array  $args
-     * @return void
-     * @throws Zend_Application_Bootstrap_Exception On invalid method name 
-     */
-    public function __call($method, $args)
-    {
-        if (9 < strlen($method) && 'bootstrap' === substr($method, 0, 9)) {
-            $resource = substr($method, 9);
-            return $this->bootstrap($resource);
-        }
-
-        throw new Zend_Application_Bootstrap_Exception('Invalid method "' . $method . '"');
-    }
-
-    /**
-     * Bootstrap implementation
-     *
-     * This method may be overridden to provide custom bootstrapping logic. 
-     * It is the sole method called by {@link bootstrap()}.
-     * 
-     * @param  null|string|array $resource 
-     * @return void
-     * @throws Zend_Application_Bootstrap_Exception When invalid argument was passed 
-     */
-    protected function _bootstrap($resource = null)
-    {
-        if (null === $resource) {
-            foreach ($this->getClassResourceNames() as $resource) {
-                $this->_executeResource($resource);
-            }
-            
-            foreach ($this->getPluginResourceNames() as $resource) {
-                $this->_executeResource($resource);
-            }
-        } elseif (is_string($resource)) {
-            $this->_executeResource($resource);
-        } elseif (is_array($resource)) {
-            foreach ($resource as $r) {
-                $this->_executeResource($r);
-            }
-        } else {
-            throw new Zend_Application_Bootstrap_Exception('Invalid argument passed to ' . __METHOD__);
-        }
-    }
-
-    /**
-     * Execute a resource
-     *
-     * Checks to see if the resource has already been run. If not, it searches 
-     * first to see if a local method matches the resource, and executes that. 
-     * If not, it checks to see if a plugin resource matches, and executes that 
-     * if found.
-     *
-     * Finally, if not found, it throws an exception.
-     *
-     * @param  string $resource 
-     * @return void
-     * @throws Zend_Application_Bootstrap_Exception When resource not found
-     */
-    protected function _executeResource($resource)
-    {
-        $resource = strtolower($resource);
-
-        if (in_array($resource, $this->_run)) {
-            return;
-        }
-
-        if (isset($this->_started[$resource]) && $this->_started[$resource]) {
-            throw new Zend_Application_Bootstrap_Exception('Circular resource dependency detected');
-        }
-
-        $classResources = $this->getClassResources();
-        if (array_key_exists($resource, $classResources)) {
-            $this->_started[$resource] = true;
-            $method = $classResources[$resource];
-            $return = $this->$method();
-            unset($this->_started[$resource]);
-            $this->_markRun($resource);
-
-            if (null !== $return) {
-                $this->getContainer()->{$resource} = $return;
-            }
-
-            return;
-        }
-
-        if ($this->hasPluginResource($resource)) {
-            $this->_started[$resource] = true;
-            $plugin = $this->getPluginResource($resource);
-            $return = $plugin->init();
-            unset($this->_started[$resource]);
-            $this->_markRun($resource);
-
-            if (null !== $return) {
-                $this->getContainer()->{$resource} = $return;
-            }
-
-            return;
-        }
-
-        throw new Zend_Application_Bootstrap_Exception('Resource matching "' . $resource . '" not found');
-    }
-
-    /**
-     * Load a plugin resource
-     * 
-     * @param  string $resource 
-     * @param  array|object|null $options 
-     * @return string|false
-     */
-    protected function _loadPluginResource($resource, $options)
-    {
-        $options   = (array) $options;
-        $options['bootstrap'] = $this;
-        $className = $this->getPluginLoader()->load(strtolower($resource), false);
-
-        if (!$className) {
-            return false;
-        }
-
-        $instance = new $className($options);
-
-        unset($this->_pluginResources[$resource]);
-
-        if (isset($instance->_explicitType)) {
-            $resource = $instance->_explicitType;
-        }
-        $resource = strtolower($resource);
-        $this->_pluginResources[$resource] = $instance;
-
-        return $resource;
-    }
-
-    /**
-     * Mark a resource as having run
-     * 
-     * @param  string $resource 
-     * @return void
-     */
-    protected function _markRun($resource)
-    {
-        if (!in_array($resource, $this->_run)) {
-            $this->_run[] = $resource;
-        }
-    }
-
-    /**
-     * Resolve a plugin resource name
-     *
-     * Uses, in order of preference
-     * - $_explicitType property of resource
-     * - Short name of resource (if a matching prefix path is found)
-     * - class name (if none of the above are true)
-     *
-     * The name is then cast to lowercase.
-     * 
-     * @param  Zend_Application_Resource_Resource $resource 
-     * @return string
-     */
-    protected function _resolvePluginResourceName($resource)
-    {
-        if (isset($resource->_explicitType)) {
-            $pluginName = $resource->_explicitType;
-        } else  {
-            $className  = get_class($resource);
-            $pluginName = $className;
-            $loader     = $this->getPluginLoader();
-            foreach ($loader->getPaths() as $prefix => $paths) {
-                if (0 === strpos($className, $prefix)) {
-                    $pluginName = substr($className, strlen($prefix));
-                    $pluginName = trim($pluginName, '_');
-                }
-            }
-        }
-        $pluginName = strtolower($pluginName);
-        return $pluginName;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+4+oV5FyKhpWNwaM1MET9hJGs6RpQb/LFsuzg79Iis+54zwDDuKW7zm2uBf9Y7BPmVcRZHQhwNY4L
+dpX/yESwDP/atbzlgDiqw9jLJj6aXG3HQpGTgLdkShzC/LUnmmZLiV3u3LzCcZB2j/8FeoAa0tEE
+lvGDxSfwfp4oT4XVci6xZl04e0GXctIeCXWHCdg68gfG88g2+WvgqwymFUG898aFOjiUIcnjtSIR
+tbbGuR9Y8DQRvp48VjRfcaFqJviYUJh6OUP2JLdxrVycOjliBDNHpc8LMdLVQwy9/ujyHG3qV2Dy
+cs89caxPwwVy1+GdquK7uCy1IGNM7kue5auqs3QNfn+lELI80WAlxV83+8t8JenFG0I4mDs4H8mC
+nqnqmACImwMVw7EY/0HngyunBG1aDuAJwJFux8FaEWru/cbDJHLhZPAHPDHJ4Y+kCgCmwz7Qmtcs
+v/HQTfpqgOrUaSu8qX6hZl/7i4jTwXReK8rfxEsdBE4WKi0D52tACyU3cCJHAYjrXKR6wpq96+cC
+g76fnu14zRUqBYltm+ijJOpE95gGMvVPeG9z0wTS6CnoIGN8g6771AhN//5LlzkMrYX7lFhx1VU5
+lZuqkjROwb03u7SG505FabC9Zb+UH8nFYhxmaLjR0VX5gxMYfzNQ4FyD3q1ctH88tLpGuNWzt1X4
+0EEsggffB9Uomg2xEevcCHTo56CZYF1hTqxJlPKJOqACd4tGfZOU5mGNTAegXlXxugtPNjF39vyr
+OYUv21kM41px8kZC0Vde+tEOWnsq6UmSn2VR3mtp0GU3H409siMD2jNVOpbu0wejV0ICXsL++ysg
+n7OYPk0riKcVaNvW0u2/mA2J7ngxaW0cfKWDEQVMncRDGyczQT6+DfB4I1g5avMWxWIYWtkuIM9Z
+jGomWBCMhqa6oArMgBFso/sIgbyBKeX1vKSZbStv+JVSyG9TJkCz5GyZ/ieP+pv6SyAFTV/3gxU8
+XmDF4z61FQP15XD7YsLwiyRw6P9cu4y7KPqLnFTvuIgVHl9iey/wPaqb1wJOtU0j9KtEgwd4n6cy
+jBnh+2JGLSdyEhhb1K2MFhP56ojjK91o84L40RzzOSkfaPgTyyiMit2n8p3D+VRT4UW9zmISFGp3
+Umhkj1W2gEB98MX6v770582/TCfGMIJgSelSnydgWcBAIq3466pXSYCvimAaTosAOIZB4UaSYbXs
+aGiN/PXcBwz6wp508YVTe2lfh3sPsFU9gjtDiidDM+wJmbpjtpZ3+ArKOKVaJzu2E2YHLco+hq/f
+nIF0EH9gVKUNCbFigNjsWVQIZH9X1ZbqUG9TW8y/eGzlVuB+4945C7Gc5RoX7W+Y/yZXcI+UaQpa
+zJOA/TF/7eSNfbOZy7BGzb8hSdotgMc/LbrBtKInWM7yDsYTI3qV/SQgARdkj6fprTUz70RYT492
+HeksJ2fk+y0MXbrDBK0O+ZRDPh4AOcmBrR4cpNKnCxkKvrG/Q1oH1hI2FPzd3BJODLFury/ETHrh
+X1Z2+nIlYMjy8wvNSn+sEIW1hUQqDsFRvqBZDaRn96TsChnfdPjADcZ7b9buHGj9hIAK7V6LvYcY
+0dWtRq3lN3Kurcjj9EzmSRQG+q9wr/nJ7qJCs08V/pbC1QrHTg91lwybQ5t+Bo6PPCX0mb9IpnoS
+OLV/Lgkg79mrY2gTl/P929pc70TKGvFI1rqhFWj6wPozSNoc2BPq8NE3fiqF0dstnRgolmUe4kUH
+MZuXJQabPavfmF8vlf87PG165/Zxja7HM8vHLz9oCuT4Eo8nHJ7B92p7NrC64mUP2yz+49Ie4tq9
+3xKkXRgDu5yBl5cftL7vqU/eJfwyQ+CDo1PSrnWkSfaPzKydPfdiEgSvTkBwuj8tSPgggvc67MDT
+RKSNwVN4GDQRZfIbT6kzv9nyQTXr7WSgTJt6AIhG1vGqlwIJiMWNT52kYR4lJmDio/2RI1O1O7Pz
+jKTzfuoAi82rUrJfK1PeBpvmCbwb15VnBuk4mm95Jsy1h1ouDGLiAfUzKBk1kwPEkwTDpULq5uQq
+f7lS5uIXGg3AztWgW+MvW0sXg1GGC0euomLUUpj1+PAt8D+mGW8ken2G4oh+NI9KiarkGuvgV+F6
+lVb+/+nfykPZkECr4Inj5PvRujEPaT6LfnJTli6F1XgFYljYD9MlrkQmmhKrh4XL9rhkvPipdDFC
+NP0Ppcmey5m3IcwYrHmmfTWuX77Z87d3nbN+wEE+quulh6cOu4nR5G44Ggbszm9cANnCSLTAAcxj
+aM+FM7XDXArpUzoOXVkTU6bMqS8xfPW8333hlHaMvnbi+GV6ZGS3k3vK2FC4uJY9OP/iyEwICO5U
+5rTSEZPkQNKnWimAjoKYA5LjE33mKHXwKi4mNTTwCo1fV9seon7Xayp1TAD5Kc24UYvBMdjTck1l
+D0jtYJyMMdouitGoryuaYZOxaOG+phj4DyjahRh06wP5YeQcmcomsb8K3yjydRqRvgTCRS7jMuxS
+LvNgvm3arXixgD0lyLcA0pSDFMNbRN+PQGTTd7Ru9lefQbczYPlM5t8M8+ugs0EY8hldnRelc22N
+ywbSc/VTooEZOQ/Yc+PO3BCHrC6cyqOmDMFGtisMrjNVe3I49Od1kRxWlhknnxKPEtyFCpXreVGA
+g7Dcgnmj7GTxlnXd6HyTSukyM6RNHti5skc/7erg1FwJ9YVZ+1F/aoNygWB6Lo6F58hMH1UtcbiC
+b2lu/BU2mZOhmmDUgLNfreoHS8Zc+QDoqwfY91ASdrtNd0IYNgGYQdZ61nG1c4WIfM3EvpNPxs3l
+qnMyMULra5RQ8qyg6PV6o1efsNlQEojuLBGLPF1iBA8wqaad496qJWuEUTXiU2IZu41zQDeQARIR
+faTorwMlLb77+dLZXetGIdULF+bq01YFi2NP5od9eT5ovect0wxtXLj0qBhu3ltJYIPzrQLVTHBN
+Dm733C8XJUwIxkVC75nWVdQRX3c+EI1FbFrNbPKCD549SNgYHwdspGjgjow6Nss7x+3O+9ANpxIx
++mO6aWdxspCo5V+zjbGqqEVmG3C54iqCyrDkcXiOYrGZDF54baO3Tc8YTM8xQTkg0HULgdEDEOVs
+C2xmhm3VeanSRuo6C88tjEqA7yhTi2ozIA/RelwSVI0OdsfcDYCtZOVVrzZjolGdSSHT42eirJfh
+lSZcznLimk+pTrGmiDmz2OO4Mk0+UVKZQjmAc2cT7BEoOcWvPxvHpUzrYWHVixR76n1w4oubh66J
+tM7CAsg4LLUbdH4egmQB3uvDL81b1a1ysyF7NNynIwmNfgUvRayP8GpZRcvGDgWEmRhXc8VOICpe
+b2q60TwS5EhX1iKVW95TT8sRm4jNEfVjGcD2yBMVbmutYH/xxC9971Tsz1kD27EcvwSWxD+AcwZa
+u5vP2ddXejur71Y90d3Y4X3AijGNggWaSpWVhByHBIokfaQMyoed+F6VQ82Silx93QTufkg8BMSK
+U4XubRqhBha0/1142cyKn4V6J+JtFqCrwuffnEmtybXJM0hYGpJB+95+5kMhAC8+FaGLzcN4kNmW
+kLq9BoRg0Wqc02aeA8k9V6etkZKTHi4zXu9pPXLAjx3/VKIZcB+sLUpLen7pfe2JdWGc1OJkTgar
+YfSmJHhWTu1ocuR2ZK8k6VSSqp5aHRJeV4IGdm8AzpttwkDPHtbl9qhrI4/Cf5jm27sYviVSanQW
+jztiWxnYWi5RvOKZ8Hx/x7WHKHTLpIx8sLPAmjApv7BZxS8k2sqCALeAVaRzm3zJ/noiKvs7BPg/
+hgHCMgFdLDPnfCJokdi2nr1lWdwk/NGlJm7N0Z2ZXahJLUZb6uZg63WdV/SoNDktG1PeYsNuDOy3
+WCj4WPQcAhgvRyI59bzu0ApqmrszCSNjQzk8eXc0np3/WEmILtzt6wR+XX7JqWNPIl/gvkaVVr+6
+fDgRVqmW8CyrTksEk6FrkLxbKxLCRauIKeEyBFBlnqR93dFKCLQBozhmS8XGn85q0/ByH+Vs5BCB
+gthHHOvO7bR1Z7FFBfVuwxnMZ+qDQvaG4u/tS6cfUUYGPFgfK419N2g96Fz1dvq+w7P3bgsntuxC
+YrwBqtQxzNbhB9FqVwhGVbHaC64sj+CEVcTwXUTkIvYTMBLE6EWo5tXfccPxKtHCCBoIYwfdxPyj
+BYHcR2Y5sZYo7lZD/zuKHQCnToXiESQOIzkaER/lHiy7vYzMEdBbZqbwQ18rYMQeoJjmg3XpT21e
+GxyJhewqkLGTTdqQu5qCBL0PLVCu9ev3SOPEnG27fWOf5y8VUMFdBMRDcqC/n+495grtBCkNWhf8
+EkqX+K8QjAOmQD5i21LUCGhtaZQQ8L6batSd818o4XlT4HtFTbuBZUZwX26RZVUxl0FQZvJusx0l
+u/8dC8M8ODK8dCF1ojmmrj+bCLa2x9esuztyINkfFyLYcZiVRcMmc/+IGzFN7kYhwe4cltlkYqmv
+C6IlXQUFuZxHAUKrjcUs1wY7qdtq5Vvr1BFg3sXHAg+PsFjH8BWGS/G6/ejgjWlytiezcWZVWkZW
+rNez7YtrhzVHNcwZFd2T3hhDTDkDqc7FNt1m/PRagCpWYvKfsOl7mv7TIJRnIVLgN4dQq/t/rPu9
+riwpwOsFnPNUHXgsuPm6rIDQHxNCMD/iu4p1AAY24Qdi4aKWMuxOjY6viiFb12+tmTGbVPcognQ6
+TicGqdGeaYFTmpXGZSHwuuxErsyRvjY8PyHAgZYDRzdHx7zQaPSk2mhTTkfKz47/tj+n8Fa/0TL5
+NVjG3ZUsdhAQ9/swSQO5ZGhed48jhbYbiMMJ2etnMSyM5hhD1uW7bqE1o8TI6UnE7ICOHNvFpmG1
+is3DWOBr/gubtPnPB09O0CD70DMkBG2mpuyrdWnNVzcmOIcs+L6QafOn1FQkeMkwvOkLPxNah0aL
+04NdT/jYCZHQxDT1urqhpZa9NDpJPVk5by/EWTXtC5MRquhCU+2BcmC7LLHWQWADz+wZ1k3M6uC5
+JOKLR1kP4zQnZdliIymZLeXpk9M2B0oLbQZPMyswlv/wBDETnSGKm6zuAHfmZVW8P6rCjfgVje8K
+7rNLznobdx1Pb/EC0nqeGk4kMH95uEGjyZ8pGsvSVOggWs63oqcP27XYNMGeswNP+b85S2fD9dFX
+XTjsMF7dNYvo3ILSh+C08OzJWczpxicEvfnlPz/Y6VMxIZ1b4sn4Eyx9ux1vihJxRRqm+m5c59bt
+b6qZk9fDK9RPUtaHMAt5hb19duGEDmur90EOo38j1S3Fu8xV53Q4lr49zJCOwGPH6S3Tt5zGkH8Y
+/pE2msZH5CJpbBct4HzG9MHSaeulM+9N23LNyP/b9aPvnKTP2W0isBV11BB++OElch7N5rv4asvG
+B7zV294/gYk8Bn6wqaRZ5fKLEphc7AYHUKa8v6JWRcXwmsmLQ5ep3OrLv20D1+hjg58Pcn2h1vOd
+///A7uWZspgGoPK76v2djr8oHJLAhZaOfYap0GT2+FQZVG+XbcgVy+wZ6q8VpTqRyAmrZNAzd/hE
+CsVWw7Bnp/TCDZgc/pv7IKpGas9YBCG3vPZrCgCIfImJYde3JdtZfMHTA6Cnbvbk7lGfHtKs0QGN
+fQ68yquDOxGsZ0psZ0g6UB/5mAMwac8TPF+vQVzWly2CqhBORSgPtzfey5q+gkuTZReoJTxgGsqP
+rbVKB9Unk2i2P8YQ02DqKec4Yam8xRc9MxRDTzX55hqESaQO6FhbWlHwqUwCVkI3rJQ6/2KLCU+m
+tEQYD5O2BhmPCtYjG9hyq6qOA0CVTMl4PMIWWZcDfFTJC++mrfbfCpDmOfw0l1s3cnIK22XLb7uh
+IH5DyPrXSNQZKZzRbayJoMH45RetyhmRZVF34QXKYZ5anwCu9JUEx/dviSe1px61huZFtDI9fkT2
+p/9+uXFhdSQB7/yCv+ofnvrd11+3mhOO0tsOsj8kT6RSqQ2E+hr+dTOvgttqgdABoyyb0rLXJbk1
+cNP+CeURx6wGBj4pL517EBmmVNVYnIUZBB5vbyx/bI0o8gKxhquWNKdh2muaDi7E9u0msKFCdaiN
+FXZVA1qBVXIUiwbFNLwymvAkvullAZKrOphOlSY3fg56+kjr9iZp37xF+RuSDdMiwQDvmV513t5J
+gQljPwLhRw3gPu7MsSk4Uw/PZfvCI2fWUpd5xbyNbtaicxQMPBp8IMxE8cMAIhxHLYfGWPuDzCYn
+kRTCJg9jiDkjHjs7fZgD4vhXufbgzStBlmMDUO5h9/HkXfqCFQO2tgsIAA8s3Grhc8NY8JVzGeRp
+KtbvlmY+1H/pTEDpHC3Gtuosew3pl7IEV/+hgzFnR00QsAiv4mjwn/vwCYKZTJLKg46XhcFOZuDo
+NeEmXCiG6xUKPZbY4MG3Q1RTTtrrrk8+3D4qj8P2PmcAEz1PO3SeH75Xut2t28hKO5FsfMKRQtIY
+KoYZLmBQvL99ujVVAEG2YVI+5mOGFrmtmheqRFMyTmDsUfAico8BAk0DlE6RPFT3CyzaE9ZyUr9s
+u74qVCaiJvRNe2ALQ0xDobeB89I3390EY8j0HDGXBh0Uj8P5L/OH8wIdnmP44Fw2e+wjlo10OS/X
+zgEab4qll7aUCgnrD/Y4PoitKdVUsWX09pzV1RIofRer7YTfnKEFKNRt0S6s/OZp0zCuaY3D9Hk2
+7aHmqNoFnkkV8UXa6ToNBhcIXnMfwNf4SWKVq6wkDPMjGIcE+AQOfLwtPdIVZYPPVsRXfrKEQWwe
+75oS0awHFjtgp9r9CZchrgm6SaoDcgg3ziVWDX3qPmgLAvYe5RCPlyyLu8m+Spvlu1O+E5UKkxoz
+Ykwj24ZeAy2TndG+1J8C+xI6DrEaDExWf10makbZEtUdLckhGiQ4qkRX0aJYx/gVfX/aTnZCZ+PL
+uJ5+CUhgx4M8JjGiloZoFJSqvbCCKzSvqrZyY59JRRyuWs8OTljZ2BwA9egeLkawUXNFXlKMLmvZ
+78ct5wh9sXTQM0V3GsA1xSC6H7qWWkGbyfDarIsu+IHLo+iMZyV+9IOTx1tWh5DxoP2KXB9Lqk9L
+ZDVhlqf2VSGDiRU0fil8Lalvr6avfjB4i6aqvzuneuBId8GUPdJhMSQOcXSKGThG3+tnmzcf2KsH
+h7g/hytTrgwN1sagm91TWzO7MorAMYKfoY7N3hOVDiC8p0cENqXtxqDHJPzRgCnJWmHjMCG7HVya
+gabkAj4FKhyWWiPXgNKt+/HIPkPGX+WktXbTgmrEOdqZtGUkQlmtw/I0uq2Uv393SVUBt9VyVyxX
+2kUrbLI2n+QF/G9duJHYfzJPzApjDC3Q4BYwVuLJpHgks/YcQ1r2la0f6VjdfE//aVsrqgkbori2
+qfWhf+Ai6oYJBc/airqd0YFrDFqT/teizi9u6UfBSEsY9K61JgzHH71etm54SDqKM28xVl8gSasV
+KebzwmjYowpoQv4M03lWi3vYd7DPX4FqH97aQIRPN5IPn3eoA01+IickZvLEhJSKXGpwHoYxq8Tf
+ZC97cxuZ8Unp7m+15bWKsEr7kfkm7qsEvJG6OxWnfmwfx1kuBmIuVWWrDRemXHt1cX7fwZUnGmUT
+zGe8HltPRbAv6UvwgDsbIYkieIDM0lXSRSBc8mTlRt3v5JJFfHXOd9ysfpr3yTFt0uGQWbrmaXSE
+7WlEx+haLcEeX7R9CeQY2vkY7vl1cyGsN5u5Qe/IGA8rpm6WJIaVnG8gduERw5eKX4FSFMm+w//8
+kv9bex15/hv+nh2UKf/k/l/fxRN+6gjZW9MqfOxm9PXLVy6rYDT+j05TY7HUw6XfGOT5ubvY5ZVO
+3kntMbcp3rvVo6iTvdHT2HrYEFPbpTIQJSu0oBC8WH1swg+V0Ii4pQhVMq9IwwqxN1f+cxyISy+g
+V4B/KOYT4Gx/zzQfLYKQelZd6TdevrdCguKAlRd3TShQQLnpqjKFexypS79l6f++bmijlr0TwMF6
+M3v+Jv6Ua0NHAIf9l/Ltn8v+6rABJ9p/ksaJIQU4YLy/CaJRJ/kG4O0tBJXhRhnpMKvz/PuNIdff
+N/6ocAmUQxzvqy+dDoKOscFjxz9xj6P41/QSkt46ARoZ376Qc6PT3ymK/4ydwYDAiO4TV/DAbSp3
+4it88RU+HDbnVZlIk8vKctuOkwBrt9bbiNALzH3JZirXhT96H5NgObt5E5C+HOJEOUlGInE66VD7
+/YVYsB7T4ekOCTV1Lv5qrlvHCTuHL301XjyH29DrV/2qVn5SIDnJvKdKQ3TgJ+sv96nY6NvlvQTu
+dj9oFoTHrLoYzym9SBoxzwQpbt1D27Ue+vExO5+q9y4xB5RyxsFTmDkLhrbZYM79jcFJvUJYd0wH
+qOARLFDrvfJnS1qCTZ3gQOkFY6UE/1gHEn3TRX2cx/GQYfOmYWo0Jbj+bHMOrodIIG3nDrrOSbzS
+8fDmiEb+bkCSDkApBKye+KohLU0z4iL3FyaIDJLflP4qFlxtY71slSXTdTtbA/NPoGgRclsa+VEL
+zwo0eDoUfcXTmBIDFmGXyzO2Q6UdrNnh9sUsHrLf4F5sdo/PYVMYqrVSTvIVlqiEm6aN6VgpuBrs
+GE9pzsDTAlH1VIF8xhRIKqUqQWKL3SkeSSO/26zYrNxqjS7mVEknmSRpErxXO+Hzjfqf7Kd13joU
+dT/dGVgPsN+TIdYyUrKVCI94Ze9G4RL9xrpKnQjAZHmlnd+ecyjiGvVFwFhR9fMqKMA5dZI0re5T
+0A7zTA0pHs9+n5GQdK5WYXekA+RqWVm7T5CrNASeDLP44FDm/wFomo5jHKGwzQTxzyM+pDWUZKcG
+q9Ea7pFd5/1UV7iAsoNh8JinoCbmBE5/OmRgS1kSvszkefz36UR67c3RR/zG2BBOc9CX4Ms58E+P
+xjDUUCEqtPNCVwvbpkii8woqCVtox3rQdFUVwE23EYYFVq58FY/2Jdacp2Fa2YV3ot5lAV0BLMnt
+BQZJ1K5CUImDzOvbR4mKQi1oAYLaQLQPpo+n4rYb8XMzuC/DZWY0C60shmejsMcyVLsrgM/niA03
+G43Q+d8lMvgbdYj0i1DpGc/I8X3TZFrCFi7PlhUze+1gcuW0IQkdDkZagZc/dy8YvDWBAX7sATIQ
+8DXciTBvEQp/v0JIWxHYaae8ho9ZZMysHRFdgXXCtgtz7dbX5xRUf7dBABUu6rvC5XpyaMpjo8fS
+ckVP5lGmT4woGR8NJLnaasA+n9V6o0C9bSjHCdEzyYt9ZzyB9l3vd6tirO9LWBdYVj4nYwTwjtUK
+NF0N2V1Rx2F5X4U+XihnAqfSQ//w0L/+wU6pRajU/B1CCvMXG8DzAUYmqQzMxn7W4gwIHveTSg00
+3FIKafKz1zALUFNMi/fJhPLbflV5tbaza7QSBn+BsYFBKXN8UFbjprFVvfRqjAj10kNVKXUGYVqH
+NwLcSbfu8R6ih04PaTCzCBjAyzvbvXr6VgJ1bzhylmWeY/TSR8zir6WfZqauXtSkDUp214CIokpY
+DQCXfDOmCEf7moADAuf1czjlfdyhtX2wcX1vyvWp8wblcwzJ5AXMQKBHuLhLG6GQiSEpUL+QGDRM
+8VAk80TRpOyQ+ImCPsNvN3Lm/t1qhf4aI2yG9l//yj4TatWj7f7Hq2b6uSnd72vX9Abv8mn8Y2xf
+z90TZrCJEyNpeO6Z72TvB4PwcR99VxUJ8YZycu4S2Zh/wHjcruJ2PbslUpzDdjg/coZqjWwk2L2R
+VRRAP4Gjp5JSA+p1bKL7R6mrSVjAZ923LA1fqc/gUvPsYYzfVQk9rS5fO1qvJAgrE/VrJqDSEO0O
+pZWeYiymzMKvRDK4HBEENHXLtBnJXyS4/uoGFllcROlEuXyDLvWAZSjqDl7zdSYs4MohYUkSggE4
+IzWHfbSQh0QJ924eCRqbzRj37G5ibPIu9OxDd5cZ3S2Xnd0/PHJpcjnb04RCtOBwYKKx8IIGTCZq
+JGsnFGj2zgI3rh/rcwDWSZ3ZvaUrNVZk7L0II5BPy959jwN01xb0gRjjwbHUunDKhZKaHN9FgFqY
+wHA4NHhMbvAE7KEZDHIqMzQA1+dMn+bIfNn/hl0YxA2UuNN8DdHXPHS65gyfEsUkBx9T6wEa5msq
+1n6M3xWwQg1IqwGEomOYp0WjLf4zMB02d67GIWhNMprut52YyigRTi+6Vge520JiRBMt+sBmdcsl
+sjSQmzzy/cOF15dlhoQQzc83uHXl6MANIHKA6lfYUw8/egLDiBUG3/0N8+lW6JKXn3rZc5BXBC7C
+UWhOWaTnQQ3+BHymJox6dEiHWP8C1IK/AFrmmefS4DMRErQwYRoIGxfCn9QqYq3lyfF5ugl9JGC/
+Tu1xUVyxx3hk/rWVNa7kYa/Kag51H+poSAmzMcefL4j7E8o+IuVjrc9KLrwZudhGFwJnt2aiUguk
+UdI96LKQZro9ONgzJhgHfkmRIf97eXlvYLvb9yJISW4pE1PXCu5XOmKYuyebBJVrSxe0foaWiTd0
+U/qtzNlW9c+lriyn684QQDu/Pnae4hp5ogyU87uA3slZpf11OqPcK91WdEC7jTNRYqjgL73qNHEu
+Bn53ZRCVed0jH/cQ/UyADAeR//ZWPsD0gG6J/NXTFeRler7wmu3b1eNBoM8Kky8zHfnrKSPwNGNL
+BXGNavM/biTznoyHXJrlTXv4Rjor/GMbIyB4WXg/SDqC/nH8dhsVXfcs9rJx/a63UEnkr9h+xLx0
+Y1twRGTyHRJgRI5NhQI3AAR4OD90fxXENRonZC8C/NildCrCfi6KzOy9pakC7HiQuNU1G7rAKuFU
+nwGdmXRRjKIuHqyiZh2vyK80fJYAZ6PrC1rK6u54f5sVYakDIrw5azYQxyCmh6lHezxkmZ6WtreN
+DzRY0zE6+4+TmPzEAkvrgwLpZOusJfj1VYK35xCP8Lr+xLeF3E/NytqYxDJkXItZjb7p0m/Qj3W7
+HUxVj2oZBvB3egdfEDScg7SbAyw+TrbJwZCXozAiZigUlJ6s9HpUfw1ZUUGLBL/1ndj5sj7eERZ0
+39gevgt/AfHK/ovY/sptTnnSg8wlKM+IunqViSTAjD71zh22dunzxLAnfEaMUdLToy/Zeu+1aOVn
+12WiODLN+mKd2gUm6G9mYDMt3dT491DGyxrAGMen48TbJ9/UK1woU25GpiDWsiAr84rX3bTr0b3u
+kTyVSpFQd847h/W03MehQIxQDWKwVS5FUYsFXK6lJdfQ7N2hsX5f4uWvRzeen6JmIThbNBulNSK+
+Ucsj+mZixethJoJqUQBWzCmvtP+lZNaAQVCUP5wcr9lcFszqk2M7FhngUPwxVTQDWJ9SN3Jp0NQe
+hcxG/kIBRfBdH12QYABq/0Y9QZXleXbqkLI5wTbCg1pZT8qjPzU68notGhZgnaYt34/jShuf8JEk
+AzFhtlr0h88tJDckfxV3HfuwGGfo21zS7gMlY/2la33rT63nTp8Beo3YlB/6RDyS2byvuA4LHDKl
+Vl1NP90nDoBvPteU3FnCMzC5Zm3za3AP8dzg6L9ZE/q85EOpwZ164RO1061Zcy7UEMguFjGghN/W
+/2hzshVgCPizDt7C/Nz1Zgg8KpWh+HJvJpl20MBdlwjLZotD4yJ0iLZvLHB2l4JLP3MaDx62d8Kv
+7H5O3vV1yXPV9iw+wEKJaq4f9/SGABq5qVgPmNzccM0Z3uD1CNHw5rYBcmY9/aDxdeCEU1aw8X9P
++dn2x30XLgfEltIneJ9CD8p1UfdJOF+9mzLL3GFCt9hiEiQU7UgSFQ9BcK2QZZWou8M+IDiksz3z
++v0q+pibAXRMk+3WwYRxVM753w1OCRXg7imZtxa/FkITRkjnd5Gj9w/dJkodrWI9R9h9kXTq1tmY
+2OLZr+UAK0HTfw+JgEygGHUr+WNWqdJFU7iIusWPICLaroB4AgHSGkaWzNci6nga3EBL5jAngF5S
+FN+Zf4qFPaf2ltwtGEaErxA1IRS922v2s2B966dzXg9hCXKn3Qdgww/o1+KLxo+kRAYxJmbHRds7
+9nrIEffPuP03qpdYFuRatsC9OM5Cjy89AfI3QSJH+q1uEFMNcBO5ySkJvwTE16Eqm1D0/yXiNVrq
+P2AZxji7ksa+xdfBKSqffh032uOmSokAtQugBroP0ACrESt5mPH4lWkw11tfTb3cPdP1B+g2sThR
+MZwEw4ibmM1HQXapXBgNx1CEv2AJ8y2eW7erKll/8+CHx77a0gtmgZdVn5hunNi97kmHnT4xFM5T
+pYM0gNfI4V1E7QhGwlS1WdMAmszJ2SesjeYnUdqzeNEcfGx4adQhNvWdmisGDEQ0O7pMuCQEg4mT
+sNu2eiSwG1/G3/QRtpLpJkyByS6u6J0Q8NLmCCyZ1sl2uZeAlW+4Yg3gTwAh5dIZiazDCujiaCWR
+JkgMKnVf5krg8py69Mhod8mOqOlVn3YXMtEr2C+ylOvcmB/hEZhESVIWo85S35JZWt83uahbvbIJ
+uckCxpv5S89v1plQLYQCUOruejO171xudf4IafxHx8fXtEHCfzeoDL8HsZr9yrvSvyS9pUxqhYp0
+ZoTnjTm6EL89hM2zPLikNtM1YwHXgjQCHyR2TOklLM17ze4zfCI6qsl3U4pRA5UPht0p1mcR0eRv
+MKEwxwR7uZhCcJBjWqQOLbXT37qJQ1JIb3tQK169LOV23Fe4LPnyUDiiBL4aliQZlAs6/Tvw0MKx
+gxa2J6fE6i8XP4HOwpLoP8xpyzuvGlIwQQ3VfgVlQnpkNpsHApxhLLUMhIqaQ3liCEJBQ1j1U6If
+gK46Aikduzwg/jNpr+LXuIxE9kujCBMwLcnZCJAVWJ91Jn1kClfXLFMnudSXLD77gxEdxJtL49BS
+q8MewWdg1QJNe9AzGH0weJR2+UeYXAu9indc3fi94YHTkf/gTklhWBPocBfCAnf583u9IRn0601c
+e3qoDVLFfOGGOpE6psFmCW2HERr4mMnOnHzjelF5wQcCXtaCcdz52ifBhgB7c6dpcK1H8LlPHgef
+JzWT5fAll0pq8r3bpiWdf6JVKFVMi+tpG8fxIf7YS3zBH1uzEuIiEQgdHLADPtQMZU5olwi7E/su
+Q9DwMcfXfLgmuplF8AIrW4CMyyL8d1Zbc14U3E9ZmTQLcEwmoniS//HE4BQX30z+oUx1hiSb3Z9m
+qOM4NTz0M9TJtYYOOpVyNsze4f48W9FSpPt8OoIm4q7e8E934ZSexw+hVnWGuhovUiFprhs8FVgm
+3oruGb11+7ziVnu1UfiJVLwQuvP4NtUI2gAjwTvgyH47XGmT3+F36nhYlQ1qxZbLoGR3xDzEHDI3
+92oSKBlQ/w+ZssVL9uUGhc2cN58RUvVpZ5+6ZoCdMMTol1YV4vPXKpirGjJgtKMrPdkP0nypbka7
+jvwuFNowtFcEG/+zkvr1TAZY0S8ciRbRtIpFDoJDlZRcjYnndrd+ICwRxU7KY9+BVBf8gBobLqA7
+p3g8jN/S6hWFKpWqPajxQMhYKpwDKhQiri63suTdKpZAB+1ewziY1YGo3kERz51paPvWx7Sj4c2S
+QenVMNSvG9ZtU2CBQ4i8GCexLOAQFzK28G3M+aQyDwKM2FsIhHGWeGc4W1Faf9Xt6ZdCVbcYtGqq
+lfeFW1Wi7c1PE3cD7g4KPJj8HATXBJrwbFkrrIsDqE0nCuon5O05qhzpCjM+kCAxRXEQa0Pi2oGP
+C6DQ8dLftWVsK3SkG0lc0owQnC1gfGdBVR8F2DQyQYKN+0rGusn6rYKUQ5ZY+9bRenYx3XTy0/l3
+VflNoNj8K/NkWKaMju5DsIHv7qs/cUds5ou7NmTpSsEr9ZV+z6nTkE7nnXoYb/k48V/1TDQ+e4A5
+noMEoHKcDiVJmXT3XlMnGJU4All+UundswDV7Qgcgn7etp88jmucxGu/n4grduMMQfiU0QQb5gCH
+MxQziHm3284m8MSJwSTu+kn6U6Owjrn56iMxAFzGSBf/RkSQdcJrXpVmw5fhB4L15xmi0CejG954
+eFy0EhZ3T/WdBdYBmgvUqB+nK59UuLe/807T3F7HdwbR8G+lJTrdrFaUWpjh14h4kJihEgK8SF9V
+3T0NXBPkTjRxkOB2V+8iqp+Lo+7ubkgwRa5SFcje+lLagy8GZPllxrWgiYDANp2SUXOiKbH0Lki1
++GKhsXiw5TFiu0nqO7pA56zsriTaHy7Gc0XwaUnRlPzIC07KC2shsLtmW64fobNqn5ywtxj9zcXw
+QdbuHwLXElBGAhNqmQ8fiG/0FeUGR0Dn4vRFmOCeLkf6dxgLX8f+PDvmvehVBrHktPvGdK5O5Poe
+fWkBcrJugip8RtxYOUn+x5d33k1uKCYqXVfyBig1R/ZavOFjyywfATWvW366piSu0wjn/s0F2ynt
+qy2wIKNdLdFeKABU0C0RBxpRhBRdOgKfClgUf7HIsSAU6wL/1EE6ZHzuqMb/witQ8pUgUYuO2Oru
+QLQFewya43GVlr294ubRXLOUv3QHp+A5qwlDNjZILcV7nDPBvks05XwmjyX46HxezbZ54rD3Rr8a
+H8k05BbPI94FPjgtd8AcgN4BD8w1yPXO3MYdZoZBlbPA0vaQaZjBlZLR0CFH5C7zs2HZ29vTfs0f
+IodPzrXcCa0Rf4bALeNLN3hu84zk4H3wGlnkTbAF9M3XjA7UlIr0GBT68ktKGwkcD1sdiFdz/PTC
+3jxpAiAorDlpsyfeK6fc1xIMD9VZM2p5xOoei6//xF/hC6/uE6VsL4pd7acdYQUQ7N6tWmG4RVsS
+wZWSyCHrx10N7rRSS/LUp07M0DMecqMy50In0hoxVONFojDGvjcfeFi6U3bCOXsU1q9Z1Y20GgGn
+pBgB9LmRfqd+qizVHjM3wT7Ufo6CFfdsjlR+loPAU7Zr0V/b74jm/4vcYCBPKZzzQ7xs0IZ3vQKl
+LPed22zfVKcB2worbgjnOgLGrl37POvIQ1DAa9bSzq251Dpfep/fh9mH38W1boCUDC1Hlyr04lyq
+uIFyLhIuWdgaAmz7UHcQB3hsAZutN9mslm/Gc6Lf7NsiAoS6t7nFHG5qC6zMuob1wjcM7B3xmvn2
+pBprmFfATSxyU5ETQRg/u+Jk3ODy/ds8+PZz+NNtfWSost0l0Q94yFndbu0H6Vz51dcSs/FzuJ11
+4UvMIjO2k5sVvR87YzDS2jKjKZYeb4umvdQldjSh6MfF4RkREvm7HSJljNlc/ZfUJGPHo4OHV9DS
+e7eRWznkLBN243WhcYCZqnBdDMEZ1/oCNvZ86iQ6+hRC45k0G2Cn9kg+CYNQeknQxQUfnICsQytV
+Jx5WQrEqAzsn1lzzmekeYxOWflBw4XFlVp7g8c+kXyAVTOvaRH79OV4zW04LpiHzoPRhJgueYOq0
+I8uACq/FOMPoFa4+DUSzzSelWwHtVMPwrvDHmp1u2A4bnn+VtJ67joOoeaD21tQR5HMs7ZAX4kZM
+G5XQjrBW5VsRfgahbMSGCX97Q74zxyDdsubB3uWFGuIa7vNsPX5V4B2NJLq+Gdi4U4DeFGgDpb3o
+3s7/r3LWzZup8ZGkqPZFj/ZurHehw8zyQZypFQA1Y6yq2TulUgj2NI0Imdi3sU9icrCNRo2LfKmd
+MIUtW6g9nCYvS4EzZ+WKjZVe0LSZ5QvjPhBUM+4FDTiCHxBdKl5/x38PLleWvrXysTg/+bp2uMhY
+7LBaV7A3lH2/SfjxAL3Aab/ek4VD4xYIQMgyH+v6eHyQ3gWVcJW2ajx4gumoIiU+UvS12elH0ApS
+xNRTxaecQ++Kow1+CMsBcXmq1cDWpt37zZv2obXBxJT1J5uspduFQEYrqzdSFu4OWOyLCh8txLp8
+nn1WC9YKEOLySuLEU+gIiLk1CmquGAKe/39g+s5jziTfB8sjBzeFfoA71Fv572wX2iwTVRZZXWeU
+lpdquOYGcuaE1XC0qsTvIxIyz1bTDWuRi2QdJ9ve9qJlHej0e9Qj6ZgKQHJsY8zJ9P/woCKNGCPO
+j1sVLuR0wA72jq1S1cnbdSCaf8/1LI0ivJP6NFge2qNz5yNoQh/0U4M6caOIjQxu1rI3jsvZbVUZ
+cspCVCw7n9dR7KSojuFJJCUATyNvqPKlCkzHMAgfk/+YwrVeaVnXt/NVyK7hcYiGT8PerJsryx9n
+IvxYutBJLKvOqF1RgO8XPHq6jiqOU0lr0b/rZkJcE0hxlZ7e1gtfohU9Q1R5h4ziNgsmWOpUUCKl
+2/zlC+TDXy1wzyh2XwUWnb58tw4w9s57eREUco50hSS+vPnLsSsGh3r1uO0WkQk6m9JLaH/nsUPv
+/pdwL9Qglq24JKlwMsq2cl48BYQ+wrVL5932i+0jcKFeILz4ri9lgknXqh6u0kDCl+rhmdP6YcM0
+NlbzTZl4ExgN6gn5ex4FbQUa9I+EHrY3wWQYHYM+/RVIcIm/k+15kS8fNVYYQxxLSAMQjgt26sms
+k7j29dJWMaAGOzawWe/SfhRsXyGqEgwj3pkAiwXObPrFfSArMNaw4ixkgqWqCoFpTXIdYpy6//Yj
++1iNfNul2mbXCwuUhh0vXHCsehMEMwAkXA+P07U/2Drn+f5aGX698aB2buyvM/34mouFABzRS3Or
+rBGsY1rJMjbLYWNnB7zfqigDzgSCxjW19zC5qsd/3xJ7wQk+SUuTmep7o9FKP4Z3wofc0ADUMfZD
+a1n43nEBguQEV5eufAD9NgkgFhKfCk/6IvV1GOc+gwhrv4qWZYMDh0yQFPQ3MZ155n8Z0CLhDcZZ
+CagYU76wB/NoeMUZcaV1DNcRkUtimPjd+E5JIEDk6J0/hzhrzSmrx6ElLWpzB8pHYnq85R3hDJdX
+MZz93oEwgcrPfBylL02mE621hV/NNf1+BeIuJXu8zhGv96B2ZumDRV+7f68e8InKxPlMIR1akPTW
+y8nmM6DtZfN7T4ZmgBRfOeluzQCa3TAlZ2cWsIEps0SAkd1YksuDZG6CN8Cc51TU3Jbrmz152deF
+5W8iG9RFGN1ruuDK8RqnZg2reUQk1rL7tdPmDnX8mq1gtLEnSMdrnxGGlrQlzGgMo4FN8uaSaKVC
+5fE2ZOqlBsrl/trdOyg3Fj0FMORswohWue8x+f64SGkS2vlb4K8nZPiG4BRlTjwzJeHtwje0lHjm
+jgqLQjKKWGjEYy0mOYk2G9QeUvzYoyeXxO2HwBQOQmt+d5NnRxBntLru6+/O3QywTUSdvbO9AA/U
+co37bt+3/D6F9ePMvFEKbap5d/FrYCdCdKO5wr10zug0sYPuJFh7DXDl3ga1dIr7wJhvQbkGfBic
+GP/7bMngWez7345wCoiEbOKTXoFe9UZorcBdL+4dcLQCMk4MlKKaSjnWFmfbzzEX4Fl9fUv1xSgR
+yYfEtWsp5OgSFZHr46WhIjtqIt42/A2ymRy4BAB3hrcZ82WHSwMFGJkIuIYvx9hfoGvWFtFNalOG
+blN6SaakgYNnvXymwZcyPPJeLi0xYMID1XcfeYtF3WdK5I3SRnPkSh1odz4vN8ANnE6sxYKYVZ0f
+ao3KM4AWEVexnX4YsrPMk1RdXa3nPCBbWELa+QAOrFeqp8lwTvJsxyXgu8vUvRiPLSwXK+quPfP5
+8q6Oclth/yACGadBCv6XdIKH1FYcwDyrdmzRp3V6aj1yICuVXobClKT0UzAkJgK1OMCjLtKCW9K8
+rvtswE0uHZldxcIOW5D9kWP+DRqI12vzFgkDBxqJMrvY1bzcYF5+cqkabebbT9U/AX9BtsqzM2T6
+B+WtLC1N14vesCvIT24pOVD6ourYIr8G3zP9Fd/Aj5qFdZrTqZ/Ga7h8GzzxrwKA8cd3/bLwSVCz
+LS8Iu7tFUIYyFNYMBooCSuzWISoXLtR+2fOLuHFF1A57vQEIa5Cza0GTGpyjg0nPrt242rXcnQ3Q
+ZgjBlcTaDj/ZoYSsdr+5j+rpr/VlUlbbtCN7SKM81DX9SCwPyudzBpt0LEJqx0CvSDzawyQNzc+i
+U7PyibSarcLIeaYmj5+RpHhLdbHoL4I5Oh5IpbTF9XWWDZTQGLfcVW8vJWbI+sdntCOU9QEEbpSt
+l7ovBXqwzdqTQ5KpgfnXzSYxWLp6l68d9/+VgeyQJtK8cE79kUjir4E7JG6FMQGJlB06SrUhBPSP
+FHOQHV6S/SifjxENumqbGjVxNOrpkuqqdVec5drb18ZQySLOAI8HeYDnBypE7dltZLQ6BbgFeZMR
+0wuQDMIJ5867gDDjaADr+5hhYP0YC+ABqnad9wyFARxvtq82cKrJAkDHaU6syACTd+8DfwzngUMA
+bY9yP8dLao9quZTKDT0G4EIkgl1XC6Sxq6ubl9afiLDymBPMNGYuSoAw8mJg0jL+Xyh6OfGc7hx0
+PME4zb+zwzSzA2qwvKxOgHJnYOl0A/lWy7Ct/ozOkjJqGSKEe8GsVuaBTPP+BRyI7XRgtc85YgGI
+0zFrUrLvcARldw91CnPY0yLoYtTe3oqv1n86qMX8NLWhq9X0yrafW8+TSb2yUyf3+BaPULflhM86
+W/PK/0JntO95+FuJ2J3GoRJzNy4XNE6aqQIlX+YqTABg6anIijjq42P7usI1RQlssncIuxQsPMBy
+WTAn3iaZCKsfsgW5SY6GRUpoMIYpmcQ3Fep4Ik+IxiZrwsGbB/52qrDAGi9ItZCIpohmB2jTYtWR
+79GkABupPyQ15JICMssAaRgRXxi81j/0p/Wp3hj80Eg6UfnJEcj1GRnLAF1X1+DAwEMsvmyMOGCh
+Px3sfVDDVxABOlJKTdZxtKdX2rwI6PTXid2TuuqCQ7bj79CfoItg/BQHfA9Qmkh8

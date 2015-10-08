@@ -1,491 +1,169 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Controller
- * @subpackage Dispatcher
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_Loader */
-require_once 'Zend/Loader.php';
-
-/** Zend_Controller_Dispatcher_Abstract */
-require_once 'Zend/Controller/Dispatcher/Abstract.php';
-
-/**
- * @category   Zend
- * @package    Zend_Controller
- * @subpackage Dispatcher
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Controller_Dispatcher_Standard extends Zend_Controller_Dispatcher_Abstract
-{
-    /**
-     * Current dispatchable directory
-     * @var string
-     */
-    protected $_curDirectory;
-
-    /**
-     * Current module (formatted)
-     * @var string
-     */
-    protected $_curModule;
-
-    /**
-     * Controller directory(ies)
-     * @var array
-     */
-    protected $_controllerDirectory = array();
-
-    /**
-     * Constructor: Set current module to default value
-     *
-     * @param  array $params
-     * @return void
-     */
-    public function __construct(array $params = array())
-    {
-        parent::__construct($params);
-        $this->_curModule = $this->getDefaultModule();
-    }
-
-    /**
-     * Add a single path to the controller directory stack
-     *
-     * @param string $path
-     * @param string $module
-     * @return Zend_Controller_Dispatcher_Standard
-     */
-    public function addControllerDirectory($path, $module = null)
-    {
-        if (null === $module) {
-            $module = $this->_defaultModule;
-        }
-
-        $module = (string) $module;
-        $path   = rtrim((string) $path, '/\\');
-
-        $this->_controllerDirectory[$module] = $path;
-        return $this;
-    }
-
-    /**
-     * Set controller directory
-     *
-     * @param array|string $directory
-     * @return Zend_Controller_Dispatcher_Standard
-     */
-    public function setControllerDirectory($directory, $module = null)
-    {
-        $this->_controllerDirectory = array();
-
-        if (is_string($directory)) {
-            $this->addControllerDirectory($directory, $module);
-        } elseif (is_array($directory)) {
-            foreach ((array) $directory as $module => $path) {
-                $this->addControllerDirectory($path, $module);
-            }
-        } else {
-            require_once 'Zend/Controller/Exception.php';
-            throw new Zend_Controller_Exception('Controller directory spec must be either a string or an array');
-        }
-
-        return $this;
-    }
-
-    /**
-     * Return the currently set directories for Zend_Controller_Action class
-     * lookup
-     *
-     * If a module is specified, returns just that directory.
-     *
-     * @param  string $module Module name
-     * @return array|string Returns array of all directories by default, single
-     * module directory if module argument provided
-     */
-    public function getControllerDirectory($module = null)
-    {
-        if (null === $module) {
-            return $this->_controllerDirectory;
-        }
-
-        $module = (string) $module;
-        if (array_key_exists($module, $this->_controllerDirectory)) {
-            return $this->_controllerDirectory[$module];
-        }
-
-        return null;
-    }
-
-    /**
-     * Remove a controller directory by module name
-     *
-     * @param  string $module
-     * @return bool
-     */
-    public function removeControllerDirectory($module)
-    {
-        $module = (string) $module;
-        if (array_key_exists($module, $this->_controllerDirectory)) {
-            unset($this->_controllerDirectory[$module]);
-            return true;
-        }
-        return false;
-    }
-
-    /**
-     * Format the module name.
-     *
-     * @param string $unformatted
-     * @return string
-     */
-    public function formatModuleName($unformatted)
-    {
-        if (($this->_defaultModule == $unformatted) && !$this->getParam('prefixDefaultModule')) {
-            return $unformatted;
-        }
-
-        return ucfirst($this->_formatName($unformatted));
-    }
-
-    /**
-     * Format action class name
-     *
-     * @param string $moduleName Name of the current module
-     * @param string $className Name of the action class
-     * @return string Formatted class name
-     */
-    public function formatClassName($moduleName, $className)
-    {
-        return $this->formatModuleName($moduleName) . '_' . $className;
-    }
-
-    /**
-     * Convert a class name to a filename
-     *
-     * @param string $class
-     * @return string
-     */
-    public function classToFilename($class)
-    {
-        return str_replace('_', DIRECTORY_SEPARATOR, $class) . '.php';
-    }
-
-    /**
-     * Returns TRUE if the Zend_Controller_Request_Abstract object can be
-     * dispatched to a controller.
-     *
-     * Use this method wisely. By default, the dispatcher will fall back to the
-     * default controller (either in the module specified or the global default)
-     * if a given controller does not exist. This method returning false does
-     * not necessarily indicate the dispatcher will not still dispatch the call.
-     *
-     * @param Zend_Controller_Request_Abstract $action
-     * @return boolean
-     */
-    public function isDispatchable(Zend_Controller_Request_Abstract $request)
-    {
-        $className = $this->getControllerClass($request);
-        if (!$className) {
-            return false;
-        }
-
-        if (class_exists($className, false)) {
-            return true;
-        }
-
-        $fileSpec    = $this->classToFilename($className);
-        $dispatchDir = $this->getDispatchDirectory();
-        $test        = $dispatchDir . DIRECTORY_SEPARATOR . $fileSpec;
-        return Zend_Loader::isReadable($test);
-    }
-
-    /**
-     * Dispatch to a controller/action
-     *
-     * By default, if a controller is not dispatchable, dispatch() will throw
-     * an exception. If you wish to use the default controller instead, set the
-     * param 'useDefaultControllerAlways' via {@link setParam()}.
-     *
-     * @param Zend_Controller_Request_Abstract $request
-     * @param Zend_Controller_Response_Abstract $response
-     * @return void
-     * @throws Zend_Controller_Dispatcher_Exception
-     */
-    public function dispatch(Zend_Controller_Request_Abstract $request, Zend_Controller_Response_Abstract $response)
-    {
-        $this->setResponse($response);
-
-        /**
-         * Get controller class
-         */
-        if (!$this->isDispatchable($request)) {
-            $controller = $request->getControllerName();
-            if (!$this->getParam('useDefaultControllerAlways') && !empty($controller)) {
-                require_once 'Zend/Controller/Dispatcher/Exception.php';
-                throw new Zend_Controller_Dispatcher_Exception('Invalid controller specified (' . $request->getControllerName() . ')');
-            }
-
-            $className = $this->getDefaultControllerClass($request);
-        } else {
-            $className = $this->getControllerClass($request);
-            if (!$className) {
-                $className = $this->getDefaultControllerClass($request);
-            }
-        }
-
-        /**
-         * Load the controller class file
-         */
-        $className = $this->loadClass($className);
-
-        /**
-         * Instantiate controller with request, response, and invocation
-         * arguments; throw exception if it's not an action controller
-         */
-        $controller = new $className($request, $this->getResponse(), $this->getParams());
-        if (!($controller instanceof Zend_Controller_Action_Interface) && 
-            !($controller instanceof Zend_Controller_Action)) {
-            require_once 'Zend/Controller/Dispatcher/Exception.php';
-            throw new Zend_Controller_Dispatcher_Exception(
-                'Controller "' . $className . '" is not an instance of Zend_Controller_Action_Interface'
-            );
-        }
-
-        /**
-         * Retrieve the action name
-         */
-        $action = $this->getActionMethod($request);
-
-        /**
-         * Dispatch the method call
-         */
-        $request->setDispatched(true);
-
-        // by default, buffer output
-        $disableOb = $this->getParam('disableOutputBuffering');
-        $obLevel   = ob_get_level();
-        if (empty($disableOb)) {
-            ob_start();
-        }
-
-        try {
-            $controller->dispatch($action);
-        } catch (Exception $e) {
-            // Clean output buffer on error
-            $curObLevel = ob_get_level();
-            if ($curObLevel > $obLevel) {
-                do {
-                    ob_get_clean();
-                    $curObLevel = ob_get_level();
-                } while ($curObLevel > $obLevel);
-            }
-
-            throw $e;
-        }
-
-        if (empty($disableOb)) {
-            $content = ob_get_clean();
-            $response->appendBody($content);
-        }
-
-        // Destroy the page controller instance and reflection objects
-        $controller = null;
-    }
-
-    /**
-     * Load a controller class
-     *
-     * Attempts to load the controller class file from
-     * {@link getControllerDirectory()}.  If the controller belongs to a
-     * module, looks for the module prefix to the controller class.
-     *
-     * @param string $className
-     * @return string Class name loaded
-     * @throws Zend_Controller_Dispatcher_Exception if class not loaded
-     */
-    public function loadClass($className)
-    {
-        $finalClass  = $className;
-        if (($this->_defaultModule != $this->_curModule)
-            || $this->getParam('prefixDefaultModule'))
-        {
-            $finalClass = $this->formatClassName($this->_curModule, $className);
-        }
-        if (class_exists($finalClass, false)) {
-            return $finalClass;
-        }
-
-        $dispatchDir = $this->getDispatchDirectory();
-        $loadFile    = $dispatchDir . DIRECTORY_SEPARATOR . $this->classToFilename($className);
-
-        if (!include_once $loadFile) {
-            require_once 'Zend/Controller/Dispatcher/Exception.php';
-            throw new Zend_Controller_Dispatcher_Exception('Cannot load controller class "' . $className . '" from file "' . $loadFile . "'");
-        }
-
-        if (!class_exists($finalClass, false)) {
-            require_once 'Zend/Controller/Dispatcher/Exception.php';
-            throw new Zend_Controller_Dispatcher_Exception('Invalid controller class ("' . $finalClass . '")');
-        }
-
-        return $finalClass;
-    }
-
-    /**
-     * Get controller class name
-     *
-     * Try request first; if not found, try pulling from request parameter;
-     * if still not found, fallback to default
-     *
-     * @param Zend_Controller_Request_Abstract $request
-     * @return string|false Returns class name on success
-     */
-    public function getControllerClass(Zend_Controller_Request_Abstract $request)
-    {
-        $controllerName = $request->getControllerName();
-        if (empty($controllerName)) {
-            if (!$this->getParam('useDefaultControllerAlways')) {
-                return false;
-            }
-            $controllerName = $this->getDefaultControllerName();
-            $request->setControllerName($controllerName);
-        }
-
-        $className = $this->formatControllerName($controllerName);
-
-        $controllerDirs      = $this->getControllerDirectory();
-        $module = $request->getModuleName();
-        if ($this->isValidModule($module)) {
-            $this->_curModule    = $module;
-            $this->_curDirectory = $controllerDirs[$module];
-        } elseif ($this->isValidModule($this->_defaultModule)) {
-            $request->setModuleName($this->_defaultModule);
-            $this->_curModule    = $this->_defaultModule;
-            $this->_curDirectory = $controllerDirs[$this->_defaultModule];
-        } else {
-            require_once 'Zend/Controller/Exception.php';
-            throw new Zend_Controller_Exception('No default module defined for this application');
-        }
-
-        return $className;
-    }
-
-    /**
-     * Determine if a given module is valid
-     *
-     * @param  string $module
-     * @return bool
-     */
-    public function isValidModule($module)
-    {
-        if (!is_string($module)) {
-            return false;
-        }
-
-        $module        = strtolower($module);
-        $controllerDir = $this->getControllerDirectory();
-        foreach (array_keys($controllerDir) as $moduleName) {
-            if ($module == strtolower($moduleName)) {
-                return true;
-            }
-        }
-
-        return false;
-    }
-
-    /**
-     * Retrieve default controller class
-     *
-     * Determines whether the default controller to use lies within the
-     * requested module, or if the global default should be used.
-     *
-     * By default, will only use the module default unless that controller does
-     * not exist; if this is the case, it falls back to the default controller
-     * in the default module.
-     *
-     * @param Zend_Controller_Request_Abstract $request
-     * @return string
-     */
-    public function getDefaultControllerClass(Zend_Controller_Request_Abstract $request)
-    {
-        $controller = $this->getDefaultControllerName();
-        $default    = $this->formatControllerName($controller);
-        $request->setControllerName($controller)
-                ->setActionName(null);
-
-        $module              = $request->getModuleName();
-        $controllerDirs      = $this->getControllerDirectory();
-        $this->_curModule    = $this->_defaultModule;
-        $this->_curDirectory = $controllerDirs[$this->_defaultModule];
-        if ($this->isValidModule($module)) {
-            $found = false;
-            if (class_exists($default, false)) {
-                $found = true;
-            } else {
-                $moduleDir = $controllerDirs[$module];
-                $fileSpec  = $moduleDir . DIRECTORY_SEPARATOR . $this->classToFilename($default);
-                if (Zend_Loader::isReadable($fileSpec)) {
-                    $found = true;
-                    $this->_curDirectory = $moduleDir;
-                }
-            }
-            if ($found) {
-                $request->setModuleName($module);
-                $this->_curModule    = $this->formatModuleName($module);
-            }
-        } else {
-            $request->setModuleName($this->_defaultModule);
-        }
-
-        return $default;
-    }
-
-    /**
-     * Return the value of the currently selected dispatch directory (as set by
-     * {@link getController()})
-     *
-     * @return string
-     */
-    public function getDispatchDirectory()
-    {
-        return $this->_curDirectory;
-    }
-
-    /**
-     * Determine the action name
-     *
-     * First attempt to retrieve from request; then from request params
-     * using action key; default to default action
-     *
-     * Returns formatted action name
-     *
-     * @param Zend_Controller_Request_Abstract $request
-     * @return string
-     */
-    public function getActionMethod(Zend_Controller_Request_Abstract $request)
-    {
-        $action = $request->getActionName();
-        if (empty($action)) {
-            $action = $this->getDefaultAction();
-            $request->setActionName($action);
-        }
-
-        return $this->formatActionName($action);
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

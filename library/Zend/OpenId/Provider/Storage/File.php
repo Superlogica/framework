@@ -1,397 +1,158 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_OpenId
- * @subpackage Zend_OpenId_Provider
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: File.php 13522 2009-01-06 16:35:55Z thomas $
- */
-
-/**
- * @see Zend_OpenId_Provider_Storage
- */
-require_once "Zend/OpenId/Provider/Storage.php";
-
-/**
- * External storage implemmentation using serialized files
- *
- * @category   Zend
- * @package    Zend_OpenId
- * @subpackage Zend_OpenId_Provider
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_OpenId_Provider_Storage_File extends Zend_OpenId_Provider_Storage
-{
-
-    /**
-     * Directory name to store data files in
-     *
-     * @var string $_dir
-     */
-    private $_dir;
-
-    /**
-     * Constructs storage object and creates storage directory
-     *
-     * @param string $dir directory name to store data files in
-     * @throws Zend_OpenId_Exception
-     */
-    public function __construct($dir = null)
-    {
-        if ($dir === null) {
-            $tmp = getenv('TMP');
-            if (empty($tmp)) {
-                $tmp = getenv('TEMP');
-                if (empty($tmp)) {
-                    $tmp = "/tmp";
-                }
-            }
-            $user = get_current_user();
-            if (is_string($user) && !empty($user)) {
-                $tmp .= '/' . $user;
-            }
-            $dir = $tmp . '/openid/provider';
-        }
-        $this->_dir = $dir;
-        if (!is_dir($this->_dir)) {
-            if (!@mkdir($this->_dir, 0700, 1)) {
-                throw new Zend_OpenId_Exception(
-                    "Cannot access storage directory $dir",
-                    Zend_OpenId_Exception::ERROR_STORAGE);
-            }
-        }
-        if (($f = fopen($this->_dir.'/assoc.lock', 'w+')) === null) {
-            throw new Zend_OpenId_Exception(
-                'Cannot create a lock file in the directory ' . $dir,
-                Zend_OpenId_Exception::ERROR_STORAGE);
-        }
-        fclose($f);
-        if (($f = fopen($this->_dir.'/user.lock', 'w+')) === null) {
-            throw new Zend_OpenId_Exception(
-                'Cannot create a lock file in the directory ' . $dir,
-                Zend_OpenId_Exception::ERROR_STORAGE);
-        }
-        fclose($f);
-    }
-
-    /**
-     * Stores information about session identified by $handle
-     *
-     * @param string $handle assiciation handle
-     * @param string $macFunc HMAC function (sha1 or sha256)
-     * @param string $secret shared secret
-     * @param string $expires expiration UNIX time
-     * @return bool
-     */
-    public function addAssociation($handle, $macFunc, $secret, $expires)
-    {
-        $name = $this->_dir . '/assoc_' . md5($handle);
-        $lock = @fopen($this->_dir . '/assoc.lock', 'w+');
-        if ($lock === false) {
-            return false;
-        }
-        if (!flock($lock, LOCK_EX)) {
-            fclose($lock);
-            return false;
-        }
-        $f = @fopen($name, 'w+');
-        if ($f === false) {
-            fclose($lock);
-            return false;
-        }
-        $data = serialize(array($handle, $macFunc, $secret, $expires));
-        fwrite($f, $data);
-        fclose($f);
-        fclose($lock);
-        return true;
-    }
-
-    /**
-     * Gets information about association identified by $handle
-     * Returns true if given association found and not expired and false
-     * otherwise
-     *
-     * @param string $handle assiciation handle
-     * @param string &$macFunc HMAC function (sha1 or sha256)
-     * @param string &$secret shared secret
-     * @param string &$expires expiration UNIX time
-     * @return bool
-     */
-    public function getAssociation($handle, &$macFunc, &$secret, &$expires)
-    {
-        $name = $this->_dir . '/assoc_' . md5($handle);
-        $lock = @fopen($this->_dir . '/assoc.lock', 'w+');
-        if ($lock === false) {
-            return false;
-        }
-        if (!flock($lock, LOCK_EX)) {
-            fclose($lock);
-            return false;
-        }
-        $f = @fopen($name, 'r');
-        if ($f === false) {
-            fclose($lock);
-            return false;
-        }
-        $ret = false;
-        $data = stream_get_contents($f);
-        if (!empty($data)) {
-            list($storedHandle, $macFunc, $secret, $expires) = unserialize($data);
-            if ($handle === $storedHandle && $expires > time()) {
-                $ret = true;
-            } else {
-                fclose($f);
-                @unlink($name);
-                fclose($lock);
-                return false;
-            }
-        }
-        fclose($f);
-        fclose($lock);
-        return $ret;
-    }
-
-    /**
-     * Removes information about association identified by $handle
-     *
-     * @param string $handle assiciation handle
-     * @return bool
-     */
-    public function delAssociation($handle)
-    {
-        $name = $this->_dir . '/assoc_' . md5($handle);
-        $lock = @fopen($this->_dir . '/assoc.lock', 'w+');
-        if ($lock === false) {
-            return false;
-        }
-        if (!flock($lock, LOCK_EX)) {
-            fclose($lock);
-            return false;
-        }
-        @unlink($name);
-        fclose($lock);
-        return true;
-    }
-
-    /**
-     * Register new user with given $id and $password
-     * Returns true in case of success and false if user with given $id already
-     * exists
-     *
-     * @param string $id user identity URL
-     * @param string $password encoded user password
-     * @return bool
-     */
-    public function addUser($id, $password)
-    {
-        $name = $this->_dir . '/user_' . md5($id);
-        $lock = @fopen($this->_dir . '/user.lock', 'w+');
-        if ($lock === false) {
-            return false;
-        }
-        if (!flock($lock, LOCK_EX)) {
-            fclose($lock);
-            return false;
-        }
-        $f = @fopen($name, 'x');
-        if ($f === false) {
-            fclose($lock);
-            return false;
-        }
-        $data = serialize(array($id, $password, array()));
-        fwrite($f, $data);
-        fclose($f);
-        fclose($lock);
-        return true;
-    }
-
-    /**
-     * Returns true if user with given $id exists and false otherwise
-     *
-     * @param string $id user identity URL
-     * @return bool
-     */
-    public function hasUser($id)
-    {
-        $name = $this->_dir . '/user_' . md5($id);
-        $lock = @fopen($this->_dir . '/user.lock', 'w+');
-        if ($lock === false) {
-            return false;
-        }
-        if (!flock($lock, LOCK_SH)) {
-            fclose($lock);
-            return false;
-        }
-        $f = @fopen($name, 'r');
-        if ($f === false) {
-            fclose($lock);
-            return false;
-        }
-        $ret = false;
-        $data = stream_get_contents($f);
-        if (!empty($data)) {
-            list($storedId, $storedPassword, $trusted) = unserialize($data);
-            if ($id === $storedId) {
-                $ret = true;
-            }
-        }
-        fclose($f);
-        fclose($lock);
-        return $ret;
-    }
-
-    /**
-     * Verify if user with given $id exists and has specified $password
-     *
-     * @param string $id user identity URL
-     * @param string $password user password
-     * @return bool
-     */
-    public function checkUser($id, $password)
-    {
-        $name = $this->_dir . '/user_' . md5($id);
-        $lock = @fopen($this->_dir . '/user.lock', 'w+');
-        if ($lock === false) {
-            return false;
-        }
-        if (!flock($lock, LOCK_SH)) {
-            fclose($lock);
-            return false;
-        }
-        $f = @fopen($name, 'r');
-        if ($f === false) {
-            fclose($lock);
-            return false;
-        }
-        $ret = false;
-        $data = stream_get_contents($f);
-        if (!empty($data)) {
-            list($storedId, $storedPassword, $trusted) = unserialize($data);
-            if ($id === $storedId && $password === $storedPassword) {
-                $ret = true;
-            }
-        }
-        fclose($f);
-        fclose($lock);
-        return $ret;
-    }
-
-    /**
-     * Removes information abou specified user
-     *
-     * @param string $id user identity URL
-     * @return bool
-     */
-    public function delUser($id)
-    {
-        $name = $this->_dir . '/user_' . md5($id);
-        $lock = @fopen($this->_dir . '/user.lock', 'w+');
-        if ($lock === false) {
-            return false;
-        }
-        if (!flock($lock, LOCK_EX)) {
-            fclose($lock);
-            return false;
-        }
-        @unlink($name);
-        fclose($lock);
-        return true;
-    }
-
-    /**
-     * Returns array of all trusted/untrusted sites for given user identified
-     * by $id
-     *
-     * @param string $id user identity URL
-     * @return array
-     */
-    public function getTrustedSites($id)
-    {
-        $name = $this->_dir . '/user_' . md5($id);
-        $lock = @fopen($this->_dir . '/user.lock', 'w+');
-        if ($lock === false) {
-            return false;
-        }
-        if (!flock($lock, LOCK_SH)) {
-            fclose($lock);
-            return false;
-        }
-        $f = @fopen($name, 'r');
-        if ($f === false) {
-            fclose($lock);
-            return false;
-        }
-        $ret = false;
-        $data = stream_get_contents($f);
-        if (!empty($data)) {
-            list($storedId, $storedPassword, $trusted) = unserialize($data);
-            if ($id === $storedId) {
-                $ret = $trusted;
-            }
-        }
-        fclose($f);
-        fclose($lock);
-        return $ret;
-    }
-
-    /**
-     * Stores information about trusted/untrusted site for given user
-     *
-     * @param string $id user identity URL
-     * @param string $site site URL
-     * @param mixed $trusted trust data from extension or just a boolean value
-     * @return bool
-     */
-    public function addSite($id, $site, $trusted)
-    {
-        $name = $this->_dir . '/user_' . md5($id);
-        $lock = @fopen($this->_dir . '/user.lock', 'w+');
-        if ($lock === false) {
-            return false;
-        }
-        if (!flock($lock, LOCK_EX)) {
-            fclose($lock);
-            return false;
-        }
-        $f = @fopen($name, 'r+');
-        if ($f === false) {
-            fclose($lock);
-            return false;
-        }
-        $ret = false;
-        $data = stream_get_contents($f);
-        if (!empty($data)) {
-            list($storedId, $storedPassword, $sites) = unserialize($data);
-            if ($id === $storedId) {
-                if ($trusted === null) {
-                    unset($sites[$site]);
-                } else {
-                    $sites[$site] = $trusted;
-                }
-                rewind($f);
-                ftruncate($f, 0);
-                $data = serialize(array($id, $storedPassword, $sites));
-                fwrite($f, $data);
-                $ret = true;
-            }
-        }
-        fclose($f);
-        fclose($lock);
-        return $ret;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

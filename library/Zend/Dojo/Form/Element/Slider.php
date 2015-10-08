@@ -1,199 +1,39 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Dojo
- * @subpackage Form_Element
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_Dojo_Form_Element_Dijit */
-require_once 'Zend/Dojo/Form/Element/Dijit.php';
-
-/**
- * Abstract Slider dijit
- * 
- * @uses       Zend_Dojo_Form_Element_Dijit
- * @package    Zend_Dojo
- * @subpackage Form_Element
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Slider.php 10003 2008-07-09 02:40:49Z matthew $
- */
-abstract class Zend_Dojo_Form_Element_Slider extends Zend_Dojo_Form_Element_Dijit
-{
-    /**
-     * Set clickSelect flag
-     *
-     * @param  bool $clickSelect
-     * @return Zend_Dojo_Form_Element_TextBox
-     */
-    public function setClickSelect($flag)
-    {
-        $this->setDijitParam('clickSelect', (bool) $flag);
-        return $this;
-    }
-
-    /**
-     * Retrieve clickSelect flag
-     *
-     * @return bool
-     */
-    public function getClickSelect()
-    {
-        if (!$this->hasDijitParam('clickSelect')) {
-            return false;
-        }
-        return $this->getDijitParam('clickSelect');
-    }
-
-    /**
-     * Set intermediateChanges flag
-     *
-     * @param  bool $intermediateChanges
-     * @return Zend_Dojo_Form_Element_TextBox
-     */
-    public function setIntermediateChanges($flag)
-    {
-        $this->setDijitParam('intermediateChanges', (bool) $flag);
-        return $this;
-    }
-
-    /**
-     * Retrieve intermediateChanges flag
-     *
-     * @return bool
-     */
-    public function getIntermediateChanges()
-    {
-        if (!$this->hasDijitParam('intermediateChanges')) {
-            return false;
-        }
-        return $this->getDijitParam('intermediateChanges');
-    }
-
-    /**
-     * Set showButtons flag
-     *
-     * @param  bool $showButtons
-     * @return Zend_Dojo_Form_Element_TextBox
-     */
-    public function setShowButtons($flag)
-    {
-        $this->setDijitParam('showButtons', (bool) $flag);
-        return $this;
-    }
-
-    /**
-     * Retrieve showButtons flag
-     *
-     * @return bool
-     */
-    public function getShowButtons()
-    {
-        if (!$this->hasDijitParam('showButtons')) {
-            return false;
-        }
-        return $this->getDijitParam('showButtons');
-    }
-
-    /**
-     * Set discreteValues
-     *
-     * @param  int $value
-     * @return Zend_Dojo_Form_Element_TextBox
-     */
-    public function setDiscreteValues($value)
-    {
-        $this->setDijitParam('discreteValues', (int) $value);
-        return $this;
-    }
-
-    /**
-     * Retrieve discreteValues
-     *
-     * @return int|null
-     */
-    public function getDiscreteValues()
-    {
-        return $this->getDijitParam('discreteValues');
-    }
-
-    /**
-     * Set maximum
-     *
-     * @param  int $value
-     * @return Zend_Dojo_Form_Element_TextBox
-     */
-    public function setMaximum($value)
-    {
-        $this->setDijitParam('maximum', (int) $value);
-        return $this;
-    }
-
-    /**
-     * Retrieve maximum
-     *
-     * @return int|null
-     */
-    public function getMaximum()
-    {
-        return $this->getDijitParam('maximum');
-    }
-
-    /**
-     * Set minimum
-     *
-     * @param  int $value
-     * @return Zend_Dojo_Form_Element_TextBox
-     */
-    public function setMinimum($value)
-    {
-        $this->setDijitParam('minimum', (int) $value);
-        return $this;
-    }
-
-    /**
-     * Retrieve minimum
-     *
-     * @return int|null
-     */
-    public function getMinimum()
-    {
-        return $this->getDijitParam('minimum');
-    }
-
-    /**
-     * Set pageIncrement
-     *
-     * @param  int $value
-     * @return Zend_Dojo_Form_Element_TextBox
-     */
-    public function setPageIncrement($value)
-    {
-        $this->setDijitParam('pageIncrement', (int) $value);
-        return $this;
-    }
-
-    /**
-     * Retrieve pageIncrement
-     *
-     * @return int|null
-     */
-    public function getPageIncrement()
-    {
-        return $this->getDijitParam('pageIncrement');
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

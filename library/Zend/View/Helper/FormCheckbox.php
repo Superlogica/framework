@@ -1,162 +1,68 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_View
- * @subpackage Helper
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-
-/**
- * Abstract class for extension
- */
-require_once 'Zend/View/Helper/FormElement.php';
-
-
-/**
- * Helper to generate a "checkbox" element
- *
- * @category   Zend
- * @package    Zend_View
- * @subpackage Helper
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_View_Helper_FormCheckbox extends Zend_View_Helper_FormElement
-{
-    /**
-     * Default checked/unchecked options
-     * @var array
-     */
-    protected static $_defaultCheckedOptions = array(
-        'checked'   => '1',
-        'unChecked' => '0'
-    );
-
-    /**
-     * Generates a 'checkbox' element.
-     *
-     * @access public
-     *
-     * @param string|array $name If a string, the element name.  If an
-     * array, all other parameters are ignored, and the array elements
-     * are extracted in place of added parameters.
-     * @param mixed $value The element value.
-     * @param array $attribs Attributes for the element tag.
-     * @return string The element XHTML.
-     */
-    public function formCheckbox($name, $value = null, $attribs = null, array $checkedOptions = null)
-    {
-        $info = $this->_getInfo($name, $value, $attribs);
-        extract($info); // name, id, value, attribs, options, listsep, disable
-
-        $checked = false;
-        if (isset($attribs['checked']) && $attribs['checked']) {
-            $checked = true;
-            unset($attribs['checked']);
-        } elseif (isset($attribs['checked'])) {
-            $checked = false;
-            unset($attribs['checked']);
-        }
-
-        $checkedOptions = self::determineCheckboxInfo($value, $checked, $checkedOptions);
-
-        // is the element disabled?
-        $disabled = '';
-        if ($disable) {
-            $disabled = ' disabled="disabled"';
-        }
-
-        // XHTML or HTML end tag?
-        $endTag = ' />';
-        if (($this->view instanceof Zend_View_Abstract) && !$this->view->doctype()->isXhtml()) {
-            $endTag= '>';
-        }
-
-        // build the element
-        $xhtml = '';
-        if (!strstr($name, '[]')) {
-            $xhtml = $this->_hidden($name, $checkedOptions['unCheckedValue']);
-        }
-        $xhtml .= '<input type="checkbox"'
-                . ' name="' . $this->view->escape($name) . '"'
-                . ' id="' . $this->view->escape($id) . '"'
-                . ' value="' . $this->view->escape($checkedOptions['checkedValue']) . '"'
-                . $checkedOptions['checkedString']
-                . $disabled
-                . $this->_htmlAttribs($attribs)
-                . $endTag;
-
-        return $xhtml;
-    }
-
-    /**
-     * Determine checkbox information
-     * 
-     * @param  string $value 
-     * @param  bool $checked 
-     * @param  array|null $checkedOptions 
-     * @return array
-     */
-    public static function determineCheckboxInfo($value, $checked, array $checkedOptions = null)
-    {
-        // Checked/unchecked values
-        $checkedValue   = null;
-        $unCheckedValue = null;
-        if (is_array($checkedOptions)) {
-            if (array_key_exists('checked', $checkedOptions)) {
-                $checkedValue = (string) $checkedOptions['checked'];
-                unset($checkedOptions['checked']);
-            }
-            if (array_key_exists('unChecked', $checkedOptions)) {
-                $unCheckedValue = (string) $checkedOptions['unChecked'];
-                unset($checkedOptions['unChecked']);
-            }
-            if (null === $checkedValue) {
-                $checkedValue = array_shift($checkedOptions);
-            }
-            if (null === $unCheckedValue) {
-                $unCheckedValue = array_shift($checkedOptions);
-            }
-        } elseif ($value !== null) {
-            $unCheckedValue = self::$_defaultCheckedOptions['unChecked'];
-        } else {
-            $checkedValue   = self::$_defaultCheckedOptions['checked'];
-            $unCheckedValue = self::$_defaultCheckedOptions['unChecked'];
-        }
-
-        // is the element checked?
-        $checkedString = '';
-        if ($checked || ($value === $checkedValue)) {
-            $checkedString = ' checked="checked"';
-            $checked = true;
-        } else {
-            $checked = false;
-        }
-
-        // Checked value should be value if no checked options provided
-        if ($checkedValue == null) {
-            $checkedValue = $value;
-        }
-
-        return array(
-            'checked'        => $checked,
-            'checkedString'  => $checkedString,
-            'checkedValue'   => $checkedValue,
-            'unCheckedValue' => $unCheckedValue,
-        );
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

@@ -1,128 +1,41 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @package    Zend_Pdf
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-
-/**
- * PHP Array (OO wrapper)
- * Used to be returned by reference by __get() methods
- *
- * @package    Zend_Pdf
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @todo       also implement Countable for PHP 5.1 but not yet to stay 5.0 compatible
- */
-class Zend_Pdf_PhpArray implements ArrayAccess, Iterator, Countable {
-    /**
-     * Array element
-     * @var mixed
-     */
-    protected $_items = array();
-
-
-    /**
-     * Object constructor
-     *
-     * @param array $srcArray
-     */
-    public function __construct($srcArray = null)
-    {
-        if ($srcArray === null) {
-            reset($this->_items);
-        } else if (is_array($srcArray)) {
-            $this->_items = $srcArray;
-        } else {
-            throw new Exception('Array can be initialized only by other array');
-        }
-    }
-
-
-    public function current()
-    {
-        return current($this->_items);
-    }
-
-
-    public function next()
-    {
-        return next($this->_items);
-    }
-
-
-    public function key()
-    {
-        return key($this->_items);
-    }
-
-
-    public function valid() {
-        return current($this->_items)!==false;
-    }
-
-
-    public function rewind()
-    {
-        reset($this->_items);
-    }
-
-
-    public function offsetExists($offset)
-    {
-        return array_key_exists($offset, $this->_items);
-    }
-
-
-    public function offsetGet($offset)
-    {
-        return $this->_items[$offset];
-    }
-
-
-    public function offsetSet($offset, $value)
-    {
-        if ($offset === null) {
-            $this->_items[]        = $value;
-        } else {
-            $this->_items[$offset] = $value;
-        }
-    }
-
-
-    public function offsetUnset($offset)
-    {
-        unset($this->_items[$offset]);
-    }
-
-
-    public function clear()
-    {
-        $this->_items = array();
-    }
-    
-    /**
-     * Defined by Countable interface
-     *
-     * @return int
-     */
-    public function count()
-    {
-        return count($this->_items);
-    }
-    
-}
-
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

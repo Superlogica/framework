@@ -1,175 +1,53 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Search_Lucene
- * @subpackage Index
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_Search_Lucene_Index_TermsStream_Interface */
-require_once 'Zend/Search/Lucene/Index/TermsStream/Interface.php';
-
-/** Zend_Search_Lucene_Index_TermsPriorityQueue */
-require_once 'Zend/Search/Lucene/Index/TermsPriorityQueue.php';
-
-
-/**
- * @category   Zend
- * @package    Zend_Search_Lucene
- * @subpackage Index
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Search_Lucene_TermStreamsPriorityQueue implements Zend_Search_Lucene_Index_TermsStream_Interface
-{
-	/**
-	 * Array of term streams (Zend_Search_Lucene_Index_TermsStream_Interface objects)
-	 *
-	 * @var array
-	 */
-	protected $_termStreams;
-
-	/**
-     * Terms stream queue
-     *
-     * @var Zend_Search_Lucene_Index_TermsPriorityQueue
-     */
-    protected $_termsStreamQueue = null;
-
-    /**
-     * Last Term in a terms stream
-     *
-     * @var Zend_Search_Lucene_Index_Term
-     */
-    protected $_lastTerm = null;
-
-
-    /**
-     * Object constructor
-     *
-     * @param array $termStreams  array of term streams (Zend_Search_Lucene_Index_TermsStream_Interface objects)
-     */
-	public function __construct(array $termStreams)
-	{
-		$this->_termStreams = $termStreams;
-
-		$this->resetTermsStream();
-	}
-
-	/**
-     * Reset terms stream.
-     */
-    public function resetTermsStream()
-    {
-        $this->_termsStreamQueue = new Zend_Search_Lucene_Index_TermsPriorityQueue();
-
-        foreach ($this->_termStreams as $termStream) {
-            $termStream->resetTermsStream();
-
-            // Skip "empty" containers
-            if ($termStream->currentTerm() !== null) {
-                $this->_termsStreamQueue->put($termStream);
-            }
-        }
-
-        $this->nextTerm();
-    }
-
-    /**
-     * Skip terms stream up to specified term preffix.
-     *
-     * Prefix contains fully specified field info and portion of searched term
-     *
-     * @param Zend_Search_Lucene_Index_Term $prefix
-     */
-    public function skipTo(Zend_Search_Lucene_Index_Term $prefix)
-    {
-        $termStreams = array();
-
-        while (($termStream = $this->_termsStreamQueue->pop()) !== null) {
-            $termStreams[] = $termStream;
-        }
-
-        foreach ($termStreams as $termStream) {
-            $termStream->skipTo($prefix);
-
-            if ($termStream->currentTerm() !== null) {
-                $this->_termsStreamQueue->put($termStream);
-            }
-        }
-
-        $this->nextTerm();
-    }
-
-    /**
-     * Scans term streams and returns next term
-     *
-     * @return Zend_Search_Lucene_Index_Term|null
-     */
-    public function nextTerm()
-    {
-        while (($termStream = $this->_termsStreamQueue->pop()) !== null) {
-            if ($this->_termsStreamQueue->top() === null ||
-                $this->_termsStreamQueue->top()->currentTerm()->key() !=
-                            $termStream->currentTerm()->key()) {
-                // We got new term
-                $this->_lastTerm = $termStream->currentTerm();
-
-                if ($termStream->nextTerm() !== null) {
-                    // Put segment back into the priority queue
-                    $this->_termsStreamQueue->put($termStream);
-                }
-
-                return $this->_lastTerm;
-            }
-
-            if ($termStream->nextTerm() !== null) {
-                // Put segment back into the priority queue
-                $this->_termsStreamQueue->put($termStream);
-            }
-        }
-
-        // End of stream
-        $this->_lastTerm = null;
-
-        return null;
-    }
-
-    /**
-     * Returns term in current position
-     *
-     * @return Zend_Search_Lucene_Index_Term|null
-     */
-    public function currentTerm()
-    {
-        return $this->_lastTerm;
-    }
-
-    /**
-     * Close terms stream
-     *
-     * Should be used for resources clean up if stream is not read up to the end
-     */
-    public function closeTermsStream()
-    {
-        while (($termStream = $this->_termsStreamQueue->pop()) !== null) {
-            $termStream->closeTermsStream();
-        }
-
-        $this->_termsStreamQueue = null;
-        $this->_lastTerm         = null;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+ErfJPLrwEa+/QkJ9AG==

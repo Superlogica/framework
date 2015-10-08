@@ -1,197 +1,60 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Tool
- * @subpackage Framework
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id$
- */
-
-/**
- * @see Zend_Tool_Project_Context_Filesystem_File
- */
-require_once 'Zend/Tool/Project/Context/Filesystem/File.php';
-
-/**
- * @see Zend_CodeGenerator_Php_File
- */
-require_once 'Zend/CodeGenerator/Php/File.php';
-
-/**
- * @see Zend_Filter_Word_DashToCamelCase
- */
-require_once 'Zend/Filter/Word/DashToCamelCase.php';
-
-/**
- * This class is the front most class for utilizing Zend_Tool_Project
- *
- * A profile is a hierarchical set of resources that keep track of
- * items within a specific project.
- * 
- * @category   Zend
- * @package    Zend_Tool
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Tool_Project_Context_Zf_ControllerFile extends Zend_Tool_Project_Context_Filesystem_File 
-{
-    
-    /**
-     * @var string
-     */
-    protected $_controllerName = 'index';
-    
-    /**
-     * @var string
-     */
-    protected $_filesystemName = 'controllerName';
-    
-    /**
-     * init()
-     *
-     * @return Zend_Tool_Project_Context_Zf_ControllerFile
-     */
-    public function init()
-    {
-        $this->_controllerName = $this->_resource->getAttribute('controllerName');
-        $this->_filesystemName = ucfirst($this->_controllerName) . 'Controller.php';
-        parent::init();
-        return $this;
-    }
-    
-    /**
-     * getPersistentAttributes
-     *
-     * @return array
-     */
-    public function getPersistentAttributes()
-    {
-        return array(
-            'controllerName' => $this->getControllerName()
-            );
-    }
-    
-    /**
-     * getName()
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return 'ControllerFile';
-    }
-    
-    /**
-     * getControllerName()
-     *
-     * @return string
-     */
-    public function getControllerName()
-    {
-        return $this->_controllerName;
-    }
-  
-    /**
-     * getContents()
-     *
-     * @return string
-     */
-    public function getContents()
-    {
-
-        $filter = new Zend_Filter_Word_DashToCamelCase();
-        
-        $className = $filter->filter($this->_controllerName) . 'Controller';
-        
-        $codeGenFile = new Zend_CodeGenerator_Php_File(array(
-            'fileName' => $this->getPath(),
-            'classes' => array(
-                new Zend_CodeGenerator_Php_Class(array(
-                    'name' => $className,
-                    'extendedClass' => 'Zend_Controller_Action',
-                    'methods' => array(
-                        new Zend_CodeGenerator_Php_Method(array(
-                            'name' => 'init',
-                            'body' => '/* Initialize action controller here */',
-                        ))
-                    )
-                ))
-            )
-        ));
-        
-
-        if ($className == 'ErrorController') {
-            
-            $codeGenFile = new Zend_CodeGenerator_Php_File(array(
-                'fileName' => $this->getPath(),
-                'classes' => array(
-                    new Zend_CodeGenerator_Php_Class(array(
-                        'name' => $className,
-                        'extendedClass' => 'Zend_Controller_Action',
-                        'methods' => array(
-                            new Zend_CodeGenerator_Php_Method(array(
-                                'name' => 'errorAction',
-                                'body' => <<<EOS
-\$errors = \$this->_getParam('error_handler');
-
-switch (\$errors->type) { 
-    case Zend_Controller_Plugin_ErrorHandler::EXCEPTION_NO_CONTROLLER:
-    case Zend_Controller_Plugin_ErrorHandler::EXCEPTION_NO_ACTION:
-
-        // 404 error -- controller or action not found
-        \$this->getResponse()->setHttpResponseCode(404);
-        \$this->view->message = 'Page not found';
-        break;
-    default:
-        // application error 
-        \$this->getResponse()->setHttpResponseCode(500);
-        \$this->view->message = 'Application error';
-        break;
-}
-
-\$this->view->exception = \$errors->exception;
-\$this->view->request   = \$errors->request;
-EOS
-                                ))
-                            )
-                        ))
-                    )
-                ));
-
-        }
-        
-        // store the generator into the registry so that the addAction command can use the same object later
-        Zend_CodeGenerator_Php_File::registerFileCodeGenerator($codeGenFile); // REQUIRES filename to be set
-        return $codeGenFile->generate();
-    }
-    
-    /**
-     * addAction()
-     *
-     * @param string $actionName
-     */
-    public function addAction($actionName)
-    {
-        //require_once $this->getPath();
-        //$codeGenFile = Zend_CodeGenerator_Php_File::fromReflection(new Zend_Reflection_File($this->getPath()));
-        $codeGenFile = Zend_CodeGenerator_Php_File::fromReflectedFileName($this->getPath());
-        $codeGenFileClasses = $codeGenFile->getClasses();
-        $class = array_shift($codeGenFileClasses);
-        $class->setMethod(array('name' => $actionName . 'Action', 'body' => '        // action body here'));
-        file_put_contents($this->getPath(), $codeGenFile->generate());
-    }
-    
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+1s2GM8UjpSSoLG==

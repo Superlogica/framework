@@ -1,598 +1,140 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Dojo
- * @subpackage Form_Element
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_Dojo_Form_Element_Dijit */
-require_once 'Zend/Dojo/Form/Element/Dijit.php';
-
-/**
- * Editor dijit
- * 
- * @uses       Zend_Dojo_Form_Element_Dijit
- * @category   Zend
- * @package    Zend_Dojo
- * @subpackage Form_Element
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Dojo_Form_Element_Editor extends Zend_Dojo_Form_Element_Dijit
-{
-    /**
-     * @var string View helper
-     */
-    public $helper = 'Editor';
-
-    /**
-     * Add a single event to connect to the editing area
-     * 
-     * @param  string $event 
-     * @return Zend_Dojo_Form_Element_Editor
-     */
-    public function addCaptureEvent($event)
-    {
-        $event = (string) $event;
-        $captureEvents = $this->getCaptureEvents();
-        if (in_array($event, $captureEvents)) {
-            return $this;
-        }
-
-        $captureEvents[] = (string) $event;
-        $this->setDijitParam('captureEvents', $captureEvents);
-        return $this;
-    }
-
-    /**
-     * Add multiple capture events
-     * 
-     * @param  array $events 
-     * @return Zend_Dojo_Form_Element_Editor
-     */
-    public function addCaptureEvents(array $events)
-    {
-        foreach ($events as $event) {
-            $this->addCaptureEvent($event);
-        }
-        return $this;
-    }
-
-    /**
-     * Overwrite many capture events at once
-     * 
-     * @param  array $events 
-     * @return Zend_Dojo_Form_Element_Editor
-     */
-    public function setCaptureEvents(array $events)
-    {
-        $this->clearCaptureEvents();
-        $this->addCaptureEvents($events);
-        return $this;
-    }
-
-    /**
-     * Get all capture events
-     * 
-     * @return array
-     */
-    public function getCaptureEvents()
-    {
-        if (!$this->hasDijitParam('captureEvents')) {
-            return array();
-        }
-        return $this->getDijitParam('captureEvents');
-    }
-
-    /**
-     * Is a given capture event registered?
-     * 
-     * @param  string $event
-     * @return bool
-     */
-    public function hasCaptureEvent($event)
-    {
-        $captureEvents = $this->getCaptureEvents();
-        return in_array((string) $event, $captureEvents);
-    }
-
-    /**
-     * Remove a given capture event
-     * 
-     * @param  string $event
-     * @return Zend_Dojo_Form_Element_Editor
-     */
-    public function removeCaptureEvent($event)
-    {
-        $event = (string) $event;
-        $captureEvents = $this->getCaptureEvents();
-        if (false === ($index = array_search($event, $captureEvents))) {
-            return $this;
-        }
-        unset($captureEvents[$index]);
-        $this->setDijitParam('captureEvents', $captureEvents);
-        return $this;
-    }
-
-    /**
-     * Clear all capture events
-     * 
-     * @return Zend_Dojo_Form_Element_Editor
-     */
-    public function clearCaptureEvents()
-    {
-        return $this->removeDijitParam('captureEvents');
-    }
-
-    /**
-     * Add a single event to the dijit
-     * 
-     * @param  string $event 
-     * @return Zend_Dojo_Form_Element_Editor
-     */
-    public function addEvent($event)
-    {
-        $event = (string) $event;
-        $events = $this->getEvents();
-        if (in_array($event, $events)) {
-            return $this;
-        }
-
-        $events[] = (string) $event;
-        $this->setDijitParam('events', $events);
-        return $this;
-    }
-
-    /**
-     * Add multiple events
-     * 
-     * @param  array $events 
-     * @return Zend_Dojo_Form_Element_Editor
-     */
-    public function addEvents(array $events)
-    {
-        foreach ($events as $event) {
-            $this->addEvent($event);
-        }
-        return $this;
-    }
-
-    /**
-     * Overwrite many events at once
-     * 
-     * @param  array $events 
-     * @return Zend_Dojo_Form_Element_Editor
-     */
-    public function setEvents(array $events)
-    {
-        $this->clearEvents();
-        $this->addEvents($events);
-        return $this;
-    }
-
-    /**
-     * Get all events
-     * 
-     * @return array
-     */
-    public function getEvents()
-    {
-        if (!$this->hasDijitParam('events')) {
-            return array();
-        }
-        return $this->getDijitParam('events');
-    }
-
-    /**
-     * Is a given event registered?
-     * 
-     * @param  string $event
-     * @return bool
-     */
-    public function hasEvent($event)
-    {
-        $events = $this->getEvents();
-        return in_array((string) $event, $events);
-    }
-
-    /**
-     * Remove a given event
-     * 
-     * @param  string $event
-     * @return Zend_Dojo_Form_Element_Editor
-     */
-    public function removeEvent($event)
-    {
-        $events = $this->getEvents();
-        if (false === ($index = array_search($event, $events))) {
-            return $this;
-        }
-        unset($events[$index]);
-        $this->setDijitParam('events', $events);
-        return $this;
-    }
-
-    /**
-     * Clear all events
-     * 
-     * @return Zend_Dojo_Form_Element_Editor
-     */
-    public function clearEvents()
-    {
-        return $this->removeDijitParam('events');
-    }
-
-    /**
-     * Add a single editor plugin
-     * 
-     * @param  string $plugin 
-     * @return Zend_Dojo_Form_Element_Editor
-     */
-    public function addPlugin($plugin)
-    {
-        $plugin = (string) $plugin;
-        $plugins = $this->getPlugins();
-        if (in_array($plugin, $plugins)) {
-            return $this;
-        }
-
-        $plugins[] = (string) $plugin;
-        $this->setDijitParam('plugins', $plugins);
-        return $this;
-    }
-
-    /**
-     * Add multiple plugins
-     * 
-     * @param  array $plugins 
-     * @return Zend_Dojo_Form_Element_Editor
-     */
-    public function addPlugins(array $plugins)
-    {
-        foreach ($plugins as $plugin) {
-            $this->addPlugin($plugin);
-        }
-        return $this;
-    }
-
-    /**
-     * Overwrite many plugins at once
-     * 
-     * @param  array $plugins 
-     * @return Zend_Dojo_Form_Element_Editor
-     */
-    public function setPlugins(array $plugins)
-    {
-        $this->clearPlugins();
-        $this->addPlugins($plugins);
-        return $this;
-    }
-
-    /**
-     * Get all plugins
-     * 
-     * @return array
-     */
-    public function getPlugins()
-    {
-        if (!$this->hasDijitParam('plugins')) {
-            return array();
-        }
-        return $this->getDijitParam('plugins');
-    }
-
-    /**
-     * Is a given plugin registered?
-     * 
-     * @param  string $plugin
-     * @return bool
-     */
-    public function hasPlugin($plugin)
-    {
-        $plugins = $this->getPlugins();
-        return in_array((string) $plugin, $plugins);
-    }
-
-    /**
-     * Remove a given plugin
-     * 
-     * @param  string $plugin
-     * @return Zend_Dojo_Form_Element_Editor
-     */
-    public function removePlugin($plugin)
-    {
-        $plugins = $this->getPlugins();
-        if (false === ($index = array_search($plugin, $plugins))) {
-            return $this;
-        }
-        unset($plugins[$index]);
-        $this->setDijitParam('plugins', $plugins);
-        return $this;
-    }
-
-    /**
-     * Clear all plugins
-     * 
-     * @return Zend_Dojo_Form_Element_Editor
-     */
-    public function clearPlugins()
-    {
-        return $this->removeDijitParam('plugins');
-    }
-
-    /**
-     * Set edit action interval
-     * 
-     * @param  int $interval 
-     * @return Zend_Dojo_Form_Element_Editor
-     */
-    public function setEditActionInterval($interval)
-    {
-        return $this->setDijitParam('editActionInterval', (int) $interval);
-    }
-
-    /**
-     * Get edit action interval; defaults to 3
-     * 
-     * @return int
-     */
-    public function getEditActionInterval()
-    {
-        if (!$this->hasDijitParam('editActionInterval')) {
-            $this->setEditActionInterval(3);
-        }
-        return $this->getDijitParam('editActionInterval');
-    }
-
-    /**
-     * Set focus on load flag
-     * 
-     * @param  bool $flag 
-     * @return Zend_Dojo_Form_Element_Editor
-     */
-    public function setFocusOnLoad($flag)
-    {
-        return $this->setDijitParam('focusOnLoad', (bool) $flag);
-    }
-
-    /**
-     * Retrieve focus on load flag
-     * 
-     * @return bool
-     */
-    public function getFocusOnLoad()
-    {
-        if (!$this->hasDijitParam('focusOnLoad')) {
-             return false;
-        }
-        return $this->getDijitParam('focusOnLoad');
-    }
-
-    /**
-     * Set editor height
-     * 
-     * @param  string|int $height 
-     * @return Zend_Dojo_Form_Element_Editor
-     */
-    public function setHeight($height)
-    {
-        if (!preg_match('/^\d+(em|px|%)?$/i', $height)) {
-            require_once 'Zend/Form/Element/Exception.php';
-            throw new Zend_Form_Element_Exception('Invalid height provided; must be integer or CSS measurement');
-        }
-        if (!preg_match('/(em|px|%)$/', $height)) {
-            $height .= 'px';
-        }
-        return $this->setDijitParam('height', $height);
-    }
-
-    /**
-     * Retrieve height
-     * 
-     * @return string
-     */
-    public function getHeight()
-    {
-        if (!$this->hasDijitParam('height')) {
-            return '300px';
-        }
-        return $this->getDijitParam('height');
-    }
-
-    /**
-     * Set whether or not to inherit parent's width
-     * 
-     * @param  bool $flag 
-     * @return Zend_Dojo_Form_Element_Editor
-     */
-    public function setInheritWidth($flag)
-    {
-        return $this->setDijitParam('inheritWidth', (bool) $flag);
-    }
-
-    /**
-     * Whether or not to inherit the parent's width
-     * 
-     * @return bool
-     */
-    public function getInheritWidth()
-    {
-        if (!$this->hasDijitParam('inheritWidth')) {
-            return false;
-        }
-        return $this->getDijitParam('inheritWidth');
-    }
-
-    /**
-     * Set minimum height of editor
-     * 
-     * @param  string|int $minHeight 
-     * @return Zend_Dojo_Form_Element_Editor
-     */
-    public function setMinHeight($minHeight)
-    {
-        if (!preg_match('/^\d+(em)?$/i', $minHeight)) {
-            require_once 'Zend/Form/Element/Exception.php';
-            throw new Zend_Form_Element_Exception('Invalid minHeight provided; must be integer or CSS measurement');
-        }
-        if ('em' != substr($minHeight, -2)) {
-            $minHeight .= 'em';
-        }
-        return $this->setDijitParam('minHeight', $minHeight);
-    }
-
-    /**
-     * Get minimum height of editor
-     * 
-     * @return string
-     */
-    public function getMinHeight()
-    {
-        if (!$this->hasDijitParam('minHeight')) {
-            return '1em';
-        }
-        return $this->getDijitParam('minHeight');
-    }
-
-    /**
-     * Add a custom stylesheet
-     * 
-     * @param  string $styleSheet 
-     * @return Zend_Dojo_Form_Element_Editor
-     */
-    public function addStyleSheet($styleSheet)
-    {
-        $stylesheets = $this->getStyleSheets();
-        if (strstr($stylesheets, ';')) {
-            $stylesheets = explode(';', $stylesheets);
-        } elseif (!empty($stylesheets)) {
-            $stylesheets = (array) $stylesheets;
-        } else {
-            $stylesheets = array();
-        }
-        if (!in_array($styleSheet, $stylesheets)) {
-            $stylesheets[] = (string) $styleSheet;
-        }
-        return $this->setDijitParam('styleSheets', implode(';', $stylesheets));
-    }
-
-    /**
-     * Add multiple custom stylesheets
-     * 
-     * @param  array $styleSheets 
-     * @return Zend_Dojo_Form_Element_Editor
-     */
-    public function addStyleSheets(array $styleSheets)
-    {
-        foreach ($styleSheets as $styleSheet) {
-            $this->addStyleSheet($styleSheet);
-        }
-        return $this;
-    }
-
-    /**
-     * Overwrite all stylesheets
-     * 
-     * @param  array $styleSheets 
-     * @return Zend_Dojo_Form_Element_Editor
-     */
-    public function setStyleSheets(array $styleSheets)
-    {
-        $this->clearStyleSheets();
-        return $this->addStyleSheets($styleSheets);
-    }
-
-    /**
-     * Get all stylesheets
-     * 
-     * @return string
-     */
-    public function getStyleSheets()
-    {
-        if (!$this->hasDijitParam('styleSheets')) {
-            return '';
-        }
-        return $this->getDijitParam('styleSheets');
-    }
-
-    /**
-     * Is a given stylesheet registered?
-     * 
-     * @param  string $styleSheet 
-     * @return bool
-     */
-    public function hasStyleSheet($styleSheet)
-    {
-        $styleSheets = $this->getStyleSheets();
-        $styleSheets = explode(';', $styleSheets);
-        return in_array($styleSheet, $styleSheets);
-    }
-
-    /**
-     * Remove a single stylesheet
-     * 
-     * @param  string $styleSheet 
-     * @return Zend_Dojo_Form_Element_Editor
-     */
-    public function removeStyleSheet($styleSheet)
-    {
-        $styleSheets = $this->getStyleSheets();
-        $styleSheets = explode(';', $styleSheets);
-        if (false !== ($index = array_search($styleSheet, $styleSheets))) {
-            unset($styleSheets[$index]);
-            $this->setDijitParam('styleSheets', implode(';', $styleSheets));
-        }
-        return $this;
-    }
-
-    /**
-     * Clear all stylesheets
-     * 
-     * @return Zend_Dojo_Form_Element_Editor
-     */
-    public function clearStyleSheets()
-    {
-        if ($this->hasDijitParam('styleSheets')) {
-            $this->removeDijitParam('styleSheets');
-        }
-        return $this;
-    }
-
-    /**
-     * Set update interval
-     * 
-     * @param  int $interval 
-     * @return Zend_Dojo_Form_Element_Editor
-     */
-    public function setUpdateInterval($interval)
-    {
-        return $this->setDijitParam('updateInterval', (int) $interval);
-    }
-
-    /**
-     * Get update interval
-     * 
-     * @return int
-     */
-    public function getUpdateInterval()
-    {
-        if (!$this->hasDijitParam('updateInterval')) {
-             return 200;
-        }
-        return $this->getDijitParam('updateInterval');
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

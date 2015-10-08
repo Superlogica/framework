@@ -1,203 +1,59 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Crypt
- * @subpackage Math
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id$
- */
-
-/**
- * @see Zend_Crypt_Math_BigInteger_Interface
- */
-require_once 'Zend/Crypt/Math/BigInteger/Interface.php';
-
-/**
- * Support for arbitrary precision mathematics in PHP.
- *
- * Zend_Crypt_Math_BigInteger_Bcmath is a wrapper across the PHP BCMath
- * extension.
- *
- * @category   Zend
- * @package    Zend_Crypt
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Crypt_Math_BigInteger_Bcmath implements Zend_Crypt_Math_BigInteger_Interface
-{
-
-    /**
-     * Initialise a big integer into an extension specific type. This is not
-     * applicable to BCMath.
-     * @param string $operand
-     * @param int $base
-     * @return string
-     */
-    public function init($operand, $base = 10)
-    {
-        return $operand;
-    }
-
-    /**
-     * Adds two arbitrary precision numbers
-     *
-     * @param string $left_operand
-     * @param string $right_operand
-     * @return string
-     */
-    public function add($left_operand, $right_operand)
-    {
-        return bcadd($left_operand, $right_operand);
-    }
-
-    /**
-     * @param string $left_operand
-     * @param string $right_operand
-     * @return string
-     */
-    public function subtract($left_operand, $right_operand)
-    {
-        return bcsub($left_operand, $right_operand);
-    }
-
-    /**
-     * Compare two big integers and returns result as an integer where 0 means
-     * both are identical, 1 that left_operand is larger, or -1 that
-     * right_operand is larger.
-     * @param string $left_operand
-     * @param string $right_operand
-     * @return int
-     */
-    public function compare($left_operand, $right_operand)
-    {
-        return bccomp($left_operand, $right_operand);
-    }
-
-    /**
-     * Divide two big integers and return result or NULL if the denominator
-     * is zero.
-     * @param string $left_operand
-     * @param string $right_operand
-     * @return string|null
-     */
-    public function divide($left_operand, $right_operand)
-    {
-        return bcdiv($left_operand, $right_operand);
-    }
-
-    /**
-     * @param string $left_operand
-     * @param string $right_operand
-     * @return string
-     */
-    public function modulus($left_operand, $modulus)
-    {
-        return bcmod($left_operand, $modulus);
-    }
-
-    /**
-     * @param string $left_operand
-     * @param string $right_operand
-     * @return string
-     */
-    public function multiply($left_operand, $right_operand)
-    {
-        return bcmul($left_operand, $right_operand);
-    }
-
-    /**
-     * @param string $left_operand
-     * @param string $right_operand
-     * @return string
-     */
-    public function pow($left_operand, $right_operand)
-    {
-        return bcpow($left_operand, $right_operand);
-    }
-
-    /**
-     * @param string $left_operand
-     * @param string $right_operand
-     * @return string
-     */
-    public function powmod($left_operand, $right_operand, $modulus)
-    {
-        return bcpowmod($left_operand, $right_operand, $modulus);
-    }
-
-    /**
-     * @param string $left_operand
-     * @param string $right_operand
-     * @return string
-     */
-    public function sqrt($operand)
-    {
-        return bcsqrt($operand);
-    }
-
-
-    public function binaryToInteger($operand)
-    {
-        $result = '0';
-        while (strlen($operand)) {
-            $ord = ord(substr($operand, 0, 1));
-            $result = bcadd(bcmul($result, 256), $ord);
-            $operand = substr($operand, 1);
-        }
-        return $result;
-    }
-
-
-    public function integerToBinary($operand)
-    {
-        $cmp = bccomp($operand, 0);
-        $return = '';
-        if ($cmp == 0) {
-            return (chr(0));
-        }
-        while (bccomp($operand, 0) > 0) {
-            $return = chr(bcmod($operand, 256)) . $return;
-            $operand = bcdiv($operand, 256);
-        }
-        if (ord($return[0]) > 127) {
-            $return = chr(0) . $return;
-        }
-        return $return;
-    }
-
-    /**public function integerToBinary($operand)
-    {
-        $return = '';
-        while(bccomp($operand, '0')) {
-            $return .= chr(bcmod($operand, '256'));
-            $operand = bcdiv($operand, '256');
-        }
-        return $return;
-    }**/ // Prior version for referenced offset
-
-
-    public function hexToDecimal($operand)
-    {
-        $return = '0';
-        while(strlen($hex)) {
-            $hex = hexdec(substr($operand, 0, 4));
-            $dec = bcadd(bcmul($return, 65536), $hex);
-            $operand = substr($operand, 4);
-        }
-        return $return;
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

@@ -1,1042 +1,254 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Mail
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Mail.php 14072 2009-02-12 22:23:49Z beberlei $
- */
-
-
-/**
- * @see Zend_Mail_Transport_Abstract
- */
-require_once 'Zend/Mail/Transport/Abstract.php';
-
-/**
- * @see Zend_Mime
- */
-require_once 'Zend/Mime.php';
-
-/**
- * @see Zend_Mime_Message
- */
-require_once 'Zend/Mime/Message.php';
-
-/**
- * @see Zend_Mime_Part
- */
-require_once 'Zend/Mime/Part.php';
-
-
-/**
- * Class for sending an email.
- *
- * @category   Zend
- * @package    Zend_Mail
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Mail extends Zend_Mime_Message
-{
-    /**#@+
-     * @access protected
-     */
-
-    /**
-     * @var Zend_Mail_Transport_Abstract
-     * @static
-     */
-    protected static $_defaultTransport = null;
-
-    /**
-     * Mail character set
-     * @var string
-     */
-    protected $_charset = null;
-
-    /**
-     * Mail headers
-     * @var array
-     */
-    protected $_headers = array();
-
-    /**
-     * Encoding of Mail headers
-     * @var string
-     */
-    protected $_headerEncoding = Zend_Mime::ENCODING_QUOTEDPRINTABLE;
-
-    /**
-     * From: address
-     * @var string
-     */
-    protected $_from = null;
-
-    /**
-     * To: addresses
-     * @var array
-     */
-    protected $_to = array();
-
-    /**
-     * Array of all recipients
-     * @var array
-     */
-    protected $_recipients = array();
-
-    /**
-     * Return-Path header
-     * @var string
-     */
-    protected $_returnPath = null;
-
-    /**
-     * Subject: header
-     * @var string
-     */
-    protected $_subject = null;
-
-    /**
-     * Date: header
-     * @var string
-     */
-    protected $_date = null;
-
-    /**
-     * Message-ID: header
-     * @var string
-     */
-    protected $_messageId = null;
-
-    /**
-     * text/plain MIME part
-     * @var false|Zend_Mime_Part
-     */
-    protected $_bodyText = false;
-
-    /**
-     * text/html MIME part
-     * @var false|Zend_Mime_Part
-     */
-    protected $_bodyHtml = false;
-
-    /**
-     * MIME boundary string
-     * @var string
-     */
-    protected $_mimeBoundary = null;
-
-    /**
-     * Content type of the message
-     * @var string
-     */
-    protected $_type = null;
-
-    /**#@-*/
-
-    /**
-     * Flag: whether or not email has attachments
-     * @var boolean
-     */
-    public $hasAttachments = false;
-
-
-    /**
-     * Sets the default mail transport for all following uses of
-     * Zend_Mail::send();
-     *
-     * @todo Allow passing a string to indicate the transport to load
-     * @todo Allow passing in optional options for the transport to load
-     * @param  Zend_Mail_Transport_Abstract $transport
-     */
-    public static function setDefaultTransport(Zend_Mail_Transport_Abstract $transport)
-    {
-        self::$_defaultTransport = $transport;
-    }
-
-    /**
-     * Public constructor
-     *
-     * @param string $charset
-     */
-    public function __construct($charset = 'iso-8859-1')
-    {
-        $this->_charset = $charset;
-    }
-
-    /**
-     * Return charset string
-     *
-     * @return string
-     */
-    public function getCharset()
-    {
-        return $this->_charset;
-    }
-
-    /**
-     * Set content type
-     *
-     * Should only be used for manually setting multipart content types.
-     *
-     * @param  string $type Content type
-     * @return Zend_Mail Implements fluent interface
-     * @throws Zend_Mail_Exception for types not supported by Zend_Mime
-     */
-    public function setType($type)
-    {
-        $allowed = array(
-            Zend_Mime::MULTIPART_ALTERNATIVE,
-            Zend_Mime::MULTIPART_MIXED,
-            Zend_Mime::MULTIPART_RELATED,
-        );
-        if (!in_array($type, $allowed)) {
-            /**
-             * @see Zend_Mail_Exception
-             */
-            require_once 'Zend/Mail/Exception.php';
-            throw new Zend_Mail_Exception('Invalid content type "' . $type . '"');
-        }
-
-        $this->_type = $type;
-        return $this;
-    }
-
-    /**
-     * Get content type of the message
-     *
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->_type;
-    }
-
-    /**
-     * Set an arbitrary mime boundary for the message
-     *
-     * If not set, Zend_Mime will generate one.
-     *
-     * @param  string    $boundary
-     * @return Zend_Mail Provides fluent interface
-     */
-    public function setMimeBoundary($boundary)
-    {
-        $this->_mimeBoundary = $boundary;
-
-        return $this;
-    }
-
-    /**
-     * Return the boundary string used for the message
-     *
-     * @return string
-     */
-    public function getMimeBoundary()
-    {
-        return $this->_mimeBoundary;
-    }
-
-    /**
-     * Return encoding of mail headers
-     *
-     * @deprecated use {@link getHeaderEncoding()} instead
-     * @return string
-     */
-    public function getEncodingOfHeaders()
-    {
-        return $this->getHeaderEncoding();
-    }
-
-    /**
-     * Return the encoding of mail headers
-     *
-     * Either Zend_Mime::ENCODING_QUOTEDPRINTABLE or Zend_Mime::ENCODING_BASE64
-     *
-     * @return string
-     */
-    public function getHeaderEncoding()
-    {
-        return $this->_headerEncoding;
-    }
-
-    /**
-     * Set the encoding of mail headers
-     *
-     * @deprecated Use {@link setHeaderEncoding()} instead.
-     * @param  string $encoding
-     * @return Zend_Mail
-     */
-    public function setEncodingOfHeaders($encoding)
-    {
-        return $this->setHeaderEncoding($encoding);
-    }
-
-    /**
-     * Set the encoding of mail headers
-     *
-     * @param  string $encoding Zend_Mime::ENCODING_QUOTEDPRINTABLE or Zend_Mime::ENCODING_BASE64
-     * @return Zend_Mail Provides fluent interface
-     */
-    public function setHeaderEncoding($encoding)
-    {
-        $allowed = array(
-            Zend_Mime::ENCODING_BASE64,
-            Zend_Mime::ENCODING_QUOTEDPRINTABLE
-        );
-        if (!in_array($encoding, $allowed)) {
-            /**
-             * @see Zend_Mail_Exception
-             */
-            require_once 'Zend/Mail/Exception.php';
-            throw new Zend_Mail_Exception('Invalid encoding "' . $encoding . '"');
-        }
-        $this->_headerEncoding = $encoding;
-
-        return $this;
-    }
-
-    /**
-     * Sets the text body for the message.
-     *
-     * @param  string $txt
-     * @param  string $charset
-     * @param  string $encoding
-     * @return Zend_Mail Provides fluent interface
-    */
-    public function setBodyText($txt, $charset = null, $encoding = Zend_Mime::ENCODING_QUOTEDPRINTABLE)
-    {
-        if ($charset === null) {
-            $charset = $this->_charset;
-        }
-
-        $mp = new Zend_Mime_Part($txt);
-        $mp->encoding = $encoding;
-        $mp->type = Zend_Mime::TYPE_TEXT;
-        $mp->disposition = Zend_Mime::DISPOSITION_INLINE;
-        $mp->charset = $charset;
-
-        $this->_bodyText = $mp;
-
-        return $this;
-    }
-
-    /**
-     * Return text body Zend_Mime_Part or string
-     *
-     * @param  bool textOnly Whether to return just the body text content or the MIME part; defaults to false, the MIME part
-     * @return false|Zend_Mime_Part|string
-     */
-    public function getBodyText($textOnly = false)
-    {
-        if ($textOnly && $this->_bodyText) {
-            $body = $this->_bodyText;
-            return $body->getContent();
-        }
-
-        return $this->_bodyText;
-    }
-
-    /**
-     * Sets the HTML body for the message
-     *
-     * @param  string    $html
-     * @param  string    $charset
-     * @param  string    $encoding
-     * @return Zend_Mail Provides fluent interface
-     */
-    public function setBodyHtml($html, $charset = null, $encoding = Zend_Mime::ENCODING_QUOTEDPRINTABLE)
-    {
-        if ($charset === null) {
-            $charset = $this->_charset;
-        }
-
-        $mp = new Zend_Mime_Part($html);
-        $mp->encoding = $encoding;
-        $mp->type = Zend_Mime::TYPE_HTML;
-        $mp->disposition = Zend_Mime::DISPOSITION_INLINE;
-        $mp->charset = $charset;
-
-        $this->_bodyHtml = $mp;
-
-        return $this;
-    }
-
-    /**
-     * Return Zend_Mime_Part representing body HTML
-     *
-     * @param  bool $htmlOnly Whether to return the body HTML only, or the MIME part; defaults to false, the MIME part
-     * @return false|Zend_Mime_Part|string
-     */
-    public function getBodyHtml($htmlOnly = false)
-    {
-        if ($htmlOnly && $this->_bodyHtml) {
-            $body = $this->_bodyHtml;
-            return $body->getContent();
-        }
-
-        return $this->_bodyHtml;
-    }
-
-    /**
-     * Adds an existing attachment to the mail message
-     *
-     * @param  Zend_Mime_Part $attachment
-     * @return Zend_Mail Provides fluent interface
-     */
-    public function addAttachment(Zend_Mime_Part $attachment)
-    {
-        $this->addPart($attachment);
-        $this->hasAttachments = true;
-
-        return $this;
-    }
-
-    /**
-     * Creates a Zend_Mime_Part attachment
-     *
-     * Attachment is automatically added to the mail object after creation. The
-     * attachment object is returned to allow for further manipulation.
-     *
-     * @param  string         $body
-     * @param  string         $mimeType
-     * @param  string         $disposition
-     * @param  string         $encoding
-     * @param  string         $filename OPTIONAL A filename for the attachment
-     * @return Zend_Mime_Part Newly created Zend_Mime_Part object (to allow
-     * advanced settings)
-     */
-    public function createAttachment($body,
-                                     $mimeType    = Zend_Mime::TYPE_OCTETSTREAM,
-                                     $disposition = Zend_Mime::DISPOSITION_ATTACHMENT,
-                                     $encoding    = Zend_Mime::ENCODING_BASE64,
-                                     $filename    = null)
-    {
-
-        $mp = new Zend_Mime_Part($body);
-        $mp->encoding = $encoding;
-        $mp->type = $mimeType;
-        $mp->disposition = $disposition;
-        $mp->filename = $filename;
-
-        $this->addAttachment($mp);
-
-        return $mp;
-    }
-
-    /**
-     * Return a count of message parts
-     *
-     * @return integer
-     */
-    public function getPartCount()
-    {
-        return count($this->_parts);
-    }
-
-    /**
-     * Encode header fields
-     *
-     * Encodes header content according to RFC1522 if it contains non-printable
-     * characters.
-     *
-     * @param  string $value
-     * @return string
-     */
-    protected function _encodeHeader($value)
-    {
-    	if (Zend_Mime::isPrintable($value) === false) {
-            if ($this->getHeaderEncoding() === Zend_Mime::ENCODING_QUOTEDPRINTABLE) {
-                $value = Zend_Mime::encodeQuotedPrintableHeader($value, $this->getCharset(), Zend_Mime::LINELENGTH, Zend_Mime::LINEEND);
-            } else {
-                $value = Zend_Mime::encodeBase64Header($value, $this->getCharset(), Zend_Mime::LINELENGTH, Zend_Mime::LINEEND);
-            }
-        }
-
-        return $value;
-    }
-
-    /**
-     * Add a header to the message
-     *
-     * Adds a header to this message. If append is true and the header already
-     * exists, raises a flag indicating that the header should be appended.
-     *
-     * @param string  $headerName
-     * @param string  $value
-     * @param bool $append
-     */
-    protected function _storeHeader($headerName, $value, $append = false)
-    {
-        if (isset($this->_headers[$headerName])) {
-            $this->_headers[$headerName][] = $value;
-        } else {
-            $this->_headers[$headerName] = array($value);
-        }
-
-        if ($append) {
-            $this->_headers[$headerName]['append'] = true;
-        }
-
-    }
-
-    /**
-     * Clear header from the message
-     *
-     * @param string $headerName
-     */
-    protected function _clearHeader($headerName)
-    {
-        if (isset($this->_headers[$headerName])){
-            unset($this->_headers[$headerName]);
-        }
-    }
-
-    /**
-     * Helper function for adding a recipient and the corresponding header
-     *
-     * @param string $headerName
-     * @param string $email
-     * @param string $name
-     */
-    protected function _addRecipientAndHeader($headerName, $email, $name)
-    {
-        $email = $this->_filterEmail($email);
-        $name  = $this->_filterName($name);
-        // prevent duplicates
-        $this->_recipients[$email] = 1;
-        $this->_storeHeader($headerName, $this->_formatAddress($email, $name), true);
-    }
-
-    /**
-     * Adds To-header and recipient
-     *
-     * @param  string $email
-     * @param  string $name
-     * @return Zend_Mail Provides fluent interface
-     */
-    public function addTo($email, $name='')
-    {
-        $this->_addRecipientAndHeader('To', $email, $name);
-        $this->_to[] = $email;
-        return $this;
-    }
-
-    /**
-     * Adds Cc-header and recipient
-     *
-     * @param  string    $email
-     * @param  string    $name
-     * @return Zend_Mail Provides fluent interface
-     */
-    public function addCc($email, $name='')
-    {
-        $this->_addRecipientAndHeader('Cc', $email, $name);
-        return $this;
-    }
-
-    /**
-     * Adds Bcc recipient
-     *
-     * @param  string    $email
-     * @return Zend_Mail Provides fluent interface
-     */
-    public function addBcc($email)
-    {
-        $this->_addRecipientAndHeader('Bcc', $email, '');
-        return $this;
-    }
-
-    /**
-     * Return list of recipient email addresses
-     *
-     * @return array (of strings)
-     */
-    public function getRecipients()
-    {
-        return array_keys($this->_recipients);
-    }
-
-    /**
-     * Clears list of recipient email addresses
-     *
-     * @return Zend_Mail Provides fluent interface
-     */
-    public function clearRecipients()
-    {
-        $this->_recipients = array();
-        $this->_to = array();
-
-        $this->_clearHeader('To');
-        $this->_clearHeader('Cc');
-        $this->_clearHeader('Bcc');
-
-        return $this;
-    }
-
-    /**
-     * Sets From-header and sender of the message
-     *
-     * @param  string    $email
-     * @param  string    $name
-     * @return Zend_Mail Provides fluent interface
-     * @throws Zend_Mail_Exception if called subsequent times
-     */
-    public function setFrom($email, $name = null)
-    {
-        if ($this->_from === null) {
-            $email = $this->_filterEmail($email);
-            $name  = $this->_filterName($name);
-            $this->_from = $email;
-            $this->_storeHeader('From', $this->_formatAddress($email, $name), true);
-        } else {
-            /**
-             * @see Zend_Mail_Exception
-             */
-            require_once 'Zend/Mail/Exception.php';
-            throw new Zend_Mail_Exception('From Header set twice');
-        }
-        return $this;
-    }
-
-    /**
-     * Returns the sender of the mail
-     *
-     * @return string
-     */
-    public function getFrom()
-    {
-        return $this->_from;
-    }
-
-    /**
-     * Clears the sender from the mail
-     *
-     * @return Zend_Mail Provides fluent interface
-     */
-    public function clearFrom()
-    {
-        $this->_from = null;
-        $this->_clearHeader('From');
-
-        return $this;
-    }
-
-    /**
-     * Sets the Return-Path header of the message
-     *
-     * @param  string    $email
-     * @return Zend_Mail Provides fluent interface
-     * @throws Zend_Mail_Exception if set multiple times
-     */
-    public function setReturnPath($email)
-    {
-        if ($this->_returnPath === null) {
-            $email = $this->_filterEmail($email);
-            $this->_returnPath = $email;
-            $this->_storeHeader('Return-Path', $email, false);
-        } else {
-            /**
-             * @see Zend_Mail_Exception
-             */
-            require_once 'Zend/Mail/Exception.php';
-            throw new Zend_Mail_Exception('Return-Path Header set twice');
-        }
-        return $this;
-    }
-
-    /**
-     * Returns the current Return-Path address of the message
-     *
-     * If no Return-Path header is set, returns the value of {@link $_from}.
-     *
-     * @return string
-     */
-    public function getReturnPath()
-    {
-        if (null !== $this->_returnPath) {
-            return $this->_returnPath;
-        }
-
-        return $this->_from;
-    }
-
-    /**
-     * Clears the current Return-Path address from the message
-     *
-     * @return Zend_Mail Provides fluent interface
-     */
-    public function clearReturnPath()
-    {
-        $this->_returnPath = null;
-        $this->_clearHeader('Return-Path');
-
-        return $this;
-    }
-
-    /**
-     * Sets the subject of the message
-     *
-     * @param   string    $subject
-     * @return  Zend_Mail Provides fluent interface
-     * @throws  Zend_Mail_Exception
-     */
-    public function setSubject($subject)
-    {
-        if ($this->_subject === null) {
-            $subject = $this->_filterOther($subject);
-            $this->_subject = $this->_encodeHeader($subject);
-            $this->_storeHeader('Subject', $this->_subject);
-        } else {
-            /**
-             * @see Zend_Mail_Exception
-             */
-            require_once 'Zend/Mail/Exception.php';
-            throw new Zend_Mail_Exception('Subject set twice');
-        }
-        return $this;
-    }
-
-    /**
-     * Returns the encoded subject of the message
-     *
-     * @return string
-     */
-    public function getSubject()
-    {
-        return $this->_subject;
-    }
-
-    /**
-     * Clears the encoded subject from the message
-     *
-     * @return  Zend_Mail Provides fluent interface
-     */
-    public function clearSubject()
-    {
-        $this->_subject = null;
-        $this->_clearHeader('Subject');
-
-        return $this;
-    }
-
-    /**
-     * Sets Date-header
-     *
-     * @param  string    $date
-     * @return Zend_Mail Provides fluent interface
-     * @throws Zend_Mail_Exception if called subsequent times
-     */
-    public function setDate($date = null)
-    {
-        if ($this->_date === null) {
-            if ($date === null) {
-                $date = date('r');
-            } else if (is_int($date)) {
-                $date = date('r', $date);
-            } else if (is_string($date)) {
-                $date = strtotime($date);
-                if ($date === false || $date < 0) {
-		            /**
-		             * @see Zend_Mail_Exception
-		             */
-		            require_once 'Zend/Mail/Exception.php';
-                	throw new Zend_Mail_Exception('String representations of Date Header must be ' .
-                                                  'strtotime()-compatible');
-                }
-                $date = date('r', $date);
-            } else if ($date instanceof Zend_Date) {
-                $date = $date->get(Zend_Date::RFC_2822);
-            } else {
-	            /**
-	             * @see Zend_Mail_Exception
-	             */
-	            require_once 'Zend/Mail/Exception.php';
-            	throw new Zend_Mail_Exception(__METHOD__ . ' only accepts UNIX timestamps, Zend_Date objects, ' .
-                                              ' and strtotime()-compatible strings');
-            }
-            $this->_date = $date;
-            $this->_storeHeader('Date', $date);
-        } else {
-            /**
-             * @see Zend_Mail_Exception
-             */
-        	require_once 'Zend/Mail/Exception.php';
-        	throw new Zend_Mail_Exception('Date Header set twice');
-        }
-        return $this;
-    }
-
-    /**
-     * Returns the formatted date of the message
-     *
-     * @return string
-     */
-    public function getDate()
-    {
-        return $this->_date;
-    }
-
-    /**
-     * Clears the formatted date from the message
-     *
-     * @return Zend_Mail Provides fluent interface
-     */
-    public function clearDate()
-    {
-        $this->_date = null;
-        $this->_clearHeader('Date');
-
-        return $this;
-    }
-
-    /**
-     * Sets the Message-ID of the message
-     *
-     * @param   boolean|string  $id
-     * true  :Auto
-     * false :No set
-     * null  :No set
-     * string:Sets string
-     * @return  Zend_Mail Provides fluent interface
-     * @throws  Zend_Mail_Exception
-     */
-    public function setMessageId($id = true)
-    {
-    	if ($id === null || $id === false) {
-    		return $this;
-    	} elseif ($id === true) {
-            $id = $this->createMessageId();
-    	}
-
-        if ($this->_messageId === null) {
-        	$id = $this->_filterOther($id);
-            $this->_messageId = $id;
-            $this->_storeHeader('Message-Id', $this->_messageId);
-        } else {
-            /**
-             * @see Zend_Mail_Exception
-             */
-            require_once 'Zend/Mail/Exception.php';
-            throw new Zend_Mail_Exception('Message-ID set twice');
-        }
-
-        return $this;
-    }
-
-    /**
-     * Returns the Message-ID of the message
-     *
-     * @return string
-     */
-    public function getMessageId()
-    {
-        return $this->_messageId;
-    }
-
-
-    /**
-     * Clears the Message-ID from the message
-     *
-     * @return Zend_Mail Provides fluent interface
-     */
-    public function clearMessageId()
-    {
-        $this->_messageId = null;
-        $this->_clearHeader('Message-Id');
-
-        return $this;
-    }
-
-    /**
-     * Creates the Message-ID
-     *
-     * @return string
-     */
-    public function createMessageId() {
-
-        $time = time();
-
-        if ($this->_from !== null) {
-        	$user = $this->_from;
-        } elseif (isset($_SERVER['REMOTE_ADDR'])) {
-        	$user = $_SERVER['REMOTE_ADDR'];
-        } else {
-        	$user = getmypid();
-        }
-
-    	$rand = mt_rand();
-
-    	if ($this->_recipients !== array()) {
-            $recipient = array_rand($this->_recipients);
-    	} else {
-    		$recipient = 'unknown';
-    	}
-
-    	if (isset($_SERVER["SERVER_NAME"])) {
-            $hostName = $_SERVER["SERVER_NAME"];
-        } else {
-        	$hostName = php_uname('n');
-        }
-
-        return sha1($time . $user . $rand . $recipient) . '@' . $hostName;
-    }
-
-    /**
-     * Add a custom header to the message
-     *
-     * @param  string              $name
-     * @param  string              $value
-     * @param  boolean             $append
-     * @return Zend_Mail           Provides fluent interface
-     * @throws Zend_Mail_Exception on attempts to create standard headers
-     */
-    public function addHeader($name, $value, $append = false)
-    {
-        $prohibit = array('to', 'cc', 'bcc', 'from', 'subject',
-                          'return-path', 'date', 'message-id',
-                         );
-        if (in_array(strtolower($name), $prohibit)) {
-            /**
-             * @see Zend_Mail_Exception
-             */
-            require_once 'Zend/Mail/Exception.php';
-            throw new Zend_Mail_Exception('Cannot set standard header from addHeader()');
-        }
-
-        $value = $this->_filterOther($value);
-        $value = $this->_encodeHeader($value);
-        $this->_storeHeader($name, $value, $append);
-
-        return $this;
-    }
-
-    /**
-     * Return mail headers
-     *
-     * @return void
-     */
-    public function getHeaders()
-    {
-        return $this->_headers;
-    }
-
-    /**
-     * Sends this email using the given transport or a previously
-     * set DefaultTransport or the internal mail function if no
-     * default transport had been set.
-     *
-     * @param  Zend_Mail_Transport_Abstract $transport
-     * @return Zend_Mail                    Provides fluent interface
-     */
-    public function send($transport = null)
-    {
-        if ($transport === null) {
-            if (! self::$_defaultTransport instanceof Zend_Mail_Transport_Abstract) {
-                require_once 'Zend/Mail/Transport/Sendmail.php';
-                $transport = new Zend_Mail_Transport_Sendmail();
-            } else {
-                $transport = self::$_defaultTransport;
-            }
-        }
-
-        if ($this->_date === null) {
-            $this->setDate();
-        }
-
-        $transport->send($this);
-
-        return $this;
-    }
-
-    /**
-     * Filter of email data
-     *
-     * @param string $email
-     * @return string
-     */
-    protected function _filterEmail($email)
-    {
-    	$rule = array("\r" => '',
-    	              "\n" => '',
-    	              "\t" => '',
-                      '"'  => '',
-    	              ','  => '',
-                      '<'  => '',
-                      '>'  => '',
-    	);
-
-        return strtr($email, $rule);
-    }
-
-    /**
-     * Filter of name data
-     *
-     * @param string $name
-     * @return string
-     */
-    protected function _filterName($name)
-    {
-    	$rule = array("\r" => '',
-                      "\n" => '',
-                      "\t" => '',
-                      '"'  => "'",
-                      '<'  => '[',
-    	              '>'  => ']',
-    	);
-
-        return trim(strtr($name, $rule));
-    }
-
-    /**
-     * Filter of other data
-     *
-     * @param string $data
-     * @return string
-     */
-    protected function _filterOther($data)
-    {
-        $rule = array("\r" => '',
-                      "\n" => '',
-                      "\t" => '',
-        );
-
-        return strtr($data, $rule);
-    }
-
-    /**
-     * Formats e-mail address
-     *
-     * @param string $email
-     * @param string $name
-     * @return string
-     */
-    protected function _formatAddress($email, $name)
-    {
-        if ($name === '' || $name === null || $name === $email) {
-            return $email;
-        } else {
-            $encodedName = $this->_encodeHeader($name);
-            if ($encodedName === $name && strpos($name, ',') !== false) {
-                $format = '"%s" <%s>';
-            } else {
-                $format = '%s <%s>';
-            }
-            return sprintf($format, $encodedName, $email);
-        }
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

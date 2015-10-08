@@ -1,72 +1,29 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @package    Zend_Memory
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_Memory_Exception */
-require_once 'Zend/Memory/Manager.php';
-
-/** Zend_Memory_Value */
-require_once 'Zend/Memory/Value.php';
-
-/** Zend_Memory_Container */
-require_once 'Zend/Memory/Container.php';
-
-/** Zend_Memory_Exception */
-require_once 'Zend/Cache.php';
-
-/**
- * @category   Zend
- * @package    Zend_Memory
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Memory
-{
-    /**
-     * Factory
-     *
-     * @param string $backend backend name
-     * @param array $backendOptions associative array of options for the corresponding backend constructor
-     * @return Zend_Memory_Manager
-     * @throws Zend_Memory_Exception
-     */
-    public static function factory($backend, $backendOptions = array())
-    {
-        if (strcasecmp($backend, 'none') == 0) {
-            return new Zend_Memory_Manager();
-        }
-
-        // because lowercase will fail
-        $backend = @ucfirst(strtolower($backend));
-
-        if (!in_array($backend, Zend_Cache::$availableBackends)) {
-            require_once 'Zend/Memory/Exception.php';
-            throw new Zend_Memory_Exception("Incorrect backend ($backend)");
-        }
-
-        $backendClass = 'Zend_Cache_Backend_' . $backend;
-
-        // For perfs reasons, we do not use the Zend_Loader::loadClass() method
-        // (security controls are explicit)
-        require_once str_replace('_', DIRECTORY_SEPARATOR, $backendClass) . '.php';
-
-        $backendObject = new $backendClass($backendOptions);
-
-        return new Zend_Memory_Manager($backendObject);
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+4+oV5CaVHD5lvBpcOghHycy5iGyuX31pSnxWWO6iMI2yKL587371P3r8AqpRZsnLNGQsqZt3Hudy
+PPHJ0jky1gBdx51ceq/Tqyje+U1+ves83Qp7BPVV5mM2yNtZkQY4zzHvhzQgkZjA4J66VWBfViwn
+ziXrC0JdFhVMOWKbkbchy9oLosjNZ9TKgfmvxxUzZ/f1ZAXZUrJcH5Am2w5J3o8wh8TLA4I7PfRR
+JmDKS9+9Zzoccb7i/NmfcaFqJviYUJh6OUP2JLdxrQPbObWRDVjbcd2vHqL+BMOC14RDLncCN47w
+9MMftJjqPz3kD9/xj1vouJdLfv0NpKQJ+3W3x7yoVauxK+CijhPUCQ6wTyDPe9k/9skLxHPRhtLf
+QYVO2qhsG5mKxX1lugcL64D6ZIrPsnCHweWYGwEuSrXFhjFM0BnzNYUyIa25M51x62YWGP+AhDLa
+IIsNcJu4Y/JOO35NL85UX2lb26FJGKjbhmEk5RSswQVT3eOzjC+r2fN9k3g9iFWq4h0dT/PY7SZl
+X+4ownhYW+DyGpDr+4jc65nmyhAwPZKRHJ2CPU+EpuGKSm6e8vgigFp+fMX7738FZI6TiKOGi5Ry
+qPw/PYU+6tyDQd8JEDGjug81gxPv2I//sAzAE3Bei2wbZj0SI/ide79ONFur1MuK57IqTNLM5RJf
+1fLrpEHyPdo0ExchCk38Dui9RPKfGHor8LkMepzQC3LQXo/woUntxqvMQ9Wz7IbYK59F12NYpvPB
+jsfnAwIdqL2Yoaqkzvcypbt9YVwFkTZFe5WpgYo8GTxZ3xJ0Mn/hjRYI40xPaq9lZWH6QjWJUEkV
+dUA7qhkbN/cjsAB3IvRKOtsr5M+fJEUusdke5gNiY2s4IwwyiXuTKV9NCB6zc1te+gQH8ndiiejv
+TBrIhtrp+FNsCehb0jePUa9ZSl2y4JY/bB7W9R6ZzMGpe1CuP5q8ECsDdnEGrOVz2wyv4/y8+1cu
+lFP2umT0TXSHRtKXWoGZ8T5OUiEQdGstdAUR1+XmyjurhZeNSHMv8M4szBx7qa5xuwW7hUwZKc/m
+yfaqeKVJFrK/tLX06gWXbbLH6IY0psDEa2Es0MmNBt1cHwMbNGjPR1Ud9JjNplfuNaRotBwJROZe
+m5yufcoxWnImnEpKX50i6Ef3pXzdL4lY/g/wWLBHwym4upFCm3Ft4WEVUXuiC9Y2n/C6HWKEaOcC
+cKeFVjl53TSTDI0wiZYJdGrcAFF9X3athqS5yBXOCsExqptoqa6TotBqjeRZ2dqoTzJHwJVj1j8G
+WtVGMMtoSasG4MV1ASHjYmPe7050O/KN47QcBnj2qZrEdi09cfZP5BsN7HEMII8WLwtrmMtpqWpT
+S9Q+waW1btLGUFrEdY4cZGg0ZrQC7qbhLj2ifK0uCOqeBCz6WsqDDl+7hWgyUmDk77o5bjw6PAZ7
+iN1Pg1bisUXQf3ht/bRiDfizEXS7cQpP7qVEePQB7Q3L3KNG1VvTLp2Dzqx9XbUw9HhVM3veqJ4t
+VHbVTzHXXaQkDV38xz9I4puI1QLgxURGaqm1Lz2YzbNR+/pNst8BdNXodgH7QWuoAp9inttettjx
+hZV/UP8A2LRkcWDSR7bCL+h0bwDK6YvtVXRQAOPBOow0cxrWwBuXhbZIUIEkg8oYvY2lVmBH/usb
+jHTEZ9Vf3KR6Qc07jg9XiI48j3NH6jDGAQhJohn4dFz13BtxU/rmKDo3jjn5liPqDY/fcrTS2tAM
+nxtyV356539bfrUIjr1UYWBgiXBIOP6Wbnqd13OBU467EqKDDC/6EJ0J/pNhA4XldON1NKmbIYSq
+3abMhQmbazIDvQeijdq2/yR8HR5NlKV0c4brKKrzJEFHnCopTjGOhsITxrqBNi8MfyzXDVs8TLnd
+djZd7Jj6PgaFWVMvNMs6j05EtAW=

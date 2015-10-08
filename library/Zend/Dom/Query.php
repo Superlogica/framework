@@ -1,221 +1,76 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Dom
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * @see Zend_Dom_Query_Css2Xpath
- */
-require_once 'Zend/Dom/Query/Css2Xpath.php';
-
-/**
- * @see Zend_Dom_Query_Result
- */
-require_once 'Zend/Dom/Query/Result.php';
-
-/**
- * Query DOM structures based on CSS selectors and/or XPath
- * 
- * @package    Zend_Dom
- * @subpackage Query
- * @copyright  Copyright (C) 2008 - Present, Zend Technologies, Inc.
- * @license    New BSD {@link http://framework.zend.com/license/new-bsd}
- */
-class Zend_Dom_Query
-{
-    /**#@+
-     * @const string Document types
-     */
-    const DOC_XML   = 'docXml';
-    const DOC_HTML  = 'docHtml';
-    const DOC_XHTML = 'docXhtml';
-    /**#@-*/
-
-    /**
-     * @var string
-     */
-    protected $_document;
-
-    /**
-     * Document type
-     * @var string
-     */
-    protected $_docType;
-
-    /**
-     * Constructor
-     * 
-     * @param  null|string $document 
-     * @return void
-     */
-    public function __construct($document = null)
-    {
-        if (null !== $document) {
-            $this->setDocument($document);
-        }
-    }
-
-    /**
-     * Set document to query
-     * 
-     * @param  string $document 
-     * @return Zend_Dom_Query
-     */
-    public function setDocument($document)
-    {
-        if ('<?xml' == substr(trim($document), 0, 5)) {
-            return $this->setDocumentXml($document);
-        }
-        if (strstr($document, 'DTD XHTML')) {
-            return $this->setDocumentXhtml($document);
-        }
-        return $this->setDocumentHtml($document);
-    }
-
-    /**
-     * Register HTML document 
-     * 
-     * @param  string $document 
-     * @return Zend_Dom_Query
-     */
-    public function setDocumentHtml($document)
-    {
-        $this->_document = (string) $document;
-        $this->_docType  = self::DOC_HTML;
-        return $this;
-    }
-
-    /**
-     * Register XHTML document
-     * 
-     * @param  string $document 
-     * @return Zend_Dom_Query
-     */
-    public function setDocumentXhtml($document)
-    {
-        $this->_document = (string) $document;
-        $this->_docType  = self::DOC_XHTML;
-        return $this;
-    }
-
-    /**
-     * Register XML document
-     * 
-     * @param  string $document 
-     * @return Zend_Dom_Query
-     */
-    public function setDocumentXml($document)
-    {
-        $this->_document = (string) $document;
-        $this->_docType  = self::DOC_XML;
-        return $this;
-    }
-
-    /**
-     * Retrieve current document
-     * 
-     * @return string
-     */
-    public function getDocument()
-    {
-        return $this->_document;
-    }
-
-    /**
-     * Get document type
-     * 
-     * @return string
-     */
-    public function getDocumentType()
-    {
-        return $this->_docType;
-    }
-
-    /**
-     * Perform a CSS selector query
-     * 
-     * @param  string $query 
-     * @return Zend_Dom_Query_Result
-     */
-    public function query($query)
-    {
-        $xpathQuery = Zend_Dom_Query_Css2Xpath::transform($query);
-        return $this->queryXpath($xpathQuery, $query);
-    }
-
-    /**
-     * Perform an XPath query
-     * 
-     * @param  string $xpathQuery
-     * @param  string $query CSS selector query
-     * @return Zend_Dom_Query_Result
-     */
-    public function queryXpath($xpathQuery, $query = null)
-    {
-        if (null === ($document = $this->getDocument())) {
-            require_once 'Zend/Dom/Exception.php';
-            throw new Zend_Dom_Exception('Cannot query; no document registered');
-        }
-
-        $domDoc = new DOMDocument;
-        $type   = $this->getDocumentType();
-        switch ($type) {
-            case self::DOC_XML:
-                $success = @$domDoc->loadXML($document);
-                break;
-            case self::DOC_HTML:
-            case self::DOC_XHTML:
-            default:
-                $success = @$domDoc->loadHTML($document);
-                break;
-        }
-
-        if (!$success) {
-            require_once 'Zend/Dom/Exception.php';
-            throw new Zend_Dom_Exception(sprintf('Error parsing document (type == %s)', $type));
-        }
-
-        $nodeList   = $this->_getNodeList($domDoc, $xpathQuery);
-        return new Zend_Dom_Query_Result($query, $xpathQuery, $domDoc, $nodeList);
-    }
-
-    /**
-     * Prepare node list
-     * 
-     * @param  DOMDocument $document
-     * @param  string|array $xpathQuery
-     * @return array
-     */
-    protected function _getNodeList($document, $xpathQuery)
-    {
-        $xpath      = new DOMXPath($document);
-        $xpathQuery = (string) $xpathQuery;
-        if (preg_match_all('|\[contains\((@[a-z0-9_-]+),\s?\' |i', $xpathQuery, $matches)) {
-            foreach ($matches[1] as $attribute) {
-                $queryString = '//*[' . $attribute . ']';
-                $attributeName = substr($attribute, 1);
-                $nodes = $xpath->query($queryString);
-                foreach ($nodes as $node) {
-                    $attr = $node->attributes->getNamedItem($attributeName);
-                    $attr->value = ' ' . $attr->value . ' ';
-                }
-            }
-        }
-        return $xpath->query($xpathQuery);
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+ut9ygy6RtPu=

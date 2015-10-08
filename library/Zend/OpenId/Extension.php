@@ -1,137 +1,32 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_OpenId
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Extension.php 13522 2009-01-06 16:35:55Z thomas $
- */
-
-/**
- * Abstract extension class for Zend_OpenId
- *
- * @category   Zend
- * @package    Zend_OpenId
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-abstract class Zend_OpenId_Extension
-{
-
-    /**
-     * Calls given function with given argument for all extensions
-     *
-     * @param mixed $extensions list of extensions or one extension
-     * @param string $func function to be called
-     * @param mixed &$params argument to pass to given funcion
-     * @return bool
-     */
-    static public function forAll($extensions, $func, &$params)
-    {
-        if ($extensions !== null) {
-            if (is_array($extensions)) {
-                foreach ($extensions as $ext) {
-                    if ($ext instanceof Zend_OpenId_Extension) {
-                        if (!$ext->$func($params)) {
-                            return false;
-                        }
-                    } else {
-                        return false;
-                    }
-                }
-            } else if (!is_object($extensions) ||
-                       !($extensions instanceof Zend_OpenId_Extension) ||
-                       !$extensions->$func($params)) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    /**
-     * Method to add additional data to OpenId 'checkid_immediate' or
-     * 'checkid_setup' request. This method addes nothing but inherited class
-     * may add additional data into request.
-     *
-     * @param array &$params request's var/val pairs
-     * @return bool
-     */
-    public function prepareRequest(&$params)
-    {
-        return true;
-    }
-
-    /**
-     * Method to parse OpenId 'checkid_immediate' or 'checkid_setup' request
-     * and initialize object with passed data. This method parses nothing but
-     * inherited class may override this method to do somthing.
-     *
-     * @param array $params request's var/val pairs
-     * @return bool
-     */
-    public function parseRequest($params)
-    {
-        return true;
-    }
-
-    /**
-     * Method to add additional data to OpenId 'id_res' response. This method
-     * addes nothing but inherited class may add additional data into response.
-     *
-     * @param array &$params response's var/val pairs
-     * @return bool
-     */
-    public function prepareResponse(&$params)
-    {
-        return true;
-    }
-
-    /**
-     * Method to parse OpenId 'id_res' response and initialize object with
-     * passed data. This method parses nothing but inherited class may override
-     * this method to do somthing.
-     *
-     * @param array $params response's var/val pairs
-     * @return bool
-     */
-    public function parseResponse($params)
-    {
-        return true;
-    }
-
-    /**
-     * Method to prepare data to store it in trusted servers database.
-     *
-     * @param array &$data data to be stored in tusted servers database
-     * @return bool
-     */
-    public function getTrustData(&$data)
-    {
-        return true;
-    }
-
-    /**
-     * Method to check if data from trusted servers database is enough to
-     * sutisfy request.
-     *
-     * @param array $data data from tusted servers database
-     * @return bool
-     */
-    public function checkTrustData($data)
-    {
-        return true;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+1jfrBo5chwczFN0=

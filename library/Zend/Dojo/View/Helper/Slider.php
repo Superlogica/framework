@@ -1,251 +1,121 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Dojo
- * @subpackage View
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Slider.php 13657 2009-01-15 23:36:35Z matthew $
- */
-
-/** Zend_Dojo_View_Helper_Dijit */
-require_once 'Zend/Dojo/View/Helper/Dijit.php';
-
-/**
- * Abstract class for Dojo Slider dijits
- * 
- * @uses       Zend_Dojo_View_Helper_Dijit
- * @package    Zend_Dojo
- * @subpackage View
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
-  */
-abstract class Zend_Dojo_View_Helper_Slider extends Zend_Dojo_View_Helper_Dijit
-{
-    /**
-     * Dojo module to use
-     * @var string
-     */
-    protected $_module = 'dijit.form.Slider';
-
-    /**
-     * Required slider parameters
-     * @var array
-     */
-    protected $_requiredParams = array('minimum', 'maximum', 'discreteValues');
-
-    /**
-     * Slider type -- vertical or horizontal
-     * @var string
-     */
-    protected $_sliderType;
-
-    /**
-     * dijit.form.Slider
-     * 
-     * @param  int $id 
-     * @param  mixed $value 
-     * @param  array $params  Parameters to use for dijit creation
-     * @param  array $attribs HTML attributes
-     * @return string
-     */
-    public function prepareSlider($id, $value = null, array $params = array(), array $attribs = array())
-    {
-        $this->_sliderType = strtolower($this->_sliderType);
-
-        // Prepare two items: a hidden element to store the value, and the slider
-        $hidden = $this->_renderHiddenElement($id, $value);
-        $hidden = preg_replace('/(name=")([^"]*)"/', 'id="$2" $1$2"', $hidden);
-
-        foreach ($this->_requiredParams as $param) {
-            if (!array_key_exists($param, $params)) {
-                require_once 'Zend/Dojo/View/Exception.php';
-                throw new Zend_Dojo_View_Exception('prepareSlider() requires minimally the "minimum", "maximum", and "discreteValues" parameters');
-            }
-        }
-
-        $content = '';
-        $params['value'] = $value;
-
-        if (!array_key_exists('onChange', $attribs)) {
-            $attribs['onChange'] = "dojo.byId('" . $id . "').value = arguments[0];";
-        }
-
-        $id  = str_replace('][', '-', $id);
-        $id  = str_replace(array('[', ']'), '-', $id);
-        $id  = rtrim($id, '-');
-        $id .= '-slider';
-
-        switch ($this->_sliderType) {
-            case 'horizontal':
-                if (array_key_exists('topDecoration', $params)) {
-                    $content .= $this->_prepareDecoration('topDecoration', $id, $params['topDecoration']);
-                    unset($params['topDecoration']);
-                }
-
-                if (array_key_exists('bottomDecoration', $params)) {
-                    $content .= $this->_prepareDecoration('bottomDecoration', $id, $params['bottomDecoration']);
-                    unset($params['bottomDecoration']);
-                }
-
-                if (array_key_exists('leftDecoration', $params)) {
-                    unset($params['leftDecoration']);
-                }
-
-                if (array_key_exists('rightDecoration', $params)) {
-                    unset($params['rightDecoration']);
-                }
-                break;
-            case 'vertical':
-                if (array_key_exists('leftDecoration', $params)) {
-                    $content .= $this->_prepareDecoration('leftDecoration', $id, $params['leftDecoration']);
-                    unset($params['leftDecoration']);
-                }
-
-                if (array_key_exists('rightDecoration', $params)) {
-                    $content .= $this->_prepareDecoration('rightDecoration', $id, $params['rightDecoration']);
-                    unset($params['rightDecoration']);
-                }
-
-                if (array_key_exists('topDecoration', $params)) {
-                    unset($params['topDecoration']);
-                }
-
-                if (array_key_exists('bottomDecoration', $params)) {
-                    unset($params['bottomDecoration']);
-                }
-                break;
-            default:
-                require_once 'Zend/Dojo/View/Exception.php';
-                throw new Zend_Dojo_View_Exception('Invalid slider type; slider must be horizontal or vertical');
-        }
-
-        return $hidden . $this->_createLayoutContainer($id, $content, $params, $attribs);
-    }
-
-    /**
-     * Prepare slider decoration
-     * 
-     * @param  string $position 
-     * @param  string $id 
-     * @param  array $decInfo 
-     * @return string
-     */
-    protected function _prepareDecoration($position, $id, $decInfo)
-    {
-        if (!in_array($position, array('topDecoration', 'bottomDecoration', 'leftDecoration', 'rightDecoration'))) {
-            return '';
-        }
-
-        if (!is_array($decInfo) 
-            || !array_key_exists('labels', $decInfo)
-            || !is_array($decInfo['labels'])
-        ) {
-            return '';
-        }
-
-        $id .= '-' . $position;
-
-        if (!array_key_exists('dijit', $decInfo)) {
-            $dijit = 'dijit.form.' . ucfirst($this->_sliderType) . 'Rule';
-        } else {
-            $dijit = $decInfo['dijit'];
-            if ('dijit.form.' != substr($dijit, 0, 10)) {
-                $dijit = 'dijit.form.' . $dijit;
-            }
-        }
-
-        $params  = array();
-        $attribs = array();
-        $labels  = $decInfo['labels'];
-        if (array_key_exists('params', $decInfo)) {
-            $params = $decInfo['params'];
-        }
-        if (array_key_exists('attribs', $decInfo)) {
-            $attribs = $decInfo['attribs'];
-        }
-
-        $containerParams = null;
-        if (array_key_exists('container', $params)) {
-            $containerParams = $params['container'];
-            unset($params['container']);
-        }
-
-        if (array_key_exists('labels', $params)) {
-            $labelsParams = $params['labels'];
-            unset($params['labels']);
-        } else {
-            $labelsParams = $params;
-        }
-
-        if (null === $containerParams) {
-            $containerParams = $params;
-        }
-
-        $containerAttribs = null;
-        if (array_key_exists('container', $attribs)) {
-            $containerAttribs = $attribs['container'];
-            unset($attribs['container']);
-        }
-
-        if (array_key_exists('labels', $attribs)) {
-            $labelsAttribs = $attribs['labels'];
-            unset($attribs['labels']);
-        } else {
-            $labelsAttribs = $attribs;
-        }
-
-        if (null === $containerAttribs) {
-            $containerAttribs = $attribs;
-        }
-
-        $containerParams['container'] = $position;
-        $labelsParams['container']    = $position;
-
-        $labelList = $this->_prepareLabelsList($id, $labelsParams, $labelsAttribs, $labels);
-
-        $dijit = 'dijit.form.' . ucfirst($this->_sliderType) . 'Rule';
-        $containerAttribs['id'] = $id;
-        $containerAttribs = $this->_prepareDijit($containerAttribs, $containerParams, 'layout', $dijit);
-        $containerHtml = '<div' . $this->_htmlAttribs($containerAttribs) . "></div>\n";
-
-        switch ($position) {
-            case 'topDecoration':
-            case 'leftDecoration':
-                return $labelList . $containerHtml;
-            case 'bottomDecoration':
-            case 'rightDecoration':
-                return $containerHtml . $labelList;
-        }
-    }
-
-    /**
-     * Prepare slider label list
-     * 
-     * @param  string $id 
-     * @param  array $params 
-     * @param  array $attribs 
-     * @param  array $labels 
-     * @return string
-     */
-    protected function _prepareLabelsList($id, array $params, array $attribs, array $labels)
-    {
-        $attribs['id'] = $id . '-labels';
-        $dijit = 'dijit.form.' . ucfirst($this->_sliderType) . 'RuleLabels';
-        $attribs = $this->_prepareDijit($attribs, $params, 'layout', $dijit);
-
-        return $this->view->htmlList($labels, true, $attribs);
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+TNSDr/yv7uMnck2cjO7IbytlHDSmlETVODy=

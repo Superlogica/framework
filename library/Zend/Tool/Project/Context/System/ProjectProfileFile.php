@@ -1,118 +1,29 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Tool
- * @subpackage Framework
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id$
- */
-
-/**
- * @see Zend_Tool_Project_Context_Filesystem_File
- */
-require_once 'Zend/Tool/Project/Context/Filesystem/File.php';
-
-/**
- * @see Zend_Tool_Project_Context_System_Interface
- */
-require_once 'Zend/Tool/Project/Context/System/Interface.php';
-
-/**
- * @see Zend_Tool_Project_Context_System_NotOverwritable
- */
-require_once 'Zend/Tool/Project/Context/System/NotOverwritable.php';
-
-/**
- * @see Zend_Tool_Project_Profile_FileParser_Xml
- */
-require_once 'Zend/Tool/Project/Profile/FileParser/Xml.php';
-
-/**
- * This class is the front most class for utilizing Zend_Tool_Project
- *
- * A profile is a hierarchical set of resources that keep track of
- * items within a specific project.
- * 
- * @category   Zend
- * @package    Zend_Tool
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Tool_Project_Context_System_ProjectProfileFile 
-    extends Zend_Tool_Project_Context_Filesystem_File
-    implements Zend_Tool_Project_Context_System_Interface,
-               Zend_Tool_Project_Context_System_NotOverwritable
-{
-
-    /**
-     * @var string
-     */
-    protected $_filesystemName = '.zfproject.xml';
-    
-    /**
-     * @var Zend_Tool_Project_Profile
-     */
-    protected $_profile = null;
-    
-    /**
-     * getName()
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return 'ProjectProfileFile';
-    }
-    
-    /**
-     * setProfile()
-     *
-     * @param Zend_Tool_Project_Profile $profile
-     * @return Zend_Tool_Project_Context_System_ProjectProfileFile
-     */
-    public function setProfile($profile)
-    {
-        $this->_profile = $profile;
-        return $this;
-    }
-    
-    /**
-     * save() 
-     * 
-     * Proxy to create
-     *
-     * @return Zend_Tool_Project_Context_System_ProjectProfileFile
-     */
-    public function save()
-    {
-        parent::create();
-        return $this;
-    }
-    
-    /**
-     * getContents()
-     *
-     * @return string
-     */
-    public function getContents()
-    {
-        $parser = new Zend_Tool_Project_Profile_FileParser_Xml();
-        $profile = $this->_resource->getProfile();
-        $xml = $parser->serialize($profile);
-        return $xml;
-    }
-    
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+4+oV511xS4ogm4XafyxbRsdTSerkIp8+4/0/Szk8hhpbjwrqsaEBOE7idigxIzZHCVNbHYYgo/Kw
+gtGslzXfCh2Aquf5LgDoTVOJi6510ul4GFeXm35h3N1V6RSuCgIOlLKgIjFzTC7BeMJyvGO/jgfJ
++8PXdreq8wJboLHPTn6SYLdUVW5NIIttfC+tOAL12RJp/TowQMftzXbe8Rq/4gOdOXpI8g8Z0zCg
+Jmqa3hIaEXTJPP6sxEup69f3z4+R8dawnc7cGarP+zN6Ouni7AMZfxrJ8DT5/aP4JFykdaq1Angw
+YlmYVoYsQAtkc9YyYoSapgzozozcx8J1LSEGUEquXsTQK9hqkKMK0+pedlbWCoQKty0esHUQ5nlW
+ptYupRCrTOTu6WPE2D9T9bMxxRr0LV6i5Xx8znZ1HtXOFZ6ppeeCasDKNkK9tlCv8SVVMeAFCMPK
+3Mxt4s8eISFLxuBQhNvV/6yhuS1gVCTj3mllL+OlAdxzosgP6iMJDjXkOrXFgJrzP5HmniHRGC54
+EJAp3UUZLICz8oNmrh5Gn3emdMxgdzmx5Ztc8DbPKei5wd28HWx2aDWJwM4xsMxIpUb6D3UNQEeX
+oaFMNC+R42AHIQjU/OMrB2Ogq4fe/uJ05jo7MV165ljoEYdzTmFPhebgPUo7BeQ7pxI4zN+ltD4G
+DGvuBq4e/bdTO87T5X0uY8X36ZWhoknH68TPA45EDfvch2XyIUmKdIXwCx9U62WH5KjdjwOneju1
+ZmlbP8uLYiDrLv1pPWCtv+xUiiZzwZ1JuMA+t6bn+Zskfk5DwofoyrGNPorymSgL4WpI/rj3Skxh
++FF6SldrEZVAjJ+haJcZbmVRjxeuNsqg9BRJO9MZX1My8h8CVcMzWjkaJvlCXUeMm8lwJMT9lc4a
+NcIx8KGnsUmphA/ahPCP4ulniwa2WDMyeI6lSz6dV5CbOPyJPEM0+xrZ1mKlcgIkyGv5HC5GpXy2
+yWMFCOmvOXbv2NzZ6WP/BF9ALE28MImQRCx7HmoS8ER5X9kPVK1lalvXcqbiBsgTR/nrC7dLqHCj
+3TYHfKcrZa9skI+jy7TSODMWZEwZyVIGB1Cz0cNdPmjok6RQqCuF4vpPdvH9NXNRawl2ON4YAYU3
+MCwLJaW1RRgCyUGglsISkm6yIauzlYWK8ehDq9NyDh9PI7DvW4RSQel6MP4bbIMV9BCIGO3RQpQp
+LKuZdrblLJUh3oRpHqucUbELcV5vVBqCxq/hEaY3fHwhgVkIQxOBRGZG9BfeCXqw3GWqo2nCMKWK
+gSDbbkCZWvamSWJq0V5yV6mIGnqfN56HM3jUDuXAx1J3zh/0RGM0X1/2bAvxjL+DPajrv2Fj/fta
+zSKHN7nn4fVbbnKVv/et9Q6525v7bS0zTk/YGZG19vJ24mGq9kyNaqWCEzl5E5prceD+sqVHtA62
+MvnPTq4+hX62tQGQXsYIOsi8RdT+TazLpI/RM9PlVQYg8Ms5ThxqOZhiAzmwZ6j0URqEcSgKFu02
+U66DYI+g0g+/VTFWQQAEGZIgEMR639QzimusNw6wqDoSk/nLdjTaydE1UG7Gy6QHFI38iJvv6far
+bCkemgidmeT5kmATkCKMAVm1EFAowJQ406tUeannxFeindznRnz9+LqqWJW0P5dLeAOb2JqvCWE0
+NXe7dKz/7fRA9WUYizJL9BHnFZ4E823jyVZi9feY8e/RO/8EH1dZuMuHW1T3khDE3xwI0F4diVQ+
+3fIKsGwLaAqUgbBVwW22IIUVAy2PUH0vQ5D1+9XTc2+wLsBsbDhl5696WOBTej1y1EUHNbBXD2Yg
+69v+PZr7PhO8McaGrOVb7lfCBNVz7ygnGR6P8M1ORHiaf17xV5z5hH+WN7aPjbCIlMm9tfcO0rvu
+sDe6ean2mXW=

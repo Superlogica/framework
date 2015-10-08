@@ -1,202 +1,39 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Db
- * @subpackage Statement
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * Emulates a PDOStatement for native database adapters.
- *
- * @category   Zend
- * @package    Zend_Db
- * @subpackage Statement
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-interface Zend_Db_Statement_Interface
-{
-
-    /**
-     * Bind a column of the statement result set to a PHP variable.
-     *
-     * @param string $column Name the column in the result set, either by
-     *                       position or by name.
-     * @param mixed  $param  Reference to the PHP variable containing the value.
-     * @param mixed  $type   OPTIONAL
-     * @return bool
-     * @throws Zend_Db_Statement_Exception
-     */
-    public function bindColumn($column, &$param, $type = null);
-
-    /**
-     * Binds a parameter to the specified variable name.
-     *
-     * @param mixed $parameter Name the parameter, either integer or string.
-     * @param mixed $variable  Reference to PHP variable containing the value.
-     * @param mixed $type      OPTIONAL Datatype of SQL parameter.
-     * @param mixed $length    OPTIONAL Length of SQL parameter.
-     * @param mixed $options   OPTIONAL Other options.
-     * @return bool
-     * @throws Zend_Db_Statement_Exception
-     */
-    public function bindParam($parameter, &$variable, $type = null, $length = null, $options = null);
-
-    /**
-     * Binds a value to a parameter.
-     *
-     * @param mixed $parameter Name the parameter, either integer or string.
-     * @param mixed $value     Scalar value to bind to the parameter.
-     * @param mixed $type      OPTIONAL Datatype of the parameter.
-     * @return bool
-     * @throws Zend_Db_Statement_Exception
-     */
-    public function bindValue($parameter, $value, $type = null);
-
-    /**
-     * Closes the cursor, allowing the statement to be executed again.
-     *
-     * @return bool
-     * @throws Zend_Db_Statement_Exception
-     */
-    public function closeCursor();
-
-    /**
-     * Returns the number of columns in the result set.
-     * Returns null if the statement has no result set metadata.
-     *
-     * @return int The number of columns.
-     * @throws Zend_Db_Statement_Exception
-     */
-    public function columnCount();
-
-    /**
-     * Retrieves the error code, if any, associated with the last operation on
-     * the statement handle.
-     *
-     * @return string error code.
-     * @throws Zend_Db_Statement_Exception
-     */
-    public function errorCode();
-
-    /**
-     * Retrieves an array of error information, if any, associated with the
-     * last operation on the statement handle.
-     *
-     * @return array
-     * @throws Zend_Db_Statement_Exception
-     */
-    public function errorInfo();
-
-    /**
-     * Executes a prepared statement.
-     *
-     * @param array $params OPTIONAL Values to bind to parameter placeholders.
-     * @return bool
-     * @throws Zend_Db_Statement_Exception
-     */
-    public function execute(array $params = array());
-
-    /**
-     * Fetches a row from the result set.
-     *
-     * @param int $style  OPTIONAL Fetch mode for this fetch operation.
-     * @param int $cursor OPTIONAL Absolute, relative, or other.
-     * @param int $offset OPTIONAL Number for absolute or relative cursors.
-     * @return mixed Array, object, or scalar depending on fetch mode.
-     * @throws Zend_Db_Statement_Exception
-     */
-    public function fetch($style = null, $cursor = null, $offset = null);
-
-    /**
-     * Returns an array containing all of the result set rows.
-     *
-     * @param int $style OPTIONAL Fetch mode.
-     * @param int $col   OPTIONAL Column number, if fetch mode is by column.
-     * @return array Collection of rows, each in a format by the fetch mode.
-     * @throws Zend_Db_Statement_Exception
-     */
-    public function fetchAll($style = null, $col = null);
-
-    /**
-     * Returns a single column from the next row of a result set.
-     *
-     * @param int $col OPTIONAL Position of the column to fetch.
-     * @return string
-     * @throws Zend_Db_Statement_Exception
-     */
-    public function fetchColumn($col = 0);
-
-    /**
-     * Fetches the next row and returns it as an object.
-     *
-     * @param string $class  OPTIONAL Name of the class to create.
-     * @param array  $config OPTIONAL Constructor arguments for the class.
-     * @return mixed One object instance of the specified class.
-     * @throws Zend_Db_Statement_Exception
-     */
-    public function fetchObject($class = 'stdClass', array $config = array());
-
-    /**
-     * Retrieve a statement attribute.
-     *
-     * @param string $key Attribute name.
-     * @return mixed      Attribute value.
-     * @throws Zend_Db_Statement_Exception
-     */
-    public function getAttribute($key);
-
-    /**
-     * Retrieves the next rowset (result set) for a SQL statement that has
-     * multiple result sets.  An example is a stored procedure that returns
-     * the results of multiple queries.
-     *
-     * @return bool
-     * @throws Zend_Db_Statement_Exception
-     */
-    public function nextRowset();
-
-    /**
-     * Returns the number of rows affected by the execution of the
-     * last INSERT, DELETE, or UPDATE statement executed by this
-     * statement object.
-     *
-     * @return int     The number of rows affected.
-     * @throws Zend_Db_Statement_Exception
-     */
-    public function rowCount();
-
-    /**
-     * Set a statement attribute.
-     *
-     * @param string $key Attribute name.
-     * @param mixed  $val Attribute value.
-     * @return bool
-     * @throws Zend_Db_Statement_Exception
-     */
-    public function setAttribute($key, $val);
-
-    /**
-     * Set the default fetch mode for this statement.
-     *
-     * @param int   $mode The fetch mode.
-     * @return bool
-     * @throws Zend_Db_Statement_Exception
-     */
-    public function setFetchMode($mode);
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

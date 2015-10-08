@@ -1,132 +1,51 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Dojo
- * @subpackage View
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: $
- */
-
-/** Zend_Dojo_View_Helper_Textarea */
-require_once 'Zend/Dojo/View/Helper/Textarea.php';
-
-/** Zend_Json */
-require_once 'Zend/Json.php';
-
-/**
- * Dojo Editor dijit
- * 
- * @uses       Zend_Dojo_View_Helper_Textarea
- * @package    Zend_Dojo
- * @subpackage View
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Dojo_View_Helper_Editor extends Zend_Dojo_View_Helper_Textarea
-{
-    /**
-     * @param string Dijit type
-     */
-    protected $_dijit = 'dijit.Editor';
-
-    /**
-     * @var string Dijit module to load
-     */
-    protected $_module = 'dijit.Editor';
-
-    /**
-     * JSON-encoded parameters
-     * @var array
-     */
-    protected $_jsonParams = array('captureEvents', 'events', 'plugins');
-
-    /**
-     * dijit.Editor
-     * 
-     * @param  string $id 
-     * @param  string $value 
-     * @param  array $params 
-     * @param  array $attribs 
-     * @return string
-     */
-    public function editor($id, $value = null, $params = array(), $attribs = array())
-    {
-        $hiddenName = $id;
-        if (array_key_exists('id', $attribs)) {
-            $hiddenId = $attribs['id'];
-        } else {
-            $hiddenId = $hiddenName;
-        }
-        $hiddenId = $this->_normalizeId($hiddenId);
-
-        $textareaName = $this->_normalizeEditorName($hiddenName);
-        $textareaId   = $hiddenId . '-Editor';
-
-        $hiddenAttribs = array(
-            'id'    => $hiddenId,
-            'name'  => $hiddenName,
-            'value' => $value,
-            'type'  => 'hidden',
-        );
-        $attribs['id'] = $textareaId;
-
-        $this->_createGetParentFormFunction();
-        $this->_createEditorOnSubmit($hiddenId, $textareaId);
-
-        $html = '<input' . $this->_htmlAttribs($hiddenAttribs) . $this->getClosingBracket()
-              . $this->textarea($textareaName, $value, $params, $attribs);
-
-        return $html;
-    }
-
-    /**
-     * Normalize editor element name
-     * 
-     * @param  string $name 
-     * @return string
-     */
-    protected function _normalizeEditorName($name)
-    {
-        if ('[]' == substr($name, -2)) {
-            $name = substr($name, 0, strlen($name) - 2);
-            $name .= '[Editor][]';
-        } else {
-            $name .= '[Editor]';
-        }
-        return $name;
-    }
-
-    /**
-     * Create onSubmit binding for element
-     * 
-     * @param  string $hiddenId 
-     * @param  string $editorId 
-     * @return void
-     */
-    protected function _createEditorOnSubmit($hiddenId, $editorId)
-    {
-        $this->dojo->onLoadCaptureStart();
-        echo <<<EOJ
-function() {
-    var form = zend.findParentForm(dojo.byId('$hiddenId'));
-    dojo.connect(form, 'onsubmit', function () {
-        dojo.byId('$hiddenId').value = dijit.byId('$editorId').getValue(false);
-    });
-}
-EOJ;
-        $this->dojo->onLoadCaptureEnd();
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

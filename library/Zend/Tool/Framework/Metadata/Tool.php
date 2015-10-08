@@ -1,218 +1,43 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Tool
- * @subpackage Framework
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id$
- */
-
-/**
- * @see Zend_Tool_Framework_Metadata_Basic
- */
-require_once 'Zend/Tool/Framework/Metadata/Basic.php';
-
-/**
- * @category   Zend
- * @package    Zend_Tool
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Tool_Framework_Metadata_Tool extends Zend_Tool_Framework_Metadata_Basic
-{
-    
-    /**
-     * @var string
-     */
-    protected $_type = 'Tool';
-    
-    /**#@+
-     * @var string
-     */
-    protected $_clientName    = null;
-    protected $_actionName    = null;
-    protected $_providerName  = null;
-    protected $_specialtyName = null;
-    /**#@-*/
-    
-    /**#@+
-     * @var string
-     */
-    protected $_clientReference = null;
-    protected $_actionReference = null;
-    protected $_providerReference = null;
-    /**#@-*/
-
-    public function setClientName($clientName)
-    {
-        $this->_clientName = $clientName;
-        return $this;
-    }
-    
-    public function getClientName()
-    {
-        return $this->_clientName;
-    }
-    
-    /**
-     * setActionName()
-     *
-     * @param string $actionName
-     * @return Zend_Tool_Framework_Metadata_Tool
-     */
-    public function setActionName($actionName)
-    {
-        $this->_actionName = $actionName;
-        return $this;
-    }
-
-    /**
-     * getActionName()
-     *
-     * @return string
-     */
-    public function getActionName()
-    {
-        return $this->_actionName;
-    }
-    
-    /**
-     * setProviderName()
-     *
-     * @param string $providerName
-     * @return Zend_Tool_Framework_Metadata_Tool
-     */
-    public function setProviderName($providerName)
-    {
-        $this->_providerName = $providerName;
-        return $this;
-    }
-
-    /**
-     * getProviderName()
-     *
-     * @return string
-     */
-    public function getProviderName()
-    {
-        return $this->_providerName;
-    }
-
-    /**
-     * setSpecialtyName()
-     *
-     * @param string $specialtyName
-     * @return Zend_Tool_Framework_Metadata_Tool
-     */
-    public function setSpecialtyName($specialtyName)
-    {
-        $this->_specialtyName = $specialtyName;
-        return $this;
-    }
-
-    /**
-     * getSpecialtyName()
-     *
-     * @return string
-     */
-    public function getSpecialtyName()
-    {
-        return $this->_specialtyName;
-    }
-
-    /**
-     * setClientReference()
-     *
-     * @param Zend_Tool_Framework_Client_Abstract $client
-     * @return Zend_Tool_Framework_Metadata_Tool
-     */
-    public function setClientReference(Zend_Tool_Framework_Client_Abstract $client)
-    {
-        $this->_clientReference = $client;
-        return $this;
-    }
-    
-    /**
-     * getClientReference()
-     *
-     * @return Zend_Tool_Framework_Client_Abstract
-     */
-    public function getClientReference()
-    {
-        return $this->_clientReference;
-    }
-    
-    /**
-     * setActionReference()
-     *
-     * @param Zend_Tool_Framework_Action_Interface $action
-     * @return Zend_Tool_Framework_Metadata_Tool
-     */
-    public function setActionReference(Zend_Tool_Framework_Action_Interface $action)
-    {
-        $this->_actionReference = $action;
-        return $this;
-    }
-    
-    /**
-     * getActionReference()
-     *
-     * @return Zend_Tool_Framework_Action_Interface
-     */
-    public function getActionReference()
-    {
-        return $this->_actionReference;
-    }
-    
-    /**
-     * setProviderReference()
-     *
-     * @param Zend_Tool_Framework_Provider_Interface $provider
-     * @return Zend_Tool_Framework_Metadata_Tool
-     */
-    public function setProviderReference(Zend_Tool_Framework_Provider_Interface $provider)
-    {
-        $this->_providerReference = $provider;
-        return $this;
-    }
-    
-    /**
-     * getProviderReference()
-     *
-     * @return Zend_Tool_Framework_Provider_Interface
-     */
-    public function getProviderReference()
-    {
-        return $this->_providerReference;
-    }
-    
-    /**
-     * __toString() cast to string
-     *
-     * @return string
-     */
-    public function __toString()
-    {
-        $string = parent::__toString();
-        $string .= ' (ProviderName: ' . $this->_providerName 
-             . ', ActionName: '     . $this->_actionName 
-             . ', SpecialtyName: '  . $this->_specialtyName 
-             . ')';
-        
-        return $string;
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

@@ -1,107 +1,35 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_InfoCard
- * @subpackage Zend_InfoCard_Xml
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Element.php 15577 2009-05-14 12:43:34Z matthew $
- */
-
-/**
- * Zend_InfoCard_Xml_Element_Interface
- */
-require_once 'Zend/InfoCard/Xml/Element/Interface.php';
-
-/**
- * An abstract class representing a an XML data block
- *
- * @category   Zend
- * @package    Zend_InfoCard
- * @subpackage Zend_InfoCard_Xml
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-abstract class Zend_InfoCard_Xml_Element
-    extends SimpleXMLElement
-    implements Zend_InfoCard_Xml_Element_Interface
-{
-    /**
-     * Convert the object to a string by displaying its XML content
-     *
-     * @return string an XML representation of the object
-     */
-    public function __toString()
-    {
-        return $this->asXML();
-    }
-
-    /**
-     * Converts an XML Element object into a DOM object
-     *
-     * @throws Zend_InfoCard_Xml_Exception
-     * @param Zend_InfoCard_Xml_Element $e The object to convert
-     * @return DOMElement A DOMElement representation of the same object
-     */
-    static public function convertToDOM(Zend_InfoCard_Xml_Element $e)
-    {
-        $dom = dom_import_simplexml($e);
-
-        if(!($dom instanceof DOMElement)) {
-            // Zend_InfoCard_Xml_Element exntes SimpleXMLElement, so this should *never* fail
-            // @codeCoverageIgnoreStart
-            require_once 'Zend/InfoCard/Xml/Exception.php';
-            throw new Zend_InfoCard_Xml_Exception("Failed to convert between SimpleXML and DOM");
-            // @codeCoverageIgnoreEnd
-        }
-
-        return $dom;
-    }
-
-    /**
-     * Converts a DOMElement object into the specific class
-     *
-     * @throws Zend_InfoCard_Xml_Exception
-     * @param DOMElement $e The DOMElement object to convert
-     * @param string $classname The name of the class to convert it to (must inhert from Zend_InfoCard_Xml_Element)
-     * @return Zend_InfoCard_Xml_Element a Xml Element object from the DOM element
-     */
-    static public function convertToObject(DOMElement $e, $classname)
-    {
-        if (!class_exists($classname)) {
-            require_once 'Zend/Loader.php';
-            Zend_Loader::loadClass($classname);
-        }
-
-        $reflection = new ReflectionClass($classname);
-
-        if(!$reflection->isSubclassOf('Zend_InfoCard_Xml_Element')) {
-            require_once 'Zend/InfoCard/Xml/Exception.php';
-            throw new Zend_InfoCard_Xml_Exception("DOM element must be converted to an instance of Zend_InfoCard_Xml_Element");
-        }
-
-        $sxe = simplexml_import_dom($e, $classname);
-
-        if(!($sxe instanceof Zend_InfoCard_Xml_Element)) {
-            // Since we just checked to see if this was a subclass of Zend_infoCard_Xml_Element this shoudl never fail
-            // @codeCoverageIgnoreStart
-            require_once 'Zend/InfoCard/Xml/Exception.php';
-            throw new Zend_InfoCard_Xml_Exception("Failed to convert between DOM and SimpleXML");
-            // @codeCoverageIgnoreEnd
-        }
-
-        return $sxe;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

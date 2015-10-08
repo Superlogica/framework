@@ -1,553 +1,90 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Search_Lucene
- * @subpackage Search
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-
-/** Zend_Search_Lucene_Search_Similarity_Default */
-require_once 'Zend/Search/Lucene/Search/Similarity/Default.php';
-
-
-/**
- * @category   Zend
- * @package    Zend_Search_Lucene
- * @subpackage Search
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-abstract class Zend_Search_Lucene_Search_Similarity
-{
-    /**
-     * The Similarity implementation used by default.
-     *
-     * @var Zend_Search_Lucene_Search_Similarity
-     */
-    private static $_defaultImpl;
-
-    /**
-     * Cache of decoded bytes.
-     * Array of floats
-     *
-     * @var array
-     */
-    private static $_normTable = array( 0   => 0.0,
-                                        1   => 5.820766E-10,
-                                        2   => 6.9849193E-10,
-                                        3   => 8.1490725E-10,
-                                        4   => 9.313226E-10,
-                                        5   => 1.1641532E-9,
-                                        6   => 1.3969839E-9,
-                                        7   => 1.6298145E-9,
-                                        8   => 1.8626451E-9,
-                                        9   => 2.3283064E-9,
-                                        10  => 2.7939677E-9,
-                                        11  => 3.259629E-9,
-                                        12  => 3.7252903E-9,
-                                        13  => 4.656613E-9,
-                                        14  => 5.5879354E-9,
-                                        15  => 6.519258E-9,
-                                        16  => 7.4505806E-9,
-                                        17  => 9.313226E-9,
-                                        18  => 1.1175871E-8,
-                                        19  => 1.3038516E-8,
-                                        20  => 1.4901161E-8,
-                                        21  => 1.8626451E-8,
-                                        22  => 2.2351742E-8,
-                                        23  => 2.6077032E-8,
-                                        24  => 2.9802322E-8,
-                                        25  => 3.7252903E-8,
-                                        26  => 4.4703484E-8,
-                                        27  => 5.2154064E-8,
-                                        28  => 5.9604645E-8,
-                                        29  => 7.4505806E-8,
-                                        30  => 8.940697E-8,
-                                        31  => 1.0430813E-7,
-                                        32  => 1.1920929E-7,
-                                        33  => 1.4901161E-7,
-                                        34  => 1.7881393E-7,
-                                        35  => 2.0861626E-7,
-                                        36  => 2.3841858E-7,
-                                        37  => 2.9802322E-7,
-                                        38  => 3.5762787E-7,
-                                        39  => 4.172325E-7,
-                                        40  => 4.7683716E-7,
-                                        41  => 5.9604645E-7,
-                                        42  => 7.1525574E-7,
-                                        43  => 8.34465E-7,
-                                        44  => 9.536743E-7,
-                                        45  => 1.1920929E-6,
-                                        46  => 1.4305115E-6,
-                                        47  => 1.66893E-6,
-                                        48  => 1.9073486E-6,
-                                        49  => 2.3841858E-6,
-                                        50  => 2.861023E-6,
-                                        51  => 3.33786E-6,
-                                        52  => 3.8146973E-6,
-                                        53  => 4.7683716E-6,
-                                        54  => 5.722046E-6,
-                                        55  => 6.67572E-6,
-                                        56  => 7.6293945E-6,
-                                        57  => 9.536743E-6,
-                                        58  => 1.1444092E-5,
-                                        59  => 1.335144E-5,
-                                        60  => 1.5258789E-5,
-                                        61  => 1.9073486E-5,
-                                        62  => 2.2888184E-5,
-                                        63  => 2.670288E-5,
-                                        64  => 3.0517578E-5,
-                                        65  => 3.8146973E-5,
-                                        66  => 4.5776367E-5,
-                                        67  => 5.340576E-5,
-                                        68  => 6.1035156E-5,
-                                        69  => 7.6293945E-5,
-                                        70  => 9.1552734E-5,
-                                        71  => 1.0681152E-4,
-                                        72  => 1.2207031E-4,
-                                        73  => 1.5258789E-4,
-                                        74  => 1.8310547E-4,
-                                        75  => 2.1362305E-4,
-                                        76  => 2.4414062E-4,
-                                        77  => 3.0517578E-4,
-                                        78  => 3.6621094E-4,
-                                        79  => 4.272461E-4,
-                                        80  => 4.8828125E-4,
-                                        81  => 6.1035156E-4,
-                                        82  => 7.324219E-4,
-                                        83  => 8.544922E-4,
-                                        84  => 9.765625E-4,
-                                        85  => 0.0012207031,
-                                        86  => 0.0014648438,
-                                        87  => 0.0017089844,
-                                        88  => 0.001953125,
-                                        89  => 0.0024414062,
-                                        90  => 0.0029296875,
-                                        91  => 0.0034179688,
-                                        92  => 0.00390625,
-                                        93  => 0.0048828125,
-                                        94  => 0.005859375,
-                                        95  => 0.0068359375,
-                                        96  => 0.0078125,
-                                        97  => 0.009765625,
-                                        98  => 0.01171875,
-                                        99  => 0.013671875,
-                                        100 => 0.015625,
-                                        101 => 0.01953125,
-                                        102 => 0.0234375,
-                                        103 => 0.02734375,
-                                        104 => 0.03125,
-                                        105 => 0.0390625,
-                                        106 => 0.046875,
-                                        107 => 0.0546875,
-                                        108 => 0.0625,
-                                        109 => 0.078125,
-                                        110 => 0.09375,
-                                        111 => 0.109375,
-                                        112 => 0.125,
-                                        113 => 0.15625,
-                                        114 => 0.1875,
-                                        115 => 0.21875,
-                                        116 => 0.25,
-                                        117 => 0.3125,
-                                        118 => 0.375,
-                                        119 => 0.4375,
-                                        120 => 0.5,
-                                        121 => 0.625,
-                                        122 => 0.75,
-                                        123 => 0.875,
-                                        124 => 1.0,
-                                        125 => 1.25,
-                                        126 => 1.5,
-                                        127 => 1.75,
-                                        128 => 2.0,
-                                        129 => 2.5,
-                                        130 => 3.0,
-                                        131 => 3.5,
-                                        132 => 4.0,
-                                        133 => 5.0,
-                                        134 => 6.0,
-                                        135 => 7.0,
-                                        136 => 8.0,
-                                        137 => 10.0,
-                                        138 => 12.0,
-                                        139 => 14.0,
-                                        140 => 16.0,
-                                        141 => 20.0,
-                                        142 => 24.0,
-                                        143 => 28.0,
-                                        144 => 32.0,
-                                        145 => 40.0,
-                                        146 => 48.0,
-                                        147 => 56.0,
-                                        148 => 64.0,
-                                        149 => 80.0,
-                                        150 => 96.0,
-                                        151 => 112.0,
-                                        152 => 128.0,
-                                        153 => 160.0,
-                                        154 => 192.0,
-                                        155 => 224.0,
-                                        156 => 256.0,
-                                        157 => 320.0,
-                                        158 => 384.0,
-                                        159 => 448.0,
-                                        160 => 512.0,
-                                        161 => 640.0,
-                                        162 => 768.0,
-                                        163 => 896.0,
-                                        164 => 1024.0,
-                                        165 => 1280.0,
-                                        166 => 1536.0,
-                                        167 => 1792.0,
-                                        168 => 2048.0,
-                                        169 => 2560.0,
-                                        170 => 3072.0,
-                                        171 => 3584.0,
-                                        172 => 4096.0,
-                                        173 => 5120.0,
-                                        174 => 6144.0,
-                                        175 => 7168.0,
-                                        176 => 8192.0,
-                                        177 => 10240.0,
-                                        178 => 12288.0,
-                                        179 => 14336.0,
-                                        180 => 16384.0,
-                                        181 => 20480.0,
-                                        182 => 24576.0,
-                                        183 => 28672.0,
-                                        184 => 32768.0,
-                                        185 => 40960.0,
-                                        186 => 49152.0,
-                                        187 => 57344.0,
-                                        188 => 65536.0,
-                                        189 => 81920.0,
-                                        190 => 98304.0,
-                                        191 => 114688.0,
-                                        192 => 131072.0,
-                                        193 => 163840.0,
-                                        194 => 196608.0,
-                                        195 => 229376.0,
-                                        196 => 262144.0,
-                                        197 => 327680.0,
-                                        198 => 393216.0,
-                                        199 => 458752.0,
-                                        200 => 524288.0,
-                                        201 => 655360.0,
-                                        202 => 786432.0,
-                                        203 => 917504.0,
-                                        204 => 1048576.0,
-                                        205 => 1310720.0,
-                                        206 => 1572864.0,
-                                        207 => 1835008.0,
-                                        208 => 2097152.0,
-                                        209 => 2621440.0,
-                                        210 => 3145728.0,
-                                        211 => 3670016.0,
-                                        212 => 4194304.0,
-                                        213 => 5242880.0,
-                                        214 => 6291456.0,
-                                        215 => 7340032.0,
-                                        216 => 8388608.0,
-                                        217 => 1.048576E7,
-                                        218 => 1.2582912E7,
-                                        219 => 1.4680064E7,
-                                        220 => 1.6777216E7,
-                                        221 => 2.097152E7,
-                                        222 => 2.5165824E7,
-                                        223 => 2.9360128E7,
-                                        224 => 3.3554432E7,
-                                        225 => 4.194304E7,
-                                        226 => 5.0331648E7,
-                                        227 => 5.8720256E7,
-                                        228 => 6.7108864E7,
-                                        229 => 8.388608E7,
-                                        230 => 1.00663296E8,
-                                        231 => 1.17440512E8,
-                                        232 => 1.34217728E8,
-                                        233 => 1.6777216E8,
-                                        234 => 2.01326592E8,
-                                        235 => 2.34881024E8,
-                                        236 => 2.68435456E8,
-                                        237 => 3.3554432E8,
-                                        238 => 4.02653184E8,
-                                        239 => 4.69762048E8,
-                                        240 => 5.3687091E8,
-                                        241 => 6.7108864E8,
-                                        242 => 8.0530637E8,
-                                        243 => 9.395241E8,
-                                        244 => 1.07374182E9,
-                                        245 => 1.34217728E9,
-                                        246 => 1.61061274E9,
-                                        247 => 1.87904819E9,
-                                        248 => 2.14748365E9,
-                                        249 => 2.68435456E9,
-                                        250 => 3.22122547E9,
-                                        251 => 3.75809638E9,
-                                        252 => 4.2949673E9,
-                                        253 => 5.3687091E9,
-                                        254 => 6.4424509E9,
-                                        255 => 7.5161928E9 );
-
-
-    /**
-     * Set the default Similarity implementation used by indexing and search
-     * code.
-     *
-     * @param Zend_Search_Lucene_Search_Similarity $similarity
-     */
-    public static function setDefault(Zend_Search_Lucene_Search_Similarity $similarity)
-    {
-        self::$_defaultImpl = $similarity;
-    }
-
-
-    /**
-     * Return the default Similarity implementation used by indexing and search
-     * code.
-     *
-     * @return Zend_Search_Lucene_Search_Similarity
-     */
-    public static function getDefault()
-    {
-        if (!self::$_defaultImpl instanceof Zend_Search_Lucene_Search_Similarity) {
-            self::$_defaultImpl = new Zend_Search_Lucene_Search_Similarity_Default();
-        }
-
-        return self::$_defaultImpl;
-    }
-
-
-    /**
-     * Computes the normalization value for a field given the total number of
-     * terms contained in a field.  These values, together with field boosts, are
-     * stored in an index and multipled into scores for hits on each field by the
-     * search code.
-     *
-     * Matches in longer fields are less precise, so implemenations of this
-     * method usually return smaller values when 'numTokens' is large,
-     * and larger values when 'numTokens' is small.
-     *
-     * That these values are computed under
-     * IndexWriter::addDocument(Document) and stored then using
-     * encodeNorm(float).  Thus they have limited precision, and documents
-     * must be re-indexed if this method is altered.
-     *
-     * fieldName - name of field
-     * numTokens - the total number of tokens contained in fields named
-     *             'fieldName' of 'doc'.
-     * Returns a normalization factor for hits on this field of this document
-     *
-     * @param string $fieldName
-     * @param integer $numTokens
-     * @return float
-     */
-    abstract public function lengthNorm($fieldName, $numTokens);
-
-    /**
-     * Computes the normalization value for a query given the sum of the squared
-     * weights of each of the query terms.  This value is then multipled into the
-     * weight of each query term.
-     *
-     * This does not affect ranking, but rather just attempts to make scores
-     * from different queries comparable.
-     *
-     * sumOfSquaredWeights - the sum of the squares of query term weights
-     * Returns a normalization factor for query weights
-     *
-     * @param float $sumOfSquaredWeights
-     * @return float
-     */
-    abstract public function queryNorm($sumOfSquaredWeights);
-
-
-    /**
-     *  Decodes a normalization factor stored in an index.
-     *
-     * @param integer $byte
-     * @return float
-     */
-    public static function decodeNorm($byte)
-    {
-        return self::$_normTable[$byte & 0xFF];
-    }
-
-
-    /**
-     * Encodes a normalization factor for storage in an index.
-     *
-     * The encoding uses a five-bit exponent and three-bit mantissa, thus
-     * representing values from around 7x10^9 to 2x10^-9 with about one
-     * significant decimal digit of accuracy.  Zero is also represented.
-     * Negative numbers are rounded up to zero.  Values too large to represent
-     * are rounded down to the largest representable value.  Positive values too
-     * small to represent are rounded up to the smallest positive representable
-     * value.
-     *
-     * @param float $f
-     * @return integer
-     */
-    static function encodeNorm($f)
-    {
-      return self::_floatToByte($f);
-    }
-
-    /**
-     * Float to byte conversion
-     *
-     * @param integer $b
-     * @return float
-     */
-    private static function _floatToByte($f)
-    {
-        // round negatives up to zero
-        if ($f <= 0.0) {
-            return 0;
-        }
-
-        // search for appropriate value
-        $lowIndex = 0;
-        $highIndex = 255;
-        while ($highIndex >= $lowIndex) {
-            // $mid = ($highIndex - $lowIndex)/2;
-            $mid = ($highIndex + $lowIndex) >> 1;
-            $delta = $f - self::$_normTable[$mid];
-
-            if ($delta < 0) {
-                $highIndex = $mid-1;
-            } elseif ($delta > 0) {
-                $lowIndex  = $mid+1;
-            } else {
-                return $mid; // We got it!
-            }
-        }
-
-        // round to closest value
-        if ($highIndex != 255 &&
-            $f - self::$_normTable[$highIndex] > self::$_normTable[$highIndex+1] - $f ) {
-            return $highIndex + 1;
-        } else {
-            return $highIndex;
-        }
-    }
-
-
-    /**
-     * Computes a score factor based on a term or phrase's frequency in a
-     * document.  This value is multiplied by the idf(Term, Searcher)
-     * factor for each term in the query and these products are then summed to
-     * form the initial score for a document.
-     *
-     * Terms and phrases repeated in a document indicate the topic of the
-     * document, so implementations of this method usually return larger values
-     * when 'freq' is large, and smaller values when 'freq'
-     * is small.
-     *
-     * freq - the frequency of a term within a document
-     * Returns a score factor based on a term's within-document frequency
-     *
-     * @param float $freq
-     * @return float
-     */
-    abstract public function tf($freq);
-
-    /**
-     * Computes the amount of a sloppy phrase match, based on an edit distance.
-     * This value is summed for each sloppy phrase match in a document to form
-     * the frequency that is passed to tf(float).
-     *
-     * A phrase match with a small edit distance to a document passage more
-     * closely matches the document, so implementations of this method usually
-     * return larger values when the edit distance is small and smaller values
-     * when it is large.
-     *
-     * distance - the edit distance of this sloppy phrase match
-     * Returns the frequency increment for this match
-     *
-     * @param integer $distance
-     * @return float
-     */
-    abstract public function sloppyFreq($distance);
-
-
-    /**
-     * Computes a score factor for a simple term or a phrase.
-     *
-     * The default implementation is:
-     *   return idfFreq(searcher.docFreq(term), searcher.maxDoc());
-     *
-     * input - the term in question or array of terms
-     * reader - reader the document collection being searched
-     * Returns a score factor for the term
-     *
-     * @param mixed $input
-     * @param Zend_Search_Lucene_Interface $reader
-     * @return a score factor for the term
-     */
-    public function idf($input, Zend_Search_Lucene_Interface $reader)
-    {
-        if (!is_array($input)) {
-            return $this->idfFreq($reader->docFreq($input), $reader->count());
-        } else {
-            $idf = 0.0;
-            foreach ($input as $term) {
-                $idf += $this->idfFreq($reader->docFreq($term), $reader->count());
-            }
-            return $idf;
-        }
-    }
-
-    /**
-     * Computes a score factor based on a term's document frequency (the number
-     * of documents which contain the term).  This value is multiplied by the
-     * tf(int) factor for each term in the query and these products are
-     * then summed to form the initial score for a document.
-     *
-     * Terms that occur in fewer documents are better indicators of topic, so
-     * implemenations of this method usually return larger values for rare terms,
-     * and smaller values for common terms.
-     *
-     * docFreq - the number of documents which contain the term
-     * numDocs - the total number of documents in the collection
-     * Returns a score factor based on the term's document frequency
-     *
-     * @param integer $docFreq
-     * @param integer $numDocs
-     * @return float
-     */
-    abstract public function idfFreq($docFreq, $numDocs);
-
-    /**
-     * Computes a score factor based on the fraction of all query terms that a
-     * document contains.  This value is multiplied into scores.
-     *
-     * The presence of a large portion of the query terms indicates a better
-     * match with the query, so implemenations of this method usually return
-     * larger values when the ratio between these parameters is large and smaller
-     * values when the ratio between them is small.
-     *
-     * overlap - the number of query terms matched in the document
-     * maxOverlap - the total number of terms in the query
-     * Returns a score factor based on term overlap with the query
-     *
-     * @param integer $overlap
-     * @param integer $maxOverlap
-     * @return float
-     */
-    abstract public function coord($overlap, $maxOverlap);
-}
-
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+oW==

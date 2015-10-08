@@ -1,160 +1,57 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Gbase
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * @see Zend_Gdata_Gbase_Entry
- */
-require_once 'Zend/Gdata/Gbase/Entry.php';
-
-/**
- * Concrete class for working with Item entries.
- *
- * @link http://code.google.com/apis/base/
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Gbase
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Gdata_Gbase_ItemEntry extends Zend_Gdata_Gbase_Entry
-{
-    /**
-     * The classname for individual item entry elements.
-     *
-     * @var string
-     */
-    protected $_entryClassName = 'Zend_Gdata_Gbase_ItemEntry';
-
-    /**
-     * Set the value of the itme_type
-     *
-     * @param Zend_Gdata_Gbase_Extension_ItemType $value The desired value for the item_type 
-     * @return Zend_Gdata_Gbase_ItemEntry Provides a fluent interface
-     */
-    public function setItemType($value)
-    {
-        $this->addGbaseAttribute('item_type', $value, 'text');
-        return $this;
-    }
-
-    /**
-     * Adds a custom attribute to the entry in the following format:
-     * &lt;g:[$name] type='[$type]'&gt;[$value]&lt;/g:[$name]&gt;      
-     *
-     * @param string $name The name of the attribute
-     * @param string $value The text value of the attribute
-     * @param string $type (optional) The type of the attribute.
-     *          e.g.: 'text', 'number', 'floatUnit'
-     * @return Zend_Gdata_Gbase_ItemEntry Provides a fluent interface
-     */
-    public function addGbaseAttribute($name, $text, $type = null) {
-        $newBaseAttribute =  new Zend_Gdata_Gbase_Extension_BaseAttribute($name, $text, $type);
-        $this->_baseAttributes[] = $newBaseAttribute;
-        return $this;
-    }
-
-    /**
-     * Removes a Base attribute from the current list of Base attributes
-     * 
-     * @param Zend_Gdata_Gbase_Extension_BaseAttribute $baseAttribute The attribute to be removed
-     * @return Zend_Gdata_Gbase_ItemEntry Provides a fluent interface
-     */
-    public function removeGbaseAttribute($baseAttribute) {
-        $baseAttributes = $this->_baseAttributes;
-        for ($i = 0; $i < count($this->_baseAttributes); $i++) {
-            if ($this->_baseAttributes[$i] == $baseAttribute) {
-                array_splice($baseAttributes, $i, 1);
-                break;
-            }
-        }
-        $this->_baseAttributes = $baseAttributes;
-        return $this;
-    }
-
-    /**
-     * Uploads changes in this entry to the server using Zend_Gdata_App
-     *
-     * @param boolean $dryRun Whether the transaction is dry run or not.
-     * @param string|null $uri The URI to send requests to, or null if $data
-     *        contains the URI.
-     * @param string|null $className The name of the class that should we
-     *        deserializing the server response. If null, then
-     *        'Zend_Gdata_App_Entry' will be used.
-     * @param array $extraHeaders Extra headers to add to the request, as an
-     *        array of string-based key/value pairs.
-     * @return Zend_Gdata_App_Entry The updated entry
-     * @throws Zend_Gdata_App_Exception
-     */
-    public function save($dryRun = false,
-                         $uri = null,
-                         $className = null,
-                         $extraHeaders = array())
-    {
-        if ($dryRun == true) {
-            $editLink = $this->getEditLink();
-            if ($uri == null && $editLink !== null) {
-                $uri = $editLink->getHref() . '?dry-run=true';
-            }
-            if ($uri === null) {
-                require_once 'Zend/Gdata/App/InvalidArgumentException.php';
-                throw new Zend_Gdata_App_InvalidArgumentException('You must specify an URI which needs deleted.');
-            }
-            $service = new Zend_Gdata_App($this->getHttpClient());
-            return $service->updateEntry($this,
-                                         $uri,
-                                         $className,
-                                         $extraHeaders);
-        } else {
-            parent::save($uri, $className, $extraHeaders);
-        }
-    }
-
-    /**
-     * Deletes this entry to the server using the referenced
-     * Zend_Http_Client to do a HTTP DELETE to the edit link stored in this
-     * entry's link collection.
-     *
-     * @param boolean $dyrRun Whether the transaction is dry run or not
-     * @return void
-     * @throws Zend_Gdata_App_Exception
-     */
-    public function delete($dryRun = false)
-    {
-        $uri = null;
-
-        if ($dryRun == true) {
-            $editLink = $this->getEditLink();
-            if ($editLink !== null) {
-                $uri = $editLink->getHref() . '?dry-run=true';
-            }
-            if ($uri === null) {
-                require_once 'Zend/Gdata/App/InvalidArgumentException.php';
-                throw new Zend_Gdata_App_InvalidArgumentException('You must specify an URI which needs deleted.');
-            }
-            parent::delete($uri);
-        } else {
-            parent::delete();
-        }
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+nkm=

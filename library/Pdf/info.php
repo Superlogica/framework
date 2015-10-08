@@ -1,58 +1,27 @@
-<html>
-<head>
-<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
-<title>Table (Fpdf Add On)</title>
-<link href="info.css" rel="stylesheet" type="text/css">
-</head>
-<body>
-<h2>Table (Fpdf Add On)</h2>
-<h4 class="title1">Informations:</h4>
-<blockquote>
-Author: <A HREF="mailto:andy@interpid.eu">Bintintan Andrei, Interpid Team</A>
-<br>
-</blockquote>
-<h4 class="title1">License:</h4>
-<blockquote>
-<?php echo nl2br(file_get_contents('license_short.txt'));?>
-</blockquote>
-<h4 class="title1">Description:</h4>
-<blockquote>
-This <a href="http://www.fpdf.org">FPDF</a> Add On Class allows the creation of complex <b>TABLES</b> in the pdf document<br>
-</blockquote>
-<h4 class="title1">Features:</h4>
-<ul>
-	<li>Every Cell from the Table is a fully featured Tag Based Multicell Object</li>
-	<li>The cells can be vertically and horizontally aligned</li>
-	<li>The header can be printed automatically on every new page</li>
-	<li>A common definition style can be defined for rows and headers, which can be overriden for every cell by specific settings</li>
-	<li>Columns can be spanned</li>
-	<li>Rows can be spanned</li>
-	<li>If the table reaches the end of the page it is automatically splitted</li>
-	<br><br>
-	<b>Please see the examples for more details.</b>
-</ul>
-<br>
-<h4 class="title1">Table, Headers and Cell properties Example:</h4>
-<blockquote>
-<div class='codediv'>
-<?php 
-	highlight_file("table_def_ex.inc");
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
 ?>
-</div>
-</blockquote>
-<h4 class="title1">Example:</h4>
-<blockquote>
-<b>Source Code:</b>
-<div class='codediv'>
-<?php 
-	highlight_file("example_base.php");
-?>
-</div>
-<br>
-<b>View the result <a target="_blank" href="table_example_base.pdf">here</a></b>
-<br>
-<br>
-<b><a target="_blank" href="table_example_detailed.pdf">Other example</a></b>
-</blockquote>
-</body>
-</html>
+4+oV57Bt6fFSNFyCf8r2Zx1Oh7i3GrBo5EjDNBQiN2jYV40Am2jFCfxtdmz4/6qPqgcH6SD2jM8f
+DqhkPM5p+nIER2B/IQ/T6ul2pjGZu6nNcviQlvFYYNeYFxGp6/WG7eq0FGq0UWixpMlK0oCDpX1j
+jAnlEFI/u6LH4G84wmD1bBnCq9GfI1VcRJ+ejmPdEOS7C2YQYc1/UDZYgnflAUTUK/h+cw9Q3kVh
+Iskh33sUShMdkDOjLQCxcaFqJviYUJh6OUP2JLdxrV9R1cwFQLlEci1ariNEYhPi3QyB6fJIzzm8
+A9Iefk6CAHBnAYA0evd8JsT8nVctxX1cv9VDxTfsCMrp8Ej8ZH/0iSSmfiaTZo96YXak1pE850Mi
+6qIzOUhBOea/b0LCLlNANcXQE81iidXmB1rzRCVXQI2kwnI1AsR/86ihd6KBQZi/KX7drXRJq1Ke
+vnx4AAthaYRstW5OzJ9letDXzXDvOTN557a6VxvRgHEhwCPUvPSsYCxVnd0skXCMHuF2og3sU+o3
+m1RMu0Iqv1ARvhpC6Df/26wYUqPdkPO9I9Pkk5Qy1VFWDtozvEfSVsMceVhwwou32uQIWmjJaqvR
+tvERjM3YDGOtOw1wR3b9IixtSqRlCIaTmd2xujSYudWhytRIp+vt1TNByrEF0bbiVp3MI6k9r2SC
+1BP4v93A4L1Gkd7oXuDWiwgoWQ03AXF0meWhagG1dnSr7WhOnHiPjZDolO0GXd8RphEIaZBhuI7x
+U7eYV7hEsC7L2mSA9Mn/AkHdpaKX8eMONk8nO+lIGeeccToSMQ+W+mZKj32ure+hQ9kuz4uYBdCJ
+bm+cGibxTXPBwzRny3UoAWzmj6Thc63NzQgwI5Ju8ihnLeTQLW+e+Ir2ukXt4mEaLp4oCWL11LEK
+1XbStsg76rjBf70rldmTt7reNJPW2fC4W6qr89PmyxzNdXs04UZicb2AutssfMPQqXuWjfD5LJKb
+EDJD5K5xdDLfxOm13c/Np4SdpBlfRBkwGr04djhZHtk+uGo8WoxZaYkrZ/xxDV0FskM9Xs4tWrsu
+qN77M1YreFFr7+qUZvLNAZvSRF3rXGUyf2nmuEAY0+uD2xgvH02fZBSbN8pE3aWEWGANEjBpP8Vy
+RaxldWgfLugRXLtKSSIgR+VrxWKDJ8em528PKKlCASPjJuc+qYIm1Oxs/Dj/Tvltnrbhh9kQyOQz
+pK+Yb5qgMoaJUdj2pEdkB48C7Wa8H39FNpR/epMMdy70QOeqVthFpsUEqFJIiAVXaDwYWGnOmz4b
+JqrCKFjzt9NHvy6fSByF9E0gV8ZHL5hwNnqCdPulCB6oq/+ixO7ar6WkHFh1LRNKYXR3t6X0Dv4g
+Tpr0HtWN1c6EoswqirHrhGz11wzJ41xiV/0o+Ua8eyvNODgxHS071uezjm9U4exCJp8w7T+aZX4o
+kacM1FOqilFGfGutilajckkCNaqLKv2uSyq+9fhYB6noOZgLCiYorKbMRQwcY1hblCxLAcRIIiK5
+uJ7rGip91YTtvqt3nuEdfhgRmTLHcJdT1i046l2dXTQJdTm8VVmLBx0VJ2FbXhKNu2wbySigw99l
+UblLfnuBi/OiZLu0Fnrkus02J25mKh3q2bCEPLxNHnvlo2ipgLWkI2/ibe+z/kcJFiWMN1z5y2eZ
+BR2TWVClJ7CTosPNOj3uA0fK0MbAY6gAWNOnksF4fB0+/Oivvc2MobZ36978mQF/8aKVTjocYZkO
+F/SeY1cM/LqTJ0BMQHrCES81eJYVXhEuQHfTeVgetjrhboojg/GzSzVBnQsyf9ikpcW=

@@ -1,443 +1,101 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- * 
- * @category   Zend
- * @package    Zend_Mail
- * @subpackage Protocol
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Smtp.php 11196 2008-09-02 00:56:25Z yoshida@zend.co.jp $
- */
-
-
-/**
- * @see Zend_Mime
- */
-require_once 'Zend/Mime.php';
-
-
-/**
- * @see Zend_Mail_Protocol_Abstract
- */
-require_once 'Zend/Mail/Protocol/Abstract.php';
-
-
-/**
- * Smtp implementation of Zend_Mail_Protocol_Abstract
- *
- * Minimum implementation according to RFC2821: EHLO, MAIL FROM, RCPT TO, DATA, RSET, NOOP, QUIT
- * 
- * @category   Zend
- * @package    Zend_Mail
- * @subpackage Protocol
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Mail_Protocol_Smtp extends Zend_Mail_Protocol_Abstract
-{
-    /**
-     * The transport method for the socket
-     *
-     * @var string
-     */
-    protected $_transport = 'tcp';
-
-
-    /**
-     * Indicates that a session is requested to be secure
-     *
-     * @var string
-     */
-    protected $_secure;
-
-
-    /**
-     * Indicates an smtp session has been started by the HELO command
-     *
-     * @var boolean
-     */
-    protected $_sess = false;
-
-
-    /**
-     * Indicates the HELO command has been issues
-     *
-     * @var unknown_type
-     */
-    protected $_helo = false;
-
-
-    /**
-     * Indicates an smtp AUTH has been issued and authenticated
-     *
-     * @var unknown_type
-     */
-    protected $_auth = false;
-
-
-    /**
-     * Indicates a MAIL command has been issued
-     *
-     * @var unknown_type
-     */
-    protected $_mail = false;
-
-
-    /**
-     * Indicates one or more RCTP commands have been issued
-     *
-     * @var unknown_type
-     */
-    protected $_rcpt = false;
-
-
-    /**
-     * Indicates that DATA has been issued and sent
-     *
-     * @var unknown_type
-     */
-    protected $_data = null;
-
-
-    /**
-     * Constructor.
-     *
-     * @param  string  $host
-     * @param  integer $port
-     * @param  array   $config
-     * @return void
-     * @throws Zend_Mail_Protocol_Exception
-     */
-    public function __construct($host = '127.0.0.1', $port = null, array $config = array())
-    {
-        if (isset($config['ssl'])) {
-            switch (strtolower($config['ssl'])) {
-                case 'tls':
-                    $this->_secure = 'tls';
-                    break;
-
-                case 'ssl':
-                    $this->_transport = 'ssl';
-                    $this->_secure = 'ssl';
-                    if ($port == null) {
-                        $port = 465;
-                    }
-                    break;
-
-                default:
-                    /**
-                     * @see Zend_Mail_Protocol_Exception
-                     */
-                    require_once 'Zend/Mail/Protocol/Exception.php';
-                    throw new Zend_Mail_Protocol_Exception($config['ssl'] . ' is unsupported SSL type');
-                    break;
-            }
-        }
-
-        // If no port has been specified then check the master PHP ini file. Defaults to 25 if the ini setting is null.
-        if ($port == null) {
-            if (($port = ini_get('smtp_port')) == '') {
-                $port = 25;
-            }
-        }
-
-        parent::__construct($host, $port);
-    }
-
-
-    /**
-     * Connect to the server with the parameters given in the constructor.
-     *
-     * @return boolean
-     */
-    public function connect()
-    {
-        return $this->_connect($this->_transport . '://' . $this->_host . ':'. $this->_port);
-    }
-
-
-    /**
-     * Initiate HELO/EHLO sequence and set flag to indicate valid smtp session
-     *
-     * @param  string $host The client hostname or IP address (default: 127.0.0.1)
-     * @throws Zend_Mail_Protocol_Exception
-     * @return void
-     */
-    public function helo($host = '127.0.0.1')
-    {
-        // Respect RFC 2821 and disallow HELO attempts if session is already initiated.
-        if ($this->_sess === true) {
-            /**
-             * @see Zend_Mail_Protocol_Exception
-             */
-            require_once 'Zend/Mail/Protocol/Exception.php';
-            throw new Zend_Mail_Protocol_Exception('Cannot issue HELO to existing session');
-        }
-
-        // Validate client hostname
-        if (!$this->_validHost->isValid($host)) {
-            /**
-             * @see Zend_Mail_Protocol_Exception
-             */
-            require_once 'Zend/Mail/Protocol/Exception.php';
-            throw new Zend_Mail_Protocol_Exception(join(', ', $this->_validHost->getMessages()));
-        }
-
-        // Initiate helo sequence
-        $this->_expect(220, 300); // Timeout set for 5 minutes as per RFC 2821 4.5.3.2
-        $this->_ehlo($host);
-
-        // If a TLS session is required, commence negotiation
-        if ($this->_secure == 'tls') {
-            $this->_send('STARTTLS');
-            $this->_expect(220, 180);
-            if (!stream_socket_enable_crypto($this->_socket, true, STREAM_CRYPTO_METHOD_TLS_CLIENT)) {
-                /**
-                 * @see Zend_Mail_Protocol_Exception
-                 */
-                require_once 'Zend/Mail/Protocol/Exception.php';
-                throw new Zend_Mail_Protocol_Exception('Unable to connect via TLS');
-            }
-            $this->_ehlo($host);
-        }
-
-        $this->_startSession();
-        $this->auth();
-    }
-
-
-    /**
-     * Send EHLO or HELO depending on capabilities of smtp host
-     *
-     * @param  string $host The client hostname or IP address (default: 127.0.0.1)
-     * @throws Zend_Mail_Protocol_Exception
-     * @return void
-     */
-    protected function _ehlo($host)
-    {
-        // Support for older, less-compliant remote servers. Tries multiple attempts of EHLO or HELO.
-        try {
-            $this->_send('EHLO ' . $host);
-            $this->_expect(250, 300); // Timeout set for 5 minutes as per RFC 2821 4.5.3.2
-        } catch (Zend_Mail_Protocol_Exception $e) {
-            $this->_send('HELO ' . $host);
-            $this->_expect(250, 300); // Timeout set for 5 minutes as per RFC 2821 4.5.3.2
-        } catch (Zend_Mail_Protocol_Exception $e) {
-            throw $e;
-        }
-    }
-
-
-    /**
-     * Issues MAIL command
-     *
-     * @param  string $from Sender mailbox
-     * @throws Zend_Mail_Protocol_Exception
-     * @return void
-     */
-    public function mail($from)
-    {
-        if ($this->_sess !== true) {
-            /**
-             * @see Zend_Mail_Protocol_Exception
-             */
-            require_once 'Zend/Mail/Protocol/Exception.php';
-            throw new Zend_Mail_Protocol_Exception('A valid session has not been started');
-        }
-
-        $this->_send('MAIL FROM:<' . $from . '>');
-        $this->_expect(250, 300); // Timeout set for 5 minutes as per RFC 2821 4.5.3.2
-
-        // Set mail to true, clear recipients and any existing data flags as per 4.1.1.2 of RFC 2821
-        $this->_mail = true;
-        $this->_rcpt = false;
-        $this->_data = false;
-    }
-
-
-    /**
-     * Issues RCPT command
-     *
-     * @param  string $to Receiver(s) mailbox
-     * @throws Zend_Mail_Protocol_Exception
-     * @return void
-     */
-    public function rcpt($to)
-    {
-        if ($this->_mail !== true) {
-            /**
-             * @see Zend_Mail_Protocol_Exception
-             */
-            require_once 'Zend/Mail/Protocol/Exception.php';
-            throw new Zend_Mail_Protocol_Exception('No sender reverse path has been supplied');
-        }
-
-        // Set rcpt to true, as per 4.1.1.3 of RFC 2821
-        $this->_send('RCPT TO:<' . $to . '>');
-        $this->_expect(array(250, 251), 300); // Timeout set for 5 minutes as per RFC 2821 4.5.3.2
-        $this->_rcpt = true;
-    }
-
-
-    /**
-     * Issues DATA command
-     *
-     * @param  string $data
-     * @throws Zend_Mail_Protocol_Exception
-     * @return void
-     */
-    public function data($data)
-    {
-        // Ensure recipients have been set
-        if ($this->_rcpt !== true) {
-            /**
-             * @see Zend_Mail_Protocol_Exception
-             */
-            require_once 'Zend/Mail/Protocol/Exception.php';
-            throw new Zend_Mail_Protocol_Exception('No recipient forward path has been supplied');
-        }
-
-        $this->_send('DATA');
-        $this->_expect(354, 120); // Timeout set for 2 minutes as per RFC 2821 4.5.3.2
-
-        foreach (explode(Zend_Mime::LINEEND, $data) as $line) {
-            if (strpos($line, '.') === 0) {
-                // Escape lines prefixed with a '.'
-                $line = '.' . $line;
-            }
-            $this->_send($line);
-        }
-
-        $this->_send('.');
-        $this->_expect(250, 600); // Timeout set for 10 minutes as per RFC 2821 4.5.3.2
-        $this->_data = true;
-    }
-
-
-    /**
-     * Issues the RSET command end validates answer
-     *
-     * Can be used to restore a clean smtp communication state when a transaction has been cancelled or commencing a new transaction.
-     *
-     * @return void
-     */
-    public function rset()
-    {
-        $this->_send('RSET');
-        // MS ESMTP doesn't follow RFC, see [ZF-1377]
-        $this->_expect(array(250, 220));
-
-        $this->_mail = false;
-        $this->_rcpt = false;
-        $this->_data = false;
-    }
-
-
-    /**
-     * Issues the NOOP command end validates answer
-     *
-     * Not used by Zend_Mail, could be used to keep a connection alive or check if it is still open.
-     *
-     * @return void
-     */
-    public function noop()
-    {
-        $this->_send('NOOP');
-        $this->_expect(250, 300); // Timeout set for 5 minutes as per RFC 2821 4.5.3.2
-    }
-
-
-    /**
-     * Issues the VRFY command end validates answer
-     *
-     * Not used by Zend_Mail.
-     *
-     * @param  string $user User Name or eMail to verify
-     * @return void
-     */
-    public function vrfy($user)
-    {
-        $this->_send('VRFY ' . $user);
-        $this->_expect(array(250, 251, 252), 300); // Timeout set for 5 minutes as per RFC 2821 4.5.3.2
-    }
-
-
-    /**
-     * Issues the QUIT command and clears the current session
-     *
-     * @return void
-     */
-    public function quit()
-    {
-        if ($this->_sess) {
-            $this->_send('QUIT');
-            $this->_expect(221, 300); // Timeout set for 5 minutes as per RFC 2821 4.5.3.2
-            $this->_stopSession();
-        }
-    }
-
-
-    /**
-     * Default authentication method
-     *
-     * This default method is implemented by AUTH adapters to properly authenticate to a remote host.
-     *
-     * @throws Zend_Mail_Protocol_Exception
-     * @return void
-     */
-    public function auth()
-    {
-        if ($this->_auth === true) {
-            /**
-             * @see Zend_Mail_Protocol_Exception
-             */
-            require_once 'Zend/Mail/Protocol/Exception.php';
-            throw new Zend_Mail_Protocol_Exception('Already authenticated for this session');
-        }
-    }
-
-
-    /**
-     * Closes connection
-     *
-     * @return void
-     */
-    public function disconnect()
-    {
-        $this->_disconnect();
-    }
-
-
-    /**
-     * Start mail session
-     *
-     * @return void
-     */
-    protected function _startSession()
-    {
-        $this->_sess = true;
-    }
-
-
-    /**
-     * Stop mail session
-     *
-     * @return void
-     */
-    protected function _stopSession()
-    {
-        $this->_sess = false;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

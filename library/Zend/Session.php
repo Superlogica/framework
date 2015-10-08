@@ -1,827 +1,230 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Session
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Session.php 15577 2009-05-14 12:43:34Z matthew $
- * @since      Preview Release 0.2
- */
-
-
-/**
- * @see Zend_Session_Abstract
- */
-require_once 'Zend/Session/Abstract.php';
-
-/**
- * @see Zend_Session_Namespace
- */
-require_once 'Zend/Session/Namespace.php';
-
-/**
- * @see Zend_Session_SaveHandler_Interface
- */
-require_once 'Zend/Session/SaveHandler/Interface.php';
-
-
-/**
- * Zend_Session
- *
- * @category   Zend
- * @package    Zend_Session
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Session extends Zend_Session_Abstract
-{
-    /**
-     * Whether or not Zend_Session is being used with unit tests
-     *
-     * @internal
-     * @var bool
-     */
-    public static $_unitTestEnabled = false;
-
-    /**
-     * Check whether or not the session was started
-     *
-     * @var bool
-     */
-    private static $_sessionStarted = false;
-
-    /**
-     * Whether or not the session id has been regenerated this request.
-     *
-     * Id regeneration state
-     * <0 - regenerate requested when session is started
-     * 0  - do nothing
-     * >0 - already called session_regenerate_id()
-     *
-     * @var int
-     */
-    private static $_regenerateIdState = 0;
-
-    /**
-     * Private list of php's ini values for ext/session
-     * null values will default to the php.ini value, otherwise
-     * the value below will overwrite the default ini value, unless
-     * the user has set an option explicity with setOptions()
-     *
-     * @var array
-     */
-    private static $_defaultOptions = array(
-        'save_path'                 => null,
-        'name'                      => null, /* this should be set to a unique value for each application */
-        'save_handler'              => null,
-        //'auto_start'                => null, /* intentionally excluded (see manual) */
-        'gc_probability'            => null,
-        'gc_divisor'                => null,
-        'gc_maxlifetime'            => null,
-        'serialize_handler'         => null,
-        'cookie_lifetime'           => null,
-        'cookie_path'               => null,
-        'cookie_domain'             => null,
-        'cookie_secure'             => null,
-        'cookie_httponly'           => null,
-        'use_cookies'               => null,
-        'use_only_cookies'          => 'on',
-        'referer_check'             => null,
-        'entropy_file'              => null,
-        'entropy_length'            => null,
-        'cache_limiter'             => null,
-        'cache_expire'              => null,
-        'use_trans_sid'             => null,
-        'bug_compat_42'             => null,
-        'bug_compat_warn'           => null,
-        'hash_function'             => null,
-        'hash_bits_per_character'   => null
-    );
-
-    /**
-     * List of options pertaining to Zend_Session that can be set by developers
-     * using Zend_Session::setOptions(). This list intentionally duplicates
-     * the individual declaration of static "class" variables by the same names.
-     *
-     * @var array
-     */
-    private static $_localOptions = array(
-        'strict'                => '_strict',
-        'remember_me_seconds'   => '_rememberMeSeconds'
-    );
-
-    /**
-     * Whether or not write close has been performed.
-     *
-     * @var bool
-     */
-    private static $_writeClosed = false;
-
-    /**
-     * Whether or not session id cookie has been deleted
-     *
-     * @var bool
-     */
-    private static $_sessionCookieDeleted = false;
-
-    /**
-     * Whether or not session has been destroyed via session_destroy()
-     *
-     * @var bool
-     */
-    private static $_destroyed = false;
-
-    /**
-     * Whether or not session must be initiated before usage
-     *
-     * @var bool
-     */
-    private static $_strict = false;
-
-    /**
-     * Default number of seconds the session will be remembered for when asked to be remembered
-     *
-     * @var int
-     */
-    private static $_rememberMeSeconds = 1209600; // 2 weeks
-
-    /**
-     * Whether the default options listed in Zend_Session::$_localOptions have been set
-     *
-     * @var bool
-     */
-    private static $_defaultOptionsSet = false;
-
-    /**
-     * A reference to the set session save handler
-     *
-     * @var Zend_Session_SaveHandler_Interface
-     */
-    private static $_saveHandler = null;
-
-
-    /**
-     * Constructor overriding - make sure that a developer cannot instantiate
-     */
-    protected function __construct()
-    {
-    }
-
-
-    /**
-     * setOptions - set both the class specified
-     *
-     * @param  array $userOptions - pass-by-keyword style array of <option name, option value> pairs
-     * @throws Zend_Session_Exception
-     * @return void
-     */
-    public static function setOptions(array $userOptions = array())
-    {
-        // set default options on first run only (before applying user settings)
-        if (!self::$_defaultOptionsSet) {
-            foreach (self::$_defaultOptions as $defaultOptionName => $defaultOptionValue) {
-                if (isset(self::$_defaultOptions[$defaultOptionName])) {
-                    ini_set("session.$defaultOptionName", $defaultOptionValue);
-                }
-            }
-
-            self::$_defaultOptionsSet = true;
-        }
-
-        // set the options the user has requested to set
-        foreach ($userOptions as $userOptionName => $userOptionValue) {
-
-            $userOptionName = strtolower($userOptionName);
-
-            // set the ini based values
-            if (array_key_exists($userOptionName, self::$_defaultOptions)) {
-                ini_set("session.$userOptionName", $userOptionValue);
-            }
-            elseif (isset(self::$_localOptions[$userOptionName])) {
-                self::${self::$_localOptions[$userOptionName]} = $userOptionValue;
-            }
-            else {
-                /** @see Zend_Session_Exception */
-                require_once 'Zend/Session/Exception.php';
-                throw new Zend_Session_Exception("Unknown option: $userOptionName = $userOptionValue");
-            }
-        }
-    }
-
-
-    /**
-     * setSaveHandler() - Session Save Handler assignment
-     *
-     * @param Zend_Session_SaveHandler_Interface $interface
-     * @return void
-     */
-    public static function setSaveHandler(Zend_Session_SaveHandler_Interface $saveHandler)
-    {
-        if (self::$_unitTestEnabled) {
-            return;
-        }
-
-        session_set_save_handler(
-            array(&$saveHandler, 'open'),
-            array(&$saveHandler, 'close'),
-            array(&$saveHandler, 'read'),
-            array(&$saveHandler, 'write'),
-            array(&$saveHandler, 'destroy'),
-            array(&$saveHandler, 'gc')
-            );
-        self::$_saveHandler = $saveHandler;
-    }
-
-
-    /**
-     * getSaveHandler() - Get the session Save Handler
-     *
-     * @return Zend_Session_SaveHandler_Interface
-     */
-    public static function getSaveHandler()
-    {
-        return self::$_saveHandler;
-    }
-
-
-    /**
-     * regenerateId() - Regenerate the session id.  Best practice is to call this after
-     * session is started.  If called prior to session starting, session id will be regenerated
-     * at start time.
-     *
-     * @throws Zend_Session_Exception
-     * @return void
-     */
-    public static function regenerateId()
-    {
-        if (!self::$_unitTestEnabled && headers_sent($filename, $linenum)) {
-            /** @see Zend_Session_Exception */
-            require_once 'Zend/Session/Exception.php';
-            throw new Zend_Session_Exception("You must call " . __CLASS__ . '::' . __FUNCTION__ .
-                "() before any output has been sent to the browser; output started in {$filename}/{$linenum}");
-        }
-
-        if (self::$_sessionStarted && self::$_regenerateIdState <= 0) {
-            if (!self::$_unitTestEnabled) {
-                session_regenerate_id(true);
-            }
-            self::$_regenerateIdState = 1;
-        } else {
-            /**
-             * @todo If we can detect that this requester had no session previously,
-             *       then why regenerate the id before the session has started?
-             *       Feedback wanted for:
-             //
-            if (isset($_COOKIE[session_name()]) || (!use only cookies && isset($_REQUEST[session_name()]))) {
-                self::$_regenerateIdState = 1;
-            } else {
-                self::$_regenerateIdState = -1;
-            }
-            //*/
-            self::$_regenerateIdState = -1;
-        }
-    }
-
-
-    /**
-     * rememberMe() - Write a persistent cookie that expires after a number of seconds in the future. If no number of
-     * seconds is specified, then this defaults to self::$_rememberMeSeconds.  Due to clock errors on end users' systems,
-     * large values are recommended to avoid undesirable expiration of session cookies.
-     *
-     * @param $seconds integer - OPTIONAL specifies TTL for cookie in seconds from present time
-     * @return void
-     */
-    public static function rememberMe($seconds = null)
-    {
-        $seconds = (int) $seconds;
-        $seconds = ($seconds > 0) ? $seconds : self::$_rememberMeSeconds;
-
-        self::rememberUntil($seconds);
-    }
-
-
-    /**
-     * forgetMe() - Write a volatile session cookie, removing any persistent cookie that may have existed. The session
-     * would end upon, for example, termination of a web browser program.
-     *
-     * @return void
-     */
-    public static function forgetMe()
-    {
-        self::rememberUntil(0);
-    }
-
-
-    /**
-     * rememberUntil() - This method does the work of changing the state of the session cookie and making
-     * sure that it gets resent to the browser via regenerateId()
-     *
-     * @param int $seconds
-     * @return void
-     */
-    public static function rememberUntil($seconds = 0)
-    {
-        if (self::$_unitTestEnabled) {
-            self::regenerateId();
-            return;
-        }
-
-        $cookieParams = session_get_cookie_params();
-
-        session_set_cookie_params(
-            $seconds,
-            $cookieParams['path'],
-            $cookieParams['domain'],
-            $cookieParams['secure']
-            );
-
-        // normally "rememberMe()" represents a security context change, so should use new session id
-        self::regenerateId();
-    }
-
-
-    /**
-     * sessionExists() - whether or not a session exists for the current request
-     *
-     * @return bool
-     */
-    public static function sessionExists()
-    {
-        if (ini_get('session.use_cookies') == '1' && isset($_COOKIE[session_name()])) {
-            return true;
-        } elseif (!empty($_REQUEST[session_name()])) {
-            return true;
-        } elseif (self::$_unitTestEnabled) {
-            return true;
-        }
-
-        return false;
-    }
-
-
-    /**
-     * Whether or not session has been destroyed via session_destroy()
-     *
-     * @return bool
-     */
-    public static function isDestroyed()
-    {
-        return self::$_destroyed;
-    }
-
-
-    /**
-     * start() - Start the session.
-     *
-     * @param bool|array $options  OPTIONAL Either user supplied options, or flag indicating if start initiated automatically
-     * @throws Zend_Session_Exception
-     * @return void
-     */
-    public static function start($options = false)
-    {
-        if (self::$_sessionStarted && self::$_destroyed) {
-            require_once 'Zend/Session/Exception.php';
-            throw new Zend_Session_Exception('The session was explicitly destroyed during this request, attempting to re-start is not allowed.');
-        }
-
-        if (self::$_sessionStarted) {
-            return; // already started
-        }
-
-        // make sure our default options (at the least) have been set
-        if (!self::$_defaultOptionsSet) {
-            self::setOptions(is_array($options) ? $options : array());
-        }
-
-        // In strict mode, do not allow auto-starting Zend_Session, such as via "new Zend_Session_Namespace()"
-        if (self::$_strict && $options === true) {
-            /** @see Zend_Session_Exception */
-            require_once 'Zend/Session/Exception.php';
-            throw new Zend_Session_Exception('You must explicitly start the session with Zend_Session::start() when session options are set to strict.');
-        }
-
-        if (!self::$_unitTestEnabled && headers_sent($filename, $linenum)) {
-            /** @see Zend_Session_Exception */
-            require_once 'Zend/Session/Exception.php';
-            throw new Zend_Session_Exception("Session must be started before any output has been sent to the browser;"
-               . " output started in {$filename}/{$linenum}");
-        }
-
-        // See http://www.php.net/manual/en/ref.session.php for explanation
-        if (!self::$_unitTestEnabled && defined('SID')) {
-            /** @see Zend_Session_Exception */
-            require_once 'Zend/Session/Exception.php';
-            throw new Zend_Session_Exception('session has already been started by session.auto-start or session_start()');
-        }
-
-        /**
-         * Hack to throw exceptions on start instead of php errors
-         * @see http://framework.zend.com/issues/browse/ZF-1325
-         */
-        /** @see Zend_Session_Exception */
-        if (!self::$_unitTestEnabled) {
-            require_once 'Zend/Session/Exception.php';
-            set_error_handler(array('Zend_Session_Exception', 'handleSessionStartError'), E_ALL);
-            session_start();
-            restore_error_handler();
-            if (Zend_Session_Exception::$sessionStartError !== null) {
-            set_error_handler(array('Zend_Session_Exception', 'handleSilentWriteClose'), E_ALL);
-            session_write_close();
-            restore_error_handler();
-            throw new Zend_Session_Exception(__CLASS__ . '::' . __FUNCTION__ . '() - ' . Zend_Session_Exception::$sessionStartError);
-            }
-        }
-
-        parent::$_readable = true;
-        parent::$_writable = true;
-        self::$_sessionStarted = true;
-        if (self::$_regenerateIdState === -1) {
-            self::regenerateId();
-        }
-
-        // run validators if they exist
-        if (isset($_SESSION['__ZF']['VALID'])) {
-            self::_processValidators();
-        }
-
-        self::_processStartupMetadataGlobal();
-    }
-
-
-    /**
-     * _processGlobalMetadata() - this method initizes the sessions GLOBAL
-     * metadata, mostly global data expiration calculations.
-     *
-     * @return void
-     */
-    private static function _processStartupMetadataGlobal()
-    {
-        // process global metadata
-        if (isset($_SESSION['__ZF'])) {
-
-            // expire globally expired values
-            foreach ($_SESSION['__ZF'] as $namespace => $namespace_metadata) {
-
-                // Expire Namespace by Time (ENT)
-                if (isset($namespace_metadata['ENT']) && ($namespace_metadata['ENT'] > 0) && (time() > $namespace_metadata['ENT']) ) {
-                    unset($_SESSION[$namespace]);
-                    unset($_SESSION['__ZF'][$namespace]['ENT']);
-                }
-
-                // Expire Namespace by Global Hop (ENGH)
-                if (isset($namespace_metadata['ENGH']) && $namespace_metadata['ENGH'] >= 1) {
-                    $_SESSION['__ZF'][$namespace]['ENGH']--;
-
-                    if ($_SESSION['__ZF'][$namespace]['ENGH'] === 0) {
-                        if (isset($_SESSION[$namespace])) {
-                            parent::$_expiringData[$namespace] = $_SESSION[$namespace];
-                            unset($_SESSION[$namespace]);
-                        }
-                        unset($_SESSION['__ZF'][$namespace]['ENGH']);
-                    }
-                }
-
-                // Expire Namespace Variables by Time (ENVT)
-                if (isset($namespace_metadata['ENVT'])) {
-                    foreach ($namespace_metadata['ENVT'] as $variable => $time) {
-                        if (time() > $time) {
-                            unset($_SESSION[$namespace][$variable]);
-                            unset($_SESSION['__ZF'][$namespace]['ENVT'][$variable]);
-
-                            if (empty($_SESSION['__ZF'][$namespace]['ENVT'])) {
-                                unset($_SESSION['__ZF'][$namespace]['ENVT']);
-                            }
-                        }
-                    }
-                }
-
-                // Expire Namespace Variables by Global Hop (ENVGH)
-                if (isset($namespace_metadata['ENVGH'])) {
-                    foreach ($namespace_metadata['ENVGH'] as $variable => $hops) {
-                        $_SESSION['__ZF'][$namespace]['ENVGH'][$variable]--;
-
-                        if ($_SESSION['__ZF'][$namespace]['ENVGH'][$variable] === 0) {
-                            if (isset($_SESSION[$namespace][$variable])) {
-                                parent::$_expiringData[$namespace][$variable] = $_SESSION[$namespace][$variable];
-                                unset($_SESSION[$namespace][$variable]);
-                            }
-                            unset($_SESSION['__ZF'][$namespace]['ENVGH'][$variable]);
-                        }
-                    }
-                }
-            }
-
-            if (isset($namespace) && empty($_SESSION['__ZF'][$namespace])) {
-                unset($_SESSION['__ZF'][$namespace]);
-            }
-        }
-
-        if (isset($_SESSION['__ZF']) && empty($_SESSION['__ZF'])) {
-            unset($_SESSION['__ZF']);
-        }
-    }
-
-
-    /**
-     * isStarted() - convenience method to determine if the session is already started.
-     *
-     * @return bool
-     */
-    public static function isStarted()
-    {
-        return self::$_sessionStarted;
-    }
-
-
-    /**
-     * isRegenerated() - convenience method to determine if session_regenerate_id()
-     * has been called during this request by Zend_Session.
-     *
-     * @return bool
-     */
-    public static function isRegenerated()
-    {
-        return ( (self::$_regenerateIdState > 0) ? true : false );
-    }
-
-
-    /**
-     * getId() - get the current session id
-     *
-     * @return string
-     */
-    public static function getId()
-    {
-        return session_id();
-    }
-
-
-    /**
-     * setId() - set an id to a user specified id
-     *
-     * @throws Zend_Session_Exception
-     * @param string $id
-     * @return void
-     */
-    public static function setId($id)
-    {
-        if (!self::$_unitTestEnabled && defined('SID')) {
-            /** @see Zend_Session_Exception */
-            require_once 'Zend/Session/Exception.php';
-            throw new Zend_Session_Exception('The session has already been started.  The session id must be set first.');
-        }
-
-        if (!self::$_unitTestEnabled && headers_sent($filename, $linenum)) {
-            /** @see Zend_Session_Exception */
-            require_once 'Zend/Session/Exception.php';
-            throw new Zend_Session_Exception("You must call ".__CLASS__.'::'.__FUNCTION__.
-                "() before any output has been sent to the browser; output started in {$filename}/{$linenum}");
-        }
-
-        if (!is_string($id) || $id === '') {
-            /** @see Zend_Session_Exception */
-            require_once 'Zend/Session/Exception.php';
-            throw new Zend_Session_Exception('You must provide a non-empty string as a session identifier.');
-        }
-
-        session_id($id);
-    }
-
-
-    /**
-     * registerValidator() - register a validator that will attempt to validate this session for
-     * every future request
-     *
-     * @param Zend_Session_Validator_Interface $validator
-     * @return void
-     */
-    public static function registerValidator(Zend_Session_Validator_Interface $validator)
-    {
-        $validator->setup();
-    }
-
-
-    /**
-     * stop() - Disable write access.  Optionally disable read (not implemented).
-     *
-     * @return void
-     */
-    public static function stop()
-    {
-        parent::$_writable = false;
-    }
-
-
-    /**
-     * writeClose() - Shutdown the sesssion, close writing and detach $_SESSION from the back-end storage mechanism.
-     * This will complete the internal data transformation on this request.
-     *
-     * @param bool $readonly - OPTIONAL remove write access (i.e. throw error if Zend_Session's attempt writes)
-     * @return void
-     */
-    public static function writeClose($readonly = true)
-    {
-        if (self::$_unitTestEnabled) {
-            return;
-        }
-
-        if (self::$_writeClosed) {
-            return;
-        }
-
-        if ($readonly) {
-            parent::$_writable = false;
-        }
-
-        session_write_close();
-        self::$_writeClosed = true;
-    }
-
-
-    /**
-     * destroy() - This is used to destroy session data, and optionally, the session cookie itself
-     *
-     * @param bool $remove_cookie - OPTIONAL remove session id cookie, defaults to true (remove cookie)
-     * @param bool $readonly - OPTIONAL remove write access (i.e. throw error if Zend_Session's attempt writes)
-     * @return void
-     */
-    public static function destroy($remove_cookie = true, $readonly = true)
-    {
-        if (self::$_unitTestEnabled) {
-            return;
-        }
-
-        if (self::$_destroyed) {
-            return;
-        }
-
-        if ($readonly) {
-            parent::$_writable = false;
-        }
-
-        session_destroy();
-        self::$_destroyed = true;
-
-        if ($remove_cookie) {
-            self::expireSessionCookie();
-        }
-    }
-
-
-    /**
-     * expireSessionCookie() - Sends an expired session id cookie, causing the client to delete the session cookie
-     *
-     * @return void
-     */
-    public static function expireSessionCookie()
-    {
-        if (self::$_unitTestEnabled) {
-            return;
-        }
-
-        if (self::$_sessionCookieDeleted) {
-            return;
-        }
-
-        self::$_sessionCookieDeleted = true;
-
-        if (isset($_COOKIE[session_name()])) {
-            $cookie_params = session_get_cookie_params();
-
-            setcookie(
-                session_name(),
-                false,
-                315554400, // strtotime('1980-01-01'),
-                $cookie_params['path'],
-                $cookie_params['domain'],
-                $cookie_params['secure']
-                );
-        }
-    }
-
-
-    /**
-     * _processValidator() - internal function that is called in the existence of VALID metadata
-     *
-     * @throws Zend_Session_Exception
-     * @return void
-     */
-    private static function _processValidators()
-    {
-        foreach ($_SESSION['__ZF']['VALID'] as $validator_name => $valid_data) {
-            if (!class_exists($validator_name)) {
-                require_once 'Zend/Loader.php';
-                Zend_Loader::loadClass($validator_name);
-            }
-            $validator = new $validator_name;
-            if ($validator->validate() === false) {
-                /** @see Zend_Session_Exception */
-                require_once 'Zend/Session/Exception.php';
-                throw new Zend_Session_Exception("This session is not valid according to {$validator_name}.");
-            }
-        }
-    }
-
-
-    /**
-     * namespaceIsset() - check to see if a namespace is set
-     *
-     * @param string $namespace
-     * @return bool
-     */
-    public static function namespaceIsset($namespace)
-    {
-        return parent::_namespaceIsset($namespace);
-    }
-
-
-    /**
-     * namespaceUnset() - unset a namespace or a variable within a namespace
-     *
-     * @param string $namespace
-     * @throws Zend_Session_Exception
-     * @return void
-     */
-    public static function namespaceUnset($namespace)
-    {
-        parent::_namespaceUnset($namespace);
-    }
-
-
-    /**
-     * namespaceGet() - get all variables in a namespace
-     * Deprecated: Use getIterator() in Zend_Session_Namespace.
-     *
-     * @param string $namespace
-     * @return array
-     */
-    public static function namespaceGet($namespace)
-    {
-        return parent::_namespaceGetAll($namespace);
-    }
-
-
-    /**
-     * getIterator() - return an iteratable object for use in foreach and the like,
-     * this completes the IteratorAggregate interface
-     *
-     * @throws Zend_Session_Exception
-     * @return ArrayObject
-     */
-    public static function getIterator()
-    {
-        if (parent::$_readable === false) {
-            /** @see Zend_Session_Exception */
-            require_once 'Zend/Session/Exception.php';
-            throw new Zend_Session_Exception(parent::_THROW_NOT_READABLE_MSG);
-        }
-
-        $spaces  = array();
-        if (isset($_SESSION)) {
-            $spaces = array_keys($_SESSION);
-            foreach($spaces as $key => $space) {
-                if (!strncmp($space, '__', 2) || !is_array($_SESSION[$space])) {
-                    unset($spaces[$key]);
-                }
-            }
-        }
-
-        return new ArrayObject(array_merge($spaces, array_keys(parent::$_expiringData)));
-    }
-
-
-    /**
-     * isWritable() - returns a boolean indicating if namespaces can write (use setters)
-     *
-     * @return bool
-     */
-    public static function isWritable()
-    {
-        return parent::$_writable;
-    }
-
-
-    /**
-     * isReadable() - returns a boolean indicating if namespaces can write (use setters)
-     *
-     * @return bool
-     */
-    public static function isReadable()
-    {
-        return parent::$_readable;
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+Cm2vHeM0nm==

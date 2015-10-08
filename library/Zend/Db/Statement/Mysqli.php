@@ -1,363 +1,112 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Db
- * @subpackage Statement
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Mysqli.php 9738 2008-06-19 23:06:36Z peptolab $
- */
-
-
-/**
- * @see Zend_Db_Statement
- */
-require_once 'Zend/Db/Statement.php';
-
-    
-/**
- * Extends for Mysqli
- *
- * @category   Zend
- * @package    Zend_Db
- * @subpackage Statement
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Db_Statement_Mysqli extends Zend_Db_Statement
-{
-
-    /**
-     * The mysqli_stmt object.
-     *
-     * @var mysqli_stmt
-     */
-    protected $_stmt;
-
-    /**
-     * Column names.
-     *
-     * @var array
-     */
-    protected $_keys;
-
-    /**
-     * Fetched result values.
-     *
-     * @var array
-     */
-    protected $_values;
-
-    /**
-     * @var array
-     */
-    protected $_meta = null;
-
-    /**
-     * @param  string $sql
-     * @return void
-     * @throws Zend_Db_Statement_Mysqli_Exception
-     */
-    public function _prepare($sql)
-    {
-        $mysqli = $this->_adapter->getConnection();
-
-        $this->_stmt = $mysqli->prepare($sql);
-
-        if ($this->_stmt === false || $mysqli->errno) {
-            /**
-             * @see Zend_Db_Statement_Mysqli_Exception
-             */
-            require_once 'Zend/Db/Statement/Mysqli/Exception.php';
-            throw new Zend_Db_Statement_Mysqli_Exception("Mysqli prepare error: " . $mysqli->error);
-        }
-    }
-
-    /**
-     * Binds a parameter to the specified variable name.
-     *
-     * @param mixed $parameter Name the parameter, either integer or string.
-     * @param mixed $variable  Reference to PHP variable containing the value.
-     * @param mixed $type      OPTIONAL Datatype of SQL parameter.
-     * @param mixed $length    OPTIONAL Length of SQL parameter.
-     * @param mixed $options   OPTIONAL Other options.
-     * @return bool
-     * @throws Zend_Db_Statement_Mysqli_Exception
-     */
-    protected function _bindParam($parameter, &$variable, $type = null, $length = null, $options = null)
-    {
-        return true;
-    }
-
-    /**
-     * Closes the cursor and the statement.
-     *
-     * @return bool
-     */
-    public function close()
-    {
-        if ($this->_stmt) {
-            $r = $this->_stmt->close();
-            $this->_stmt = null;
-            return $r;
-        }
-        return false;
-    }
-
-    /**
-     * Closes the cursor, allowing the statement to be executed again.
-     *
-     * @return bool
-     */
-    public function closeCursor()
-    {
-        if ($stmt = $this->_stmt) {
-            $mysqli = $this->_adapter->getConnection();
-            while ($mysqli->next_result()) {}
-            $this->_stmt->free_result();
-            return $this->_stmt->reset();
-        }
-        return false;
-    }
-
-    /**
-     * Returns the number of columns in the result set.
-     * Returns null if the statement has no result set metadata.
-     *
-     * @return int The number of columns.
-     */
-    public function columnCount()
-    {
-        if (isset($this->_meta) && $this->_meta) {
-            return $this->_meta->field_count;
-        }
-        return 0;
-    }
-
-    /**
-     * Retrieves the error code, if any, associated with the last operation on
-     * the statement handle.
-     *
-     * @return string error code.
-     */
-    public function errorCode()
-    {
-        if (!$this->_stmt) {
-            return false;
-        }
-        return substr($this->_stmt->sqlstate, 0, 5);
-    }
-
-    /**
-     * Retrieves an array of error information, if any, associated with the
-     * last operation on the statement handle.
-     *
-     * @return array
-     */
-    public function errorInfo()
-    {
-        if (!$this->_stmt) {
-            return false;
-        }
-        return array(
-            substr($this->_stmt->sqlstate, 0, 5),
-            $this->_stmt->errno,
-            $this->_stmt->error,
-        );
-    }
-
-    /**
-     * Executes a prepared statement.
-     *
-     * @param array $params OPTIONAL Values to bind to parameter placeholders.
-     * @return bool
-     * @throws Zend_Db_Statement_Mysqli_Exception
-     */
-    public function _execute(array $params = null)
-    {
-        if (!$this->_stmt) {
-            return false;
-        }
-
-        // if no params were given as an argument to execute(),
-        // then default to the _bindParam array
-        if ($params === null) {
-            $params = $this->_bindParam;
-        }
-        // send $params as input parameters to the statement
-        if ($params) {
-            array_unshift($params, str_repeat('s', count($params)));
-            call_user_func_array(
-                array($this->_stmt, 'bind_param'),
-                $params
-            );
-        }
-
-        // execute the statement
-        $retval = $this->_stmt->execute();
-        if ($retval === false) {
-            /**
-             * @see Zend_Db_Statement_Mysqli_Exception
-             */
-            require_once 'Zend/Db/Statement/Mysqli/Exception.php';
-            throw new Zend_Db_Statement_Mysqli_Exception("Mysqli statement execute error : " . $this->_stmt->error);
-        }
-
-
-        // retain metadata
-        if ($this->_meta === null) {
-            $this->_meta = $this->_stmt->result_metadata();
-            if ($this->_stmt->errno) {
-                /**
-                 * @see Zend_Db_Statement_Mysqli_Exception
-                 */
-                require_once 'Zend/Db/Statement/Mysqli/Exception.php';
-                throw new Zend_Db_Statement_Mysqli_Exception("Mysqli statement metadata error: " . $this->_stmt->error);
-            }
-        }
-
-        // statements that have no result set do not return metadata
-        if ($this->_meta !== false) {
-
-            // get the column names that will result
-            $this->_keys = array();
-            foreach ($this->_meta->fetch_fields() as $col) {
-                $this->_keys[] = $this->_adapter->foldCase($col->name);
-            }
-
-            // set up a binding space for result variables
-            $this->_values = array_fill(0, count($this->_keys), null);
-
-            // set up references to the result binding space.
-            // just passing $this->_values in the call_user_func_array()
-            // below won't work, you need references.
-            $refs = array();
-            foreach ($this->_values as $i => &$f) {
-                $refs[$i] = &$f;
-            }
-
-            $this->_stmt->store_result();
-            // bind to the result variables
-            call_user_func_array(
-                array($this->_stmt, 'bind_result'),
-                $this->_values
-            );
-        }
-        return $retval;
-    }
-
-
-    /**
-     * Fetches a row from the result set.
-     *
-     * @param int $style  OPTIONAL Fetch mode for this fetch operation.
-     * @param int $cursor OPTIONAL Absolute, relative, or other.
-     * @param int $offset OPTIONAL Number for absolute or relative cursors.
-     * @return mixed Array, object, or scalar depending on fetch mode.
-     * @throws Zend_Db_Statement_Mysqli_Exception
-     */
-    public function fetch($style = null, $cursor = null, $offset = null)
-    {
-        if (!$this->_stmt) {
-            return false;
-        }
-        // fetch the next result
-        $retval = $this->_stmt->fetch();
-        switch ($retval) {
-        case null: // end of data
-        case false: // error occurred
-            $this->_stmt->reset();
-            return $retval;
-        default:
-            // fallthrough
-        }
-
-        // make sure we have a fetch mode
-        if ($style === null) {
-            $style = $this->_fetchMode;
-        }
-
-        // dereference the result values, otherwise things like fetchAll()
-        // return the same values for every entry (because of the reference).
-        $values = array();
-        foreach ($this->_values as $key => $val) {
-            $values[] = $val;
-        }
-
-        $row = false;
-        switch ($style) {
-            case Zend_Db::FETCH_NUM:
-                $row = $values;
-                break;
-            case Zend_Db::FETCH_ASSOC:
-                $row = array_combine($this->_keys, $values);
-                break;
-            case Zend_Db::FETCH_BOTH:
-                $assoc = array_combine($this->_keys, $values);
-                $row = array_merge($values, $assoc);
-                break;
-            case Zend_Db::FETCH_OBJ:
-                $row = (object) array_combine($this->_keys, $values);
-                break;
-            case Zend_Db::FETCH_BOUND:
-                $assoc = array_combine($this->_keys, $values);
-                $row = array_merge($values, $assoc);
-                return $this->_fetchBound($row);
-                break;
-            default:
-                /**
-                 * @see Zend_Db_Statement_Mysqli_Exception
-                 */
-                require_once 'Zend/Db/Statement/Mysqli/Exception.php';
-                throw new Zend_Db_Statement_Mysqli_Exception("Invalid fetch mode '$style' specified");
-                break;
-        }
-        return $row;
-    }
-
-    /**
-     * Retrieves the next rowset (result set) for a SQL statement that has
-     * multiple result sets.  An example is a stored procedure that returns
-     * the results of multiple queries.
-     *
-     * @return bool
-     * @throws Zend_Db_Statement_Mysqli_Exception
-     */
-    public function nextRowset()
-    {
-        /**
-         * @see Zend_Db_Statement_Mysqli_Exception
-         */
-        require_once 'Zend/Db/Statement/Mysqli/Exception.php';
-        throw new Zend_Db_Statement_Mysqli_Exception(__FUNCTION__.'() is not implemented');
-    }
-
-    /**
-     * Returns the number of rows affected by the execution of the
-     * last INSERT, DELETE, or UPDATE statement executed by this
-     * statement object.
-     *
-     * @return int     The number of rows affected.
-     */
-    public function rowCount()
-    {
-        if (!$this->_adapter) {
-            return false;
-        }
-        $mysqli = $this->_adapter->getConnection();
-        return $mysqli->affected_rows;
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+bv9iQeNFDY/4HZV6ghoSRtZv

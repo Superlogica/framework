@@ -1,832 +1,179 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category    ZendX
- * @package     ZendX_JQuery
- * @subpackage  View
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
- * @license     http://framework.zend.com/license/new-bsd     New BSD License
- * @version     $Id: Container.php 20750 2010-01-29 11:12:00Z beberlei $
- */
-
-/**
- * @see ZendX_JQuery
- */
-require_once "ZendX/JQuery.php";
-
-/**
- * jQuery View Helper. Transports all jQuery stack and render information across all views.
- *
- * @uses 	   ZendX_JQuery_View_Helper_JQuery_Container
- * @package    ZendX_JQuery
- * @subpackage View
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class ZendX_JQuery_View_Helper_JQuery_Container
-{
-    /**
-     * Path to local webserver jQuery library
-     *
-     * @var String
-     */
-    protected $_jqueryLibraryPath = null;
-
-    /**
-     * Additional javascript files that for jQuery Helper components.
-     *
-     * @var Array
-     */
-    protected $_javascriptSources = array();
-
-    /**
-     * Indicates wheater the jQuery View Helper is enabled.
-     *
-     * @var Boolean
-     */
-    protected $_enabled = false;
-
-    /**
-     * Indicates if a capture start method for javascript or onLoad has been called.
-     *
-     * @var Boolean
-     */
-    protected $_captureLock = false;
-
-    /**
-     * Additional javascript statements that need to be executed after jQuery lib.
-     *
-     * @var Array
-     */
-    protected $_javascriptStatements = array();
-
-    /**
-     * Additional stylesheet files for jQuery related components.
-     *
-     * @var Array
-     */
-    protected $_stylesheets = array();
-
-    /**
-     * jQuery onLoad statements Stack
-     *
-     * @var Array
-     */
-    protected $_onLoadActions = array();
-
-    /**
-     * View is rendered in XHTML or not.
-     *
-     * @var Boolean
-     */
-    protected $_isXhtml = false;
-
-    /**
-     * Default CDN jQuery Library version
-     *
-     * @var String
-     */
-    protected $_version = ZendX_JQuery::DEFAULT_JQUERY_VERSION;
-
-    /**
-     * Default Render Mode (all parts)
-     *
-     * @var Integer
-     */
-    protected $_renderMode = ZendX_JQuery::RENDER_ALL;
-
-    /**
-     * jQuery UI Library Enabled
-     *
-     * @var Boolean
-     */
-    protected $_uiEnabled = false;
-
-    /**
-     * Local jQuery UI Path. Use Google CDN if
-     * variable is null
-     *
-     * @var String
-     */
-    protected $_uiPath = null;
-
-    /**
-     * jQuery UI Google CDN Version
-     *
-     * @var String
-     */
-    protected $_uiVersion = ZendX_JQuery::DEFAULT_UI_VERSION;
-
-    /**
-     * Load CDN Path from SSL or Non-SSL?
-     *
-     * @var boolean
-     */
-    protected $_loadSslCdnPath = false;
-
-    /**
-     * View Instance
-     *
-     * @var Zend_View_Interface
-     */
-    public $view = null;
-
-    /**
-     * Set view object
-     *
-     * @param  Zend_View_Interface $view
-     * @return void
-     */
-    public function setView(Zend_View_Interface $view)
-    {
-        $this->view = $view;
-    }
-
-    /**
-     * Enable jQuery
-     *
-     * @return ZendX_JQuery_View_Helper_JQuery_Container
-     */
-    public function enable()
-    {
-        $this->_enabled = true;
-        return $this;
-    }
-
-    /**
-     * Disable jQuery
-     *
-     * @return ZendX_JQuery_View_Helper_JQuery_Container
-     */
-    public function disable()
-    {
-        $this->uiDisable();
-        $this->_enabled = false;
-        return $this;
-    }
-
-    /**
-     * Is jQuery enabled?
-     *
-     * @return boolean
-     */
-    public function isEnabled()
-    {
-        return $this->_enabled;
-    }
-
-    /**
-     * Set the version of the jQuery library used.
-     *
-     * @param string $version
-     * @return ZendX_JQuery_View_Helper_JQuery_Container
-     */
-    public function setVersion($version)
-    {
-        $this->_version = $version;
-        return $this;
-    }
-
-    /**
-     * Get the version used with the jQuery library
-     *
-     * @return string
-     */
-    public function getVersion()
-    {
-        return $this->_version;
-    }
-
-    /**
-     * Use CDN, using version specified. Currently supported
-     * by Googles Ajax Library API are: 1.2.3, 1.2.6
-     *
-     * @deprecated As of version 1.8, use {@link setVersion()} instead.
-     * @param  string $version
-     * @return ZendX_JQuery_View_Helper_JQuery_Container
-     */
-    public function setCdnVersion($version = null)
-    {
-        return $this->setVersion($version);
-    }
-
-    /**
-     * Get CDN version
-     *
-     * @deprecated As of version 1.8, use {@link getVersion()} instead.
-     * @return string
-     */
-    public function getCdnVersion()
-    {
-        return $this->getVersion();
-    }
-
-    /**
-     * Set Use SSL on CDN Flag
-     *
-     * @return ZendX_JQuery_View_Helper_JQuery_Container
-     */
-    public function setCdnSsl($flag)
-    {
-        $this->_loadSslCdnPath = $flag;
-        return $this;
-    }
-
-    /**
-     * Are we using the CDN?
-     *
-     * @return boolean
-     */
-    public function useCdn()
-    {
-        return !$this->useLocalPath();
-    }
-
-    /**
-     * Set path to local jQuery library
-     *
-     * @param  string $path
-     * @return ZendX_JQuery_View_Helper_JQuery_Container
-     */
-    public function setLocalPath($path)
-    {
-        $this->_jqueryLibraryPath = (string) $path;
-        return $this;
-    }
-
-    /**
-     * Enable jQuery UI Library Rendering
-     *
-     * @return ZendX_JQuery_View_Helper_JQuery_Container
-     */
-    public function uiEnable()
-    {
-        $this->enable();
-        $this->_uiEnabled = true;
-        return $this;
-    }
-
-    /**
-     * Disable jQuery UI Library Rendering
-     *
-     * @return ZendX_JQuery_View_Helper_JQuery_Container
-     */
-    public function uiDisable()
-    {
-        $this->_uiEnabled = false;
-        return $this;
-    }
-
-    /**
-     * Check wheater currently the jQuery UI library is enabled.
-     *
-     * @return boolean
-     */
-    public function uiIsEnabled()
-    {
-         return $this->_uiEnabled;
-    }
-
-    /**
-     * Set jQuery UI version used.
-     * 
-     * @param  string $version
-     * @return ZendX_JQuery_View_Helper_JQuery_Container
-     */
-    public function setUiVersion($version)
-    {
-        $this->_uiVersion = $version;
-    	return $this;
-    }
-
-    /**
-     * Get jQuery UI Version used.
-     *
-     * @return string
-     */
-    public function getUiVersion()
-    {
-        return $this->_uiVersion;
-    }
-
-    /**
-     * Set jQuery UI CDN Version
-     *
-     * @deprecated As of 1.8 use {@link setUiVersion()}
-     * @param String $version
-     * @return ZendX_JQuery_View_Helper_JQuery_Container
-     */
-    public function setUiCdnVersion($version="1.5.2")
-    {
-        return $this->setUiVersion($version);
-    }
-
-    /**
-     * Return jQuery UI CDN Version
-     *
-     * @deprecated As of 1.8 use {@link getUiVersion()}
-     * @return String
-     */
-    public function getUiCdnVersion()
-    {
-        return $this->getUiVersion();
-    }
-
-    /**
-     * Set local path to jQuery UI library
-     *
-     * @param String $path
-     * @return ZendX_JQuery_View_Helper_JQuery_Container
-     */
-    public function setUiLocalPath($path)
-    {
-    	$this->_uiPath = (string) $path;
-    	return $this;
-    }
-
-    /**
-     * Return the local jQuery UI Path if set.
-     *
-     * @return string
-     */
-    public function getUiPath()
-    {
-    	return $this->_uiPath;
-    }
-
-    /**
-     * Proxies to getUiPath() for consistency in function naming.
-     *
-     * @return string
-     */
-    public function getUiLocalPath()
-    {
-        return $this->getUiPath();
-    }
-
-    /**
-     * Is the jQuery Ui loaded from local scope?
-     *
-     * @return boolean
-     */
-    public function useUiLocal()
-    {
-    	return (null===$this->_uiPath ? false : true);
-    }
-
-    /**
-     * Is the jQuery Ui enabled and loaded from CDN?
-     *
-     * @return ZendX_JQuery_View_Helper_JQuery_Container
-     */
-    public function useUiCdn()
-    {
-    	return !$this->useUiLocal();
-    }
-
-    /**
-     * Get local path to jQuery
-     *
-     * @return string
-     */
-    public function getLocalPath()
-    {
-        return $this->_jqueryLibraryPath;
-    }
-
-    /**
-     * Are we using a local path?
-     *
-     * @return boolean
-     */
-    public function useLocalPath()
-    {
-        return (null === $this->_jqueryLibraryPath) ? false : true;
-    }
-
-    /**
-     * Start capturing routines to run onLoad
-     *
-     * @return boolean
-     */
-    public function onLoadCaptureStart()
-    {
-        if ($this->_captureLock) {
-            require_once 'Zend/Exception.php';
-            throw new Zend_Exception('Cannot nest onLoad captures');
-        }
-
-        $this->_captureLock = true;
-        return ob_start();
-    }
-
-    /**
-     * Stop capturing routines to run onLoad
-     *
-     * @return boolean
-     */
-    public function onLoadCaptureEnd()
-    {
-        $data               = ob_get_clean();
-        $this->_captureLock = false;
-
-        $this->addOnLoad($data);
-        return true;
-    }
-
-    /**
-     * Capture arbitrary javascript to include in jQuery script
-     *
-     * @return boolean
-     */
-    public function javascriptCaptureStart()
-    {
-        if ($this->_captureLock) {
-            require_once 'Zend/Exception.php';
-            throw new Zend_Exception('Cannot nest captures');
-        }
-
-        $this->_captureLock = true;
-        return ob_start();
-    }
-
-    /**
-     * Finish capturing arbitrary javascript to include in jQuery script
-     *
-     * @return boolean
-     */
-    public function javascriptCaptureEnd()
-    {
-        $data               = ob_get_clean();
-        $this->_captureLock = false;
-
-        $this->addJavascript($data);
-        return true;
-    }
-
-    /**
-     * Add a Javascript File to the include stack.
-     *
-     * @return ZendX_JQuery_View_Helper_JQuery_Container
-     */
-    public function addJavascriptFile($path)
-    {
-        $path = (string) $path;
-        if (!in_array($path, $this->_javascriptSources)) {
-            $this->_javascriptSources[] = (string) $path;
-        }
-        return $this;
-    }
-
-    /**
-     * Return all currently registered Javascript files.
-     *
-     * This does not include the jQuery library, which is handled by another retrieval
-     * strategy.
-     *
-     * @return Array
-     */
-    public function getJavascriptFiles()
-    {
-        return $this->_javascriptSources;
-    }
-
-    /**
-     * Clear all currently registered Javascript files.
-     *
-     * @return ZendX_JQuery_View_Helper_JQuery_Container
-     */
-    public function clearJavascriptFiles()
-    {
-        $this->_javascriptSources = array();
-        return $this;
-    }
-
-    /**
-     * Add arbitrary javascript to execute in jQuery JS container
-     *
-     * @param  string $js
-     * @return ZendX_JQuery_View_Helper_JQuery_Container
-     */
-    public function addJavascript($js)
-    {
-        $this->_javascriptStatements[] = $js;
-        $this->enable();
-        return $this;
-    }
-
-    /**
-     * Return all registered javascript statements
-     *
-     * @return array
-     */
-    public function getJavascript()
-    {
-        return $this->_javascriptStatements;
-    }
-
-    /**
-     * Clear arbitrary javascript stack
-     *
-	 * @return ZendX_JQuery_View_Helper_JQuery_Container
-     */
-    public function clearJavascript()
-    {
-        $this->_javascriptStatements = array();
-        return $this;
-    }
-
-    /**
-     * Add a stylesheet
-     *
-     * @param  string $path
-     * @return ZendX_JQuery_View_Helper_JQuery_Container
-     */
-    public function addStylesheet($path)
-    {
-        $path = (string) $path;
-        if (!in_array($path, $this->_stylesheets)) {
-            $this->_stylesheets[] = (string) $path;
-        }
-        return $this;
-    }
-
-    /**
-     * Retrieve registered stylesheets
-     *
-     * @return array
-     */
-    public function getStylesheets()
-    {
-        return $this->_stylesheets;
-    }
-
-    /**
-     * Add a script to execute onLoad
-     *
-     * @param  string $callback Lambda
-     * @return ZendX_JQuery_View_Helper_JQuery_Container
-     */
-    public function addOnLoad($callback)
-    {
-        if (!in_array($callback, $this->_onLoadActions, true)) {
-            $this->_onLoadActions[] = $callback;
-        }
-        $this->enable();
-        return $this;
-    }
-
-    /**
-     * Retrieve all registered onLoad actions
-     *
-     * @return array
-     */
-    public function getOnLoadActions()
-    {
-        return $this->_onLoadActions;
-    }
-
-    /**
-     * Clear the onLoadActions stack.
-     *
-     * @return ZendX_JQuery_View_Helper_JQuery_Container
-     */
-    public function clearOnLoadActions()
-    {
-        $this->_onLoadActions = array();
-        return $this;
-    }
-
-    /**
-     * Set which parts of the jQuery enviroment should be rendered.
-     *
-     * This function allows for a gradual refactoring of the jQuery code
-     * rendered by calling __toString(). Use ZendX_JQuery::RENDER_*
-     * constants. By default all parts of the enviroment are rendered.
-     *
-     * @see    ZendX_JQuery::RENDER_ALL
-     * @param  integer $mask
-     * @return ZendX_JQuery_View_Helper_JQuery_Container
-     */
-    public function setRenderMode($mask)
-    {
-        $this->_renderMode = $mask;
-        return $this;
-    }
-
-    /**
-     * Return bitmask of the current Render Mode
-     * @return integer
-     */
-    public function getRenderMode()
-    {
-        return $this->_renderMode;
-    }
-
-    /**
-     * String representation of jQuery environment
-     *
-     * @return string
-     */
-    public function __toString()
-    {
-        if (!$this->isEnabled()) {
-            return '';
-        }
-
-        $this->_isXhtml = $this->view->doctype()->isXhtml();
-
-        $html  = $this->_renderStylesheets() . PHP_EOL
-               . $this->_renderScriptTags() . PHP_EOL
-               . $this->_renderExtras();
-        return $html;
-    }
-
-    /**
-     * Render jQuery stylesheets
-     *
-     * @return string
-     */
-    protected function _renderStylesheets()
-    {
-    	if( ($this->getRenderMode() & ZendX_JQuery::RENDER_STYLESHEETS) == 0) {
-            return '';
-    	}
-
-        foreach ($this->getStylesheets() as $stylesheet) {
-            $stylesheets[] = $stylesheet;
-        }
-
-        if (empty($stylesheets)) {
-            return '';
-        }
-
-        array_reverse($stylesheets);
-        $style = "";
-        foreach($stylesheets AS $stylesheet) {
-            if ($this->view instanceof Zend_View_Abstract) {
-                $closingBracket = ($this->view->doctype()->isXhtml()) ? ' />' : '>';
-            } else {
-                $closingBracket = ' />';
-            }
-
-            $style .= '<link rel="stylesheet" href="'.$stylesheet.'" '.
-                      'type="text/css" media="screen"' . $closingBracket . PHP_EOL;
-        }
-
-        return $style;
-    }
-
-    /**
-     * Renders all javascript file related stuff of the jQuery enviroment.
-     *
-     * @return string
-     */
-    protected function _renderScriptTags()
-    {
-        $scriptTags = '';
-        if( ($this->getRenderMode() & ZendX_JQuery::RENDER_LIBRARY) > 0) {
-            $source = $this->_getJQueryLibraryPath();
-
-            $scriptTags .= '<script type="text/javascript" src="' . $source . '"></script>'.PHP_EOL;
-
-            if($this->uiIsEnabled()) {
-                $uiPath = $this->_getJQueryUiLibraryPath();
-                $scriptTags .= '<script type="text/javascript" src="'.$uiPath.'"></script>'.PHP_EOL;
-            }
-
-            if(ZendX_JQuery_View_Helper_JQuery::getNoConflictMode() == true) {
-                $scriptTags .= '<script type="text/javascript">var $j = jQuery.noConflict();</script>'.PHP_EOL;
-            }
-        }
-
-        if( ($this->getRenderMode() & ZendX_JQuery::RENDER_SOURCES) > 0) {
-            foreach($this->getJavascriptFiles() AS $javascriptFile) {
-                $scriptTags .= '<script type="text/javascript" src="' . $javascriptFile . '"></script>'.PHP_EOL;
-            }
-        }
-
-        return $scriptTags;
-    }
-
-    /**
-     * Renders all javascript code related stuff of the jQuery enviroment.
-     *
-     * @return string
-     */
-    protected function _renderExtras()
-    {
-        $onLoadActions = array();
-        if( ($this->getRenderMode() & ZendX_JQuery::RENDER_JQUERY_ON_LOAD) > 0) {
-            foreach ($this->getOnLoadActions() as $callback) {
-                $onLoadActions[] = $callback;
-            }
-        }
-
-        $javascript = '';
-        if( ($this->getRenderMode() & ZendX_JQuery::RENDER_JAVASCRIPT) > 0) {
-            $javascript = implode("\n    ", $this->getJavascript());
-        }
-
-        $content = '';
-
-        if (!empty($onLoadActions)) {
-            if(ZendX_JQuery_View_Helper_JQuery::getNoConflictMode() == true) {
-                $content .= '$j(document).ready(function() {'."\n    ";
-            } else {
-                $content .= '$(document).ready(function() {'."\n    ";
-            }
-            $content .= implode("\n    ", $onLoadActions) . "\n";
-            $content .= '});'."\n";
-        }
-
-        if (!empty($javascript)) {
-            $content .= $javascript . "\n";
-        }
-
-        if (preg_match('/^\s*$/s', $content)) {
-            return '';
-        }
-
-        $html = '<script type="text/javascript">' . PHP_EOL
-              . (($this->_isXhtml) ? '//<![CDATA[' : '//<!--') . PHP_EOL
-              . $content
-              . (($this->_isXhtml) ? '//]]>' : '//-->') . PHP_EOL
-              . PHP_EOL . '</script>';
-        return $html;
-    }
-
-    /**
-     * @return string
-     */
-    protected function _getJQueryLibraryBaseCdnUri()
-    {
-        if($this->_loadSslCdnPath == true) {
-            $baseUri = ZendX_JQuery::CDN_BASE_GOOGLE_SSL;
-        } else {
-            $baseUri = ZendX_JQuery::CDN_BASE_GOOGLE;
-        }
-        return $baseUri;
-    }
-
-    /**
-     * @return string
-     */
-    protected function _getJQueryUiLibraryBaseCdnUri()
-    {
-        if($this->_loadSslCdnPath == true) {
-            $baseUri = ZendX_JQuery::CDN_BASEUI_GOOGLE_SSL;
-        } else {
-            $baseUri = ZendX_JQuery::CDN_BASEUI_GOOGLE;
-        }
-        return $baseUri;
-    }
-
-	/**
-	 * Internal function that constructs the include path of the jQuery library.
-	 *
-	 * @return string
-	 */
-    protected function _getJQueryLibraryPath()
-    {
-        if($this->_jqueryLibraryPath != null) {
-            $source = $this->_jqueryLibraryPath;
-        } else {
-            $baseUri = $this->_getJQueryLibraryBaseCdnUri();
-            $source = $baseUri .
-                ZendX_JQuery::CDN_SUBFOLDER_JQUERY .
-                $this->getCdnVersion() .
-            	ZendX_JQuery::CDN_JQUERY_PATH_GOOGLE;
-        }
-
-        return $source;
-    }
-
-    /**
-     * @return string
-     */
-    protected function _getJQueryUiLibraryPath()
-    {
-        if($this->useUiCdn()) {
-            $baseUri = $this->_getJQueryLibraryBaseCdnUri();
-            $uiPath = $baseUri.
-                ZendX_JQuery::CDN_SUBFOLDER_JQUERYUI .
-                $this->getUiCdnVersion() .
-                "/jquery-ui.min.js";
-        } else if($this->useUiLocal()) {
-            $uiPath = $this->getUiPath();
-        }
-        return $uiPath;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

@@ -1,204 +1,36 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @package    Zend_Controller
- * @subpackage Dispatcher
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * Zend_Controller_Request_Abstract
- */
-require_once 'Zend/Controller/Request/Abstract.php';
-
-/**
- * Zend_Controller_Response_Abstract
- */
-require_once 'Zend/Controller/Response/Abstract.php';
-
-/**
- * @package    Zend_Controller
- * @subpackage Dispatcher
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-interface Zend_Controller_Dispatcher_Interface
-{
-    /**
-     * Formats a string into a controller name.  This is used to take a raw
-     * controller name, such as one that would be packaged inside a request
-     * object, and reformat it to a proper class name that a class extending
-     * Zend_Controller_Action would use.
-     *
-     * @param string $unformatted
-     * @return string
-     */
-    public function formatControllerName($unformatted);
-
-    /**
-     * Formats a string into a module name.  This is used to take a raw
-     * module name, such as one that would be packaged inside a request
-     * object, and reformat it to a proper directory/class name that a class extending
-     * Zend_Controller_Action would use.
-     *
-     * @param string $unformatted
-     * @return string
-     */
-    public function formatModuleName($unformatted);
-
-    /**
-     * Formats a string into an action name.  This is used to take a raw
-     * action name, such as one that would be packaged inside a request
-     * object, and reformat into a proper method name that would be found
-     * inside a class extending Zend_Controller_Action.
-     *
-     * @param string $unformatted
-     * @return string
-     */
-    public function formatActionName($unformatted);
-
-    /**
-     * Returns TRUE if an action can be dispatched, or FALSE otherwise.
-     *
-     * @param  Zend_Controller_Request_Abstract $request
-     * @return boolean
-     */
-    public function isDispatchable(Zend_Controller_Request_Abstract $request);
-
-    /**
-     * Add or modify a parameter with which to instantiate an Action Controller
-     *
-     * @param string $name
-     * @param mixed $value
-     * @return Zend_Controller_Dispatcher_Interface
-     */
-    public function setParam($name, $value);
-
-    /**
-     * Set an array of a parameters to pass to the Action Controller constructor
-     *
-     * @param array $params
-     * @return Zend_Controller_Dispatcher_Interface
-     */
-    public function setParams(array $params);
-
-    /**
-     * Retrieve a single parameter from the controller parameter stack
-     *
-     * @param string $name
-     * @return mixed
-     */
-    public function getParam($name);
-
-    /**
-     * Retrieve the parameters to pass to the Action Controller constructor
-     *
-     * @return array
-     */
-    public function getParams();
-
-    /**
-     * Clear the controller parameter stack
-     *
-     * By default, clears all parameters. If a parameter name is given, clears
-     * only that parameter; if an array of parameter names is provided, clears
-     * each.
-     *
-     * @param null|string|array single key or array of keys for params to clear
-     * @return Zend_Controller_Dispatcher_Interface
-     */
-    public function clearParams($name = null);
-
-    /**
-     * Set the response object to use, if any
-     *
-     * @param Zend_Controller_Response_Abstract|null $response
-     * @return void
-     */
-    public function setResponse(Zend_Controller_Response_Abstract $response = null);
-
-    /**
-     * Retrieve the response object, if any
-     *
-     * @return Zend_Controller_Response_Abstract|null
-     */
-    public function getResponse();
-
-    /**
-     * Add a controller directory to the controller directory stack
-     *
-     * @param string $path
-     * @param string $args
-     * @return Zend_Controller_Dispatcher_Interface
-     */
-    public function addControllerDirectory($path, $args = null);
-
-    /**
-     * Set the directory where controller files are stored
-     *
-     * Specify a string or an array; if an array is specified, all paths will be
-     * added.
-     *
-     * @param string|array $dir
-     * @return Zend_Controller_Dispatcher_Interface
-     */
-    public function setControllerDirectory($path);
-
-    /**
-     * Return the currently set directory(ies) for controller file lookup
-     *
-     * @return array
-     */
-    public function getControllerDirectory();
-
-    /**
-     * Dispatches a request object to a controller/action.  If the action
-     * requests a forward to another action, a new request will be returned.
-     *
-     * @param  Zend_Controller_Request_Abstract $request
-     * @param  Zend_Controller_Response_Abstract $response
-     * @return void
-     */
-    public function dispatch(Zend_Controller_Request_Abstract $request, Zend_Controller_Response_Abstract $response);
-
-    /**
-     * Whether or not a given module is valid
-     *
-     * @param string $module
-     * @return boolean
-     */
-    public function isValidModule($module);
-
-    /**
-     * Retrieve the default module name
-     * 
-     * @return string
-     */
-    public function getDefaultModule();
-
-    /**
-     * Retrieve the default controller name
-     * 
-     * @return string
-     */
-    public function getDefaultControllerName();
-
-    /**
-     * Retrieve the default action
-     * 
-     * @return string
-     */
-    public function getDefaultAction();
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

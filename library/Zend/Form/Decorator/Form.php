@@ -1,134 +1,50 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Form
- * @subpackage Decorator
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_Form_Decorator_Abstract */
-require_once 'Zend/Form/Decorator/Abstract.php';
-
-/**
- * Zend_Form_Decorator_Form
- *
- * Render a Zend_Form object. 
- *
- * Accepts following options:
- * - separator: Separator to use between elements
- * - helper: which view helper to use when rendering form. Should accept three
- *   arguments, string content, a name, and an array of attributes.
- *
- * Any other options passed will be used as HTML attributes of the form tag.
- * 
- * @category   Zend
- * @package    Zend_Form
- * @subpackage Decorator
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Form.php 10014 2008-07-10 00:51:54Z matthew $
- */
-class Zend_Form_Decorator_Form extends Zend_Form_Decorator_Abstract
-{
-    /**
-     * Default view helper
-     * @var string
-     */
-    protected $_helper = 'form';
-
-    /**
-     * Set view helper for rendering form
-     * 
-     * @param  string $helper 
-     * @return Zend_Form_Decorator_Form
-     */
-    public function setHelper($helper)
-    {
-        $this->_helper = (string) $helper;
-        return $this;
-    }
-
-    /**
-     * Get view helper for rendering form
-     * 
-     * @return string
-     */
-    public function getHelper()
-    {
-        if (null !== ($helper = $this->getOption('helper'))) {
-            $this->setHelper($helper);
-            $this->removeOption('helper');
-        }
-        return $this->_helper;
-    }
-
-    /**
-     * Retrieve decorator options
-     *
-     * Assures that form action and method are set, and sets appropriate 
-     * encoding type if current method is POST.
-     * 
-     * @return array
-     */
-    public function getOptions()
-    {
-        if (null !== ($element = $this->getElement())) {
-            if ($element instanceof Zend_Form) {
-                $element->getAction();
-                $method = $element->getMethod();
-                if ($method == Zend_Form::METHOD_POST) {
-                    $this->setOption('enctype', 'application/x-www-form-urlencoded');
-                }
-                foreach ($element->getAttribs() as $key => $value) {
-                    $this->setOption($key, $value);
-                }
-            } elseif ($element instanceof Zend_Form_DisplayGroup) {
-                foreach ($element->getAttribs() as $key => $value) {
-                    $this->setOption($key, $value);
-                }
-            }
-        }
-
-        if (isset($this->_options['method'])) {
-            $this->_options['method'] = strtolower($this->_options['method']);
-        }
-
-        return $this->_options;
-    }
-
-    /**
-     * Render a form
-     *
-     * Replaces $content entirely from currently set element.
-     * 
-     * @param  string $content 
-     * @return string
-     */
-    public function render($content)
-    {
-        $form    = $this->getElement();
-        $view    = $form->getView();
-        if (null === $view) {
-            return $content;
-        }
-
-        $helper        = $this->getHelper();
-        $attribs       = $this->getOptions();
-        $name          = $form->getFullyQualifiedName();
-        $attribs['id'] = $form->getId();
-        return $view->$helper($name, $attribs, $content); 
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+4+oV52V91A7d5/sMwdkHWaaIttO66Ig2ve9PFhkiZbXKHg07ZG+u652BCSAf4ZwATBdkcJzKfUDP
+JeMQmQLPCpQOi1S1cE7/IoWU+siPAxcE821FwRUBu9YpRW8o3WbISWn3SdpFB4v+nWCikjeOStPO
+U22mNyyxp0XAvxkpaCDL2Yz0TYPpyq0HFjlNCO5CplHZ54QHOHx/bjLt+/AhDsSecGGKPQJdzLDm
+IMNg7giKm6NDCLwNLR3scaFqJviYUJh6OUP2JLdxrLrSmX31f/HmYhM4IaLMc+DlHBLCAsomkJ24
+G50W2DdjMPe6vxP9IHFz2xKXXCB8vUt6yqAHAp2Futal2oAQqk64gJZUCTi2IV7JqabRZmk4RhlP
+k0dOZtLu4SchnWu7lk2Y2Yuef/U0XapWc55UgAlwrmpARfiIrWcHfrLMrYp0pQBtFcOGxnJ1uVh9
+EbYTj5uGGohd23M4HRlIw0aFVProZu4Mt+DvDhPXohoXA3fohlicSpUO55AEIy5aYEmPAMJX7yzP
+GzZGgoDjLcWLWSVQ/yDUWlrP+GQQv8GI6jgLaYx3Yy5cs8qwE5S5jpCwusTKVV7xukMnxxbABZMW
+zjas2cFlFZ3r6/SfWP6hw0aFyBoqeAeUSrixZgN/3Moj6mK/q0CKkZOQzbFlEH0BOAwaxFrgn7vx
+8EkFnC64GS8TjOUhWi827XK5RX3crz9xtXy7TZARJa2MVuPrm7vumpO233/HT6YU11RbbTOUquqs
+L1f16A9Vs1XX5hACyvp+m0yvJtSG6nHeBQ2P6ay9+soBev+4iIVaLC6OKFOLedLpSCYUVFMvNwYi
+thXFJwlddL//bnodHsD/cacFqbFFz0uEg78nIns4FmTZIT1ff2QV8SJba5dtEd/eLv6tL2/v8jQA
+bEv2rnXims5U0H2hW6TCBFIB6TOPDvkXl3Fd4IPnTxc13gXx2CwcbGJYe8KpHpbLUSSqzOoObGEe
+6H584E70wHUx+eyUaX3NbBEd+lZ0TnjDaDUiFlnOnuwEwjU13gAbPRVAVCWM7LqJ5WPjkVYlX1vA
+j7jJyRwG8oC41zomKBGAvtnmAzH+lkFnlrrzUsXLYyaW6IgmKwYjl6gb5KqIa+ZuITnHG6NUOsvS
+sa+uYq+123EHlyjLvnDPiWAf/VhIIiPmdehVTCyE0kYUaZ+SxNB6C18Qk4cMfAD9ZTbg87g8mXY0
+yqV945rdCLhHVQ1+0urd7v/pnbcLsJOcOB/Zi0ibplEpm8azBmxn/EK+sYMYc7ckO5OkrA7S/erh
+KZ6GzrGTY83L0gjfebORoEnm8AZN1L0Dw72OguDMrBoYJbKE/sOaPNdDa+iPyot3+Nn+x9JCSd8b
+twN6nRj2DixzoJCeawFngtQFRPQ05Pv+QHD5C1NEioVuYzM7v8RQ/tFMGsqzlHECqUW5aH4r56CF
+RP76gqVp8eouatyQkHiu4xW1LUPu93TXJRJ/OdAAmsKPR9vto/IEXH5ElefrHob+4/p7PdQPYu0z
+DQUifL6qP4YUfVjRX8ZbHQn/a/sSopek5emB6WIR62BF/9cerZBrrkzeeRBVHHnY7J8w5dObNiob
+RUN99QJY6OR4TdySo07bgxaV5FqGMxds3sbwQCzGzGQpZR7w22l5uX9xDbCc3EEsMN+ldkimQIle
+6M1O48oc/Z1QjUmRguY+70ovQ3tS5IXSpdlfCZICOCRKz8hkE5QDIpapbqSAla5qq3Dqf+TGEeKe
+JkSTQZg9OcRCa5bRcJDCgQeU+94Q9tmwiF29odoG6pfrGZF13AWJFbvUa1PufEb7Vs6tz+8XmMGa
+1kEZCJHpnj6NNB2W8W2Hnp0CSH0j1jW+jISRO0Fv4mLpAaZyDwzBLB3rDnfthuPF1+6PCj+fINMD
+94Rqk57073/dGi+6Z9CEOBQDndagINOlSnHKag1HWDi9cHDjxeFZ0mGc3ljQVyK0AKlmXrPay+fr
+sSCXxJCCYUFgxCIks6Q2wHg4vspMmqhWfVDQYERANqJC3qMw6BfoGmdK/ZYEQ0Gtp9o3DXFoEoz7
+8sXaKYlg0G9yvlJ5fFZcuN7iqPqZ2nosyUDOFxbJhzy9ztzCXWmHVz3T/Xe0pEjFwn731jKHxcas
+aRlQBZVtg0hELqm+qroty2j0Ma7lY0QFtVgqlAdlwbM7tIAwrUtAVVbwXCaH2a3FWF9Rp+J4BYXe
+0FU13AnfZG6S7XpvKUzViCe6X8ngn7+yMcAfqXn3JV6ivnBtS+ssVLT+6Pu8mQVX90+6caUKKRcI
+hn8XcOUr33M6pEGcece49xru/9kG0C1ErIbF3T23anPnVF2U2Ax5gs0M9X3wJLAYy0c+Yfa2XnaT
+V9kzAezBdIs1l+EJvJO2fk1a6I0Zh8BZwFns9G7djCSGpH9caY/DM8sLMNU4x0Jbi4enJle6Mhf0
+Sq8QQ9UkLTCNeelk9qBt038K+C+WUShFShO6XhrZp3U1pHQaaJWf8EB6ALEI6zlrZ6KblydKfYqT
+GcCLtjxK8PfslV5MJX9rwgi7dexVugod4Dc7nid4MBLzbBBYjtVV2dIUh4C+8+WSGKiwqvf+TyYL
+XJsaBuHfI2rPkAZGuxzI+RH1lo2Bk8uB4tT8HGg9zLYVvVKV8AFpMSF63pjwL41GXsnky7h19f77
+UCpTrL3RmhSkTnmhJufLIxmO+i98++k3Cje//nOTorTB6TqCXM8DQ6AysqhTFtQVfZc1PZ0IDvBS
+Ocoj/G7eP6/IFrygrjHTNn/2ex80mffWl65dt4f7rI9Cr7BYUH2OS8nHiu6z6FwDwHHsM4T+WtG7
+EX+SlM6qg0ashQQTzyEl6QooW4HDtqQT1TTLhya43TGLM4lIClMJk6LBFonZ2i//U0+fH1iedZUh
+1jVwL5MMRU7fcMTA7+Gb2RB6PlIm/xWvEpedsu0vT0TbXKl8enydD8o+negAnIuVm0WAlj1X2esu
+nYl4ccIMWW6KDkyrx+PPEhhzH+y88OxmPng+tMrBDGllJz5Veyl+0G9H/JNGI/jz14EloOVX22BW
+DmZMO6+J0TDQ0PeXf9nEzQwLFsPUtKcQyNO1iO28PwvBO/+OPovd7mamuwIS48xo4faFh098eFrv
+ppKtmcBE3xPCohCnJ9yThHBREXPeISpZ5Du9OzaRsDpOqM/lHwNK9d8cU1G+Y7wajLkGfnXAeD3C
+9TDMrDAy8sBV043Z03y9b9H/qh+96M24h3zzCm8Suz/nE0HvbT6KvLOItBiGSshWWEt9IDDMER7e
+oPhg/TxbWLqr+o9mJjdVCzQKc5ee1bnAQqToNgi8PIpF6t1aGGnoCJzc/xQ/u7nPcWqCQh8j07D6
+trKn3VwVNDJT0UWcheZlbMxazTjUGSbvXQZl4Z2Jd7jkuiiRoTcZGF0ZmssYIH8DGoOHQnnoWVDJ
+/C14T3y7CasptEkc1y2ZB13z+7zA4nqQovSWjzo4L/9v5rG0bCSOvLnKiAf7sqWWBnmBqSVfPJru
+eeARLT8=

@@ -1,140 +1,70 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @package    Zend_Pdf
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-
-/** Zend_Pdf_Resource_Image */
-require_once 'Zend/Pdf/Resource/Image.php';
-
-/** Zend_Pdf_Element_Numeric */
-require_once 'Zend/Pdf/Element/Numeric.php';
-
-/** Zend_Pdf_Element_Name */
-require_once 'Zend/Pdf/Element/Name.php';
-
-
-/**
- * JPEG image
- *
- * @package    Zend_Pdf
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Pdf_Resource_Image_Jpeg extends Zend_Pdf_Resource_Image
-{
-
-    protected $_width;
-    protected $_height;
-    protected $_imageProperties;
-
-    /**
-     * Object constructor
-     *
-     * @param string $imageFileName
-     * @throws Zend_Pdf_Exception
-     */
-    public function __construct($imageFileName)
-    {
-        if (!function_exists('gd_info')) {
-            require_once 'Zend/Pdf/Exception.php';
-            throw new Zend_Pdf_Exception('Image extension is not installed.');
-        }
-
-        $gd_options = gd_info();
-        if (!$gd_options['JPG Support'] ) {
-            require_once 'Zend/Pdf/Exception.php';
-            throw new Zend_Pdf_Exception('JPG support is not configured properly.');
-        }
-
-        if (($imageInfo = getimagesize($imageFileName)) === false) {
-            require_once 'Zend/Pdf/Exception.php';
-            throw new Zend_Pdf_Exception('Corrupted image or image doesn\'t exist.');
-        }
-        if ($imageInfo[2] != IMAGETYPE_JPEG && $imageInfo[2] != IMAGETYPE_JPEG2000) {
-            require_once 'Zend/Pdf/Exception.php';
-            throw new Zend_Pdf_Exception('ImageType is not JPG');
-        }
-
-        parent::__construct();
-
-        switch ($imageInfo['channels']) {
-            case 3:
-                $colorSpace = 'DeviceRGB';
-                break;
-            case 4:
-                $colorSpace = 'DeviceCMYK';
-                break;
-            default:
-                $colorSpace = 'DeviceGray';
-                break;
-        }
-
-        $imageDictionary = $this->_resource->dictionary;
-        $imageDictionary->Width            = new Zend_Pdf_Element_Numeric($imageInfo[0]);
-        $imageDictionary->Height           = new Zend_Pdf_Element_Numeric($imageInfo[1]);
-        $imageDictionary->ColorSpace       = new Zend_Pdf_Element_Name($colorSpace);
-        $imageDictionary->BitsPerComponent = new Zend_Pdf_Element_Numeric($imageInfo['bits']);
-        if ($imageInfo[2] == IMAGETYPE_JPEG) {
-            $imageDictionary->Filter       = new Zend_Pdf_Element_Name('DCTDecode');
-        } else if ($imageInfo[2] == IMAGETYPE_JPEG2000){
-            $imageDictionary->Filter       = new Zend_Pdf_Element_Name('JPXDecode');
-        }
-
-        if (($imageFile = @fopen($imageFileName, 'rb')) === false ) {
-            require_once 'Zend/Pdf/Exception.php';
-            throw new Zend_Pdf_Exception( "Can not open '$imageFileName' file for reading." );
-        }
-        $byteCount = filesize($imageFileName);
-        $this->_resource->value = '';
-        while ( $byteCount > 0 && ($nextBlock = fread($imageFile, $byteCount)) != false ) {
-            $this->_resource->value .= $nextBlock;
-            $byteCount -= strlen($nextBlock);
-        }
-        fclose($imageFile);
-        $this->_resource->skipFilters();
-
-    $this->_width = $imageInfo[0];
-    $this->_height = $imageInfo[1];
-    $this->_imageProperties = array();
-    $this->_imageProperties['bitDepth'] = $imageInfo['bits'];
-    $this->_imageProperties['jpegImageType'] = $imageInfo[2];
-    $this->_imageProperties['jpegColorType'] = $imageInfo['channels'];
-    }
-
-    /**
-     * Image width
-     */
-    public function getPixelWidth() {
-        return $this->_width;
-    }
-
-    /**
-     * Image height
-     */
-    public function getPixelHeight() {
-        return $this->_height;
-    }
-
-    /**
-     * Image properties
-     */
-    public function getProperties() {
-        return $this->_imageProperties;
-    }
-}
-
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+5LOQfNcGQVMQEBRauUvI

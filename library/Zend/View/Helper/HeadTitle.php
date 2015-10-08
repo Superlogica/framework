@@ -1,177 +1,62 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @package    Zend_View
- * @subpackage Helper
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @version    $Id: Placeholder.php 7078 2007-12-11 14:29:33Z matthew $
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_View_Helper_Placeholder_Container_Standalone */
-require_once 'Zend/View/Helper/Placeholder/Container/Standalone.php';
-
-/**
- * Helper for setting and retrieving title element for HTML head
- *
- * @uses       Zend_View_Helper_Placeholder_Container_Standalone
- * @package    Zend_View
- * @subpackage Helper
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_View_Helper_HeadTitle extends Zend_View_Helper_Placeholder_Container_Standalone
-{
-    /**
-     * Registry key for placeholder
-     * @var string
-     */
-    protected $_regKey = 'Zend_View_Helper_HeadTitle';
-
-    /**
-     * Whether or not auto-translation is enabled
-     * @var boolean
-     */
-    protected $_translate = false;
-
-    /**
-     * Translation object
-     *
-     * @var Zend_Translate_Adapter
-     */
-    protected $_translator;
-
-    /**
-     * Retrieve placeholder for title element and optionally set state
-     *
-     * @param  string $title
-     * @param  string $setType
-     * @param  string $separator
-     * @return Zend_View_Helper_HeadTitle
-     */
-    public function headTitle($title = null, $setType = Zend_View_Helper_Placeholder_Container_Abstract::APPEND)
-    {
-        if ($title) {
-            if ($setType == Zend_View_Helper_Placeholder_Container_Abstract::SET) {
-                $this->set($title);
-            } elseif ($setType == Zend_View_Helper_Placeholder_Container_Abstract::PREPEND) {
-                $this->prepend($title);
-            } else {
-                $this->append($title);
-            }
-        }
-
-        return $this;
-    }
-
-    /**
-     * Sets a translation Adapter for translation
-     *
-     * @param  Zend_Translate|Zend_Translate_Adapter $translate
-     * @return Zend_View_Helper_HeadTitle
-     */
-    public function setTranslator($translate)
-    {
-        if ($translate instanceof Zend_Translate_Adapter) {
-            $this->_translator = $translate;
-        } elseif ($translate instanceof Zend_Translate) {
-            $this->_translator = $translate->getAdapter();
-        } else {
-            require_once 'Zend/View/Exception.php';
-            throw new Zend_View_Exception("You must set an instance of Zend_Translate or Zend_Translate_Adapter");
-        }
-        return $this;
-    }
-
-    /*
-     * Retrieve translation object
-     *
-     * If none is currently registered, attempts to pull it from the registry
-     * using the key 'Zend_Translate'.
-     *
-     * @return Zend_Translate_Adapter|null
-     */
-    public function getTranslator()
-    {
-        if (null === $this->_translator) {
-            require_once 'Zend/Registry.php';
-            if (Zend_Registry::isRegistered('Zend_Translate')) {
-                $this->setTranslator(Zend_Registry::get('Zend_Translate'));
-            }
-        }
-        return $this->_translator;
-    }
-
-    /**
-     * Enables translation
-     *
-     * @return Zend_View_Helper_HeadTitle
-     */
-    public function enableTranslation()
-    {
-        $this->_translate = true;
-        return $this;
-    }
-
-    /**
-     * Disables translation
-     *
-     * @return Zend_View_Helper_HeadTitle
-     */
-    public function disableTranslation()
-    {
-        $this->_translate = false;
-        return $this;
-    }
-
-    /**
-     * Turn helper into string
-     *
-     * @param  string|null $indent
-     * @param  string|null $locale
-     * @return string
-     */
-    public function toString($indent = null, $locale = null)
-    {
-        $indent = (null !== $indent)
-                ? $this->getWhitespace($indent)
-                : $this->getIndent();
-
-        $items = array();
-
-        if($this->_translate && $translator = $this->getTranslator()) {
-            foreach ($this as $item) {
-                $items[] = $translator->translate($item, $locale);
-            }
-        } else {
-            foreach ($this as $item) {
-                $items[] = $item;
-            }
-        }
-
-        $separator = $this->getSeparator();
-        $output = '';
-        if(($prefix = $this->getPrefix())) {
-            $output  .= $prefix;
-        }
-        $output .= implode($separator, $items);
-        if(($postfix = $this->getPostfix())) {
-            $output .= $postfix;
-        }
-
-        $output = ($this->_autoEscape) ? $this->_escape($output) : $output;
-
-        return $indent . '<title>' . $output . '</title>';
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

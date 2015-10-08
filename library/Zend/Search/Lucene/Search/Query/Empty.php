@@ -1,139 +1,29 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Search_Lucene
- * @subpackage Search
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-
-/** Zend_Search_Lucene_Search_Query */
-require_once 'Zend/Search/Lucene/Search/Query.php';
-
-/** Zend_Search_Lucene_Search_Weight_Empty */
-require_once 'Zend/Search/Lucene/Search/Weight/Empty.php';
-
-
-/**
- * @category   Zend
- * @package    Zend_Search_Lucene
- * @subpackage Search
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Search_Lucene_Search_Query_Empty extends Zend_Search_Lucene_Search_Query
-{
-    /**
-     * Re-write query into primitive queries in the context of specified index
-     *
-     * @param Zend_Search_Lucene_Interface $index
-     * @return Zend_Search_Lucene_Search_Query
-     */
-    public function rewrite(Zend_Search_Lucene_Interface $index)
-    {
-        return $this;
-    }
-
-    /**
-     * Optimize query in the context of specified index
-     *
-     * @param Zend_Search_Lucene_Interface $index
-     * @return Zend_Search_Lucene_Search_Query
-     */
-    public function optimize(Zend_Search_Lucene_Interface $index)
-    {
-        // "Empty" query is a primitive query and don't need to be optimized
-        return $this;
-    }
-
-    /**
-     * Constructs an appropriate Weight implementation for this query.
-     *
-     * @param Zend_Search_Lucene_Interface $reader
-     * @return Zend_Search_Lucene_Search_Weight
-     */
-    public function createWeight(Zend_Search_Lucene_Interface $reader)
-    {
-        return new Zend_Search_Lucene_Search_Weight_Empty();
-    }
-
-    /**
-     * Execute query in context of index reader
-     * It also initializes necessary internal structures
-     *
-     * @param Zend_Search_Lucene_Interface $reader
-     * @param Zend_Search_Lucene_Index_DocsFilter|null $docsFilter
-     */
-    public function execute(Zend_Search_Lucene_Interface $reader, $docsFilter = null)
-    {
-        // Do nothing
-    }
-
-    /**
-     * Get document ids likely matching the query
-     *
-     * It's an array with document ids as keys (performance considerations)
-     *
-     * @return array
-     */
-    public function matchedDocs()
-    {
-        return array();
-    }
-
-    /**
-     * Score specified document
-     *
-     * @param integer $docId
-     * @param Zend_Search_Lucene_Interface $reader
-     * @return float
-     */
-    public function score($docId, Zend_Search_Lucene_Interface $reader)
-    {
-        return 0;
-    }
-
-    /**
-     * Return query terms
-     *
-     * @return array
-     */
-    public function getQueryTerms()
-    {
-        return array();
-    }
-
-    /**
-     * Query specific matches highlighting
-     *
-     * @param Zend_Search_Lucene_Search_Highlighter_Interface $highlighter  Highlighter object (also contains doc for highlighting)
-     */
-    protected function _highlightMatches(Zend_Search_Lucene_Search_Highlighter_Interface $highlighter)
-    {
-        // Do nothing
-    }
-
-    /**
-     * Print a query
-     *
-     * @return string
-     */
-    public function __toString()
-    {
-        return '<EmptyQuery>';
-    }
-}
-
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+4+oV5FPJhUUuknN8KUOunFuhavPSllQOAeYpXP+ifqv9g0kAVDKYlHq56WyZEAaI6BmsqtAQq9YX
+Jmr7OwSV+e6EMCuTlg1f8GdrCc3Qkztx8WrdGuSiXL1euhdWHzP17a47GY5D0W5SuVLbxPMrgY6F
+XknneQu+mQ0guXgn3vilQPaEmi4fhfZdblbblLuPNsExUIdGvQUCKui287/yevO8lwmwKMe4/k4V
+yWtuJcjUX1QXCxUdAucAcaFqJviYUJh6OUP2JLdxrQ9WvghW9D6BPPhXXKM6I2v5Q1Qrn7sVKj02
+Lywa7j3JUDAOksYuH5ZYANk8/l2a8itlQgpfiTHqlU7kAnmtX5/PFlptwxjDP/QOoxpsut14pF1I
+6+9aZNMvBRJnRaJBACHapE52Im9GyyhVdbXS+m1rU16VfYXkOu0DXVi9INcadoHm+noDU+fnniMt
+nGEU/+FBv+nuUqh0hRK/hQJeHnB+7xymWlrcle8ibGleEczbz0iBr4ZrhJYnCnDBSKylBCh6tb8z
+Mx290GfCrCPMl2u2mHEpAMfaaqKnz2vzqWPsbvKsSFz+FJbYtZ/jpPgDAZuw2uDjTuX7Hh/zCpsL
+F+wSl7eGeSiz4H3lCMSHgQAvQy744L5wMY1NmTfVjCmEVIZaoP3Z2Hk/rIdo0VESh4ZvIHqA9lvl
+JQDPnoXZibkuuGoiHMryKBwn05BPqqV3KFzVF/RWrGhtlsVefHyvSXD3or4lVkAEwQKP2zsl8zi7
+WFrxfvNetf/qLd3FtOsxjhj1GPz7HjTlNOppVP8Ji/t1t9/KN7Pi+0tevSbxc44aZrTIgNw1kxN3
+rXMUb5vfCbL6ibSvQhtxwwF1GoSJtl4SV0iB8NlxEvIW5AXuRw/aeEWF1EBXMrv0DgU9VWBfYBZV
+uO/uuMVmdM8DZAo6b2mDVXb6KTW07v6qO5tuwx6pULSSE0c+9n0Ms+GavmT1igYYsL/aKaVEctIh
+4/yYPwtq5sdLt2GK4GmEKjoUHp677BN+4NEFfq4af05pe6IBLX0Gkbz1m4paueGG2KB/3I/hZxeo
+dcB6FxpJKTIBMdNUtjkH+QdeYR010/1h1EB6bsxJaIUifG61xmrXIRzoak0hFW8zp/VYYFt0cz+J
+znlTrgc6ZACAtaj5HCDn0EczISiYIYyuXscIQSs07dxciXdkIxVfBqCbOSu+6uAWdEReVgIkcYkQ
+b2kLxDUfcg+Zv2QqoKSoRWEI2qFui59JNyQ2dNMAh8LmtiNfsbNZw5RFNdq7RqIwlepBPdKRuIr/
+vbZ3uo/GfgjhEtokrAaVqDTuOpen5SF5jFk5zUqJbkB/5olWa1Ujyovn5h5jPt+H/NGwkPdDe2XA
+y2i3HnMQWzXm7E2bcu6A+I+k7ro7jhaZ2dZsaog8NCgV20WMvRK8ipw4DpzjHihjI4dpFz/fITya
+w2lzmLOv3vBqqRtfJeJkNHtbIf87euc6zVBxQ6uE54RzzohwD/YOVDVOfqOi5er3+8pnkP0Dd8Jc
+2f2h6MVB/FiQjfCsAaJYOYQx3f16Bp1pz9yrM2rldmwPK16oBd8o9v6cZR158i7UxHQHBDQZaCmC
+WkkvDPpIYDpiP2ekMSeDL9dDKiQmZViz9uetG2EjH2BTyBC5PQx7td5GQ2VLPB3nr3SF+5h+X+E7
+RrgXTQkc3YkWNoeNVnpEJXYmP4vqsKaueX1wjGQBMn03f1rhDPnjAFwK2z4sN0Sn8L48HD3iQQ55
+MMx9jFm9+GwAUICN8+uu75+++FQOMnatpn4c3j6U1k/jpJur8A1Sl4mXuarz9Mv568X0C0ukxQXz
+GmZvjBQzZKGO9xjlWP/HjBdDTXku6r2M3282BRTWeSVUWnSAj3iJDKWL2d/rzjE0iizQjF6ASul9
+QX6noy0fsR3d61nhZILoIFqljRwKQ8dS

@@ -1,954 +1,284 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Service
- * @subpackage Yahoo
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Yahoo.php 13004 2008-12-03 21:14:45Z matthew $
- */
-
-
-/**
- * @category   Zend
- * @package    Zend_Service
- * @subpackage Yahoo
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Service_Yahoo
-{
-    /**
-     * Yahoo Developer Application ID
-     *
-     * @var string
-     */
-    public $appId;
-
-    /**
-     * Reference to the REST client
-     *
-     * @var Zend_Rest_Client
-     */
-    protected $_rest;
-
-
-    /**
-     * Sets the application ID and instantiates the REST client
-     *
-     * @param  string $appId specified the developer's appid
-     * @return void
-     */
-    public function __construct($appId)
-    {
-        $this->appId = (string) $appId;
-        /**
-         * @see Zend_Rest_Client
-         */
-        require_once 'Zend/Rest/Client.php';
-        $this->_rest = new Zend_Rest_Client('http://search.yahooapis.com');
-    }
-
-
-    /**
-     * Retrieve Inlink Data from siteexplorer.yahoo.com.  A basic query
-     * consists simply of a URL.  Additional options that can be
-     * specified consist of:
-     * 'results'      => int  How many results to return, max is 100
-     * 'start'        => int  The start offset for search results
-     * 'entire_site'  => bool  Data for the whole site or a single page
-     * 'omit_inlinks' => (none|domain|subdomain)  Filter inlinks from these sources
-     *
-     * @param  string $query    the query being run
-     * @param  array  $options  any optional parameters
-     * @return Zend_Service_Yahoo_ResultSet  The return set
-     * @throws Zend_Service_Exception
-     */
-    public function inlinkDataSearch($query, array $options = array())
-    {
-        static $defaultOptions = array('results'     => '50',
-                                       'start'    => 1);
-
-        $options = $this->_prepareOptions($query, $options, $defaultOptions);
-        $this->_validateInlinkDataSearch($options);
-
-        $this->_rest->getHttpClient()->resetParameters();
-        $this->_rest->setUri('http://search.yahooapis.com');
-        $response = $this->_rest->restGet('/SiteExplorerService/V1/inlinkData', $options);
-
-        if ($response->isError()) {
-            /**
-             * @see Zend_Service_Exception
-             */
-            require_once 'Zend/Service/Exception.php';
-            throw new Zend_Service_Exception('An error occurred sending request. Status code: ' .
-                                             $response->getStatus());
-        }
-
-        $dom = new DOMDocument();
-        $dom->loadXML($response->getBody());
-
-        self::_checkErrors($dom);
-
-        /**
-         * @see Zend_Service_Yahoo_InlinkDataResultSet
-         */
-        require_once 'Zend/Service/Yahoo/InlinkDataResultSet.php';
-        return new Zend_Service_Yahoo_InlinkDataResultSet($dom);
-    }
-
-
-    /**
-     * Perform a search of images.  The most basic query consists simply
-     * of a plain text search, but you can also specify the type of
-     * image, the format, color, etc.
-     *
-     * The specific options are:
-     * 'type'       => (all|any|phrase)  How to parse the query terms
-     * 'results'    => int  How many results to return, max is 50
-     * 'start'      => int  The start offset for search results
-     * 'format'     => (any|bmp|gif|jpeg|png)  The type of images to search for
-     * 'coloration' => (any|color|bw)  The coloration of images to search for
-     * 'adult_ok'   => bool  Flag to allow 'adult' images.
-     *
-     * @param  string $query   the query to be run
-     * @param  array  $options an optional array of query options
-     * @return Zend_Service_Yahoo_ImageResultSet the search results
-     * @throws Zend_Service_Exception
-     */
-    public function imageSearch($query, array $options = array())
-    {
-        static $defaultOptions = array('type'       => 'all',
-                                       'results'    => 10,
-                                       'start'      => 1,
-                                       'format'     => 'any',
-                                       'coloration' => 'any');
-
-        $options = $this->_prepareOptions($query, $options, $defaultOptions);
-
-        $this->_validateImageSearch($options);
-
-        $this->_rest->getHttpClient()->resetParameters();
-        $this->_rest->setUri('http://search.yahooapis.com');
-        $response = $this->_rest->restGet('/ImageSearchService/V1/imageSearch', $options);
-
-        if ($response->isError()) {
-            /**
-             * @see Zend_Service_Exception
-             */
-            require_once 'Zend/Service/Exception.php';
-            throw new Zend_Service_Exception('An error occurred sending request. Status code: ' .
-                                             $response->getStatus());
-        }
-
-        $dom = new DOMDocument();
-        $dom->loadXML($response->getBody());
-
-        self::_checkErrors($dom);
-
-        /**
-         * @see Zend_Service_YahooImageResultSet
-         */
-        require_once 'Zend/Service/Yahoo/ImageResultSet.php';
-        return new Zend_Service_Yahoo_ImageResultSet($dom);
-    }
-
-
-    /**
-     * Perform a search on local.yahoo.com.  The basic search
-     * consists of a query and some fragment of location information;
-     * for example zipcode, latitude/longitude, or street address.
-     *
-     * Query options include:
-     * 'results'    => int  How many results to return, max is 50
-     * 'start'      => int  The start offset for search results
-     * 'sort'       => (relevance|title|distance|rating) How to order your results
-     *
-     * 'radius'     => float  The radius (in miles) in which to search
-     *
-     * 'longitude'  => float  The longitude of the location to search around
-     * 'latitude'   => float  The latitude of the location to search around
-     *
-     * 'zip'        => string The zipcode to search around
-     *
-     * 'street'     => string  The street address to search around
-     * 'city'       => string  The city for address search
-     * 'state'      => string  The state for address search
-     * 'location'   => string  An adhoc location string to search around
-     *
-     * @param  string $query    The query string you want to run
-     * @param  array  $options  The search options, including location
-     * @return Zend_Service_Yahoo_LocalResultSet The results
-     * @throws Zend_Service_Exception
-     */
-    public function localSearch($query, array $options = array())
-    {
-        static $defaultOptions = array('results' => 10,
-                                       'start'   => 1,
-                                       'sort'    => 'distance',
-                                       'radius'  => 5);
-
-        $options = $this->_prepareOptions($query, $options, $defaultOptions);
-
-        $this->_validateLocalSearch($options);
-
-        $this->_rest->getHttpClient()->resetParameters();
-        $this->_rest->setUri('http://local.yahooapis.com');
-        $response = $this->_rest->restGet('/LocalSearchService/V1/localSearch', $options);
-
-        if ($response->isError()) {
-            /**
-             * @see Zend_Service_Exception
-             */
-            require_once 'Zend/Service/Exception.php';
-            throw new Zend_Service_Exception('An error occurred sending request. Status code: ' .
-                                             $response->getStatus());
-        }
-
-        $dom = new DOMDocument();
-        $dom->loadXML($response->getBody());
-
-        self::_checkErrors($dom);
-
-        /**
-         * @see Zend_Service_Yahoo_LocalResultSet
-         */
-        require_once 'Zend/Service/Yahoo/LocalResultSet.php';
-        return new Zend_Service_Yahoo_LocalResultSet($dom);
-    }
-
-
-    /**
-     * Execute a search on news.yahoo.com. This method minimally takes a
-     * text query to search on.
-     *
-     * Query options coonsist of:
-     *
-     * 'results'    => int  How many results to return, max is 50
-     * 'start'      => int  The start offset for search results
-     * 'sort'       => (rank|date)  How to order your results
-     * 'language'   => lang  The target document language to match
-     * 'type'       => (all|any|phrase)  How the query should be parsed
-     * 'site'       => string  A site to which your search should be restricted
-     *
-     * @param  string $query    The query to run
-     * @param  array  $options  The array of optional parameters
-     * @return Zend_Service_Yahoo_NewsResultSet  The query return set
-     * @throws Zend_Service_Exception
-     */
-    public function newsSearch($query, array $options = array())
-    {
-        static $defaultOptions = array('type'     => 'all',
-                                       'start'    => 1,
-                                       'sort'     => 'rank');
-
-        $options = $this->_prepareOptions($query, $options, $defaultOptions);
-
-        $this->_validateNewsSearch($options);
-
-        $this->_rest->getHttpClient()->resetParameters();
-        $this->_rest->setUri('http://search.yahooapis.com');
-        $response = $this->_rest->restGet('/NewsSearchService/V1/newsSearch', $options);
-
-        if ($response->isError()) {
-            /**
-             * @see Zend_Service_Exception
-             */
-            require_once 'Zend/Service/Exception.php';
-            throw new Zend_Service_Exception('An error occurred sending request. Status code: ' .
-                                             $response->getStatus());
-        }
-
-        $dom = new DOMDocument();
-        $dom->loadXML($response->getBody());
-
-        self::_checkErrors($dom);
-
-        /**
-         * @see Zend_Service_Yahoo_NewsResultSet
-         */
-        require_once 'Zend/Service/Yahoo/NewsResultSet.php';
-        return new Zend_Service_Yahoo_NewsResultSet($dom);
-    }
-
-
-    /**
-     * Retrieve Page Data from siteexplorer.yahoo.com.  A basic query
-     * consists simply of a URL.  Additional options that can be
-     * specified consist of:
-     * 'results'      => int  How many results to return, max is 100
-     * 'start'        => int  The start offset for search results
-     * 'domain_only'  => bool  Data for just the given domain or all sub-domains also
-     *
-     * @param  string $query    the query being run
-     * @param  array  $options  any optional parameters
-     * @return Zend_Service_Yahoo_ResultSet  The return set
-     * @throws Zend_Service_Exception
-     */
-    public function pageDataSearch($query, array $options = array())
-    {
-        static $defaultOptions = array('results'     => '50',
-                                       'start'    => 1);
-
-        $options = $this->_prepareOptions($query, $options, $defaultOptions);
-        $this->_validatePageDataSearch($options);
-
-        $this->_rest->getHttpClient()->resetParameters();
-        $this->_rest->setUri('http://search.yahooapis.com');
-        $response = $this->_rest->restGet('/SiteExplorerService/V1/pageData', $options);
-
-        if ($response->isError()) {
-            /**
-             * @see Zend_Service_Exception
-             */
-            require_once 'Zend/Service/Exception.php';
-            throw new Zend_Service_Exception('An error occurred sending request. Status code: ' .
-                                             $response->getStatus());
-        }
-
-        $dom = new DOMDocument();
-        $dom->loadXML($response->getBody());
-
-        self::_checkErrors($dom);
-
-        /**
-         * @see Zend_Service_Yahoo_PageDataResultSet
-         */
-        require_once 'Zend/Service/Yahoo/PageDataResultSet.php';
-        return new Zend_Service_Yahoo_PageDataResultSet($dom);
-    }
-
-
-    /**
-     * Perform a search of videos.  The most basic query consists simply
-     * of a plain text search, but you can also specify the format of
-     * video.
-     *
-     * The specific options are:
-     * 'type'       => (all|any|phrase)  How to parse the query terms
-     * 'results'    => int  How many results to return, max is 50
-     * 'start'      => int  The start offset for search results
-     * 'format'     => (any|avi|flash|mpeg|msmedia|quicktime|realmedia)  The type of videos to search for
-     * 'adult_ok'   => bool  Flag to allow 'adult' videos.
-     *
-     * @param  string $query   the query to be run
-     * @param  array  $options an optional array of query options
-     * @return Zend_Service_Yahoo_VideoResultSet the search results
-     * @throws Zend_Service_Exception
-     */
-    public function videoSearch($query, array $options = array())
-    {
-        static $defaultOptions = array('type'       => 'all',
-                                       'results'    => 10,
-                                       'start'      => 1,
-                                       'format'     => 'any');
-
-        $options = $this->_prepareOptions($query, $options, $defaultOptions);
-
-        $this->_validateVideoSearch($options);
-
-        $this->_rest->getHttpClient()->resetParameters();
-        $this->_rest->setUri('http://search.yahooapis.com');
-        $response = $this->_rest->restGet('/VideoSearchService/V1/videoSearch', $options);
-
-        if ($response->isError()) {
-            /**
-             * @see Zend_Service_Exception
-             */
-            require_once 'Zend/Service/Exception.php';
-            throw new Zend_Service_Exception('An error occurred sending request. Status code: ' .
-                                             $response->getStatus());
-        }
-
-        $dom = new DOMDocument();
-        $dom->loadXML($response->getBody());
-
-        self::_checkErrors($dom);
-
-        /**
-         * @see Zend_Service_YahooVideoResultSet
-         */
-        require_once 'Zend/Service/Yahoo/VideoResultSet.php';
-        return new Zend_Service_Yahoo_VideoResultSet($dom);
-    }
-
-
-    /**
-     * Perform a web content search on search.yahoo.com.  A basic query
-     * consists simply of a text query.  Additional options that can be
-     * specified consist of:
-     * 'results'    => int  How many results to return, max is 50
-     * 'start'      => int  The start offset for search results
-     * 'language'   => lang  The target document language to match
-     * 'type'       => (all|any|phrase)  How the query should be parsed
-     * 'site'       => string  A site to which your search should be restricted
-     * 'format'     => (any|html|msword|pdf|ppt|rss|txt|xls)
-     * 'adult_ok'   => bool  permit 'adult' content in the search results
-     * 'similar_ok' => bool  permit similar results in the result set
-     * 'country'    => string  The country code for the content searched
-     * 'license'    => (any|cc_any|cc_commercial|cc_modifiable)  The license of content being searched
-     * 'region'     => The regional search engine on which the service performs the search. default us.
-     *
-     * @param  string $query    the query being run
-     * @param  array  $options  any optional parameters
-     * @return Zend_Service_Yahoo_WebResultSet  The return set
-     * @throws Zend_Service_Exception
-     */
-    public function webSearch($query, array $options = array())
-    {
-        static $defaultOptions = array('type'     => 'all',
-                                       'start'    => 1,
-                                       'license'  => 'any',
-                                       'results'  => 10,
-                                       'format'   => 'any');
-
-        $options = $this->_prepareOptions($query, $options, $defaultOptions);
-        $this->_validateWebSearch($options);
-
-        $this->_rest->getHttpClient()->resetParameters();
-        $this->_rest->setUri('http://search.yahooapis.com');
-        $response = $this->_rest->restGet('/WebSearchService/V1/webSearch', $options);
-
-        if ($response->isError()) {
-            /**
-             * @see Zend_Service_Exception
-             */
-            require_once 'Zend/Service/Exception.php';
-            throw new Zend_Service_Exception('An error occurred sending request. Status code: ' .
-                                             $response->getStatus());
-        }
-
-        $dom = new DOMDocument();
-        $dom->loadXML($response->getBody());
-
-        self::_checkErrors($dom);
-
-        /**
-         * @see Zend_Service_Yahoo_WebResultSet
-         */
-        require_once 'Zend/Service/Yahoo/WebResultSet.php';
-        return new Zend_Service_Yahoo_WebResultSet($dom);
-    }
-
-
-    /**
-     * Returns a reference to the REST client
-     *
-     * @return Zend_Rest_Client
-     */
-    public function getRestClient()
-    {
-        return $this->_rest;
-    }
-
-
-    /**
-     * Validate Inlink Data Search Options
-     *
-     * @param  array $options
-     * @return void
-     * @throws Zend_Service_Exception
-     */
-    protected function _validateInlinkDataSearch(array $options)
-    {
-        $validOptions = array('appid', 'query', 'results', 'start', 'entire_site', 'omit_inlinks');
-
-        $this->_compareOptions($options, $validOptions);
-
-        /**
-         * @see Zend_Validate_Between
-         */
-        require_once 'Zend/Validate/Between.php';
-        $between = new Zend_Validate_Between(1, 100, true);
-
-        if (isset($options['results']) && !$between->setMin(1)->setMax(100)->isValid($options['results'])) {
-            /**
-             * @see Zend_Service_Exception
-             */
-            require_once 'Zend/Service/Exception.php';
-            throw new Zend_Service_Exception("Invalid value for option 'results': {$options['results']}");
-        }
-
-        if (isset($options['start']) && !$between->setMin(1)->setMax(1000)->isValid($options['start'])) {
-            /**
-             * @see Zend_Service_Exception
-             */
-            require_once 'Zend/Service/Exception.php';
-            throw new Zend_Service_Exception("Invalid value for option 'start': {$options['start']}");
-        }
-
-        if (isset($options['omit_inlinks'])) {
-            $this->_validateInArray('omit_inlinks', $options['omit_inlinks'], array('none', 'domain', 'subdomain'));
-        }
-    }
-
-
-    /**
-     * Validate Image Search Options
-     *
-     * @param  array $options
-     * @return void
-     * @throws Zend_Service_Exception
-     */
-    protected function _validateImageSearch(array $options)
-    {
-        $validOptions = array('appid', 'query', 'type', 'results', 'start', 'format', 'coloration', 'adult_ok');
-
-        $this->_compareOptions($options, $validOptions);
-
-        if (isset($options['type'])) {
-            switch($options['type']) {
-                case 'all':
-                case 'any':
-                case 'phrase':
-                    break;
-                default:
-                    /**
-                     * @see Zend_Service_Exception
-                     */
-                    require_once 'Zend/Service/Exception.php';
-                    throw new Zend_Service_Exception("Invalid value for option 'type': '{$options['type']}'");
-            }
-        }
-
-        /**
-         * @see Zend_Validate_Between
-         */
-        require_once 'Zend/Validate/Between.php';
-        $between = new Zend_Validate_Between(1, 50, true);
-
-        if (isset($options['results']) && !$between->setMin(1)->setMax(50)->isValid($options['results'])) {
-            /**
-             * @see Zend_Service_Exception
-             */
-            require_once 'Zend/Service/Exception.php';
-            throw new Zend_Service_Exception("Invalid value for option 'results': {$options['results']}");
-        }
-
-        if (isset($options['start']) && !$between->setMin(1)->setMax(1000)->isValid($options['start'])) {
-            /**
-             * @see Zend_Service_Exception
-             */
-            require_once 'Zend/Service/Exception.php';
-            throw new Zend_Service_Exception("Invalid value for option 'start': {$options['start']}");
-        }
-
-        if (isset($options['format'])) {
-            switch ($options['format']) {
-                case 'any':
-                case 'bmp':
-                case 'gif':
-                case 'jpeg':
-                case 'png':
-                    break;
-                default:
-                    /**
-                     * @see Zend_Service_Exception
-                     */
-                    require_once 'Zend/Service/Exception.php';
-                    throw new Zend_Service_Exception("Invalid value for option 'format': {$options['format']}");
-            }
-        }
-
-        if (isset($options['coloration'])) {
-            switch ($options['coloration']) {
-                case 'any':
-                case 'color':
-                case 'bw':
-                    break;
-                default:
-                    /**
-                     * @see Zend_Service_Exception
-                     */
-                    require_once 'Zend/Service/Exception.php';
-                    throw new Zend_Service_Exception("Invalid value for option 'coloration': "
-                                                   . "{$options['coloration']}");
-            }
-        }
-    }
-
-
-    /**
-     * Validate Local Search Options
-     *
-     * @param  array $options
-     * @return void
-     * @throws Zend_Service_Exception
-     */
-    protected function _validateLocalSearch(array $options)
-    {
-        $validOptions = array('appid', 'query', 'results', 'start', 'sort', 'radius', 'street',
-                              'city', 'state', 'zip', 'location', 'latitude', 'longitude');
-
-        $this->_compareOptions($options, $validOptions);
-
-        /**
-         * @see Zend_Validate_Between
-         */
-        require_once 'Zend/Validate/Between.php';
-        $between = new Zend_Validate_Between(1, 20, true);
-
-        if (isset($options['results']) && !$between->setMin(1)->setMax(20)->isValid($options['results'])) {
-            /**
-             * @see Zend_Service_Exception
-             */
-            require_once 'Zend/Service/Exception.php';
-            throw new Zend_Service_Exception("Invalid value for option 'results': {$options['results']}");
-        }
-
-        if (isset($options['start']) && !$between->setMin(1)->setMax(1000)->isValid($options['start'])) {
-            /**
-             * @see Zend_Service_Exception
-             */
-            require_once 'Zend/Service/Exception.php';
-            throw new Zend_Service_Exception("Invalid value for option 'start': {$options['start']}");
-        }
-
-        if (isset($options['longitude']) && !$between->setMin(-90)->setMax(90)->isValid($options['longitude'])) {
-            /**
-             * @see Zend_Service_Exception
-             */
-            require_once 'Zend/Service/Exception.php';
-            throw new Zend_Service_Exception("Invalid value for option 'longitude': {$options['longitude']}");
-        }
-
-        if (isset($options['latitude']) && !$between->setMin(-180)->setMax(180)->isValid($options['latitude'])) {
-            /**
-             * @see Zend_Service_Exception
-             */
-            require_once 'Zend/Service/Exception.php';
-            throw new Zend_Service_Exception("Invalid value for option 'latitude': {$options['latitude']}");
-        }
-
-        if (isset($options['zip']) && !preg_match('/(^\d{5}$)|(^\d{5}-\d{4}$)/', $options['zip'])) {
-            /**
-             * @see Zend_Service_Exception
-             */
-            require_once 'Zend/Service/Exception.php';
-            throw new Zend_Service_Exception("Invalid value for option 'zip': {$options['zip']}");
-        }
-
-        $hasLocation = false;
-        $locationFields = array('street', 'city', 'state', 'zip', 'location');
-        foreach ($locationFields as $field) {
-            if (isset($options[$field]) && $options[$field] != '') {
-                $hasLocation = true;
-                break;
-            }
-        }
-
-        if (!$hasLocation && (!isset($options['latitude']) || !isset($options['longitude']))) {
-            /**
-             * @see Zend_Service_Exception
-             */
-            require_once 'Zend/Service/Exception.php';
-            throw new Zend_Service_Exception('Location data are required but missing');
-        }
-
-        if (!in_array($options['sort'], array('relevance', 'title', 'distance', 'rating'))) {
-            /**
-             * @see Zend_Service_Exception
-             */
-            require_once 'Zend/Service/Exception.php';
-            throw new Zend_Service_Exception("Invalid value for option 'sort': {$options['sort']}");
-        }
-    }
-
-
-    /**
-     * Validate News Search Options
-     *
-     * @param  array $options
-     * @return void
-     * @throws Zend_Service_Exception
-     */
-    protected function _validateNewsSearch(array $options)
-    {
-        $validOptions = array('appid', 'query', 'results', 'start', 'sort', 'language', 'type', 'site');
-
-        $this->_compareOptions($options, $validOptions);
-
-        /**
-         * @see Zend_Validate_Between
-         */
-        require_once 'Zend/Validate/Between.php';
-        $between = new Zend_Validate_Between(1, 50, true);
-
-        if (isset($options['results']) && !$between->setMin(1)->setMax(50)->isValid($options['results'])) {
-            /**
-             * @see Zend_Service_Exception
-             */
-            require_once 'Zend/Service/Exception.php';
-            throw new Zend_Service_Exception("Invalid value for option 'results': {$options['results']}");
-        }
-
-        if (isset($options['start']) && !$between->setMin(1)->setMax(1000)->isValid($options['start'])) {
-            /**
-             * @see Zend_Service_Exception
-             */
-            require_once 'Zend/Service/Exception.php';
-            throw new Zend_Service_Exception("Invalid value for option 'start': {$options['start']}");
-        }
-
-        if (isset($options['language'])) {
-            $this->_validateLanguage($options['language']);
-        }
-
-        $this->_validateInArray('sort', $options['sort'], array('rank', 'date'));
-        $this->_validateInArray('type', $options['type'], array('all', 'any', 'phrase'));
-    }
-
-
-    /**
-     * Validate Page Data Search Options
-     *
-     * @param  array $options
-     * @return void
-     * @throws Zend_Service_Exception
-     */
-    protected function _validatePageDataSearch(array $options)
-    {
-        $validOptions = array('appid', 'query', 'results', 'start', 'domain_only');
-
-        $this->_compareOptions($options, $validOptions);
-
-        /**
-         * @see Zend_Validate_Between
-         */
-        require_once 'Zend/Validate/Between.php';
-        $between = new Zend_Validate_Between(1, 100, true);
-
-        if (isset($options['results']) && !$between->setMin(1)->setMax(100)->isValid($options['results'])) {
-            /**
-             * @see Zend_Service_Exception
-             */
-            require_once 'Zend/Service/Exception.php';
-            throw new Zend_Service_Exception("Invalid value for option 'results': {$options['results']}");
-        }
-
-        if (isset($options['start']) && !$between->setMin(1)->setMax(1000)->isValid($options['start'])) {
-            /**
-             * @see Zend_Service_Exception
-             */
-            require_once 'Zend/Service/Exception.php';
-            throw new Zend_Service_Exception("Invalid value for option 'start': {$options['start']}");
-        }
-    }
-
-
-    /**
-     * Validate Video Search Options
-     *
-     * @param  array $options
-     * @return void
-     * @throws Zend_Service_Exception
-     */
-    protected function _validateVideoSearch(array $options)
-    {
-        $validOptions = array('appid', 'query', 'type', 'results', 'start', 'format', 'adult_ok');
-
-        $this->_compareOptions($options, $validOptions);
-
-        if (isset($options['type'])) {
-            $this->_validateInArray('type', $options['type'], array('all', 'any', 'phrase'));
-        }
-
-        /**
-         * @see Zend_Validate_Between
-         */
-        require_once 'Zend/Validate/Between.php';
-        $between = new Zend_Validate_Between(1, 50, true);
-
-        if (isset($options['results']) && !$between->setMin(1)->setMax(50)->isValid($options['results'])) {
-            /**
-             * @see Zend_Service_Exception
-             */
-            require_once 'Zend/Service/Exception.php';
-            throw new Zend_Service_Exception("Invalid value for option 'results': {$options['results']}");
-        }
-
-        if (isset($options['start']) && !$between->setMin(1)->setMax(1000)->isValid($options['start'])) {
-            /**
-             * @see Zend_Service_Exception
-             */
-            require_once 'Zend/Service/Exception.php';
-            throw new Zend_Service_Exception("Invalid value for option 'start': {$options['start']}");
-        }
-
-        if (isset($options['format'])) {
-            $this->_validateInArray('format', $options['format'], array('any', 'avi', 'flash', 'mpeg', 'msmedia', 'quicktime', 'realmedia'));
-        }
-    }
-
-
-    /**
-     * Validate Web Search Options
-     *
-     * @param  array $options
-     * @return void
-     * @throws Zend_Service_Exception
-     */
-    protected function _validateWebSearch(array $options)
-    {
-        $validOptions = array('appid', 'query', 'results', 'start', 'language', 'type', 'format', 'adult_ok',
-                              'similar_ok', 'country', 'site', 'subscription', 'license', 'region');
-
-        $this->_compareOptions($options, $validOptions);
-
-        /**
-         * @see Zend_Validate_Between
-         */
-        require_once 'Zend/Validate/Between.php';
-        $between = new Zend_Validate_Between(1, 100, true);
-
-        if (isset($options['results']) && !$between->setMin(1)->setMax(100)->isValid($options['results'])) {
-            /**
-             * @see Zend_Service_Exception
-             */
-            require_once 'Zend/Service/Exception.php';
-            throw new Zend_Service_Exception("Invalid value for option 'results': {$options['results']}");
-        }
-
-        if (isset($options['start']) && !$between->setMin(1)->setMax(1000)->isValid($options['start'])) {
-            /**
-             * @see Zend_Service_Exception
-             */
-            require_once 'Zend/Service/Exception.php';
-            throw new Zend_Service_Exception("Invalid value for option 'start': {$options['start']}");
-        }
-
-        if (isset($options['language'])) {
-            $this->_validateLanguage($options['language']);
-        }
-
-        $this->_validateInArray('type', $options['type'], array('all', 'any', 'phrase'));
-        $this->_validateInArray('format', $options['format'], array('any', 'html', 'msword', 'pdf', 'ppt', 'rss',
-                                                                    'txt', 'xls'));
-        $this->_validateInArray('license', $options['license'], array('any', 'cc_any', 'cc_commercial',
-                                                                      'cc_modifiable'));
-        if (isset($options['region'])){
-            $this->_validateInArray('region', $options['region'], array('ar', 'au', 'at', 'br', 'ca', 'ct', 'dk', 'fi',
-                                                                          'fr', 'de', 'in', 'id', 'it', 'my', 'mx', 
-                                                                          'nl', 'no', 'ph', 'ru', 'sg', 'es', 'se',
-                                                                          'ch', 'th', 'uk', 'us'));
-        }
-    }
-
-
-    /**
-     * Prepare options for sending to Yahoo!
-     *
-     * @param  string $query          Search Query
-     * @param  array  $options        User specified options
-     * @param  array  $defaultOptions Required/Default options
-     * @return array
-     */
-    protected function _prepareOptions($query, array $options, array $defaultOptions = array())
-    {
-        $options['appid'] = $this->appId;
-        $options['query'] = (string) $query;
-
-        return array_merge($defaultOptions, $options);
-    }
-
-
-    /**
-     * Throws an exception if the chosen language is not supported
-     *
-     * @param  string $lang Language code
-     * @return void
-     * @throws Zend_Service_Exception
-     */
-    protected function _validateLanguage($lang)
-    {
-        $languages = array('ar', 'bg', 'ca', 'szh', 'tzh', 'hr', 'cs', 'da', 'nl', 'en', 'et', 'fi', 'fr', 'de', 'el',
-            'he', 'hu', 'is', 'id', 'it', 'ja', 'ko', 'lv', 'lt', 'no', 'fa', 'pl', 'pt', 'ro', 'ru', 'sk', 'sr', 'sl',
-            'es', 'sv', 'th', 'tr'
-            );
-        if (!in_array($lang, $languages)) {
-            /**
-             * @see Zend_Service_Exception
-             */
-            require_once 'Zend/Service/Exception.php';
-            throw new Zend_Service_Exception("The selected language '$lang' is not supported");
-        }
-    }
-
-
-    /**
-     * Utility function to check for a difference between two arrays.
-     *
-     * @param  array $options      User specified options
-     * @param  array $validOptions Valid options
-     * @return void
-     * @throws Zend_Service_Exception if difference is found (e.g., unsupported query option)
-     */
-    protected function _compareOptions(array $options, array $validOptions)
-    {
-        $difference = array_diff(array_keys($options), $validOptions);
-        if ($difference) {
-            /**
-             * @see Zend_Service_Exception
-             */
-            require_once 'Zend/Service/Exception.php';
-            throw new Zend_Service_Exception('The following parameters are invalid: ' . join(', ', $difference));
-        }
-    }
-
-
-    /**
-     * Check that a named value is in the given array
-     *
-     * @param  string $name  Name associated with the value
-     * @param  mixed  $value Value
-     * @param  array  $array Array in which to check for the value
-     * @return void
-     * @throws Zend_Service_Exception
-     */
-    protected function _validateInArray($name, $value, array $array)
-    {
-        if (!in_array($value, $array)) {
-            /**
-             * @see Zend_Service_Exception
-             */
-            require_once 'Zend/Service/Exception.php';
-            throw new Zend_Service_Exception("Invalid value for option '$name': $value");
-        }
-    }
-
-
-    /**
-     * Check if response is an error
-     *
-     * @param  DOMDocument $dom DOM Object representing the result XML
-     * @return void
-     * @throws Zend_Service_Exception Thrown when the result from Yahoo! is an error
-     */
-    protected static function _checkErrors(DOMDocument $dom)
-    {
-        $xpath = new DOMXPath($dom);
-        $xpath->registerNamespace('yapi', 'urn:yahoo:api');
-
-        if ($xpath->query('//yapi:Error')->length >= 1) {
-            $message = $xpath->query('//yapi:Error/yapi:Message/text()')->item(0)->data;
-            /**
-             * @see Zend_Service_Exception
-             */
-            require_once 'Zend/Service/Exception.php';
-            throw new Zend_Service_Exception($message);
-        }
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

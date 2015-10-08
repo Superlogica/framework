@@ -1,94 +1,38 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category  Zend
- * @package   Zend_Validate
- * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   http://framework.zend.com/license/new-bsd     New BSD License
- * @version   $Id: $
- */
-
-/**
- * @see Zend_Validate_Abstract
- */
-require_once 'Zend/Validate/File/Extension.php';
-
-/**
- * Validator for the excluding file extensions
- *
- * @category  Zend
- * @package   Zend_Validate
- * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Validate_File_ExcludeExtension extends Zend_Validate_File_Extension
-{
-    /**
-     * @const string Error constants
-     */
-    const FALSE_EXTENSION = 'fileExcludeExtensionFalse';
-    const NOT_FOUND       = 'fileExcludeExtensionNotFound';
-
-    /**
-     * @var array Error message templates
-     */
-    protected $_messageTemplates = array(
-        self::FALSE_EXTENSION => "The file '%value%' has a false extension",
-        self::NOT_FOUND       => "The file '%value%' was not found"
-    );
-
-    /**
-     * Defined by Zend_Validate_Interface
-     *
-     * Returns true if and only if the fileextension of $value is not included in the
-     * set extension list
-     *
-     * @param  string  $value Real file to check for extension
-     * @param  array   $file  File data from Zend_File_Transfer
-     * @return boolean
-     */
-    public function isValid($value, $file = null)
-    {
-        // Is file readable ?
-        require_once 'Zend/Loader.php';
-        if (!Zend_Loader::isReadable($value)) {
-            return $this->_throw($file, self::NOT_FOUND);
-        }
-
-        if ($file !== null) {
-            $info['extension'] = substr($file['name'], strrpos($file['name'], '.') + 1);
-        } else {
-            $info = pathinfo($value);
-        }
-
-        $extensions = $this->getExtension();
-
-        if ($this->_case and (!in_array($info['extension'], $extensions))) {
-            return true;
-        } else if (!$this->_case) {
-            $found = false;
-            foreach ($extensions as $extension) {
-                if (strtolower($extension) == strtolower($info['extension'])) {
-                    $found = true;
-                }
-            }
-
-            if (!$found) {
-                return true;
-            }
-        }
-
-        return $this->_throw($file, self::FALSE_EXTENSION);
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+LB3U

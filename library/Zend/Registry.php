@@ -1,209 +1,56 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Registry
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Registry.php 15577 2009-05-14 12:43:34Z matthew $
- */
-
-/**
- * Generic storage class helps to manage global data.
- *
- * @category   Zend
- * @package    Zend_Registry
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Registry extends ArrayObject
-{
-    /**
-     * Class name of the singleton registry object.
-     * @var string
-     */
-    private static $_registryClassName = 'Zend_Registry';
-
-    /**
-     * Registry object provides storage for shared objects.
-     * @var Zend_Registry
-     */
-    private static $_registry = null;
-
-    /**
-     * Retrieves the default registry instance.
-     *
-     * @return Zend_Registry
-     */
-    public static function getInstance()
-    {
-        if (self::$_registry === null) {
-            self::init();
-        }
-
-        return self::$_registry;
-    }
-
-    /**
-     * Set the default registry instance to a specified instance.
-     *
-     * @param Zend_Registry $registry An object instance of type Zend_Registry,
-     *   or a subclass.
-     * @return void
-     * @throws Zend_Exception if registry is already initialized.
-     */
-    public static function setInstance(Zend_Registry $registry)
-    {
-        if (self::$_registry !== null) {
-            require_once 'Zend/Exception.php';
-            throw new Zend_Exception('Registry is already initialized');
-        }
-
-        self::setClassName(get_class($registry));
-        self::$_registry = $registry;
-    }
-
-    /**
-     * Initialize the default registry instance.
-     *
-     * @return void
-     */
-    protected static function init()
-    {
-        self::setInstance(new self::$_registryClassName());
-    }
-
-    /**
-     * Set the class name to use for the default registry instance.
-     * Does not affect the currently initialized instance, it only applies
-     * for the next time you instantiate.
-     *
-     * @param string $registryClassName
-     * @return void
-     * @throws Zend_Exception if the registry is initialized or if the
-     *   class name is not valid.
-     */
-    public static function setClassName($registryClassName = 'Zend_Registry')
-    {
-        if (self::$_registry !== null) {
-            require_once 'Zend/Exception.php';
-            throw new Zend_Exception('Registry is already initialized');
-        }
-
-        if (!is_string($registryClassName)) {
-            require_once 'Zend/Exception.php';
-            throw new Zend_Exception("Argument is not a class name");
-        }
-
-        /**
-         * @see Zend_Loader
-         */
-        if (!class_exists($registryClassName)) {
-            require_once 'Zend/Loader.php';
-            Zend_Loader::loadClass($registryClassName);
-        }
-
-        self::$_registryClassName = $registryClassName;
-    }
-
-    /**
-     * Unset the default registry instance.
-     * Primarily used in tearDown() in unit tests.
-     * @returns void
-     */
-    public static function _unsetInstance()
-    {
-        self::$_registry = null;
-    }
-
-    /**
-     * getter method, basically same as offsetGet().
-     *
-     * This method can be called from an object of type Zend_Registry, or it
-     * can be called statically.  In the latter case, it uses the default
-     * static instance stored in the class.
-     *
-     * @param string $index - get the value associated with $index
-     * @return mixed
-     * @throws Zend_Exception if no entry is registerd for $index.
-     */
-    public static function get($index)
-    {
-        $instance = self::getInstance();
-
-        if (!$instance->offsetExists($index)) {
-            require_once 'Zend/Exception.php';
-            throw new Zend_Exception("No entry is registered for key '$index'");
-        }
-
-        return $instance->offsetGet($index);
-    }
-
-    /**
-     * setter method, basically same as offsetSet().
-     *
-     * This method can be called from an object of type Zend_Registry, or it
-     * can be called statically.  In the latter case, it uses the default
-     * static instance stored in the class.
-     *
-     * @param string $index The location in the ArrayObject in which to store
-     *   the value.
-     * @param mixed $value The object to store in the ArrayObject.
-     * @return void
-     */
-    public static function set($index, $value)
-    {
-        $instance = self::getInstance();
-        $instance->offsetSet($index, $value);
-    }
-
-    /**
-     * Returns TRUE if the $index is a named value in the registry,
-     * or FALSE if $index was not found in the registry.
-     *
-     * @param  string $index
-     * @return boolean
-     */
-    public static function isRegistered($index)
-    {
-        if (self::$_registry === null) {
-            return false;
-        }
-        return self::$_registry->offsetExists($index);
-    }
-
-    /**
-     * Constructs a parent ArrayObject with default
-     * ARRAY_AS_PROPS to allow acces as an object
-     *
-     * @param array $array data array
-     * @param integer $flags ArrayObject flags
-     */
-    public function __construct($array = array(), $flags = parent::ARRAY_AS_PROPS)
-    {
-        parent::__construct($array, $flags);
-    }
-
-    /**
-     * @param string $index
-     * @returns mixed
-     *
-     * Workaround for http://bugs.php.net/bug.php?id=40442 (ZF-960).
-     */
-    public function offsetExists($index)
-    {
-        return array_key_exists($index, $this);
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+xvXsttHJH2c6vQbekdKbOT7tk/f90Ue=

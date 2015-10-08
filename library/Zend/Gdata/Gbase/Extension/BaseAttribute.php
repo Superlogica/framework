@@ -1,115 +1,36 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Gbase
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Entry.php 3941 2007-03-14 21:36:13Z darby $
- */
-
-/**
- * @see Zend_Gdata_App_Extension_Element
- */
-require_once 'Zend/Gdata/App/Extension/Element.php';
-
-/**
- * Concrete class for working with ItemType elements.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Gbase
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Gdata_Gbase_Extension_BaseAttribute extends Zend_Gdata_App_Extension_Element
-{
-
-    /**
-     * Namespace for Google Base elements
-     *
-     * var @string
-     */
-    protected $_rootNamespace = 'g';
-
-    /**
-     * Create a new instance.
-     *
-     * @param string $name (optional) The name of the Base attribute
-     * @param string $text (optional) The text value of the Base attribute
-     * @param string $text (optional) The type of the Base attribute
-     */
-    public function __construct($name = null, $text = null, $type = null)
-    {
-        $this->registerAllNamespaces(Zend_Gdata_Gbase::$namespaces);
-        if ($type !== null) {
-          $attr = array('name' => 'type', 'value' => $type);
-          $typeAttr = array('type' => $attr);
-          $this->setExtensionAttributes($typeAttr);
-        }
-        parent::__construct($name,
-                            $this->_rootNamespace,
-                            $this->lookupNamespace($this->_rootNamespace),
-                            $text);
-    }
-
-    /**
-     * Get the name of the attribute
-     *
-     * @return attribute name The requested object.
-     */
-    public function getName() {
-      return $this->_rootElement;
-    }
-
-    /**
-     * Get the type of the attribute
-     *
-     * @return attribute type The requested object.
-     */
-    public function getType() {
-      $typeAttr = $this->getExtensionAttributes();
-      return $typeAttr['type']['value'];
-    }
-
-    /**
-     * Set the 'name' of the Base attribute object:
-     *     &lt;g:[$name] type='[$type]'&gt;[$value]&lt;/g:[$name]&gt;
-     *
-     * @param Zend_Gdata_App_Extension_Element $attribute The attribute object
-     * @param string $name The name of the Base attribute
-     * @return Zend_Gdata_Extension_ItemEntry Provides a fluent interface
-     */
-    public function setName($name) {
-      $this->_rootElement = $name;
-      return $this;
-    }
-
-    /**
-     * Set the 'type' of the Base attribute object:
-     *     &lt;g:[$name] type='[$type]'&gt;[$value]&lt;/g:[$name]&gt;
-     *
-     * @param Zend_Gdata_App_Extension_Element $attribute The attribute object
-     * @param string $type The type of the Base attribute
-     * @return Zend_Gdata_Extension_ItemEntry Provides a fluent interface
-     */
-    public function setType($type) {
-      $attr = array('name' => 'type', 'value' => $type);
-      $typeAttr = array('type' => $attr);
-      $this->setExtensionAttributes($typeAttr);
-      return $this;
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+Br421DU0QhbUZWaae5bN0Hsrdp0uFm==

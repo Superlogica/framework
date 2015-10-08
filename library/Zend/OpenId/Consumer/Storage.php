@@ -1,132 +1,30 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_OpenId
- * @subpackage Zend_OpenId_Consumer
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Storage.php 9239 2008-04-18 12:09:31Z dmitry $
- */
-
-/**
- * Abstract class to implement external storage for OpenID consumer
- *
- * @category   Zend
- * @package    Zend_OpenId
- * @subpackage Zend_OpenId_Consumer
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-abstract class Zend_OpenId_Consumer_Storage
-{
-
-    /**
-     * Stores information about association identified by $url/$handle
-     *
-     * @param string $url OpenID server URL
-     * @param string $handle assiciation handle
-     * @param string $macFunc HMAC function (sha1 or sha256)
-     * @param string $secret shared secret
-     * @param long $expires expiration UNIX time
-     * @return void
-     */
-    abstract public function addAssociation($url, $handle, $macFunc, $secret, $expires);
-
-    /**
-     * Gets information about association identified by $url
-     * Returns true if given association found and not expired and false
-     * otherwise
-     *
-     * @param string $url OpenID server URL
-     * @param string &$handle assiciation handle
-     * @param string &$macFunc HMAC function (sha1 or sha256)
-     * @param string &$secret shared secret
-     * @param long &$expires expiration UNIX time
-     * @return bool
-     */
-    abstract public function getAssociation($url, &$handle, &$macFunc, &$secret, &$expires);
-
-    /**
-     * Gets information about association identified by $handle
-     * Returns true if given association found and not expired and false
-     * othverwise
-     *
-     * @param string $handle assiciation handle
-     * @param string &$url OpenID server URL
-     * @param string &$macFunc HMAC function (sha1 or sha256)
-     * @param string &$secret shared secret
-     * @param long &$expires expiration UNIX time
-     * @return bool
-     */
-    abstract public function getAssociationByHandle($handle, &$url, &$macFunc, &$secret, &$expires);
-
-    /**
-     * Deletes association identified by $url
-     *
-     * @param string $url OpenID server URL
-     * @return void
-     */
-    abstract public function delAssociation($url);
-
-    /**
-     * Stores information discovered from identity $id
-     *
-     * @param string $id identity
-     * @param string $realId discovered real identity URL
-     * @param string $server discovered OpenID server URL
-     * @param float $version discovered OpenID protocol version
-     * @param long $expires expiration UNIX time
-     * @return void
-     */
-    abstract public function addDiscoveryInfo($id, $realId, $server, $version, $expires);
-
-    /**
-     * Gets information discovered from identity $id
-     * Returns true if such information exists and false otherwise
-     *
-     * @param string $id identity
-     * @param string &$realId discovered real identity URL
-     * @param string &$server discovered OpenID server URL
-     * @param float &$version discovered OpenID protocol version
-     * @param long &$expires expiration UNIX time
-     * @return bool
-     */
-    abstract public function getDiscoveryInfo($id, &$realId, &$server, &$version, &$expires);
-
-    /**
-     * Removes cached information discovered from identity $id
-     *
-     * @param string $id identity
-     * @return bool
-     */
-    abstract public function delDiscoveryInfo($id);
-
-    /**
-     * The function checks the uniqueness of openid.response_nonce
-     *
-     * @param string $provider openid.openid_op_endpoint field from authentication response
-     * @param string $nonce openid.response_nonce field from authentication response
-     * @return bool
-     */
-    abstract public function isUniqueNonce($provider, $nonce);
-
-    /**
-     * Removes data from the uniqueness database that is older then given date
-     *
-     * @param string $date Date of expired data
-     */
-    abstract public function purgeNonces($date=null);
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

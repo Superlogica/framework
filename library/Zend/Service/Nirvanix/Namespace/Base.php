@@ -1,171 +1,46 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Service
- * @subpackage Nirvanix
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
- 
-/**
- * @see Zend_Http_Client
- */
-require_once 'Zend/Http/Client.php';
-
-/**
- * @see Zend_Service_Nirvanix_Response
- */
-require_once 'Zend/Service/Nirvanix/Response.php';
-
-/**
- * The Nirvanix web services are split into namespaces.  This is a proxy class
- * representing one namespace.  It allows calls to the namespace to be made by
- * PHP object calls rather than by having to construct HTTP client requests.
- * 
- * @category   Zend
- * @package    Zend_Service
- * @subpackage Nirvanix
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Service_Nirvanix_Namespace_Base
-{
-    /**
-     * HTTP client instance that will be used to make calls to
-     * the Nirvanix web services.
-     * @var Zend_Http_Client
-     */
-    protected $_httpClient;
-    
-    /**
-     * Host to use for calls to this Nirvanix namespace.  It is possible
-     * that the user will wish to use different hosts for different namespaces.
-     * @var string
-     */
-    protected $_host = 'http://services.nirvanix.com';
-
-    /**
-     * Name of this namespace as used in the URL.
-     * @var string
-     */
-    protected $_namespace = '';
-
-    /**
-     * Defaults for POST parameters.  When a request to the service is to be
-     * made, the POST parameters are merged into these.  This is a convenience
-     * feature so parameters that are repeatedly required like sessionToken
-     * do not need to be supplied again and again by the user. 
-     *
-     * @param array
-     */
-    protected $_defaults = array();    
-
-    /**
-     * Class constructor.  
-     *
-     * @param  $options  array  Options and dependency injection
-     */
-    public function __construct($options = array())
-    {   
-        if (isset($options['baseUrl'])) {
-            $this->_host = $options['baseUrl'];
-        }
-
-        if (isset($options['namespace'])) {
-            $this->_namespace = $options['namespace'];
-        }
-
-        if (isset($options['defaults'])) {
-            $this->_defaults = $options['defaults'];
-        }
-
-        if (! isset($options['httpClient'])) {
-            $options['httpClient'] = new Zend_Http_Client();
-        }
-        $this->_httpClient = $options['httpClient'];
-    }
-    
-    /**
-     * When a method call is made against this proxy, convert it to
-     * an HTTP request to make against the Nirvanix REST service.  
-     *
-     * $imfs->DeleteFiles(array('filePath' => 'foo'));
-     *
-     * Assuming this object was proxying the IMFS namespace, the 
-     * method call above would call the DeleteFiles command.  The
-     * POST parameters would be filePath, merged with the 
-     * $this->_defaults (containing the sessionToken).
-     *
-     * @param  string  $methodName  Name of the command to call 
-     *                              on this namespace.
-     * @param  array   $args        Only the first is used and it must be
-     *                              an array.  It contains the POST params.
-     *
-     * @return Zend_Service_Nirvanix_Response
-     */
-    public function __call($methodName, $args)
-    {
-        $uri = $this->_makeUri($methodName);
-        $this->_httpClient->setUri($uri);
-
-        if (!isset($args[0]) || !is_array($args[0])) { 
-            $args[0] = array();
-        }
-
-        $params = array_merge($this->_defaults, $args[0]);
-        $this->_httpClient->resetParameters();
-        $this->_httpClient->setParameterPost($params);
-
-        $httpResponse = $this->_httpClient->request(Zend_Http_Client::POST);
-        return $this->_wrapResponse($httpResponse);
-    }
-
-    /**
-     * Return the HTTP client used for this namespace.  This is useful
-     * for inspecting the last request or directly interacting with the
-     * HTTP client.
-     *
-     * @return Zend_Http_Client
-     */
-    public function getHttpClient()
-    {
-        return $this->_httpClient;
-    }
-
-    /**
-     * Make a complete URI from an RPC method name.  All Nirvanix REST
-     * service URIs use the same format.
-     * 
-     * @param  string  $methodName  RPC method name
-     * @return string    
-     */
-    protected function _makeUri($methodName)
-    {
-        $methodName = ucfirst($methodName);
-        return "{$this->_host}/ws/{$this->_namespace}/{$methodName}.ashx";
-    }
-    
-    /**
-     * All Nirvanix REST service calls return an XML payload.  This method
-     * makes a Zend_Service_Nirvanix_Response from that XML payload.  
-     *
-     * @param  Zend_Http_Response  $httpResponse  Raw response from Nirvanix
-     * @return Zend_Service_Nirvanix_Response     Wrapped response
-     */
-    protected function _wrapResponse($httpResponse)
-    {
-        return new Zend_Service_Nirvanix_Response($httpResponse->getBody());
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+MHpu5wQrOOwDxKqioghkoP1KBKr0hxgfya0BRG==

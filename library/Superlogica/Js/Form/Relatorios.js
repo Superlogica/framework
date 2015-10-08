@@ -101,6 +101,10 @@ var Superlogica_Js_Form_Relatorios = new Class({
             var $elemento= new Superlogica_Js_Form_Elementos(this);
             $elemento.setValue(0);
         }
+        if ( this.atributo('valorPadrao') ){
+            var $elemento= new Superlogica_Js_Form_Elementos(this);
+            $elemento.setValue( this.atributo('valorPadrao') );
+        }
         
         this.bind('change', function(event){  
             

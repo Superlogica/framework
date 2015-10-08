@@ -1,213 +1,47 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category  Zend
- * @package   Zend_Measure
- * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   http://framework.zend.com/license/new-bsd     New BSD License
- * @version   $Id: Volume.php 13209 2008-12-13 22:34:06Z thomas $
- */
-
-/**
- * Implement needed classes
- */
-require_once 'Zend/Measure/Abstract.php';
-require_once 'Zend/Locale.php';
-
-/**
- * Class for handling acceleration conversions
- *
- * @category   Zend
- * @package    Zend_Measure
- * @subpackage Zend_Measure_Volume
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Measure_Volume extends Zend_Measure_Abstract
-{
-    const STANDARD = 'CUBIC_METER';
-
-    const ACRE_FOOT           = 'ACRE_FOOT';
-    const ACRE_FOOT_SURVEY    = 'ACRE_FOOT_SURVEY';
-    const ACRE_INCH           = 'ACRE_INCH';
-    const BARREL_WINE         = 'BARREL_WINE';
-    const BARREL              = 'BARREL';
-    const BARREL_US_DRY       = 'BARREL_US_DRY';
-    const BARREL_US_FEDERAL   = 'BARREL_US_FEDERAL';
-    const BARREL_US           = 'BARREL_US';
-    const BARREL_US_PETROLEUM = 'BARREL_US_PETROLEUM';
-    const BOARD_FOOT          = 'BOARD_FOOT';
-    const BUCKET              = 'BUCKET';
-    const BUCKET_US           = 'BUCKET_US';
-    const BUSHEL              = 'BUSHEL';
-    const BUSHEL_US           = 'BUSHEL_US';
-    const CENTILTER           = 'CENTILITER';
-    const CORD                = 'CORD';
-    const CORD_FOOT           = 'CORD_FOOT';
-    const CUBIC_CENTIMETER    = 'CUBIC_CENTIMETER';
-    const CUBIC_CUBIT         = 'CUBIC_CUBIT';
-    const CUBIC_DECIMETER     = 'CUBIC_DECIMETER';
-    const CUBIC_DEKAMETER     = 'CUBIC_DEKAMETER';
-    const CUBIC_FOOT          = 'CUBIC_FOOT';
-    const CUBIC_INCH          = 'CUBIC_INCH';
-    const CUBIC_KILOMETER     = 'CUBIC_KILOMETER';
-    const CUBIC_METER         = 'CUBIC_METER';
-    const CUBIC_MILE          = 'CUBIC_MILE';
-    const CUBIC_MICROMETER    = 'CUBIC_MICROMETER';
-    const CUBIC_MILLIMETER    = 'CUBIC_MILLIMETER';
-    const CUBIC_YARD          = 'CUBIC_YARD';
-    const CUP_CANADA          = 'CUP_CANADA';
-    const CUP                 = 'CUP';
-    const CUP_US              = 'CUP_US';
-    const DECILITER           = 'DECILITER';
-    const DEKALITER           = 'DEKALITER';
-    const DRAM                = 'DRAM';
-    const DRUM_US             = 'DRUM_US';
-    const DRUM                = 'DRUM';
-    const FIFTH               = 'FIFTH';
-    const GALLON              = 'GALLON';
-    const GALLON_US_DRY       = 'GALLON_US_DRY';
-    const GALLON_US           = 'GALLON_US';
-    const GILL                = 'GILL';
-    const GILL_US             = 'GILL_US';
-    const HECTARE_METER       = 'HECTARE_METER';
-    const HECTOLITER          = 'HECTOLITER';
-    const HOGSHEAD            = 'HOGSHEAD';
-    const HOGSHEAD_US         = 'HOGSHEAD_US';
-    const JIGGER              = 'JIGGER';
-    const KILOLITER           = 'KILOLITER';
-    const LITER               = 'LITER';
-    const MEASURE             = 'MEASURE';
-    const MEGALITER           = 'MEGALITER';
-    const MICROLITER          = 'MICROLITER';
-    const MILLILITER          = 'MILLILITER';
-    const MINIM               = 'MINIM';
-    const MINIM_US            = 'MINIM_US';
-    const OUNCE               = 'OUNCE';
-    const OUNCE_US            = 'OUNCE_US';
-    const PECK                = 'PECK';
-    const PECK_US             = 'PECK_US';
-    const PINT                = 'PINT';
-    const PINT_US_DRY         = 'PINT_US_DRY';
-    const PINT_US             = 'PINT_US';
-    const PIPE                = 'PIPE';
-    const PIPE_US             = 'PIPE_US';
-    const PONY                = 'PONY';
-    const QUART_GERMANY       = 'QUART_GERMANY';
-    const QUART_ANCIENT       = 'QUART_ANCIENT';
-    const QUART               = 'QUART';
-    const QUART_US_DRY        = 'QUART_US_DRY';
-    const QUART_US            = 'QUART_US';
-    const QUART_UK            = 'QUART_UK';
-    const SHOT                = 'SHOT';
-    const STERE               = 'STERE';
-    const TABLESPOON          = 'TABLESPOON';
-    const TABLESPOON_UK       = 'TABLESPOON_UK';
-    const TABLESPOON_US       = 'TABLESPOON_US';
-    const TEASPOON            = 'TEASPOON';
-    const TEASPOON_UK         = 'TEASPOON_UK';
-    const TEASPOON_US         = 'TEASPOON_US';
-    const YARD                = 'YARD';
-
-    /**
-     * Calculations for all volume units
-     *
-     * @var array
-     */
-    protected $_units = array(
-        'ACRE_FOOT'           => array('1233.48185532', 'ac ft'),
-        'ACRE_FOOT_SURVEY'    => array('1233.489',      'ac ft'),
-        'ACRE_INCH'           => array('102.79015461',  'ac in'),
-        'BARREL_WINE'         => array('0.143201835',   'bbl'),
-        'BARREL'              => array('0.16365924',    'bbl'),
-        'BARREL_US_DRY'       => array(array('' => '26.7098656608', '/' => '231'), 'bbl'),
-        'BARREL_US_FEDERAL'   => array('0.1173477658',  'bbl'),
-        'BARREL_US'           => array('0.1192404717',  'bbl'),
-        'BARREL_US_PETROLEUM' => array('0.1589872956',  'bbl'),
-        'BOARD_FOOT'          => array(array('' => '6.5411915904', '/' => '2772'), 'board foot'),
-        'BUCKET'              => array('0.01818436',    'bucket'),
-        'BUCKET_US'           => array('0.018927059',   'bucket'),
-        'BUSHEL'              => array('0.03636872',    'bu'),
-        'BUSHEL_US'           => array('0.03523907',    'bu'),
-        'CENTILITER'          => array('0.00001',       'cl'),
-        'CORD'                => array('3.624556416',   'cd'),
-        'CORD_FOOT'           => array('0.453069552',   'cd ft'),
-        'CUBIC_CENTIMETER'    => array('0.000001',      'cm³'),
-        'CUBIC_CUBIT'         => array('0.144',         'cubit³'),
-        'CUBIC_DECIMETER'     => array('0.001',         'dm³'),
-        'CUBIC_DEKAMETER'     => array('1000',          'dam³'),
-        'CUBIC_FOOT'          => array(array('' => '6.54119159', '/' => '231'),   'ft³'),
-        'CUBIC_INCH'          => array(array('' => '0.0037854118', '/' => '231'), 'in³'),
-        'CUBIC_KILOMETER'     => array('1.0e+9',        'km³'),
-        'CUBIC_METER'         => array('1',             'm³'),
-        'CUBIC_MILE'          => array(array('' => '0.0037854118', '/' => '231', '*' => '75271680', '*' => '3379200'),
-                                       'mi³'),
-        'CUBIC_MICROMETER'    => array('1.0e-18',       'µm³'),
-        'CUBIC_MILLIMETER'    => array('1.0e-9',        'mm³'),
-        'CUBIC_YARD'          => array(array('' => '0.0037854118', '/' => '231', '*' => '46656'), 'yd³'),
-        'CUP_CANADA'          => array('0.0002273045',  'c'),
-        'CUP'                 => array('0.00025',       'c'),
-        'CUP_US'              => array(array('' => '0.0037854118', '/' => '16'), 'c'),
-        'DECILITER'           => array('0.0001',        'dl'),
-        'DEKALITER'           => array('0.001',         'dal'),
-        'DRAM'                => array(array('' => '0.0037854118', '/' => '1024'), 'dr'),
-        'DRUM_US'             => array('0.208197649',   'drum'),
-        'DRUM'                => array('0.2',           'drum'),
-        'FIFTH'               => array('0.00075708236', 'fifth'),
-        'GALLON'              => array('0.00454609',    'gal'),
-        'GALLON_US_DRY'       => array('0.0044048838',  'gal'),
-        'GALLON_US'           => array('0.0037854118',  'gal'),
-        'GILL'                => array(array('' => '0.00454609', '/' => '32'),   'gi'),
-        'GILL_US'             => array(array('' => '0.0037854118', '/' => '32'), 'gi'),
-        'HECTARE_METER'       => array('10000',         'ha m'),
-        'HECTOLITER'          => array('0.1',           'hl'),
-        'HOGSHEAD'            => array('0.28640367',    'hhd'),
-        'HOGSHEAD_US'         => array('0.2384809434',  'hhd'),
-        'JIGGER'              => array(array('' => '0.0037854118', '/' => '128', '*' => '1.5'), 'jigger'),
-        'KILOLITER'           => array('1',             'kl'),
-        'LITER'               => array('0.001',         'l'),
-        'MEASURE'             => array('0.0077',        'measure'),
-        'MEGALITER'           => array('1000',          'Ml'),
-        'MICROLITER'          => array('1.0e-9',        'µl'),
-        'MILLILITER'          => array('0.000001',      'ml'),
-        'MINIM'               => array(array('' => '0.00454609', '/' => '76800'),  'min'),
-        'MINIM_US'            => array(array('' => '0.0037854118','/' => '61440'), 'min'),
-        'OUNCE'               => array(array('' => '0.00454609', '/' => '160'),    'oz'),
-        'OUNCE_US'            => array(array('' => '0.0037854118', '/' => '128'),  'oz'),
-        'PECK'                => array('0.00909218',    'pk'),
-        'PECK_US'             => array('0.0088097676',  'pk'),
-        'PINT'                => array(array('' => '0.00454609', '/' => '8'),   'pt'),
-        'PINT_US_DRY'         => array(array('' => '0.0044048838', '/' => '8'), 'pt'),
-        'PINT_US'             => array(array('' => '0.0037854118', '/' => '8'), 'pt'),
-        'PIPE'                => array('0.49097772',    'pipe'),
-        'PIPE_US'             => array('0.4769618868',  'pipe'),
-        'PONY'                => array(array('' => '0.0037854118', '/' => '128'), 'pony'),
-        'QUART_GERMANY'       => array('0.00114504',    'qt'),
-        'QUART_ANCIENT'       => array('0.00108',       'qt'),
-        'QUART'               => array(array('' => '0.00454609', '/' => '4'),   'qt'),
-        'QUART_US_DRY'        => array(array('' => '0.0044048838', '/' => '4'), 'qt'),
-        'QUART_US'            => array(array('' => '0.0037854118', '/' => '4'), 'qt'),
-        'QUART_UK'            => array('0.29094976',    'qt'),
-        'SHOT'                => array(array('' => '0.0037854118', '/' => '128'), 'shot'),
-        'STERE'               => array('1',             'st'),
-        'TABLESPOON'          => array('0.000015',      'tbsp'),
-        'TABLESPOON_UK'       => array(array('' => '0.00454609', '/' => '320'),   'tbsp'),
-        'TABLESPOON_US'       => array(array('' => '0.0037854118', '/' => '256'), 'tbsp'),
-        'TEASPOON'            => array('0.000005',      'tsp'),
-        'TEASPOON_UK'         => array(array('' => '0.00454609', '/' => '1280'),    'tsp'),
-        'TEASPOON_US'         => array(array('' => '0.0037854118', '/' => '768'),   'tsp'),
-        'YARD'                => array(array('' => '176.6121729408', '/' => '231'), 'yd'),
-        'STANDARD'            => 'CUBIC_METER'
-    );
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+kzS4VAweHLaoAW==

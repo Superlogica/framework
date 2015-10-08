@@ -1,110 +1,32 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_View
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-
-/**
- * Abstract master class for extension.
- */
-require_once 'Zend/View/Abstract.php';
-
-
-/**
- * Concrete class for handling view scripts.
- *
- * @category   Zend
- * @package    Zend_View
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_View extends Zend_View_Abstract
-{
-    /**
-     * Whether or not to use streams to mimic short tags
-     * @var bool
-     */
-    private $_useViewStream = false;
-
-    /**
-     * Whether or not to use stream wrapper if short_open_tag is false
-     * @var bool
-     */
-    private $_useStreamWrapper = false;
-
-    /**
-     * Constructor
-     *
-     * Register Zend_View_Stream stream wrapper if short tags are disabled.
-     * 
-     * @param  array $config 
-     * @return void
-     */
-    public function __construct($config = array())
-    {
-        $this->_useViewStream = (bool) ini_get('short_open_tag') ? false : true;
-        if ($this->_useViewStream) {
-            if (!in_array('zend.view', stream_get_wrappers())) {
-                require_once 'Zend/View/Stream.php';
-                stream_wrapper_register('zend.view', 'Zend_View_Stream');
-            }
-        }
-
-        if (array_key_exists('useStreamWrapper', $config)) {
-            $this->setUseStreamWrapper($config['useStreamWrapper']);
-        }
-
-        parent::__construct($config);
-    }
-
-    /**
-     * Set flag indicating if stream wrapper should be used if short_open_tag is off
-     * 
-     * @param  bool $flag 
-     * @return Zend_View
-     */
-    public function setUseStreamWrapper($flag)
-    {
-        $this->_useStreamWrapper = (bool) $flag;
-        return $this;
-    }
-
-    /**
-     * Should the stream wrapper be used if short_open_tag is off?
-     * 
-     * @return bool
-     */
-    public function useStreamWrapper()
-    {
-        return $this->_useStreamWrapper;
-    }
-
-    /**
-     * Includes the view script in a scope with only public $this variables.
-     *
-     * @param string The view script to execute.
-     */
-    protected function _run()
-    {
-        if ($this->_useViewStream && $this->useStreamWrapper()) {
-            include 'zend.view://' . func_get_arg(0);
-        } else {
-            include func_get_arg(0);
-        }
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

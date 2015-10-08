@@ -1,99 +1,29 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_InfoCard
- * @subpackage Zend_InfoCard_Cipher
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Cipher.php 13213 2008-12-14 11:05:07Z thomas $
- */
-
-/**
- * Provides an abstraction for encryption ciphers used in an Information Card
- * implementation
- *
- * @category   Zend
- * @package    Zend_InfoCard
- * @subpackage Zend_InfoCard_Cipher
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_InfoCard_Cipher
-{
-    /**
-     * AES 256 Encryption with CBC
-     */
-    const ENC_AES256CBC      = 'http://www.w3.org/2001/04/xmlenc#aes256-cbc';
-
-    /**
-     * AES 128 Encryption with CBC
-     */
-    const ENC_AES128CBC      = 'http://www.w3.org/2001/04/xmlenc#aes128-cbc';
-
-    /**
-     * RSA Public Key Encryption with OAEP Padding
-     */
-    const ENC_RSA_OAEP_MGF1P = 'http://www.w3.org/2001/04/xmlenc#rsa-oaep-mgf1p';
-
-    /**
-     * RSA Public Key Encryption with no padding
-     */
-    const ENC_RSA            = 'http://www.w3.org/2001/04/xmlenc#rsa-1_5';
-
-    /**
-     * Constructor (disabled)
-     *
-     * @return void
-     * @codeCoverageIgnoreStart
-     */
-    protected function __construct()
-    {
-    }
-    // @codeCoverageIgnoreEnd
-    /**
-     * Returns an instance of a cipher object supported based on the URI provided
-     *
-     * @throws Zend_InfoCard_Cipher_Exception
-     * @param string $uri The URI of the encryption method wantde
-     * @return mixed an Instance of Zend_InfoCard_Cipher_Symmetric_Interface or Zend_InfoCard_Cipher_Pki_Interface
-     *               depending on URI
-     */
-    static public function getInstanceByURI($uri)
-    {
-        switch($uri) {
-            case self::ENC_AES256CBC:
-                include_once 'Zend/InfoCard/Cipher/Symmetric/Adapter/Aes256cbc.php';
-                return new Zend_InfoCard_Cipher_Symmetric_Adapter_Aes256cbc();
-
-            case self::ENC_AES128CBC:
-                include_once 'Zend/InfoCard/Cipher/Symmetric/Adapter/Aes128cbc.php';
-                return new Zend_InfoCard_Cipher_Symmetric_Adapter_Aes128cbc();
-
-            case self::ENC_RSA_OAEP_MGF1P:
-                include_once 'Zend/InfoCard/Cipher/Pki/Adapter/Rsa.php';
-                return new Zend_InfoCard_Cipher_Pki_Adapter_Rsa(Zend_InfoCard_Cipher_Pki_Adapter_Rsa::OAEP_PADDING);
-                break;
-
-            case self::ENC_RSA:
-                include_once 'Zend/InfoCard/Cipher/Pki/Adapter/Rsa.php';
-                return new Zend_InfoCard_Cipher_Pki_Adapter_Rsa(Zend_InfoCard_Cipher_Pki_Adapter_Rsa::NO_PADDING);
-                break;
-
-            default:
-                require_once 'Zend/InfoCard/Cipher/Exception.php';
-                throw new Zend_InfoCard_Cipher_Exception("Unknown Cipher URI");
-        }
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+4+oV5BN47IbEBUOE0t682Wt5ASWh5KiEhTYpGOkiL+SBW0zkZcepZ/kdCLvsf0loORN9avwv76Hn
+U4jxt9nMnOX8O9NGv6bk0QElzbI4gZv2tOJ9Wfn/9PWLdoN5U6H5yDUlgwNig9e2IXpKKWo2RUjU
+j1f0v3377qac41WsGMnLWf6MTgilM0ElJl0Ycns9UMndDxx2C71wzLQ8XuQHqmQQgQVfxsQPMqbA
+kJRANtIYfLbRkr2SsiNrcaFqJviYUJh6OUP2JLdxrN1VZj6wwLccd3W4GqNMfFSos1fL2zNvbC/a
+at4+gJegPGr261xi8dgp+zuHI0WPrESboEDFIwK/dCJ+0VVD0faZPG18+FrnYjaKRDpmkH/JOtVO
+eZ6lKmXoclhPQ+OGYYbyIa+ZlzRf9vFeMu9p1jCTBmdiCpj8PvwPzs7SAtRfCNgCpNh74vhShoJ0
+W0sp8icMLkLFAbA+FOpqmmEtEzmUuzj2f8VWT0kI+zsyvW2VPPYR+o2krV6udt144NzS+4SU4tg/
+je5PBpUM1Ay/tnB13v/q+bKDi0H+tdwWSEO0t/vv2n6XAYg3lPA8H2QOUC8lCAKWbkhHh0wvv+PU
+MjBsrz5HXq95sKmUgktlKj5bhcJxk3V/hClLvW2mIfo++Fr7lW+ah4jCIs7MqxDMjbyJNfDpNR7+
+F/PXK+oDnaAOvH05PXQM1mD/ckQMpuIFBR6cJtbLXi4qbc2Hhp049PM3akiYfDyVkn6HhTggnUg/
+foIxZ6+0fvYUC54FH+O8x06uEmusR2WVCxLdChgCuKDxMyZ/HotLuuicvtczRqw2lOfsA6aqrskG
++43fNcVNsI7B4jdM1H9SIy5qkdZWr315Ok/7jfHLQEVhEXPDV0+H3J4+SbAmBxV7TTOrJvlA4T6C
+bhAi5OJioK5vJl+2+atYGV8uCYSby8WNP0lMlGB9jYYUjzJ2xbRl0xqgKcjb+dlE7D684qrspL3i
+/QSaUtYLsm3S3S6dKTv/P+GkyJJbTPwlc03R8z+HghNpe6KAs0+VTE4QBGdAlzdrp9NDEYcWjMWs
+9hmzEN27xSZ2bYQupZfzyfDv6R4dpDUCE++J83/qlOTd7BDx9ChlFWVK1rmKcJTcZ9ETssAx5aui
+7E1JlMg9zT4dfI1DR468AogS23cIL9q1wmlDh0SEg5QTwqeQWiIi38GOXIKT3srrLB/N+8KP6eHP
+TDtFES+HbaSemURGsRqJvw7aWyZXv0tUAytmt066IK9Br53+c19a/J4K+5g4rtau2USB2YejtC0E
+/tULwMz4k9iXOgFuG1gh7WU7uQDXxs/OfzjI/od1kfAWpKwRG394ZxsVkINIIGxp4Kl/gzeo9C8n
+5z8sU+F+UZA7BwAGe6al7B1hss/oivb5rhfSy/f7BR42vQo7buiAJV97wk9aPedCvlfViCsFPT0i
+KCBsMpefv1VtGuQv1WadQsUYkV4QK7g1dxYoSFcoJCjubP/kq867zNhDNWPb4UgYJlcSIaDgbc9V
+ANUHv6/epjX0Cr93ENKcQzTSDm3pYfrm5ss3O44HEEN84hqheYzkWti4zcRJ0AXJxuQ1+7O1jgq+
+ksvODDGuKRAhcvrafc1Z/2eYuBe5NAXQvWRT2GzUi7M55+8F9I8k+cUAqX+DduR+y7JBl7X5ZsLM
+unfckkGL+3TIw9ZOszJlm/Aml2IGc+eF+nw00n3iFznfyU0PxpchHkGbA+8Od+wMU3cv4j21wwbO
+5CD29mtJV/bcBMLoInt2uXSk6y0phZ7vaj3QxCk5b6f9ugfCf/XRTN5b8Uc9Mu6R0h2kLBRXGlsA
+v2WO0EtdB+nuE/Fy44yOGG0jxSjVRRkxI0FkQZjEki5JNWC9/nPPCG3HUmU8d1xY4efHEmPYEix5
+7l2kz6B+2m==

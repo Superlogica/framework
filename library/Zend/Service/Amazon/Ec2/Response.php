@@ -1,139 +1,38 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Service_Amazon
- * @subpackage Ec2
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id$
- */
-
-require_once 'Zend/Http/Response.php';
-
-/**
- * @category   Zend
- * @package    Zend_Service_Amazon
- * @subpackage Ec2
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Service_Amazon_Ec2_Response {
-    /**
-     * XML namespace used for EC2 responses.
-     */
-    const XML_NAMESPACE = 'http://ec2.amazonaws.com/doc/2008-12-01/';
-
-    /**
-     * The original HTTP response
-     *
-     * This contains the response body and headers.
-     *
-     * @var Zend_Http_Response
-     */
-    private $_httpResponse = null;
-
-    /**
-     * The response document object
-     *
-     * @var DOMDocument
-     */
-    private $_document = null;
-
-    /**
-     * The response XPath
-     *
-     * @var DOMXPath
-     */
-    private $_xpath = null;
-
-    /**
-     * Last error code
-     *
-     * @var integer
-     */
-    private $_errorCode = 0;
-
-    /**
-     * Last error message
-     *
-     * @var string
-     */
-    private $_errorMessage = '';
-
-    /**
-     * Creates a new high-level EC2 response object
-     *
-     * @param Zend_Http_Response $httpResponse the HTTP response.
-     */
-    public function __construct(Zend_Http_Response $httpResponse)
-    {
-        $this->_httpResponse = $httpResponse;
-    }
-
-    /**
-     * Gets the XPath object for this response
-     *
-     * @return DOMXPath the XPath object for response.
-     */
-    public function getXPath()
-    {
-        if ($this->_xpath === null) {
-            $document = $this->getDocument();
-            if ($document === false) {
-                $this->_xpath = false;
-            } else {
-                $this->_xpath = new DOMXPath($document);
-                $this->_xpath->registerNamespace('ec2',
-                    self::XML_NAMESPACE);
-            }
-        }
-
-        return $this->_xpath;
-    }
-
-    /**
-     * Gets the document object for this response
-     *
-     * @return DOMDocument the DOM Document for this response.
-     */
-    public function getDocument()
-    {
-        try {
-            $body = $this->_httpResponse->getBody();
-        } catch (Zend_Http_Exception $e) {
-            $body = false;
-        }
-
-        if ($this->_document === null) {
-            if ($body !== false) {
-                // turn off libxml error handling
-                $errors = libxml_use_internal_errors();
-
-                $this->_document = new DOMDocument();
-                if (!$this->_document->loadXML($body)) {
-                    $this->_document = false;
-                }
-
-                // reset libxml error handling
-                libxml_clear_errors();
-                libxml_use_internal_errors($errors);
-            } else {
-                $this->_document = false;
-            }
-        }
-
-        return $this->_document;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+xtFFxjMFY9cvblkQfvaYss9jib52/RWqT7Q7

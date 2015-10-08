@@ -1,131 +1,63 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Gdata
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * @see Zend_Gdata
- */
-require_once 'Zend/Gdata.php';
-
-/**
- * @see Zend_Gdata_App_MediaEntry
- */
-require_once 'Zend/Gdata/App/MediaEntry.php';
-
-/**
- * Represents the Gdata flavor of an Atom entry
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Gdata
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Gdata_Entry extends Zend_Gdata_App_MediaEntry
-{
-
-    protected $_entryClassName = 'Zend_Gdata_Entry';
-
-    public function __construct($element = null)
-    {
-        $this->registerAllNamespaces(Zend_Gdata::$namespaces);
-        parent::__construct($element);
-    }
-
-    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
-    {
-        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
-        // ETags are special. We only support them in protocol >= 2.X.
-        // This will be duplicated by the HTTP ETag header.
-        if ($majorVersion >= 2) {
-            if ($this->_etag != null) {
-                $element->setAttributeNS($this->lookupNamespace('gd'),
-                                         'gd:etag',
-                                         $this->_etag);
-            }
-        }
-        return $element;
-    }
-
-    protected function takeChildFromDOM($child)
-    {
-        $absoluteNodeName = $child->namespaceURI . ':' . $child->localName;
-        switch ($absoluteNodeName) {
-        case $this->lookupNamespace('atom') . ':' . 'content':
-            $content = new Zend_Gdata_App_Extension_Content();
-            $content->transferFromDOM($child);
-            $this->_content = $content;
-            break;
-        case $this->lookupNamespace('atom') . ':' . 'published':
-            $published = new Zend_Gdata_App_Extension_Published();
-            $published->transferFromDOM($child);
-            $this->_published = $published;
-            break;
-        case $this->lookupNamespace('atom') . ':' . 'source':
-            $source = new Zend_Gdata_App_Extension_Source();
-            $source->transferFromDOM($child);
-            $this->_source = $source;
-            break;
-        case $this->lookupNamespace('atom') . ':' . 'summary':
-            $summary = new Zend_Gdata_App_Extension_Summary();
-            $summary->transferFromDOM($child);
-            $this->_summary = $summary;
-            break;
-        case $this->lookupNamespace('app') . ':' . 'control':
-            $control = new Zend_Gdata_App_Extension_Control();
-            $control->transferFromDOM($child);
-            $this->_control = $control;
-            break;
-        default:
-            parent::takeChildFromDOM($child);
-            break;
-        }
-    }
-
-    /**
-     * Given a DOMNode representing an attribute, tries to map the data into
-     * instance members.  If no mapping is defined, the name and value are
-     * stored in an array.
-     *
-     * @param DOMNode $attribute The DOMNode attribute needed to be handled
-     */
-    protected function takeAttributeFromDOM($attribute)
-    {
-        switch ($attribute->localName) {
-        case 'etag':
-            // ETags are special, since they can be conveyed by either the
-            // HTTP ETag header or as an XML attribute.
-            $etag = $attribute->nodeValue;
-            if ($this->_etag === null) {
-                $this->_etag = $etag;
-            }
-            elseif ($this->_etag != $etag) {
-                require_once('Zend/Gdata/App/IOException.php');
-                throw new Zend_Gdata_App_IOException("ETag mismatch");
-            }
-            break;
-        default:
-            parent::takeAttributeFromDOM($attribute);
-            break;
-        }
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

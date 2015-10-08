@@ -1,586 +1,170 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_XmlRpc
- * @subpackage Server
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Server.php 13223 2008-12-14 11:21:31Z thomas $
- */
-
-/**
- * Extends Zend_Server_Abstract
- */
-require_once 'Zend/Server/Abstract.php';
-
-/**
- * XMLRPC Request
- */
-require_once 'Zend/XmlRpc/Request.php';
-
-/**
- * XMLRPC Response
- */
-require_once 'Zend/XmlRpc/Response.php';
-
-/**
- * XMLRPC HTTP Response
- */
-require_once 'Zend/XmlRpc/Response/Http.php';
-
-/**
- * XMLRPC server fault class
- */
-require_once 'Zend/XmlRpc/Server/Fault.php';
-
-/**
- * XMLRPC server system methods class
- */
-require_once 'Zend/XmlRpc/Server/System.php';
-
-/**
- * Convert PHP to and from xmlrpc native types
- */
-require_once 'Zend/XmlRpc/Value.php';
-
-/**
- * Reflection API for function/method introspection
- */
-require_once 'Zend/Server/Reflection.php';
-
-/**
- * Zend_Server_Reflection_Function_Abstract
- */
-require_once 'Zend/Server/Reflection/Function/Abstract.php';
-
-/**
- * Specifically grab the Zend_Server_Reflection_Method for manually setting up
- * system.* methods and handling callbacks in {@link loadFunctions()}.
- */
-require_once 'Zend/Server/Reflection/Method.php';
-
-/**
- * An XML-RPC server implementation
- *
- * Example:
- * <code>
- * require_once 'Zend/XmlRpc/Server.php';
- * require_once 'Zend/XmlRpc/Server/Cache.php';
- * require_once 'Zend/XmlRpc/Server/Fault.php';
- * require_once 'My/Exception.php';
- * require_once 'My/Fault/Observer.php';
- *
- * // Instantiate server
- * $server = new Zend_XmlRpc_Server();
- *
- * // Allow some exceptions to report as fault responses:
- * Zend_XmlRpc_Server_Fault::attachFaultException('My_Exception');
- * Zend_XmlRpc_Server_Fault::attachObserver('My_Fault_Observer');
- *
- * // Get or build dispatch table:
- * if (!Zend_XmlRpc_Server_Cache::get($filename, $server)) {
- *     require_once 'Some/Service/Class.php';
- *     require_once 'Another/Service/Class.php';
- *
- *     // Attach Some_Service_Class in 'some' namespace
- *     $server->setClass('Some_Service_Class', 'some');
- *
- *     // Attach Another_Service_Class in 'another' namespace
- *     $server->setClass('Another_Service_Class', 'another');
- *
- *     // Create dispatch table cache file
- *     Zend_XmlRpc_Server_Cache::save($filename, $server);
- * }
- *
- * $response = $server->handle();
- * echo $response;
- * </code>
- *
- * @category   Zend
- * @package    Zend_XmlRpc
- * @subpackage Server
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_XmlRpc_Server extends Zend_Server_Abstract
-{
-    /**
-     * Character encoding
-     * @var string
-     */
-    protected $_encoding = 'UTF-8';
-
-    /**
-     * Request processed
-     * @var null|Zend_XmlRpc_Request
-     */
-    protected $_request = null;
-
-    /**
-     * Class to use for responses; defaults to {@link Zend_XmlRpc_Response_Http}
-     * @var string
-     */
-    protected $_responseClass = 'Zend_XmlRpc_Response_Http';
-
-    /**
-     * Dispatch table of name => method pairs
-     * @var Zend_XmlRpc_Server_ServerDefinition
-     */
-    protected $_table;
-
-    /**
-     * PHP types => XML-RPC types
-     * @var array
-     */
-    protected $_typeMap = array(
-        'i4'               => 'i4',
-        'int'              => 'int',
-        'integer'          => 'int',
-        'double'           => 'double',
-        'float'            => 'double',
-        'real'             => 'double',
-        'boolean'          => 'boolean',
-        'bool'             => 'boolean',
-        'true'             => 'boolean',
-        'false'            => 'boolean',
-        'string'           => 'string',
-        'str'              => 'string',
-        'base64'           => 'base64',
-        'dateTime.iso8601' => 'dateTime.iso8601',
-        'date'             => 'dateTime.iso8601',
-        'time'             => 'dateTime.iso8601',
-        'time'             => 'dateTime.iso8601',
-        'array'            => 'array',
-        'struct'           => 'struct',
-        'null'             => 'nil',
-        'nil'              => 'nil',
-        'void'             => 'void',
-        'mixed'            => 'struct'
-    );
-
-    /**
-     * Constructor
-     *
-     * Creates system.* methods.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->_table = new Zend_Server_Definition();
-        $this->_registerSystemMethods();
-    }
-
-    /**
-     * Proxy calls to system object
-     *
-     * @param  string $method
-     * @param  array $params
-     * @return mixed
-     * @throws Zend_XmlRpc_Server_Exception
-     */
-    public function __call($method, $params)
-    {
-        $system = $this->getSystem();
-        if (!method_exists($system, $method)) {
-            require_once 'Zend/XmlRpc/Server/Exception.php';
-            throw new Zend_XmlRpc_Server_Exception('Unknown instance method called on server: ' . $method);
-        }
-        return call_user_func_array(array($system, $method), $params);
-    }
-
-    /**
-     * Attach a callback as an XMLRPC method
-     *
-     * Attaches a callback as an XMLRPC method, prefixing the XMLRPC method name
-     * with $namespace, if provided. Reflection is done on the callback's
-     * docblock to create the methodHelp for the XMLRPC method.
-     *
-     * Additional arguments to pass to the function at dispatch may be passed;
-     * any arguments following the namespace will be aggregated and passed at
-     * dispatch time.
-     *
-     * @param string|array $function Valid callback
-     * @param string $namespace Optional namespace prefix
-     * @return void
-     * @throws Zend_XmlRpc_Server_Exception
-     */
-    public function addFunction($function, $namespace = '')
-    {
-        if (!is_string($function) && !is_array($function)) {
-            require_once 'Zend/XmlRpc/Server/Exception.php';
-            throw new Zend_XmlRpc_Server_Exception('Unable to attach function; invalid', 611);
-        }
-
-        $argv = null;
-        if (2 < func_num_args()) {
-            $argv = func_get_args();
-            $argv = array_slice($argv, 2);
-        }
-
-        $function = (array) $function;
-        foreach ($function as $func) {
-            if (!is_string($func) || !function_exists($func)) {
-                require_once 'Zend/XmlRpc/Server/Exception.php';
-                throw new Zend_XmlRpc_Server_Exception('Unable to attach function; invalid', 611);
-            }
-            $reflection = Zend_Server_Reflection::reflectFunction($func, $argv, $namespace);
-            $this->_buildSignature($reflection);
-        }
-    }
-
-    /**
-     * Attach class methods as XMLRPC method handlers
-     *
-     * $class may be either a class name or an object. Reflection is done on the
-     * class or object to determine the available public methods, and each is
-     * attached to the server as an available method; if a $namespace has been
-     * provided, that namespace is used to prefix the XMLRPC method names.
-     *
-     * Any additional arguments beyond $namespace will be passed to a method at
-     * invocation.
-     *
-     * @param string|object $class
-     * @param string $namespace Optional
-     * @param mixed $argv Optional arguments to pass to methods
-     * @return void
-     * @throws Zend_XmlRpc_Server_Exception on invalid input
-     */
-    public function setClass($class, $namespace = '', $argv = null)
-    {
-        if (is_string($class) && !class_exists($class)) {
-            if (!class_exists($class)) {
-                require_once 'Zend/XmlRpc/Server/Exception.php';
-                throw new Zend_XmlRpc_Server_Exception('Invalid method class', 610);
-            }
-        }
-
-        $argv = null;
-        if (3 < func_num_args()) {
-            $argv = func_get_args();
-            $argv = array_slice($argv, 3);
-        }
-
-        $dispatchable = Zend_Server_Reflection::reflectClass($class, $argv, $namespace);
-        foreach ($dispatchable->getMethods() as $reflection) {
-            $this->_buildSignature($reflection, $class);
-        }
-    }
-
-    /**
-     * Raise an xmlrpc server fault
-     *
-     * @param string|Exception $fault
-     * @param int $code
-     * @return Zend_XmlRpc_Server_Fault
-     */
-    public function fault($fault = null, $code = 404)
-    {
-        if (!$fault instanceof Exception) {
-            $fault = (string) $fault;
-            if (empty($fault)) {
-                $fault = 'Unknown error';
-            }
-            require_once 'Zend/XmlRpc/Server/Exception.php';
-            $fault = new Zend_XmlRpc_Server_Exception($fault, $code);
-        }
-
-        return Zend_XmlRpc_Server_Fault::getInstance($fault);
-    }
-
-    /**
-     * Handle an xmlrpc call
-     *
-     * @param Zend_XmlRpc_Request $request Optional
-     * @return Zend_XmlRpc_Response|Zend_XmlRpc_Fault
-     */
-    public function handle($request = false)
-    {
-        // Get request
-        if ((!$request || !$request instanceof Zend_XmlRpc_Request)
-            && (null === ($request = $this->getRequest()))
-        ) {
-            require_once 'Zend/XmlRpc/Request/Http.php';
-            $request = new Zend_XmlRpc_Request_Http();
-            $request->setEncoding($this->getEncoding());
-        }
-
-        $this->setRequest($request);
-
-        if ($request->isFault()) {
-            $response = $request->getFault();
-        } else {
-            try {
-                $response = $this->_handle($request);
-            } catch (Exception $e) {
-                $response = $this->fault($e);
-            }
-        }
-
-        // Set output encoding
-        $response->setEncoding($this->getEncoding());
-
-        return $response;
-    }
-
-    /**
-     * Load methods as returned from {@link getFunctions}
-     *
-     * Typically, you will not use this method; it will be called using the
-     * results pulled from {@link Zend_XmlRpc_Server_Cache::get()}.
-     *
-     * @param  array|Zend_Server_Definition $definition
-     * @return void
-     * @throws Zend_XmlRpc_Server_Exception on invalid input
-     */
-    public function loadFunctions($definition)
-    {
-        if (!is_array($definition) && (!$definition instanceof Zend_Server_Definition)) {
-            if (is_object($definition)) {
-                $type = get_class($definition);
-            } else {
-                $type = gettype($definition);
-            }
-            require_once 'Zend/XmlRpc/Server/Exception.php';
-            throw new Zend_XmlRpc_Server_Exception('Unable to load server definition; must be an array or Zend_Server_Definition, received ' . $type, 612);
-        }
-
-        $this->_table->clearMethods();
-        $this->_registerSystemMethods();
-
-        if ($definition instanceof Zend_Server_Definition) {
-            $definition = $definition->getMethods();
-        }
-
-        foreach ($definition as $key => $method) {
-            if ('system.' == substr($key, 0, 7)) {
-                continue;
-            }
-            $this->_table->addMethod($method, $key);
-        }
-    }
-
-    /**
-     * Set encoding
-     *
-     * @param string $encoding
-     * @return Zend_XmlRpc_Server
-     */
-    public function setEncoding($encoding)
-    {
-        $this->_encoding = $encoding;
-        return $this;
-    }
-
-    /**
-     * Retrieve current encoding
-     *
-     * @return string
-     */
-    public function getEncoding()
-    {
-        return $this->_encoding;
-    }
-
-    /**
-     * Do nothing; persistence is handled via {@link Zend_XmlRpc_Server_Cache}
-     *
-     * @param  mixed $mode
-     * @return void
-     */
-    public function setPersistence($mode)
-    {
-    }
-
-    /**
-     * Set the request object
-     *
-     * @param string|Zend_XmlRpc_Request $request
-     * @return Zend_XmlRpc_Server
-     * @throws Zend_XmlRpc_Server_Exception on invalid request class or object
-     */
-    public function setRequest($request)
-    {
-        if (is_string($request) && class_exists($request)) {
-            $request = new $request();
-            if (!$request instanceof Zend_XmlRpc_Request) {
-                require_once 'Zend/XmlRpc/Server/Exception.php';
-                throw new Zend_XmlRpc_Server_Exception('Invalid request class');
-            }
-            $request->setEncoding($this->getEncoding());
-        } elseif (!$request instanceof Zend_XmlRpc_Request) {
-            require_once 'Zend/XmlRpc/Server/Exception.php';
-            throw new Zend_XmlRpc_Server_Exception('Invalid request object');
-        }
-
-        $this->_request = $request;
-        return $this;
-    }
-
-    /**
-     * Return currently registered request object
-     *
-     * @return null|Zend_XmlRpc_Request
-     */
-    public function getRequest()
-    {
-        return $this->_request;
-    }
-
-    /**
-     * Set the class to use for the response
-     *
-     * @param string $class
-     * @return boolean True if class was set, false if not
-     */
-    public function setResponseClass($class)
-    {
-        if (class_exists($class)) {
-            $reflection = new ReflectionClass($class);
-            if ($reflection->isSubclassOf(new ReflectionClass('Zend_XmlRpc_Response'))) {
-                $this->_responseClass = $class;
-                return true;
-            }
-        }
-
-        return false;
-    }
-
-    /**
-     * Retrieve current response class
-     *
-     * @return string
-     */
-    public function getResponseClass()
-    {
-        return $this->_responseClass;
-    }
-
-    /**
-     * Retrieve dispatch table
-     *
-     * @return array
-     */
-    public function getDispatchTable()
-    {
-        return $this->_table;
-    }
-
-    /**
-     * Returns a list of registered methods
-     *
-     * Returns an array of dispatchables (Zend_Server_Reflection_Function,
-     * _Method, and _Class items).
-     *
-     * @return array
-     */
-    public function getFunctions()
-    {
-        return $this->_table->toArray();
-    }
-
-    /**
-     * Retrieve system object
-     *
-     * @return Zend_XmlRpc_Server_System
-     */
-    public function getSystem()
-    {
-        return $this->_system;
-    }
-
-    /**
-     * Map PHP type to XML-RPC type
-     *
-     * @param  string $type
-     * @return string
-     */
-    protected function _fixType($type)
-    {
-        if (isset($this->_typeMap[$type])) {
-            return $this->_typeMap[$type];
-        }
-        return 'void';
-    }
-
-    /**
-     * Handle an xmlrpc call (actual work)
-     *
-     * @param Zend_XmlRpc_Request $request
-     * @return Zend_XmlRpc_Response
-     * @throws Zend_XmlRpcServer_Exception|Exception
-     * Zend_XmlRpcServer_Exceptions are thrown for internal errors; otherwise,
-     * any other exception may be thrown by the callback
-     */
-    protected function _handle(Zend_XmlRpc_Request $request)
-    {
-        $method = $request->getMethod();
-
-        // Check for valid method
-        if (!$this->_table->hasMethod($method)) {
-            require_once 'Zend/XmlRpc/Server/Exception.php';
-            throw new Zend_XmlRpc_Server_Exception('Method "' . $method . '" does not exist', 620);
-        }
-
-        $info     = $this->_table->getMethod($method);
-        $params   = $request->getParams();
-        $argv     = $info->getInvokeArguments();
-        if (0 < count($argv)) {
-            $params = array_merge($params, $argv);
-        }
-
-        // Check calling parameters against signatures
-        $matched    = false;
-        $sigCalled  = $request->getTypes();
-
-        $sigLength  = count($sigCalled);
-        $paramsLen  = count($params);
-        if ($sigLength < $paramsLen) {
-            for ($i = $sigLength; $i < $paramsLen; ++$i) {
-                $xmlRpcValue = Zend_XmlRpc_Value::getXmlRpcValue($params[$i]);
-                $sigCalled[] = $xmlRpcValue->getType();
-            }
-        }
-
-        $signatures = $info->getPrototypes();
-        foreach ($signatures as $signature) {
-            $sigParams = $signature->getParameters();
-            if ($sigCalled === $sigParams) {
-                $matched = true;
-                break;
-            }
-        }
-        if (!$matched) {
-            require_once 'Zend/XmlRpc/Server/Exception.php';
-            throw new Zend_XmlRpc_Server_Exception('Calling parameters do not match signature', 623);
-        }
-
-        $return        = $this->_dispatch($info, $params);
-        $responseClass = $this->getResponseClass();
-        return new $responseClass($return);
-    }
-
-    /**
-     * Register system methods with the server
-     *
-     * @return void
-     */
-    protected function _registerSystemMethods()
-    {
-        $system = new Zend_XmlRpc_Server_System($this);
-        $this->_system = $system;
-        $this->setClass($system, 'system');
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+XJ3pFWofQyVjvG==

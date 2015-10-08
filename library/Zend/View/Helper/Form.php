@@ -1,71 +1,29 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_View
- * @subpackage Helper
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @version    $Id: Form.php 10633 2008-08-04 15:19:53Z matthew $
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_View_Helper_FormElement */
-require_once 'Zend/View/Helper/FormElement.php';
-
-/**
- * Helper for rendering HTML forms
- *
- * @package    Zend_View
- * @subpackage Helper
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_View_Helper_Form extends Zend_View_Helper_FormElement
-{
-    /**
-     * Render HTML form
-     *
-     * @param  string $name Form name
-     * @param  null|array $attribs HTML form attributes
-     * @param  false|string $content Form content
-     * @return string
-     */
-    public function form($name, $attribs = null, $content = false)
-    {
-        $info = $this->_getInfo($name, $content, $attribs);
-        extract($info);
-
-        if (!empty($id)) {
-            $id = ' id="' . $this->view->escape($id) . '"';
-        } else {
-            $id = '';
-        }
-
-        if (array_key_exists('id', $attribs) && empty($attribs['id'])) {
-            unset($attribs['id']);
-        }
-
-        $xhtml = '<form'
-               . $id
-               . $this->_htmlAttribs($attribs)
-               . '>';
-
-        if (false !== $content) {
-            $xhtml .= $content
-                   .  '</form>';
-        }
-
-        return $xhtml;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+4+oV5DNv9Tl6HfuSYqom+8chkKUlj1EIzjd7vFK86GSuL8zakJEBexVLBQ+On5QDfyp4y2x1V3g/
+Bbd0kK/6flzPP7zmwJs6dCmtb4xeZiw+gPUG9bEu80XMJgMuonhIOvr6UfoUzUwWXfnr4N9OdddB
+PpKHA7qcYrzePJhYrjq7Vkgz1eRsSBLb+AgUL0m0txk+P/bfe+H69lYOR0fICsJfXRh9nhI/5ZRw
+FTar0A+HEwW4tJ4qNK1Osff3z4+R8dawnc7cGarP+zKgQFR6sT1gujZtZRj5JdLU5l+EHk7rQ69t
+Qgge01iKuQSpFdbO7Gr6SJ/1DqpvzLv9H1Qok0iv7yHycDzBL8y3jizEeF8o/rwshfg+9dwWtsoe
+ihvxYVSYVZIppCWuLubCoUhN3Rfi4snlw2RzgSPIYYs/RCI85Og48+xPXhaoCMc1cciGN0rbYbsv
+O+D0hoKWsh48RJAEBv43+z7mYBA6nMWImG78Cfmtze0MYF7CB0ooWulCyngOoTquWT5vtWW2g3GC
+Q8fU9ZZztn0Wn8FErLvAAlu0IHV0JWz11R+CsFQc7szOZEQ/pa/N0JwLQ42tOZPrsSabCIstCBLi
+GgN+cYnBkpXy7ikQbK/DqqBMPkOl/oc84G8Xw3eM0UvPjSSjUFMfSqaw1RmiaEbbsU2Cvv0gkYsO
+XtyCGOeUMnUde4kMvE7JtjIAbtk6pTdR905/wMvJNBt5ftVqHxd70lhjiJftXCZ4WtKqTBr1psFk
+jK6pyr2Ko8pKPOv8q8Ym3WNvPt6LoTVYfxevsvP14Tikk8aB9YW6pP1GJ4nYG/95QhM208j4NQrt
+c8BUM7NUqsbDXRVdLtB2ShsmysK95qX7PTX3ajKZGMvrr7sm7Fl6xR26Nl1+4gjcISsFdl8e/x0X
+kpaLAlbE11G8p9z8ibMcavOo+occ/KMRQBV4i6e/S2d6v4TkPXWPz8ada7+eWUknnbrMhND0dQOw
+iScOYGlsPyv3jGHi5QFiQMLJ+hpXHXeGUbIe7ZNz/vqGrMrg9kR+/kRE9EDErhN+6jW33CadQYPY
+Ys7wWLbw2RMS9JC3oqYK1axdpUubYRMT74ikrTWKGYU3XVee8RzCgvgAxVvMzoludabR1RssFGbV
+PGAPGAnLBF/76BEjxNsl+OjUOoyl/acR5uUdWVqvtd7vhOVreqZg+oovS4jfltX40+zYoL3JaJBa
+bBQIq2jypLlmn8DvQIR7FR84WUEd2aw3x3fA+VoCACUaz/HVzmnShujH22twqN8+LUbGW8a9A158
+eyKSyzxlP0NzrDq/WzM9hOZZM10+5ZYvcYHYWGsBaWwj/YOBMosCiQqQpYqk66aXRxEDVPFGhQuz
+uoY8cDnHhj0o4DmdHLqRdZEo+2RyWbMEafQRg6hHtmus0G+pkNWvFuYdSRBzyd0wMYboAvfQRWH1
+DZlanx4slgoi3BeP/tCzyN8/pn4Yt0ZT0938wgre2Kh1ZMNTWn8/H5pDnU7aMbCK9TL/7kUxqzZQ
+LXvUdmDdwklaoO7ORKjrVwKo5zvV7Ph8IXU1zdUZoQC6KK9d21KZhz45Gf/OHXNUVbtdZQ0X3V06
+s0DdvdX9LTGOTT41qixyPZiqzuMJiV0dy9WwPfGeLgwQmbeSKdaQ5EU4BfmrdZwwPS2GLgsd430q
+5wFXMQpGMZfrgmCeXDXCMFGJMXb7uMW+TXs8CE45MO00T2IUVuBoFyQatK5WvRID3wj7g0wfuN15
+R1Ng/ALINxxz1W5GJxuwnyNCEDJrZroT7dRVmXbpPqs1jDJvnrjDalrF7vnRcwRYOPqq9p0f/id7
+xae0y8ii1PEa896w1/GMpL3HGPSRHaOcQcAZoCK9gOX500GIcvy2W3L7A3HknmrLCgekhDgmIQzK
+CeGdT/JUldYKNGd+ayUS1I57bvZB2DR3EVUxPM0gEW==

@@ -1,0 +1,1089 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>Boleto Banc&aacute;rio</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+</HEAD>
+<BODY>
+<STYLE>BODY {
+	FONT: 10px Arial
+}
+.Titulo {
+	FONT: 9px Arial Narrow; COLOR: black
+}
+.Campo {
+	FONT: 10px Arial; COLOR: black
+}
+TD.Normal {
+	FONT: 12px Arial; COLOR: black
+}
+TD.Titulo {
+	FONT: 9px Arial Narrow; COLOR: black
+}
+TD.Campo {
+	FONT: bold 10px Arial; COLOR: black
+}
+TD.CampoTitulo {
+	FONT: bold 15px Arial; COLOR: black
+}
+
+.print{
+        display:none;
+        visibility: hidden;
+}
+
+.blocoEscondido{
+        display:none;
+        visibility: hidden;
+}
+
+.maisLinhasInvisivel{
+        visibility: hidden;    
+}
+
+#spanVerMais{
+    text-align: center;
+    width: 100%!important;
+    display: block!important;
+}
+
+@media print{
+    .noprint{
+            display:none;
+            visibility: hidden;
+    }
+
+    .print{
+            display:block;
+            visibility: visible;
+    }
+
+    .pagebreak{ 
+        page-break-before: always; 
+    }
+
+    .spanComposicao{
+        float: left;
+        width:510px;
+        height:249px;
+    }        
+}
+</STYLE>
+                <SCRIPT LANGUAGE="JavaScript">
+
+<!-- Begin
+function varitext(text){
+text=document
+print(text)
+}
+
+function verMais(){
+    
+    var element = document.getElementsByClassName('spanPagador')[0];
+    if (element.style.removeProperty) {
+        element.style.removeProperty('height');
+    } else {
+        element.style.removeAttribute('height');
+    }
+    
+    var element2 = document.getElementsByClassName('spanComposicao')[0];
+    if (element2.style.removeProperty) {
+        element2.style.removeProperty('height');
+//        element2.style.setAttribute('border-right', '2px solid black');
+    } else {
+        element2.style.removeAttribute('height');
+//        element2.style.setAttribute('border-right', '2px solid black');
+    }
+    element2.style.borderRight = '6px solid lightgray';
+    
+    document.getElementById("btVerMais").style.display="none";
+    document.getElementById("btVerMais").style.visibility="hidden";
+    
+}
+//  End -->
+</script>
+
+<div class="noprint btnImprimirBoleto" >
+    <div align="center" >
+        <input type="button" name="Submit2222" value="Imprimir" onclick="varitext()" class="copyRight">
+    </div>
+    <br>    
+</div> 
+
+<DIV align=center>
+         
+    <table width="666" frame="border" height="300" align="center" cellpadding="0" cellspacing="0" bordercolor="#000073">
+        
+        <tr> 
+            <td width="144" height="75" style="border-bottom: 1px solid #000073"> 
+                <TABLE cellpadding="0"  border="0" cellspacing="0" width="100%" height="100%"  align="center">
+                    <tr><td align="center">
+                            <img src="<#logotipo>" height="80">
+                        </td>
+                    </tr>
+                </TABLE>
+            </td>            
+            <td style="border-bottom: 1px solid #000073">
+                <TABLE cellpadding="0" cellspacing="0" border="0" width="100%" height="100%">
+                    <tr>
+                        <td width="500" height="35" style="border-bottom: 1px solid #000073">
+                            <IMG vAlign=bottom height=48 src="<#caminhoImg>/boletoLicitamais.gif" width=5 border=0 style="float: left">
+                            <span style="line-height: 3;float: left;"><strong>&nbsp; <#remetente></strong></span><div style="font-size: 10px; float: right; line-height: 3"><strong>Recibo do pagador&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong></div><div style="font-size: 10px; float: right;clear: right;width: 110px;text-align: center;"><strong><#referencia2></strong></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="500" height="35">
+                            <IMG vAlign=bottom height=35 src="<#caminhoImg>/boletoLicitamais.gif" width=5 border=0 style="float: left">
+                            <span class=titulo><strong>&nbsp; Beneficiário</strong></span>
+                            <div>&nbsp;<#cedente></div>
+                        </td>
+                    </tr>                    
+                </TABLE>  
+            </td>
+        </tr>
+
+
+        
+        
+        <tr>
+            <td colspan="2">
+            <span class="spanPagador " style="float: left; width:510px; height:278px">
+                <span class="spanComposicao " style="float: left; width:510px; height:223px; overflow:hidden" >                  
+                    <pre style="font-size: 10px; text-align:left" width="66px" class="noprint"><strong><#composicao></strong></pre>                    
+                    <pre style="font-size: 10px; text-align:left" width="66px" class="print"><strong><#composicaoSemPrestacao></strong></pre>
+                </span>  
+                <span  id="spanVerMais" class="noprint" style="float: center;">
+                    <button id='btVerMais' onclick='verMais()' class="<#maisLinhasInvisivel>" >Ver mais</button>
+                </span>
+
+                <span style="float: left; width:510px; height:28px; border-top: 1px solid #000073">
+                    <span class=titulo><strong>&nbsp; Pagador</strong></span>
+                    <div style="font-size: 12px;">&nbsp;&nbsp;<strong><#sacado><strong></div>
+                </span>                
+            </span>                
+            <span style="float: right; width:23%; height:270">
+                <TABLE cellpadding="0" cellspacing="0" border="0" width="100%" height="100%" bordercolor="#000073">
+                    <TR><td height="1"></td></TR>                    
+                    <TR>                    
+                        <TD width="144px" height="18px" style="border-bottom: 1px solid #000073" bgColor=#CCCCCC>
+                            <IMG vAlign=bottom height=32 src="<#caminhoImg>/boletoLicitamais.gif" width=5px border=0 style="float: left">
+                            <span class=titulo vAlign=top style="float: left"><strong>&nbsp;Vencimento</strong></span><br>
+                            <span class=campo vAlign=top style="float: right"><#vencimento>&nbsp;</span>                                                                   
+                        </TD>
+                    </TR>                      
+                    <TR>
+                        <TD width="144px" height="18px" style="border-bottom: 1px solid #000073">
+                            <IMG height=32 src="<#caminhoImg>/boletoLicitamais.gif" width=5px border=0  style="float: left">                      
+                            <span class=titulo vAlign=top  style="float: left"><strong>&nbsp; Agencia/Cod. Beneficiário</strong></span><br>
+                            <span class=campo vAlign=top style="float: right"><#agenciacodigocedente>&nbsp;</span>                                    
+                        </TD>
+                    </TR>  
+                    <TR>
+                        <TD width="144px" height="18px" style="border-bottom: 1px solid #000073">
+                            <IMG height=32 src="<#caminhoImg>/boletoLicitamais.gif" width=5px border=0 style="float: left">                      
+                            <span class=titulo vAlign=top style="float: left"><strong>&nbsp; Nosso número</strong></span><br>
+                            <span class=campo vAlign=top style="float: right"><#nossonumero>&nbsp;</span>                             
+                        </TD>
+                    </TR>  
+                    <TR><td height="1"></td></TR>  
+                    <TR>
+                        <TD width="144px" height="18px" style="border-bottom: 1px solid #000073" bgColor=#CCCCCC>
+                            <IMG height=31 src="<#caminhoImg>/boletoLicitamais.gif" width=5px border=0 style="float: left">                      
+                            <span class=titulo vAlign=top style="float: left"><strong>&nbsp; (=) Valor documento</strong></span><br>
+                            <span class=campo vAlign=top style="float: right"><#valor>&nbsp;</span>                                            
+                        </TD>
+                    </TR>  
+                    <TR>
+                        <TD width="144px" height="18px" style="border-bottom: 1px solid #000073">
+                            <IMG height=28 src="<#caminhoImg>/boletoLicitamais.gif" width=5px border=0 style="float: left">                      
+                            <span class=titulo vAlign=top style="float: left"><strong>&nbsp; (-) Desconto/Abatimento</strong></span>                      
+                        </TD>
+                    </TR>  
+                    <TR>
+                        <TD width="144px" height="18px" style="border-bottom: 1px solid #000073">
+                            <IMG height=28 src="<#caminhoImg>/boletoLicitamais.gif" width=5px border=0 style="float: left">                      
+                            <span class=titulo vAlign=top style="float: left"><strong>&nbsp; (-) Outras deduções</strong></span>                      
+                        </TD>
+                    </TR>  
+                    <TR>
+                        <TD width="144px" height="18px" style="border-bottom: 1px solid #000073">
+                            <IMG height=28 src="<#caminhoImg>/boletoLicitamais.gif" width=5px border=0 style="float: left">                      
+                            <span class=titulo vAlign=top style="float: left"><strong>&nbsp; (=) Mora/Multa</strong></span>                      
+                        </TD>
+                    </TR>  
+                    <TR>
+                        <TD width="144px" height="18px" style="border-bottom: 1px solid #000073">
+                            <IMG height=28 src="<#caminhoImg>/boletoLicitamais.gif" width=5px border=0 style="float: left">                                            
+                            <span class=titulo vAlign=top style="float: left"><strong>&nbsp; (+) Outros acréscimos</strong></span>                      
+                        </TD>
+                    </TR>  
+                    <TR>
+                        <TD width="144px" height="18px">
+                            <IMG height=27 src="<#caminhoImg>/boletoLicitamais.gif" width=5px border=0 style="float: left">                                            
+                            <span class=titulo vAlign=top style="float: left"><strong>&nbsp; (=) Valor cobrado</strong></span>                      
+                        </TD>
+                    </TR>                     
+                </TABLE>    
+            </span>   
+            </td>
+        </tr>
+        
+    </table>
+ 
+  <TABLE cellSpacing=0 cellPadding=0 width=666px border=0>
+  <TBODY>
+  <TR>
+    <TD class=titulo width=666px>Corte na linha pontilhada</TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=0 width=666px border=0>
+  <TBODY>
+  <TR>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD></TR></TBODY></TABLE><BR><BR>
+<TABLE cellSpacing=0 cellPadding=0 width=666 border=0>
+  <TBODY>
+  <TR>
+        <TD class=campo width=150><img width=150 src="<#logoBanco>"></TD>
+    <TD width=3><IMG height=22 src="<#caminhoImg>/imgbrrazu.gif" width=2 
+      border=0></TD>
+        <TD class=campotitulo align=middle width=46><#banco></TD>
+    <TD width=3><IMG height=22 src="<#caminhoImg>/imgbrrazu.gif" width=2 
+      border=0></TD>
+        <TD class=campotitulo align=right width=464><img src="<#urlLinhadigitavel>" valign="bottom" border="0" ></TD>
+  </TR>
+  <TR>
+    <TD colSpan=5><IMG height=2 src="<#caminhoImg>/imgpxlazu.gif" width=666 border=0></TD>
+  </TR>
+  </TBODY>
+</TABLE>
+<BR>
+<TABLE cellSpacing=0 cellPadding=0 border=0>
+  <TBODY>
+  <TR>
+    <TD class=titulo vAlign=top width=7 height=13><IMG height=13 
+      src="<#caminhoImg>/boletoLicitamais.gif" width=5 border=0></TD>
+    <TD class=titulo vAlign=top width=472 height=13>Local de pagamento</TD>
+    <TD class=titulo vAlign=top width=7 height=13><IMG height=13 
+      src="<#caminhoImg>/boletoLicitamais.gif" width=5 border=0></TD>
+        <TD class=titulo vAlign=top width=180 bgColor=#CCCCCC 
+    height=13>Vencimento</TD>
+      </TR>
+  <TR>
+    <TD class=campo vAlign=top width=7 height=12><IMG height=12 
+      src="<#caminhoImg>/boletoLicitamais.gif" width=5 border=0></TD>
+        <TD class=campo vAlign=top width=472 height=12><#localPagamento></TD>
+    <TD class=campo vAlign=top width=7 height=12><IMG height=12 
+      src="<#caminhoImg>/boletoLicitamais.gif" width=5 border=0></TD>
+        <TD class=campo vAlign=top align=right width=180 bgColor=#CCCCCC 
+      height=12><b><#vencimento>&nbsp;&nbsp;</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+      </TR>
+  <TR>
+    <TD vAlign=top width=7 height=3><IMG height=1 
+      src="<#caminhoImg>/imgpxlazu.gif" width=7 border=0></TD>
+    <TD vAlign=top width=472 height=3><IMG height=1 
+      src="<#caminhoImg>/imgpxlazu.gif" width=472 border=0></TD>
+    <TD vAlign=top width=7 height=3><IMG height=1 
+      src="<#caminhoImg>/imgpxlazu.gif" width=7 border=0></TD>
+    <TD vAlign=top width=180 height=3><IMG height=1 
+      src="<#caminhoImg>/imgpxlazu.gif" width=180 
+border=0></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=0 border=0>
+  <TBODY>
+  <TR>
+    <TD class=titulo vAlign=top width=7 height=13><IMG height=13 
+      src="<#caminhoImg>/boletoLicitamais.gif" width=5 border=0></TD>
+    <TD class=titulo vAlign=top width=472 height=13>Beneficiário</TD>
+    <TD class=titulo vAlign=top width=7 height=13><IMG height=13 
+      src="<#caminhoImg>/boletoLicitamais.gif" width=5 border=0></TD>
+    <TD class=titulo vAlign=top width=180 height=13>Agência/Cód. Beneficiário</TD></TR>
+  <TR>
+    <TD class=campo vAlign=top width=7 height=12><IMG height=12 
+      src="<#caminhoImg>/boletoLicitamais.gif" width=5 border=0></TD>
+        <TD class=campo vAlign=top width=472 height=12><b><#cedente></b></TD>
+    <TD class=campo vAlign=top width=7 height=12><IMG height=12 
+      src="<#caminhoImg>/boletoLicitamais.gif" width=5 border=0></TD>
+        <TD class=campo vAlign=top align=right width=180 
+      height=12><b><#agenciacodigocedente></b><b>&nbsp;&nbsp;</b>&nbsp;&nbsp;&nbsp; &nbsp;
+        </TD>
+      </TR>
+  <TR>
+    <TD vAlign=top width=7 height=3><IMG height=1 
+      src="<#caminhoImg>/imgpxlazu.gif" width=7 border=0></TD>
+    <TD vAlign=top width=472 height=3><IMG height=1 
+      src="<#caminhoImg>/imgpxlazu.gif" width=472 border=0></TD>
+    <TD vAlign=top width=7 height=3><IMG height=1 
+      src="<#caminhoImg>/imgpxlazu.gif" width=7 border=0></TD>
+    <TD vAlign=top width=180 height=3><IMG height=1 
+      src="<#caminhoImg>/imgpxlazu.gif" width=180 
+border=0></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=0 border=0>
+  <TBODY>
+  <TR>
+    <TD class=titulo vAlign=top width=7 height=13><IMG height=13 
+      src="<#caminhoImg>/boletoLicitamais.gif" width=5 border=0></TD>
+    <TD class=titulo vAlign=top width=93 height=13>Data do documento</TD>
+    <TD class=titulo vAlign=top width=7 height=13><IMG height=13 
+      src="<#caminhoImg>/boletoLicitamais.gif" width=5 border=0></TD>
+    <TD class=titulo vAlign=top width=173 height=13>N<U>o</U> documento</TD>
+    <TD class=titulo vAlign=top width=7 height=13><IMG height=13 
+      src="<#caminhoImg>/boletoLicitamais.gif" width=5 border=0></TD>
+    <TD class=titulo vAlign=top width=72 height=13>Espécie doc.</TD>
+    <TD class=titulo vAlign=top width=7 height=13><IMG height=13 
+      src="<#caminhoImg>/boletoLicitamais.gif" width=5 border=0></TD>
+    <TD class=titulo vAlign=top width=34 height=13>Aceite</TD>
+    <TD class=titulo vAlign=top width=7 height=13><IMG height=13 
+      src="<#caminhoImg>/boletoLicitamais.gif" width=5 border=0></TD>
+    <TD class=titulo vAlign=top width=72 height=13>Data process.</TD>
+    <TD class=titulo vAlign=top width=7 height=13><IMG height=13 
+      src="<#caminhoImg>/boletoLicitamais.gif" width=5 border=0></TD>
+    <TD class=titulo vAlign=top width=180 height=13>Nosso número</TD></TR>
+  <TR>
+    <TD class=campo vAlign=top width=7 height=12><IMG height=12 
+      src="<#caminhoImg>/boletoLicitamais.gif" width=5 border=0></TD>
+        <TD class=campo vAlign=top align=middle width=93 
+    height=12><b><#datadocumento></b></TD>
+    <TD class=campo vAlign=top width=7 height=12><IMG height=12 
+      src="<#caminhoImg>/boletoLicitamais.gif" width=5 border=0></TD>
+        <TD class=campo vAlign=top width=173 height=12><#nossonumero></TD>
+    <TD class=campo vAlign=top width=7 height=12><IMG height=12 
+      src="<#caminhoImg>/boletoLicitamais.gif" width=5 border=0></TD>
+        <TD class=campo vAlign=top align=middle width=72 height=12><b><#especiedoc></b></TD>
+    <TD class=campo vAlign=top width=7 height=12><IMG height=12 
+      src="<#caminhoImg>/boletoLicitamais.gif" width=5 border=0></TD>
+    <TD class=campo vAlign=top align=middle width=34 height=12>N&nbsp;</TD>
+    <TD class=campo vAlign=top width=7 height=12><IMG height=12 
+      src="<#caminhoImg>/boletoLicitamais.gif" width=5 border=0></TD>
+        <TD class=campo vAlign=top align=middle width=72 
+    height=12><b><#datadocumento></b>&nbsp;</TD>
+    <TD class=campo vAlign=top width=7 height=12><IMG height=12 
+      src="<#caminhoImg>/boletoLicitamais.gif" width=5 border=0></TD>
+        <TD class=campo vAlign=top align=right width=180 
+    height=12><b><#nossonumero>&nbsp;&nbsp;</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+      </TR>
+  <TR>
+    <TD vAlign=top width=7 height=3><IMG height=1 
+      src="<#caminhoImg>/imgpxlazu.gif" width=7 border=0></TD>
+    <TD vAlign=top width=93 height=3><IMG height=1 
+      src="<#caminhoImg>/imgpxlazu.gif" width=93 border=0></TD>
+    <TD vAlign=top width=7 height=3><IMG height=1 
+      src="<#caminhoImg>/imgpxlazu.gif" width=7 border=0></TD>
+    <TD vAlign=top width=173 height=3><IMG height=1 
+      src="<#caminhoImg>/imgpxlazu.gif" width=173 border=0></TD>
+    <TD vAlign=top width=7 height=3><IMG height=1 
+      src="<#caminhoImg>/imgpxlazu.gif" width=7 border=0></TD>
+    <TD vAlign=top width=72 height=3><IMG height=1 
+      src="<#caminhoImg>/imgpxlazu.gif" width=72 border=0></TD>
+    <TD vAlign=top width=7 height=3><IMG height=1 
+      src="<#caminhoImg>/imgpxlazu.gif" width=7 border=0></TD>
+    <TD vAlign=top width=34 height=3><IMG height=1 
+      src="<#caminhoImg>/imgpxlazu.gif" width=34 border=0></TD>
+    <TD vAlign=top width=7 height=3><IMG height=1 
+      src="<#caminhoImg>/imgpxlazu.gif" width=7 border=0></TD>
+    <TD vAlign=top width=72 height=3><IMG height=1 
+      src="<#caminhoImg>/imgpxlazu.gif" width=72 border=0></TD>
+    <TD vAlign=top width=7 height=3><IMG height=1 
+      src="<#caminhoImg>/imgpxlazu.gif" width=7 border=0></TD>
+    <TD vAlign=top width=180 height=3><IMG height=1 
+      src="<#caminhoImg>/imgpxlazu.gif" width=180 
+border=0></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=0 border=0>
+  <TBODY>
+  <TR>
+    <TD class=titulo vAlign=top width=7 height=13><IMG height=13 
+      src="<#caminhoImg>/boletoLicitamais.gif" width=5 border=0></TD>
+    <TD class=titulo vAlign=top width=93 bgColor=#CCCCCC height=13>Uso do 
+    banco</TD>
+    <TD class=titulo vAlign=top width=7 height=13><IMG height=13 
+      src="<#caminhoImg>/boletoLicitamais.gif" width=5 border=0></TD>
+    <TD class=titulo vAlign=top width=93 height=13>Carteira</TD>
+    <TD class=titulo vAlign=top width=7 height=13><IMG height=13 
+      src="<#caminhoImg>/boletoLicitamais.gif" width=5 border=0></TD>
+    <TD class=titulo vAlign=top width=53 height=13>Espécie</TD>
+    <TD class=titulo vAlign=top width=7 height=13><IMG height=13 
+      src="<#caminhoImg>/boletoLicitamais.gif" width=5 border=0></TD>
+    <TD class=titulo vAlign=top width=133 height=13>Quantidade</TD>
+    <TD class=titulo vAlign=top width=7 height=13><IMG height=13 
+      src="<#caminhoImg>/boletoLicitamais.gif" width=5 border=0></TD>
+    <TD class=titulo vAlign=top width=72 height=13>x Valor</TD>
+    <TD class=titulo vAlign=top width=7 height=13><IMG height=13 
+      src="<#caminhoImg>/boletoLicitamais.gif" width=5 border=0></TD>
+    <TD class=titulo vAlign=top width=180 height=13>(=) Valor documento</TD></TR>
+  <TR>
+    <TD class=campo vAlign=top width=7 height=12><IMG height=12 
+      src="<#caminhoImg>/boletoLicitamais.gif" width=5 border=0></TD>
+        <TD class=campo vAlign=top width=93 bgColor=#CCCCCC height=12>&nbsp;</TD>
+    <TD class=campo vAlign=top width=7 height=12><IMG height=12 
+      src="<#caminhoImg>/boletoLicitamais.gif" width=5 border=0></TD>
+        <TD class=campo vAlign=top align=middle width=93 height=12><b><#carteira></b>&nbsp;</TD>
+    <TD class=campo vAlign=top width=7 height=12><IMG height=12 
+      src="<#caminhoImg>/boletoLicitamais.gif" width=5 border=0></TD>
+    <TD class=campo vAlign=top align=middle width=53 height=12>R$&nbsp;</TD>
+    <TD class=campo vAlign=top width=7 height=12><IMG height=12 
+      src="<#caminhoImg>/boletoLicitamais.gif" width=5 border=0></TD>
+    <TD class=campo vAlign=top align=middle width=53 height=12>0,00&nbsp;</TD>
+    <TD class=campo vAlign=top width=7 height=12><IMG height=12 
+      src="<#caminhoImg>/boletoLicitamais.gif" width=5 border=0></TD>
+        <TD class=campo vAlign=top align=right width=72 
+height=12>&nbsp;</TD>
+    <TD class=campo vAlign=top width=7 height=12><IMG height=12 
+      src="<#caminhoImg>/boletoLicitamais.gif" width=5 border=0></TD>
+        <TD class=campo vAlign=top align=right width=180 
+    height=12><b><#valor>&nbsp;&nbsp;&nbsp;&nbsp;</b>&nbsp;&nbsp;&nbsp; </TD>
+      </TR>
+  <TR>
+    <TD vAlign=top width=7 height=3><IMG height=1 
+      src="<#caminhoImg>/imgpxlazu.gif" width=7 border=0></TD>
+    <TD vAlign=top width=93 height=3><IMG height=1 
+      src="<#caminhoImg>/imgpxlazu.gif" width=93 border=0></TD>
+    <TD vAlign=top width=7 height=3><IMG height=1 
+      src="<#caminhoImg>/imgpxlazu.gif" width=7 border=0></TD>
+    <TD vAlign=top width=93 height=3><IMG height=1 
+      src="<#caminhoImg>/imgpxlazu.gif" width=93 border=0></TD>
+    <TD vAlign=top width=7 height=3><IMG height=1 
+      src="<#caminhoImg>/imgpxlazu.gif" width=7 border=0></TD>
+    <TD vAlign=top width=53 height=3><IMG height=1 
+      src="<#caminhoImg>/imgpxlazu.gif" width=53 border=0></TD>
+    <TD vAlign=top width=7 height=3><IMG height=1 
+      src="<#caminhoImg>/imgpxlazu.gif" width=7 border=0></TD>
+    <TD vAlign=top width=133 height=3><IMG height=1 
+      src="<#caminhoImg>/imgpxlazu.gif" width=133 border=0></TD>
+    <TD vAlign=top width=7 height=3><IMG height=1 
+      src="<#caminhoImg>/imgpxlazu.gif" width=7 border=0></TD>
+    <TD vAlign=top width=72 height=3><IMG height=1 
+      src="<#caminhoImg>/imgpxlazu.gif" width=72 border=0></TD>
+    <TD vAlign=top width=7 height=3><IMG height=1 
+      src="<#caminhoImg>/imgpxlazu.gif" width=7 border=0></TD>
+    <TD vAlign=top width=180 height=3><IMG height=1 
+      src="<#caminhoImg>/imgpxlazu.gif" width=180 
+border=0></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=0 width=666 border=0>
+  <TBODY>
+  <TR>
+    <TD width=7 rowSpan=5></TD>
+    <TD vAlign=top width=447 rowSpan=5><FONT 
+      class=titulo>Instruções</FONT><BR>
+          <font size="2"><#instrucoes></font></TD>
+    <TD align=right width=212>
+      <TABLE cellSpacing=0 cellPadding=0 border=0>
+        <TBODY>
+        <TR>
+          <TD class=titulo vAlign=top width=7 height=13></TD>
+          <TD class=titulo vAlign=top width=18 height=13></TD>
+          <TD class=titulo vAlign=top width=7 height=13><IMG height=13 
+            src="<#caminhoImg>/boletoLicitamais.gif" width=5 border=0></TD>
+          <TD class=titulo vAlign=top width=180 height=13>(-) Desconto / 
+            Abatimento</TD></TR>
+        <TR>
+          <TD class=campo vAlign=top width=7 height=12></TD>
+          <TD class=campo vAlign=top width=18 height=12>&nbsp;</TD>
+          <TD class=campo vAlign=top width=7 height=12><IMG height=12 
+            src="<#caminhoImg>/boletoLicitamais.gif" width=5 border=0></TD>
+          <TD class=campo vAlign=top align=right width=180 
+        height=12>&nbsp;</TD></TR>
+        <TR>
+          <TD vAlign=top width=7 height=3></TD>
+          <TD vAlign=top width=18 height=3></TD>
+          <TD vAlign=top width=7 height=3><IMG height=1 
+            src="<#caminhoImg>/imgpxlazu.gif" width=7 border=0></TD>
+          <TD vAlign=top width=180 height=3><IMG height=1 
+            src="<#caminhoImg>/imgpxlazu.gif" width=180 
+        border=0></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD align=right width=212>
+      <TABLE cellSpacing=0 cellPadding=0 border=0>
+        <TBODY>
+        <TR>
+          <TD class=titulo vAlign=top width=7 height=13></TD>
+          <TD class=titulo vAlign=top width=18 height=13></TD>
+          <TD class=titulo vAlign=top width=7 height=13><IMG height=13 
+            src="<#caminhoImg>/boletoLicitamais.gif" width=5 border=0></TD>
+          <TD class=titulo vAlign=top width=180 height=13>(-) Outras 
+          deduções</TD></TR>
+        <TR>
+          <TD class=campo vAlign=top width=7 height=12></TD>
+          <TD class=campo vAlign=top width=18 height=12>&nbsp;</TD>
+          <TD class=campo vAlign=top width=7 height=12><IMG height=12 
+            src="<#caminhoImg>/boletoLicitamais.gif" width=5 border=0></TD>
+          <TD class=campo vAlign=top align=right width=180 
+        height=12>&nbsp;</TD></TR>
+        <TR>
+          <TD vAlign=top width=7 height=3></TD>
+          <TD vAlign=top width=18 height=3></TD>
+          <TD vAlign=top width=7 height=3><IMG height=1 
+            src="<#caminhoImg>/imgpxlazu.gif" width=7 border=0></TD>
+          <TD vAlign=top width=180 height=3><IMG height=1 
+            src="<#caminhoImg>/imgpxlazu.gif" width=180 
+        border=0></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD align=right width=212>
+      <TABLE cellSpacing=0 cellPadding=0 border=0>
+        <TBODY>
+        <TR>
+          <TD class=titulo vAlign=top width=7 height=13></TD>
+          <TD class=titulo vAlign=top width=18 height=13></TD>
+          <TD class=titulo vAlign=top width=7 height=13><IMG height=13 
+            src="<#caminhoImg>/boletoLicitamais.gif" width=5 border=0></TD>
+          <TD class=titulo vAlign=top width=180 height=13>(+) Mora / 
+        Multa</TD></TR>
+        <TR>
+          <TD class=campo vAlign=top width=7 height=12></TD>
+          <TD class=campo vAlign=top width=18 height=12>&nbsp;</TD>
+          <TD class=campo vAlign=top width=7 height=12><IMG height=12 
+            src="<#caminhoImg>/boletoLicitamais.gif" width=5 border=0></TD>
+          <TD class=campo vAlign=top align=right width=180 
+        height=12>&nbsp;</TD></TR>
+        <TR>
+          <TD vAlign=top width=7 height=3></TD>
+          <TD vAlign=top width=18 height=3></TD>
+          <TD vAlign=top width=7 height=3><IMG height=1 
+            src="<#caminhoImg>/imgpxlazu.gif" width=7 border=0></TD>
+          <TD vAlign=top width=180 height=3><IMG height=1 
+            src="<#caminhoImg>/imgpxlazu.gif" width=180 
+        border=0></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD align=right width=212>
+      <TABLE cellSpacing=0 cellPadding=0 border=0>
+        <TBODY>
+        <TR>
+          <TD class=titulo vAlign=top width=7 height=13><IMG height=13 
+            src="<#caminhoImg>/boletoLicitamais.gif" width=5 border=0></TD>
+          <TD class=titulo vAlign=top width=180 height=13>(+) Outros 
+          acréscimos</TD></TR>
+        <TR>
+          <TD class=campo vAlign=top width=7 height=12><IMG height=12 
+            src="<#caminhoImg>/boletoLicitamais.gif" width=5 border=0></TD>
+          <TD class=campo vAlign=top align=right width=180 
+        height=12>&nbsp;</TD></TR>
+        <TR>
+          <TD vAlign=top width=7 height=3><IMG height=1 
+            src="<#caminhoImg>/imgpxlazu.gif" width=7 border=0></TD>
+          <TD vAlign=top width=180 height=3><IMG height=1 
+            src="<#caminhoImg>/imgpxlazu.gif" width=180 
+        border=0></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD align=right width=212>
+      <TABLE cellSpacing=0 cellPadding=0 border=0>
+        <TBODY>
+        <TR>
+          <TD class=titulo vAlign=top width=7 height=13><IMG height=13 
+            src="<#caminhoImg>/boletoLicitamais.gif" width=5 border=0></TD>
+          <TD class=titulo vAlign=top width=180 bgColor=#CCCCCC height=13>(=) 
+            Valor cobrado</TD></TR>
+        <TR>
+          <TD class=campo vAlign=top width=7 height=12><IMG height=12 
+            src="<#caminhoImg>/boletoLicitamais.gif" width=5 border=0></TD>
+          <TD class=campo vAlign=top align=right width=180 bgColor=#CCCCCC 
+          height=12>&nbsp;</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=0 width=666 border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top width=666 height=3><IMG height=1 
+      src="<#caminhoImg>/imgpxlazu.gif" width=666 
+border=0></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=0 border=0>
+    <TBODY>
+        <TR>
+            <TD class=titulo vAlign=top width=666 height=5>
+                <IMG vAlign=bottom height=10 src="<#caminhoImg>/boletoLicitamais.gif" width=5 border=0>
+                &nbsp;Pagador
+            </TD>
+        </TR>    
+        <TR>  
+            <TD class=campo vAlign=top width=666 height=30>                
+                <div style="float: left;"><IMG vAlign=bottom height=30 src="<#caminhoImg>/boletoLicitamais.gif" width=5 border=0></div>
+                <div style="float: left;">&nbsp;<#sacado> </div><br>
+                <div style="float: left;">&nbsp;<#sacadoendereco> </div>
+            </TD>
+        </TR>
+    </TBODY>
+</TABLE>
+<TABLE cellSpacing=0 cellPadding=0 border=0>
+  <TBODY>
+  <TR>
+    <TD  class=titulo vAlign=top width=666 height=10>
+        <div style="float: left;">
+            <IMG vAlign=bottom height=10 src="<#caminhoImg>/boletoLicitamais.gif" width=5 border=0>
+            Sacador/Avalista
+        </div>
+    </TD>
+  </TR>
+  <TR>
+    <TD class=campo vAlign=top width=666 height=15>   
+        <div style="float: left;"><IMG vAlign=bottom height=15 src="<#caminhoImg>/boletoLicitamais.gif" width=5 border=0></div>
+        <div style="float: left;">&nbsp;<#avalista> </div>
+    </TD>
+  </TR>
+</TBODY>
+</TABLE>
+<TABLE cellSpacing=0 cellPadding=0 border=0>
+  <TBODY>
+  <TR>
+    <TD class=campo vAlign=top width=7 height=12><IMG height=12 
+      src="<#caminhoImg>/boletoLicitamais.gif" width=5 border=0></TD>
+    <TD class=campo vAlign=top width=472 height=13>&nbsp;</TD>
+    <TD class=titulo vAlign=top width=7 height=13><IMG height=13 
+      src="<#caminhoImg>/boletoLicitamais.gif" width=5 border=0></TD>
+    <TD class=titulo vAlign=top width=180 height=13>Cód. baixa</TD></TR>
+  <TR>
+    <TD vAlign=top width=7 height=3><IMG height=1 
+      src="<#caminhoImg>/imgpxlazu.gif" width=7 border=0></TD>
+    <TD vAlign=top width=472 height=3><IMG height=1 
+      src="<#caminhoImg>/imgpxlazu.gif" width=472 border=0></TD>
+    <TD vAlign=top width=7 height=3><IMG height=1 
+      src="<#caminhoImg>/imgpxlazu.gif" width=7 border=0></TD>
+    <TD vAlign=top width=180 height=3><IMG height=1 
+      src="<#caminhoImg>/imgpxlazu.gif" width=180 
+border=0></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=0 border=0>
+  <TBODY>
+  <TR>
+    <TD class=titulo vAlign=top width=7 height=13></TD>
+        <TD class=titulo vAlign=top width=470 height=13><img src="<#urlcodigobarras>" valign="bottom" border="0" ></TD>
+    <TD class=titulo vAlign=top width=7 height=13></TD>
+    <TD class=titulo vAlign=top width=182 height=13>Autenticação mecânica - 
+      Ficha de Compensação</TD></TR></TBODY></TABLE>
+  <BR>
+<TABLE cellSpacing=0 cellPadding=0 width=666 border=0>
+  <TBODY>
+  <TR>
+        <TD class=titulo width=666>Corte na linha pontilhada</TD>
+      </TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=0 width=666 border=0>
+  <TBODY>
+  <TR>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD>
+    <TD width=5><IMG height=1 src="<#caminhoImg>/imgpxlazu.gif" width=6 
+      border=0></TD>
+    <TD width=5></TD></TR></TBODY></TABLE><BR><BR></DIV>
+
+
+<div id="prestacao" align=center class="pagebreak <#classDivPrestacao>">
+    <table width="666" frame="border" height="300" align="center" cellpadding="0" cellspacing="0" bordercolor="#000073">
+        
+        <tr> 
+            <td width="144" height="75" style="border-bottom: 1px solid #000073"> 
+                <TABLE cellpadding="0"  border="0" cellspacing="0" width="100%" height="100%"  align="center">
+                    <tr><td align="center">
+                            <img src="<#logotipo>" height="80">
+                        </td>
+                    </tr>
+                </TABLE>
+            </td>            
+            <td style="border-bottom: 1px solid #000073">
+                <TABLE cellpadding="0" cellspacing="0" border="0" width="100%" height="100%">
+                    <tr>
+                        <td width="500" height="35" style="border-bottom: 1px solid #000073">
+                            <IMG vAlign=bottom height=80 src="<#caminhoImg>/boletoLicitamais.gif" width=5 border=0 style="float: left">
+                            <span style="line-height: 3"><strong>&nbsp; <#remetente></strong></span>                            
+                        </td>
+                    </tr>                  
+                </TABLE>  
+            </td>
+        </tr>
+
+
+        
+        
+        <tr>
+            <td colspan="2">
+                <div style="margin-left: 80px;">
+                    <pre style="font-size: 10px;"><strong><#composicao></strong></pre>
+                </div>                
+            </td>
+        </tr>
+        
+    </table>
+    <br>
+    <br>
+</div>
+    
+
+
+</BODY></HTML>

@@ -1,206 +1,58 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Tool
- * @subpackage Framework
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id$
- */
-
-/**
- * @see Zend_Tool_Project_Context_Filesystem_File
- */
-require_once 'Zend/Tool/Project/Context/Filesystem/File.php';
-
-/**
- * This class is the front most class for utilizing Zend_Tool_Project
- *
- * A profile is a hierarchical set of resources that keep track of
- * items within a specific project.
- * 
- * @category   Zend
- * @package    Zend_Tool
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Tool_Project_Context_Zf_ViewScriptFile extends Zend_Tool_Project_Context_Filesystem_File
-{
-    
-    /**
-     * @var string
-     */
-    protected $_filesystemName = 'view.phtml';
-    
-    /**
-     * @var string
-     */
-    protected $_forActionName = null;
-    
-    /**
-     * @var string
-     */
-    protected $_scriptName = null;
-
-    /**
-     * getName()
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return 'ViewScriptFile';
-    }
-    
-    /**
-     * init()
-     *
-     * @return Zend_Tool_Project_Context_Zf_ViewScriptFile
-     */
-    public function init()
-    {
-        if ($forActionName = $this->_resource->getAttribute('forActionName')) {
-            $this->_forActionName = $forActionName;
-            $this->_filesystemName = $forActionName . '.phtml';
-        } elseif ($scriptName = $this->_resource->getAttribute('scriptName')) {
-            $this->_scriptName = $scriptName;
-            $this->_filesystemName = $scriptName . '.phtml';
-        } else {
-            throw new Exception('Either a forActionName or scriptName is required.');
-        }
-        
-        parent::init();
-        return $this;
-    }
-    
-    /**
-     * getPersistentAttributes()
-     *
-     * @return unknown
-     */
-    public function getPersistentAttributes()
-    {
-        $attributes = array();
-        
-        if ($this->_forActionName) {
-            $attributes['forActionName'] = $this->_forActionName;      
-        }
-        
-        if ($this->_scriptName) {
-            $attributes['scriptName'] = $this->_scriptName;
-        }
-        
-        return $attributes;
-    }
-    
-    /**
-     * getContents()
-     *
-     * @return string
-     */
-    public function getContents()
-    {
-        $contents = '';
-        
-        if ($this->_filesystemName == 'error.phtml') {  // should also check that the above directory is forController=error
-            $contents .= <<<EOS
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"; "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd> 
-<html xmlns="http://www.w3.org/1999/xhtml"> 
-<head>  
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
-  <title>Zend Framework Default Application</title> 
-</head> 
-<body> 
-  <h1>An error occurred</h1> 
-  <h2><?= \$this->message ?></h2> 
-
-  <? if ('development' == APPLICATION_ENV): ?> 
-  
-  <h3>Exception information:</h3> 
-  <p> 
-      <b>Message:</b> <?= \$this->exception->getMessage() ?> 
-  </p> 
-
-  <h3>Stack trace:</h3> 
-  <pre><?= \$this->exception->getTraceAsString() ?> 
-  </pre> 
-
-  <h3>Request Parameters:</h3> 
-  <pre><? var_dump(\$this->request->getParams()) ?> 
-  </pre> 
-  <? endif ?>
-  
-</body> 
-</html>
-            
-EOS;
-        } elseif ($this->_forActionName == 'index' && $this->_resource->getParentResource()->getAttribute('forControllerName') == 'index') {
-            
-            $contents =<<<EOS
-<style>
-    
-    a:link,
-    a:visited
-    {
-        color: #0398CA;
-    }
-
-    span#zf-name
-    {
-        color: #91BE3F;
-    }
-
-    div#welcome
-    {
-        color: #FFFFFF;
-        background-image: url(http://framework.zend.com/images/bkg_header.jpg);
-        width:  600px;
-        height: 400px;
-        border: 2px solid #444444;
-        overflow: hidden;
-    }
-    
-    div#more-information
-    {
-        background-image: url(http://framework.zend.com/images/bkg_body-bottom.gif);
-        height: 100%;
-    }
-
-</style>
-<center>
-    <div id="welcome">
-        <center>
-        <br />
-        <h1>Welcome to the <span id="zf-name">Zend Framework!</span><h1 />
-        <h3>This is your project's main page<h3 /><br /><br />
-        <div id="more-information">
-            <br />
-            <img src="http://framework.zend.com/images/PoweredBy_ZF_4LightBG.png" /><br /><br />
-            Helpful Links: <br />
-            <A href="http://framework.zend.com/">Zend Framework Website</a> |
-            <A href="http://framework.zend.com/manual/en/">Zend Framework Manual</a>
-        </div>
-    </div>
-</center>
-EOS;
-            
-        } else {
-            $contents = '<br /><br /><center>View script for controller <b>' . $this->_resource->getParentResource()->getAttribute('forControllerName') . '</b>'
-                . ' and script/action name <b>' . $this->_forActionName . '</b></center>';
-        }
-        return $contents;
-    }
-    
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+1H8Gf+hxaVyN0SEoTtZmSW==

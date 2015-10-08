@@ -1,126 +1,37 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Service
- * @subpackage Yahoo
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Result.php 8064 2008-02-16 10:58:39Z thomas $
- */
-
-
-/**
- * @category   Zend
- * @package    Zend_Service
- * @subpackage Yahoo
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Service_Yahoo_Result
-{
-    /**
-     * The title of the search entry
-     *
-     * @var string
-     */
-    public $Title;
-
-    /**
-     * The URL of the found object
-     *
-     * @var string
-     */
-    public $Url;
-
-    /**
-     * The URL for linking to the found object
-     *
-     * @var string
-     */
-    public $ClickUrl;
-
-    /**
-     * Result fields
-     *
-     * @var array
-     */
-    protected $_fields;
-
-    /**
-     * REST response fragment for the result
-     *
-     * @var DOMElement
-     */
-    protected $_result;
-
-    /**
-     * Object for XPath queries
-     *
-     * @var DOMXPath
-     */
-    protected $_xpath;
-
-
-    /**
-     * Initializes the result
-     *
-     * @param  DOMElement $result
-     * @return void
-     */
-    public function __construct(DOMElement $result)
-    {
-        // default fields for all search results:
-        $fields = array('Title', 'Url', 'ClickUrl');
-
-        // merge w/ child's fields
-        $this->_fields = array_merge($this->_fields, $fields);
-
-        $this->_xpath = new DOMXPath($result->ownerDocument);
-        $this->_xpath->registerNamespace('yh', $this->_namespace);
-
-        // add search results to appropriate fields
-
-        foreach ($this->_fields as $f) {
-            $query = "./yh:$f/text()";
-            $node = $this->_xpath->query($query, $result);
-            if ($node->length == 1) {
-                $this->{$f} = $node->item(0)->data;
-            }
-        }
-
-        $this->_result = $result;
-    }
-
-
-    /**
-     * Sets the Thumbnail property
-     *
-     * @return void
-     */
-    protected function _setThumbnail()
-    {
-        $node = $this->_xpath->query('./yh:Thumbnail', $this->_result);
-        if ($node->length == 1) {
-            /**
-             * @see Zend_Service_Yahoo_Image
-             */
-            require_once 'Zend/Service/Yahoo/Image.php';
-            $this->Thumbnail = new Zend_Service_Yahoo_Image($node->item(0), $this->_namespace);
-        } else {
-            $this->Thumbnail = null;
-        }
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

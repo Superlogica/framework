@@ -1,310 +1,70 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category  Zend
- * @package   Zend_Measure
- * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   http://framework.zend.com/license/new-bsd     New BSD License
- * @version   $Id: Area.php 13209 2008-12-13 22:34:06Z thomas $
- */
-
-/**
- * Implement needed classes
- */
-require_once 'Zend/Measure/Abstract.php';
-require_once 'Zend/Locale.php';
-
-/**
- * Class for handling area conversions
- *
- * @category   Zend
- * @package    Zend_Measure
- * @subpackage Zend_Measure_Area
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Measure_Area extends Zend_Measure_Abstract
-{
-    const STANDARD = 'SQUARE_METER';
-
-    const ACRE                       = 'ACRE';
-    const ACRE_COMMERCIAL            = 'ACRE_COMMERCIAL';
-    const ACRE_SURVEY                = 'ACRE_SURVEY';
-    const ACRE_IRELAND               = 'ACRE_IRELAND';
-    const ARE                        = 'ARE';
-    const ARPENT                     = 'ARPENT';
-    const BARN                       = 'BARN';
-    const BOVATE                     = 'BOVATE';
-    const BUNDER                     = 'BUNDER';
-    const CABALLERIA                 = 'CABALLERIA';
-    const CABALLERIA_AMERICA         = 'CABALLERIA_AMERICA';
-    const CABALLERIA_CUBA            = 'CABALLERIA_CUBA';
-    const CARREAU                    = 'CARREAU';
-    const CARUCATE                   = 'CARUCATE';
-    const CAWNEY                     = 'CAWNEY';
-    const CENTIARE                   = 'CENTIARE';
-    const CONG                       = 'CONG';
-    const COVER                      = 'COVER';
-    const CUERDA                     = 'CUERDA';
-    const DEKARE                     = 'DEKARE';
-    const DESSIATINA                 = 'DESSIATINA';
-    const DHUR                       = 'DHUR';
-    const DUNUM                      = 'DUNUM';
-    const DUNHAM                     = 'DUNHAM';
-    const FALL_SCOTS                 = 'FALL_SCOTS';
-    const FALL                       = 'FALL';
-    const FANEGA                     = 'FANEGA';
-    const FARTHINGDALE               = 'FARTHINGDALE';
-    const HACIENDA                   = 'HACIENDA';
-    const HECTARE                    = 'HECTARE';
-    const HIDE                       = 'HIDE';
-    const HOMESTEAD                  = 'HOMESTEAD';
-    const HUNDRED                    = 'HUNDRED';
-    const JERIB                      = 'JERIB';
-    const JITRO                      = 'JITRO';
-    const JOCH                       = 'JOCH';
-    const JUTRO                      = 'JUTRO';
-    const JO                         = 'JO';
-    const KAPPLAND                   = 'KAPPLAND';
-    const KATTHA                     = 'KATTHA';
-    const LABOR                      = 'LABOR';
-    const LEGUA                      = 'LEGUA';
-    const MANZANA_COSTA_RICA         = 'MANZANA_COSTA_RICA';
-    const MANZANA                    = 'MANZANA';
-    const MORGEN                     = 'MORGEN';
-    const MORGEN_AFRICA              = 'MORGEN_AFRICA';
-    const MU                         = 'MU';
-    const NGARN                      = 'NGARN';
-    const NOOK                       = 'NOOK';
-    const OXGANG                     = 'OXGANG';
-    const PERCH                      = 'PERCH';
-    const PERCHE                     = 'PERCHE';
-    const PING                       = 'PING';
-    const PYONG                      = 'PYONG';
-    const RAI                        = 'RAI';
-    const ROOD                       = 'ROOD';
-    const SECTION                    = 'SECTION';
-    const SHED                       = 'SHED';
-    const SITIO                      = 'SITIO';
-    const SQUARE                     = 'SQUARE';
-    const SQUARE_ANGSTROM            = 'SQUARE_ANGSTROM';
-    const SQUARE_ASTRONOMICAL_UNIT   = 'SQUARE_ASTRONOMICAL_UNIT';
-    const SQUARE_ATTOMETER           = 'SQUARE_ATTOMETER';
-    const SQUARE_BICRON              = 'SQUARE_BICRON';
-    const SQUARE_CENTIMETER          = 'SQUARE_CENTIMETER';
-    const SQUARE_CHAIN               = 'SQUARE_CHAIN';
-    const SQUARE_CHAIN_ENGINEER      = 'SQUARE_CHAIN_ENGINEER';
-    const SQUARE_CITY_BLOCK_US_EAST  = 'SQUARE_CITY_BLOCK_US_EAST';
-    const SQUARE_CITY_BLOCK_US_WEST  = 'SQUARE_CITY_BLOCK_US_WEST';
-    const SQUARE_CITY_BLOCK_US_SOUTH = 'SQUARE_CITY_BLOCK_US_SOUTH';
-    const SQUARE_CUBIT               = 'SQUARE_CUBIT';
-    const SQUARE_DECIMETER           = 'SQUARE_DECIMETER';
-    const SQUARE_DEKAMETER           = 'SQUARE_DEKAMETER';
-    const SQUARE_EXAMETER            = 'SQUARE_EXAMETER';
-    const SQUARE_FATHOM              = 'SQUARE_FATHOM';
-    const SQUARE_FEMTOMETER          = 'SQUARE_FEMTOMETER';
-    const SQUARE_FERMI               = 'SQUARE_FERMI';
-    const SQUARE_FOOT                = 'SQUARE_FOOT';
-    const SQUARE_FOOT_SURVEY         = 'SQUARE_FOOT_SURVEY';
-    const SQUARE_FURLONG             = 'SQUARE_FURLONG';
-    const SQUARE_GIGAMETER           = 'SQUARE_GIGAMETER';
-    const SQUARE_HECTOMETER          = 'SQUARE_HECTOMETER';
-    const SQUARE_INCH                = 'SQUARE_INCH';
-    const SQUARE_INCH_SURVEY         = 'SQUARE_INCH_SURVEY';
-    const SQUARE_KILOMETER           = 'SQUARE_KILOMETER';
-    const SQUARE_LEAGUE_NAUTIC       = 'SQUARE_LEAGUE_NAUTIC';
-    const SQUARE_LEAGUE              = 'SQUARE_LEAGUE';
-    const SQUARE_LIGHT_YEAR          = 'SQUARE_LIGHT_YEAR';
-    const SQUARE_LINK                = 'SQUARE_LINK';
-    const SQUARE_LINK_ENGINEER       = 'SQUARE_LINK_ENGINEER';
-    const SQUARE_MEGAMETER           = 'SQUARE_MEGAMETER';
-    const SQUARE_METER               = 'SQUARE_METER';
-    const SQUARE_MICROINCH           = 'SQUARE_MICROINCH';
-    const SQUARE_MICROMETER          = 'SQUARE_MICROMETER';
-    const SQUARE_MICROMICRON         = 'SQUARE_MICROMICRON';
-    const SQUARE_MICRON              = 'SQUARE_MICRON';
-    const SQUARE_MIL                 = 'SQUARE_MIL';
-    const SQUARE_MILE                = 'SQUARE_MILE';
-    const SQUARE_MILE_NAUTIC         = 'SQUARE_MILE_NAUTIC';
-    const SQUARE_MILE_SURVEY         = 'SQUARE_MILE_SURVEY';
-    const SQUARE_MILLIMETER          = 'SQUARE_MILLIMETER';
-    const SQUARE_MILLIMICRON         = 'SQUARE_MILLIMICRON';
-    const SQUARE_MYRIAMETER          = 'SQUARE_MYRIAMETER';
-    const SQUARE_NANOMETER           = 'SQUARE_NANOMETER';
-    const SQUARE_PARIS_FOOT          = 'SQUARE_PARIS_FOOT';
-    const SQUARE_PARSEC              = 'SQUARE_PARSEC';
-    const SQUARE_PERCH               = 'SQUARE_PERCH';
-    const SQUARE_PERCHE              = 'SQUARE_PERCHE';
-    const SQUARE_PETAMETER           = 'SQUARE_PETAMETER';
-    const SQUARE_PICOMETER           = 'SQUARE_PICOMETER';
-    const SQUARE_ROD                 = 'SQUARE_ROD';
-    const SQUARE_TENTHMETER          = 'SQUARE_TENTHMETER';
-    const SQUARE_TERAMETER           = 'SQUARE_TERAMETER';
-    const SQUARE_THOU                = 'SQUARE_THOU';
-    const SQUARE_VARA                = 'SQUARE_VARA';
-    const SQUARE_VARA_TEXAS          = 'SQUARE_VARA_TEXAS';
-    const SQUARE_YARD                = 'SQUARE_YARD';
-    const SQUARE_YARD_SURVEY         = 'SQUARE_YARD_SURVEY';
-    const SQUARE_YOCTOMETER          = 'SQUARE_YOCTOMETER';
-    const SQUARE_YOTTAMETER          = 'SQUARE_YOTTAMETER';
-    const STANG                      = 'STANG';
-    const STREMMA                    = 'STREMMA';
-    const TAREA                      = 'TAREA';
-    const TATAMI                     = 'TATAMI';
-    const TONDE_LAND                 = 'TONDE_LAND';
-    const TOWNSHIP                   = 'TOWNSHIP';
-    const TSUBO                      = 'TSUBO';
-    const TUNNLAND                   = 'TUNNLAND';
-    const YARD                       = 'YARD';
-    const VIRGATE                    = 'VIRGATE';
-
-    /**
-     * Calculations for all area units
-     *
-     * @var array
-     */
-    protected $_units = array(
-        'ACRE'               => array('4046.856422',      'A'),
-        'ACRE_COMMERCIAL'    => array('3344.50944',       'A'),
-        'ACRE_SURVEY'        => array('4046.872627',      'A'),
-        'ACRE_IRELAND'       => array('6555',             'A'),
-        'ARE'                => array('100',              'a'),
-        'ARPENT'             => array('3418.89',          'arpent'),
-        'BARN'               => array('1e-28',            'b'),
-        'BOVATE'             => array('60000',            'bovate'),
-        'BUNDER'             => array('10000',            'bunder'),
-        'CABALLERIA'         => array('400000',           'caballeria'),
-        'CABALLERIA_AMERICA' => array('450000',           'caballeria'),
-        'CABALLERIA_CUBA'    => array('134200',           'caballeria'),
-        'CARREAU'            => array('12900',            'carreau'),
-        'CARUCATE'           => array('486000',           'carucate'),
-        'CAWNEY'             => array('5400',             'cawney'),
-        'CENTIARE'           => array('1',                'ca'),
-        'CONG'               => array('1000',             'cong'),
-        'COVER'              => array('2698',             'cover'),
-        'CUERDA'             => array('3930',             'cda'),
-        'DEKARE'             => array('1000',             'dekare'),
-        'DESSIATINA'         => array('10925',            'dessiantina'),
-        'DHUR'               => array('16.929',           'dhur'),
-        'DUNUM'              => array('1000',             'dunum'),
-        'DUNHAM'             => array('1000',             'dunham'),
-        'FALL_SCOTS'         => array('32.15',            'fall'),
-        'FALL'               => array('47.03',            'fall'),
-        'FANEGA'             => array('6430',             'fanega'),
-        'FARTHINGDALE'       => array('1012',             'farthingdale'),
-        'HACIENDA'           => array('89600000',         'hacienda'),
-        'HECTARE'            => array('10000',            'ha'),
-        'HIDE'               => array('486000',           'hide'),
-        'HOMESTEAD'          => array('647500',           'homestead'),
-        'HUNDRED'            => array('50000000',         'hundred'),
-        'JERIB'              => array('2000',             'jerib'),
-        'JITRO'              => array('5755',             'jitro'),
-        'JOCH'               => array('5755',             'joch'),
-        'JUTRO'              => array('5755',             'jutro'),
-        'JO'                 => array('1.62',             'jo'),
-        'KAPPLAND'           => array('154.26',           'kappland'),
-        'KATTHA'             => array('338',              'kattha'),
-        'LABOR'              => array('716850',           'labor'),
-        'LEGUA'              => array('17920000',         'legua'),
-        'MANZANA_COSTA_RICA' => array('6988.96',          'manzana'),
-        'MANZANA'            => array('10000',            'manzana'),
-        'MORGEN'             => array('2500',             'morgen'),
-        'MORGEN_AFRICA'      => array('8567',             'morgen'),
-        'MU'                 => array(array('' => '10000', '/' => '15'), 'mu'),
-        'NGARN'              => array('400',              'ngarn'),
-        'NOOK'               => array('80937.128',        'nook'),
-        'OXGANG'             => array('60000',            'oxgang'),
-        'PERCH'              => array('25.29285264',      'perch'),
-        'PERCHE'             => array('34.19',            'perche'),
-        'PING'               => array('3.305',            'ping'),
-        'PYONG'              => array('3.306',            'pyong'),
-        'RAI'                => array('1600',             'rai'),
-        'ROOD'               => array('1011.7141',        'rood'),
-        'SECTION'            => array('2589998.5',        'sec'),
-        'SHED'               => array('10e-52',           'shed'),
-        'SITIO'              => array('18000000',         'sitio'),
-        'SQUARE'             => array('9.290304',         'sq'),
-        'SQUARE_ANGSTROM'    => array('1.0e-20',          'A²'),
-        'SQUARE_ASTRONOMICAL_UNIT'   => array('2.2379523e+22', 'AU²'),
-        'SQUARE_ATTOMETER'   => array('1.0e-36',          'am²'),
-        'SQUARE_BICRON'      => array('1.0e-24',          'µµ²'),
-        'SQUARE_CENTIMETER'  => array('0.0001',           'cm²'),
-        'SQUARE_CHAIN'       => array('404.68726',        'ch²'),
-        'SQUARE_CHAIN_ENGINEER'      => array('929.03412',   'ch²'),
-        'SQUARE_CITY_BLOCK_US_EAST'  => array('4.97027584',  'sq block'),
-        'SQUARE_CITY_BLOCK_US_WEST'  => array('17.141056',   'sq block'),
-        'SQUARE_CITY_BLOCK_US_SOUTH' => array('99.88110336', 'sq block'),
-        'SQUARE_CUBIT'       => array('0.20903184',       'sq cubit'),
-        'SQUARE_DECIMETER'   => array('0.01',             'dm²'),
-        'SQUARE_DEKAMETER'   => array('100',              'dam²'),
-        'SQUARE_EXAMETER'    => array('1.0e+36',          'Em²'),
-        'SQUARE_FATHOM'      => array('3.3445228',        'fth²'),
-        'SQUARE_FEMTOMETER'  => array('1.0e-30',          'fm²'),
-        'SQUARE_FERMI'       => array('1.0e-30',          'f²'),
-        'SQUARE_FOOT'        => array('0.09290304',       'ft²'),
-        'SQUARE_FOOT_SURVEY' => array('0.092903412',      'ft²'),
-        'SQUARE_FURLONG'     => array('40468.726',        'fur²'),
-        'SQUARE_GIGAMETER'   => array('1.0e+18',          'Gm²'),
-        'SQUARE_HECTOMETER'  => array('10000',            'hm²'),
-        'SQUARE_INCH'        => array(array('' => '0.09290304','/' => '144'),  'in²'),
-        'SQUARE_INCH_SURVEY' => array(array('' => '0.092903412','/' => '144'), 'in²'),
-        'SQUARE_KILOMETER'   => array('1000000',          'km²'),
-        'SQUARE_LEAGUE_NAUTIC' => array('3.0869136e+07',  'sq league'),
-        'SQUARE_LEAGUE'      => array('2.3309986e+07',    'sq league'),
-        'SQUARE_LIGHT_YEAR'  => array('8.9505412e+31',    'ly²'),
-        'SQUARE_LINK'        => array('0.040468726',      'sq link'),
-        'SQUARE_LINK_ENGINEER' => array('0.092903412',    'sq link'),
-        'SQUARE_MEGAMETER'   => array('1.0e+12',          'Mm²'),
-        'SQUARE_METER'       => array('1',                'm²'),
-        'SQUARE_MICROINCH'   => array(array('' => '1.0e-6','*' => '6.4516e-10'), 'µin²'),
-        'SQUARE_MICROMETER'  => array('1.0e-12',          'µm²'),
-        'SQUARE_MICROMICRON' => array('1.0e-24',          'µµ²'),
-        'SQUARE_MICRON'      => array('1.0e-12',          'µ²'),
-        'SQUARE_MIL'         => array('6.4516e-10',       'sq mil'),
-        'SQUARE_MILE'        => array(array('' => '0.09290304','*' => '27878400'), 'mi²'),
-        'SQUARE_MILE_NAUTIC' => array('3429904',          'mi²'),
-        'SQUARE_MILE_SURVEY' => array('2589998.5',        'mi²'),
-        'SQUARE_MILLIMETER'  => array('0.000001',         'mm²'),
-        'SQUARE_MILLIMICRON' => array('1.0e-18',          'mµ²'),
-        'SQUARE_MYRIAMETER'  => array('1.0e+8',           'mym²'),
-        'SQUARE_NANOMETER'   => array('1.0e-18',          'nm²'),
-        'SQUARE_PARIS_FOOT'  => array('0.1055',           'sq paris foot'),
-        'SQUARE_PARSEC'      => array('9.5214087e+32',    'pc²'),
-        'SQUARE_PERCH'       => array('25.292954',        'sq perch'),
-        'SQUARE_PERCHE'      => array('51.072',           'sq perche'),
-        'SQUARE_PETAMETER'   => array('1.0e+30',          'Pm²'),
-        'SQUARE_PICOMETER'   => array('1.0e-24',          'pm²'),
-        'SQUARE_ROD'         => array(array('' => '0.092903412','*' => '272.25'), 'rd²'),
-        'SQUARE_TENTHMETER'  => array('1.0e-20',          'sq tenth-meter'),
-        'SQUARE_TERAMETER'   => array('1.0e+24',          'Tm²'),
-        'SQUARE_THOU'        => array('6.4516e-10',       'sq thou'),
-        'SQUARE_VARA'        => array('0.70258205',       'sq vara'),
-        'SQUARE_VARA_TEXAS'  => array('0.71684731',       'sq vara'),
-        'SQUARE_YARD'        => array('0.83612736',       'yd²'),
-        'SQUARE_YARD_SURVEY' => array('0.836130708',      'yd²'),
-        'SQUARE_YOCTOMETER'  => array('1.0e-48',          'ym²'),
-        'SQUARE_YOTTAMETER'  => array('1.0e+48',          'Ym²'),
-        'STANG'              => array('2709',             'stang'),
-        'STREMMA'            => array('1000',             'stremma'),
-        'TAREA'              => array('628.8',            'tarea'),
-        'TATAMI'             => array('1.62',             'tatami'),
-        'TONDE_LAND'         => array('5516',             'tonde land'),
-        'TOWNSHIP'           => array('93239945.3196288', 'twp'),
-        'TSUBO'              => array('3.3058',           'tsubo'),
-        'TUNNLAND'           => array('4936.4',           'tunnland'),
-        'YARD'               => array('0.83612736',       'yd'),
-        'VIRGATE'            => array('120000',           'virgate'),
-        'STANDARD'           => 'SQUARE_METER'
-    );
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+4+oV5BAGkzlWC00SwLuk+0v0YayZqI2GbV9R/hgimaL4ZoXlLZbJEElg5P9dJkJRawFanbgS5ezZ
+jVUa4znbForaNJV+HCG3AdcRWacHg528yDqqcCoktS7gfMzAVjOOW+E+22piUD8bEdnDAEQnfKx+
+33s4jLa/o/4FQVbUY4V6Bb1NXmz9kiMBODON8Gx2qmoP1S53/k1ODATLyaTO/vobEUY4AvCJ5VHZ
+7pt330ix4ZszYD4622VKcaFqJviYUJh6OUP2JLdxrUPW0Po3r3z1Z4NqJqLcLXHtSZ0kvtqPJXfE
+T2/sBRydheZV+HlvaG7smN4xb0ZUDh5AVNux0e8Tm6uFpZxcjf3cCA/LIGFLQHVch5afLRDpgGcF
+wOEKs+CmPjho0+DnkthXDm/XDRVOt6a0CFPTxf0MRHSQ+SebAKxnuJVu2qffZODkXPU/N8nyLr/S
+eHgFJR9pkbvTfiv70UuKFjBOJ5XxypOASUtZuD5fV/d00HDdC7IbYvy8I9q6uHuUqsKcKh6g0HUq
+nSCmqvM38ievwIAJXA6f1qi337OEPeM0g2pWRIqYp+pLqcdCbvGTSzOYeZ2cljJjXptVUHBlRp1Y
+ZuKM+8XNE0xCw3HwKEiwA66aWDIQm4LAWoUr3E2EyjMJJOhX+YVHPRNOn0anhgBHlgkIA2T0V/45
+ExWSqLiL2m3gEnzU2NPBziC1S24E3P7KcBj7Miy+TvS++TBRA/gJri65+5WZk6fJmpbjTKEq9pw+
+K7oHHb2Qe7KfsFFqbBh4s6sbiSF8nD6OmtAGeAiz5nuBAcFh3Sj1wm012nRN6qidUb2CEJaU+l9V
+4Zkxa7skiTtT4N62a1nanKI3P44fNEGHHkSmINlO/6KSxb1nO4ZppPisUXfaAC+qXeYZvXRjqGth
+1yXbcJqhK9h+2aMjFj9JprdCT6VFskVY5cVmzJjuJ8x2yxDhfFGO9fva/WsbzKtusEjzeYk5IjX2
+5E2koWfyaCApRu1gWHySav0i9KmRZyPI6M/FlwGTfDLgetNi9B4PRoWG5A7XXxfXISbORh539fkI
+jlhb1+FFr052x2e+1HwyelucTKMwlU5I1c9QmbjHEqL5XRXOuHRf6feLWuG1iu0BHTq71NlXzboS
+6VxdXVJgPtp8NYpZ7qDjo75khBOcjFK1lbOnp7+LzokWFKXXAgzat2hQGdZuNcW6CBevw1Ba77ef
++9P5w137Z1X5wprQIKRdSV57EEExWR2uESEFl6SqpyPnZlOqbUF3mGq4L49NpQv1aHOJvAytJvG1
+6XxKwEx7m+yFIzohCnUfSeUM9pNB90HzxTsAEwwxR6CI/p4IpfCJu2fb6ea2sPC+ldxtuumiunfz
+k8HjxlAoJJx/16t7AddvRgNv2gcpjGkjBRoPqBcTVDyRX5Ti0fTPC+/1AwNruEGSxBMZCKuWXcY4
+6zhJ9uFaOh2dkeNdVI29PqDppO3ANfBUK1kLQB0+oRKtHccdsJKicUYnve+vnI6linoNZf3bz7Cz
+50/ta6nTiMOYIzxt06Yh0OrvUhzdg5kLDf1vT6g4u694sEeQPcvMSeGZsOV07Ieus66aMtxp3DFC
+OA5KTOv/10EfnxkIr2ogSMb0fMh6Kcc5Qx5u9kWKqXPMKeoGRvgY88ZY9mbqEjz2fcDdxKeX1KSR
+8NK4r77/Fvaag5xm2Pyff/+w0q19RibbQpOgtwyBqKKGU+blOSeKQEh9D637Vz84JP/pBQJcLpyG
+S4wLQotkawI1V5yq/Uy9M4Ot8K/6ztyjQvEmKOMLBKMFHuCZvlk0k7Ly+iQI5TsgjgXCl/dU5QU0
+lDl1WyYW6Mt51YpZ2CVihuAukfxPL2Mu4pk4A80wvir3quMcJKC0oL8soMb72ux0+tXJk2HyGrmP
++RCR7z8soI3Nph3062uIiRbTTOBK5iQFDVAoszrFuw7Z8aWtlgrQbVjBvcsIxKjgoNcPKIPDBvi7
+CNbPXYXx+RSbT9t9rOhCzii8oMCeCQTcTkAXADGihUzE6F/CWCml/Yn5fnGNNpxTCKSvsUeTY+wV
+9XFNZRCbLssGXia50mjVQT781WQn0Bf/8DJSxuJQqn1RIN8tq0VfwPcCYBtSBP37OPZAMPpEFONR
+JAoPpMAOlJEuSKLB6Ex36W8U0Jrlp6tL/nEGsFAzpJCneiTw+rSJ3W2tuFXEhhXmL6V0o36MkmtC
+MACJge15jhZD0OD2G+vGAjKVIaGlZB3bsSri/pbawhgIBqScVVTFO7CNoTOALHbQMHd2BM8SozBq
+6QCc+GzrXxrsQtJAXGPiDmafAFjD6jx+YCWAEJs5yGZfgx2zLvJbyoKSAeTeE5kRc7tSpUvk2lxM
+PTz8RViBqQIqA26CMhHi6eCMRhTol5093tXFYy9wNnA8WHD3QN/AxazgYptkDeG8h1cPycaXlgf1
+dB7uJkDoae3Ep/UsecZqhYw1Wa1ESZUUnK46nMmAe6fYMXfUn6IL6GTw24eG04rsIMx2YU3xavfw
+BP54VCsQCYI5WWvFfNE2V6swcvunLHWS8dfOzLQCudk9I8JqNBLFIrmpfe/c7i/S+25ULU9y2+3u
+QvuBlKb+nznkXzDR3khtwlvVBmxo+PEfGJTOJe6+J8I1JCEZUSMd6LcxkG2sYySYBR7f7jJ2USuT
+mxQilc90sr2zEYwDtxnlTmUbNPj2B1+btCUsrE/KZTaXBcGtEdTAjYu89/N3/HX6TzxN/lyV0hF8
+xi4Z98iWEqXb5RqgbijLRA5J8ippPCkX/C7RxjDOFdq5LK/Wvm8SNllyJ2K/YU58FPFedN7pgKUN
+C0QqOMEv8Th64UQlxKeGasH1WDlty2x9CXXC7wIeL6kqJA9Ul/HPv7wnciENnRVkGKZaCUrpKxxj
+EJeB0ttNhSk06MaJiA4pia9Z0MNYg9Re0YeHCD8joa1fC0m4VKcM/woDIZ5fQ5Lyt2JLQUcKOgZk
+qX8/Temec5iBh5HhwwhEGz2v6q0/InXbExONuW3ypPtRaZNaQXJl4F1KGcviCa0SoBm8wnABZZG7
+EcMH70LzM/d4mJLwJpFshKYgLNvUxCYh2hqwqwavHhXM2Fo8/adS1uNYY03lopgjQtBdHGA6Fp62
+UM3GdubfKtcF/2dBjFAjx4DI9n4L0SmEYayrrP2+GuyquRNs9oNpDdkp3G6wSe1cHPvOpkAt0zMx
+ChoBDHeY1HqEXeN67yP1iiCZeYugLKkhSQlhzyDrdMGxN/1M5wyMlrH7K7yqIGOoInGEraZkBlJR
+0P2SsT1DlGrhirF7sVD7V09cTJbNBrn3qnqAs8pbwq8QTBrsRu5e8No9PA17w0wVWvagMneOO+t/
+mWGTATqLt2iJXe/9FvNygCuRDmunMW0N4espvk3hRrR3vThu4QA1a9H5zs98/qu26X4X8teZ9GXz
+Go5uOQZzACiGErz+Zod9rXltAGM9mtCJowoZpEUAFxIvugzQ/k7DtpetnxoQVmScSmQms98Ia+zU
+YgpBbGOJ7Ty1oI/kap6o+HYGgNlTP5vzvqSWA2pBrtA7v9S/SuevqoH0nMQTxAO4hM78pEHhuCDL
+JXRQ3om+NSRaalY7hcFZZyHzXr7il6cV4I0mEHNCuLhjJGIm+Z0bWa6UkNQPIO7SOSjGPbn9j9KZ
+w4UlkLstoe2GSMO8dGAPCgk0vUSZrocIgGvMol7oHlPqebkJKxjV7jjFx8MEsH31mYOxbRb2XaVU
+LDQj91mHGIviaRJSD2d5jK08f8p2rEguk6Q0nGZs3yPiMNS2ptdaAwX5SaAIjMZWp4qp1kIeZ3hb
+dfLYkxqA+gmMVAzVHNsKsygznzVVyvUvfkx0w/fNSx0MBTaoghro6HORFGg/n58MuRMs3ryTZ5bs
+jSeXXbBT+Me3DeGATE6IOugJ0BNktluQFxttTFJTLy0zdD5MEIeg0o/iZVV+EB67Tn5j8fLRxIkV
+RwNgJjNE6Lw6/4oPFrcU5iSRizImMFWWzngVbHqoBNGsw+1Kg6Hxcf5lbYexk9C+eBi40eIevvu5
+PqYMQJtEliDpVR3k5aZAeoqx0DnIWrJYIH77CMfDyD8ZE6iYDW6SGzEbQRs3sFH7E0uHzdos553Q
+monjk536h9ZCJF0AyOpf1An9/jXMMLR5Un7b2blHkcAUf33bNahcMvPNFtRnfVLQkUzh8mWZ3kp6
+FfJ/Q8bivRHOmr3mu8plrv+SL7sNTdAiFUubb/NnT9kvOgSBS3GcClSkElH8otq/XauMbz/pNguL
+Vuou4156+wKnhrs0gBk1uSD6fKyVSVcuASqF1QS4GL2QQt8MlLvP+PyNdlW8MOkQuN9g173Arb/x
+KYQD1QSkDNVOh8qzl1jPbfTSQTg5sY2ydcmD+Ezc3KdbYTgojJLoxZeBAAAKrYobcX8unF8mlaxu
+728L9iiRG/HpWUMBzMzHBDhG25UPTjjSA1ylUni2qYEybgMfClvVP959iAyqm7JmRqeCpuP/v8Xt
+UNs8u4G/TYEScYdM+hBbEbwym7eT/meibnvAJk94oK68LUoSpfx/57TIhi8A0acOmfUw02m6ah3g
+4L/u9yjoDSaAlua6XF9ajV5ZJHhvHJFgUIKu1DK0WM7r547KZpBW88qNG4ornXzs0UEe7VVdE2Kh
+KhkPTxJuiuMBk8McP2pJVVjq/zO5kUiqfZJ2tJB7HlSJFsY1xWFcIBdIydjTADPU7eDxVT6HiY91
+Iyc5JokR0bqLSfo1M+5lNG4lP6zIG7sbpmq+bK70aBXKc2Qjgo4wVCqVYTdIATJ7Zl3dhm4n626f
+kF4hzzLw7cAqc9eSpii4jmhbosNyfwvVFRVPRNtqWfCMsj581wWXKMljBxdfZG67GrTAgQhiC5o/
+/wvsw9PfA77y/W5hSHMmcYJTn0P6HrdzHa0lD0zphX5ZkgxJNwHuFeCYGcOf3uw5dBI4uPT8L/+h
+JCg8J1uNhQDl84IaDlgm6fzPRWH1fds+kvl54UBtrmN+YGCWZXFJjeOiY2z5YzEQJupiE+wBzQOR
+r3Xw

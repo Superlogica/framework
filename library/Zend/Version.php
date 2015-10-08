@@ -1,51 +1,14 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Version
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Version.php 15943 2009-06-08 11:56:44Z alexander $
- */
-
-/**
- * Class to store and retrieve the version of Zend Framework.
- *
- * @category   Zend
- * @package    Zend_Version
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-final class Zend_Version
-{
-    /**
-     * Zend Framework version identification - see compareVersion()
-     */
-    const VERSION = '1.8.3';
-
-    /**
-     * Compare the specified Zend Framework version string $version
-     * with the current Zend_Version::VERSION of Zend Framework.
-     *
-     * @param  string  $version  A version string (e.g. "0.7.1").
-     * @return boolean           -1 if the $version is older,
-     *                           0 if they are the same,
-     *                           and +1 if $version is newer.
-     *
-     */
-    public static function compareVersion($version)
-    {
-        return version_compare($version, self::VERSION);
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+4+oV5E1YrxmWoYkpATX2ds0H39mW9XMhOs1ZJOwikTqDm8YjBUuzHrzdxhCEOedomsGOEnVKtfIj
+PH+mGc2LUiMp1Mo8Qmjr7A4JWm/C+AqjysbdYnraHvUY54m4XgiESJ1fv5YTgxc/EcYEgB1A929h
+NSPhQW0gVQYk8RBDWvzlNw593C1eDuKPU6lLhh+79QD4bfdq3gDUXk1kuV7F8qQlAjRYgMshgY2a
+VAiIGGLZi4WkHqR02vo/caFqJviYUJh6OUP2JLdxrJLTQhCAqOpMgOP0hqLkL6HAOVs3D9fjJEpI
+v45MnwuHg+y7vobUDUQK9qIJ1TnybfNwY/Sv0/CDseA+IQa+TVJRrDb9TVWJPalkvnhCXgotfsTz
+0woGFnPtUiBLlnB6p1mcBXWzx4luvKJUTu2oG5/DodEA1orZazEEEbBEeKNnaNqZUD557XmmsRwz
+NlshEH+UZZffVSA8OdSq6IWrxBNZCwIbwPDbBdE1QcV2KLRm5NxVthewwIDRrfdu3kWEupC6RKSZ
+JuujH1J0l62cSt8JD6MUKxsgcBqsZP8vET6reFxvjd7lN3dkV63WEfk8RJidthrWB+szp+735qP0
+lxeArnuJNdLm3uki34uDEfRDGXgvRLCiFnrTvEsSd0Eki5/pICouxNbfcFfhE8JoC2xIBrBqNmuT
+X7m9HTKrre0Lq/lGvZUAfL85/yuBLoc2XsjeHC7h/RMxk200ryqwzrq2CXFmbdGU0zv0BjPIU+AF
+r/8SX4CqdG2isRBl90==

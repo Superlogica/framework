@@ -1,410 +1,113 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Tag
- * @subpackage Cloud
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Cloud.php 15457 2009-05-09 15:19:13Z dasprid $
- */
-
-/**
- * @see Zend_Tag_Item
- */
-require_once 'Zend/Tag/Item.php';
-
-/**
- * @category   Zend
- * @package    Zend_Tag
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Tag_Cloud
-{
-    /**
-     * Decorator for the cloud
-     *
-     * @var Zend_Tag_Cloud_Decorator_Cloud
-     */
-    protected $_cloudDecorator = null;
-
-    /**
-     * Decorator for the tags
-     *
-     * @var Zend_Tag_Cloud_Decorator_Tag
-     */
-    protected $_tagDecorator = null;
-
-    /**
-     * List of all tags
-     *
-     * @var Zend_Tag_ItemList
-     */
-    protected $_tags = null;
-
-    /**
-     * Plugin loader for decorators
-     *
-     * @var Zend_Loader_PluginLoader
-     */
-    protected $_pluginLoader = null;
-
-    /**
-     * Option keys to skip when calling setOptions()
-     *
-     * @var array
-     */
-    protected $_skipOptions = array(
-        'options',
-        'config',
-    );
-
-    /**
-     * Create a new tag cloud with options
-     *
-     * @param mixed $options
-     */
-    public function __construct($options = null)
-    {
-        if ($options instanceof Zend_Config) {
-            $this->setConfig($options);
-        }
-
-        if (is_array($options)) {
-            $this->setOptions($options);
-        }
-    }
-    
-    /**
-     * Set options from Zend_Config
-     *
-     * @param  Zend_Config $config
-     * @return Zend_Tag_Cloud
-     */
-    public function setConfig(Zend_Config $config)
-    {
-        $this->setOptions($config->toArray());
-        
-        return $this;
-    }
-
-    /**
-     * Set options from array
-     *
-     * @param  array $options Configuration for Zend_Tag_Cloud
-     * @return Zend_Tag_Cloud
-     */
-    public function setOptions(array $options)
-    {
-        if (isset($options['prefixPath'])) {
-            $this->addPrefixPaths($options['prefixPath']);
-            unset($options['prefixPath']);
-        }
-        
-        foreach ($options as $key => $value) {
-            if (in_array(strtolower($key), $this->_skipOptions)) {
-                continue;
-            }
-
-            $method = 'set' . ucfirst($key);
-            if (method_exists($this, $method)) {
-                $this->$method($value);
-            }
-        }
-
-        return $this;
-    }
-
-    /**
-     * Set the tags for the tag cloud.
-     *
-     * $tags should be an array containing single tags as array. Each tag
-     * array should at least contain the keys 'title' and 'weight'. Optionally
-     * you may supply the key 'url', to which the tag links to. Any additional
-     * parameter in the array is silently ignored and can be used by custom
-     * decorators.
-     *
-     * @param  array $tags
-     * @return Zend_Tag_Cloud
-     */
-    public function setTags(array $tags)
-    {
-        // Validate and cleanup the tags
-        $itemList = $this->getItemList();
-        
-        foreach ($tags as $tag) {
-            if ($tag instanceof Zend_Tag_Taggable) {
-                $itemList[] = $tag;
-            } else if (is_array($tag)) {
-                $itemList[] = new Zend_Tag_Item($tag);
-            } else {
-                require_once 'Zend/Tag/Cloud/Exception.php';
-                throw new Zend_Tag_Cloud_Exception('Tag must be an instance of Zend_Tag_Taggable or an array');
-            }
-        }
-
-        return $this;
-    }
-    
-    /**
-     * Append a single tag to the cloud
-     *
-     * @param  Zend_Tag_Taggable|array $tag
-     * @return Zend_Tag_Cloud
-     */
-    public function appendTag($tag)
-    {
-        $tags = $this->getItemList();
-        if ($tag instanceof Zend_Tag_Taggable) {
-            $tags[] = $tag;   
-        } else if (is_array($tag)) {
-            $tags[] = new Zend_Tag_Item($tag);
-        } else {
-            require_once 'Zend/Tag/Cloud/Exception.php';
-            throw new Zend_Tag_Cloud_Exception('Tag must be an instance of Zend_Tag_Taggable or an array');
-        }
-        
-        return $this;
-    }
-    
-    /**
-     * Set the item list
-     *
-     * @param  Zend_Tag_ItemList $itemList
-     * @return Zend_Tag_Cloud
-     */
-    public function setItemList(Zend_Tag_ItemList $itemList)
-    {
-        $this->_tags = $itemList;
-        return $this;
-    }
-
-    /**
-     * Retrieve the item list
-     *
-     * If item list is undefined, creates one.
-     * 
-     * @return Zend_Tag_ItemList
-     */
-    public function getItemList()
-    {
-        if (null === $this->_tags) {
-            require_once 'Zend/Tag/ItemList.php';
-            $this->setItemList(new Zend_Tag_ItemList());
-        }
-        return $this->_tags;
-    }
-
-    /**
-     * Set the decorator for the cloud
-     *
-     * @param  mixed $decorator
-     * @return Zend_Tag_Cloud
-     */
-    public function setCloudDecorator($decorator)
-    {
-        $options = null;
-
-        if (is_array($decorator)) {
-            if (isset($decorator['options'])) {
-                $options = $decorator['options'];
-            }
-
-            if (isset($decorator['decorator'])) {
-                $decorator = $decorator['decorator'];
-            }
-        }
-
-        if (is_string($decorator)) {
-            $classname = $this->getPluginLoader()->load($decorator);
-            $decorator = new $classname($options);
-        }
-
-        if (!($decorator instanceof Zend_Tag_Cloud_Decorator_Cloud)) {
-            require_once 'Zend/Tag/Cloud/Exception.php';
-            throw new Zend_Tag_Cloud_Exception('Decorator is no instance of Zend_Tag_Cloud_Decorator_Cloud');
-        }
-
-        $this->_cloudDecorator = $decorator;
-
-        return $this;
-    }
-
-    /**
-     * Get the decorator for the cloud
-     *
-     * @return Zend_Tag_Cloud_Decorator_Cloud
-     */
-    public function getCloudDecorator()
-    {
-        if (null === $this->_cloudDecorator) {
-            $this->setCloudDecorator('htmlCloud');
-        }
-        return $this->_cloudDecorator;
-    }
-
-    /**
-     * Set the decorator for the tags
-     *
-     * @param  mixed $decorator
-     * @return Zend_Tag_Cloud
-     */
-    public function setTagDecorator($decorator)
-    {
-        $options = null;
-
-        if (is_array($decorator)) {
-            if (isset($decorator['options'])) {
-                $options = $decorator['options'];
-            }
-
-            if (isset($decorator['decorator'])) {
-                $decorator = $decorator['decorator'];
-            }
-        }
-
-        if (is_string($decorator)) {
-            $classname = $this->getPluginLoader()->load($decorator);
-            $decorator = new $classname($options);
-        }
-
-        if (!($decorator instanceof Zend_Tag_Cloud_Decorator_Tag)) {
-            require_once 'Zend/Tag/Cloud/Exception.php';
-            throw new Zend_Tag_Cloud_Exception('Decorator is no instance of Zend_Tag_Cloud_Decorator_Tag');
-        }
-
-        $this->_tagDecorator = $decorator;
-
-        return $this;
-    }
-
-    /**
-     * Get the decorator for the tags
-     *
-     * @return Zend_Tag_Cloud_Decorator_Tag
-     */
-    public function getTagDecorator()
-    {
-        if (null === $this->_tagDecorator) {
-            $this->setTagDecorator('htmlTag');
-        }
-        return $this->_tagDecorator;
-    }
-
-    /**
-     * Set plugin loaders for use with decorators
-     * 
-     * @param  Zend_Loader_PluginLoader_Interface $loader 
-     * @return Zend_Tag_Cloud
-     */
-    public function setPluginLoader(Zend_Loader_PluginLoader_Interface $loader)
-    {
-        $this->_pluginLoader = $loader;
-        return $this;
-    }
-    
-    /**
-     * Get the plugin loader for decorators
-     *
-     * @return Zend_Loader_PluginLoader
-     */
-    public function getPluginLoader()
-    {
-        if ($this->_pluginLoader === null) {
-            $prefix     = 'Zend_Tag_Cloud_Decorator_';
-            $pathPrefix = 'Zend/Tag/Cloud/Decorator/';
-
-            require_once 'Zend/Loader/PluginLoader.php';
-            $this->_pluginLoader = new Zend_Loader_PluginLoader(array($prefix => $pathPrefix));
-        }
-
-        return $this->_pluginLoader;
-    }
-    
-    /**
-     * Add many prefix paths at once
-     * 
-     * @param  array $paths 
-     * @return Zend_Tag_Cloud
-     */
-    public function addPrefixPaths(array $paths)
-    {
-        if (isset($paths['prefix']) && isset($paths['path'])) {
-            return $this->addPrefixPath($paths['prefix'], $paths['path']);
-        } 
-        
-        foreach ($paths as $path) {
-            if (!isset($path['prefix']) || !isset($path['path'])) {
-                continue;
-            }
-            
-            $this->addPrefixPath($path['prefix'], $path['path']);
-        }
-        
-        return $this;
-    }
-    
-    /**
-     * Add prefix path for plugin loader
-     *
-     * @param  string $prefix
-     * @param  string $path 
-     * @return Zend_Tag_Cloud
-     */
-    public function addPrefixPath($prefix, $path) 
-    {
-        $loader = $this->getPluginLoader();
-        $loader->addPrefixPath($prefix, $path);
-        
-        return $this;
-    }
-
-    /**
-     * Render the tag cloud
-     *
-     * @return string
-     */
-    public function render()
-    {
-        $tags = $this->getItemList();
-        
-        if (count($tags) === 0) {
-            return '';
-        }
-        
-        $tagsResult  = $this->getTagDecorator()->render($tags);
-        $cloudResult = $this->getCloudDecorator()->render($tagsResult);
-
-        return $cloudResult;
-    }
-
-    /**
-     * Render the tag cloud
-     *
-     * @return string
-     */
-    public function __toString()
-    {
-        try {
-            $result = $this->render();
-            return $result;
-        } catch (Exception $e) {
-            $message = "Exception caught by tag cloud: " . $e->getMessage()
-                     . "\nStack Trace:\n" . $e->getTraceAsString();
-            trigger_error($message, E_USER_WARNING);
-            return '';
-        }
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

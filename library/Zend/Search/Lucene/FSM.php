@@ -1,442 +1,133 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Search_Lucene
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_Search_Lucene_FSMAction */
-require_once 'Zend/Search/Lucene/FSMAction.php';
-
-/**
- * Abstract Finite State Machine
- *
- * Take a look on Wikipedia state machine description: http://en.wikipedia.org/wiki/Finite_state_machine
- *
- * Any type of Transducers (Moore machine or Mealy machine) also may be implemented by using this abstract FSM.
- * process() methods invokes a specified actions which may construct FSM output.
- * Actions may be also used to signal, that we have reached Accept State
- *
- * @category   Zend
- * @package    Zend_Search_Lucene
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-abstract class Zend_Search_Lucene_FSM
-{
-    /**
-     * Machine States alphabet
-     *
-     * @var array
-     */
-    private $_states = array();
-
-    /**
-     * Current state
-     *
-     * @var integer|string
-     */
-    private $_currentState = null;
-
-    /**
-     * Input alphabet
-     *
-     * @var array
-     */
-    private $_inputAphabet = array();
-
-    /**
-     * State transition table
-     *
-     * [sourceState][input] => targetState
-     *
-     * @var array
-     */
-    private $_rules = array();
-
-    /**
-     * List of entry actions
-     * Each action executes when entering the state
-     *
-     * [state] => action
-     *
-     * @var array
-     */
-    private $_entryActions =  array();
-
-    /**
-     * List of exit actions
-     * Each action executes when exiting the state
-     *
-     * [state] => action
-     *
-     * @var array
-     */
-    private $_exitActions =  array();
-
-    /**
-     * List of input actions
-     * Each action executes when entering the state
-     *
-     * [state][input] => action
-     *
-     * @var array
-     */
-    private $_inputActions =  array();
-
-    /**
-     * List of input actions
-     * Each action executes when entering the state
-     *
-     * [state1][state2] => action
-     *
-     * @var array
-     */
-    private $_transitionActions =  array();
-
-    /**
-     * Finite State machine constructor
-     *
-     * $states is an array of integers or strings with a list of possible machine states
-     * constructor treats fist list element as a sturt state (assignes it to $_current state).
-     * It may be reassigned by setState() call.
-     * States list may be empty and can be extended later by addState() or addStates() calls.
-     *
-     * $inputAphabet is the same as $states, but represents input alphabet
-     * it also may be extended later by addInputSymbols() or addInputSymbol() calls.
-     *
-     * $rules parameter describes FSM transitions and has a structure:
-     * array( array(sourseState, input, targetState[, inputAction]),
-     *        array(sourseState, input, targetState[, inputAction]),
-     *        array(sourseState, input, targetState[, inputAction]),
-     *        ...
-     *      )
-     * Rules also can be added later by addRules() and addRule() calls.
-     *
-     * FSM actions are very flexible and may be defined by addEntryAction(), addExitAction(),
-     * addInputAction() and addTransitionAction() calls.
-     *
-     * @param array $states
-     * @param array $inputAphabet
-     * @param array $rules
-     */
-    public function __construct($states = array(), $inputAphabet = array(), $rules = array())
-    {
-        $this->addStates($states);
-        $this->addInputSymbols($inputAphabet);
-        $this->addRules($rules);
-    }
-
-    /**
-     * Add states to the state machine
-     *
-     * @param array $states
-     */
-    public function addStates($states)
-    {
-        foreach ($states as $state) {
-            $this->addState($state);
-        }
-    }
-
-    /**
-     * Add state to the state machine
-     *
-     * @param integer|string $state
-     */
-    public function addState($state)
-    {
-        $this->_states[$state] = $state;
-
-        if ($this->_currentState === null) {
-            $this->_currentState = $state;
-        }
-    }
-
-    /**
-     * Set FSM state.
-     * No any action is invoked
-     *
-     * @param integer|string $state
-     * @throws Zend_Search_Exception
-     */
-    public function setState($state)
-    {
-        if (!isset($this->_states[$state])) {
-            require_once 'Zend/Search/Exception.php';
-            throw new Zend_Search_Exception('State \'' . $state . '\' is not on of the possible FSM states.');
-        }
-
-        $this->_currentState = $state;
-    }
-
-    /**
-     * Get FSM state.
-     *
-     * @return integer|string $state|null
-     */
-    public function getState()
-    {
-        return $this->_currentState;
-    }
-
-    /**
-     * Add symbols to the input alphabet
-     *
-     * @param array $inputAphabet
-     */
-    public function addInputSymbols($inputAphabet)
-    {
-        foreach ($inputAphabet as $inputSymbol) {
-            $this->addInputSymbol($inputSymbol);
-        }
-    }
-
-    /**
-     * Add symbol to the input alphabet
-     *
-     * @param integer|string $inputSymbol
-     */
-    public function addInputSymbol($inputSymbol)
-    {
-        $this->_inputAphabet[$inputSymbol] = $inputSymbol;
-    }
-
-
-    /**
-     * Add transition rules
-     *
-     * array structure:
-     * array( array(sourseState, input, targetState[, inputAction]),
-     *        array(sourseState, input, targetState[, inputAction]),
-     *        array(sourseState, input, targetState[, inputAction]),
-     *        ...
-     *      )
-     *
-     * @param array $rules
-     */
-    public function addRules($rules)
-    {
-        foreach ($rules as $rule) {
-            $this->addrule($rule[0], $rule[1], $rule[2], isset($rule[3])?$rule[3]:null);
-        }
-    }
-
-    /**
-     * Add symbol to the input alphabet
-     *
-     * @param integer|string $sourceState
-     * @param integer|string $input
-     * @param integer|string $targetState
-     * @param Zend_Search_Lucene_FSMAction|null $inputAction
-     * @throws Zend_Search_Exception
-     */
-    public function addRule($sourceState, $input, $targetState, $inputAction = null)
-    {
-        if (!isset($this->_states[$sourceState])) {
-            require_once 'Zend/Search/Exception.php';
-            throw new Zend_Search_Exception('Undefined source state (' . $sourceState . ').');
-        }
-        if (!isset($this->_states[$targetState])) {
-            require_once 'Zend/Search/Exception.php';
-            throw new Zend_Search_Exception('Undefined target state (' . $targetState . ').');
-        }
-        if (!isset($this->_inputAphabet[$input])) {
-            require_once 'Zend/Search/Exception.php';
-            throw new Zend_Search_Exception('Undefined input symbol (' . $input . ').');
-        }
-
-        if (!isset($this->_rules[$sourceState])) {
-            $this->_rules[$sourceState] = array();
-        }
-        if (isset($this->_rules[$sourceState][$input])) {
-            require_once 'Zend/Search/Exception.php';
-            throw new Zend_Search_Exception('Rule for {state,input} pair (' . $sourceState . ', '. $input . ') is already defined.');
-        }
-
-        $this->_rules[$sourceState][$input] = $targetState;
-
-
-        if ($inputAction !== null) {
-            $this->addInputAction($sourceState, $input, $inputAction);
-        }
-    }
-
-
-    /**
-     * Add state entry action.
-     * Several entry actions are allowed.
-     * Action execution order is defined by addEntryAction() calls
-     *
-     * @param integer|string $state
-     * @param Zend_Search_Lucene_FSMAction $action
-     */
-    public function addEntryAction($state, Zend_Search_Lucene_FSMAction $action)
-    {
-        if (!isset($this->_states[$state])) {
-            require_once 'Zend/Search/Exception.php';
-            throw new Zend_Search_Exception('Undefined state (' . $state. ').');
-        }
-
-        if (!isset($this->_entryActions[$state])) {
-            $this->_entryActions[$state] = array();
-        }
-
-        $this->_entryActions[$state][] = $action;
-    }
-
-    /**
-     * Add state exit action.
-     * Several exit actions are allowed.
-     * Action execution order is defined by addEntryAction() calls
-     *
-     * @param integer|string $state
-     * @param Zend_Search_Lucene_FSMAction $action
-     */
-    public function addExitAction($state, Zend_Search_Lucene_FSMAction $action)
-    {
-        if (!isset($this->_states[$state])) {
-            require_once 'Zend/Search/Exception.php';
-            throw new Zend_Search_Exception('Undefined state (' . $state. ').');
-        }
-
-        if (!isset($this->_exitActions[$state])) {
-            $this->_exitActions[$state] = array();
-        }
-
-        $this->_exitActions[$state][] = $action;
-    }
-
-    /**
-     * Add input action (defined by {state, input} pair).
-     * Several input actions are allowed.
-     * Action execution order is defined by addInputAction() calls
-     *
-     * @param integer|string $state
-     * @param integer|string $input
-     * @param Zend_Search_Lucene_FSMAction $action
-     */
-    public function addInputAction($state, $inputSymbol, Zend_Search_Lucene_FSMAction $action)
-    {
-        if (!isset($this->_states[$state])) {
-            require_once 'Zend/Search/Exception.php';
-            throw new Zend_Search_Exception('Undefined state (' . $state. ').');
-        }
-        if (!isset($this->_inputAphabet[$inputSymbol])) {
-            require_once 'Zend/Search/Exception.php';
-            throw new Zend_Search_Exception('Undefined input symbol (' . $inputSymbol. ').');
-        }
-
-        if (!isset($this->_inputActions[$state])) {
-            $this->_inputActions[$state] = array();
-        }
-        if (!isset($this->_inputActions[$state][$inputSymbol])) {
-            $this->_inputActions[$state][$inputSymbol] = array();
-        }
-
-        $this->_inputActions[$state][$inputSymbol][] = $action;
-    }
-
-    /**
-     * Add transition action (defined by {state, input} pair).
-     * Several transition actions are allowed.
-     * Action execution order is defined by addTransitionAction() calls
-     *
-     * @param integer|string $sourceState
-     * @param integer|string $targetState
-     * @param Zend_Search_Lucene_FSMAction $action
-     */
-    public function addTransitionAction($sourceState, $targetState, Zend_Search_Lucene_FSMAction $action)
-    {
-        if (!isset($this->_states[$sourceState])) {
-            require_once 'Zend/Search/Exception.php';
-            throw new Zend_Search_Exception('Undefined source state (' . $sourceState. ').');
-        }
-        if (!isset($this->_states[$targetState])) {
-            require_once 'Zend/Search/Exception.php';
-            throw new Zend_Search_Exception('Undefined source state (' . $targetState. ').');
-        }
-
-        if (!isset($this->_transitionActions[$sourceState])) {
-            $this->_transitionActions[$sourceState] = array();
-        }
-        if (!isset($this->_transitionActions[$sourceState][$targetState])) {
-            $this->_transitionActions[$sourceState][$targetState] = array();
-        }
-
-        $this->_transitionActions[$sourceState][$targetState][] = $action;
-    }
-
-
-    /**
-     * Process an input
-     *
-     * @param mixed $input
-     * @throws Zend_Search_Exception
-     */
-    public function process($input)
-    {
-        if (!isset($this->_rules[$this->_currentState])) {
-            require_once 'Zend/Search/Exception.php';
-            throw new Zend_Search_Exception('There is no any rule for current state (' . $this->_currentState . ').');
-        }
-        if (!isset($this->_rules[$this->_currentState][$input])) {
-            require_once 'Zend/Search/Exception.php';
-            throw new Zend_Search_Exception('There is no any rule for {current state, input} pair (' . $this->_currentState . ', ' . $input . ').');
-        }
-
-        $sourceState = $this->_currentState;
-        $targetState = $this->_rules[$this->_currentState][$input];
-
-        if ($sourceState != $targetState  &&  isset($this->_exitActions[$sourceState])) {
-            foreach ($this->_exitActions[$sourceState] as $action) {
-                $action->doAction();
-            }
-        }
-        if (isset($this->_inputActions[$sourceState]) &&
-            isset($this->_inputActions[$sourceState][$input])) {
-            foreach ($this->_inputActions[$sourceState][$input] as $action) {
-                $action->doAction();
-            }
-        }
-
-
-        $this->_currentState = $targetState;
-
-        if (isset($this->_transitionActions[$sourceState]) &&
-            isset($this->_transitionActions[$sourceState][$targetState])) {
-            foreach ($this->_transitionActions[$sourceState][$targetState] as $action) {
-                $action->doAction();
-            }
-        }
-        if ($sourceState != $targetState  &&  isset($this->_entryActions[$targetState])) {
-            foreach ($this->_entryActions[$targetState] as $action) {
-                $action->doAction();
-            }
-        }
-    }
-
-    public function reset()
-    {
-        if (count($this->_states) == 0) {
-            require_once 'Zend/Search/Exception.php';
-            throw new Zend_Search_Exception('There is no any state defined for FSM.');
-        }
-
-        $this->_currentState = $this->_states[0];
-    }
-}
-
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

@@ -2,14 +2,34 @@
 $baseUrl = Zend_Controller_Front::getInstance()->getBaseUrl();
 $location = new Superlogica_Location();
 $location->viaProxy(true);
+
 $session = Application_Helpers_Session::getInstance();
+$configVertical =  $session->config_vertical;
+$mostrarMenuTickets =  $session->mostrarMenuTickets;
+
+$logoTopo = $configVertical['logotopo']['url'];
+$exibirAvisos = $configVertical['avisos']['exibir'];
+$exibirLinkContaSuperlogica = $configVertical['menuusuario']['exibircontasuperlogica'];
+$exibirLinkContaWhiteLabel = $configVertical['menuusuario']['exibirareadoclientewhitelabel'];
+$nomeEmpresaWhiteLabel = $configVertical['nomedaempresa'];
+
+$exibirBarraImplantancao = $configVertical['exibirbarraimplantacao'];
+$urlAssistenteImplantacao = $configVertical['urlassistenteimplantacao'];
+$exibirAtendimento = $configVertical['menuusuario']['exibiratendimento'];
+$emailSuporte = $configVertical['suporte']['email'];
+
 ?>
+<style>
+.top-header .top-nav .nav-right > li {
+    margin-left: 4px;
+}
+</style>
 <header class="clearfix">
 
     <a class="logo bg-superlogica blocoEscondido" href="<?=$location->setParams(array())->setController('index')->setAction('index')->toString()?>">
         <div>
             <span>
-                <img src="\images\logo_topo.png" />
+                <img src="<?php echo $logoTopo;?>" />
             </span>
         </div>
     </a>
@@ -25,9 +45,19 @@ $session = Application_Helpers_Session::getInstance();
             <li class="dropdown">
         <ol class="breadcrumb-alt">
             <li id="licencas-topo">
-                <a href="" class="licencas-topo" comportamentos="hint">
+                <a href="" class="licencas-topo" comportamentos="mostraFormBreadCrumbs hint" title="Clique aqui para mudar de empresa.">
                     <?php echo $session->licenca; ?>
                 </a>
+                <div id="div-licencas-topo" class="">
+                    <?php                        
+                         if( APPLICATION_ENV == 'production'){
+                            echo $this->licencas;
+                        }else{
+                            echo $session->licenca;
+                        };
+                    ?>
+                </div>
+
             </li>
             <?php
             
@@ -42,17 +72,75 @@ $session = Application_Helpers_Session::getInstance();
             <?php } ?>
         </ol>
                 </li>
-                </ul>
-        <ul class="nav-right pull-right list-unstyled">
-            <li class="dropdown">
+                </ul>        
+        <ul class="nav-right pull-right list-unstyled">          
+            
+                    
+        <?php
+            if ($exibirBarraImplantancao &&  $session->vencimentoSoftware ) {
+                $locationTrial = new Superlogica_Location();
+                if (( $locationTrial->getController() != 'ajuda' ) && ( $locationTrial->getController() != 'index')) {
+                    ?>
+                    <li class="dropdown text-normal nav-profile" comportamentos=" ">
+                        <a href="<?php echo $urlAssistenteImplantacao; ?>" class="" data-toggle="" style="background-color: #a3c86d;color: white; padding-left: 5px; padding-right: 5px;">
+                            <img src="<?= APPLICATION_CLIENT_TEMA_URL ?>/img/play.png" title="Continuar implantação do sistema" alt="Continuar implantação do sistema" class="img-circle img30_30">
+                            <span class="hidden-xs">
+                                <span data-i18n="Continuar implantação " title="Continuar implantação do sistema" style="padding-left: 1px; padding-right: 14px;">Continuar implantação&nbsp;&nbsp;</span>
+                            </span>
+                        </a>
+                    </li>
+                    <?php
+                }
+            }
+            ?>  
+ 
+            
+       <?php if($mostrarMenuTickets){ ?>
+            <li>
                 <?php
-                $locationAvisos = new Superlogica_Location();
-                $locationAvisos->setController("avisos")->setAction("index")->setParams(array());
-                ?>                
-                <a href="<?php echo $locationAvisos;?>" title="Avisos">
-                    <i class="fa fa-comment-o"></i>
-                </a>
+//                $dados = Superlogica_Response::getResponse();
+                $contTickets =   $session->ticketsNaoEncerrados;
+                $locationTickets = new Superlogica_Location();
+                $locationTickets->setController("tickets")->setAction("index")->setParams(array())->setParam('status',0)->viaProxy(true);
+                ?>
+                    <a href="<?php echo $locationTickets;?>" title="Tickets">
+                        <i class="fa fa-lg fa-ticket" style="line-height: 22px; vertical-align: 0;"></i>
+                        <?php if ( $contTickets ) {?>
+                            <span class="badge badge-success"><?php echo $contTickets > 20 ? '20+' : $contTickets;?></span>
+                        <?php } ?>
+                    </a>
+                <?php ?>
             </li>
+            <li>&nbsp;&nbsp;</li> 
+        <?php } ?>   
+            
+           <?php if($exibirAvisos){?>
+            
+            <li>
+                    <?php
+                    $session = Application_Helpers_Session::getInstance();
+                    $naoLidos = $session->avisosNaoLidos;
+
+                    $locationAvisos = new Superlogica_Location();
+                    $locationAvisos->setController("avisos")->setAction("index")->setParams(array());
+                    ?>                
+                    <a href="<?php echo $locationAvisos;?>" title="Coisas Novas e Legais">
+                        <i class="fa fa-lg fa-gift" style="line-height: normal; vertical-align: 0;"></i>
+                        <?php if ($naoLidos > 0) { ?>
+                            <span class="badge badge-notify"><?php echo $naoLidos > 20 ? '20+' : $naoLidos; ?></span>
+                        <?php } ?>
+                    </a>
+                </li>
+                <li>&nbsp;&nbsp;</li> 
+            <?php } ?>
+                
+          <?php if( $exibirAtendimento ){?>     
+                <li>
+                    <a href="<?= $location->setParams(array())->setController('suporte')->setAction('index')->toString(); ?>" title="Atendimento">    
+                       <i class="fa fa-lg fa fa-microphone" style="line-height: 22px; vertical-align: 0; "></i>
+                    </a>
+                </li>
+          <?php } ?>              
             <li class="dropdown text-normal nav-profile" comportamentos="usuarioHover">
                 <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
                     <img src="<?=APPLICATION_CLIENT_TEMA_URL?>/img/usuario.png" title="<?=$session->ST_APELIDO_USU; ?>" alt="<?=$session->ST_APELIDO_USU; ?>" class="img-circle img30_30">
@@ -84,6 +172,12 @@ $session = Application_Helpers_Session::getInstance();
                         </a>
                     </li>
                     <li class="item-menu-usuario">
+                        <a href="<?=$location->setParams(array())->setController('filadesms')->setAction('index')->toString();?>">
+                        <i class="fa fa-file-text-o"></i>
+                        <span data-i18n="Histórico de sms enviados">Histórico de SMS enviados</span>
+                        </a>
+                    </li>
+                    <li class="item-menu-usuario">
                         <?php 
                           $nomeMenu = (APPLICATION_ID == 'condor') ? 'Documentos' : 'Histórico impressões';
                         ?>
@@ -98,21 +192,31 @@ $session = Application_Helpers_Session::getInstance();
                         <span data-i18n="Histórico proc. em lote">Histórico proc. em lote</span>
                         </a>
                     </li>
+                    <?php if($exibirLinkContaSuperlogica){?>
                     <li class="list-group-item item-menu-usuario-destaque">
-                        <a href="<?=$location->setParams(array())->setController('contasuperlogica')->setAction('index')->toString();?>">
+                        <a href="#" comportamentos="abrirFormStatus">
                             <i class="fa fa-user"></i>
-                        <span data-i18n="Minha conta na Superlógica">Minha conta na Superlógica</span>
+                            <span data-i18n="Minha conta na Superlógica">Minha conta na Superlógica</span>
                         </a>
-                    </li>                    
+                    </li> 
+                     <?php  } ?>                        
+                    <?php if ($exibirLinkContaWhiteLabel) { ?>
+                        <li class="list-group-item item-menu-usuario-destaque">
+                            <a href="<?= $location->setParams(array())->setController('contaswhitelabel')->setAction('ivalue')->toString(); ?>">
+                                <i class="fa fa-user"></i>
+                                <span data-i18n="Minha conta na <?php echo $nomeEmpresaWhiteLabel; ?>">Minha conta na <?php echo $nomeEmpresaWhiteLabel; ?></span>
+                            </a>
+                        </li>
+                    <?php } ?>
                     <li class="panel-footer item-menu-usuario-destaque">
-                        <a href="<?="$baseUrl/auth/logout" ?>" comportamentos="logout">
+                        <a href="<?="$baseUrl/auth/logout" ?>" comportamentos="">
                             <i class="fa fa-sign-out"></i>
-                            <span data-i18n="Sair" comportamentos="logout">Sair</span>
+                            <span data-i18n="Sair" comportamentos="">Sair</span>
                         </a>
                     </li>                       
                 </ul>
-            </li>
-        </ul>
+            </li>            
+        </ul>                          
     </div>
 
 </header>

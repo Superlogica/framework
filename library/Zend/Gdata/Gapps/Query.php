@@ -1,122 +1,29 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Gapps
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * Zend_Gdata_Query
- */
-require_once('Zend/Gdata/Query.php');
-
-/**
- * Zend_Gdata_Gapps
- */
-require_once('Zend/Gdata/Gapps.php');
-
-/**
- * Assists in constructing queries for Google Apps entries. This class 
- * provides common methods used by all other Google Apps query classes.
- *
- * This class should never be instantiated directly. Instead, instantiate a 
- * class which inherits from this class.
-  * 
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Gapps
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-abstract class Zend_Gdata_Gapps_Query extends Zend_Gdata_Query
-{
-    
-    /**
-     * The domain which is being administered via the Provisioning API.
-     *
-     * @var string
-     */
-    protected $_domain = null;
-    
-    /**
-     * Create a new instance.
-     * 
-     * @param string $domain (optional) The Google Apps-hosted domain to use 
-     *          when constructing query URIs.
-     */
-    public function __construct($domain = null)
-    {
-        parent::__construct();
-        $this->_domain = $domain;
-    }
-    
-    /**
-     * Set domain for this service instance. This should be a fully qualified 
-     * domain, such as 'foo.example.com'.
-     *
-     * This value is used when calculating URLs for retrieving and posting 
-     * entries. If no value is specified, a URL will have to be manually 
-     * constructed prior to using any methods which interact with the Google 
-     * Apps provisioning service.
-     * 
-     * @param string $value The domain to be used for this session.
-     */
-    public function setDomain($value)
-    {
-        $this->_domain = $value;
-    }
-
-    /**
-     * Get domain for this service instance. This should be a fully qualified 
-     * domain, such as 'foo.example.com'. If no domain is set, null will be 
-     * returned.
-     * 
-     * @see setDomain
-     * @return string The domain to be used for this session, or null if not 
-     *          set.
-     */
-    public function getDomain()
-    {
-        return $this->_domain;
-    }
-    
-    /**
-     * Returns the base URL used to access the Google Apps service, based 
-     * on the current domain. The current domain can be temporarily 
-     * overridden by providing a fully qualified domain as $domain.
-     *
-     * @see setDomain
-     * @param string $domain (optional) A fully-qualified domain to use 
-     *          instead of the default domain for this service instance.
-     */
-     public function getBaseUrl($domain = null)
-     {
-         if ($domain !== null) {
-             return Zend_Gdata_Gapps::APPS_BASE_FEED_URI . '/' . $domain;
-         }
-         else if ($this->_domain !== null) {
-             return Zend_Gdata_Gapps::APPS_BASE_FEED_URI . '/' . $this->_domain;
-         }
-         else {
-             require_once 'Zend/Gdata/App/InvalidArgumentException.php';
-             throw new Zend_Gdata_App_InvalidArgumentException(
-                 'Domain must be specified.');
-         }
-     }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+4+oV5CFIGiTyExVeRMVNvATkaM8sOwT2OEHI1hUiMJw5Zefin7c1poLEB2kXCem9RYcru8a5Cjcd
+kLWg8+ByW6mVcU3rZLxiRMTMkIvOoPPTL/k6aal1kq+p+S14wu7RTDQ5dDzHPGYkPbVmBri16JuS
+wIapa3R+Sq8xDwZ52kcs6l7t8gikXuEjj0UpH4rhxo4QYmiWrIyUFIZSxlOo4HubHwV8+2crj0+W
+QaF0gUsEo8WpwtcANYyCcaFqJviYUJh6OUP2JLdxrM5XocrcxcuWe3NTHKKUwTfu//8QJvOuYc9o
+q3rZ4WUJwcrCLR7tHneq7HbpSwu8C7u9QkVsezlHLAJZMokOhDtcldybCK4nsQuSPuWccu4mxUAA
+fxDNrpeENWxHMvdfvjXMiigGR6vaqc4UhWr4d/4E3OrZGnvxNmAaizcH8yDukWVlYsyizIP24nVv
+mUX1UxedHVMMB1EgPIxbyDy/fN/DhlE0i8ujxkuf1mSEum535Lbd0LPVuzZ33FPupCj/ssyceJ8u
+V7v4hPw+SzKGX8hONTZup24tiR1PZldo8wO1KVKOhAbGS0t8vMkdJax5eRTQBuGDNM6/It4ZwlOX
+Hq5xXhBT1KRPcrODyvPgdfixGn+7gnflbWADLVBO8A2f+Ju098Vzgd8zlOuSj//lFziruXVsM8JL
+8Cow2bTIjw8wL9CxqPhbTt1r/VHtjFgAlKMqpcPDFXN7IzT5htHHUivHjv6Xu5IEu/0/NQf2xaLN
+QZrKL+9mWFRPqk4qRFPmJ9VlHhsGh8o6SbuBKCRchmVdGbJ7qy+QFV22dp5Q105Gd+wQ5M9ofEo2
+h7Ysn6BLhx2IcsjrQtq4vp3sOJYE4Ye6LO/Q6fh8V/KeB4jfnJUkqKZ3o93PpzC+/jrPxOUHaLG/
++vPMWT7vLpXb2o/DC3ybQ/23+UDpB+6o+8uBMdawoKipB3XboFE5tIE8b8Fshv79K6U3ponsRV/O
+Ot9J4VqhT4RyMHy5jNJ42nOAZrOU6eltl0Jsf2U9njQCkpcTEnoKTPbqqC4WtwnImxc8PIFpTg9g
+wNy8fWJgLaObckG3C+jVZ+ycrjJLAqzSS+xSDCBH4RmbCKZ2IWRJLNr4glsM2D+FGGkVIV/RhcbV
++MvuhzOo7/3f1AdEJLtVlGz28fNPiB1K3tZSkuUtxdNFquOBg0oYHYyh/MVTBhSrfz20uWQ8o3HJ
+LLHqmmbhQtpDwAvhSeETHe1FivQxeWpN5S0dhPBlnL48Mg1dLQ+w//sVzpApn4a5jY5gH5nWEYi+
+LK9Y1FpEVuFrU17QTJYQhTqH96bGDyGMaJr/Me5/SD+/X4hK7jaCGPgzLG6AUBBQ6z5sACjTtJvv
+vQN5CvPA5nthAsWUHokoHGlmr/vZxvThi024j5AoS3CFIiQ0D/vrBvULB3dEPSDM5dg2ee8OLfji
+NRLFVP+FJAJv9buH0NbSq4TKMdClp9kuoj4adocyZP4EGdwYDh9QlxkY+IRQNPVVJh34EESdZGeu
+c+ekOUFo6I4tdltd/kIQi7okM0i7aNYp3C/UWiz3tzXxz3DitL1ZHIbCLsoCPidGxQSHvkK12am0
+GSIT8XTq3qIlkSxp3+tJrqsAhKqKS4VpxI5dazAI2Muw4A1xtcqg4M3qZvbL7bt4UUzMTzSS7RId
+15Ao+hZgQwL5v/P3nlc/E+DGOnjNCWZF+ljfDj3EA7WPIiKvMxKlLVkjth8O/OC7NI95ACHa8Dhe
+yhxTmnhAm2qlKQNSiPe/VHSeDeZGbPkNWdAgwaIXux4l5mXFZYKfCy2FYi43FXyngeKG/8XwhDwD
+3i7vLpai75YSerwqITNvJDlsxYDWNovwi9UTFaiHTIAKabCIh/MItlgy0uBppDNeAU4ADHt0DgpJ
+vxrkvNhCm4mMoAuvO+U7

@@ -1,174 +1,75 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Gdata
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * @see Zend_Gdata_Extension
- */
-require_once 'Zend/Gdata/Extension.php';
-
-/**
- * @see Zend_Gdata_Feed
- */
-require_once 'Zend/Gdata/Feed.php';
-
-/**
- * Represents the gd:feedLink element
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Gdata
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Gdata_Extension_FeedLink extends Zend_Gdata_Extension
-{
-
-    protected $_rootElement = 'feedLink';
-    protected $_countHint = null;
-    protected $_href = null;
-    protected $_readOnly = null;
-    protected $_rel = null;
-    protected $_feed = null;
-
-    public function __construct($href = null, $rel = null,
-            $countHint = null, $readOnly = null, $feed = null)
-    {
-        parent::__construct();
-        $this->_countHint = $countHint;
-        $this->_href = $href;
-        $this->_readOnly = $readOnly;
-        $this->_rel = $rel;
-        $this->_feed = $feed;
-    }
-
-    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
-    {
-        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
-        if ($this->_countHint !== null) {
-            $element->setAttribute('countHint', $this->_countHint);
-        }
-        if ($this->_href !== null) {
-            $element->setAttribute('href', $this->_href);
-        }
-        if ($this->_readOnly !== null) {
-            $element->setAttribute('readOnly', ($this->_readOnly ? "true" : "false"));
-        }
-        if ($this->_rel !== null) {
-            $element->setAttribute('rel', $this->_rel);
-        }
-        if ($this->_feed !== null) {
-            $element->appendChild($this->_feed->getDOM($element->ownerDocument));
-        }
-        return $element;
-    }
-
-    protected function takeChildFromDOM($child)
-    {
-        $absoluteNodeName = $child->namespaceURI . ':' . $child->localName;
-        switch ($absoluteNodeName) {
-            case $this->lookupNamespace('atom') . ':' . 'feed';
-                $feed = new Zend_Gdata_Feed();
-                $feed->transferFromDOM($child);
-                $this->_feed = $feed;
-                break;
-        default:
-            parent::takeChildFromDOM($child);
-            break;
-        }
-    }
-
-    protected function takeAttributeFromDOM($attribute)
-    {
-        switch ($attribute->localName) {
-        case 'countHint':
-            $this->_countHint = $attribute->nodeValue;
-            break;
-        case 'href':
-            $this->_href = $attribute->nodeValue;
-            break;
-        case 'readOnly':
-            if ($attribute->nodeValue == "true") {
-                $this->_readOnly = true;
-            }
-            else if ($attribute->nodeValue == "false") {
-                $this->_readOnly = false;
-            }
-            else {
-                throw new Zend_Gdata_App_InvalidArgumentException("Expected 'true' or 'false' for gCal:selected#value.");
-            }
-            break;
-        case 'rel':
-            $this->_rel = $attribute->nodeValue;
-            break;
-        default:
-            parent::takeAttributeFromDOM($attribute);
-        }
-    }
-
-    /**
-     * @return string
-     */
-    public function getHref()
-    {
-        return $this->_href;
-    }
-
-    public function setHref($value)
-    {
-        $this->_href = $value;
-        return $this;
-    }
-
-    public function getReadOnly()
-    {
-        return $this->_readOnly;
-    }
-
-    public function setReadOnly($value)
-    {
-        $this->_readOnly = $value;
-        return $this;
-    }
-
-    public function getRel()
-    {
-        return $this->_rel;
-    }
-
-    public function setRel($value)
-    {
-        $this->_rel = $value;
-        return $this;
-    }
-
-    public function getFeed()
-    {
-        return $this->_feed;
-    }
-
-    public function setFeed($value)
-    {
-        $this->_feed = $value;
-        return $this;
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+dxIw4ui46a4CieLlhh8=

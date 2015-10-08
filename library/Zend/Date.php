@@ -1,4559 +1,1953 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category  Zend
- * @package   Zend_Date
- * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   http://framework.zend.com/license/new-bsd     New BSD License
- * @version   $Id: Date.php 14629 2009-04-03 21:37:27Z thomas $
- */
-
-/**
- * Include needed Date classes
- */
-require_once 'Zend/Date/DateObject.php';
-require_once 'Zend/Locale.php';
-require_once 'Zend/Locale/Format.php';
-require_once 'Zend/Locale/Math.php';
-
-/**
- * @category  Zend
- * @package   Zend_Date
- * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Date extends Zend_Date_DateObject
-{
-    private $_locale  = null;
-
-    // Fractional second variables
-    private $_fractional = 0;
-    private $_precision  = 3;
-
-    private static $_options = array(
-        'format_type'  => 'iso',      // format for date strings 'iso' or 'php'
-        'fix_dst'      => true,       // fix dst on summer/winter time change
-        'extend_month' => false,      // false - addMonth like SQL, true like excel
-        'cache'        => null,       // cache to set
-        'timesync'     => null        // timesync server to set
-    );
-
-    // Class wide Date Constants
-    const DAY               = 'dd';
-    const DAY_SHORT         = 'd';
-    const DAY_SUFFIX        = 'SS';
-    const DAY_OF_YEAR       = 'D';
-    const WEEKDAY           = 'EEEE';
-    const WEEKDAY_SHORT     = 'EEE';
-    const WEEKDAY_NARROW    = 'E';
-    const WEEKDAY_NAME      = 'EE';
-    const WEEKDAY_8601      = 'eee';
-    const WEEKDAY_DIGIT     = 'e';
-    const WEEK              = 'ww';
-    const MONTH             = 'MM';
-    const MONTH_SHORT       = 'M';
-    const MONTH_DAYS        = 'ddd';
-    const MONTH_NAME        = 'MMMM';
-    const MONTH_NAME_SHORT  = 'MMM';
-    const MONTH_NAME_NARROW = 'MMMMM';
-    const YEAR              = 'y';
-    const YEAR_SHORT        = 'yy';
-    const YEAR_8601         = 'Y';
-    const YEAR_SHORT_8601   = 'YY';
-    const LEAPYEAR          = 'l';
-    const MERIDIEM          = 'a';
-    const SWATCH            = 'B';
-    const HOUR              = 'HH';
-    const HOUR_SHORT        = 'H';
-    const HOUR_AM           = 'hh';
-    const HOUR_SHORT_AM     = 'h';
-    const MINUTE            = 'mm';
-    const MINUTE_SHORT      = 'm';
-    const SECOND            = 'ss';
-    const SECOND_SHORT      = 's';
-    const MILLISECOND       = 'S';
-    const TIMEZONE_NAME     = 'zzzz';
-    const DAYLIGHT          = 'I';
-    const GMT_DIFF          = 'Z';
-    const GMT_DIFF_SEP      = 'ZZZZ';
-    const TIMEZONE          = 'z';
-    const TIMEZONE_SECS     = 'X';
-    const ISO_8601          = 'c';
-    const RFC_2822          = 'r';
-    const TIMESTAMP         = 'U';
-    const ERA               = 'G';
-    const ERA_NAME          = 'GGGG';
-    const ERA_NARROW        = 'GGGGG';
-    const DATES             = 'F';
-    const DATE_FULL         = 'FFFFF';
-    const DATE_LONG         = 'FFFF';
-    const DATE_MEDIUM       = 'FFF';
-    const DATE_SHORT        = 'FF';
-    const TIMES             = 'WW';
-    const TIME_FULL         = 'TTTTT';
-    const TIME_LONG         = 'TTTT';
-    const TIME_MEDIUM       = 'TTT';
-    const TIME_SHORT        = 'TT';
-    const ATOM              = 'OOO';
-    const COOKIE            = 'CCC';
-    const RFC_822           = 'R';
-    const RFC_850           = 'RR';
-    const RFC_1036          = 'RRR';
-    const RFC_1123          = 'RRRR';
-    const RFC_3339          = 'RRRRR';
-    const RSS               = 'SSS';
-    const W3C               = 'WWW';
-
-    /**
-     * Generates the standard date object, could be a unix timestamp, localized date,
-     * string, integer, array and so on. Also parts of dates or time are supported
-     * Always set the default timezone: http://php.net/date_default_timezone_set
-     * For example, in your bootstrap: date_default_timezone_set('America/Los_Angeles');
-     * For detailed instructions please look in the docu.
-     *
-     * @param  string|integer|Zend_Date|array  $date    OPTIONAL Date value or value of date part to set
-     *                                                 ,depending on $part. If null the actual time is set
-     * @param  string                          $part    OPTIONAL Defines the input format of $date
-     * @param  string|Zend_Locale              $locale  OPTIONAL Locale for parsing input
-     * @return Zend_Date
-     * @throws Zend_Date_Exception
-     */
-    public function __construct($date = null, $part = null, $locale = null)
-    {
-        if (($date !== null) and !($date instanceof Zend_TimeSync_Protocol) and (Zend_Locale::isLocale($date, true, false))) {
-            $locale = $date;
-            $date = null;
-            $part = null;
-        } else if (($part !== null) and (Zend_Locale::isLocale($part, null, false))) {
-            $locale = $part;
-            $part   = null;
-        }
-
-        $this->setLocale($locale);
-        if (is_string($date) && ($part === null) && (strlen($date) <= 5)) {
-            $part = $date;
-            $date = null;
-        }
-
-        if ($date === null) {
-            if ($part === null) {
-                $date = time();
-            } else if ($part !== self::TIMESTAMP) {
-                $date = self::now($locale);
-                $date = $date->get($part);
-            }
-        }
-
-        if ($date instanceof Zend_TimeSync_Protocol) {
-            $date = $date->getInfo();
-            $date = $this->_getTime($date['offset']);
-            $part = null;
-        } else if (parent::$_defaultOffset != 0) {
-            $date = $this->_getTime(parent::$_defaultOffset);
-        }
-
-        // set the timezone and offset for $this
-        $zone = @date_default_timezone_get();
-        $this->setTimezone($zone);
-
-        // try to get timezone from date-string
-        if (!is_int($date)) {
-            $zone = $this->getTimezoneFromString($date);
-            $this->setTimezone($zone);
-        }
-
-        // set datepart
-        if (($part !== null && $part !== self::TIMESTAMP) or (!is_numeric($date))) {
-            // switch off dst handling for value setting
-            $this->setUnixTimestamp($this->getGmtOffset());
-            $this->set($date, $part, $this->_locale);
-
-            // DST fix
-            if ((is_array($date) === true) and (isset($date['hour']) === true)) {
-                $hour = $this->toString('H');
-                $hour = $date['hour'] - $hour;
-                switch ($hour) {
-                    case 1 :
-                    case -23 :
-                        $this->addTimestamp(3600);
-                        break;
-                    case -1 :
-                    case 23 :
-                        $this->subTimestamp(3600);
-                        break;
-                    case 2 :
-                    case -22 :
-                        $this->addTimestamp(7200);
-                        break;
-                    case -2 :
-                    case 22 :
-                        $this->subTimestamp(7200);
-                        break;
-                }
-            }
-        } else {
-            $this->setUnixTimestamp($date);
-        }
-    }
-
-    /**
-     * Sets class wide options, if no option was given, the actual set options will be returned
-     *
-     * @param  array  $options  Options to set
-     * @throws Zend_Date_Exception
-     * @return Options array if no option was given
-     */
-    public static function setOptions(array $options = array())
-    {
-        if (empty($options)) {
-            return self::$_options;
-        }
-        foreach ($options as $name => $value) {
-            $name  = strtolower($name);
-
-            if (array_key_exists($name, self::$_options)) {
-                switch($name) {
-                    case 'format_type' :
-                        if ((strtolower($value) != 'php') && (strtolower($value) != 'iso')) {
-                            require_once 'Zend/Date/Exception.php';
-                            throw new Zend_Date_Exception("Unknown format type ($value) for dates, only 'iso' and 'php' supported", $value);
-                        }
-                        break;
-                    case 'fix_dst' :
-                        if (!is_bool($value)) {
-                            require_once 'Zend/Date/Exception.php';
-                            throw new Zend_Date_Exception("'fix_dst' has to be boolean", $value);
-                        }
-                        break;
-                    case 'extend_month' :
-                        if (!is_bool($value)) {
-                            require_once 'Zend/Date/Exception.php';
-                            throw new Zend_Date_Exception("'extend_month' has to be boolean", $value);
-                        }
-                        break;
-                    case 'cache' :
-                        if (!$value instanceof Zend_Cache_Core) {
-                            require_once 'Zend/Date/Exception.php';
-                            throw new Zend_Date_Exception("Instance of Zend_Cache expected");
-                        }
-                        parent::$_cache = $value;
-                        Zend_Locale_Data::setCache($value);
-                        break;
-                    case 'timesync' :
-                        if (!$value instanceof Zend_TimeSync_Protocol) {
-                            require_once 'Zend/Date/Exception.php';
-                            throw new Zend_Date_Exception("Instance of Zend_TimeSync expected");
-                        }
-                        $date = $value->getInfo();
-                        parent::$_defaultOffset = $date['offset'];
-                        break;
-                }
-                self::$_options[$name] = $value;
-            }
-            else {
-                require_once 'Zend/Date/Exception.php';
-                throw new Zend_Date_Exception("Unknown option: $name = $value");
-            }
-        }
-    }
-
-    /**
-     * Returns this object's internal UNIX timestamp (equivalent to Zend_Date::TIMESTAMP).
-     * If the timestamp is too large for integers, then the return value will be a string.
-     * This function does not return the timestamp as an object.
-     * Use clone() or copyPart() instead.
-     *
-     * @return integer|string  UNIX timestamp
-     */
-    public function getTimestamp()
-    {
-        return $this->getUnixTimestamp();
-    }
-
-    /**
-     * Returns the calculated timestamp
-     * HINT: timestamps are always GMT
-     *
-     * @param  string                          $calc    Type of calculation to make
-     * @param  string|integer|array|Zend_Date  $stamp   Timestamp to calculate, when null the actual timestamp is calculated
-     * @return Zend_Date|integer
-     * @throws Zend_Date_Exception
-     */
-    private function _timestamp($calc, $stamp)
-    {
-        if ($stamp instanceof Zend_Date) {
-            // extract timestamp from object
-            $stamp = $stamp->get(self::TIMESTAMP, true);
-        }
-
-        if (is_array($stamp)) {
-            if (isset($stamp['timestamp']) === true) {
-                $stamp = $stamp['timestamp'];
-            } else {
-                require_once 'Zend/Date/Exception.php';
-                throw new Zend_Date_Exception('no timestamp given in array');
-            }
-        }
-
-        if ($calc === 'set') {
-            $return = $this->setUnixTimestamp($stamp);
-        } else {
-            $return = $this->_calcdetail($calc, $stamp, self::TIMESTAMP, null);
-        }
-        if ($calc != 'cmp') {
-            return $this;
-        }
-        return $return;
-    }
-
-    /**
-     * Sets a new timestamp
-     *
-     * @param  integer|string|array|Zend_Date  $timestamp  Timestamp to set
-     * @return Zend_Date
-     * @throws Zend_Date_Exception
-     */
-    public function setTimestamp($timestamp)
-    {
-        return $this->_timestamp('set', $timestamp);
-    }
-
-    /**
-     * Adds a timestamp
-     *
-     * @param  integer|string|array|Zend_Date  $timestamp  Timestamp to add
-     * @return Zend_Date
-     * @throws Zend_Date_Exception
-     */
-    public function addTimestamp($timestamp)
-    {
-        return $this->_timestamp('add', $timestamp);
-    }
-
-    /**
-     * Subtracts a timestamp
-     *
-     * @param  integer|string|array|Zend_Date  $timestamp  Timestamp to sub
-     * @return Zend_Date
-     * @throws Zend_Date_Exception
-     */
-    public function subTimestamp($timestamp)
-    {
-        return $this->_timestamp('sub', $timestamp);
-    }
-
-    /**
-     * Compares two timestamps, returning the difference as integer
-     *
-     * @param  integer|string|array|Zend_Date  $timestamp  Timestamp to compare
-     * @return integer  0 = equal, 1 = later, -1 = earlier
-     * @throws Zend_Date_Exception
-     */
-    public function compareTimestamp($timestamp)
-    {
-        return $this->_timestamp('cmp', $timestamp);
-    }
-
-    /**
-     * Returns a string representation of the object
-     * Supported format tokens are:
-     * G - era, y - year, Y - ISO year, M - month, w - week of year, D - day of year, d - day of month
-     * E - day of week, e - number of weekday (1-7), h - hour 1-12, H - hour 0-23, m - minute, s - second
-     * A - milliseconds of day, z - timezone, Z - timezone offset, S - fractional second, a - period of day
-     *
-     * Additionally format tokens but non ISO conform are:
-     * SS - day suffix, eee - php number of weekday(0-6), ddd - number of days per month
-     * l - Leap year, B - swatch internet time, I - daylight saving time, X - timezone offset in seconds
-     * r - RFC2822 format, U - unix timestamp
-     *
-     * Not supported ISO tokens are
-     * u - extended year, Q - quarter, q - quarter, L - stand alone month, W - week of month
-     * F - day of week of month, g - modified julian, c - stand alone weekday, k - hour 0-11, K - hour 1-24
-     * v - wall zone
-     *
-     * @param  string              $format  OPTIONAL Rule for formatting output. If null the default date format is used
-     * @param  string              $type    OPTIONAL Type for the format string which overrides the standard setting
-     * @param  string|Zend_Locale  $locale  OPTIONAL Locale for parsing input
-     * @return string
-     */
-    public function toString($format = null, $type = null, $locale = null)
-    {
-        if ((strlen($format) != 2) and ($format !== null) and (Zend_Locale::isLocale($format, null, false))) {
-            $locale = $format;
-            $format = null;
-        }
-
-        if (($type !== null) and (Zend_Locale::isLocale($type, null, false))) {
-            $locale = $type;
-            $type = null;
-        }
-
-        if ($locale === null) {
-            $locale = $this->getLocale();
-        }
-
-        if ($format === null) {
-            $format = Zend_Locale_Format::getDateFormat($locale) . ' ' . Zend_Locale_Format::getTimeFormat($locale);
-        } else if (((self::$_options['format_type'] == 'php') && ($type === null)) or ($type == 'php')) {
-            $format = Zend_Locale_Format::convertPhpToIsoFormat($format);
-        }
-
-        return $this->get($format, $locale);
-    }
-
-    /**
-     * Returns a string representation of the date which is equal with the timestamp
-     *
-     * @return string
-     */
-    public function __toString()
-    {
-        return $this->toString(null, $this->_locale);
-    }
-
-    /**
-     * Returns a integer representation of the object
-     * But returns false when the given part is no value f.e. Month-Name
-     *
-     * @param  string|integer|Zend_Date  $part  OPTIONAL Defines the date or datepart to return as integer
-     * @return integer|false
-     */
-    public function toValue($part = null)
-    {
-        $result = $this->get($part);
-        if (is_numeric($result)) {
-          return intval("$result");
-        } else {
-          return false;
-        }
-    }
-
-    /**
-     * Returns an array representation of the object
-     *
-     * @return array
-     */
-    public function toArray()
-    {
-        return array('day'       => $this->get(self::DAY_SHORT),
-                     'month'     => $this->get(self::MONTH_SHORT),
-                     'year'      => $this->get(self::YEAR),
-                     'hour'      => $this->get(self::HOUR_SHORT),
-                     'minute'    => $this->get(self::MINUTE_SHORT),
-                     'second'    => $this->get(self::SECOND_SHORT),
-                     'timezone'  => $this->get(self::TIMEZONE),
-                     'timestamp' => $this->get(self::TIMESTAMP),
-                     'weekday'   => $this->get(self::WEEKDAY_8601),
-                     'dayofyear' => $this->get(self::DAY_OF_YEAR),
-                     'week'      => $this->get(self::WEEK),
-                     'gmtsecs'   => $this->get(self::TIMEZONE_SECS));
-    }
-
-    /**
-     * Returns a representation of a date or datepart
-     * This could be for example a localized monthname, the time without date,
-     * the era or only the fractional seconds. There are about 50 different supported date parts.
-     * For a complete list of supported datepart values look into the docu
-     *
-     * @param  string              $part    OPTIONAL Part of the date to return, if null the timestamp is returned
-     * @param  string|Zend_Locale  $locale  OPTIONAL Locale for parsing input
-     * @return string  date or datepart
-     */
-    public function get($part = null, $locale = null)
-    {
-        if ($locale === null) {
-            $locale = $this->getLocale();
-        }
-
-        if (($part !== null) && (strlen($part) !== 2) && (Zend_Locale::isLocale($part, null, false))) {
-            $locale = $part;
-            $part = null;
-        }
-
-        if ($part === null) {
-            $part = self::TIMESTAMP;
-        }
-
-        return $this->date($this->_toToken($part, $locale), $this->getUnixTimestamp(), false);
-    }
-
-    private function _toToken($part, $locale) {
-        // get format tokens
-        $comment = false;
-        $format  = '';
-        $orig    = '';
-        for ($i = 0; $i < strlen($part); ++$i) {
-            if ($part[$i] == "'") {
-                $comment = $comment ? false : true;
-                if (isset($part[$i+1]) && ($part[$i+1] == "'")) {
-                    $comment = $comment ? false : true;
-                    $format .= "\\'";
-                    ++$i;
-                }
-
-                $orig = '';
-                continue;
-            }
-
-            if ($comment) {
-                $format .= '\\' . $part[$i];
-                $orig = '';
-            } else {
-                $orig .= $part[$i];
-                if (!isset($part[$i+1]) || (isset($orig[0]) && ($orig[0] != $part[$i+1]))) {
-                    $format .= $this->_parseIsoToDate($orig, $locale);
-                    $orig  = '';
-                }
-            }
-        }
-
-        return $format;
-    }
-
-    /**
-     * Internal parsing method
-     *
-     * @param string $token
-     * @param string $locale
-     * @return string
-     */
-    private function _parseIsoToDate($token, $locale) {
-        switch($token) {
-            case self::DAY :
-                return 'd';
-                break;
-
-            case self::WEEKDAY_SHORT :
-                $weekday = strtolower($this->date('D', $this->getUnixTimestamp(), false));
-                $day     = Zend_Locale_Data::getContent($locale, 'day', array('gregorian', 'format', 'wide', $weekday));
-                return $this->_toComment(iconv_substr($day, 0, 3, 'UTF-8'));
-                break;
-
-            case self::DAY_SHORT :
-                return 'j';
-                break;
-
-            case self::WEEKDAY :
-                $weekday = strtolower($this->date('D', $this->getUnixTimestamp(), false));
-                return $this->_toComment(Zend_Locale_Data::getContent($locale, 'day', array('gregorian', 'format', 'wide', $weekday)));
-                break;
-
-            case self::WEEKDAY_8601 :
-                return 'N';
-                break;
-
-            case 'ee' :
-                return $this->_toComment(str_pad($this->date('N', $this->getUnixTimestamp(), false), 2, '0', STR_PAD_LEFT));
-                break;
-
-            case self::DAY_SUFFIX :
-                return 'S';
-                break;
-
-            case self::WEEKDAY_DIGIT :
-                return 'w';
-                break;
-
-            case self::DAY_OF_YEAR :
-                return 'z';
-                break;
-
-            case 'DDD' :
-                return $this->_toComment(str_pad($this->date('z', $this->getUnixTimestamp(), false), 3, '0', STR_PAD_LEFT));
-                break;
-
-            case 'DD' :
-                return $this->_toComment(str_pad($this->date('z', $this->getUnixTimestamp(), false), 2, '0', STR_PAD_LEFT));
-                break;
-
-            case self::WEEKDAY_NARROW :
-            case 'EEEEE' :
-                $weekday = strtolower($this->date('D', $this->getUnixTimestamp(), false));
-                $day = Zend_Locale_Data::getContent($locale, 'day', array('gregorian', 'format', 'abbreviated', $weekday));
-                return $this->_toComment(iconv_substr($day, 0, 1, 'UTF-8'));
-                break;
-
-            case self::WEEKDAY_NAME :
-                $weekday = strtolower($this->date('D', $this->getUnixTimestamp(), false));
-                return $this->_toComment(Zend_Locale_Data::getContent($locale, 'day', array('gregorian', 'format', 'abbreviated', $weekday)));
-                break;
-
-            case 'w' :
-                $week = $this->date('W', $this->getUnixTimestamp(), false);
-                return $this->_toComment(($week[0] == '0') ? $week[1] : $week);
-                break;
-
-            case self::WEEK :
-                return 'W';
-                break;
-
-            case self::MONTH_NAME :
-                $month = $this->date('n', $this->getUnixTimestamp(), false);
-                return $this->_toComment(Zend_Locale_Data::getContent($locale, 'month', array('gregorian', 'format', 'wide', $month)));
-                break;
-
-            case self::MONTH :
-                return 'm';
-                break;
-
-            case self::MONTH_NAME_SHORT :
-                $month = $this->date('n', $this->getUnixTimestamp(), false);
-                return $this->_toComment(Zend_Locale_Data::getContent($locale, 'month', array('gregorian', 'format', 'abbreviated', $month)));
-                break;
-
-            case self::MONTH_SHORT :
-                return 'n';
-                break;
-
-            case self::MONTH_DAYS :
-                return 't';
-                break;
-
-            case self::MONTH_NAME_NARROW :
-                $month = $this->date('n', $this->getUnixTimestamp(), false);
-                $mon = Zend_Locale_Data::getContent($locale, 'month', array('gregorian', 'format', 'abbreviated', $month));
-                return $this->_toComment(iconv_substr($mon, 0, 1, 'UTF-8'));
-                break;
-
-            case self::LEAPYEAR :
-                return 'L';
-                break;
-
-            case self::YEAR_8601 :
-                return 'o';
-                break;
-
-            case self::YEAR :
-                return 'Y';
-                break;
-
-            case self::YEAR_SHORT :
-                return 'y';
-                break;
-
-            case self::YEAR_SHORT_8601 :
-                return $this->_toComment(substr($this->date('o', $this->getUnixTimestamp(), false), -2, 2));
-                break;
-
-            case self::MERIDIEM :
-                $am = $this->date('a', $this->getUnixTimestamp(), false);
-                if ($am == 'am') {
-                    return $this->_toComment(Zend_Locale_Data::getContent($locale, 'am'));
-                }
-
-                return $this->_toComment(Zend_Locale_Data::getContent($locale, 'pm'));
-                break;
-
-            case self::SWATCH :
-                return 'B';
-                break;
-
-            case self::HOUR_SHORT_AM :
-                return 'g';
-                break;
-
-            case self::HOUR_SHORT :
-                return 'G';
-                break;
-
-            case self::HOUR_AM :
-                return 'h';
-                break;
-
-            case self::HOUR :
-                return 'H';
-                break;
-
-            case self::MINUTE :
-                return $this->_toComment(str_pad($this->date('i', $this->getUnixTimestamp(), false), 2, '0', STR_PAD_LEFT));
-                break;
-
-            case self::SECOND :
-                return $this->_toComment(str_pad($this->date('s', $this->getUnixTimestamp(), false), 2, '0', STR_PAD_LEFT));
-                break;
-
-            case self::MINUTE_SHORT :
-                return 'i';
-                break;
-
-            case self::SECOND_SHORT :
-                return 's';
-                break;
-
-            case self::MILLISECOND :
-                return $this->_toComment($this->_fractional);
-                break;
-
-            case self::TIMEZONE_NAME :
-            case 'vvvv' :
-                return 'e';
-                break;
-
-            case self::DAYLIGHT :
-                return 'I';
-                break;
-
-            case self::GMT_DIFF :
-            case 'ZZ' :
-            case 'ZZZ' :
-                return 'O';
-                break;
-
-            case self::GMT_DIFF_SEP :
-                return 'P';
-                break;
-
-            case self::TIMEZONE :
-            case 'v' :
-            case 'zz' :
-            case 'zzz' :
-                return 'T';
-                break;
-
-            case self::TIMEZONE_SECS :
-                return 'Z';
-                break;
-
-            case self::ISO_8601 :
-                return 'c';
-                break;
-
-            case self::RFC_2822 :
-                return 'r';
-                break;
-
-            case self::TIMESTAMP :
-                return 'U';
-                break;
-
-            case self::ERA :
-            case 'GG' :
-            case 'GGG' :
-                $year = $this->date('Y', $this->getUnixTimestamp(), false);
-                if ($year < 0) {
-                    return $this->_toComment(Zend_Locale_Data::getContent($locale, 'era', array('gregorian', 'Abbr', '0')));
-                }
-
-                return $this->_toComment(Zend_Locale_Data::getContent($locale, 'era', array('gregorian', 'Abbr', '1')));
-                break;
-
-            case self::ERA_NARROW :
-                $year = $this->date('Y', $this->getUnixTimestamp(), false);
-                if ($year < 0) {
-                    return $this->_toComment(iconv_substr(Zend_Locale_Data::getContent($locale, 'era', array('gregorian', 'Abbr', '0')), 0, 1, 'UTF-8')) . '.';
-                }
-
-                return $this->_toComment(iconv_substr(Zend_Locale_Data::getContent($locale, 'era', array('gregorian', 'Abbr', '1')), 0, 1, 'UTF-8')) . '.';
-                break;
-
-            case self::ERA_NAME :
-                $year = $this->date('Y', $this->getUnixTimestamp(), false);
-                if ($year < 0) {
-                    return $this->_toComment(Zend_Locale_Data::getContent($locale, 'era', array('gregorian', 'Names', '0')));
-                }
-
-                return $this->_toComment(Zend_Locale_Data::getContent($locale, 'era', array('gregorian', 'Names', '1')));
-                break;
-
-            case self::DATES :
-                return $this->_toToken(Zend_Locale_Format::getDateFormat($locale), $locale);
-                break;
-
-            case self::DATE_FULL :
-                return $this->_toToken(Zend_Locale_Data::getContent($locale, 'date', array('gregorian', 'full')), $locale);
-                break;
-
-            case self::DATE_LONG :
-                return $this->_toToken(Zend_Locale_Data::getContent($locale, 'date', array('gregorian', 'long')), $locale);
-                break;
-
-            case self::DATE_MEDIUM :
-                return $this->_toToken(Zend_Locale_Data::getContent($locale, 'date', array('gregorian', 'medium')), $locale);
-                break;
-
-            case self::DATE_SHORT :
-                return $this->_toToken(Zend_Locale_Data::getContent($locale, 'date', array('gregorian', 'short')), $locale);
-                break;
-
-            case self::TIMES :
-                return $this->_toToken(Zend_Locale_Format::getTimeFormat($locale), $locale);
-                break;
-
-            case self::TIME_FULL :
-                return $this->_toToken(Zend_Locale_Data::getContent($locale, 'time', 'full'), $locale);
-                break;
-
-            case self::TIME_LONG :
-                return $this->_toToken(Zend_Locale_Data::getContent($locale, 'time', 'long'), $locale);
-                break;
-
-            case self::TIME_MEDIUM :
-                return $this->_toToken(Zend_Locale_Data::getContent($locale, 'time', 'medium'), $locale);
-                break;
-
-            case self::TIME_SHORT :
-                return $this->_toToken(Zend_Locale_Data::getContent($locale, 'time', 'short'), $locale);
-                break;
-
-            case self::ATOM :
-                return 'Y\-m\-d\TH\:i\:sP';
-                break;
-
-            case self::COOKIE :
-                return 'l\, d\-M\-y H\:i\:s e';
-                break;
-
-            case self::RFC_822 :
-                return 'D\, d M y H\:i\:s O';
-                break;
-
-            case self::RFC_850 :
-                return 'l\, d\-M\-y H\:i\:s e';
-                break;
-
-            case self::RFC_1036 :
-                return 'D\, d M y H\:i\:s O';
-                break;
-
-            case self::RFC_1123 :
-                return 'D\, d M Y H\:i\:s O';
-                break;
-
-            case self::RFC_3339 :
-                return 'Y\-m\-d\TH\:i\:sP';
-                break;
-
-            case self::RSS :
-                return 'D\, d M Y H\:i\:s O';
-                break;
-
-            case self::W3C :
-                return 'Y\-m\-d\TH\:i\:sP';
-                break;
-        }
-
-        if ($token == '') {
-            return '';
-        }
-
-        switch ($token[0]) {
-            case 'y' :
-                if ((strlen($token) == 4) && (abs($this->getUnixTimestamp()) <= 0x7FFFFFFF)) {
-                    return 'Y';
-                }
-
-                $length = iconv_strlen($token, 'UTF-8');
-                return $this->_toComment(str_pad($this->date('Y', $this->getUnixTimestamp(), false), $length, '0', STR_PAD_LEFT));
-                break;
-
-            case 'Y' :
-                if ((strlen($token) == 4) && (abs($this->getUnixTimestamp()) <= 0x7FFFFFFF)) {
-                    return 'o';
-                }
-
-                $length = iconv_strlen($token, 'UTF-8');
-                return $this->_toComment(str_pad($this->date('o', $this->getUnixTimestamp(), false), $length, '0', STR_PAD_LEFT));
-                break;
-
-            case 'A' :
-                $length  = iconv_strlen($token, 'UTF-8');
-                $result  = $this->_fractional;
-                $result += $this->date('s', $this->getUnixTimestamp(), false) * 1000;
-                $result += $this->date('i', $this->getUnixTimestamp(), false) * 60000;
-                $result += $this->date('H', $this->getUnixTimestamp(), false) * 3600000;
-
-                return $this->_toComment(str_pad($result, $length, '0', STR_PAD_LEFT));
-                break;
-        }
-
-        return $this->_toComment($token);
-    }
-
-    /**
-     * Private function to make a comment of a token
-     *
-     * @param string $token
-     * @return string
-     */
-    private function _toComment($token)
-    {
-        $token = str_split($token);
-        $result = '';
-        foreach ($token as $tok) {
-            $result .= '\\' . $tok;
-        }
-
-        return $result;
-    }
-
-    /**
-     * Return digit from standard names (english)
-     * Faster implementation than locale aware searching
-     *
-     * @param  string  $name
-     * @return integer  Number of this month
-     * @throws Zend_Date_Exception
-     */
-    private function _getDigitFromName($name)
-    {
-        switch($name) {
-            case "Jan":
-                return 1;
-
-            case "Feb":
-                return 2;
-
-            case "Mar":
-                return 3;
-
-            case "Apr":
-                return 4;
-
-            case "May":
-                return 5;
-
-            case "Jun":
-                return 6;
-
-            case "Jul":
-                return 7;
-
-            case "Aug":
-                return 8;
-
-            case "Sep":
-                return 9;
-
-            case "Oct":
-                return 10;
-
-            case "Nov":
-                return 11;
-
-            case "Dec":
-                return 12;
-
-            default:
-                require_once 'Zend/Date/Exception.php';
-                throw new Zend_Date_Exception('Month ($name) is not a known month');
-        }
-    }
-
-    /**
-     * Counts the exact year number
-     * < 70 - 2000 added, >70 < 100 - 1900, others just returned
-     *
-     * @param  integer  $value year number
-     * @return integer  Number of year
-     */
-    public static function getFullYear($value)
-    {
-        if ($value >= 0) {
-            if ($value < 70) {
-                $value += 2000;
-            } else if ($value < 100) {
-                $value += 1900;
-            }
-        }
-        return $value;
-    }
-
-    /**
-     * Sets the given date as new date or a given datepart as new datepart returning the new datepart
-     * This could be for example a localized dayname, the date without time,
-     * the month or only the seconds. There are about 50 different supported date parts.
-     * For a complete list of supported datepart values look into the docu
-     *
-     * @param  string|integer|array|Zend_Date  $date    Date or datepart to set
-     * @param  string                          $part    OPTIONAL Part of the date to set, if null the timestamp is set
-     * @param  string|Zend_Locale              $locale  OPTIONAL Locale for parsing input
-     * @return integer|string  new datepart
-     * @throws Zend_Date_Exception
-     */
-    public function set($date, $part = null, $locale = null)
-    {
-        $zone = $this->getTimezoneFromString($date);
-        $this->setTimezone($zone);
-
-        $result = $this->_calculate('set', $date, $part, $locale);
-        return $result;
-    }
-
-    /**
-     * Adds a date or datepart to the existing date, by extracting $part from $date,
-     * and modifying this object by adding that part.  The $part is then extracted from
-     * this object and returned as an integer or numeric string (for large values, or $part's
-     * corresponding to pre-defined formatted date strings).
-     * This could be for example a ISO 8601 date, the hour the monthname or only the minute.
-     * There are about 50 different supported date parts.
-     * For a complete list of supported datepart values look into the docu.
-     *
-     * @param  string|integer|array|Zend_Date  $date    Date or datepart to add
-     * @param  string                          $part    OPTIONAL Part of the date to add, if null the timestamp is added
-     * @param  string|Zend_Locale              $locale  OPTIONAL Locale for parsing input
-     * @return integer|string  new datepart
-     * @throws Zend_Date_Exception
-     */
-    public function add($date, $part = null, $locale = null)
-    {
-        $this->_calculate('add', $date, $part, $locale);
-        $result = $this->get($part, $locale);
-
-        return $result;
-    }
-
-    /**
-     * Subtracts a date from another date.
-     * This could be for example a RFC2822 date, the time,
-     * the year or only the timestamp. There are about 50 different supported date parts.
-     * For a complete list of supported datepart values look into the docu
-     * Be aware: Adding -2 Months is not equal to Subtracting 2 Months !!!
-     *
-     * @param  string|integer|array|Zend_Date  $date    Date or datepart to subtract
-     * @param  string                          $part    OPTIONAL Part of the date to sub, if null the timestamp is subtracted
-     * @param  string|Zend_Locale              $locale  OPTIONAL Locale for parsing input
-     * @return integer|string  new datepart
-     * @throws Zend_Date_Exception
-     */
-    public function sub($date, $part = null, $locale = null)
-    {
-        $this->_calculate('sub', $date, $part, $locale);
-        $result = $this->get($part, $locale);
-
-        return $result;
-    }
-
-    /**
-     * Compares a date or datepart with the existing one.
-     * Returns -1 if earlier, 0 if equal and 1 if later.
-     *
-     * @param  string|integer|array|Zend_Date  $date    Date or datepart to compare with the date object
-     * @param  string                          $part    OPTIONAL Part of the date to compare, if null the timestamp is subtracted
-     * @param  string|Zend_Locale              $locale  OPTIONAL Locale for parsing input
-     * @return integer  0 = equal, 1 = later, -1 = earlier
-     * @throws Zend_Date_Exception
-     */
-    public function compare($date, $part = null, $locale = null)
-    {
-        $compare = $this->_calculate('cmp', $date, $part, $locale);
-
-        if ($compare > 0) {
-            return 1;
-        } else if ($compare < 0) {
-            return -1;
-        }
-        return 0;
-    }
-
-    /**
-     * Returns a new instance of Zend_Date with the selected part copied.
-     * To make an exact copy, use PHP's clone keyword.
-     * For a complete list of supported date part values look into the docu.
-     * If a date part is copied, all other date parts are set to standard values.
-     * For example: If only YEAR is copied, the returned date object is equal to
-     * 01-01-YEAR 00:00:00 (01-01-1970 00:00:00 is equal to timestamp 0)
-     * If only HOUR is copied, the returned date object is equal to
-     * 01-01-1970 HOUR:00:00 (so $this contains a timestamp equal to a timestamp of 0 plus HOUR).
-     *
-     * @param  string              $part    Part of the date to compare, if null the timestamp is subtracted
-     * @param  string|Zend_Locale  $locale  OPTIONAL New object's locale.  No adjustments to timezone are made.
-     * @return Zend_Date
-     */
-    public function copyPart($part, $locale = null)
-    {
-        $clone = clone $this;           // copy all instance variables
-        $clone->setUnixTimestamp(0);    // except the timestamp
-        if ($locale != null) {
-            $clone->setLocale($locale); // set an other locale if selected
-        }
-        $clone->set($this, $part);
-        return $clone;
-    }
-
-    /**
-     * Internal function, returns the offset of a given timezone
-     *
-     * @param string $zone
-     * @return integer
-     */
-    public function getTimezoneFromString($zone)
-    {
-        if (is_array($zone)) {
-            return $this->getTimezone();
-        }
-
-        if ($zone instanceof Zend_Date) {
-            return $zone->getTimezone();
-        }
-
-        $match = array();
-        preg_match('/\dZ$/', $zone, $match);
-        if (!empty($match)) {
-            return "Etc/UTC";
-        }
-
-        preg_match('/([+-]\d{2}):{0,1}\d{2}/', $zone, $match);
-        if (!empty($match) and ($match[count($match) - 1] <= 12) and ($match[count($match) - 1] >= -12)) {
-            $zone = "Etc/GMT";
-            $zone .= ($match[count($match) - 1] < 0) ? "+" : "-";
-            $zone .= (int) abs($match[count($match) - 1]);
-            return $zone;
-        }
-
-        preg_match('/([[:alpha:]\/]{3,30})/', $zone, $match);
-        try {
-            if (!empty($match) and (!is_int($match[count($match) - 1]))) {
-                $oldzone = $this->getTimezone();
-                $this->setTimezone($match[count($match) - 1]);
-                $result = $this->getTimezone();
-                $this->setTimezone($oldzone);
-                if ($result !== $oldzone) {
-                    return $match[count($match) - 1];
-                }
-            }
-        } catch (Exception $e) {
-            // fall through
-        }
-
-        return $this->getTimezone();
-    }
-
-    /**
-     * Calculates the date or object
-     *
-     * @param  string                    $calc  Calculation to make
-     * @param  string|integer            $date  Date for calculation
-     * @param  string|integer            $comp  Second date for calculation
-     * @param  boolean|integer           $dst   Use dst correction if option is set
-     * @return integer|string|Zend_Date  new timestamp or Zend_Date depending on calculation
-     */
-    private function _assign($calc, $date, $comp = 0, $dst = false)
-    {
-        switch ($calc) {
-            case 'set' :
-                if (!empty($comp)) {
-                    $this->setUnixTimestamp(call_user_func(Zend_Locale_Math::$sub, $this->getUnixTimestamp(), $comp));
-                }
-                $this->setUnixTimestamp(call_user_func(Zend_Locale_Math::$add, $this->getUnixTimestamp(), $date));
-                $value = $this->getUnixTimestamp();
-                break;
-            case 'add' :
-                $this->setUnixTimestamp(call_user_func(Zend_Locale_Math::$add, $this->getUnixTimestamp(), $date));
-                $value = $this->getUnixTimestamp();
-                break;
-            case 'sub' :
-                $this->setUnixTimestamp(call_user_func(Zend_Locale_Math::$sub, $this->getUnixTimestamp(), $date));
-                $value = $this->getUnixTimestamp();
-                break;
-            default :
-                // cmp - compare
-                return call_user_func(Zend_Locale_Math::$comp, $comp, $date);
-                break;
-        }
-
-        // dst-correction if 'fix_dst' = true and dst !== false but only for non UTC and non GMT
-        if ((self::$_options['fix_dst'] === true) and ($dst !== false) and ($this->_dst === true)) {
-            $hour = $this->get(self::HOUR);
-            if ($hour != $dst) {
-                if (($dst == ($hour + 1)) or ($dst == ($hour - 23))) {
-                    $value += 3600;
-                } else if (($dst == ($hour - 1)) or ($dst == ($hour + 23))) {
-                    $value -= 3600;
-                }
-                $this->setUnixTimestamp($value);
-            }
-        }
-        return $this->getUnixTimestamp();
-    }
-
-
-    /**
-     * Calculates the date or object
-     *
-     * @param  string                          $calc    Calculation to make, one of: 'add'|'sub'|'cmp'|'copy'|'set'
-     * @param  string|integer|array|Zend_Date  $date    Date or datepart to calculate with
-     * @param  string                          $part    Part of the date to calculate, if null the timestamp is used
-     * @param  string|Zend_Locale              $locale  Locale for parsing input
-     * @return integer|string|Zend_Date        new timestamp
-     * @throws Zend_Date_Exception
-     */
-    private function _calculate($calc, $date, $part, $locale)
-    {
-        if ($date === null) {
-            require_once 'Zend/Date/Exception.php';
-            throw new Zend_Date_Exception('parameter $date must be set, null is not allowed');
-        }
-
-        if (($part !== null) && (strlen($part) !== 2) && (Zend_Locale::isLocale($part, null, false))) {
-            $locale = $part;
-            $part   = null;
-        }
-
-        if ($locale === null) {
-            $locale = $this->getLocale();
-        }
-
-        $locale = (string) $locale;
-
-        // Create date parts
-        $year   = $this->get(self::YEAR);
-        $month  = $this->get(self::MONTH_SHORT);
-        $day    = $this->get(self::DAY_SHORT);
-        $hour   = $this->get(self::HOUR_SHORT);
-        $minute = $this->get(self::MINUTE_SHORT);
-        $second = $this->get(self::SECOND_SHORT);
-        // If object extract value
-        if ($date instanceof Zend_Date) {
-            $date = $date->get($part, $locale);
-        }
-
-        if (is_array($date) === true) {
-            if (empty($part) === false) {
-                switch($part) {
-                    // Fall through
-                    case self::DAY:
-                    case self::DAY_SHORT:
-                        if (isset($date['day']) === true) {
-                            $date = $date['day'];
-                        }
-                        break;
-                    // Fall through
-                    case self::WEEKDAY_SHORT:
-                    case self::WEEKDAY:
-                    case self::WEEKDAY_8601:
-                    case self::WEEKDAY_DIGIT:
-                    case self::WEEKDAY_NARROW:
-                    case self::WEEKDAY_NAME:
-                        if (isset($date['weekday']) === true) {
-                            $date = $date['weekday'];
-                            $part = self::WEEKDAY_DIGIT;
-                        }
-                        break;
-                    case self::DAY_OF_YEAR:
-                        if (isset($date['day_of_year']) === true) {
-                            $date = $date['day_of_year'];
-                        }
-                        break;
-                    // Fall through
-                    case self::MONTH:
-                    case self::MONTH_SHORT:
-                    case self::MONTH_NAME:
-                    case self::MONTH_NAME_SHORT:
-                    case self::MONTH_NAME_NARROW:
-                        if (isset($date['month']) === true) {
-                            $date = $date['month'];
-                        }
-                        break;
-                    // Fall through
-                    case self::YEAR:
-                    case self::YEAR_SHORT:
-                    case self::YEAR_8601:
-                    case self::YEAR_SHORT_8601:
-                        if (isset($date['year']) === true) {
-                            $date = $date['year'];
-                        }
-                        break;
-                    // Fall through
-                    case self::HOUR:
-                    case self::HOUR_AM:
-                    case self::HOUR_SHORT:
-                    case self::HOUR_SHORT_AM:
-                        if (isset($date['hour']) === true) {
-                            $date = $date['hour'];
-                        }
-                        break;
-                    // Fall through
-                    case self::MINUTE:
-                    case self::MINUTE_SHORT:
-                        if (isset($date['minute']) === true) {
-                            $date = $date['minute'];
-                        }
-                        break;
-                    // Fall through
-                    case self::SECOND:
-                    case self::SECOND_SHORT:
-                        if (isset($date['second']) === true) {
-                            $date = $date['second'];
-                        }
-                        break;
-                    // Fall through
-                    case self::TIMEZONE:
-                    case self::TIMEZONE_NAME:
-                        if (isset($date['timezone']) === true) {
-                            $date = $date['timezone'];
-                        }
-                        break;
-                    case self::TIMESTAMP:
-                        if (isset($date['timestamp']) === true) {
-                            $date = $date['timestamp'];
-                        }
-                        break;
-                    case self::WEEK:
-                        if (isset($date['week']) === true) {
-                            $date = $date['week'];
-                        }
-                        break;
-                    case self::TIMEZONE_SECS:
-                        if (isset($date['gmtsecs']) === true) {
-                            $date = $date['gmtsecs'];
-                        }
-                        break;
-                    default:
-                        require_once 'Zend/Date/Exception.php';
-                        throw new Zend_Date_Exception("datepart for part ($part) not found in array");
-                        break;
-                }
-            } else {
-                $hours = 0;
-                if (isset($date['hour']) === true) {
-                    $hours = $date['hour'];
-                }
-                $minutes = 0;
-                if (isset($date['minute']) === true) {
-                    $minutes = $date['minute'];
-                }
-                $seconds = 0;
-                if (isset($date['second']) === true) {
-                    $seconds = $date['second'];
-                }
-                $months = 0;
-                if (isset($date['month']) === true) {
-                    $months = $date['month'];
-                }
-                $days = 0;
-                if (isset($date['day']) === true) {
-                    $days = $date['day'];
-                }
-                $years = 0;
-                if (isset($date['year']) === true) {
-                    $years = $date['year'];
-                }
-                return $this->_assign($calc, $this->mktime($hours, $minutes, $seconds, $months, $days, $years, true),
-                                             $this->mktime($hour, $minute, $second, $month, $day, $year, true), $hour);
-            }
-        }
-
-        // $date as object, part of foreign date as own date
-        switch($part) {
-
-            // day formats
-            case self::DAY:
-                if (is_numeric($date)) {
-                    return $this->_assign($calc, $this->mktime(0, 0, 0, 1, 1 + intval($date), 1970, true),
-                                                 $this->mktime(0, 0, 0, 1, 1 + intval($day), 1970, true), $hour);
-                }
-                require_once 'Zend/Date/Exception.php';
-                throw new Zend_Date_Exception("invalid date ($date) operand, day expected", $date);
-                break;
-
-            case self::WEEKDAY_SHORT:
-                $daylist = Zend_Locale_Data::getList($locale, 'day');
-                $weekday = (int) $this->get(self::WEEKDAY_DIGIT, $locale);
-                $cnt = 0;
-
-                foreach ($daylist as $key => $value) {
-                    if (strtoupper(iconv_substr($value, 0, 3, 'UTF-8')) == strtoupper($date)) {
-                         $found = $cnt;
-                        break;
-                    }
-                    ++$cnt;
-                }
-
-                // Weekday found
-                if ($cnt < 7) {
-                    return $this->_assign($calc, $this->mktime(0, 0, 0, 1, 1 + $found, 1970, true),
-                                                 $this->mktime(0, 0, 0, 1, 1 + $weekday, 1970, true), $hour);
-                }
-
-                // Weekday not found
-                require_once 'Zend/Date/Exception.php';
-                throw new Zend_Date_Exception("invalid date ($date) operand, weekday expected", $date);
-                break;
-
-            case self::DAY_SHORT:
-                if (is_numeric($date)) {
-                    return $this->_assign($calc, $this->mktime(0, 0, 0, 1, 1 + intval($date), 1970, true),
-                                                 $this->mktime(0, 0, 0, 1, 1 + intval($day), 1970, true), $hour);
-                }
-                require_once 'Zend/Date/Exception.php';
-                throw new Zend_Date_Exception("invalid date ($date) operand, day expected", $date);
-                break;
-
-            case self::WEEKDAY:
-                $daylist = Zend_Locale_Data::getList($locale, 'day');
-                $weekday = (int) $this->get(self::WEEKDAY_DIGIT, $locale);
-                $cnt = 0;
-
-                foreach ($daylist as $key => $value) {
-                    if (strtoupper($value) == strtoupper($date)) {
-                        $found = $cnt;
-                        break;
-                    }
-                    ++$cnt;
-                }
-
-                // Weekday found
-                if ($cnt < 7) {
-                    return $this->_assign($calc, $this->mktime(0, 0, 0, 1, 1 + $found, 1970, true),
-                                                 $this->mktime(0, 0, 0, 1, 1 + $weekday, 1970, true), $hour);
-                }
-
-                // Weekday not found
-                require_once 'Zend/Date/Exception.php';
-                throw new Zend_Date_Exception("invalid date ($date) operand, weekday expected", $date);
-                break;
-
-            case self::WEEKDAY_8601:
-                $weekday = (int) $this->get(self::WEEKDAY_8601, $locale);
-                if ((intval($date) > 0) and (intval($date) < 8)) {
-                    return $this->_assign($calc, $this->mktime(0, 0, 0, 1, 1 + intval($date), 1970, true),
-                                                 $this->mktime(0, 0, 0, 1, 1 + $weekday, 1970, true), $hour);
-                }
-
-                // Weekday not found
-                require_once 'Zend/Date/Exception.php';
-                throw new Zend_Date_Exception("invalid date ($date) operand, weekday expected", $date);
-                break;
-
-            case self::DAY_SUFFIX:
-                require_once 'Zend/Date/Exception.php';
-                throw new Zend_Date_Exception('day suffix not supported', $date);
-                break;
-
-            case self::WEEKDAY_DIGIT:
-                $weekday = (int) $this->get(self::WEEKDAY_DIGIT, $locale);
-                if (is_numeric($date) and (intval($date) >= 0) and (intval($date) < 7)) {
-                    return $this->_assign($calc, $this->mktime(0, 0, 0, 1, 1 + $date, 1970, true),
-                                                 $this->mktime(0, 0, 0, 1, 1 + $weekday, 1970, true), $hour);
-                }
-
-                // Weekday not found
-                require_once 'Zend/Date/Exception.php';
-                throw new Zend_Date_Exception("invalid date ($date) operand, weekday expected", $date);
-                break;
-
-            case self::DAY_OF_YEAR:
-                if (is_numeric($date)) {
-                    return $this->_assign($calc, $this->mktime(0, 0, 0, 1, 1 + $date, 1970, true),
-                                                 $this->mktime(0, 0, 0, $month, 1 + $day, 1970, true), $hour);
-                }
-                require_once 'Zend/Date/Exception.php';
-                throw new Zend_Date_Exception("invalid date ($date) operand, day expected", $date);
-                break;
-
-            case self::WEEKDAY_NARROW:
-                $daylist = Zend_Locale_Data::getList($locale, 'day', array('gregorian', 'format', 'abbreviated'));
-                $weekday = (int) $this->get(self::WEEKDAY_DIGIT, $locale);
-                $cnt = 0;
-                foreach ($daylist as $key => $value) {
-                    if (strtoupper(iconv_substr($value, 0, 1, 'UTF-8')) == strtoupper($date)) {
-                        $found = $cnt;
-                        break;
-                    }
-                    ++$cnt;
-                }
-
-                // Weekday found
-                if ($cnt < 7) {
-                    return $this->_assign($calc, $this->mktime(0, 0, 0, 1, 1 + $found, 1970, true),
-                                                 $this->mktime(0, 0, 0, 1, 1 + $weekday, 1970, true), $hour);
-                }
-
-                // Weekday not found
-                require_once 'Zend/Date/Exception.php';
-                throw new Zend_Date_Exception("invalid date ($date) operand, weekday expected", $date);
-                break;
-
-            case self::WEEKDAY_NAME:
-                $daylist = Zend_Locale_Data::getList($locale, 'day', array('gregorian', 'format', 'abbreviated'));
-                $weekday = (int) $this->get(self::WEEKDAY_DIGIT, $locale);
-                $cnt = 0;
-                foreach ($daylist as $key => $value) {
-                    if (strtoupper($value) == strtoupper($date)) {
-                        $found = $cnt;
-                        break;
-                    }
-                    ++$cnt;
-                }
-
-                // Weekday found
-                if ($cnt < 7) {
-                    return $this->_assign($calc, $this->mktime(0, 0, 0, 1, 1 + $found, 1970, true),
-                                                 $this->mktime(0, 0, 0, 1, 1 + $weekday, 1970, true), $hour);
-                }
-
-                // Weekday not found
-                require_once 'Zend/Date/Exception.php';
-                throw new Zend_Date_Exception("invalid date ($date) operand, weekday expected", $date);
-                break;
-
-            // week formats
-            case self::WEEK:
-                if (is_numeric($date)) {
-                    $week = (int) $this->get(self::WEEK, $locale);
-                    return $this->_assign($calc, parent::mktime(0, 0, 0, 1, 1 + ($date * 7), 1970, true),
-                                                 parent::mktime(0, 0, 0, 1, 1 + ($week * 7), 1970, true), $hour);
-                }
-                require_once 'Zend/Date/Exception.php';
-                throw new Zend_Date_Exception("invalid date ($date) operand, week expected", $date);
-                break;
-
-            // month formats
-            case self::MONTH_NAME:
-                $monthlist = Zend_Locale_Data::getList($locale, 'month');
-                $cnt = 0;
-                foreach ($monthlist as $key => $value) {
-                    if (strtoupper($value) == strtoupper($date)) {
-                        $found = $key;
-                        break;
-                    }
-                    ++$cnt;
-                }
-                $date = array_search($date, $monthlist);
-
-                // Monthname found
-                if ($cnt < 12) {
-                    $fixday = 0;
-                    if ($calc == 'add') {
-                        $date += $found;
-                        $calc = 'set';
-                        if (self::$_options['extend_month'] == false) {
-                            $parts = $this->getDateParts($this->mktime($hour, $minute, $second, $date, $day, $year, false));
-                            if ($parts['mday'] != $day) {
-                                $fixday = ($parts['mday'] < $day) ? -$parts['mday'] : ($parts['mday'] - $day);
-                            }
-                        }
-                    } else if ($calc == 'sub') {
-                        $date = $month - $found;
-                        $calc = 'set';
-                        if (self::$_options['extend_month'] == false) {
-                            $parts = $this->getDateParts($this->mktime($hour, $minute, $second, $date, $day, $year, false));
-                            if ($parts['mday'] != $day) {
-                                $fixday = ($parts['mday'] < $day) ? -$parts['mday'] : ($parts['mday'] - $day);
-                            }
-                        }
-                    }
-                    return $this->_assign($calc, $this->mktime(0, 0, 0, $date,  $day + $fixday, $year, true),
-                                                 $this->mktime(0, 0, 0, $month, $day, $year, true), $hour);
-                }
-
-                // Monthname not found
-                require_once 'Zend/Date/Exception.php';
-                throw new Zend_Date_Exception("invalid date ($date) operand, month expected", $date);
-                break;
-
-            case self::MONTH:
-                if (is_numeric($date)) {
-                    $fixday = 0;
-                    if ($calc == 'add') {
-                        $date += $month;
-                        $calc = 'set';
-                        if (self::$_options['extend_month'] == false) {
-                            $parts = $this->getDateParts($this->mktime($hour, $minute, $second, $date, $day, $year, false));
-                            if ($parts['mday'] != $day) {
-                                $fixday = ($parts['mday'] < $day) ? -$parts['mday'] : ($parts['mday'] - $day);
-                            }
-                        }
-                    } else if ($calc == 'sub') {
-                        $date = $month - $date;
-                        $calc = 'set';
-                        if (self::$_options['extend_month'] == false) {
-                            $parts = $this->getDateParts($this->mktime($hour, $minute, $second, $date, $day, $year, false));
-                            if ($parts['mday'] != $day) {
-                                $fixday = ($parts['mday'] < $day) ? -$parts['mday'] : ($parts['mday'] - $day);
-                            }
-                        }
-                    }
-                    return $this->_assign($calc, $this->mktime(0, 0, 0, $date, $day + $fixday, $year, true),
-                                                 $this->mktime(0, 0, 0, $month, $day, $year, true), $hour);
-                }
-                require_once 'Zend/Date/Exception.php';
-                throw new Zend_Date_Exception("invalid date ($date) operand, month expected", $date);
-                break;
-
-            case self::MONTH_NAME_SHORT:
-                $monthlist = Zend_Locale_Data::getList($locale, 'month', array('gregorian', 'format', 'abbreviated'));
-                $cnt = 0;
-                foreach ($monthlist as $key => $value) {
-                    if (strtoupper($value) == strtoupper($date)) {
-                        $found = $key;
-                        break;
-                    }
-                    ++$cnt;
-                }
-                $date = array_search($date, $monthlist);
-
-                // Monthname found
-                if ($cnt < 12) {
-                    $fixday = 0;
-                    if ($calc == 'add') {
-                        $date += $found;
-                        $calc = 'set';
-                        if (self::$_options['extend_month'] === false) {
-                            $parts = $this->getDateParts($this->mktime($hour, $minute, $second, $date, $day, $year, false));
-                            if ($parts['mday'] != $day) {
-                                $fixday = ($parts['mday'] < $day) ? -$parts['mday'] : ($parts['mday'] - $day);
-                            }
-                        }
-                    } else if ($calc == 'sub') {
-                        $date = $month - $found;
-                        $calc = 'set';
-                        if (self::$_options['extend_month'] === false) {
-                            $parts = $this->getDateParts($this->mktime($hour, $minute, $second, $date, $day, $year, false));
-                            if ($parts['mday'] != $day) {
-                                $fixday = ($parts['mday'] < $day) ? -$parts['mday'] : ($parts['mday'] - $day);
-                            }
-                        }
-                    }
-                    return $this->_assign($calc, $this->mktime(0, 0, 0, $date, $day + $fixday, $year, true),
-                                                 $this->mktime(0, 0, 0, $month, $day, $year, true), $hour);
-                }
-
-                // Monthname not found
-                require_once 'Zend/Date/Exception.php';
-                throw new Zend_Date_Exception("invalid date ($date) operand, month expected", $date);
-                break;
-
-            case self::MONTH_SHORT:
-                if (is_numeric($date) === true) {
-                    $fixday = 0;
-                    if ($calc === 'add') {
-                        $date += $month;
-                        $calc  = 'set';
-                        if (self::$_options['extend_month'] === false) {
-                            $parts = $this->getDateParts($this->mktime($hour, $minute, $second, $date, $day, $year, false));
-                            if ($parts['mday'] != $day) {
-                                $fixday = ($parts['mday'] < $day) ? -$parts['mday'] : ($parts['mday'] - $day);
-                            }
-                        }
-                    } else if ($calc === 'sub') {
-                        $date = $month - $date;
-                        $calc = 'set';
-                        if (self::$_options['extend_month'] === false) {
-                            $parts = $this->getDateParts($this->mktime($hour, $minute, $second, $date, $day, $year, false));
-                            if ($parts['mday'] != $day) {
-                                $fixday = ($parts['mday'] < $day) ? -$parts['mday'] : ($parts['mday'] - $day);
-                            }
-                        }
-                    }
-
-                    return $this->_assign($calc, $this->mktime(0, 0, 0, $date,  $day + $fixday, $year, true),
-                                                 $this->mktime(0, 0, 0, $month, $day,           $year, true), $hour);
-                }
-                require_once 'Zend/Date/Exception.php';
-                throw new Zend_Date_Exception("invalid date ($date) operand, month expected", $date);
-                break;
-
-            case self::MONTH_DAYS:
-                require_once 'Zend/Date/Exception.php';
-                throw new Zend_Date_Exception('month days not supported', $date);
-                break;
-
-            case self::MONTH_NAME_NARROW:
-                $monthlist = Zend_Locale_Data::getList($locale, 'month', array('gregorian', 'stand-alone', 'narrow'));
-                $cnt       = 0;
-                foreach ($monthlist as $key => $value) {
-                    if (strtoupper($value) === strtoupper($date)) {
-                        $found = $key;
-                        break;
-                    }
-                    ++$cnt;
-                }
-                $date = array_search($date, $monthlist);
-
-                // Monthname found
-                if ($cnt < 12) {
-                    $fixday = 0;
-                    if ($calc === 'add') {
-                        $date += $found;
-                        $calc  = 'set';
-                        if (self::$_options['extend_month'] === false) {
-                            $parts = $this->getDateParts($this->mktime($hour, $minute, $second, $date, $day, $year, false));
-                            if ($parts['mday'] != $day) {
-                                $fixday = ($parts['mday'] < $day) ? -$parts['mday'] : ($parts['mday'] - $day);
-                            }
-                        }
-                    } else if ($calc === 'sub') {
-                        $date = $month - $found;
-                        $calc = 'set';
-                        if (self::$_options['extend_month'] === false) {
-                            $parts = $this->getDateParts($this->mktime($hour, $minute, $second, $date, $day, $year, false));
-                            if ($parts['mday'] != $day) {
-                                $fixday = ($parts['mday'] < $day) ? -$parts['mday'] : ($parts['mday'] - $day);
-                            }
-                        }
-                    }
-                    return $this->_assign($calc, $this->mktime(0, 0, 0, $date,  $day + $fixday, $year, true),
-                                                 $this->mktime(0, 0, 0, $month, $day,           $year, true), $hour);
-                }
-
-                // Monthname not found
-                require_once 'Zend/Date/Exception.php';
-                throw new Zend_Date_Exception("invalid date ($date) operand, month expected", $date);
-                break;
-
-            // year formats
-            case self::LEAPYEAR:
-                require_once 'Zend/Date/Exception.php';
-                throw new Zend_Date_Exception('leap year not supported', $date);
-                break;
-
-            case self::YEAR_8601:
-                if (is_numeric($date)) {
-                    if ($calc === 'add') {
-                        $date += $year;
-                        $calc  = 'set';
-                    } else if ($calc === 'sub') {
-                        $date = $year - $date;
-                        $calc = 'set';
-                    }
-                    return $this->_assign($calc, $this->mktime(0, 0, 0, $month, $day, intval($date), true),
-                                                 $this->mktime(0, 0, 0, $month, $day, $year,         true), false);
-                }
-                require_once 'Zend/Date/Exception.php';
-                throw new Zend_Date_Exception("invalid date ($date) operand, year expected", $date);
-                break;
-
-            case self::YEAR:
-                if (is_numeric($date)) {
-                    if ($calc === 'add') {
-                        $date += $year;
-                        $calc  = 'set';
-                    } else if ($calc === 'sub') {
-                        $date = $year - $date;
-                        $calc = 'set';
-                    }
-                    return $this->_assign($calc, $this->mktime(0, 0, 0, $month, $day, intval($date), true),
-                                                 $this->mktime(0, 0, 0, $month, $day, $year,         true), false);
-                }
-                require_once 'Zend/Date/Exception.php';
-                throw new Zend_Date_Exception("invalid date ($date) operand, year expected", $date);
-                break;
-
-            case self::YEAR_SHORT:
-                if (is_numeric($date)) {
-                    $date = intval($date);
-                    if (($calc == 'set') || ($calc == 'cmp')) {
-                        $date = self::getFullYear($date);
-                    }
-                    if ($calc === 'add') {
-                        $date += $year;
-                        $calc  = 'set';
-                    } else if ($calc === 'sub') {
-                        $date = $year - $date;
-                        $calc = 'set';
-                    }
-                    return $this->_assign($calc, $this->mktime(0, 0, 0, $month, $day, $date, true),
-                                                 $this->mktime(0, 0, 0, $month, $day, $year, true), false);
-                }
-                require_once 'Zend/Date/Exception.php';
-                throw new Zend_Date_Exception("invalid date ($date) operand, year expected", $date);
-                break;
-
-            case self::YEAR_SHORT_8601:
-                if (is_numeric($date)) {
-                    $date = intval($date);
-                    if (($calc === 'set') || ($calc === 'cmp')) {
-                        $date = self::getFullYear($date);
-                    }
-                    if ($calc === 'add') {
-                        $date += $year;
-                        $calc  = 'set';
-                    } else if ($calc === 'sub') {
-                        $date = $year - $date;
-                        $calc = 'set';
-                    }
-                    return $this->_assign($calc, $this->mktime(0, 0, 0, $month, $day, $date, true),
-                                                 $this->mktime(0, 0, 0, $month, $day, $year, true), false);
-                }
-                require_once 'Zend/Date/Exception.php';
-                throw new Zend_Date_Exception("invalid date ($date) operand, year expected", $date);
-                break;
-
-            // time formats
-            case self::MERIDIEM:
-                require_once 'Zend/Date/Exception.php';
-                throw new Zend_Date_Exception('meridiem not supported', $date);
-                break;
-
-            case self::SWATCH:
-                if (is_numeric($date)) {
-                    $rest    = intval($date);
-                    $hours   = floor($rest * 24 / 1000);
-                    $rest    = $rest - ($hours * 1000 / 24);
-                    $minutes = floor($rest * 1440 / 1000);
-                    $rest    = $rest - ($minutes * 1000 / 1440);
-                    $seconds = floor($rest * 86400 / 1000);
-                    return $this->_assign($calc, $this->mktime($hours, $minutes, $seconds, 1, 1, 1970, true),
-                                                 $this->mktime($hour,  $minute,  $second,  1, 1, 1970, true), false);
-                }
-                require_once 'Zend/Date/Exception.php';
-                throw new Zend_Date_Exception("invalid date ($date) operand, swatchstamp expected", $date);
-                break;
-
-            case self::HOUR_SHORT_AM:
-                if (is_numeric($date)) {
-                    return $this->_assign($calc, $this->mktime(intval($date), 0, 0, 1, 1, 1970, true),
-                                                 $this->mktime($hour,         0, 0, 1, 1, 1970, true), false);
-                }
-                require_once 'Zend/Date/Exception.php';
-                throw new Zend_Date_Exception("invalid date ($date) operand, hour expected", $date);
-                break;
-
-            case self::HOUR_SHORT:
-                if (is_numeric($date)) {
-                    return $this->_assign($calc, $this->mktime(intval($date), 0, 0, 1, 1, 1970, true),
-                                                 $this->mktime($hour,         0, 0, 1, 1, 1970, true), false);
-                }
-                require_once 'Zend/Date/Exception.php';
-                throw new Zend_Date_Exception("invalid date ($date) operand, hour expected", $date);
-                break;
-
-            case self::HOUR_AM:
-                if (is_numeric($date)) {
-                    return $this->_assign($calc, $this->mktime(intval($date), 0, 0, 1, 1, 1970, true),
-                                                 $this->mktime($hour,         0, 0, 1, 1, 1970, true), false);
-                }
-                require_once 'Zend/Date/Exception.php';
-                throw new Zend_Date_Exception("invalid date ($date) operand, hour expected", $date);
-                break;
-
-            case self::HOUR:
-                if (is_numeric($date)) {
-                    return $this->_assign($calc, $this->mktime(intval($date), 0, 0, 1, 1, 1970, true),
-                                                 $this->mktime($hour,         0, 0, 1, 1, 1970, true), false);
-                }
-                require_once 'Zend/Date/Exception.php';
-                throw new Zend_Date_Exception("invalid date ($date) operand, hour expected", $date);
-                break;
-
-            case self::MINUTE:
-                if (is_numeric($date)) {
-                    return $this->_assign($calc, $this->mktime(0, intval($date), 0, 1, 1, 1970, true),
-                                                 $this->mktime(0, $minute,       0, 1, 1, 1970, true), false);
-                }
-                require_once 'Zend/Date/Exception.php';
-                throw new Zend_Date_Exception("invalid date ($date) operand, minute expected", $date);
-                break;
-
-            case self::SECOND:
-                if (is_numeric($date)) {
-                    return $this->_assign($calc, $this->mktime(0, 0, intval($date), 1, 1, 1970, true),
-                                                 $this->mktime(0, 0, $second,       1, 1, 1970, true), false);
-                }
-                require_once 'Zend/Date/Exception.php';
-                throw new Zend_Date_Exception("invalid date ($date) operand, second expected", $date);
-                break;
-
-            case self::MILLISECOND:
-                if (is_numeric($date)) {
-                    switch($calc) {
-                        case 'set' :
-                            return $this->setMillisecond($date);
-                            break;
-                        case 'add' :
-                            return $this->addMillisecond($date);
-                            break;
-                        case 'sub' :
-                            return $this->subMillisecond($date);
-                            break;
-                    }
-                    return $this->compareMillisecond($date);
-                }
-                require_once 'Zend/Date/Exception.php';
-                throw new Zend_Date_Exception("invalid date ($date) operand, milliseconds expected", $date);
-                break;
-
-            case self::MINUTE_SHORT:
-                if (is_numeric($date)) {
-                    return $this->_assign($calc, $this->mktime(0, intval($date), 0, 1, 1, 1970, true),
-                                                 $this->mktime(0, $minute,       0, 1, 1, 1970, true), false);
-                }
-                require_once 'Zend/Date/Exception.php';
-                throw new Zend_Date_Exception("invalid date ($date) operand, minute expected", $date);
-                break;
-
-            case self::SECOND_SHORT:
-                if (is_numeric($date)) {
-                    return $this->_assign($calc, $this->mktime(0, 0, intval($date), 1, 1, 1970, true),
-                                                 $this->mktime(0, 0, $second,       1, 1, 1970, true), false);
-                }
-                require_once 'Zend/Date/Exception.php';
-                throw new Zend_Date_Exception("invalid date ($date) operand, second expected", $date);
-                break;
-
-            // timezone formats
-            // break intentionally omitted
-            case self::TIMEZONE_NAME:
-            case self::TIMEZONE:
-            case self::TIMEZONE_SECS:
-                require_once 'Zend/Date/Exception.php';
-                throw new Zend_Date_Exception('timezone not supported', $date);
-                break;
-
-            case self::DAYLIGHT:
-                require_once 'Zend/Date/Exception.php';
-                throw new Zend_Date_Exception('daylight not supported', $date);
-                break;
-
-            case self::GMT_DIFF:
-            case self::GMT_DIFF_SEP:
-                require_once 'Zend/Date/Exception.php';
-                throw new Zend_Date_Exception('gmtdiff not supported', $date);
-                break;
-
-            // date strings
-            case self::ISO_8601:
-                // (-)YYYY-MM-dd
-                preg_match('/^(-{0,1}\d{4})-(\d{2})-(\d{2})/', $date, $datematch);
-                // (-)YY-MM-dd
-                if (empty($datematch)) {
-                    preg_match('/^(-{0,1}\d{2})-(\d{2})-(\d{2})/', $date, $datematch);
-                }
-                // (-)YYYYMMdd
-                if (empty($datematch)) {
-                    preg_match('/^(-{0,1}\d{4})(\d{2})(\d{2})/', $date, $datematch);
-                }
-                // (-)YYMMdd
-                if (empty($datematch)) {
-                    preg_match('/^(-{0,1}\d{2})(\d{2})(\d{2})/', $date, $datematch);
-                }
-                $tmpdate = $date;
-                if (!empty($datematch)) {
-                    $dateMatchCharCount = iconv_strlen($datematch[0], 'UTF-8');
-                    $tmpdate = iconv_substr($date,
-                                            $dateMatchCharCount,
-                                            iconv_strlen($date, 'UTF-8') - $dateMatchCharCount,
-                                            'UTF-8');
-                }
-                // (T)hh:mm:ss
-                preg_match('/[T,\s]{0,1}(\d{2}):(\d{2}):(\d{2})/', $tmpdate, $timematch);
-                if (empty($timematch)) {
-                    preg_match('/[T,\s]{0,1}(\d{2})(\d{2})(\d{2})/', $tmpdate, $timematch);
-                }
-                if (empty($datematch) and empty($timematch)) {
-                    require_once 'Zend/Date/Exception.php';
-                    throw new Zend_Date_Exception("unsupported ISO8601 format ($date)", $date);
-                }
-                if (!empty($timematch)) {
-                    $timeMatchCharCount = iconv_strlen($timematch[0], 'UTF-8');
-                    $tmpdate = iconv_substr($tmpdate,
-                                            $timeMatchCharCount,
-                                            iconv_strlen($tmpdate, 'UTF-8') - $timeMatchCharCount,
-                                            'UTF-8');
-                }
-                if (empty($datematch)) {
-                    $datematch[1] = 1970;
-                    $datematch[2] = 1;
-                    $datematch[3] = 1;
-                } else if (iconv_strlen($datematch[1], 'UTF-8') == 2) {
-                    $datematch[1] = self::getFullYear($datematch[1]);
-                }
-                if (empty($timematch)) {
-                    $timematch[1] = 0;
-                    $timematch[2] = 0;
-                    $timematch[3] = 0;
-                }
-
-                if (($calc == 'set') || ($calc == 'cmp')) {
-                    --$datematch[2];
-                    --$month;
-                    --$datematch[3];
-                    --$day;
-                    $datematch[1] -= 1970;
-                    $year         -= 1970;
-                }
-                return $this->_assign($calc, $this->mktime($timematch[1], $timematch[2], $timematch[3], 1 + $datematch[2], 1 + $datematch[3], 1970 + $datematch[1], false),
-                                             $this->mktime($hour,         $minute,       $second,       1 + $month,        1 + $day,          1970 + $year,         false), false);
-                break;
-
-            case self::RFC_2822:
-                $result = preg_match('/^\w{3},\s(\d{1,2})\s(\w{3})\s(\d{4})\s(\d{2}):(\d{2}):{0,1}(\d{0,2})\s([+-]{1}\d{4})$/', $date, $match);
-                if (!$result) {
-                    require_once 'Zend/Date/Exception.php';
-                    throw new Zend_Date_Exception("no RFC 2822 format ($date)", $date);
-                }
-
-                $months  = $this->_getDigitFromName($match[2]);
-
-                if (($calc == 'set') || ($calc == 'cmp')) {
-                    --$months;
-                    --$month;
-                    --$match[1];
-                    --$day;
-                    $match[3] -= 1970;
-                    $year     -= 1970;
-                }
-                return $this->_assign($calc, $this->mktime($match[4], $match[5], $match[6], 1 + $months, 1 + $match[1], 1970 + $match[3], false),
-                                             $this->mktime($hour,     $minute,   $second,   1 + $month,  1 + $day,      1970 + $year,     false), false);
-                break;
-
-            case self::TIMESTAMP:
-                if (is_numeric($date)) {
-                    return $this->_assign($calc, $date, $this->getUnixTimestamp());
-                }
-                require_once 'Zend/Date/Exception.php';
-                throw new Zend_Date_Exception("invalid date ($date) operand, timestamp expected", $date);
-                break;
-
-            // additional formats
-            // break intentionally omitted
-            case self::ERA:
-            case self::ERA_NAME:
-                require_once 'Zend/Date/Exception.php';
-                throw new Zend_Date_Exception('era not supported', $date);
-                break;
-
-            case self::DATES:
-                try {
-                    $parsed = Zend_Locale_Format::getDate($date, array('locale' => $locale, 'format_type' => 'iso', 'fix_date' => true));
-
-                    if (($calc == 'set') || ($calc == 'cmp')) {
-                        --$parsed['month'];
-                        --$month;
-                        --$parsed['day'];
-                        --$day;
-                        $parsed['year'] -= 1970;
-                        $year  -= 1970;
-                    }
-                    return $this->_assign($calc, $this->mktime(0, 0, 0, 1 + $parsed['month'], 1 + $parsed['day'], 1970 + $parsed['year'], true),
-                                                 $this->mktime(0, 0, 0, 1 + $month,           1 + $day,           1970 + $year,           true), $hour);
-                } catch (Zend_Locale_Exception $e) {
-                    require_once 'Zend/Date/Exception.php';
-                    throw new Zend_Date_Exception($e->getMessage(), $date);
-                }
-                break;
-
-            case self::DATE_FULL:
-                try {
-                    $format = Zend_Locale_Data::getContent($locale, 'date', array('gregorian', 'full'));
-                    $parsed = Zend_Locale_Format::getDate($date, array('date_format' => $format, 'format_type' => 'iso', 'locale' => $locale));
-
-                    if (($calc == 'set') || ($calc == 'cmp')) {
-                        --$parsed['month'];
-                        --$month;
-                        --$parsed['day'];
-                        --$day;
-                        $parsed['year'] -= 1970;
-                        $year  -= 1970;
-                    }
-                    return $this->_assign($calc, $this->mktime(0, 0, 0, 1 + $parsed['month'], 1 + $parsed['day'], 1970 + $parsed['year'], true),
-                                                 $this->mktime(0, 0, 0, 1 + $month,           1 + $day,           1970 + $year,           true), $hour);
-                } catch (Zend_Locale_Exception $e) {
-                    require_once 'Zend/Date/Exception.php';
-                    throw new Zend_Date_Exception($e->getMessage(), $date);
-                }
-                break;
-
-            case self::DATE_LONG:
-                try {
-                    $format = Zend_Locale_Data::getContent($locale, 'date', array('gregorian', 'long'));
-                    $parsed = Zend_Locale_Format::getDate($date, array('date_format' => $format, 'format_type' => 'iso', 'locale' => $locale));
-
-                    if (($calc == 'set') || ($calc == 'cmp')){
-                        --$parsed['month'];
-                        --$month;
-                        --$parsed['day'];
-                        --$day;
-                        $parsed['year'] -= 1970;
-                        $year  -= 1970;
-                    }
-                    return $this->_assign($calc, $this->mktime(0, 0, 0, 1 + $parsed['month'], 1 + $parsed['day'], 1970 + $parsed['year'], true),
-                                                 $this->mktime(0, 0, 0, 1 + $month,           1 + $day,           1970 + $year,           true), $hour);
-                } catch (Zend_Locale_Exception $e) {
-                    require_once 'Zend/Date/Exception.php';
-                    throw new Zend_Date_Exception($e->getMessage(), $date);
-                }
-                break;
-
-            case self::DATE_MEDIUM:
-                try {
-                    $format = Zend_Locale_Data::getContent($locale, 'date', array('gregorian', 'medium'));
-                    $parsed = Zend_Locale_Format::getDate($date, array('date_format' => $format, 'format_type' => 'iso', 'locale' => $locale));
-
-                    if (($calc == 'set') || ($calc == 'cmp')) {
-                        --$parsed['month'];
-                        --$month;
-                        --$parsed['day'];
-                        --$day;
-                        $parsed['year'] -= 1970;
-                        $year  -= 1970;
-                    }
-                    return $this->_assign($calc, $this->mktime(0, 0, 0, 1 + $parsed['month'], 1 + $parsed['day'], 1970 + $parsed['year'], true),
-                                                 $this->mktime(0, 0, 0, 1 + $month,           1 + $day,           1970 + $year,           true), $hour);
-                } catch (Zend_Locale_Exception $e) {
-                    require_once 'Zend/Date/Exception.php';
-                    throw new Zend_Date_Exception($e->getMessage(), $date);
-                }
-                break;
-
-            case self::DATE_SHORT:
-                try {
-                    $format = Zend_Locale_Data::getContent($locale, 'date', array('gregorian', 'short'));
-                    $parsed = Zend_Locale_Format::getDate($date, array('date_format' => $format, 'format_type' => 'iso', 'locale' => $locale));
-
-                    $parsed['year'] = self::getFullYear($parsed['year']);
-
-                    if (($calc == 'set') || ($calc == 'cmp')) {
-                        --$parsed['month'];
-                        --$month;
-                        --$parsed['day'];
-                        --$day;
-                        $parsed['year'] -= 1970;
-                        $year  -= 1970;
-                    }
-                    return $this->_assign($calc, $this->mktime(0, 0, 0, 1 + $parsed['month'], 1 + $parsed['day'], 1970 + $parsed['year'], true),
-                                                 $this->mktime(0, 0, 0, 1 + $month,           1 + $day,           1970 + $year,           true), $hour);
-                } catch (Zend_Locale_Exception $e) {
-                    require_once 'Zend/Date/Exception.php';
-                    throw new Zend_Date_Exception($e->getMessage(), $date);
-                }
-                break;
-
-            case self::TIMES:
-                try {
-                    if ($calc != 'set') {
-                        $month = 1;
-                        $day   = 1;
-                        $year  = 1970;
-                    }
-                    $parsed = Zend_Locale_Format::getTime($date, array('locale' => $locale, 'format_type' => 'iso', 'fix_date' => true));
-                    return $this->_assign($calc, $this->mktime($parsed['hour'], $parsed['minute'], $parsed['second'], $month, $day, $year, true),
-                                                 $this->mktime($hour,           $minute,           $second,           $month, $day, $year, true), false);
-                } catch (Zend_Locale_Exception $e) {
-                    require_once 'Zend/Date/Exception.php';
-                    throw new Zend_Date_Exception($e->getMessage(), $date);
-                }
-                break;
-
-            case self::TIME_FULL:
-                try {
-                    $format = Zend_Locale_Data::getContent($locale, 'time', array('gregorian', 'full'));
-                    $parsed = Zend_Locale_Format::getTime($date, array('date_format' => $format, 'format_type' => 'iso', 'locale' => $locale));
-                    if ($calc != 'set') {
-                        $month = 1;
-                        $day   = 1;
-                        $year  = 1970;
-                    }
-                    return $this->_assign($calc, $this->mktime($parsed['hour'], $parsed['minute'], 0,       $month, $day, $year, true),
-                                                 $this->mktime($hour,           $minute,           $second, $month, $day, $year, true), false);
-                } catch (Zend_Locale_Exception $e) {
-                    require_once 'Zend/Date/Exception.php';
-                    throw new Zend_Date_Exception($e->getMessage(), $date);
-                }
-                break;
-
-            case self::TIME_LONG:
-                try {
-                    $format = Zend_Locale_Data::getContent($locale, 'time', array('gregorian', 'long'));
-                    $parsed = Zend_Locale_Format::getTime($date, array('date_format' => $format, 'format_type' => 'iso', 'locale' => $locale));
-                    if ($calc != 'set') {
-                        $month = 1;
-                        $day   = 1;
-                        $year  = 1970;
-                    }
-                    return $this->_assign($calc, $this->mktime($parsed['hour'], $parsed['minute'], $parsed['second'], $month, $day, $year, true),
-                                                 $this->mktime($hour,           $minute,           $second,           $month, $day, $year, true), false);
-                } catch (Zend_Locale_Exception $e) {
-                    require_once 'Zend/Date/Exception.php';
-                    throw new Zend_Date_Exception($e->getMessage(), $date);
-                }
-                break;
-
-            case self::TIME_MEDIUM:
-                try {
-                    $format = Zend_Locale_Data::getContent($locale, 'time', array('gregorian', 'medium'));
-                    $parsed = Zend_Locale_Format::getTime($date, array('date_format' => $format, 'format_type' => 'iso', 'locale' => $locale));
-                    if ($calc != 'set') {
-                        $month = 1;
-                        $day   = 1;
-                        $year  = 1970;
-                    }
-                    return $this->_assign($calc, $this->mktime($parsed['hour'], $parsed['minute'], $parsed['second'], $month, $day, $year, true),
-                                                 $this->mktime($hour,           $minute,           $second,           $month, $day, $year, true), false);
-                } catch (Zend_Locale_Exception $e) {
-                    require_once 'Zend/Date/Exception.php';
-                    throw new Zend_Date_Exception($e->getMessage(), $date);
-                }
-                break;
-
-            case self::TIME_SHORT:
-                try {
-                    $format = Zend_Locale_Data::getContent($locale, 'time', array('gregorian', 'short'));
-                    $parsed = Zend_Locale_Format::getTime($date, array('date_format' => $format, 'format_type' => 'iso', 'locale' => $locale));
-                    if ($calc != 'set') {
-                        $month = 1;
-                        $day   = 1;
-                        $year  = 1970;
-                    }
-                    return $this->_assign($calc, $this->mktime($parsed['hour'], $parsed['minute'], 0,       $month, $day, $year, true),
-                                                 $this->mktime($hour,           $minute,           $second, $month, $day, $year, true), false);
-                } catch (Zend_Locale_Exception $e) {
-                    require_once 'Zend/Date/Exception.php';
-                    throw new Zend_Date_Exception($e->getMessage(), $date);
-                }
-                break;
-
-            // ATOM and RFC_3339 are identical
-            case self::ATOM:
-            case self::RFC_3339:
-                $result = preg_match('/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})\d{0,4}([+-]{1}\d{2}:\d{2}|Z)$/', $date, $match);
-                if (!$result) {
-                    require_once 'Zend/Date/Exception.php';
-                    throw new Zend_Date_Exception("invalid date ($date) operand, ATOM format expected", $date);
-                }
-
-                if (($calc == 'set') || ($calc == 'cmp')) {
-                    --$match[2];
-                    --$month;
-                    --$match[3];
-                    --$day;
-                    $match[1] -= 1970;
-                    $year     -= 1970;
-                }
-                return $this->_assign($calc, $this->mktime($match[4], $match[5], $match[6], 1 + $match[2], 1 + $match[3], 1970 + $match[1], true),
-                                             $this->mktime($hour,     $minute,   $second,   1 + $month,    1 + $day,      1970 + $year,     true), false);
-                break;
-
-            case self::COOKIE:
-                $result = preg_match("/^\w{6,9},\s(\d{2})-(\w{3})-(\d{2})\s(\d{2}):(\d{2}):(\d{2})\s.{3,20}$/", $date, $match);
-                if (!$result) {
-                    require_once 'Zend/Date/Exception.php';
-                    throw new Zend_Date_Exception("invalid date ($date) operand, COOKIE format expected", $date);
-                }
-                $matchStartPos = iconv_strpos($match[0], ' ', 0, 'UTF-8') + 1;
-                $match[0] = iconv_substr($match[0],
-                                         $matchStartPos,
-                                         iconv_strlen($match[0], 'UTF-8') - $matchStartPos,
-                                         'UTF-8');
-
-                $months    = $this->_getDigitFromName($match[2]);
-                $match[3] = self::getFullYear($match[3]);
-
-                if (($calc == 'set') || ($calc == 'cmp')) {
-                    --$months;
-                    --$month;
-                    --$match[1];
-                    --$day;
-                    $match[3] -= 1970;
-                    $year     -= 1970;
-                }
-                return $this->_assign($calc, $this->mktime($match[4], $match[5], $match[6], 1 + $months, 1 + $match[1], 1970 + $match[3], true),
-                                             $this->mktime($hour,     $minute,   $second,   1 + $month,  1 + $day,      1970 + $year,     true), false);
-                break;
-
-            case self::RFC_822:
-            case self::RFC_1036:
-                // new RFC 822 format, identical to RFC 1036 standard
-                $result = preg_match('/^\w{0,3},{0,1}\s{0,1}(\d{1,2})\s(\w{3})\s(\d{2})\s(\d{2}):(\d{2}):{0,1}(\d{0,2})\s([+-]{1}\d{4}|\w{1,20})$/', $date, $match);
-                if (!$result) {
-                    require_once 'Zend/Date/Exception.php';
-                    throw new Zend_Date_Exception("invalid date ($date) operand, RFC 822 date format expected", $date);
-                }
-
-                $months    = $this->_getDigitFromName($match[2]);
-                $match[3] = self::getFullYear($match[3]);
-
-                if (($calc == 'set') || ($calc == 'cmp')) {
-                    --$months;
-                    --$month;
-                    --$match[1];
-                    --$day;
-                    $match[3] -= 1970;
-                    $year     -= 1970;
-                }
-                return $this->_assign($calc, $this->mktime($match[4], $match[5], $match[6], 1 + $months, 1 + $match[1], 1970 + $match[3], false),
-                                             $this->mktime($hour,     $minute,   $second,   1 + $month,  1 + $day,      1970 + $year,     false), false);
-                break;
-
-            case self::RFC_850:
-                $result = preg_match('/^\w{6,9},\s(\d{2})-(\w{3})-(\d{2})\s(\d{2}):(\d{2}):(\d{2})\s.{3,21}$/', $date, $match);
-                if (!$result) {
-                    require_once 'Zend/Date/Exception.php';
-                    throw new Zend_Date_Exception("invalid date ($date) operand, RFC 850 date format expected", $date);
-                }
-
-                $months    = $this->_getDigitFromName($match[2]);
-                $match[3] = self::getFullYear($match[3]);
-
-                if (($calc == 'set') || ($calc == 'cmp')) {
-                    --$months;
-                    --$month;
-                    --$match[1];
-                    --$day;
-                    $match[3] -= 1970;
-                    $year     -= 1970;
-                }
-                return $this->_assign($calc, $this->mktime($match[4], $match[5], $match[6], 1 + $months, 1 + $match[1], 1970 + $match[3], true),
-                                             $this->mktime($hour,     $minute,   $second,   1 + $month,  1 + $day,      1970 + $year,     true), false);
-                break;
-
-            case self::RFC_1123:
-                $result = preg_match('/^\w{0,3},{0,1}\s{0,1}(\d{1,2})\s(\w{3})\s(\d{2,4})\s(\d{2}):(\d{2}):{0,1}(\d{0,2})\s([+-]{1}\d{4}|\w{1,20})$/', $date, $match);
-                if (!$result) {
-                    require_once 'Zend/Date/Exception.php';
-                    throw new Zend_Date_Exception("invalid date ($date) operand, RFC 1123 date format expected", $date);
-                }
-
-                $months  = $this->_getDigitFromName($match[2]);
-
-                if (($calc == 'set') || ($calc == 'cmp')) {
-                    --$months;
-                    --$month;
-                    --$match[1];
-                    --$day;
-                    $match[3] -= 1970;
-                    $year     -= 1970;
-                }
-                return $this->_assign($calc, $this->mktime($match[4], $match[5], $match[6], 1 + $months, 1 + $match[1], 1970 + $match[3], true),
-                                             $this->mktime($hour,     $minute,   $second,   1 + $month,  1 + $day,      1970 + $year,     true), false);
-                break;
-
-            case self::RSS:
-                $result = preg_match('/^\w{3},\s(\d{2})\s(\w{3})\s(\d{2,4})\s(\d{1,2}):(\d{2}):(\d{2})\s.{1,21}$/', $date, $match);
-                if (!$result) {
-                    require_once 'Zend/Date/Exception.php';
-                    throw new Zend_Date_Exception("invalid date ($date) operand, RSS date format expected", $date);
-                }
-
-                $months  = $this->_getDigitFromName($match[2]);
-                $match[3] = self::getFullYear($match[3]);
-
-                if (($calc == 'set') || ($calc == 'cmp')) {
-                    --$months;
-                    --$month;
-                    --$match[1];
-                    --$day;
-                    $match[3] -= 1970;
-                    $year  -= 1970;
-                }
-                return $this->_assign($calc, $this->mktime($match[4], $match[5], $match[6], 1 + $months, 1 + $match[1], 1970 + $match[3], true),
-                                             $this->mktime($hour,     $minute,   $second,   1 + $month,  1 + $day,      1970 + $year,     true), false);
-                break;
-
-            case self::W3C:
-                $result = preg_match('/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})[+-]{1}\d{2}:\d{2}$/', $date, $match);
-                if (!$result) {
-                    require_once 'Zend/Date/Exception.php';
-                    throw new Zend_Date_Exception("invalid date ($date) operand, W3C date format expected", $date);
-                }
-
-                if (($calc == 'set') || ($calc == 'cmp')) {
-                    --$match[2];
-                    --$month;
-                    --$match[3];
-                    --$day;
-                    $match[1] -= 1970;
-                    $year     -= 1970;
-                }
-                return $this->_assign($calc, $this->mktime($match[4], $match[5], $match[6], 1 + $match[2], 1 + $match[3], 1970 + $match[1], true),
-                                             $this->mktime($hour,     $minute,   $second,   1 + $month,    1 + $day,      1970 + $year,     true), false);
-                break;
-
-            default:
-                if (!is_numeric($date) || !empty($part)) {
-                    try {
-                        if (self::$_options['format_type'] == 'php') {
-                            $part = Zend_Locale_Format::convertPhpToIsoFormat($part);
-                        }
-                        if (empty($part)) {
-                            $part  = Zend_Locale_Format::getDateFormat($locale) . " ";
-                            $part .= Zend_Locale_Format::getTimeFormat($locale);
-                        }
-                        $parsed = Zend_Locale_Format::getDate($date, array('date_format' => $part, 'locale' => $locale, 'fix_date' => true, 'format_type' => 'iso'));
-                        if ((strpos(strtoupper($part), 'YY') !== false) and (strpos(strtoupper($part), 'YYYY') === false)) {
-                            $parsed['year'] = self::getFullYear($parsed['year']);
-                        }
-                        if (($calc == 'set') || ($calc == 'cmp')) {
-                            if (isset($parsed['month'])) {
-                                --$parsed['month'];
-                            } else {
-                                $parsed['month'] = 0;
-                            }
-                            if (isset($parsed['day'])) {
-                                --$parsed['day'];
-                            } else {
-                                $parsed['day'] = 0;
-                            }
-                            if (isset($parsed['year'])) {
-                                $parsed['year'] -= 1970;
-                            } else {
-                                $parsed['year'] = 0;
-                            }
-                        }
-                        return $this->_assign($calc, $this->mktime(
-                            isset($parsed['hour']) ? $parsed['hour'] : 0,
-                            isset($parsed['minute']) ? $parsed['minute'] : 0,
-                            isset($parsed['second']) ? $parsed['second'] : 0,
-                            1 + $parsed['month'], 1 + $parsed['day'], 1970 + $parsed['year'],
-                            false), $this->getUnixTimestamp(), false);
-                    } catch (Zend_Locale_Exception $e) {
-                        if (!is_numeric($date)) {
-                            require_once 'Zend/Date/Exception.php';
-                            throw new Zend_Date_Exception($e->getMessage(), $date);
-                        }
-                    }
-                }
-                return $this->_assign($calc, $date, $this->getUnixTimestamp(), false);
-                break;
-        }
-    }
-
-    /**
-     * Returns true when both date objects or date parts are equal.
-     * For example:
-     * 15.May.2000 <-> 15.June.2000 Equals only for Day or Year... all other will return false
-     *
-     * @param  string|integer|array|Zend_Date  $date    Date or datepart to equal with
-     * @param  string                          $part    OPTIONAL Part of the date to compare, if null the timestamp is used
-     * @param  string|Zend_Locale              $locale  OPTIONAL Locale for parsing input
-     * @return boolean
-     * @throws Zend_Date_Exception
-     */
-    public function equals($date, $part = null, $locale = null)
-    {
-        $result = $this->compare($date, $part, $locale);
-
-        if ($result == 0) {
-            return true;
-        }
-        return false;
-    }
-
-    /**
-     * Returns if the given date or datepart is earlier
-     * For example:
-     * 15.May.2000 <-> 13.June.1999 will return true for day, year and date, but not for month
-     *
-     * @param  string|integer|array|Zend_Date  $date    Date or datepart to compare with
-     * @param  string                          $part    OPTIONAL Part of the date to compare, if null the timestamp is used
-     * @param  string|Zend_Locale              $locale  OPTIONAL Locale for parsing input
-     * @return boolean
-     * @throws Zend_Date_Exception
-     */
-    public function isEarlier($date, $part = null, $locale = null)
-    {
-        $result = $this->compare($date, $part, $locale);
-
-        if ($result == -1) {
-            return true;
-        }
-        return false;
-    }
-
-    /**
-     * Returns if the given date or datepart is later
-     * For example:
-     * 15.May.2000 <-> 13.June.1999 will return true for month but false for day, year and date
-     * Returns if the given date is later
-     *
-     * @param  string|integer|array|Zend_Date  $date    Date or datepart to compare with
-     * @param  string                          $part    OPTIONAL Part of the date to compare, if null the timestamp is used
-     * @param  string|Zend_Locale              $locale  OPTIONAL Locale for parsing input
-     * @return boolean
-     * @throws Zend_Date_Exception
-     */
-    public function isLater($date, $part = null, $locale = null)
-    {
-        $result = $this->compare($date, $part, $locale);
-
-        if ($result == 1) {
-            return true;
-        }
-        return false;
-    }
-
-    /**
-     * Returns only the time of the date as new Zend_Date object
-     * For example:
-     * 15.May.2000 10:11:23 will return a dateobject equal to 01.Jan.1970 10:11:23
-     *
-     * @param  string|Zend_Locale  $locale  OPTIONAL Locale for parsing input
-     * @return Zend_Date
-     */
-    public function getTime($locale = null)
-    {
-        return $this->copyPart(self::TIME_MEDIUM, $locale);
-    }
-
-    /**
-     * Returns the calculated time
-     *
-     * @param  string                    $calc    Calculation to make
-     * @param  string|integer|array|Zend_Date  $time    Time to calculate with, if null the actual time is taken
-     * @param  string                          $format  Timeformat for parsing input
-     * @param  string|Zend_Locale              $locale  Locale for parsing input
-     * @return integer|Zend_Date  new time
-     * @throws Zend_Date_Exception
-     */
-    private function _time($calc, $time, $format, $locale)
-    {
-        if ($time === null) {
-            require_once 'Zend/Date/Exception.php';
-            throw new Zend_Date_Exception('parameter $time must be set, null is not allowed');
-        }
-
-        if ($time instanceof Zend_Date) {
-            // extract time from object
-            $time = $time->get('HH:mm:ss');
-        } else {
-            if (is_array($time)) {
-                if ((isset($time['hour']) === true) or (isset($time['minute']) === true) or
-                    (isset($time['second']) === true)) {
-                    $parsed = $time;
-                } else {
-                    require_once 'Zend/Date/Exception.php';
-                    throw new Zend_Date_Exception("no hour, minute or second given in array");
-                }
-            } else {
-                if (self::$_options['format_type'] == 'php') {
-                    $format = Zend_Locale_Format::convertPhpToIsoFormat($format);
-                }
-                try {
-                    if ($locale === null) {
-                        $locale = $this->getLocale();
-                    }
-
-                    $parsed = Zend_Locale_Format::getTime($time, array('date_format' => $format, 'locale' => $locale, 'format_type' => 'iso'));
-                } catch (Zend_Locale_Exception $e) {
-                    require_once 'Zend/Date/Exception.php';
-                    throw new Zend_Date_Exception($e->getMessage());
-                }
-            }
-            $time  = str_pad($parsed['hour'], 2, '0', STR_PAD_LEFT) . ":";
-            $time .= str_pad($parsed['minute'], 2, '0', STR_PAD_LEFT) . ":";
-            $time .= str_pad($parsed['second'], 2, '0', STR_PAD_LEFT);
-        }
-
-        $return = $this->_calcdetail($calc, $time, self::TIMES, 'de');
-        if ($calc != 'cmp') {
-            return $this;
-        }
-        return $return;
-    }
-
-
-    /**
-     * Sets a new time for the date object. Format defines how to parse the time string.
-     * Also a complete date can be given, but only the time is used for setting.
-     * For example: dd.MMMM.yyTHH:mm' and 'ss sec'-> 10.May.07T25:11 and 44 sec => 1h11min44sec + 1 day
-     * Returned is the new date object and the existing date is left as it was before
-     *
-     * @param  string|integer|array|Zend_Date  $time    Time to set
-     * @param  string                          $format  OPTIONAL Timeformat for parsing input
-     * @param  string|Zend_Locale              $locale  OPTIONAL Locale for parsing input
-     * @return Zend_Date  new time
-     * @throws Zend_Date_Exception
-     */
-    public function setTime($time, $format = null, $locale = null)
-    {
-        return $this->_time('set', $time, $format, $locale);
-    }
-
-
-    /**
-     * Adds a time to the existing date. Format defines how to parse the time string.
-     * If only parts are given the other parts are set to 0.
-     * If no format is given, the standardformat of this locale is used.
-     * For example: HH:mm:ss -> 10 -> +10 hours
-     *
-     * @param  string|integer|array|Zend_Date  $time    Time to add
-     * @param  string                          $format  OPTIONAL Timeformat for parsing input
-     * @param  string|Zend_Locale              $locale  OPTIONAL Locale for parsing input
-     * @return Zend_Date  new time
-     * @throws Zend_Date_Exception
-     */
-    public function addTime($time, $format = null, $locale = null)
-    {
-        return $this->_time('add', $time, $format, $locale);
-    }
-
-
-    /**
-     * Subtracts a time from the existing date. Format defines how to parse the time string.
-     * If only parts are given the other parts are set to 0.
-     * If no format is given, the standardformat of this locale is used.
-     * For example: HH:mm:ss -> 10 -> -10 hours
-     *
-     * @param  string|integer|array|Zend_Date  $time    Time to sub
-     * @param  string                          $format  OPTIONAL Timeformat for parsing input
-     * @param  string|Zend_Locale              $locale  OPTIONAL Locale for parsing input
-     * @return Zend_Date  new time
-     * @throws Zend_Date_Exception
-     */
-    public function subTime($time, $format = null, $locale = null)
-    {
-        return $this->_time('sub', $time, $format, $locale);
-    }
-
-
-    /**
-     * Compares the time from the existing date. Format defines how to parse the time string.
-     * If only parts are given the other parts are set to default.
-     * If no format us given, the standardformat of this locale is used.
-     * For example: HH:mm:ss -> 10 -> 10 hours
-     *
-     * @param  string|integer|array|Zend_Date  $time    Time to compare
-     * @param  string                          $format  OPTIONAL Timeformat for parsing input
-     * @param  string|Zend_Locale              $locale  OPTIONAL Locale for parsing input
-     * @return integer  0 = equal, 1 = later, -1 = earlier
-     * @throws Zend_Date_Exception
-     */
-    public function compareTime($time, $format = null, $locale = null)
-    {
-        return $this->_time('cmp', $time, $format, $locale);
-    }
-
-    /**
-     * Returns a clone of $this, with the time part set to 00:00:00.
-     *
-     * @param  string|Zend_Locale  $locale  OPTIONAL Locale for parsing input
-     * @return Zend_Date
-     */
-    public function getDate($locale = null)
-    {
-        $date = $this->copyPart(self::DATE_MEDIUM, $locale);
-        $date->addTimestamp($this->getGmtOffset());
-        return $date;
-    }
-
-    /**
-     * Returns the calculated date
-     *
-     * @param  string                          $calc    Calculation to make
-     * @param  string|integer|array|Zend_Date  $date    Date to calculate with, if null the actual date is taken
-     * @param  string                          $format  Date format for parsing
-     * @param  string|Zend_Locale              $locale  Locale for parsing input
-     * @return integer|Zend_Date  new date
-     * @throws Zend_Date_Exception
-     */
-    private function _date($calc, $date, $format, $locale)
-    {
-        if ($date === null) {
-            require_once 'Zend/Date/Exception.php';
-            throw new Zend_Date_Exception('parameter $date must be set, null is not allowed');
-        }
-
-        if ($date instanceof Zend_Date) {
-            // extract date from object
-            $date = $date->get('d.M.Y');
-        } else {
-            if (is_array($date)) {
-                if ((isset($time['year']) === true) or (isset($time['month']) === true) or
-                    (isset($time['day']) === true)) {
-                    $parsed = $time;
-                } else {
-                    require_once 'Zend/Date/Exception.php';
-                    throw new Zend_Date_Exception("no day,month or year given in array");
-                }
-            } else {
-                if (self::$_options['format_type'] == 'php') {
-                    $format = Zend_Locale_Format::convertPhpToIsoFormat($format);
-                }
-                try {
-                    if ($locale === null) {
-                        $locale = $this->getLocale();
-                    }
-
-                    $parsed = Zend_Locale_Format::getDate($date, array('date_format' => $format, 'locale' => $locale, 'format_type' => 'iso'));
-                    if ((strpos(strtoupper($format), 'YY') !== false) and (strpos(strtoupper($format), 'YYYY') === false)) {
-                        $parsed['year'] = self::getFullYear($parsed['year']);
-                    }
-                } catch (Zend_Locale_Exception $e) {
-                    require_once 'Zend/Date/Exception.php';
-                    throw new Zend_Date_Exception($e->getMessage());
-                }
-            }
-            $date  = $parsed['day'] . "." . $parsed['month'] . "." . $parsed['year'];
-        }
-
-        $return = $this->_calcdetail($calc, $date, self::DATE_MEDIUM, 'de');
-        if ($calc != 'cmp') {
-            return $this;
-        }
-        return $return;
-    }
-
-
-    /**
-     * Sets a new date for the date object. Format defines how to parse the date string.
-     * Also a complete date with time can be given, but only the date is used for setting.
-     * For example: MMMM.yy HH:mm-> May.07 22:11 => 01.May.07 00:00
-     * Returned is the new date object and the existing time is left as it was before
-     *
-     * @param  string|integer|array|Zend_Date  $date    Date to set
-     * @param  string                          $format  OPTIONAL Date format for parsing
-     * @param  string|Zend_Locale              $locale  OPTIONAL Locale for parsing input
-     * @return integer|Zend_Date  new date
-     * @throws Zend_Date_Exception
-     */
-    public function setDate($date, $format = null, $locale = null)
-    {
-        return $this->_date('set', $date, $format, $locale);
-    }
-
-
-    /**
-     * Adds a date to the existing date object. Format defines how to parse the date string.
-     * If only parts are given the other parts are set to 0.
-     * If no format is given, the standardformat of this locale is used.
-     * For example: MM.dd.YYYY -> 10 -> +10 months
-     *
-     * @param  string|integer|array|Zend_Date  $date    Date to add
-     * @param  string                          $format  OPTIONAL Date format for parsing input
-     * @param  string|Zend_Locale              $locale  OPTIONAL Locale for parsing input
-     * @return Zend_Date  new date
-     * @throws Zend_Date_Exception
-     */
-    public function addDate($date, $format = null, $locale = null)
-    {
-        return $this->_date('add', $date, $format, $locale);
-    }
-
-
-    /**
-     * Subtracts a date from the existing date object. Format defines how to parse the date string.
-     * If only parts are given the other parts are set to 0.
-     * If no format is given, the standardformat of this locale is used.
-     * For example: MM.dd.YYYY -> 10 -> -10 months
-     * Be aware: Subtracting 2 months is not equal to Adding -2 months !!!
-     *
-     * @param  string|integer|array|Zend_Date  $date    Date to sub
-     * @param  string                          $format  OPTIONAL Date format for parsing input
-     * @param  string|Zend_Locale              $locale  OPTIONAL Locale for parsing input
-     * @return Zend_Date  new date
-     * @throws Zend_Date_Exception
-     */
-    public function subDate($date, $format = null, $locale = null)
-    {
-        return $this->_date('sub', $date, $format, $locale);
-    }
-
-
-    /**
-     * Compares the date from the existing date object, ignoring the time.
-     * Format defines how to parse the date string.
-     * If only parts are given the other parts are set to 0.
-     * If no format is given, the standardformat of this locale is used.
-     * For example: 10.01.2000 => 10.02.1999 -> false
-     *
-     * @param  string|integer|array|Zend_Date  $date    Date to compare
-     * @param  string                          $format  OPTIONAL Date format for parsing input
-     * @param  string|Zend_Locale              $locale  OPTIONAL Locale for parsing input
-     * @return Zend_Date  new date
-     * @throws Zend_Date_Exception
-     */
-    public function compareDate($date, $format = null, $locale = null)
-    {
-        return $this->_date('cmp', $date, $format, $locale);
-    }
-
-
-    /**
-     * Returns the full ISO 8601 date from the date object.
-     * Always the complete ISO 8601 specifiction is used. If an other ISO date is needed
-     * (ISO 8601 defines several formats) use toString() instead.
-     * This function does not return the ISO date as object. Use copy() instead.
-     *
-     * @param  string|Zend_Locale  $locale  OPTIONAL Locale for parsing input
-     * @return string
-     */
-    public function getIso($locale = null)
-    {
-        return $this->get(self::ISO_8601, $locale);
-    }
-
-
-    /**
-     * Sets a new date for the date object. Not given parts are set to default.
-     * Only supported ISO 8601 formats are accepted.
-     * For example: 050901 -> 01.Sept.2005 00:00:00, 20050201T10:00:30 -> 01.Feb.2005 10h00m30s
-     * Returned is the new date object
-     *
-     * @param  string|integer|Zend_Date  $date    ISO Date to set
-     * @param  string|Zend_Locale        $locale  OPTIONAL Locale for parsing input
-     * @return integer|Zend_Date  new date
-     * @throws Zend_Date_Exception
-     */
-    public function setIso($date, $locale = null)
-    {
-        return $this->_calcvalue('set', $date, 'iso', self::ISO_8601, $locale);
-    }
-
-
-    /**
-     * Adds a ISO date to the date object. Not given parts are set to default.
-     * Only supported ISO 8601 formats are accepted.
-     * For example: 050901 -> + 01.Sept.2005 00:00:00, 10:00:00 -> +10h
-     * Returned is the new date object
-     *
-     * @param  string|integer|Zend_Date  $date    ISO Date to add
-     * @param  string|Zend_Locale        $locale  OPTIONAL Locale for parsing input
-     * @return integer|Zend_Date  new date
-     * @throws Zend_Date_Exception
-     */
-    public function addIso($date, $locale = null)
-    {
-        return $this->_calcvalue('add', $date, 'iso', self::ISO_8601, $locale);
-    }
-
-
-    /**
-     * Subtracts a ISO date from the date object. Not given parts are set to default.
-     * Only supported ISO 8601 formats are accepted.
-     * For example: 050901 -> - 01.Sept.2005 00:00:00, 10:00:00 -> -10h
-     * Returned is the new date object
-     *
-     * @param  string|integer|Zend_Date  $date    ISO Date to sub
-     * @param  string|Zend_Locale        $locale  OPTIONAL Locale for parsing input
-     * @return integer|Zend_Date  new date
-     * @throws Zend_Date_Exception
-     */
-    public function subIso($date, $locale = null)
-    {
-        return $this->_calcvalue('sub', $date, 'iso', self::ISO_8601, $locale);
-    }
-
-
-    /**
-     * Compares a ISO date with the date object. Not given parts are set to default.
-     * Only supported ISO 8601 formats are accepted.
-     * For example: 050901 -> - 01.Sept.2005 00:00:00, 10:00:00 -> -10h
-     * Returns if equal, earlier or later
-     *
-     * @param  string|integer|Zend_Date  $date    ISO Date to sub
-     * @param  string|Zend_Locale        $locale  OPTIONAL Locale for parsing input
-     * @return integer  0 = equal, 1 = later, -1 = earlier
-     * @throws Zend_Date_Exception
-     */
-    public function compareIso($date, $locale = null)
-    {
-        return $this->_calcvalue('cmp', $date, 'iso', self::ISO_8601, $locale);
-    }
-
-
-    /**
-     * Returns a RFC 822 compilant datestring from the date object.
-     * This function does not return the RFC date as object. Use copy() instead.
-     *
-     * @param  string|Zend_Locale  $locale  OPTIONAL Locale for parsing input
-     * @return string
-     */
-    public function getArpa($locale = null)
-    {
-        return $this->get(self::RFC_822, $locale);
-    }
-
-
-    /**
-     * Sets a RFC 822 date as new date for the date object.
-     * Only RFC 822 compilant date strings are accepted.
-     * For example: Sat, 14 Feb 09 00:31:30 +0100
-     * Returned is the new date object
-     *
-     * @param  string|integer|Zend_Date  $date    RFC 822 to set
-     * @param  string|Zend_Locale        $locale  OPTIONAL Locale for parsing input
-     * @return integer|Zend_Date  new date
-     * @throws Zend_Date_Exception
-     */
-    public function setArpa($date, $locale = null)
-    {
-        return $this->_calcvalue('set', $date, 'arpa', self::RFC_822, $locale);
-    }
-
-
-    /**
-     * Adds a RFC 822 date to the date object.
-     * ARPA messages are used in emails or HTTP Headers.
-     * Only RFC 822 compilant date strings are accepted.
-     * For example: Sat, 14 Feb 09 00:31:30 +0100
-     * Returned is the new date object
-     *
-     * @param  string|integer|Zend_Date  $date    RFC 822 Date to add
-     * @param  string|Zend_Locale        $locale  OPTIONAL Locale for parsing input
-     * @return integer|Zend_Date  new date
-     * @throws Zend_Date_Exception
-     */
-    public function addArpa($date, $locale = null)
-    {
-        return $this->_calcvalue('add', $date, 'arpa', self::RFC_822, $locale);
-    }
-
-
-    /**
-     * Subtracts a RFC 822 date from the date object.
-     * ARPA messages are used in emails or HTTP Headers.
-     * Only RFC 822 compilant date strings are accepted.
-     * For example: Sat, 14 Feb 09 00:31:30 +0100
-     * Returned is the new date object
-     *
-     * @param  string|integer|Zend_Date  $date    RFC 822 Date to sub
-     * @param  string|Zend_Locale        $locale  OPTIONAL Locale for parsing input
-     * @return integer|Zend_Date  new date
-     * @throws Zend_Date_Exception
-     */
-    public function subArpa($date, $locale = null)
-    {
-        return $this->_calcvalue('sub', $date, 'arpa', self::RFC_822, $locale);
-    }
-
-
-    /**
-     * Compares a RFC 822 compilant date with the date object.
-     * ARPA messages are used in emails or HTTP Headers.
-     * Only RFC 822 compilant date strings are accepted.
-     * For example: Sat, 14 Feb 09 00:31:30 +0100
-     * Returns if equal, earlier or later
-     *
-     * @param  string|integer|Zend_Date  $date    RFC 822 Date to sub
-     * @param  string|Zend_Locale        $locale  OPTIONAL Locale for parsing input
-     * @return integer  0 = equal, 1 = later, -1 = earlier
-     * @throws Zend_Date_Exception
-     */
-    public function compareArpa($date, $locale = null)
-    {
-        return $this->_calcvalue('cmp', $date, 'arpa', self::RFC_822, $locale);
-    }
-
-
-    /**
-     * Check if location is supported
-     *
-     * @param $location array - locations array
-     * @return $horizon float
-     */
-    private function _checkLocation($location)
-    {
-        if (!isset($location['longitude']) or !isset($location['latitude'])) {
-            require_once 'Zend/Date/Exception.php';
-            throw new Zend_Date_Exception('Location must include \'longitude\' and \'latitude\'', $location);
-        }
-        if (($location['longitude'] > 180) or ($location['longitude'] < -180)) {
-            require_once 'Zend/Date/Exception.php';
-            throw new Zend_Date_Exception('Longitude must be between -180 and 180', $location);
-        }
-        if (($location['latitude'] > 90) or ($location['latitude'] < -90)) {
-            require_once 'Zend/Date/Exception.php';
-            throw new Zend_Date_Exception('Latitude must be between -90 and 90', $location);
-        }
-
-        if (!isset($location['horizon'])){
-            $location['horizon'] = 'effective';
-        }
-
-        switch ($location['horizon']) {
-            case 'civil' :
-                return -0.104528;
-                break;
-            case 'nautic' :
-                return -0.207912;
-                break;
-            case 'astronomic' :
-                return -0.309017;
-                break;
-            default :
-                return -0.0145439;
-                break;
-        }
-    }
-
-
-    /**
-     * Returns the time of sunrise for this date and a given location as new date object
-     * For a list of cities and correct locations use the class Zend_Date_Cities
-     *
-     * @param  $location array - location of sunrise
-     *                   ['horizon']   -> civil, nautic, astronomical, effective (default)
-     *                   ['longitude'] -> longitude of location
-     *                   ['latitude']  -> latitude of location
-     * @return Zend_Date
-     * @throws Zend_Date_Exception
-     */
-    public function getSunrise($location)
-    {
-        $horizon = $this->_checkLocation($location);
-        $result = clone $this;
-        $result->set($this->calcSun($location, $horizon, true), self::TIMESTAMP);
-        return $result;
-    }
-
-
-    /**
-     * Returns the time of sunset for this date and a given location as new date object
-     * For a list of cities and correct locations use the class Zend_Date_Cities
-     *
-     * @param  $location array - location of sunset
-     *                   ['horizon']   -> civil, nautic, astronomical, effective (default)
-     *                   ['longitude'] -> longitude of location
-     *                   ['latitude']  -> latitude of location
-     * @return Zend_Date
-     * @throws Zend_Date_Exception
-     */
-    public function getSunset($location)
-    {
-        $horizon = $this->_checkLocation($location);
-        $result = clone $this;
-        $result->set($this->calcSun($location, $horizon, false), self::TIMESTAMP);
-        return $result;
-    }
-
-
-    /**
-     * Returns an array with the sunset and sunrise dates for all horizon types
-     * For a list of cities and correct locations use the class Zend_Date_Cities
-     *
-     * @param  $location array - location of suninfo
-     *                   ['horizon']   -> civil, nautic, astronomical, effective (default)
-     *                   ['longitude'] -> longitude of location
-     *                   ['latitude']  -> latitude of location
-     * @return array - [sunset|sunrise][effective|civil|nautic|astronomic]
-     * @throws Zend_Date_Exception
-     */
-    public function getSunInfo($location)
-    {
-        $suninfo = array();
-        for ($i = 0; $i < 4; ++$i) {
-            switch ($i) {
-                case 0 :
-                    $location['horizon'] = 'effective';
-                    break;
-                case 1 :
-                    $location['horizon'] = 'civil';
-                    break;
-                case 2 :
-                    $location['horizon'] = 'nautic';
-                    break;
-                case 3 :
-                    $location['horizon'] = 'astronomic';
-                    break;
-            }
-            $horizon = $this->_checkLocation($location);
-            $result = clone $this;
-            $result->set($this->calcSun($location, $horizon, true), self::TIMESTAMP);
-            $suninfo['sunrise'][$location['horizon']] = $result;
-            $result = clone $this;
-            $result->set($this->calcSun($location, $horizon, false), self::TIMESTAMP);
-            $suninfo['sunset'][$location['horizon']]  = $result;
-        }
-        return $suninfo;
-    }
-
-
-    /**
-     * Check a given year for leap year.
-     *
-     * @param  integer|array|Zend_Date  $year  Year to check
-     * @return boolean
-     */
-    public static function checkLeapYear($year)
-    {
-        if ($year instanceof Zend_Date) {
-            $year = (int) $year->get(self::YEAR);
-        }
-        if (is_array($year)) {
-            if (isset($year['year']) === true) {
-                $year = $year['year'];
-            } else {
-                require_once 'Zend/Date/Exception.php';
-                throw new Zend_Date_Exception("no year given in array");
-            }
-        }
-        if (!is_numeric($year)) {
-            require_once 'Zend/Date/Exception.php';
-            throw new Zend_Date_Exception("year ($year) has to be integer for checkLeapYear()", $year);
-        }
-
-        return (bool) parent::isYearLeapYear($year);
-    }
-
-
-    /**
-     * Returns true, if the year is a leap year.
-     *
-     * @return boolean
-     */
-    public function isLeapYear()
-    {
-        return self::checkLeapYear($this);
-    }
-
-
-    /**
-     * Returns if the set date is todays date
-     *
-     * @return boolean
-     */
-    public function isToday()
-    {
-        $today = $this->date('Ymd', $this->_getTime());
-        $day   = $this->date('Ymd', $this->getUnixTimestamp());
-        return ($today == $day);
-    }
-
-
-    /**
-     * Returns if the set date is yesterdays date
-     *
-     * @return boolean
-     */
-    public function isYesterday()
-    {
-        list($year, $month, $day) = explode('-', $this->date('Y-m-d', $this->_getTime()));
-        // adjusts for leap days and DST changes that are timezone specific
-        $yesterday = $this->date('Ymd', $this->mktime(0, 0, 0, $month, $day -1, $year));
-        $day   = $this->date('Ymd', $this->getUnixTimestamp());
-        return $day == $yesterday;
-    }
-
-
-    /**
-     * Returns if the set date is tomorrows date
-     *
-     * @return boolean
-     */
-    public function isTomorrow()
-    {
-        list($year, $month, $day) = explode('-', $this->date('Y-m-d', $this->_getTime()));
-        // adjusts for leap days and DST changes that are timezone specific
-        $tomorrow = $this->date('Ymd', $this->mktime(0, 0, 0, $month, $day +1, $year));
-        $day   = $this->date('Ymd', $this->getUnixTimestamp());
-        return $day == $tomorrow;
-    }
-
-    /**
-     * Returns the actual date as new date object
-     *
-     * @param  string|Zend_Locale        $locale  OPTIONAL Locale for parsing input
-     * @return Zend_Date
-     */
-    public static function now($locale = null)
-    {
-        return new Zend_Date(time(), self::TIMESTAMP, $locale);
-    }
-
-    /**
-     * Calculate date details
-     *
-     * @param  string                          $calc    Calculation to make
-     * @param  string|integer|array|Zend_Date  $date    Date or Part to calculate
-     * @param  string                          $part    Datepart for Calculation
-     * @param  string|Zend_Locale              $locale  Locale for parsing input
-     * @return integer|string  new date
-     * @throws Zend_Date_Exception
-     */
-    private function _calcdetail($calc, $date, $type, $locale)
-    {
-        switch($calc) {
-            case 'set' :
-                return $this->set($date, $type, $locale);
-                break;
-            case 'add' :
-                return $this->add($date, $type, $locale);
-                break;
-            case 'sub' :
-                return $this->sub($date, $type, $locale);
-                break;
-        }
-        return $this->compare($date, $type, $locale);
-    }
-
-    /**
-     * Internal calculation, returns the requested date type
-     *
-     * @param  string                    $calc    Calculation to make
-     * @param  string|integer|Zend_Date  $value   Datevalue to calculate with, if null the actual value is taken
-     * @param  string|Zend_Locale        $locale  Locale for parsing input
-     * @return integer|Zend_Date  new date
-     * @throws Zend_Date_Exception
-     */
-    private function _calcvalue($calc, $value, $type, $parameter, $locale)
-    {
-        if ($value === null) {
-            require_once 'Zend/Date/Exception.php';
-            throw new Zend_Date_Exception("parameter $type must be set, null is not allowed");
-        }
-
-        if ($locale === null) {
-            $locale = $this->getLocale();
-        }
-
-        if ($value instanceof Zend_Date) {
-            // extract value from object
-            $value = $value->get($parameter, $locale);
-        } else if (!is_array($value) && !is_numeric($value) && ($type != 'iso') && ($type != 'arpa')) {
-            require_once 'Zend/Date/Exception.php';
-            throw new Zend_Date_Exception("invalid $type ($value) operand", $value);
-        }
-
-        $return = $this->_calcdetail($calc, $value, $parameter, $locale);
-        if ($calc != 'cmp') {
-            return $this;
-        }
-        return $return;
-    }
-
-
-    /**
-     * Returns only the year from the date object as new object.
-     * For example: 10.May.2000 10:30:00 -> 01.Jan.2000 00:00:00
-     *
-     * @param  string|Zend_Locale  $locale  OPTIONAL Locale for parsing input
-     * @return Zend_Date
-     */
-    public function getYear($locale = null)
-    {
-        return $this->copyPart(self::YEAR, $locale);
-    }
-
-
-    /**
-     * Sets a new year
-     * If the year is between 0 and 69, 2000 will be set (2000-2069)
-     * If the year if between 70 and 99, 1999 will be set (1970-1999)
-     * 3 or 4 digit years are set as expected. If you need to set year 0-99
-     * use set() instead.
-     * Returned is the new date object
-     *
-     * @param  string|integer|array|Zend_Date  $date    Year to set
-     * @param  string|Zend_Locale              $locale  OPTIONAL Locale for parsing input
-     * @return Zend_Date  new date
-     * @throws Zend_Date_Exception
-     */
-    public function setYear($year, $locale = null)
-    {
-        return $this->_calcvalue('set', $year, 'year', self::YEAR, $locale);
-    }
-
-
-    /**
-     * Adds the year to the existing date object
-     * If the year is between 0 and 69, 2000 will be added (2000-2069)
-     * If the year if between 70 and 99, 1999 will be added (1970-1999)
-     * 3 or 4 digit years are added as expected. If you need to add years from 0-99
-     * use add() instead.
-     * Returned is the new date object
-     *
-     * @param  string|integer|array|Zend_Date  $date    Year to add
-     * @param  string|Zend_Locale              $locale  OPTIONAL Locale for parsing input
-     * @return Zend_Date  new date
-     * @throws Zend_Date_Exception
-     */
-    public function addYear($year, $locale = null)
-    {
-        return $this->_calcvalue('add', $year, 'year', self::YEAR, $locale);
-    }
-
-
-    /**
-     * Subs the year from the existing date object
-     * If the year is between 0 and 69, 2000 will be subtracted (2000-2069)
-     * If the year if between 70 and 99, 1999 will be subtracted (1970-1999)
-     * 3 or 4 digit years are subtracted as expected. If you need to subtract years from 0-99
-     * use sub() instead.
-     * Returned is the new date object
-     *
-     * @param  string|integer|array|Zend_Date  $date    Year to sub
-     * @param  string|Zend_Locale              $locale  OPTIONAL Locale for parsing input
-     * @return Zend_Date  new date
-     * @throws Zend_Date_Exception
-     */
-    public function subYear($year, $locale = null)
-    {
-        return $this->_calcvalue('sub', $year, 'year', self::YEAR, $locale);
-    }
-
-
-    /**
-     * Compares the year with the existing date object, ignoring other date parts.
-     * For example: 10.03.2000 -> 15.02.2000 -> true
-     * Returns if equal, earlier or later
-     *
-     * @param  string|integer|array|Zend_Date  $year    Year to compare
-     * @param  string|Zend_Locale              $locale  OPTIONAL Locale for parsing input
-     * @return integer  0 = equal, 1 = later, -1 = earlier
-     * @throws Zend_Date_Exception
-     */
-    public function compareYear($year, $locale = null)
-    {
-        return $this->_calcvalue('cmp', $year, 'year', self::YEAR, $locale);
-    }
-
-
-    /**
-     * Returns only the month from the date object as new object.
-     * For example: 10.May.2000 10:30:00 -> 01.May.1970 00:00:00
-     *
-     * @param  string|Zend_Locale  $locale  OPTIONAL Locale for parsing input
-     * @return Zend_Date
-     */
-    public function getMonth($locale = null)
-    {
-        return $this->copyPart(self::MONTH, $locale);
-    }
-
-
-    /**
-     * Returns the calculated month
-     *
-     * @param  string                          $calc    Calculation to make
-     * @param  string|integer|array|Zend_Date  $month   Month to calculate with, if null the actual month is taken
-     * @param  string|Zend_Locale              $locale  Locale for parsing input
-     * @return integer|Zend_Date  new time
-     * @throws Zend_Date_Exception
-     */
-    private function _month($calc, $month, $locale)
-    {
-        if ($month === null) {
-            require_once 'Zend/Date/Exception.php';
-            throw new Zend_Date_Exception('parameter $month must be set, null is not allowed');
-        }
-
-        if ($locale === null) {
-            $locale = $this->getLocale();
-        }
-
-        if ($month instanceof Zend_Date) {
-            // extract month from object
-            $found = $month->get(self::MONTH_SHORT, $locale);
-        } else {
-            if (is_numeric($month)) {
-                $found = $month;
-            } else if (is_array($month)) {
-                if (isset($month['month']) === true) {
-                    $month = $month['month'];
-                } else {
-                    require_once 'Zend/Date/Exception.php';
-                    throw new Zend_Date_Exception("no month given in array");
-                }
-            } else {
-                $monthlist  = Zend_Locale_Data::getList($locale, 'month');
-                $monthlist2 = Zend_Locale_Data::getList($locale, 'month', array('gregorian', 'format', 'abbreviated'));
-
-                $monthlist = array_merge($monthlist, $monthlist2);
-                $found = 0;
-                $cnt = 0;
-                foreach ($monthlist as $key => $value) {
-                    if (strtoupper($value) == strtoupper($month)) {
-                        $found = $key + 1;
-                        break;
-                    }
-                    ++$cnt;
-                }
-                if ($found == 0) {
-                    foreach ($monthlist2 as $key => $value) {
-                        if (strtoupper(iconv_substr($value, 0, 1, 'UTF-8')) == strtoupper($month)) {
-                            $found = $key + 1;
-                            break;
-                        }
-                        ++$cnt;
-                    }
-                }
-                if ($found == 0) {
-                    require_once 'Zend/Date/Exception.php';
-                    throw new Zend_Date_Exception("unknown month name ($month)", $month);
-                }
-            }
-        }
-        $return = $this->_calcdetail($calc, $found, self::MONTH_SHORT, $locale);
-        if ($calc != 'cmp') {
-            return $this;
-        }
-        return $return;
-    }
-
-
-    /**
-     * Sets a new month
-     * The month can be a number or a string. Setting months lower then 0 and greater then 12
-     * will result in adding or subtracting the relevant year. (12 months equal one year)
-     * If a localized monthname is given it will be parsed with the default locale or the optional
-     * set locale.
-     * Returned is the new date object
-     *
-     * @param  string|integer|array|Zend_Date  $month   Month to set
-     * @param  string|Zend_Locale              $locale  OPTIONAL Locale for parsing input
-     * @return Zend_Date  new date
-     * @throws Zend_Date_Exception
-     */
-    public function setMonth($month, $locale = null)
-    {
-        return $this->_month('set', $month, $locale);
-    }
-
-
-    /**
-     * Adds months to the existing date object.
-     * The month can be a number or a string. Adding months lower then 0 and greater then 12
-     * will result in adding or subtracting the relevant year. (12 months equal one year)
-     * If a localized monthname is given it will be parsed with the default locale or the optional
-     * set locale.
-     * Returned is the new date object
-     *
-     * @param  string|integer|array|Zend_Date  $month   Month to add
-     * @param  string|Zend_Locale              $locale  OPTIONAL Locale for parsing input
-     * @return Zend_Date  new date
-     * @throws Zend_Date_Exception
-     */
-    public function addMonth($month, $locale = null)
-    {
-        return $this->_month('add', $month, $locale);
-    }
-
-
-    /**
-     * Subtracts months from the existing date object.
-     * The month can be a number or a string. Subtracting months lower then 0 and greater then 12
-     * will result in adding or subtracting the relevant year. (12 months equal one year)
-     * If a localized monthname is given it will be parsed with the default locale or the optional
-     * set locale.
-     * Returned is the new date object
-     *
-     * @param  string|integer|array|Zend_Date  $month   Month to sub
-     * @param  string|Zend_Locale              $locale  OPTIONAL Locale for parsing input
-     * @return Zend_Date  new date
-     * @throws Zend_Date_Exception
-     */
-    public function subMonth($month, $locale = null)
-    {
-        return $this->_month('sub', $month, $locale);
-    }
-
-
-    /**
-     * Compares the month with the existing date object, ignoring other date parts.
-     * For example: 10.03.2000 -> 15.03.1950 -> true
-     * Returns if equal, earlier or later
-     *
-     * @param  string|integer|array|Zend_Date  $month   Month to compare
-     * @param  string|Zend_Locale              $locale  OPTIONAL Locale for parsing input
-     * @return integer  0 = equal, 1 = later, -1 = earlier
-     * @throws Zend_Date_Exception
-     */
-    public function compareMonth($month, $locale = null)
-    {
-        return $this->_month('cmp', $month, $locale);
-    }
-
-
-    /**
-     * Returns the day as new date object
-     * Example: 20.May.1986 -> 20.Jan.1970 00:00:00
-     *
-     * @param $locale  string|Zend_Locale  OPTIONAL Locale for parsing input
-     * @return Zend_Date
-     */
-    public function getDay($locale = null)
-    {
-        return $this->copyPart(self::DAY_SHORT, $locale);
-    }
-
-
-    /**
-     * Returns the calculated day
-     *
-     * @param $calc    string                    Type of calculation to make
-     * @param $day     string|integer|Zend_Date  Day to calculate, when null the actual day is calculated
-     * @param $locale  string|Zend_Locale        Locale for parsing input
-     * @return Zend_Date|integer
-     */
-    private function _day($calc, $day, $locale)
-    {
-        if ($day === null) {
-            require_once 'Zend/Date/Exception.php';
-            throw new Zend_Date_Exception('parameter $day must be set, null is not allowed');
-        }
-
-        if ($locale === null) {
-            $locale = $this->getLocale();
-        }
-
-        if ($day instanceof Zend_Date) {
-            $day = $day->get(self::DAY_SHORT, $locale);
-        }
-
-        if (is_numeric($day)) {
-            $type = self::DAY_SHORT;
-        } else if (is_array($day)) {
-            if (isset($day['day']) === true) {
-                $day = $day['day'];
-                $type = self::WEEKDAY;
-            } else {
-                require_once 'Zend/Date/Exception.php';
-                throw new Zend_Date_Exception("no day given in array");
-            }
-        } else {
-            switch (iconv_strlen($day, 'UTF-8')) {
-                case 1 :
-                   $type = self::WEEKDAY_NARROW;
-                    break;
-                case 2:
-                    $type = self::WEEKDAY_NAME;
-                    break;
-                case 3:
-                    $type = self::WEEKDAY_SHORT;
-                    break;
-                default:
-                    $type = self::WEEKDAY;
-                    break;
-            }
-        }
-        $return = $this->_calcdetail($calc, $day, $type, $locale);
-        if ($calc != 'cmp') {
-            return $this;
-        }
-        return $return;
-    }
-
-
-    /**
-     * Sets a new day
-     * The day can be a number or a string. Setting days lower then 0 or greater than the number of this months days
-     * will result in adding or subtracting the relevant month.
-     * If a localized dayname is given it will be parsed with the default locale or the optional
-     * set locale.
-     * Returned is the new date object
-     * Example: setDay('Montag', 'de_AT'); will set the monday of this week as day.
-     *
-     * @param  string|integer|array|Zend_Date  $month   Day to set
-     * @param  string|Zend_Locale              $locale  OPTIONAL Locale for parsing input
-     * @return Zend_Date  new date
-     * @throws Zend_Date_Exception
-     */
-    public function setDay($day, $locale = null)
-    {
-        return $this->_day('set', $day, $locale);
-    }
-
-
-    /**
-     * Adds days to the existing date object.
-     * The day can be a number or a string. Adding days lower then 0 or greater than the number of this months days
-     * will result in adding or subtracting the relevant month.
-     * If a localized dayname is given it will be parsed with the default locale or the optional
-     * set locale.
-     * Returned is the new date object
-     * Example: addDay('Montag', 'de_AT'); will add the number of days until the next monday
-     *
-     * @param  string|integer|array|Zend_Date  $month   Day to add
-     * @param  string|Zend_Locale              $locale  OPTIONAL Locale for parsing input
-     * @return Zend_Date  new date
-     * @throws Zend_Date_Exception
-     */
-    public function addDay($day, $locale = null)
-    {
-        return $this->_day('add', $day, $locale);
-    }
-
-
-    /**
-     * Subtracts days from the existing date object.
-     * The day can be a number or a string. Subtracting days lower then 0 or greater than the number of this months days
-     * will result in adding or subtracting the relevant month.
-     * If a localized dayname is given it will be parsed with the default locale or the optional
-     * set locale.
-     * Returned is the new date object
-     * Example: subDay('Montag', 'de_AT'); will sub the number of days until the previous monday
-     *
-     * @param  string|integer|array|Zend_Date  $month   Day to sub
-     * @param  string|Zend_Locale              $locale  OPTIONAL Locale for parsing input
-     * @return Zend_Date  new date
-     * @throws Zend_Date_Exception
-     */
-    public function subDay($day, $locale = null)
-    {
-        return $this->_day('sub', $day, $locale);
-    }
-
-
-    /**
-     * Compares the day with the existing date object, ignoring other date parts.
-     * For example: 'Monday', 'en' -> 08.Jan.2007 -> 0
-     * Returns if equal, earlier or later
-     *
-     * @param  string|integer|array|Zend_Date  $day     Day to compare
-     * @param  string|Zend_Locale              $locale  OPTIONAL Locale for parsing input
-     * @return integer  0 = equal, 1 = later, -1 = earlier
-     * @throws Zend_Date_Exception
-     */
-    public function compareDay($day, $locale = null)
-    {
-        return $this->_day('cmp', $day, $locale);
-    }
-
-
-    /**
-     * Returns the weekday as new date object
-     * Weekday is always from 1-7
-     * Example: 09-Jan-2007 -> 2 = Tuesday -> 02-Jan-1970 (when 02.01.1970 is also Tuesday)
-     *
-     * @param $locale  string|Zend_Locale  OPTIONAL Locale for parsing input
-     * @return Zend_Date
-     */
-    public function getWeekday($locale = null)
-    {
-        return $this->copyPart(self::WEEKDAY, $locale);
-    }
-
-
-    /**
-     * Returns the calculated weekday
-     *
-     * @param  $calc     string                          Type of calculation to make
-     * @param  $weekday  string|integer|array|Zend_Date  Weekday to calculate, when null the actual weekday is calculated
-     * @param  $locale   string|Zend_Locale              Locale for parsing input
-     * @return Zend_Date|integer
-     * @throws Zend_Date_Exception
-     */
-    private function _weekday($calc, $weekday, $locale)
-    {
-        if ($weekday === null) {
-            require_once 'Zend/Date/Exception.php';
-            throw new Zend_Date_Exception('parameter $weekday must be set, null is not allowed');
-        }
-
-        if ($locale === null) {
-            $locale = $this->getLocale();
-        }
-
-        if ($weekday instanceof Zend_Date) {
-            $weekday = $weekday->get(self::WEEKDAY_8601, $locale);
-        }
-
-        if (is_numeric($weekday)) {
-            $type = self::WEEKDAY_8601;
-        } else if (is_array($weekday)) {
-            if (isset($weekday['weekday']) === true) {
-                $weekday = $weekday['weekday'];
-                $type = self::WEEKDAY;
-            } else {
-                require_once 'Zend/Date/Exception.php';
-                throw new Zend_Date_Exception("no weekday given in array");
-            }
-        } else {
-            switch(iconv_strlen($weekday, 'UTF-8')) {
-                case 1:
-                   $type = self::WEEKDAY_NARROW;
-                    break;
-                case 2:
-                    $type = self::WEEKDAY_NAME;
-                    break;
-                case 3:
-                    $type = self::WEEKDAY_SHORT;
-                    break;
-                default:
-                    $type = self::WEEKDAY;
-                    break;
-            }
-        }
-        $return = $this->_calcdetail($calc, $weekday, $type, $locale);
-        if ($calc != 'cmp') {
-            return $this;
-        }
-        return $return;
-    }
-
-
-    /**
-     * Sets a new weekday
-     * The weekday can be a number or a string. If a localized weekday name is given,
-     * then it will be parsed as a date in $locale (defaults to the same locale as $this).
-     * Returned is the new date object.
-     * Example: setWeekday(3); will set the wednesday of this week as day.
-     *
-     * @param  string|integer|array|Zend_Date  $month   Weekday to set
-     * @param  string|Zend_Locale              $locale  OPTIONAL Locale for parsing input
-     * @return Zend_Date  new date
-     * @throws Zend_Date_Exception
-     */
-    public function setWeekday($weekday, $locale = null)
-    {
-        return $this->_weekday('set', $weekday, $locale);
-    }
-
-
-    /**
-     * Adds weekdays to the existing date object.
-     * The weekday can be a number or a string.
-     * If a localized dayname is given it will be parsed with the default locale or the optional
-     * set locale.
-     * Returned is the new date object
-     * Example: addWeekday(3); will add the difference of days from the begining of the month until
-     * wednesday.
-     *
-     * @param  string|integer|array|Zend_Date  $month   Weekday to add
-     * @param  string|Zend_Locale              $locale  OPTIONAL Locale for parsing input
-     * @return Zend_Date  new date
-     * @throws Zend_Date_Exception
-     */
-    public function addWeekday($weekday, $locale = null)
-    {
-        return $this->_weekday('add', $weekday, $locale);
-    }
-
-
-    /**
-     * Subtracts weekdays from the existing date object.
-     * The weekday can be a number or a string.
-     * If a localized dayname is given it will be parsed with the default locale or the optional
-     * set locale.
-     * Returned is the new date object
-     * Example: subWeekday(3); will subtract the difference of days from the begining of the month until
-     * wednesday.
-     *
-     * @param  string|integer|array|Zend_Date  $month   Weekday to sub
-     * @param  string|Zend_Locale              $locale  OPTIONAL Locale for parsing input
-     * @return Zend_Date  new date
-     * @throws Zend_Date_Exception
-     */
-    public function subWeekday($weekday, $locale = null)
-    {
-        return $this->_weekday('sub', $weekday, $locale);
-    }
-
-
-    /**
-     * Compares the weekday with the existing date object, ignoring other date parts.
-     * For example: 'Monday', 'en' -> 08.Jan.2007 -> 0
-     * Returns if equal, earlier or later
-     *
-     * @param  string|integer|array|Zend_Date  $weekday  Weekday to compare
-     * @param  string|Zend_Locale              $locale   OPTIONAL Locale for parsing input
-     * @return integer  0 = equal, 1 = later, -1 = earlier
-     * @throws Zend_Date_Exception
-     */
-    public function compareWeekday($weekday, $locale = null)
-    {
-        return $this->_weekday('cmp', $weekday, $locale);
-    }
-
-
-    /**
-     * Returns the day of year as new date object
-     * Example: 02.Feb.1986 10:00:00 -> 02.Feb.1970 00:00:00
-     *
-     * @param  string|Zend_Locale  $locale  OPTIONAL Locale for parsing input
-     * @return Zend_Date
-     */
-    public function getDayOfYear($locale = null)
-    {
-        return $this->copyPart(self::DAY_OF_YEAR, $locale);
-    }
-
-
-    /**
-     * Sets a new day of year
-     * The day of year is always a number.
-     * Returned is the new date object
-     * Example: 04.May.2004 -> setDayOfYear(10) -> 10.Jan.2004
-     *
-     * @param  string|integer|array|Zend_Date  $day     Day of Year to set
-     * @param  string|Zend_Locale              $locale  OPTIONAL Locale for parsing input
-     * @return Zend_Date  new date
-     * @throws Zend_Date_Exception
-     */
-    public function setDayOfYear($day, $locale = null)
-    {
-        return $this->_calcvalue('set', $day, 'day of year', self::DAY_OF_YEAR, $locale);
-    }
-
-
-    /**
-     * Adds a day of year to the existing date object.
-     * The day of year is always a number.
-     * Returned is the new date object
-     * Example: addDayOfYear(10); will add 10 days to the existing date object.
-     *
-     * @param  string|integer|array|Zend_Date  $day     Day of Year to add
-     * @param  string|Zend_Locale              $locale  OPTIONAL Locale for parsing input
-     * @return Zend_Date  new date
-     * @throws Zend_Date_Exception
-     */
-    public function addDayOfYear($day, $locale = null)
-    {
-        return $this->_calcvalue('add', $day, 'day of year', self::DAY_OF_YEAR, $locale);
-    }
-
-
-    /**
-     * Subtracts a day of year from the existing date object.
-     * The day of year is always a number.
-     * Returned is the new date object
-     * Example: subDayOfYear(10); will subtract 10 days from the existing date object.
-     *
-     * @param  string|integer|array|Zend_Date  $day     Day of Year to sub
-     * @param  string|Zend_Locale              $locale  OPTIONAL Locale for parsing input
-     * @return Zend_Date  new date
-     * @throws Zend_Date_Exception
-     */
-    public function subDayOfYear($day, $locale = null)
-    {
-        return $this->_calcvalue('sub', $day, 'day of year', self::DAY_OF_YEAR, $locale);
-    }
-
-
-    /**
-     * Compares the day of year with the existing date object.
-     * For example: compareDayOfYear(33) -> 02.Feb.2007 -> 0
-     * Returns if equal, earlier or later
-     *
-     * @param  string|integer|array|Zend_Date  $day     Day of Year to compare
-     * @param  string|Zend_Locale              $locale  OPTIONAL Locale for parsing input
-     * @return integer  0 = equal, 1 = later, -1 = earlier
-     * @throws Zend_Date_Exception
-     */
-    public function compareDayOfYear($day, $locale = null)
-    {
-        return $this->_calcvalue('cmp', $day, 'day of year', self::DAY_OF_YEAR, $locale);
-    }
-
-
-    /**
-     * Returns the hour as new date object
-     * Example: 02.Feb.1986 10:30:25 -> 01.Jan.1970 10:00:00
-     *
-     * @param $locale  string|Zend_Locale  OPTIONAL Locale for parsing input
-     * @return Zend_Date
-     */
-    public function getHour($locale = null)
-    {
-        return $this->copyPart(self::HOUR, $locale);
-    }
-
-
-    /**
-     * Sets a new hour
-     * The hour is always a number.
-     * Returned is the new date object
-     * Example: 04.May.1993 13:07:25 -> setHour(7); -> 04.May.1993 07:07:25
-     *
-     * @param  string|integer|array|Zend_Date  $hour    Hour to set
-     * @param  string|Zend_Locale              $locale  OPTIONAL Locale for parsing input
-     * @return Zend_Date  new date
-     * @throws Zend_Date_Exception
-     */
-    public function setHour($hour, $locale = null)
-    {
-        return $this->_calcvalue('set', $hour, 'hour', self::HOUR_SHORT, $locale);
-    }
-
-
-    /**
-     * Adds hours to the existing date object.
-     * The hour is always a number.
-     * Returned is the new date object
-     * Example: 04.May.1993 13:07:25 -> addHour(12); -> 05.May.1993 01:07:25
-     *
-     * @param  string|integer|array|Zend_Date  $hour    Hour to add
-     * @param  string|Zend_Locale              $locale  OPTIONAL Locale for parsing input
-     * @return Zend_Date  new date
-     * @throws Zend_Date_Exception
-     */
-    public function addHour($hour, $locale = null)
-    {
-        return $this->_calcvalue('add', $hour, 'hour', self::HOUR_SHORT, $locale);
-    }
-
-
-    /**
-     * Subtracts hours from the existing date object.
-     * The hour is always a number.
-     * Returned is the new date object
-     * Example: 04.May.1993 13:07:25 -> subHour(6); -> 05.May.1993 07:07:25
-     *
-     * @param  string|integer|array|Zend_Date  $hour    Hour to sub
-     * @param  string|Zend_Locale              $locale  OPTIONAL Locale for parsing input
-     * @return Zend_Date  new date
-     * @throws Zend_Date_Exception
-     */
-    public function subHour($hour, $locale = null)
-    {
-        return $this->_calcvalue('sub', $hour, 'hour', self::HOUR_SHORT, $locale);
-    }
-
-
-    /**
-     * Compares the hour with the existing date object.
-     * For example: 10:30:25 -> compareHour(10) -> 0
-     * Returns if equal, earlier or later
-     *
-     * @param  string|integer|array|Zend_Date  $hour    Hour to compare
-     * @param  string|Zend_Locale              $locale  OPTIONAL Locale for parsing input
-     * @return integer  0 = equal, 1 = later, -1 = earlier
-     * @throws Zend_Date_Exception
-     */
-    public function compareHour($hour, $locale = null)
-    {
-        return $this->_calcvalue('cmp', $hour, 'hour', self::HOUR_SHORT, $locale);
-    }
-
-
-    /**
-     * Returns the minute as new date object
-     * Example: 02.Feb.1986 10:30:25 -> 01.Jan.1970 00:30:00
-     *
-     * @param  string|Zend_Locale  $locale  OPTIONAL Locale for parsing input
-     * @return Zend_Date
-     */
-    public function getMinute($locale = null)
-    {
-        return $this->copyPart(self::MINUTE, $locale);
-    }
-
-
-    /**
-     * Sets a new minute
-     * The minute is always a number.
-     * Returned is the new date object
-     * Example: 04.May.1993 13:07:25 -> setMinute(29); -> 04.May.1993 13:29:25
-     *
-     * @param  string|integer|array|Zend_Date  $minute  Minute to set
-     * @param  string|Zend_Locale              $locale  OPTIONAL Locale for parsing input
-     * @return Zend_Date  new date
-     * @throws Zend_Date_Exception
-     */
-    public function setMinute($minute, $locale = null)
-    {
-        return $this->_calcvalue('set', $minute, 'minute', self::MINUTE_SHORT, $locale);
-    }
-
-
-    /**
-     * Adds minutes to the existing date object.
-     * The minute is always a number.
-     * Returned is the new date object
-     * Example: 04.May.1993 13:07:25 -> addMinute(65); -> 04.May.1993 13:12:25
-     *
-     * @param  string|integer|array|Zend_Date  $minute  Minute to add
-     * @param  string|Zend_Locale              $locale  OPTIONAL Locale for parsing input
-     * @return Zend_Date  new date
-     * @throws Zend_Date_Exception
-     */
-    public function addMinute($minute, $locale = null)
-    {
-        return $this->_calcvalue('add', $minute, 'minute', self::MINUTE_SHORT, $locale);
-    }
-
-
-    /**
-     * Subtracts minutes from the existing date object.
-     * The minute is always a number.
-     * Returned is the new date object
-     * Example: 04.May.1993 13:07:25 -> subMinute(9); -> 04.May.1993 12:58:25
-     *
-     * @param  string|integer|array|Zend_Date  $minute  Minute to sub
-     * @param  string|Zend_Locale              $locale  OPTIONAL Locale for parsing input
-     * @return Zend_Date  new date
-     * @throws Zend_Date_Exception
-     */
-    public function subMinute($minute, $locale = null)
-    {
-        return $this->_calcvalue('sub', $minute, 'minute', self::MINUTE_SHORT, $locale);
-    }
-
-
-    /**
-     * Compares the minute with the existing date object.
-     * For example: 10:30:25 -> compareMinute(30) -> 0
-     * Returns if equal, earlier or later
-     *
-     * @param  string|integer|array|Zend_Date  $minute  Hour to compare
-     * @param  string|Zend_Locale              $locale  OPTIONAL Locale for parsing input
-     * @return integer  0 = equal, 1 = later, -1 = earlier
-     * @throws Zend_Date_Exception
-     */
-    public function compareMinute($minute, $locale = null)
-    {
-        return $this->_calcvalue('cmp', $minute, 'minute', self::MINUTE_SHORT, $locale);
-    }
-
-
-    /**
-     * Returns the second as new date object
-     * Example: 02.Feb.1986 10:30:25 -> 01.Jan.1970 00:00:25
-     *
-     * @param  string|Zend_Locale  $locale  OPTIONAL Locale for parsing input
-     * @return Zend_Date
-     */
-    public function getSecond($locale = null)
-    {
-        return $this->copyPart(self::SECOND, $locale);
-    }
-
-
-    /**
-     * Sets new seconds to the existing date object.
-     * The second is always a number.
-     * Returned is the new date object
-     * Example: 04.May.1993 13:07:25 -> setSecond(100); -> 04.May.1993 13:08:40
-     *
-     * @param  string|integer|array|Zend_Date $second Second to set
-     * @param  string|Zend_Locale             $locale (Optional) Locale for parsing input
-     * @return Zend_Date  new date
-     * @throws Zend_Date_Exception
-     */
-    public function setSecond($second, $locale = null)
-    {
-        return $this->_calcvalue('set', $second, 'second', self::SECOND_SHORT, $locale);
-    }
-
-
-    /**
-     * Adds seconds to the existing date object.
-     * The second is always a number.
-     * Returned is the new date object
-     * Example: 04.May.1993 13:07:25 -> addSecond(65); -> 04.May.1993 13:08:30
-     *
-     * @param  string|integer|array|Zend_Date $second Second to add
-     * @param  string|Zend_Locale             $locale (Optional) Locale for parsing input
-     * @return Zend_Date  new date
-     * @throws Zend_Date_Exception
-     */
-    public function addSecond($second, $locale = null)
-    {
-        return $this->_calcvalue('add', $second, 'second', self::SECOND_SHORT, $locale);
-    }
-
-
-    /**
-     * Subtracts seconds from the existing date object.
-     * The second is always a number.
-     * Returned is the new date object
-     * Example: 04.May.1993 13:07:25 -> subSecond(10); -> 04.May.1993 13:07:15
-     *
-     * @param  string|integer|array|Zend_Date $second Second to sub
-     * @param  string|Zend_Locale             $locale (Optional) Locale for parsing input
-     * @return Zend_Date  new date
-     * @throws Zend_Date_Exception
-     */
-    public function subSecond($second, $locale = null)
-    {
-        return $this->_calcvalue('sub', $second, 'second', self::SECOND_SHORT, $locale);
-    }
-
-
-    /**
-     * Compares the second with the existing date object.
-     * For example: 10:30:25 -> compareSecond(25) -> 0
-     * Returns if equal, earlier or later
-     *
-     * @param  string|integer|array|Zend_Date $second Second to compare
-     * @param  string|Zend_Locale             $locale (Optional) Locale for parsing input
-     * @return integer  0 = equal, 1 = later, -1 = earlier
-     * @throws Zend_Date_Exception
-     */
-    public function compareSecond($second, $locale = null)
-    {
-        return $this->_calcvalue('cmp', $second, 'second', self::SECOND_SHORT, $locale);
-    }
-
-
-    /**
-     * Returns the precision for fractional seconds
-     *
-     * @return integer
-     */
-    public function getFractionalPrecision()
-    {
-        return $this->_precision;
-    }
-
-
-    /**
-     * Sets a new precision for fractional seconds
-     *
-     * @param  integer $precision Precision for the fractional datepart 3 = milliseconds
-     * @throws Zend_Date_Exception
-     * @return void
-     */
-    public function setFractionalPrecision($precision)
-    {
-        if (!intval($precision) or ($precision < 0) or ($precision > 9)) {
-            require_once 'Zend/Date/Exception.php';
-            throw new Zend_Date_Exception("precision ($precision) must be a positive integer less than 10", $precision);
-        }
-        $this->_precision = (int) $precision;
-    }
-
-
-    /**
-     * Returns the milliseconds of the date object
-     *
-     * @return integer
-     */
-    public function getMilliSecond()
-    {
-        return $this->_fractional;
-    }
-
-
-    /**
-     * Sets new milliseconds for the date object
-     * Example: setMilliSecond(550, 2) -> equals +5 Sec +50 MilliSec
-     *
-     * @param  integer|Zend_Date $milli     (Optional) Millisecond to set, when null the actual millisecond is set
-     * @param  integer           $precision (Optional) Fraction precision of the given milliseconds
-     * @return integer|string
-     */
-    public function setMilliSecond($milli = null, $precision = null)
-    {
-        if ($milli === null) {
-            list($milli, $time) = explode(" ", microtime());
-            $milli = intval($milli);
-            $precision = 6;
-        } else if (!is_numeric($milli)) {
-            require_once 'Zend/Date/Exception.php';
-            throw new Zend_Date_Exception("invalid milli second ($milli) operand", $milli);
-        }
-
-        if ($precision === null) {
-            $precision = $this->_precision;
-        } else if (!is_int($precision) || $precision < 1 || $precision > 9) {
-            require_once 'Zend/Date/Exception.php';
-            throw new Zend_Date_Exception("precision ($precision) must be a positive integer less than 10", $precision);
-        }
-
-        $this->_fractional = 0;
-        $this->addMilliSecond($milli, $precision);
-        return $this->_fractional;
-    }
-
-
-    /**
-     * Adds milliseconds to the date object
-     *
-     * @param  integer|Zend_Date $milli     (Optional) Millisecond to add, when null the actual millisecond is added
-     * @param  integer           $precision (Optional) Fractional precision for the given milliseconds
-     * @return integer|string
-     */
-    public function addMilliSecond($milli = null, $precision = null)
-    {
-        if ($milli === null) {
-            list($milli, $time) = explode(" ", microtime());
-            $milli = intval($milli);
-        } else if (!is_numeric($milli)) {
-            require_once 'Zend/Date/Exception.php';
-            throw new Zend_Date_Exception("invalid milli second ($milli) operand", $milli);
-        }
-
-        if ($precision === null) {
-            $precision = $this->_precision;
-        } else if (!is_int($precision) || $precision < 1 || $precision > 9) {
-            require_once 'Zend/Date/Exception.php';
-            throw new Zend_Date_Exception("precision ($precision) must be a positive integer less than 10", $precision);
-        }
-
-        if ($precision != $this->_precision) {
-            if ($precision > $this->_precision) {
-                $diff = $precision - $this->_precision;
-                $milli = (int) ($milli / (10 * $diff));
-            } else {
-                $diff = $this->_precision - $precision;
-                $milli = (int) ($milli * (10 * $diff));
-            }
-        }
-
-        $this->_fractional += $milli;
-        // Add/sub milliseconds + add/sub seconds
-
-        $max = pow(10, $this->_precision);
-        // Milli includes seconds
-        if ($this->_fractional >= $max) {
-            while ($this->_fractional >= $max) {
-                $this->addSecond(1);
-                $this->_fractional -= $max;
-            }
-        }
-
-        if ($this->_fractional < 0) {
-            while ($this->_fractional < 0) {
-                $this->subSecond(1);
-                $this->_fractional += $max;
-            }
-        }
-
-        return $this->_fractional;
-    }
-
-
-    /**
-     * Subtracts a millisecond
-     *
-     * @param  integer|Zend_Date $milli     (Optional) Millisecond to sub, when null the actual millisecond is subtracted
-     * @param  integer           $precision (Optional) Fractional precision for the given milliseconds
-     * @return integer
-     */
-    public function subMilliSecond($milli = null, $precision = null)
-    {
-        return $this->addMilliSecond(0 - $milli);
-    }
-
-    /**
-     * Compares only the millisecond part, returning the difference
-     *
-     * @param  integer|Zend_Date  $milli  OPTIONAL Millisecond to compare, when null the actual millisecond is compared
-     * @param  integer            $precision  OPTIONAL Fractional precision for the given milliseconds
-     * @return integer
-     */
-    public function compareMilliSecond($milli = null, $precision = null)
-    {
-        if ($milli === null) {
-            list($milli, $time) = explode(" ", microtime());
-            $milli = intval($milli);
-        } else if (is_numeric($milli) === false) {
-            require_once 'Zend/Date/Exception.php';
-            throw new Zend_Date_Exception("invalid milli second ($milli) operand", $milli);
-        }
-
-        if ($precision === null) {
-            $precision = $this->_precision;
-        } else if (!is_int($precision) || $precision < 1 || $precision > 9) {
-            require_once 'Zend/Date/Exception.php';
-            throw new Zend_Date_Exception("precision ($precision) must be a positive integer less than 10", $precision);
-        }
-
-        if ($precision === 0) {
-            require_once 'Zend/Date/Exception.php';
-            throw new Zend_Date_Exception('precision is 0');
-        }
-
-        if ($precision != $this->_precision) {
-            if ($precision > $this->_precision) {
-                $diff = $precision - $this->_precision;
-                $milli = (int) ($milli / (10 * $diff));
-            } else {
-                $diff = $this->_precision - $precision;
-                $milli = (int) ($milli * (10 * $diff));
-            }
-        }
-
-        $comp = $this->_fractional - $milli;
-        if ($comp < 0) {
-            return -1;
-        } else if ($comp > 0) {
-            return 1;
-        }
-        return 0;
-    }
-
-    /**
-     * Returns the week as new date object using monday as begining of the week
-     * Example: 12.Jan.2007 -> 08.Jan.1970 00:00:00
-     *
-     * @param $locale  string|Zend_Locale  OPTIONAL Locale for parsing input
-     * @return Zend_Date
-     */
-    public function getWeek($locale = null)
-    {
-        return $this->copyPart(self::WEEK, $locale);
-    }
-
-    /**
-     * Sets a new week. The week is always a number. The day of week is not changed.
-     * Returned is the new date object
-     * Example: 09.Jan.2007 13:07:25 -> setWeek(1); -> 02.Jan.2007 13:07:25
-     *
-     * @param  string|integer|array|Zend_Date  $week    Week to set
-     * @param  string|Zend_Locale              $locale  OPTIONAL Locale for parsing input
-     * @return Zend_Date
-     * @throws Zend_Date_Exception
-     */
-    public function setWeek($week, $locale = null)
-    {
-        return $this->_calcvalue('set', $week, 'week', self::WEEK, $locale);
-    }
-
-    /**
-     * Adds a week. The week is always a number. The day of week is not changed.
-     * Returned is the new date object
-     * Example: 09.Jan.2007 13:07:25 -> addWeek(1); -> 16.Jan.2007 13:07:25
-     *
-     * @param  string|integer|array|Zend_Date  $week    Week to add
-     * @param  string|Zend_Locale              $locale  OPTIONAL Locale for parsing input
-     * @return Zend_Date
-     * @throws Zend_Date_Exception
-     */
-    public function addWeek($week, $locale = null)
-    {
-        return $this->_calcvalue('add', $week, 'week', self::WEEK, $locale);
-    }
-
-    /**
-     * Subtracts a week. The week is always a number. The day of week is not changed.
-     * Returned is the new date object
-     * Example: 09.Jan.2007 13:07:25 -> subWeek(1); -> 02.Jan.2007 13:07:25
-     *
-     * @param  string|integer|array|Zend_Date  $week    Week to sub
-     * @param  string|Zend_Locale              $locale  OPTIONAL Locale for parsing input
-     * @return Zend_Date
-     * @throws Zend_Date_Exception
-     */
-    public function subWeek($week, $locale = null)
-    {
-        return $this->_calcvalue('sub', $week, 'week', self::WEEK, $locale);
-    }
-
-    /**
-     * Compares only the week part, returning the difference
-     * Returned is the new date object
-     * Returns if equal, earlier or later
-     * Example: 09.Jan.2007 13:07:25 -> compareWeek(2); -> 0
-     *
-     * @param  string|integer|array|Zend_Date  $week    Week to compare
-     * @param  string|Zend_Locale              $locale  OPTIONAL Locale for parsing input
-     * @return integer 0 = equal, 1 = later, -1 = earlier
-     */
-    public function compareWeek($week, $locale = null)
-    {
-        return $this->_calcvalue('cmp', $week, 'week', self::WEEK, $locale);
-    }
-
-    /**
-     * Sets a new standard locale for the date object.
-     * This locale will be used for all functions
-     * Returned is the really set locale.
-     * Example: 'de_XX' will be set to 'de' because 'de_XX' does not exist
-     * 'xx_YY' will be set to 'root' because 'xx' does not exist
-     *
-     * @param  string|Zend_Locale $locale (Optional) Locale for parsing input
-     * @throws Zend_Date_Exception When the given locale does not exist
-     * @return Zend_Date Provides fluent interface
-     */
-    public function setLocale($locale = null)
-    {
-        try {
-            $this->_locale = Zend_Locale::findLocale($locale);
-        } catch (Zend_Locale_Exception $e) {
-            require_once 'Zend/Date/Exception.php';
-            throw new Zend_Date_Exception($e->getMessage());
-        }
-
-        return $this;
-    }
-
-    /**
-     * Returns the actual set locale
-     *
-     * @return string
-     */
-    public function getLocale()
-    {
-        return $this->_locale;
-    }
-
-    /**
-     * Checks if the given date is a real date or datepart.
-     * Returns false if a expected datepart is missing or a datepart exceeds its possible border.
-     * But the check will only be done for the expected dateparts which are given by format.
-     * If no format is given the standard dateformat for the actual locale is used.
-     * f.e. 30.February.2007 will return false if format is 'dd.MMMM.YYYY'
-     *
-     * @param  string             $date   Date to parse for correctness
-     * @param  string             $format (Optional) Format for parsing the date string
-     * @param  string|Zend_Locale $locale (Optional) Locale for parsing date parts
-     * @return boolean            True when all date parts are correct
-     */
-    public static function isDate($date, $format = null, $locale = null)
-    {
-        if (!is_string($date) and !is_numeric($date) and !($date instanceof Zend_Date)) {
-            return false;
-        }
-
-        if (($format !== null) and (Zend_Locale::isLocale($format, null, false))) {
-            $locale = $format;
-            $format = null;
-        }
-
-        $locale = Zend_Locale::findLocale($locale);
-
-        if ($format === null) {
-            $format = Zend_Locale_Format::getDateFormat($locale);
-        } else if (self::$_options['format_type'] == 'php') {
-            $format = Zend_Locale_Format::convertPhpToIsoFormat($format);
-        }
-
-        $format = self::_getLocalizedToken($format, $locale);
-        try {
-            $parsed = Zend_Locale_Format::getDate($date, array('locale' => $locale,
-                                                  'date_format' => $format, 'format_type' => 'iso',
-                                                  'fix_date' => false));
-        } catch (Zend_Locale_Exception $e) {
-            // Date can not be parsed
-            return false;
-        }
-
-        if (((strpos($format, 'Y') !== false) or (strpos($format, 'y') !== false)) and
-            (!isset($parsed['year']))) {
-            // Year expected but not found
-            return false;
-        }
-
-        if ((strpos($format, 'M') !== false) and (!isset($parsed['month']))) {
-            // Month expected but not found
-            return false;
-        }
-
-        if ((strpos($format, 'd') !== false) and (!isset($parsed['day']))) {
-            // Day expected but not found
-            return false;
-        }
-
-        if (((strpos($format, 'H') !== false) or (strpos($format, 'h') !== false)) and
-            (!isset($parsed['hour']))) {
-            // Hour expected but not found
-            return false;
-        }
-
-        if ((strpos($format, 'm') !== false) and (!isset($parsed['minute']))) {
-            // Minute expected but not found
-            return false;
-        }
-
-        if ((strpos($format, 's') !== false) and (!isset($parsed['second']))) {
-            // Second expected  but not found
-            return false;
-        }
-
-        // Set not given dateparts
-        if (isset($parsed['hour']) === false) {
-            $parsed['hour'] = 0;
-        }
-
-        if (isset($parsed['minute']) === false) {
-            $parsed['minute'] = 0;
-        }
-
-        if (isset($parsed['second']) === false) {
-            $parsed['second'] = 0;
-        }
-
-        if (isset($parsed['month']) === false) {
-            $parsed['month'] = 1;
-        }
-
-        if (isset($parsed['day']) === false) {
-            $parsed['day'] = 1;
-        }
-
-        if (isset($parsed['year']) === false) {
-            $parsed['year'] = 1970;
-        }
-
-        if (self::isYearLeapYear($parsed['year'])) {
-            $parsed['year'] = 1972;
-        } else {
-            $parsed['year'] = 1971;
-        }
-
-        $date      = new self($parsed, null, $locale);
-        $timestamp = $date->mktime($parsed['hour'], $parsed['minute'], $parsed['second'],
-                                   $parsed['month'], $parsed['day'], $parsed['year']);
-        if ($parsed['year'] != $date->date('Y', $timestamp)) {
-            // Given year differs from parsed year
-            return false;
-        }
-
-        if ($parsed['month'] != $date->date('n', $timestamp)) {
-            // Given month differs from parsed month
-            return false;
-        }
-
-        if ($parsed['day'] != $date->date('j', $timestamp)) {
-            // Given day differs from parsed day
-            return false;
-        }
-
-        if ($parsed['hour'] != $date->date('G', $timestamp)) {
-            // Given hour differs from parsed hour
-            return false;
-        }
-
-        if ($parsed['minute'] != $date->date('i', $timestamp)) {
-            // Given minute differs from parsed minute
-            return false;
-        }
-
-        if ($parsed['second'] != $date->date('s', $timestamp)) {
-            // Given second differs from parsed second
-            return false;
-        }
-
-        return true;
-    }
-
-    /**
-     * Returns the ISO Token for all localized constants
-     *
-     * @param string $token Token to normalize
-     * @param string $locale Locale to search
-     * @return string
-     */
-    protected static function _getLocalizedToken($token, $locale)
-    {
-        switch($token) {
-            case self::ISO_8601 :
-                return "dd mm yy";
-                break;
-            case self::RFC_2822 :
-                return "EEE, dd MMM yyyy HH:mm:ss";
-                break;
-            case self::DATES :
-                return Zend_Locale_Data::getContent($locale, 'date');
-                break;
-            case self::DATE_FULL :
-                return Zend_Locale_Data::getContent($locale, 'date', array('gregorian', 'full'));
-                break;
-            case self::DATE_LONG :
-                return Zend_Locale_Data::getContent($locale, 'date', array('gregorian', 'long'));
-                break;
-            case self::DATE_MEDIUM :
-                return Zend_Locale_Data::getContent($locale, 'date', array('gregorian', 'medium'));
-                break;
-            case self::DATE_SHORT :
-                return Zend_Locale_Data::getContent($locale, 'date', array('gregorian', 'short'));
-                break;
-            case self::TIMES :
-                return Zend_Locale_Data::getContent($locale, 'date');
-                break;
-            case self::TIME_FULL :
-                return Zend_Locale_Data::getContent($locale, 'time', array('gregorian', 'full'));
-                break;
-            case self::TIME_LONG :
-                return Zend_Locale_Data::getContent($locale, 'date', array('gregorian', 'long'));
-                break;
-            case self::TIME_MEDIUM :
-                return Zend_Locale_Data::getContent($locale, 'date', array('gregorian', 'medium'));
-                break;
-            case self::TIME_SHORT :
-                return Zend_Locale_Data::getContent($locale, 'date', array('gregorian', 'short'));
-                break;
-            case self::ATOM :
-            case self::RFC_3339 :
-            case self::W3C :
-                return "yyyy-MM-DD HH:mm:ss";
-                break;
-            case self::COOKIE :
-            case self::RFC_850 :
-                return "EEEE, dd-MM-yyyy HH:mm:ss";
-                break;
-            case self::RFC_822 :
-            case self::RFC_1036 :
-            case self::RFC_1123 :
-            case self::RSS :
-                return "EEE, dd MM yyyy HH:mm:ss";
-                break;
-        }
-
-        return $token;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

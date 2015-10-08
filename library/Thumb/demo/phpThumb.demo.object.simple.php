@@ -1,64 +1,34 @@
-<?php
-//////////////////////////////////////////////////////////////
-///  phpThumb() by James Heinrich <info@silisoftware.com>   //
-//        available at http://phpthumb.sourceforge.net     ///
-//////////////////////////////////////////////////////////////
-///                                                         //
-// phpThumb.demo.object.simple.php                          //
-// James Heinrich <info@silisoftware.com>                   //
-//                                                          //
-// Simplified example of how to use phpthumb.class.php as   //
-// an object -- please also see phpThumb.demo.object.php    //
-//                                                          //
-//////////////////////////////////////////////////////////////
-
-// Note: phpThumb.php is where the caching code is located, if
-//   you instantiate your own phpThumb() object that code is
-//   bypassed and it's up to you to handle the reading and
-//   writing of cached files, if appropriate.
-
-die('For security reasons, this demo is disabled by default. Please comment out line '.__LINE__.' in '.basename(__FILE__));
-
-require_once('../phpthumb.class.php');
-
-// create phpThumb object
-$phpThumb = new phpThumb();
-
-$thumbnail_width = 100;
-
-// set data source -- do this first, any settings must be made AFTER this call
-if (is_uploaded_file(@$_FILES['userfile']['tmp_name'])) {
-	$phpThumb->setSourceFilename($_FILES['userfile']['tmp_name']);
-	$output_filename = './thumbnails/'.basename($_FILES['userfile']['name']).'_'.$thumbnail_width.'.'.$phpThumb->config_output_format;
-} else {
-	$phpThumb->setSourceData(file_get_contents('..\images\disk.jpg'));
-	$output_filename = './thumbnails/disk_small.jpg';
-}
-
-// PLEASE NOTE:
-// You must set any relevant config settings here. The phpThumb
-// object mode does NOT pull any settings from phpThumb.config.php
-//$phpThumb->setParameter('config_document_root', '/home/groups/p/ph/phpthumb/htdocs/');
-//$phpThumb->setParameter('config_cache_directory', '/tmp/persistent/phpthumb/cache/');
-
-// set parameters (see "URL Parameters" in phpthumb.readme.txt)
-$phpThumb->setParameter('w', $thumbnail_width);
-//$phpThumb->setParameter('fltr', 'gam|1.2');
-//$phpThumb->setParameter('fltr', 'wmi|../watermark.jpg|C|75|20|20');
-
-// generate & output thumbnail
-if ($phpThumb->GenerateThumbnail()) { // this line is VERY important, do not remove it!
-	if ($phpThumb->RenderToFile($output_filename)) {
-		// do something on success
-		echo 'Successfully rendered to "'.$output_filename.'"';
-	} else {
-		// do something with debug/error messages
-		echo 'Failed:<pre>'.implode("\n\n", $phpThumb->debugmessages).'</pre>';
-	}
-	$phpThumb->purgeTempFiles();
-} else {
-	// do something with debug/error messages
-	echo 'Failed:<pre>'.$phpThumb->fatalerror."\n\n".implode("\n\n", $phpThumb->debugmessages).'</pre>';
-}
-
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
 ?>
+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

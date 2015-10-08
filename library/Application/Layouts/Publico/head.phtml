@@ -1,0 +1,32 @@
+<meta name="viewport" content="width=device-width, user-scalable=no">
+<?php
+
+
+$cssPersonalizado = false;
+
+
+echo $this->headLink()
+        ->appendStylesheet(APPLICATION_CLIENT_TEMA_URL.'/style/iflat/font-awesome/css/font-awesome.min.css')
+        ->appendStylesheet(APPLICATION_CLIENT_TEMA_URL.'/style/iflat/fontello/css/fontello.css')
+        ->appendStylesheet(APPLICATION_CLIENT_TEMA_URL.'/../bootstrap/css/bootstrap.css')
+        ->appendStylesheet(APPLICATION_CLIENT_TEMA_URL.'/style/iflat/main.css')
+        ->appendStylesheet(APPLICATION_CLIENT_TEMA_URL . '/style/jquery.lightbox-0.5.css')
+        ->appendStylesheet('https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic')
+        ->appendStylesheet('https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic','all')
+        ->appendStylesheet(APPLICATION_CLIENT_TEMA_URL . '/style/jquery-ui-1.8.6.custom.css')
+        ->appendStylesheet(APPLICATION_CLIENT_TEMA_URL . '/style/main.css','all')
+        ->appendStylesheet(APPLICATION_CLIENT_TEMA_URL . '/style/areas_v2.css','all');
+    
+$baseUrl = Zend_Controller_Front::getInstance()->getBaseUrl();
+
+
+$headScript = $this->headScript();
+$js = new Superlogica_Js();
+$scripts = $js->getScripts();
+foreach ($scripts as $script) {
+    $script['tipo'] == 'arquivo' ? $headScript->appendFile(APPLICATION_URL . '/scripts/min/' . $script['filename']) : $headScript->appendScript($script['codigo']);
+}
+
+echo $headScript;
+
+?>

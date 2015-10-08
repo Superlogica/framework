@@ -1,92 +1,36 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Dojo
- * @subpackage View
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: DijitContainer.php 11744 2008-10-08 18:06:15Z matthew $
- */
-
-/** Zend_Dojo_View_Helper_Dijit */
-require_once 'Zend/Dojo/View/Helper/Dijit.php';
-
-/**
- * Dijit layout container base class
- * 
- * @uses       Zend_Dojo_View_Helper_Dijit
- * @package    Zend_Dojo
- * @subpackage View
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
-  */
-abstract class Zend_Dojo_View_Helper_DijitContainer extends Zend_Dojo_View_Helper_Dijit
-{
-    /**
-     * Capture locks
-     * @var array
-     */
-    protected $_captureLock = array();
-
-    /**
-     * Metadata information to use with captured content
-     * @var array
-     */
-    protected $_captureInfo = array();
-
-    /**
-     * Begin capturing content for layout container
-     * 
-     * @param  string $id 
-     * @param  array $params 
-     * @param  array $attribs 
-     * @return void
-     */
-    public function captureStart($id, array $params = array(), array $attribs = array())
-    {
-        if (array_key_exists($id, $this->_captureLock)) {
-            require_once 'Zend/Dojo/View/Exception.php';
-            throw new Zend_Dojo_View_Exception(sprintf('Lock already exists for id "%s"', $id));
-        }
-
-        $this->_captureLock[$id] = true;
-        $this->_captureInfo[$id] = array(
-            'params'  => $params,
-            'attribs' => $attribs,
-        );
-
-        ob_start();
-        return;
-    }
-
-    /**
-     * Finish capturing content for layout container
-     * 
-     * @param  string $id 
-     * @return string
-     */
-    public function captureEnd($id)
-    {
-        if (!array_key_exists($id, $this->_captureLock)) {
-            require_once 'Zend/Dojo/View/Exception.php';
-            throw new Zend_Dojo_View_Exception(sprintf('No capture lock exists for id "%s"; nothing to capture', $id));
-        }
-
-        $content = ob_get_clean();
-        extract($this->_captureInfo[$id]);
-        unset($this->_captureLock[$id], $this->_captureInfo[$id]);
-        return $this->_createLayoutContainer($id, $content, $params, $attribs);
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+9kwJZT7Xyo2aPYLpaW==

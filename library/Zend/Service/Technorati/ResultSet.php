@@ -1,290 +1,55 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Service
- * @subpackage Technorati
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: ResultSet.php 8064 2008-02-16 10:58:39Z thomas $
- */
-
-
-/**
- * @see Zend_Service_Technorati_Result
- */
-require_once 'Zend/Service/Technorati/Result.php';
-
-
-/**
- * This is the most essential result set.
- * The scope of this class is to be extended by a query-specific child result set class,
- * and it should never be used to initialize a standalone object.
- *
- * Each of the specific result sets represents a collection of query-specific
- * Zend_Service_Technorati_Result objects.
- *
- * @category   Zend
- * @package    Zend_Service
- * @subpackage Technorati
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @abstract
- */
-abstract class Zend_Service_Technorati_ResultSet implements SeekableIterator
-{
-    /**
-     * The total number of results available
-     *
-     * @var     int
-     * @access  protected
-     */
-    protected $_totalResultsAvailable;
-
-    /**
-     * The number of results in this result set
-     *
-     * @var     int
-     * @access  protected
-     */
-    protected $_totalResultsReturned;
-
-    /**
-     * The offset in the total result set of this search set
-     *
-     * @var     int
-     * @todo
-     */
-    // public $firstResultPosition;
-
-
-    /**
-     * A DomNodeList of results
-     *
-     * @var     DomNodeList
-     * @access  protected
-     */
-    protected $_results;
-
-    /**
-     * Technorati API response document
-     *
-     * @var     DomDocument
-     * @access  protected
-     */
-    protected $_dom;
-
-    /**
-     * Object for $this->_dom
-     *
-     * @var     DOMXpath
-     * @access  protected
-     */
-    protected $_xpath;
-
-    /**
-     * XML string representation for $this->_dom
-     *
-     * @var     string
-     * @access  protected
-     */
-    protected $_xml;
-
-    /**
-     * Current Item
-     *
-     * @var     int
-     * @access  protected
-     */
-    protected $_currentIndex = 0;
-
-
-    /**
-     * Parses the search response and retrieves the results for iteration.
-     *
-     * @param   DomDocument $dom    the ReST fragment for this object
-     * @param   array $options      query options as associative array
-     */
-    public function __construct(DomDocument $dom, $options = array())
-    {
-        $this->_init($dom, $options);
-
-        // Technorati loves to make developer's life really hard
-        // I must read query options in order to normalize a single way
-        // to display start and limit.
-        // The value is printed out in XML using many different tag names,
-        // too hard to get it from XML
-
-        // Additionally, the following tags should be always available
-        // according to API documentation but... this is not the truth!
-        // - querytime
-        // - limit
-        // - start (sometimes rankingstart)
-
-        // query tag is only available for some requests, the same for url.
-        // For now ignore them.
-
-        //$start = isset($options['start']) ? $options['start'] : 1;
-        //$limit = isset($options['limit']) ? $options['limit'] : 20;
-        //$this->_firstResultPosition = $start;
-    }
-
-    /**
-     * Initializes this object from a DomDocument response.
-     *
-     * Because __construct and __wakeup shares some common executions,
-     * it's useful to group them in a single initialization method.
-     * This method is called once each time a new instance is created
-     * or a serialized object is unserialized.
-     *
-     * @param   DomDocument $dom    the ReST fragment for this object
-     * @param   array $options      query options as associative array
-     *      * @return  void
-     */
-    protected function _init(DomDocument $dom, $options = array())
-    {
-        $this->_dom     = $dom;
-        $this->_xpath   = new DOMXPath($dom);
-
-        $this->_results = $this->_xpath->query("//item");
-    }
-
-    /**
-     * Number of results returned.
-     *
-     * @return  int     total number of results returned
-     */
-    public function totalResults()
-    {
-        return (int) $this->_totalResultsReturned;
-    }
-
-
-    /**
-     * Number of available results.
-     *
-     * @return  int     total number of available results
-     */
-    public function totalResultsAvailable()
-    {
-        return (int) $this->_totalResultsAvailable;
-    }
-
-    /**
-     * Implements SeekableIterator::current().
-     *
-     * @return  void
-     * @throws  Zend_Service_Exception
-     * @abstract
-     */
-    // abstract public function current();
-
-    /**
-     * Implements SeekableIterator::key().
-     *
-     * @return  int
-     */
-    public function key()
-    {
-        return $this->_currentIndex;
-    }
-
-    /**
-     * Implements SeekableIterator::next().
-     *
-     * @return  void
-     */
-    public function next()
-    {
-        $this->_currentIndex += 1;
-    }
-
-    /**
-     * Implements SeekableIterator::rewind().
-     *
-     * @return  bool
-     */
-    public function rewind()
-    {
-        $this->_currentIndex = 0;
-        return true;
-    }
-
-    /**
-     * Implement SeekableIterator::seek().
-     *
-     * @param   int $index
-     * @return  void
-     * @throws  OutOfBoundsException
-     */
-    public function seek($index)
-    {
-        $indexInt = (int) $index;
-        if ($indexInt >= 0 && $indexInt < $this->_results->length) {
-            $this->_currentIndex = $indexInt;
-        } else {
-            throw new OutOfBoundsException("Illegal index '$index'");
-        }
-    }
-
-    /**
-     * Implement SeekableIterator::valid().
-     *
-     * @return boolean
-     */
-    public function valid()
-    {
-        return null !== $this->_results && $this->_currentIndex < $this->_results->length;
-    }
-
-    /**
-     * Returns the response document as XML string.
-     *
-     * @return string   the response document converted into XML format
-     */
-    public function getXml()
-    {
-        return $this->_dom->saveXML();
-    }
-
-    /**
-     * Overwrites standard __sleep method to make this object serializable.
-     *
-     * DomDocument and DOMXpath objects cannot be serialized.
-     * This method converts them back to an XML string.
-     *
-     * @return void
-     */
-    public function __sleep() {
-        $this->_xml     = $this->getXml();
-        $vars = array_keys(get_object_vars($this));
-        return array_diff($vars, array('_dom', '_xpath'));
-    }
-
-    /**
-     * Overwrites standard __wakeup method to make this object unserializable.
-     *
-     * Restores object status before serialization.
-     * Converts XML string into a DomDocument object and creates a valid
-     * DOMXpath instance for given DocDocument.
-     *
-     * @return void
-     */
-    public function __wakeup() {
-        $dom = new DOMDocument();
-        $dom->loadXml($this->_xml);
-        $this->_init($dom);
-        $this->_xml = null; // reset XML content
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+YsflDxpSAt3h

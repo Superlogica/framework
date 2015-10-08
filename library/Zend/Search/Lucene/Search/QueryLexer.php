@@ -1,509 +1,279 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Search_Lucene
- * @subpackage Search
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_Search_Lucene_FSM */
-require_once 'Zend/Search/Lucene/FSM.php';
-
-/** Zend_Search_Lucene_Search_QueryParser */
-require_once 'Zend/Search/Lucene/Search/QueryToken.php';
-
-/**
- * @category   Zend
- * @package    Zend_Search_Lucene
- * @subpackage Search
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Search_Lucene_Search_QueryLexer extends Zend_Search_Lucene_FSM
-{
-    /** State Machine states */
-    const ST_WHITE_SPACE     = 0;
-    const ST_SYNT_LEXEME     = 1;
-    const ST_LEXEME          = 2;
-    const ST_QUOTED_LEXEME   = 3;
-    const ST_ESCAPED_CHAR    = 4;
-    const ST_ESCAPED_QCHAR   = 5;
-    const ST_LEXEME_MODIFIER = 6;
-    const ST_NUMBER          = 7;
-    const ST_MANTISSA        = 8;
-    const ST_ERROR           = 9;
-
-    /** Input symbols */
-    const IN_WHITE_SPACE     = 0;
-    const IN_SYNT_CHAR       = 1;
-    const IN_LEXEME_MODIFIER = 2;
-    const IN_ESCAPE_CHAR     = 3;
-    const IN_QUOTE           = 4;
-    const IN_DECIMAL_POINT   = 5;
-    const IN_ASCII_DIGIT     = 6;
-    const IN_CHAR            = 7;
-    const IN_MUTABLE_CHAR    = 8;
-
-    const QUERY_WHITE_SPACE_CHARS      = " \n\r\t";
-    const QUERY_SYNT_CHARS             = ':()[]{}!|&';
-    const QUERY_MUTABLE_CHARS          = '+-';
-    const QUERY_DOUBLECHARLEXEME_CHARS = '|&';
-    const QUERY_LEXEMEMODIFIER_CHARS   = '~^';
-    const QUERY_ASCIIDIGITS_CHARS      = '0123456789';
-
-    /**
-     * List of recognized lexemes
-     *
-     * @var array
-     */
-    private $_lexemes;
-
-    /**
-     * Query string (array of single- or non single-byte characters)
-     *
-     * @var array
-     */
-    private $_queryString;
-
-    /**
-     * Current position within a query string
-     * Used to create appropriate error messages
-     *
-     * @var integer
-     */
-    private $_queryStringPosition;
-
-    /**
-     * Recognized part of current lexeme
-     *
-     * @var string
-     */
-    private $_currentLexeme;
-
-    public function __construct()
-    {
-        parent::__construct( array(self::ST_WHITE_SPACE,
-                                   self::ST_SYNT_LEXEME,
-                                   self::ST_LEXEME,
-                                   self::ST_QUOTED_LEXEME,
-                                   self::ST_ESCAPED_CHAR,
-                                   self::ST_ESCAPED_QCHAR,
-                                   self::ST_LEXEME_MODIFIER,
-                                   self::ST_NUMBER,
-                                   self::ST_MANTISSA,
-                                   self::ST_ERROR),
-                             array(self::IN_WHITE_SPACE,
-                                   self::IN_SYNT_CHAR,
-                                   self::IN_MUTABLE_CHAR,
-                                   self::IN_LEXEME_MODIFIER,
-                                   self::IN_ESCAPE_CHAR,
-                                   self::IN_QUOTE,
-                                   self::IN_DECIMAL_POINT,
-                                   self::IN_ASCII_DIGIT,
-                                   self::IN_CHAR));
-
-
-        $lexemeModifierErrorAction    = new Zend_Search_Lucene_FSMAction($this, 'lexModifierErrException');
-        $quoteWithinLexemeErrorAction = new Zend_Search_Lucene_FSMAction($this, 'quoteWithinLexemeErrException');
-        $wrongNumberErrorAction       = new Zend_Search_Lucene_FSMAction($this, 'wrongNumberErrException');
-
-
-
-        $this->addRules(array( array(self::ST_WHITE_SPACE,   self::IN_WHITE_SPACE,     self::ST_WHITE_SPACE),
-                               array(self::ST_WHITE_SPACE,   self::IN_SYNT_CHAR,       self::ST_SYNT_LEXEME),
-                               array(self::ST_WHITE_SPACE,   self::IN_MUTABLE_CHAR,    self::ST_SYNT_LEXEME),
-                               array(self::ST_WHITE_SPACE,   self::IN_LEXEME_MODIFIER, self::ST_LEXEME_MODIFIER),
-                               array(self::ST_WHITE_SPACE,   self::IN_ESCAPE_CHAR,     self::ST_ESCAPED_CHAR),
-                               array(self::ST_WHITE_SPACE,   self::IN_QUOTE,           self::ST_QUOTED_LEXEME),
-                               array(self::ST_WHITE_SPACE,   self::IN_DECIMAL_POINT,   self::ST_LEXEME),
-                               array(self::ST_WHITE_SPACE,   self::IN_ASCII_DIGIT,     self::ST_LEXEME),
-                               array(self::ST_WHITE_SPACE,   self::IN_CHAR,            self::ST_LEXEME)
-                             ));
-        $this->addRules(array( array(self::ST_SYNT_LEXEME,   self::IN_WHITE_SPACE,     self::ST_WHITE_SPACE),
-                               array(self::ST_SYNT_LEXEME,   self::IN_SYNT_CHAR,       self::ST_SYNT_LEXEME),
-                               array(self::ST_SYNT_LEXEME,   self::IN_MUTABLE_CHAR,    self::ST_SYNT_LEXEME),
-                               array(self::ST_SYNT_LEXEME,   self::IN_LEXEME_MODIFIER, self::ST_LEXEME_MODIFIER),
-                               array(self::ST_SYNT_LEXEME,   self::IN_ESCAPE_CHAR,     self::ST_ESCAPED_CHAR),
-                               array(self::ST_SYNT_LEXEME,   self::IN_QUOTE,           self::ST_QUOTED_LEXEME),
-                               array(self::ST_SYNT_LEXEME,   self::IN_DECIMAL_POINT,   self::ST_LEXEME),
-                               array(self::ST_SYNT_LEXEME,   self::IN_ASCII_DIGIT,     self::ST_LEXEME),
-                               array(self::ST_SYNT_LEXEME,   self::IN_CHAR,            self::ST_LEXEME)
-                             ));
-        $this->addRules(array( array(self::ST_LEXEME,        self::IN_WHITE_SPACE,     self::ST_WHITE_SPACE),
-                               array(self::ST_LEXEME,        self::IN_SYNT_CHAR,       self::ST_SYNT_LEXEME),
-                               array(self::ST_LEXEME,        self::IN_MUTABLE_CHAR,    self::ST_LEXEME),
-                               array(self::ST_LEXEME,        self::IN_LEXEME_MODIFIER, self::ST_LEXEME_MODIFIER),
-                               array(self::ST_LEXEME,        self::IN_ESCAPE_CHAR,     self::ST_ESCAPED_CHAR),
-
-                               // IN_QUOTE     not allowed
-                               array(self::ST_LEXEME,        self::IN_QUOTE,           self::ST_ERROR, $quoteWithinLexemeErrorAction),
-
-                               array(self::ST_LEXEME,        self::IN_DECIMAL_POINT,   self::ST_LEXEME),
-                               array(self::ST_LEXEME,        self::IN_ASCII_DIGIT,     self::ST_LEXEME),
-                               array(self::ST_LEXEME,        self::IN_CHAR,            self::ST_LEXEME)
-                             ));
-        $this->addRules(array( array(self::ST_QUOTED_LEXEME, self::IN_WHITE_SPACE,     self::ST_QUOTED_LEXEME),
-                               array(self::ST_QUOTED_LEXEME, self::IN_SYNT_CHAR,       self::ST_QUOTED_LEXEME),
-                               array(self::ST_QUOTED_LEXEME, self::IN_MUTABLE_CHAR,    self::ST_QUOTED_LEXEME),
-                               array(self::ST_QUOTED_LEXEME, self::IN_LEXEME_MODIFIER, self::ST_QUOTED_LEXEME),
-                               array(self::ST_QUOTED_LEXEME, self::IN_ESCAPE_CHAR,     self::ST_ESCAPED_QCHAR),
-                               array(self::ST_QUOTED_LEXEME, self::IN_QUOTE,           self::ST_WHITE_SPACE),
-                               array(self::ST_QUOTED_LEXEME, self::IN_DECIMAL_POINT,   self::ST_QUOTED_LEXEME),
-                               array(self::ST_QUOTED_LEXEME, self::IN_ASCII_DIGIT,     self::ST_QUOTED_LEXEME),
-                               array(self::ST_QUOTED_LEXEME, self::IN_CHAR,            self::ST_QUOTED_LEXEME)
-                             ));
-        $this->addRules(array( array(self::ST_ESCAPED_CHAR,  self::IN_WHITE_SPACE,     self::ST_LEXEME),
-                               array(self::ST_ESCAPED_CHAR,  self::IN_SYNT_CHAR,       self::ST_LEXEME),
-                               array(self::ST_ESCAPED_CHAR,  self::IN_MUTABLE_CHAR,    self::ST_LEXEME),
-                               array(self::ST_ESCAPED_CHAR,  self::IN_LEXEME_MODIFIER, self::ST_LEXEME),
-                               array(self::ST_ESCAPED_CHAR,  self::IN_ESCAPE_CHAR,     self::ST_LEXEME),
-                               array(self::ST_ESCAPED_CHAR,  self::IN_QUOTE,           self::ST_LEXEME),
-                               array(self::ST_ESCAPED_CHAR,  self::IN_DECIMAL_POINT,   self::ST_LEXEME),
-                               array(self::ST_ESCAPED_CHAR,  self::IN_ASCII_DIGIT,     self::ST_LEXEME),
-                               array(self::ST_ESCAPED_CHAR,  self::IN_CHAR,            self::ST_LEXEME)
-                             ));
-        $this->addRules(array( array(self::ST_ESCAPED_QCHAR, self::IN_WHITE_SPACE,     self::ST_QUOTED_LEXEME),
-                               array(self::ST_ESCAPED_QCHAR, self::IN_SYNT_CHAR,       self::ST_QUOTED_LEXEME),
-                               array(self::ST_ESCAPED_QCHAR, self::IN_MUTABLE_CHAR,    self::ST_QUOTED_LEXEME),
-                               array(self::ST_ESCAPED_QCHAR, self::IN_LEXEME_MODIFIER, self::ST_QUOTED_LEXEME),
-                               array(self::ST_ESCAPED_QCHAR, self::IN_ESCAPE_CHAR,     self::ST_QUOTED_LEXEME),
-                               array(self::ST_ESCAPED_QCHAR, self::IN_QUOTE,           self::ST_QUOTED_LEXEME),
-                               array(self::ST_ESCAPED_QCHAR, self::IN_DECIMAL_POINT,   self::ST_QUOTED_LEXEME),
-                               array(self::ST_ESCAPED_QCHAR, self::IN_ASCII_DIGIT,     self::ST_QUOTED_LEXEME),
-                               array(self::ST_ESCAPED_QCHAR, self::IN_CHAR,            self::ST_QUOTED_LEXEME)
-                             ));
-        $this->addRules(array( array(self::ST_LEXEME_MODIFIER, self::IN_WHITE_SPACE,     self::ST_WHITE_SPACE),
-                               array(self::ST_LEXEME_MODIFIER, self::IN_SYNT_CHAR,       self::ST_SYNT_LEXEME),
-                               array(self::ST_LEXEME_MODIFIER, self::IN_MUTABLE_CHAR,    self::ST_SYNT_LEXEME),
-                               array(self::ST_LEXEME_MODIFIER, self::IN_LEXEME_MODIFIER, self::ST_LEXEME_MODIFIER),
-
-                               // IN_ESCAPE_CHAR       not allowed
-                               array(self::ST_LEXEME_MODIFIER, self::IN_ESCAPE_CHAR,     self::ST_ERROR, $lexemeModifierErrorAction),
-
-                               // IN_QUOTE             not allowed
-                               array(self::ST_LEXEME_MODIFIER, self::IN_QUOTE,           self::ST_ERROR, $lexemeModifierErrorAction),
-
-
-                               array(self::ST_LEXEME_MODIFIER, self::IN_DECIMAL_POINT,   self::ST_MANTISSA),
-                               array(self::ST_LEXEME_MODIFIER, self::IN_ASCII_DIGIT,     self::ST_NUMBER),
-
-                               // IN_CHAR              not allowed
-                               array(self::ST_LEXEME_MODIFIER, self::IN_CHAR,            self::ST_ERROR, $lexemeModifierErrorAction),
-                             ));
-        $this->addRules(array( array(self::ST_NUMBER, self::IN_WHITE_SPACE,     self::ST_WHITE_SPACE),
-                               array(self::ST_NUMBER, self::IN_SYNT_CHAR,       self::ST_SYNT_LEXEME),
-                               array(self::ST_NUMBER, self::IN_MUTABLE_CHAR,    self::ST_SYNT_LEXEME),
-                               array(self::ST_NUMBER, self::IN_LEXEME_MODIFIER, self::ST_LEXEME_MODIFIER),
-
-                               // IN_ESCAPE_CHAR       not allowed
-                               array(self::ST_NUMBER, self::IN_ESCAPE_CHAR,     self::ST_ERROR, $wrongNumberErrorAction),
-
-                               // IN_QUOTE             not allowed
-                               array(self::ST_NUMBER, self::IN_QUOTE,           self::ST_ERROR, $wrongNumberErrorAction),
-
-                               array(self::ST_NUMBER, self::IN_DECIMAL_POINT,   self::ST_MANTISSA),
-                               array(self::ST_NUMBER, self::IN_ASCII_DIGIT,     self::ST_NUMBER),
-
-                               // IN_CHAR              not allowed
-                               array(self::ST_NUMBER, self::IN_CHAR,            self::ST_ERROR, $wrongNumberErrorAction),
-                             ));
-        $this->addRules(array( array(self::ST_MANTISSA, self::IN_WHITE_SPACE,     self::ST_WHITE_SPACE),
-                               array(self::ST_MANTISSA, self::IN_SYNT_CHAR,       self::ST_SYNT_LEXEME),
-                               array(self::ST_MANTISSA, self::IN_MUTABLE_CHAR,    self::ST_SYNT_LEXEME),
-                               array(self::ST_MANTISSA, self::IN_LEXEME_MODIFIER, self::ST_LEXEME_MODIFIER),
-
-                               // IN_ESCAPE_CHAR       not allowed
-                               array(self::ST_MANTISSA, self::IN_ESCAPE_CHAR,     self::ST_ERROR, $wrongNumberErrorAction),
-
-                               // IN_QUOTE             not allowed
-                               array(self::ST_MANTISSA, self::IN_QUOTE,           self::ST_ERROR, $wrongNumberErrorAction),
-
-                               // IN_DECIMAL_POINT     not allowed
-                               array(self::ST_MANTISSA, self::IN_DECIMAL_POINT,   self::ST_ERROR, $wrongNumberErrorAction),
-
-                               array(self::ST_MANTISSA, self::IN_ASCII_DIGIT,     self::ST_MANTISSA),
-
-                               // IN_CHAR              not allowed
-                               array(self::ST_MANTISSA, self::IN_CHAR,            self::ST_ERROR, $wrongNumberErrorAction),
-                             ));
-
-
-        /** Actions */
-        $syntaxLexemeAction    = new Zend_Search_Lucene_FSMAction($this, 'addQuerySyntaxLexeme');
-        $lexemeModifierAction  = new Zend_Search_Lucene_FSMAction($this, 'addLexemeModifier');
-        $addLexemeAction       = new Zend_Search_Lucene_FSMAction($this, 'addLexeme');
-        $addQuotedLexemeAction = new Zend_Search_Lucene_FSMAction($this, 'addQuotedLexeme');
-        $addNumberLexemeAction = new Zend_Search_Lucene_FSMAction($this, 'addNumberLexeme');
-        $addLexemeCharAction   = new Zend_Search_Lucene_FSMAction($this, 'addLexemeChar');
-
-
-        /** Syntax lexeme */
-        $this->addEntryAction(self::ST_SYNT_LEXEME,  $syntaxLexemeAction);
-        // Two lexemes in succession
-        $this->addTransitionAction(self::ST_SYNT_LEXEME, self::ST_SYNT_LEXEME, $syntaxLexemeAction);
-
-
-        /** Lexeme */
-        $this->addEntryAction(self::ST_LEXEME,                       $addLexemeCharAction);
-        $this->addTransitionAction(self::ST_LEXEME, self::ST_LEXEME, $addLexemeCharAction);
-        // ST_ESCAPED_CHAR => ST_LEXEME transition is covered by ST_LEXEME entry action
-
-        $this->addTransitionAction(self::ST_LEXEME, self::ST_WHITE_SPACE,     $addLexemeAction);
-        $this->addTransitionAction(self::ST_LEXEME, self::ST_SYNT_LEXEME,     $addLexemeAction);
-        $this->addTransitionAction(self::ST_LEXEME, self::ST_QUOTED_LEXEME,   $addLexemeAction);
-        $this->addTransitionAction(self::ST_LEXEME, self::ST_LEXEME_MODIFIER, $addLexemeAction);
-        $this->addTransitionAction(self::ST_LEXEME, self::ST_NUMBER,          $addLexemeAction);
-        $this->addTransitionAction(self::ST_LEXEME, self::ST_MANTISSA,        $addLexemeAction);
-
-
-        /** Quoted lexeme */
-        // We don't need entry action (skeep quote)
-        $this->addTransitionAction(self::ST_QUOTED_LEXEME, self::ST_QUOTED_LEXEME, $addLexemeCharAction);
-        $this->addTransitionAction(self::ST_ESCAPED_QCHAR, self::ST_QUOTED_LEXEME, $addLexemeCharAction);
-        // Closing quote changes state to the ST_WHITE_SPACE   other states are not used
-        $this->addTransitionAction(self::ST_QUOTED_LEXEME, self::ST_WHITE_SPACE,   $addQuotedLexemeAction);
-
-
-        /** Lexeme modifier */
-        $this->addEntryAction(self::ST_LEXEME_MODIFIER, $lexemeModifierAction);
-
-
-        /** Number */
-        $this->addEntryAction(self::ST_NUMBER,                           $addLexemeCharAction);
-        $this->addEntryAction(self::ST_MANTISSA,                         $addLexemeCharAction);
-        $this->addTransitionAction(self::ST_NUMBER,   self::ST_NUMBER,   $addLexemeCharAction);
-        // ST_NUMBER => ST_MANTISSA transition is covered by ST_MANTISSA entry action
-        $this->addTransitionAction(self::ST_MANTISSA, self::ST_MANTISSA, $addLexemeCharAction);
-
-        $this->addTransitionAction(self::ST_NUMBER,   self::ST_WHITE_SPACE,     $addNumberLexemeAction);
-        $this->addTransitionAction(self::ST_NUMBER,   self::ST_SYNT_LEXEME,     $addNumberLexemeAction);
-        $this->addTransitionAction(self::ST_NUMBER,   self::ST_LEXEME_MODIFIER, $addNumberLexemeAction);
-        $this->addTransitionAction(self::ST_MANTISSA, self::ST_WHITE_SPACE,     $addNumberLexemeAction);
-        $this->addTransitionAction(self::ST_MANTISSA, self::ST_SYNT_LEXEME,     $addNumberLexemeAction);
-        $this->addTransitionAction(self::ST_MANTISSA, self::ST_LEXEME_MODIFIER, $addNumberLexemeAction);
-    }
-
-
-
-
-    /**
-     * Translate input char to an input symbol of state machine
-     *
-     * @param string $char
-     * @return integer
-     */
-    private function _translateInput($char)
-    {
-        if        (strpos(self::QUERY_WHITE_SPACE_CHARS,    $char) !== false) { return self::IN_WHITE_SPACE;
-        } else if (strpos(self::QUERY_SYNT_CHARS,           $char) !== false) { return self::IN_SYNT_CHAR;
-        } else if (strpos(self::QUERY_MUTABLE_CHARS,        $char) !== false) { return self::IN_MUTABLE_CHAR;
-        } else if (strpos(self::QUERY_LEXEMEMODIFIER_CHARS, $char) !== false) { return self::IN_LEXEME_MODIFIER;
-        } else if (strpos(self::QUERY_ASCIIDIGITS_CHARS,    $char) !== false) { return self::IN_ASCII_DIGIT;
-        } else if ($char === '"' )                                            { return self::IN_QUOTE;
-        } else if ($char === '.' )                                            { return self::IN_DECIMAL_POINT;
-        } else if ($char === '\\')                                            { return self::IN_ESCAPE_CHAR;
-        } else                                                                { return self::IN_CHAR;
-        }
-    }
-
-
-    /**
-     * This method is used to tokenize query string into lexemes
-     *
-     * @param string $inputString
-     * @param string $encoding
-     * @return array
-     * @throws Zend_Search_Lucene_Search_QueryParserException
-     */
-    public function tokenize($inputString, $encoding)
-    {
-        $this->reset();
-
-        $this->_lexemes     = array();
-        $this->_queryString = array();
-
-        if (PHP_OS == 'AIX' && $encoding == '') {
-            $encoding = 'ISO8859-1';
-        }
-        $strLength = iconv_strlen($inputString, $encoding);
-
-        // Workaround for iconv_substr bug
-        $inputString .= ' ';
-
-        for ($count = 0; $count < $strLength; $count++) {
-            $this->_queryString[$count] = iconv_substr($inputString, $count, 1, $encoding);
-        }
-
-        for ($this->_queryStringPosition = 0;
-             $this->_queryStringPosition < count($this->_queryString);
-             $this->_queryStringPosition++) {
-            $this->process($this->_translateInput($this->_queryString[$this->_queryStringPosition]));
-        }
-
-        $this->process(self::IN_WHITE_SPACE);
-
-        if ($this->getState() != self::ST_WHITE_SPACE) {
-            require_once 'Zend/Search/Lucene/Search/QueryParserException.php';
-            throw new Zend_Search_Lucene_Search_QueryParserException('Unexpected end of query');
-        }
-
-        $this->_queryString = null;
-
-        return $this->_lexemes;
-    }
-
-
-
-    /*********************************************************************
-     * Actions implementation
-     *
-     * Actions affect on recognized lexemes list
-     *********************************************************************/
-
-    /**
-     * Add query syntax lexeme
-     *
-     * @throws Zend_Search_Lucene_Search_QueryParserException
-     */
-    public function addQuerySyntaxLexeme()
-    {
-        $lexeme = $this->_queryString[$this->_queryStringPosition];
-
-        // Process two char lexemes
-        if (strpos(self::QUERY_DOUBLECHARLEXEME_CHARS, $lexeme) !== false) {
-            // increase current position in a query string
-            $this->_queryStringPosition++;
-
-            // check,
-            if ($this->_queryStringPosition == count($this->_queryString)  ||
-                $this->_queryString[$this->_queryStringPosition] != $lexeme) {
-                    require_once 'Zend/Search/Lucene/Search/QueryParserException.php';
-                    throw new Zend_Search_Lucene_Search_QueryParserException('Two chars lexeme expected. ' . $this->_positionMsg());
-                }
-
-            // duplicate character
-            $lexeme .= $lexeme;
-        }
-
-        $token = new Zend_Search_Lucene_Search_QueryToken(
-                                Zend_Search_Lucene_Search_QueryToken::TC_SYNTAX_ELEMENT,
-                                $lexeme,
-                                $this->_queryStringPosition);
-
-        // Skip this lexeme if it's a field indicator ':' and treat previous as 'field' instead of 'word'
-        if ($token->type == Zend_Search_Lucene_Search_QueryToken::TT_FIELD_INDICATOR) {
-            $token = array_pop($this->_lexemes);
-            if ($token === null  ||  $token->type != Zend_Search_Lucene_Search_QueryToken::TT_WORD) {
-                require_once 'Zend/Search/Lucene/Search/QueryParserException.php';
-                throw new Zend_Search_Lucene_Search_QueryParserException('Field mark \':\' must follow field name. ' . $this->_positionMsg());
-            }
-
-            $token->type = Zend_Search_Lucene_Search_QueryToken::TT_FIELD;
-        }
-
-        $this->_lexemes[] = $token;
-    }
-
-    /**
-     * Add lexeme modifier
-     */
-    public function addLexemeModifier()
-    {
-        $this->_lexemes[] = new Zend_Search_Lucene_Search_QueryToken(
-                                    Zend_Search_Lucene_Search_QueryToken::TC_SYNTAX_ELEMENT,
-                                    $this->_queryString[$this->_queryStringPosition],
-                                    $this->_queryStringPosition);
-    }
-
-
-    /**
-     * Add lexeme
-     */
-    public function addLexeme()
-    {
-        $this->_lexemes[] = new Zend_Search_Lucene_Search_QueryToken(
-                                    Zend_Search_Lucene_Search_QueryToken::TC_WORD,
-                                    $this->_currentLexeme,
-                                    $this->_queryStringPosition - 1);
-
-        $this->_currentLexeme = '';
-    }
-
-    /**
-     * Add quoted lexeme
-     */
-    public function addQuotedLexeme()
-    {
-        $this->_lexemes[] = new Zend_Search_Lucene_Search_QueryToken(
-                                    Zend_Search_Lucene_Search_QueryToken::TC_PHRASE,
-                                    $this->_currentLexeme,
-                                    $this->_queryStringPosition);
-
-        $this->_currentLexeme = '';
-    }
-
-    /**
-     * Add number lexeme
-     */
-    public function addNumberLexeme()
-    {
-        $this->_lexemes[] = new Zend_Search_Lucene_Search_QueryToken(
-                                    Zend_Search_Lucene_Search_QueryToken::TC_NUMBER,
-                                    $this->_currentLexeme,
-                                    $this->_queryStringPosition - 1);
-        $this->_currentLexeme = '';
-    }
-
-    /**
-     * Extend lexeme by one char
-     */
-    public function addLexemeChar()
-    {
-        $this->_currentLexeme .= $this->_queryString[$this->_queryStringPosition];
-    }
-
-
-    /**
-     * Position message
-     *
-     * @return string
-     */
-    private function _positionMsg()
-    {
-        return 'Position is ' . $this->_queryStringPosition . '.';
-    }
-
-
-    /*********************************************************************
-     * Syntax errors actions
-     *********************************************************************/
-    public function lexModifierErrException()
-    {
-        require_once 'Zend/Search/Lucene/Search/QueryParserException.php';
-        throw new Zend_Search_Lucene_Search_QueryParserException('Lexeme modifier character can be followed only by number, white space or query syntax element. ' . $this->_positionMsg());
-    }
-    public function quoteWithinLexemeErrException()
-    {
-        require_once 'Zend/Search/Lucene/Search/QueryParserException.php';
-        throw new Zend_Search_Lucene_Search_QueryParserException('Quote within lexeme must be escaped by \'\\\' char. ' . $this->_positionMsg());
-    }
-    public function wrongNumberErrException()
-    {
-        require_once 'Zend/Search/Lucene/Search/QueryParserException.php';
-        throw new Zend_Search_Lucene_Search_QueryParserException('Wrong number syntax.' . $this->_positionMsg());
-    }
-}
-
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

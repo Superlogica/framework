@@ -1,141 +1,60 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Dom
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * Transform CSS selectors to XPath 
- * 
- * @package    Zend_Dom
- * @subpackage Query
- * @copyright  Copyright (C) 2007 - Present, Zend Technologies, Inc.
- * @license    New BSD {@link http://framework.zend.com/license/new-bsd}
- * @version    $Id: Css2Xpath.php 11013 2008-08-24 21:06:20Z thomas $
- */
-class Zend_Dom_Query_Css2Xpath
-{
-    /**
-     * Transform CSS expression to XPath
-     * 
-     * @param  string $path 
-     * @return string
-     */
-    public static function transform($path)
-    {
-        $path = (string) $path;
-        if (strstr($path, ',')) {
-            $paths       = explode(',', $path);
-            $expressions = array();
-            foreach ($paths as $path) {
-                $xpath = self::transform(trim($path));
-                if (is_string($xpath)) {
-                    $expressions[] = $xpath;
-                } elseif (is_array($xpath)) {
-                    $expressions = array_merge($expressions, $xpath);
-                }
-            }
-            return $expressions;
-        }
-
-        $paths    = array('//');
-        $segments = preg_split('/\s+/', $path);
-        foreach ($segments as $key => $segment) {
-            $pathSegment = self::_tokenize($segment);
-            if (0 == $key) {
-                if (0 === strpos($pathSegment, '[contains(@class')) {
-                    $paths[0] .= '*' . $pathSegment;
-                } else {
-                    $paths[0] .= $pathSegment;
-                }
-                continue;
-            }
-            if (0 === strpos($pathSegment, '[contains(@class')) {
-                foreach ($paths as $key => $xpath) {
-                    $paths[$key] .= '//*' . $pathSegment;
-                    $paths[]      = $xpath . $pathSegment;
-                }
-            } else {
-                foreach ($paths as $key => $xpath) {
-                    $paths[$key] .= '//' . $pathSegment;
-                }
-            }
-        }
-
-        if (1 == count($paths)) {
-            return $paths[0];
-        }
-        return implode(' | ', $paths);
-    }
-
-    /**
-     * Tokenize CSS expressions to XPath
-     * 
-     * @param  string $expression 
-     * @return string
-     */
-    protected static function _tokenize($expression)
-    {
-        // Child selectors
-        $expression = str_replace('>', '/', $expression);
-
-        // IDs
-        $expression = preg_replace('|#([a-z][a-z0-9_-]*)|i', '[@id=\'$1\']', $expression);
-        $expression = preg_replace('|(?<![a-z0-9_-])(\[@id=)|i', '*$1', $expression);
-
-        // arbitrary attribute strict equality
-        if (preg_match('|([a-z]+)\[([a-z0-9_-]+)=[\'"]([^\'"]+)[\'"]\]|i', $expression)) {
-            $expression = preg_replace_callback(
-                '|([a-z]+)\[([a-z0-9_-]+)=[\'"]([^\'"]+)[\'"]\]|i', 
-                create_function(
-                    '$matches',
-                    'return $matches[1] . "[@" . strtolower($matches[2]) . "=\'" . $matches[3] . "\']";'
-                ),
-                $expression
-            );
-        }
-
-        // arbitrary attribute contains full word
-        if (preg_match('|([a-z]+)\[([a-z0-9_-]+)~=[\'"]([^\'"]+)[\'"]\]|i', $expression)) {
-            $expression = preg_replace_callback(
-                '|([a-z]+)\[([a-z0-9_-]+)~=[\'"]([^\'"]+)[\'"]\]|i', 
-                create_function(
-                    '$matches',
-                    'return $matches[1] . "[contains(@" . strtolower($matches[2]) . ", \' $matches[3] \')]";'
-                ),
-                $expression
-            );
-        }
-
-        // arbitrary attribute contains specified content
-        if (preg_match('|([a-z]+)\[([a-z0-9_-]+)\*=[\'"]([^\'"]+)[\'"]\]|i', $expression)) {
-            $expression = preg_replace_callback(
-                '|([a-z]+)\[([a-z0-9_-]+)\*=[\'"]([^\'"]+)[\'"]\]|i', 
-                create_function(
-                    '$matches',
-                    'return $matches[1] . "[contains(@" . strtolower($matches[2]) . ", \'" . $matches[3] . "\')]";'
-                ),
-                $expression
-            );
-        }
-
-        // Classes
-        $expression = preg_replace('|\.([a-z][a-z0-9_-]*)|i', "[contains(@class, ' \$1 ')]", $expression);
-
-        return $expression;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

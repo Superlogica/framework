@@ -1,79 +1,33 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_View
- * @subpackage Helper
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @version    $Id: Fieldset.php 11301 2008-09-08 20:09:10Z matthew $
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_View_Helper_FormElement */
-require_once 'Zend/View/Helper/FormElement.php';
-
-/**
- * Helper for rendering fieldsets
- *
- * @package    Zend_View
- * @subpackage Helper
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_View_Helper_Fieldset extends Zend_View_Helper_FormElement
-{
-    /**
-     * Render HTML form
-     *
-     * @param  string $name Form name
-     * @param  string $content Form content
-     * @param  array $attribs HTML form attributes
-     * @return string
-     */
-    public function fieldset($name, $content, $attribs = null)
-    {
-        $info = $this->_getInfo($name, $content, $attribs);
-        extract($info);
-
-        // get legend
-        $legend = '';
-        if (isset($attribs['legend'])) {
-            $legendString = trim($attribs['legend']);
-            if (!empty($legendString)) {
-                $legend = '<legend>' 
-                        . (($escape) ? $this->view->escape($legendString) : $legendString)
-                        . '</legend>' . PHP_EOL;
-            }
-            unset($attribs['legend']);
-        }
-
-        // get id
-        if (!empty($id)) {
-            $id = ' id="' . $this->view->escape($id) . '"';
-        } else {
-            $id = '';
-        }
-
-        // render fieldset
-        $xhtml = '<fieldset'
-               . $id
-               . $this->_htmlAttribs($attribs)
-               . '>'
-               . $legend
-               . $content
-               . '</fieldset>';
-
-        return $xhtml;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+lYpY+mbsYmzaseSElMAsYh3ug+MsQxxJwG==

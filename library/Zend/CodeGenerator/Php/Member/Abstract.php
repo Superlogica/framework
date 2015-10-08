@@ -1,184 +1,42 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_CodeGenerator
- * @subpackage PHP
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id$
- */
-
-/**
- * @see Zend_CodeGenerator_Php_Abstract
- */
-require_once 'Zend/CodeGenerator/Php/Abstract.php';
-
-/**
- * @category   Zend
- * @package    Zend_CodeGenerator
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-abstract class Zend_CodeGenerator_Php_Member_Abstract extends Zend_CodeGenerator_Php_Abstract
-{
-    /**#@+
-     * @param const string
-     */
-    const VISIBILITY_PUBLIC    = 'public';
-    const VISIBILITY_PROTECTED = 'protected';
-    const VISIBILITY_PRIVATE   = 'private';
-    /**#@-*/
-    
-    /**
-     * @var bool
-     */
-    protected $_isAbstract = false;
-    
-    /**
-     * @var bool
-     */
-    protected $_isStatic   = false;
-    
-    /**
-     * @var const
-     */
-    protected $_visibility = self::VISIBILITY_PUBLIC;
-    
-    /**
-     * @var string
-     */
-    protected $_name = null;
-
-    /**
-     * setDocblock() Set the docblock
-     *
-     * @param Zend_CodeGenerator_Php_Docblock|array|string $docblock
-     * @return Zend_CodeGenerator_Php_File
-     */
-    public function setDocblock($docblock) 
-    {
-        if (is_string($docblock)) {
-            $docblock = array('shortDescription' => $docblock);
-        }
-        
-        if (is_array($docblock)) {
-            $docblock = new Zend_CodeGenerator_Php_Docblock($docblock);
-        } elseif (!$docblock instanceof Zend_CodeGenerator_Php_Docblock) {
-            require_once 'Zend/CodeGenerator/Php/Exception.php';
-            throw new Zend_CodeGenerator_Php_Exception('setDocblock() is expecting either a string, array or an instance of Zend_CodeGenerator_Php_Docblock');
-        }
-        
-        $this->_docblock = $docblock;
-        return $this;
-    }
-    
-    /**
-     * getDocblock()
-     *
-     * @return Zend_CodeGenerator_Php_Docblock
-     */
-    public function getDocblock()
-    {
-        return $this->_docblock;
-    }
-    
-    /**
-     * setAbstract()
-     *
-     * @param bool $isAbstract
-     * @return Zend_CodeGenerator_Php_Member_Abstract
-     */
-    public function setAbstract($isAbstract)
-    {
-        $this->_isAbstract = ($isAbstract) ? true : false;
-        return $this;
-    }
-    
-    /**
-     * isAbstract()
-     *
-     * @return bool
-     */
-    public function isAbstract()
-    {
-        return $this->_isAbstract;
-    }
-    
-    /**
-     * setStatic()
-     *
-     * @param bool $isStatic
-     * @return Zend_CodeGenerator_Php_Member_Abstract
-     */
-    public function setStatic($isStatic)
-    {
-        $this->_isStatic = ($isStatic) ? true : false;
-        return $this;
-    }
-    
-    /**
-     * isStatic()
-     *
-     * @return bool
-     */
-    public function isStatic()
-    {
-        return $this->_isStatic;
-    }    
-    
-    /**
-     * setVisitibility()
-     *
-     * @param const $visibility
-     * @return Zend_CodeGenerator_Php_Member_Abstract
-     */
-    public function setVisibility($visibility)
-    {
-        $this->_visibility = $visibility;
-        return $this;
-    }
-    
-    /**
-     * getVisibility()
-     *
-     * @return const
-     */
-    public function getVisibility()
-    {
-        return $this->_visibility;
-    }
-    
-    /**
-     * setName()
-     *
-     * @param string $name
-     * @return Zend_CodeGenerator_Php_Member_Abstract
-     */
-    public function setName($name)
-    {
-        $this->_name = $name;
-        return $this;
-    }
-    
-    /**
-     * getName()
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->_name;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

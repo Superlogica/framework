@@ -1,174 +1,36 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @package    Zend_Memory
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-
-/**
- * String value object
- *
- * It's an OO string wrapper.
- * Used to intercept string updates.
- *
- * @package    Zend_Memory
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @todo       also implement Countable for PHP 5.1 but not yet to stay 5.0 compatible
- */
-class Zend_Memory_Value implements ArrayAccess {
-    /**
-     * Value
-     *
-     * @var string
-     */
-    private $_value;
-
-    /**
-     * Container
-     *
-     * @var Zend_Memory_Container_Interface
-     */
-    private $_container;
-
-    /**
-     * Boolean flag which signals to trace value modifications
-     *
-     * @var boolean
-     */
-    private $_trace;
-
-
-    /**
-     * Object constructor
-     *
-     * @param string $value
-     * @param Zend_Memory_Container_Movable $container
-     */
-    public function __construct($value, Zend_Memory_Container_Movable $container)
-    {
-        $this->_container = $container;
-
-        $this->_value = (string)$value;
-
-        /**
-         * Object is marked as just modified by memory manager
-         * So we don't need to trace followed object modifications and
-         * object is processed (and marked as traced) when another
-         * memory object is modified.
-         *
-         * It reduces overall numberr of calls necessary to modification trace
-         */
-        $this->_trace = false;
-    }
-
-
-    /**
-     * ArrayAccess interface method
-     * returns true if string offset exists
-     *
-     * @param integer $offset
-     * @return boolean
-     */
-    public function offsetExists($offset)
-    {
-        return $offset >= 0  &&  $offset < strlen($this->_value);
-    }
-
-    /**
-     * ArrayAccess interface method
-     * Get character at $offset position
-     *
-     * @param integer $offset
-     * @return string
-     */
-    public function offsetGet($offset)
-    {
-        return $this->_value[$offset];
-    }
-
-    /**
-     * ArrayAccess interface method
-     * Set character at $offset position
-     *
-     * @param integer $offset
-     * @param string $char
-     */
-    public function offsetSet($offset, $char)
-    {
-        $this->_value[$offset] = $char;
-
-        if ($this->_trace) {
-            $this->_trace = false;
-            $this->_container->processUpdate();
-        }
-    }
-
-    /**
-     * ArrayAccess interface method
-     * Unset character at $offset position
-     *
-     * @param integer $offset
-     */
-    public function offsetUnset($offset)
-    {
-        unset($this->_value[$offset]);
-
-        if ($this->_trace) {
-            $this->_trace = false;
-            $this->_container->processUpdate();
-        }
-    }
-
-
-    /**
-     * To string conversion
-     *
-     * @return string
-     */
-    public function __toString()
-    {
-        return $this->_value;
-    }
-
-
-    /**
-     * Get string value reference
-     *
-     * _Must_ be used for value access before PHP v 5.2
-     * or _may_ be used for performance considerations
-     *
-     * @internal
-     * @return string
-     */
-    public function &getRef()
-    {
-        return $this->_value;
-    }
-
-    /**
-     * Start modifications trace
-     *
-     * _Must_ be used for value access before PHP v 5.2
-     * or _may_ be used for performance considerations
-     *
-     * @internal
-     */
-    public function startTrace()
-    {
-        $this->_trace = true;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

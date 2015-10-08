@@ -1,94 +1,36 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_View
- * @subpackage Helper
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-
-/**
- * Abstract class for extension
- */
-require_once 'Zend/View/Helper/FormElement.php';
-
-
-/**
- * Helper to generate a "password" element
- *
- * @category   Zend
- * @package    Zend_View
- * @subpackage Helper
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_View_Helper_FormPassword extends Zend_View_Helper_FormElement
-{
-    /**
-     * Generates a 'password' element.
-     *
-     * @access public
-     *
-     * @param string|array $name If a string, the element name.  If an
-     * array, all other parameters are ignored, and the array elements
-     * are extracted in place of added parameters.
-     *
-     * @param mixed $value The element value.
-     *
-     * @param array $attribs Attributes for the element tag.
-     *
-     * @return string The element XHTML.
-     */
-    public function formPassword($name, $value = null, $attribs = null)
-    {
-        $info = $this->_getInfo($name, $value, $attribs);
-        extract($info); // name, value, attribs, options, listsep, disable
-
-        // is it disabled?
-        $disabled = '';
-        if ($disable) {
-            // disabled
-            $disabled = ' disabled="disabled"';
-        }
-
-        // determine the XHTML value
-        $valueString = ' value=""';
-        if (array_key_exists('renderPassword', $attribs)) {
-            if ($attribs['renderPassword']) {
-                $valueString = ' value="' . $this->view->escape($value) . '"';
-            }
-            unset($attribs['renderPassword']);
-        }
-        
-        // XHTML or HTML end tag?
-        $endTag = ' />';
-        if (($this->view instanceof Zend_View_Abstract) && !$this->view->doctype()->isXhtml()) {
-            $endTag= '>';
-        }
-
-        // render the element
-        $xhtml = '<input type="password"'
-                . ' name="' . $this->view->escape($name) . '"'
-                . ' id="' . $this->view->escape($id) . '"'
-                . $valueString
-                . $disabled
-                . $this->_htmlAttribs($attribs)
-                . $endTag;
-
-        return $xhtml;
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

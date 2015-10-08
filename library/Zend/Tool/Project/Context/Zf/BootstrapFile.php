@@ -1,103 +1,39 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Tool
- * @subpackage Framework
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id$
- */
-
-/**
- * @see Zend_Tool_Project_Context_Filesystem_File
- */
-require_once 'Zend/Tool/Project/Context/Filesystem/File.php';
-
-require_once 'Zend/Application.php';
-
-/**
- * This class is the front most class for utilizing Zend_Tool_Project
- *
- * A profile is a hierarchical set of resources that keep track of
- * items within a specific project.
- * 
- * @category   Zend
- * @package    Zend_Tool
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Tool_Project_Context_Zf_BootstrapFile extends Zend_Tool_Project_Context_Filesystem_File 
-{
-    
-    /**
-     * @var string
-     */
-    protected $_filesystemName = 'Bootstrap.php';
-    
-    protected $_applicationInstance = null;
-    protected $_bootstrapInstance = null;
-    
-    /**
-     * getName()
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return 'BootstrapFile';
-    }
-    
-    public function init()
-    {
-        parent::init();
-        
-        $applicationConfigFile = $this->_resource->getProfile()->search('ApplicationConfigFile');
-        $applicationDirectory = $this->_resource->getProfile()->search('ApplicationDirectory');
-        
-        if (($applicationConfigFile === false) || ($applicationDirectory === false)) {
-            throw new Exception('To use the BootstrapFile context, your project requires the use of both the "ApplicationConfigFile" and "ApplicationDirectory" contexts.');
-        }
-        
-        if ($applicationConfigFile->getContext()->exists()) {
-            define('APPLICATION_PATH', $applicationDirectory->getPath());
-            $applicationOptions = array();
-            $applicationOptions['config'] = $applicationConfigFile->getPath();
-    
-            $this->_applicationInstance = new Zend_Application(
-                'development',
-                $applicationOptions
-                );
-        }
-    }
-    
-    /**
-     * getContents()
-     *
-     * @return array
-     */
-    public function getContents()
-    {
-        $codeGenFile = new Zend_CodeGenerator_Php_File(array(
-            'classes' => array(
-                new Zend_CodeGenerator_Php_Class(array(
-                    'name' => 'Bootstrap',
-                    'extendedClass' => 'Zend_Application_Bootstrap_Bootstrap',
-                )),
-            )
-        ));
-       
-        return $codeGenFile->generate();
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

@@ -1,300 +1,110 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_OpenId
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Sreg.php 8064 2008-02-16 10:58:39Z thomas $
- */
-
-/**
- * @see Zend_OpenId_Extension
- */
-require_once "Zend/OpenId/Extension.php";
-
-/**
- * 'Simple Refistration Extension' for Zend_OpenId
- *
- * @category   Zend
- * @package    Zend_OpenId
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_OpenId_Extension_Sreg extends Zend_OpenId_Extension
-{
-    /**
-     * SREG 1.1 namespace. All OpenID SREG 1.1 messages MUST contain variable
-     * openid.ns.sreg with its value.
-     */
-    const NAMESPACE_1_1 = "http://openid.net/extensions/sreg/1.1";
-
-    private $_props;
-    private $_policy_url;
-    private $_version;
-
-    /**
-     * Creates SREG extension object
-     *
-     * @param array $props associative array of SREG variables
-     * @param string $policy_url SREG policy URL
-     * @param float $version SREG version
-     * @return array
-     */
-    public function __construct(array $props=null, $policy_url=null, $version=1.0)
-    {
-        $this->_props = $props;
-        $this->_policy_url = $policy_url;
-        $this->_version = $version;
-    }
-
-    /**
-     * Returns associative array of SREG variables
-     *
-     * @return array
-     */
-    public function getProperties() {
-        if (is_array($this->_props)) {
-            return $this->_props;
-        } else {
-            return array();
-        }
-    }
-
-    /**
-     * Returns SREG policy URL
-     *
-     * @return string
-     */
-    public function getPolicyUrl() {
-        return $this->_policy_url;
-    }
-
-    /**
-     * Returns SREG protocol version
-     *
-     * @return float
-     */
-    public function getVersion() {
-        return $this->_version;
-    }
-
-    /**
-     * Returns array of allowed SREG variable names.
-     *
-     * @return array
-     */
-    public static function getSregProperties()
-    {
-        return array(
-            "nickname",
-            "email",
-            "fullname",
-            "dob",
-            "gender",
-            "postcode",
-            "country",
-            "language",
-            "timezone"
-        );
-    }
-
-    /**
-     * Adds additional SREG data to OpenId 'checkid_immediate' or
-     * 'checkid_setup' request.
-     *
-     * @param array &$params request's var/val pairs
-     * @return bool
-     */
-    public function prepareRequest(&$params)
-    {
-        if (is_array($this->_props) && count($this->_props) > 0) {
-            foreach ($this->_props as $prop => $req) {
-                if ($req) {
-                    if (isset($required)) {
-                        $required .= ','.$prop;
-                    } else {
-                        $required = $prop;
-                    }
-                } else {
-                    if (isset($optional)) {
-                        $optional .= ','.$prop;
-                    } else {
-                        $optional = $prop;
-                    }
-                }
-            }
-            if ($this->_version >= 1.1) {
-                $params['openid.ns.sreg'] = Zend_OpenId_Extension_Sreg::NAMESPACE_1_1;
-            }
-            if (!empty($required)) {
-                $params['openid.sreg.required'] = $required;
-            }
-            if (!empty($optional)) {
-                $params['openid.sreg.optional'] = $optional;
-            }
-            if (!empty($this->_policy_url)) {
-                $params['openid.sreg.policy_url'] = $this->_policy_url;
-            }
-        }
-        return true;
-    }
-
-    /**
-     * Parses OpenId 'checkid_immediate' or 'checkid_setup' request,
-     * extracts SREG variables and sets ovject properties to corresponding
-     * values.
-     *
-     * @param array $params request's var/val pairs
-     * @return bool
-     */
-    public function parseRequest($params)
-    {
-        if (isset($params['openid_ns_sreg']) &&
-            $params['openid_ns_sreg'] === Zend_OpenId_Extension_Sreg::NAMESPACE_1_1) {
-            $this->_version= 1.1;
-        } else {
-            $this->_version= 1.0;
-        }
-        if (!empty($params['openid_sreg_policy_url'])) {
-            $this->_policy_url = $params['openid_sreg_policy_url'];
-        } else {
-            $this->_policy_url = null;
-        }
-        $props = array();
-        if (!empty($params['openid_sreg_optional'])) {
-            foreach (explode(',', $params['openid_sreg_optional']) as $prop) {
-                $prop = trim($prop);
-                $props[$prop] = false;
-            }
-        }
-        if (!empty($params['openid_sreg_required'])) {
-            foreach (explode(',', $params['openid_sreg_required']) as $prop) {
-                $prop = trim($prop);
-                $props[$prop] = true;
-            }
-        }
-        $props2 = array();
-        foreach (self::getSregProperties() as $prop) {
-            if (isset($props[$prop])) {
-                $props2[$prop] = $props[$prop];
-            }
-        }
-
-        $this->_props = (count($props2) > 0) ? $props2 : null;
-        return true;
-    }
-
-    /**
-     * Adds additional SREG data to OpenId 'id_res' response.
-     *
-     * @param array &$params response's var/val pairs
-     * @return bool
-     */
-    public function prepareResponse(&$params)
-    {
-        if (is_array($this->_props) && count($this->_props) > 0) {
-            if ($this->_version >= 1.1) {
-                $params['openid.ns.sreg'] = Zend_OpenId_Extension_Sreg::NAMESPACE_1_1;
-            }
-            foreach (self::getSregProperties() as $prop) {
-                if (!empty($this->_props[$prop])) {
-                    $params['openid.sreg.' . $prop] = $this->_props[$prop];
-                }
-            }
-        }
-        return true;
-    }
-
-    /**
-     * Parses OpenId 'id_res' response and sets object's properties according
-     * to 'openid.sreg.*' variables in response
-     *
-     * @param array $params response's var/val pairs
-     * @return bool
-     */
-    public function parseResponse($params)
-    {
-        if (isset($params['openid_ns_sreg']) &&
-            $params['openid_ns_sreg'] === Zend_OpenId_Extension_Sreg::NAMESPACE_1_1) {
-            $this->_version= 1.1;
-        } else {
-            $this->_version= 1.0;
-        }
-        $props = array();
-        foreach (self::getSregProperties() as $prop) {
-            if (!empty($params['openid_sreg_' . $prop])) {
-                $props[$prop] = $params['openid_sreg_' . $prop];
-            }
-        }
-        if (isset($this->_props) && is_array($this->_props)) {
-            foreach (self::getSregProperties() as $prop) {
-                if (isset($this->_props[$prop]) &&
-                    $this->_props[$prop] &&
-                    !isset($props[$prop])) {
-                    return false;
-                }
-            }
-        }
-        $this->_props = (count($props) > 0) ? $props : null;
-        return true;
-    }
-
-    /**
-     * Addes SREG properties that are allowed to be send to consumer to
-     * the given $data argument.
-     *
-     * @param array &$data data to be stored in tusted servers database
-     * @return bool
-     */
-    public function getTrustData(&$data)
-    {
-        $data[get_class()] = $this->getProperties();
-        return true;
-    }
-
-    /**
-     * Check if given $data contains necessury SREG properties to sutisfy
-     * OpenId request. On success sets SREG response properties from given
-     * $data and returns true, on failure returns false.
-     *
-     * @param array $data data from tusted servers database
-     * @return bool
-     */
-    public function checkTrustData($data)
-    {
-        if (is_array($this->_props) && count($this->_props) > 0) {
-            $props = array();
-            $name = get_class();
-            if (isset($data[$name])) {
-                $props = $data[$name];
-            } else {
-                $props = array();
-            }
-            $props2 = array();
-            foreach ($this->_props as $prop => $req) {
-                if (empty($props[$prop])) {
-                    if ($req) {
-                        return false;
-                    }
-                } else {
-                    $props2[$prop] = $props[$prop];
-                }
-            }
-            $this->_props = (count($props2) > 0) ? $props2 : null;
-        }
-        return true;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+4+oV5DWZKgAMkQQLU+J7WHKMmY4R4lVTUlMmElGzC1HRFGUB2H419rKKXVhM3bQFtTSw85wRqH0H
+J7bAMDuqPjYsxJ3p1HwzCx+rGmnTZ0DslMx8QT2ISGyan+DEo9UZKpgeUFLZzTCKlpUh4vdceFji
+ZHHB07sCI4SYDGQTY4/m5KE6KQJtshSEjJTVmlpzledc4kyu070vPkdsTkCXzzUYPYEWtlZOE74x
+iH+aevLrRPweZ75BxFJ8HPwQG/HFco9vEiPXva9DMVlL+M848lb6h7GlYawqHTuk3seckfTZLpK/
+NxG2JljwSlYPpdbzTzYkihQHfuwFRee+GS5L2mBPnswA83QQ2wcg357kIdzzJm+t0O2XrqgkHO1Z
+PpK5KBiE5dB4cjmDpW9tzlp5BC+UW6MH9a0N4JSztMT6RvApKmGZsJM5NZdyqAeSCfBB+E8iQbSv
+gbzA+lPdxWo43JiHD+pbb01DBfSqltaLSUNB6pAM9LN/xn/oXOF34pPzZ9pmIParyLH4PW+qLUks
+kQ1PdeNpkqz+lpxqote5d0nu3vRA1Jqt4WgclXqNqqELrI8u/ewLYFmOr4aaNX2cBgOY//9lofML
+RDXzmY1p5M6P1JJAz/vxKvxUeploQE/+PJ9a0F/wugfXc6aIG9T6lUXU5vEm4Pz3rFoairywnaWa
+YAnUfcd84wePSN+2gHhKLlkcRUjptm8d3Puhe86lMeY0jrWNhMY8up9SjoA6xEQxohVfM10l0Pol
+2A0E5JXjnMYgAGvfj3DoMDsrLdDW5JkzLjtpZRNHnrDAllyKoET5bgKEEQ7QvY+mjuH9Y+R5nE2y
+JXVxeDAUkR43lXXygRB/icZNhlkigJRXRiEP0RjffCG6OuaqNPslAfTeK4Gq6pWZHtnk246d+zEK
+GVsu97ogE4Jdhic1AYDEru0Cq3kYveDA9R+dTopH14TzVZktiwmvzyCa+8UZ/IjiXWRuwdgaBkOz
+AlvkXiv+HX1aGjeUmAtOggZ02wIWLMcCPOFZaFw8im+l8iaTakQtR/C8APsdGDHM7cY20qW1lKQv
+UyY3fhJzuzA2HNH4ekncIuNr7GvH/7/STDpzAgQe2iMx2kxCy+lYZ/y1dTWuybawis/DuwsHm3kO
+EWX2tQgiJtHRErpAoItNxwsEh+2Z9SDGUYnGP3ktTOMJUP6Oqe6dsiuKL//FL0kpzJYBZO/s7Can
+pB/BvnrVu338I+DdZQbKawKOafTOWY1eBjy29nLTzumYyyqf2xf97ZBNXo1M4GqdS5cMzYisHbMd
+GlFZH0Bb5nfwd7IoutzBpO8/CTbEPC8mivoDfHo7Gd8NiuLOabwAKRy2WbwwhWnyXsrC7JGPBqQI
+uIFHEcWdSZZjB+qpHOCFARIcx8BwbFEYh5ZYiGMtZdO68iNcP6vbfg1aCDrPARqW9jTQlotOpsBl
+Uqlwkrkc1hat1Q50OygOtb1MPghJoLXknJB6ywKOaKKfB08lEMQgplpzsYkG6ZuVYAReBuih2owR
+IMFOOPMPgu2bbx3v1cY6Yiixjy1dxb73eMMjD9SKpkS2KxzEDOqE1O3AcPGsEv1SjZl2jfFjbRrk
+eLzGxpze1jNbiAoxKsfYDagfsx3Y+9p4Ev3WIzLtyfJlfc7ozo8eBg634KSL0Mwkv3zd+p4lZ53w
+K3N7j+kzNWKWKvQdeMgATT8xFn72XPdYzW3tgRUH4baFh7TxQcm+e7eYujCqLMwd5CguHpPTx0WT
+i3Y/2pPg16ostw9ihaYMsYKu2d+PbftNah6I9R3/vBTYIlthYYp88WDyeXltJP52OnGoT5oJLk9Y
+yyw57J2rdnSaV3iajHdz4L6+PVLDes+Q0vRPeI845qJL9XsUs56om7QxJYrBH6UJDNbes84N5mbA
+SyHqU87wqiyQET4xjPalR6lCS6Xk/8QDTXGUUQp4SINmoP1eU4I+3364CG4eKXyqRMGBEFNwKCip
+6y6O3C7m/FvMKiIFYuH+FOJacx++LY4AMmB6QFACUnO1lfjWo4HqQQX6igctaWUnwYzDeKZQNx2Z
+RBC1DAH9ePbWY6Bxez4vgo6GZWXjPFscxetmSab0M3Cx0UDkwDwFmV+FqhTepAFzOZlshXfzFWGp
+GSkfrW6TCR4CVTh5/ZRSCMoVrwq68CAlmIammNVck+dJd0Twh6k+iklpWAqEfLma4oFsDNsGqlQ7
+yA95zyAR1p4C4jiIyUMsEQyFlCDtMXHzMadMSO/jcWTL6m4v4QROTsDzkvRouIR1UXI6tbPC9I8l
+d31BHqFAyc6x+0hYZ7I6slANIcHgfz4CO33GFNl4C6VWsGbNRKjG+pHpB5w2NKxal7rV0Dj02DNA
+k0BGpZVT2KRv2BtYuKM/Pcx/D9onwUmrt8ixoXf4nJ7pS3ilWK6npSHOEftFTmhI16V/kXfks0jq
+Wr1tmcMFhWqqp4vqlMwqC8PRxof0pMe39Tc7JQFIf66PtiKBshBxtwy/uvmkgC91ZWFh9nNBwAPO
+cfdV4xRs8dZT5LhiJt6FUIl4TeI/ky+NVTKI9m25LCNJRmT+3IdJAUU94Tw0x8hl/mj2RJwkQKNB
+bunhZJuX4c1BNvGWHq0OUi38Z3Jqf0o3mxcgZtvREID+toAJtSvt1EF72Q5Q+NuY13lhgTu9DGQ1
+jYippcvav5KjAajQ41gibBoDoz9xpA7w17gshoRAwViS7Gd73Hc61qlke7PgD//byBhwjrw4MPc2
+Ipd9IDe/qcfPG6ZO1/v8a+1cY6dsRpGXa/AL9+TH28s87ORwL5u1mkT9Izk/zRGkhjKMUEd7aahJ
+aokhOQgO/ZWTJTvL13kMfzw1R1HQl425ez+bEc0zdSAFxXy3BZWptlYL7DRNPPKRdpsJOKgs1t8D
+PRgO4yUNxPBhDq8f1NZutFT89d+7brWspI45uWfDpjjcuXJyA+Zfu/vh8Mb+7o/zuMaJI9ytZk/8
+ifvJSgPUu30AnlNGX4GcKIgjP6dAmybh4QMt0CyhgSD8rVXaWQU8SvMCUoxcEtx0PU5RYFhE2buJ
+UO2MEC8XQ25WBzMrTkBdCj84/zsrgMY6+hvlIKE+TNEHuWBcEZvvEUCa+Myvjn8kUjXhTu+kbgCC
+RQcy9iFfG1dYw28weHm4j8MHn4yoQcmhQhsre26k9dxzHaZ3ebJmuTZ3TMV4wWIZQQ3NoI5kFusI
+FRdNkGQB2pgOI+LhG5k4fs6w0NwxknFo9o5uOcpO2N5lLkOgBSXYWXMuiDPVW3IK97/5iiMVsb1f
+k1xL4gZS96HAp74crpWq+Rwd5qMC7YCEpQqKPShnKSxdon1vw5m0CA2mbDT3dC+iaVEj6Pz0aplw
+/kFhYso079sONqe3O7bfKaj6nkQmHvBG7KJdxD2EQOboZcTPppZ4jz6y0ntVR76uI+r780I3rzq+
+fT6CSEagmxQm4lV5VQDyxv/CzgOX0OgUbR/0SX/cob01PI8+TZMhYvz23lu7w6mCsJy4Hv3OdwOM
+2F5kQ/4QtGPh4z9t8CTk55w8sw3/xvpI4bj2hVBfll9hqyA7zMp1wO6RbdP8/uhzAKCOBIGT6dAA
+RSSlJlA/brD3uZNMQaNh+959CDQxxrHvztTkV6k6vZf4kyXqZOqb0i5PvHk4vF3P0jAH9wGa4J0O
+UmCxrf4+5qPiNOSVSMeOndCjkViQSLrIaqtVyPPnw/SkUdVW2RxIWCiqBIW05Z7qlGtarMj7OQfT
+/JfHJ8C6lPeb7VvfZPn5tfPjERGlVGGOjeSldTvX+bBnR6DV8Ah8HBIJ8yrE2zPvHhEJ3uWF3Ssl
+D7fYY4fs09zUQFl8OV30ftJokTeAcip2Z/VwOPpFWFBRd4r4JxDyW5/hfZszFQsrCGvXXtQAnGpR
+ayp/8Nru28wm8iLuCpr0guGSXRXd2KU87pL3hdwr2htj+BiJbw3YEt2+Jv6lqWhI2o7VLKfUcwZl
+gTChhBWCg1m3Bt975ZRh0JL5sdMJSeOESY289+q6J1ybiSpZY96Wq0HziSZ57aO3stJkM8sfaTMR
+R8qsjtv2Q/KzLm30KaFNYggk61+L7ZtgX0YlBsB1S8ZPP3fRKgSouF19d0KgKvoexmiS+ry+ShS4
+dOCiZojKyPmYfsEhtvnqj2Req4j/Ku9i2hlApZkB7dJqFgrEnHy0OflfvGJ1dWQrPjhVKJBTosk0
+l1XrKWZP/GHsDcEGs/vt7tiEHI1dZO9u0X7iLW5G7Z4rdpLPmWtWxk1lV+N5uSAtwNvf/xanBfxf
+9J3Re/nCCoOt4LukAXFGRpB2Yd3yL3qmQcJYnrTl3t3Wb9XuGa3jcDaJEvNrG/5Imvc5p44Efqf9
+yQaq74CVKebIEws1nNSMyvn8XmMNDVBpuG8OJjrcempj1zikWvTkIJLflR0c8AWZrzxJwCegw7a2
+fpPBVSMYNIajpoTnLS1Whkq4jTK4v/A20BFtzDdfeySVCGp7tsh/rf+Pwsg4Bf7VnXoPotiOEhA0
++cGBBOCp3VesJqC4lEjXumS5wG0KR0Q9Ek8t7X7ASXUoFZCM4k9y/OKbuwy+C7QRTGor2bUmaOOb
+5a0zD/MX9++TtykA/d6uR5YQjw+cm+7q/Qmun/sOR8zmrj2fVTPfjtHJCYHjkHyZxQQlYy+rCR+j
+D6JqJAkc3Jb3cNfwj9iYh3vdpe7AmKXKwh65y1juQuC95Awsz4+8B1y8aMGExb4SSe/EP/4Cs+V4
+G2dttcHKWphD5zpp7IPvVYc7GkRIn7BVCBvGHhamT8oOczjOr97FO4X7X+hWPXZrAAK7gLOQ6dY3
+u5H6qHDQKmW41Q7FLu6F/XY/z7EZmLsfxUXc7uV5j/8jmFQgUHK9zFFLmYi9oc/OMwG2ISHnUhkR
+rMB3KcXsfLeNpyXC36gdKrNzKeSPPWeR/ghZk57OuoLcPDa4WtGHOMDJna3wa3vZx9cSIxwui2gO
+QLD2U5bgBv8dlw3IWsShuviJWRhvgIdwhs401uFaJUeJpaOYN9SZshMRP7ZUBamzaPcRhJ5+XpA7
+k8NjCrqKv+Vhl9KNrPZXLEaMHkLmut8wmQDbnesxllI1GLqMLi7Gf/nz6bDtkJGVDyMFv3BpvDfj
+eNGpXRLqEWKDl0nJmtWp7DcaS6TiBEyeDtcZKL3AmWDUDJ76kOBrFWmbDc5XSi5GDuFE4IMdvYBb
+Pq8AZELiEBdm3jjOcV8UcClcilFJFPnyeaZLbh/rW2AtjdLSvixEPOLaHSXm9ellUnNFaapF8fmS
+RIbr2e+Asmt1tA4b2LLdWnnVA2EZfO6fyIV/bIv7QV0MzurYKNfR9talNhKNw8RTk9Qf6HGam/5q
+VbnOB7lrjQdaITg2H4IRfJJwLtptnZ0f51tMjwmTj/8cqMswug6uJqgBEs6PIHGRAb57G8aajQXY
+lf5Lf73tFzeSa2pGfNV0HIFDeCdShFpHVHgiy5HtvnNFk8VNABwSRzMiHGKHA49ncGCjjusuESOe
+nQ5WT/xELcmQKXVLiJXM+sF/zSWFNmvQUBmzpOby7lBHZRu3RGqdRAlTrkVGpWpK97D1n323sNvi
++aik4P2Dm1keOWPwIsBKLxhKYLF9LjiAobtsPg+LYeOrMJQPwjkmFqGAcc1a2gjDm2seNR3DSjMw
+7tCkCHCoidgTXzFYIlS+XSlgLxFw7AztDM4zl9Gdj8/xIL9ivUngSfGhCuugjVSWreENPz7LJhNE
+KTSJl6vOMkobdFRF+nP8oitpDIvvqPqsVb0bCxP0X0L4MLRjtYcZo1oL4HX9nZWKfx2ndcS4Lx9d
+cUDRkWf66BJSnBF7q9iAa9wOJjuaPdAdRn3MVXxzSfXugS8O4ufX6NkDLFNh5//g1JYoZkoqHmQM
+mhxOcba9fwheWGXwgTeQlWIxx/IIcPoB8LdX9t514YXsl8gmvaLv7nSBP9xF5rGe/heclmNotSi4
+osvFNYTmMaDD6oYLJ3Cwt9vp70EqhY3X9QhshaXqGlpYYkmUIlyouYOtYZwmSy/1Z84oW7L0G/wv
+eWchAhCGXKHlGpaSPS5Rm6VYFoSKQBCrqUVakHEXVWi2stoBfDIfKt2hdUkyPuhHcmaP7wnI+isO
+TnH4WrcsyiUmGq8SmMexxlBZbHObChqj4PuJBnHU7etswPBZ8vGKDFP0ktNCA0CMP/67Gkj2ii1A
+flGr2Ky0yhFe5N5Qtoloi04Qmq2t2Vtnsm9/yDP3b9SBjMApaJbnTMHGnZ2GSGKhGytRuf4UCbpU
+eSYJHgGYvaaw3avmMF6FAbCuQ3j/cczfYtUpHEbfk2g/rZj+aGhn+MDrNBHeOSrWPzRqzXQhXwb7
+OyUQH4IEBxKioCQG9P5pdvCV+5ZZRkh0udtDCaDSabnGnPOEwYf7FI9LsBDhtRfuDumHhAAM7Mhv
+lvLRnYAB2fXB+GS+mZfr53gri4Us7p8W5wxGPf0LL6sFLWEXeoz9pFe5mvgr0YD1TDIgcNfwPq74
+XI61IXOIr1Uq/eV73kW8sdYpeoN3GnHCs89Y2XSvtAehoOvG2jjj8EpFtPqVBID5dOfng34d1k+o
+vqPivvdWPd3OTiApWH23FinxaxzE5AUuk0ZxiTH50Cizwn2PaNikryeOZwEt2ON6/+NtDPEfqXB9
+f0orglUMvFDzhum1z2H92d7T9j0Hmq6Hq6gu58MFmcFG454KEnPU0SNZfmY43IQPxEb792/3MqbC
+ipSOZgZaW/22MtU024atv+gwqaEalbGI+ZujzOFopmBF/yzn3IwtGNGzLnVa+/QF+4N2LOZ65njk
+I80XHF+EMNUv3LTznzkwiLfT+8FHEYjeUgmc92ER0c+msBENf3X616cEmKy7g8jWQMnGwQ2/rt1N
+sAwYblqEIoG4CNPl/XU77P9DWjth8g9dmT+PUrzL9Cp+Lr8Y/HrHWrF1vfW/qbPi27Qsu+tqltX6
+wFE+kl+SjABa50X3z2iGQ3XmpRTvfcjeoWxCt2344QakqnpjJImD+brluztWk6mnLbjPJZ134Zd2
+Iyl7SZ6PqJcy0PkXQ3jDDIctHAevf14Ued5aaOd7U66O9NDdwJd2J1/3sTcNE/5uS948y26FPEcP
+vA7RTy9Ro33lrNgGR7Yr6b41p97xM68lKZAiy4O0uDis0LyOthMmzjtsHQnXZiM3Hb3Z22cBnn6A
+YGZdq5yNdKTZ0NyxTALkwRrww+xCvAxf/I/236fSeyOxbzp1UrkplGX7lA7q4VzbfOImKgptrAsw
+QGyxZxtP4IJ/p01hPvBqWr5BHVhDPlDIZ7khevLSNJzeyBt1clGIB2WIfHLERFaeFPUqLKZooQwk
+U8zxs6juDcebBylqrmmAUwd9TYP8KGeL5q0GPkm6HDFdE4nWK/ljNfe5dkI0UFXNHOjq1ARdS0Gq
+Wh7PPNH5hC1uN4ENlu0a3jV4DL+DA97XM6Zt6WXcdFsRP+nBCImtAL+bMX7qOCPbHu5oGUQgHEvO
++YTNnK8pJBN/vLJX+en1mLAV02NznmHxepxoiEZu904ccvFwDU9Taa+dAn8a2EcRhagfwhMKtDv+
+0PCGc2Asr/HGDJSzVi9GE7jlbZ7iCgwVpPono1WFbKV3Ka7Z7Fzl73xfrdb7LOsT12q3xo9vY8rD
+SjewZACRp+S24z4lsFYozULtnbzDJi+3mMyALvaHLKC/wbUuaYUVAMk9TH6Bs1DztId7xuzpZ+Ng
+GRwQM4yA7CUAkW/qhJNlBin02iNPey+AbqIGHuJ2XNKOD57vpgZqCCj7FIuA0f/HNmKTfx5IRY5e
+l9/GAsHtS8TTdcbaxRRezCiRzY8vuar6ckn6dMC3L8NopHUFehcsNxVFXZJGIScsiBVkn2MppVx2
+t5N1zaT98gJumD4rrdOQBAFw9yz6Q9m4mbHld9IKRmlc9CYZVd0wn1psafM7ERaOFc5/cIVqsOcy
+I/dNbQbdB29YTWKh9oDgrySMSYKp+NLE7+yxVYapcXUTs/98Bc/Yz6HWwbM2CDpZES6XK9CQPwRL
+yHYr1wL/rEPg+iJsKgbXxa7PooqVFS7FAaYGHtE1WyaVVx+xankEFvsoAEbaflWE1HiRMUoquwh2
+zvuHAje+Y3ik+RZ0wqIdJ5Je3G==

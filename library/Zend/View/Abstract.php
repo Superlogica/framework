@@ -1,1135 +1,296 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_View
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_Loader */
-require_once 'Zend/Loader.php';
-
-/** Zend_Loader_PluginLoader */
-require_once 'Zend/Loader/PluginLoader.php';
-
-/** Zend_View_Interface */
-require_once 'Zend/View/Interface.php';
-
-/**
- * Abstract class for Zend_View to help enforce private constructs.
- *
- * @category   Zend
- * @package    Zend_View
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-abstract class Zend_View_Abstract implements Zend_View_Interface
-{
-    /**
-     * Path stack for script, helper, and filter directories.
-     *
-     * @var array
-     */
-    private $_path = array(
-        'script' => array(),
-        'helper' => array(),
-        'filter' => array(),
-    );
-
-    /**
-     * Script file name to execute
-     *
-     * @var string
-     */
-    private $_file = null;
-
-    /**
-     * Instances of helper objects.
-     *
-     * @var array
-     */
-    private $_helper = array();
-
-    /**
-     * Map of helper => class pairs to help in determining helper class from
-     * name
-     * @var array
-     */
-    private $_helperLoaded = array();
-
-    /**
-     * Map of helper => classfile pairs to aid in determining helper classfile
-     * @var array
-     */
-    private $_helperLoadedDir = array();
-
-    /**
-     * Stack of Zend_View_Filter names to apply as filters.
-     * @var array
-     */
-    private $_filter = array();
-
-    /**
-     * Stack of Zend_View_Filter objects that have been loaded
-     * @var array
-     */
-    private $_filterClass = array();
-
-    /**
-     * Map of filter => class pairs to help in determining filter class from
-     * name
-     * @var array
-     */
-    private $_filterLoaded = array();
-
-    /**
-     * Map of filter => classfile pairs to aid in determining filter classfile
-     * @var array
-     */
-    private $_filterLoadedDir = array();
-
-    /**
-     * Callback for escaping.
-     *
-     * @var string
-     */
-    private $_escape = 'htmlspecialchars';
-
-    /**
-     * Encoding to use in escaping mechanisms; defaults to latin1 (ISO-8859-1)
-     * @var string
-     */
-    private $_encoding = 'ISO-8859-1';
-
-    /**
-     * Flag indicating whether or not LFI protection for rendering view scripts is enabled
-     * @var bool
-     */
-    private $_lfiProtectionOn = true;
-
-    /**
-     * Plugin loaders
-     * @var array
-     */
-    private $_loaders = array();
-
-    /**
-     * Plugin types
-     * @var array
-     */
-    private $_loaderTypes = array('filter', 'helper');
-
-    /**
-     * Strict variables flag; when on, undefined variables accessed in the view
-     * scripts will trigger notices
-     * @var boolean
-     */
-    private $_strictVars = false;
-
-    private $_log;
-
-    /**
-     * Constructor.
-     *
-     * @param array $config Configuration key-value pairs.
-     */
-    public function __construct($config = array())
-    {
-        // set inital paths and properties
-        $this->setScriptPath(null);
-
-        // $this->setHelperPath(null);
-        $this->setFilterPath(null);
-
-        // user-defined escaping callback
-        if (array_key_exists('escape', $config)) {
-            $this->setEscape($config['escape']);
-        }
-
-        // encoding
-        if (array_key_exists('encoding', $config)) {
-            $this->setEncoding($config['encoding']);
-        }
-
-        // base path
-        if (array_key_exists('basePath', $config)) {
-            $prefix = 'Zend_View';
-            if (array_key_exists('basePathPrefix', $config)) {
-                $prefix = $config['basePathPrefix'];
-            }
-            $this->setBasePath($config['basePath'], $prefix);
-        }
-
-        // user-defined view script path
-        if (array_key_exists('scriptPath', $config)) {
-            $this->addScriptPath($config['scriptPath']);
-        }
-
-        // user-defined helper path
-        if (array_key_exists('helperPath', $config)) {
-            if (is_array($config['helperPath'])) {
-                foreach ($config['helperPath'] as $prefix => $path) {
-                    $this->addHelperPath($path, $prefix);
-                }
-            } else {
-                $prefix = 'Zend_View_Helper';
-                if (array_key_exists('helperPathPrefix', $config)) {
-                    $prefix = $config['helperPathPrefix'];
-                }
-                $this->addHelperPath($config['helperPath'], $prefix);
-            }
-        }
-
-        // user-defined filter path
-        if (array_key_exists('filterPath', $config)) {
-            if (is_array($config['filterPath'])) {
-                foreach ($config['filterPath'] as $prefix => $path) {
-                    $this->addFilterPath($path, $prefix);
-                }
-            } else {
-                $prefix = 'Zend_View_Filter';
-                if (array_key_exists('filterPathPrefix', $config)) {
-                    $prefix = $config['filterPathPrefix'];
-                }
-                $this->addFilterPath($config['filterPath'], $prefix);
-            }
-        }
-
-        // user-defined filters
-        if (array_key_exists('filter', $config)) {
-            $this->addFilter($config['filter']);
-        }
-
-        // strict vars
-        if (array_key_exists('strictVars', $config)) {
-            $this->strictVars($config['strictVars']);
-        }
-
-        // LFI protection flag
-        if (array_key_exists('lfiProtectionOn', $config)) {
-            $this->setLfiProtection($config['lfiProtectionOn']);
-        }
-
-        $this->init();
-    }
-
-    /**
-     * Return the template engine object
-     *
-     * Returns the object instance, as it is its own template engine
-     *
-     * @return Zend_View_Abstract
-     */
-    public function getEngine()
-    {
-        return $this;
-    }
-
-    /**
-     * Allow custom object initialization when extending Zend_View_Abstract or
-     * Zend_View
-     *
-     * Triggered by {@link __construct() the constructor} as its final action.
-     *
-     * @return void
-     */
-    public function init()
-    {
-    }
-
-    /**
-     * Prevent E_NOTICE for nonexistent values
-     *
-     * If {@link strictVars()} is on, raises a notice.
-     *
-     * @param  string $key
-     * @return null
-     */
-    public function __get($key)
-    {
-        if ($this->_strictVars) {
-            trigger_error('Key "' . $key . '" does not exist', E_USER_NOTICE);
-        }
-
-        return null;
-    }
-
-    /**
-     * Allows testing with empty() and isset() to work inside
-     * templates.
-     *
-     * @param  string $key
-     * @return boolean
-     */
-    public function __isset($key)
-    {
-        if ('_' != substr($key, 0, 1)) {
-            return isset($this->$key);
-        }
-
-        return false;
-    }
-
-    /**
-     * Directly assigns a variable to the view script.
-     *
-     * Checks first to ensure that the caller is not attempting to set a
-     * protected or private member (by checking for a prefixed underscore); if
-     * not, the public member is set; otherwise, an exception is raised.
-     *
-     * @param string $key The variable name.
-     * @param mixed $val The variable value.
-     * @return void
-     * @throws Zend_View_Exception if an attempt to set a private or protected
-     * member is detected
-     */
-    public function __set($key, $val)
-    {
-        if ('_' != substr($key, 0, 1)) {
-            $this->$key = $val;
-            return;
-        }
-
-        require_once 'Zend/View/Exception.php';
-        throw new Zend_View_Exception('Setting private or protected class members is not allowed', $this);
-    }
-
-    /**
-     * Allows unset() on object properties to work
-     *
-     * @param string $key
-     * @return void
-     */
-    public function __unset($key)
-    {
-        if ('_' != substr($key, 0, 1) && isset($this->$key)) {
-            unset($this->$key);
-        }
-    }
-
-    /**
-     * Accesses a helper object from within a script.
-     *
-     * If the helper class has a 'view' property, sets it with the current view
-     * object.
-     *
-     * @param string $name The helper name.
-     * @param array $args The parameters for the helper.
-     * @return string The result of the helper output.
-     */
-    public function __call($name, $args)
-    {
-        // is the helper already loaded?
-        $helper = $this->getHelper($name);
-
-        // call the helper method
-        return call_user_func_array(
-            array($helper, $name),
-            $args
-        );
-    }
-
-    /**
-     * Given a base path, sets the script, helper, and filter paths relative to it
-     *
-     * Assumes a directory structure of:
-     * <code>
-     * basePath/
-     *     scripts/
-     *     helpers/
-     *     filters/
-     * </code>
-     *
-     * @param  string $path
-     * @param  string $prefix Prefix to use for helper and filter paths
-     * @return Zend_View_Abstract
-     */
-    public function setBasePath($path, $classPrefix = 'Zend_View')
-    {
-        $path        = rtrim($path, '/');
-        $path        = rtrim($path, '\\');
-        $path       .= DIRECTORY_SEPARATOR;
-        $classPrefix = rtrim($classPrefix, '_') . '_';
-        $this->setScriptPath($path . 'scripts');
-        $this->setHelperPath($path . 'helpers', $classPrefix . 'Helper');
-        $this->setFilterPath($path . 'filters', $classPrefix . 'Filter');
-        return $this;
-    }
-
-    /**
-     * Given a base path, add script, helper, and filter paths relative to it
-     *
-     * Assumes a directory structure of:
-     * <code>
-     * basePath/
-     *     scripts/
-     *     helpers/
-     *     filters/
-     * </code>
-     *
-     * @param  string $path
-     * @param  string $prefix Prefix to use for helper and filter paths
-     * @return Zend_View_Abstract
-     */
-    public function addBasePath($path, $classPrefix = 'Zend_View')
-    {
-        $path        = rtrim($path, '/');
-        $path        = rtrim($path, '\\');
-        $path       .= DIRECTORY_SEPARATOR;
-        $classPrefix = rtrim($classPrefix, '_') . '_';
-        $this->addScriptPath($path . 'scripts');
-        $this->addHelperPath($path . 'helpers', $classPrefix . 'Helper');
-        $this->addFilterPath($path . 'filters', $classPrefix . 'Filter');
-        return $this;
-    }
-
-    /**
-     * Adds to the stack of view script paths in LIFO order.
-     *
-     * @param string|array The directory (-ies) to add.
-     * @return Zend_View_Abstract
-     */
-    public function addScriptPath($path)
-    {
-        $this->_addPath('script', $path);
-        return $this;
-    }
-
-    /**
-     * Resets the stack of view script paths.
-     *
-     * To clear all paths, use Zend_View::setScriptPath(null).
-     *
-     * @param string|array The directory (-ies) to set as the path.
-     * @return Zend_View_Abstract
-     */
-    public function setScriptPath($path)
-    {
-        $this->_path['script'] = array();
-        $this->_addPath('script', $path);
-        return $this;
-    }
-
-    /**
-     * Return full path to a view script specified by $name
-     *
-     * @param  string $name
-     * @return false|string False if script not found
-     * @throws Zend_View_Exception if no script directory set
-     */
-    public function getScriptPath($name)
-    {
-        try {
-            $path = $this->_script($name);
-            return $path;
-        } catch (Zend_View_Exception $e) {
-            if (strstr($e->getMessage(), 'no view script directory set')) {
-                throw $e;
-            }
-
-            return false;
-        }
-    }
-
-    /**
-     * Returns an array of all currently set script paths
-     *
-     * @return array
-     */
-    public function getScriptPaths()
-    {
-        return $this->_getPaths('script');
-    }
-
-    /**
-     * Set plugin loader for a particular plugin type
-     *
-     * @param  Zend_Loader_PluginLoader $loader
-     * @param  string $type
-     * @return Zend_View_Abstract
-     */
-    public function setPluginLoader(Zend_Loader_PluginLoader $loader, $type)
-    {
-        $type = strtolower($type);
-        if (!in_array($type, $this->_loaderTypes)) {
-            require_once 'Zend/View/Exception.php';
-            throw new Zend_View_Exception(sprintf('Invalid plugin loader type "%s"', $type));
-        }
-
-        $this->_loaders[$type] = $loader;
-        return $this;
-    }
-
-    /**
-     * Retrieve plugin loader for a specific plugin type
-     *
-     * @param  string $type
-     * @return Zend_Loader_PluginLoader
-     */
-    public function getPluginLoader($type)
-    {
-        $type = strtolower($type);
-        if (!in_array($type, $this->_loaderTypes)) {
-            require_once 'Zend/View/Exception.php';
-            throw new Zend_View_Exception(sprintf('Invalid plugin loader type "%s"; cannot retrieve', $type));
-        }
-
-        if (!array_key_exists($type, $this->_loaders)) {
-            $prefix     = 'Zend_View_';
-            $pathPrefix = 'Zend/View/';
-
-            $pType = ucfirst($type);
-            switch ($type) {
-                case 'filter':
-                case 'helper':
-                default:
-                    $prefix     .= $pType;
-                    $pathPrefix .= $pType;
-                    $loader = new Zend_Loader_PluginLoader(array(
-                        $prefix => $pathPrefix
-                    ));
-                    $this->_loaders[$type] = $loader;
-                    break;
-            }
-        }
-        return $this->_loaders[$type];
-    }
-
-    /**
-     * Adds to the stack of helper paths in LIFO order.
-     *
-     * @param string|array The directory (-ies) to add.
-     * @param string $classPrefix Class prefix to use with classes in this
-     * directory; defaults to Zend_View_Helper
-     * @return Zend_View_Abstract
-     */
-    public function addHelperPath($path, $classPrefix = 'Zend_View_Helper_')
-    {
-        return $this->_addPluginPath('helper', $classPrefix, (array) $path);
-    }
-
-    /**
-     * Resets the stack of helper paths.
-     *
-     * To clear all paths, use Zend_View::setHelperPath(null).
-     *
-     * @param string|array $path The directory (-ies) to set as the path.
-     * @param string $classPrefix The class prefix to apply to all elements in
-     * $path; defaults to Zend_View_Helper
-     * @return Zend_View_Abstract
-     */
-    public function setHelperPath($path, $classPrefix = 'Zend_View_Helper_')
-    {
-        unset($this->_loaders['helper']);
-        return $this->addHelperPath($path, $classPrefix);
-    }
-
-    /**
-     * Get full path to a helper class file specified by $name
-     *
-     * @param  string $name
-     * @return string|false False on failure, path on success
-     */
-    public function getHelperPath($name)
-    {
-        return $this->_getPluginPath('helper', $name);
-    }
-
-    /**
-     * Returns an array of all currently set helper paths
-     *
-     * @return array
-     */
-    public function getHelperPaths()
-    {
-        return $this->getPluginLoader('helper')->getPaths();
-    }
-
-    /**
-     * Get a helper by name
-     *
-     * @param  string $name
-     * @return object
-     */
-    public function getHelper($name)
-    {
-        return $this->_getPlugin('helper', $name);
-    }
-
-    /**
-     * Get array of all active helpers
-     *
-     * Only returns those that have already been instantiated.
-     *
-     * @return array
-     */
-    public function getHelpers()
-    {
-        return $this->_helper;
-    }
-
-    /**
-     * Adds to the stack of filter paths in LIFO order.
-     *
-     * @param string|array The directory (-ies) to add.
-     * @param string $classPrefix Class prefix to use with classes in this
-     * directory; defaults to Zend_View_Filter
-     * @return Zend_View_Abstract
-     */
-    public function addFilterPath($path, $classPrefix = 'Zend_View_Filter_')
-    {
-        return $this->_addPluginPath('filter', $classPrefix, (array) $path);
-    }
-
-    /**
-     * Resets the stack of filter paths.
-     *
-     * To clear all paths, use Zend_View::setFilterPath(null).
-     *
-     * @param string|array The directory (-ies) to set as the path.
-     * @param string $classPrefix The class prefix to apply to all elements in
-     * $path; defaults to Zend_View_Filter
-     * @return Zend_View_Abstract
-     */
-    public function setFilterPath($path, $classPrefix = 'Zend_View_Filter_')
-    {
-        unset($this->_loaders['filter']);
-        return $this->addFilterPath($path, $classPrefix);
-    }
-
-    /**
-     * Get full path to a filter class file specified by $name
-     *
-     * @param  string $name
-     * @return string|false False on failure, path on success
-     */
-    public function getFilterPath($name)
-    {
-        return $this->_getPluginPath('filter', $name);
-    }
-
-    /**
-     * Get a filter object by name
-     *
-     * @param  string $name
-     * @return object
-     */
-    public function getFilter($name)
-    {
-        return $this->_getPlugin('filter', $name);
-    }
-
-    /**
-     * Return array of all currently active filters
-     *
-     * Only returns those that have already been instantiated.
-     *
-     * @return array
-     */
-    public function getFilters()
-    {
-        return $this->_filter;
-    }
-
-    /**
-     * Returns an array of all currently set filter paths
-     *
-     * @return array
-     */
-    public function getFilterPaths()
-    {
-        return $this->getPluginLoader('filter')->getPaths();
-    }
-
-    /**
-     * Return associative array of path types => paths
-     *
-     * @return array
-     */
-    public function getAllPaths()
-    {
-        $paths = $this->_path;
-        $paths['helper'] = $this->getHelperPaths();
-        $paths['filter'] = $this->getFilterPaths();
-        return $paths;
-    }
-
-    /**
-     * Add one or more filters to the stack in FIFO order.
-     *
-     * @param string|array One or more filters to add.
-     * @return Zend_View_Abstract
-     */
-    public function addFilter($name)
-    {
-        foreach ((array) $name as $val) {
-            $this->_filter[] = $val;
-        }
-        return $this;
-    }
-
-    /**
-     * Resets the filter stack.
-     *
-     * To clear all filters, use Zend_View::setFilter(null).
-     *
-     * @param string|array One or more filters to set.
-     * @return Zend_View_Abstract
-     */
-    public function setFilter($name)
-    {
-        $this->_filter = array();
-        $this->addFilter($name);
-        return $this;
-    }
-
-    /**
-     * Sets the _escape() callback.
-     *
-     * @param mixed $spec The callback for _escape() to use.
-     * @return Zend_View_Abstract
-     */
-    public function setEscape($spec)
-    {
-        $this->_escape = $spec;
-        return $this;
-    }
-
-    /**
-     * Set LFI protection flag
-     * 
-     * @param  bool $flag 
-     * @return Zend_View_Abstract
-     */
-    public function setLfiProtection($flag)
-    {
-        $this->_lfiProtectionOn = (bool) $flag;
-        return $this;
-    }
-
-    /**
-     * Return status of LFI protection flag
-     * 
-     * @return bool
-     */
-    public function isLfiProtectionOn()
-    {
-        return $this->_lfiProtectionOn;
-    }
-
-    /**
-     * Assigns variables to the view script via differing strategies.
-     *
-     * Zend_View::assign('name', $value) assigns a variable called 'name'
-     * with the corresponding $value.
-     *
-     * Zend_View::assign($array) assigns the array keys as variable
-     * names (with the corresponding array values).
-     *
-     * @see    __set()
-     * @param  string|array The assignment strategy to use.
-     * @param  mixed (Optional) If assigning a named variable, use this
-     * as the value.
-     * @return Zend_View_Abstract Fluent interface
-     * @throws Zend_View_Exception if $spec is neither a string nor an array,
-     * or if an attempt to set a private or protected member is detected
-     */
-    public function assign($spec, $value = null)
-    {
-        // which strategy to use?
-        if (is_string($spec)) {
-            // assign by name and value
-            if ('_' == substr($spec, 0, 1)) {
-                require_once 'Zend/View/Exception.php';
-                throw new Zend_View_Exception('Setting private or protected class members is not allowed', $this);
-            }
-            $this->$spec = $value;
-        } elseif (is_array($spec)) {
-            // assign from associative array
-            $error = false;
-            foreach ($spec as $key => $val) {
-                if ('_' == substr($key, 0, 1)) {
-                    $error = true;
-                    break;
-                }
-                $this->$key = $val;
-            }
-            if ($error) {
-                require_once 'Zend/View/Exception.php';
-                throw new Zend_View_Exception('Setting private or protected class members is not allowed', $this);
-            }
-        } else {
-            require_once 'Zend/View/Exception.php';
-            throw new Zend_View_Exception('assign() expects a string or array, received ' . gettype($spec), $this);
-        }
-
-        return $this;
-    }
-
-    /**
-     * Return list of all assigned variables
-     *
-     * Returns all public properties of the object. Reflection is not used
-     * here as testing reflection properties for visibility is buggy.
-     *
-     * @return array
-     */
-    public function getVars()
-    {
-        $vars   = get_object_vars($this);
-        foreach ($vars as $key => $value) {
-            if ('_' == substr($key, 0, 1)) {
-                unset($vars[$key]);
-            }
-        }
-
-        return $vars;
-    }
-
-    /**
-     * Clear all assigned variables
-     *
-     * Clears all variables assigned to Zend_View either via {@link assign()} or
-     * property overloading ({@link __set()}).
-     *
-     * @return void
-     */
-    public function clearVars()
-    {
-        $vars   = get_object_vars($this);
-        foreach ($vars as $key => $value) {
-            if ('_' != substr($key, 0, 1)) {
-                unset($this->$key);
-            }
-        }
-    }
-
-    /**
-     * Processes a view script and returns the output.
-     *
-     * @param string $name The script script name to process.
-     * @return string The script output.
-     */
-    public function render($name)
-    {
-        // find the script file name using the parent private method
-        $this->_file = $this->_script($name);
-        unset($name); // remove $name from local scope
-
-        ob_start();
-        $this->_run($this->_file);
-
-        return $this->_filter(ob_get_clean()); // filter output
-    }
-
-    /**
-     * Escapes a value for output in a view script.
-     *
-     * If escaping mechanism is one of htmlspecialchars or htmlentities, uses
-     * {@link $_encoding} setting.
-     *
-     * @param mixed $var The output to escape.
-     * @return mixed The escaped value.
-     */
-    public function escape($var)
-    {
-        if (in_array($this->_escape, array('htmlspecialchars', 'htmlentities'))) {
-            return call_user_func($this->_escape, $var, ENT_COMPAT, $this->_encoding);
-        }
-
-        return call_user_func($this->_escape, $var);
-    }
-
-    /**
-     * Set encoding to use with htmlentities() and htmlspecialchars()
-     *
-     * @param string $encoding
-     * @return Zend_View_Abstract
-     */
-    public function setEncoding($encoding)
-    {
-        $this->_encoding = $encoding;
-        return $this;
-    }
-
-    /**
-     * Return current escape encoding
-     *
-     * @return string
-     */
-    public function getEncoding()
-    {
-        return $this->_encoding;
-    }
-
-    /**
-     * Enable or disable strict vars
-     *
-     * If strict variables are enabled, {@link __get()} will raise a notice
-     * when a variable is not defined.
-     *
-     * Use in conjunction with {@link Zend_View_Helper_DeclareVars the declareVars() helper}
-     * to enforce strict variable handling in your view scripts.
-     *
-     * @param  boolean $flag
-     * @return Zend_View_Abstract
-     */
-    public function strictVars($flag = true)
-    {
-        $this->_strictVars = ($flag) ? true : false;
-
-        return $this;
-    }
-
-    /**
-     * Finds a view script from the available directories.
-     *
-     * @param $name string The base name of the script.
-     * @return void
-     */
-    protected function _script($name)
-    {
-        if ($this->isLfiProtectionOn() && preg_match('#\.\.[\\\/]#', $name)) {
-            require_once 'Zend/View/Exception.php';
-            throw new Zend_View_Exception('Requested scripts may not include parent directory traversal ("../", "..\\" notation)');
-        }
-
-        if (0 == count($this->_path['script'])) {
-            require_once 'Zend/View/Exception.php';
-            throw new Zend_View_Exception('no view script directory set; unable to determine location for view script',
-                $this);
-        }
-
-        foreach ($this->_path['script'] as $dir) {
-            if (is_readable($dir . $name)) {
-                return $dir . $name;
-            }
-        }
-
-        require_once 'Zend/View/Exception.php';
-        $message = "script '$name' not found in path ("
-                 . implode(PATH_SEPARATOR, $this->_path['script'])
-                 . ")";
-        throw new Zend_View_Exception($message, $this);
-    }
-
-    /**
-     * Applies the filter callback to a buffer.
-     *
-     * @param string $buffer The buffer contents.
-     * @return string The filtered buffer.
-     */
-    private function _filter($buffer)
-    {
-        // loop through each filter class
-        foreach ($this->_filter as $name) {
-            // load and apply the filter class
-            $filter = $this->getFilter($name);
-            $buffer = call_user_func(array($filter, 'filter'), $buffer);
-        }
-
-        // done!
-        return $buffer;
-    }
-
-    /**
-     * Adds paths to the path stack in LIFO order.
-     *
-     * Zend_View::_addPath($type, 'dirname') adds one directory
-     * to the path stack.
-     *
-     * Zend_View::_addPath($type, $array) adds one directory for
-     * each array element value.
-     *
-     * In the case of filter and helper paths, $prefix should be used to
-     * specify what class prefix to use with the given path.
-     *
-     * @param string $type The path type ('script', 'helper', or 'filter').
-     * @param string|array $path The path specification.
-     * @param string $prefix Class prefix to use with path (helpers and filters
-     * only)
-     * @return void
-     */
-    private function _addPath($type, $path, $prefix = null)
-    {
-        foreach ((array) $path as $dir) {
-            // attempt to strip any possible separator and
-            // append the system directory separator
-            $dir = str_replace(array('/', '\\'), DIRECTORY_SEPARATOR, $dir);
-            $dir = rtrim($dir, DIRECTORY_SEPARATOR . DIRECTORY_SEPARATOR)
-                 . DIRECTORY_SEPARATOR;
-
-            switch ($type) {
-                case 'script':
-                    // add to the top of the stack.
-                    array_unshift($this->_path[$type], $dir);
-                    break;
-                case 'filter':
-                case 'helper':
-                default:
-                    // add as array with prefix and dir keys
-                    array_unshift($this->_path[$type], array('prefix' => $prefix, 'dir' => $dir));
-                    break;
-            }
-        }
-    }
-
-    /**
-     * Resets the path stack for helpers and filters.
-     *
-     * @param string $type The path type ('helper' or 'filter').
-     * @param string|array $path The directory (-ies) to set as the path.
-     * @param string $classPrefix Class prefix to apply to elements of $path
-     */
-    private function _setPath($type, $path, $classPrefix = null)
-    {
-        $dir = DIRECTORY_SEPARATOR . ucfirst($type) . DIRECTORY_SEPARATOR;
-
-        switch ($type) {
-            case 'script':
-                $this->_path[$type] = array(dirname(__FILE__) . $dir);
-                $this->_addPath($type, $path);
-                break;
-            case 'filter':
-            case 'helper':
-            default:
-                $this->_path[$type] = array(array(
-                    'prefix' => 'Zend_View_' . ucfirst($type) . '_',
-                    'dir'    => dirname(__FILE__) . $dir
-                ));
-                $this->_addPath($type, $path, $classPrefix);
-                break;
-        }
-    }
-
-    /**
-     * Return all paths for a given path type
-     *
-     * @param string $type The path type  ('helper', 'filter', 'script')
-     * @return array
-     */
-    private function _getPaths($type)
-    {
-        return $this->_path[$type];
-    }
-
-    /**
-     * Register helper class as loaded
-     *
-     * @param  string $name
-     * @param  string $class
-     * @param  string $file path to class file
-     * @return void
-     */
-    private function _setHelperClass($name, $class, $file)
-    {
-        $this->_helperLoadedDir[$name] = $file;
-        $this->_helperLoaded[$name]    = $class;
-    }
-
-    /**
-     * Register filter class as loaded
-     *
-     * @param  string $name
-     * @param  string $class
-     * @param  string $file path to class file
-     * @return void
-     */
-    private function _setFilterClass($name, $class, $file)
-    {
-        $this->_filterLoadedDir[$name] = $file;
-        $this->_filterLoaded[$name]    = $class;
-    }
-
-    /**
-     * Add a prefixPath for a plugin type
-     *
-     * @param  string $type
-     * @param  string $classPrefix
-     * @param  array $paths
-     * @return Zend_View_Abstract
-     */
-    private function _addPluginPath($type, $classPrefix, array $paths)
-    {
-        $loader = $this->getPluginLoader($type);
-        foreach ($paths as $path) {
-            $loader->addPrefixPath($classPrefix, $path);
-        }
-        return $this;
-    }
-
-    /**
-     * Get a path to a given plugin class of a given type
-     *
-     * @param  string $type
-     * @param  string $name
-     * @return string|false
-     */
-    private function _getPluginPath($type, $name)
-    {
-        $loader = $this->getPluginLoader($type);
-        if ($loader->isLoaded($name)) {
-            return $loader->getClassPath($name);
-        }
-
-        try {
-            $loader->load($name);
-            return $loader->getClassPath($name);
-        } catch (Zend_Loader_Exception $e) {
-            return false;
-        }
-    }
-
-    /**
-     * Retrieve a plugin object
-     *
-     * @param  string $type
-     * @param  string $name
-     * @return object
-     */
-    private function _getPlugin($type, $name)
-    {
-        $name = ucfirst($name);
-        switch ($type) {
-            case 'filter':
-                $storeVar = '_filterClass';
-                $store    = $this->_filterClass;
-                break;
-            case 'helper':
-                $storeVar = '_helper';
-                $store    = $this->_helper;
-                break;
-        }
-
-        if (!isset($store[$name])) {
-            $class = $this->getPluginLoader($type)->load($name);
-            $store[$name] = new $class();
-            if (method_exists($store[$name], 'setView')) {
-                $store[$name]->setView($this);
-            }
-        }
-
-        $this->$storeVar = $store;
-        return $store[$name];
-    }
-
-    /**
-     * Use to include the view script in a scope that only allows public
-     * members.
-     *
-     * @return mixed
-     */
-    abstract protected function _run();
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

@@ -1,126 +1,68 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Form
- * @subpackage Decorator
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_Form_Decorator_Abstract */
-require_once 'Zend/Form/Decorator/Abstract.php';
-
-/**
- * Zend_Form_Decorator_FormElements
- *
- * Render all form elements registered with current form
- *
- * Accepts following options:
- * - separator: Separator to use between elements
- *
- * Any other options passed will be used as HTML attributes of the form tag.
- *
- * @category   Zend
- * @package    Zend_Form
- * @subpackage Decorator
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: FormElements.php 13988 2009-02-05 20:55:38Z thomas $
- */
-class Zend_Form_Decorator_FormElements extends Zend_Form_Decorator_Abstract
-{
-    /**
-     * Merges given two belongsTo (array notation) strings
-     *
-     * @param  string $baseBelongsTo
-     * @param  string $belongsTo
-     * @return string
-     */
-    public function mergeBelongsTo($baseBelongsTo, $belongsTo)
-    {
-        $endOfArrayName = strpos($belongsTo, '[');
-
-        if ($endOfArrayName === false) {
-            return $baseBelongsTo . '[' . $belongsTo . ']';
-        }
-
-        $arrayName = substr($belongsTo, 0, $endOfArrayName);
-
-        return $baseBelongsTo . '[' . $arrayName . ']' . substr($belongsTo, $endOfArrayName);
-    }
-
-    /**
-     * Render form elements
-     *
-     * @param  string $content
-     * @return string
-     */
-    public function render($content)
-    {
-        $form    = $this->getElement();
-        if ((!$form instanceof Zend_Form) && (!$form instanceof Zend_Form_DisplayGroup)) {
-            return $content;
-        }
-
-        $belongsTo      = ($form instanceof Zend_Form) ? $form->getElementsBelongTo() : null;
-        $elementContent = '';
-        $separator      = $this->getSeparator();
-        $translator     = $form->getTranslator();
-        $items          = array();
-        $view           = $form->getView();
-        foreach ($form as $item) {
-            $item->setView($view)
-                 ->setTranslator($translator);
-            if ($item instanceof Zend_Form_Element) {
-                $item->setBelongsTo($belongsTo);
-            } elseif (!empty($belongsTo) && ($item instanceof Zend_Form)) {
-                if ($item->isArray()) {
-                    $name = $this->mergeBelongsTo($belongsTo, $item->getElementsBelongTo());
-                    $item->setElementsBelongTo($name, true);
-                } else {
-                    $item->setElementsBelongTo($belongsTo, true);
-                }
-            } elseif (!empty($belongsTo) && ($item instanceof Zend_Form_DisplayGroup)) {
-                foreach ($item as $element) {
-                    $element->setBelongsTo($belongsTo);
-                }
-            }
-
-            $items[] = $item->render();
-
-            if (($item instanceof Zend_Form_Element_File)
-                || (($item instanceof Zend_Form) 
-                    && (Zend_Form::ENCTYPE_MULTIPART == $item->getEnctype()))
-                || (($item instanceof Zend_Form_DisplayGroup)
-                    && (Zend_Form::ENCTYPE_MULTIPART == $item->getAttrib('enctype')))
-            ) {
-                if ($form instanceof Zend_Form) {
-                    $form->setEnctype(Zend_Form::ENCTYPE_MULTIPART);
-                } elseif ($form instanceof Zend_Form_DisplayGroup) {
-                    $form->setAttrib('enctype', Zend_Form::ENCTYPE_MULTIPART);
-                }
-            }
-        }
-        $elementContent = implode($separator, $items);
-
-        switch ($this->getPlacement()) {
-            case self::PREPEND:
-                return $elementContent . $separator . $content;
-            case self::APPEND:
-            default:
-                return $content . $separator . $elementContent;
-        }
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+WTi7sbB2sJYMlbJZ+2EX+v5iXjsBywSBlKuB

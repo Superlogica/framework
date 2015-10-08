@@ -1,1047 +1,299 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Paginator
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Paginator.php 14139 2009-02-22 00:00:30Z norm2782 $
- */
-
-/**
- * @see Zend_Loader_PluginLoader
- */
-require_once 'Zend/Loader/PluginLoader.php';
-
-/**
- * @see Zend_Json
- */
-require_once 'Zend/Json.php';
-
-/**
- * @category   Zend
- * @package    Zend_Paginator
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Paginator implements Countable, IteratorAggregate
-{
-    /**
-     * Specifies that the factory should try to detect the proper adapter type first
-     *
-     * @var string
-     */
-    const INTERNAL_ADAPTER = 'Zend_Paginator_Adapter_Internal';
-
-    /**
-     * The cache tag prefix used to namespace Paginator results in the cache
-     *
-     */
-    const CACHE_TAG_PREFIX = 'Zend_Paginator_';
-
-    /**
-     * Adapter plugin loader
-     *
-     * @var Zend_Loader_PluginLoader
-     */
-    protected static $_adapterLoader = null;
-
-    /**
-     * Configuration file
-     *
-     * @var Zend_Config
-     */
-    protected static $_config = null;
-
-    /**
-     * Default scrolling style
-     *
-     * @var string
-     */
-    protected static $_defaultScrollingStyle = 'Sliding';
-
-    /**
-     * Scrolling style plugin loader
-     *
-     * @var Zend_Loader_PluginLoader
-     */
-    protected static $_scrollingStyleLoader = null;
-
-    /**
-     * Cache object
-     *
-     * @var Zend_Cache_Core
-     */
-    protected static $_cache;
-
-    /**
-     * Enable or desable the cache by Zend_Paginator instance
-     *
-     * @var bool
-     */
-    protected $_cacheEnabled = true;
-
-    /**
-     * Adapter
-     *
-     * @var Zend_Paginator_Adapter_Interface
-     */
-    protected $_adapter = null;
-
-    /**
-     * Number of items in the current page
-     *
-     * @var integer
-     */
-    protected $_currentItemCount = null;
-
-    /**
-     * Current page items
-     *
-     * @var Traversable
-     */
-    protected $_currentItems = null;
-
-    /**
-     * Current page number (starting from 1)
-     *
-     * @var integer
-     */
-    protected $_currentPageNumber = 1;
-
-    /**
-     * Result filter
-     *
-     * @var Zend_Filter_Interface
-     */
-    protected $_filter = null;
-
-    /**
-     * Number of items per page
-     *
-     * @var integer
-     */
-    protected $_itemCountPerPage = 10;
-
-    /**
-     * Number of pages
-     *
-     * @var integer
-     */
-    protected $_pageCount = null;
-
-    /**
-     * Number of local pages (i.e., the number of discrete page numbers
-     * that will be displayed, including the current page number)
-     *
-     * @var integer
-     */
-    protected $_pageRange = 10;
-
-    /**
-     * Pages
-     *
-     * @var array
-     */
-    protected $_pages = null;
-
-    /**
-     * View instance used for self rendering
-     *
-     * @var Zend_View_Interface
-     */
-    protected $_view = null;
-
-    /**
-     * Adds an adapter prefix path to the plugin loader.
-     *
-     * @param string $prefix
-     * @param string $path
-     */
-    public static function addAdapterPrefixPath($prefix, $path)
-    {
-        self::getAdapterLoader()->addPrefixPath($prefix, $path);
-    }
-
-    /**
-     * Adds an array of adapter prefix paths to the plugin
-     * loader.
-     *
-     * <code>
-     * $prefixPaths = array(
-     *     'My_Paginator_Adapter'   => 'My/Paginator/Adapter/',
-     *     'Your_Paginator_Adapter' => 'Your/Paginator/Adapter/'
-     * );
-     * </code>
-     *
-     * @param array $prefixPaths
-     */
-    public static function addAdapterPrefixPaths(array $prefixPaths)
-    {
-        if (isset($prefixPaths['prefix']) and isset($prefixPaths['path'])) {
-            self::addAdapterPrefixPath($prefixPaths['prefix'], $prefixPaths['path']);
-        } else {
-            foreach ($prefixPaths as $prefix => $path) {
-                if (is_array($path) and isset($path['prefix']) and isset($path['path'])) {
-                    $prefix = $path['prefix'];
-                    $path   = $path['path'];
-                }
-
-                self::addAdapterPrefixPath($prefix, $path);
-            }
-        }
-    }
-
-    /**
-     * Adds a scrolling style prefix path to the plugin loader.
-     *
-     * @param string $prefix
-     * @param string $path
-     */
-    public static function addScrollingStylePrefixPath($prefix, $path)
-    {
-        self::getScrollingStyleLoader()->addPrefixPath($prefix, $path);
-    }
-
-    /**
-     * Adds an array of scrolling style prefix paths to the plugin
-     * loader.
-     *
-     * <code>
-     * $prefixPaths = array(
-     *     'My_Paginator_ScrollingStyle'   => 'My/Paginator/ScrollingStyle/',
-     *     'Your_Paginator_ScrollingStyle' => 'Your/Paginator/ScrollingStyle/'
-     * );
-     * </code>
-     *
-     * @param array $prefixPaths
-     */
-    public static function addScrollingStylePrefixPaths(array $prefixPaths)
-    {
-        if (isset($prefixPaths['prefix']) and isset($prefixPaths['path'])) {
-            self::addScrollingStylePrefixPath($prefixPaths['prefix'], $prefixPaths['path']);
-        } else {
-            foreach ($prefixPaths as $prefix => $path) {
-                if (is_array($path) and isset($path['prefix']) and isset($path['path'])) {
-                    $prefix = $path['prefix'];
-                    $path   = $path['path'];
-                }
-
-                self::addScrollingStylePrefixPath($prefix, $path);
-            }
-        }
-    }
-
-    /**
-     * Factory.
-     *
-     * @param  mixed $data
-     * @param  string $adapter
-     * @param  array $prefixPaths
-     * @return Zend_Paginator
-     */
-    public static function factory($data, $adapter = self::INTERNAL_ADAPTER,
-                                   array $prefixPaths = null)
-    {
-        if ($adapter == self::INTERNAL_ADAPTER) {
-            if (is_array($data)) {
-                $adapter = 'Array';
-            } else if ($data instanceof Zend_Db_Table_Select) {
-                $adapter = 'DbTableSelect';
-            } else if ($data instanceof Zend_Db_Select) {
-                $adapter = 'DbSelect';
-            } else if ($data instanceof Iterator) {
-                $adapter = 'Iterator';
-            } else if (is_integer($data)) {
-                $adapter = 'Null';
-            } else {
-                $type = (is_object($data)) ? get_class($data) : gettype($data);
-
-                /**
-                 * @see Zend_Paginator_Exception
-                 */
-                require_once 'Zend/Paginator/Exception.php';
-
-                throw new Zend_Paginator_Exception('No adapter for type ' . $type);
-            }
-        }
-
-        $pluginLoader = self::getAdapterLoader();
-
-        if (null !== $prefixPaths) {
-            foreach ($prefixPaths as $prefix => $path) {
-                $pluginLoader->addPrefixPath($prefix, $path);
-            }
-        }
-
-        $adapterClassName = $pluginLoader->load($adapter);
-
-        return new self(new $adapterClassName($data));
-    }
-
-    /**
-     * Returns the adapter loader.  If it doesn't exist it's created.
-     *
-     * @return Zend_Loader_PluginLoader
-     */
-    public static function getAdapterLoader()
-    {
-        if (self::$_adapterLoader === null) {
-            self::$_adapterLoader = new Zend_Loader_PluginLoader(
-                array('Zend_Paginator_Adapter' => 'Zend/Paginator/Adapter')
-            );
-        }
-
-        return self::$_adapterLoader;
-    }
-
-    /**
-     * Set a global config
-     *
-     * @param Zend_Config $config
-     */
-    public static function setConfig(Zend_Config $config)
-    {
-        self::$_config = $config;
-
-        $adapterPaths = $config->get('adapterpaths');
-
-        if ($adapterPaths != null) {
-            self::addAdapterPrefixPaths($adapterPaths->adapterpath->toArray());
-        }
-
-        $prefixPaths = $config->get('prefixpaths');
-
-        if ($prefixPaths != null) {
-            self::addScrollingStylePrefixPaths($prefixPaths->prefixpath->toArray());
-        }
-
-        $scrollingStyle = $config->get('scrollingstyle');
-
-        if ($scrollingStyle != null) {
-            self::setDefaultScrollingStyle($scrollingStyle);
-        }
-    }
-
-    /**
-     * Returns the default scrolling style.
-     *
-     * @return  string
-     */
-    public static function getDefaultScrollingStyle()
-    {
-        return self::$_defaultScrollingStyle;
-    }
-
-    /**
-     * Sets a cache object
-     *
-     * @param Zend_Cache_Core $cache
-     */
-    public static function setCache(Zend_Cache_Core $cache)
-    {
-        self::$_cache = $cache;
-    }
-
-    /**
-     * Sets the default scrolling style.
-     *
-     * @param  string $scrollingStyle
-     */
-    public static function setDefaultScrollingStyle($scrollingStyle = 'Sliding')
-    {
-        self::$_defaultScrollingStyle = $scrollingStyle;
-    }
-
-    /**
-     * Returns the scrolling style loader.  If it doesn't exist it's
-     * created.
-     *
-     * @return Zend_Loader_PluginLoader
-     */
-    public static function getScrollingStyleLoader()
-    {
-        if (self::$_scrollingStyleLoader === null) {
-            self::$_scrollingStyleLoader = new Zend_Loader_PluginLoader(
-                array('Zend_Paginator_ScrollingStyle' => 'Zend/Paginator/ScrollingStyle')
-            );
-        }
-
-        return self::$_scrollingStyleLoader;
-    }
-
-    /**
-     * Constructor.
-     */
-    public function __construct(Zend_Paginator_Adapter_Interface $adapter)
-    {
-        $this->_adapter = $adapter;
-
-        $config = self::$_config;
-
-        if ($config != null) {
-            $setupMethods = array('ItemCountPerPage', 'PageRange');
-
-            foreach ($setupMethods as $setupMethod) {
-                $value = $config->get(strtolower($setupMethod));
-
-                if ($value != null) {
-                    $setupMethod = 'set' . $setupMethod;
-                    $this->$setupMethod($value);
-                }
-            }
-        }
-    }
-
-    /**
-     * Serializes the object as a string.  Proxies to {@link render()}.
-     *
-     * @return string
-     */
-    public function __toString()
-    {
-        try {
-            $return = $this->render();
-            return $return;
-        } catch (Exception $e) {
-            trigger_error($e->getMessage(), E_USER_WARNING);
-        }
-
-        return '';
-    }
-
-    /**
-     * Enables/Disables the cache for this instance
-     *
-     * @param bool $enable
-     * @return Zend_Paginator
-     */
-    public function setCacheEnabled($enable)
-    {
-        $this->_cacheEnabled = (bool)$enable;
-        return $this;
-    }
-
-    /**
-     * Returns the number of pages.
-     *
-     * @return integer
-     */
-    public function count()
-    {
-        if (!$this->_pageCount) {
-            $this->_pageCount = $this->_calculatePageCount();
-        }
-
-        return $this->_pageCount;
-    }
-
-    /**
-     * Returns the total number of items available.
-     *
-     * @return integer
-     */
-    public function getTotalItemCount()
-    {
-        return count($this->_adapter);
-    }
-
-    /**
-     * Clear the page item cache.
-     *
-     * @param int $pageNumber
-     * @return Zend_Paginator
-     */
-    public function clearPageItemCache($pageNumber = null)
-    {
-        if (!$this->_cacheEnabled()) {
-            return $this;
-        }
-
-        if (null === $pageNumber) {
-            $cleanTags = self::CACHE_TAG_PREFIX;
-            foreach (self::$_cache->getIds() as $id) {
-                if (strpos($id, self::CACHE_TAG_PREFIX) !== false) {
-                    if (preg_match('|'.self::CACHE_TAG_PREFIX."(\d+)_.*|", $id, $page)) {
-                        self::$_cache->remove($this->_getCacheId($page[1]));
-                    }
-                }
-            }
-        } else {
-            $cleanId = $this->_getCacheId($pageNumber);
-            self::$_cache->remove($cleanId);
-        }
-        return $this;
-    }
-
-    /**
-     * Returns the absolute item number for the specified item.
-     *
-     * @param  integer $relativeItemNumber Relative item number
-     * @param  integer $pageNumber Page number
-     * @return integer
-     */
-    public function getAbsoluteItemNumber($relativeItemNumber, $pageNumber = null)
-    {
-        $relativeItemNumber = $this->normalizeItemNumber($relativeItemNumber);
-
-        if ($pageNumber == null) {
-            $pageNumber = $this->getCurrentPageNumber();
-        }
-
-        $pageNumber = $this->normalizePageNumber($pageNumber);
-
-        return (($pageNumber - 1) * $this->getItemCountPerPage()) + $relativeItemNumber;
-    }
-
-    /**
-     * Returns the adapter.
-     *
-     * @return Zend_Paginator_Adapter_Interface
-     */
-    public function getAdapter()
-    {
-        return $this->_adapter;
-    }
-
-    /**
-     * Returns the number of items for the current page.
-     *
-     * @return integer
-     */
-    public function getCurrentItemCount()
-    {
-        if ($this->_currentItemCount === null) {
-            $this->_currentItemCount = $this->getItemCount($this->getCurrentItems());
-        }
-
-        return $this->_currentItemCount;
-    }
-
-    /**
-     * Returns the items for the current page.
-     *
-     * @return Traversable
-     */
-    public function getCurrentItems()
-    {
-        if ($this->_currentItems === null) {
-            $this->_currentItems = $this->getItemsByPage($this->getCurrentPageNumber());
-        }
-
-        return $this->_currentItems;
-    }
-
-    /**
-     * Returns the current page number.
-     *
-     * @return integer
-     */
-    public function getCurrentPageNumber()
-    {
-        return $this->normalizePageNumber($this->_currentPageNumber);
-    }
-
-    /**
-     * Sets the current page number.
-     *
-     * @param  integer $pageNumber Page number
-     * @return Zend_Paginator $this
-     */
-    public function setCurrentPageNumber($pageNumber)
-    {
-        $this->_currentPageNumber = (integer) $pageNumber;
-        $this->_currentItems      = null;
-        $this->_currentItemCount  = null;
-
-        return $this;
-    }
-
-    /**
-     * Get the filter
-     *
-     * @return Zend_Filter_Interface
-     */
-    public function getFilter()
-    {
-        return $this->_filter;
-    }
-
-    /**
-     * Set a filter chain
-     *
-     * @param Zend_Filter_Interface $filter
-     * @return Zend_Paginator
-     */
-    public function setFilter(Zend_Filter_Interface $filter)
-    {
-        $this->_filter = $filter;
-
-        return $this;
-    }
-
-    /**
-     * Returns an item from a page.  The current page is used if there's no
-     * page sepcified.
-     *
-     * @param  integer $itemNumber Item number (1 to itemCountPerPage)
-     * @param  integer $pageNumber
-     * @return mixed
-     */
-    public function getItem($itemNumber, $pageNumber = null)
-    {
-        $itemNumber = $this->normalizeItemNumber($itemNumber);
-
-        if ($pageNumber == null) {
-            $pageNumber = $this->getCurrentPageNumber();
-        }
-
-        $page = $this->getItemsByPage($pageNumber);
-        $itemCount = $this->getItemCount($page);
-
-        if ($itemCount == 0) {
-            /**
-             * @see Zend_Paginator_Exception
-             */
-            require_once 'Zend/Paginator/Exception.php';
-
-            throw new Zend_Paginator_Exception('Page ' . $pageNumber . ' does not exist');
-        }
-
-        if ($itemNumber > $itemCount) {
-            /**
-             * @see Zend_Paginator_Exception
-             */
-            require_once 'Zend/Paginator/Exception.php';
-
-            throw new Zend_Paginator_Exception('Page ' . $pageNumber . ' does not'
-                                             . ' contain item number ' . $itemNumber);
-        }
-
-        return $page[$itemNumber - 1];
-    }
-
-    /**
-     * Returns the number of items per page.
-     *
-     * @return integer
-     */
-    public function getItemCountPerPage()
-    {
-        return $this->_itemCountPerPage;
-    }
-
-    /**
-     * Sets the number of items per page.
-     *
-     * @param  integer $itemCountPerPage
-     * @return Zend_Paginator $this
-     */
-    public function setItemCountPerPage($itemCountPerPage)
-    {
-        $this->_itemCountPerPage = (integer) $itemCountPerPage;
-        if ($this->_itemCountPerPage == 0) {
-            $this->_itemCountPerPage = 1;
-        }
-        $this->_pageCount        = $this->_calculatePageCount();
-        if ($this->_cacheEnabled()) {
-            $this->clearPageItemCache();
-        }
-        $this->_currentItems     = null;
-        $this->_currentItemCount = null;
-
-        return $this;
-    }
-
-    /**
-     * Returns the number of items in a collection.
-     *
-     * @param  mixed $items Items
-     * @return integer
-     */
-    public function getItemCount($items)
-    {
-        $itemCount = 0;
-
-        if (is_array($items) or $items instanceof Countable) {
-            $itemCount = count($items);
-        } else { // $items is something like LimitIterator
-            $itemCount = iterator_count($items);
-        }
-
-        return $itemCount;
-    }
-
-    /**
-     * Returns the items for a given page.
-     *
-     * @return Traversable
-     */
-    public function getItemsByPage($pageNumber)
-    {
-        $pageNumber = $this->normalizePageNumber($pageNumber);
-
-        if ($this->_cacheEnabled()) {
-            $data = self::$_cache->load($this->_getCacheId($pageNumber));
-            if ($data !== false) {
-                return $data;
-            }
-        }
-
-        $offset = ($pageNumber - 1) * $this->_itemCountPerPage;
-
-        $items = $this->_adapter->getItems($offset, $this->_itemCountPerPage);
-
-        $filter = $this->getFilter();
-
-        if ($filter !== null) {
-            $items = $filter->filter($items);
-        }
-
-        if (!$items instanceof Traversable) {
-            $items = new ArrayIterator($items);
-        }
-
-        if ($this->_cacheEnabled()) {
-            self::$_cache->save($items, $this->_getCacheId($pageNumber));
-        }
-
-        return $items;
-    }
-
-    /**
-     * Returns a foreach-compatible iterator.
-     *
-     * @return Traversable
-     */
-    public function getIterator()
-    {
-        return $this->getCurrentItems();
-    }
-
-    /**
-     * Returns the page range (see property declaration above).
-     *
-     * @return integer
-     */
-    public function getPageRange()
-    {
-        return $this->_pageRange;
-    }
-
-    /**
-     * Sets the page range (see property declaration above).
-     *
-     * @param  integer $pageRange
-     * @return Zend_Paginator $this
-     */
-    public function setPageRange($pageRange)
-    {
-        $this->_pageRange = (integer) $pageRange;
-
-        return $this;
-    }
-
-    /**
-     * Returns the page collection.
-     *
-     * @param  string $scrollingStyle Scrolling style
-     * @return array
-     */
-    public function getPages($scrollingStyle = null)
-    {
-        if ($this->_pages === null) {
-            $this->_pages = $this->_createPages($scrollingStyle);
-        }
-
-        return $this->_pages;
-    }
-
-    /**
-     * Returns a subset of pages within a given range.
-     *
-     * @param  integer $lowerBound Lower bound of the range
-     * @param  integer $upperBound Upper bound of the range
-     * @return array
-     */
-    public function getPagesInRange($lowerBound, $upperBound)
-    {
-        $lowerBound = $this->normalizePageNumber($lowerBound);
-        $upperBound = $this->normalizePageNumber($upperBound);
-
-        $pages = array();
-
-        for ($pageNumber = $lowerBound; $pageNumber <= $upperBound; $pageNumber++) {
-            $pages[$pageNumber] = $pageNumber;
-        }
-
-        return $pages;
-    }
-
-    /**
-     * Returns the page item cache.
-     *
-     * @return array
-     */
-    public function getPageItemCache()
-    {
-        $data = array();
-        if ($this->_cacheEnabled()) {
-            foreach (self::$_cache->getIds() as $id) {
-                if (strpos($id, self::CACHE_TAG_PREFIX) !== false) {
-                    if (preg_match('|'.self::CACHE_TAG_PREFIX."(\d+)_.*|", $id, $page)) {
-                        $data[$page[1]] = self::$_cache->load($this->_getCacheId($page[1]));
-                    }
-                }
-            }
-        }
-        return $data;
-    }
-
-    /**
-     * Retrieves the view instance.  If none registered, attempts to pull f
-     * rom ViewRenderer.
-     *
-     * @return Zend_View_Interface|null
-     */
-    public function getView()
-    {
-        if ($this->_view === null) {
-            /**
-             * @see Zend_Controller_Action_HelperBroker
-             */
-            require_once 'Zend/Controller/Action/HelperBroker.php';
-
-            $viewRenderer = Zend_Controller_Action_HelperBroker::getStaticHelper('viewRenderer');
-            if ($viewRenderer->view === null) {
-                $viewRenderer->initView();
-            }
-            $this->_view = $viewRenderer->view;
-        }
-
-        return $this->_view;
-    }
-
-    /**
-     * Sets the view object.
-     *
-     * @param  Zend_View_Interface $view
-     * @return Zend_Paginator
-     */
-    public function setView(Zend_View_Interface $view = null)
-    {
-        $this->_view = $view;
-
-        return $this;
-    }
-
-    /**
-     * Brings the item number in range of the page.
-     *
-     * @param  integer $itemNumber
-     * @return integer
-     */
-    public function normalizeItemNumber($itemNumber)
-    {
-        if ($itemNumber < 1) {
-            $itemNumber = 1;
-        }
-
-        if ($itemNumber > $this->_itemCountPerPage) {
-            $itemNumber = $this->_itemCountPerPage;
-        }
-
-        return $itemNumber;
-    }
-
-    /**
-     * Brings the page number in range of the paginator.
-     *
-     * @param  integer $pageNumber
-     * @return integer
-     */
-    public function normalizePageNumber($pageNumber)
-    {
-        if ($pageNumber < 1) {
-            $pageNumber = 1;
-        }
-
-        $pageCount = $this->count();
-
-        if ($pageCount > 0 and $pageNumber > $pageCount) {
-            $pageNumber = $pageCount;
-        }
-
-        return $pageNumber;
-    }
-
-    /**
-     * Renders the paginator.
-     *
-     * @param  Zend_View_Interface $view
-     * @return string
-     */
-    public function render(Zend_View_Interface $view = null)
-    {
-        if (null !== $view) {
-            $this->setView($view);
-        }
-
-        $view = $this->getView();
-
-        return $view->paginationControl($this);
-    }
-
-    /**
-     * Returns the items of the current page as JSON.
-     *
-     * @return string
-     */
-    public function toJson()
-    {
-        $currentItems = $this->getCurrentItems();
-
-        if ($currentItems instanceof Zend_Db_Table_Rowset_Abstract) {
-            return Zend_Json::encode($currentItems->toArray());
-        } else {
-            return Zend_Json::encode($currentItems);
-        }
-    }
-
-    /**
-     * Tells if there is an active cache object
-     * and if the cache has not been desabled
-     *
-     * @return bool
-     */
-    protected function _cacheEnabled()
-    {
-        return ((self::$_cache !== null) && $this->_cacheEnabled);
-    }
-
-    /**
-     * Makes an Id for the cache
-     * Depends on the object and the page number
-     *
-     * @param int $page
-     * @return string
-     */
-    protected function _getCacheId($page = null)
-    {
-        if ($page === null) {
-            $page = $this->getCurrentPageNumber();
-        }
-        return self::CACHE_TAG_PREFIX . $page . '_' . spl_object_hash($this);
-    }
-
-    /**
-     * Calculates the page count.
-     *
-     * @return integer
-     */
-    protected function _calculatePageCount()
-    {
-        return (integer) ceil($this->_adapter->count() / $this->_itemCountPerPage);
-    }
-
-    /**
-     * Creates the page collection.
-     *
-     * @param  string $scrollingStyle Scrolling style
-     * @return stdClass
-     */
-    protected function _createPages($scrollingStyle = null)
-    {
-        $pageCount         = $this->count();
-        $currentPageNumber = $this->getCurrentPageNumber();
-
-        $pages = new stdClass();
-        $pages->pageCount        = $pageCount;
-        $pages->itemCountPerPage = $this->getItemCountPerPage();
-        $pages->first            = 1;
-        $pages->current          = $currentPageNumber;
-        $pages->last             = $pageCount;
-
-        // Previous and next
-        if ($currentPageNumber - 1 > 0) {
-            $pages->previous = $currentPageNumber - 1;
-        }
-
-        if ($currentPageNumber + 1 <= $pageCount) {
-            $pages->next = $currentPageNumber + 1;
-        }
-
-        // Pages in range
-        $scrollingStyle = $this->_loadScrollingStyle($scrollingStyle);
-        $pages->pagesInRange     = $scrollingStyle->getPages($this);
-        $pages->firstPageInRange = min($pages->pagesInRange);
-        $pages->lastPageInRange  = max($pages->pagesInRange);
-
-        // Item numbers
-        if ($this->getCurrentItems() !== null) {
-            $pages->currentItemCount = $this->getCurrentItemCount();
-            $pages->itemCountPerPage = $this->getItemCountPerPage();
-            $pages->totalItemCount   = $this->getTotalItemCount();
-            $pages->firstItemNumber  = (($currentPageNumber - 1) * $this->_itemCountPerPage) + 1;
-            $pages->lastItemNumber   = $pages->firstItemNumber + $pages->currentItemCount - 1;
-        }
-
-        return $pages;
-    }
-
-    /**
-     * Loads a scrolling style.
-     *
-     * @param string $scrollingStyle
-     * @return Zend_Paginator_ScrollingStyle_Interface
-     */
-    protected function _loadScrollingStyle($scrollingStyle = null)
-    {
-        if ($scrollingStyle === null) {
-            $scrollingStyle = self::$_defaultScrollingStyle;
-        }
-
-        switch (strtolower(gettype($scrollingStyle))) {
-            case 'object':
-                if (!$scrollingStyle instanceof Zend_Paginator_ScrollingStyle_Interface) {
-                    /**
-                     * @see Zend_View_Exception
-                     */
-                    require_once 'Zend/View/Exception.php';
-
-                    throw new Zend_View_Exception('Scrolling style must implement ' .
-                        'Zend_Paginator_ScrollingStyle_Interface');
-                }
-
-                return $scrollingStyle;
-
-            case 'string':
-                $className = self::getScrollingStyleLoader()->load($scrollingStyle);
-
-                return new $className();
-
-            case 'null':
-                // Fall through to default case
-
-            default:
-                /**
-                 * @see Zend_View_Exception
-                 */
-                require_once 'Zend/View/Exception.php';
-
-                throw new Zend_View_Exception('Scrolling style must be a class ' .
-                    'name or object implementing Zend_Paginator_ScrollingStyle_Interface');
-        }
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+adnzb/xCfHSY1ce=

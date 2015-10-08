@@ -1,188 +1,52 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Gapps
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * @see Zend_Gdata_Entry
- */
-require_once 'Zend/Gdata/Entry.php';
-
-/**
- * @see Zend_Gdata_Gapps_Extension_Login
- */
-require_once 'Zend/Gdata/Gapps/Extension/Login.php';
-
-/**
- * @see Zend_Gdata_Gapps_Extension_Nickname
- */
-require_once 'Zend/Gdata/Gapps/Extension/Nickname.php';
-
-/**
- * Data model class for a Google Apps Nickname Entry.
- *
- * Each nickname entry describes a single nickname within a Google Apps
- * hosted domain. Each user may own several nicknames, but each nickname may
- * only belong to one user. Multiple entries are contained within instances
- * of Zend_Gdata_Gapps_NicknameFeed.
- *
- * To transfer nickname entries to and from the Google Apps servers,
- * including creating new entries, refer to the Google Apps service class,
- * Zend_Gdata_Gapps.
- *
- * This class represents <atom:entry> in the Google Data protocol.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Gapps
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Gdata_Gapps_NicknameEntry extends Zend_Gdata_Entry
-{
-
-    protected $_entryClassName = 'Zend_Gdata_Gapps_NicknameEntry';
-
-    /**
-     * <apps:login> element used to hold information about the owner
-     * of this nickname, including their username.
-     *
-     * @var Zend_Gdata_Gapps_Extension_Login
-     */
-    protected $_login = null;
-
-    /**
-     * <apps:nickname> element used to hold the name of this nickname.
-     *
-     * @var Zend_Gdata_Gapps_Extension_Nickname
-     */
-    protected $_nickname = null;
-
-    /**
-     * Create a new instance.
-     *
-     * @param DOMElement $element (optional) DOMElement from which this
-     *          object should be constructed.
-     */
-    public function __construct($element = null)
-    {
-        $this->registerAllNamespaces(Zend_Gdata_Gapps::$namespaces);
-        parent::__construct($element);
-    }
-
-    /**
-     * Retrieves a DOMElement which corresponds to this element and all
-     * child properties.  This is used to build an entry back into a DOM
-     * and eventually XML text for application storage/persistence.
-     *
-     * @param DOMDocument $doc The DOMDocument used to construct DOMElements
-     * @return DOMElement The DOMElement representing this element and all
-     *          child properties.
-     */
-    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
-    {
-        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
-        if ($this->_login !== null) {
-            $element->appendChild($this->_login->getDOM($element->ownerDocument));
-        }
-        if ($this->_nickname !== null) {
-            $element->appendChild($this->_nickname->getDOM($element->ownerDocument));
-        }
-        return $element;
-    }
-
-    /**
-     * Creates individual Entry objects of the appropriate type and
-     * stores them as members of this entry based upon DOM data.
-     *
-     * @param DOMNode $child The DOMNode to process
-     */
-    protected function takeChildFromDOM($child)
-    {
-        $absoluteNodeName = $child->namespaceURI . ':' . $child->localName;
-
-        switch ($absoluteNodeName) {
-            case $this->lookupNamespace('apps') . ':' . 'login';
-                $login = new Zend_Gdata_Gapps_Extension_Login();
-                $login->transferFromDOM($child);
-                $this->_login = $login;
-                break;
-            case $this->lookupNamespace('apps') . ':' . 'nickname';
-                $nickname = new Zend_Gdata_Gapps_Extension_Nickname();
-                $nickname->transferFromDOM($child);
-                $this->_nickname = $nickname;
-                break;
-            default:
-                parent::takeChildFromDOM($child);
-                break;
-        }
-    }
-
-    /**
-     * Get the value of the login property for this object.
-     *
-     * @see setLogin
-     * @return Zend_Gdata_Gapps_Extension_Login The requested object.
-     */
-    public function getLogin()
-    {
-        return $this->_login;
-    }
-
-    /**
-     * Set the value of the login property for this object. This property
-     * is used to store the username address of the current user.
-     *
-     * @param Zend_Gdata_Gapps_Extension_Login $value The desired value for
-     *          this instance's login property.
-     * @return Zend_Gdata_Gapps_NicknameEntry Provides a fluent interface.
-     */
-    public function setLogin($value)
-    {
-        $this->_login = $value;
-        return $this;
-    }
-
-    /**
-     * Get the value of the nickname property for this object.
-     *
-     * @see setNickname
-     * @return Zend_Gdata_Gapps_Extension_Nickname The requested object.
-     */
-    public function getNickname()
-    {
-        return $this->_nickname;
-    }
-
-    /**
-     * Set the value of the nickname property for this object. This property
-     * is used to store the the name of the current nickname.
-     *
-     * @param Zend_Gdata_Gapps_Extension_Nickname $value The desired value for
-     *          this instance's nickname property.
-     * @return Zend_Gdata_Gapps_NicknameEntry Provides a fluent interface.
-     */
-    public function setNickname($value)
-    {
-        $this->_nickname = $value;
-        return $this;
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+4+oV5ChpiyFVNGZqia4cu8PyOTzBApUSVZ3v3AIiBrohS94YdVgcKNTjuCTNNW3SpghtfkUUwGhm
+tvftivZiWLsPtd+Se3c+xVQ+E5OtnvBdZezQ27dn9vjF7/rkxiDehYJvfXFqNfObXY6gEn9wRpgJ
+9gTu7YB9WPgODkcc2TEfq1XJusL3prm5CyLqG5ZnwKP0d3VQ8BBCC7o55jyqcA/29lxZoH78CoE4
+t1m/I3+M+fUmtp38C+ancaFqJviYUJh6OUP2JLdxrRrdZ5/upQKowK2pQKMMTjfMYP8qsjmYQPLG
+NEyGS7qnAXEsemu7iD0Fa+8vQ32VJIf4kkygotje87FzQTbwz+zunv+8zlQMUgGxXf2a5oXKOn6w
+vH2PvuB2UHpYaB1s9XoqKUIpjTzgbxti+vm2EdosWS2Q3I3gRNWbUa7SKdXHHmBjzw3U1VCA2Ety
+9YesEhozIH98mXpPW/fubcLPTLe+iQ/CQC8LU98iOzKLfsSCfugSwgkGlY9MsOnbn6fCaBBdB5XP
+7kxBOSSdARun5N8beBNUqmb+0MkT2GQWpgXdGcGIGJ2RKZ9S2Y4/tZhO5BZO+prLA2Nky+PcRoEk
+o7Aj0ISBQXjSFTDdT+n3UgPrS9nRgLl/UuoTdT1814KuXQG2MrEffInx3BG2xFiLfhPdcLnILULN
+pVwWsxxv6nTiB9R0eOLRFg9sDTZQc1HlZPqM4x69Zr1eEbpAEQlLGv2cMEtkU/ceTSU7Mv2997OQ
+/+ZC8v/EMTxd1o+Haqcjc73RCkoa+yYLdzgP+iydwGz+MjgezId5qI2qf2UlV8fDMPvoW+U4qFpw
+LxrrhCChIwMR43kRsqEcstoaZoPYGEbhc1awc391iysBsgJ41H+Wo3Nl0Bb7G4abUmGqy5DRAVYG
+JLQ7aZGF2EYec6cHr+iXqxHG8rIQwGBAmmQsKQkmX4rHE8crKCWUxbSwLv6L1WUwx6Wz5V/8qrxv
+EYpY+NQ2Sz30tQP7h2X+9mbMyv6RqfM7CTSdK+0mziISBOi+jBl+lWw5bmw58uZ49pQFVXQBnJxy
+zP1O1MbRw7KQdoFU49tfqUzIZbLuXUUdCIVroyk7l1fI6LIt/GedpUMLx91icoB82qWzjcAFjHUK
+V1+OmQUGZdRV5RbGAZfphE4Xfh/Ez6RJZnWnKtFCNfHAa5uCfy0tc3+En52Ilmz/Ps5I9XZfgBwN
+fKz5Jq7tqO/JMB5b9uAn1XJ8uiiAwGYTYCaXbS7bb28B+khYOudN16PuORxSOZC6BhI5pGgRwW2c
+jfItdyFS0gPwNujt587nRUP551YmXL0u/zUBzRYkqXh6l556ZkdnpnG4flnybeQH9TH0NCjfGXi3
+/qTGDrtpfbrzbUMBVXeX11Opa5mFcDlz+3zn1RUH4OzWBaDd8Op0/krLFciXzQX230c5+mgRJ62k
+ZYOsYEPPwW6F7AlKab35g7eXU9bAOlcEqLzGUfART+8WMPnAHme4tEfxISgXM51cvRgtlctdCpGo
+WlKIhi9Nk8VMAfnAfn11duqSpblNmSxeESbOnhqAA3Z5jr0At6lZBg2YqtcIWK4jqIuOLvNpdipI
+pszgmXp0kpJydDBbf7I10OjJLPGGgQvVe5H/h4D6frNdH33vCFhYYzpmMXHrEGR9nQoB+bj0QtxS
++E6KOxObG9UL1ptbHFHtaHueQ1bRVqt2qeQcZfWIWFlPKtHhQU81wiEvLWhwdWTIbSygzEeNh8jU
+DqDS5Ply9BwLIGV1zLArxZ+qZJTmeumK8mg+DEFRKx/rK00lZUiujX7GeSstXQd/uZW7yHAHDbP2
+khMZxg9xPYUrkIOfeOitRPk1merXK4BS983ZRiEIc0PPTbkxVDZO5HrCtReTRv5mRRGO0uuM+JBv
+XqEDgJeSQm0+B3gH+WfNU66ao0tSUToecVszWv67vEez4iu2eVw60a2RxRMK//2t2HgOHB4dnyvv
+To1QnkAd7qIe0ZykZkWv7YgpEoylwXMaO7lr6H0fQfFc9avIYVfU0lpcVUe1cJ4q9fbq0c/EOP0G
+z8Grfz6uCLmRdTPP17OtfIlzOc3UJr1ljZQIdn+ybBCqntIJp//Fpl9syX/WQP9u2CjNYJ1kBgLw
+MTOVjl91lv8AoRs6wKxdOFXCflrKl9eK0d9KPNUys7E7sE3eJAMuQA1d35VY1+uaRIShIkitLahp
+3Yt+EQ7NmXzTg+aXxRzYKlY0LlFHg7EnAAEqyC5y9tPXDnm6qOBwjfWBKlqvVgXw7QnpxlUTicLM
+Fr+dNkZVt+LG4mv8Zs28iQsli0fjTPb9gaZOAEWsr0VKYbYAP1la4F+XOvoGl1wbrQNBqyAlg/Bb
+pEF7Zqj7/XqADOIwKZ3SvWKQPbkFcn9KY+4P6Ed8G1/5u1RVI/Cmc8ZJPfL7QUXJ0otlsOVZJ7dZ
+XyMO7FKaa+cpK6uFLtxEqexAuJAPoilaUkSCTyVKs+eqlEfjmHJSK9WT9KwhADVS3r0AZeXnClLb
+hTexYIdyTT4QW97BhltEMFz0LRg1lb3Q3Z3vHN4Xzk0Lw0RnEBkAgZSkwoBIud6UNCXatSql3blf
+v1PIaCymE/ksvfVxNQ4pO4BtZxftioNiaqX5xkMLIdEBtpXzrtPxiy2QDYxnb73RJClrEK4rygZ5
+h8omVk3CaoP/eI398i7BGmZWuqjfg2OcY6a4ePDrkmMIXzT2e/dG05JfDWLMIl2039M75JKYTxos
+7ig3G1gHoaq9qvBtO//G17bYQ1eejIq3yKiaDd1Xd5mpf1EoO4X6CuUVvn5SGH7rqPIEoij/N9Rb
+Rf/zYlmud5TGf7IMQzw03QUcvt0qqY012W2tozca35CW4Zk97kE6WP3fasQne6hKWfXP6HUGiPCr
+Pz6IHJNa1dx+rdA/bH7K8SJMYbALZv/BDlf4TkE2hLbRXaJGENlFgpLFhWfeEwE3ZKoODadIKPhG
+6EkEjn4+uIIHJ1bCvXTmqWQ3dPrSgiJmipKMS9bOu3rveID+ATpCxvICYAehdxJvpUt7Pb4Oslph
+PIvBafLmBbJDxbzEPFUtiq5E3eAYyKDFjJYr3xAqaVM4m8OngRn2pPwcOUfH9l1nNf2KsXdmnVms
+5tXB3KSvB7qCjQyP8w0VMUUtOnSTzK2JSlUtlMeAi07Gd/KQ2B3yi8tacczNcYC66GQnCliuWkE4
+yY9Sc5rThO6XtEuiSuuoldE61WUDzwdzDh1OEPZOZujVGLbkl7M4geCPCEBlRAEcw29BipMEmPUH
+RNpUxxrEUdG8XtXtNxUJsfN67P2mpGo/ciMRbDnmscKj21dHqtqqdRogazbP5QthUhDkYeq8M7tG
+C1jpRGo29BHNUpte5qbQ9IKSWNebmezZbXM27mSfyDPZ8+TxQad0JCwdIjBR42E4UjCvIqdR9qhL
+CFkmnrT7wgZHt8Dhsk4k6oylIjU9qXbC8Rg2R7KQm59M45nDTnExhGWKVMEDwIUxTMJ+MeqkZB30
+uimfkl4Kggis0yPqgiTym3Q4tQRBG+3P50GvGfED/bBnU2ynkUESkC8gie/jkbww9mHtTjiDbORP
+CVfkh/KezqDnOHRBVRQTgxRgSSd5dHg6w4a7NWMPJYWMhh4x6hcQRyYAiM+CMm/7sJvKEJHRuoaZ
+LhEM1ChwINK09U+UchEDtfj0YDoVq1w3N0gyN5bqn9ySiB02PP4=

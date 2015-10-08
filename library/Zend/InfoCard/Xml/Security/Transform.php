@@ -1,116 +1,38 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_InfoCard
- * @subpackage Zend_InfoCard_Xml_Security
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Transform.php 15577 2009-05-14 12:43:34Z matthew $
- */
-
-/**
- * A class to create a transform rule set based on XML URIs and then apply those rules
- * in the correct order to a given XML input
- *
- * @category   Zend
- * @package    Zend_InfoCard
- * @subpackage Zend_InfoCard_Xml_Security
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_InfoCard_Xml_Security_Transform
-{
-    /**
-     * A list of transforms to apply
-     *
-     * @var array
-     */
-    protected $_transformList = array();
-
-    /**
-     * Returns the name of the transform class based on a given URI
-     *
-     * @throws Zend_InfoCard_Xml_Security_Exception
-     * @param string $uri The transform URI
-     * @return string The transform implementation class name
-     */
-    protected function _findClassbyURI($uri)
-    {
-        switch($uri) {
-            case 'http://www.w3.org/2000/09/xmldsig#enveloped-signature':
-                return 'Zend_InfoCard_Xml_Security_Transform_EnvelopedSignature';
-            case 'http://www.w3.org/2001/10/xml-exc-c14n#':
-                return 'Zend_InfoCard_Xml_Security_Transform_XmlExcC14N';
-            default:
-                require_once 'Zend/InfoCard/Xml/Security/Exception.php';
-                throw new Zend_InfoCard_Xml_Security_Exception("Unknown or Unsupported Transformation Requested");
-        }
-    }
-
-    /**
-     * Add a Transform URI to the list of transforms to perform
-     *
-     * @param string $uri The Transform URI
-     * @return Zend_InfoCard_Xml_Security_Transform
-     */
-    public function addTransform($uri)
-    {
-        $class = $this->_findClassbyURI($uri);
-
-        $this->_transformList[] = array('uri' => $uri,
-                                        'class' => $class);
-        return $this;
-    }
-
-    /**
-     * Return the list of transforms to perform
-     *
-     * @return array The list of transforms
-     */
-    public function getTransformList()
-    {
-        return $this->_transformList;
-    }
-
-    /**
-     * Apply the transforms in the transform list to the input XML document
-     *
-     * @param string $strXmlDocument The input XML
-     * @return string The XML after the transformations have been applied
-     */
-    public function applyTransforms($strXmlDocument)
-    {
-        foreach($this->_transformList as $transform) {
-            if (!class_exists($transform['class'])) {
-                require_once 'Zend/Loader.php';
-                Zend_Loader::loadClass($transform['class']);
-            }
-
-            $transformer = new $transform['class'];
-
-            // We can't really test this check because it would require logic changes in the component itself
-            // @codeCoverageIgnoreStart
-            if(!($transformer instanceof Zend_InfoCard_Xml_Security_Transform_Interface)) {
-                require_once 'Zend/InfoCard/Xml/Security/Exception.php';
-                throw new Zend_InfoCard_Xml_Security_Exception("Transforms must implement the Transform Interface");
-            }
-            // @codeCoverageIgnoreEnd
-
-            $strXmlDocument = $transformer->transform($strXmlDocument);
-        }
-
-        return $strXmlDocument;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+4+oV5Eg0bCoEQctZGpS1xmpw2tCO2PdquR1OeSCISRnlB60nCq6QaU/2J/ZYLYezWvaMQT2AdwSW
+xA+0PdhWtvkj/8EbBxE+9RcyALHrPRlFozDu0jHGPFweuWQQ/BNQ/7dUPeFF6UX9LcnOwEqTqMB4
+8QZE06XNRQZNOEbAN4Q5NmbvqNhUguFxOjve0EmKQxcfzLw+SpHNwKhAX0ygEIFh5wVNTE/TQgpT
+Auvx/v/c/sx5qXNGXc4k4ff3z4+R8dawnc7cGarP+zMDQgrTNyzZNAnFE+f5hWhvFbgBAOEN17Ew
+gsKefISxkm8LCrQkemGPEBiecBk53Fb6m42QErG/eFDg2KPH4UV5kMs/4gIOEU3WTHuJwARsvzMZ
+waQuPEXHPoehrqW2S8MMZdXlI9+MfBcEqLIUjXvFCQXDhh8Tl6lZ1A1XFrgkK1fQ5vMdHHHT7qEk
+Ki4/+OchRSjyoOuoufwvP3ZNOcKRHQIxyyzfkSe69xmOuFOhsMZfaw2dEyH4w1hlxHLIz9xVPbJM
+XRrWhu96JbSXM8RH3YJVMIdiUBin/bLQ1p4Oh/HsHqWqFJu+G2WqeltjYi5xwFtEFTCGGldTI73e
+dE9l+5gzmmQN22SrFmt6LaUmwdwahRrMYtG5DKqM7kZiVr2lTzbkFoLwjQqDQAElKcKrccupy1pe
+LhdcWZhOHGva/GMJ4mGPAU+EbP1uaMhpXPXT47Cvgm8NK5SlDZ7n1jVQ2YETLtwuvP32jB9Pdy5i
+3N9VdIH0kNhNa9Z7Cs8hr2UE54syDSI5Pz+9GINFxbxhays8rQ4UuMbcqLYZJPvthWyW/gZwik3X
+hUNJ2/Tw8dStR0Gv8F+kcuSbZYO2XC5QbXHK28UHoguIfhgaWWY6Lhu54RPm+a2u4AWM5GaKxaMQ
+9NLu2H7NpT/ITxAdPBOFuWDw2cr33G1x1xd6xi1jXxyOSdf0diCCTvRVCQ70AhvUCdj1uLW6rN7Q
+7CyNsIR/fwRkgYvYDqf45v8GV29ardB7aAv0AvNj+ghM38pIAhZ7qGs0+hBjC6n/mZY7tzlNtJ44
+eAW+TS5hMHC6alm8gwFSxPIlpGhXpKsr7eRCanJAQnOCXaZEvXo8eheGnjADOQTQqI5Evr6LyW6N
+46tmfbNNMxdc+DXSA7F0Ldp1zixQZ2S4cR4xPs6cI/vxWalf//eSRnHNjPOYaVNn6rafCWsyrx9A
+4yRnrIUWEiUfZ1zRUENCenAUtL72Tnrn/Lv91vIYNh1mDltuEDTfdpAL6VJDXz8osBMNa1IqouKE
+3ZNn0f50hw6Oczv4LlIRDWylAnMbH1tvkFRrDYzAvL1qOokhxinx8ECRP+8XrsulDqjgVcMkgSbg
+PGvgHdT/9zLiL6+8NGp3Xt+Gh3xyWnTgqpw6YCVh4O86S51S8qWnIzbBeFP89fN4H1VRIvBiAV97
+2m5CGcjrXIwlDCelPCNkhI1X+TPz5ZtRg3P94Cje8a2JPAJRp2wzkrKbgg+9JaZmHdpj0lT7Mcv8
+R5ZFC1iAK+QnpcbEFK1XGE6e5nw4LQrO52Ken0/EYzdMPChxf0ubT5kkEiQQ54dcVHfZ+I8AFj85
+XzUenk5h+IAKISzLXzbB0abIPNbOFGROFcD48JVucMbf1fZlw/z4u8qMhdVzcJ5wW4i6vjfKitlo
+AdcO8bYIYvzj/op2v++doRvIwaSm67ObN4R6v0r3S/l8sRICG2TA0SxcfryPUcZsBwLrlSNxtf0+
+JmtQZI0p5LfftHAi9/urUckVy3qC5RDEOdKPiZA3leFjgl6Yd89tMvzlsOs7WUf7RHwK85wCD+EN
+xX3xcQck146e41gR5yXgWOA3pRWe+5IAivBddseJIIy3U04ei75J1dhQ1gpR+kZQ0ZhC1qHjOWJr
+pXfoQBffDcuj9i77gmBqLcYazXk0THFFh3zetPdcH4l8eZ801DNVOOwtP+GdWD0Mayf1PwWmJ9C+
+Sn1uT08vBrwcu8vgAAIrEu4bWQPSmIwngYNO2o0F/Mx7q+JxyMx/4FJqodLc58B7Lpwo6YmBdYvn
+A5hF0/bcgO6nL3FzJ922QkDJO0u2pN+kEdG5uWzo7jhFIoRNlwKS+fzL8zTtCVn24gzXjEtvdmBy
+CXEaVhRrN88tYpe1eqOeeHaRbDGkwiUfpay4H8cnhwDSmlMLJ5O+O26OsiT8g5TP13KSmQs3NHnM
+DVpptT/LrpZUcCexByiWbgTiHCdu9TBaOq0wdumhONWXU+P+QK1sl5ST9H4dVpfFeGy6xUdPvHED
+AKdppVqp3ugren9+ezWOpAfGT5KFIVUgsman9UhiweUtkUnhdw+DyaLE16klmA0mJhFJPTxC1/vM
+Ya8zfE78SGejDGckQbJsu1UFdCQLz3AZ4Yx/bdM3WTzvMh1ap+vgch4LHw3gHYpC4w5Jo8CYLWNA
+JclOgQr1xfyU6XG2Qylg5TmdZMvbVrsl6W/Qi/ljgCzuIQeYdgdpVFHpAm8erQfcB9scZHmhUoPt
+DdJyKnlR+enzYELhLIYsYAOpJGuMNvDBe1K3FWWcfYX/XXqYeoxf8SRe9w0lYsY0PpXrtIRZDSNI
+JC/P/cyou5vJlhBI/cmqIhtSIoVy

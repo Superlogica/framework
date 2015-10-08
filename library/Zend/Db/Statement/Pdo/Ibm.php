@@ -1,94 +1,39 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Db
- * @subpackage Statement
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Mysqli.php 4874 2007-05-19 01:26:32Z bkarwin $
- */
-
-/**
- * @see Zend_Db_Statement_Pdo
- */
-require_once 'Zend/Db/Statement/Pdo.php';
-
-/**
- * Proxy class to wrap a PDOStatement object for IBM Databases.
- * Matches the interface of PDOStatement.  All methods simply proxy to the
- * matching method in PDOStatement.  PDOExceptions thrown by PDOStatement
- * are re-thrown as Zend_Db_Statement_Exception.
- *
- * @category   Zend
- * @package    Zend_Db
- * @subpackage Statement
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Db_Statement_Pdo_Ibm extends Zend_Db_Statement_Pdo
-{
-    /**
-    * Returns an array containing all of the result set rows.
-    *
-    * Behaves like parent, but if limit()
-    * is used, the final result removes the extra column
-    * 'zend_db_rownum'
-    *
-    * @param int $style OPTIONAL Fetch mode.
-    * @param int $col   OPTIONAL Column number, if fetch mode is by column.
-    * @return array Collection of rows, each in a format by the fetch mode.
-    * @throws Zend_Db_Statement_Exception
-    */
-    public function fetchAll($style = null, $col = null)
-    {
-        $data = parent::fetchAll($style, $col);
-        $results = array();
-        $remove = $this->_adapter->foldCase('ZEND_DB_ROWNUM');
-
-        foreach ($data as $row) {
-            if (is_array($row) && array_key_exists($remove, $row)) {
-                unset($row[$remove]);
-            }
-            $results[] = $row;
-        }
-        return $results;
-    }
-
-    /**
-     * Binds a parameter to the specified variable name.
-     *
-     * @param mixed $parameter Name the parameter, either integer or string.
-     * @param mixed $variable  Reference to PHP variable containing the value.
-     * @param mixed $type      OPTIONAL Datatype of SQL parameter.
-     * @param mixed $length    OPTIONAL Length of SQL parameter.
-     * @param mixed $options   OPTIONAL Other options.
-     * @return bool
-     * @throws Zend_Db_Statement_Exception
-     */
-    public function _bindParam($parameter, &$variable, $type = null, $length = null, $options = null)
-    {
-        try {
-            if (($type === null) && ($length === null) && ($options === null)) {
-                return $this->_stmt->bindParam($parameter, $variable);
-            } else {
-                return $this->_stmt->bindParam($parameter, $variable, $type, $length, $options);
-            }
-        } catch (PDOException $e) {
-            require_once 'Zend/Db/Statement/Exception.php';
-            throw new Zend_Db_Statement_Exception($e->getMessage());
-        }
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+4+oV542ShvksPXJSMoiwkE214LTKIZZbXKiqOegiHYlPYLQuGy8XEeUQehf96n1zjdGf9QDgZSN6
+/35vQqp7yJqrPl08U6B7J0lTlNst9wcCp3V1uVZv014+Yb7MVmXM5MXv13rpjjcpkalrm4+YK7ty
+fkmD9zC3NmsSOuWm4YVpI6pxiYG2g7ZcaAHRcPfE0QE/ymvSpVbE6E1LfXdBur/Rx24dXEgAegNB
+qRuGU0wxEO4U49d03yGucaFqJviYUJh6OUP2JLdxrH1WiAlMK2YzMM2a67LFdw5eFlpcmX061udn
+xQc0OpASTHibQZ1n6yJzfoWRAbAvW0G+ANuzitBmHBWKMAUztjtB9C55waXpbFQkYcu8xNqIYAf+
+MmTgK3Qs27T4GJkhwbYFM1oTqh5gCbgx/J5YUBns5acWY1YTicu6h4L3tD8taPNo7s6oXLZEIRcV
+8C9SLVO23jY/DDq7Ir+KjSugAXwAeASMjo92JUicVKJuXW6UlpLas5ROO2k/AhKc1gj+BP7K8Zjr
+gwmef1QS0QInECDCp9X+Ri9xfi2f3SoQSVDixBm0hcnmSxc0x6JkHCmLiKGd88o1Ahyun7F6iLcx
+Xur84gdyrGhDJVVDh8O5Zby1uM9UHIXpPrN/VSTwzMuXG3sdNktau4MBYz8MlZAi4Jv/A5H+AvmL
+oA6LE2+mOCEfHos/faeLD61tR3tJW3lGJyNXxXHswdZ7WIA8nFIbTaXGws9YTlwe7cGHmtWwQ4x9
+D1n+IoxbTMYyYIk2dQgjUrtjyAj4qPZFJupsVueT6SBS+A5rGVy7QN4FIPXBRKVhzVXOYQtZrhwb
+POjv+XfILHPE20Es7gLukub37L69HMzU+CC1IgxaxWSb5SAXN++ysHwQ1EC7ywmMcVJHOPDjbWWO
+cZAxZB3k1nQGC11tdsKZML1dNRIEiNI0rMPg4/F31g41QjWXg6z7OlKmVIiP5OHM2bOi2qkQNF+6
+WywXUQaupkTGzllhBZH3/fmuqyrr5BVFfGEDjUviqGac4s/a5htY6YURsQDZVtDYSs+xFrdlvlWQ
+WhwnkrTSeY1JNlthOaKFkBq7nnQO8h+xzCtu/hfgnJHaRQ3YmjX2QNWaA1+q/10HqX/kajYHvPC+
+L2jlOZwjownkCo2OgOsBShnPehx+n8yx5/zZw81W7X6i9DwhGKSvOU2uNVPPN3MAYqxoif56Xxd8
+j7zswxiCVTqPuKZOnzUC21AHcVOA7EUlem9p+uz+DipjFHCoSiuimJBSnQWm60Pdd9WptFFqf7f0
+EhhCcyclMCMTPmnEgDuoA6v5jx7DauosifeH8+ak+QuJVlOtWyuuY72VKCAvGt+oCNo27/I45sIK
+iMBi3kVHaLnZfK/aaIFcAQmLnur8R4aM5uaXoqyeFT2yKbZwTkKgHuqzrchbCE+SIYonKhCDi8bV
+pjD2OvQvM8sa47AcK4JChPa2GVeF5zFZTYwut2C7dvwXYqJO2neQMGV2oVHXIGR8AZYnPZ6GU2uv
+OQiT7j9vur9dgpyAfGuKqoMdCr/9TraLMF79K4pbvpEGY5hyaySIIWuJWc/+rcqFRiVs77zUsO4L
+aYDDY8C/ApLY6hdg3gclEF8e5FdJBE1pNktBMOF3KpBZ6u+zIirnMzxVgEL0qfa7o70tgQ+WH7o0
+tqBpxqCtwl/Zv5aNnUUpQ08SBTk5lo7j4zYx6MRilQwdtycOrh8GePOF3f7qXKqojrQtTfEBumzR
+9ZLI8uFINOKg8vahf5iURajGe86+KW7ysBpvrM3atvzTq29DMOvDUSLtHW5wC2WRsMEsISKQ+wei
+l+h1K9GqQJDs3M6jmb9XCn19xtaNxT0nlUQ+7+ZNRGNfs1dQLet2qtGPZJJr5WEIIOVecAk8Fcp/
+ygkXzW4UIPCeRL6iwmPLZ7hMxCx9UYv2ESDEdRTLGT988kPQxzSUJaD/eNEzgqXe1ozvmWV2fn94
+iZ3jJcfqy+GnaYaBz39Lwk8kX/QeO/bKi+47/U1MVz+rnR1e2WBWOYi2bRENPqBidsatN/7G2mRo
++Bn92cTbWAnc/FbA19viqies2QT0ZblwafgTWWbkGYsFm28aSTKzvgDhioxeXsZiMtkLY7xV4bZn
+9X77EbQSD3LbQJTiLMPc11g/agd9KcYqQkfwX8p9axBy3Xgalwv/vOw9LP1nlIu0SiGsUBnalQbN
+VCl07wMxG960NRMVVjOUO3WvhWpLZR/+pslm5s4IfXvEtJezUij+lmZGXW3Ljh+9fJ183hE6JElq
+g/674ImrkLOrFmzR7tt+G9A0+c1Gw24pWJGQKMeIyTGEvyhLpi/1p9wYsa7a06jyhFOwm2J99Il7
+gYgh21msQBQZykEn/yIUuL8oziyCkkJqJDUv9LSC9Mb3wkGLozg0h3PyGfuZazqvjAISQhUo5L8k
+gGTO+oVlcF57QzFl+p8U/GRcTIpfzZIBDHM95oR4zjSOLYMhj9bE57Fn2CcX8sY9KuCAjAfWvGj7
+di/1xJ3o8jkEwhz4xmiw+tImO8UQMqS3btGZZKaOp9QxWWWliE2iohmlurJ4b9nRO3Y/QZcpJ8jT
+m73JuU3YBNwgNYwh7JYn0M09lde2cx7/Jx5ElEWmFdWgROGfsarMvKhSUzEbZmxI+gR2pwkG9iaJ
+NS1QohVUglLLK5QP7xSKuHilxdyOZbcDMUDid9Roxq5QYG+7iBCTXSDg

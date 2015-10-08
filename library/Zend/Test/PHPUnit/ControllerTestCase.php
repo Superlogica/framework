@@ -1,1108 +1,292 @@
-<?php
-
-/** PHPUnit_Framework_TestCase */
-require_once 'PHPUnit/Framework/TestCase.php';
-
-/** PHPUnit_Runner_Version */
-require_once 'PHPUnit/Runner/Version.php';
-
-/** Zend_Controller_Front */
-require_once 'Zend/Controller/Front.php';
-
-/** Zend_Controller_Action_HelperBroker */
-require_once 'Zend/Controller/Action/HelperBroker.php';
-
-/** Zend_Layout */
-require_once 'Zend/Layout.php';
-
-/** Zend_Session */
-require_once 'Zend/Session.php';
-
-/** Zend_Registry */
-require_once 'Zend/Registry.php';
-
-/**
- * Functional testing scaffold for MVC applications
- * 
- * @uses       PHPUnit_Framework_TestCase
- * @package    Zend_Test
- * @subpackage PHPUnit
- * @copyright  Copyright (C) 2008 - Present, Zend Technologies, Inc.
- * @license    New BSD {@link http://framework.zend.com/license/new-bsd}
- */
-abstract class Zend_Test_PHPUnit_ControllerTestCase extends PHPUnit_Framework_TestCase
-{
-    /**
-     * @var mixed Bootstrap file path or callback
-     */
-    public $bootstrap;
-
-    /**
-     * @var Zend_Controller_Front
-     */
-    protected $_frontController;
-
-    /**
-     * @var Zend_Dom_Query
-     */
-    protected $_query;
-
-    /**
-     * @var Zend_Controller_Request_Abstract
-     */
-    protected $_request;
-    
-    /**
-     * @var Zend_Controller_Response_Abstract
-     */
-    protected $_response;
-
-    /**
-     * Overloading: prevent overloading to special properties
-     * 
-     * @param  string $name 
-     * @param  mixed $value 
-     * @return void
-     */
-    public function __set($name, $value)
-    {
-        if (in_array($name, array('request', 'response', 'frontController'))) {
-            require_once 'Zend/Exception.php';
-            throw new Zend_Exception(sprintf('Setting %s object manually is not allowed', $name));
-        }
-        $this->$name = $value;
-    }
-
-    /**
-     * Overloading for common properties
-     *
-     * Provides overloading for request, response, and frontController objects.
-     * 
-     * @param mixed $name 
-     * @return void
-     */
-    public function __get($name)
-    {
-        switch ($name) {
-            case 'request':
-                return $this->getRequest();
-            case 'response':
-                return $this->getResponse();
-            case 'frontController':
-                return $this->getFrontController();
-        }
-
-        return null;
-    }
-
-    /**
-     * Set up MVC app
-     *
-     * Calls {@link bootstrap()} by default
-     * 
-     * @return void
-     */
-    protected function setUp()
-    {
-        $this->bootstrap();
-    }
-
-    /**
-     * Bootstrap the front controller
-     *
-     * Resets the front controller, and then bootstraps it.
-     *
-     * If {@link $bootstrap} is a callback, executes it; if it is a file, it include's 
-     * it. When done, sets the test case request and response objects into the 
-     * front controller.
-     * 
-     * @return void
-     */
-    final public function bootstrap()
-    {
-        $this->reset();
-        if (null !== $this->bootstrap) {
-            if (is_callable($this->bootstrap)) {
-                call_user_func($this->bootstrap);
-            } elseif (is_string($this->bootstrap)) {
-                require_once 'Zend/Loader.php';
-                if (Zend_Loader::isReadable($this->bootstrap)) {
-                    include $this->bootstrap;
-                }
-            }
-        }
-        $this->frontController
-             ->setRequest($this->getRequest())
-             ->setResponse($this->getResponse());
-    }
-
-    /**
-     * Dispatch the MVC
-     *
-     * If a URL is provided, sets it as the request URI in the request object. 
-     * Then sets test case request and response objects in front controller, 
-     * disables throwing exceptions, and disables returning the response.
-     * Finally, dispatches the front controller.
-     * 
-     * @param  string|null $url 
-     * @return void
-     */
-    public function dispatch($url = null)
-    {
-        // redirector should not exit
-        $redirector = Zend_Controller_Action_HelperBroker::getStaticHelper('redirector');
-        $redirector->setExit(false);
-
-        // json helper should not exit
-        $json = Zend_Controller_Action_HelperBroker::getStaticHelper('json');
-        $json->suppressExit = true;
-
-        $request    = $this->getRequest();
-        if (null !== $url) {
-            $request->setRequestUri($url);
-        }
-        $request->setPathInfo(null);
-        $controller = $this->getFrontController();
-        $this->frontController
-             ->setRequest($request)
-             ->setResponse($this->getResponse())
-             ->throwExceptions(false)
-             ->returnResponse(false);
-        $this->frontController->dispatch();
-    }
-
-    /**
-     * Reset MVC state
-     * 
-     * Creates new request/response objects, resets the front controller 
-     * instance, and resets the action helper broker.
-     *
-     * @todo   Need to update Zend_Layout to add a resetInstance() method
-     * @return void
-     */
-    public function reset()
-    {
-        $_SESSION = array();
-        $_GET     = array();
-        $_POST    = array();
-        $_COOKIE  = array();
-        $this->resetRequest();
-        $this->resetResponse();
-        Zend_Layout::resetMvcInstance();
-        Zend_Controller_Action_HelperBroker::resetHelpers();
-        $this->frontController->resetInstance();
-        Zend_Session::$_unitTestEnabled = true;
-    }
-
-    /**
-     * Rest all view placeholders
-     * 
-     * @return void
-     */
-    protected function _resetPlaceholders()
-    {
-        $registry = Zend_Registry::getInstance();
-        $remove   = array();
-        foreach ($registry as $key => $value) {
-            if (strstr($key, '_View_')) {
-                $remove[] = $key;
-            }
-        }
-
-        foreach ($remove as $key) {
-            unset($registry[$key]);
-        }
-    }
-
-    /**
-     * Reset the request object
-     *
-     * Useful for test cases that need to test multiple trips to the server.
-     * 
-     * @return Zend_Test_PHPUnit_ControllerTestCase
-     */
-    public function resetRequest()
-    {
-        $this->_request = null;
-        return $this;
-    }
-
-    /**
-     * Reset the response object
-     *
-     * Useful for test cases that need to test multiple trips to the server.
-     * 
-     * @return Zend_Test_PHPUnit_ControllerTestCase
-     */
-    public function resetResponse()
-    {
-        $this->_response = null;
-        $this->_resetPlaceholders();
-        return $this;
-    }
-
-    /**
-     * Assert against DOM selection
-     * 
-     * @param  string $path CSS selector path
-     * @param  string $message
-     * @return void
-     */
-    public function assertQuery($path, $message = '')
-    {
-        $this->_incrementAssertionCount();
-        require_once 'Zend/Test/PHPUnit/Constraint/DomQuery.php';
-        $constraint = new Zend_Test_PHPUnit_Constraint_DomQuery($path);
-        $content    = $this->response->outputBody();
-        if (!$constraint->evaluate($content, __FUNCTION__)) {
-            $constraint->fail($path, $message);
-        }
-    }
-
-    /**
-     * Assert against DOM selection
-     * 
-     * @param  string $path CSS selector path
-     * @param  string $message
-     * @return void
-     */
-    public function assertNotQuery($path, $message = '')
-    {
-        $this->_incrementAssertionCount();
-        require_once 'Zend/Test/PHPUnit/Constraint/DomQuery.php';
-        $constraint = new Zend_Test_PHPUnit_Constraint_DomQuery($path);
-        $content    = $this->response->outputBody();
-        if (!$constraint->evaluate($content, __FUNCTION__)) {
-            $constraint->fail($path, $message);
-        }
-    }
-
-    /**
-     * Assert against DOM selection; node should contain content
-     * 
-     * @param  string $path CSS selector path
-     * @param  string $match content that should be contained in matched nodes
-     * @param  string $message
-     * @return void
-     */
-    public function assertQueryContentContains($path, $match, $message = '')
-    {
-        $this->_incrementAssertionCount();
-        require_once 'Zend/Test/PHPUnit/Constraint/DomQuery.php';
-        $constraint = new Zend_Test_PHPUnit_Constraint_DomQuery($path);
-        $content    = $this->response->outputBody();
-        if (!$constraint->evaluate($content, __FUNCTION__, $match)) {
-            $constraint->fail($path, $message);
-        }
-    }
-
-    /**
-     * Assert against DOM selection; node should NOT contain content
-     * 
-     * @param  string $path CSS selector path
-     * @param  string $match content that should NOT be contained in matched nodes
-     * @param  string $message
-     * @return void
-     */
-    public function assertNotQueryContentContains($path, $match, $message = '')
-    {
-        $this->_incrementAssertionCount();
-        require_once 'Zend/Test/PHPUnit/Constraint/DomQuery.php';
-        $constraint = new Zend_Test_PHPUnit_Constraint_DomQuery($path);
-        $content    = $this->response->outputBody();
-        if (!$constraint->evaluate($content, __FUNCTION__, $match)) {
-            $constraint->fail($path, $message);
-        }
-    }
-
-    /**
-     * Assert against DOM selection; node should match content
-     * 
-     * @param  string $path CSS selector path
-     * @param  string $pattern Pattern that should be contained in matched nodes
-     * @param  string $message
-     * @return void
-     */
-    public function assertQueryContentRegex($path, $pattern, $message = '')
-    {
-        $this->_incrementAssertionCount();
-        require_once 'Zend/Test/PHPUnit/Constraint/DomQuery.php';
-        $constraint = new Zend_Test_PHPUnit_Constraint_DomQuery($path);
-        $content    = $this->response->outputBody();
-        if (!$constraint->evaluate($content, __FUNCTION__, $pattern)) {
-            $constraint->fail($path, $message);
-        }
-    }
-
-    /**
-     * Assert against DOM selection; node should NOT match content
-     * 
-     * @param  string $path CSS selector path
-     * @param  string $pattern pattern that should NOT be contained in matched nodes
-     * @param  string $message
-     * @return void
-     */
-    public function assertNotQueryContentRegex($path, $pattern, $message = '')
-    {
-        $this->_incrementAssertionCount();
-        require_once 'Zend/Test/PHPUnit/Constraint/DomQuery.php';
-        $constraint = new Zend_Test_PHPUnit_Constraint_DomQuery($path);
-        $content    = $this->response->outputBody();
-        if (!$constraint->evaluate($content, __FUNCTION__, $pattern)) {
-            $constraint->fail($path, $message);
-        }
-    }
-
-    /**
-     * Assert against DOM selection; should contain exact number of nodes
-     * 
-     * @param  string $path CSS selector path
-     * @param  string $count Number of nodes that should match
-     * @param  string $message
-     * @return void
-     */
-    public function assertQueryCount($path, $count, $message = '')
-    {
-        $this->_incrementAssertionCount();
-        require_once 'Zend/Test/PHPUnit/Constraint/DomQuery.php';
-        $constraint = new Zend_Test_PHPUnit_Constraint_DomQuery($path);
-        $content    = $this->response->outputBody();
-        if (!$constraint->evaluate($content, __FUNCTION__, $count)) {
-            $constraint->fail($path, $message);
-        }
-    }
-
-    /**
-     * Assert against DOM selection; should NOT contain exact number of nodes
-     * 
-     * @param  string $path CSS selector path
-     * @param  string $count Number of nodes that should NOT match
-     * @param  string $message
-     * @return void
-     */
-    public function assertNotQueryCount($path, $count, $message = '')
-    {
-        $this->_incrementAssertionCount();
-        require_once 'Zend/Test/PHPUnit/Constraint/DomQuery.php';
-        $constraint = new Zend_Test_PHPUnit_Constraint_DomQuery($path);
-        $content    = $this->response->outputBody();
-        if (!$constraint->evaluate($content, __FUNCTION__, $count)) {
-            $constraint->fail($path, $message);
-        }
-    }
-
-    /**
-     * Assert against DOM selection; should contain at least this number of nodes
-     * 
-     * @param  string $path CSS selector path
-     * @param  string $count Minimum number of nodes that should match
-     * @param  string $message
-     * @return void
-     */
-    public function assertQueryCountMin($path, $count, $message = '')
-    {
-        $this->_incrementAssertionCount();
-        require_once 'Zend/Test/PHPUnit/Constraint/DomQuery.php';
-        $constraint = new Zend_Test_PHPUnit_Constraint_DomQuery($path);
-        $content    = $this->response->outputBody();
-        if (!$constraint->evaluate($content, __FUNCTION__, $count)) {
-            $constraint->fail($path, $message);
-        }
-    }
-
-    /**
-     * Assert against DOM selection; should contain no more than this number of nodes
-     * 
-     * @param  string $path CSS selector path
-     * @param  string $count Maximum number of nodes that should match
-     * @param  string $message
-     * @return void
-     */
-    public function assertQueryCountMax($path, $count, $message = '')
-    {
-        $this->_incrementAssertionCount();
-        require_once 'Zend/Test/PHPUnit/Constraint/DomQuery.php';
-        $constraint = new Zend_Test_PHPUnit_Constraint_DomQuery($path);
-        $content    = $this->response->outputBody();
-        if (!$constraint->evaluate($content, __FUNCTION__, $count)) {
-            $constraint->fail($path, $message);
-        }
-    }
-
-    /**
-     * Assert against XPath selection
-     * 
-     * @param  string $path XPath path
-     * @param  string $message
-     * @return void
-     */
-    public function assertXpath($path, $message = '')
-    {
-        $this->_incrementAssertionCount();
-        require_once 'Zend/Test/PHPUnit/Constraint/DomQuery.php';
-        $constraint = new Zend_Test_PHPUnit_Constraint_DomQuery($path);
-        $content    = $this->response->outputBody();
-        if (!$constraint->evaluate($content, __FUNCTION__)) {
-            $constraint->fail($path, $message);
-        }
-    }
-
-    /**
-     * Assert against XPath selection
-     * 
-     * @param  string $path XPath path
-     * @param  string $message
-     * @return void
-     */
-    public function assertNotXpath($path, $message = '')
-    {
-        $this->_incrementAssertionCount();
-        require_once 'Zend/Test/PHPUnit/Constraint/DomQuery.php';
-        $constraint = new Zend_Test_PHPUnit_Constraint_DomQuery($path);
-        $content    = $this->response->outputBody();
-        if (!$constraint->evaluate($content, __FUNCTION__)) {
-            $constraint->fail($path, $message);
-        }
-    }
-
-    /**
-     * Assert against XPath selection; node should contain content
-     * 
-     * @param  string $path XPath path
-     * @param  string $match content that should be contained in matched nodes
-     * @param  string $message
-     * @return void
-     */
-    public function assertXpathContentContains($path, $match, $message = '')
-    {
-        $this->_incrementAssertionCount();
-        require_once 'Zend/Test/PHPUnit/Constraint/DomQuery.php';
-        $constraint = new Zend_Test_PHPUnit_Constraint_DomQuery($path);
-        $content    = $this->response->outputBody();
-        if (!$constraint->evaluate($content, __FUNCTION__, $match)) {
-            $constraint->fail($path, $message);
-        }
-    }
-
-    /**
-     * Assert against XPath selection; node should NOT contain content
-     * 
-     * @param  string $path XPath path
-     * @param  string $match content that should NOT be contained in matched nodes
-     * @param  string $message
-     * @return void
-     */
-    public function assertNotXpathContentContains($path, $match, $message = '')
-    {
-        $this->_incrementAssertionCount();
-        require_once 'Zend/Test/PHPUnit/Constraint/DomQuery.php';
-        $constraint = new Zend_Test_PHPUnit_Constraint_DomQuery($path);
-        $content    = $this->response->outputBody();
-        if (!$constraint->evaluate($content, __FUNCTION__, $match)) {
-            $constraint->fail($path, $message);
-        }
-    }
-
-    /**
-     * Assert against XPath selection; node should match content
-     * 
-     * @param  string $path XPath path
-     * @param  string $pattern Pattern that should be contained in matched nodes
-     * @param  string $message
-     * @return void
-     */
-    public function assertXpathContentRegex($path, $pattern, $message = '')
-    {
-        $this->_incrementAssertionCount();
-        require_once 'Zend/Test/PHPUnit/Constraint/DomQuery.php';
-        $constraint = new Zend_Test_PHPUnit_Constraint_DomQuery($path);
-        $content    = $this->response->outputBody();
-        if (!$constraint->evaluate($content, __FUNCTION__, $pattern)) {
-            $constraint->fail($path, $message);
-        }
-    }
-
-    /**
-     * Assert against XPath selection; node should NOT match content
-     * 
-     * @param  string $path XPath path
-     * @param  string $pattern pattern that should NOT be contained in matched nodes
-     * @param  string $message
-     * @return void
-     */
-    public function assertNotXpathContentRegex($path, $pattern, $message = '')
-    {
-        $this->_incrementAssertionCount();
-        require_once 'Zend/Test/PHPUnit/Constraint/DomQuery.php';
-        $constraint = new Zend_Test_PHPUnit_Constraint_DomQuery($path);
-        $content    = $this->response->outputBody();
-        if (!$constraint->evaluate($content, __FUNCTION__, $pattern)) {
-            $constraint->fail($path, $message);
-        }
-    }
-
-    /**
-     * Assert against XPath selection; should contain exact number of nodes
-     * 
-     * @param  string $path XPath path
-     * @param  string $count Number of nodes that should match
-     * @param  string $message
-     * @return void
-     */
-    public function assertXpathCount($path, $count, $message = '')
-    {
-        $this->_incrementAssertionCount();
-        require_once 'Zend/Test/PHPUnit/Constraint/DomQuery.php';
-        $constraint = new Zend_Test_PHPUnit_Constraint_DomQuery($path);
-        $content    = $this->response->outputBody();
-        if (!$constraint->evaluate($content, __FUNCTION__, $count)) {
-            $constraint->fail($path, $message);
-        }
-    }
-
-    /**
-     * Assert against XPath selection; should NOT contain exact number of nodes
-     * 
-     * @param  string $path XPath path
-     * @param  string $count Number of nodes that should NOT match
-     * @param  string $message
-     * @return void
-     */
-    public function assertNotXpathCount($path, $count, $message = '')
-    {
-        $this->_incrementAssertionCount();
-        require_once 'Zend/Test/PHPUnit/Constraint/DomQuery.php';
-        $constraint = new Zend_Test_PHPUnit_Constraint_DomQuery($path);
-        $content    = $this->response->outputBody();
-        if (!$constraint->evaluate($content, __FUNCTION__, $count)) {
-            $constraint->fail($path, $message);
-        }
-    }
-
-    /**
-     * Assert against XPath selection; should contain at least this number of nodes
-     * 
-     * @param  string $path XPath path
-     * @param  string $count Minimum number of nodes that should match
-     * @param  string $message
-     * @return void
-     */
-    public function assertXpathCountMin($path, $count, $message = '')
-    {
-        $this->_incrementAssertionCount();
-        require_once 'Zend/Test/PHPUnit/Constraint/DomQuery.php';
-        $constraint = new Zend_Test_PHPUnit_Constraint_DomQuery($path);
-        $content    = $this->response->outputBody();
-        if (!$constraint->evaluate($content, __FUNCTION__, $count)) {
-            $constraint->fail($path, $message);
-        }
-    }
-
-    /**
-     * Assert against XPath selection; should contain no more than this number of nodes
-     * 
-     * @param  string $path XPath path
-     * @param  string $count Maximum number of nodes that should match
-     * @param  string $message
-     * @return void
-     */
-    public function assertXpathCountMax($path, $count, $message = '')
-    {
-        $this->_incrementAssertionCount();
-        require_once 'Zend/Test/PHPUnit/Constraint/DomQuery.php';
-        $constraint = new Zend_Test_PHPUnit_Constraint_DomQuery($path);
-        $content    = $this->response->outputBody();
-        if (!$constraint->evaluate($content, __FUNCTION__, $count)) {
-            $constraint->fail($path, $message);
-        }
-    }
-
-    /**
-     * Assert that response is a redirect
-     * 
-     * @param  string $message 
-     * @return void
-     */
-    public function assertRedirect($message = '')
-    {
-        $this->_incrementAssertionCount();
-        require_once 'Zend/Test/PHPUnit/Constraint/Redirect.php';
-        $constraint = new Zend_Test_PHPUnit_Constraint_Redirect();
-        $response   = $this->response;
-        if (!$constraint->evaluate($response, __FUNCTION__)) {
-            $constraint->fail($response, $message);
-        }
-    }
-
-    /**
-     * Assert that response is NOT a redirect
-     * 
-     * @param  string $message 
-     * @return void
-     */
-    public function assertNotRedirect($message = '')
-    {
-        $this->_incrementAssertionCount();
-        require_once 'Zend/Test/PHPUnit/Constraint/Redirect.php';
-        $constraint = new Zend_Test_PHPUnit_Constraint_Redirect();
-        $response   = $this->response;
-        if (!$constraint->evaluate($response, __FUNCTION__)) {
-            $constraint->fail($response, $message);
-        }
-    }
-
-    /**
-     * Assert that response redirects to given URL
-     * 
-     * @param  string $url 
-     * @param  string $message 
-     * @return void
-     */
-    public function assertRedirectTo($url, $message = '')
-    {
-        $this->_incrementAssertionCount();
-        require_once 'Zend/Test/PHPUnit/Constraint/Redirect.php';
-        $constraint = new Zend_Test_PHPUnit_Constraint_Redirect();
-        $response   = $this->response;
-        if (!$constraint->evaluate($response, __FUNCTION__, $url)) {
-            $constraint->fail($response, $message);
-        }
-    }
-
-    /**
-     * Assert that response does not redirect to given URL
-     * 
-     * @param  string $url 
-     * @param  string $message 
-     * @return void
-     */
-    public function assertNotRedirectTo($url, $message = '')
-    {
-        $this->_incrementAssertionCount();
-        require_once 'Zend/Test/PHPUnit/Constraint/Redirect.php';
-        $constraint = new Zend_Test_PHPUnit_Constraint_Redirect();
-        $response   = $this->response;
-        if (!$constraint->evaluate($response, __FUNCTION__, $url)) {
-            $constraint->fail($response, $message);
-        }
-    }
-
-    /**
-     * Assert that redirect location matches pattern
-     * 
-     * @param  string $pattern 
-     * @param  string $message 
-     * @return void
-     */
-    public function assertRedirectRegex($pattern, $message = '')
-    {
-        $this->_incrementAssertionCount();
-        require_once 'Zend/Test/PHPUnit/Constraint/Redirect.php';
-        $constraint = new Zend_Test_PHPUnit_Constraint_Redirect();
-        $response   = $this->response;
-        if (!$constraint->evaluate($response, __FUNCTION__, $pattern)) {
-            $constraint->fail($response, $message);
-        }
-    }
-
-    /**
-     * Assert that redirect location does not match pattern
-     * 
-     * @param  string $pattern 
-     * @param  string $message 
-     * @return void
-     */
-    public function assertNotRedirectRegex($pattern, $message = '')
-    {
-        $this->_incrementAssertionCount();
-        require_once 'Zend/Test/PHPUnit/Constraint/Redirect.php';
-        $constraint = new Zend_Test_PHPUnit_Constraint_Redirect();
-        $response   = $this->response;
-        if (!$constraint->evaluate($response, __FUNCTION__, $pattern)) {
-            $constraint->fail($response, $message);
-        }
-    }
-
-    /**
-     * Assert response code
-     * 
-     * @param  int $code 
-     * @param  string $message 
-     * @return void
-     */
-    public function assertResponseCode($code, $message = '')
-    {
-        $this->_incrementAssertionCount();
-        require_once 'Zend/Test/PHPUnit/Constraint/ResponseHeader.php';
-        $constraint = new Zend_Test_PHPUnit_Constraint_ResponseHeader();
-        $response   = $this->response;
-        if (!$constraint->evaluate($response, __FUNCTION__, $code)) {
-            $constraint->fail($response, $message);
-        }
-    }
-
-    /**
-     * Assert response code
-     * 
-     * @param  int $code 
-     * @param  string $message 
-     * @return void
-     */
-    public function assertNotResponseCode($code, $message = '')
-    {
-        $this->_incrementAssertionCount();
-        require_once 'Zend/Test/PHPUnit/Constraint/ResponseHeader.php';
-        $constraint = new Zend_Test_PHPUnit_Constraint_ResponseHeader();
-        $constraint->setNegate(true);
-        $response   = $this->response;
-        if (!$constraint->evaluate($response, __FUNCTION__, $code)) {
-            $constraint->fail($response, $message);
-        }
-    }
-
-    /**
-     * Assert response header exists
-     * 
-     * @param  string $header 
-     * @param  string $message 
-     * @return void
-     */
-    public function assertHeader($header, $message = '')
-    {
-        $this->_incrementAssertionCount();
-        require_once 'Zend/Test/PHPUnit/Constraint/ResponseHeader.php';
-        $constraint = new Zend_Test_PHPUnit_Constraint_ResponseHeader();
-        $response   = $this->response;
-        if (!$constraint->evaluate($response, __FUNCTION__, $header)) {
-            $constraint->fail($response, $message);
-        }
-    }
-
-    /**
-     * Assert response header does not exist
-     * 
-     * @param  string $header 
-     * @param  string $message 
-     * @return void
-     */
-    public function assertNotHeader($header, $message = '')
-    {
-        $this->_incrementAssertionCount();
-        require_once 'Zend/Test/PHPUnit/Constraint/ResponseHeader.php';
-        $constraint = new Zend_Test_PHPUnit_Constraint_ResponseHeader();
-        $constraint->setNegate(true);
-        $response   = $this->response;
-        if (!$constraint->evaluate($response, __FUNCTION__, $header)) {
-            $constraint->fail($response, $message);
-        }
-    }
-
-    /**
-     * Assert response header exists and contains the given string
-     * 
-     * @param  string $header 
-     * @param  string $match 
-     * @param  string $message 
-     * @return void
-     */
-    public function assertHeaderContains($header, $match, $message = '')
-    {
-        $this->_incrementAssertionCount();
-        require_once 'Zend/Test/PHPUnit/Constraint/ResponseHeader.php';
-        $constraint = new Zend_Test_PHPUnit_Constraint_ResponseHeader();
-        $response   = $this->response;
-        if (!$constraint->evaluate($response, __FUNCTION__, $header, $match)) {
-            $constraint->fail($response, $message);
-        }
-    }
-
-    /**
-     * Assert response header does not exist and/or does not contain the given string
-     * 
-     * @param  string $header 
-     * @param  string $match
-     * @param  string $message 
-     * @return void
-     */
-    public function assertNotHeaderContains($header, $match, $message = '')
-    {
-        $this->_incrementAssertionCount();
-        require_once 'Zend/Test/PHPUnit/Constraint/ResponseHeader.php';
-        $constraint = new Zend_Test_PHPUnit_Constraint_ResponseHeader();
-        $constraint->setNegate(true);
-        $response   = $this->response;
-        if (!$constraint->evaluate($response, __FUNCTION__, $header, $match)) {
-            $constraint->fail($response, $message);
-        }
-    }
-
-    /**
-     * Assert response header exists and matches the given pattern
-     * 
-     * @param  string $header 
-     * @param  string $pattern 
-     * @param  string $message 
-     * @return void
-     */
-    public function assertHeaderRegex($header, $pattern, $message = '')
-    {
-        $this->_incrementAssertionCount();
-        require_once 'Zend/Test/PHPUnit/Constraint/ResponseHeader.php';
-        $constraint = new Zend_Test_PHPUnit_Constraint_ResponseHeader();
-        $response   = $this->response;
-        if (!$constraint->evaluate($response, __FUNCTION__, $header, $pattern)) {
-            $constraint->fail($response, $message);
-        }
-    }
-
-    /**
-     * Assert response header does not exist and/or does not match the given regex
-     * 
-     * @param  string $header 
-     * @param  string $pattern
-     * @param  string $message 
-     * @return void
-     */
-    public function assertNotHeaderRegex($header, $pattern, $message = '')
-    {
-        $this->_incrementAssertionCount();
-        require_once 'Zend/Test/PHPUnit/Constraint/ResponseHeader.php';
-        $constraint = new Zend_Test_PHPUnit_Constraint_ResponseHeader();
-        $constraint->setNegate(true);
-        $response   = $this->response;
-        if (!$constraint->evaluate($response, __FUNCTION__, $header, $pattern)) {
-            $constraint->fail($response, $message);
-        }
-    }
-
-    /**
-     * Assert that the last handled request used the given module
-     * 
-     * @param  string $module 
-     * @param  string $message 
-     * @return void
-     */
-    public function assertModule($module, $message = '')
-    {
-        $this->_incrementAssertionCount();
-        if ($module != $this->request->getModuleName()) {
-            $msg = sprintf('Failed asserting last module used was "%s"', $module);
-            if (!empty($message)) {
-                $msg = $message . "\n" . $msg;
-            }
-            $this->fail($msg);
-        }
-    }
-
-    /**
-     * Assert that the last handled request did NOT use the given module
-     * 
-     * @param  string $module 
-     * @param  string $message 
-     * @return void
-     */
-    public function assertNotModule($module, $message = '')
-    {
-        $this->_incrementAssertionCount();
-        if ($module == $this->request->getModuleName()) {
-            $msg = sprintf('Failed asserting last module used was NOT "%s"', $module);
-            if (!empty($message)) {
-                $msg = $message . "\n" . $msg;
-            }
-            $this->fail($msg);
-        }
-    }
-
-    /**
-     * Assert that the last handled request used the given controller
-     * 
-     * @param  string $controller 
-     * @param  string $message 
-     * @return void
-     */
-    public function assertController($controller, $message = '')
-    {
-        $this->_incrementAssertionCount();
-        if ($controller != $this->request->getControllerName()) {
-            $msg = sprintf('Failed asserting last controller used was "%s"', $controller);
-            if (!empty($message)) {
-                $msg = $message . "\n" . $msg;
-            }
-            $this->fail($msg);
-        }
-    }
-
-    /**
-     * Assert that the last handled request did NOT use the given controller
-     * 
-     * @param  string $controller 
-     * @param  string $message 
-     * @return void
-     */
-    public function assertNotController($controller, $message = '')
-    {
-        $this->_incrementAssertionCount();
-        if ($controller == $this->request->getControllerName()) {
-            $msg = sprintf('Failed asserting last controller used was NOT "%s"', $controller);
-            if (!empty($message)) {
-                $msg = $message . "\n" . $msg;
-            }
-            $this->fail($msg);
-        }
-    }
-
-    /**
-     * Assert that the last handled request used the given action
-     * 
-     * @param  string $action 
-     * @param  string $message 
-     * @return void
-     */
-    public function assertAction($action, $message = '')
-    {
-        $this->_incrementAssertionCount();
-        if ($action != $this->request->getActionName()) {
-            $msg = sprintf('Failed asserting last action used was "%s"', $action);
-            if (!empty($message)) {
-                $msg = $message . "\n" . $msg;
-            }
-            $this->fail($msg);
-        }
-    }
-
-    /**
-     * Assert that the last handled request did NOT use the given action
-     * 
-     * @param  string $action 
-     * @param  string $message 
-     * @return void
-     */
-    public function assertNotAction($action, $message = '')
-    {
-        $this->_incrementAssertionCount();
-        if ($action == $this->request->getActionName()) {
-            $msg = sprintf('Failed asserting last action used was NOT "%s"', $action);
-            if (!empty($message)) {
-                $msg = $message . "\n" . $msg;
-            }
-            $this->fail($msg);
-        }
-    }
-
-    /**
-     * Assert that the specified route was used
-     * 
-     * @param  string $route 
-     * @param  string $message 
-     * @return void
-     */
-    public function assertRoute($route, $message = '')
-    {
-        $this->_incrementAssertionCount();
-        $router = $this->frontController->getRouter();
-        if ($route != $router->getCurrentRouteName()) {
-            $msg = sprintf('Failed asserting route matched was "%s"', $route);
-            if (!empty($message)) {
-                $msg = $message . "\n" . $msg;
-            }
-            $this->fail($msg);
-        }
-    }
-
-    /**
-     * Assert that the route matched is NOT as specified
-     * 
-     * @param  string $route 
-     * @param  string $message 
-     * @return void
-     */
-    public function assertNotRoute($route, $message = '')
-    {
-        $this->_incrementAssertionCount();
-        $router = $this->frontController->getRouter();
-        if ($route == $router->getCurrentRouteName()) {
-            $msg = sprintf('Failed asserting route matched was NOT "%s"', $route);
-            if (!empty($message)) {
-                $msg = $message . "\n" . $msg;
-            }
-            $this->fail($msg);
-        }
-    }
-
-    /**
-     * Retrieve front controller instance
-     * 
-     * @return Zend_Controller_Front
-     */
-    public function getFrontController()
-    {
-        if (null === $this->_frontController) {
-            $this->_frontController = Zend_Controller_Front::getInstance();
-        }
-        return $this->_frontController;
-    }
-
-    /**
-     * Retrieve test case request object
-     * 
-     * @return Zend_Controller_Request_Abstract
-     */
-    public function getRequest()
-    {
-        if (null === $this->_request) {
-            require_once 'Zend/Controller/Request/HttpTestCase.php';
-            $this->_request = new Zend_Controller_Request_HttpTestCase;
-        }
-        return $this->_request;
-    }
-
-    /**
-     * Retrieve test case response object 
-     * 
-     * @return Zend_Controller_Response_Abstract
-     */
-    public function getResponse()
-    {
-        if (null === $this->_response) {
-            require_once 'Zend/Controller/Response/HttpTestCase.php';
-            $this->_response = new Zend_Controller_Response_HttpTestCase;
-        }
-        return $this->_response;
-    }
-
-    /**
-     * Retrieve DOM query object
-     * 
-     * @return Zend_Dom_Query
-     */
-    public function getQuery()
-    {
-        if (null === $this->_query) {
-            require_once 'Zend/Dom/Query.php';
-            $this->_query = new Zend_Dom_Query;
-        }
-        return $this->_query;
-    }
-
-    /**
-     * Increment assertion count
-     * 
-     * @return void
-     */
-    protected function _incrementAssertionCount()
-    {
-        $stack = debug_backtrace();
-        foreach (debug_backtrace() as $step) {
-            if (isset($step['object']) 
-                && $step['object'] instanceof PHPUnit_Framework_TestCase
-            ) {
-                if (version_compare(PHPUnit_Runner_Version::id(), '3.3.3', 'lt')) {
-                    $step['object']->incrementAssertionCounter();
-                } else {
-                    $step['object']->addToAssertionCount(1);
-                }
-                break;
-            }
-        }
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+gofxnim=

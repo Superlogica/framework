@@ -1,96 +1,42 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Geo
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * @see Zend_Gdata_Entry
- */
-require_once 'Zend/Gdata/Entry.php';
-
-/**
- * @see Zend_Gdata_Geo
- */
-require_once 'Zend/Gdata/Geo.php';
-
-/**
- * @see Zend_Gdata_Geo_Extension_GeoRssWhere
- */
-require_once 'Zend/Gdata/Geo/Extension/GeoRssWhere.php';
-
-/**
- * An Atom entry containing Geograpic data.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Geo
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Gdata_Geo_Entry extends Zend_Gdata_Entry
-{
-
-    protected $_entryClassName = 'Zend_Gdata_Geo_Entry';
-
-    protected $_where = null;
-
-    public function __construct($element = null)
-    {
-        $this->registerAllNamespaces(Zend_Gdata_Geo::$namespaces);
-        parent::__construct($element);
-    }
-
-    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
-    {
-        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
-        if ($this->_where != null) {
-            $element->appendChild($this->_where->getDOM($element->ownerDocument));
-        }
-        return $element;
-    }
-
-    protected function takeChildFromDOM($child)
-    {
-        $absoluteNodeName = $child->namespaceURI . ':' . $child->localName;
-        switch ($absoluteNodeName) {
-        case $this->lookupNamespace('georss') . ':' . 'where':
-            $where = new Zend_Gdata_Geo_Extension_GeoRssWhere();
-            $where->transferFromDOM($child);
-            $this->_where = $where;
-            break;
-        default:
-            parent::takeChildFromDOM($child);
-            break;
-        }
-    }
-
-    public function getWhere()
-    {
-        return $this->_where;
-    }
-
-    public function setWhere($value)
-    {
-        $this->_where = $value;
-        return $this;
-    }
-
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+xChUPmcUsGll5r2hKCDU50==

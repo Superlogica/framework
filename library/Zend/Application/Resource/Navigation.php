@@ -1,112 +1,39 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Application
- * @subpackage Resource
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id$
- */
-
-/**
- * Resource for setting navigation structure
- *
- * @uses       Zend_Application_Resource_ResourceAbstract
- * @category   Zend
- * @package    Zend_Application
- * @subpackage Resource
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @author     Dolf Schimmel
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Application_Resource_Navigation 
-    extends Zend_Application_Resource_ResourceAbstract
-{
-    const DEFAULT_REGISTRY_KEY = 'Zend_Navigation';
-
-    /**
-     * @var Zend_Navigation
-     */
-    protected $_container;
-
-    /**
-     * Defined by Zend_Application_Resource_Resource
-     *
-     * @return Zend_Navigation
-     */
-    public function init()
-    {
-        if (!$this->_container) {
-            $options = $this->getOptions();
-            $pages = isset($options['pages']) ? $options['pages'] : array();
-            $this->_container = new Zend_Navigation($pages);
-        }
-
-        $this->store();
-        return $this->_container;
-    }
-
-    /**
-     * Stores navigation container in registry or Navigation view helper
-     *
-     * @return void
-     */
-    public function store()
-    {
-        $options = $this->getOptions();
-        if (isset($options['storage']['registry']) &&
-            $options['storage']['registry'] == true) {
-            $this->_storeRegistry();
-        } else {
-            $this->_storeHelper();
-        }
-    }
-
-    /**
-     * Stores navigation container in the registry
-     *
-     * @return void
-     */
-    protected function _storeRegistry()
-    {
-        $options = $this->getOptions();
-        $key = !is_numeric($options['storage']['registry']['key'])
-             ?  $options['storage']['registry']['key']
-             : self::DEFAULT_REGISTRY_KEY;
-        Zend_Registry::set($key,$this->getContainer());
-    }
-
-    /**
-     * Stores navigation container in the Navigation helper
-     *
-     * @return void
-     */
-    protected function _storeHelper()
-    {
-        $this->getBootstrap()->bootstrap('view');
-        $view = $this->getBootstrap()->getPluginResource('view')->getView();
-        $view->getHelper('navigation')->navigation($this->getContainer());
-    }
-
-    /**
-     * Returns navigation container
-     *
-     * @return Zend_Navigation
-     */
-    public function getContainer()
-    {
-        return $this->_container;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+Ro+3g/TyOsm=

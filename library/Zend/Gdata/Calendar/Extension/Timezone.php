@@ -1,123 +1,38 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Calendar
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * @see Zend_Gdata_Extension
- */
-require_once 'Zend/Gdata/Extension.php';
-
-/**
- * Represents the gCal:timezone element used by the Calendar data API
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Calendar
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Gdata_Calendar_Extension_Timezone extends Zend_Gdata_Extension
-{
-
-    protected $_rootNamespace = 'gCal';
-    protected $_rootElement = 'timezone';
-    protected $_value = null;
-
-    /**
-     * Constructs a new Zend_Gdata_Calendar_Extension_Timezone object.
-     * @param string $value (optional) The text content of the element.
-     */
-    public function __construct($value = null)
-    {
-        $this->registerAllNamespaces(Zend_Gdata_Calendar::$namespaces);
-        parent::__construct();
-        $this->_value = $value;
-    }
-
-    /**
-     * Retrieves a DOMElement which corresponds to this element and all
-     * child properties.  This is used to build an entry back into a DOM
-     * and eventually XML text for sending to the server upon updates, or
-     * for application storage/persistence.
-     *
-     * @param DOMDocument $doc The DOMDocument used to construct DOMElements
-     * @return DOMElement The DOMElement representing this element and all
-     * child properties.
-     */
-    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
-    {
-        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
-        if ($this->_value != null) {
-            $element->setAttribute('value', $this->_value);
-        }
-        return $element;
-    }
-
-    /**
-     * Given a DOMNode representing an attribute, tries to map the data into
-     * instance members.  If no mapping is defined, the name and value are
-     * stored in an array.
-     *
-     * @param DOMNode $attribute The DOMNode attribute needed to be handled
-     */
-    protected function takeAttributeFromDOM($attribute)
-    {
-        switch ($attribute->localName) {
-        case 'value':
-            $this->_value = $attribute->nodeValue;
-            break;
-        default:
-            parent::takeAttributeFromDOM($attribute);
-        }
-    }
-
-    /**
-     * Get the value for this element's value attribute.
-     *
-     * @return string The value associated with this attribute.
-     */
-    public function getValue()
-    {
-        return $this->_value;
-    }
-
-    /**
-     * Set the value for this element's value attribute.
-     *
-     * @param string $value The desired value for this attribute.
-     * @return Zend_Gdata_Calendar_Extension_Timezone The element being modified.
-     */
-    public function setValue($value)
-    {
-        $this->_value = $value;
-        return $this;
-    }
-
-    /**
-     * Magic toString method allows using this directly via echo
-     * Works best in PHP >= 4.2.0
-     */
-    public function __toString()
-    {
-        return $this->getValue();
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

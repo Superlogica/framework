@@ -1,33 +1,34 @@
-<?php
-if (empty($_REQUEST['list'])) {
-	header('Location: phpThumb.demo.demo.php');
-	exit;
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
 ?>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-	<title>Demo of phpThumb() - thumbnails created by PHP using GD and/or ImageMagick</title>
-	<link rel="stylesheet"    type="text/css" href="/style.css" title="style sheet">
-	<link rel="shortcut icon" type="image/x-icon" href="http://phpthumb.sourceforge.net/thumb.ico">
-	<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
-</head>
-<body style="background-color: #C5C5C5;">
-<?php
-$dh = opendir('.');
-while ($file = readdir($dh)) {
-	if (is_file($file) && ($file{0} != '.') && ($file != basename(__FILE__))) {
-		switch ($file) {
-			case 'phpThumb.demo.object.simple.php':
-			case 'phpThumb.demo.object.php':
-				echo '<tt>'.str_replace(' ', '&nbsp;', str_pad(filesize($file), 10, ' ', STR_PAD_LEFT)).'</tt> '.$file.' (cannot work as a live demo)<br>';
-				break;
-			default:
-				echo '<tt>'.str_replace(' ', '&nbsp;', str_pad(filesize($file), 10, ' ', STR_PAD_LEFT)).'</tt> <a href="'.$file.'">'.$file.'</a><br>';
-				break;
-		}
-	}
-}
-?>
-</body>
-</html>
+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
+jx7s904=

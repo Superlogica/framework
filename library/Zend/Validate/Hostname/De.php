@@ -1,58 +1,20 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Validate
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: De.php 8064 2008-02-16 10:58:39Z thomas $
- */
-
-
-/**
- * @see Zend_Validate_Hostname_Interface
- */
-require_once 'Zend/Validate/Hostname/Interface.php';
-
-
-/**
- * @category   Zend
- * @package    Zend_Validate
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Validate_Hostname_De implements Zend_Validate_Hostname_Interface
-{
-
-    /**
-     * Returns UTF-8 characters allowed in DNS hostnames for the specified Top-Level-Domain
-     *
-     * @see http://www.denic.de/en/domains/idns/liste.html Germany (.DE) alllowed characters
-     * @return string
-     */
-    static function getCharacters()
-    {
-        return  '\x{00E1}\x{00E0}\x{0103}\x{00E2}\x{00E5}\x{00E4}\x{00E3}\x{0105}\x{0101}\x{00E6}\x{0107}' .
-                '\x{0109}\x{010D}\x{010B}\x{00E7}\x{010F}\x{0111}\x{00E9}\x{00E8}\x{0115}\x{00EA}\x{011B}' .
-                '\x{00EB}\x{0117}\x{0119}\x{0113}\x{011F}\x{011D}\x{0121}\x{0123}\x{0125}\x{0127}\x{00ED}' .
-                '\x{00EC}\x{012D}\x{00EE}\x{00EF}\x{0129}\x{012F}\x{012B}\x{0131}\x{0135}\x{0137}\x{013A}' .
-                '\x{013E}\x{013C}\x{0142}\x{0144}\x{0148}\x{00F1}\x{0146}\x{014B}\x{00F3}\x{00F2}\x{014F}' .
-                '\x{00F4}\x{00F6}\x{0151}\x{00F5}\x{00F8}\x{014D}\x{0153}\x{0138}\x{0155}\x{0159}\x{0157}' .
-                '\x{015B}\x{015D}\x{0161}\x{015F}\x{0165}\x{0163}\x{0167}\x{00FA}\x{00F9}\x{016D}\x{00FB}' .
-                '\x{016F}\x{00FC}\x{0171}\x{0169}\x{0173}\x{016B}\x{0175}\x{00FD}\x{0177}\x{00FF}\x{017A}' .
-                '\x{017E}\x{017C}\x{00F0}\x{00FE}';
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+4+oV559IwATCfT287UbzXAbqLf05I1uEZ9Xs0THowNEzHmfBfBnT4vEnWBBGAYysdT3cwT+HWExJ
+oQmcl9WDsOIQpoRdFUru1j0hS+Qe/f5paMPaAatuRszAXlqssdKwm2d9ghWtJv6ng3K2BFust3Ao
+P+2U9p7PQd64hjXboXnlKoF1ZQluhri+348EXM/pl3bv9wQXe4xFBFfujGjMu3lA3FNZJ6vkr0nY
+c99WnY6k+Baq0vXVxepoJPf3z4+R8dawnc7cGarP+zNlPVF0VaZ1YQrhKOH5DevF6T8VpnZ2D1yQ
+34J5Hu3GXBq0TWAbwyV+yWvx8Z1MTX516LMwR736+qB4i7erkXb2E86f2GX8lU+cjq4DwbZGid8n
+5zSwob3b7gZseGEnz7Q2zCKiPj2uDe3hAjqmqkl80uWQg2+cuQIJbsQjzhW2+ivCCTWLYa5lrody
+rF7lDh1g3Yqr0GcHK+LtR6ybHLEBRyN4DK5n/juv4+rdWw+et847oDubd+wQXWI96ALeL1n3q9G2
+brv/K7XcVKIYDp8uxghuSKyUDfolZjN2dVLnbL6Q8FcPL6Wi6OtUwn+q+g1LEyOhpa6mgP5O8hpd
+WD7cQvukHarJ+La+X5REhy34SfvBfuXGW4SFE0KtYGxJGpGXrOv53wFUKzRnbOs0+YeAxv9gmgOQ
+uvDirV1DppPcpW3XFv9xzIvL6FP7DuO6ffN8Kz+TtOJ6Dp+RG4voGjnp7jxliNfsTDEbc8V49apA
+wZxR6Og28lMfhAR1VQzt/xx/WspgVnz+E0Rvv0Ip1DKVUjItmMuPa9y6VWIGdBksLSDPTlRlZDro
+zK1AYHqTxNnCoWwqdS4C2TDBUiuVTai0Lf7jbi2ounLQ5gt3CnjG657oPAEJInIwUuYsrSFMSOFz
+nh7mTLfRZfaJczvYwSbovilI1RaW6xyU+vdFA+wQUWwLBOnJXiId5bNrPLHrfnKObRnlNaTU95QL
+M5AqkWj04+ONVWQ252WkWa818lof7dR8T25d1+zgrn9Kv5S4obwNe1RYDGbmchl30nN8Q+WtrHer
+OWA1qshQ9y3GkZHLYeaaqTbIEol+ZOJABIxVTe1Y3VWsBOcitbr9Wp7xIIxFguIVFpq1JulHy/AA
+SDXck95XRDTKCPXSzn11Jl4qHJ9s1YLVjxaY04VfuN/ebdkMBYq+NBPbzv+IsXbQhz4P6PcFa9wB
+Px4+Ua8tiG/+OV7DJDaCa/fsfYpGK4iuCoAmyy5FaR4wKvipwEhz//ddULUrqso1YG==

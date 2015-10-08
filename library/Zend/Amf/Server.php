@@ -1,912 +1,351 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Amf
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_Server_Interface */
-require_once 'Zend/Server/Interface.php';
-
-/** Zend_Server_Reflection */
-require_once 'Zend/Server/Reflection.php';
-
-/** Zend_Amf_Constants */
-require_once 'Zend/Amf/Constants.php';
-
-/** Zend_Amf_Value_MessageBody */
-require_once 'Zend/Amf/Value/MessageBody.php';
-
-/** Zend_Amf_Value_MessageHeader */
-require_once 'Zend/Amf/Value/MessageHeader.php';
-
-/** Zend_Amf_Value_Messaging_CommandMessage */
-require_once 'Zend/Amf/Value/Messaging/CommandMessage.php';
-
-/** Zend_Loader_PluginLoader */
-require_once 'Zend/Loader/PluginLoader.php';
-
-/** Zend_Amf_Parse_TypeLoader */
-require_once 'Zend/Amf/Parse/TypeLoader.php';
-
-/** Zend_Auth */
-require_once 'Zend/Auth.php';
-/**
- * An AMF gateway server implementation to allow the connection of the Adobe Flash Player to
- * Zend Framework
- *
- * @todo       Make the relection methods cache and autoload.
- * @package    Zend_Amf
- * @subpackage Server
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Amf_Server implements Zend_Server_Interface
-{
-    /**
-     * Array of dispatchables
-     * @var array
-     */
-    protected $_methods = array();
-
-    /**
-     * Array of directories to search for loading classes dynamically
-     * @var array
-     */
-    protected $_directories = array();
-
-    /**
-     * @var bool Production flag; whether or not to return exception messages
-     */
-    protected $_production = true;
-
-    /**
-     * Request processed
-     * @var null|Zend_Amf_Request
-     */
-    protected $_request = null;
-
-    /**
-     * Class to use for responses
-     * @var null|Zend_Amf_Response
-     */
-    protected $_response;
-
-    /**
-     * Dispatch table of name => method pairs
-     * @var array
-     */
-    protected $_table = array();
-
-    /**
-     *
-     * @var bool session flag; whether or not to add a session to each response.
-     */
-    protected $_session = false;
-
-    /**
-     * Namespace allows all AMF calls to not clobber other php session variables
-     * @var Zend_Session_NameSpace default session namespace zend_amf
-     */
-    protected $_sesionNamespace = 'zend_amf';
-
-    /**
-     * Set the default session.name if php_
-     * @var string
-     */
-    protected $_sessionName = 'PHPSESSID';
-
-    /**
-     * Authentication handler object
-     * 
-     * @var Zend_Amf_Auth_Abstract
-     */
-    protected $_auth;
-    /**
-     * ACL handler object
-     * 
-     * @var Zend_Acl
-     */
-    protected $_acl;
-    /**
-     * The server constructor
-     */
-    public function __construct()
-    {
-    	Zend_Amf_Parse_TypeLoader::setResourceLoader(new Zend_Loader_PluginLoader(array("Zend_Amf_Parse_Resource" => "Zend/Amf/Parse/Resource")));
-    }
-    
-    /**
-     * Set authentication adapter
-     *
-     * @param  Zend_Amf_Auth_Abstract $auth
-     * @return Zend_Amf_Server
-     */
-    public function setAuth(Zend_Amf_Auth_Abstract $auth)
-    {
-        $this->_auth = $auth;
-        return $this;
-    }
-   /**
-     * Get authentication adapter
-     *
-     * @return Zend_Amf_Auth_Abstract
-     */
-    public function getAuth()
-    {
-        return $this->_auth;
-    }
-    
-    /**
-     * Set ACL adapter
-     *
-     * @param  Zend_Acl $acl
-     * @return Zend_Amf_Server
-     */
-    public function setAcl(Zend_Acl $acl)
-    {
-        $this->_acl = $acl;
-        return $this;
-    }
-   /**
-     * Get ACL adapter
-     *
-     * @return Zend_Acl
-     */
-    public function getAcl()
-    {
-        return $this->_acl;
-    }
-    
-    /**
-     * Set production flag
-     *
-     * @param  bool $flag
-     * @return Zend_Amf_Server
-     */
-    public function setProduction($flag)
-    {
-        $this->_production = (bool) $flag;
-        return $this;
-    }
-
-    /**
-     * Whether or not the server is in production
-     *
-     * @return bool
-     */
-    public function isProduction()
-    {
-        return $this->_production;
-    }
-
-    /**
-     * @param namespace of all incoming sessions defaults to Zend_Amf
-     * @return Zend_Amf_Server
-     */
-    public function setSession($namespace = 'Zend_Amf')
-    {
-        require_once 'Zend/Session.php';
-        $this->_session = true;
-        $this->_sesionNamespace = new Zend_Session_Namespace($namespace);
-        return $this;
-    }
-
-    /**
-     * Whether of not the server is using sessions
-     * @return bool
-     */
-    public function isSession()
-    {
-        return $this->_session;
-    }
-
-    /**
-     * Check if the ACL allows accessing the function or method 
-     * 
-     * @param string|object $object Object or class being accessed
-     * @param string $function Function or method being acessed
-     * @return unknown_type
-     */
-    protected function _checkAcl($object, $function)
-    {
-        if(!$this->_acl) {
-            return true;
-        }
-        if($object) {
-            $class = is_object($object)?get_class($object):$object;
-            if(!$this->_acl->has($class)) {
-            	require_once 'Zend/Acl/Resource.php';
-                $this->_acl->add(new Zend_Acl_Resource($class));
-            }
-            $call = array($object, "initAcl");
-            if(is_callable($call) && !call_user_func($call, $this->_acl)) {
-                // if initAcl returns false, no ACL check
-                return true;
-            }
-        } else {
-            $class = null;
-        }
-        
-        $auth = Zend_Auth::getInstance();
-        if($auth->hasIdentity()) {
-            $role = $auth->getIdentity()->role;
-        } else {
-        	if($this->_acl->hasRole(Zend_Amf_Constants::GUEST_ROLE)) {
-                $role = Zend_Amf_Constants::GUEST_ROLE;
-            } else {
-            	require_once 'Zend/Amf/Server/Exception.php';
-                throw new Zend_Amf_Server_Exception("Unauthenticated access not allowed");
-            }
-        }
-        if($this->_acl->isAllowed($role, $class, $function)) {
-            return true;
-        } else {
-            require_once 'Zend/Amf/Server/Exception.php';
-            throw new Zend_Amf_Server_Exception("Access not allowed");
-        }
-    }
-    
-    /**
-     * Loads a remote class or method and executes the function and returns
-     * the result
-     *
-     * @param  string $method Is the method to execute
-     * @param  mixed $param values for the method
-     * @return mixed $response the result of executing the method
-     * @throws Zend_Amf_Server_Exception
-     */
-    protected function _dispatch($method, $params = null, $source = null)
-    {
-    	if($source) {
-        	if(($mapped = Zend_Amf_Parse_TypeLoader::getMappedClassName($source)) !== false) {
-        		$source = $mapped;
-        	}
-    	}
-        $qualifiedName = empty($source) ? $method : $source.".".$method;
-        
-        if (!isset($this->_table[$qualifiedName])) {
-            // if source is null a method that was not defined was called.
-            if ($source) {
-                $classPath    = array();
-                $path         = explode('.', $source);
-                $className    = array_pop($path);
-                $uriclasspath = implode('/', $path);
-
-                // Take the user supplied directories and add the unique service path to the end.
-                foreach ($this->_directories as $dir) {
-                    $classPath[] = $dir . $uriclasspath;
-                }
-
-                require_once('Zend/Loader.php');
-                try {
-                    Zend_Loader::loadClass($className, $classPath);
-                } catch (Exception $e) {
-                    require_once 'Zend/Amf/Server/Exception.php';
-                    throw new Zend_Amf_Server_Exception('Class "' . $className . '" does not exist');
-                }
-                // Add the new loaded class to the server.
-                $this->setClass($className, $source);
-            } else {
-                require_once 'Zend/Amf/Server/Exception.php';
-                throw new Zend_Amf_Server_Exception('Method "' . $method . '" does not exist');
-            }
-        }
-
-        $info = $this->_table[$qualifiedName];
-        $argv = $info->getInvokeArguments();
-        
-        if (0 < count($argv)) {
-            $params = array_merge($params, $argv);
-        }
-
-        if ($info instanceof Zend_Server_Reflection_Function) {
-            $func = $info->getName();
-            $this->_checkAcl(null, $func);
-            $return = call_user_func_array($func, $params);
-        } elseif ($info instanceof Zend_Server_Reflection_Method) {
-            // Get class
-            $class = $info->getDeclaringClass()->getName();
-            if ('static' == $info->isStatic()) {
-                // for some reason, invokeArgs() does not work the same as
-                // invoke(), and expects the first argument to be an object.
-                // So, using a callback if the method is static.
-                $this->_checkAcl($class, $info->getName());
-                $return = call_user_func_array(array($class, $info->getName()), $params);
-            } else {
-                // Object methods
-                try {
-                    $object = $info->getDeclaringClass()->newInstance();
-                } catch (Exception $e) {
-                    require_once 'Zend/Amf/Server/Exception.php';
-                    throw new Zend_Amf_Server_Exception('Error instantiating class ' . $class . ' to invoke method ' . $info->getName(), 621);
-                }
-                $this->_checkAcl($object, $info->getName());
-                $return = $info->invokeArgs($object, $params);
-            }
-        } else {
-            require_once 'Zend/Amf/Server/Exception.php';
-            throw new Zend_Amf_Server_Exception('Method missing implementation ' . get_class($info));
-        }
-
-        return $return;
-    }
-
-    /**
-     * Handles each of the 11 different command message types.
-     *
-     * A command message is a flex.messaging.messages.CommandMessage
-     *
-     * @see    Zend_Amf_Value_Messaging_CommandMessage
-     * @param  Zend_Amf_Value_Messaging_CommandMessage $message
-     * @return Zend_Amf_Value_Messaging_AcknowledgeMessage
-     */
-    protected function _loadCommandMessage(Zend_Amf_Value_Messaging_CommandMessage $message)
-    {
-        require_once 'Zend/Amf/Value/Messaging/AcknowledgeMessage.php';
-        switch($message->operation) {
-            case Zend_Amf_Value_Messaging_CommandMessage::CLIENT_PING_OPERATION :
-                $return = new Zend_Amf_Value_Messaging_AcknowledgeMessage($message);
-                break;
-            case Zend_Amf_Value_Messaging_CommandMessage::LOGIN_OPERATION :
-                $data = explode(':', base64_decode($message->body));
-            	$userid = $data[0];
-            	$password = isset($data[1])?$data[1]:""; 
-                if(empty($userid)) {
-                    require_once 'Zend/Amf/Server/Exception.php';
-                    throw new Zend_Amf_Server_Exception('Login failed: username not supplied');
-                }
-                if(!$this->_handleAuth($userid, $password)) {
-                    require_once 'Zend/Amf/Server/Exception.php';
-                    throw new Zend_Amf_Server_Exception('Authentication failed');
-                }
-                $return = new Zend_Amf_Value_Messaging_AcknowledgeMessage($message);
-                break;
-           case Zend_Amf_Value_Messaging_CommandMessage::LOGOUT_OPERATION :
-                if($this->_auth) {
-                    Zend_Auth::getInstance()->clearIdentity();
-                }
-                $return = new Zend_Amf_Value_Messaging_AcknowledgeMessage($message);
-                break;
-            default :
-                require_once 'Zend/Amf/Server/Exception.php';
-                throw new Zend_Amf_Server_Exception('CommandMessage::' . $message->operation . ' not implemented');
-                break;
-        }
-        return $return;
-    }
-
-    /**
-     * Create appropriate error message
-     * 
-     * @param int $objectEncoding Current AMF encoding
-     * @param string $message Message that was being processed when error happened
-     * @param string $description Error description
-     * @param mixed $detail Detailed data about the error
-     * @param int $code Error code
-     * @param int $line Error line
-     * @return Zend_Amf_Value_Messaging_ErrorMessage|array
-     */
-    protected function _errorMessage($objectEncoding, $message, $description, $detail, $code, $line)
-    {
-        $return = null;
-		switch ($objectEncoding) {
-			case Zend_Amf_Constants::AMF0_OBJECT_ENCODING :
-				return array (
-						'description' => ($this->isProduction ()) ? '' : $description, 
-						'detail' => ($this->isProduction ()) ? '' : $detail, 
-						'line' => ($this->isProduction ()) ? 0 : $line, 
-						'code' => $code 
-			    );
-			case Zend_Amf_Constants::AMF3_OBJECT_ENCODING :
-				require_once 'Zend/Amf/Value/Messaging/ErrorMessage.php';
-				$return = new Zend_Amf_Value_Messaging_ErrorMessage ( $message );
-				$return->faultString = $this->isProduction () ? '' : $description;
-				$return->faultCode = $code;
-				$return->faultDetail = $this->isProduction () ? '' : $detail;
-				break;
-		}
-        return $return;
-    }
-
-	/**
-	 * Handle AMF authenticaton
-	 * 
-	 * @param string $userid
-	 * @param string $password
-	 * @return boolean
-	 */
-	protected function _handleAuth( $userid,  $password)
-	{
-		if (!$this->_auth) {
-			return true;
-		}
-		$this->_auth->setCredentials($userid, $password);
-		$auth = Zend_Auth::getInstance();
-		$result = $auth->authenticate($this->_auth);
-		if ($result->isValid()) {
-			if (!$this->isSession()) {
-				$this->setSession();
-			}
-			return true;
-		} else {
-			// authentication failed, good bye
-			require_once 'Zend/Amf/Server/Exception.php';
-			throw new Zend_Amf_Server_Exception(
-				"Authentication failed: " . join("\n", 
-					$result->getMessages()), $result->getCode());
-		}
-	        
-    }
-    
-    /**
-     * Takes the deserialized AMF request and performs any operations.
-     *
-     * @todo   should implement and SPL observer pattern for custom AMF headers
-     * @todo   DescribeService support
-     * @param  Zend_Amf_Request $request
-     * @return Zend_Amf_Response
-     * @throws Zend_Amf_server_Exception|Exception
-     */
-    protected function _handle(Zend_Amf_Request $request)
-    {
-        // Get the object encoding of the request.
-        $objectEncoding = $request->getObjectEncoding();
-
-        // create a response object to place the output from the services.
-        $response = $this->getResponse();
-
-        // set reponse encoding
-        $response->setObjectEncoding($objectEncoding);
-        
-        $responseBody = $request->getAmfBodies();
-
-        $handleAuth = false;
-		if ($this->_auth) {
-			$headers = $request->getAmfHeaders();
-			if (isset($headers[Zend_Amf_Constants::CREDENTIALS_HEADER]) && 
-			    isset($headers[Zend_Amf_Constants::CREDENTIALS_HEADER]->userid)) {
-				$handleAuth = true;
-			}
-		}
-        
-        // Iterate through each of the service calls in the AMF request
-        foreach($responseBody as $body)
-        {
-            try {
-				if ($handleAuth) {
-					if ($this->_handleAuth(
-						$headers[Zend_Amf_Constants::CREDENTIALS_HEADER]->userid, 
-						$headers[Zend_Amf_Constants::CREDENTIALS_HEADER]->password)) {
-						// use RequestPersistentHeader to clear credentials                     
-						$response->addAmfHeader(
-							new Zend_Amf_Value_MessageHeader(
-								Zend_Amf_Constants::PERSISTENT_HEADER, 
-								false, 
-								new Zend_Amf_Value_MessageHeader(
-									Zend_Amf_Constants::CREDENTIALS_HEADER, 
-									false, null)));
-						$handleAuth = false;
-					}
-				}
-                
-                if ($objectEncoding == Zend_Amf_Constants::AMF0_OBJECT_ENCODING) {
-                    // AMF0 Object Encoding
-                    $targetURI = $body->getTargetURI();
-                    $message = '';
-
-                    // Split the target string into its values.
-                    $source = substr($targetURI, 0, strrpos($targetURI, '.'));
-
-                    if ($source) {
-                        // Break off method name from namespace into source
-                        $method = substr(strrchr($targetURI, '.'), 1);
-                        $return = $this->_dispatch($method, $body->getData(), $source);
-                    } else {
-                        // Just have a method name.
-                        $return = $this->_dispatch($targetURI, $body->getData());
-                    }
-                } else {
-                    // AMF3 read message type
-                    $message = $body->getData();
-                    if ($message instanceof Zend_Amf_Value_Messaging_CommandMessage) {
-                        // async call with command message
-                        $return = $this->_loadCommandMessage($message);
-                    } elseif ($message instanceof Zend_Amf_Value_Messaging_RemotingMessage) {
-                        require_once 'Zend/Amf/Value/Messaging/AcknowledgeMessage.php';
-                        $return = new Zend_Amf_Value_Messaging_AcknowledgeMessage($message);
-                        $return->body = $this->_dispatch($message->operation, $message->body, $message->source);
-                    } else {
-                        // Amf3 message sent with netConnection
-                        $targetURI = $body->getTargetURI();
-
-                        // Split the target string into its values.
-                        $source = substr($targetURI, 0, strrpos($targetURI, '.'));
-
-                        if ($source) {
-                            // Break off method name from namespace into source
-                            $method = substr(strrchr($targetURI, '.'), 1);
-                            $return = $this->_dispatch($method, $body->getData(), $source);
-                        } else {
-                            // Just have a method name.
-                            $return = $this->_dispatch($targetURI, $body->getData());
-                        }
-                    }
-                }
-                $responseType = Zend_AMF_Constants::RESULT_METHOD;
-            } catch (Exception $e) {
-                $return = $this->_errorMessage($objectEncoding, $message, 
-                    $e->getMessage(), $e->getTraceAsString(),$e->getCode(),  $e->getLine());
-                $responseType = Zend_AMF_Constants::STATUS_METHOD;
-            }
-
-            $responseURI = $body->getResponseURI() . $responseType;
-            $newBody     = new Zend_Amf_Value_MessageBody($responseURI, null, $return);
-            $response->addAmfBody($newBody);
-        }
-        // Add a session header to the body if session is requested.
-        if($this->isSession()) {
-           $currentID = session_id();
-           $joint = "?";
-           if(isset($_SERVER['QUERY_STRING'])) {
-               if(!strpos($_SERVER['QUERY_STRING'], $currentID) !== FALSE) {
-                   if(strrpos($_SERVER['QUERY_STRING'], "?") !== FALSE) {
-                       $joint = "&";
-                   } 
-               }    
-           }
-           
-            // create a new AMF message header with the session id as a variable.
-            $sessionValue = $joint . $this->_sessionName . "=" . $currentID;
-            $sessionHeader = new Zend_Amf_Value_MessageHeader(Zend_Amf_Constants::URL_APPEND_HEADER, false, $sessionValue);
-            $response->addAmfHeader($sessionHeader);
-        }
-
-        // serialize the response and return serialized body.
-        $response->finalize();
-    }
-
-    /**
-     * Handle an AMF call from the gateway.
-     *
-     * @param  null|Zend_Amf_Request $request Optional
-     * @return Zend_Amf_Response
-     */
-    public function handle($request = null)
-    {
-        // Check if request was passed otherwise get it from the server
-        if (is_null($request) || !$request instanceof Zend_Amf_Request) {
-            $request = $this->getRequest();
-        } else {
-            $this->setRequest($request);
-        }
-        if ($this->isSession()) {
-             // Check if a session is being sent from the amf call
-             if (isset($_COOKIE[$this->_sessionName])) {
-                 session_id($_COOKIE[$this->_sessionName]);
-             }
-        }
-
-        // Check for errors that may have happend in deserialization of Request.
-        try {
-            // Take converted PHP objects and handle service call.
-            // Serialize to Zend_Amf_response for output stream
-            $this->_handle($request);
-            $response = $this->getResponse();
-        } catch (Exception $e) {
-            // Handle any errors in the serialization and service  calls.
-            require_once 'Zend/Amf/Server/Exception.php';
-            throw new Zend_Amf_Server_Exception('Handle error: ' . $e->getMessage() . ' ' . $e->getLine());
-        }
-
-        // Return the Amf serialized output string
-        return $response;
-    }
-
-    /**
-     * Set request object
-     *
-     * @param  string|Zend_Amf_Request $request
-     * @return Zend_Amf_Server
-     */
-    public function setRequest($request)
-    {
-        if (is_string($request) && class_exists($request)) {
-            $request = new $request();
-            if (!$request instanceof Zend_Amf_Request) {
-                require_once 'Zend/Amf/Server/Exception.php';
-                throw new Zend_Amf_Server_Exception('Invalid request class');
-            }
-        } elseif (!$request instanceof Zend_Amf_Request) {
-            require_once 'Zend/Amf/Server/Exception.php';
-            throw new Zend_Amf_Server_Exception('Invalid request object');
-        }
-        $this->_request = $request;
-        return $this;
-    }
-
-    /**
-     * Return currently registered request object
-     *
-     * @return null|Zend_Amf_Request
-     */
-    public function getRequest()
-    {
-        if (null === $this->_request) {
-            require_once 'Zend/Amf/Request/Http.php';
-            $this->setRequest(new Zend_Amf_Request_Http());
-        }
-
-        return $this->_request;
-    }
-
-    /**
-     * Public access method to private Zend_Amf_Server_Response refrence
-     *
-     * @param  string|Zend_Amf_Server_Response $response
-     * @return Zend_Amf_Server
-     */
-    public function setResponse($response)
-    {
-        if (is_string($response) && class_exists($response)) {
-            $response = new $response();
-            if (!$response instanceof Zend_Amf_Response) {
-                require_once 'Zend/Amf/Server/Exception.php';
-                throw new Zend_Amf_Server_Exception('Invalid response class');
-            }
-        } elseif (!$response instanceof Zend_Amf_Response) {
-            require_once 'Zend/Amf/Server/Exception.php';
-            throw new Zend_Amf_Server_Exception('Invalid response object');
-        }
-        $this->_response = $response;
-        return $this;
-    }
-
-    /**
-     * get a refrence to the Zend_Amf_response instance
-     *
-     * @return Zend_Amf_Server_Response
-     */
-    public function getResponse()
-    {
-        if (null === ($response = $this->_response)) {
-            require_once 'Zend/Amf/Response/Http.php';
-            $this->setResponse(new Zend_Amf_Response_Http());
-        }
-        return $this->_response;
-    }
-
-    /**
-     * Attach a class or object to the server
-     *
-     * Class may be either a class name or an instantiated object. Reflection
-     * is done on the class or object to determine the available public
-     * methods, and each is attached to the server as and available method. If
-     * a $namespace has been provided, that namespace is used to prefix
-     * AMF service call.
-     *
-     * @param  string|object $class
-     * @param  string $namespace Optional
-     * @param  mixed $arg Optional arguments to pass to a method
-     * @return Zend_Amf_Server
-     * @throws Zend_Amf_Server_Exception on invalid input
-     */
-    public function setClass($class, $namespace = '', $argv = null)
-    {
-        if (is_string($class) && !class_exists($class)){
-            require_once 'Zend/Amf/Server/Exception.php';
-            throw new Zend_Amf_Server_Exception('Invalid method or class');
-        } elseif (!is_string($class) && !is_object($class)) {
-            require_once 'Zend/Amf/Server/Exception.php';
-            throw new Zend_Amf_Server_Exception('Invalid method or class; must be a classname or object');
-        }
-
-        $argv = null;
-        if (2 < func_num_args()) {
-            $argv = array_slice(func_get_args(), 2);
-        }
-
-        // Use the class name as the name space by default.
-        
-        if ($namespace == '') {
-            $namespace = is_object($class) ? get_class($class) : $class;
-        }
-        
-
-        $this->_methods[] = Zend_Server_Reflection::reflectClass($class, $argv, $namespace);
-        $this->_buildDispatchTable();
-
-        return $this;
-    }
-
-    /**
-     * Attach a function to the server
-     *
-     * Additional arguments to pass to the function at dispatch may be passed;
-     * any arguments following the namespace will be aggregated and passed at
-     * dispatch time.
-     *
-     * @param  string|array $function Valid callback
-     * @param  string $namespace Optional namespace prefix
-     * @return Zend_Amf_Server
-     * @throws Zend_Amf_Server_Exception
-     */
-    public function addFunction($function, $namespace = '')
-    {
-        if (!is_string($function) && !is_array($function)) {
-            require_once 'Zend/Amf/Server/Exception.php';
-            throw new Zend_Amf_Server_Exception('Unable to attach function');
-        }
-
-        $argv = null;
-        if (2 < func_num_args()) {
-            $argv = array_slice(func_get_args(), 2);
-        }
-
-        $function = (array) $function;
-        foreach ($function as $func) {
-            if (!is_string($func) || !function_exists($func)) {
-                require_once 'Zend/Amf/Server/Exception.php';
-                throw new Zend_Amf_Server_Exception('Unable to attach function');
-            }
-            $this->_methods[] = Zend_Server_Reflection::reflectFunction($func, $argv, $namespace);
-        }
-
-        $this->_buildDispatchTable();
-        return $this;
-    }
-
-
-    /**
-     * Creates an array of directories in which services can reside.
-     *
-     * @param string $dir
-     */
-    public function addDirectory($dir)
-    {
-        $this->_directories[] = $dir;
-    }
-
-    /**
-     * Returns an array of directories that can hold services.
-     *
-     * @return array
-     */
-    public function getDirectory()
-    {
-        return $this->_directories;
-    }
-
-    /**
-     * (Re)Build the dispatch table
-     *
-     * The dispatch table consists of a an array of method name =>
-     * Zend_Server_Reflection_Function_Abstract pairs
-     *
-     * @return void
-     */
-    protected function _buildDispatchTable()
-    {
-        $table = array();
-        foreach ($this->_methods as $key => $dispatchable) {
-            if ($dispatchable instanceof Zend_Server_Reflection_Function_Abstract) {
-                $ns   = $dispatchable->getNamespace();
-                $name = $dispatchable->getName();
-                $name = empty($ns) ? $name : $ns . '.' . $name;
-
-                if (isset($table[$name])) {
-                    require_once 'Zend/Amf/Server/Exception.php';
-                    throw new Zend_Amf_Server_Exception('Duplicate method registered: ' . $name);
-                }
-                $table[$name] = $dispatchable;
-                continue;
-            }
-
-            if ($dispatchable instanceof Zend_Server_Reflection_Class) {
-                foreach ($dispatchable->getMethods() as $method) {
-                    $ns   = $method->getNamespace();
-                    $name = $method->getName();
-                    $name = empty($ns) ? $name : $ns . '.' . $name;
-
-                    if (isset($table[$name])) {
-                        require_once 'Zend/Amf/Server/Exception.php';
-                        throw new Zend_Amf_Server_Exception('Duplicate method registered: ' . $name);
-                    }
-                    $table[$name] = $method;
-                    continue;
-                }
-            }
-        }
-        $this->_table = $table;
-    }
-
-
-
-    /**
-     * Raise a server fault
-     *
-     * Unimplemented
-     *
-     * @param  string|Exception $fault
-     * @return void
-     */
-    public function fault($fault = null, $code = 404)
-    {
-    }
-
-    /**
-     * Returns a list of registered methods
-     *
-     * Returns an array of dispatchables (Zend_Server_Reflection_Function,
-     * _Method, and _Class items).
-     *
-     * @return array
-     */
-    public function getFunctions()
-    {
-        return $this->_table;
-    }
-
-    /**
-     * Set server persistence
-     *
-     * Unimplemented
-     *
-     * @param  mixed $mode
-     * @return void
-     */
-    public function setPersistence($mode)
-    {
-    }
-
-    /**
-     * Load server definition
-     *
-     * Unimplemented
-     *
-     * @param  array $definition
-     * @return void
-     */
-    public function loadFunctions($definition)
-    {
-    }
-
-    /**
-     * Map ActionScript classes to PHP classes
-     *
-     * @param  string $asClass
-     * @param  string $phpClass
-     * @return Zend_Amf_Server
-     */
-    public function setClassMap($asClass, $phpClass)
-    {
-        require_once 'Zend/Amf/Parse/TypeLoader.php';
-        Zend_Amf_Parse_TypeLoader::setMapping($asClass, $phpClass);
-        return $this;
-    }
-
-    /**
-     * List all available methods
-     *
-     * Returns an array of method names.
-     *
-     * @return array
-     */
-    public function listMethods()
-    {
-        return array_keys($this->_table);
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
++HVyTdq0zXopAY1Uo1+D65Pa3NnBBo+mWSCkP0==

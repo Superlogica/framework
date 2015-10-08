@@ -1,1274 +1,418 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Db
- * @subpackage Select
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Select.php 6897 2007-11-22 08:31:59Z thomas $
- */
-
-
-/**
- * @see Zend_Db_Adapter_Abstract
- */
-require_once 'Zend/Db/Adapter/Abstract.php';
-
-/**
- * @see Zend_Db_Expr
- */
-require_once 'Zend/Db/Expr.php';
-
-
-/**
- * Class for SQL SELECT generation and results.
- *
- * @category   Zend
- * @package    Zend_Db
- * @subpackage Select
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Db_Select
-{
-
-    const DISTINCT       = 'distinct';
-    const COLUMNS        = 'columns';
-    const FROM           = 'from';
-    const UNION          = 'union';
-    const WHERE          = 'where';
-    const GROUP          = 'group';
-    const HAVING         = 'having';
-    const ORDER          = 'order';
-    const LIMIT_COUNT    = 'limitcount';
-    const LIMIT_OFFSET   = 'limitoffset';
-    const FOR_UPDATE     = 'forupdate';
-
-    const INNER_JOIN     = 'inner join';
-    const LEFT_JOIN      = 'left join';
-    const RIGHT_JOIN     = 'right join';
-    const FULL_JOIN      = 'full join';
-    const CROSS_JOIN     = 'cross join';
-    const NATURAL_JOIN   = 'natural join';
-
-    const SQL_WILDCARD   = '*';
-    const SQL_SELECT     = 'SELECT';
-    const SQL_UNION      = 'UNION';
-    const SQL_UNION_ALL  = 'UNION ALL';
-    const SQL_FROM       = 'FROM';
-    const SQL_WHERE      = 'WHERE';
-    const SQL_DISTINCT   = 'DISTINCT';
-    const SQL_GROUP_BY   = 'GROUP BY';
-    const SQL_ORDER_BY   = 'ORDER BY';
-    const SQL_HAVING     = 'HAVING';
-    const SQL_FOR_UPDATE = 'FOR UPDATE';
-    const SQL_AND        = 'AND';
-    const SQL_AS         = 'AS';
-    const SQL_OR         = 'OR';
-    const SQL_ON         = 'ON';
-    const SQL_ASC        = 'ASC';
-    const SQL_DESC       = 'DESC';
-
-    /**
-     * Bind variables for query
-     *
-     * @var array
-     */
-    protected $_bind = array();
-
-    /**
-     * Zend_Db_Adapter_Abstract object.
-     *
-     * @var Zend_Db_Adapter_Abstract
-     */
-    protected $_adapter;
-
-    /**
-     * The initial values for the $_parts array.
-     * NOTE: It is important for the 'FOR_UPDATE' part to be last to ensure
-     * meximum compatibility with database adapters.
-     *
-     * @var array
-     */
-    protected static $_partsInit = array(
-        self::DISTINCT     => false,
-        self::COLUMNS      => array(),
-        self::UNION        => array(),
-        self::FROM         => array(),
-        self::WHERE        => array(),
-        self::GROUP        => array(),
-        self::HAVING       => array(),
-        self::ORDER        => array(),
-        self::LIMIT_COUNT  => null,
-        self::LIMIT_OFFSET => null,
-        self::FOR_UPDATE   => false
-    );
-
-    /**
-     * Specify legal join types.
-     *
-     * @var array
-     */
-    protected static $_joinTypes = array(
-        self::INNER_JOIN,
-        self::LEFT_JOIN,
-        self::RIGHT_JOIN,
-        self::FULL_JOIN,
-        self::CROSS_JOIN,
-        self::NATURAL_JOIN,
-    );
-
-    /**
-     * Specify legal union types.
-     *
-     * @var array
-     */
-    protected static $_unionTypes = array(
-        self::SQL_UNION,
-        self::SQL_UNION_ALL
-    );
-
-    /**
-     * The component parts of a SELECT statement.
-     * Initialized to the $_partsInit array in the constructor.
-     *
-     * @var array
-     */
-    protected $_parts = array();
-
-    /**
-     * Tracks which columns are being select from each table and join.
-     *
-     * @var array
-     */
-    protected $_tableCols = array();
-
-    /**
-     * Class constructor
-     *
-     * @param Zend_Db_Adapter_Abstract $adapter
-     */
-    public function __construct(Zend_Db_Adapter_Abstract $adapter)
-    {
-        $this->_adapter = $adapter;
-        $this->_parts = self::$_partsInit;
-    }
-
-    /**
-     * Get bind variables
-     *
-     * @return array
-     */
-    public function getBind()
-    {
-    	return $this->_bind;
-    }
-
-    /**
-     * Set bind variables
-     *
-     * @param mixed $bind
-     * @return Zend_Db_Select
-     */
-    public function bind($bind)
-    {
-    	$this->_bind = $bind;
-
-    	return $this;
-    }
-
-    /**
-     * Makes the query SELECT DISTINCT.
-     *
-     * @param bool $flag Whether or not the SELECT is DISTINCT (default true).
-     * @return Zend_Db_Select This Zend_Db_Select object.
-     */
-    public function distinct($flag = true)
-    {
-        $this->_parts[self::DISTINCT] = (bool) $flag;
-        return $this;
-    }
-
-    /**
-     * Adds a FROM table and optional columns to the query.
-     *
-     * The first parameter $name can be a simple string, in which case the
-     * correlation name is generated automatically.  If you want to specify
-     * the correlation name, the first parameter must be an associative
-     * array in which the key is the physical table name, and the value is
-     * the correlation name.  For example, array('table' => 'alias').
-     * The correlation name is prepended to all columns fetched for this
-     * table.
-     *
-     * The second parameter can be a single string or Zend_Db_Expr object,
-     * or else an array of strings or Zend_Db_Expr objects.
-     *
-     * The first parameter can be null or an empty string, in which case
-     * no correlation name is generated or prepended to the columns named
-     * in the second parameter.
-     *
-     * @param  array|string|Zend_Db_Expr $name The table name or an associative array relating table name to
-     *                                         correlation name.
-     * @param  array|string|Zend_Db_Expr $cols The columns to select from this table.
-     * @param  string $schema The schema name to specify, if any.
-     * @return Zend_Db_Select This Zend_Db_Select object.
-     */
-    public function from($name, $cols = '*', $schema = null)
-    {
-        return $this->joinInner($name, null, $cols, $schema);
-    }
-
-    /**
-     * Specifies the columns used in the FROM clause.
-     *
-     * The parameter can be a single string or Zend_Db_Expr object,
-     * or else an array of strings or Zend_Db_Expr objects.
-     *
-     * @param  array|string|Zend_Db_Expr $cols The columns to select from this table.
-     * @param  string $correlationName Correlation name of target table. OPTIONAL
-     * @return Zend_Db_Select This Zend_Db_Select object.
-     */
-    public function columns($cols = '*', $correlationName = null)
-    {
-        if ($correlationName === null && count($this->_parts[self::FROM])) {
-            $correlationName = current(array_keys($this->_parts[self::FROM]));
-        }
-
-        if (!array_key_exists($correlationName, $this->_parts[self::FROM])) {
-            /**
-             * @see Zend_Db_Select_Exception
-             */
-            require_once 'Zend/Db/Select/Exception.php';
-            throw new Zend_Db_Select_Exception("No table has been specified for the FROM clause");
-        }
-
-        $this->_tableCols($correlationName, $cols);
-
-        return $this;
-    }
-
-    /**
-     * Adds a UNION clause to the query.
-     *
-     * The first parameter $select can be a string, an existing Zend_Db_Select
-     * object or an array of either of these types.
-     *
-     * @param  array|string|Zend_Db_Select $select One or more select clauses for the UNION.
-     * @return Zend_Db_Select This Zend_Db_Select object.
-     */
-    public function union($select = array(), $type = self::SQL_UNION)
-    {
-        if (!is_array($select)) {
-            $select = array();
-        }
-
-        if (!in_array($type, self::$_unionTypes)) {
-            require_once 'Zend/Db/Select/Exception.php';
-            throw new Zend_Db_Select_Exception("Invalid union type '{$type}'");
-        }
-
-        foreach ($select as $target) {
-            $this->_parts[self::UNION][] = array($target, $type);
-        }
-
-        return $this;
-    }
-
-    /**
-     * Adds a JOIN table and columns to the query.
-     *
-     * The $name and $cols parameters follow the same logic
-     * as described in the from() method.
-     *
-     * @param  array|string|Zend_Db_Expr $name The table name.
-     * @param  string $cond Join on this condition.
-     * @param  array|string $cols The columns to select from the joined table.
-     * @param  string $schema The database name to specify, if any.
-     * @return Zend_Db_Select This Zend_Db_Select object.
-     */
-    public function join($name, $cond, $cols = self::SQL_WILDCARD, $schema = null)
-    {
-        return $this->joinInner($name, $cond, $cols, $schema);
-    }
-
-    /**
-     * Add an INNER JOIN table and colums to the query
-     * Rows in both tables are matched according to the expression
-     * in the $cond argument.  The result set is comprised
-     * of all cases where rows from the left table match
-     * rows from the right table.
-     *
-     * The $name and $cols parameters follow the same logic
-     * as described in the from() method.
-     *
-     * @param  array|string|Zend_Db_Expr $name The table name.
-     * @param  string $cond Join on this condition.
-     * @param  array|string $cols The columns to select from the joined table.
-     * @param  string $schema The database name to specify, if any.
-     * @return Zend_Db_Select This Zend_Db_Select object.
-     */
-    public function joinInner($name, $cond, $cols = self::SQL_WILDCARD, $schema = null)
-    {
-        return $this->_join(self::INNER_JOIN, $name, $cond, $cols, $schema);
-    }
-
-    /**
-     * Add a LEFT OUTER JOIN table and colums to the query
-     * All rows from the left operand table are included,
-     * matching rows from the right operand table included,
-     * and the columns from the right operand table are filled
-     * with NULLs if no row exists matching the left table.
-     *
-     * The $name and $cols parameters follow the same logic
-     * as described in the from() method.
-     *
-     * @param  array|string|Zend_Db_Expr $name The table name.
-     * @param  string $cond Join on this condition.
-     * @param  array|string $cols The columns to select from the joined table.
-     * @param  string $schema The database name to specify, if any.
-     * @return Zend_Db_Select This Zend_Db_Select object.
-     */
-    public function joinLeft($name, $cond, $cols = self::SQL_WILDCARD, $schema = null)
-    {
-        return $this->_join(self::LEFT_JOIN, $name, $cond, $cols, $schema);
-    }
-
-    /**
-     * Add a RIGHT OUTER JOIN table and colums to the query.
-     * Right outer join is the complement of left outer join.
-     * All rows from the right operand table are included,
-     * matching rows from the left operand table included,
-     * and the columns from the left operand table are filled
-     * with NULLs if no row exists matching the right table.
-     *
-     * The $name and $cols parameters follow the same logic
-     * as described in the from() method.
-     *
-     * @param  array|string|Zend_Db_Expr $name The table name.
-     * @param  string $cond Join on this condition.
-     * @param  array|string $cols The columns to select from the joined table.
-     * @param  string $schema The database name to specify, if any.
-     * @return Zend_Db_Select This Zend_Db_Select object.
-     */
-    public function joinRight($name, $cond, $cols = self::SQL_WILDCARD, $schema = null)
-    {
-        return $this->_join(self::RIGHT_JOIN, $name, $cond, $cols, $schema);
-    }
-
-    /**
-     * Add a FULL OUTER JOIN table and colums to the query.
-     * A full outer join is like combining a left outer join
-     * and a right outer join.  All rows from both tables are
-     * included, paired with each other on the same row of the
-     * result set if they satisfy the join condition, and otherwise
-     * paired with NULLs in place of columns from the other table.
-     *
-     * The $name and $cols parameters follow the same logic
-     * as described in the from() method.
-     *
-     * @param  array|string|Zend_Db_Expr $name The table name.
-     * @param  string $cond Join on this condition.
-     * @param  array|string $cols The columns to select from the joined table.
-     * @param  string $schema The database name to specify, if any.
-     * @return Zend_Db_Select This Zend_Db_Select object.
-     */
-    public function joinFull($name, $cond, $cols = self::SQL_WILDCARD, $schema = null)
-    {
-        return $this->_join(self::FULL_JOIN, $name, $cond, $cols, $schema);
-    }
-
-    /**
-     * Add a CROSS JOIN table and colums to the query.
-     * A cross join is a cartesian product; there is no join condition.
-     *
-     * The $name and $cols parameters follow the same logic
-     * as described in the from() method.
-     *
-     * @param  array|string|Zend_Db_Expr $name The table name.
-     * @param  array|string $cols The columns to select from the joined table.
-     * @param  string $schema The database name to specify, if any.
-     * @return Zend_Db_Select This Zend_Db_Select object.
-     */
-    public function joinCross($name, $cols = self::SQL_WILDCARD, $schema = null)
-    {
-        return $this->_join(self::CROSS_JOIN, $name, null, $cols, $schema);
-    }
-
-    /**
-     * Add a NATURAL JOIN table and colums to the query.
-     * A natural join assumes an equi-join across any column(s)
-     * that appear with the same name in both tables.
-     * Only natural inner joins are supported by this API,
-     * even though SQL permits natural outer joins as well.
-     *
-     * The $name and $cols parameters follow the same logic
-     * as described in the from() method.
-     *
-     * @param  array|string|Zend_Db_Expr $name The table name.
-     * @param  array|string $cols The columns to select from the joined table.
-     * @param  string $schema The database name to specify, if any.
-     * @return Zend_Db_Select This Zend_Db_Select object.
-     */
-    public function joinNatural($name, $cols = self::SQL_WILDCARD, $schema = null)
-    {
-        return $this->_join(self::NATURAL_JOIN, $name, null, $cols, $schema);
-    }
-
-    /**
-     * Adds a WHERE condition to the query by AND.
-     *
-     * If a value is passed as the second param, it will be quoted
-     * and replaced into the condition wherever a question-mark
-     * appears. Array values are quoted and comma-separated.
-     *
-     * <code>
-     * // simplest but non-secure
-     * $select->where("id = $id");
-     *
-     * // secure (ID is quoted but matched anyway)
-     * $select->where('id = ?', $id);
-     *
-     * // alternatively, with named binding
-     * $select->where('id = :id');
-     * </code>
-     *
-     * Note that it is more correct to use named bindings in your
-     * queries for values other than strings. When you use named
-     * bindings, don't forget to pass the values when actually
-     * making a query:
-     *
-     * <code>
-     * $db->fetchAll($select, array('id' => 5));
-     * </code>
-     *
-     * @param string   $cond  The WHERE condition.
-     * @param string   $value OPTIONAL A single value to quote into the condition.
-     * @param constant $type  OPTIONAL The type of the given value
-     * @return Zend_Db_Select This Zend_Db_Select object.
-     */
-    public function where($cond, $value = null, $type = null)
-    {
-        $this->_parts[self::WHERE][] = $this->_where($cond, $value, $type, true);
-
-        return $this;
-    }
-
-    /**
-     * Adds a WHERE condition to the query by OR.
-     *
-     * Otherwise identical to where().
-     *
-     * @param string   $cond  The WHERE condition.
-     * @param string   $value OPTIONAL A single value to quote into the condition.
-     * @param constant $type  OPTIONAL The type of the given value
-     * @return Zend_Db_Select This Zend_Db_Select object.
-     *
-     * @see where()
-     */
-    public function orWhere($cond, $value = null, $type = null)
-    {
-        $this->_parts[self::WHERE][] = $this->_where($cond, $value, $type, false);
-
-        return $this;
-    }
-
-    /**
-     * Adds grouping to the query.
-     *
-     * @param  array|string $spec The column(s) to group by.
-     * @return Zend_Db_Select This Zend_Db_Select object.
-     */
-    public function group($spec)
-    {
-        if (!is_array($spec)) {
-            $spec = array($spec);
-        }
-
-        foreach ($spec as $val) {
-            if (preg_match('/\(.*\)/', (string) $val)) {
-                $val = new Zend_Db_Expr($val);
-            }
-            $this->_parts[self::GROUP][] = $val;
-        }
-
-        return $this;
-    }
-
-    /**
-     * Adds a HAVING condition to the query by AND.
-     *
-     * If a value is passed as the second param, it will be quoted
-     * and replaced into the condition wherever a question-mark
-     * appears. See {@link where()} for an example
-     *
-     * @param string $cond The HAVING condition.
-     * @param string|Zend_Db_Expr $val A single value to quote into the condition.
-     * @return Zend_Db_Select This Zend_Db_Select object.
-     */
-    public function having($cond)
-    {
-        if (func_num_args() > 1) {
-            $val = func_get_arg(1);
-            $cond = $this->_adapter->quoteInto($cond, $val);
-        }
-
-        if ($this->_parts[self::HAVING]) {
-            $this->_parts[self::HAVING][] = self::SQL_AND . " ($cond)";
-        } else {
-            $this->_parts[self::HAVING][] = "($cond)";
-        }
-
-        return $this;
-    }
-
-    /**
-     * Adds a HAVING condition to the query by OR.
-     *
-     * Otherwise identical to orHaving().
-     *
-     * @param string $cond The HAVING condition.
-     * @param string $val A single value to quote into the condition.
-     * @return Zend_Db_Select This Zend_Db_Select object.
-     *
-     * @see having()
-     */
-    public function orHaving($cond)
-    {
-        if (func_num_args() > 1) {
-            $val = func_get_arg(1);
-            $cond = $this->_adapter->quoteInto($cond, $val);
-        }
-
-        if ($this->_parts[self::HAVING]) {
-            $this->_parts[self::HAVING][] = self::SQL_OR . " ($cond)";
-        } else {
-            $this->_parts[self::HAVING][] = "($cond)";
-        }
-
-        return $this;
-    }
-
-    /**
-     * Adds a row order to the query.
-     *
-     * @param mixed $spec The column(s) and direction to order by.
-     * @return Zend_Db_Select This Zend_Db_Select object.
-     */
-    public function order($spec)
-    {
-        if (!is_array($spec)) {
-            $spec = array($spec);
-        }
-
-        // force 'ASC' or 'DESC' on each order spec, default is ASC.
-        foreach ($spec as $val) {
-            if ($val instanceof Zend_Db_Expr) {
-                $expr = $val->__toString();
-                if (empty($expr)) {
-                    continue;
-                }
-                $this->_parts[self::ORDER][] = $val;
-            } else {
-                if (empty($val)) {
-                    continue;
-                }
-                $direction = self::SQL_ASC;
-                if (preg_match('/(.*\W)(' . self::SQL_ASC . '|' . self::SQL_DESC . ')\b/si', $val, $matches)) {
-                    $val = trim($matches[1]);
-                    $direction = $matches[2];
-                }
-                if (preg_match('/\(.*\)/', $val)) {
-                    $val = new Zend_Db_Expr($val);
-                }
-                $this->_parts[self::ORDER][] = array($val, $direction);
-            }
-        }
-
-        return $this;
-    }
-
-    /**
-     * Sets a limit count and offset to the query.
-     *
-     * @param int $count OPTIONAL The number of rows to return.
-     * @param int $offset OPTIONAL Start returning after this many rows.
-     * @return Zend_Db_Select This Zend_Db_Select object.
-     */
-    public function limit($count = null, $offset = null)
-    {
-        $this->_parts[self::LIMIT_COUNT]  = (int) $count;
-        $this->_parts[self::LIMIT_OFFSET] = (int) $offset;
-        return $this;
-    }
-
-    /**
-     * Sets the limit and count by page number.
-     *
-     * @param int $page Limit results to this page number.
-     * @param int $rowCount Use this many rows per page.
-     * @return Zend_Db_Select This Zend_Db_Select object.
-     */
-    public function limitPage($page, $rowCount)
-    {
-        $page     = ($page > 0)     ? $page     : 1;
-        $rowCount = ($rowCount > 0) ? $rowCount : 1;
-        $this->_parts[self::LIMIT_COUNT]  = (int) $rowCount;
-        $this->_parts[self::LIMIT_OFFSET] = (int) $rowCount * ($page - 1);
-        return $this;
-    }
-
-    /**
-     * Makes the query SELECT FOR UPDATE.
-     *
-     * @param bool $flag Whether or not the SELECT is FOR UPDATE (default true).
-     * @return Zend_Db_Select This Zend_Db_Select object.
-     */
-    public function forUpdate($flag = true)
-    {
-        $this->_parts[self::FOR_UPDATE] = (bool) $flag;
-        return $this;
-    }
-
-    /**
-     * Get part of the structured information for the currect query.
-     *
-     * @param string $part
-     * @return mixed
-     * @throws Zend_Db_Select_Exception
-     */
-    public function getPart($part)
-    {
-        $part = strtolower($part);
-        if (!array_key_exists($part, $this->_parts)) {
-            require_once 'Zend/Db/Select/Exception.php';
-            throw new Zend_Db_Select_Exception("Invalid Select part '$part'");
-        }
-        return $this->_parts[$part];
-    }
-
-    /**
-     * Executes the current select object and returns the result
-     *
-     * @param integer $fetchMode OPTIONAL
-     * @param  mixed  $bind An array of data to bind to the placeholders.
-     * @return PDO_Statement|Zend_Db_Statement
-     */
-    public function query($fetchMode = null, $bind = array())
-    {
-        if (!empty($bind)) {
-            $this->bind($bind);
-        }
-
-        $stmt = $this->_adapter->query($this);
-        if ($fetchMode == null) {
-            $fetchMode = $this->_adapter->getFetchMode();
-        }
-        $stmt->setFetchMode($fetchMode);
-        return $stmt;
-    }
-
-    /**
-     * Converts this object to an SQL SELECT string.
-     *
-     * @return string This object as a SELECT string.
-     */
-    public function assemble()
-    {
-        $sql = self::SQL_SELECT;
-        foreach (array_keys(self::$_partsInit) as $part) {
-            $method = '_render' . ucfirst($part);
-            if (method_exists($this, $method)) {
-                $sql = $this->$method($sql);
-            }
-        }
-        return $sql;
-    }
-
-    /**
-     * Clear parts of the Select object, or an individual part.
-     *
-     * @param string $part OPTIONAL
-     * @return Zend_Db_Select
-     */
-    public function reset($part = null)
-    {
-        if ($part == null) {
-            $this->_parts = self::$_partsInit;
-        } else if (array_key_exists($part, self::$_partsInit)) {
-            $this->_parts[$part] = self::$_partsInit[$part];
-        }
-        return $this;
-    }
-
-    /**
-     * Gets the Zend_Db_Adapter_Abstract for this
-     * particular Zend_Db_Select object.
-     *
-     * @return Zend_Db_Adapter_Abstract
-     */
-    public function getAdapter()
-    {
-        return $this->_adapter;
-    }
-
-    /**
-     * Populate the {@link $_parts} 'join' key
-     *
-     * Does the dirty work of populating the join key.
-     *
-     * The $name and $cols parameters follow the same logic
-     * as described in the from() method.
-     *
-     * @param  null|string $type Type of join; inner, left, and null are currently supported
-     * @param  array|string|Zend_Db_Expr $name Table name
-     * @param  string $cond Join on this condition
-     * @param  array|string $cols The columns to select from the joined table
-     * @param  string $schema The database name to specify, if any.
-     * @return Zend_Db_Select This Zend_Db_Select object
-     * @throws Zend_Db_Select_Exception
-     */
-    protected function _join($type, $name, $cond, $cols, $schema = null)
-    {
-        if (!in_array($type, self::$_joinTypes)) {
-            /**
-             * @see Zend_Db_Select_Exception
-             */
-            require_once 'Zend/Db/Select/Exception.php';
-            throw new Zend_Db_Select_Exception("Invalid join type '$type'");
-        }
-
-        if (count($this->_parts[self::UNION])) {
-            require_once 'Zend/Db/Select/Exception.php';
-            throw new Zend_Db_Select_Exception("Invalid use of table with " . self::SQL_UNION);
-        }
-
-        if (empty($name)) {
-            $correlationName = $tableName = '';
-        } else if (is_array($name)) {
-            // Must be array($correlationName => $tableName) or array($ident, ...)
-            foreach ($name as $_correlationName => $_tableName) {
-                if (is_string($_correlationName)) {
-                    // We assume the key is the correlation name and value is the table name
-                    $tableName = $_tableName;
-                    $correlationName = $_correlationName;
-                } else {
-                    // We assume just an array of identifiers, with no correlation name
-                    $tableName = $_tableName;
-                    $correlationName = $this->_uniqueCorrelation($tableName);
-                }
-                break;
-            }
-        } else if ($name instanceof Zend_Db_Expr|| $name instanceof Zend_Db_Select) {
-            $tableName = $name;
-            $correlationName = $this->_uniqueCorrelation('t');
-        } else if (preg_match('/^(.+)\s+AS\s+(.+)$/i', $name, $m)) {
-            $tableName = $m[1];
-            $correlationName = $m[2];
-        } else {
-            $tableName = $name;
-            $correlationName = $this->_uniqueCorrelation($tableName);
-        }
-
-        // Schema from table name overrides schema argument
-        if (!is_object($tableName) && false !== strpos($tableName, '.')) {
-            list($schema, $tableName) = explode('.', $tableName);
-        }
-
-        if (!empty($correlationName)) {
-            if (array_key_exists($correlationName, $this->_parts[self::FROM])) {
-                /**
-                 * @see Zend_Db_Select_Exception
-                 */
-                require_once 'Zend/Db/Select/Exception.php';
-                throw new Zend_Db_Select_Exception("You cannot define a correlation name '$correlationName' more than once");
-            }
-
-            $this->_parts[self::FROM][$correlationName] = array(
-                'joinType'      => $type,
-                'schema'        => $schema,
-                'tableName'     => $tableName,
-                'joinCondition' => $cond
-            );
-        }
-
-        // add to the columns from this joined table
-        $this->_tableCols($correlationName, $cols);
-
-        return $this;
-    }
-
-    /**
-     * Handle JOIN... USING... syntax
-     *
-     * This is functionality identical to the existing JOIN methods, however
-     * the join condition can be passed as a single column name. This method
-     * then completes the ON condition by using the same field for the FROM
-     * table and the JOIN table.
-     *
-     * <code>
-     * $select = $db->select()->from('table1')
-     *                        ->joinUsing('table2', 'column1');
-     *
-     * // SELECT * FROM table1 JOIN table2 ON table1.column1 = table2.column2
-     * </code>
-     *
-     * These joins are called by the developer simply by adding 'Using' to the
-     * method name. E.g.
-     * * joinUsing
-     * * joinInnerUsing
-     * * joinFullUsing
-     * * joinRightUsing
-     * * joinLeftUsing
-     *
-     * @return Zend_Db_Select This Zend_Db_Select object.
-     */
-    public function _joinUsing($type, $name, $cond, $cols = '*', $schema = null)
-    {
-        if (empty($this->_parts[self::FROM])) {
-            require_once 'Zend/Db/Select/Exception.php';
-            throw new Zend_Db_Select_Exception("You can only perform a joinUsing after specifying a FROM table");
-        }
-
-        $join  = $this->_adapter->quoteIdentifier(key($this->_parts[self::FROM]), true);
-        $from  = $this->_adapter->quoteIdentifier($this->_uniqueCorrelation($name), true);
-
-        $cond1 = $from . '.' . $cond;
-        $cond2 = $join . '.' . $cond;
-        $cond  = $cond1 . ' = ' . $cond2;
-
-        return $this->_join($type, $name, $cond, $cols, $schema);
-    }
-
-    /**
-     * Generate a unique correlation name
-     *
-     * @param string|array $name A qualified identifier.
-     * @return string A unique correlation name.
-     */
-    private function _uniqueCorrelation($name)
-    {
-        if (is_array($name)) {
-            $c = end($name);
-        } else {
-            // Extract just the last name of a qualified table name
-            $dot = strrpos($name,'.');
-            $c = ($dot === false) ? $name : substr($name, $dot+1);
-        }
-        for ($i = 2; array_key_exists($c, $this->_parts[self::FROM]); ++$i) {
-            $c = $name . '_' . (string) $i;
-        }
-        return $c;
-    }
-
-    /**
-     * Adds to the internal table-to-column mapping array.
-     *
-     * @param  string $tbl The table/join the columns come from.
-     * @param  array|string $cols The list of columns; preferably as
-     * an array, but possibly as a string containing one column.
-     * @return void
-     */
-    protected function _tableCols($correlationName, $cols)
-    {
-        if (!is_array($cols)) {
-            $cols = array($cols);
-        }
-
-        if ($correlationName == null) {
-            $correlationName = '';
-        }
-
-        foreach (array_filter($cols) as $alias => $col) {
-            $currentCorrelationName = $correlationName;
-            if (is_string($col)) {
-                // Check for a column matching "<column> AS <alias>" and extract the alias name
-                if (preg_match('/^(.+)\s+' . self::SQL_AS . '\s+(.+)$/i', $col, $m)) {
-                    $col = $m[1];
-                    $alias = $m[2];
-                }
-                // Check for columns that look like functions and convert to Zend_Db_Expr
-                if (preg_match('/\(.*\)/', $col)) {
-                    $col = new Zend_Db_Expr($col);
-                } elseif (preg_match('/(.+)\.(.+)/', $col, $m)) {
-                    $currentCorrelationName = $m[1];
-                    $col = $m[2];
-                }
-            }
-            $this->_parts[self::COLUMNS][] = array($currentCorrelationName, $col, is_string($alias) ? $alias : null);
-        }
-    }
-
-    /**
-     * Internal function for creating the where clause
-     *
-     * @param string   $condition
-     * @param string   $value  optional
-     * @param string   $type   optional
-     * @param boolean  $bool  true = AND, false = OR
-     * @return string  clause
-     */
-    protected function _where($condition, $value = null, $type = null, $bool = true)
-    {
-        if (count($this->_parts[self::UNION])) {
-            require_once 'Zend/Db/Select/Exception.php';
-            throw new Zend_Db_Select_Exception("Invalid use of where clause with " . self::SQL_UNION);
-        }
-
-        if ($value !== null) {
-            $condition = $this->_adapter->quoteInto($condition, $value, $type);
-        }
-
-        $cond = "";
-        if ($this->_parts[self::WHERE]) {
-            if ($bool === true) {
-                $cond = self::SQL_AND . ' ';
-            } else {
-                $cond = self::SQL_OR . ' ';
-            }
-        }
-
-        return $cond . "($condition)";
-    }
-
-    /**
-     * @return array
-     */
-    protected function _getDummyTable()
-    {
-        return array();
-    }
-
-    /**
-     * Return a quoted schema name
-     *
-     * @param string   $schema  The schema name OPTIONAL
-     * @return string|null
-     */
-    protected function _getQuotedSchema($schema = null)
-    {
-        if ($schema === null) {
-            return null;
-        }
-        return $this->_adapter->quoteIdentifier($schema, true) . '.';
-    }
-
-    /**
-     * Return a quoted table name
-     *
-     * @param string   $tableName        The table name
-     * @param string   $correlationName  The correlation name OPTIONAL
-     * @return string
-     */
-    protected function _getQuotedTable($tableName, $correlationName = null)
-    {
-        return $this->_adapter->quoteTableAs($tableName, $correlationName, true);
-    }
-
-    /**
-     * Render DISTINCT clause
-     *
-     * @param string   $sql SQL query
-     * @return string
-     */
-    protected function _renderDistinct($sql)
-    {
-        if ($this->_parts[self::DISTINCT]) {
-            $sql .= ' ' . self::SQL_DISTINCT;
-        }
-
-        return $sql;
-    }
-
-    /**
-     * Render DISTINCT clause
-     *
-     * @param string   $sql SQL query
-     * @return string
-     */
-    protected function _renderColumns($sql)
-    {
-        if (!count($this->_parts[self::COLUMNS])) {
-            return null;
-        }
-
-        $columns = array();
-        foreach ($this->_parts[self::COLUMNS] as $columnEntry) {
-            list($correlationName, $column, $alias) = $columnEntry;
-            if ($column instanceof Zend_Db_Expr) {
-                $columns[] = $this->_adapter->quoteColumnAs($column, $alias, true);
-            } else {
-                if ($column == self::SQL_WILDCARD) {
-                    $column = new Zend_Db_Expr(self::SQL_WILDCARD);
-                    $alias = null;
-                }
-                if (empty($correlationName)) {
-                    $columns[] = $this->_adapter->quoteColumnAs($column, $alias, true);
-                } else {
-                    $columns[] = $this->_adapter->quoteColumnAs(array($correlationName, $column), $alias, true);
-                }
-            }
-        }
-
-        return $sql .= ' ' . implode(', ', $columns);
-    }
-
-    /**
-     * Render FROM clause
-     *
-     * @param string   $sql SQL query
-     * @return string
-     */
-    protected function _renderFrom($sql)
-    {
-        /*
-         * If no table specified, use RDBMS-dependent solution
-         * for table-less query.  e.g. DUAL in Oracle.
-         */
-        if (empty($this->_parts[self::FROM])) {
-            $this->_parts[self::FROM] = $this->_getDummyTable();
-        }
-
-        $from = array();
-
-        foreach ($this->_parts[self::FROM] as $correlationName => $table) {
-            $tmp = '';
-
-            // Add join clause (if applicable)
-            if (! empty($from)) {
-                $tmp .= ' ' . strtoupper($table['joinType']) . ' ';
-            }
-
-            $tmp .= $this->_getQuotedSchema($table['schema']);
-            $tmp .= $this->_getQuotedTable($table['tableName'], $correlationName);
-
-            // Add join conditions (if applicable)
-            if (!empty($from) && ! empty($table['joinCondition'])) {
-                $tmp .= ' ' . self::SQL_ON . ' ' . $table['joinCondition'];
-            }
-
-            // Add the table name and condition add to the list
-            $from[] = $tmp;
-        }
-
-        // Add the list of all joins
-        if (!empty($from)) {
-            $sql .= ' ' . self::SQL_FROM . ' ' . implode("\n", $from);
-        }
-
-        return $sql;
-    }
-
-    /**
-     * Render UNION query
-     *
-     * @param string   $sql SQL query
-     * @return string
-     */
-    protected function _renderUnion($sql)
-    {
-        if ($this->_parts[self::UNION]) {
-            $parts = count($this->_parts[self::UNION]);
-            foreach ($this->_parts[self::UNION] as $cnt => $union) {
-                list($target, $type) = $union;
-                if ($target instanceof Zend_Db_Select) {
-                    $target = $target->assemble();
-                }
-                $sql .= $target;
-                if ($cnt < $parts - 1) {
-                    $sql .= ' ' . $type . ' ';
-                }
-            }
-        }
-
-        return $sql;
-    }
-
-    /**
-     * Render WHERE clause
-     *
-     * @param string   $sql SQL query
-     * @return string
-     */
-    protected function _renderWhere($sql)
-    {
-        if ($this->_parts[self::FROM] && $this->_parts[self::WHERE]) {
-            $sql .= ' ' . self::SQL_WHERE . ' ' .  implode(' ', $this->_parts[self::WHERE]);
-        }
-
-        return $sql;
-    }
-
-    /**
-     * Render GROUP clause
-     *
-     * @param string   $sql SQL query
-     * @return string
-     */
-    protected function _renderGroup($sql)
-    {
-        if ($this->_parts[self::FROM] && $this->_parts[self::GROUP]) {
-            $group = array();
-            foreach ($this->_parts[self::GROUP] as $term) {
-                $group[] = $this->_adapter->quoteIdentifier($term, true);
-            }
-            $sql .= ' ' . self::SQL_GROUP_BY . ' ' . implode(",\n\t", $group);
-        }
-
-        return $sql;
-    }
-
-    /**
-     * Render HAVING clause
-     *
-     * @param string   $sql SQL query
-     * @return string
-     */
-    protected function _renderHaving($sql)
-    {
-        if ($this->_parts[self::FROM] && $this->_parts[self::HAVING]) {
-            $sql .= ' ' . self::SQL_HAVING . ' ' . implode(' ', $this->_parts[self::HAVING]);
-        }
-
-        return $sql;
-    }
-
-    /**
-     * Render ORDER clause
-     *
-     * @param string   $sql SQL query
-     * @return string
-     */
-    protected function _renderOrder($sql)
-    {
-        if ($this->_parts[self::ORDER]) {
-            $order = array();
-            foreach ($this->_parts[self::ORDER] as $term) {
-                if (is_array($term)) {
-                    $order[] = $this->_adapter->quoteIdentifier($term[0], true) . ' ' . $term[1];
-                } else {
-                    $order[] = $this->_adapter->quoteIdentifier($term, true);
-                }
-            }
-            $sql .= ' ' . self::SQL_ORDER_BY . ' ' . implode(', ', $order);
-        }
-
-        return $sql;
-    }
-
-    /**
-     * Render LIMIT OFFSET clause
-     *
-     * @param string   $sql SQL query
-     * @return string
-     */
-    protected function _renderLimitoffset($sql)
-    {
-        $count = 0;
-        $offset = 0;
-
-        if (!empty($this->_parts[self::LIMIT_OFFSET])) {
-            $offset = (int) $this->_parts[self::LIMIT_OFFSET];
-            // This should reduce to the max integer PHP can support
-            $count = intval(9223372036854775807);
-        }
-
-        if (!empty($this->_parts[self::LIMIT_COUNT])) {
-            $count = (int) $this->_parts[self::LIMIT_COUNT];
-        }
-
-        /*
-         * Add limits clause
-         */
-        if ($count > 0) {
-            $sql = trim($this->_adapter->limit($sql, $count, $offset));
-        }
-
-        return $sql;
-    }
-
-    /**
-     * Render FOR UPDATE clause
-     *
-     * @param string   $sql SQL query
-     * @return string
-     */
-    protected function _renderForupdate($sql)
-    {
-        if ($this->_parts[self::FOR_UPDATE]) {
-            $sql .= ' ' . self::SQL_FOR_UPDATE;
-        }
-
-        return $sql;
-    }
-
-    /**
-     * Turn magic function calls into non-magic function calls
-     * for joinUsing syntax
-     *
-     * @param string $method
-     * @param array $args OPTIONAL Zend_Db_Table_Select query modifier
-     * @return Zend_Db_Select
-     * @throws Zend_Db_Select_Exception If an invalid method is called.
-     */
-    public function __call($method, array $args)
-    {
-        $matches = array();
-
-        /**
-         * Recognize methods for Has-Many cases:
-         * findParent<Class>()
-         * findParent<Class>By<Rule>()
-         * Use the non-greedy pattern repeat modifier e.g. \w+?
-         */
-        if (preg_match('/^join([a-zA-Z]*?)Using$/', $method, $matches)) {
-            $type = strtolower($matches[1]);
-            if ($type) {
-                $type .= ' join';
-                if (!in_array($type, self::$_joinTypes)) {
-                    require_once 'Zend/Db/Select/Exception.php';
-                    throw new Zend_Db_Select_Exception("Unrecognized method '$method()'");
-                }
-                if (in_array($type, array(self::CROSS_JOIN, self::NATURAL_JOIN))) {
-                    require_once 'Zend/Db/Select/Exception.php';
-                    throw new Zend_Db_Select_Exception("Cannot perform a joinUsing with method '$method()'");
-                }
-            } else {
-                $type = self::INNER_JOIN;
-            }
-            array_unshift($args, $type);
-            return call_user_func_array(array($this, '_joinUsing'), $args);
-        }
-
-        require_once 'Zend/Db/Select/Exception.php';
-        throw new Zend_Db_Select_Exception("Unrecognized method '$method()'");
-    }
-
-    /**
-     * Implements magic method.
-     *
-     * @return string This object as a SELECT string.
-     */
-    public function __toString()
-    {
-        try {
-            $sql = $this->assemble();
-        } catch (Exception $e) {
-            trigger_error($e->getMessage(), E_USER_WARNING);
-            $sql = '';
-        }
-        return (string)$sql;
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+Yn6YtujKo5ar1QdOJex5

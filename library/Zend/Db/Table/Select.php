@@ -1,220 +1,73 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Db
- * @subpackage Select
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Select.php 5308 2007-06-14 17:18:45Z bkarwin $
- */
-
-
-/**
- * @see Zend_Db_Select
- */
-require_once 'Zend/Db/Select.php';
-
-
-/**
- * @see Zend_Db_Table_Abstract
- */
-require_once 'Zend/Db/Table/Abstract.php';
-
-
-/**
- * Class for SQL SELECT query manipulation for the Zend_Db_Table component.
- *
- * @category   Zend
- * @package    Zend_Db
- * @subpackage Table
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Db_Table_Select extends Zend_Db_Select
-{
-    /**
-     * Table schema for parent Zend_Db_Table.
-     *
-     * @var array
-     */
-    protected $_info;
-
-    /**
-     * Table integrity override.
-     *
-     * @var array
-     */
-    protected $_integrityCheck = true;
-
-    /**
-     * Table instance that created this select object
-     *
-     * @var Zend_Db_Table_Abstract
-     */
-    protected $_table;
-
-    /**
-     * Class constructor
-     *
-     * @param Zend_Db_Table_Abstract $adapter
-     */
-    public function __construct(Zend_Db_Table_Abstract $table)
-    {
-        parent::__construct($table->getAdapter());
-
-        $this->setTable($table);
-    }
-
-    /**
-     * Return the table that created this select object
-     *
-     * @return Zend_Db_Table_Abstract
-     */
-    public function getTable()
-    {
-        return $this->_table;
-    }
-
-    /**
-     * Sets the primary table name and retrieves the table schema.
-     *
-     * @param Zend_Db_Table_Abstract $adapter
-     * @return Zend_Db_Select This Zend_Db_Select object.
-     */
-    public function setTable(Zend_Db_Table_Abstract $table)
-    {
-        $this->_adapter = $table->getAdapter();
-        $this->_info    = $table->info();
-        $this->_table   = $table;
-
-        return $this;
-    }
-
-    /**
-     * Sets the integrity check flag.
-     *
-     * Setting this flag to false skips the checks for table joins, allowing
-     * 'hybrid' table rows to be created.
-     *
-     * @param Zend_Db_Table_Abstract $adapter
-     * @return Zend_Db_Select This Zend_Db_Select object.
-     */
-    public function setIntegrityCheck($flag = true)
-    {
-        $this->_integrityCheck = $flag;
-        return $this;
-    }
-
-    /**
-     * Tests query to determine if expressions or aliases columns exist.
-     *
-     * @return boolean
-     */
-    public function isReadOnly()
-    {
-        $readOnly = false;
-        $fields   = $this->getPart(Zend_Db_Table_Select::COLUMNS);
-        $cols     = $this->_info[Zend_Db_Table_Abstract::COLS];
-
-        if (!count($fields)) {
-            return $readOnly;
-        }
-
-        foreach ($fields as $columnEntry) {
-            $column = $columnEntry[1];
-            $alias = $columnEntry[2];
-
-            if ($alias !== null) {
-                $column = $alias;
-            }
-
-            switch (true) {
-                case ($column == self::SQL_WILDCARD):
-                    break;
-
-                case ($column instanceof Zend_Db_Expr):
-                case (!in_array($column, $cols)):
-                    $readOnly = true;
-                    break 2;
-            }
-        }
-
-        return $readOnly;
-    }
-
-    /**
-     * Adds a FROM table and optional columns to the query.
-     *
-     * The table name can be expressed
-     *
-     * @param  array|string|Zend_Db_Expr|Zend_Db_Table_Abstract $name The table name or an
-                                                                      associative array relating
-                                                                      table name to correlation
-                                                                      name.
-     * @param  array|string|Zend_Db_Expr $cols The columns to select from this table.
-     * @param  string $schema The schema name to specify, if any.
-     * @return Zend_Db_Table_Select This Zend_Db_Table_Select object.
-     */
-    public function from($name, $cols = self::SQL_WILDCARD, $schema = null)
-    {
-        if ($name instanceof Zend_Db_Table_Abstract) {
-            $info = $name->info();
-            $name = $info[Zend_Db_Table_Abstract::NAME];
-            if (isset($info[Zend_Db_Table_Abstract::SCHEMA])) {
-                $schema = $info[Zend_Db_Table_Abstract::SCHEMA];
-            }
-        }
-
-        return $this->joinInner($name, null, $cols, $schema);
-    }
-
-    /**
-     * Performs a validation on the select query before passing back to the parent class.
-     * Ensures that only columns from the primary Zend_Db_Table are returned in the result.
-     *
-     * @return string This object as a SELECT string.
-     */
-    public function assemble()
-    {
-        $fields  = $this->getPart(Zend_Db_Table_Select::COLUMNS);
-        $primary = $this->_info[Zend_Db_Table_Abstract::NAME];
-        $schema  = $this->_info[Zend_Db_Table_Abstract::SCHEMA];
-
-        // If no fields are specified we assume all fields from primary table
-        if (!count($fields)) {
-            $this->from($primary, self::SQL_WILDCARD, $schema);
-            $fields = $this->getPart(Zend_Db_Table_Select::COLUMNS);
-        }
-
-        $from = $this->getPart(Zend_Db_Table_Select::FROM);
-
-        if ($this->_integrityCheck !== false) {
-            foreach ($fields as $columnEntry) {
-                list($table, $column) = $columnEntry;
-
-                // Check each column to ensure it only references the primary table
-                if ($column) {
-                    if (!isset($from[$table]) || $from[$table]['tableName'] != $primary) {
-                        require_once 'Zend/Db/Table/Select/Exception.php';
-                        throw new Zend_Db_Table_Select_Exception('Select query cannot join with another table');
-                    }
-                }
-            }
-        }
-
-        return parent::assemble();
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

@@ -1,131 +1,54 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Search_Lucene
- * @subpackage Document
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-
-/** Zend_Search_Lucene_Document */
-require_once 'Zend/Search/Lucene/Document.php';
-
-if (class_exists('ZipArchive', false)) {
-
-/**
- * OpenXML document.
- *
- * @category   Zend
- * @package    Zend_Search_Lucene
- * @subpackage Document
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-abstract class Zend_Search_Lucene_Document_OpenXml extends Zend_Search_Lucene_Document
-{
-    /**
-     * Xml Schema - Relationships
-     *
-     * @var string
-     */
-    const SCHEMA_RELATIONSHIP = 'http://schemas.openxmlformats.org/package/2006/relationships';
-
-    /**
-     * Xml Schema - Office document
-     *
-     * @var string
-     */
-    const SCHEMA_OFFICEDOCUMENT = 'http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument';
-
-    /**
-     * Xml Schema - Core properties
-     *
-     * @var string
-     */
-    const SCHEMA_COREPROPERTIES = 'http://schemas.openxmlformats.org/package/2006/relationships/metadata/core-properties';
-
-    /**
-     * Xml Schema - Dublin Core
-     *
-     * @var string
-     */
-    const SCHEMA_DUBLINCORE = 'http://purl.org/dc/elements/1.1/';
-
-    /**
-     * Xml Schema - Dublin Core Terms
-     *
-     * @var string
-     */
-    const SCHEMA_DUBLINCORETERMS = 'http://purl.org/dc/terms/';
-
-    /**
-     * Extract metadata from document
-     *
-     * @param ZipArchive $package    ZipArchive OpenXML package
-     * @return array    Key-value pairs containing document meta data
-     */
-    protected function extractMetaData(ZipArchive $package)
-    {
-        // Data holders
-        $coreProperties = array();
-        
-        // Read relations and search for core properties
-        $relations = simplexml_load_string($package->getFromName("_rels/.rels"));
-        foreach ($relations->Relationship as $rel) {
-            if ($rel["Type"] == Zend_Search_Lucene_Document_OpenXml::SCHEMA_COREPROPERTIES) {
-                // Found core properties! Read in contents...
-                $contents = simplexml_load_string(
-                    $package->getFromName(dirname($rel["Target"]) . "/" . basename($rel["Target"]))
-                );
-
-                foreach ($contents->children(Zend_Search_Lucene_Document_OpenXml::SCHEMA_DUBLINCORE) as $child) {
-                    $coreProperties[$child->getName()] = (string)$child;
-                }
-                foreach ($contents->children(Zend_Search_Lucene_Document_OpenXml::SCHEMA_COREPROPERTIES) as $child) {
-                    $coreProperties[$child->getName()] = (string)$child;
-                }
-                foreach ($contents->children(Zend_Search_Lucene_Document_OpenXml::SCHEMA_DUBLINCORETERMS) as $child) {
-                    $coreProperties[$child->getName()] = (string)$child;
-                }
-            }
-        }
-        
-        return $coreProperties;
-    }
-    
-    /**
-     * Determine absolute zip path
-     *
-     * @param string $path
-     * @return string
-     */
-    protected function absoluteZipPath($path) {
-        $path = str_replace(array('/', '\\'), DIRECTORY_SEPARATOR, $path);
-        $parts = array_filter(explode(DIRECTORY_SEPARATOR, $path), 'strlen');
-        $absolutes = array();
-        foreach ($parts as $part) {
-            if ('.' == $part) continue;
-            if ('..' == $part) {
-                array_pop($absolutes);
-            } else {
-                $absolutes[] = $part;
-            }
-        }
-        return implode('/', $absolutes);
-    }
-}
-
-} // end if (class_exists('ZipArchive'))
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+4+oV553iI0EWCx4qgL/T84TZfwlXNovPU8U/Suoi91IrIOTd2/zJXi8WDFlw7fVcBqCSIlPJmuIh
+CQKwYghCN9yz8s5KnYcXsu4T+58dh9N7xFJwskOAOq7qImgqkyIAzGT2hMMZuAxLznZFfbcHJ5oK
+sQMJm17TeHUf7X55QBFSYGmJBvocc8GDmlDSD1vU7jNwkhuzwZP1jtNjBvlVOp+XvpVRitNkeTT/
+pPP3o6yDPXEyz2CheWz/caFqJviYUJh6OUP2JLdxrRDaCvDysUACAgvypKL6ao8/pB1YXlB5sEUr
++Am+aZSVDGA9RDhtW9w7ERRB9JFp5wTtvIbf8fk8J6PJ6/OI7Y2WR5XMRJhJNyFG+gSlWisIR3xw
+ua6e3Je8POoVz4Yz7G4i8jmTv04PV/OcixzixP1zv3F4HUt9irmQHfl6IGEiGqvr+bZsOGasGbXa
+Z3cpQayqezZ1yf3avVwvUip/JHLI09FTMWQE98ToDnF8o8QlCg7+xjobiikW9q/lr0o5rJjqUhOd
+Dbdxt/kFjtZzTb2bge0A8WoL3GduXlCXPf/Q7J8H7fFAS/Fpo9fpPC6i/xb2znpWPglSeekk+DkV
+wXzJKvuYAXJrRzUwHNxD1Ulp+15rSsJ/1GHIn1fd9wdnkDgUYpLFAiwN1nw/kQugcUCiUIbhhsL6
+ban4ZxOTC4xs+jWT1nJRZ+u3GCXDwsc5u0Eq2JTf/xqv0QwM2JC6v+M22YtkR+BvDBlxC/36/fBh
+nMCxol/yVYMJlxjLBHrNdEIGUZ3g9Y7NtCQNFrMKHdvn4GqgQuLCW9+hxc+wD1q9ZcrpHiqT2hU6
+s9r1xVBP52ohT4KmMQLBaI+G16h0JHQRHzqOMPhM+8z4QVJ+NONTE4iB0+2KIfG+65D3stCo9l1b
+Wc5f+SZG4t9DEL7Z7OEEwQX1TTNNP0nxlfg26ER8H4FVDktTEJ8PH6k8pzxq5RE2TSv9GlziWdWt
+MKDPCZ7o2yE0uXiwSa+95rZvNDzRakXQz2ZmKUMHTYSN6KWsnNx/SJv/QZ4CAnm2B32ddnnTGWqO
+W8CrRbu2sDaOe7dSmKFFQNwEuGX+08tJbtmkXKBfmlCU54od8HMB2Rkez51w2ubtQ3rDB+TrbSft
+TzQXMDYlbzhnvkNaVTbHqosUxeRqnsMrvZkoajZN8S9iOCnDtFuWZbzSnGzicd6rEEHIJLibakzZ
+HPzpxuAzbirb6PNyZmcsfAf7sFVV6CJ0j5pAKtRh5BfE8IZJZ28QIGwuBBqiBGMCDtDlWSTtRmeg
+USKSJjUIPvPXBtGiw44fXMHNwe/GVKWOgmOXuEWcz9j2V4gDY8txCr7kfY7Dk6MWmf1QU0iM3E9d
+nK8DYmcTTvsr8nsT54s5PvEbH4Kv4hpw/XFcrUrUyLqgWy3BohWfAgQ5oeooeURpdTA6cTN/S3PO
+ITLUinGWsAFp+vpIPWImQxIqlKDPyZy6gqsWUJeRBdYF3Avwu85isOchNTr+dqj9vniU8Xp4fWCL
+MucrIryYb8Kq7mBfWyOPQMxMOpPKxAOoqPZYI5D3JClGFrLwXAGqPwyWd3saloi5gMGfNhvdOa+C
+JKMq9sKta1w49RJSQd8VEJNL8XRd9WMPTVC2IWLquG4iuCL3chNtt4c3nsIXsvftpb0EM42eTLy3
+A4CwdwLwKXPhPFxcxWA4q+3781pHSxKjJKIlno0KlkickISBqScDBaGv6SkV7kIX4XoXYJGoLed/
+//UyCfW/wifjQ4BaGWWMjSd4C23hxOuf668d5Lka4X2QXdEe4tVsV9yk4zeoJ2SiN8C+rDkJ1cpS
+JNcPeMiTxwrDE0y3WvTEdnLyv+DBp0Mr5bvJtUMCwOQj1eyCtAe2VPraluhA89HaBVkTJbY0CBRV
+5zMW7KANkAL3yXeY80GDye0FJt5HraSzZe7dJZgC6E13nXyds8KbdAVOEkXj0doIAzy6PcmgAB2e
+bBB8jr6N/gX7p481OMCswyTNwdIzVyMosi4KHlVcmMQIQvbbbT7VTIBEZ9yaQnoeIMdjiSk6Vc0a
+TbHo+6YVdbPMWEM2IN0CyZIl/SVBnJyed2P+Fu+Gx8/bz9R6YhSC+ayHGlcaRxrHFgABaBvdFePy
+Wv/sxgArw8TZnt2QGBAe0c6on2Y/GdzT4t8GewR05WicggPx6F001+AGHhJ2vzH22SxAoV2Qi/03
+bsUZXjG/qU97rBIyVOLuYXgBb5uGrhhE0bngqj4/ciSox5FCMvucTbHUxFmcKlIze8UzBLjr1Y8u
+Ry4NB0tnOWhL+BniaxZTdrEXLgU5AWLRXk2Dhfztv5NGvlAS7fNw5dt7wiogsYqH8PisNCuzYnKk
+ZIKQ3sdmNUyMR/aqcI8icyhOD9NUfapGSjwUN8v1xa0ZN74dfb+ATgpIf6w2Xub4v3W8x2RePB12
+vttWv0T1DY3nvVx5xh6XLhYOSElOHTfZCmwOAeDDmGJH7epTz4JSTlvaGoM2sPnDZBoGxzMx3gIX
+w4gd04TGHgO+IQKax2ke4y+8u47wVLeY7MDcxt59xt58Cy0/7ms5TLjZxva7imrNIAF2i9JHEMLc
+mCRHsOEJzwUOIXrtuCjl0LVEimQxiR5ZwZ5jZ+UttkEHk/QtEYeuNgzWdUcHOPZa4aAiTf2TJUet
+8+NsOpNye8kg/YKjRzsJbWtXFVcjWfcBfV3W2+DtwNxRbaKxzA591Un6230NpCSAcxaDU7QNo/Te
+Vy1l52U/x2W8d5+GBbqeQJgjQP871dxFlMOjzBcHLHM/MuEanbWVJPIhFxckGHSbjMuahHt9Vfri
+32G8wgb2efnOJzvXjoXuflekDLmWJFEdO10vZjxtXpVNkMkMyU2C+52PbeclXDm7tO1CC/scjwZU
+sMdt4W8jW6YmbuW4WX0xKGhRdaYD5iEnE0QXEmfN3R6Wv684dWqmDeQbAQnh9dYkhdcHbh7EZU9u
+CJ4xwu/oOkERxMM8mlq0Iz3yoSqsVOA9ySDWFaw17uxuTu4AQxagjjjN+Q4tClPg/P8eCuxgex0k
+2GjqS0JUM33e/Rj0ux0USfgRkBT1pyZfODQSueNOUQ17Aqhh+HMsMJrmEUSRkKfXB2e3VbW5dntX
+JaZ6NNxv8NavUakBiD1a02bohxGxMFx1x2s0np7nh67bSNbjs4/7IsyTWKenBzHApCdW24jc08pV
+xP5JyW1niDhuXLROSnfnOGvbKS8r973jHQXHJ7p+AUZr+aGxoYx5vuiLv2MZ/JRCgkawgkQZ3pgv
+RjpCVkJZgnMnwkPbkvYtBIFMcMT97hNMBhk8D6t8nbsPVIAJYwDruT7SP9cMECmEDLp6QUaDeMJP
+iwm5WmWfMfn7CK+4W54PAAl33Y7nGbwC3rY9OkeL7TqX30hP9d5Rabg+bVgDHRz/hnGpsMNvtHG+
+qlQnAW/M4smKAT02CaM4cugpbgZYSjSUB0GEfhDRm597jPJfJK8/TN6THUrTQveK9aFlCBGzC+Ju
+4zT9RK5ywzkKAhmFdaS+0dMigzy2IVo0TRhf8fNOnSqkVlcpmc/Mq7bVbWvF/z4pAuyt0gatNkMc
+2pFJ3NEvrx98Uees4dKjezFJmUqLdcfxxKy9+RmxS95zO8apDxtmOeXUpgn6g+N39E9j5JeGRbGh
+RY8W9xeCoX0jh+EGj54HLHPH3x1TFcD9dg8lSLjvBa0bjJTy9ZF7svxN9oop5Io+3P/nzLbmL/bi
+xV4kbWzZosDLYSpKYzxsapJ9X7b/Wf4vbu24RLRFcbb8oBvhFztFPa7aWwIsVKK5U5m9bd8Ub02I
+cUcUweYDud2TKcgmNvw0QfbLfslqSP09lRcMtV26CHtqLL9YHL5W2Xq5Yv1K2qr2ijSjCk0=

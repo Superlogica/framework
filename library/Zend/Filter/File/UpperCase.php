@@ -1,84 +1,34 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Filter
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: $
- */
-
-/**
- * @see Zend_Filter_StringToUpper
- */
-require_once 'Zend/Filter/StringToUpper.php';
-
-/**
- * @category   Zend
- * @package    Zend_Filter
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Filter_File_UpperCase extends Zend_Filter_StringToUpper
-{
-    /**
-     * Adds options to the filter at initiation
-     *
-     * @param string $options
-     */
-    public function __construct($options = null)
-    {
-        if (!empty($options)) {
-            $this->setEncoding($options);
-        }
-    }
-
-    /**
-     * Defined by Zend_Filter_Interface
-     *
-     * Does a lowercase on the content of the given file
-     *
-     * @param  string $value Full path of file to change
-     * @return string The given $value
-     * @throws Zend_Filter_Exception
-     */
-    public function filter($value)
-    {
-        if (!file_exists($value)) {
-            require_once 'Zend/Filter/Exception.php';
-            throw new Zend_Filter_Exception("File '$value' not found");
-        }
-
-        if (!is_writable($value)) {
-            require_once 'Zend/Filter/Exception.php';
-            throw new Zend_Filter_Exception("File '$value' is not writable");
-        }
-
-        $content = file_get_contents($value);
-        if (!$content) {
-            require_once 'Zend/Filter/Exception.php';
-            throw new Zend_Filter_Exception("Problem while reading file '$value'");
-        }
-
-        $content = parent::filter($content);
-        $result  = file_put_contents($value, $content);
-
-        if (!$result) {
-            require_once 'Zend/Filter/Exception.php';
-            throw new Zend_Filter_Exception("Problem while writing file '$value'");
-        }
-
-        return $value;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+RUZ/+fmJn18ibgW0TSc4fx2rKFJgCm==

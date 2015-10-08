@@ -1,619 +1,222 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Service
- * @subpackage SlideShare
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: SlideShare.php 13522 2009-01-06 16:35:55Z thomas $
- */
-
-/**
- * Zend_Http_Client
- */
-require_once 'Zend/Http/Client.php';
-
-/**
- * Zend_Cache
- */
-require_once 'Zend/Cache.php';
-
-/**
- * Zend_Service_SlideShare_SlideShow
- */
-require_once 'Zend/Service/SlideShare/SlideShow.php';
-
-/**
- * The Zend_Service_SlideShare component is used to interface with the
- * slideshare.net web server to retrieve slide shows hosted on the web site for
- * display or other processing.
- *
- * @category   Zend
- * @package    Zend_Service
- * @subpackage SlideShare
- * @throws     Zend_Service_SlideShare_Exception
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Service_SlideShare
-{
-
-    /**
-     * Web service result code mapping
-     */
-    const SERVICE_ERROR_BAD_APIKEY       = 1;
-    const SERVICE_ERROR_BAD_AUTH         = 2;
-    const SERVICE_ERROR_MISSING_TITLE    = 3;
-    const SERVICE_ERROR_MISSING_FILE     = 4;
-    const SERVICE_ERROR_EMPTY_TITLE      = 5;
-    const SERVICE_ERROR_NOT_SOURCEOBJ    = 6;
-    const SERVICE_ERROR_INVALID_EXT      = 7;
-    const SERVICE_ERROR_FILE_TOO_BIG     = 8;
-    const SERVICE_ERROR_SHOW_NOT_FOUND   = 9;
-    const SERVICE_ERROR_USER_NOT_FOUND   = 10;
-    const SERVICE_ERROR_GROUP_NOT_FOUND  = 11;
-    const SERVICE_ERROR_MISSING_TAG      = 12;
-    const SERVICE_ERROR_DAILY_LIMIT      = 99;
-    const SERVICE_ERROR_ACCOUNT_BLOCKED  = 100;
-
-    /**
-     * Slide share Web service communication URIs
-     */
-    const SERVICE_UPLOAD_URI                  = 'http://www.slideshare.net/api/1/upload_slideshow';
-    const SERVICE_GET_SHOW_URI                = 'http://www.slideshare.net/api/1/get_slideshow';
-    const SERVICE_GET_SHOW_BY_USER_URI        = 'http://www.slideshare.net/api/1/get_slideshow_by_user';
-    const SERVICE_GET_SHOW_BY_TAG_URI         = 'http://www.slideshare.net/api/1/get_slideshow_by_tag';
-    const SERVICE_GET_SHOW_BY_GROUP_URI       = 'http://www.slideshare.net/api/1/get_slideshows_from_group';
-
-    /**
-     * The MIME type of Slideshow files
-     *
-     */
-    const POWERPOINT_MIME_TYPE    = "application/vnd.ms-powerpoint";
-
-    /**
-     * The API key to use in requests
-     *
-     * @var string The API key
-     */
-    protected $_apiKey;
-
-    /**
-     * The shared secret to use in requests
-     *
-     * @var string the Shared secret
-     */
-    protected $_sharedSecret;
-
-    /**
-     * The username to use in requests
-     *
-     * @var string the username
-     */
-    protected $_username;
-
-    /**
-     * The password to use in requests
-     *
-     * @var string the password
-     */
-    protected $_password;
-
-    /**
-     * The HTTP Client object to use to perform requests
-     *
-     * @var Zend_Http_Client
-     */
-    protected $_httpclient;
-
-    /**
-     * The Cache object to use to perform caching
-     *
-     * @var Zend_Cache_Core
-     */
-    protected $_cacheobject;
-
-    /**
-     * Sets the Zend_Http_Client object to use in requests. If not provided a default will
-     * be used.
-     *
-     * @param Zend_Http_Client $client The HTTP client instance to use
-     * @return Zend_Service_SlideShare
-     */
-    public function setHttpClient(Zend_Http_Client $client)
-    {
-        $this->_httpclient = $client;
-        return $this;
-    }
-
-    /**
-     * Returns the instance of the Zend_Http_Client which will be used. Creates an instance
-     * of Zend_Http_Client if no previous client was set.
-     *
-     * @return Zend_Http_Client The HTTP client which will be used
-     */
-    public function getHttpClient()
-    {
-
-        if(!($this->_httpclient instanceof Zend_Http_Client)) {
-            $client = new Zend_Http_Client();
-            $client->setConfig(array('maxredirects' => 2,
-                                     'timeout' => 5));
-
-            $this->setHttpClient($client);
-        }
-
-        $this->_httpclient->resetParameters();
-        return $this->_httpclient;
-    }
-
-    /**
-     * Sets the Zend_Cache object to use to cache the results of API queries
-     *
-     * @param Zend_Cache_Core $cacheobject The Zend_Cache object used
-     * @return Zend_Service_SlideShare
-     */
-    public function setCacheObject(Zend_Cache_Core $cacheobject)
-    {
-        $this->_cacheobject = $cacheobject;
-        return $this;
-    }
-
-    /**
-     * Gets the Zend_Cache object which will be used to cache API queries. If no cache object
-     * was previously set the the default will be used (Filesystem caching in /tmp with a life
-     * time of 43200 seconds)
-     *
-     * @return Zend_Cache_Core The object used in caching
-     */
-    public function getCacheObject()
-    {
-
-        if(!($this->_cacheobject instanceof Zend_Cache_Core)) {
-            $cache = Zend_Cache::factory('Core', 'File', array('lifetime' => 43200,
-                                                               'automatic_serialization' => true),
-                                                         array('cache_dir' => '/tmp'));
-
-            $this->setCacheObject($cache);
-        }
-
-        return $this->_cacheobject;
-    }
-
-    /**
-     * Returns the user name used for API calls
-     *
-     * @return string The username
-     */
-    public function getUserName()
-    {
-        return $this->_username;
-    }
-
-    /**
-     * Sets the user name to use for API calls
-     *
-     * @param string $un The username to use
-     * @return Zend_Service_SlideShare
-     */
-    public function setUserName($un)
-    {
-        $this->_username = $un;
-        return $this;
-    }
-
-    /**
-     * Gets the password to use in API calls
-     *
-     * @return string the password to use in API calls
-     */
-    public function getPassword()
-    {
-        return $this->_password;
-    }
-
-    /**
-     * Sets the password to use in API calls
-     *
-     * @param string $pw The password to use
-     * @return Zend_Service_SlideShare
-     */
-    public function setPassword($pw)
-    {
-        $this->_password = (string)$pw;
-        return $this;
-    }
-
-    /**
-     * Gets the API key to be used in making API calls
-     *
-     * @return string the API Key
-     */
-    public function getApiKey()
-    {
-        return $this->_apiKey;
-    }
-
-    /**
-     * Sets the API key to be used in making API calls
-     *
-     * @param string $key The API key to use
-     * @return Zend_Service_SlideShare
-     */
-    public function setApiKey($key)
-    {
-        $this->_apiKey = (string)$key;
-        return $this;
-    }
-
-    /**
-     * Gets the shared secret used in making API calls
-     *
-     * @return string the Shared secret
-     */
-    public function getSharedSecret()
-    {
-        return $this->_sharedSecret;
-    }
-
-    /**
-     * Sets the shared secret used in making API calls
-     *
-     * @param string $secret the shared secret
-     * @return Zend_Service_SlideShare
-     */
-    public function setSharedSecret($secret)
-    {
-        $this->_sharedSecret = (string)$secret;
-        return $this;
-    }
-
-    /**
-     * The Constructor
-     *
-     * @param string $apikey The API key
-     * @param string $sharedSecret The shared secret
-     * @param string $username The username
-     * @param string $password The password
-     */
-    public function __construct($apikey, $sharedSecret, $username = null, $password = null)
-    {
-        $this->setApiKey($apikey)
-             ->setSharedSecret($sharedSecret)
-             ->setUserName($username)
-             ->setPassword($password);
-
-        $this->_httpclient = new Zend_Http_Client();
-    }
-
-    /**
-     * Uploads the specified Slide show the the server
-     *
-     * @param Zend_Service_SlideShare_SlideShow $ss The slide show object representing the slide show to upload
-     * @param boolean $make_src_public Determines if the the slide show's source file is public or not upon upload
-     * @return Zend_Service_SlideShare_SlideShow The passed Slide show object, with the new assigned ID provided
-     */
-    public function uploadSlideShow(Zend_Service_SlideShare_SlideShow $ss, $make_src_public = true)
-    {
-
-        $timestamp = time();
-
-        $params = array('api_key' => $this->getApiKey(),
-                        'ts' => $timestamp,
-                        'hash' => sha1($this->getSharedSecret().$timestamp),
-                        'username' => $this->getUserName(),
-                        'password' => $this->getPassword(),
-                        'slideshow_title' => $ss->getTitle());
-
-        $description = $ss->getDescription();
-        $tags = $ss->getTags();
-
-        $filename = $ss->getFilename();
-
-        if(!file_exists($filename) || !is_readable($filename)) {
-            require_once 'Zend/Service/SlideShare/Exception.php';
-            throw new Zend_Service_SlideShare_Exception("Specified Slideshow for upload not found or unreadable");
-        }
-
-        if(!empty($description)) {
-            $params['slideshow_description'] = $description;
-        } else {
-            $params['slideshow_description'] = "";
-        }
-
-        if(!empty($tags)) {
-            $tmp = array();
-            foreach($tags as $tag) {
-                $tmp[] = "\"$tag\"";
-            }
-            $params['slideshow_tags'] = implode(' ', $tmp);
-        } else {
-            $params['slideshow_tags'] = "";
-        }
-
-
-        $client = $this->getHttpClient();
-        $client->setUri(self::SERVICE_UPLOAD_URI);
-        $client->setParameterPost($params);
-        $client->setFileUpload($filename, "slideshow_srcfile");
-
-        require_once 'Zend/Http/Client/Exception.php';
-        try {
-            $response = $client->request('POST');
-        } catch(Zend_Http_Client_Exception $e) {
-            require_once 'Zend/Service/SlideShare/Exception.php';
-            throw new Zend_Service_SlideShare_Exception("Service Request Failed: {$e->getMessage()}");
-        }
-
-        $sxe = simplexml_load_string($response->getBody());
-
-        if($sxe->getName() == "SlideShareServiceError") {
-            $message = (string)$sxe->Message[0];
-            list($code, $error_str) = explode(':', $message);
-            require_once 'Zend/Service/SlideShare/Exception.php';
-            throw new Zend_Service_SlideShare_Exception(trim($error_str), $code);
-        }
-
-        if(!$sxe->getName() == "SlideShowUploaded") {
-            require_once 'Zend/Service/SlideShare/Exception.php';
-            throw new Zend_Service_SlideShare_Exception("Unknown XML Respons Received");
-        }
-
-        $ss->setId((int)(string)$sxe->SlideShowID);
-
-        return $ss;
-    }
-
-    /**
-     * Retrieves a slide show's information based on slide show ID
-     *
-     * @param int $ss_id The slide show ID
-     * @return Zend_Service_SlideShare_SlideShow the Slideshow object
-     */
-    public function getSlideShow($ss_id)
-    {
-        $timestamp = time();
-
-        $params = array('api_key' => $this->getApiKey(),
-                        'ts' => $timestamp,
-                        'hash' => sha1($this->getSharedSecret().$timestamp),
-                        'slideshow_id' => $ss_id);
-
-        $cache = $this->getCacheObject();
-
-        $cache_key = md5("__zendslideshare_cache_$ss_id");
-
-        if(!$retval = $cache->load($cache_key)) {
-            $client = $this->getHttpClient();
-
-            $client->setUri(self::SERVICE_GET_SHOW_URI);
-            $client->setParameterPost($params);
-
-            require_once 'Zend/Http/Client/Exception.php';
-            try {
-                $response = $client->request('POST');
-            } catch(Zend_Http_Client_Exception $e) {
-                require_once 'Zend/Service/SlideShare/Exception.php';
-                throw new Zend_Service_SlideShare_Exception("Service Request Failed: {$e->getMessage()}");
-            }
-
-            $sxe = simplexml_load_string($response->getBody());
-
-            if($sxe->getName() == "SlideShareServiceError") {
-                $message = (string)$sxe->Message[0];
-                list($code, $error_str) = explode(':', $message);
-                require_once 'Zend/Service/SlideShare/Exception.php';
-                throw new Zend_Service_SlideShare_Exception(trim($error_str), $code);
-            }
-
-            if(!$sxe->getName() == 'Slideshows') {
-                require_once 'Zend/Service/SlideShare/Exception.php';
-                throw new Zend_Service_SlideShare_Exception('Unknown XML Repsonse Received');
-            }
-
-            $retval = $this->_slideShowNodeToObject(clone $sxe->Slideshow[0]);
-
-            $cache->save($retval, $cache_key);
-        }
-
-        return $retval;
-    }
-
-    /**
-     * Retrieves an array of slide shows for a given username
-     *
-     * @param string $username The username to retrieve slide shows from
-     * @param int $offset The offset of the list to start retrieving from
-     * @param int $limit The maximum number of slide shows to retrieve
-     * @return array An array of Zend_Service_SlideShare_SlideShow objects
-     */
-    public function getSlideShowsByUsername($username, $offset = null, $limit = null)
-    {
-        return $this->_getSlideShowsByType('username_for', $username, $offset, $limit);
-    }
-
-    /**
-     * Retrieves an array of slide shows based on tag
-     *
-     * @param string $tag The tag to retrieve slide shows with
-     * @param int $offset The offset of the list to start retrieving from
-     * @param int $limit The maximum number of slide shows to retrieve
-     * @return array An array of Zend_Service_SlideShare_SlideShow objects
-     */
-    public function getSlideShowsByTag($tag, $offset = null, $limit = null)
-    {
-
-        if(is_array($tag)) {
-            $tmp = array();
-            foreach($tag as $t) {
-                $tmp[] = "\"$t\"";
-            }
-
-            $tag = implode(" ", $tmp);
-        }
-
-        return $this->_getSlideShowsByType('tag', $tag, $offset, $limit);
-    }
-
-    /**
-     * Retrieves an array of slide shows based on group name
-     *
-     * @param string $group The group name to retrieve slide shows for
-     * @param int $offset The offset of the list to start retrieving from
-     * @param int $limit The maximum number of slide shows to retrieve
-     * @return array An array of Zend_Service_SlideShare_SlideShow objects
-     */
-    public function getSlideShowsByGroup($group, $offset = null, $limit = null)
-    {
-        return $this->_getSlideShowsByType('group_name', $group, $offset, $limit);
-    }
-
-    /**
-     * Retrieves Zend_Service_SlideShare_SlideShow object arrays based on the type of
-     * list desired
-     *
-     * @param string $key The type of slide show object to retrieve
-     * @param string $value The specific search query for the slide show type to look up
-     * @param int $offset The offset of the list to start retrieving from
-     * @param int $limit The maximum number of slide shows to retrieve
-     * @return array An array of Zend_Service_SlideShare_SlideShow objects
-     */
-    protected function _getSlideShowsByType($key, $value, $offset = null, $limit = null)
-    {
-
-        $key = strtolower($key);
-
-        switch($key) {
-            case 'username_for':
-                $responseTag = 'User';
-                $queryUri = self::SERVICE_GET_SHOW_BY_USER_URI;
-                break;
-            case 'group_name':
-                $responseTag = 'Group';
-                $queryUri = self::SERVICE_GET_SHOW_BY_GROUP_URI;
-                break;
-            case 'tag':
-                $responseTag = 'Tag';
-                $queryUri = self::SERVICE_GET_SHOW_BY_TAG_URI;
-                break;
-            default:
-                require_once 'Zend/Service/SlideShare/Exception.php';
-                throw new Zend_Service_SlideShare_Exception("Invalid SlideShare Query");
-        }
-
-        $timestamp = time();
-
-        $params = array('api_key' => $this->getApiKey(),
-                        'ts' => $timestamp,
-                        'hash' => sha1($this->getSharedSecret().$timestamp),
-                        $key => $value);
-
-        if($offset !== null) {
-            $params['offset'] = (int)$offset;
-        }
-
-        if($limit !== null) {
-            $params['limit'] = (int)$limit;
-        }
-
-        $cache = $this->getCacheObject();
-
-        $cache_key = md5($key.$value.$offset.$limit);
-
-        if(!$retval = $cache->load($cache_key)) {
-
-            $client = $this->getHttpClient();
-
-            $client->setUri($queryUri);
-            $client->setParameterPost($params);
-
-            require_once 'Zend/Http/Client/Exception.php';
-            try {
-                $response = $client->request('POST');
-            } catch(Zend_Http_Client_Exception $e) {
-                require_once 'Zend/Service/SlideShare/Exception.php';
-                throw new Zend_Service_SlideShare_Exception("Service Request Failed: {$e->getMessage()}");
-            }
-
-            $sxe = simplexml_load_string($response->getBody());
-
-            if($sxe->getName() == "SlideShareServiceError") {
-                $message = (string)$sxe->Message[0];
-                list($code, $error_str) = explode(':', $message);
-                require_once 'Zend/Service/SlideShare/Exception.php';
-                throw new Zend_Service_SlideShare_Exception(trim($error_str), $code);
-            }
-
-            if(!$sxe->getName() == $responseTag) {
-                require_once 'Zend/Service/SlideShare/Exception.php';
-                throw new Zend_Service_SlideShare_Exception('Unknown or Invalid XML Repsonse Received');
-            }
-
-            $retval = array();
-
-            foreach($sxe->children() as $node) {
-                if($node->getName() == 'Slideshow') {
-                    $retval[] = $this->_slideShowNodeToObject($node);
-                }
-            }
-
-            $cache->save($retval, $cache_key);
-        }
-
-        return $retval;
-    }
-
-    /**
-     * Converts a SimpleXMLElement object representing a response from the service
-     * into a Zend_Service_SlideShare_SlideShow object
-     *
-     * @param SimpleXMLElement $node The input XML from the slideshare.net service
-     * @return Zend_Service_SlideShare_SlideShow The resulting object
-     */
-    protected function _slideShowNodeToObject(SimpleXMLElement $node)
-    {
-
-        if($node->getName() == 'Slideshow') {
-
-            $ss = new Zend_Service_SlideShare_SlideShow();
-
-            $ss->setId((string)$node->ID);
-            $ss->setDescription((string)$node->Description);
-            $ss->setEmbedCode((string)$node->EmbedCode);
-            $ss->setNumViews((string)$node->Views);
-            $ss->setPermaLink((string)$node->Permalink);
-            $ss->setStatus((string)$node->Status);
-            $ss->setStatusDescription((string)$node->StatusDescription);
-
-            foreach(explode(",", (string)$node->Tags) as $tag) {
-
-                if(!in_array($tag, $ss->getTags())) {
-                    $ss->addTag($tag);
-                }
-            }
-
-            $ss->setThumbnailUrl((string)$node->Thumbnail);
-            $ss->setTitle((string)$node->Title);
-            $ss->setLocation((string)$node->Location);
-            $ss->setTranscript((string)$node->Transcript);
-
-            return $ss;
-
-        }
-
-        require_once 'Zend/Service/SlideShare/Exception.php';
-        throw new Zend_Service_SlideShare_Exception("Was not provided the expected XML Node for processing");
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+19j25sjG4CWxbYT0lVLhN23z

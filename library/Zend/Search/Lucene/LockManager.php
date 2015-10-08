@@ -1,235 +1,57 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Search_Lucene
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_Search_Lucene_Storage_Directory */
-require_once 'Zend/Search/Lucene/Storage/Directory.php';
-
-/** Zend_Search_Lucene_Storage_File */
-require_once 'Zend/Search/Lucene/Storage/File.php';
-
-/**
- * This is an utility class which provides index locks processing functionality
- *
- * @category   Zend
- * @package    Zend_Search_Lucene
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Search_Lucene_LockManager
-{
-    /**
-     * consts for name of file to show lock status
-     */
-    const WRITE_LOCK_FILE                = 'write.lock.file';
-    const READ_LOCK_FILE                 = 'read.lock.file';
-    const READ_LOCK_PROCESSING_LOCK_FILE = 'read-lock-processing.lock.file';
-    const OPTIMIZATION_LOCK_FILE         = 'optimization.lock.file';
-
-    /**
-     * Obtain exclusive write lock on the index
-     *
-     * @param Zend_Search_Lucene_Storage_Directory $lockDirectory
-     * @return Zend_Search_Lucene_Storage_File
-     * @throws Zend_Search_Lucene_Exception
-     */
-    public static function obtainWriteLock(Zend_Search_Lucene_Storage_Directory $lockDirectory)
-    {
-        $lock = $lockDirectory->createFile(self::WRITE_LOCK_FILE);
-        if (!$lock->lock(LOCK_EX)) {
-            require_once 'Zend/Search/Lucene/Exception.php';
-            throw new Zend_Search_Lucene_Exception('Can\'t obtain exclusive index lock');
-        }
-        return $lock;
-    }
-
-    /**
-     * Release exclusive write lock
-     *
-     * @param Zend_Search_Lucene_Storage_Directory $lockDirectory
-     */
-    public static function releaseWriteLock(Zend_Search_Lucene_Storage_Directory $lockDirectory)
-    {
-        $lock = $lockDirectory->getFileObject(self::WRITE_LOCK_FILE);
-        $lock->unlock();
-    }
-
-    /**
-     * Obtain the exclusive "read escalation/de-escalation" lock
-     *
-     * Required to protect the escalate/de-escalate read lock process
-     * on GFS (and potentially other) mounted filesystems.
-     *
-     * Why we need this:
-     *  While GFS supports cluster-wide locking via flock(), it's
-     *  implementation isn't quite what it should be.  The locking
-     *  semantics that work consistently on a local filesystem tend to
-     *  fail on GFS mounted filesystems.  This appears to be a design defect
-     *  in the implementation of GFS.  How this manifests itself is that
-     *  conditional promotion of a shared lock to exclusive will always
-     *  fail, lock release requests are honored but not immediately
-     *  processed (causing erratic failures of subsequent conditional
-     *  requests) and the releasing of the exclusive lock before the
-     *  shared lock is set when a lock is demoted (which can open a window
-     *  of opportunity for another process to gain an exclusive lock when
-     *  it shoudln't be allowed to).
-     *
-     * @param Zend_Search_Lucene_Storage_Directory $lockDirectory
-     * @return Zend_Search_Lucene_Storage_File
-     * @throws Zend_Search_Lucene_Exception
-     */
-    private static function _startReadLockProcessing(Zend_Search_Lucene_Storage_Directory $lockDirectory)
-    {
-        $lock = $lockDirectory->createFile(self::READ_LOCK_PROCESSING_LOCK_FILE);
-        if (!$lock->lock(LOCK_EX)) {
-            require_once 'Zend/Search/Lucene/Exception.php';
-            throw new Zend_Search_Lucene_Exception('Can\'t obtain exclusive lock for the read lock processing file');
-        }
-        return $lock;
-    }
-
-    /**
-     * Release the exclusive "read escalation/de-escalation" lock
-     *
-     * Required to protect the escalate/de-escalate read lock process
-     * on GFS (and potentially other) mounted filesystems.
-     *
-     * @param Zend_Search_Lucene_Storage_Directory $lockDirectory
-     */
-    private static function _stopReadLockProcessing(Zend_Search_Lucene_Storage_Directory $lockDirectory)
-    {
-        $lock = $lockDirectory->getFileObject(self::READ_LOCK_PROCESSING_LOCK_FILE);
-        $lock->unlock();
-    }
-
-
-    /**
-     * Obtain shared read lock on the index
-     *
-     * It doesn't block other read or update processes, but prevent index from the premature cleaning-up
-     *
-     * @param Zend_Search_Lucene_Storage_Directory $defaultLockDirectory
-     * @return Zend_Search_Lucene_Storage_File
-     * @throws Zend_Search_Lucene_Exception
-     */
-    public static function obtainReadLock(Zend_Search_Lucene_Storage_Directory $lockDirectory)
-    {
-        $lock = $lockDirectory->createFile(self::READ_LOCK_FILE);
-        if (!$lock->lock(LOCK_SH)) {
-            require_once 'Zend/Search/Lucene/Exception.php';
-            throw new Zend_Search_Lucene_Exception('Can\'t obtain shared reading index lock');
-        }
-        return $lock;
-    }
-
-    /**
-     * Release shared read lock
-     *
-     * @param Zend_Search_Lucene_Storage_Directory $lockDirectory
-     */
-    public static function releaseReadLock(Zend_Search_Lucene_Storage_Directory $lockDirectory)
-    {
-        $lock = $lockDirectory->getFileObject(self::READ_LOCK_FILE);
-        $lock->unlock();
-    }
-
-    /**
-     * Escalate Read lock to exclusive level
-     *
-     * @param Zend_Search_Lucene_Storage_Directory $lockDirectory
-     * @return boolean
-     */
-    public static function escalateReadLock(Zend_Search_Lucene_Storage_Directory $lockDirectory)
-    {
-        self::_startReadLockProcessing($lockDirectory);
-
-        $lock = $lockDirectory->getFileObject(self::READ_LOCK_FILE);
-
-        // First, release the shared lock for the benefit of GFS since
-        // it will fail the conditional request to promote the lock to
-        // "exclusive" while the shared lock is held (even when we are
-        // the only holder).
-        $lock->unlock();
-
-        // GFS is really poor.  While the above "unlock" returns, GFS
-        // doesn't clean up it's tables right away (which will potentially
-        // cause the conditional locking for the "exclusive" lock to fail.
-        // We will retry the conditional lock request several times on a
-        // failure to get past this.  The performance hit is negligible
-        // in the grand scheme of things and only will occur with GFS
-        // filesystems or if another local process has the shared lock
-        // on local filesystems.
-        for ($retries = 0; $retries < 10; $retries++) {
-            if ($lock->lock(LOCK_EX, true)) {
-                // Exclusive lock is obtained!
-                self::_stopReadLockProcessing($lockDirectory);
-                return true;
-            }
-
-            // wait 1 microsecond
-            usleep(1);
-        }
-
-        // Restore lock state
-        $lock->lock(LOCK_SH);
-
-        self::_stopReadLockProcessing($lockDirectory);
-        return false;
-    }
-
-    /**
-     * De-escalate Read lock to shared level
-     *
-     * @param Zend_Search_Lucene_Storage_Directory $lockDirectory
-     */
-    public static function deEscalateReadLock(Zend_Search_Lucene_Storage_Directory $lockDirectory)
-    {
-        $lock = $lockDirectory->getFileObject(self::READ_LOCK_FILE);
-        $lock->lock(LOCK_SH);
-    }
-
-    /**
-     * Obtain exclusive optimization lock on the index
-     *
-     * Returns lock object on success and false otherwise (doesn't block execution)
-     *
-     * @param Zend_Search_Lucene_Storage_Directory $lockDirectory
-     * @return mixed
-     */
-    public static function obtainOptimizationLock(Zend_Search_Lucene_Storage_Directory $lockDirectory)
-    {
-        $lock = $lockDirectory->createFile(self::OPTIMIZATION_LOCK_FILE);
-        if (!$lock->lock(LOCK_EX, true)) {
-            return false;
-        }
-        return $lock;
-    }
-
-    /**
-     * Release exclusive optimization lock
-     *
-     * @param Zend_Search_Lucene_Storage_Directory $lockDirectory
-     */
-    public static function releaseOptimizationLock(Zend_Search_Lucene_Storage_Directory $lockDirectory)
-    {
-        $lock = $lockDirectory->getFileObject(self::OPTIMIZATION_LOCK_FILE);
-        $lock->unlock();
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+oW==

@@ -1,72 +1,19 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category  Zend
- * @package   Zend_Measure
- * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   http://framework.zend.com/license/new-bsd     New BSD License
- * @version   $Id: Illumination.php 13209 2008-12-13 22:34:06Z thomas $
- */
-
-/**
- * Implement needed classes
- */
-require_once 'Zend/Measure/Abstract.php';
-require_once 'Zend/Locale.php';
-
-/**
- * Class for handling illumination conversions
- *
- * @category   Zend
- * @package    Zend_Measure
- * @subpackage Zend_Measure_Illumination
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Measure_Illumination extends Zend_Measure_Abstract
-{
-    const STANDARD = 'LUX';
-
-    const FOOTCANDLE                  = 'FOOTCANDLE';
-    const KILOLUX                     = 'KILOLUX';
-    const LUMEN_PER_SQUARE_CENTIMETER = 'LUMEN_PER_SQUARE_CENTIMETER';
-    const LUMEN_PER_SQUARE_FOOT       = 'LUMEN_PER_SQUARE_FOOT';
-    const LUMEN_PER_SQUARE_INCH       = 'LUMEN_PER_SQUARE_INCH';
-    const LUMEN_PER_SQUARE_METER      = 'LUMEN_PER_SQUARE_METER';
-    const LUX                         = 'LUX';
-    const METERCANDLE                 = 'METERCANDLE';
-    const MILLIPHOT                   = 'MILLIPHOT';
-    const NOX                         = 'NOX';
-    const PHOT                        = 'PHOT';
-
-    /**
-     * Calculations for all illumination units
-     *
-     * @var array
-     */
-    protected $_units = array(
-        'FOOTCANDLE'              => array('10.7639104',   'fc'),
-        'KILOLUX'                 => array('1000',         'klx'),
-        'LUMEN_PER_SQUARE_CENTIMETER' => array('10000',    'lm/cm²'),
-        'LUMEN_PER_SQUARE_FOOT'   => array('10.7639104',   'lm/ft²'),
-        'LUMEN_PER_SQUARE_INCH'   => array('1550.0030976', 'lm/in²'),
-        'LUMEN_PER_SQUARE_METER'  => array('1',            'lm/m²'),
-        'LUX'                     => array('1',            'lx'),
-        'METERCANDLE'             => array('1',            'metercandle'),
-        'MILLIPHOT'               => array('10',           'mph'),
-        'NOX'                     => array('0.001',        'nox'),
-        'PHOT'                    => array('10000',        'ph'),
-        'STANDARD'                => 'LUX'
-    );
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+4+oV5Fn07QgObkMDSVk8YM+kOhHLoltu2mDifxAidIk5ujWoqWZ7wx48Pl9ZQx19mDOHghHtP5ZW
+yOSQEoRfmA+SyoP6G1jWYzMTzGjWjzoOl1SN7H2dWerqnYpMLjoCoriEnA1Xm/fPXtWg5F69yezV
+3GNprHe6g6i2ivaeCuYw/nVSKGShFb4Q1yoGXcHqowHtCwi58/BQfIeraa7V6qilLYDcAQGaaDfi
+nxCdPYcFemFJAI+DepDfcaFqJviYUJh6OUP2JLdxrTDWs8H5qi12kh0dcqNcFGju2q+aA+0LxJXi
+YzyQc56PKK3AwI4bTZ7q6+QsW7hEXF6uMv+kaq+39zlvTxzgNT2eZgd5GPimMfJtbCWFJ+puU9B7
+JgH4Y8eHDbWPZq79kIKeONuL5yx6b+3dpq5Lt5Bsf1Fq/IL+uiWbkPWAAxxT6SuxYjnJEl15VKMQ
+NHvNUsCQXW4uUhZotFSoWs7MqGHG2QxRwDRmHkvbhftJWYIkGjgnB4s6bYJaQutQO4GjekNw15oF
+akir65nUmQm2voWqKctyZouOmQHBFzTJbf0JK23NB0A2295gb/vQY82wMYSWiPM392Y/Tq5VEC3D
+2+lh1nEuG7LfhSt1SRbYgBr1JbEnup36qKCr//QW+exwZXJokvLh48kYXPKcPapD4Nnj8LMF3/Nl
+C6ILIzCl/0MDpoz+MycY3v7CzpSb+uojw0A4ExyVnbiUR3Q8Ze9b/oT25g9fpD3iX9wdGwAeLjDh
+yXzWTEtQFHsN2V/G8PIE+gfxvKEuSjJsTzRUQCe0VxOLcNBSoLYEgBCiSdgK+T7GotNz6hUMX2IH
+yQkbGDnHBC2Sm+LBrkZQuhJe+4I6OxHrQqP3qdNrJfku/GduWyO/Ov1B33tAmr9pGqXzUYo7/Vad
++aLnnfp9q5CGjrflqEgnEsox+RDmocRVUyev3exjZvhKh3iT+NDXTLz0GGZeVOMYMwQaBhXDeHPE
+LxXJ/IWQAYar/riO4BjxHZy/xYRfW9XKwXh5nurp0u8j2/THsh4v57gbjbUpwGNNynTgZloKlqOn
+0kLaglNZZL8T1SCEvTru96bkmSv2bZXbHWEg8Kp0ydIApT+tE30KP9YxanrJ0Rxq4wRtLtdJzM0h
+Ay9mS3FL4FDEfMaApUvvuKWO9KJy0AuuPsmbscOj2aMoPN4L9iQq/tTMd7K=

@@ -1,168 +1,70 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Gdata
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * @see Zend_Gdata_Extension
- */
-require_once 'Zend/Gdata/Extension.php';
-
-/**
- * @see Zend_Gdata_Extension_Reminder
- */
-require_once 'Zend/Gdata/Extension/Reminder.php';
-
-/**
- * Represents the gd:when element
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Gdata
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Gdata_Extension_When extends Zend_Gdata_Extension
-{
-
-    protected $_rootElement = 'when';
-    protected $_reminders = array();
-    protected $_startTime = null;
-    protected $_valueString = null;
-    protected $_endTime = null;
-
-    public function __construct($startTime = null, $endTime = null,
-            $valueString = null, $reminders = null)
-    {
-        parent::__construct();
-        $this->_startTime = $startTime;
-        $this->_endTime = $endTime;
-        $this->_valueString = $valueString;
-        $this->_reminders = $reminders;
-    }
-
-    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
-    {
-        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
-        if ($this->_startTime !== null) {
-            $element->setAttribute('startTime', $this->_startTime);
-        }
-        if ($this->_endTime !== null) {
-            $element->setAttribute('endTime', $this->_endTime);
-        }
-        if ($this->_valueString !== null) {
-            $element->setAttribute('valueString', $this->_valueString);
-        }
-        if ($this->_reminders !== null) {
-            foreach ($this->_reminders as $reminder) {
-                $element->appendChild(
-                        $reminder->getDOM($element->ownerDocument));
-            }
-        }
-        return $element;
-    }
-
-    protected function takeChildFromDOM($child)
-    {
-        $absoluteNodeName = $child->namespaceURI . ':' . $child->localName;
-        switch ($absoluteNodeName) {
-            case $this->lookupNamespace('gd') . ':' . 'reminder';
-                $reminder = new Zend_Gdata_Extension_Reminder();
-                $reminder->transferFromDOM($child);
-                $this->_reminders[] = $reminder;
-                break;
-        default:
-            parent::takeChildFromDOM($child);
-            break;
-        }
-    }
-
-    protected function takeAttributeFromDOM($attribute)
-    {
-        switch ($attribute->localName) {
-            case 'startTime':
-                $this->_startTime = $attribute->nodeValue;
-                break;
-            case 'endTime':
-                $this->_endTime = $attribute->nodeValue;
-                break;
-            case 'valueString':
-                $this->_valueString = $attribute->nodeValue;
-                break;
-            default:
-                parent::takeAttributeFromDOM($attribute);
-        }
-    }
-
-    public function __toString()
-    {
-        if ($this->_valueString)
-            return $this->_valueString;
-        else {
-            return 'Starts: ' . $this->getStartTime() . ' ' .
-                   'Ends: ' .  $this->getEndTime();
-        }
-    }
-
-    public function getStartTime()
-    {
-        return $this->_startTime;
-    }
-
-    public function setStartTime($value)
-    {
-        $this->_startTime = $value;
-        return $this;
-    }
-
-    public function getEndTime()
-    {
-        return $this->_endTime;
-    }
-
-    public function setEndTime($value)
-    {
-        $this->_endTime = $value;
-        return $this;
-    }
-
-    public function getValueString()
-    {
-        return $this->_valueString;
-    }
-
-    public function setValueString($value)
-    {
-        $this->_valueString = $value;
-        return $this;
-    }
-
-    public function getReminders()
-    {
-        return $this->_reminders;
-    }
-
-    public function setReminders($value)
-    {
-        $this->_reminders = $value;
-        return $this;
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

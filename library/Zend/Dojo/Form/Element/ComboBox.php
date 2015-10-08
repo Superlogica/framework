@@ -1,186 +1,50 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Dojo
- * @subpackage Form_Element
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_Dojo_Form_Element_DijitMulti */
-require_once 'Zend/Dojo/Form/Element/DijitMulti.php';
-
-/**
- * ComboBox dijit
- * 
- * @uses       Zend_Dojo_Form_Element_DijitMulti
- * @package    Zend_Dojo
- * @subpackage Form_Element
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: ComboBox.php 10723 2008-08-06 15:30:18Z matthew $
- */
-class Zend_Dojo_Form_Element_ComboBox extends Zend_Dojo_Form_Element_DijitMulti
-{
-    /**
-     * Use ComboBox dijit view helper
-     * @var string
-     */
-    public $helper = 'ComboBox';
-
-    /**
-     * Flag: autoregister inArray validator?
-     * @var bool
-     */
-    protected $_registerInArrayValidator = false;
-
-    /**
-     * Get datastore information 
-     * 
-     * @return array
-     */
-    public function getStoreInfo()
-    {
-        if (!$this->hasDijitParam('store')) {
-            $this->dijitParams['store'] = array();
-        }
-        return $this->dijitParams['store'];
-    }
-
-    /**
-     * Set datastore identifier
-     * 
-     * @param  string $identifier 
-     * @return Zend_Dojo_Form_Element_ComboBox
-     */
-    public function setStoreId($identifier)
-    {
-        $store = $this->getStoreInfo();
-        $store['store'] = (string) $identifier;
-        $this->setDijitParam('store', $store);
-        return $this;
-    }
-
-    /**
-     * Get datastore identifier 
-     * 
-     * @return string|null
-     */
-    public function getStoreId()
-    {
-        $store = $this->getStoreInfo();
-        if (array_key_exists('store', $store)) {
-            return $store['store'];
-        }
-        return null;
-    }
-
-    /**
-     * Set datastore dijit type
-     * 
-     * @param  string $dojoType 
-     * @return Zend_Dojo_Form_Element_ComboBox
-     */
-    public function setStoreType($dojoType)
-    {
-        $store = $this->getStoreInfo();
-        $store['type'] = (string) $dojoType;
-        $this->setDijitParam('store', $store);
-        return $this;
-    }
-
-    /**
-     * Get datastore dijit type 
-     * 
-     * @return string|null
-     */
-    public function getStoreType()
-    {
-        $store = $this->getStoreInfo();
-        if (array_key_exists('type', $store)) {
-            return $store['type'];
-        }
-        return null;
-    }
-
-    /**
-     * Set datastore parameters
-     * 
-     * @param  array $params 
-     * @return Zend_Dojo_Form_Element_ComboBox
-     */
-    public function setStoreParams(array $params)
-    {
-        $store = $this->getStoreInfo();
-        $store['params'] = $params;
-        $this->setDijitParam('store', $store);
-        return $this;
-    }
-
-    /**
-     * Get datastore params
-     * 
-     * @return array
-     */
-    public function getStoreParams()
-    {
-        $store = $this->getStoreInfo();
-        if (array_key_exists('params', $store)) {
-            return $store['params'];
-        }
-        return array();
-    }
-
-    /**
-     * Set autocomplete flag
-     * 
-     * @param  bool $flag 
-     * @return Zend_Dojo_Form_Element_ComboBox
-     */
-    public function setAutocomplete($flag)
-    {
-        $this->setDijitParam('autocomplete', (bool) $flag);
-        return $this;
-    }
-
-    /**
-     * Get autocomplete flag
-     * 
-     * @return bool
-     */
-    public function getAutocomplete()
-    {
-        if (!$this->hasDijitParam('autocomplete')) {
-            return false;
-        }
-        return $this->getDijitParam('autocomplete');
-    }
-
-    /**
-     * Is the value valid?
-     * 
-     * @param  string $value 
-     * @param  mixed $context 
-     * @return bool
-     */
-    public function isValid($value, $context = null)
-    {
-        $storeInfo = $this->getStoreInfo();
-        if (!empty($storeInfo)) {
-            $this->setRegisterInArrayValidator(false);
-        }
-        return parent::isValid($value, $context);
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

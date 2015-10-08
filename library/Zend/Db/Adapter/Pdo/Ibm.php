@@ -1,360 +1,114 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Db
- * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Ibm.php 13522 2009-01-06 16:35:55Z thomas $
- */
-
-
-/** @see Zend_Db_Adapter_Pdo_Abstract */
-require_once 'Zend/Db/Adapter/Pdo/Abstract.php';
-
-/** @see Zend_Db_Abstract_Pdo_Ibm_Db2 */
-require_once 'Zend/Db/Adapter/Pdo/Ibm/Db2.php';
-
-/** @see Zend_Db_Abstract_Pdo_Ibm_Ids */
-require_once 'Zend/Db/Adapter/Pdo/Ibm/Ids.php';
-
-/** @see Zend_Db_Statement_Pdo_Ibm */
-require_once 'Zend/Db/Statement/Pdo/Ibm.php';
-
-
-/**
- * @category   Zend
- * @package    Zend_Db
- * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2008 Zend Technologies Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Db_Adapter_Pdo_Ibm extends Zend_Db_Adapter_Pdo_Abstract
-{
-    /**
-     * PDO type.
-     *
-     * @var string
-     */
-    protected $_pdoType = 'ibm';
-
-    /**
-     * The IBM data server connected to
-     *
-     * @var string
-     */
-    protected $_serverType = null;
-
-    /**
-     * Keys are UPPERCASE SQL datatypes or the constants
-     * Zend_Db::INT_TYPE, Zend_Db::BIGINT_TYPE, or Zend_Db::FLOAT_TYPE.
-     *
-     * Values are:
-     * 0 = 32-bit integer
-     * 1 = 64-bit integer
-     * 2 = float or decimal
-     *
-     * @var array Associative array of datatypes to values 0, 1, or 2.
-     */
-    protected $_numericDataTypes = array(
-                        Zend_Db::INT_TYPE    => Zend_Db::INT_TYPE,
-                        Zend_Db::BIGINT_TYPE => Zend_Db::BIGINT_TYPE,
-                        Zend_Db::FLOAT_TYPE  => Zend_Db::FLOAT_TYPE,
-                        'INTEGER'            => Zend_Db::INT_TYPE,
-                        'SMALLINT'           => Zend_Db::INT_TYPE,
-                        'BIGINT'             => Zend_Db::BIGINT_TYPE,
-                        'DECIMAL'            => Zend_Db::FLOAT_TYPE,
-                        'DEC'                => Zend_Db::FLOAT_TYPE,
-                        'REAL'               => Zend_Db::FLOAT_TYPE,
-                        'NUMERIC'            => Zend_Db::FLOAT_TYPE,
-                        'DOUBLE PRECISION'   => Zend_Db::FLOAT_TYPE,
-                        'FLOAT'              => Zend_Db::FLOAT_TYPE
-                        );
-
-    /**
-     * Creates a PDO object and connects to the database.
-     *
-     * The IBM data server is set.
-     * Current options are DB2 or IDS
-     * @todo also differentiate between z/OS and i/5
-     *
-     * @return void
-     * @throws Zend_Db_Adapter_Exception
-     */
-    public function _connect()
-    {
-        if ($this->_connection) {
-            return;
-        }
-        parent::_connect();
-
-        $this->getConnection()->setAttribute(Zend_Db::ATTR_STRINGIFY_FETCHES, true);
-
-        try {
-            if ($this->_serverType === null) {
-                $server = substr($this->getConnection()->getAttribute(PDO::ATTR_SERVER_INFO), 0, 3);
-
-                switch ($server) {
-                    case 'DB2':
-                        $this->_serverType = new Zend_Db_Adapter_Pdo_Ibm_Db2($this);
-
-                        // Add DB2-specific numeric types
-                        $this->_numericDataTypes['DECFLOAT'] = Zend_Db::FLOAT_TYPE;
-                        $this->_numericDataTypes['DOUBLE']   = Zend_Db::FLOAT_TYPE;
-                        $this->_numericDataTypes['NUM']      = Zend_Db::FLOAT_TYPE;
-
-                        break;
-                    case 'IDS':
-                        $this->_serverType = new Zend_Db_Adapter_Pdo_Ibm_Ids($this);
-
-                        // Add IDS-specific numeric types
-                        $this->_numericDataTypes['SERIAL']       = Zend_Db::INT_TYPE;
-                        $this->_numericDataTypes['SERIAL8']      = Zend_Db::BIGINT_TYPE;
-                        $this->_numericDataTypes['INT8']         = Zend_Db::BIGINT_TYPE;
-                        $this->_numericDataTypes['SMALLFLOAT']   = Zend_Db::FLOAT_TYPE;
-                        $this->_numericDataTypes['MONEY']        = Zend_Db::FLOAT_TYPE;
-
-                        break;
-                    }
-            }
-        } catch (PDOException $e) {
-            /** @see Zend_Db_Adapter_Exception */
-            require_once 'Zend/Db/Adapter/Exception.php';
-            $error = strpos($e->getMessage(), 'driver does not support that attribute');
-            if ($error) {
-                throw new Zend_Db_Adapter_Exception("PDO_IBM driver extension is downlevel.  Please use driver release version 1.2.1 or later");
-            } else {
-                throw new Zend_Db_Adapter_Exception($e->getMessage());
-            }
-        }
-    }
-
-    /**
-     * Creates a PDO DSN for the adapter from $this->_config settings.
-     *
-     * @return string
-     */
-    protected function _dsn()
-    {
-        $this->_checkRequiredOptions($this->_config);
-
-        // check if using full connection string
-        if (array_key_exists('host', $this->_config)) {
-            $dsn = ';DATABASE=' . $this->_config['dbname']
-            . ';HOSTNAME=' . $this->_config['host']
-            . ';PORT='     . $this->_config['port']
-            // PDO_IBM supports only DB2 TCPIP protocol
-            . ';PROTOCOL=' . 'TCPIP;';
-        } else {
-            // catalogued connection
-            $dsn = $this->_config['dbname'];
-        }
-        return $this->_pdoType . ': ' . $dsn;
-    }
-
-    /**
-     * Checks required options
-     *
-     * @param  array $config
-     * @throws Zend_Db_Adapter_Exception
-     * @return void
-     */
-    protected function _checkRequiredOptions(array $config)
-    {
-        parent::_checkRequiredOptions($config);
-
-        if (array_key_exists('host', $this->_config) &&
-        !array_key_exists('port', $config)) {
-            /** @see Zend_Db_Adapter_Exception */
-            require_once 'Zend/Db/Adapter/Exception.php';
-            throw new Zend_Db_Adapter_Exception("Configuration must have a key for 'port' when 'host' is specified");
-        }
-    }
-
-    /**
-     * Prepares an SQL statement.
-     *
-     * @param string $sql The SQL statement with placeholders.
-     * @param array $bind An array of data to bind to the placeholders.
-     * @return PDOStatement
-     */
-    public function prepare($sql)
-    {
-        $this->_connect();
-        $stmtClass = $this->_defaultStmtClass;
-        $stmt = new $stmtClass($this, $sql);
-        $stmt->setFetchMode($this->_fetchMode);
-        return $stmt;
-    }
-
-    /**
-     * Returns a list of the tables in the database.
-     *
-     * @return array
-     */
-    public function listTables()
-    {
-        $this->_connect();
-        return $this->_serverType->listTables();
-    }
-
-    /**
-     * Returns the column descriptions for a table.
-     *
-     * The return value is an associative array keyed by the column name,
-     * as returned by the RDBMS.
-     *
-     * The value of each array element is an associative array
-     * with the following keys:
-     *
-     * SCHEMA_NAME      => string; name of database or schema
-     * TABLE_NAME       => string;
-     * COLUMN_NAME      => string; column name
-     * COLUMN_POSITION  => number; ordinal position of column in table
-     * DATA_TYPE        => string; SQL datatype name of column
-     * DEFAULT          => string; default expression of column, null if none
-     * NULLABLE         => boolean; true if column can have nulls
-     * LENGTH           => number; length of CHAR/VARCHAR
-     * SCALE            => number; scale of NUMERIC/DECIMAL
-     * PRECISION        => number; precision of NUMERIC/DECIMAL
-     * UNSIGNED         => boolean; unsigned property of an integer type
-     * PRIMARY          => boolean; true if column is part of the primary key
-     * PRIMARY_POSITION => integer; position of column in primary key
-     *
-     * @todo Discover integer unsigned property.
-     *
-     * @param string $tableName
-     * @param string $schemaName OPTIONAL
-     * @return array
-     */
-    public function describeTable($tableName, $schemaName = null)
-    {
-        $this->_connect();
-        return $this->_serverType->describeTable($tableName, $schemaName);
-    }
-
-    /**
-     * Inserts a table row with specified data.
-     * Special handling for PDO_IBM
-     * remove empty slots
-     *
-     * @param mixed $table The table to insert data into.
-     * @param array $bind Column-value pairs.
-     * @return int The number of affected rows.
-     */
-    public function insert($table, array $bind)
-    {
-        $this->_connect();
-        $newbind = array();
-        if (is_array($bind)) {
-            foreach ($bind as $name => $value) {
-                if($value !== null) {
-                    $newbind[$name] = $value;
-                }
-            }
-        }
-
-        return parent::insert($table, $newbind);
-    }
-
-    /**
-     * Adds an adapter-specific LIMIT clause to the SELECT statement.
-     *
-     * @param string $sql
-     * @param integer $count
-     * @param integer $offset OPTIONAL
-     * @return string
-     */
-    public function limit($sql, $count, $offset = 0)
-    {
-       $this->_connect();
-       return $this->_serverType->limit($sql, $count, $offset);
-    }
-
-    /**
-     * Gets the last ID generated automatically by an IDENTITY/AUTOINCREMENT
-     * column.
-     *
-     * @param string $tableName OPTIONAL
-     * @param string $primaryKey OPTIONAL
-     * @return integer
-     */
-    public function lastInsertId($tableName = null, $primaryKey = null)
-    {
-        $this->_connect();
-
-         if ($tableName !== null) {
-            $sequenceName = $tableName;
-            if ($primaryKey) {
-                $sequenceName .= "_$primaryKey";
-            }
-            $sequenceName .= '_seq';
-            return $this->lastSequenceId($sequenceName);
-        }
-
-        $id = $this->getConnection()->lastInsertId();
-
-        return $id;
-    }
-
-    /**
-     * Return the most recent value from the specified sequence in the database.
-     *
-     * @param string $sequenceName
-     * @return integer
-     */
-    public function lastSequenceId($sequenceName)
-    {
-        $this->_connect();
-        return $this->_serverType->lastSequenceId($sequenceName);
-    }
-
-    /**
-     * Generate a new value from the specified sequence in the database,
-     * and return it.
-     *
-     * @param string $sequenceName
-     * @return integer
-     */
-    public function nextSequenceId($sequenceName)
-    {
-        $this->_connect();
-        return $this->_serverType->nextSequenceId($sequenceName);
-    }
-
-    /**
-     * Retrieve server version in PHP style
-     * Pdo_Idm doesn't support getAttribute(PDO::ATTR_SERVER_VERSION)
-     * @return string
-     */
-    public function getServerVersion()
-    {
-        try {
-            $stmt = $this->query('SELECT service_level, fixpack_num FROM TABLE (sysproc.env_get_inst_info()) as INSTANCEINFO');
-            $result = $stmt->fetchAll(Zend_Db::FETCH_NUM);
-            if (count($result)) {
-                $matches = null;
-                if (preg_match('/((?:[0-9]{1,2}\.){1,3}[0-9]{1,2})/', $result[0][0], $matches)) {
-                    return $matches[1];
-                } else {
-                    return null;
-                }
-            }
-            return null;
-        } catch (PDOException $e) {
-            return null;
-        }
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+4+oV56aULdlXiAfywDx3M9XhVv/V7ls8736lbB6iCHorJZ6TsmSP1h0TE4+BdPlH5rZdV5DfgeXg
+0NI8iXwC47D+pWg8XYJQBZJ+t1PNLw/y7STd5E96pHPivms9rBsBd5q99edhwS+Ov0zTMMcz11KD
+DKZnkORN/E19aGGot0UMUlHtOozbE+otU1ESosLXFy7uk+DS9LD4JX8slMASRtW6Zi3RKBGU5Gv/
+LIRUalsa6aFYVK/qEY3dcaFqJviYUJh6OUP2JLdxrL1Va/g3jvpWWNNQKNNlNg1u/vMU8L1a19fr
+1UQ0/hP2raYOAdkOQyqoyAPa3FG7Zvy0IHpuTIjmYZdGihQYcz5tfeE1g1snUOhfPJ3sKtJalZjo
+GavdWJ5xrL3DAdjGkeNwRHVNXJZy/lHpTnKlcIZeY5h30PQqKGVyVPitzY8XAp/pKhmVBoxYdi1q
+GKnGaBTQWW4GVEbxYpr01scOI5hRhGth3KTXLkJQKoQ3sWzFMS6d5NRRZVmLMMCaz9lxZp1U/yId
+I/Uro3J1HiqM9Vxn4gS7qtLVjvye1s7Tld5IfVMVI/3AKGQG6zLTH06OmjSpCJHbKqBMyuUk7fjy
+WZyq0dC03jD5jyErsSnuqyT0e66IuuDNuj2zkCS+T5HO8gLQfS+weVc8yl+h1Hb9TryTDu9yTuFO
+YNnoXti/WBRuadaZ9F3CuM3GOfq4Lykgkdh9FsgsMA6meP5F5GB2T94Xk1Se52VgZkKXG4scUFs7
+kL4PQ5skGzubORCi9lMD8Q2ckmWuK20XYUrGpDtzARqXWs4XdasrE9uL1NrISptu2aepkYM1i6ji
+zPHFoT1+p4XKjbhLtgGv4S68SWj7eiTxq7GveAQYqOUzeLP9zuOiKxigYhOC4OURpWn2zxwkJ0x0
+rgU7PTCRrjPus1h9dxz/esxX0AaV2x7QEWkwYOiK7Z6K7LuQKXDCmrNhv8JGZxsZOwaR4FyUtedm
+QXvUcuJ1BiJFKiM0hIyDMHmm+IfpYjFIvGoo5Jjammj4O84cJxAiWEOLr+uO6cXRMHPayZeHxB8d
+qJOAQHZBxNQFcJg4QN0g4kX4sm4oE5f1UFuW4LQTUQzqWNKtRU9p4fN+DxUhSanFlAnZeIYKRCAR
+tSiFJIXrifDvbS2fjy6Mj200khssS0NTu6AeQHma/pJRgCm/ACaGhsld5OnWQhWXgPpOhd+kktvT
+odw/ZbF1iveNlEohgK+t7ei1RwsaXzxFgjO/bMTyccmXuUWXtSNHNsJw9jrmuc25bU3l70mNn5t2
+cjR4rC2hLIHbaOt4Eh2mdj7lhR8wYHnnpX4wL+3W7NXRSxDPmFKwOo/UhwlW7U4J5bJEwCgiDJzU
+xzdh3qaWmRH6721sdth2rBtSngZo3NykjqabqOr3u0VWSjfK3UG/pjUS45qulUQ8TWJzW2tz/8Zm
+nRjs4OULtVMXUcAaZcALmVdM5v3cS2fmnUziCaWGHn9wEbf9zXmwPqF2reM1jKdl+u4XlZd3rFIH
+r2kgwkqFnrRV8w0dXDQTPG1o74ovveTjEiEK26zJhufolIHrvbM0IdyRcHLOsaLDp+7LBT/W+QEQ
+ip5ZaG8tCDKCvsTr5gLlJBj+YNTHncWCnMhlikb27CKzm90IoEgKhzn0OwPIOabYb/9GQAZvrcZ/
+w2OIjPmuLHpWsRQaUtGjlq0zCiRyxLTAofCTnikJuPx94Fv237AKGOxcxT78keq5frGstMTUenpJ
+1npX4EbnsS081rtLcBXR7ElFC60ZsRgQOWOG6BbNxnaYmTRWG5NE4LPafDB3rPR9Gk7VSPqqYL8l
+APZZdLoT1tSZzn/0oCm1GzFgoJIke5e7pNWlTTLyitO4L99RUHQoAwUnZG/KOxr0fPofaCjThwY6
+QuKTC3H9n4iMs/GzlAZZdSrtz4+V8ZOK9jOA/BxTJdHZXSqBz8uI645n6v1SZZxt8taaa3kfjLBM
+QlMcizKQw5rqxw9QQ1JILAXaaSIS7EttfPctGqUpOFWaSxo0wBZJwItMc1odGK7gYhhUkuk2Y0Mo
+vPugr2C1UDn2xmuE/LwLlL5qfpw9FLog8bwRf/d54A6sxO+PpRhsHK7eoOCPU6QNmggpExf70HJw
+IvMx0Xr389ViKujS6dqM16FfqHm8USRTRo68kQRq3rtfy7Ca4sFiXLRAG8UaQ9Z1NV6dJRgS4mBD
+oL9BbeGo9TX2Ex6mi5BMx9Tvtbl0RWaJlvqUCTmjzuJ1j5sOHMLGaViP2tQumPrt/S5LphzmRgPk
+KHJOdBDAz+wXzXUlDxwuRnfIHvCA9Xt98FGHUB8JAiAVwXuH8m8mOAB1nus6xXdR1716mns2J+7N
+U+raBPyi2v2CNhn8AVq3lHRSZ5CdWfo/seBmj5xwDK0HCe/osCFI1BxVr41URUX96JBUqZgCFjJs
+ALzgXE5hdMaTKZza/20+PlhHxCraXV4vKv8xFjk2wZELkoe46yEmB+gIaHMW3EC25CoV5fLMoCnC
+PjGvYvobNc9en2auEf2QwtnLjcIxm4DsnOJbIEwcUAaVlTl3dqY7YGDmHLVRB4wP+w3uIjosDAez
+6uZpfT/OIhj418pnjB4RusR4wHUNxCAmx7EZGT7KQwdXv8wS5jHHbFeX8PIxLYp5oqsr4CYj37WD
+Y3PZmkO+GlwumqPHqqZpaIIBYxAp9QyWvnhSNS5NJKTo3iJajDCHj35L66Uur04ovC23YLvnEV/+
+PDnwGz2obis9710+cuXM25bnSLzBebmYU5108Uy7v2l8SS0lhv/Yjb3p3Knf2abvbt51yyPH+0L0
+ESVllO662IGxZvhPdP7IOpio+BizrfW/RYnee4inumD8WomBy9UB3QNaIazSHKVdikFM7Hi75hPp
+RQdMf+8dEz4b6+s/VZZDnkpibtK1LfMHQcmth8F6ia6w9kzBUo1Jm139JNzjfAG1QwN4n1jroS3C
+fqQtU1LhzgLu9UqgDi0uQoUp0YoTxR4AZ6hqIF4Ua7qVHV7EKXL6xNMkEhalDDESAMf9E3zQpfPh
+d96j9D85tHXgcWemtxyN0/xP5YbJ/pBV4zSMYqBh7rYahQ4efcPkCaoo2CsVHU48n3Aqu3xMjXXC
+RGcUlO75dqeW0TgLW2CQ7He8O1kRdcsPnsCBEyw0YNK4xbXgurjU8B36z/P78RtHnxrxqEVzkLTu
+NvbgEfTZHSwvkerMwRxQuFPoDfiC/QXu1PS/2taNH8u8d6qk/beAQAy6hlS5L3fhus5d8+x/Lf40
+2MdLYHuVeiAnZgdnbwjuvaW05LGLcpPHl61cyb8B8znsGmeis+Ezd1O5uOOSAISuyyvAYFpGKpLA
+enTpJjK6CQuWsxVYdJW+48cnjFCKTdkpj/wLuDHZOtPI7cbBAxmvnM2DlWBD8Pzn3ISEOEhXWD9B
+eSPcxQoV25c7w6JmjPNOwsF9//Uu8Hwl1nA6Vo6UBWSAvlAfk0es6DVcRG1lyqrs1Q/F9e8/Pfyc
+9Q4SmJq2xxqGTTFBS47QiuEYCq5vTTq5cQJzIBIUH4jmQGPbtVgLPPhMvHg8wyGzKwXIdv+nA7lf
+ac1+BgUkMxnbiW+R9qbRIiAevH3RaLysj8kOSTI5OyRnQScpZoy2jqCAUb7kGsz03eiGmKIyq0IO
+Qh+lGLGdLWlf3yw62KsgY+Kwp/VDo6q72ldrq4rEwhOWftXIC4xY9G8BclV3NxB1mZMnhX45IZ91
+WquecARECgGEOsbB7yfgJiBL52WqLD8j1nKnQ7jCwWERTwGmV0c0Snzx0RZ6/kQ7xWdfRo5Kd4Nw
+2zoHI8r98bv0JCsM5Ag1dIRjSJElU+neDjsZIbvNuQbwK0LotQlL1t86fUta9vDt23htaIA9zYLi
+8DC3wJSJoLN30Y7V/8bpl2EzrfmMXx6xuuOhLTo9HMv95+oRZPBs7kn2LL6k07M/Kjfpnqj87SmQ
+kloCa8rWWMbLQSWXaNO6z5E+pdW8d6E+Vk0ar8u71USASPfd10x0NizYEb1W8eb3zfRePu+OHlVE
+JAx2q2YNQFMRMTp5G6WB45FNZV95JVTiw8B+hOvYFKzAtRJ6/TdldKscb+1EImp4dJ4fL67ZEDWX
+YgXwtVLT575VGePWznwPOSUMSGqeu4K3tV3+dIfWmC8NKTO9grL1AuhzM65CWnrPjdBTpbfeA8WH
+8GDxpJD0X3AT1ZTsVLNHvaMPta77juhNU4n2vNsMe5JsteHQypHHLgONQH5VF+Bisp/sS2m0BkRL
+jeOkqM1dEowKlbZnk4aVPh7dKfp+DLhfhO7o2K6spT2KcQ1AL2SSI6DqgmvKlt8h/fUi237F1FU8
+nle/QGCpZPZCCPxy1rt1iDMT0b/V/yiW6frnLfKiIUZGdkgs5ec5S38wiLXeFTORB3D2FhMwB9rG
+2N8zsPpSmC/4KFGtdFRjzvWlt7Y+QYV3dYtaI37ftyJxxMl/Y790+EOrBW0J1VoU9P0JRNTNmikt
+RUG6my0O7vNL8nM2Lf8CAI/gJgQSEuMFo35WU67xE5ZSE1b0YlLJs5dLNDcxrwG4kSjiZrGex/pR
+OqmWIjWcJCQ8Yivwcz0IEeh0HNPvysWf+N8xossCMcART42QwHr1ucJEmtsTBoqob3C0rhR1pxMK
+ZWLVQ31+5G5Nheud9foB7+hoQzI9ow2H4GYBP+2a5AiFMkM3Ijflc8MWi0cCkIC4ciZ+MPlwiAmH
+JXIiULSaKy8xuZAEe1z44ypA2TLgLnRTMw+bONL12zDddi9qqoYwOtrTJfD8ok1lehInFHXLwgex
+WoeEcFbs9V+zJP5uQF8bylEN/pfZMTi+x61t19CpoJ05VHA04InIgN9OZDeDKGVyxsqHbKfZ4Mh1
+YzK1AFixf9qGiJtnFe77tJ2tY830qYuDDHlkHg9Jt1iwFRGemUeMkHd19Els85kyZPf3AjG+th07
+8z9bi/agIKJrq4Q44CMOto0k8eGxmHuNDLwA30awwhJ+u9gUTL1dg7E+GE0/oRlhiMfA56WDETFf
+IzncPfzIAd942GB/jTYUsJFqlWQ76VfjD5AlrjqhelVPcS8SRaZ5Ipji9xhvxtz7WzfuXiycRyJX
+s+JycrAlWERxibDAv+HQ8D/GSmsgDkiX1agZb1u2C0c+cNLj/stuCvpf0i1KOrwkz8gLe12J5dlD
+jZFLJAU1cNXGoCCqeyPU6zFn/3IQp8isAPbi0oY0TLwBYWzP3DTx5mvRrbeVs1C21aNnvcIY0mF2
+H7y9rKpmBKugievJXumJDMi8W0uD7ZbWjo3nWv6IhNQzXF/TWd3rSv0vC6cCR2tv4bwo+iF5hP6i
+JjcKinnHhgBjSvFQcYVZyRDCi6TAf5jZQF+pWhtz24wNeCHD89ifZ0wblGwQ3AvdyzIw0tXOXwPE
+Vm+tZR4m8Fa+Jl4/NLsDuwqvykeJMighFIk54YykWDQCBMhTNFF2nUjmnu50N6vu7dFvLsWs1el1
+B+n4hO1gcoV/JYez8lx6gXEPC85+Q7Qg9DMIsYv86IsHiV9mT0JiZbmJx5TpRJlpOWaCu219gSoG
+TYCeH1ACA3kitllHKN3q5kDF8aPyaCLUh2bwHUpcV2XlAFWsWMEFzjGM1c23++KHCFO4BM3x2jzL
+BvSPnSoHHb9xYSVgfdjDhk6Y8mWcgXWPD5hVojy/dH2PLceMT8+hUpB9fb+McL7g0y9K9pY7HVVY
+uKz6w8UCqYlOxFPeRabgyuqFjZE1k3bGk+y0Xngh1MYyBwohlWbIeJsRNdM6ihj7CEMd/E+1/P4g
+hD2/TLS0deSpE8dP2loeLqMVszSvfF6pHT9RNg/HVlnpYvE5JO0KRrJd4O/EHHU3OojOHroQMzEB
+/HXN6okWNBtQ8C45ZpFfzD/8mdrIZpvhBMvBnpdcNrg1H0vEFqDVKJAmjAOdUABimsbUIF8rsDPM
+fmVZA/W/KyLC2T9tckbg6r2St610QTmMQ/9UT1rbqRklNA924TzZaI+COd2MA8ErEu6/Her0Pdvh
+IOVUI8OUbjnQbz4CfCX6aq3XAGMdZkhmplwWA20jaZlezZFfgfqQovil6hzSxWBiuDER9Ij3Hjtx
+b2W5UVFG1tYst++Gj5/XotYrsEf1PZeJosjkAbIMkevnplD/3nzWVy9z0GCMQF3HOZhjpX5zXO8N
+nPoFX/0HG6girXbLcAFpy0W0qnY37hMoN1rn6+O0010z2q+bHWxvwaI49kN+ud/lSP3YR5yMcdqh
+EG3HbeHpxcYg09E8Cbr/1/bygD+nQUx2Q33c/9BY0F1PzYVihj/BQFfVOiIGLvfzZUVKkHI0TlYB
+HqVG1iA/oZ2m9vqX/zGin9T1+KM5IM2TLYCh+OrKwrd0M90nGK+urBWZJGyLyYgRdMz9bOrrPXze
+bF6EqK/1Qch5GG9dVx6L7xfuT1KqDoZ6Rh9rDpYLTKt4COf9v186n7erxGoQZEVqXBMST6kLvsEO
+jqBU9Us9PljjKMF8LbpAeXJmaH0v3oe/e49HsOE6Kqt61VjiMb1ILtCVs3t/7FZIpLQk/GNel3Uh
+ez+WQXqI5f51tgDdA7feoEVAHcDU+0uuNLJyzyXAJy5FAskvdIU9C9W1o5crSMWTrFsLNr0AGDR8
+q3RZQdaZ0vy/LdXhILjlhtHesbmjgUGP6XjtZRmPwx0jhbgifT1BQUBdtNOlAXNqLtOIFMQfFjAv
+5AXrIlN0o+zNE2Q6l76oWIVE9LhCS6WQ1pvp4wCHNblxlT6fAjLbboKfEgmMRIYwZE91zOPwAABJ
+LeTR0Homxq0YA2DrV9Bf+ByF1VROZNW+3dXQnWnlZ5QXYrUMK10u2RLdemEKbN3JzoLmzo1K/zLW
+rRBCZsmW5SzdQJ1Vkmt3XGyb8dNk8/vTMsai7On9JNqwQX1HOIYbYzTocD1/WsXkTwamc8+5zLyw
+rdNm6YcTwTUGRlcJKU5asgGnSUQVQVRgZAdHGlGRz40SdhyMZPLV56M8XGOpMVN5bxoRl0AVoDZn
+NfzC6ZxRXuKzZdxfA9szPLmace7I4hOfhhhfyu3z+ciPwUNqVPMj4sp6LYIv3wmfFNz3cvi3D/bf
+M6wJKXhf9PLbj9erMs7Ah4UbRrsoI43n8UeHW+oUaE6w6oDkX28Jk8WIsCGrahq9rbMQ5XcQ4he+
+0zKJkTkqlM6iQ60PbqRtGoBZcBZGg0ogFd3KyVDxH83FoIMa6GdGWK8hl2c7vLFP90VNzqfA9vR7
+i9etHsvZQPuYMJyhI279csOrHR+Zw7luBEXRqZ5gwAgT0DwJeEu8wY7dQlqQcrDfy4+2uw+BNpv4
+k4dH0t6E/Z3Wqln62YrprFlvnTclQfaq6sv2GfTNhxwFVa2XwxNAtCXSjdVD9UFwWbkJiGUK1Iaa
+VGsiKYpCzIDqK1XxslfSRKZl+jfxGZCkpbP1QsfdKHUaOcE7cd1eWoC5cEsVFu2+yN7G5zVgDUC3
+WMeAlt+L3jzmJ/JaUvG5lUn+7/ZJnjILNGX3f5kNHzjzl6Msx+ifL4sia2hm0xIDJ/WHU05vLHKk
+yRFLIv7QouAlpekEqsNwAth6JuwtiNuap9AORIKlTMeKXrzYJ7hrrvNp3qaQMcz73gVpZ1Rrtwov
+6ht6SpAwz5SOHi4cQnTkjKoNAV8kbWRQzSUY0pSc4Op9RwsF7/iHzW6PvRjU3FySNxnL8xG56k1F
+jsmksZT641r6Pj+FME885/0el4VuHsOgD1MT3jkbow5uzezOGa12VOT1HTkBri2PdN09IKYUAbFk
+4nVVqlECXVHKtv2AUfUXmQa3kiSVd4CmwAhd8j7CmRjhgtZteJKPYx4HW3DJWkKc6PbGukRemkeE
+3fCSiWKBfQ0d5eYmyeZpzuI661Skn6RbIhXUaXHJdMkL6E+Za2kLv1zlneYCUtrHGuEKHRcqYRPE
+hMetn9Xg8eUDTrd/8HBqJz+Y2WR1HM9gLFT/QELah3I32SCR4sGxg6IyJMpUy+m/0yDZdqobGYf8
+o7XLNwmQAOHqAqNwIv/DDOfUhOaBjNl1jxW1iSwC3Aw0k1ZaysbP74B9rz1LeN8MVCaYEd6UtSPC
+QJZ/LUEooDLuwc7aAHz+iEHhXAJjtcgDiJPOCEmwswJy88BrB8NBZudnEF3uG5t4gRL5KZfo3nV9
+6/U2O8F3r463e5aVs1SSWzXqK/aMuLCFXJHpM//A+4Zhev/1xcFFPy0+LVXuJOIWPu4heVlgvWN+
+bEx6WrwbsHAbo8r1PLzwoIWIsKh8l97+b/V6kBDQy4H0KkZxym0cLLM8nlFC4At3xjf+spCI0AUW
+qDOEu3NIrFrHAU/FLdi/oOVoDc1n3my54h/66+sg/asrqNbMVFmQUUrklmqDYEkjoJl2PaMNXvQL
+NZSr7BXy01uLco33gul4SvK=

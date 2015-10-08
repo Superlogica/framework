@@ -1,88 +1,31 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_InfoCard
- * @subpackage Zend_InfoCard_Xml
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Assertion.php 13213 2008-12-14 11:05:07Z thomas $
- */
-
-/**
- * Zend_InfoCard_Xml_Assertion_Interface
- */
-require_once 'Zend/InfoCard/Xml/Assertion/Interface.php';
-
-/**
- * Factory object to retrieve an Assertion object based on the type of XML document provided
- *
- * @category   Zend
- * @package    Zend_InfoCard
- * @subpackage Zend_InfoCard_Xml
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-final class Zend_InfoCard_Xml_Assertion
-{
-    /**
-     * The namespace for a SAML-formatted Assertion document
-     */
-    const TYPE_SAML = 'urn:oasis:names:tc:SAML:1.0:assertion';
-
-    /**
-     * Constructor (disabled)
-     *
-     * @return void
-     */
-    private function __construct()
-    {
-    }
-
-    /**
-     * Returns an instance of a InfoCard Assertion object based on the XML data provided
-     *
-     * @throws Zend_InfoCard_Xml_Exception
-     * @param string $xmlData The XML-Formatted Assertion
-     * @return Zend_InfoCard_Xml_Assertion_Interface
-     * @throws Zend_InfoCard_Xml_Exception
-     */
-    static public function getInstance($xmlData)
-    {
-
-        if($xmlData instanceof Zend_InfoCard_Xml_Element) {
-            $strXmlData = $xmlData->asXML();
-        } else if (is_string($xmlData)) {
-            $strXmlData = $xmlData;
-        } else {
-            require_once 'Zend/InfoCard/Xml/Exception.php';
-            throw new Zend_InfoCard_Xml_Exception("Invalid Data provided to create instance");
-        }
-
-        $sxe = simplexml_load_string($strXmlData);
-
-        $namespaces = $sxe->getDocNameSpaces();
-
-        foreach($namespaces as $namespace) {
-            switch($namespace) {
-                case self::TYPE_SAML:
-                    include_once 'Zend/InfoCard/Xml/Assertion/Saml.php';
-                    return simplexml_load_string($strXmlData, 'Zend_InfoCard_Xml_Assertion_Saml', null);
-            }
-        }
-
-        require_once 'Zend/InfoCard/Xml/Exception.php';
-        throw new Zend_InfoCard_Xml_Exception("Unable to determine Assertion type by Namespace");
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+A4bDSmaaLC7ZilV6l26UWji=

@@ -1,173 +1,63 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_InfoCard
- * @subpackage Zend_InfoCard_Xml
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: SecurityTokenReference.php 9094 2008-03-30 18:36:55Z thomas $
- */
-
-/**
- * Zend_InfoCard_Xml_Element
- */
-require_once 'Zend/InfoCard/Xml/Element.php';
-
-/**
- * Represents a SecurityTokenReference XML block
- *
- * @category   Zend
- * @package    Zend_InfoCard
- * @subpackage Zend_InfoCard_Xml
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_InfoCard_Xml_SecurityTokenReference extends Zend_InfoCard_Xml_Element
-{
-    /**
-     * Base64 Binary Encoding URI
-     */
-    const ENCODING_BASE64BIN = 'http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary';
-
-    /**
-     * Return an instance of the object based on the input XML
-     *
-     * @param string $xmlData The SecurityTokenReference XML Block
-     * @return Zend_InfoCard_Xml_SecurityTokenReference
-     * @throws Zend_InfoCard_Xml_Exception
-     */
-    static public function getInstance($xmlData)
-    {
-        if($xmlData instanceof Zend_InfoCard_Xml_Element) {
-            $strXmlData = $xmlData->asXML();
-        } else if (is_string($xmlData)) {
-            $strXmlData = $xmlData;
-        } else {
-            throw new Zend_InfoCard_Xml_Exception("Invalid Data provided to create instance");
-        }
-
-        $sxe = simplexml_load_string($strXmlData);
-
-        if($sxe->getName() != "SecurityTokenReference") {
-            throw new Zend_InfoCard_Xml_Exception("Invalid XML Block provided for SecurityTokenReference");
-        }
-
-        return simplexml_load_string($strXmlData, "Zend_InfoCard_Xml_SecurityTokenReference");
-    }
-
-    /**
-     * Return the Key Identifier XML Object
-     *
-     * @return Zend_InfoCard_Xml_Element
-     * @throws Zend_InfoCard_Xml_Exception
-     */
-    protected function _getKeyIdentifier()
-    {
-        $this->registerXPathNamespace('o', 'http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd');
-        list($keyident) = $this->xpath('//o:KeyIdentifier');
-
-        if(!($keyident instanceof Zend_InfoCard_Xml_Element)) {
-            throw new Zend_InfoCard_Xml_Exception("Failed to retrieve Key Identifier");
-        }
-
-        return $keyident;
-    }
-
-    /**
-     * Return the Key URI identifying the thumbprint type used
-     *
-     * @return string The thumbprint type URI
-     * @throws  Zend_InfoCard_Xml_Exception
-     */
-    public function getKeyThumbprintType()
-    {
-
-        $keyident = $this->_getKeyIdentifier();
-
-        $dom = self::convertToDOM($keyident);
-
-        if(!$dom->hasAttribute('ValueType')) {
-            throw new Zend_InfoCard_Xml_Exception("Key Identifier did not provide a type for the value");
-        }
-
-        return $dom->getAttribute('ValueType');
-    }
-
-
-    /**
-     * Return the thumbprint encoding type used as a URI
-     *
-     * @return string the URI of the thumbprint encoding used
-     * @throws Zend_InfoCard_Xml_Exception
-     */
-    public function getKeyThumbprintEncodingType()
-    {
-
-        $keyident = $this->_getKeyIdentifier();
-
-        $dom = self::convertToDOM($keyident);
-
-        if(!$dom->hasAttribute('EncodingType')) {
-            throw new Zend_InfoCard_Xml_Exception("Unable to determine the encoding type for the key identifier");
-        }
-
-        return $dom->getAttribute('EncodingType');
-    }
-
-    /**
-     * Get the key reference data used to identify the public key
-     *
-     * @param bool $decode if true, will return a decoded version of the key
-     * @return string the key reference thumbprint, either in binary or encoded form
-     * @throws Zend_InfoCard_Xml_Exception
-     */
-    public function getKeyReference($decode = true)
-    {
-        $keyIdentifier = $this->_getKeyIdentifier();
-
-        $dom = self::convertToDOM($keyIdentifier);
-        $encoded = $dom->nodeValue;
-
-        if(empty($encoded)) {
-            throw new Zend_InfoCard_Xml_Exception("Could not find the Key Reference Encoded Value");
-        }
-
-        if($decode) {
-
-            $decoded = "";
-            switch($this->getKeyThumbprintEncodingType()) {
-                case self::ENCODING_BASE64BIN:
-
-                    if(version_compare(PHP_VERSION, "5.2.0", ">=")) {
-                        $decoded = base64_decode($encoded, true);
-                    } else {
-                        $decoded = base64_decode($encoded);
-                    }
-
-                    break;
-                default:
-                    throw new Zend_InfoCard_Xml_Exception("Unknown Key Reference Encoding Type: {$this->getKeyThumbprintEncodingType()}");
-            }
-
-            if(!$decoded || empty($decoded)) {
-                throw new Zend_InfoCard_Xml_Exception("Failed to decode key reference");
-            }
-
-            return $decoded;
-        }
-
-        return $encoded;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

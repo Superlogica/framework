@@ -1,341 +1,77 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @package    Zend_Pdf
- * @subpackage Fonts
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_Pdf_Cmap_ByteEncoding */
-require_once 'Zend/Pdf/Cmap/ByteEncoding.php';
-
-/** Zend_Pdf_Cmap_ByteEncoding_Static */
-require_once 'Zend/Pdf/Cmap/ByteEncoding/Static.php';
-
-/** Zend_Pdf_Cmap_SegmentToDelta */
-require_once 'Zend/Pdf/Cmap/SegmentToDelta.php';
-
-/** Zend_Pdf_Cmap_TrimmedTable */
-require_once 'Zend/Pdf/Cmap/TrimmedTable.php';
-
-/**
- * Abstract helper class for {@link Zend_Pdf_Resource_Font} which manages font
- * character maps.
- *
- * Defines the public interface for concrete subclasses which are responsible
- * for mapping Unicode characters to the font's glyph numbers. Also provides
- * shared utility methods.
- *
- * Cmap objects should ordinarily be obtained through the factory method
- * {@link cmapWithTypeData()}.
- *
- * The supported character map types are those found in the OpenType spec. For
- * additional detail on the internal binary format of these tables, see:
- * <ul>
- *  <li>{@link http://developer.apple.com/textfonts/TTRefMan/RM06/Chap6cmap.html}
- *  <li>{@link http://www.microsoft.com/OpenType/OTSpec/cmap.htm}
- *  <li>{@link http://partners.adobe.com/public/developer/opentype/index_cmap.html}
- * </ul>
- *
- * @todo Write code for Zend_Pdf_FontCmap_HighByteMapping class.
- * @todo Write code for Zend_Pdf_FontCmap_MixedCoverage class.
- * @todo Write code for Zend_Pdf_FontCmap_TrimmedArray class.
- * @todo Write code for Zend_Pdf_FontCmap_SegmentedCoverage class.
- *
- * @package    Zend_Pdf
- * @subpackage Fonts
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-abstract class Zend_Pdf_Cmap
-{
-  /**** Class Constants ****/
-
-
-  /* Cmap Table Types */
-
-    /**
-     * Byte Encoding character map table type.
-     */
-    const TYPE_BYTE_ENCODING = 0x00;
-
-    /**
-     * High Byte Mapping character map table type.
-     */
-    const TYPE_HIGH_BYTE_MAPPING = 0x02;
-
-    /**
-     * Segment Value to Delta Mapping character map table type.
-     */
-    const TYPE_SEGMENT_TO_DELTA = 0x04;
-
-    /**
-     * Trimmed Table character map table type.
-     */
-    const TYPE_TRIMMED_TABLE = 0x06;
-
-    /**
-     * Mixed Coverage character map table type.
-     */
-    const TYPE_MIXED_COVERAGE = 0x08;
-
-    /**
-     * Trimmed Array character map table type.
-     */
-    const TYPE_TRIMMED_ARRAY = 0x0a;
-
-    /**
-     * Segmented Coverage character map table type.
-     */
-    const TYPE_SEGMENTED_COVERAGE = 0x0c;
-
-    /**
-     * Static Byte Encoding character map table type. Variant of
-     * {@link TYPE_BYTEENCODING}.
-     */
-    const TYPE_BYTE_ENCODING_STATIC = 0xf1;
-
-    /**
-     * Unknown character map table type.
-     */
-    const TYPE_UNKNOWN = 0xff;
-
-
-  /* Special Glyph Names */
-
-    /**
-     * Glyph representing missing characters.
-     */
-    const MISSING_CHARACTER_GLYPH = 0x00;
-
-
-
-  /**** Public Interface ****/
-
-
-  /* Factory Methods */
-
-    /**
-     * Instantiates the appropriate concrete subclass based on the type of cmap
-     * table and returns the instance.
-     *
-     * The cmap type must be one of the following values:
-     * <ul>
-     *  <li>{@link Zend_Pdf_Cmap::TYPE_BYTE_ENCODING}
-     *  <li>{@link Zend_Pdf_Cmap::TYPE_BYTE_ENCODING_STATIC}
-     *  <li>{@link Zend_Pdf_Cmap::TYPE_HIGH_BYTE_MAPPING}
-     *  <li>{@link Zend_Pdf_Cmap::TYPE_SEGMENT_TO_DELTA}
-     *  <li>{@link Zend_Pdf_Cmap::TYPE_TRIMMED_TABLE}
-     *  <li>{@link Zend_Pdf_Cmap::TYPE_MIXED_COVERAGE}
-     *  <li>{@link Zend_Pdf_Cmap::TYPE_TRIMMED_ARRAY}
-     *  <li>{@link Zend_Pdf_Cmap::TYPE_SEGMENTED_COVERAGE}
-     * </ul>
-     *
-     * Throws an exception if the table type is invalid or the cmap table data
-     * cannot be validated.
-     *
-     * @param integer $cmapType Type of cmap.
-     * @param mixed $cmapData Cmap table data. Usually a string or array.
-     * @return Zend_Pdf_Cmap
-     * @throws Zend_Pdf_Exception
-     */
-    public static function cmapWithTypeData($cmapType, $cmapData)
-    {
-        switch ($cmapType) {
-            case Zend_Pdf_Cmap::TYPE_BYTE_ENCODING:
-                return new Zend_Pdf_Cmap_ByteEncoding($cmapData);
-
-            case Zend_Pdf_Cmap::TYPE_BYTE_ENCODING_STATIC:
-                return new Zend_Pdf_Cmap_ByteEncoding_Static($cmapData);
-
-            case Zend_Pdf_Cmap::TYPE_HIGH_BYTE_MAPPING:
-                require_once 'Zend/Pdf/Exception.php';
-                throw new Zend_Pdf_Exception('High byte mapping cmap currently unsupported',
-                                             Zend_Pdf_Exception::CMAP_TYPE_UNSUPPORTED);
-
-            case Zend_Pdf_Cmap::TYPE_SEGMENT_TO_DELTA:
-                return new Zend_Pdf_Cmap_SegmentToDelta($cmapData);
-
-            case Zend_Pdf_Cmap::TYPE_TRIMMED_TABLE:
-                return new Zend_Pdf_Cmap_TrimmedTable($cmapData);
-
-            case Zend_Pdf_Cmap::TYPE_MIXED_COVERAGE:
-                require_once 'Zend/Pdf/Exception.php';
-                throw new Zend_Pdf_Exception('Mixed coverage cmap currently unsupported',
-                                             Zend_Pdf_Exception::CMAP_TYPE_UNSUPPORTED);
-
-            case Zend_Pdf_Cmap::TYPE_TRIMMED_ARRAY:
-                require_once 'Zend/Pdf/Exception.php';
-                throw new Zend_Pdf_Exception('Trimmed array cmap currently unsupported',
-                                             Zend_Pdf_Exception::CMAP_TYPE_UNSUPPORTED);
-
-            case Zend_Pdf_Cmap::TYPE_SEGMENTED_COVERAGE:
-                require_once 'Zend/Pdf/Exception.php';
-                throw new Zend_Pdf_Exception('Segmented coverage cmap currently unsupported',
-                                             Zend_Pdf_Exception::CMAP_TYPE_UNSUPPORTED);
-
-            default:
-                require_once 'Zend/Pdf/Exception.php';
-                throw new Zend_Pdf_Exception("Unknown cmap type: $cmapType",
-                                             Zend_Pdf_Exception::CMAP_UNKNOWN_TYPE);
-        }
-    }
-
-
-  /* Abstract Methods */
-
-    /**
-     * Object constructor
-     *
-     * Parses the raw binary table data. Throws an exception if the table is
-     * malformed.
-     *
-     * @param string $cmapData Raw binary cmap table data.
-     * @throws Zend_Pdf_Exception
-     */
-    abstract public function __construct($cmapData);
-
-    /**
-     * Returns an array of glyph numbers corresponding to the Unicode characters.
-     *
-     * If a particular character doesn't exist in this font, the special 'missing
-     * character glyph' will be substituted.
-     *
-     * See also {@link glyphNumberForCharacter()}.
-     *
-     * @param array $characterCodes Array of Unicode character codes (code points).
-     * @return array Array of glyph numbers.
-     */
-    abstract public function glyphNumbersForCharacters($characterCodes);
-
-    /**
-     * Returns the glyph number corresponding to the Unicode character.
-     *
-     * If a particular character doesn't exist in this font, the special 'missing
-     * character glyph' will be substituted.
-     *
-     * See also {@link glyphNumbersForCharacters()} which is optimized for bulk
-     * operations.
-     *
-     * @param integer $characterCode Unicode character code (code point).
-     * @return integer Glyph number.
-     */
-    abstract public function glyphNumberForCharacter($characterCode);
-
-    /**
-     * Returns an array containing the Unicode characters that have entries in
-     * this character map.
-     *
-     * @return array Unicode character codes.
-     */
-    abstract public function getCoveredCharacters();
-
-    /**
-     * Returns an array containing the glyphs numbers that have entries in this character map.
-     * Keys are Unicode character codes (integers)
-     *
-     * This functionality is partially covered by glyphNumbersForCharacters(getCoveredCharacters())
-     * call, but this method do it in more effective way (prepare complete list instead of searching
-     * glyph for each character code).
-     *
-     * @internal
-     * @return array Array representing <Unicode character code> => <glyph number> pairs.
-     */
-    abstract public function getCoveredCharactersGlyphs();
-
-
-  /**** Internal Methods ****/
-
-
-  /* Internal Utility Methods */
-
-    /**
-     * Extracts a signed 2-byte integer from a string.
-     *
-     * Integers are always big-endian. Throws an exception if the index is out
-     * of range.
-     *
-     * @param string &$data
-     * @param integer $index Position in string of integer.
-     * @return integer
-     * @throws Zend_Pdf_Exception
-     */
-    protected function _extractInt2(&$data, $index)
-    {
-        if (($index < 0) | (($index + 1) > strlen($data))) {
-            require_once 'Zend/Pdf/Exception.php';
-            throw new Zend_Pdf_Exception("Index out of range: $index",
-                                         Zend_Pdf_Exception::INDEX_OUT_OF_RANGE);
-        }
-        $number = ord($data[$index]);
-        if (($number & 0x80) == 0x80) {    // negative
-            $number = ~((((~ $number) & 0xff) << 8) | ((~ ord($data[++$index])) & 0xff));
-        } else {
-            $number = ($number << 8) | ord($data[++$index]);
-        }
-        return $number;
-    }
-
-    /**
-     * Extracts an unsigned 2-byte integer from a string.
-     *
-     * Integers are always big-endian. Throws an exception if the index is out
-     * of range.
-     *
-     * @param string &$data
-     * @param integer $index Position in string of integer.
-     * @return integer
-     * @throws Zend_Pdf_Exception
-     */
-    protected function _extractUInt2(&$data, $index)
-    {
-        if (($index < 0) | (($index + 1) > strlen($data))) {
-            require_once 'Zend/Pdf/Exception.php';
-            throw new Zend_Pdf_Exception("Index out of range: $index",
-                                         Zend_Pdf_Exception::INDEX_OUT_OF_RANGE);
-        }
-        $number = (ord($data[$index]) << 8) | ord($data[++$index]);
-        return $number;
-    }
-
-    /**
-     * Extracts an unsigned 4-byte integer from a string.
-     *
-     * Integers are always big-endian. Throws an exception if the index is out
-     * of range.
-     *
-     * NOTE: If you ask for a 4-byte unsigned integer on a 32-bit machine, the
-     * resulting value WILL BE SIGNED because PHP uses signed integers internally
-     * for everything. To guarantee portability, be sure to use bitwise or
-     * similar operators on large integers!
-     *
-     * @param string &$data
-     * @param integer $index Position in string of integer.
-     * @return integer
-     * @throws Zend_Pdf_Exception
-     */
-    protected function _extractUInt4(&$data, $index)
-    {
-        if (($index < 0) | (($index + 3) > strlen($data))) {
-            require_once 'Zend/Pdf/Exception.php';
-            throw new Zend_Pdf_Exception("Index out of range: $index",
-                                         Zend_Pdf_Exception::INDEX_OUT_OF_RANGE);
-        }
-        $number = (ord($data[$index]) << 24) | (ord($data[++$index]) << 16) |
-                  (ord($data[++$index]) << 8) | ord($data[++$index]);
-        return $number;
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+iq6xEHu=

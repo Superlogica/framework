@@ -1,183 +1,53 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category  Zend
- * @package   Zend_Uri
- * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   http://framework.zend.com/license/new-bsd     New BSD License
- * @version   $Id: Uri.php 15577 2009-05-14 12:43:34Z matthew $
- */
-
-/**
- * Abstract class for all Zend_Uri handlers
- *
- * @category  Zend
- * @package   Zend_Uri
- * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   http://framework.zend.com/license/new-bsd     New BSD License
- */
-abstract class Zend_Uri
-{
-    /**
-     * Scheme of this URI (http, ftp, etc.)
-     *
-     * @var string
-     */
-    protected $_scheme = '';
-
-    /**
-     * Global configuration array
-     *
-     * @var array
-     */
-    static protected $_config = array(
-        'allow_unwise' => false
-    );
-    
-    /**
-     * Return a string representation of this URI.
-     *
-     * @see    getUri()
-     * @return string
-     */
-    public function __toString()
-    {
-        return $this->getUri();
-    }
-
-    /**
-     * Convenience function, checks that a $uri string is well-formed
-     * by validating it but not returning an object.  Returns TRUE if
-     * $uri is a well-formed URI, or FALSE otherwise.
-     *
-     * @param  string $uri The URI to check
-     * @return boolean
-     */
-    public static function check($uri)
-    {
-        try {
-            $uri = self::factory($uri);
-        } catch (Exception $e) {
-            return false;
-        }
-
-        return $uri->valid();
-    }
-
-    /**
-     * Create a new Zend_Uri object for a URI.  If building a new URI, then $uri should contain
-     * only the scheme (http, ftp, etc).  Otherwise, supply $uri with the complete URI.
-     *
-     * @param  string $uri The URI form which a Zend_Uri instance is created
-     * @throws Zend_Uri_Exception When an empty string was supplied for the scheme
-     * @throws Zend_Uri_Exception When an illegal scheme is supplied
-     * @throws Zend_Uri_Exception When the scheme is not supported
-     * @return Zend_Uri
-     * @link   http://www.faqs.org/rfcs/rfc2396.html
-     */
-    public static function factory($uri = 'http')
-    {
-        // Separate the scheme from the scheme-specific parts
-        $uri            = explode(':', $uri, 2);
-        $scheme         = strtolower($uri[0]);
-        $schemeSpecific = isset($uri[1]) === true ? $uri[1] : '';
-
-        if (strlen($scheme) === 0) {
-            require_once 'Zend/Uri/Exception.php';
-            throw new Zend_Uri_Exception('An empty string was supplied for the scheme');
-        }
-
-        // Security check: $scheme is used to load a class file, so only alphanumerics are allowed.
-        if (ctype_alnum($scheme) === false) {
-            require_once 'Zend/Uri/Exception.php';
-            throw new Zend_Uri_Exception('Illegal scheme supplied, only alphanumeric characters are permitted');
-        }
-
-        /**
-         * Create a new Zend_Uri object for the $uri. If a subclass of Zend_Uri exists for the
-         * scheme, return an instance of that class. Otherwise, a Zend_Uri_Exception is thrown.
-         */
-        switch ($scheme) {
-            case 'http':
-                // Break intentionally omitted
-            case 'https':
-                $className = 'Zend_Uri_Http';
-                break;
-
-            case 'mailto':
-                // TODO
-            default:
-                require_once 'Zend/Uri/Exception.php';
-                throw new Zend_Uri_Exception("Scheme \"$scheme\" is not supported");
-                break;
-        }
-
-        if (!class_exists($className)) {
-            require_once 'Zend/Loader.php';
-            Zend_Loader::loadClass($className);
-        }
-        $schemeHandler = new $className($scheme, $schemeSpecific);
-
-        return $schemeHandler;
-    }
-
-    /**
-     * Get the URI's scheme
-     *
-     * @return string|false Scheme or false if no scheme is set.
-     */
-    public function getScheme()
-    {
-        if (empty($this->_scheme) === false) {
-            return $this->_scheme;
-        } else {
-            return false;
-        }
-    }
-
-    /**
-     * Set global configuration options
-     *
-     * @param array $config
-     */
-    static public function setConfig(array $config)
-    {
-        foreach ($config as $k => $v) {
-            self::$_config[$k] = $v;
-        }
-    }
-    
-    /**
-     * Zend_Uri and its subclasses cannot be instantiated directly.
-     * Use Zend_Uri::factory() to return a new Zend_Uri object.
-     *
-     * @param string $scheme         The scheme of the URI
-     * @param string $schemeSpecific The scheme-specific part of the URI
-     */
-    abstract protected function __construct($scheme, $schemeSpecific = '');
-
-    /**
-     * Return a string representation of this URI.
-     *
-     * @return string
-     */
-    abstract public function getUri();
-
-    /**
-     * Returns TRUE if this URI is valid, or FALSE otherwise.
-     *
-     * @return boolean
-     */
-    abstract public function valid();
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+3gRcacnn5e2O/Cy3T+wq2CfWQ7P7ebi9qmO=

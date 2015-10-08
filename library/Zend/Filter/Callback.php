@@ -1,133 +1,36 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Filter
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Callback.php 14975 2009-04-18 05:13:52Z norm2782 $
- */
-
-/**
- * @see Zend_Filter_Interface
- */
-require_once 'Zend/Filter/Interface.php';
-
-/**
- * @category   Zend
- * @package    Zend_Filter
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Filter_Callback implements Zend_Filter_Interface
-{
-    /**
-     * Callback in a call_user_func format
-     *
-     * @var string|array
-     */
-    protected $_callback = null;
-
-    /**
-     * Default options to set for the filter
-     *
-     * @var mixed
-     */
-    protected $_options = null;
-
-    /**
-     * Constructor
-     *
-     * @param string|array $callback Callback in a call_user_func format
-     * @param mixed        $options  (Optional) Default options for this filter
-     */
-    public function __construct($callback, $options = null)
-    {
-        $this->setCallback($callback);
-        $this->setOptions($options);
-    }
-
-    /**
-     * Returns the set callback
-     *
-     * @return string|array Set callback
-     */
-    public function getCallback()
-    {
-        return $this->_callback;
-    }
-
-    /**
-     * Sets a new callback for this filter
-     *
-     * @param unknown_type $callback
-     * @return unknown
-     */
-    public function setCallback($callback, $options = null)
-    {
-        if (!is_callable($callback)) {
-            require_once 'Zend/Filter/Exception.php';
-            throw new Zend_Filter_Exception('Callback can not be accessed');
-        }
-
-        $this->_callback = $callback;
-        $this->setOptions($options);
-        return $this;
-    }
-
-    /**
-     * Returns the set default options
-     *
-     * @return mixed
-     */
-    public function getOptions()
-    {
-        return $this->_options;
-    }
-
-    /**
-     * Sets new default options to the callback filter
-     *
-     * @param mixed $options Default options to set
-     * @return Zend_Filter_Callback
-     */
-    public function setOptions($options)
-    {
-        $this->_options = $options;
-        return $this;
-    }
-
-    /**
-     * Calls the filter per callback
-     *
-     * @param $value mixed Options for the set callback
-     * @return mixed       Result from the filter which was callbacked
-     */
-    public function filter($value)
-    {
-    	$options = array();
-
-        if ($this->_options !== null) {
-            if (!is_array($this->_options)) {
-                $options = array($this->_options);
-            } else {
-                $options = $this->_options;
-            }
-        }
-
-        array_unshift($options, $value);
-
-        return call_user_func_array($this->_callback, $options);
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

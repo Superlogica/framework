@@ -1,234 +1,75 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category  Zend
- * @package   Zend_Validate
- * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   http://framework.zend.com/license/new-bsd     New BSD License
- * @version   $Id: $
- */
-
-/**
- * @see Zend_Validate_Abstract
- */
-require_once 'Zend/Validate/Abstract.php';
-
-/**
- * Validator for the file extension of a file
- *
- * @category  Zend
- * @package   Zend_Validate
- * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Validate_File_Extension extends Zend_Validate_Abstract
-{
-    /**
-     * @const string Error constants
-     */
-    const FALSE_EXTENSION = 'fileExtensionFalse';
-    const NOT_FOUND       = 'fileExtensionNotFound';
-
-    /**
-     * @var array Error message templates
-     */
-    protected $_messageTemplates = array(
-        self::FALSE_EXTENSION => "The file '%value%' has a false extension",
-        self::NOT_FOUND       => "The file '%value%' was not found"
-    );
-
-    /**
-     * Internal list of extensions
-     * @var string
-     */
-    protected $_extension = '';
-
-    /**
-     * Validate case sensitive
-     *
-     * @var boolean
-     */
-    protected $_case = false;
-
-    /**
-     * @var array Error message template variables
-     */
-    protected $_messageVariables = array(
-        'extension' => '_extension'
-    );
-
-    /**
-     * Sets validator options
-     *
-     * @param  string|array $extension
-     * @param  boolean      $case      If true validation is done case sensitive
-     * @return void
-     */
-    public function __construct($options)
-    {
-        if ($options instanceof Zend_Config) {
-            $options = $options->toArray();
-        }
-
-        if (1 < func_num_args()) {
-            trigger_error('Multiple arguments to constructor are deprecated in favor of options array', E_USER_NOTICE);
-            $case = func_get_arg(1);
-            $this->setCase($case);
-        }
-
-        if (is_array($options) and isset($options['case'])) {
-            $this->setCase($options['case']);
-            unset($options['case']);
-        }
-
-        $this->setExtension($options);
-    }
-
-    /**
-     * Returns the case option
-     *
-     * @return boolean
-     */
-    public function getCase()
-    {
-        return $this->_case;
-    }
-
-    /**
-     * Sets the case to use
-     *
-     * @param  boolean $case
-     * @return Zend_Validate_File_Extension Provides a fluent interface
-     */
-    public function setCase($case)
-    {
-        $this->_case = (boolean) $case;
-        return $this;
-    }
-
-    /**
-     * Returns the set file extension
-     *
-     * @return array
-     */
-    public function getExtension()
-    {
-        $extension = explode(',', $this->_extension);
-
-        return $extension;
-    }
-
-    /**
-     * Sets the file extensions
-     *
-     * @param  string|array $extension The extensions to validate
-     * @return Zend_Validate_File_Extension Provides a fluent interface
-     */
-    public function setExtension($extension)
-    {
-        $this->_extension = null;
-        $this->addExtension($extension);
-        return $this;
-    }
-
-    /**
-     * Adds the file extensions
-     *
-     * @param  string|array $extension The extensions to add for validation
-     * @return Zend_Validate_File_Extension Provides a fluent interface
-     */
-    public function addExtension($extension)
-    {
-        $extensions = $this->getExtension();
-        if (is_string($extension)) {
-            $extension = explode(',', $extension);
-        }
-
-        foreach ($extension as $content) {
-            if (empty($content) || !is_string($content)) {
-                continue;
-            }
-
-            $extensions[] = trim($content);
-        }
-        $extensions = array_unique($extensions);
-
-        // Sanity check to ensure no empty values
-        foreach ($extensions as $key => $ext) {
-            if (empty($ext)) {
-                unset($extensions[$key]);
-            }
-        }
-
-        $this->_extension = implode(',', $extensions);
-
-        return $this;
-    }
-
-    /**
-     * Defined by Zend_Validate_Interface
-     *
-     * Returns true if and only if the fileextension of $value is included in the
-     * set extension list
-     *
-     * @param  string  $value Real file to check for extension
-     * @param  array   $file  File data from Zend_File_Transfer
-     * @return boolean
-     */
-    public function isValid($value, $file = null)
-    {
-        // Is file readable ?
-        require_once 'Zend/Loader.php';
-        if (!Zend_Loader::isReadable($value)) {
-            return $this->_throw($file, self::NOT_FOUND);
-        }
-
-        if ($file !== null) {
-            $info['extension'] = substr($file['name'], strrpos($file['name'], '.') + 1);
-        } else {
-            $info = pathinfo($value);
-        }
-
-        $extensions = $this->getExtension();
-
-        if ($this->_case && (in_array($info['extension'], $extensions))) {
-            return true;
-        } else if (!$this->getCase()) {
-            foreach ($extensions as $extension) {
-                if (strtolower($extension) == strtolower($info['extension'])) {
-                    return true;
-                }
-            }
-        }
-
-        return $this->_throw($file, self::FALSE_EXTENSION);
-    }
-
-    /**
-     * Throws an error of the given type
-     *
-     * @param  string $file
-     * @param  string $errorType
-     * @return false
-     */
-    protected function _throw($file, $errorType)
-    {
-        if (null !== $file) {
-            $this->_value = $file['name'];
-        }
-
-        $this->_error($errorType);
-        return false;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

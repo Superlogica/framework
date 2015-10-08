@@ -1,100 +1,40 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Dojo
- * @subpackage View
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: CheckBox.php 11292 2008-09-08 18:51:39Z matthew $
- */
-
-/** Zend_Dojo_View_Helper_Dijit */
-require_once 'Zend/Dojo/View/Helper/Dijit.php';
-
-/**
- * Dojo CheckBox dijit
- * 
- * @uses       Zend_Dojo_View_Helper_Dijit
- * @package    Zend_Dojo
- * @subpackage View
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
-  */
-class Zend_Dojo_View_Helper_CheckBox extends Zend_Dojo_View_Helper_Dijit
-{
-    /**
-     * Dijit being used
-     * @var string
-     */
-    protected $_dijit  = 'dijit.form.CheckBox';
-
-    /**
-     * Element type
-     * @var string
-     */
-    protected $_elementType = 'checkbox';
-
-    /**
-     * Dojo module to use
-     * @var string
-     */
-    protected $_module = 'dijit.form.CheckBox';
-
-    /**
-     * dijit.form.CheckBox
-     * 
-     * @param  int $id 
-     * @param  string $content 
-     * @param  array $params  Parameters to use for dijit creation
-     * @param  array $attribs HTML attributes
-     * @param  array $checkedOptions Should contain either two items, or the keys checkedValue and unCheckedValue
-     * @return string
-     */
-    public function checkBox($id, $value = null, array $params = array(), array $attribs = array(), array $checkedOptions = null)
-    {
-        // Prepare the checkbox options
-        require_once 'Zend/View/Helper/FormCheckbox.php';
-        $checked = false;
-        if (isset($attribs['checked']) && $attribs['checked']) {
-            $checked = true;
-        } elseif (isset($attribs['checked'])) {
-            $checked = false;
-        }
-        $checkboxInfo = Zend_View_Helper_FormCheckbox::determineCheckboxInfo($value, $checked, $checkedOptions);
-        $attribs['checked'] = $checkboxInfo['checked'];
-        if (!array_key_exists('id', $attribs)) {
-            $attribs['id'] = $id;
-        }
-
-        $attribs = $this->_prepareDijit($attribs, $params, 'element');
-
-        // strip options so they don't show up in markup
-        if (array_key_exists('options', $attribs)) {
-            unset($attribs['options']);
-        }
-
-        // and now we create it:
-        $html = '';
-        if (!strstr($id, '[]')) {
-            // hidden element for unchecked value
-            $html .= $this->_renderHiddenElement($id, $checkboxInfo['unCheckedValue']);
-        }
-
-        // and final element
-        $html .= $this->_createFormElement($id, $checkboxInfo['checkedValue'], $params, $attribs);
-
-        return $html;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+4+oV5FlDL1ux5ArHrdh1FV7LRoSRU36/KNIs79QiTKSE1yyn4xaSu1oyFG2ZKJONCNbeFPqi/tGZ
+K2jvYtIYQwiEFIA+Uo/xxiLuYtYS0KP7lM2nzqmlwY8S6zfnsq3IIcgDRFK6cNCIvlczJ/X7XaR0
+zxuZZseDJoEBT0IzAqthXcHrUHWpAOoDlkO2n7G+BHYqyjv3xQNE5WzGkAUJSOFaCVsH+nmilL7w
+dFpVW+QalQ4gtIcJCHo0caFqJviYUJh6OUP2JLdxrRLUj2i/rHb4xf8EsKK6auGX/nYMD1Z1fFQB
+SoklQq4LiNRGsC0LdLTUY14QBLR+Df9IlAgm5uimoTmYzjnMtDI++zyecVbYHP7adWULJ4YyI+WV
+KiBT7Y9jRG2hlkScQjKQRgs6rY8kZ45WdCFXQSlCkuX3cT/xIBx9Oo5rGRsBDfakIhESpqboQIEN
+wymS7UYvJI3VJzgyY/M9AKRoj+xh7Yh1LoXCSwoCReAAajJarsuivo6anO54ZUO4sR1WQjHR1pin
+YkE8wqYOZUESJh1c5LpIdWjVy7LMXdkGNZB4ZFPqzOd+bM4an+4rOZ9lcQhpzeSW+eh108YM4DKR
+cIwA+jrnBF+7T5Lf1OSpbpPBPp8Qy1Wit6tiR6J1C/eAzoSBfmoK5sAzBMcTOHoIcMCRx6ZilcNb
+9L076lJ8+ZfUA47AZW0jmWrPsOOfWvrxoCiko+Ns4L3SiTqD7+MrBj9qVVxTV0YThUl3+LNUYESc
+pXbbIq0JsRzao3c0pakMq9k9+hPAxihZ4NOiRAQKN6UtJZZr32VxG5jlrmvDwymFDMUmR+6b17sT
+DMfH2YZB7n72AuAKr1AwOVRfpLNnVOzWZFp76Vmu79QpbSnC/rivbTPh7Dag3W74XMQ6Tb23Qe4D
+3SjgzCOjUhdJU4897niErX8NA50dsEY9hnkI1I3u7ZQ+JYpP1j+p7MUrxq8Mby1UIxpNbO5sLY1A
+M1oCw4EF7rANjG9XyIdjN49K8oU3fxarbig5aT42kPQo90pRwUYcNY18gE/vdmg4ktVHniPSBYWr
+ncfVptk30UpN6Y4R/BswcOMsxVIttlw6MniXe1jhX1/t9ZWijIAj3a+BuXVJgALkj7Nl8wj0/tR3
+LkE05vvJ/EQaNIs2AcOHq9fD9yrEUq4etnSSqld4KZkHgFrtzxopLx0Sa6iwuQebPe09EO/aItCx
+4k++es6OxfFhJbjLI+E1RBbTTeVNxufsZDVVPg78l8D6KAxlP0U1jpS2j2krp1FenWNQlfFX1wHO
++5NAaGIWAOpZiXUNf2U68sQKvehGaDcDSIFSmOHtOsPr/mwP+M9sBQ78TJFcds0Hweir/PvrUMDd
+XSDwh3ICBdYI1cu5C4NTTm34RHVi9go/0UtLG0bFRQ3x9EKnLUrLv/LWkXUxcXge0vI+61AecmXY
+LcHMzOspbLJ3UDIQ4vmp+0OxmQN5LyJLzcmXUr0Pn3ZQHTSGX69g0pjMBMaKpg2/BosgG4qdP8iN
+VbWh4Ug/IMNslhzYvJPDxc6zUV1Gj/QEPCCY/Cb4qPNhFXlacvgqYVOmedPEwK8hpmt5vlpT8nSZ
+E7AwUEd9Hlp8CI7hZeRp/j7MS9UXfbuzd34IiXLTqvxfKQpIkwTSil5X8uh4rMdI3Z2qb5nyfh3J
+R+TvXdyNLExjZ7cWBiJeRIHUbb2DglqhB0mM8bAVKbguc44veQ3PrRt8fss/ryfvVF5+IBlbCPxT
+JBtpoNX6kY5xntV0DAIN8MdHfhe+BUB0Sb/Ypm5CugnCDn6rBS091uElwJuexdQfGttGmczoErr/
+hvXvJkeIzfVA54d0rCW0zjAgTfVP+JhOmjm40mCrnL0QW1h909ESsPVnHi8TJlmj+dJXL0CLwzXu
+WPN4mDrt1SClqxmdpl2Os9JS0rdc7iXRVVHA+Hhb5877LuNtZqYysqasoO54zvh/62EvYpVzq4HJ
+f07v/siSPO3seRfaXSgLstF4ucW0CZGKc6SuOfYV3GguPVW2PdVW8qtF0aUkk923/juZjK7wPkai
+YEyO0v+RpKCC2UJt8KIa/B67BKhggpq8LB3oRGlJPpGOQe8pfKFNkqIU+M76bw8HRyD5aPn4i7yG
+pO9N2flbsK+jIyCX5gLtpcyqRweDb8nFicF5gFDPGHlK9EwCDQpBWYnp4HNpuaDdWLgUY3dg2hJg
+tHcKANv639SfYj6yK29rEkBZcbeqQjgObb+GzLBXZmdygrcN96LdDL/LVusML03TOK9lSbecYLeN
+vbBmJOmhaUsApXA0FmxAWHiiXgfiUxKFEGecZD2NxYB9EbI78bfP7AeRUpKRDuguSniTNtC3Lk08
+3jKwaBjjX5F3yeA2d4AvT6NgSJjk/CcYrue8poMcwkFLzCdJzS8hKxFxpr6bNiP6sDRx9Apdhiva
+n3tpEPIxeE4ioC2WMoEOntaiWrb/AF98vU3TShZEjz3ZNFo9HDzN9qpjlfYp/wweW4MZH05sxEv4
+rOPUrnBjK5EQnHc3TX9kLyVyWjX6K3es7UEzug91AbI4s4DsXlbUlVg5MpTzgLEXEF8P+mwD21sF
+16oLG75Fa1nPQwnd0q0nAc5gLIbCVR+SIysI1jzEiMFfdIIiMny4zMmNJOUOX5j1O1gcUGkTezu/
+AmSR3z8eh9+MSLDiCxzHNiKGyUrg9hocjbVUg1YqCdI4apIGmDA1JA81sw393uwP5GBo7ImT6qWj
+Z4/LeS9jemwuSpwfguixZVinCGe09w7P6oIW4AO9CW==

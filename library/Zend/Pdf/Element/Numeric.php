@@ -1,93 +1,30 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Pdf
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-
-/** Zend_Pdf_Element */
-require_once 'Zend/Pdf/Element.php';
-
-
-/**
- * PDF file 'numeric' element implementation
- *
- * @category   Zend
- * @package    Zend_Pdf
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Pdf_Element_Numeric extends Zend_Pdf_Element
-{
-    /**
-     * Object value
-     *
-     * @var numeric
-     */
-    public $value;
-
-
-    /**
-     * Object constructor
-     *
-     * @param numeric $val
-     * @throws Zend_Pdf_Exception
-     */
-    public function __construct($val)
-    {
-        if ( !is_numeric($val) ) {
-            throw new Zend_Pdf_Exception('Argument must be numeric');
-        }
-
-        $this->value   = $val;
-    }
-
-
-    /**
-     * Return type of the element.
-     *
-     * @return integer
-     */
-    public function getType()
-    {
-        return Zend_Pdf_Element::TYPE_NUMERIC;
-    }
-
-
-    /**
-     * Return object as string
-     *
-     * @param Zend_Pdf_Factory $factory
-     * @return string
-     */
-    public function toString($factory = null)
-    {
-        if (is_integer($this->value)) {
-            return (string)$this->value;
-        }
-
-        /**
-         * PDF doesn't support exponental format.
-         * Fixed point format must be used instead
-         */
-        $prec = 0; $v = $this->value;
-        while (abs( floor($v) - $v ) > 1e-10) {
-            $prec++; $v *= 10;
-        }
-        return sprintf("%.{$prec}F", $this->value);
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+Qs+iPW==

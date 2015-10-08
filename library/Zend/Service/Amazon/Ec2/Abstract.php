@@ -1,201 +1,75 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Service_Amazon
- * @subpackage Ec2
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id$
- */
-
-require_once 'Zend/Service/Amazon/Abstract.php';
-
-require_once 'Zend/Service/Amazon/Ec2/Response.php';
-
-require_once 'Zend/Service/Amazon/Ec2/Exception.php';
-
-/**
- * Provides the basic functionality to send a request to the Amazon Ec2 Query API
- *
- * @category   Zend
- * @package    Zend_Service_Amazon
- * @subpackage Ec2
- * @copyright  Copyright (c) 22005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-abstract class Zend_Service_Amazon_Ec2_Abstract extends Zend_Service_Amazon_Abstract
-{
-    /**
-     * The HTTP query server
-     */
-    const EC2_ENDPOINT = 'ec2.amazonaws.com';
-
-    /**
-     * The API version to use
-     */
-    const EC2_API_VERSION = '2008-12-01';
-
-    /**
-     * Signature Version
-     */
-    const EC2_SIGNATURE_VERSION = '2';
-
-    /**
-     * Signature Encoding Method
-     */
-    const EC2_SIGNATURE_METHOD = 'HmacSHA256';
-
-    /**
-     * Period after which HTTP request will timeout in seconds
-     */
-    const HTTP_TIMEOUT = 10;
-
-    /**
-     * Sends a HTTP request to the queue service using Zend_Http_Client
-     *
-     * @param array $params         List of parameters to send with the request
-     * @return Zend_Service_Amazon_Ec2_Response
-     * @throws Zend_Service_Amazon_Ec2_Exception
-     */
-    protected function sendRequest(array $params = array())
-    {
-        $url = 'https://' . $this->_getRegion() . self::EC2_ENDPOINT . '/';
-
-        $params = $this->addRequiredParameters($params);
-
-        try {
-            /* @var $request Zend_Http_Client */
-            $request = self::getHttpClient();
-			$request->resetParameters();
-
-            $request->setConfig(array(
-                'timeout' => self::HTTP_TIMEOUT
-            ));
-
-            $request->setUri($url);
-            $request->setMethod(Zend_Http_Client::POST);
-            $request->setParameterPost($params);
-
-            $httpResponse = $request->request();
-
-
-        } catch (Zend_Http_Client_Exception $zhce) {
-            $message = 'Error in request to AWS service: ' . $zhce->getMessage();
-            throw new Zend_Service_Amazon_Ec2_Exception($message, $zhce->getCode());
-        }
-
-        $response = new Zend_Service_Amazon_Ec2_Response($httpResponse);
-        $this->checkForErrors($response);
-
-        return $response;
-    }
-
-    /**
-     * Adds required authentication and version parameters to an array of
-     * parameters
-     *
-     * The required parameters are:
-     * - AWSAccessKey
-     * - SignatureVersion
-     * - Timestamp
-     * - Version and
-     * - Signature
-     *
-     * If a required parameter is already set in the <tt>$parameters</tt> array,
-     * it is overwritten.
-     *
-     * @param array $parameters the array to which to add the required
-     *                          parameters.
-     *
-     * @return array
-     */
-    protected function addRequiredParameters(array $parameters)
-    {
-        $parameters['AWSAccessKeyId']   = $this->_getAccessKey();
-        $parameters['SignatureVersion'] = self::EC2_SIGNATURE_VERSION;
-        $parameters['Expires']          = gmdate('c');
-        $parameters['Version']          = self::EC2_API_VERSION;
-        $parameters['SignatureMethod']  = self::EC2_SIGNATURE_METHOD;
-        $parameters['Signature']        = $this->signParameters($parameters);
-
-        return $parameters;
-    }
-
-    /**
-     * Computes the RFC 2104-compliant HMAC signature for request parameters
-     *
-     * This implements the Amazon Web Services signature, as per the following
-     * specification:
-     *
-     * 1. Sort all request parameters (including <tt>SignatureVersion</tt> and
-     *    excluding <tt>Signature</tt>, the value of which is being created),
-     *    ignoring case.
-     *
-     * 2. Iterate over the sorted list and append the parameter name (in its
-     *    original case) and then its value. Do not URL-encode the parameter
-     *    values before constructing this string. Do not use any separator
-     *    characters when appending strings.
-     *
-     * @param array  $parameters the parameters for which to get the signature.
-     * @param string $secretKey  the secret key to use to sign the parameters.
-     *
-     * @return string the signed data.
-     */
-    protected function signParameters(array $paramaters)
-    {
-        $data = "POST\n";
-        $data .= $this->_getRegion() . self::EC2_ENDPOINT . "\n";
-        $data .= "/\n";
-
-        uksort($paramaters, 'strcmp');
-        unset($paramaters['Signature']);
-
-        $arrData = array();
-        foreach($paramaters as $key => $value) {
-            $arrData[] = $key . '=' . str_replace("%7E", "~", urlencode($value));
-        }
-
-        $data .= implode('&', $arrData);
-
-        require_once 'Zend/Crypt/Hmac.php';
-        $hmac = Zend_Crypt_Hmac::compute($this->_getSecretKey(), 'SHA256', $data, Zend_Crypt_Hmac::BINARY);
-
-        return base64_encode($hmac);
-    }
-
-    /**
-     * Checks for errors responses from Amazon
-     *
-     * @param Zend_Service_Amazon_Ec2_Response $response the response object to
-     *                                                   check.
-     *
-     * @return void
-     *
-     * @throws Zend_Service_Amazon_Ec2_Exception if one or more errors are
-     *         returned from Amazon.
-     */
-    private function checkForErrors(Zend_Service_Amazon_Ec2_Response $response)
-    {
-        $xpath = new DOMXPath($response->getDocument());
-        $list  = $xpath->query('//Error');
-        if ($list->length > 0) {
-            $node    = $list->item(0);
-            $code    = $xpath->evaluate('string(Code/text())', $node);
-            $message = $xpath->evaluate('string(Message/text())', $node);
-            throw new Zend_Service_Amazon_Ec2_Exception($message, 0, $code);
-        }
-
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+x1rANZRWrw00ppXQecRTMSdTeS1n1mq=

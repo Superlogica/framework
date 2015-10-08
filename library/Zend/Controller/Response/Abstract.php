@@ -1,755 +1,206 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Controller
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * Zend_Controller_Response_Abstract
- *
- * Base class for Zend_Controller responses
- *
- * @package Zend_Controller
- * @subpackage Response
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-abstract class Zend_Controller_Response_Abstract
-{
-    /**
-     * Body content
-     * @var array
-     */
-    protected $_body = array();
-
-    /**
-     * Exception stack
-     * @var Exception
-     */
-    protected $_exceptions = array();
-
-    /**
-     * Array of headers. Each header is an array with keys 'name' and 'value'
-     * @var array
-     */
-    protected $_headers = array();
-
-    /**
-     * Array of raw headers. Each header is a single string, the entire header to emit
-     * @var array
-     */
-    protected $_headersRaw = array();
-
-    /**
-     * HTTP response code to use in headers
-     * @var int
-     */
-    protected $_httpResponseCode = 200;
-
-    /**
-     * Flag; is this response a redirect?
-     * @var boolean
-     */
-    protected $_isRedirect = false;
-
-    /**
-     * Whether or not to render exceptions; off by default
-     * @var boolean
-     */
-    protected $_renderExceptions = false;
-
-    /**
-     * Flag; if true, when header operations are called after headers have been
-     * sent, an exception will be raised; otherwise, processing will continue
-     * as normal. Defaults to true.
-     *
-     * @see canSendHeaders()
-     * @var boolean
-     */
-    public $headersSentThrowsException = true;
-
-    /**
-     * Normalize a header name
-     *
-     * Normalizes a header name to X-Capitalized-Names
-     * 
-     * @param  string $name 
-     * @return string
-     */
-    protected function _normalizeHeader($name)
-    {
-        $filtered = str_replace(array('-', '_'), ' ', (string) $name);
-        $filtered = ucwords(strtolower($filtered));
-        $filtered = str_replace(' ', '-', $filtered);
-        return $filtered;
-    }
-
-    /**
-     * Set a header
-     *
-     * If $replace is true, replaces any headers already defined with that
-     * $name.
-     *
-     * @param string $name
-     * @param string $value
-     * @param boolean $replace
-     * @return Zend_Controller_Response_Abstract
-     */
-    public function setHeader($name, $value, $replace = false)
-    {
-        $this->canSendHeaders(true);
-        $name  = $this->_normalizeHeader($name);
-        $value = (string) $value;
-
-        if ($replace) {
-            foreach ($this->_headers as $key => $header) {
-                if ($name == $header['name']) {
-                    unset($this->_headers[$key]);
-                }
-            }
-        }
-
-        $this->_headers[] = array(
-            'name'    => $name,
-            'value'   => $value,
-            'replace' => $replace
-        );
-
-        return $this;
-    }
-
-    /**
-     * Set redirect URL
-     *
-     * Sets Location header and response code. Forces replacement of any prior
-     * redirects.
-     *
-     * @param string $url
-     * @param int $code
-     * @return Zend_Controller_Response_Abstract
-     */
-    public function setRedirect($url, $code = 302)
-    {
-        $this->canSendHeaders(true);
-        $this->setHeader('Location', $url, true)
-             ->setHttpResponseCode($code);
-
-        return $this;
-    }
-
-    /**
-     * Is this a redirect?
-     *
-     * @return boolean
-     */
-    public function isRedirect()
-    {
-        return $this->_isRedirect;
-    }
-
-    /**
-     * Return array of headers; see {@link $_headers} for format
-     *
-     * @return array
-     */
-    public function getHeaders()
-    {
-        return $this->_headers;
-    }
-
-    /**
-     * Clear headers
-     *
-     * @return Zend_Controller_Response_Abstract
-     */
-    public function clearHeaders()
-    {
-        $this->_headers = array();
-
-        return $this;
-    }
-
-    /**
-     * Set raw HTTP header
-     *
-     * Allows setting non key => value headers, such as status codes
-     *
-     * @param string $value
-     * @return Zend_Controller_Response_Abstract
-     */
-    public function setRawHeader($value)
-    {
-        $this->canSendHeaders(true);
-        if ('Location' == substr($value, 0, 8)) {
-            $this->_isRedirect = true;
-        }
-        $this->_headersRaw[] = (string) $value;
-        return $this;
-    }
-
-    /**
-     * Retrieve all {@link setRawHeader() raw HTTP headers}
-     *
-     * @return array
-     */
-    public function getRawHeaders()
-    {
-        return $this->_headersRaw;
-    }
-
-    /**
-     * Clear all {@link setRawHeader() raw HTTP headers}
-     *
-     * @return Zend_Controller_Response_Abstract
-     */
-    public function clearRawHeaders()
-    {
-        $this->_headersRaw = array();
-        return $this;
-    }
-
-    /**
-     * Clear all headers, normal and raw
-     *
-     * @return Zend_Controller_Response_Abstract
-     */
-    public function clearAllHeaders()
-    {
-        return $this->clearHeaders()
-                    ->clearRawHeaders();
-    }
-
-    /**
-     * Set HTTP response code to use with headers
-     *
-     * @param int $code
-     * @return Zend_Controller_Response_Abstract
-     */
-    public function setHttpResponseCode($code)
-    {
-        if (!is_int($code) || (100 > $code) || (599 < $code)) {
-            require_once 'Zend/Controller/Response/Exception.php';
-            throw new Zend_Controller_Response_Exception('Invalid HTTP response code');
-        }
-
-        if ((300 <= $code) && (307 >= $code)) {
-            $this->_isRedirect = true;
-        } else {
-            $this->_isRedirect = false;
-        }
-
-        $this->_httpResponseCode = $code;
-        return $this;
-    }
-
-    /**
-     * Retrieve HTTP response code
-     *
-     * @return int
-     */
-    public function getHttpResponseCode()
-    {
-        return $this->_httpResponseCode;
-    }
-
-    /**
-     * Can we send headers?
-     *
-     * @param boolean $throw Whether or not to throw an exception if headers have been sent; defaults to false
-     * @return boolean
-     * @throws Zend_Controller_Response_Exception
-     */
-    public function canSendHeaders($throw = false)
-    {
-        $ok = headers_sent($file, $line);
-        if ($ok && $throw && $this->headersSentThrowsException) {
-            require_once 'Zend/Controller/Response/Exception.php';
-            throw new Zend_Controller_Response_Exception('Cannot send headers; headers already sent in ' . $file . ', line ' . $line);
-        }
-
-        return !$ok;
-    }
-
-    /**
-     * Send all headers
-     *
-     * Sends any headers specified. If an {@link setHttpResponseCode() HTTP response code}
-     * has been specified, it is sent with the first header.
-     *
-     * @return Zend_Controller_Response_Abstract
-     */
-    public function sendHeaders()
-    {
-        // Only check if we can send headers if we have headers to send
-        if (count($this->_headersRaw) || count($this->_headers) || (200 != $this->_httpResponseCode)) {
-            $this->canSendHeaders(true);
-        } elseif (200 == $this->_httpResponseCode) {
-            // Haven't changed the response code, and we have no headers
-            return $this;
-        }
-
-        $httpCodeSent = false;
-
-        foreach ($this->_headersRaw as $header) {
-            if (!$httpCodeSent && $this->_httpResponseCode) {
-                header($header, true, $this->_httpResponseCode);
-                $httpCodeSent = true;
-            } else {
-                header($header);
-            }
-        }
-
-        foreach ($this->_headers as $header) {
-            if (!$httpCodeSent && $this->_httpResponseCode) {
-                header($header['name'] . ': ' . $header['value'], $header['replace'], $this->_httpResponseCode);
-                $httpCodeSent = true;
-            } else {
-                header($header['name'] . ': ' . $header['value'], $header['replace']);
-            }
-        }
-
-        if (!$httpCodeSent) {
-            header('HTTP/1.1 ' . $this->_httpResponseCode);
-            $httpCodeSent = true;
-        }
-
-        return $this;
-    }
-
-    /**
-     * Set body content
-     *
-     * If $name is not passed, or is not a string, resets the entire body and
-     * sets the 'default' key to $content.
-     *
-     * If $name is a string, sets the named segment in the body array to
-     * $content.
-     *
-     * @param string $content
-     * @param null|string $name
-     * @return Zend_Controller_Response_Abstract
-     */
-    public function setBody($content, $name = null)
-    {
-        if ((null === $name) || !is_string($name)) {
-            $this->_body = array('default' => (string) $content);
-        } else {
-            $this->_body[$name] = (string) $content;
-        }
-
-        return $this;
-    }
-
-    /**
-     * Append content to the body content
-     *
-     * @param string $content
-     * @param null|string $name
-     * @return Zend_Controller_Response_Abstract
-     */
-    public function appendBody($content, $name = null)
-    {
-        if ((null === $name) || !is_string($name)) {
-            if (isset($this->_body['default'])) {
-                $this->_body['default'] .= (string) $content;
-            } else {
-                return $this->append('default', $content);
-            }
-        } elseif (isset($this->_body[$name])) {
-            $this->_body[$name] .= (string) $content;
-        } else {
-            return $this->append($name, $content);
-        }
-
-        return $this;
-    }
-
-    /**
-     * Clear body array
-     *
-     * With no arguments, clears the entire body array. Given a $name, clears
-     * just that named segment; if no segment matching $name exists, returns
-     * false to indicate an error.
-     *
-     * @param  string $name Named segment to clear
-     * @return boolean
-     */
-    public function clearBody($name = null)
-    {
-        if (null !== $name) {
-            $name = (string) $name;
-            if (isset($this->_body[$name])) {
-                unset($this->_body[$name]);
-                return true;
-            }
-
-            return false;
-        }
-
-        $this->_body = array();
-        return true;
-    }
-
-    /**
-     * Return the body content
-     *
-     * If $spec is false, returns the concatenated values of the body content
-     * array. If $spec is boolean true, returns the body content array. If
-     * $spec is a string and matches a named segment, returns the contents of
-     * that segment; otherwise, returns null.
-     *
-     * @param boolean $spec
-     * @return string|array|null
-     */
-    public function getBody($spec = false)
-    {
-        if (false === $spec) {
-            ob_start();
-            $this->outputBody();
-            return ob_get_clean();
-        } elseif (true === $spec) {
-            return $this->_body;
-        } elseif (is_string($spec) && isset($this->_body[$spec])) {
-            return $this->_body[$spec];
-        }
-
-        return null;
-    }
-
-    /**
-     * Append a named body segment to the body content array
-     *
-     * If segment already exists, replaces with $content and places at end of
-     * array.
-     *
-     * @param string $name
-     * @param string $content
-     * @return Zend_Controller_Response_Abstract
-     */
-    public function append($name, $content)
-    {
-        if (!is_string($name)) {
-            require_once 'Zend/Controller/Response/Exception.php';
-            throw new Zend_Controller_Response_Exception('Invalid body segment key ("' . gettype($name) . '")');
-        }
-
-        if (isset($this->_body[$name])) {
-            unset($this->_body[$name]);
-        }
-        $this->_body[$name] = (string) $content;
-        return $this;
-    }
-
-    /**
-     * Prepend a named body segment to the body content array
-     *
-     * If segment already exists, replaces with $content and places at top of
-     * array.
-     *
-     * @param string $name
-     * @param string $content
-     * @return void
-     */
-    public function prepend($name, $content)
-    {
-        if (!is_string($name)) {
-            require_once 'Zend/Controller/Response/Exception.php';
-            throw new Zend_Controller_Response_Exception('Invalid body segment key ("' . gettype($name) . '")');
-        }
-
-        if (isset($this->_body[$name])) {
-            unset($this->_body[$name]);
-        }
-
-        $new = array($name => (string) $content);
-        $this->_body = $new + $this->_body;
-
-        return $this;
-    }
-
-    /**
-     * Insert a named segment into the body content array
-     *
-     * @param  string $name
-     * @param  string $content
-     * @param  string $parent
-     * @param  boolean $before Whether to insert the new segment before or
-     * after the parent. Defaults to false (after)
-     * @return Zend_Controller_Response_Abstract
-     */
-    public function insert($name, $content, $parent = null, $before = false)
-    {
-        if (!is_string($name)) {
-            require_once 'Zend/Controller/Response/Exception.php';
-            throw new Zend_Controller_Response_Exception('Invalid body segment key ("' . gettype($name) . '")');
-        }
-
-        if ((null !== $parent) && !is_string($parent)) {
-            require_once 'Zend/Controller/Response/Exception.php';
-            throw new Zend_Controller_Response_Exception('Invalid body segment parent key ("' . gettype($parent) . '")');
-        }
-
-        if (isset($this->_body[$name])) {
-            unset($this->_body[$name]);
-        }
-
-        if ((null === $parent) || !isset($this->_body[$parent])) {
-            return $this->append($name, $content);
-        }
-
-        $ins  = array($name => (string) $content);
-        $keys = array_keys($this->_body);
-        $loc  = array_search($parent, $keys);
-        if (!$before) {
-            // Increment location if not inserting before
-            ++$loc;
-        }
-
-        if (0 === $loc) {
-            // If location of key is 0, we're prepending
-            $this->_body = $ins + $this->_body;
-        } elseif ($loc >= (count($this->_body))) {
-            // If location of key is maximal, we're appending
-            $this->_body = $this->_body + $ins;
-        } else {
-            // Otherwise, insert at location specified
-            $pre  = array_slice($this->_body, 0, $loc);
-            $post = array_slice($this->_body, $loc);
-            $this->_body = $pre + $ins + $post;
-        }
-
-        return $this;
-    }
-
-    /**
-     * Echo the body segments
-     *
-     * @return void
-     */
-    public function outputBody()
-    {
-        foreach ($this->_body as $content) {
-            echo $content;
-        }
-    }
-
-    /**
-     * Register an exception with the response
-     *
-     * @param Exception $e
-     * @return Zend_Controller_Response_Abstract
-     */
-    public function setException(Exception $e)
-    {
-        $this->_exceptions[] = $e;
-        return $this;
-    }
-
-    /**
-     * Retrieve the exception stack
-     *
-     * @return array
-     */
-    public function getException()
-    {
-        return $this->_exceptions;
-    }
-
-    /**
-     * Has an exception been registered with the response?
-     *
-     * @return boolean
-     */
-    public function isException()
-    {
-        return !empty($this->_exceptions);
-    }
-
-    /**
-     * Does the response object contain an exception of a given type?
-     *
-     * @param  string $type
-     * @return boolean
-     */
-    public function hasExceptionOfType($type)
-    {
-        foreach ($this->_exceptions as $e) {
-            if ($e instanceof $type) {
-                return true;
-            }
-        }
-
-        return false;
-    }
-
-    /**
-     * Does the response object contain an exception with a given message?
-     *
-     * @param  string $message
-     * @return boolean
-     */
-    public function hasExceptionOfMessage($message)
-    {
-        foreach ($this->_exceptions as $e) {
-            if ($message == $e->getMessage()) {
-                return true;
-            }
-        }
-
-        return false;
-    }
-
-    /**
-     * Does the response object contain an exception with a given code?
-     *
-     * @param  int $code
-     * @return boolean
-     */
-    public function hasExceptionOfCode($code)
-    {
-        $code = (int) $code;
-        foreach ($this->_exceptions as $e) {
-            if ($code == $e->getCode()) {
-                return true;
-            }
-        }
-
-        return false;
-    }
-
-    /**
-     * Retrieve all exceptions of a given type
-     *
-     * @param  string $type
-     * @return false|array
-     */
-    public function getExceptionByType($type)
-    {
-        $exceptions = array();
-        foreach ($this->_exceptions as $e) {
-            if ($e instanceof $type) {
-                $exceptions[] = $e;
-            }
-        }
-
-        if (empty($exceptions)) {
-            $exceptions = false;
-        }
-
-        return $exceptions;
-    }
-
-    /**
-     * Retrieve all exceptions of a given message
-     *
-     * @param  string $message
-     * @return false|array
-     */
-    public function getExceptionByMessage($message)
-    {
-        $exceptions = array();
-        foreach ($this->_exceptions as $e) {
-            if ($message == $e->getMessage()) {
-                $exceptions[] = $e;
-            }
-        }
-
-        if (empty($exceptions)) {
-            $exceptions = false;
-        }
-
-        return $exceptions;
-    }
-
-    /**
-     * Retrieve all exceptions of a given code
-     *
-     * @param mixed $code
-     * @return void
-     */
-    public function getExceptionByCode($code)
-    {
-        $code       = (int) $code;
-        $exceptions = array();
-        foreach ($this->_exceptions as $e) {
-            if ($code == $e->getCode()) {
-                $exceptions[] = $e;
-            }
-        }
-
-        if (empty($exceptions)) {
-            $exceptions = false;
-        }
-
-        return $exceptions;
-    }
-
-    /**
-     * Whether or not to render exceptions (off by default)
-     *
-     * If called with no arguments or a null argument, returns the value of the
-     * flag; otherwise, sets it and returns the current value.
-     *
-     * @param boolean $flag Optional
-     * @return boolean
-     */
-    public function renderExceptions($flag = null)
-    {
-        if (null !== $flag) {
-            $this->_renderExceptions = $flag ? true : false;
-        }
-
-        return $this->_renderExceptions;
-    }
-
-    /**
-     * Send the response, including all headers, rendering exceptions if so
-     * requested.
-     *
-     * @return void
-     */
-    public function sendResponse()
-    {
-        $this->sendHeaders();
-
-        if ($this->isException() && $this->renderExceptions()) {
-            $exceptions = '';
-            foreach ($this->getException() as $e) {
-                $exceptions .= $e->__toString() . "\n";
-            }
-            echo $exceptions;
-            return;
-        }
-
-        $this->outputBody();
-    }
-
-    /**
-     * Magic __toString functionality
-     *
-     * Proxies to {@link sendResponse()} and returns response value as string
-     * using output buffering.
-     *
-     * @return string
-     */
-    public function __toString()
-    {
-        ob_start();
-        $this->sendResponse();
-        return ob_get_clean();
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

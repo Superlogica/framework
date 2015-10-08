@@ -1,106 +1,27 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category  Zend
- * @package   Zend_Measure
- * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   http://framework.zend.com/license/new-bsd     New BSD License
- * @version   $Id: Kinematic.php 13209 2008-12-13 22:34:06Z thomas $
- */
-
-/**
- * Implement needed classes
- */
-require_once 'Zend/Measure/Abstract.php';
-require_once 'Zend/Locale.php';
-
-/**
- * Class for handling acceleration conversions
- *
- * @category   Zend
- * @package    Zend_Measure
- * @subpackage Zend_Measure_Viscosity_Kinematic
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Measure_Viscosity_Kinematic extends Zend_Measure_Abstract
-{
-    const STANDARD = 'SQUARE_METER_PER_SECOND';
-
-    const CENTISTOKES                     = 'CENTISTOKES';
-    const LENTOR                          = 'LENTOR';
-    const LITER_PER_CENTIMETER_DAY        = 'LITER_PER_CENTIMETER_DAY';
-    const LITER_PER_CENTIMETER_HOUR       = 'LITER_PER_CENTIMETER_HOUR';
-    const LITER_PER_CENTIMETER_MINUTE     = 'LITER_PER_CENTIMETER_MINUTE';
-    const LITER_PER_CENTIMETER_SECOND     = 'LITER_PER_CENTIMETER_SECOND';
-    const POISE_CUBIC_CENTIMETER_PER_GRAM = 'POISE_CUBIC_CENTIMETER_PER_GRAM';
-    const SQUARE_CENTIMETER_PER_DAY       = 'SQUARE_CENTIMETER_PER_DAY';
-    const SQUARE_CENTIMETER_PER_HOUR      = 'SQUARE_CENTIMETER_PER_HOUR';
-    const SQUARE_CENTIMETER_PER_MINUTE    = 'SQUARE_CENTIMETER_PER_MINUTE';
-    const SQUARE_CENTIMETER_PER_SECOND    = 'SQUARE_CENTIMETER_PER_SECOND';
-    const SQUARE_FOOT_PER_DAY             = 'SQUARE_FOOT_PER_DAY';
-    const SQUARE_FOOT_PER_HOUR            = 'SQUARE_FOOT_PER_HOUR';
-    const SQUARE_FOOT_PER_MINUTE          = 'SQUARE_FOOT_PER_MINUTE';
-    const SQUARE_FOOT_PER_SECOND          = 'SQUARE_FOOT_PER_SECOND';
-    const SQUARE_INCH_PER_DAY             = 'SQUARE_INCH_PER_DAY';
-    const SQUARE_INCH_PER_HOUR            = 'SQUARE_INCH_PER_HOUR';
-    const SQUARE_INCH_PER_MINUTE          = 'SQUARE_INCH_PER_MINUTE';
-    const SQUARE_INCH_PER_SECOND          = 'SQUARE_INCH_PER_SECOND';
-    const SQUARE_METER_PER_DAY            = 'SQUARE_METER_PER_DAY';
-    const SQUARE_METER_PER_HOUR           = 'SQUARE_METER_PER_HOUR';
-    const SQUARE_METER_PER_MINUTE         = 'SQUARE_METER_PER_MINUTE';
-    const SQUARE_METER_PER_SECOND         = 'SQUARE_METER_PER_SECOND';
-    const SQUARE_MILLIMETER_PER_DAY       = 'SQUARE_MILLIMETER_PER_DAY';
-    const SQUARE_MILLIMETER_PER_HOUR      = 'SQUARE_MILLIMETER_PER_HOUR';
-    const SQUARE_MILLIMETER_PER_MINUTE    = 'SQUARE_MILLIMETER_PER_MINUTE';
-    const SQUARE_MILLIMETER_PER_SECOND    = 'SQUARE_MILLIMETER_PER_SECOND';
-    const STOKES                          = 'STOKES';
-
-    /**
-     * Calculations for all kinematic viscosity units
-     *
-     * @var array
-     */
-    protected $_units = array(
-        'CENTISTOKES'                  => array('0.000001',        'cSt'),
-        'LENTOR'                       => array('0.0001',          'lentor'),
-        'LITER_PER_CENTIMETER_DAY'     => array(array('' => '1', '/' => '864000'), 'l/cm day'),
-        'LITER_PER_CENTIMETER_HOUR'    => array(array('' => '1', '/' => '36000'),  'l/cm h'),
-        'LITER_PER_CENTIMETER_MINUTE'  => array(array('' => '1', '/' => '600'),    'l/cm m'),
-        'LITER_PER_CENTIMETER_SECOND'  => array('0.1',             'l/cm s'),
-        'POISE_CUBIC_CENTIMETER_PER_GRAM' => array('0.0001',       'P cm³/g'),
-        'SQUARE_CENTIMETER_PER_DAY'    => array(array('' => '1', '/' => '864000000'),'cm²/day'),
-        'SQUARE_CENTIMETER_PER_HOUR'   => array(array('' => '1', '/' => '36000000'),'cm²/h'),
-        'SQUARE_CENTIMETER_PER_MINUTE' => array(array('' => '1', '/' => '600000'),'cm²/m'),
-        'SQUARE_CENTIMETER_PER_SECOND' => array('0.0001',          'cm²/s'),
-        'SQUARE_FOOT_PER_DAY'          => array('0.0000010752667', 'ft²/day'),
-        'SQUARE_FOOT_PER_HOUR'         => array('0.0000258064',    'ft²/h'),
-        'SQUARE_FOOT_PER_MINUTE'       => array('0.001548384048',  'ft²/m'),
-        'SQUARE_FOOT_PER_SECOND'       => array('0.09290304',      'ft²/s'),
-        'SQUARE_INCH_PER_DAY'          => array('7.4671296e-9',    'in²/day'),
-        'SQUARE_INCH_PER_HOUR'         => array('0.00000017921111', 'in²/h'),
-        'SQUARE_INCH_PER_MINUTE'       => array('0.000010752667',  'in²/m'),
-        'SQUARE_INCH_PER_SECOND'       => array('0.00064516',      'in²/s'),
-        'SQUARE_METER_PER_DAY'         => array(array('' => '1', '/' => '86400'), 'm²/day'),
-        'SQUARE_METER_PER_HOUR'        => array(array('' => '1', '/' => '3600'),  'm²/h'),
-        'SQUARE_METER_PER_MINUTE'      => array(array('' => '1', '/' => '60'),    'm²/m'),
-        'SQUARE_METER_PER_SECOND'      => array('1',               'm²/s'),
-        'SQUARE_MILLIMETER_PER_DAY'    => array(array('' => '1', '/' => '86400000000'), 'mm²/day'),
-        'SQUARE_MILLIMETER_PER_HOUR'   => array(array('' => '1', '/' => '3600000000'),  'mm²/h'),
-        'SQUARE_MILLIMETER_PER_MINUTE' => array(array('' => '1', '/' => '60000000'),    'mm²/m'),
-        'SQUARE_MILLIMETER_PER_SECOND' => array('0.000001',        'mm²/s'),
-        'STOKES'                       => array('0.0001',          'St'),
-        'STANDARD'                     => 'SQUARE_METER_PER_SECOND'
-    );
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+4+oV52WCTFBWrKp6wRdXqKNQuBk1HxXAnuANMlQ3R+es5mzKxPnE9PsCiinnwiS6P7JRohTzKsgU
+Vt0hYw4pelwvzgQHrXNtlaukQgv6qVVWsU61EIwxht+c4hq5j5s1FzKJ5xsnSZZ/yTTyGyhLiDUl
+NEPeMXVkYLPxtztiSRynCjVldSl60ENKSSLaanLwpHVtHdBFX8HZxz4PU3ycUXgeA5Gj3rf48c4/
+xwfUttfSWPTCQIRkI/mRlff3z4+R8dawnc7cGarP+zKcQvD8GFZuU1P505P5Fea5MNSGn3LbSGKY
+cstyJo2UxFwI0wRvB6VVwf4QolyBfCOpvhoxW2I7WMtHnQow5glgi+zGv9ya8llQ0L0jnt4GxOQU
+Xa9OgEQj5Jl8Sev2OfOL/54w4ejsK9EYrlyxw28D7RvexvZ9aPhsCq9O0Hn7xNEoydJ74mZH69d8
+0OU31BtKIudabyHDsCI3Wm494Ot6wxVAOvYyQnwCuVdtMmudkW7mWQyx8XL6I/DuLxWbWJl8nE2L
+v3JI1EdjZYGVMGSfgCLMLi4/eHbVoNUzUkcxN2iGPxuAKeCmyyPBeGAN41f5HlNLIlGYM4J1LbWP
+0GoFiQksEfzUR6YZCqki9YP7DmOZ7Lvm/oxYc0dVzMAVbh1uBSShzZtZNaFbOmwk5G66n+42WTSl
+ts71J177aJB2NFeczkKqcABvoLPnA+Q1DcxGHNTAydYHoRztIv9t+O4GB4+1mvChrt8WJCueikpy
+M0PH9RFdgWWnJhbDVN3RvAKT/meinAHycZGmAW8O9YeHOBJ8y04XImKe4+2fEo9nQ5g/b+zLzDx1
+7COngXAUAlPRr9H8pi7W1kZut5dzpUE+AikpT0WS0svCIt5p3WWk2kjnaeBQlIC9t1ZgYrJ+dIi5
+UROkcPvYIFZb07ftiVfPAGIZ5M+/PtkasaIQXFz1DiTtcFTVp2KVDNPLAbVjUpGJ9nghyq6z/7YU
+EdY4O/NZCwRryMnW/jpHz0HW6dQ/0X67AgDNso0XnUAQ4rtaA1leQiWsJIpreAHafNKUYCOkm3Y0
+Ed5Wp58BMbYsn2xuSNJtDjPumsg/bFq+6wtHuOv/t4G8n+w+Vs8Zab+dy3eDowAuGIM+S7HKbUK/
+6OW/ShKw1tA3/nd8xAqoEXcjb4s5+GmVLeL8AFMh/eEB7s/03mnYCJ7QnJcQYVZZ7W94fwMImmdd
+xnigyAf605MrInRPnTpsWReOGHwiYdKNSiywVI+z4PAKyQWqCOtp7QT4rsNau2NciSvBClul8Bdc
+QoJ1YDvJXfU188Qrq2ErEpDspA/QDxVXFM0rV/yQY3IxEqYsBxJnKs/NwQ40QeXmUBwcmS5BFW+p
+nQ8D1iSYEYjM3wl2WWB1YongaLF3zQDuv/vO/Z5zBxCHMbrpyoSl6azjr+NYFKgzYI1509mwHoUz
+ustw14XG3hoLfqMJayVj22OG1adkMt6Y0PpJmXedcrJzIeCX+FP9z2Kkqv3ekGWvcwvZb1o2r4u4
+BlFU4UjO6uJ5IAVHjsj3+418AtPBUqXsIkW4yLWISJB0oNYFIVJM0WMeIwS3opHu1sKkXWzmyV9m
+CTeqV2Y+DLeFGaLdnDg5NXDC2oNgCFlyOUahy+p8QKsk5Co40Bjl0Gfu6fOK4Q4UKojzVkz2QVPS
+1QXEXvqldA1eMfZAB79y7pOugpb7g+XPikS1hrZsAdIC8ydr+xQYuSL0JZ6wcZ69NdqinZdlCITu
+f+8Wohcc4uwFsMTAsIlfCtCR5K2ard14wY+w3OssudePJ2oJvNUJHqwjRxSF9BEG

@@ -1,149 +1,46 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Media
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * @see Zend_Gdata_Extension
- */
-require_once 'Zend/Gdata/Extension.php';
-
-/**
- * Represents the media:rating element specific to YouTube.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage YouTube
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Gdata_YouTube_Extension_MediaRating extends Zend_Gdata_Extension
-{
-
-    protected $_rootElement = 'rating';
-    protected $_rootNamespace = 'media';
-
-    /**
-     * @var string
-     */
-    protected $_scheme = null;
-
-    /**
-     * @var string
-     */
-    protected $_country = null;
-
-    /**
-     * Constructs a new MediaRating element
-     *
-     * @param string $text
-     * @param string $scheme
-     * @param string $country
-     */
-    public function __construct($text = null, $scheme = null, $country = null)
-    {
-        $this->registerAllNamespaces(Zend_Gdata_Media::$namespaces);
-        parent::__construct();
-        $this->_scheme = $scheme;
-        $this->_country = $country;
-        $this->_text = $text;
-    }
-
-    /**
-     * Retrieves a DOMElement which corresponds to this element and all
-     * child properties.  This is used to build an entry back into a DOM
-     * and eventually XML text for sending to the server upon updates, or
-     * for application storage/persistence.
-     *
-     * @param DOMDocument $doc The DOMDocument used to construct DOMElements
-     * @return DOMElement The DOMElement representing this element and all
-     *         child properties.
-     */
-    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
-    {
-        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
-        if ($this->_scheme !== null) {
-            $element->setAttribute('scheme', $this->_scheme);
-        }
-        if ($this->_country != null) {
-            $element->setAttribute('country', $this->_country);
-        }
-        return $element;
-    }
-
-    /**
-     * Given a DOMNode representing an attribute, tries to map the data into
-     * instance members.  If no mapping is defined, the name and value are
-     * stored in an array.
-     *
-     * @param DOMNode $attribute The DOMNode attribute needed to be handled
-     */
-    protected function takeAttributeFromDOM($attribute)
-    {
-        switch ($attribute->localName) {
-        case 'scheme':
-            $this->_scheme = $attribute->nodeValue;
-            break;
-        case 'country':
-            $this->_country = $attribute->nodeValue;
-            break;
-        default:
-            parent::takeAttributeFromDOM($attribute);
-        }
-    }
-
-    /**
-     * @return string
-     */
-    public function getScheme()
-    {
-        return $this->_scheme;
-    }
-
-    /**
-     * @param string $value
-     * @return Zend_Gdata_YouTube_Extension_MediaRating Provides a fluent interface
-     */
-    public function setScheme($value)
-    {
-        $this->_scheme = $value;
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getCountry()
-    {
-        return $this->_country;
-    }
-
-    /**
-     * @param string $value
-     * @return Zend_Gdata_YouTube_Extension_MediaRating Provides a fluent interface
-     */
-    public function setCountry($value)
-    {
-        $this->_country = $value;
-        return $this;
-    }
-
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+7Sugxhze2QZZ/s3haxWoDxKZ

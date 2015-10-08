@@ -1,209 +1,50 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Form
- * @subpackage Element
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_Form_Element_Xhtml */
-require_once 'Zend/Form/Element/Xhtml.php';
-
-/**
- * Checkbox form element
- * 
- * @category   Zend
- * @package    Zend_Form
- * @subpackage Element
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Checkbox.php 9323 2008-04-25 21:13:17Z matthew $
- */
-class Zend_Form_Element_Checkbox extends Zend_Form_Element_Xhtml
-{
-    /**
-     * Is the checkbox checked?
-     * @var bool
-     */
-    public $checked = false;
-
-    /**
-     * Use formCheckbox view helper by default
-     * @var string
-     */
-    public $helper = 'formCheckbox';
-
-    /**
-     * Value when checked
-     * @var string
-     */
-    protected $_checkedValue = '1';
-
-    /**
-     * Value when not checked
-     * @var string
-     */
-    protected $_uncheckedValue = '0';
-
-    /**
-     * Current value
-     * @var string 0 or 1
-     */
-    protected $_value = '0';
-
-    /**
-     * Set options
-     *
-     * Intercept checked and unchecked values and set them early; test stored 
-     * value against checked and unchecked values after configuration.
-     * 
-     * @param  array $options 
-     * @return Zend_Form_Element_Checkbox
-     */
-    public function setOptions(array $options)
-    {
-        if (array_key_exists('checkedValue', $options)) {
-            $this->setCheckedValue($options['checkedValue']);
-            unset($options['checkedValue']);
-        }
-        if (array_key_exists('uncheckedValue', $options)) {
-            $this->setUncheckedValue($options['uncheckedValue']);
-            unset($options['uncheckedValue']);
-        }
-        parent::setOptions($options);
-
-        $curValue = $this->getValue();
-        $test     = array($this->getCheckedValue(), $this->getUncheckedValue());
-        if (!in_array($curValue, $test)) {
-            $this->setValue($curValue);
-        }
-
-        return $this;
-    }
-
-    /**
-     * Set value
-     *
-     * If value matches checked value, sets to that value, and sets the checked
-     * flag to true.
-     *
-     * Any other value causes the unchecked value to be set as the current 
-     * value, and the checked flag to be set as false.
-     *
-     * 
-     * @param  mixed $value 
-     * @return Zend_Form_Element_Checkbox
-     */
-    public function setValue($value)
-    {
-        if ($value == $this->getCheckedValue()) {
-            parent::setValue($value);
-            $this->checked = true;
-        } else {
-            parent::setValue($this->getUncheckedValue());
-            $this->checked = false;
-        }
-        return $this;
-    }
-
-    /**
-     * Set checked value
-     * 
-     * @param  string $value 
-     * @return Zend_Form_Element_Checkbox
-     */
-    public function setCheckedValue($value)
-    {
-        $this->_checkedValue = (string) $value;
-        return $this;
-    }
-
-    /**
-     * Get value when checked
-     * 
-     * @return string
-     */
-    public function getCheckedValue()
-    {
-        return $this->_checkedValue;
-    }
-
-    /**
-     * Set unchecked value
-     * 
-     * @param  string $value 
-     * @return Zend_Form_Element_Checkbox
-     */
-    public function setUncheckedValue($value)
-    {
-        $this->_uncheckedValue = (string) $value;
-        return $this;
-    }
-
-    /**
-     * Get value when not checked
-     * 
-     * @return string
-     */
-    public function getUncheckedValue()
-    {
-        return $this->_uncheckedValue;
-    }
-
-    /**
-     * Set checked flag
-     * 
-     * @param  bool $flag 
-     * @return Zend_Form_Element_Checkbox
-     */
-    public function setChecked($flag)
-    {
-        $this->checked = (bool) $flag;
-        if ($this->checked) {
-            $this->setValue($this->getCheckedValue());
-        } else {
-            $this->setValue($this->getUncheckedValue());
-        }
-        return $this;
-    }
-
-    /**
-     * Get checked flag
-     * 
-     * @return bool
-     */
-    public function isChecked()
-    {
-        return $this->checked;
-    }
-
-    /**
-     * Render
-     *
-     * Ensure that options property is set when rendering.
-     * 
-     * @param  Zend_View_Interface $view 
-     * @return string
-     */
-    public function render(Zend_View_Interface $view = null)
-    {
-        $this->options = array(
-            'checked'   => $this->getCheckedValue(),
-            'unChecked' => $this->getUncheckedValue(),
-        );
-        return parent::render($view);
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+bvDaxncrMfHY/0==

@@ -1,644 +1,199 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- * 
- * @category   Zend
- * @package    Zend_Mail
- * @subpackage Storage
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Imap.php 12519 2008-11-10 18:41:24Z alexander $
- */
-
-
-/**
- * @see Zend_Mail_Storage_Abstract
- */
-require_once 'Zend/Mail/Storage/Abstract.php';
-
-/**
- * @see Zend_Mail_Protocol_Imap
- */
-require_once 'Zend/Mail/Protocol/Imap.php';
-
-/**
- * @see Zend_Mail_Storage_Writable_Interface
- */
-require_once 'Zend/Mail/Storage/Writable/Interface.php';
-
-/**
- * @see Zend_Mail_Storage_Folder_Interface
- */
-require_once 'Zend/Mail/Storage/Folder/Interface.php';
-
-/**
- * @see Zend_Mail_Storage_Folder
- */
-require_once 'Zend/Mail/Storage/Folder.php';
-
-/**
- * @see Zend_Mail_Message
- */
-require_once 'Zend/Mail/Message.php';
-
-/**
- * @see Zend_Mail_Storage
- */
-require_once 'Zend/Mail/Storage.php';
-
-/**
- * @category   Zend
- * @package    Zend_Mail
- * @subpackage Storage
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Mail_Storage_Imap extends Zend_Mail_Storage_Abstract
-                             implements Zend_Mail_Storage_Folder_Interface, Zend_Mail_Storage_Writable_Interface
-{
-    // TODO: with an internal cache we could optimize this class, or create an extra class with
-    // such optimizations. Especially the various fetch calls could be combined to one cache call
-
-    /**
-     * protocol handler
-     * @var null|Zend_Mail_Protocol_Imap
-     */
-    protected $_protocol;
-
-    /**
-     * name of current folder
-     * @var string
-     */
-    protected $_currentFolder = '';
-
-    /**
-     * imap flags to constants translation
-     * @var array
-     */
-    protected static $_knownFlags = array('\Passed'   => Zend_Mail_Storage::FLAG_PASSED,
-                                          '\Answered' => Zend_Mail_Storage::FLAG_ANSWERED,
-                                          '\Seen'     => Zend_Mail_Storage::FLAG_SEEN,
-                                          '\Deleted'  => Zend_Mail_Storage::FLAG_DELETED,
-                                          '\Draft'    => Zend_Mail_Storage::FLAG_DRAFT,
-                                          '\Flagged'  => Zend_Mail_Storage::FLAG_FLAGGED);
-
-    /**
-     * map flags to search criterias
-     * @var array
-     */
-    protected static $_searchFlags = array('\Recent'   => 'RECENT',
-                                           '\Answered' => 'ANSWERED',
-                                           '\Seen'     => 'SEEN',
-                                           '\Deleted'  => 'DELETED',
-                                           '\Draft'    => 'DRAFT',
-                                           '\Flagged'  => 'FLAGGED');
-
-    /**
-     * Count messages all messages in current box
-     *
-     * @return int number of messages
-     * @throws Zend_Mail_Storage_Exception
-     * @throws Zend_Mail_Protocol_Exception
-     */
-    public function countMessages($flags = null)
-    {
-        if (!$this->_currentFolder) {
-            /**
-             * @see Zend_Mail_Storage_Exception
-             */
-            require_once 'Zend/Mail/Storage/Exception.php';
-            throw new Zend_Mail_Storage_Exception('No selected folder to count');
-        }
-
-        if ($flags === null) {
-            return count($this->_protocol->search(array('ALL')));
-        }
-    
-        $params = array();
-        foreach ((array)$flags as $flag) {
-            if (isset(self::$_searchFlags[$flag])) {
-                $params[] = self::$_searchFlags[$flag];
-            } else {
-                $params[] = 'KEYWORD';
-                $params[] = $this->_protocol->escapeString($flag);
-            }
-        }
-        return count($this->_protocol->search($params));
-    }
-
-    /**
-     * get a list of messages with number and size
-     *
-     * @param int $id number of message
-     * @return int|array size of given message of list with all messages as array(num => size)
-     * @throws Zend_Mail_Protocol_Exception
-     */
-    public function getSize($id = 0)
-    {
-        if ($id) {
-            return $this->_protocol->fetch('RFC822.SIZE', $id);
-        }
-        return $this->_protocol->fetch('RFC822.SIZE', 1, INF);
-    }
-
-    /**
-     * Fetch a message
-     *
-     * @param int $id number of message
-     * @return Zend_Mail_Message
-     * @throws Zend_Mail_Protocol_Exception
-     */
-    public function getMessage($id)
-    {
-        $data = $this->_protocol->fetch(array('FLAGS', 'RFC822.HEADER'), $id);
-        $header = $data['RFC822.HEADER'];
-
-        $flags = array();
-        foreach ($data['FLAGS'] as $flag) {
-            $flags[] = isset(self::$_knownFlags[$flag]) ? self::$_knownFlags[$flag] : $flag;
-        }
-
-        return new $this->_messageClass(array('handler' => $this, 'id' => $id, 'headers' => $header, 'flags' => $flags));
-    }
-
-    /*
-     * Get raw header of message or part
-     *
-     * @param  int               $id       number of message
-     * @param  null|array|string $part     path to part or null for messsage header
-     * @param  int               $topLines include this many lines with header (after an empty line)
-     * @param  int $topLines include this many lines with header (after an empty line)
-     * @return string raw header
-     * @throws Zend_Mail_Protocol_Exception
-     * @throws Zend_Mail_Storage_Exception
-     */
-    public function getRawHeader($id, $part = null, $topLines = 0)
-    {
-        if ($part !== null) {
-            // TODO: implement
-            /**
-             * @see Zend_Mail_Storage_Exception
-             */
-            require_once 'Zend/Mail/Storage/Exception.php';
-            throw new Zend_Mail_Storage_Exception('not implemented');
-        }
-
-        // TODO: toplines
-        return $this->_protocol->fetch('RFC822.HEADER', $id);
-    }
-
-    /*
-     * Get raw content of message or part
-     *
-     * @param  int               $id   number of message
-     * @param  null|array|string $part path to part or null for messsage content
-     * @return string raw content
-     * @throws Zend_Mail_Protocol_Exception
-     * @throws Zend_Mail_Storage_Exception
-     */
-    public function getRawContent($id, $part = null)
-    {
-        if ($part !== null) {
-            // TODO: implement
-            /**
-             * @see Zend_Mail_Storage_Exception
-             */
-            require_once 'Zend/Mail/Storage/Exception.php';
-            throw new Zend_Mail_Storage_Exception('not implemented');
-        }
-
-        return $this->_protocol->fetch('RFC822.TEXT', $id);
-    }
-
-    /**
-     * create instance with parameters
-     * Supported paramters are
-     *   - user username
-     *   - host hostname or ip address of IMAP server [optional, default = 'localhost']
-     *   - password password for user 'username' [optional, default = '']
-     *   - port port for IMAP server [optional, default = 110]
-     *   - ssl 'SSL' or 'TLS' for secure sockets
-     *   - folder select this folder [optional, default = 'INBOX']
-     *
-     * @param  array $params mail reader specific parameters
-     * @throws Zend_Mail_Storage_Exception
-     * @throws Zend_Mail_Protocol_Exception
-     */
-    public function __construct($params)
-    {
-        if (is_array($params)) {
-            $params = (object)$params;
-        }
-
-        $this->_has['flags'] = true;
-
-        if ($params instanceof Zend_Mail_Protocol_Imap) {
-            $this->_protocol = $params;
-            try {
-                $this->selectFolder('INBOX');
-            } catch(Zend_Mail_Storage_Exception $e) {
-                /**
-                 * @see Zend_Mail_Storage_Exception
-                 */
-                require_once 'Zend/Mail/Storage/Exception.php';
-                throw new Zend_Mail_Storage_Exception('cannot select INBOX, is this a valid transport?');
-            }
-            return;
-        }
-
-        if (!isset($params->user)) {
-            /**
-             * @see Zend_Mail_Storage_Exception
-             */
-            require_once 'Zend/Mail/Storage/Exception.php';
-            throw new Zend_Mail_Storage_Exception('need at least user in params');
-        }
-
-        $host     = isset($params->host)     ? $params->host     : 'localhost';
-        $password = isset($params->password) ? $params->password : '';
-        $port     = isset($params->port)     ? $params->port     : null;
-        $ssl      = isset($params->ssl)      ? $params->ssl      : false;
-
-        $this->_protocol = new Zend_Mail_Protocol_Imap();
-        $this->_protocol->connect($host, $port, $ssl);
-        if (!$this->_protocol->login($params->user, $password)) {
-            /**
-             * @see Zend_Mail_Storage_Exception
-             */
-            require_once 'Zend/Mail/Storage/Exception.php';
-            throw new Zend_Mail_Storage_Exception('cannot login, user or password wrong');
-        }
-        $this->selectFolder(isset($params->folder) ? $params->folder : 'INBOX');
-    }
-
-    /**
-     * Close resource for mail lib. If you need to control, when the resource
-     * is closed. Otherwise the destructor would call this.
-     *
-     * @return null
-     */
-    public function close()
-    {
-        $this->_currentFolder = '';
-        $this->_protocol->logout();
-    }
-
-    /**
-     * Keep the server busy.
-     *
-     * @return null
-     * @throws Zend_Mail_Storage_Exception
-     */
-    public function noop()
-    {
-        if (!$this->_protocol->noop()) {
-            /**
-             * @see Zend_Mail_Storage_Exception
-             */
-            require_once 'Zend/Mail/Storage/Exception.php';
-            throw new Zend_Mail_Storage_Exception('could not do nothing');
-        }
-    }
-
-    /**
-     * Remove a message from server. If you're doing that from a web enviroment
-     * you should be careful and use a uniqueid as parameter if possible to
-     * identify the message.
-     *
-     * @param   int $id number of message
-     * @return  null
-     * @throws  Zend_Mail_Storage_Exception
-     */
-    public function removeMessage($id)
-    {
-        if (!$this->_protocol->store(array(Zend_Mail_Storage::FLAG_DELETED), $id, null, '+')) {
-            /**
-             * @see Zend_Mail_Storage_Exception
-             */
-            require_once 'Zend/Mail/Storage/Exception.php';
-            throw new Zend_Mail_Storage_Exception('cannot set deleted flag');
-        }
-        // TODO: expunge here or at close? we can handle an error here better and are more fail safe
-        if (!$this->_protocol->expunge()) {
-            /**
-             * @see Zend_Mail_Storage_Exception
-             */
-            require_once 'Zend/Mail/Storage/Exception.php';
-            throw new Zend_Mail_Storage_Exception('message marked as deleted, but could not expunge');
-        }
-    }
-
-    /**
-     * get unique id for one or all messages
-     *
-     * if storage does not support unique ids it's the same as the message number
-     *
-     * @param int|null $id message number
-     * @return array|string message number for given message or all messages as array
-     * @throws Zend_Mail_Storage_Exception
-     */
-    public function getUniqueId($id = null)
-    {
-        if ($id) {
-            return $this->_protocol->fetch('UID', $id);
-        }
-
-        return $this->_protocol->fetch('UID', 1, INF);
-    }
-
-    /**
-     * get a message number from a unique id
-     *
-     * I.e. if you have a webmailer that supports deleting messages you should use unique ids
-     * as parameter and use this method to translate it to message number right before calling removeMessage()
-     *
-     * @param string $id unique id
-     * @return int message number
-     * @throws Zend_Mail_Storage_Exception
-     */
-    public function getNumberByUniqueId($id)
-    {
-        // TODO: use search to find number directly
-        $ids = $this->getUniqueId();
-        foreach ($ids as $k => $v) {
-            if ($v == $id) {
-                return $k;
-            }
-        }
-
-        /**
-         * @see Zend_Mail_Storage_Exception
-         */
-        require_once 'Zend/Mail/Storage/Exception.php';
-        throw new Zend_Mail_Storage_Exception('unique id not found');
-    }
-
-
-    /**
-     * get root folder or given folder
-     *
-     * @param  string $rootFolder get folder structure for given folder, else root
-     * @return Zend_Mail_Storage_Folder root or wanted folder
-     * @throws Zend_Mail_Storage_Exception
-     * @throws Zend_Mail_Protocol_Exception
-     */
-    public function getFolders($rootFolder = null)
-    {
-        $folders = $this->_protocol->listMailbox((string)$rootFolder);
-        if (!$folders) {
-            /**
-             * @see Zend_Mail_Storage_Exception
-             */
-            require_once 'Zend/Mail/Storage/Exception.php';
-            throw new Zend_Mail_Storage_Exception('folder not found');
-        }
-
-        ksort($folders, SORT_STRING);
-        $root = new Zend_Mail_Storage_Folder('/', '/', false);
-        $stack = array(null);
-        $folderStack = array(null);
-        $parentFolder = $root;
-        $parent = '';
-
-        foreach ($folders as $globalName => $data) {
-            do {
-                if (!$parent || strpos($globalName, $parent) === 0) {
-                    $pos = strrpos($globalName, $data['delim']);
-                    if ($pos === false) {
-                        $localName = $globalName;
-                    } else {
-                        $localName = substr($globalName, $pos + 1);
-                    }
-                    $selectable = !$data['flags'] || !in_array('\\Noselect', $data['flags']);
-
-                    array_push($stack, $parent);
-                    $parent = $globalName . $data['delim'];
-                    $folder = new Zend_Mail_Storage_Folder($localName, $globalName, $selectable);
-                    $parentFolder->$localName = $folder;
-                    array_push($folderStack, $parentFolder);
-                    $parentFolder = $folder;
-                    break;
-                } else if ($stack) {
-                    $parent = array_pop($stack);
-                    $parentFolder = array_pop($folderStack);
-                }
-            } while ($stack);
-            if (!$stack) {
-                /**
-                 * @see Zend_Mail_Storage_Exception
-                 */
-                require_once 'Zend/Mail/Storage/Exception.php';
-                throw new Zend_Mail_Storage_Exception('error while constructing folder tree');
-            }
-        }
-
-        return $root;
-    }
-
-    /**
-     * select given folder
-     *
-     * folder must be selectable!
-     *
-     * @param  Zend_Mail_Storage_Folder|string $globalName global name of folder or instance for subfolder
-     * @return null
-     * @throws Zend_Mail_Storage_Exception
-     * @throws Zend_Mail_Protocol_Exception
-     */
-    public function selectFolder($globalName)
-    {
-        $this->_currentFolder = $globalName;
-        if (!$this->_protocol->select($this->_currentFolder)) {
-            $this->_currentFolder = '';
-            /**
-             * @see Zend_Mail_Storage_Exception
-             */
-            require_once 'Zend/Mail/Storage/Exception.php';
-            throw new Zend_Mail_Storage_Exception('cannot change folder, maybe it does not exist');
-        }
-    }
-
-
-    /**
-     * get Zend_Mail_Storage_Folder instance for current folder
-     *
-     * @return Zend_Mail_Storage_Folder instance of current folder
-     * @throws Zend_Mail_Storage_Exception
-     */
-    public function getCurrentFolder()
-    {
-        return $this->_currentFolder;
-    }
-
-    /**
-     * create a new folder
-     *
-     * This method also creates parent folders if necessary. Some mail storages may restrict, which folder
-     * may be used as parent or which chars may be used in the folder name
-     *
-     * @param  string                          $name         global name of folder, local name if $parentFolder is set
-     * @param  string|Zend_Mail_Storage_Folder $parentFolder parent folder for new folder, else root folder is parent
-     * @return null
-     * @throws Zend_Mail_Storage_Exception
-     */
-    public function createFolder($name, $parentFolder = null)
-    {
-        // TODO: we assume / as the hierarchy delim - need to get that from the folder class!
-        if ($parentFolder instanceof Zend_Mail_Storage_Folder) {
-            $folder = $parentFolder->getGlobalName() . '/' . $name;
-        } else if ($parentFolder != null) {
-            $folder = $parentFolder . '/' . $name;
-        } else {
-            $folder = $name;
-        }
-
-        if (!$this->_protocol->create($folder)) {
-            /**
-             * @see Zend_Mail_Storage_Exception
-             */
-            require_once 'Zend/Mail/Storage/Exception.php';
-            throw new Zend_Mail_Storage_Exception('cannot create folder');
-        }
-    }
-
-    /**
-     * remove a folder
-     *
-     * @param  string|Zend_Mail_Storage_Folder $name      name or instance of folder
-     * @return null
-     * @throws Zend_Mail_Storage_Exception
-     */
-    public function removeFolder($name)
-    {
-        if ($name instanceof Zend_Mail_Storage_Folder) {
-            $name = $name->getGlobalName();
-        }
-
-        if (!$this->_protocol->delete($name)) {
-            /**
-             * @see Zend_Mail_Storage_Exception
-             */
-            require_once 'Zend/Mail/Storage/Exception.php';
-            throw new Zend_Mail_Storage_Exception('cannot delete folder');
-        }
-    }
-
-    /**
-     * rename and/or move folder
-     *
-     * The new name has the same restrictions as in createFolder()
-     *
-     * @param  string|Zend_Mail_Storage_Folder $oldName name or instance of folder
-     * @param  string                          $newName new global name of folder
-     * @return null
-     * @throws Zend_Mail_Storage_Exception
-     */
-    public function renameFolder($oldName, $newName)
-    {
-        if ($oldName instanceof Zend_Mail_Storage_Folder) {
-            $oldName = $oldName->getGlobalName();
-        }
-
-        if (!$this->_protocol->rename($oldName, $newName)) {
-            /**
-             * @see Zend_Mail_Storage_Exception
-             */
-            require_once 'Zend/Mail/Storage/Exception.php';
-            throw new Zend_Mail_Storage_Exception('cannot rename folder');
-        }
-    }
-
-    /**
-     * append a new message to mail storage
-     *
-     * @param  string                                     $message message as string or instance of message class
-     * @param  null|string|Zend_Mail_Storage_Folder       $folder  folder for new message, else current folder is taken
-     * @param  null|array                                 $flags   set flags for new message, else a default set is used
-     * @throws Zend_Mail_Storage_Exception
-     */
-     // not yet * @param string|Zend_Mail_Message|Zend_Mime_Message $message message as string or instance of message class
-    public function appendMessage($message, $folder = null, $flags = null)
-    {
-        if ($folder === null) {
-            $folder = $this->_currentFolder;
-        }
-
-        if ($flags === null) {
-            $flags = array(Zend_Mail_Storage::FLAG_SEEN);
-        }
-
-        // TODO: handle class instances for $message
-        if (!$this->_protocol->append($folder, $message, $flags)) {
-            /**
-             * @see Zend_Mail_Storage_Exception
-             */
-            require_once 'Zend/Mail/Storage/Exception.php';
-            throw new Zend_Mail_Storage_Exception('cannot create message, please check if the folder exists and your flags');
-        }
-    }
-
-    /**
-     * copy an existing message
-     *
-     * @param  int                             $id     number of message
-     * @param  string|Zend_Mail_Storage_Folder $folder name or instance of targer folder
-     * @return null
-     * @throws Zend_Mail_Storage_Exception
-     */
-    public function copyMessage($id, $folder)
-    {
-        if (!$this->_protocol->copy($folder, $id)) {
-            /**
-             * @see Zend_Mail_Storage_Exception
-             */
-            require_once 'Zend/Mail/Storage/Exception.php';
-            throw new Zend_Mail_Storage_Exception('cannot copy message, does the folder exist?');
-        }
-    }
-
-    /**
-     * move an existing message
-     *
-     * NOTE: imap has no native move command, thus it's emulated with copy and delete
-     *
-     * @param  int                             $id     number of message
-     * @param  string|Zend_Mail_Storage_Folder $folder name or instance of targer folder
-     * @return null
-     * @throws Zend_Mail_Storage_Exception
-     */
-    public function moveMessage($id, $folder) {
-        $this->copyMessage($id, $folder);
-        $this->removeMessage($id);
-    }
-
-    /**
-     * set flags for message
-     *
-     * NOTE: this method can't set the recent flag.
-     *
-     * @param  int   $id    number of message
-     * @param  array $flags new flags for message
-     * @throws Zend_Mail_Storage_Exception
-     */
-    public function setFlags($id, $flags)
-    {
-        if (!$this->_protocol->store($flags, $id)) {
-            /**
-             * @see Zend_Mail_Storage_Exception
-             */
-            require_once 'Zend/Mail/Storage/Exception.php';
-            throw new Zend_Mail_Storage_Exception('cannot set flags, have you tried to set the recent flag or special chars?');
-        }
-    }
-}
-
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+sBBgee8dkO/5MwK7ETuR

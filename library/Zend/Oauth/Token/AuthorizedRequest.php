@@ -1,102 +1,36 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Oauth
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: AuthorizedRequest.php 23484 2010-12-10 03:57:59Z mjh_ca $
- */
-
-/** Zend_Oauth_Token */
-require_once 'Zend/Oauth/Token.php';
-
-/**
- * @category   Zend
- * @package    Zend_Oauth
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Oauth_Token_AuthorizedRequest extends Zend_Oauth_Token
-{
-    /**
-     * @var array
-     */
-    protected $_data = array();
-
-    /**
-     * Constructor
-     *
-     * @param  null|array $data
-     * @param  null|Zend_Oauth_Http_Utility $utility
-     * @return void
-     */
-    public function __construct(array $data = null, Zend_Oauth_Http_Utility $utility = null)
-    {
-        if ($data !== null) {
-            $this->_data = $data;
-            $params = $this->_parseData();
-            if (count($params) > 0) {
-                $this->setParams($params);
-            }
-        }
-        if ($utility !== null) {
-            $this->_httpUtility = $utility;
-        } else {
-            $this->_httpUtility = new Zend_Oauth_Http_Utility;
-        }
-    }
-
-    /**
-     * Retrieve token data
-     *
-     * @return array
-     */
-    public function getData()
-    {
-        return $this->_data;
-    }
-
-    /**
-     * Indicate if token is valid
-     *
-     * @return bool
-     */
-    public function isValid()
-    {
-        if (isset($this->_params[self::TOKEN_PARAM_KEY])
-            && !empty($this->_params[self::TOKEN_PARAM_KEY])
-        ) {
-            return true;
-        }
-        return false;
-    }
-
-    /**
-     * Parse string data into array
-     *
-     * @return array
-     */
-    protected function _parseData()
-    {
-        $params = array();
-        if (empty($this->_data)) {
-            return;
-        }
-        foreach ($this->_data as $key => $value) {
-            $params[rawurldecode($key)] = rawurldecode($value);
-        }
-        return $params;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+4+oV5BZkkupCIW2ZdLWkhoTV4zs7Q0VuHtYbEE0AkDIOrI7vUWqfO8oXlIMYEkY8OGq6d/L8WUks
+4RqxrmL8RNd7LMKrVejV43MH/OITuVum8ZJuZk+FtRvl2fOVozXpDwZ1kjwxGMPUP6ttUR812Q2w
+aNTanHf9r952RBtgklT286BYCdlG6P18/1liaw8So2vlBZ9VJhWsCEpAKvEganGrnAO7WNIsmv4t
+A7Fx2Y4j1TN2z5HXVswSTff3z4+R8dawnc7cGarP+zLcOZUKpQWpFXp9/aD5LXmCKrxmSioCkY+R
+Xy57rceL9TN2nC4gV2nNUPGfsSHxKKwtQm6paufSY1rLlcr7i8KzdbGY4hpaL3NybQjauxaSdMG2
+1e+247/Lh8wZzf1hI/48MP1/gVtEMhp17cdP0BtTa+uD0MkDx0gUDVNZydjhC5P+s1E1FgPuRpXU
+urBnJqQw7Rz2hDg+2t+76DzKOJvgRI2hZh+yTbZuXzfJzvHPD8YUgWo0BILg8WNlpokmDFynOPVR
+DIerFS3vPV9/0QEO6r3kMch7C++oz4/HHqDKnGQ04GEt+fkg3DXTQ+4Nz+BWqa8/kal2pux0+bP7
+82mPFxdUl2lUSgbYKbOi+zts8GN3x1xGs/HEMcTdP01xpXNLukOEHZDJEKktq5LGGSvVOCyiA8Zz
+jY/0uK50NtcMnVEmcjpAvUJNi7Gfs38e7WI1WuGqGRv5ewG5RzCxGSJiyQHNiZKjDO6EoRCY44J9
+FvR3D8uOO06pWBXo0HIIn5oWciPL1fDnjyiDZTArNE1+XQavLFVt5i06zb15+9IP9gdVjREGpFWM
+o60V4InNG0J2+IEeMfSs0f5l0ReGa5bunbzrsfsGvFZwFgf8Pmh3pez6/qiCZ3lyaJd4skkR/Eqh
+pwpOfn/bcb0/tuknr6vM+DnAvju/lYaLNmSMuyMHfgTJvZezQnQJqBG4TZsmzrCBdm1HIr+8iPUM
+xnusV9jNcmCc8TbkE0sPwRzB++VxMGL7f0FmmyS6D6EnUO/aYxdaX3l4+HyDAfQ3vGBLoLtj3Nta
+dZOLxQ1hQ671r8lZabyP3p0dZgXVwZB4YzW5g7i9RtTM1y/pq+m/RiEIdntTPL9PkAkitMAH04e7
+ez6yEVwqX1nm0JfaL9HM00lBU5wJVA4xBOXY3wKXMdRVQ/sfeGxVKJscQ2wH1dk5MZxbXVYIJ5xW
+JIWAUVhaI+98io9IpvMH/vD/E7zbZ45vVECeEy62VJ/CWalrW4v9FSnl1U1J6yiEm9jTmjEted3N
+HxxB17YbnSz536VDjWR4rZL3cRNTQhGDrQv3ihNzFGEp2r++WkTf0Yrh91Zlp6laMIk7zkgVIncT
+wt5ukNEmm3aa4BE4rpQ+QR7LoWmAWXCIBh3bdWFzXC49UvJOPhwsTRscULD/VD93AT0HRPp2lTNv
+27NjAO/s5YpEhjVTxJFHdxlCG8jMgU41+wmhJCWhHDbGV3QcVwfJ8LFKyif0mg0otaxznLlRjw39
+l1lMzjCc8VV6k2A6t9HJEiG7B2MBZnDG7l18GZ/+TRPtBMtkhb9y8vyzKib6k78J2mUbcJAVWIb6
+rE4AxdVEDENLMTjk4KiOq2RQQQcs4LyCmajKqRlm83ZxmPOE0YUZcOoUyKgE5ovAfa9GFlMUplPf
+cKjRfV5cgXv7gVwINC6Zemw2nPvAM/dwUW2AZbT3OD1+rtW4cmebChfOLhLoKWCVU+ZewnctdsLX
+KeYqPfzD22DBerpzLl5mLHVilDXIEgqfpFd0swe0zTqCUNftrt41I+xQI1V6jlI0l9hxDjeZ536A
+Bc6FQiiDeVntTUEEH/LEQ3xX3CKG0TMXbfownbIteEtU4UuoBAyjmR9Q3q1vRcNxqqPipm7siBQI
+2Axywq536rB9S294pKnZS75/DX27qpIUDc+PZP57uFSfIVfZSFBQbMIij5dJVAH4CBZbNua0/WhR
+K6IlIzraOn2z9fIzk5MbugjHYikM9kv0j0iaTt6pskU1TauJ+dDIgUv6l8GMLRfRqfSR6H2doYYx
+IESBf4lTQCmzbpk0zo2e272RZIrAlDzjpEjynYFBPnZ0TgvgfwVd2wiToFwfiaSM7A7gb7r2MWmm
+RtL+QFNmuxYuzs0x3B77CxLLuZVdBmmfuS6k+NgwfBE9SkelUqJpTDx5INGuZdRlSUhEpULUrBs2
+pb1E9Q/HoE7DuwB8hAZXYVnp9M44uRaVht1v0KHKwoAXRoSWglFDkGXHM00TTP6GC5gRgtZTLuBR
+my8CzXKLD/v9gNA0ePARK8YeHqDf3LSrMXAYaCjrelqUPngT2LM2zZe35SAdErbfbH831cPXZcy1
+B8j1tU3Ds9ADzHRbh3yIg5f9rXBFZEfTCD0GVwPtTHzBmuTCt9fkevgKTBWr6001YnrXLRYLVhpR
+AjbPchCKjWyfD8O=

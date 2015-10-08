@@ -1,214 +1,69 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Gdata
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * @see Zend_Gdata_Extension
- */
-require_once 'Zend/Gdata/Extension.php';
-
-/**
- * @see Zend_Gdata_Extension_EntryLink
- */
-require_once 'Zend/Gdata/Extension/EntryLink.php';
-
-/**
- * @see Zend_Gdata_Extension_OriginalEvent
- */
-require_once 'Zend/Gdata/Extension/OriginalEvent.php';
-
-/**
- * Data model class to represent an entry's recurrenceException
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Gdata
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Gdata_Extension_RecurrenceException extends Zend_Gdata_Extension
-{
-
-    protected $_rootElement = 'recurrenceException';
-    protected $_specialized = null;
-    protected $_entryLink = null;
-    protected $_originalEvent = null;
-
-    /**
-     * Constructs a new Zend_Gdata_Extension_RecurrenceException object.
-     * @param bool $specialized (optional) Whether this is a specialized exception or not.
-     * @param Zend_Gdata_EntryLink (optional) An Event entry with details about the exception.
-     * @param Zend_Gdata_OriginalEvent (optional) The origianl recurrent event this is an exeption to.
-     */
-    public function __construct($specialized = null, $entryLink = null,
-            $originalEvent = null)
-    {
-        parent::__construct();
-        $this->_specialized = $specialized;
-        $this->_entryLink = $entryLink;
-        $this->_originalEvent = $originalEvent;
-    }
-
-    /**
-     * Retrieves a DOMElement which corresponds to this element and all
-     * child properties.  This is used to build an entry back into a DOM
-     * and eventually XML text for sending to the server upon updates, or
-     * for application storage/persistence.
-     *
-     * @param DOMDocument $doc The DOMDocument used to construct DOMElements
-     * @return DOMElement The DOMElement representing this element and all
-     * child properties.
-     */
-    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
-    {
-        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
-        if ($this->_specialized !== null) {
-            $element->setAttribute('specialized', ($this->_specialized ? "true" : "false"));
-        }
-        if ($this->_entryLink !== null) {
-            $element->appendChild($this->_entryLink->getDOM($element->ownerDocument));
-        }
-        if ($this->_originalEvent !== null) {
-            $element->appendChild($this->_originalEvent->getDOM($element->ownerDocument));
-        }
-        return $element;
-    }
-
-    /**
-     * Given a DOMNode representing an attribute, tries to map the data into
-     * instance members.  If no mapping is defined, the name and value are
-     * stored in an array.
-     *
-     * @param DOMNode $attribute The DOMNode attribute needed to be handled
-     */
-    protected function takeAttributeFromDOM($attribute)
-    {
-        switch ($attribute->localName) {
-        case 'specialized':
-            if ($attribute->nodeValue == "true") {
-                $this->_specialized = true;
-            }
-            else if ($attribute->nodeValue == "false") {
-                $this->_specialized = false;
-            }
-            else {
-                throw new Zend_Gdata_App_InvalidArgumentException("Expected 'true' or 'false' for gCal:selected#value.");
-            }
-            break;
-        default:
-            parent::takeAttributeFromDOM($attribute);
-        }
-    }
-
-    /**
-     * Creates individual Entry objects of the appropriate type and
-     * stores them as members of this entry based upon DOM data.
-     *
-     * @param DOMNode $child The DOMNode to process
-     */
-    protected function takeChildFromDOM($child)
-    {
-        $absoluteNodeName = $child->namespaceURI . ':' . $child->localName;
-        switch ($absoluteNodeName) {
-        case $this->lookupNamespace('gd') . ':' . 'entryLink':
-            $entryLink = new Zend_Gdata_Extension_EntryLink();
-            $entryLink->transferFromDOM($child);
-            $this->_entryLink = $entryLink;
-            break;
-        case $this->lookupNamespace('gd') . ':' . 'originalEvent':
-            $originalEvent = new Zend_Gdata_Extension_OriginalEvent();
-            $originalEvent->transferFromDOM($child);
-            $this->_originalEvent = $originalEvent;
-            break;
-        default:
-            parent::takeChildFromDOM($child);
-            break;
-        }
-    }
-
-    /**
-     * Get the value for this element's Specialized attribute.
-     *
-     * @return bool The requested attribute.
-     */
-    public function getSpecialized()
-    {
-        return $this->_specialized;
-    }
-
-    /**
-     * Set the value for this element's Specialized attribute.
-     *
-     * @param bool $value The desired value for this attribute.
-     * @return Zend_Gdata_Extension_RecurrenceException The element being modified.
-     */
-    public function setSpecialized($value)
-    {
-        $this->_specialized = $value;
-        return $this;
-    }
-
-    /**
-     * Get the value for this element's EntryLink attribute.
-     *
-     * @return Zend_Gdata_Extension_EntryLink The requested attribute.
-     */
-    public function getEntryLink()
-    {
-        return $this->_entryLink;
-    }
-
-    /**
-     * Set the value for this element's EntryLink attribute.
-     *
-     * @param Zend_Gdata_Extension_EntryLink $value The desired value for this attribute.
-     * @return Zend_Gdata_Extension_RecurrenceException The element being modified.
-     */
-    public function setEntryLink($value)
-    {
-        $this->_entryLink = $value;
-        return $this;
-    }
-
-    /**
-     * Get the value for this element's Specialized attribute.
-     *
-     * @return Zend_Gdata_Extension_OriginalEvent The requested attribute.
-     */
-    public function getOriginalEvent()
-    {
-        return $this->_originalEvent;
-    }
-
-    /**
-     * Set the value for this element's Specialized attribute.
-     *
-     * @param Zend_Gdata_Extension_OriginalEvent $value The desired value for this attribute.
-     * @return Zend_Gdata_Extension_RecurrenceException The element being modified.
-     */
-    public function setOriginalEvent($value)
-    {
-        $this->_originalEvent = $value;
-        return $this;
-    }
-
-}
-
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+lOZJ3Oa=

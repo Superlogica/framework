@@ -1,245 +1,86 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Gdata
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * Zend_Gdata_HttpClient
- */
-require_once 'Zend/Gdata/HttpClient.php';
-
-/**
- * Zend_Version
- */
-require_once 'Zend/Version.php';
-
-/**
- * Wrapper around Zend_Http_Client to facilitate Google's "Account Authentication
- * Proxy for Web-Based Applications".
- *
- * @see http://code.google.com/apis/accounts/AuthForWebApps.html
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Gdata
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Gdata_AuthSub
-{
-
-    const AUTHSUB_REQUEST_URI      = 'https://www.google.com/accounts/AuthSubRequest';
-
-    const AUTHSUB_SESSION_TOKEN_URI = 'https://www.google.com/accounts/AuthSubSessionToken';
-
-    const AUTHSUB_REVOKE_TOKEN_URI  = 'https://www.google.com/accounts/AuthSubRevokeToken';
-
-    const AUTHSUB_TOKEN_INFO_URI    = 'https://www.google.com/accounts/AuthSubTokenInfo';
-
-     /**
-      * Creates a URI to request a single-use AuthSub token.
-      *
-      * @param string $next (required) URL identifying the service to be 
-      *                     accessed.
-      *  The resulting token will enable access to the specified service only.
-      *  Some services may limit scope further, such as read-only access.
-      * @param string $scope (required) URL identifying the service to be 
-      *                      accessed.  The resulting token will enable 
-      *                      access to the specified service only.
-      *                      Some services may limit scope further, such 
-      *                      as read-only access.
-      * @param int $secure (optional) Boolean flag indicating whether the 
-      *                    authentication transaction should issue a secure 
-      *                    token (1) or a non-secure token (0). Secure tokens
-      *                    are available to registered applications only.
-      * @param int $session (optional) Boolean flag indicating whether 
-      *                     the one-time-use  token may be exchanged for 
-      *                     a session token (1) or not (0).
-      * @param string $request_uri (optional) URI to which to direct the 
-      *                            authentication request.
-      */
-     public static function getAuthSubTokenUri($next, $scope, $secure=0, $session=0, 
-                                               $request_uri = self::AUTHSUB_REQUEST_URI)
-     {
-         $querystring = '?next=' . urlencode($next)
-             . '&scope=' . urldecode($scope)
-             . '&secure=' . urlencode($secure)
-             . '&session=' . urlencode($session);
-         return $request_uri . $querystring;
-     }
-
-
-    /**
-     * Upgrades a single use token to a session token
-     *
-     * @param string $token The single use token which is to be upgraded
-     * @param Zend_Http_Client $client (optional) HTTP client to use to 
-     *                                 make the request
-     * @param string $request_uri (optional) URI to which to direct 
-     *                            the session token upgrade
-     * @return string The upgraded token value
-     * @throws Zend_Gdata_App_AuthException
-     * @throws Zend_Gdata_App_HttpException
-     */
-    public static function getAuthSubSessionToken(
-            $token, $client = null, 
-            $request_uri = self::AUTHSUB_SESSION_TOKEN_URI)
-    {
-        $client = self::getHttpClient($token, $client);
-   
-        if ($client instanceof Zend_Gdata_HttpClient) { 
-            $filterResult = $client->filterHttpRequest('GET', $request_uri);
-            $url = $filterResult['url'];
-            $headers = $filterResult['headers'];
-            $client->setHeaders($headers);
-            $client->setUri($url);
-        } else {
-            $client->setUri($request_uri);
-        }
-
-        try {
-            $response = $client->request('GET');
-        } catch (Zend_Http_Client_Exception $e) {
-            require_once 'Zend/Gdata/App/HttpException.php';
-            throw new Zend_Gdata_App_HttpException($e->getMessage(), $e);
-        }
-
-        // Parse Google's response
-        if ($response->isSuccessful()) {
-            $goog_resp = array();
-            foreach (explode("\n", $response->getBody()) as $l) {
-                $l = chop($l);
-                if ($l) {
-                    list($key, $val) = explode('=', chop($l), 2);
-                    $goog_resp[$key] = $val;
-                }
-            }
-            return $goog_resp['Token'];
-        } else {
-            require_once 'Zend/Gdata/App/AuthException.php';
-            throw new Zend_Gdata_App_AuthException(
-                    'Token upgrade failed. Reason: ' . $response->getBody());
-        }
-    }
-
-    /**
-     * Revoke a token
-     *
-     * @param string $token The token to revoke
-     * @param Zend_Http_Client $client (optional) HTTP client to use to make the request
-     * @param string $request_uri (optional) URI to which to direct the revokation request
-     * @return boolean Whether the revokation was successful
-     * @throws Zend_Gdata_App_HttpException
-     */
-    public static function AuthSubRevokeToken($token, $client = null,
-                                              $request_uri = self::AUTHSUB_REVOKE_TOKEN_URI)
-    {
-        $client = self::getHttpClient($token, $client);
- 
-        if ($client instanceof Zend_Gdata_HttpClient) {
-            $filterResult = $client->filterHttpRequest('GET', $request_uri);
-            $url = $filterResult['url'];
-            $headers = $filterResult['headers'];
-            $client->setHeaders($headers);
-            $client->setUri($url);
-            $client->resetParameters();
-        } else {
-            $client->setUri($request_uri);
-        }
-
-        ob_start();
-        try {
-            $response = $client->request('GET');
-        } catch (Zend_Http_Client_Exception $e) {
-            require_once 'Zend/Gdata/App/HttpException.php';
-            throw new Zend_Gdata_App_HttpException($e->getMessage(), $e);
-        }
-        ob_end_clean();
-        // Parse Google's response
-        if ($response->isSuccessful()) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-
-    /**
-     * get token information
-     *
-     * @param string $token The token to retrieve information about
-     * @param Zend_Http_Client $client (optional) HTTP client to use to 
-     *                                 make the request
-     * @param string $request_uri (optional) URI to which to direct 
-     *                            the information request
-     */
-    public static function getAuthSubTokenInfo(
-            $token, $client = null, $request_uri = self::AUTHSUB_TOKEN_INFO_URI)
-    {
-        $client = self::getHttpClient($token, $client);
-
-        if ($client instanceof Zend_Gdata_HttpClient) {
-            $filterResult = $client->filterHttpRequest('GET', $request_uri);
-            $url = $filterResult['url'];
-            $headers = $filterResult['headers'];
-            $client->setHeaders($headers);
-            $client->setUri($url);
-        } else {
-            $client->setUri($request_uri);
-        }
-
-        ob_start();
-        try {
-            $response = $client->request('GET');
-        } catch (Zend_Http_Client_Exception $e) {
-            require_once 'Zend/Gdata/App/HttpException.php';
-            throw new Zend_Gdata_App_HttpException($e->getMessage(), $e);
-        }
-        ob_end_clean();
-        return $response->getBody();
-    }
-
-    /**
-     * Retrieve a HTTP client object with AuthSub credentials attached
-     * as the Authorization header
-     *
-     * @param string $token The token to retrieve information about
-     * @param Zend_Gdata_HttpClient $client (optional) HTTP client to use to make the request
-     */
-    public static function getHttpClient($token, $client = null)
-    {
-        if ($client == null) {
-            $client = new Zend_Gdata_HttpClient();
-        }
-        if (!$client instanceof Zend_Http_Client) {
-            require_once 'Zend/Gdata/App/HttpException.php';
-            throw new Zend_Gdata_App_HttpException('Client is not an instance of Zend_Http_Client.');
-        }
-        $useragent = 'Zend_Framework_Gdata/' . Zend_Version::VERSION;
-        $client->setConfig(array(
-                'strictredirects' => true,
-                'useragent' => $useragent
-            )
-        );
-        $client->setAuthSubToken($token);
-        return $client;
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+RNPULZOdmkW3I43l09EcZpjtgn/XihsfARW=

@@ -1,189 +1,54 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Dojo
- * @subpackage Form_Element
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_Form_Element */
-require_once 'Zend/Form/Element.php';
-
-/**
- * Base element for dijit elements
- * 
- * @category   Zend
- * @package    Zend_Dojo
- * @subpackage Form_Element
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Dijit.php 13260 2008-12-15 14:30:35Z matthew $
- */
-abstract class Zend_Dojo_Form_Element_Dijit extends Zend_Form_Element
-{
-    /**
-     * Dijit parameters
-     * @var array
-     */
-    public $dijitParams = array();
-
-    /**
-     * View helper to use
-     * @var string
-     */
-    public $helper;
-
-    /**
-     * Constructor
-     * 
-     * @todo Should we set dojo view helper paths here?
-     * @param  mixed $spec 
-     * @param  mixed $options 
-     * @return void
-     */
-    public function __construct($spec, $options = null)
-    {
-        $this->addPrefixPath('Zend_Dojo_Form_Decorator', 'Zend/Dojo/Form/Decorator', 'decorator');
-        parent::__construct($spec, $options);
-    }
-
-    /**
-     * Set a dijit parameter
-     * 
-     * @param  string $key 
-     * @param  mixed $value 
-     * @return Zend_Dojo_Form_Element_Dijit
-     */
-    public function setDijitParam($key, $value)
-    {
-        $key = (string) $key;
-        $this->dijitParams[$key] = $value;
-        return $this;
-    }
-
-    /**
-     * Set multiple dijit params at once
-     * 
-     * @param  array $params 
-     * @return Zend_Dojo_Form_Element_Dijit
-     */
-    public function setDijitParams(array $params)
-    {
-        $this->dijitParams = array_merge($this->dijitParams, $params);
-        return $this;
-    }
-
-    /**
-     * Does the given dijit parameter exist?
-     * 
-     * @param  string $key 
-     * @return bool
-     */
-    public function hasDijitParam($key)
-    {
-        return array_key_exists($key, $this->dijitParams);
-    }
-
-    /**
-     * Get a single dijit parameter
-     * 
-     * @param  string $key 
-     * @return mixed
-     */
-    public function getDijitParam($key)
-    {
-        $key = (string) $key;
-        if ($this->hasDijitParam($key)) {
-            return $this->dijitParams[$key];
-        }
-        return null;
-    }
-
-    /**
-     * Retrieve all dijit parameters
-     * 
-     * @return array
-     */
-    public function getDijitParams()
-    {
-        return $this->dijitParams;
-    }
-
-    /**
-     * Remove a single dijit parameter
-     * 
-     * @param  string $key 
-     * @return Zend_Dojo_Form_Element_Dijit
-     */
-    public function removeDijitParam($key)
-    {
-        $key = (string) $key;
-        if (array_key_exists($key, $this->dijitParams)) {
-            unset($this->dijitParams[$key]);
-        }
-        return $this;
-    }
-
-    /**
-     * Clear all dijit parameters
-     * 
-     * @return Zend_Dojo_Form_Element_Dijit
-     */
-    public function clearDijitParams()
-    {
-        $this->dijitParams = array();
-        return $this;
-    }
-
-    /**
-     * Load default decorators
-     * 
-     * @return void
-     */
-    public function loadDefaultDecorators()
-    {
-        if ($this->loadDefaultDecoratorsIsDisabled()) {
-            return;
-        }
-
-        $decorators = $this->getDecorators();
-        if (empty($decorators)) {
-            $this->addDecorator('DijitElement')
-                 ->addDecorator('Errors')
-                 ->addDecorator('Description', array('tag' => 'p', 'class' => 'description'))
-                 ->addDecorator('HtmlTag', array('tag' => 'dd'))
-                 ->addDecorator('Label', array('tag' => 'dt'));
-        }
-    }
-
-    /**
-     * Set the view object
-     *
-     * Ensures that the view object has the dojo view helper path set.
-     * 
-     * @param  Zend_View_Interface $view 
-     * @return Zend_Dojo_Form_Element_Dijit
-     */
-    public function setView(Zend_View_Interface $view = null)
-    {
-        if (null !== $view) {
-            if (false === $view->getPluginLoader('helper')->getPaths('Zend_Dojo_View_Helper')) {
-                $view->addHelperPath('Zend/Dojo/View/Helper', 'Zend_Dojo_View_Helper');
-            }
-        }
-        return parent::setView($view);
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+TlUF8XVfaHqL2j1X8FcogXbirm==

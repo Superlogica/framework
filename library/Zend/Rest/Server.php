@@ -1,607 +1,254 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Rest
- * @subpackage Server
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * Zend_Server_Interface
- */
-require_once 'Zend/Server/Interface.php';
-
-/**
- * Zend_Server_Reflection
- */
-require_once 'Zend/Server/Reflection.php';
-
-/**
- * Zend_Server_Abstract
- */
-require_once 'Zend/Server/Abstract.php';
-
-/**
- * @category   Zend
- * @package    Zend_Rest
- * @subpackage Server
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Rest_Server implements Zend_Server_Interface
-{
-    /**
-     * Class Constructor Args
-     * @var array
-     */
-    protected $_args = array();
-
-    /**
-     * @var string Encoding
-     */
-    protected $_encoding = 'UTF-8';
-
-    /**
-     * @var array An array of Zend_Server_Reflect_Method
-     */
-    protected $_functions = array();
-
-    /**
-     * @var array Array of headers to send
-     */
-    protected $_headers = array();
-
-    /**
-     * @var array PHP's Magic Methods, these are ignored
-     */
-    protected static $magicMethods = array(
-        '__construct',
-        '__destruct',
-        '__get',
-        '__set',
-        '__call',
-        '__sleep',
-        '__wakeup',
-        '__isset',
-        '__unset',
-        '__tostring',
-        '__clone',
-        '__set_state',
-    );
-
-    /**
-     * @var string Current Method
-     */
-    protected $_method;
-
-    /**
-     * @var Zend_Server_Reflection
-     */
-    protected $_reflection = null;
-
-    /**
-     * Whether or not {@link handle()} should send output or return the response.
-     * @var boolean Defaults to false
-     */
-    protected $_returnResponse = false;
-
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        set_exception_handler(array($this, "fault"));
-        $this->_reflection = new Zend_Server_Reflection();
-    }
-
-    /**
-     * Set XML encoding
-     *
-     * @param  string $encoding
-     * @return Zend_Rest_Server
-     */
-    public function setEncoding($encoding)
-    {
-        $this->_encoding = (string) $encoding;
-        return $this;
-    }
-
-    /**
-     * Get XML encoding
-     *
-     * @return string
-     */
-    public function getEncoding()
-    {
-        return $this->_encoding;
-    }
-
-    /**
-     * Lowercase a string
-     *
-     * Lowercase's a string by reference
-     *
-     * @param string $value
-     * @param string $key
-     * @return string Lower cased string
-     */
-    public static function lowerCase(&$value, &$key)
-    {
-        return $value = strtolower($value);
-    }
-
-    /**
-     * Whether or not to return a response
-     *
-     * If called without arguments, returns the value of the flag. If called
-     * with an argument, sets the flag.
-     *
-     * When 'return response' is true, {@link handle()} will not send output,
-     * but will instead return the response from the dispatched function/method.
-     *
-     * @param boolean $flag
-     * @return boolean|Zend_Rest_Server Returns Zend_Rest_Server when used to set the flag; returns boolean flag value otherwise.
-     */
-    public function returnResponse($flag = null)
-    {
-        if (null == $flag) {
-            return $this->_returnResponse;
-        }
-
-        $this->_returnResponse = ($flag) ? true : false;
-        return $this;
-    }
-
-    /**
-     * Implement Zend_Server_Interface::handle()
-     *
-     * @param  array $request
-     * @throws Zend_Rest_Server_Exception
-     * @return string|void
-     */
-    public function handle($request = false)
-    {
-        $this->_headers = array('Content-Type: text/xml');
-        if (!$request) {
-            $request = $_REQUEST;
-        }
-        if (isset($request['method'])) {
-            $this->_method = $request['method'];
-            if (isset($this->_functions[$this->_method])) {
-                if ($this->_functions[$this->_method] instanceof Zend_Server_Reflection_Function || $this->_functions[$this->_method] instanceof Zend_Server_Reflection_Method && $this->_functions[$this->_method]->isPublic()) {
-                    $request_keys = array_keys($request);
-                    array_walk($request_keys, array(__CLASS__, "lowerCase"));
-                    $request = array_combine($request_keys, $request);
-
-                    $func_args = $this->_functions[$this->_method]->getParameters();
-
-                    $calling_args = array();
-                    foreach ($func_args as $arg) {
-                        if (isset($request[strtolower($arg->getName())])) {
-                            $calling_args[] = $request[strtolower($arg->getName())];
-                        } elseif ($arg->isOptional()) {
-                            $calling_args[] = $arg->getDefaultValue();
-                        }
-                    }
-
-                    foreach ($request as $key => $value) {
-                        if (substr($key, 0, 3) == 'arg') {
-                            $key = str_replace('arg', '', $key);
-                            $calling_args[$key] = $value;
-                        }
-                    }
-
-                    // Sort arguments by key -- @see ZF-2279
-                    ksort($calling_args);
-
-                    $result = false;
-                    if (count($calling_args) < count($func_args)) {
-                        require_once 'Zend/Rest/Server/Exception.php';
-                        $result = $this->fault(new Zend_Rest_Server_Exception('Invalid Method Call to ' . $this->_method . '. Requires ' . count($func_args) . ', ' . count($calling_args) . ' given.'), 400);
-                    }
-
-                    if (!$result && $this->_functions[$this->_method] instanceof Zend_Server_Reflection_Method) {
-                        // Get class
-                        $class = $this->_functions[$this->_method]->getDeclaringClass()->getName();
-
-                        if ($this->_functions[$this->_method]->isStatic()) {
-                            // for some reason, invokeArgs() does not work the same as
-                            // invoke(), and expects the first argument to be an object.
-                            // So, using a callback if the method is static.
-                            $result = $this->_callStaticMethod($class, $calling_args);
-                        } else {
-                            // Object method
-                            $result = $this->_callObjectMethod($class, $calling_args);
-                        }
-                    } elseif (!$result) {
-                        try {
-                            $result = call_user_func_array($this->_functions[$this->_method]->getName(), $calling_args); //$this->_functions[$this->_method]->invokeArgs($calling_args);
-                        } catch (Exception $e) {
-                            $result = $this->fault($e);
-                        }
-                    }
-                } else {
-                    require_once "Zend/Rest/Server/Exception.php";
-                    $result = $this->fault(
-                        new Zend_Rest_Server_Exception("Unknown Method '$this->_method'."),
-                        404
-                    );
-                }
-            } else {
-                require_once "Zend/Rest/Server/Exception.php";
-                $result = $this->fault(
-                    new Zend_Rest_Server_Exception("Unknown Method '$this->_method'."),
-                    404
-                );
-            }
-        } else {
-            require_once "Zend/Rest/Server/Exception.php";
-            $result = $this->fault(
-                new Zend_Rest_Server_Exception("No Method Specified."),
-                404
-            );
-        }
-
-        if ($result instanceof SimpleXMLElement) {
-            $response = $result->asXML();
-        } elseif ($result instanceof DOMDocument) {
-            $response = $result->saveXML();
-        } elseif ($result instanceof DOMNode) {
-            $response = $result->ownerDocument->saveXML($result);
-        } elseif (is_array($result) || is_object($result)) {
-            $response = $this->_handleStruct($result);
-        } else {
-            $response = $this->_handleScalar($result);
-        }
-
-        if (!$this->returnResponse()) {
-            if (!headers_sent()) {
-                foreach ($this->_headers as $header) {
-                    header($header);
-                }
-            }
-
-            echo $response;
-            return;
-        }
-
-        return $response;
-     }
-
-    /**
-     * Implement Zend_Server_Interface::setClass()
-     *
-     * @param string $classname Class name
-     * @param string $namespace Class namespace (unused)
-     * @param array $argv An array of Constructor Arguments
-     */
-    public function setClass($classname, $namespace = '', $argv = array())
-    {
-        $this->_args = $argv;
-        foreach ($this->_reflection->reflectClass($classname, $argv)->getMethods() as $method) {
-            $this->_functions[$method->getName()] = $method;
-        }
-    }
-
-    /**
-     * Handle an array or object result
-     *
-     * @param array|object $struct Result Value
-     * @return string XML Response
-     */
-    protected function _handleStruct($struct)
-    {
-        $function = $this->_functions[$this->_method];
-        if ($function instanceof Zend_Server_Reflection_Method) {
-            $class = $function->getDeclaringClass()->getName();
-        } else {
-            $class = false;
-        }
-
-        $method = $function->getName();
-
-        $dom    = new DOMDocument('1.0', $this->getEncoding());
-        if ($class) {
-            $root   = $dom->createElement($class);
-            $method = $dom->createElement($method);
-            $root->appendChild($method);
-        } else {
-            $root   = $dom->createElement($method);
-            $method = $root;
-        }
-        $root->setAttribute('generator', 'zend');
-        $root->setAttribute('version', '1.0');
-        $dom->appendChild($root);
-
-        $this->_structValue($struct, $dom, $method);
-
-        $struct = (array) $struct;
-        if (!isset($struct['status'])) {
-            $status = $dom->createElement('status', 'success');
-            $method->appendChild($status);
-        }
-
-        return $dom->saveXML();
-    }
-
-    /**
-     * Recursively iterate through a struct
-     *
-     * Recursively iterates through an associative array or object's properties
-     * to build XML response.
-     *
-     * @param mixed $struct
-     * @param DOMDocument $dom
-     * @param DOMElement $parent
-     * @return void
-     */
-    protected function _structValue($struct, DOMDocument $dom, DOMElement $parent)
-    {
-        $struct = (array) $struct;
-
-        foreach ($struct as $key => $value) {
-            if ($value === false) {
-                $value = 0;
-            } elseif ($value === true) {
-                $value = 1;
-            }
-
-            if (ctype_digit((string) $key)) {
-                $key = 'key_' . $key;
-            }
-
-            if (is_array($value) || is_object($value)) {
-                $element = $dom->createElement($key);
-                $this->_structValue($value, $dom, $element);
-            } else {
-                $element = $dom->createElement($key);
-                $element->appendChild($dom->createTextNode($value));
-            }
-
-            $parent->appendChild($element);
-        }
-    }
-
-    /**
-     * Handle a single value
-     *
-     * @param string|int|boolean $value Result value
-     * @return string XML Response
-     */
-    protected function _handleScalar($value)
-    {
-        $function = $this->_functions[$this->_method];
-        if ($function instanceof Zend_Server_Reflection_Method) {
-            $class = $function->getDeclaringClass()->getName();
-        } else {
-            $class = false;
-        }
-
-        $method = $function->getName();
-
-        $dom = new DOMDocument('1.0', $this->getEncoding());
-        if ($class) {
-            $xml = $dom->createElement($class);
-            $methodNode = $dom->createElement($method);
-            $xml->appendChild($methodNode);
-        } else {
-            $xml = $dom->createElement($method);
-            $methodNode = $xml;
-        }
-        $xml->setAttribute('generator', 'zend');
-        $xml->setAttribute('version', '1.0');
-        $dom->appendChild($xml);
-
-        if ($value === false) {
-            $value = 0;
-        } elseif ($value === true) {
-            $value = 1;
-        }
-
-        if (isset($value)) {
-            $element = $dom->createElement('response');
-            $element->appendChild($dom->createTextNode($value));
-            $methodNode->appendChild($element);
-        } else {
-            $methodNode->appendChild($dom->createElement('response'));
-        }
-
-        $methodNode->appendChild($dom->createElement('status', 'success'));
-
-        return $dom->saveXML();
-    }
-
-    /**
-     * Implement Zend_Server_Interface::fault()
-     *
-     * Creates XML error response, returning DOMDocument with response.
-     *
-     * @param string|Exception $fault Message
-     * @param int $code Error Code
-     * @return DOMDocument
-     */
-    public function fault($exception = null, $code = null)
-    {
-        if (isset($this->_functions[$this->_method])) {
-            $function = $this->_functions[$this->_method];
-        } elseif (isset($this->_method)) {
-            $function = $this->_method;
-        } else {
-            $function = 'rest';
-        }
-
-        if ($function instanceof Zend_Server_Reflection_Method) {
-            $class = $function->getDeclaringClass()->getName();
-        } else {
-            $class = false;
-        }
-
-        if ($function instanceof Zend_Server_Reflection_Function_Abstract) {
-            $method = $function->getName();
-        } else {
-            $method = $function;
-        }
-
-        $dom = new DOMDocument('1.0', $this->getEncoding());
-        if ($class) {
-            $xml       = $dom->createElement($class);
-            $xmlMethod = $dom->createElement($method);
-            $xml->appendChild($xmlMethod);
-        } else {
-            $xml       = $dom->createElement($method);
-            $xmlMethod = $xml;
-        }
-        $xml->setAttribute('generator', 'zend');
-        $xml->setAttribute('version', '1.0');
-        $dom->appendChild($xml);
-
-        $xmlResponse = $dom->createElement('response');
-        $xmlMethod->appendChild($xmlResponse);
-
-        if ($exception instanceof Exception) {
-            $element = $dom->createElement('message');
-            $element->appendChild($dom->createTextNode($exception->getMessage()));
-            $xmlResponse->appendChild($element);
-            $code = $exception->getCode();
-        } elseif (($exception !== null) || 'rest' == $function) {
-            $xmlResponse->appendChild($dom->createElement('message', 'An unknown error occured. Please try again.'));
-        } else {
-            $xmlResponse->appendChild($dom->createElement('message', 'Call to ' . $method . ' failed.'));
-        }
-
-        $xmlMethod->appendChild($xmlResponse);
-        $xmlMethod->appendChild($dom->createElement('status', 'failed'));
-
-        // Headers to send
-        if ($code === null || (404 != $code)) {
-            $this->_headers[] = 'HTTP/1.0 400 Bad Request';
-        } else {
-            $this->_headers[] = 'HTTP/1.0 404 File Not Found';
-        }
-
-        return $dom;
-    }
-
-    /**
-     * Retrieve any HTTP extra headers set by the server
-     *
-     * @return array
-     */
-    public function getHeaders()
-    {
-        return $this->_headers;
-    }
-
-    /**
-     * Implement Zend_Server_Interface::addFunction()
-     *
-     * @param string $function Function Name
-     * @param string $namespace Function namespace (unused)
-     */
-    public function addFunction($function, $namespace = '')
-    {
-        if (!is_array($function)) {
-            $function = (array) $function;
-        }
-
-        foreach ($function as $func) {
-            if (is_callable($func) && !in_array($func, self::$magicMethods)) {
-                $this->_functions[$func] = $this->_reflection->reflectFunction($func);
-            } else {
-                require_once 'Zend/Rest/Server/Exception.php';
-                throw new Zend_Rest_Server_Exception("Invalid Method Added to Service.");
-            }
-        }
-    }
-
-    /**
-     * Implement Zend_Server_Interface::getFunctions()
-     *
-     * @return array An array of Zend_Server_Reflection_Method's
-     */
-    public function getFunctions()
-    {
-        return $this->_functions;
-    }
-
-    /**
-     * Implement Zend_Server_Interface::loadFunctions()
-     *
-     * @todo Implement
-     * @param array $functions
-     */
-    public function loadFunctions($functions)
-    {
-    }
-
-    /**
-     * Implement Zend_Server_Interface::setPersistence()
-     *
-     * @todo Implement
-     * @param int $mode
-     */
-    public function setPersistence($mode)
-    {
-    }
-
-    /**
-     * Call a static class method and return the result
-     *
-     * @param  string $class
-     * @param  array $args
-     * @return mixed
-     */
-    protected function _callStaticMethod($class, array $args)
-    {
-        try {
-            $result = call_user_func_array(array($class, $this->_functions[$this->_method]->getName()), $args);
-        } catch (Exception $e) {
-            $result = $this->fault($e);
-        }
-        return $result;
-    }
-
-    /**
-     * Call an instance method of an object
-     *
-     * @param  string $class
-     * @param  array $args
-     * @return mixed
-     * @throws Zend_Rest_Server_Exception For invalid class name
-     */
-    protected function _callObjectMethod($class, array $args)
-    {
-        try {
-            if ($this->_functions[$this->_method]->getDeclaringClass()->getConstructor()) {
-                $object = $this->_functions[$this->_method]->getDeclaringClass()->newInstanceArgs($this->_args);
-            } else {
-                $object = $this->_functions[$this->_method]->getDeclaringClass()->newInstance();
-            }
-        } catch (Exception $e) {
-            echo $e->getMessage();
-            require_once 'Zend/Rest/Server/Exception.php';
-            throw new Zend_Rest_Server_Exception('Error instantiating class ' . $class . ' to invoke method ' . $this->_functions[$this->_method]->getName(), 500);
-        }
-
-        try {
-            $result = $this->_functions[$this->_method]->invokeArgs($object, $args);
-        } catch (Exception $e) {
-            $result = $this->fault($e);
-        }
-
-        return $result;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

@@ -1,87 +1,31 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Dojo
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * Enable Dojo components
- * 
- * @package    Zend_Dojo
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Dojo.php 10130 2008-07-16 14:51:08Z matthew $
- */
-class Zend_Dojo
-{
-    /**
-     *  @const string Base path to AOL CDN
-     */
-    const CDN_BASE_AOL = 'http://o.aolcdn.com/dojo/';
-
-    /**
-     * @const string Path to dojo on AOL CDN (following version string)
-     */
-    const CDN_DOJO_PATH_AOL = '/dojo/dojo.xd.js';
-
-    /**
-     *  @const string Base path to Google CDN
-     */
-    const CDN_BASE_GOOGLE = 'http://ajax.googleapis.com/ajax/libs/dojo/';
-
-    /**
-     * @const string Path to dojo on Google CDN (following version string)
-     */
-    const CDN_DOJO_PATH_GOOGLE = '/dojo/dojo.xd.js';
-
-    /**
-     * Dojo-enable a form instance
-     * 
-     * @param  Zend_Form $form 
-     * @return void
-     */
-    public static function enableForm(Zend_Form $form)
-    {
-        $form->addPrefixPath('Zend_Dojo_Form_Decorator', 'Zend/Dojo/Form/Decorator', 'decorator')
-             ->addPrefixPath('Zend_Dojo_Form_Element', 'Zend/Dojo/Form/Element', 'element')
-             ->addElementPrefixPath('Zend_Dojo_Form_Decorator', 'Zend/Dojo/Form/Decorator', 'decorator')
-             ->addDisplayGroupPrefixPath('Zend_Dojo_Form_Decorator', 'Zend/Dojo/Form/Decorator')
-             ->setDefaultDisplayGroupClass('Zend_Dojo_Form_DisplayGroup');
-
-        foreach ($form->getSubForms() as $subForm) {
-            self::enableForm($subForm);
-        }
-
-        if (null !== ($view = $form->getView())) {
-            self::enableView($view);
-        }
-    }
-
-    /**
-     * Dojo-enable a view instance
-     * 
-     * @param  Zend_View_Interface $view 
-     * @return void
-     */
-    public static function enableView(Zend_View_Interface $view)
-    {
-        if (false === $view->getPluginLoader('helper')->getPaths('Zend_Dojo_View_Helper')) {
-            $view->addHelperPath('Zend/Dojo/View/Helper', 'Zend_Dojo_View_Helper');
-        }
-    }
-}
-
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

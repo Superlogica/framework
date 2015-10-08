@@ -1,270 +1,108 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Search_Lucene
- * @subpackage Index
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_Search_Lucene_Index_SegmentInfo */
-require_once 'Zend/Search/Lucene/Index/SegmentInfo.php';
-
-/** Zend_Search_Lucene_Index_SegmentWriter_StreamWriter */
-require_once 'Zend/Search/Lucene/Index/SegmentWriter/StreamWriter.php';
-
-/** Zend_Search_Lucene_Index_TermsPriorityQueue */
-require_once 'Zend/Search/Lucene/Index/TermsPriorityQueue.php';
-
-/**
- * @category   Zend
- * @package    Zend_Search_Lucene
- * @subpackage Index
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Search_Lucene_Index_SegmentMerger
-{
-    /**
-     * Target segment writer
-     *
-     * @var Zend_Search_Lucene_Index_SegmentWriter_StreamWriter
-     */
-    private $_writer;
-
-    /**
-     * Number of docs in a new segment
-     *
-     * @var integer
-     */
-    private $_docCount;
-
-    /**
-     * A set of segments to be merged
-     *
-     * @var array Zend_Search_Lucene_Index_SegmentInfo
-     */
-    private $_segmentInfos = array();
-
-    /**
-     * Flag to signal, that merge is already done
-     *
-     * @var boolean
-     */
-    private $_mergeDone = false;
-
-    /**
-     * Field map
-     * [<segment_name>][<field_number>] => <target_field_number>
-     *
-     * @var array
-     */
-    private $_fieldsMap = array();
-
-
-
-    /**
-     * Object constructor.
-     *
-     * Creates new segment merger with $directory as target to merge segments into
-     * and $name as a name of new segment
-     *
-     * @param Zend_Search_Lucene_Storage_Directory $directory
-     * @param string $name
-     */
-    public function __construct($directory, $name)
-    {
-        $this->_writer = new Zend_Search_Lucene_Index_SegmentWriter_StreamWriter($directory, $name);
-    }
-
-
-    /**
-     * Add segmnet to a collection of segments to be merged
-     *
-     * @param Zend_Search_Lucene_Index_SegmentInfo $segment
-     */
-    public function addSource(Zend_Search_Lucene_Index_SegmentInfo $segmentInfo)
-    {
-        $this->_segmentInfos[$segmentInfo->getName()] = $segmentInfo;
-    }
-
-
-    /**
-     * Do merge.
-     *
-     * Returns number of documents in newly created segment
-     *
-     * @return Zend_Search_Lucene_Index_SegmentInfo
-     * @throws Zend_Search_Lucene_Exception
-     */
-    public function merge()
-    {
-        if ($this->_mergeDone) {
-            require_once 'Zend/Search/Lucene/Exception.php';
-            throw new Zend_Search_Lucene_Exception('Merge is already done.');
-        }
-
-        if (count($this->_segmentInfos) < 1) {
-            require_once 'Zend/Search/Lucene/Exception.php';
-            throw new Zend_Search_Lucene_Exception('Wrong number of segments to be merged ('
-                                                 . count($this->_segmentInfos)
-                                                 . ').');
-        }
-
-        $this->_mergeFields();
-        $this->_mergeNorms();
-        $this->_mergeStoredFields();
-        $this->_mergeTerms();
-
-        $this->_mergeDone = true;
-
-        return $this->_writer->close();
-    }
-
-
-    /**
-     * Merge fields information
-     */
-    private function _mergeFields()
-    {
-        foreach ($this->_segmentInfos as $segName => $segmentInfo) {
-            foreach ($segmentInfo->getFieldInfos() as $fieldInfo) {
-                $this->_fieldsMap[$segName][$fieldInfo->number] = $this->_writer->addFieldInfo($fieldInfo);
-            }
-        }
-    }
-
-    /**
-     * Merge field's normalization factors
-     */
-    private function _mergeNorms()
-    {
-        foreach ($this->_writer->getFieldInfos() as $fieldInfo) {
-            if ($fieldInfo->isIndexed) {
-                foreach ($this->_segmentInfos as $segName => $segmentInfo) {
-                    if ($segmentInfo->hasDeletions()) {
-                        $srcNorm = $segmentInfo->normVector($fieldInfo->name);
-                        $norm    = '';
-                        $docs    = $segmentInfo->count();
-                        for ($count = 0; $count < $docs; $count++) {
-                            if (!$segmentInfo->isDeleted($count)) {
-                                $norm .= $srcNorm[$count];
-                            }
-                        }
-                        $this->_writer->addNorm($fieldInfo->name, $norm);
-                    } else {
-                        $this->_writer->addNorm($fieldInfo->name, $segmentInfo->normVector($fieldInfo->name));
-                    }
-                }
-            }
-        }
-    }
-
-    /**
-     * Merge fields information
-     */
-    private function _mergeStoredFields()
-    {
-        $this->_docCount = 0;
-
-        foreach ($this->_segmentInfos as $segName => $segmentInfo) {
-            $fdtFile = $segmentInfo->openCompoundFile('.fdt');
-
-            for ($count = 0; $count < $segmentInfo->count(); $count++) {
-                $fieldCount = $fdtFile->readVInt();
-                $storedFields = array();
-
-                for ($count2 = 0; $count2 < $fieldCount; $count2++) {
-                    $fieldNum = $fdtFile->readVInt();
-                    $bits = $fdtFile->readByte();
-                    $fieldInfo = $segmentInfo->getField($fieldNum);
-
-                    if (!($bits & 2)) { // Text data
-                        $storedFields[] =
-                                 new Zend_Search_Lucene_Field($fieldInfo->name,
-                                                              $fdtFile->readString(),
-                                                              'UTF-8',
-                                                              true,
-                                                              $fieldInfo->isIndexed,
-                                                              $bits & 1 );
-                    } else {            // Binary data
-                        $storedFields[] =
-                                 new Zend_Search_Lucene_Field($fieldInfo->name,
-                                                              $fdtFile->readBinary(),
-                                                              '',
-                                                              true,
-                                                              $fieldInfo->isIndexed,
-                                                              $bits & 1,
-                                                              true);
-                    }
-                }
-
-                if (!$segmentInfo->isDeleted($count)) {
-                    $this->_docCount++;
-                    $this->_writer->addStoredFields($storedFields);
-                }
-            }
-        }
-    }
-
-
-    /**
-     * Merge fields information
-     */
-    private function _mergeTerms()
-    {
-        $segmentInfoQueue = new Zend_Search_Lucene_Index_TermsPriorityQueue();
-
-        $segmentStartId = 0;
-        foreach ($this->_segmentInfos as $segName => $segmentInfo) {
-            $segmentStartId = $segmentInfo->resetTermsStream($segmentStartId, Zend_Search_Lucene_Index_SegmentInfo::SM_MERGE_INFO);
-
-            // Skip "empty" segments
-            if ($segmentInfo->currentTerm() !== null) {
-                $segmentInfoQueue->put($segmentInfo);
-            }
-        }
-
-        $this->_writer->initializeDictionaryFiles();
-
-        $termDocs = array();
-        while (($segmentInfo = $segmentInfoQueue->pop()) !== null) {
-            // Merge positions array
-            $termDocs += $segmentInfo->currentTermPositions();
-
-            if ($segmentInfoQueue->top() === null ||
-                $segmentInfoQueue->top()->currentTerm()->key() !=
-                            $segmentInfo->currentTerm()->key()) {
-                // We got new term
-                ksort($termDocs, SORT_NUMERIC);
-
-                // Add term if it's contained in any document
-                if (count($termDocs) > 0) {
-                    $this->_writer->addTerm($segmentInfo->currentTerm(), $termDocs);
-                }
-                $termDocs = array();
-            }
-
-            $segmentInfo->nextTerm();
-            // check, if segment dictionary is finished
-            if ($segmentInfo->currentTerm() !== null) {
-                // Put segment back into the priority queue
-                $segmentInfoQueue->put($segmentInfo);
-            }
-        }
-
-        $this->_writer->closeDictionaryFiles();
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+isGXxEnEiDjLv95r9nW76WD5gp2OqgScB6x1

@@ -1,91 +1,31 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @package    Zend_Pdf
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-
-/** Zend_Pdf_Filter_Compression */
-require_once 'Zend/Pdf/Filter/Compression.php';
-
-
-/**
- * LZW stream filter
- *
- * @package    Zend_Pdf
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Pdf_Filter_Compression_Lzw extends Zend_Pdf_Filter_Compression
-{
-    /**
-     * Get EarlyChange decode param value
-     *
-     * @param array $params
-     * @return integer
-     * @throws Zend_Pdf_Exception
-     */
-    private static function _getEarlyChangeValue($params)
-    {
-        if (isset($params['EarlyChange'])) {
-            $earlyChange = $params['EarlyChange'];
-
-            if ($earlyChange != 0  &&  $earlyChange != 1) {
-                throw new Zend_Pdf_Exception('Invalid value of \'EarlyChange\' decode param - ' . $earlyChange . '.' );
-            }
-            return $earlyChange;
-        } else {
-            return 1;
-        }
-    }
-
-
-    /**
-     * Encode data
-     *
-     * @param string $data
-     * @param array $params
-     * @return string
-     * @throws Zend_Pdf_Exception
-     */
-    public static function encode($data, $params = null)
-    {
-        if ($params != null) {
-            $data = self::_applyEncodeParams($data, $params);
-        }
-
-        throw new Zend_Pdf_Exception('Not implemented yet');
-    }
-
-    /**
-     * Decode data
-     *
-     * @param string $data
-     * @param array $params
-     * @return string
-     * @throws Zend_Pdf_Exception
-     */
-    public static function decode($data, $params = null)
-    {
-        throw new Zend_Pdf_Exception('Not implemented yet');
-
-        if ($params !== null) {
-            return self::_applyDecodeParams($data, $params);
-        } else {
-            return $data;
-        }
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+cTwChgSIPi77V7cl1tZYXX8ISx8LgNgq

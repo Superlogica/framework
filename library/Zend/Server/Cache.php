@@ -1,147 +1,42 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Server
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Cache.php 12195 2008-10-30 13:34:35Z matthew $
- */
-
-/**
- * Zend_Server_Cache: cache server definitions
- *
- * @category   Zend
- * @package    Zend_Server
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Server_Cache
-{
-    /**
-     * @var array Methods to skip when caching server
-     */
-    protected static $_skipMethods = array();
-
-    /**
-     * Cache a file containing the dispatch list.
-     *
-     * Serializes the server definition stores the information
-     * in $filename.
-     *
-     * Returns false on any error (typically, inability to write to file), true
-     * on success.
-     *
-     * @param  string $filename
-     * @param  Zend_Server_Interface $server
-     * @return bool
-     */
-    public static function save($filename, Zend_Server_Interface $server)
-    {
-        if (!is_string($filename)
-            || (!file_exists($filename) && !is_writable(dirname($filename))))
-        {
-            return false;
-        }
-
-        $methods = $server->getFunctions();
-
-        if ($methods instanceof Zend_Server_Definition) {
-            $definition = new Zend_Server_Definition();
-            foreach ($methods as $method) {
-                if (in_array($method->getName(), self::$_skipMethods)) {
-                    continue;
-                }
-                $definition->addMethod($method);
-            }
-            $methods = $definition;
-        }
-
-        if (0 === @file_put_contents($filename, serialize($methods))) {
-            return false;
-        }
-
-        return true;
-    }
-
-    /**
-     * Load server definition from a file
-     *
-     * Unserializes a stored server definition from $filename. Returns false if 
-     * it fails in any way, true on success.
-     *
-     * Useful to prevent needing to build the server definition on each 
-     * request. Sample usage:
-     *
-     * <code>
-     * if (!Zend_Server_Cache::get($filename, $server)) {
-     *     require_once 'Some/Service/Class.php';
-     *     require_once 'Another/Service/Class.php';
-     *
-     *     // Attach Some_Service_Class with namespace 'some'
-     *     $server->attach('Some_Service_Class', 'some');
-     *
-     *     // Attach Another_Service_Class with namespace 'another'
-     *     $server->attach('Another_Service_Class', 'another');
-     *
-     *     Zend_Server_Cache::save($filename, $server);
-     * }
-     *
-     * $response = $server->handle();
-     * echo $response;
-     * </code>
-     *
-     * @param  string $filename
-     * @param  Zend_Server_Interface $server
-     * @return bool
-     */
-    public static function get($filename, Zend_Server_Interface $server)
-    {
-        if (!is_string($filename)
-            || !file_exists($filename)
-            || !is_readable($filename))
-        {
-            return false;
-        }
-
-
-        if (false === ($dispatch = @file_get_contents($filename))) {
-            return false;
-        }
-
-        if (false === ($dispatchArray = @unserialize($dispatch))) {
-            return false;
-        }
-
-        $server->loadFunctions($dispatchArray);
-
-        return true;
-    }
-
-    /**
-     * Remove a cache file
-     *
-     * @param  string $filename
-     * @return boolean
-     */
-    public static function delete($filename)
-    {
-        if (is_string($filename) && file_exists($filename)) {
-            unlink($filename);
-            return true;
-        }
-
-        return false;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+mGOS6XDxiIyMeSl4iL4=

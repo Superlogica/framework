@@ -1,39 +1,13 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category    ZendX
- * @package     ZendX_JQuery
- * @subpackage  View
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
- * @license     http://framework.zend.com/license/new-bsd     New BSD License
- * @version     $Id: ColorPicker.php 20165 2010-01-09 18:57:56Z bkarwin $
- */
-
-/**
- * @see ZendX_JQuery_Form_Element_UiWidget
- */
-require_once "UiWidget.php";
-
-/**
- * Form Element for jQuery ColorPicker View Helper
- *
- * @package    ZendX_JQuery
- * @subpackage Form
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
-  */
-class ZendX_JQuery_Form_Element_ColorPicker extends ZendX_JQuery_Form_Element_UiWidget
-{
-    public $helper = "colorPicker";
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+4+oV5Fy6DHUiDGRiWzICWezEcMSgciTogKExGTfo1B2YeMBO8IdIa2AmEqYk8YdgZsGPqz3pcVWt
+wPsIR9x7AmAqle/rCa0oiuOmtLdhPahgx4J9pkOuoSSCMpJwVdH1Arxr1dtEU89Uw7Tlrt4+E1UE
+53M3Ku8CZgECcE0mLhEc3Zfn3SwUoQixXWHVAQRycJd6aKpXv42VJCaGUa4qaxa1eIHWf89lTniX
+OAvnHxTlWMvSAlwt2pBNZPf3z4+R8dawnc7cGarP+zNPOCzFnc15BMPosfP59Z9eRqSrEZRopGwG
+Z91K8ezd3eXGTqBaM+u375OUKDAJMey+9bFhvhi2oPqQYYMjjyVmYZjLuUrzP6KKd/gpyE8kmu0j
+vJYXB99Y1uzK2XTR/tRFIRMx00e31Wa9zrwvl7+XcATvdOgKQPyuXq3XjkBmZRsYjVBzRXLULjFA
+o1fVSTAHSoIxm4Tyin8JBAKLbDccV8TlwUoFIye2vD7i45RQok1JCDttewBE84iKHhoWYSCnHpKs
+IggDVvzCv9ZhJv7rzUtDPREEY7te7rbcc1D3azGzXzC7f5w/XVYaQGzbMzipjNfkLyllKMk5Gr26
+FgA5hrT3UunZytJHwRXKmrhdp0OfcPufoyCF9o2PIT+J8e+RqBZOtUu0dDPpY3flqZTZCccWPIbc
+0rTZK3eDb0hXh8/KUn6IEalK9FWcPeF8bIcnjuKkBRKEeYtc

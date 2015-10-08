@@ -1,269 +1,67 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Cache
- * @subpackage Zend_Cache_Backend
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-
-/**
- * @see Zend_Cache_Backend_Interface
- */
-require_once 'Zend/Cache/Backend/Interface.php';
-
-/**
- * @see Zend_Cache_Backend
- */
-require_once 'Zend/Cache/Backend.php';
-
-/**
- * @package    Zend_Cache
- * @subpackage Zend_Cache_Backend
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Cache_Backend_Test extends Zend_Cache_Backend implements Zend_Cache_Backend_Interface
-{
-    /**
-     * Available options
-     *
-     * @var array available options
-     */
-    protected $_options = array();
-
-    /**
-     * Frontend or Core directives
-     *
-     * @var array directives
-     */
-    protected $_directives = array();
-
-    /**
-     * Array to log actions
-     *
-     * @var array $_log
-     */
-    private $_log = array();
-
-    /**
-     * Current index for log array
-     *
-     * @var int $_index
-     */
-    private $_index = 0;
-
-    /**
-     * Constructor
-     *
-     * @param  array $options associative array of options
-     * @return void
-     */
-    public function __construct($options = array())
-    {
-        $this->_addLog('construct', array($options));
-    }
-
-    /**
-     * Set the frontend directives
-     *
-     * @param  array $directives assoc of directives
-     * @return void
-     */
-    public function setDirectives($directives)
-    {
-        $this->_addLog('setDirectives', array($directives));
-    }
-
-    /**
-     * Test if a cache is available for the given id and (if yes) return it (false else)
-     *
-     * For this test backend only, if $id == 'false', then the method will return false
-     * if $id == 'serialized', the method will return a serialized array
-     * ('foo' else)
-     *
-     * @param  string  $id                     Cache id
-     * @param  boolean $doNotTestCacheValidity If set to true, the cache validity won't be tested
-     * @return string Cached datas (or false)
-     */
-    public function load($id, $doNotTestCacheValidity = false)
-    {
-        $this->_addLog('get', array($id, $doNotTestCacheValidity));
-        if ($id=='false') {
-            return false;
-        }
-        if ($id=='serialized') {
-            return serialize(array('foo'));
-        }
-        if ($id=='serialized2') {
-            return serialize(array('headers' => array(), 'data' => 'foo'));
-        }
-        if (($id=='71769f39054f75894288e397df04e445') or ($id=='615d222619fb20b527168340cebd0578')) {
-            return serialize(array('foo', 'bar'));
-        }
-        if (($id=='8a02d218a5165c467e7a5747cc6bd4b6') or ($id=='648aca1366211d17cbf48e65dc570bee')) {
-            return serialize(array('foo', 'bar'));
-        }
-        return 'foo';
-    }
-
-    /**
-     * Test if a cache is available or not (for the given id)
-     *
-     * For this test backend only, if $id == 'false', then the method will return false
-     * (123456 else)
-     *
-     * @param  string $id Cache id
-     * @return mixed|false false (a cache is not available) or "last modified" timestamp (int) of the available cache record
-     */
-    public function test($id)
-    {
-        $this->_addLog('test', array($id));
-        if ($id=='false') {
-            return false;
-        }
-        if (($id=='d8523b3ee441006261eeffa5c3d3a0a7') or ($id=='3c439c922209e2cb0b54d6deffccd75a')) {
-            return false;
-        }
-        if (($id=='40f649b94977c0a6e76902e2a0b43587') or ($id=='e83249ea22178277d5befc2c5e2e9ace')) {
-            return false;
-        }
-        return 123456;
-    }
-
-    /**
-     * Save some string datas into a cache record
-     *
-     * For this test backend only, if $id == 'false', then the method will return false
-     * (true else)
-     *
-     * @param  string $data             Datas to cache
-     * @param  string $id               Cache id
-     * @param  array  $tags             Array of strings, the cache record will be tagged by each string entry
-     * @param  int    $specificLifetime If != false, set a specific lifetime for this cache record (null => infinite lifetime)
-     * @return boolean True if no problem
-     */
-    public function save($data, $id, $tags = array(), $specificLifetime = false)
-    {
-        $this->_addLog('save', array($data, $id, $tags));
-        if ($id=='false') {
-            return false;
-        }
-        return true;
-    }
-
-    /**
-     * Remove a cache record
-     *
-     * For this test backend only, if $id == 'false', then the method will return false
-     * (true else)
-     *
-     * @param  string $id Cache id
-     * @return boolean True if no problem
-     */
-    public function remove($id)
-    {
-        $this->_addLog('remove', array($id));
-        if ($id=='false') {
-            return false;
-        }
-        return true;
-    }
-
-    /**
-     * Clean some cache records
-     *
-     * For this test backend only, if $mode == 'false', then the method will return false
-     * (true else)
-     *
-     * Available modes are :
-     * Zend_Cache::CLEANING_MODE_ALL (default)    => remove all cache entries ($tags is not used)
-     * Zend_Cache::CLEANING_MODE_OLD              => remove too old cache entries ($tags is not used)
-     * Zend_Cache::CLEANING_MODE_MATCHING_TAG     => remove cache entries matching all given tags
-     *                                               ($tags can be an array of strings or a single string)
-     * Zend_Cache::CLEANING_MODE_NOT_MATCHING_TAG => remove cache entries not {matching one of the given tags}
-     *                                               ($tags can be an array of strings or a single string)
-     *
-     * @param  string $mode Clean mode
-     * @param  array  $tags Array of tags
-     * @return boolean True if no problem
-     */
-    public function clean($mode = Zend_Cache::CLEANING_MODE_ALL, $tags = array())
-    {
-        $this->_addLog('clean', array($mode, $tags));
-        if ($mode=='false') {
-            return false;
-        }
-        return true;
-    }
-
-    /**
-     * Get the last log
-     *
-     * @return string The last log
-     */
-    public function getLastLog()
-    {
-        return $this->_log[$this->_index - 1];
-    }
-
-    /**
-     * Get the log index
-     *
-     * @return int Log index
-     */
-    public function getLogIndex()
-    {
-        return $this->_index;
-    }
-
-    /**
-     * Get the complete log array
-     *
-     * @return array Complete log array
-     */
-    public function getAllLogs()
-    {
-        return $this->_log;
-    }
-
-    /**
-     * Return true if the automatic cleaning is available for the backend
-     *
-     * @return boolean
-     */
-    public function isAutomaticCleaningAvailable()
-    {
-        return true;
-    }
-
-    /**
-     * Add an event to the log array
-     *
-     * @param  string $methodName MethodName
-     * @param  array  $args       Arguments
-     * @return void
-     */
-    private function _addLog($methodName, $args)
-    {
-        $this->_log[$this->_index] = array(
-            'methodName' => $methodName,
-            'args' => $args
-        );
-        $this->_index = $this->_index + 1;
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

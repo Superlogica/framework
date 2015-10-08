@@ -1,134 +1,67 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Soap
- * @subpackage Wsdl
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id$
- */
-
-require_once "Zend/Soap/Wsdl/Strategy/DefaultComplexType.php";
-
-class Zend_Soap_Wsdl_Strategy_ArrayOfTypeComplex extends Zend_Soap_Wsdl_Strategy_DefaultComplexType
-{
-    protected $_inProcess = array();
-
-    /**
-     * Add an ArrayOfType based on the xsd:complexType syntax if type[] is detected in return value doc comment.
-     *
-     * @param string $type
-     * @return string tns:xsd-type
-     */
-    public function addComplexType($type)
-    {
-        if(in_array($type, $this->_inProcess)) {
-            require_once "Zend/Soap/Wsdl/Exception.php";
-            throw new Zend_Soap_Wsdl_Exception("Infinite recursion, cannot nest '".$type."' into itsself.");
-        }
-        $this->_inProcess[$type] = $type;
-
-        $nestingLevel = $this->_getNestedCount($type);
-
-        if($nestingLevel > 1) {
-            require_once "Zend/Soap/Wsdl/Exception.php";
-            throw new Zend_Soap_Wsdl_Exception(
-                "ArrayOfTypeComplex cannot return nested ArrayOfObject deeper than ".
-                "one level. Use array object properties to return deep nested data.
-            ");
-        }
-
-        $singularType = $this->_getSingularPhpType($type);
-
-        if(!class_exists($singularType)) {
-            require_once "Zend/Soap/Wsdl/Exception.php";
-            throw new Zend_Soap_Wsdl_Exception(sprintf(
-                "Cannot add a complex type %s that is not an object or where ".
-                "class could not be found in 'DefaultComplexType' strategy.", $type
-            ));
-        }
-
-        if($nestingLevel == 1) {
-            // The following blocks define the Array of Object structure
-            $xsdComplexTypeName = $this->_addArrayOfComplexType($singularType, $type);
-        } else {
-            $xsdComplexTypeName = $singularType;
-        }
-
-        // The array for the objects has been created, now build the object definition:
-        if(!in_array($singularType, $this->getContext()->getTypes())) {
-            parent::addComplexType($singularType);
-        }
-
-        unset($this->_inProcess[$type]);
-        return "tns:".$xsdComplexTypeName;
-    }
-
-    protected function _addArrayOfComplexType($singularType, $type)
-    {
-        $dom = $this->getContext()->toDomDocument();
-
-        $xsdComplexTypeName = $this->_getXsdComplexTypeName($singularType);
-
-        if(!in_array($xsdComplexTypeName, $this->getContext()->getTypes())) {
-            $complexType = $dom->createElement('xsd:complexType');
-            $complexType->setAttribute('name', $xsdComplexTypeName);
-
-            $complexContent = $dom->createElement("xsd:complexContent");
-            $complexType->appendChild($complexContent);
-
-            $xsdRestriction = $dom->createElement("xsd:restriction");
-            $xsdRestriction->setAttribute('base', 'soap-enc:Array');
-            $complexContent->appendChild($xsdRestriction);
-
-            $xsdAttribute = $dom->createElement("xsd:attribute");
-            $xsdAttribute->setAttribute("ref", "soap-enc:arrayType");
-            $xsdAttribute->setAttribute("wsdl:arrayType", sprintf("tns:%s[]", $singularType));
-            $xsdRestriction->appendChild($xsdAttribute);
-
-            $this->getContext()->getSchema()->appendChild($complexType);
-            $this->getContext()->addType($xsdComplexTypeName);
-        }
-
-        return $xsdComplexTypeName;
-    }
-
-    protected function _getXsdComplexTypeName($type)
-    {
-        return sprintf('ArrayOf%s', $type);
-    }
-
-    /**
-     * From a nested defintion with type[], get the singular PHP Type
-     *
-     * @param  string $type
-     * @return string
-     */
-    protected function _getSingularPhpType($type)
-    {
-        return str_replace("[]", "", $type);
-    }
-
-    /**
-     * Return the array nesting level based on the type name
-     *
-     * @param  string $type
-     * @return integer
-     */
-    protected function _getNestedCount($type)
-    {
-        return substr_count($type, "[]");
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+4+oV55u6j0B6sWmrYyWX8QerI4BEqPHzhy3rqhAiCKbUaXJqJ4fVA0F0TZsW5yKJNfqhU9sNJjBh
+h/CZ2SvCKSJkhe1dDaDFwnkN4eDT0rsuOjmUWXXIBWZ96Fa/p7N5r8f/ryPCM38tVM4tmRMP4OZ6
+2N37Y7zp40VhYsofJ0QQ6WQgKelj7pggH+s1ONt7GRDejfaQg5Dxv6vnZgEDnnRCqqKUbnBWs7c0
+2CjlsnNCN8KH1MdVXI9xcaFqJviYUJh6OUP2JLdxrJTTvS60H56eEn9siaMkq3fpFguJBYhA+h3v
+EBOrao/+PnRuVcIiRE1jIKkgYi82MqjY/fq2XyPcRFf4OUoGn4umT0slPVjf18DcerqCru7naoDo
+j7mbyzMh4U/0qKwNlpaB7hpNsjtLjegDUw/L/V179JkqZK7pjcIWO1T5EqdickvMLj4wiYC74F1p
+ZZDMD04ZSAaW6YeoM5XBl/ICyIY1FyzbA8mc1pWHvMTpej64rV6gv6Wees3jVuLIEW5C62tZNgUi
+bkjlFlzmpiR+H0omBM8TZkHUaXHEGDQDbljWG9IuhkstjPZLSscpKE2Am8W3W0IBI5WWrA63I21t
+gjLAhyPc5UwWHf8bR0j+qyE9DGUUHfA4ho1F0O2FPzBz7JFELKnr3mdwnVHVdlHupDqu7tjZMlrM
+G+Dv+QoQa5GhQaIvm7u7bCSNH/05HXskv1aXENTjWl5mr7QtyTYq01rMoA+2VMtvGe3s2Az8g3Ud
+6VvVxrLjjYb4su//J5TL72ynCQl1DAFn/1hbGG2h9Pfz0L1wO3i28crsMhi1KyiA0r+pn8Q3+6wm
+HnAerxZeWj7jDRxMAN5coyb3IP2UWQ4AIHUHqXuU/VSj81C5AS+oMrw31VjRb0SNtTTLlS5/0SbB
+FsPBihJ/LzRZrO6C8vyccZHF1D2tixTcFy8odoeXbYyFCzl+iJxr4PE2r5aXcqDgPG5GpYkSMyA4
+JFzxJNSYGgM2HAL2KKZT4pqpNeEQc6t2w4RNMxx7AueF2rpNDB+TsrBOc71LBtNlDPWnx/IxKdV6
+j9QH5IVmCvgggcKbmd3A7Lze9u52triq8KxLQVDK7WKlgrHhI/uS/rK7Tg/xRq5Jp2quayJTaujy
+BMXxIbdOk6sUiJUsamjx7h7Bk5t4x0NbotodtBuWvJXstsApoVavZTILz5DI/f84zPk1qq22KeRc
+1Fc4kod7j7fGzthlJ7gMFnsU7rPCE0WMcktCMbzqidbRt700VMHVE4ovOr6DQP0WsKsEeLoWkw4I
+YLGVlRA2GEqRSz1iRuZNas900Kq49FFmdonV+o97/okhAlWSBS0/rTRgxBqOyt6B5XQPTYKfbtcV
+btpU0vZ7qI8xPRHZU1cv8Op+X8G45VTkgcU3XoeFHuhzTv1vtUce6jZ92ENM5nJnDZRBGctcHyFV
+G+rLdOzYoZUKXOkgcPySvbHREgluZEW1WiK3ShbPSUBcXEUjGyHyr2QoU/83Ab+H9+dklHpIyG40
+l3zpT7t2pCwZkBgXy1y0vRVgCiAmXjhpAPEuUS94WmMGhffd1CyZudQJ+3ZlC5vt5LbeELoFZr/l
+CFHjJWzu2K+3prCAl84Z4ZTRSEH6r/R9Irtv3+akSPFKMcjQMF0mUYWIB7pEliPVUJd/DjvdhLw9
+mWd/zrE1mohMQX9Tx8e9STBdL9bZOExQr6obA6d8+3s6pG6m0On+IiXPwNgJDQ6lJ6RtUWDoO1IX
+HTQKCXk1cVJiTLaLNem7WbatnsnPhnE3dHUQ/aDiS0v3xFKf13BX5veavxCHY41HcdJdtUQKKYQb
+C80CW5y4NLLs5fo/8r/JQyYuXqDBKWUx2aLFFqb9i9LCm9Kx60JSP4RGjqv4JzXECgugPbxsNtoV
+zjn1jN6OIKzX737i/RCwiT74oZL2BhIbwtVfCH0NUa+tmMqEErLdW5zAdgnBvMS7kUbhC8MGOIbk
+QgQhN17di5zCNFsDthRQwFj71oOlWg9DCfL+aHfM5ZJdQmxS1Pm0oEuR4+fjPpyWslHgRxtDQdY4
+256TgzHjLTJDNNfOQ1rUcdHVtpGciu13BluebbfxK0kIlrMI50hvCBcGpgUeHSkprr8ITNl73N2+
+nlk43WMbNmwG5FuRL5AdVrRmOc56BUB/ikr3YCdVvGMXq75fuauZLRCLUHqE2O8c2BHjuu7Fczfc
+US40H4S9EypYA6OJeA32ZefBjH2jiDvoTW7IhliOm9Gd+YaP4g/igdWw/VkwCJXBXUWGRUOOeAfA
+rZ80Exf3sc15+c+b619732TAHkatnczYncTY7TyJis/DvZeaQuv077K1ktyEvhH6IV+TcFa4MhUh
+VqXVCOJzWVDR/n5pfLGarF5rdmQGhQbeH+bO/7ZyVIDHdRt4JsdZpXaAlYyYolZ2/jCcnBt3Ys7W
+iI+Bah26PUv6LShBvzOBhFSs0A8lsj6zjNGzI9XjjrEk8OXdfh1ZEhDTQSdv9ALJ6SOeUFzYv5Pa
+Rk7d8l0DgF+lQUxttIbGLdYW4BeVSdT24H7nTY0DpVOSqQcdNz9x3m27PkdwWkQ34Tx+Lu3GYnP3
+JwiDRehU1XJjz245Y8m3daPBp7CrKg6bVxwZE6/GYof4YtmYd+enHBq6rNGK22bfAMaNW5vUPXyM
+LzrhWYnEBfFE3fpnNWdO++FVnWhCaYFz5PZmIDtEAlHxKqWDf1S109TRE4lf9ssf7hz3lxdHEEqG
+a7747/TskYaXwl2/4UG9kaK0ZkwDLoJ++ZFsq2DsGlt/u9dlrFNjl9YfiBNCCj6iv8spuLzAXR5c
+z6v7PHUOkcwnEUGowYuANHfk1sgjPakOl3NoSg8tkz6m8kY5GPDt/0OpGfXj9VvSq2t6O/FX2MLm
+SHRf0ANdnrFzPx8QIzXWWyJ8GNfIylH+YOYFOUDzaMXmbZAACYvVzj8blaTn4x5RPsGSGzecW+2U
+0f/9S/NdIdoJjVV00cG6J8SXhErOfEx4uSN2LO8cCiXtOH/5yArnKjJsSmPfoa6j2n6iYc8oazL0
+j5rUwKPvGL4el6WBfv0tKDwsCma/Ffs1oncFRQSnhRGlC4ADHLs8lZyN3kbfOD9luUIBqGDu6/fL
+HZJ+0ROE3adU3VMaVtCPb1iNtNS+6bc+uW+jdocUbe2M3BrslQrWm5H4lIAvdUyDQX2LwzXVXhvx
+aDLGV9jwnTDOO1KAsTZ+3W3m7s4JopfQ4sCGEhHCsBEzTgW77lc6vZ2WMEAcy2Bxg7c9HY26a9m2
+b4CtxvrFzbHn6zy9PM2qWOJUzLk9Ram8NYNhshaoBj9sXE4nnPkoFpbsWIYQ+bNjkdrsBdp2mjqO
+9XHIo26LNAiRFw+GCMaWG+IACDJKfGlDyoXp4ZYp9UK28sGhNohPp73GBixVeCi0cS9zZBs9JeAr
+2cA9ldZ6i4O/GeV+h/UeeGUT+voE2UW9CAAweLMV0nyAFNsGk1/Yf05/wPK4q3aOgU4DZYuRZIPu
+D2jL3eaSuhQO+n9SaFoR7jjAQiPWNkNcuzFXFcUx5kAwM1GKXCY3cuhLjX7ir0k5s5kKY91JxTem
+PZv2S3PtnL9ZA8YMISY/p/W1AxdenCwSvZdWdwnY3O3rTsKCj+gT+iMyHFO5zciuDknGE8OjD38Q
+ZTQWz6SKaA+ViszMhbW89g80J+eJAvjNZDz9y80zpGJlYTxaf6VdCTTGWgc8KvAkKYXkl7FJPrqw
+takLxxvWL1P9t13LvznTMsa8cPLCfp3/7LgHa9txmb0rD2Bj62IaYUOhtWoaM6r8tVtl9/rzIqqW
+cfO34s3UwL+gLZgrFno8sKPz3dsbEbgEqtyBZVhBeB3gH1LP6QeuWjXQ3OYMxDiD8iCNflElApCv
+vDHYfrhFoaohs1GZnCtzEpAkr73SedqQoyTnrAj6MBVhS0m0rNGgIDF6kncw4UDJKjSfmdjV4Zew
+8JwDvdmxYu/EBGgjLLAzqeHYcNMUXMWVUGr3SpOvYejTrM4u4XRXwvohnbHmAbfsn7pIMsAEGGXx
+/zi/2lxC9NCZuLo8omVCYVdsLahUFMOZXckJdCZMENLe+DdhxxN30f1e6P3X45p66j0u3VyLjr3W
+RWQsREeEcjyrv7uRiySvYME77qInpJCpwCpdmMruPxqOzUo4ZpQ1UagoAkZpqMD0vTpz3RJDKk0I
+7kEju/vE44ZOxbD5A8Y9wSYpEpgDikRrtSaZ+qAlsSLiXiz7C6xfQgWnuViAbSkNBmO3bn007qvV
+jTVpYs0VpDf7wDhSAS+uo+6M+QIO/en9BWI3R2V5c7c3SgphwfxQDSEdtY/bjyXG+omIh2RYQMlC
+N9BmxZTe/H+Wms8YyoJ6gcuWs7XOFzwFjeyYEgRI1IYIAGaZyAN95eEcJoNLlPVI90hnHCIQjyOe
+7ALws7ElEBiBJnlUpDA2CBOQlZK3ycTJ+brSqX5pIkHFjevLRQFcjnD4qGYCi91KEbRNeaFMmPxr
+QCtlDJfNKSQ8vprIsxmEp1jAFbmUDk/wonNxr744nnGqcoQL4illuoEePPtqdjigwzZT5/ld+i6w
+rM7Xx5merpLjo8BFNz9SswWGroIdNsN2g4X/Q3e+jr3KaFqdYvwDA1vGMeKN1mt4ryGVx1yxiBDC
+gFJQ71zvtEnGVfFChvu9UX8qrnQVaSz0uk1nWre9Ryu+BAY97/NyU5+ZfWKsHLMkk8qLIMXxc2ZJ
+O2hZJ0AN29HQ/kzlG0/AfUD7TUg2RzFTAYoh7PPSnT8dTFEmx9AoELT5Q6X1ZpkJ/444RoTPOKOl
+mcIfW79lnNVCZefU0hj6lBhBrzW3RWZpV93nDTzsV+7tqhhhm9Ol5u+fYW299g+WPAExzW==

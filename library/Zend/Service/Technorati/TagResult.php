@@ -1,171 +1,32 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Service
- * @subpackage Technorati
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: TagResult.php 8064 2008-02-16 10:58:39Z thomas $
- */
-
-
-/** 
- * @see Zend_Service_Technorati_Result 
- */
-require_once 'Zend/Service/Technorati/Result.php';
-
-
-/**
- * Represents a single Technorati Tag query result object. 
- * It is never returned as a standalone object, 
- * but it always belongs to a valid Zend_Service_Technorati_TagResultSet object.
- * 
- * @category   Zend
- * @package    Zend_Service
- * @subpackage Technorati
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Service_Technorati_TagResult extends Zend_Service_Technorati_Result
-{
-    /**
-     * Technorati weblog object corresponding to queried keyword.
-     * 
-     * @var     Zend_Service_Technorati_Weblog
-     * @access  protected
-     */
-    protected $_weblog;
-
-    /**
-     * The title of the entry.
-     * 
-     * @var     string
-     * @access  protected
-     */
-    protected $_title;
-    
-    /**
-     * The blurb from entry with search term highlighted.
-     * 
-     * @var     string
-     * @access  protected
-     */
-    protected $_excerpt;
-
-    /**
-     * The datetime the entry was created.
-     * 
-     * @var     Zend_Date
-     * @access  protected
-     */
-    protected $_created;
-    
-    /**
-     * The datetime the entry was updated.
-     * Called 'postupdate' in original XML response,
-     * it has been renamed to provide more coherence.
-     * 
-     * @var     Zend_Date
-     * @access  protected
-     */
-    protected $_updated;
-    
-    /**
-     * The permalink of the blog entry.
-     * 
-     * @var     Zend_Uri_Http
-     * @access  protected
-     */
-    protected $_permalink;
-    
-
-    /**
-     * Constructs a new object object from DOM Element.
-     *
-     * @param   DomElement $dom the ReST fragment for this object
-     */
-    public function __construct(DomElement $dom)
-    {
-        $this->_fields = array( '_permalink'    => 'permalink',
-                                '_excerpt'      => 'excerpt',
-                                '_created'      => 'created',
-                                '_updated'      => 'postupdate',
-                                '_title'        => 'title');
-        parent::__construct($dom);
-
-        // weblog object field
-        $this->_parseWeblog();
-
-        // filter fields
-        $this->_permalink = Zend_Service_Technorati_Utils::normalizeUriHttp($this->_permalink);
-        $this->_created = Zend_Service_Technorati_Utils::normalizeDate($this->_created);
-        $this->_updated = Zend_Service_Technorati_Utils::normalizeDate($this->_updated);
-    }
-
-    /**
-     * Returns the weblog object that links queried URL.
-     * 
-     * @return  Zend_Service_Technorati_Weblog
-     */
-    public function getWeblog() {
-        return $this->_weblog;
-    }
-    
-    /**
-     * Returns the title of the entry.
-     * 
-     * @return  string
-     */
-    public function getTitle() {
-        return $this->_title;
-    }
-    
-    /**
-     * Returns the blurb from entry with search term highlighted.
-     * 
-     * @return  string
-     */
-    public function getExcerpt() {
-        return $this->_excerpt;
-    }
-        
-    /**
-     * Returns the datetime the entry was created.
-     * 
-     * @return  Zend_Date
-     */
-    public function getCreated() {
-        return $this->_created;
-    }
-        
-    /**
-     * Returns the datetime the entry was updated.
-     * 
-     * @return  Zend_Date
-     */
-    public function getUpdated() {
-        return $this->_updated;
-    }
-    
-    /**
-     * Returns the permalink of the blog entry.
-     * 
-     * @return  Zend_Uri_Http
-     */
-    public function getPermalink() {
-        return $this->_permalink;
-    }
-    
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

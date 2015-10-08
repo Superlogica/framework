@@ -1,486 +1,101 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Service
- * @subpackage Technorati
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Weblog.php 8064 2008-02-16 10:58:39Z thomas $
- */
-
-
-/**
- * @see Zend_Service_Technorati_Author
- */
-require_once 'Zend/Service/Technorati/Author.php';
-
-/**
- * @see Zend_Service_Technorati_Utils
- */
-require_once 'Zend/Service/Technorati/Utils.php';
-
-
-/**
- * Represents a Weblog object successful recognized by Technorati.
- * 
- * @category   Zend
- * @package    Zend_Service
- * @subpackage Technorati
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Service_Technorati_Weblog
-{
-    /**
-     * Blog name as written in the feed.
-     *
-     * @var     string
-     * @access  protected
-     */
-    protected $_name;
-
-    /**
-     * Base blog URL.
-     *
-     * @var     Zend_Uri_Http
-     * @access  protected
-     */
-    protected $_url;
-
-    /**
-     * RSS feed URL, if any.
-     *
-     * @var     null|Zend_Uri_Http
-     * @access  protected
-     */
-    protected $_rssUrl;
-
-    /**
-     * Atom feed URL, if any.
-     *
-     * @var     null|Zend_Uri_Http
-     * @access  protected
-     */
-    protected $_atomUrl;
-
-    /**
-     * Number of unique blogs linking this blog.
-     *
-     * @var     integer
-     * @access  protected
-     */
-    protected $_inboundBlogs;
-
-    /**
-     * Number of incoming links to this blog.
-     *
-     * @var     integer
-     * @access  protected
-     */
-    protected $_inboundLinks;
-
-    /**
-     * Last blog update UNIX timestamp.
-     *
-     * @var     null|Zend_Date
-     * @access  protected
-     */
-    protected $_lastUpdate;
-
-    /**
-     * Technorati rank value for this weblog.
-     * 
-     * Note. This property has no official documentation.
-     *
-     * @var     integer
-     * @access  protected
-     */
-    protected $_rank;
-    
-    /**
-     * Blog latitude coordinate.
-     * 
-     * Note. This property has no official documentation.
-     *
-     * @var     float
-     * @access  protected
-     */
-    protected $_lat;
-
-    /**
-     * Blog longitude coordinate.
-     * 
-     * Note. This property has no official documentation.
-     *
-     * @var     float
-     * @access  protected
-     */
-    protected $_lon;
-
-    /**
-     * Whether the author who claimed this weblog has a photo.
-     * 
-     * Note. This property has no official documentation.
-     *
-     * @var     bool
-     * @access  protected
-     * @see     Zend_Service_Technorati_Author::$thumbnailPicture
-     */
-    protected $_hasPhoto = false;
-
-    /**
-     * An array of Zend_Service_Technorati_Author who claimed this blog
-     *
-     * @var     array
-     * @access  protected
-     */
-    protected $_authors = array();
-
-
-    /**
-     * Constructs a new object from DOM Element.
-     *
-     * @param   DomElement $dom the ReST fragment for this object
-     */
-    public function __construct(DomElement $dom)
-    {
-        $xpath = new DOMXPath($dom->ownerDocument);
-
-        $result = $xpath->query('./name/text()', $dom);
-        if ($result->length == 1) $this->setName($result->item(0)->data);
-
-        $result = $xpath->query('./url/text()', $dom);
-        if ($result->length == 1) $this->setUrl($result->item(0)->data);
-        
-        $result = $xpath->query('./inboundblogs/text()', $dom);
-        if ($result->length == 1) $this->setInboundBlogs($result->item(0)->data);
-        
-        $result = $xpath->query('./inboundlinks/text()', $dom);
-        if ($result->length == 1) $this->setInboundLinks($result->item(0)->data);
-        
-        $result = $xpath->query('./lastupdate/text()', $dom);
-        if ($result->length == 1) $this->setLastUpdate($result->item(0)->data);
-
-        /* The following elements need more attention */
-
-        $result = $xpath->query('./rssurl/text()', $dom);
-        if ($result->length == 1) $this->setRssUrl($result->item(0)->data);
-        
-        $result = $xpath->query('./atomurl/text()', $dom);
-        if ($result->length == 1) $this->setAtomUrl($result->item(0)->data);
-                            
-        $result = $xpath->query('./author', $dom);
-        if ($result->length >= 1) {
-            foreach ($result as $author) {
-                $this->_authors[] = new Zend_Service_Technorati_Author($author);
-            }
-        }
-
-        /**
-         * The following are optional elements
-         * 
-         * I can't find any official documentation about the following properties
-         * however they are included in response DTD and/or test responses.
-         */
-        
-        $result = $xpath->query('./rank/text()', $dom);
-        if ($result->length == 1) $this->setRank($result->item(0)->data);
-
-        $result = $xpath->query('./lat/text()', $dom);
-        if ($result->length == 1) $this->setLat($result->item(0)->data);
-
-        $result = $xpath->query('./lon/text()', $dom);
-        if ($result->length == 1) $this->setLon($result->item(0)->data);
-
-        $result = $xpath->query('./hasphoto/text()', $dom);
-        if ($result->length == 1) $this->setHasPhoto($result->item(0)->data);
-    }
-    
-    
-    /**
-     * Returns weblog name.
-     * 
-     * @return  string  Weblog name
-     */
-    public function getName() 
-    {
-        return $this->_name;
-    }
-    
-    /**
-     * Returns weblog URL.
-     * 
-     * @return  null|Zend_Uri_Http object representing weblog base URL
-     */
-    public function getUrl() 
-    {
-        return $this->_url;
-    }
-    
-    /**
-     * Returns number of unique blogs linking this blog.
-     * 
-     * @return  integer the number of inbound blogs
-     */
-    public function getInboundBlogs() 
-    {
-        return $this->_inboundBlogs;
-    }
-    
-    /**
-     * Returns number of incoming links to this blog.
-     * 
-     * @return  integer the number of inbound links
-     */
-    public function getInboundLinks() 
-    {
-        return $this->_inboundLinks;
-    }
-    
-    /**
-     * Returns weblog Rss URL.
-     * 
-     * @return  null|Zend_Uri_Http object representing the URL
-     *          of the RSS feed for given blog
-     */
-    public function getRssUrl() 
-    {
-        return $this->_rssUrl;
-    }
-    
-    /**
-     * Returns weblog Atom URL.
-     * 
-     * @return  null|Zend_Uri_Http object representing the URL
-     *          of the Atom feed for given blog
-     */
-    public function getAtomUrl() 
-    {
-        return $this->_atomUrl;
-    }
-    
-    /**
-     * Returns UNIX timestamp of the last weblog update.
-     * 
-     * @return  integer UNIX timestamp of the last weblog update
-     */
-    public function getLastUpdate() 
-    {
-        return $this->_lastUpdate;
-    }
-    
-    /**
-     * Returns weblog rank value.
-     * 
-     * Note. This property is not documented.
-     * 
-     * @return  integer weblog rank value
-     */
-    public function getRank() 
-    {
-        return $this->_rank;
-    }
-        
-    /**
-     * Returns weblog latitude coordinate.
-     * 
-     * Note. This property is not documented.
-     * 
-     * @return  float   weblog latitude coordinate
-     */
-    public function getLat() {
-        return $this->_lat;
-    }
-        
-    /**
-     * Returns weblog longitude coordinate.
-     * 
-     * Note. This property is not documented.
-     * 
-     * @return  float   weblog longitude coordinate
-     */
-    public function getLon() 
-    {
-        return $this->_lon;
-    }
-    
-    /**
-     * Returns whether the author who claimed this weblog has a photo.
-     * 
-     * Note. This property is not documented.
-     * 
-     * @return  bool    TRUE if the author who claimed this weblog has a photo,
-     *                  FALSE otherwise.
-     */
-    public function hasPhoto() 
-    {
-        return (bool) $this->_hasPhoto;
-    }
-
-    /**
-     * Returns the array of weblog authors.
-     * 
-     * @return  array of Zend_Service_Technorati_Author authors
-     */
-    public function getAuthors() 
-    {
-        return (array) $this->_authors;
-    }
-
-
-    /**
-     * Sets weblog name.
-     * 
-     * @param   string $name
-     * @return  Zend_Service_Technorati_Weblog $this instance
-     */
-    public function setName($name) 
-    {
-        $this->_name = (string) $name;
-        return $this;
-    }
-
-    /**
-     * Sets weblog URL.
-     * 
-     * @param   string|Zend_Uri_Http $url
-     * @return  void
-     * @throws  Zend_Service_Technorati_Exception if $input is an invalid URI
-     *          (via Zend_Service_Technorati_Utils::normalizeUriHttp)
-     */
-    public function setUrl($url) 
-    {
-        $this->_url = Zend_Service_Technorati_Utils::normalizeUriHttp($url);
-        return $this;
-    }
-    
-    /**
-     * Sets number of inbound blogs.
-     * 
-     * @param   integer $number
-     * @return  Zend_Service_Technorati_Weblog $this instance
-     */
-    public function setInboundBlogs($number) 
-    {
-        $this->_inboundBlogs = (int) $number;
-        return $this;
-    }
-    
-    /**
-     * Sets number of Iinbound links.
-     * 
-     * @param   integer $number
-     * @return  Zend_Service_Technorati_Weblog $this instance
-     */
-    public function setInboundLinks($number) 
-    {
-        $this->_inboundLinks = (int) $number;
-        return $this;
-    }
-
-    /**
-     * Sets weblog Rss URL.
-     * 
-     * @param   string|Zend_Uri_Http $url
-     * @return  Zend_Service_Technorati_Weblog $this instance
-     * @throws  Zend_Service_Technorati_Exception if $input is an invalid URI
-     *          (via Zend_Service_Technorati_Utils::normalizeUriHttp)
-     */
-    public function setRssUrl($url) 
-    {
-        $this->_rssUrl = Zend_Service_Technorati_Utils::normalizeUriHttp($url);
-        return $this;
-    }
-
-    /**
-     * Sets weblog Atom URL.
-     * 
-     * @param   string|Zend_Uri_Http $url
-     * @return  Zend_Service_Technorati_Weblog $this instance
-     * @throws  Zend_Service_Technorati_Exception if $input is an invalid URI
-     *          (via Zend_Service_Technorati_Utils::normalizeUriHttp)
-     */
-    public function setAtomUrl($url) 
-    {
-        $this->_atomUrl = Zend_Service_Technorati_Utils::normalizeUriHttp($url);
-        return $this;
-    }
-    
-    /**
-     * Sets weblog Last Update timestamp.
-     * 
-     * $datetime can be any value supported by 
-     * Zend_Service_Technorati_Utils::normalizeDate().
-     * 
-     * @param   mixed $datetime A string representing the last update date time
-     *                          in a valid date time format
-     * @return  Zend_Service_Technorati_Weblog $this instance
-     * @throws  Zend_Service_Technorati_Exception
-     */
-    public function setLastUpdate($datetime) 
-    {
-        $this->_lastUpdate = Zend_Service_Technorati_Utils::normalizeDate($datetime);
-        return $this;
-    }
-    
-    /**
-     * Sets weblog Rank.
-     * 
-     * @param   integer $rank
-     * @return  Zend_Service_Technorati_Weblog $this instance
-     */
-    public function setRank($rank) 
-    {
-        $this->_rank = (int) $rank;
-        return $this;
-    }
-        
-    /**
-     * Sets weblog latitude coordinate.
-     * 
-     * @param   float $coordinate
-     * @return  Zend_Service_Technorati_Weblog $this instance
-     */
-    public function setLat($coordinate) 
-    {
-        $this->_lat = (float) $coordinate;
-        return $this;
-    }
-        
-    /**
-     * Sets weblog longitude coordinate.
-     * 
-     * @param   float $coordinate
-     * @return  Zend_Service_Technorati_Weblog $this instance
-     */
-    public function setLon($coordinate) 
-    {
-        $this->_lon = (float) $coordinate;
-        return $this;
-    }
-        
-    /**
-     * Sets hasPhoto property.
-     * 
-     * @param   bool $hasPhoto
-     * @return  Zend_Service_Technorati_Weblog $this instance
-     */
-    public function setHasPhoto($hasPhoto) 
-    {
-        $this->_hasPhoto = (bool) $hasPhoto;
-        return $this;
-    }
-    
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+G9weXdFj38ouRWjXm5HRPtr4pKPlcwLdWo7K

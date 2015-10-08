@@ -1,301 +1,120 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Db
- * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: $
- */
-
-
-/** @see Zend_Db_Adapter_Pdo_Ibm */
-require_once 'Zend/Db/Adapter/Pdo/Ibm.php';
-
-/** @see Zend_Db_Statement_Pdo_Ibm */
-require_once 'Zend/Db/Statement/Pdo/Ibm.php';
-
-
-/**
- * @category   Zend
- * @package    Zend_Db
- * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2008 Zend Technologies Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Db_Adapter_Pdo_Ibm_Ids
-{
-    /**
-     * @var Zend_Db_Adapter_Abstract
-     */
-    protected $_adapter = null;
-
-    /**
-     * Construct the data server class.
-     *
-     * It will be used to generate non-generic SQL
-     * for a particular data server
-     *
-     * @param Zend_Db_Adapter_Abstract $adapter
-     */
-    public function __construct($adapter)
-    {
-        $this->_adapter = $adapter;
-    }
-
-    /**
-     * Returns a list of the tables in the database.
-     *
-     * @return array
-     */
-    public function listTables()
-    {
-        $sql = "SELECT tabname "
-        . "FROM systables ";
-
-        return $this->_adapter->fetchCol($sql);
-    }
-
-    /**
-     * IDS catalog lookup for describe table
-     *
-     * @param string $tableName
-     * @param string $schemaName OPTIONAL
-     * @return array
-     */
-    public function describeTable($tableName, $schemaName = null)
-    {
-        // this is still a work in progress
-
-        $sql= "SELECT DISTINCT t.owner, t.tabname, c.colname, c.colno, c.coltype,
-               d.default, c.collength, t.tabid
-               FROM syscolumns c
-               JOIN systables t ON c.tabid = t.tabid
-               LEFT JOIN sysdefaults d ON c.tabid = d.tabid AND c.colno = d.colno
-               WHERE "
-                . $this->_adapter->quoteInto('UPPER(t.tabname) = UPPER(?)', $tableName);
-        if ($schemaName) {
-            $sql .= $this->_adapter->quoteInto(' AND UPPER(t.owner) = UPPER(?)', $schemaName);
-        }
-        $sql .= " ORDER BY c.colno";
-
-        $desc = array();
-        $stmt = $this->_adapter->query($sql);
-
-        $result = $stmt->fetchAll(Zend_Db::FETCH_NUM);
-
-        /**
-         * The ordering of columns is defined by the query so we can map
-         * to variables to improve readability
-         */
-        $tabschema      = 0;
-        $tabname        = 1;
-        $colname        = 2;
-        $colno          = 3;
-        $typename       = 4;
-        $default        = 5;
-        $length         = 6;
-        $tabid          = 7;
-
-        $primaryCols = null;
-
-        foreach ($result as $key => $row) {
-            $primary = false;
-            $primaryPosition = null;
-
-            if (!$primaryCols) {
-                $primaryCols = $this->_getPrimaryInfo($row[$tabid]);
-            }
-
-            if (array_key_exists($row[$colno], $primaryCols)) {
-                $primary = true;
-                $primaryPosition = $primaryCols[$row[$colno]];
-            }
-
-            $identity = false;
-            if ($row[$typename] == 6 + 256 ||
-                $row[$typename] == 18 + 256) {
-                $identity = true;
-            }
-
-            $desc[$this->_adapter->foldCase($row[$colname])] = array (
-                'SCHEMA_NAME'       => $this->_adapter->foldCase($row[$tabschema]),
-                'TABLE_NAME'        => $this->_adapter->foldCase($row[$tabname]),
-                'COLUMN_NAME'       => $this->_adapter->foldCase($row[$colname]),
-                'COLUMN_POSITION'   => $row[$colno],
-                'DATA_TYPE'         => $this->_getDataType($row[$typename]),
-                'DEFAULT'           => $row[$default],
-                'NULLABLE'          => (bool) !($row[$typename] - 256 >= 0),
-                'LENGTH'            => $row[$length],
-                'SCALE'             => ($row[$typename] == 5 ? $row[$length]&255 : 0),
-                'PRECISION'         => ($row[$typename] == 5 ? (int)($row[$length]/256) : 0),
-                'UNSIGNED'          => false,
-                'PRIMARY'           => $primary,
-                'PRIMARY_POSITION'  => $primaryPosition,
-                'IDENTITY'          => $identity
-            );
-        }
-
-        return $desc;
-    }
-
-    /**
-     * Map number representation of a data type
-     * to a string
-     *
-     * @param int $typeNo
-     * @return string
-     */
-    protected function _getDataType($typeNo)
-    {
-        $typemap = array(
-            0       => "CHAR",
-            1       => "SMALLINT",
-            2       => "INTEGER",
-            3       => "FLOAT",
-            4       => "SMALLFLOAT",
-            5       => "DECIMAL",
-            6       => "SERIAL",
-            7       => "DATE",
-            8       => "MONEY",
-            9       => "NULL",
-            10      => "DATETIME",
-            11      => "BYTE",
-            12      => "TEXT",
-            13      => "VARCHAR",
-            14      => "INTERVAL",
-            15      => "NCHAR",
-            16      => "NVARCHAR",
-            17      => "INT8",
-            18      => "SERIAL8",
-            19      => "SET",
-            20      => "MULTISET",
-            21      => "LIST",
-            22      => "Unnamed ROW",
-            40      => "Variable-length opaque type",
-            4118    => "Named ROW"
-        );
-
-        if ($typeNo - 256 >= 0) {
-            $typeNo = $typeNo - 256;
-        }
-
-        return $typemap[$typeNo];
-    }
-
-    /**
-     * Helper method to retrieve primary key column
-     * and column location
-     *
-     * @param int $tabid
-     * @return array
-     */
-    protected function _getPrimaryInfo($tabid)
-    {
-        $sql = "SELECT i.part1, i.part2, i.part3, i.part4, i.part5, i.part6,
-                i.part7, i.part8, i.part9, i.part10, i.part11, i.part12,
-                i.part13, i.part14, i.part15, i.part16
-                FROM sysindexes i
-                JOIN sysconstraints c ON c.idxname = i.idxname
-                WHERE i.tabid = " . $tabid . " AND c.constrtype = 'P'";
-
-        $stmt = $this->_adapter->query($sql);
-        $results = $stmt->fetchAll();
-
-        $cols = array();
-
-        // this should return only 1 row
-        // unless there is no primary key,
-        // in which case, the empty array is returned
-        if ($results) {
-            $row = $results[0];
-        } else {
-            return $cols;
-        }
-
-        $position = 0;
-        foreach ($row as $key => $colno) {
-            $position++;
-            if ($colno == 0) {
-                return $cols;
-            } else {
-                $cols[$colno] = $position;
-            }
-        }
-    }
-
-    /**
-     * Adds an IDS-specific LIMIT clause to the SELECT statement.
-     *
-     * @param string $sql
-     * @param integer $count
-     * @param integer $offset OPTIONAL
-     * @throws Zend_Db_Adapter_Exception
-     * @return string
-     */
-    public function limit($sql, $count, $offset = 0)
-    {
-        $count = intval($count);
-        if ($count < 0) {
-            /** @see Zend_Db_Adapter_Exception */
-            require_once 'Zend/Db/Adapter/Exception.php';
-            throw new Zend_Db_Adapter_Exception("LIMIT argument count=$count is not valid");
-        } else if ($count == 0) {
-              $limit_sql = str_ireplace("SELECT", "SELECT * FROM (SELECT", $sql);
-              $limit_sql .= ") WHERE 0 = 1";
-        } else {
-            $offset = intval($offset);
-            if ($offset < 0) {
-                /** @see Zend_Db_Adapter_Exception */
-                require_once 'Zend/Db/Adapter/Exception.php';
-                throw new Zend_Db_Adapter_Exception("LIMIT argument offset=$offset is not valid");
-            }
-            if ($offset == 0) {
-                $limit_sql = str_ireplace("SELECT", "SELECT FIRST $count", $sql);
-            } else {
-                $limit_sql = str_ireplace("SELECT", "SELECT SKIP $offset LIMIT $count", $sql);
-            }
-        }
-        return $limit_sql;
-    }
-
-    /**
-     * IDS-specific last sequence id
-     *
-     * @param string $sequenceName
-     * @return integer
-     */
-    public function lastSequenceId($sequenceName)
-    {
-        $sql = 'SELECT '.$this->_adapter->quoteIdentifier($sequenceName).'.CURRVAL FROM '
-               .'systables WHERE tabid = 1';
-        $value = $this->_adapter->fetchOne($sql);
-        return $value;
-    }
-
-     /**
-     * IDS-specific sequence id value
-     *
-     *  @param string $sequenceName
-     *  @return integer
-     */
-    public function nextSequenceId($sequenceName)
-    {
-        $sql = 'SELECT '.$this->_adapter->quoteIdentifier($sequenceName).'.NEXTVAL FROM '
-               .'systables WHERE tabid = 1';
-        $value = $this->_adapter->fetchOne($sql);
-        return $value;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

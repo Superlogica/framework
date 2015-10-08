@@ -1,147 +1,29 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @package    Zend_Memory
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * Zend_Memory_Container_Interface
- */
-require_once 'Zend/Memory/Container/Interface.php';
-
-/**
- * Memory object container access controller.
- *
- * Memory manager stores a list of generated objects to control them.
- * So container objects always have at least one reference and can't be automatically destroyed.
- *
- * This class is intended to be an userland proxy to memory container object.
- * It's not referenced by memory manager and class destructor is invoked immidiately after gouing
- * out of scope or unset operation.
- *
- * Class also provides Zend_Memory_Container_Interface interface and works as proxy for such cases.
- *
- * @category   Zend
- * @package    Zend_Memory
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Memory_AccessController implements Zend_Memory_Container_Interface
-{
-    /**
-     * Memory container object
-     *
-     * @var Zend_Memory_Container
-     */
-    private $_memContainer;
-
-
-    /**
-     * Object constructor
-     *
-     * @param Zend_Memory_Container_Movable $memoryManager
-     */
-    public function __construct(Zend_Memory_Container_Movable $memContainer)
-    {
-        $this->_memContainer = $memContainer;
-    }
-
-    /**
-     * Object destructor
-     */
-    public function __destruct()
-    {
-        $this->_memContainer->destroy();
-    }
-
-
-    /**
-     * Get string value reference
-     *
-     * _Must_ be used for value access before PHP v 5.2
-     * or _may_ be used for performance considerations
-     *
-     * @return &string
-     */
-    public function &getRef()
-    {
-        return $this->_memContainer->getRef();
-    }
-
-    /**
-     * Signal, that value is updated by external code.
-     *
-     * Should be used together with getRef()
-     */
-    public function touch()
-    {
-        $this->_memContainer->touch();
-    }
-
-    /**
-     * Lock object in memory.
-     */
-    public function lock()
-    {
-        $this->_memContainer->lock();
-    }
-
-
-    /**
-     * Unlock object
-     */
-    public function unlock()
-    {
-        $this->_memContainer->unlock();
-    }
-
-    /**
-     * Return true if object is locked
-     *
-     * @return boolean
-     */
-    public function isLocked()
-    {
-        return $this->_memContainer->isLocked();
-    }
-
-    /**
-     * Get handler
-     *
-     * Loads object if necessary and moves it to the top of loaded objects list.
-     * Swaps objects from the bottom of loaded objects list, if necessary.
-     *
-     * @param string $property
-     * @return string
-     * @throws Zend_Memory_Exception
-     */
-    public function __get($property)
-    {
-        return $this->_memContainer->$property;
-    }
-
-    /**
-     * Set handler
-     *
-     * @param string $property
-     * @param  string $value
-     * @throws Zend_Exception
-     */
-    public function __set($property, $value)
-    {
-        $this->_memContainer->$property = $value;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

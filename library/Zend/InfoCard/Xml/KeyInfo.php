@@ -1,90 +1,31 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_InfoCard
- * @subpackage Zend_InfoCard_Xml
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: KeyInfo.php 9094 2008-03-30 18:36:55Z thomas $
- */
-
-/**
- * Zend_InfoCard_Xml_Element
- */
-require_once 'Zend/InfoCard/Xml/Element.php';
-
-/**
- * Factory class to return a XML KeyInfo block based on input XML
- *
- * @category   Zend
- * @package    Zend_InfoCard
- * @subpackage Zend_InfoCard_Xml
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_InfoCard_Xml_KeyInfo
-{
-    /**
-     * Constructor (disabled)
-     *
-     * @return void
-     */
-    private function __construct()
-    {
-    }
-
-    /**
-     * Returns an instance of KeyInfo object based on the input KeyInfo XML block
-     *
-     * @param string $xmlData The KeyInfo XML Block
-     * @return Zend_InfoCard_Xml_KeyInfo_Abstract
-     * @throws Zend_InfoCard_Xml_Exception
-     */
-    static public function getInstance($xmlData)
-    {
-
-        if($xmlData instanceof Zend_InfoCard_Xml_Element) {
-            $strXmlData = $xmlData->asXML();
-        } else if (is_string($xmlData)) {
-            $strXmlData = $xmlData;
-        } else {
-            throw new Zend_InfoCard_Xml_Exception("Invalid Data provided to create instance");
-        }
-
-        $sxe = simplexml_load_string($strXmlData);
-
-        $namespaces = $sxe->getDocNameSpaces();
-
-        if(!empty($namespaces)) {
-            foreach($sxe->getDocNameSpaces() as $namespace) {
-                switch($namespace) {
-                    case 'http://www.w3.org/2000/09/xmldsig#':
-                        include_once 'Zend/InfoCard/Xml/KeyInfo/XmlDSig.php';
-                        return simplexml_load_string($strXmlData, 'Zend_InfoCard_Xml_KeyInfo_XmlDSig');
-                    default:
-
-                        throw new Zend_InfoCard_Xml_Exception("Unknown KeyInfo Namespace provided");
-                    // We are ignoring these lines, as XDebug reports each as a "non executed" line
-                    // which breaks my coverage %
-                    // @codeCoverageIgnoreStart
-                }
-            }
-        }
-        // @codeCoverageIgnoreEnd
-
-        include_once 'Zend/InfoCard/Xml/KeyInfo/Default.php';
-        return simplexml_load_string($strXmlData, 'Zend_InfoCard_Xml_KeyInfo_Default');
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

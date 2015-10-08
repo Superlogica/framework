@@ -100,6 +100,35 @@ var Superlogica_Js_Request = new Class({
      * @param string method
      * @return Superlogica_Js_Request Fluent
      */
+    paramsToJson : function(url, params){
+        var parametros = [params];
+        if ( params.todos ){
+            Object.each( params, function( valor, chave){
+                if ( chave == 'todos' )
+                    return true;
+                Object.each ( params.todos, function( valor2, chave2 ){
+                    if ( typeof params.todos[chave2][chave] == 'undefined')
+                        params.todos[chave2][chave] = valor;
+                })
+            });
+            parametros = params.todos;
+        }
+
+        var json = {
+            'json' : new Superlogica_Js_Json({
+                'params': this._encodeRecursive( parametros ), //deveria ser utf8_encode, por conta disto, foi necessario alterar o decode no server veja Superlogica_Controller_Request_Http::_parseJson
+                'url' : url
+            }).encode()
+        };
+          
+        return json;
+    },
+
+    /**
+     * Seta o método de envio da requisição
+     * @param string method
+     * @return Superlogica_Js_Request Fluent
+     */
     setMethod : function(method){
         this._method = method;
         return this;
@@ -170,9 +199,15 @@ var Superlogica_Js_Request = new Class({
     _encodeRecursive : function( toEncode  ){
 
         if ( typeof toEncode == 'string' ){
-            return encodeURI(decodeURI(toEncode));
+            
+            try{
+                return encodeURI(decodeURI(toEncode));
+            }catch(e){
+                return encodeURI(toEncode);
+            }
         }
 
+        
         Object.each ( typeof toEncode == 'object' ? toEncode : {}, function( valor, chave ){
             
             toEncode[chave]= this._encodeRecursive( valor );
@@ -275,11 +310,13 @@ var Superlogica_Js_Request = new Class({
     _sendRequest : function(callback, cacheLabel){
 
         if ((cacheLabel) && ( Superlogica_Js_Request.cache[cacheLabel])){
+            var response = Object.clone(Superlogica_Js_Request.cache[cacheLabel]);
             if ( typeof callback == 'function' ){
-                callback(Superlogica_Js_Request.cache[cacheLabel]);
+                callback(response);
                 return this;
             }else
-                return Superlogica_Js_Request.cache[cacheLabel];
+
+                return response;
         }
         
         
@@ -303,7 +340,7 @@ var Superlogica_Js_Request = new Class({
             if ( item.length > 1 ){
                 item = this._parseMultipleRequest( item, url );
             }
-            
+           
             for ( var chave in item ){
                 if ( !item.hasOwnProperty( chave) ){
                     continue;
@@ -321,7 +358,7 @@ var Superlogica_Js_Request = new Class({
 
                         "url" : url,
 
-                        "data" : parametros,
+                        "data" : /* Comentado pois estava dando erro nas URL's dos APPs ( ((typeof callback == 'function') && (!parametros.json)) ? this.paramsToJson( url, parametros ) : */parametros /*)*/,
 
                         "type" : this._method.toLowerCase(),
                         
@@ -364,7 +401,7 @@ var Superlogica_Js_Request = new Class({
                                    if ( textStatus == 'timeout' || ( textStatus != 'abort' && xhr.getAllResponseHeaders() ) ){
                                        var response = new Superlogica_Js_Response( JSON.encode( reference._processarResponses(reference._responses)) , typeof reference._responseOptions != 'undefined' ? reference._responseOptions : {} );
                                        if ((cacheLabel)&&(response.isValid())){
-                                           Superlogica_Js_Request.cache[cacheLabel] = response;
+                                           Superlogica_Js_Request.cache[cacheLabel] = Object.clone( response );
                                        }
                                        callback(response);
                                    }
@@ -414,12 +451,19 @@ var Superlogica_Js_Request = new Class({
         
         if ( !this._handler ) return false;
 
-        this._imgLoading = new Superlogica_Js_Elemento('<img />')
-            .atributo('src', APPLICATION_CONF["APPLICATION_CLIENT_TEMA_URL"] + '/img/load.gif')
-            .atributo('alt', 'Carregando... aguarde.' )
-            .atributo('style', 'margin-top: 5px');
-        this._handler.esconder();
-        this._imgLoading.inserirDepoisDe( this._handler );
+        
+        var request = this;
+            request._imgLoading = [];
+        this._handler.emCadaElemento(function(){
+            var handler = new Superlogica_Js_Elemento( this );             
+            var imgLoading = new Superlogica_Js_Elemento('<img />')
+                .atributo('src', APPLICATION_CONF["APPLICATION_CLIENT_TEMA_URL"] + '/img/load.gif')
+                .atributo('alt', 'Carregando... aguarde.' )
+                .atributo('style', 'margin-top: 5px;width:21px;height:5px');
+            handler.esconder();
+            imgLoading.inserirDepoisDe( handler );
+            request._imgLoading.push( imgLoading );
+        });
         
     },
 
@@ -427,10 +471,21 @@ var Superlogica_Js_Request = new Class({
      * Remove a imagem de loading
      */
     removerLoadingImg : function(){
-        if ( this._imgLoading ){
-            this._imgLoading.remover();
-            this._handler.mostrar();
+        if ( !this._imgLoading ){
+            return true;
         }
+        
+        // remove todas imgs de loading
+        for( var x=0, totalImgs = this._imgLoading.length; x<totalImgs; x++){
+
+            this._imgLoading[x].remover();
+        }
+        
+        // mostra todos elementos novamente
+        this._handler.emCadaElemento(function(){
+            new Superlogica_Js_Elemento( this ).mostrar();
+        });
+
     },
 
     /**
@@ -439,6 +494,7 @@ var Superlogica_Js_Request = new Class({
     _adicionarAoResponse : function( response ){
         var multipleresponse;
 
+        
         if ( typeof response.multipleresponse != 'undefined'){
             multipleresponse = parseInt( multipleresponse );
         }
@@ -447,6 +503,7 @@ var Superlogica_Js_Request = new Class({
             Object.each(
                 response.data,
                 function( item, chave ){
+                    item.multipleresponse = 1;
                     this._responses.data.push( item );
                 },
                 this
@@ -502,7 +559,9 @@ var Superlogica_Js_Request = new Class({
      * @return integer 0 = parar todos requisições, 1 = continuar normalmente, -1 = volta para requisição anterior
      */
     _comStatus401 : function( params, dados ){
-        window.location.reload();
+        var locationLogout = new Superlogica_Js_Location();
+        locationLogout.setController('auth').setAction('logout').setApi(false);
+        window.location = locationLogout.toString();
         return 0;
     }
 
@@ -533,6 +592,10 @@ Superlogica_Js_Request.setCache = function (cacheLabel, json){
     }        
     Superlogica_Js_Request.cache[cacheLabel] = new Superlogica_Js_Response(_json);
     
+};
+
+Superlogica_Js_Request.removeCache = function (cacheLabel){
+    delete Superlogica_Js_Request.cache[cacheLabel];
 };
 
 /**

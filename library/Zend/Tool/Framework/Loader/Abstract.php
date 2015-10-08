@@ -1,146 +1,52 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Tool
- * @subpackage Framework
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id$
- */
-
-/**
- * @see Zend_Tool_Framework_Registry_EnabledInterface
- */
-require_once 'Zend/Tool/Framework/Registry/EnabledInterface.php';
-
-/**
- * @category   Zend
- * @package    Zend_Tool
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-abstract class Zend_Tool_Framework_Loader_Abstract implements Zend_Tool_Framework_Registry_EnabledInterface
-{
-    /**
-     * @var Zend_Tool_Framework_Repository_Interface
-     */
-    protected $_registry = null;
-    
-    /**
-     * @var array
-     */
-    private $_retrievedFiles = array();
-    
-    /**
-     * @var array
-     */
-    private $_loadedClasses  = array();
-    
-    /**
-     * _getFiles
-     *
-     * @return array Array Of Files
-     */
-    abstract protected function _getFiles();
-
-    /**
-     * setRegistry() - required by the enabled interface to get an instance of
-     * the registry
-     *
-     * @param Zend_Tool_Framework_Registry_Interface $registry
-     * @return Zend_Tool_Framework_Loader_Abstract
-     */
-    public function setRegistry(Zend_Tool_Framework_Registry_Interface $registry)
-    {
-        $this->_registry = $registry;
-        return $this;
-    }
-    
-    /**
-     * load() - called by the client initialize routine to load files
-     *
-     */
-    public function load()
-    {
-        $this->_retrievedFiles = $this->getRetrievedFiles();
-        $this->_loadedClasses  = array();
-        
-        $manifestRegistry = $this->_registry->getManifestRepository();
-        $providerRegistry = $this->_registry->getProviderRepository();
-        
-        $loadedClasses = array();
-        
-        // loop through files and find the classes declared by loading the file
-        foreach ($this->_retrievedFiles as $file) {
-            $classesLoadedBefore = get_declared_classes();
-            $oldLevel = error_reporting(E_ALL | ~E_STRICT); // remove strict so that other packages wont throw warnings
-            // should we lint the files here? i think so
-            include_once $file;
-            error_reporting($oldLevel); // restore old error level
-            $classesLoadedAfter = get_declared_classes();
-            $loadedClasses = array_merge($loadedClasses, array_diff($classesLoadedAfter, $classesLoadedBefore));
-        }
-        
-        // loop through the loaded classes and ensure that 
-        foreach ($loadedClasses as $loadedClass) {
-            
-            // reflect class to see if its something we want to load
-            $reflectionClass = new ReflectionClass($loadedClass);
-            if ($reflectionClass->implementsInterface('Zend_Tool_Framework_Manifest_Interface') 
-                && !$reflectionClass->isAbstract()) 
-            {
-                $manifestRegistry->addManifest($reflectionClass->newInstance());
-                $this->_loadedClasses[] = $loadedClass;
-            }
-            
-            if ($reflectionClass->implementsInterface('Zend_Tool_Framework_Provider_Interface') 
-                && !$reflectionClass->isAbstract()
-                && !$providerRegistry->hasProvider($reflectionClass->getName(), false)) 
-            {
-                $providerRegistry->addProvider($reflectionClass->newInstance());
-                $this->_loadedClasses[] = $loadedClass;
-            }
-
-        }
-        
-        return $this->_loadedClasses;
-    }
-    
-    /**
-     * getRetrievedFiles()
-     *
-     * @return array Array of Files Retrieved
-     */
-    public function getRetrievedFiles()
-    {
-        if ($this->_retrievedFiles == null) {
-            $this->_retrievedFiles = $this->_getFiles();
-        }
-        
-        return $this->_retrievedFiles;
-    }
-    
-    /**
-     * getLoadedClasses()
-     *
-     * @return array Array of Loaded Classes
-     */
-    public function getLoadedClasses()
-    {
-        return $this->_loadedClasses;
-    }
-
-    
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

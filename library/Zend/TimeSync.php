@@ -1,304 +1,99 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_TimeSync
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @version    $Id: TimeSync.php 15577 2009-05-14 12:43:34Z matthew $
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * Zend_Date
- */
-require_once 'Zend/Date.php';
-
-/**
- * @category   Zend
- * @package    Zend_TimeSync
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_TimeSync implements IteratorAggregate
-{
-    /**
-     * Set the default timeserver protocol to "Ntp". This will be called
-     * when no protocol is specified
-     */
-    const DEFAULT_PROTOCOL = 'Ntp';
-
-    /**
-     * Contains array of timeserver objects
-     *
-     * @var array
-     */
-    protected $_timeservers = array();
-
-    /**
-     * Holds a reference to the timeserver that is currently being used
-     *
-     * @var object
-     */
-    protected $_current;
-
-    /**
-     * Allowed timeserver schemes
-     *
-     * @var array
-     */
-    protected $_allowedSchemes = array(
-        'Ntp',
-        'Sntp'
-    );
-
-    /**
-     * Configuration array, set using the constructor or using
-     * ::setOptions() or ::setOption()
-     *
-     * @var array
-     */
-    public static $options = array(
-        'timeout' => 1
-    );
-
-    /**
-     * Zend_TimeSync constructor
-     *
-     * @param  string|array $target - OPTIONAL single timeserver, or an array of timeservers.
-     * @param  string       $alias  - OPTIONAL an alias for this timeserver
-     * @return  object
-     */
-    public function __construct($target = null, $alias = null)
-    {
-        if ($target !== null) {
-            $this->addServer($target, $alias);
-        }
-    }
-
-    /**
-     * getIterator() - return an iteratable object for use in foreach and the like,
-     * this completes the IteratorAggregate interface
-     *
-     * @return ArrayObject
-     */
-    public function getIterator()
-    {
-        return new ArrayObject($this->_timeservers);
-    }
-
-    /**
-     * Add a timeserver or multiple timeservers
-     *
-     * Server should be a single string representation of a timeserver,
-     * or a structured array listing multiple timeservers.
-     *
-     * If you provide an array of timeservers in the $target variable,
-     * $alias will be ignored. you can enter these as the array key
-     * in the provided array, which should be structured as follows:
-     *
-     * <code>
-     * $example = array(
-     *   'server_a' => 'ntp://127.0.0.1',
-     *   'server_b' => 'ntp://127.0.0.1:123',
-     *   'server_c' => 'ntp://[2000:364:234::2.5]',
-     *   'server_d' => 'ntp://[2000:364:234::2.5]:123'
-     * );
-     * </code>
-     *
-     * If no port number has been suplied, the default matching port
-     * number will be used.
-     *
-     * Supported protocols are:
-     * - ntp
-     * - sntp
-     *
-     * @param  string|array $target - Single timeserver, or an array of timeservers.
-     * @param  string       $alias  - OPTIONAL an alias for this timeserver
-     * @throws Zend_TimeSync_Exception
-     */
-    public function addServer($target, $alias = null)
-    {
-        if (is_array($target)) {
-            foreach ($target as $key => $server) {
-                $this->_addServer($server, $key);
-            }
-        } else {
-            $this->_addServer($target, $alias);
-        }
-    }
-
-    /**
-     * Sets the value for the given options
-     *
-     * This will replace any currently defined options.
-     *
-     * @param   array $options - An array of options to be set
-     */
-    public static function setOptions(array $options)
-    {
-        foreach ($options as $key => $value) {
-            Zend_TimeSync::$options[$key] = $value;
-        }
-    }
-
-    /**
-     * Marks a nameserver as current
-     *
-     * @param   string|integer $alias - The alias from the timeserver to set as current
-     * @throws  Zend_TimeSync_Exception
-     */
-    public function setServer($alias)
-    {
-        if (isset($this->_timeservers[$alias]) === true) {
-            $this->_current = $this->_timeservers[$alias];
-        } else {
-            require_once 'Zend/TimeSync/Exception.php';
-            throw new Zend_TimeSync_Exception("'$alias' does not point to valid timeserver");
-        }
-    }
-
-    /**
-     * Returns the value to the option
-     *
-     * @param   string $key - The option's identifier
-     * @return  mixed
-     * @throws  Zend_TimeSync_Exception
-     */
-    public static function getOptions($key = null)
-    {
-        if ($key == null) {
-            return Zend_TimeSync::$options;
-        }
-
-        if (isset(Zend_TimeSync::$options[$key]) === true) {
-            return Zend_TimeSync::$options[$key];
-        } else {
-            require_once 'Zend/TimeSync/Exception.php';
-            throw new Zend_TimeSync_Exception("'$key' does not point to valid option");
-        }
-    }
-
-    /**
-     * Return a specified timeserver by alias
-     * If no alias is given it will return the current timeserver
-     *
-     * @param   string|integer $alias - The alias from the timeserver to return
-     * @return  object
-     * @throws  Zend_TimeSync_Exception
-     */
-    public function getServer($alias = null)
-    {
-        if ($alias === null) {
-            if (isset($this->_current) && $this->_current !== false) {
-                return $this->_current;
-            } else {
-                require_once 'Zend/TimeSync/Exception.php';
-                throw new Zend_TimeSync_Exception('there is no timeserver set');
-            }
-        }
-        if (isset($this->_timeservers[$alias]) === true) {
-            return $this->_timeservers[$alias];
-        } else {
-            require_once 'Zend/TimeSync/Exception.php';
-            throw new Zend_TimeSync_Exception("'$alias' does not point to valid timeserver");
-        }
-    }
-
-    /**
-     * Returns information sent/returned from the current timeserver
-     *
-     * @return  array
-     */
-    public function getInfo()
-    {
-        return $this->getServer()->getInfo();
-    }
-
-    /**
-     * Query the timeserver list using the fallback mechanism
-     *
-     * If there are multiple servers listed, this method will act as a
-     * facade and will try to return the date from the first server that
-     * returns a valid result.
-     *
-     * @param   $locale - OPTIONAL locale
-     * @return  object
-     * @throws  Zend_TimeSync_Exception
-     */
-    public function getDate($locale = null)
-    {
-        require_once 'Zend/TimeSync/Exception.php';
-        foreach ($this->_timeservers as $alias => $server) {
-            $this->_current = $server;
-            try {
-                return $server->getDate($locale);
-            } catch (Zend_TimeSync_Exception $e) {
-                if (!isset($masterException)) {
-                    $masterException = new Zend_TimeSync_Exception('all timeservers are bogus');
-                }
-                $masterException->addException($e);
-            }
-        }
-
-        throw $masterException;
-    }
-
-    /**
-     * Adds a timeserver object to the timeserver list
-     *
-     * @param  string|array $target   - Single timeserver, or an array of timeservers.
-     * @param  string       $alias    - An alias for this timeserver
-     */
-    protected function _addServer($target, $alias)
-    {
-        if ($pos = strpos($target, '://')) {
-            $protocol = substr($target, 0, $pos);
-            $adress = substr($target, $pos + 3);
-        } else {
-            $adress = $target;
-            $protocol = self::DEFAULT_PROTOCOL;
-        }
-
-        if ($pos = strrpos($adress, ':')) {
-            $posbr = strpos($adress, ']');
-            if ($posbr and ($pos > $posbr)) {
-                $port = substr($adress, $pos + 1);
-                $adress = substr($adress, 0, $pos);
-            } else if (!$posbr and $pos) {
-                $port = substr($adress, $pos + 1);
-                $adress = substr($adress, 0, $pos);
-            } else {
-                $port = null;
-            }
-        } else {
-            $port = null;
-        }
-
-        $protocol = ucfirst(strtolower($protocol));
-        if (!in_array($protocol, $this->_allowedSchemes)) {
-            require_once 'Zend/TimeSync/Exception.php';
-            throw new Zend_TimeSync_Exception("'$protocol' is not a supported protocol");
-        }
-
-        $className = 'Zend_TimeSync_' . $protocol;
-        if (!class_exists($className)) {
-            require_once 'Zend/Loader.php';
-            Zend_Loader::loadClass($className);
-        }
-        $timeServerObj = new $className($adress, $port);
-
-        $this->_timeservers[$alias] = $timeServerObj;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

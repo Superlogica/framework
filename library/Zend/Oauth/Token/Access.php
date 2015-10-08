@@ -1,99 +1,42 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Oauth
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Access.php 23484 2010-12-10 03:57:59Z mjh_ca $
- */
-
-/** Zend_Oauth_Token */
-require_once 'Zend/Oauth/Token.php';
-
-/** Zend_Oauth_Http */
-require_once 'Zend/Oauth/Http.php';
-
-/** Zend_Uri_Http */
-require_once 'Zend/Uri/Http.php';
-
-/** Zend_Oauth_Client */
-require_once 'Zend/Oauth/Client.php';
-
-/**
- * @category   Zend
- * @package    Zend_Oauth
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Oauth_Token_Access extends Zend_Oauth_Token
-{
-    /**
-     * Cast to HTTP header
-     *
-     * @param  string $url
-     * @param  Zend_Oauth_Config_ConfigInterface $config
-     * @param  null|array $customParams
-     * @param  null|string $realm
-     * @return string
-     */
-    public function toHeader(
-        $url, Zend_Oauth_Config_ConfigInterface $config, array $customParams = null, $realm = null
-    ) {
-        if (!Zend_Uri::check($url)) {
-            require_once 'Zend/Oauth/Exception.php';
-            throw new Zend_Oauth_Exception(
-                '\'' . $url . '\' is not a valid URI'
-            );
-        }
-        $params = $this->_httpUtility->assembleParams($url, $config, $customParams);
-        return $this->_httpUtility->toAuthorizationHeader($params, $realm);
-    }
-
-    /**
-     * Cast to HTTP query string
-     *
-     * @param  mixed $url
-     * @param  Zend_Oauth_Config_ConfigInterface $config
-     * @param  null|array $params
-     * @return string
-     */
-    public function toQueryString($url, Zend_Oauth_Config_ConfigInterface $config, array $params = null)
-    {
-        if (!Zend_Uri::check($url)) {
-            require_once 'Zend/Oauth/Exception.php';
-            throw new Zend_Oauth_Exception(
-                '\'' . $url . '\' is not a valid URI'
-            );
-        }
-        $params = $this->_httpUtility->assembleParams($url, $config, $params);
-        return $this->_httpUtility->toEncodedQueryString($params);
-    }
-
-    /**
-     * Get OAuth client
-     *
-     * @param  array $oauthOptions
-     * @param  null|string $uri
-     * @param  null|array|Zend_Config $config
-     * @param  bool $excludeCustomParamsFromHeader
-     * @return Zend_Oauth_Client
-     */
-    public function getHttpClient(array $oauthOptions, $uri = null, $config = null, $excludeCustomParamsFromHeader = true)
-    {
-        $client = new Zend_Oauth_Client($oauthOptions, $uri, $config, $excludeCustomParamsFromHeader);
-        $client->setToken($this);
-        return $client;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

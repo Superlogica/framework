@@ -377,7 +377,7 @@ var Superlogica_Js_Params = new Class({
         dialogo.dialogo({
             'modal' : true,
             'resizable' : false,
-            'width' : 350,
+            'width' : 370,
             'position' : [parseInt( subformItem.posicao().esquerda ), parseInt( subformItem.posicao().topo )+20]
         });        
     },

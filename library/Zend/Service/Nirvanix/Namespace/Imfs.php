@@ -1,104 +1,47 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Service
- * @subpackage Nirvanix
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * @see Zend_Service_Nirvanix_Namespace_Base
- */
-require_once 'Zend/Service/Nirvanix/Namespace/Base.php'; 
- 
-/**
- * Namespace proxy with additional convenience methods for the IMFS namespace.
- * 
- * @category   Zend
- * @package    Zend_Service
- * @subpackage Nirvanix
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Service_Nirvanix_Namespace_Imfs extends Zend_Service_Nirvanix_Namespace_Base
-{
-    /**
-     * Convenience function to get the contents of a file on
-     * the Nirvanix IMFS.  Analog to PHP's file_get_contents().
-     *
-     * @param  string  $filePath    Remote path and filename
-     * @param  integer $expiration  Number of seconds that Nirvanix
-     *                              make the file available for download.
-     * @return string               Contents of file  
-     */
-    public function getContents($filePath, $expiration = 3600)
-    {
-        // get url to download the file
-        $params = array('filePath'   => $filePath,
-                        'expiration' => $expiration);
-        $resp = $this->getOptimalUrls($params);
-        $url = (string)$resp->Download->DownloadURL;
-
-        // download the file
-        $this->_httpClient->resetParameters();
-        $this->_httpClient->setUri($url);
-        $resp = $this->_httpClient->request(Zend_Http_Client::GET);
-
-        return $resp->getBody();
-    }
-
-    /**
-     * Convenience function to put the contents of a string into
-     * the Nirvanix IMFS.  Analog to PHP's file_put_contents().
-     *
-     * @param  string  $filePath    Remote path and filename
-     * @param  integer $data        Data to store in the file
-     * @param  string  $mimeType    Mime type of data
-     * @return Zend_Service_Nirvanix_Response
-     */
-    public function putContents($filePath, $data, $mimeType = null)
-    {
-        // get storage node for upload
-        $params = array('sizeBytes' => strlen($data));
-        $resp = $this->getStorageNode($params);
-        $host        = (string)$resp->GetStorageNode->UploadHost;
-        $uploadToken = (string)$resp->GetStorageNode->UploadToken;
-
-        // http upload data into remote file
-        $this->_httpClient->resetParameters();
-        $this->_httpClient->setUri("http://{$host}/Upload.ashx");
-        $this->_httpClient->setParameterPost('uploadToken', $uploadToken);
-        $this->_httpClient->setParameterPost('destFolderPath', dirname($filePath));
-        $this->_httpClient->setFileUpload(basename($filePath), 'uploadFile', $data, $mimeType);
-        $response = $this->_httpClient->request(Zend_Http_Client::POST);
-
-        return new Zend_Service_Nirvanix_Response($response->getBody());
-    }
-    
-    /**
-     * Convenience function to remove a file from the Nirvanix IMFS.
-     * Analog to PHP's unlink().
-     *
-     * @param  string  $filePath  Remove path and filename
-     * @return Zend_Service_Nirvanix_Response
-     */
-    public function unlink($filePath)
-    {
-        $params = array('filePath' => $filePath);
-        return $this->deleteFiles($params);
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

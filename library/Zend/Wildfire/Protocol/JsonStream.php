@@ -1,234 +1,92 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Wildfire
- * @subpackage Protocol
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_Wildfire_Plugin_Interface */
-require_once 'Zend/Wildfire/Plugin/Interface.php';
-
-/** Zend_Wildfire_Channel_Interface */
-require_once 'Zend/Wildfire/Channel/Interface.php';
-
-/** Zend_Json */
-require_once 'Zend/Json.php';
-
-/**
- * Encodes messages into the Wildfire JSON Stream Communication Protocol.
- *
- * @category   Zend
- * @package    Zend_Wildfire
- * @subpackage Protocol
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Wildfire_Protocol_JsonStream
-{
-    /**
-     * The protocol URI for this protocol
-     */
-    const PROTOCOL_URI = 'http://meta.wildfirehq.org/Protocol/JsonStream/0.2';
-
-    /**
-     * All messages to be sent.
-     * @var array
-     */
-    protected $_messages = array();
-
-    /**
-     * Plugins that are using this protocol
-     * @var array
-     */
-    protected $_plugins = array();
-
-    /**
-     * Register a plugin that uses this protocol
-     *
-     * @param Zend_Wildfire_Plugin_Interface $plugin The plugin to be registered
-     * @return boolean Returns TRUE if plugin was registered, false if it was already registered
-     */
-    public function registerPlugin(Zend_Wildfire_Plugin_Interface $plugin)
-    {
-        if (in_array($plugin,$this->_plugins)) {
-            return false;
-        }
-        $this->_plugins[] = $plugin;
-        return true;
-    }
-
-    /**
-     * Record a message with the given data in the given structure
-     *
-     * @param Zend_Wildfire_Plugin_Interface $plugin The plugin recording the message
-     * @param string $structure The structure to be used for the data
-     * @param array $data The data to be recorded
-     * @return boolean Returns TRUE if message was recorded
-     */
-    public function recordMessage(Zend_Wildfire_Plugin_Interface $plugin, $structure, $data)
-    {
-        if(!isset($this->_messages[$structure])) {
-            $this->_messages[$structure] = array();
-        }
-
-        $uri = $plugin->getUri();
-
-        if(!isset($this->_messages[$structure][$uri])) {
-            $this->_messages[$structure][$uri] = array();
-        }
-
-        $this->_messages[$structure][$uri][] = $this->_encode($data);
-        return true;
-    }
-
-    /**
-     * Remove all qued messages
-     *
-     * @param Zend_Wildfire_Plugin_Interface $plugin The plugin for which to clear messages
-     * @return boolean Returns TRUE if messages were present
-     */
-    public function clearMessages(Zend_Wildfire_Plugin_Interface $plugin)
-    {
-        $uri = $plugin->getUri();
-
-        $present = false;
-        foreach ($this->_messages as $structure => $messages) {
-
-            if(!isset($this->_messages[$structure][$uri])) {
-                continue;
-            }
-
-            $present = true;
-
-            unset($this->_messages[$structure][$uri]);
-
-            if (!$this->_messages[$structure]) {
-                unset($this->_messages[$structure]);
-            }
-        }
-        return $present;
-    }
-
-    /**
-     * Get all qued messages
-     *
-     * @return mixed Returns qued messages or FALSE if no messages are qued
-     */
-    public function getMessages()
-    {
-        if (!$this->_messages) {
-            return false;
-        }
-        return $this->_messages;
-    }
-
-    /**
-     * Use the JSON encoding scheme for the value specified
-     *
-     * @param mixed $value The value to be encoded
-     * @return string  The encoded value
-     */
-    protected function _encode($value)
-    {
-        return Zend_Json::encode($value, true, array('silenceCyclicalExceptions'=>true));
-    }
-
-    /**
-     * Retrieves all formatted data ready to be sent by the channel.
-     *
-     * @param Zend_Wildfire_Channel_Interface $channel The instance of the channel that will be transmitting the data
-     * @return mixed Returns the data to be sent by the channel.
-     * @throws Zend_Wildfire_Exception
-     */
-    public function getPayload(Zend_Wildfire_Channel_Interface $channel)
-    {
-        if (!$channel instanceof Zend_Wildfire_Channel_HttpHeaders) {
-            require_once 'Zend/Wildfire/Exception.php';
-            throw new Zend_Wildfire_Exception('The '.get_class($channel).' channel is not supported by the '.get_class($this).' protocol.');
-        }
-
-        if ($this->_plugins) {
-            foreach ($this->_plugins as $plugin) {
-                $plugin->flushMessages(self::PROTOCOL_URI);
-            }
-        }
-
-        if (!$this->_messages) {
-            return false;
-        }
-
-        $protocol_index = 1;
-        $structure_index = 1;
-        $plugin_index = 1;
-        $message_index = 1;
-
-        $payload = array();
-
-        $payload[] = array('Protocol-'.$protocol_index, self::PROTOCOL_URI);
-
-        foreach ($this->_messages as $structure_uri => $plugin_messages ) {
-
-            $payload[] = array($protocol_index.'-Structure-'.$structure_index, $structure_uri);
-
-            foreach ($plugin_messages as $plugin_uri => $messages ) {
-
-                $payload[] = array($protocol_index.'-Plugin-'.$plugin_index, $plugin_uri);
-
-                foreach ($messages as $message) {
-
-                    $parts = explode("\n",chunk_split($message, 5000, "\n"));
-
-                    for ($i=0 ; $i<count($parts) ; $i++) {
-
-                        $part = $parts[$i];
-                        if ($part) {
-
-                            $msg = '';
-
-                            if (count($parts)>2) {
-                                $msg = (($i==0)?strlen($message):'')
-                                       . '|' . $part . '|'
-                                       . (($i<count($parts)-2)?'\\':'');
-                            } else {
-                                $msg = strlen($part) . '|' . $part . '|';
-                            }
-
-                            $payload[] = array($protocol_index . '-'
-                                               . $structure_index . '-'
-                                               . $plugin_index . '-'
-                                               . $message_index,
-                                               $msg);
-
-                            $message_index++;
-
-                            if ($message_index > 99999) {
-                                require_once 'Zend/Wildfire/Exception.php';
-                                throw new Zend_Wildfire_Exception('Maximum number (99,999) of messages reached!');
-                            }
-                        }
-                    }
-                }
-                $plugin_index++;
-            }
-            $structure_index++;
-        }
-
-        return $payload;
-    }
-
-}
-
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+GNC=

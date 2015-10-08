@@ -1,180 +1,58 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category    ZendX
- * @package     ZendX_JQuery
- * @subpackage  View
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
- * @license     http://framework.zend.com/license/new-bsd     New BSD License
- * @version     $Id: UiWidget.php 20165 2010-01-09 18:57:56Z bkarwin $
- */
-
-require_once "Zend/Form/Element.php";
-
-/**
- * Base Form Element for jQuery View Helpers
- *
- * @package    ZendX_JQuery
- * @subpackage Form
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class ZendX_JQuery_Form_Element_UiWidget extends Zend_Form_Element
-{
-    /**
-     * jQuery related parameters of this form element.
-     *
-     * @var array
-     */
-    public $jQueryParams = array();
-
-    /**
-     * Just here to prevent errors.
-     *
-     * @var array
-     */
-    public $options = array();
-
-    /**
-     * Constructor
-     *
-     * @param  mixed $spec
-     * @param  mixed $options
-     * @return void
-     */
-    public function __construct($spec, $options = null)
-    {
-        $this->addPrefixPath('ZendX_JQuery_Form_Decorator', 'ZendX/JQuery/Form/Decorator', 'decorator');
-        parent::__construct($spec, $options);
-    }
-
-    /**
-     * Get jQuery related parameter of this form element
-     *
-     * @param  string $key
-     * @return string
-     */
-    public function getJQueryParam($key)
-    {
-        $key = (string) $key;
-        return $this->jQueryParams[$key];
-    }
-
-    /**
-     * Get all currently known jQuery related parameters of this element
-     *
-     * @return array
-     */
-    public function getJQueryParams()
-    {
-        return $this->jQueryParams;
-    }
-
-    /**
-     * Set a jQuery related parameter of this form element.
-     *
-     * @param  string $key
-     * @param  string $value
-     * @return ZendX_JQuery_Form_Element_UiWidget
-     */
-    public function setJQueryParam($key, $value)
-    {
-        $key = (string) $key;
-        $this->jQueryParams[$key] = $value;
-        return $this;
-    }
-
-    /**
-     * Set an array of jQuery related options for this element (merging with old options).
-     *
-     * @param  Array $params
-     * @return ZendX_JQuery_Form_Element_UiWidget
-     */
-    public function setJQueryParams($params)
-    {
-        $this->jQueryParams = array_merge($this->jQueryParams, $params);
-        return $this;
-    }
-
-    /**
-     * Load default decorators
-     *
-     * @return void
-     */
-    public function loadDefaultDecorators()
-    {
-        if ($this->loadDefaultDecoratorsIsDisabled()) {
-            return;
-        }
-
-        $decorators = $this->getDecorators();
-        if (empty($decorators)) {
-            $this->addDecorator('UiWidgetElement')
-                 ->addDecorator('Errors')
-                 ->addDecorator('Description', array('tag' => 'p', 'class' => 'description'))
-                 ->addDecorator('HtmlTag', array('tag' => 'dd'))
-                 ->addDecorator('Label', array('tag' => 'dt'));
-        }
-    }
-
-    /**
-     * Set the view object
-     *
-     * Ensures that the view object has the jQuery view helper path set.
-     *
-     * @param  Zend_View_Interface $view
-     * @return ZendX_JQuery_Form_Element_UiWidget
-     */
-    public function setView(Zend_View_Interface $view = null)
-    {
-        if (null !== $view) {
-            if (false === $view->getPluginLoader('helper')->getPaths('ZendX_JQuery_View_Helper')) {
-                $view->addHelperPath('ZendX/JQuery/View/Helper', 'ZendX_JQuery_View_Helper');
-            }
-        }
-        return parent::setView($view);
-    }
-
-    /**
-     * Retrieve all decorators
-     *
-     * @throws ZendX_JQuery_Form_Exception
-     * @return array
-     */
-    public function getDecorators()
-    {
-        $decorators = parent::getDecorators();
-        if(count($decorators) > 0) {
-            // Only check this if there are decorators present, otherwise it could
-            // be that the decorators have not been initialized yet.
-            $foundUiWidgetElementMarker = false;
-            foreach($decorators AS $decorator) {
-                if($decorator instanceof ZendX_JQuery_Form_Decorator_UiWidgetElementMarker) {
-                    $foundUiWidgetElementMarker = true;
-                }
-            }
-            if($foundUiWidgetElementMarker === false) {
-                require_once "ZendX/JQuery/Form/Exception.php";
-                throw new ZendX_JQuery_Form_Exception(
-                    "Cannot render jQuery form element without at least one decorator ".
-                    "implementing the 'ZendX_JQuery_Form_Decorator_UiWidgetElementMarker' interface. ".
-                    "Default decorator for this marker interface is the 'ZendX_JQuery_Form_Decorator_UiWidgetElement'. ".
-                    "Hint: The ViewHelper decorator does not render jQuery elements correctly."
-                );
-            }
-        }
-
-        return $decorators;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

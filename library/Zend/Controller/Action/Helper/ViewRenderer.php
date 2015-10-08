@@ -1,994 +1,249 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Controller
- * @subpackage Zend_Controller_Action_Helper
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * @see Zend_Controller_Action_Helper_Abstract
- */
-require_once 'Zend/Controller/Action/Helper/Abstract.php';
-
-/**
- * @see Zend_View
- */
-require_once 'Zend/View.php';
-
-/**
- * View script integration
- *
- * Zend_Controller_Action_Helper_ViewRenderer provides transparent view
- * integration for action controllers. It allows you to create a view object
- * once, and populate it throughout all actions. Several global options may be
- * set:
- *
- * - noController: if set true, render() will not look for view scripts in
- *   subdirectories named after the controller
- * - viewSuffix: what view script filename suffix to use
- *
- * The helper autoinitializes the action controller view preDispatch(). It
- * determines the path to the class file, and then determines the view base
- * directory from there. It also uses the module name as a class prefix for
- * helpers and views such that if your module name is 'Search', it will set the
- * helper class prefix to 'Search_View_Helper' and the filter class prefix to ;
- * 'Search_View_Filter'.
- *
- * Usage:
- * <code>
- * // In your bootstrap:
- * Zend_Controller_Action_HelperBroker::addHelper(new Zend_Controller_Action_Helper_ViewRenderer());
- *
- * // In your action controller methods:
- * $viewHelper = $this->_helper->getHelper('view');
- *
- * // Don't use controller subdirectories
- * $viewHelper->setNoController(true);
- *
- * // Specify a different script to render:
- * $this->_helper->view('form');
- *
- * </code>
- *
- * @uses       Zend_Controller_Action_Helper_Abstract
- * @package    Zend_Controller
- * @subpackage Zend_Controller_Action_Helper
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Controller_Action_Helper_ViewRenderer extends Zend_Controller_Action_Helper_Abstract
-{
-    /**
-     * @var Zend_View_Interface
-     */
-    public $view;
-
-    /**
-     * Word delimiters
-     * @var array
-     */
-    protected $_delimiters;
-
-    /**
-     * Front controller instance
-     * @var Zend_Controller_Front
-     */
-    protected $_frontController;
-
-    /**
-     * @var Zend_Filter_Inflector
-     */
-    protected $_inflector;
-
-    /**
-     * Inflector target
-     * @var string
-     */
-    protected $_inflectorTarget = '';
-
-    /**
-     * Current module directory
-     * @var string
-     */
-    protected $_moduleDir = '';
-
-    /**
-     * Whether or not to autorender using controller name as subdirectory;
-     * global setting (not reset at next invocation)
-     * @var boolean
-     */
-    protected $_neverController = false;
-
-    /**
-     * Whether or not to autorender postDispatch; global setting (not reset at
-     * next invocation)
-     * @var boolean
-     */
-    protected $_neverRender     = false;
-
-    /**
-     * Whether or not to use a controller name as a subdirectory when rendering
-     * @var boolean
-     */
-    protected $_noController    = false;
-
-    /**
-     * Whether or not to autorender postDispatch; per controller/action setting (reset
-     * at next invocation)
-     * @var boolean
-     */
-    protected $_noRender        = false;
-
-    /**
-     * Characters representing path delimiters in the controller
-     * @var string|array
-     */
-    protected $_pathDelimiters;
-
-    /**
-     * Which named segment of the response to utilize
-     * @var string
-     */
-    protected $_responseSegment = null;
-
-    /**
-     * Which action view script to render
-     * @var string
-     */
-    protected $_scriptAction    = null;
-
-    /**
-     * View object basePath
-     * @var string
-     */
-    protected $_viewBasePathSpec = ':moduleDir/views';
-
-    /**
-     * View script path specification string
-     * @var string
-     */
-    protected $_viewScriptPathSpec = ':controller/:action.:suffix';
-
-    /**
-     * View script path specification string, minus controller segment
-     * @var string
-     */
-    protected $_viewScriptPathNoControllerSpec = ':action.:suffix';
-
-    /**
-     * View script suffix
-     * @var string
-     */
-    protected $_viewSuffix      = 'phtml';
-
-    /**
-     * Constructor
-     *
-     * Optionally set view object and options.
-     *
-     * @param  Zend_View_Interface $view
-     * @param  array               $options
-     * @return void
-     */
-    public function __construct(Zend_View_Interface $view = null, array $options = array())
-    {
-        if (null !== $view) {
-            $this->setView($view);
-        }
-
-        if (!empty($options)) {
-            $this->_setOptions($options);
-        }
-    }
-    
-    /**
-     * Clone - also make sure the view is cloned.
-     *
-     * @return void
-     */
-    public function __clone()
-    {
-        if (isset($this->view) && $this->view instanceof Zend_View_Interface) {
-            $this->view = clone $this->view;
-            
-        }
-    }
-
-    /**
-     * Set the view object
-     *
-     * @param  Zend_View_Interface $view
-     * @return Zend_Controller_Action_Helper_ViewRenderer Provides a fluent interface
-     */
-    public function setView(Zend_View_Interface $view)
-    {
-        $this->view = $view;
-        return $this;
-    }
-
-    /**
-     * Get current module name
-     * 
-     * @return string
-     */
-    public function getModule()
-    {
-        $request = $this->getRequest();
-        $module  = $request->getModuleName();
-        if (null === $module) {
-            $module = $this->getFrontController()->getDispatcher()->getDefaultModule();
-        }
-
-        return $module;
-    }
-
-    /**
-     * Get module directory
-     *
-     * @throws Zend_Controller_Action_Exception
-     * @return string
-     */
-    public function getModuleDirectory()
-    {
-        $module    = $this->getModule();
-        $moduleDir = $this->getFrontController()->getControllerDirectory($module);
-        if ((null === $moduleDir) || is_array($moduleDir)) {
-            /**
-             * @see Zend_Controller_Action_Exception
-             */
-            require_once 'Zend/Controller/Action/Exception.php';
-            throw new Zend_Controller_Action_Exception('ViewRenderer cannot locate module directory');
-        }
-        $this->_moduleDir = dirname($moduleDir);
-        return $this->_moduleDir;
-    }
-
-    /**
-     * Get inflector
-     * 
-     * @return Zend_Filter_Inflector
-     */
-    public function getInflector()
-    {
-        if (null === $this->_inflector) {
-            /**
-             * @see Zend_Filter_Inflector
-             */
-            require_once 'Zend/Filter/Inflector.php';
-            /**
-             * @see Zend_Filter_PregReplace
-             */
-            require_once 'Zend/Filter/PregReplace.php';
-            /**
-             * @see Zend_Filter_Word_UnderscoreToSeparator
-             */
-            require_once 'Zend/Filter/Word/UnderscoreToSeparator.php';
-            $this->_inflector = new Zend_Filter_Inflector();
-            $this->_inflector->setStaticRuleReference('moduleDir', $this->_moduleDir) // moduleDir must be specified before the less specific 'module'
-                 ->addRules(array(
-                     ':module'     => array('Word_CamelCaseToDash', 'StringToLower'),
-                     ':controller' => array('Word_CamelCaseToDash', new Zend_Filter_Word_UnderscoreToSeparator('/'), 'StringToLower', new Zend_Filter_PregReplace('/\./', '-')),
-                     ':action'     => array('Word_CamelCaseToDash', new Zend_Filter_PregReplace('#[^a-z0-9' . preg_quote('/', '#') . ']+#i', '-'), 'StringToLower'),
-                 ))
-                 ->setStaticRuleReference('suffix', $this->_viewSuffix)
-                 ->setTargetReference($this->_inflectorTarget);
-        }
-
-        // Ensure that module directory is current
-        $this->getModuleDirectory();
-
-        return $this->_inflector;
-    }
-
-    /**
-     * Set inflector
-     * 
-     * @param  Zend_Filter_Inflector $inflector 
-     * @param  boolean               $reference Whether the moduleDir, target, and suffix should be set as references to ViewRenderer properties
-     * @return Zend_Controller_Action_Helper_ViewRenderer Provides a fluent interface
-     */
-    public function setInflector(Zend_Filter_Inflector $inflector, $reference = false)
-    {
-        $this->_inflector = $inflector;
-        if ($reference) {
-            $this->_inflector->setStaticRuleReference('suffix', $this->_viewSuffix)
-                 ->setStaticRuleReference('moduleDir', $this->_moduleDir)
-                 ->setTargetReference($this->_inflectorTarget);
-        }
-        return $this;
-    }
-
-    /**
-     * Set inflector target
-     * 
-     * @param  string $target 
-     * @return void
-     */
-    protected function _setInflectorTarget($target)
-    {
-        $this->_inflectorTarget = (string) $target;
-    }
-
-    /**
-     * Set internal module directory representation
-     * 
-     * @param  string $dir 
-     * @return void
-     */
-    protected function _setModuleDir($dir)
-    {
-        $this->_moduleDir = (string) $dir;
-    }
-
-    /**
-     * Get internal module directory representation
-     * 
-     * @return string
-     */
-    protected function _getModuleDir()
-    {
-        return $this->_moduleDir;
-    }
-
-    /**
-     * Generate a class prefix for helper and filter classes
-     *
-     * @return string
-     */
-    protected function _generateDefaultPrefix()
-    {
-        $default = 'Zend_View';
-        if (null === $this->_actionController) {
-            return $default;
-        }
-
-        $class = get_class($this->_actionController);
-
-        if (!strstr($class, '_')) {
-            return $default;
-        }
-
-        $module = $this->getModule();
-        if ('default' == $module) {
-            return $default;
-        }
-
-        $prefix = substr($class, 0, strpos($class, '_')) . '_View';
-
-        return $prefix;
-    }
-
-    /**
-     * Retrieve base path based on location of current action controller
-     *
-     * @return string
-     */
-    protected function _getBasePath()
-    {
-        if (null === $this->_actionController) {
-            return './views';
-        }
-
-        $inflector = $this->getInflector();
-        $this->_setInflectorTarget($this->getViewBasePathSpec());
-        
-        $dispatcher = $this->_frontController->getDispatcher();
-        $request = $this->getRequest();
-
-        $parts = array(
-            'module'     => (($moduleName = $request->getModuleName()) != '') ? $dispatcher->formatModuleName($moduleName) : $moduleName,
-            'controller' => $request->getControllerName(),
-            'action'     => $dispatcher->formatActionName($request->getActionName())
-            );
-
-        $path = $inflector->filter($parts);
-        return $path;
-    }
-
-    /**
-     * Set options
-     *
-     * @param  array $options
-     * @return Zend_Controller_Action_Helper_ViewRenderer Provides a fluent interface
-     */
-    protected function _setOptions(array $options)
-    {
-        foreach ($options as $key => $value)
-        {
-            switch ($key) {
-                case 'neverRender':
-                case 'neverController':
-                case 'noController':
-                case 'noRender':
-                    $property = '_' . $key;
-                    $this->{$property} = ($value) ? true : false;
-                    break;
-                case 'responseSegment':
-                case 'scriptAction':
-                case 'viewBasePathSpec':
-                case 'viewScriptPathSpec':
-                case 'viewScriptPathNoControllerSpec':
-                case 'viewSuffix':
-                    $property = '_' . $key;
-                    $this->{$property} = (string) $value;
-                    break;
-                default:
-                    break;
-            }
-        }
-
-        return $this;
-    }
-
-    /**
-     * Initialize the view object
-     *
-     * $options may contain the following keys:
-     * - neverRender - flag dis/enabling postDispatch() autorender (affects all subsequent calls)
-     * - noController - flag indicating whether or not to look for view scripts in subdirectories named after the controller
-     * - noRender - flag indicating whether or not to autorender postDispatch()
-     * - responseSegment - which named response segment to render a view script to
-     * - scriptAction - what action script to render
-     * - viewBasePathSpec - specification to use for determining view base path
-     * - viewScriptPathSpec - specification to use for determining view script paths
-     * - viewScriptPathNoControllerSpec - specification to use for determining view script paths when noController flag is set
-     * - viewSuffix - what view script filename suffix to use
-     *
-     * @param  string $path
-     * @param  string $prefix
-     * @param  array  $options
-     * @throws Zend_Controller_Action_Exception
-     * @return void
-     */
-    public function initView($path = null, $prefix = null, array $options = array())
-    {
-        if (null === $this->view) {
-            $this->setView(new Zend_View());
-        }
-
-        // Reset some flags every time
-        $options['noController'] = (isset($options['noController'])) ? $options['noController'] : false;
-        $options['noRender']     = (isset($options['noRender'])) ? $options['noRender'] : false;
-        $this->_scriptAction     = null;
-        $this->_responseSegment  = null;
-
-        // Set options first; may be used to determine other initializations
-        $this->_setOptions($options);
-
-        // Get base view path
-        if (empty($path)) {
-            $path = $this->_getBasePath();
-            if (empty($path)) {
-                /**
-                 * @see Zend_Controller_Action_Exception
-                 */
-                require_once 'Zend/Controller/Action/Exception.php';
-                throw new Zend_Controller_Action_Exception('ViewRenderer initialization failed: retrieved view base path is empty');
-            }
-        }
-
-        if (null === $prefix) {
-            $prefix = $this->_generateDefaultPrefix();
-        }
-
-        // Determine if this path has already been registered
-        $currentPaths = $this->view->getScriptPaths();
-        $path         = str_replace(array('/', '\\'), '/', $path);
-        $pathExists   = false;
-        foreach ($currentPaths as $tmpPath) {
-            $tmpPath = str_replace(array('/', '\\'), '/', $tmpPath);
-            if (strstr($tmpPath, $path)) {
-                $pathExists = true;
-                break;
-            }
-        }
-        if (!$pathExists) {
-            $this->view->addBasePath($path, $prefix);
-        }
-
-        // Register view with action controller (unless already registered)
-        if ((null !== $this->_actionController) && (null === $this->_actionController->view)) {
-            $this->_actionController->view       = $this->view;
-            $this->_actionController->viewSuffix = $this->_viewSuffix;
-        }
-    }
-
-    /**
-     * init - initialize view
-     *
-     * @return void
-     */
-    public function init()
-    {
-        if ($this->getFrontController()->getParam('noViewRenderer')) {
-            return;
-        }
-
-        $this->initView();
-    }
-
-    /**
-     * Set view basePath specification
-     *
-     * Specification can contain one or more of the following:
-     * - :moduleDir - current module directory
-     * - :controller - name of current controller in the request
-     * - :action - name of current action in the request
-     * - :module - name of current module in the request
-     *
-     * @param  string $path
-     * @return Zend_Controller_Action_Helper_ViewRenderer Provides a fluent interface
-     */
-    public function setViewBasePathSpec($path)
-    {
-        $this->_viewBasePathSpec = (string) $path;
-        return $this;
-    }
-
-    /**
-     * Retrieve the current view basePath specification string
-     *
-     * @return string
-     */
-    public function getViewBasePathSpec()
-    {
-        return $this->_viewBasePathSpec;
-    }
-
-    /**
-     * Set view script path specification
-     *
-     * Specification can contain one or more of the following:
-     * - :moduleDir - current module directory
-     * - :controller - name of current controller in the request
-     * - :action - name of current action in the request
-     * - :module - name of current module in the request
-     *
-     * @param  string $path
-     * @return Zend_Controller_Action_Helper_ViewRenderer Provides a fluent interface
-     */
-    public function setViewScriptPathSpec($path)
-    {
-        $this->_viewScriptPathSpec = (string) $path;
-        return $this;
-    }
-
-    /**
-     * Retrieve the current view script path specification string
-     *
-     * @return string
-     */
-    public function getViewScriptPathSpec()
-    {
-        return $this->_viewScriptPathSpec;
-    }
-
-    /**
-     * Set view script path specification (no controller variant)
-     *
-     * Specification can contain one or more of the following:
-     * - :moduleDir - current module directory
-     * - :controller - name of current controller in the request
-     * - :action - name of current action in the request
-     * - :module - name of current module in the request
-     *
-     * :controller will likely be ignored in this variant.
-     *
-     * @param  string $path
-     * @return Zend_Controller_Action_Helper_ViewRenderer Provides a fluent interface
-     */
-    public function setViewScriptPathNoControllerSpec($path)
-    {
-        $this->_viewScriptPathNoControllerSpec = (string) $path;
-        return $this;
-    }
-
-    /**
-     * Retrieve the current view script path specification string (no controller variant)
-     *
-     * @return string
-     */
-    public function getViewScriptPathNoControllerSpec()
-    {
-        return $this->_viewScriptPathNoControllerSpec;
-    }
-
-    /**
-     * Get a view script based on an action and/or other variables
-     *
-     * Uses values found in current request if no values passed in $vars.
-     *
-     * If {@link $_noController} is set, uses {@link $_viewScriptPathNoControllerSpec};
-     * otherwise, uses {@link $_viewScriptPathSpec}.
-     *
-     * @param  string $action
-     * @param  array  $vars
-     * @return string
-     */
-    public function getViewScript($action = null, array $vars = array())
-    {
-        $request = $this->getRequest();
-        if ((null === $action) && (!isset($vars['action']))) {
-            $action = $this->getScriptAction();
-            if (null === $action) {
-                $action = $request->getActionName();
-            }
-            $vars['action'] = $action;
-        } elseif (null !== $action) {
-            $vars['action'] = $action;
-        }
-
-        $inflector = $this->getInflector();
-        if ($this->getNoController() || $this->getNeverController()) {
-            $this->_setInflectorTarget($this->getViewScriptPathNoControllerSpec());
-        } else {
-            $this->_setInflectorTarget($this->getViewScriptPathSpec());
-        }
-        return $this->_translateSpec($vars);
-    }
-
-    /**
-     * Set the neverRender flag (i.e., globally dis/enable autorendering)
-     *
-     * @param  boolean $flag
-     * @return Zend_Controller_Action_Helper_ViewRenderer Provides a fluent interface
-     */
-    public function setNeverRender($flag = true)
-    {
-        $this->_neverRender = ($flag) ? true : false;
-        return $this;
-    }
-
-    /**
-     * Retrieve neverRender flag value
-     *
-     * @return boolean
-     */
-    public function getNeverRender()
-    {
-        return $this->_neverRender;
-    }
-
-    /**
-     * Set the noRender flag (i.e., whether or not to autorender)
-     *
-     * @param  boolean $flag
-     * @return Zend_Controller_Action_Helper_ViewRenderer Provides a fluent interface
-     */
-    public function setNoRender($flag = true)
-    {
-        $this->_noRender = ($flag) ? true : false;
-        return $this;
-    }
-
-    /**
-     * Retrieve noRender flag value
-     *
-     * @return boolean
-     */
-    public function getNoRender()
-    {
-        return $this->_noRender;
-    }
-
-    /**
-     * Set the view script to use
-     *
-     * @param  string $name
-     * @return Zend_Controller_Action_Helper_ViewRenderer Provides a fluent interface
-     */
-    public function setScriptAction($name)
-    {
-        $this->_scriptAction = (string) $name;
-        return $this;
-    }
-
-    /**
-     * Retrieve view script name
-     *
-     * @return string
-     */
-    public function getScriptAction()
-    {
-        return $this->_scriptAction;
-    }
-
-    /**
-     * Set the response segment name
-     *
-     * @param  string $name
-     * @return Zend_Controller_Action_Helper_ViewRenderer Provides a fluent interface
-     */
-    public function setResponseSegment($name)
-    {
-        if (null === $name) {
-            $this->_responseSegment = null;
-        } else {
-            $this->_responseSegment = (string) $name;
-        }
-
-        return $this;
-    }
-
-    /**
-     * Retrieve named response segment name
-     *
-     * @return string
-     */
-    public function getResponseSegment()
-    {
-        return $this->_responseSegment;
-    }
-
-    /**
-     * Set the noController flag (i.e., whether or not to render into controller subdirectories)
-     *
-     * @param  boolean $flag
-     * @return Zend_Controller_Action_Helper_ViewRenderer Provides a fluent interface
-     */
-    public function setNoController($flag = true)
-    {
-        $this->_noController = ($flag) ? true : false;
-        return $this;
-    }
-
-    /**
-     * Retrieve noController flag value
-     *
-     * @return boolean
-     */
-    public function getNoController()
-    {
-        return $this->_noController;
-    }
-
-    /**
-     * Set the neverController flag (i.e., whether or not to render into controller subdirectories)
-     *
-     * @param  boolean $flag
-     * @return Zend_Controller_Action_Helper_ViewRenderer Provides a fluent interface
-     */
-    public function setNeverController($flag = true)
-    {
-        $this->_neverController = ($flag) ? true : false;
-        return $this;
-    }
-
-    /**
-     * Retrieve neverController flag value
-     *
-     * @return boolean
-     */
-    public function getNeverController()
-    {
-        return $this->_neverController;
-    }
-
-    /**
-     * Set view script suffix
-     *
-     * @param  string $suffix
-     * @return Zend_Controller_Action_Helper_ViewRenderer Provides a fluent interface
-     */
-    public function setViewSuffix($suffix)
-    {
-        $this->_viewSuffix = (string) $suffix;
-        return $this;
-    }
-
-    /**
-     * Get view script suffix
-     *
-     * @return string
-     */
-    public function getViewSuffix()
-    {
-        return $this->_viewSuffix;
-    }
-
-    /**
-     * Set options for rendering a view script
-     *
-     * @param  string  $action       View script to render
-     * @param  string  $name         Response named segment to render to
-     * @param  boolean $noController Whether or not to render within a subdirectory named after the controller
-     * @return Zend_Controller_Action_Helper_ViewRenderer Provides a fluent interface
-     */
-    public function setRender($action = null, $name = null, $noController = null)
-    {
-        if (null !== $action) {
-            $this->setScriptAction($action);
-        }
-
-        if (null !== $name) {
-            $this->setResponseSegment($name);
-        }
-
-        if (null !== $noController) {
-            $this->setNoController($noController);
-        }
-
-        return $this;
-    }
-
-    /**
-     * Inflect based on provided vars
-     *
-     * Allowed variables are:
-     * - :moduleDir - current module directory
-     * - :module - current module name
-     * - :controller - current controller name
-     * - :action - current action name
-     * - :suffix - view script file suffix
-     *
-     * @param  array $vars
-     * @return string
-     */
-    protected function _translateSpec(array $vars = array())
-    {
-        $inflector  = $this->getInflector();
-        $request    = $this->getRequest();
-        $dispatcher = $this->_frontController->getDispatcher();
-        $module     = $dispatcher->formatModuleName($request->getModuleName());
-        $controller = $request->getControllerName();
-        $action     = $dispatcher->formatActionName($request->getActionName());
-
-        $params     = compact('module', 'controller', 'action');
-        foreach ($vars as $key => $value) {
-            switch ($key) {
-                case 'module':
-                case 'controller':
-                case 'action':
-                case 'moduleDir':
-                case 'suffix':
-                    $params[$key] = (string) $value;
-                    break;
-                default:
-                    break;
-            }
-        }
-
-        if (isset($params['suffix'])) {
-            $origSuffix = $this->getViewSuffix();
-            $this->setViewSuffix($params['suffix']);
-        }
-        if (isset($params['moduleDir'])) {
-            $origModuleDir = $this->_getModuleDir();
-            $this->_setModuleDir($params['moduleDir']);
-        }
-
-        $filtered = $inflector->filter($params);
-
-        if (isset($params['suffix'])) {
-            $this->setViewSuffix($origSuffix);
-        }
-        if (isset($params['moduleDir'])) {
-            $this->_setModuleDir($origModuleDir);
-        }
-
-        return $filtered;
-    }
-
-    /**
-     * Render a view script (optionally to a named response segment)
-     *
-     * Sets the noRender flag to true when called.
-     *
-     * @param  string $script
-     * @param  string $name
-     * @return void
-     */
-    public function renderScript($script, $name = null)
-    {
-        if (null === $name) {
-            $name = $this->getResponseSegment();
-        }
-
-        $this->getResponse()->appendBody(
-            $this->view->render($script),
-            $name
-        );
-
-        $this->setNoRender();
-    }
-
-    /**
-     * Render a view based on path specifications
-     *
-     * Renders a view based on the view script path specifications.
-     *
-     * @param  string  $action
-     * @param  string  $name
-     * @param  boolean $noController
-     * @return void
-     */
-    public function render($action = null, $name = null, $noController = null)
-    {
-        $this->setRender($action, $name, $noController);
-        $path = $this->getViewScript();
-        $this->renderScript($path, $name);
-    }
-
-    /**
-     * Render a script based on specification variables
-     *
-     * Pass an action, and one or more specification variables (view script suffix)
-     * to determine the view script path, and render that script.
-     *
-     * @param  string $action
-     * @param  array  $vars
-     * @param  string $name
-     * @return void
-     */
-    public function renderBySpec($action = null, array $vars = array(), $name = null)
-    {
-        if (null !== $name) {
-            $this->setResponseSegment($name);
-        }
-
-        $path = $this->getViewScript($action, $vars);
-
-        $this->renderScript($path);
-    }
-
-    /**
-     * postDispatch - auto render a view
-     *
-     * Only autorenders if:
-     * - _noRender is false
-     * - action controller is present
-     * - request has not been re-dispatched (i.e., _forward() has not been called)
-     * - response is not a redirect
-     *
-     * @return void
-     */
-    public function postDispatch()
-    {
-        if ($this->_shouldRender()) {
-            $this->render();
-        }
-    }
-
-    /**
-     * Should the ViewRenderer render a view script?
-     * 
-     * @return boolean
-     */
-    protected function _shouldRender()
-    {
-        return (!$this->getFrontController()->getParam('noViewRenderer')
-            && !$this->_neverRender
-            && !$this->_noRender
-            && (null !== $this->_actionController)
-            && $this->getRequest()->isDispatched()
-            && !$this->getResponse()->isRedirect()
-        );
-    }
-
-    /**
-     * Use this helper as a method; proxies to setRender()
-     *
-     * @param  string  $action
-     * @param  string  $name
-     * @param  boolean $noController
-     * @return void
-     */
-    public function direct($action = null, $name = null, $noController = null)
-    {
-        $this->setRender($action, $name, $noController);
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

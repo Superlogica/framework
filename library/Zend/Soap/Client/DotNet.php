@@ -1,94 +1,31 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Soap
- * @subpackage Client
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_Soap_Client */
-require_once 'Zend/Soap/Client.php';
-
-if (extension_loaded('soap')) {
-
-/**
- * Zend_Soap_Client_Local
- *
- * Class is intended to be used with .Net Web Services.
- *
- * Important! Class is at experimental stage now.
- * Please leave your notes, compatiblity issues reports or
- * suggestions in fw-webservices@lists.zend.com or fw-general@lists.com
- *
- * @category   Zend
- * @package    Zend_Soap
- * @subpackage Client
- */
-class Zend_Soap_Client_DotNet extends Zend_Soap_Client
-{
-    /**
-     * Constructor
-     *
-     * @param string $wsdl
-     * @param array $options
-     */
-    public function __construct($wsdl = null, $options = null)
-    {
-        // Use SOAP 1.1 as default
-        $this->setSoapVersion(SOAP_1_1);
-
-        parent::__construct($wsdl, $options);
-    }
-
-
-    /**
-     * Perform arguments pre-processing
-     *
-     * My be overridden in descendant classes
-     *
-     * @param array $arguments
-     * @throws Zend_Soap_Client_Exception
-     */
-    protected function _preProcessArguments($arguments)
-    {
-    	if (count($arguments) > 1  ||
-    	    (count($arguments) == 1  &&  !is_array(reset($arguments)))
-    	   ) {
-    		require_once 'Zend/Soap/Client/Exception.php';
-    		throw new Zend_Soap_Client_Exception('.Net webservice arguments have to be grouped into array: array(\'a\' => $a, \'b\' => $b, ...).');
-    	}
-
-        // Do nothing
-        return array($arguments);
-    }
-
-    /**
-     * Perform result pre-processing
-     *
-     * My be overridden in descendant classes
-     *
-     * @param array $arguments
-     */
-    protected function _preProcessResult($result)
-    {
-        $resultProperty = $this->getLastMethod() . 'Result';
-
-        return $result->$resultProperty;
-    }
-
-}
-
-} // end if (extension_loaded('soap')
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+5OMhOG==

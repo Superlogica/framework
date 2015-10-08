@@ -1,305 +1,153 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_InfoCard
- * @subpackage Zend_InfoCard_Xml_Security
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Security.php 13213 2008-12-14 11:05:07Z thomas $
- */
-
-/**
- * Zend_InfoCard_Xml_Security_Transform
- */
-require_once 'Zend/InfoCard/Xml/Security/Transform.php';
-
-/**
- *
- * @category   Zend
- * @package    Zend_InfoCard
- * @subpackage Zend_InfoCard_Xml_Security
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_InfoCard_Xml_Security
-{
-    /**
-     * ASN.1 type INTEGER class
-     */
-    const ASN_TYPE_INTEGER = 0x02;
-
-    /**
-     * ASN.1 type BIT STRING class
-     */
-    const ASN_TYPE_BITSTRING = 0x03;
-
-    /**
-     * ASN.1 type SEQUENCE class
-     */
-    const ASN_TYPE_SEQUENCE = 0x30;
-
-    /**
-     * The URI for Canonical Method C14N Exclusive
-     */
-    const CANONICAL_METHOD_C14N_EXC = 'http://www.w3.org/2001/10/xml-exc-c14n#';
-
-    /**
-     * The URI for Signature Method SHA1
-     */
-    const SIGNATURE_METHOD_SHA1 = 'http://www.w3.org/2000/09/xmldsig#rsa-sha1';
-
-    /**
-     * The URI for Digest Method SHA1
-     */
-    const DIGEST_METHOD_SHA1 = 'http://www.w3.org/2000/09/xmldsig#sha1';
-
-    /**
-     * The Identifier for RSA Keys
-     */
-    const RSA_KEY_IDENTIFIER = '300D06092A864886F70D0101010500';
-
-    /**
-     * Constructor  (disabled)
-     *
-     * @return void
-     */
-    private function __construct()
-    {
-    }
-
-    /**
-     * Validates the signature of a provided XML block
-     *
-     * @param  string $strXMLInput An XML block containing a Signature
-     * @return bool True if the signature validated, false otherwise
-     * @throws Zend_InfoCard_Xml_Security_Exception
-     */
-    static public function validateXMLSignature($strXMLInput)
-    {
-        if(!extension_loaded('openssl')) {
-            require_once 'Zend/InfoCard/Xml/Security/Exception.php';
-            throw new Zend_InfoCard_Xml_Security_Exception("You must have the openssl extension installed to use this class");
-        }
-
-        $sxe = simplexml_load_string($strXMLInput);
-
-        if(!isset($sxe->Signature)) {
-            require_once 'Zend/InfoCard/Xml/Security/Exception.php';
-            throw new Zend_InfoCard_Xml_Security_Exception("Could not identify XML Signature element");
-        }
-
-        if(!isset($sxe->Signature->SignedInfo)) {
-            require_once 'Zend/InfoCard/Xml/Security/Exception.php';
-            throw new Zend_InfoCard_Xml_Security_Exception("Signature is missing a SignedInfo block");
-        }
-
-        if(!isset($sxe->Signature->SignatureValue)) {
-            require_once 'Zend/InfoCard/Xml/Security/Exception.php';
-            throw new Zend_InfoCard_Xml_Security_Exception("Signature is missing a SignatureValue block");
-        }
-
-        if(!isset($sxe->Signature->KeyInfo)) {
-            require_once 'Zend/InfoCard/Xml/Security/Exception.php';
-            throw new Zend_InfoCard_Xml_Security_Exception("Signature is missing a KeyInfo block");
-        }
-
-        if(!isset($sxe->Signature->KeyInfo->KeyValue)) {
-            require_once 'Zend/InfoCard/Xml/Security/Exception.php';
-            throw new Zend_InfoCard_Xml_Security_Exception("Signature is missing a KeyValue block");
-        }
-
-        switch((string)$sxe->Signature->SignedInfo->CanonicalizationMethod['Algorithm']) {
-            case self::CANONICAL_METHOD_C14N_EXC:
-                $cMethod = (string)$sxe->Signature->SignedInfo->CanonicalizationMethod['Algorithm'];
-                break;
-            default:
-                require_once 'Zend/InfoCard/Xml/Security/Exception.php';
-                throw new Zend_InfoCard_Xml_Security_Exception("Unknown or unsupported CanonicalizationMethod Requested");
-                break;
-        }
-
-        switch((string)$sxe->Signature->SignedInfo->SignatureMethod['Algorithm']) {
-            case self::SIGNATURE_METHOD_SHA1:
-                $sMethod = (string)$sxe->Signature->SignedInfo->SignatureMethod['Algorithm'];
-                break;
-            default:
-                require_once 'Zend/InfoCard/Xml/Security/Exception.php';
-                throw new Zend_InfoCard_Xml_Security_Exception("Unknown or unsupported SignatureMethod Requested");
-                break;
-        }
-
-        switch((string)$sxe->Signature->SignedInfo->Reference->DigestMethod['Algorithm']) {
-            case self::DIGEST_METHOD_SHA1:
-                $dMethod = (string)$sxe->Signature->SignedInfo->Reference->DigestMethod['Algorithm'];
-                break;
-            default:
-                require_once 'Zend/InfoCard/Xml/Security/Exception.php';
-                throw new Zend_InfoCard_Xml_Security_Exception("Unknown or unsupported DigestMethod Requested");
-                break;
-        }
-
-        $base64DecodeSupportsStrictParam = version_compare(PHP_VERSION, '5.2.0', '>=');
-
-        if ($base64DecodeSupportsStrictParam) {
-            $dValue = base64_decode((string)$sxe->Signature->SignedInfo->Reference->DigestValue, true);
-        } else {
-            $dValue = base64_decode((string)$sxe->Signature->SignedInfo->Reference->DigestValue);
-        }
-
-        if ($base64DecodeSupportsStrictParam) {
-            $signatureValue = base64_decode((string)$sxe->Signature->SignatureValue, true);
-        } else {
-            $signatureValue = base64_decode((string)$sxe->Signature->SignatureValue);
-        }
-
-        $transformer = new Zend_InfoCard_Xml_Security_Transform();
-
-        foreach($sxe->Signature->SignedInfo->Reference->Transforms->children() as $transform) {
-            $transformer->addTransform((string)$transform['Algorithm']);
-        }
-
-        $transformed_xml = $transformer->applyTransforms($strXMLInput);
-
-        $transformed_xml_binhash = pack("H*", sha1($transformed_xml));
-
-        if($transformed_xml_binhash != $dValue) {
-            require_once 'Zend/InfoCard/Xml/Security/Exception.php';
-            throw new Zend_InfoCard_Xml_Security_Exception("Locally Transformed XML does not match XML Document. Cannot Verify Signature");
-        }
-
-        $public_key = null;
-
-        switch(true) {
-            case isset($sxe->Signature->KeyInfo->KeyValue->X509Certificate):
-
-                $certificate = (string)$sxe->Signature->KeyInfo->KeyValue->X509Certificate;
-
-
-                $pem = "-----BEGIN CERTIFICATE-----\n" .
-                       wordwrap($certificate, 64, "\n", true) .
-                       "\n-----END CERTIFICATE-----";
-
-                $public_key = openssl_pkey_get_public($pem);
-
-                if(!$public_key) {
-                    require_once 'Zend/InfoCard/Xml/Security/Exception.php';
-                    throw new Zend_InfoCard_Xml_Security_Exception("Unable to extract and prcoess X509 Certificate from KeyValue");
-                }
-
-                break;
-            case isset($sxe->Signature->KeyInfo->KeyValue->RSAKeyValue):
-
-                if(!isset($sxe->Signature->KeyInfo->KeyValue->RSAKeyValue->Modulus) ||
-                   !isset($sxe->Signature->KeyInfo->KeyValue->RSAKeyValue->Exponent)) {
-                       require_once 'Zend/InfoCard/Xml/Security/Exception.php';
-                       throw new Zend_InfoCard_Xml_Security_Exception("RSA Key Value not in Modulus/Exponent form");
-                }
-
-                $modulus = base64_decode((string)$sxe->Signature->KeyInfo->KeyValue->RSAKeyValue->Modulus);
-                $exponent = base64_decode((string)$sxe->Signature->KeyInfo->KeyValue->RSAKeyValue->Exponent);
-
-                $pem_public_key = self::_getPublicKeyFromModExp($modulus, $exponent);
-
-                $public_key = openssl_pkey_get_public ($pem_public_key);
-
-                break;
-            default:
-                require_once 'Zend/InfoCard/Xml/Security/Exception.php';
-                throw new Zend_InfoCard_Xml_Security_Exception("Unable to determine or unsupported representation of the KeyValue block");
-        }
-
-        $transformer = new Zend_InfoCard_Xml_Security_Transform();
-        $transformer->addTransform((string)$sxe->Signature->SignedInfo->CanonicalizationMethod['Algorithm']);
-
-        // The way we are doing our XML processing requires that we specifically add this
-        // (even though it's in the <Signature> parent-block).. otherwise, our canonical form
-        // fails signature verification
-        $sxe->Signature->SignedInfo->addAttribute('xmlns', 'http://www.w3.org/2000/09/xmldsig#');
-
-        $canonical_signedinfo = $transformer->applyTransforms($sxe->Signature->SignedInfo->asXML());
-
-        if(@openssl_verify($canonical_signedinfo, $signatureValue, $public_key)) {
-            return (string)$sxe->Signature->SignedInfo->Reference['URI'];
-        }
-
-        return false;
-    }
-
-    /**
-     * Transform an RSA Key in Modulus/Exponent format into a PEM encoding and
-     * return an openssl resource for it
-     *
-     * @param string $modulus The RSA Modulus in binary format
-     * @param string $exponent The RSA exponent in binary format
-     * @return string The PEM encoded version of the key
-     */
-    static protected function _getPublicKeyFromModExp($modulus, $exponent)
-    {
-        $modulusInteger  = self::_encodeValue($modulus, self::ASN_TYPE_INTEGER);
-        $exponentInteger = self::_encodeValue($exponent, self::ASN_TYPE_INTEGER);
-        $modExpSequence  = self::_encodeValue($modulusInteger . $exponentInteger, self::ASN_TYPE_SEQUENCE);
-        $modExpBitString = self::_encodeValue($modExpSequence, self::ASN_TYPE_BITSTRING);
-
-        $binRsaKeyIdentifier = pack( "H*", self::RSA_KEY_IDENTIFIER );
-
-        $publicKeySequence = self::_encodeValue($binRsaKeyIdentifier . $modExpBitString, self::ASN_TYPE_SEQUENCE);
-
-        $publicKeyInfoBase64 = base64_encode( $publicKeySequence );
-
-        $publicKeyString = "-----BEGIN PUBLIC KEY-----\n";
-        $publicKeyString .= wordwrap($publicKeyInfoBase64, 64, "\n", true);
-        $publicKeyString .= "\n-----END PUBLIC KEY-----\n";
-
-        return $publicKeyString;
-    }
-
-    /**
-     * Encode a limited set of data types into ASN.1 encoding format
-     * which is used in X.509 certificates
-     *
-     * @param string $data The data to encode
-     * @param const $type The encoding format constant
-     * @return string The encoded value
-     * @throws Zend_InfoCard_Xml_Security_Exception
-     */
-    static protected function _encodeValue($data, $type)
-    {
-        // Null pad some data when we get it (integer values > 128 and bitstrings)
-        if( (($type == self::ASN_TYPE_INTEGER) && (ord($data) > 0x7f)) ||
-            ($type == self::ASN_TYPE_BITSTRING)) {
-                $data = "\0$data";
-        }
-
-        $len = strlen($data);
-
-        // encode the value based on length of the string
-        // I'm fairly confident that this is by no means a complete implementation
-        // but it is enough for our purposes
-        switch(true) {
-            case ($len < 128):
-                return sprintf("%c%c%s", $type, $len, $data);
-            case ($len < 0x0100):
-                return sprintf("%c%c%c%s", $type, 0x81, $len, $data);
-            case ($len < 0x010000):
-                return sprintf("%c%c%c%c%s", $type, 0x82, $len / 0x0100, $len % 0x0100, $data);
-            default:
-                require_once 'Zend/InfoCard/Xml/Security/Exception.php';
-                throw new Zend_InfoCard_Xml_Security_Exception("Could not encode value");
-        }
-
-        require_once 'Zend/InfoCard/Xml/Security/Exception.php';
-        throw new Zend_InfoCard_Xml_Security_Exception("Invalid code path");
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+VQzs0BKf

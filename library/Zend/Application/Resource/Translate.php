@@ -1,83 +1,35 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Application
- * @subpackage Resource
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Translate.php 14974 2009-04-18 00:02:32Z norm2782 $
- */
-
-/**
- * Resource for setting translation options
- *
- * @uses       Zend_Application_Resource_ResourceAbstract
- * @category   Zend
- * @package    Zend_Application
- * @subpackage Resource
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Application_Resource_Translate extends Zend_Application_Resource_ResourceAbstract
-{
-    const DEFAULT_REGISTRY_KEY = 'Zend_Translate';
-
-    /**
-     * @var Zend_Translate
-     */
-    protected $_translate;
-
-    /**
-     * Defined by Zend_Application_Resource_Resource
-     *
-     * @return Zend_Translate
-     */
-    public function init()
-    {
-        return $this->getTranslate();
-    }
-
-    /**
-     * Retrieve translate object
-     *
-     * @return Zend_Translate
-     */
-    public function getTranslate()
-    {
-        if (null === $this->_translate) {
-            $options = $this->getOptions();
-
-            if (!isset($options['data'])) {
-                throw new Zend_Application_Resource_Exception('No translation source data provided.');
-            }
-
-            $adapter = isset($options['adapter']) ? $options['adapter'] : Zend_Translate::AN_ARRAY;
-            $locale  = isset($options['locale'])  ? $options['locale']  : null;
-            $translateOptions = isset($options['options']) ? $options['options'] : array();
-
-            $this->_translate = new Zend_Translate(
-                $adapter, $options['data'], $locale, $translateOptions
-            );
-
-            $key = (isset($options['registry_key']) && !is_numeric($options['registry_key']))
-                 ? $options['registry_key']
-                 : self::DEFAULT_REGISTRY_KEY;
-
-            Zend_Registry::set($key, $this->_translate);
-        }
-
-        return $this->_translate;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

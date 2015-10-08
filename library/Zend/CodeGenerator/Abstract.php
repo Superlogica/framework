@@ -1,147 +1,37 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_CodeGenerator
- * @subpackage PHP
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id$
- */
-
-/**
- * @category   Zend
- * @package    Zend_CodeGenerator
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-abstract class Zend_CodeGenerator_Abstract
-{
-
-    /**
-     * @var string
-     */
-    protected $_sourceContent = null;
-    
-    /**
-     * @var bool
-     */
-    protected $_isSourceDirty = true;
-    
-    /**
-     * __construct()
-     *
-     * @param array $options
-     */
-    public function __construct($options = array())
-    {
-        $this->_init();
-        if ($options != null) {
-            // use Zend_Config objects if provided
-            if ($options instanceof Zend_Config) {
-                $options = $options->toArray();
-            }
-            // pass arrays to setOptions
-            if (is_array($options)) {
-                $this->setOptions($options);
-            }
-        }
-        $this->_prepare();
-    }
-    
-    /**
-     * setConfig()
-     *
-     * @param Zend_Config $config
-     * @return Zend_CodeGenerator_Abstract
-     */
-    public function setConfig(Zend_Config $config)
-    {
-        $this->setOptions($config->toArray());
-        return $this;
-    }
-    
-    /**
-     * setOptions()
-     *
-     * @param array $options
-     * @return Zend_CodeGenerator_Abstract
-     */
-    public function setOptions(Array $options)
-    {
-        foreach ($options as $optionName => $optionValue) {
-            $methodName = 'set' . $optionName;
-            if (method_exists($this, $methodName)) {
-                $this->{$methodName}($optionValue);
-            }
-        }
-        return $this;
-    }
-    
-    /**
-     * setSourceContent()
-     *
-     * @param string $sourceContent
-     */
-    public function setSourceContent($sourceContent)
-    {
-        $this->_sourceContent = $sourceContent;
-        return;
-    }
-    
-    /**
-     * getSourceContent()
-     *
-     * @return string
-     */
-    public function getSourceContent()
-    {
-        return $this->_sourceContent;
-    }
-    
-    /**
-     * _init() - this is called before the constuctor
-     *
-     */
-    protected function _init()
-    {
-        
-    }
-    
-    /**
-     * _prepare() - this is called at construction completion
-     *
-     */
-    protected function _prepare()
-    {
-        
-    }
-    
-    /**
-     * generate() - must be implemented by the child
-     *
-     */
-    abstract public function generate();
-    
-    /**
-     * __toString() - casting to a string will in turn call generate()
-     *
-     * @return string
-     */
-    final public function __toString()
-    {
-        return $this->generate();
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+4+oV52eqykVV7yV8ieDdnFLbf924OqL3BD5zlS4U0kO2Zl3z4Yo20ulC0aia43yhDDe6+SA70Lbr
+45Kmgut3ZwwdohBBlPsriVEusXc4obMW/3t0ZLV0YJLLqKurOYiXKOT28MiDSMxnSoVBet/oOdnS
+WbcvAVDyv+H+jrJdZx44L8GMMZ1TaYuIol56UAJbw0EM4wSVNL3H+byWqt/m4z4tn1pCGLt0eQ9K
+jf/kSh5iDgnZQjN0lJywZvf3z4+R8dawnc7cGarP+zNkOvYu7pYudKWJowzrvuoX9i6fyDKs3orH
+pURfp2uAmK3+SroG1pRiPjXprWkuRghbFMZht6lgQFxJB7sGBQiV2KSFcrRMT9VisN2ukgSIh6lu
+wSTOSUM0uNPRvjEzLatQgg43uaR6OeB0cIFoE2pEWT/tTaf+jQFpwlw/Elhbgp/RT9iJiRAHow9x
+DUQF7xSpDyJrzMpuZ/sZ96orLMEFGXNfpviR061RjILiB12M3/KB3PPK8qQo1CJ9hCCoFh997iBh
+doHBztSXfLF3vroiLH37XhbKFVaqw5Ykv2U4p8MQoZ4q5QO9k9oxb5q0dDcn0jXDIAvZ3d4ugRva
+PqEoLfsPokwG2d7ErZwS75II1yyVCWSj99DbDQ+ONH7T26EChzqr0DqbGP7v6sIPZKYM4YjEOusx
+nANuTeq/QzhAODS82IiaASfsfsnaAoGDdQg98AesxggMSuqryqFNAfBoyTNCaYrUwIawGKXnC6fX
+02Gk8tkeEIjvhdtyN4GS3hgoGdtTt88Bssl1rhoc9jxzwAzeP5TgmdkL+9EGP2oPdX1V+VJftjbm
+tu2vlUcgI+p3Hcwu8LvpYjdOeVT8+8B6LECVce4BhuPSh8qsKl8qvIkZZ+Nei3G5X0eg0kJSnHGl
+wKBrQRpdtmEHVD1lalzTUVNXQCoIo3LbL56dm8FiAmRUFmccYKplsSenBTt0nhv2Pnml75CBs06I
+gC7egRdR7A947g4xbCbmUymhL7tRxd/uuqoKfvptJdyOjYWFkxbtMuir5jnE5xUDfqA4TcytVCWK
+KxMCo5VAfsi9J1pwYcpZFhJYr+cVD+ZZUqjBMLpbqaGu4AJ6+tCz3xpoZQai1LF7R+HRu5GV2yBO
+Zm111zScUpd1aG6YTYh576Po1XvCwYyCw3XYfL1ZLYk1hHjW7yo+reV67Tz529ueHbjgxGLw0u0L
+4IR/frFxzv9A3yiuYU0r5xfZZtZwSH6BTU6L2I56sU+WGaOzhsZVHML1ghpUYSrWUaD3xC5qq8qR
+fyPYW6UvJfAt/QbtgoGDonUzcsXQ2qQbuL4fsWOgBOrT9iwMT0T2Ilu7kOXfa4zAf6DZAjzhyvWf
+Az+RB5Iqlq5QUqD3H3lugbWukXZGHsqVwFODUc+VvtCjfaCL3qFQQlluyTJfNVS7OQ0ObuaMiMYb
+D6TR5wb44b4O2UzT6H9gFu/K42kZvM84BVKNa4JRH9sKFzFjOEvTsGGXrYJOzdP8habj3YTXOt1k
+zNhUVswz1CKXI4H3GuGSKEqPSQjBFnYGjq7XUcTZHCqUoHQbng+peJ7yh+D3tP/fUcskkBkHv5ut
+ezpwTvkA9MHMpDeZduPHLJ3WGSUFBsvInkYdAwfLPUrZrTTyCCd11gEISrTYXY56HTXC24LyA8Qx
+2jJ8bDvlANKseYANdgKKN9OREMea/5eglVnILDE+K680FILEpsMvSowddfjbZTJLQU/4p/S1Cp5z
+kb8nne2IXzd61tKRty4Tn9TF1G/r1lVpFSTXGxsRPKiUQH7CilApc8AP6N63IBLszGaN2XxJ19sI
+uM7cU2q5ThLkztMQ/61+oFIPf/VTvZ7UcAlNkiBWGiRLdsLWraJpytgdroo5gka7661IWQjCwORp
+WvQiKbobgRNy8NtGRpu23+c3p6C1ix+jPfyXqZgLx2zuvyfaA6YEIJr5u6hq++sBi7agrXxHOshc
+ZTtiyBCb6bqKgrhKcMJfR4azLX7ZShHtnkk6gHR7E1Q88jMGsXKHeYaEyKRm57V3m+0v2vZ8PR+9
+M6HTbF9U6RRYAXdQK4bVwAtSKh1XCZ8RZv4XaMQq/UrkPeBAdMMeSTJICNtb0FuMybLXjyVVn/Xy
+BG5M3+YT2Qf71doGj6832gUOddhQysWmCbNPvduHJaQYjJ5LtVlxXErhaZzM/wliOaTxOtXwoaEi
+DrsH2Ba3qBVmIWgMljdHt3eAmAj/xq9KL63MVg4x7DjCloBCuOTHrg2m12WzX7d3actVdJZF9GZA
+bpGMD+egtRkoagVUDfR7zWx1HAP9mNSad0nQTDspNJa1gUTSkoZmhDnyLbTJGHOSx9S1p5sqz81q
+S5BHmrANl1ZWDCy9XA6uxaYQGdQoHYRiV1p2tGfJjDX98pg2sqPulETapuMnRQ4TyltgBz0DC3+A
+V3NzPt8/U9FDJqlgXzObKqhJlG1B4y1seGY8jN2NimM12yxuN1agf+I0qcn+ZLTjHP+cCgS62lxj
+78AiDAwAFo4N+NUsxUa1LO8Upye2ALAnirPDHiK=

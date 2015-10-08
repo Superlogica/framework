@@ -1,200 +1,56 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Books
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-require_once 'Zend/Gdata.php';
-
-/**
- * @see Zend_Gdata_DublinCore
- */
-require_once 'Zend/Gdata/DublinCore.php';
-
-/**
- * @see Zend_Gdata_Books_CollectionEntry
- */
-require_once 'Zend/Gdata/Books/CollectionEntry.php';
-
-/**
- * @see Zend_Gdata_Books_CollectionFeed
- */
-require_once 'Zend/Gdata/Books/CollectionFeed.php';
-
-/**
- * @see Zend_Gdata_Books_VolumeEntry
- */
-require_once 'Zend/Gdata/Books/VolumeEntry.php';
-
-/**
- * @see Zend_Gdata_Books_VolumeFeed
- */
-require_once 'Zend/Gdata/Books/VolumeFeed.php';
-
-/**
- * Service class for interacting with the Books service
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Books
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Gdata_Books extends Zend_Gdata
-{
-    const VOLUME_FEED_URI = 'http://books.google.com/books/feeds/volumes';
-    const MY_LIBRARY_FEED_URI = 'http://books.google.com/books/feeds/users/me/collections/library/volumes';
-    const MY_ANNOTATION_FEED_URI = 'http://books.google.com/books/feeds/users/me/volumes';
-    const AUTH_SERVICE_NAME = 'print';
-
-    /**
-     * Namespaces used for Zend_Gdata_Books
-     *
-     * @var array
-     */
-    public static $namespaces = array(
-        array('gbs', 'http://schemas.google.com/books/2008', 1, 0),
-        array('dc', 'http://purl.org/dc/terms', 1, 0)
-    );
-
-    /**
-     * Create Zend_Gdata_Books object
-     *
-     * @param Zend_Http_Client $client (optional) The HTTP client to use when
-     *          when communicating with the Google servers.
-     * @param string $applicationId The identity of the app in the form of Company-AppName-Version
-     */
-    public function __construct($client = null, $applicationId = 'MyCompany-MyApp-1.0')
-    {
-        $this->registerPackage('Zend_Gdata_Books');
-        $this->registerPackage('Zend_Gdata_Books_Extension');
-        parent::__construct($client, $applicationId);
-        $this->_httpClient->setParameterPost('service', self::AUTH_SERVICE_NAME);
-     }
-
-    /**
-     * Retrieves a feed of volumes.
-     *
-     * @param Zend_Gdata_Query|string|null $location (optional) The URL to
-     *        query or a Zend_Gdata_Query object from which a URL can be
-     *        determined.
-     * @return Zend_Gdata_Books_VolumeFeed The feed of volumes found at the
-     *         specified URL.
-     */
-    public function getVolumeFeed($location = null)
-    {
-        if ($location == null) {
-            $uri = self::VOLUME_FEED_URI;
-        } else if ($location instanceof Zend_Gdata_Query) {
-            $uri = $location->getQueryUrl();
-        } else {
-            $uri = $location;
-        }
-        return parent::getFeed($uri, 'Zend_Gdata_Books_VolumeFeed');
-    }
-
-    /**
-     * Retrieves a specific volume entry.
-     *
-     * @param string|null $volumeId The volumeId of interest.
-     * @param Zend_Gdata_Query|string|null $location (optional) The URL to
-     *        query or a Zend_Gdata_Query object from which a URL can be
-     *        determined.
-     * @return Zend_Gdata_Books_VolumeEntry The feed of volumes found at the
-     *         specified URL.
-     */
-    public function getVolumeEntry($volumeId = null, $location = null)
-    {
-        if ($volumeId !== null) {
-            $uri = self::VOLUME_FEED_URI . "/" . $volumeId;
-        } else if ($location instanceof Zend_Gdata_Query) {
-            $uri = $location->getQueryUrl();
-        } else {
-            $uri = $location;
-        }
-        return parent::getEntry($uri, 'Zend_Gdata_Books_VolumeEntry');
-    }
-
-    /**
-     * Retrieves a feed of volumes, by default the User library feed.
-     *
-     * @param Zend_Gdata_Query|string|null $location (optional) The URL to
-     *        query.
-     * @return Zend_Gdata_Books_VolumeFeed The feed of volumes found at the
-     *         specified URL.
-     */
-    public function getUserLibraryFeed($location = null)
-    {
-        if ($location == null) {
-            $uri = self::MY_LIBRARY_FEED_URI;
-        } else {
-            $uri = $location;
-        }
-        return parent::getFeed($uri, 'Zend_Gdata_Books_VolumeFeed');
-    }
-
-    /**
-     * Retrieves a feed of volumes, by default the User annotation feed
-     *
-     * @param Zend_Gdata_Query|string|null $location (optional) The URL to
-     *        query.
-     * @return Zend_Gdata_Books_VolumeFeed The feed of volumes found at the
-     *         specified URL.
-     */
-    public function getUserAnnotationFeed($location = null)
-    {
-        if ($location == null) {
-            $uri = self::MY_ANNOTATION_FEED_URI;
-        } else {
-            $uri = $location;
-        }
-        return parent::getFeed($uri, 'Zend_Gdata_Books_VolumeFeed');
-    }
-
-    /**
-     * Insert a Volume / Annotation
-     *
-     * @param Zend_Gdata_Books_VolumeEntry $entry
-     * @param Zend_Gdata_Query|string|null $location (optional) The URL to
-     *        query
-     * @return Zend_Gdata_Books_VolumeEntry The inserted volume entry.
-     */
-    public function insertVolume($entry, $location = null)
-    {
-        if ($location == null) {
-            $uri = self::MY_LIBRARY_FEED_URI;
-        } else {
-            $uri = $location;
-        }
-        return parent::insertEntry(
-            $entry, $uri, 'Zend_Gdata_Books_VolumeEntry');
-    }
-
-    /**
-     * Delete a Volume
-     *
-     * @param Zend_Gdata_Books_VolumeEntry $entry
-     * @return void
-     */
-    public function deleteVolume($entry)
-    {
-        $entry->delete();
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

@@ -1,132 +1,48 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Amf
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_Amf_Auth_Abstract */
-require_once 'Zend/Amf/Auth/Abstract.php';
-
-/** Zend_Acl */
-require_once 'Zend/Acl.php';
-
-/** Zend_Auth_Result */
-require_once 'Zend/Auth/Result.php';
-
-/**
- * This class implements authentication against XML file with roles for Flex Builder.
- *
- * @package    Zend_Amf
- * @subpackage Adobe
- * @copyright  Copyright (c) 2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Amf_Adobe_Auth extends Zend_Amf_Auth_Abstract
-{
-    
-    /**
-     * ACL for authorization
-     * 
-     * @var Zend_Acl
-     */
-    protected $_acl;
-    
-    /**
-     * Username/password array
-     * 
-     * @var array
-     */
-    protected $_users = array();
-    
-    /**
-     * Create auth adapter
-     * 
-     * @param string $rolefile File containing XML with users and roles
-     */
-    public function __construct($rolefile)
-    {
-        $this->_acl = new Zend_Acl();
-        $xml = simplexml_load_file($rolefile);
-/*
-Roles file format:
- <roles>
-   <role id=”admin”>
-        <user name=”user1” password=”pwd”/>
-    </role>
-   <role id=”hr”>
-        <user name=”user2” password=”pwd2”/>
-    </role>    
-</roles>
-*/
-        foreach($xml->role as $role) {
-            $this->_acl->addRole(new Zend_Acl_Role((string)$role["id"]));
-            foreach($role->user as $user) {
-		        $this->_users[(string)$user["name"]] = array("password" => (string)$user["password"], 
-		        										"role" => (string)$role["id"]);
-	        }
-        }
-    }
-    
-    /**
-     * Get ACL with roles from XML file
-     * 
-     * @return Zend_Acl
-     */
-    public function getAcl()
-    {
-        return $this->_acl;
-    }
-    
-    /**
-     * Perform authentication
-     * 
-     * @throws Zend_Auth_Adapter_Exception
-     * @return Zend_Auth_Result
-     * @see Zend_Auth_Adapter_Interface#authenticate()
-     */
-    public function authenticate()
-    {
-        if (empty($this->_username) ||
-            empty($this->_password)) {
-            /**
-             * @see Zend_Auth_Adapter_Exception
-             */
-            require_once 'Zend/Auth/Adapter/Exception.php';
-            throw new Zend_Auth_Adapter_Exception('Username/password should be set');
-        }
-        
-        if(!isset($this->_users[$this->_username])) {
-            return new Zend_Auth_Result(Zend_Auth_Result::FAILURE_IDENTITY_NOT_FOUND,
-                null,
-                array('Username not found')
-                );
-        }
-        
-        $user = $this->_users[$this->_username];
-        if($user["password"] != $this->_password) {
-            return new Zend_Auth_Result(Zend_Auth_Result::FAILURE_CREDENTIAL_INVALID,
-                null,
-                array('Authentication failed')
-                );
-        }
-        
-        $id = new stdClass();
-        $id->role = $user["role"];
-        $id->name = $this->_username;
-        return new Zend_Auth_Result(Zend_Auth_Result::SUCCESS, $id);
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+DNtBPcjJxtqI6xtzBboreQjsar0=

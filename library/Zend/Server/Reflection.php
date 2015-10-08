@@ -1,111 +1,38 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Server
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * Zend_Server_Reflection_Function
- */
-require_once 'Zend/Server/Reflection/Function.php';
-
-/**
- * Zend_Server_Reflection_Class
- */
-require_once 'Zend/Server/Reflection/Class.php';
-
-/**
- * Reflection for determining method signatures to use with server classes
- *
- * @category   Zend
- * @package    Zend_Server
- * @subpackage Reflection
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version $Id: Reflection.php 13217 2008-12-14 11:09:37Z thomas $
- */
-class Zend_Server_Reflection
-{
-    /**
-     * Perform class reflection to create dispatch signatures
-     *
-     * Creates a {@link Zend_Server_Reflection_Class} object for the class or
-     * object provided.
-     *
-     * If extra arguments should be passed to dispatchable methods, these may
-     * be provided as an array to $argv.
-     *
-     * @param string|object $class Class name or object
-     * @param null|array $argv Optional arguments to be used during the method call
-     * @param string $namespace Optional namespace with which to prefix the
-     * method name (used for the signature key). Primarily to avoid collisions,
-     * also for XmlRpc namespacing
-     * @return Zend_Server_Reflection_Class
-     * @throws Zend_Server_Reflection_Exception
-     */
-    public static function reflectClass($class, $argv = false, $namespace = '')
-    {
-        if (is_object($class)) {
-            $reflection = new ReflectionObject($class);
-        } elseif (class_exists($class)) {
-            $reflection = new ReflectionClass($class);
-        } else {
-            require_once 'Zend/Server/Reflection/Exception.php';
-            throw new Zend_Server_Reflection_Exception('Invalid class or object passed to attachClass()');
-        }
-
-        if ($argv && !is_array($argv)) {
-            require_once 'Zend/Server/Reflection/Exception.php';
-            throw new Zend_Server_Reflection_Exception('Invalid argv argument passed to reflectClass');
-        }
-
-        return new Zend_Server_Reflection_Class($reflection, $namespace, $argv);
-    }
-
-    /**
-     * Perform function reflection to create dispatch signatures
-     *
-     * Creates dispatch prototypes for a function. It returns a
-     * {@link Zend_Server_Reflection_Function} object.
-     *
-     * If extra arguments should be passed to the dispatchable function, these
-     * may be provided as an array to $argv.
-     *
-     * @param string $function Function name
-     * @param null|array $argv Optional arguments to be used during the method call
-     * @param string $namespace Optional namespace with which to prefix the
-     * function name (used for the signature key). Primarily to avoid
-     * collisions, also for XmlRpc namespacing
-     * @return Zend_Server_Reflection_Function
-     * @throws Zend_Server_Reflection_Exception
-     */
-    public static function reflectFunction($function, $argv = false, $namespace = '')
-    {
-        if (!is_string($function) || !function_exists($function)) {
-            require_once 'Zend/Server/Reflection/Exception.php';
-            throw new Zend_Server_Reflection_Exception('Invalid function "' . $function . '" passed to reflectFunction');
-        }
-
-
-        if ($argv && !is_array($argv)) {
-            require_once 'Zend/Server/Reflection/Exception.php';
-            throw new Zend_Server_Reflection_Exception('Invalid argv argument passed to reflectClass');
-        }
-
-        return new Zend_Server_Reflection_Function(new ReflectionFunction($function), $namespace, $argv);
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+CJ8=

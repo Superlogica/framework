@@ -1,127 +1,59 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Soap
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: CodeGenerator.php 11560 2008-10-01 10:09:10Z yoshida@zend.co.jp $
- */
-
-require_once 'Zend/Soap/Wsdl/Parser.php';
-
-/**
- * Zend_Soap_Wsdl_CodeGenerator
- * 
- * @category   Zend
- * @package    Zend_Soap
- */
-class Zend_Soap_Wsdl_CodeGenerator {
-   
-    /**
-     * @var string WSDL Filename/URI
-     */
-    private static $filename = null;
-    
-    /**
-     * @var string PHP Code for output
-     */
-    private static $php_code;
-    
-    /**
-     * @var object Zend_Soap_Wsdl_Parser Result
-     */
-    private static $wsdl;
-
-    /**
-     * Constructor
-     *
-     * @param string $wsdl Filename, URI or XML for the WSDL
-     * @param string $output Output file name, default: null
-     */
-    public static function parse($wsdl, $output = null)
-    {
-        self::$wsdl = Zend_Soap_Wsdl_Parser::parse($wsdl);
-        
-        self::$php_code = self::generatePhp();
-        
-        if (!is_null($output) && is_writable($output)) {
-            file_put_contents($output);
-        }
-        
-        return self::$php_code;
-        
-    }
-    
-    /**
-     * Generate the output PHP
-     *
-     * @return string
-     */
-    private function generatePhp()
-    {
-        $php_code = '<?php' . "\n";
-        if (isset(self::$wsdl->documentation)) {
-            $docs = self::$wsdl->documentation;
-            $docs = explode("\n", $docs);
-            $php_code .= "/**\n";
-            foreach ($docs as $line) {
-                $php_code .= ' * ' .trim($line). PHP_EOL;
-            }
-            $php_code .= " */\n\n";
-        }
-        if (!isset(self::$wsdl->name)) {
-            $classname = 'SoapService';
-        } else {
-            $classname = self::$wsdl->name;
-        }                
-            
-        $php_code .= "class {$classname} {\n";
-        
-        foreach (self::$wsdl->operations as $name => $io) {
-            if (isset($io['documentation'])) {
-                $php_code .= "\n\t/**\n";
-                $docs = $io['documentation'];
-                $docs = explode("\n", $docs);
-                foreach ($docs as $line) {
-                    $php_code .= "\t * " .trim($line). PHP_EOL;
-                }
-                $php_code .= "\t */\n";
-            }
-            $php_code .= "\n\tpublic function {$name} (";
-            if (isset($io['input'])) {
-                $arg_names = array();
-                foreach ($io['input'] as $arg) {
-                    $arg_names[] = $arg['name'];
-                }
-                $php_code .= '$' .implode(', $', $arg_names);
-            }
-            $php_code .= ')';
-            $php_code .= "\n\t{";
-            $php_code .= "\n\t\t\n";
-            if (isset($io['output'])) {
-                $php_code .= "\t\treturn \${$io['output']['name']};\n";
-            }
-            $php_code .= "\t}\n";
-        }
-        
-        $php_code .= "\n}";
-        
-        $php_code .= PHP_EOL. "\$server = new SoapServer;" .PHP_EOL;
-        $php_code .= "\$server->setClass($classname);";
-        $php_code .= "\n?>";
-        return $php_code;
-    }
-}
-
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

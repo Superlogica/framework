@@ -150,18 +150,58 @@ var Superlogica_Js_Chart = new Class({
         var series = this.getOpcao('series');
         if(this.getOpcao('render') == 'PieChart'){
          
-            var dados = this._dataToMorrisDonutArray( series, json );
+            var i =0;
+            var total = 0;
+            var porcentagem = 0;
+            var porcentagemMinima = 5;
+            var outros=0;
+            var countOutros=0;
+            var jsonFormatado =[];
+            
             if(this.getOpcao('porcentagem')){
+                //menor que 5% vai para outros
+                Object.each(json, function(item, key){
+                    if((item['valor'] < porcentagemMinima) && (item['valor'] > 0)){
+                      outros += parseFloat(item['valor']);     
+                      countOutros++;
+                    }else{
+                        jsonFormatado[i]=item;
+                        i++;
+                    }   
+                 });                
+                
+                if(outros){
+                    jsonFormatado[jsonFormatado.length]=[];
+                    jsonFormatado[jsonFormatado.length]={'label': 'outros','valor': outros};
+                }                  
+                  
                 Morris.Donut({
                     element: this.getOpcao('idGrafico'),
-                    data: dados,
+                    data: this._dataToMorrisDonutArray( series, (countOutros > 3) ? jsonFormatado : json),
                     colors: this.getOpcao('cores'),
                     formatter: function (sx) { return sx + "%"}
                     });
-            }else{
+            }else{     
+                //menor que 5% vai para outros                
+                Object.each(json, function(item, key){ total+= parseFloat(item['valor']); });                
+                Object.each(json, function(item, key){                   
+                    porcentagem= (parseFloat(item['valor']) * 100)/total;                    
+                    if((porcentagem < porcentagemMinima) && (porcentagem > 0)){
+                      outros += parseFloat(item['valor']);  
+                      countOutros++;                      
+                    }else{
+                        jsonFormatado[i]=item;
+                        i++;
+                    }   
+                 });                
+                
+                if(outros){
+                    jsonFormatado[jsonFormatado.length]={'label': 'outros','valor': outros};
+                }
+                
                 Morris.Donut({
                     element: this.getOpcao('idGrafico'),
-                    data: dados,
+                    data: this._dataToMorrisDonutArray( series, (countOutros > 3) ? jsonFormatado : json),
                     colors: this.getOpcao('cores')
                     });                
             }

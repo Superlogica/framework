@@ -1,117 +1,29 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category  Zend
- * @package   Zend_Measure
- * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   http://framework.zend.com/license/new-bsd     New BSD License
- * @version   $Id: $
- */
-
-/**
- * Implement needed classes
- */
-require_once 'Zend/Measure/Abstract.php';
-require_once 'Zend/Locale.php';
-
-/**
- * Class for handling time conversions
- *
- * @category   Zend
- * @package    Zend_Measure
- * @subpackage Zend_Measure_Time
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Measure_Time extends Zend_Measure_Abstract
-{
-    const STANDARD = 'SECOND';
-
-    const ANOMALISTIC_YEAR  = 'ANOMALISTIC_YEAR';
-    const ATTOSECOND        = 'ATTOSECOND';
-    const CENTURY           = 'CENTURY';
-    const DAY               = 'DAY';
-    const DECADE            = 'DECADE';
-    const DRACONIC_YEAR     = 'DRACONTIC_YEAR';
-    const EXASECOND         = 'EXASECOND';
-    const FEMTOSECOND       = 'FEMTOSECOND';
-    const FORTNIGHT         = 'FORTNIGHT';
-    const GAUSSIAN_YEAR     = 'GAUSSIAN_YEAR';
-    const GIGASECOND        = 'GIGASECOND';
-    const GREGORIAN_YEAR    = 'GREGORIAN_YEAR';
-    const HOUR              = 'HOUR';
-    const JULIAN_YEAR       = 'JULIAN_YEAR';
-    const KILOSECOND        = 'KILOSECOND';
-    const LEAPYEAR          = 'LEAPYEAR';
-    const MEGASECOND        = 'MEGASECOND';
-    const MICROSECOND       = 'MICROSECOND';
-    const MILLENIUM         = 'MILLENIUM';
-    const MILLISECOND       = 'MILLISECOND';
-    const MINUTE            = 'MINUTE';
-    const MONTH             = 'MONTH';
-    const NANOSECOND        = 'NANOSECOND';
-    const PETASECOND        = 'PETASECOND';
-    const PICOSECOND        = 'PICOSECOND';
-    const QUARTER           = 'QUARTER';
-    const SECOND            = 'SECOND';
-    const SHAKE             = 'SHAKE';
-    const SIDEREAL_YEAR     = 'SYNODIC_MONTH';
-    const TERASECOND        = 'TERASECOND';
-    const TROPICAL_YEAR     = 'TROPIC_YEAR';
-    const WEEK              = 'WEEK';
-    const YEAR              = 'YEAR';
-
-    /**
-     * Calculations for all time units
-     *
-     * @var array
-     */
-    protected $_units = array(
-        'ANOMALISTIC_YEAR'  => array('31558432', 'anomalistic year'),
-        'ATTOSECOND'        => array('1.0e-18', 'as'),
-        'CENTURY'           => array('3153600000', 'century'),
-        'DAY'               => array('86400', 'day'),
-        'DECADE'            => array('315360000', 'decade'),
-        'DRACONIC_YEAR'     => array('29947974', 'draconic year'),
-        'EXASECOND'         => array('1.0e+18', 'Es'),
-        'FEMTOSECOND'       => array('1.0e-15', 'fs'),
-        'FORTNIGHT'         => array('1209600', 'fortnight'),
-        'GAUSSIAN_YEAR'     => array('31558196', 'gaussian year'),
-        'GIGASECOND'        => array('1.0e+9', 'Gs'),
-        'GREAT_YEAR'        => array(array('*' => '31536000', '*' => '25700'), 'great year'),
-        'GREGORIAN_YEAR'    => array('31536000', 'year'),
-        'HOUR'              => array('3600', 'h'),
-        'JULIAN_YEAR'       => array('31557600', 'a'),
-        'KILOSECOND'        => array('1000', 'ks'),
-        'LEAPYEAR'          => array('31622400', 'year'),
-        'MEGASECOND'        => array('1000000', 'Ms'),
-        'MICROSECOND'       => array('0.000001', 'µs'),
-        'MILLENIUM'         => array('31536000000', 'millenium'),
-        'MILLISECOND'       => array('0.001', 'ms'),
-        'MINUTE'            => array('60', 'min'),
-        'MONTH'             => array('2628600', 'month'),
-        'NANOSECOND'        => array('1.0e-9', 'ns'),
-        'PETASECOND'        => array('1.0e+15', 'Ps'),
-        'PICOSECOND'        => array('1.0e-12', 'ps'),
-        'QUARTER'           => array('7884000', 'quarter'),
-        'SECOND'            => array('1', 's'),
-        'SHAKE'             => array('1.0e-9', 'shake'),
-        'SIDEREAL_YEAR'     => array('31558149.7676', 'sidereal year'),
-        'TERASECOND'        => array('1.0e+12', 'Ts'),
-        'TROPICAL_YEAR'     => array('31556925', 'tropical year'),
-        'WEEK'              => array('604800', 'week'),
-        'YEAR'              => array('31536000', 'year'),
-        'STANDARD'          => 'SECOND'
-    );
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

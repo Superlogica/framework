@@ -1,435 +1,116 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Service
- * @subpackage Simpy
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Simpy.php 15893 2009-06-04 23:12:54Z elazar $
- */
-
-
-require_once 'Zend/Http/Client.php';
-
-/**
- * @category   Zend
- * @package    Zend_Service
- * @subpackage Simpy
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @link       http://www.simpy.com/doc/api/rest/
- */
-class Zend_Service_Simpy
-{
-    /**
-     * Base URI to which API methods and parameters will be appended
-     *
-     * @var string
-     */
-    protected $_baseUri = 'http://simpy.com/simpy/api/rest/';
-
-    /**
-     * HTTP client for use in making web service calls 
-     *
-     * @var Zend_Http_Client 
-     */
-    protected $_http;
-
-    /**
-     * Constructs a new Simpy (free) REST API Client
-     *
-     * @param  string $username Username for the Simpy user account
-     * @param  string $password Password for the Simpy user account
-     * @return void
-     */
-    public function __construct($username, $password)
-    {
-        /**
-         * @see Zend_Service_Rest
-         */
-        require_once 'Zend/Rest/Client.php';
-        $this->_http = new Zend_Http_Client;
-        $this->_http->setAuth($username, $password);
-    }
-
-    /**
-     * Returns the HTTP client currently in use by this class for REST API 
-     * calls, intended mainly for testing.
-     *
-     * @return Zend_Http_Client
-     */
-    public function getHttpClient()
-    {
-        return $this->_http;
-    }
-
-    /**
-     * Sends a request to the REST API service and does initial processing
-     * on the response.
-     *
-     * @param  string $op    Name of the operation for the request
-     * @param  array  $query Query data for the request (optional)
-     * @throws Zend_Service_Exception
-     * @return DOMDocument Parsed XML response
-     */
-    protected function _makeRequest($op, $query = null)
-    {
-        if ($query != null) {
-            $query = array_diff($query, array_filter($query, 'is_null'));
-            $query = '?' . http_build_query($query);
-        }
-
-        $this->_http->setUri($this->_baseUri . $op . '.do' . $query);
-        $response = $this->_http->request('GET');
-
-        if ($response->isSuccessful()) {
-            $doc = new DOMDocument();
-            $doc->loadXML($response->getBody());
-            $xpath = new DOMXPath($doc);
-            $list = $xpath->query('/status/code');
-
-            if ($list->length > 0) {
-                $code = $list->item(0)->nodeValue;
-
-                if ($code != 0) {
-                    $list = $xpath->query('/status/message');
-                    $message = $list->item(0)->nodeValue;
-                    /**
-                     * @see Zend_Service_Exception
-                     */
-                    require_once 'Zend/Service/Exception.php';
-                    throw new Zend_Service_Exception($message, $code);
-                }
-            }
-
-            return $doc;
-        }
-
-        /**
-         * @see Zend_Service_Exception
-         */
-        require_once 'Zend/Service/Exception.php';
-        throw new Zend_Service_Exception($response->getMessage(), $response->getStatus());
-    }
-
-    /**
-     * Returns a list of all tags and their counts, ordered by count in
-     * decreasing order
-     *
-     * @param  int $limit Limits the number of tags returned (optional)
-     * @link   http://www.simpy.com/doc/api/rest/GetTags
-     * @throws Zend_Service_Exception
-     * @return Zend_Service_Simpy_TagSet
-     */
-    public function getTags($limit = null)
-    {
-        $query = array(
-            'limit' => $limit
-        );
-
-        $doc = $this->_makeRequest('GetTags', $query);
-
-        /**
-         * @see Zend_Service_Simpy_TagSet
-         */
-        require_once 'Zend/Service/Simpy/TagSet.php';
-        return new Zend_Service_Simpy_TagSet($doc);
-    }
-
-    /**
-     * Removes a tag.
-     *
-     * @param  string $tag Tag to be removed
-     * @link   http://www.simpy.com/doc/api/rest/RemoveTag
-     * @return Zend_Service_Simpy Provides a fluent interface
-     */
-    public function removeTag($tag)
-    {
-        $query = array(
-            'tag' => $tag
-        );
-
-        $this->_makeRequest('RemoveTag', $query);
-
-        return $this;
-    }
-
-    /**
-     * Renames a tag.
-     *
-     * @param  string $fromTag Tag to be renamed
-     * @param  string $toTag   New tag name
-     * @link   http://www.simpy.com/doc/api/rest/RenameTag
-     * @return Zend_Service_Simpy Provides a fluent interface
-     */
-    public function renameTag($fromTag, $toTag)
-    {
-        $query = array(
-            'fromTag' => $fromTag,
-            'toTag' => $toTag
-        );
-
-        $this->_makeRequest('RenameTag', $query);
-
-        return $this;
-    }
-
-    /**
-     * Merges two tags into a new tag.
-     *
-     * @param  string $fromTag1 First tag to merge.
-     * @param  string $fromTag2 Second tag to merge.
-     * @param  string $toTag    Tag to merge the two tags into.
-     * @link   http://www.simpy.com/doc/api/rest/MergeTags
-     * @return Zend_Service_Simpy Provides a fluent interface
-     */
-    public function mergeTags($fromTag1, $fromTag2, $toTag)
-    {
-        $query = array(
-            'fromTag1' => $fromTag1,
-            'fromTag2' => $fromTag2,
-            'toTag' => $toTag
-        );
-
-        $this->_makeRequest('MergeTags', $query);
-
-        return $this;
-    }
-
-    /**
-     * Splits a single tag into two separate tags.
-     *
-     * @param  string $tag    Tag to split
-     * @param  string $toTag1 First tag to split into
-     * @param  string $toTag2 Second tag to split into
-     * @link   http://www.simpy.com/doc/api/rest/SplitTag
-     * @return Zend_Service_Simpy Provides a fluent interface
-     */
-    public function splitTag($tag, $toTag1, $toTag2)
-    {
-        $query = array(
-            'tag' => $tag,
-            'toTag1' => $toTag1,
-            'toTag2' => $toTag2
-        );
-
-        $this->_makeRequest('SplitTag', $query);
-
-        return $this;
-    }
-
-    /**
-     * Performs a query on existing links and returns the results or returns all
-     * links if no particular query is specified (which should be used sparingly
-     * to prevent overloading Simpy servers)
-     *
-     * @param  Zend_Service_Simpy_LinkQuery $q Query object to use (optional)
-     * @return Zend_Service_Simpy_LinkSet
-     */
-    public function getLinks(Zend_Service_Simpy_LinkQuery $q = null)
-    {
-        if ($q != null) {
-            $query = array(
-                'q'          => $q->getQueryString(),
-                'limit'      => $q->getLimit(),
-                'date'       => $q->getDate(),
-                'afterDate'  => $q->getAfterDate(),
-                'beforeDate' => $q->getBeforeDate()
-            );
-
-            $doc = $this->_makeRequest('GetLinks', $query);
-        } else {
-            $doc = $this->_makeRequest('GetLinks');
-        }
-
-        /**
-         * @see Zend_Service_Simpy_LinkSet
-         */
-        require_once 'Zend/Service/Simpy/LinkSet.php';
-        return new Zend_Service_Simpy_LinkSet($doc);
-    }
-
-    /**
-     * Saves a given link.
-     *
-     * @param  string $title       Title of the page to save
-     * @param  string $href        URL of the page to save
-     * @param  int    $accessType  ACCESSTYPE_PUBLIC or ACCESSTYPE_PRIVATE
-     * @param  mixed  $tags        String containing a comma-separated list of
-     *                             tags or array of strings containing tags
-     *                             (optional)
-     * @param  string $urlNickname Alternative custom title (optional)
-     * @param  string $note        Free text note (optional)
-     * @link   Zend_Service_Simpy::ACCESSTYPE_PUBLIC
-     * @link   Zend_Service_Simpy::ACCESSTYPE_PRIVATE
-     * @link   http://www.simpy.com/doc/api/rest/SaveLink
-     * @return Zend_Service_Simpy Provides a fluent interface
-     */
-    public function saveLink($title, $href, $accessType, $tags = null, $urlNickname = null, $note = null)
-    {
-        if (is_array($tags)) {
-            $tags = implode(',', $tags);
-        }
-
-        $query = array(
-            'title'       => $title,
-            'href'        => $href,
-            'accessType'  => $accessType,
-            'tags'        => $tags,
-            'urlNickname' => $urlNickname,
-            'note'        => $note
-        );
-
-        $this->_makeRequest('SaveLink', $query);
-
-        return $this;
-    }
-
-    /**
-     * Deletes a given link.
-     *
-     * @param  string $href URL of the bookmark to delete
-     * @link   http://www.simpy.com/doc/api/rest/DeleteLink
-     * @return Zend_Service_Simpy Provides a fluent interface
-     */
-    public function deleteLink($href)
-    {
-        $query = array(
-            'href' => $href
-        );
-
-        $this->_makeRequest('DeleteLink', $query);
-
-        return $this;
-    }
-
-    /**
-     * Return a list of watchlists and their meta-data, including the number
-     * of new links added to each watchlist since last login.
-     *
-     * @link   http://www.simpy.com/doc/api/rest/GetWatchlists
-     * @return Zend_Service_Simpy_WatchlistSet
-     */
-    public function getWatchlists()
-    {
-        $doc = $this->_makeRequest('GetWatchlists');
-
-        /**
-         * @see Zend_Service_Simpy_WatchlistSet
-         */
-        require_once 'Zend/Service/Simpy/WatchlistSet.php';
-        return new Zend_Service_Simpy_WatchlistSet($doc);
-    }
-
-    /**
-     * Returns the meta-data for a given watchlist.
-     *
-     * @param  int $watchlistId ID of the watchlist to retrieve
-     * @link   http://www.simpy.com/doc/api/rest/GetWatchlist
-     * @return Zend_Service_Simpy_Watchlist
-     */
-    public function getWatchlist($watchlistId)
-    {
-        $query = array(
-            'watchlistId' => $watchlistId
-        );
-
-        $doc = $this->_makeRequest('GetWatchlist', $query);
-
-        /**
-         * @see Zend_Service_Simpy_Watchlist
-         */
-        require_once 'Zend/Service/Simpy/Watchlist.php';
-        return new Zend_Service_Simpy_Watchlist($doc->documentElement);
-    }
-
-    /**
-     * Returns all notes in reverse chronological order by add date or by
-     * rank.
-     *
-     * @param  string $q     Query string formatted using Simpy search syntax
-     *                       and search fields (optional)
-     * @param  int    $limit Limits the number notes returned (optional)
-     * @link   http://www.simpy.com/doc/api/rest/GetNotes
-     * @link   http://www.simpy.com/simpy/FAQ.do#searchSyntax
-     * @link   http://www.simpy.com/simpy/FAQ.do#searchFieldsLinks
-     * @return Zend_Service_Simpy_NoteSet
-     */
-    public function getNotes($q = null, $limit = null)
-    {
-        $query = array(
-            'q'     => $q,
-            'limit' => $limit
-        );
-
-        $doc = $this->_makeRequest('GetNotes', $query);
-
-        /**
-         * @see Zend_Service_Simpy_NoteSet
-         */
-        require_once 'Zend/Service/Simpy/NoteSet.php';
-        return new Zend_Service_Simpy_NoteSet($doc);
-    }
-
-    /**
-     * Saves a note.
-     *
-     * @param  string $title       Title of the note
-     * @param  mixed  $tags        String containing a comma-separated list of
-     *                             tags or array of strings containing tags
-     *                             (optional)
-     * @param  string $description Free-text note (optional)
-     * @param  int    $noteId      Unique identifier for an existing note to
-     *                             update (optional)
-     * @link   http://www.simpy.com/doc/api/rest/SaveNote
-     * @return Zend_Service_Simpy Provides a fluent interface
-     */
-    public function saveNote($title, $tags = null, $description = null, $noteId = null)
-    {
-        if (is_array($tags)) {
-            $tags = implode(',', $tags);
-        }
-
-        $query = array(
-            'title'       => $title,
-            'tags'        => $tags,
-            'description' => $description,
-            'noteId'      => $noteId
-        );
-
-        $this->_makeRequest('SaveNote', $query);
-
-        return $this;
-    }
-
-    /**
-     * Deletes a given note.
-     *
-     * @param  int $noteId ID of the note to delete
-     * @link   http://www.simpy.com/doc/api/rest/DeleteNote
-     * @return Zend_Service_Simpy Provides a fluent interface
-     */
-    public function deleteNote($noteId)
-    {
-        $query = array(
-            'noteId' => $noteId
-        );
-
-        $this->_makeRequest('DeleteNote', $query);
-
-        return $this;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

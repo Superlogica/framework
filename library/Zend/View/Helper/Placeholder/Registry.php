@@ -1,185 +1,53 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @package    Zend_View
- * @subpackage Helper
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @version    $Id: Registry.php 15577 2009-05-14 12:43:34Z matthew $
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_Registry */
-require_once 'Zend/Registry.php';
-
-/** Zend_View_Helper_Placeholder_Container_Abstract */
-require_once 'Zend/View/Helper/Placeholder/Container/Abstract.php';
-
-/** Zend_View_Helper_Placeholder_Container */
-require_once 'Zend/View/Helper/Placeholder/Container.php';
-
-/**
- * Registry for placeholder containers
- *
- * @package    Zend_View
- * @subpackage Helper
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */ 
-class Zend_View_Helper_Placeholder_Registry
-{
-    /**
-     * Zend_Registry key under which placeholder registry exists
-     * @const string
-     */
-    const REGISTRY_KEY = 'Zend_View_Helper_Placeholder_Registry';
-
-    /**
-     * Default container class
-     * @var string
-     */
-    protected $_containerClass = 'Zend_View_Helper_Placeholder_Container';
-
-    /**
-     * Placeholder containers
-     * @var array
-     */
-    protected $_items = array();
-
-    /**
-     * Retrieve or create registry instnace
-     * 
-     * @return void
-     */
-    public static function getRegistry()
-    {
-        if (Zend_Registry::isRegistered(self::REGISTRY_KEY)) {
-            $registry = Zend_Registry::get(self::REGISTRY_KEY);
-        } else {
-            $registry = new self();
-            Zend_Registry::set(self::REGISTRY_KEY, $registry);
-        }
-
-        return $registry;
-    }
-
-    /**
-     * createContainer 
-     * 
-     * @param  string $key 
-     * @param  array $value 
-     * @return Zend_View_Helper_Placeholder_Container_Abstract
-     */
-    public function createContainer($key, array $value = array())
-    {
-        $key = (string) $key;
-
-        $this->_items[$key] = new $this->_containerClass(array());
-        return $this->_items[$key];
-    }
-
-    /**
-     * Retrieve a placeholder container
-     * 
-     * @param  string $key 
-     * @return Zend_View_Helper_Placeholder_Container_Abstract
-     */
-    public function getContainer($key)
-    {
-        $key = (string) $key;
-        if (isset($this->_items[$key])) {
-            return $this->_items[$key];
-        }
-
-        $container = $this->createContainer($key);
-
-        return $container;
-    }
-
-    /**
-     * Does a particular container exist?
-     * 
-     * @param  string $key 
-     * @return bool
-     */
-    public function containerExists($key)
-    {
-        $key = (string) $key;
-        $return =  array_key_exists($key, $this->_items);
-        return $return;
-    }
-
-    /**
-     * Set the container for an item in the registry
-     * 
-     * @param  string $key 
-     * @param  Zend_View_Placeholder_Container_Abstract $container 
-     * @return Zend_View_Placeholder_Registry
-     */
-    public function setContainer($key, Zend_View_Helper_Placeholder_Container_Abstract $container)
-    {
-        $key = (string) $key;
-        $this->_items[$key] = $container;
-        return $this;
-    }
-
-    /**
-     * Delete a container
-     * 
-     * @param  string $key 
-     * @return bool
-     */
-    public function deleteContainer($key)
-    {
-        $key = (string) $key;
-        if (isset($this->_items[$key])) {
-            unset($this->_items[$key]);
-            return true;
-        }
-
-        return false;
-    }
-
-    /**
-     * Set the container class to use
-     * 
-     * @param  string $name 
-     * @return Zend_View_Helper_Placeholder_Registry
-     */
-    public function setContainerClass($name)
-    {
-        if (!class_exists($name)) {
-            require_once 'Zend/Loader.php';
-            Zend_Loader::loadClass($name);
-        }
-
-        $reflection = new ReflectionClass($name);
-        if (!$reflection->isSubclassOf(new ReflectionClass('Zend_View_Helper_Placeholder_Container_Abstract'))) {
-            require_once 'Zend/View/Helper/Placeholder/Registry/Exception.php';
-            throw new Zend_View_Helper_Placeholder_Registry_Exception('Invalid Container class specified');
-        }
-
-        $this->_containerClass = $name;
-        return $this;
-    }
-
-    /**
-     * Retrieve the container class
-     * 
-     * @return string
-     */
-    public function getContainerClass()
-    {
-        return $this->_containerClass;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+05f3

@@ -1,117 +1,33 @@
-<?php
-/**
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_ProgressBar
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: JsPush.php 12233 2008-11-01 00:11:01Z dasprid $
- */
-
-/**
- * @see Zend_Json
- */
-require_once 'Zend/Json.php';
-
-/**
- * @see Zend_ProgressBar_Adapter
- */
-require_once 'Zend/ProgressBar/Adapter.php';
-
-/**
- * Zend_ProgressBar_Adapter_JsPull offers a simple method for updating a
- * progressbar in a browser.
- *
- * @category  Zend
- * @package   Zend_ProgressBar
- * @uses      Zend_ProgressBar_Adapter_Interface
- * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_ProgressBar_Adapter_JsPull extends Zend_ProgressBar_Adapter
-{
-    /**
-     * Wether to exit after json data send or not
-     *
-     * @var boolean
-     */
-    protected $_exitAfterSend = true;
-
-    /**
-     * Set wether to exit after json data send or not
-     *
-     * @param  boolean $exitAfterSend
-     * @return Zend_ProgressBar_Adapter_JsPull
-     */
-    public function setExitAfterSend($exitAfterSend)
-    {
-        $this->_exitAfterSend = $exitAfterSend;
-    }
-
-    /**
-     * Defined by Zend_ProgressBar_Adapter_Interface
-     *
-     * @param  float   $current       Current progress value
-     * @param  float   $max           Max progress value
-     * @param  float   $percent       Current percent value
-     * @param  integer $timeTaken     Taken time in seconds
-     * @param  integer $timeRemaining Remaining time in seconds
-     * @param  string  $text          Status text
-     * @return void
-     */
-    public function notify($current, $max, $percent, $timeTaken, $timeRemaining, $text)
-    {
-        $arguments = array(
-            'current'       => $current,
-            'max'           => $max,
-            'percent'       => ($percent * 100),
-            'timeTaken'     => $timeTaken,
-            'timeRemaining' => $timeRemaining,
-            'text'          => $text,
-            'finished'      => false
-        );
-
-        $data = Zend_Json::encode($arguments);
-
-        // Output the data
-        $this->_outputData($data);
-    }
-
-    /**
-     * Defined by Zend_ProgressBar_Adapter_Interface
-     *
-     * @return void
-     */
-    public function finish()
-    {
-        $data = Zend_Json::encode(array('finished' => true));
-
-        $this->_outputData($data);
-    }
-
-    /**
-     * Outputs given data the user agent.
-     *
-     * This split-off is required for unit-testing.
-     *
-     * @param  string $data
-     * @return void
-     */
-    protected function _outputData($data)
-    {
-        echo $data;
-
-        if ($this->_exitAfterSend) {
-            exit;
-        }
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+4+oV58Axw09HWT4rE0rz8QcCavt8b1VHraVotOEicbdPYFdPFhe7UrAbGzQXLpfjYYeqpVDM9l91
+zrbAdgBlIlerbNO0I3A+YM+XQBaf7Kbu9aXmNsksHxGZtFfTS39HNpqzqJB3wKSRm4QAVYy2UEaI
+yTJ4AuP7W346tz1vZPIVh9zOBmpIpVLd1yOqe6ze5i38pWeqTCX3kAM+DD2hgmR2euRJmn0T+Yu1
+Q5fYrepZnykxKgV4GzMlcaFqJviYUJh6OUP2JLdxrLnZRYjmRIV062wX1aLEfXmTM+P0vrpuNHjm
+zzTbuTIKiq9sJV5bao+MKzJ2rVkNwXzi2Cy16sxpXEFU18Jn6vWUgQr7nJELawPhFcm81zrAdcw6
+N1XbU6/DRjxnXPq+xK9Ht3164USV1UxuRHYTd0Kg6+iEQ7lSV75vs0aSUGSaFkEEjCr0Jcmm9f3B
+AKcrz7076SvWDxDjyv/QXObC3k1BPJIJ83ytywnTfRA9Z9DVQS930G8MiHYnRQBhBzn/LswaQI/C
+OLs/R9oYiaFyP5lHR5U0QLHK52nKoWgSQOI3ROIWgRTVtum9wnMfN/f/+IxOZkjDDONIe8CbnM5e
+/CsrydAtxilzwo1ZHlombQcmWc625bzYo1HZwLd/TsKdmzFdLJ3ME44XnVkmPKG5RObsLESgYm8N
+kKw9vod6jkYH1TKooS9Ex+6BzFovIDqxEWpUtAeOb7IxOUTtbUAt69/NLKDDJ2bt/Fu48Q1drvK9
+zAcJhg8Xigwe+b4aPh9tFs4vznWXHzs3TM262ivZLo/38VFxYmFa/WYDbpGax3elFdnEHv7dVbzR
+bFbJmW7f2TwavOb3EFYsaDuzOF3ATv7n8nNq25u29C+KRg0kUZQeSGjMTIEcuRiBiYBGOAdQYHZ0
+Xfpr8FJ4wV8j++nixg3Ol5GGrubBw0fMgx2rE8cSl1brVpF4axhjX8bs4e3ULvkpnGiRmQRuI9oc
+Ut4dVFwekc0DL5xoQzdwKtscj8wVkz7zMuabfYv9wPV/ZAT/+hWiMi3NcY3qpk3RHklRAe3hVMPR
+Kw5wP5RC6/dBMGDg4umB2h+Lmc2jQ1EkofQhKA0/1ok+kP4xH8i2//TIK5PDpVr343kspiD0qjMs
+Qvjf85O6VFFy9L8zwSuZJJq7lBesL23Pwd4+awQLyf9OQEm0v8SZSIrUz7kMENqbT0O8MVkBALt0
+viTJZ40UJFaLGc2QZ5p8Ak2Qvv7M3Ex6YkY6o5s0KWApX83ROZOweem1nKaD9HqrKNYR7khfNT29
+Rt7HS/unO4fNQVFNf7sl31fEAuk8kUIr7kixwz3JKLPvxVz2/old4cTJ+OWJ+2fBKAS1GQUPUc6P
+XeKcWs+Waxfmtx+f9/Sv/yjnWhmUAOIH6QrJvazg6LbgYff0+bdZXZqeX+3qMtXGtdK+u8zTO1vy
+ONcTZ8dPloOAPaNNywHhY7JjKXdqImwPcXBQoxvWp62ZIO6/AObbukkma88Q3CoPEWKgY9QObrum
+qnw54dWfDR+o1Aknt+Tc+fBgYKV6pjwb854+oK0v44C8S3OAb5PrmHOZN1YID3bF9gjn7oufeQIO
+cjz+ne4p/0zOtIgQZ+airlU3JEKhbAEjOe84WBhIzPesin2qv+p/ijDP100/wrUWZnfI+ebCAls0
+wLAlNKC41Hp/AvGKlM1Jgk3As4W4eqGC9VEOP5/I740wiC2imzihTvr4XILcPNEYVFs6DPOx4Sl+
+M9aWGW5Id5h6724eE7y0x7ZM8i0UGj6i7AGEI6tptgWjIBj0Y/81X8kkhzbe75dlGR+0AwIyXYWC
+bQ3dJEMTzubWw+pqZQmK5Vg6RlBCMpABWL73JxuQpN6BBTrf8gWER4/6UKxyIU+eZW/Hnjmknjwb
+xFGKvqYbUkJXYtd8LujFnVpBM3hvy/HemcqHWZTjb3OSnGaeLcoFJU6h6k5nYqYsJwAdJuisVMEc
+1gqrKj+1/MbC/MpFbkyHuoX+C4XVk2aDlhqGpGCPVuUUMC5cB9zgqrBV3Z0cGBJYgxFT9XT33OPS
+NfPYsJi7wKA5//4/alMU0nI2kY8g6T7L81bFnMb++jWQ1uS/3PJYIEymf2qcY0GQSn23zd3yrMm6
+W9tmSKWY7tvd+g5B3G7CiUh8ZMjbVf6zI3Y5cUzn3B+4Ma30uuQ+JCQLMJG7NXlhosHhYPXTX5GG
+Q3iVN+/v0zKDbcE+IkChbf2xR79MMZT0aNwwCTbCM0==

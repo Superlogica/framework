@@ -1,443 +1,123 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Db
- * @subpackage Statement
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Mysqli.php 4874 2007-05-19 01:26:32Z bkarwin $
- */
-
-/**
- * @see Zend_Db_Statement
- */
-require_once 'Zend/Db/Statement.php';
-
-/**
- * Proxy class to wrap a PDOStatement object.
- * Matches the interface of PDOStatement.  All methods simply proxy to the
- * matching method in PDOStatement.  PDOExceptions thrown by PDOStatement
- * are re-thrown as Zend_Db_Statement_Exception.
- *
- * @category   Zend
- * @package    Zend_Db
- * @subpackage Statement
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Db_Statement_Pdo extends Zend_Db_Statement implements IteratorAggregate
-{
-
-    /**
-     * The statement object.
-     *
-     * @var PDOStatement
-     */
-    protected $_stmt;
-
-    /**
-     * @var int
-     */
-    protected $_fetchMode = PDO::FETCH_ASSOC;
-
-    /**
-     * Prepare a string SQL statement and create a statement object.
-     *
-     * @param string $sql
-     * @return void
-     * @throws Zend_Db_Statement_Exception
-     */
-    protected function _prepare($sql)
-    {
-        try {
-            $this->_stmt = $this->_adapter->getConnection()->prepare($sql);
-        } catch (PDOException $e) {
-            require_once 'Zend/Db/Statement/Exception.php';
-            throw new Zend_Db_Statement_Exception($e->getMessage());
-        }
-    }
-
-    /**
-     * Bind a column of the statement result set to a PHP variable.
-     *
-     * @param string $column Name the column in the result set, either by
-     *                       position or by name.
-     * @param mixed  $param  Reference to the PHP variable containing the value.
-     * @param mixed  $type   OPTIONAL
-     * @return bool
-     * @throws Zend_Db_Statement_Exception
-     */
-    public function bindColumn($column, &$param, $type = null)
-    {
-        try {
-            if ($type === null) {
-                return $this->_stmt->bindColumn($column, $param);
-            } else {
-                return $this->_stmt->bindColumn($column, $param, $type);
-            }
-        } catch (PDOException $e) {
-            require_once 'Zend/Db/Statement/Exception.php';
-            throw new Zend_Db_Statement_Exception($e->getMessage());
-        }
-    }
-
-    /**
-     * Binds a parameter to the specified variable name.
-     *
-     * @param mixed $parameter Name the parameter, either integer or string.
-     * @param mixed $variable  Reference to PHP variable containing the value.
-     * @param mixed $type      OPTIONAL Datatype of SQL parameter.
-     * @param mixed $length    OPTIONAL Length of SQL parameter.
-     * @param mixed $options   OPTIONAL Other options.
-     * @return bool
-     * @throws Zend_Db_Statement_Exception
-     */
-    protected function _bindParam($parameter, &$variable, $type = null, $length = null, $options = null)
-    {
-        try {
-            if ($type === null) {
-                if (is_bool($variable)) {
-                    $type = PDO::PARAM_BOOL;
-                } elseif ($variable === null) {
-                    $type = PDO::PARAM_NULL;
-                } elseif (is_integer($variable)) {
-                    $type = PDO::PARAM_INT;
-                } else {
-                    $type = PDO::PARAM_STR;
-                }
-            }
-            return $this->_stmt->bindParam($parameter, $variable, $type, $length, $options);
-        } catch (PDOException $e) {
-            require_once 'Zend/Db/Statement/Exception.php';
-            throw new Zend_Db_Statement_Exception($e->getMessage());
-        }
-    }
-
-    /**
-     * Binds a value to a parameter.
-     *
-     * @param mixed $parameter Name the parameter, either integer or string.
-     * @param mixed $value     Scalar value to bind to the parameter.
-     * @param mixed $type      OPTIONAL Datatype of the parameter.
-     * @return bool
-     * @throws Zend_Db_Statement_Exception
-     */
-    public function bindValue($parameter, $value, $type = null)
-    {
-        if (is_string($parameter) && $parameter[0] != ':') {
-            $parameter = ":$parameter";
-        }
-        try {
-            if ($type === null) {
-                return $this->_stmt->bindValue($parameter, $value);
-            } else {
-                return $this->_stmt->bindValue($parameter, $value, $type);
-            }
-        } catch (PDOException $e) {
-            require_once 'Zend/Db/Statement/Exception.php';
-            throw new Zend_Db_Statement_Exception($e->getMessage());
-        }
-    }
-
-    /**
-     * Closes the cursor, allowing the statement to be executed again.
-     *
-     * @return bool
-     * @throws Zend_Db_Statement_Exception
-     */
-    public function closeCursor()
-    {
-        try {
-            return $this->_stmt->closeCursor();
-        } catch (PDOException $e) {
-            require_once 'Zend/Db/Statement/Exception.php';
-            throw new Zend_Db_Statement_Exception($e->getMessage());
-        }
-    }
-
-    /**
-     * Returns the number of columns in the result set.
-     * Returns null if the statement has no result set metadata.
-     *
-     * @return int The number of columns.
-     * @throws Zend_Db_Statement_Exception
-     */
-    public function columnCount()
-    {
-        try {
-            return $this->_stmt->columnCount();
-        } catch (PDOException $e) {
-            require_once 'Zend/Db/Statement/Exception.php';
-            throw new Zend_Db_Statement_Exception($e->getMessage());
-        }
-    }
-
-    /**
-     * Retrieves the error code, if any, associated with the last operation on
-     * the statement handle.
-     *
-     * @return string error code.
-     * @throws Zend_Db_Statement_Exception
-     */
-    public function errorCode()
-    {
-        try {
-            return $this->_stmt->errorCode();
-        } catch (PDOException $e) {
-            require_once 'Zend/Db/Statement/Exception.php';
-            throw new Zend_Db_Statement_Exception($e->getMessage());
-        }
-    }
-
-    /**
-     * Retrieves an array of error information, if any, associated with the
-     * last operation on the statement handle.
-     *
-     * @return array
-     * @throws Zend_Db_Statement_Exception
-     */
-    public function errorInfo()
-    {
-        try {
-            return $this->_stmt->errorInfo();
-        } catch (PDOException $e) {
-            require_once 'Zend/Db/Statement/Exception.php';
-            throw new Zend_Db_Statement_Exception($e->getMessage());
-        }
-    }
-
-    /**
-     * Executes a prepared statement.
-     *
-     * @param array $params OPTIONAL Values to bind to parameter placeholders.
-     * @return bool
-     * @throws Zend_Db_Statement_Exception
-     */
-    public function _execute(array $params = null)
-    {
-        try {
-            if ($params !== null) {
-                return $this->_stmt->execute($params);
-            } else {
-                return $this->_stmt->execute();
-            }
-        } catch (PDOException $e) {
-            require_once 'Zend/Db/Statement/Exception.php';
-            throw new Zend_Db_Statement_Exception($e->getMessage());
-        }
-    }
-
-    /**
-     * Fetches a row from the result set.
-     *
-     * @param int $style  OPTIONAL Fetch mode for this fetch operation.
-     * @param int $cursor OPTIONAL Absolute, relative, or other.
-     * @param int $offset OPTIONAL Number for absolute or relative cursors.
-     * @return mixed Array, object, or scalar depending on fetch mode.
-     * @throws Zend_Db_Statement_Exception
-     */
-    public function fetch($style = null, $cursor = null, $offset = null)
-    {
-        if ($style === null) {
-            $style = $this->_fetchMode;
-        }
-        try {
-            return $this->_stmt->fetch($style, $cursor, $offset);
-        } catch (PDOException $e) {
-            require_once 'Zend/Db/Statement/Exception.php';
-            throw new Zend_Db_Statement_Exception($e->getMessage());
-        }
-    }
-
-    /**
-     * Required by IteratorAggregate interface
-     *
-     * @return IteratorIterator
-     */
-    public function getIterator()
-    {
-        return new IteratorIterator($this->_stmt);
-    }
-
-    /**
-     * Returns an array containing all of the result set rows.
-     *
-     * @param int $style OPTIONAL Fetch mode.
-     * @param int $col   OPTIONAL Column number, if fetch mode is by column.
-     * @return array Collection of rows, each in a format by the fetch mode.
-     * @throws Zend_Db_Statement_Exception
-     */
-    public function fetchAll($style = null, $col = null)
-    {
-        if ($style === null) {
-            $style = $this->_fetchMode;
-        }
-        try {
-            if ($style == PDO::FETCH_COLUMN) {
-                if ($col === null) {
-                    $col = 0;
-                }
-                return $this->_stmt->fetchAll($style, $col);
-            } else {
-                return $this->_stmt->fetchAll($style);
-            }
-        } catch (PDOException $e) {
-            require_once 'Zend/Db/Statement/Exception.php';
-            throw new Zend_Db_Statement_Exception($e->getMessage());
-        }
-    }
-
-    /**
-     * Returns a single column from the next row of a result set.
-     *
-     * @param int $col OPTIONAL Position of the column to fetch.
-     * @return string
-     * @throws Zend_Db_Statement_Exception
-     */
-    public function fetchColumn($col = 0)
-    {
-        try {
-            return $this->_stmt->fetchColumn($col);
-        } catch (PDOException $e) {
-            require_once 'Zend/Db/Statement/Exception.php';
-            throw new Zend_Db_Statement_Exception($e->getMessage());
-        }
-    }
-
-    /**
-     * Fetches the next row and returns it as an object.
-     *
-     * @param string $class  OPTIONAL Name of the class to create.
-     * @param array  $config OPTIONAL Constructor arguments for the class.
-     * @return mixed One object instance of the specified class.
-     * @throws Zend_Db_Statement_Exception
-     */
-    public function fetchObject($class = 'stdClass', array $config = array())
-    {
-        try {
-            return $this->_stmt->fetchObject($class, $config);
-        } catch (PDOException $e) {
-            require_once 'Zend/Db/Statement/Exception.php';
-            throw new Zend_Db_Statement_Exception($e->getMessage());
-        }
-    }
-
-    /**
-     * Retrieve a statement attribute.
-     *
-     * @param integer $key Attribute name.
-     * @return mixed      Attribute value.
-     * @throws Zend_Db_Statement_Exception
-     */
-    public function getAttribute($key)
-    {
-        try {
-            return $this->_stmt->getAttribute($key);
-        } catch (PDOException $e) {
-            require_once 'Zend/Db/Statement/Exception.php';
-            throw new Zend_Db_Statement_Exception($e->getMessage());
-        }
-    }
-
-    /**
-     * Returns metadata for a column in a result set.
-     *
-     * @param int $column
-     * @return mixed
-     * @throws Zend_Db_Statement_Exception
-     */
-    public function getColumnMeta($column)
-    {
-        try {
-            return $this->_stmt->getColumnMeta($column);
-        } catch (PDOException $e) {
-            require_once 'Zend/Db/Statement/Exception.php';
-            throw new Zend_Db_Statement_Exception($e->getMessage());
-        }
-    }
-
-    /**
-     * Retrieves the next rowset (result set) for a SQL statement that has
-     * multiple result sets.  An example is a stored procedure that returns
-     * the results of multiple queries.
-     *
-     * @return bool
-     * @throws Zend_Db_Statement_Exception
-     */
-    public function nextRowset()
-    {
-        try {
-            return $this->_stmt->nextRowset();
-        } catch (PDOException $e) {
-            require_once 'Zend/Db/Statement/Exception.php';
-            throw new Zend_Db_Statement_Exception($e->getMessage());
-        }
-    }
-
-    /**
-     * Returns the number of rows affected by the execution of the
-     * last INSERT, DELETE, or UPDATE statement executed by this
-     * statement object.
-     *
-     * @return int     The number of rows affected.
-     * @throws Zend_Db_Statement_Exception
-     */
-    public function rowCount()
-    {
-        try {
-            return $this->_stmt->rowCount();
-        } catch (PDOException $e) {
-            require_once 'Zend/Db/Statement/Exception.php';
-            throw new Zend_Db_Statement_Exception($e->getMessage());
-        }
-    }
-
-    /**
-     * Set a statement attribute.
-     *
-     * @param string $key Attribute name.
-     * @param mixed  $val Attribute value.
-     * @return bool
-     * @throws Zend_Db_Statement_Exception
-     */
-    public function setAttribute($key, $val)
-    {
-        try {
-            return $this->_stmt->setAttribute($key, $val);
-        } catch (PDOException $e) {
-            require_once 'Zend/Db/Statement/Exception.php';
-            throw new Zend_Db_Statement_Exception($e->getMessage());
-        }
-    }
-
-    /**
-     * Set the default fetch mode for this statement.
-     *
-     * @param int   $mode The fetch mode.
-     * @return bool
-     * @throws Zend_Db_Statement_Exception
-     */
-    public function setFetchMode($mode)
-    {
-        $this->_fetchMode = $mode;
-        try {
-            return $this->_stmt->setFetchMode($mode);
-        } catch (PDOException $e) {
-            require_once 'Zend/Db/Statement/Exception.php';
-            throw new Zend_Db_Statement_Exception($e->getMessage());
-        }
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+HYRqr12HiS/KOu8=

@@ -1,726 +1,210 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category  Zend
- * @package   Zend_Uri
- * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   http://framework.zend.com/license/new-bsd     New BSD License
- * @version   $Id: Http.php 14650 2009-04-05 03:15:38Z robinsk $
- */
-
-/**
- * @see Zend_Uri
- */
-require_once 'Zend/Uri.php';
-
-/**
- * @see Zend_Validate_Hostname
- */
-require_once 'Zend/Validate/Hostname.php';
-
-/**
- * HTTP(S) URI handler
- *
- * @category  Zend
- * @package   Zend_Uri
- * @uses      Zend_Uri
- * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Uri_Http extends Zend_Uri
-{
-    /**
-     * Character classes for validation regular expressions
-     */
-    const CHAR_ALNUM    = 'A-Za-z0-9';
-    const CHAR_MARK     = '-_.!~*\'()\[\]';
-    const CHAR_RESERVED = ';\/?:@&=+$,';
-    const CHAR_SEGMENT  = ':@&=+$,;';
-    const CHAR_UNWISE   = '{}|\\\\^`';
-
-    /**
-     * HTTP username
-     *
-     * @var string
-     */
-    protected $_username = '';
-
-    /**
-     * HTTP password
-     *
-     * @var string
-     */
-    protected $_password = '';
-
-    /**
-     * HTTP host
-     *
-     * @var string
-     */
-    protected $_host = '';
-
-    /**
-     * HTTP post
-     *
-     * @var string
-     */
-    protected $_port = '';
-
-    /**
-     * HTTP part
-     *
-     * @var string
-     */
-    protected $_path = '';
-
-    /**
-     * HTTP query
-     *
-     * @var string
-     */
-    protected $_query = '';
-
-    /**
-     * HTTP fragment
-     *
-     * @var string
-     */
-    protected $_fragment = '';
-
-    /**
-     * Regular expression grammar rules for validation; values added by constructor
-     *
-     * @var array
-     */
-    protected $_regex = array();
-
-    /**
-     * Constructor accepts a string $scheme (e.g., http, https) and a scheme-specific part of the URI
-     * (e.g., example.com/path/to/resource?query=param#fragment)
-     *
-     * @param  string $scheme         The scheme of the URI
-     * @param  string $schemeSpecific The scheme-specific part of the URI
-     * @throws Zend_Uri_Exception When the URI is not valid
-     */
-    protected function __construct($scheme, $schemeSpecific = '')
-    {
-        // Set the scheme
-        $this->_scheme = $scheme;
-
-        // Set up grammar rules for validation via regular expressions. These
-        // are to be used with slash-delimited regular expression strings.
-
-        // Escaped special characters (eg. '%25' for '%')
-        $this->_regex['escaped']    = '%[[:xdigit:]]{2}';
-
-        // Unreserved characters
-        $this->_regex['unreserved'] = '[' . self::CHAR_ALNUM . self::CHAR_MARK . ']';
-
-        // Segment can use escaped, unreserved or a set of additional chars
-        $this->_regex['segment']    = '(?:' . $this->_regex['escaped'] . '|[' .
-            self::CHAR_ALNUM . self::CHAR_MARK . self::CHAR_SEGMENT . '])*';
-
-        // Path can be a series of segmets char strings seperated by '/'
-        $this->_regex['path']       = '(?:\/(?:' . $this->_regex['segment'] . ')?)+';
-
-        // URI characters can be escaped, alphanumeric, mark or reserved chars
-        $this->_regex['uric']       = '(?:' . $this->_regex['escaped'] . '|[' .
-            self::CHAR_ALNUM . self::CHAR_MARK . self::CHAR_RESERVED .
-
-        // If unwise chars are allowed, add them to the URI chars class
-            (self::$_config['allow_unwise'] ? self::CHAR_UNWISE : '') . '])';
-
-        // If no scheme-specific part was supplied, the user intends to create
-        // a new URI with this object.  No further parsing is required.
-        if (strlen($schemeSpecific) === 0) {
-            return;
-        }
-
-        // Parse the scheme-specific URI parts into the instance variables.
-        $this->_parseUri($schemeSpecific);
-
-        // Validate the URI
-        if ($this->valid() === false) {
-            require_once 'Zend/Uri/Exception.php';
-            throw new Zend_Uri_Exception('Invalid URI supplied');
-        }
-    }
-
-    /**
-     * Creates a Zend_Uri_Http from the given string
-     *
-     * @param  string $uri String to create URI from, must start with
-     *                     'http://' or 'https://'
-     * @throws InvalidArgumentException  When the given $uri is not a string or
-     *                                   does not start with http:// or https://
-     * @throws Zend_Uri_Exception        When the given $uri is invalid
-     * @return Zend_Uri_Http
-     */
-    public static function fromString($uri)
-    {
-        if (is_string($uri) === false) {
-            require_once 'Zend/Uri/Exception.php';
-            throw new Zend_Uri_Exception('$uri is not a string');
-        }
-
-        $uri            = explode(':', $uri, 2);
-        $scheme         = strtolower($uri[0]);
-        $schemeSpecific = isset($uri[1]) === true ? $uri[1] : '';
-
-        if (in_array($scheme, array('http', 'https')) === false) {
-            require_once 'Zend/Uri/Exception.php';
-            throw new Zend_Uri_Exception("Invalid scheme: '$scheme'");
-        }
-
-        $schemeHandler = new Zend_Uri_Http($scheme, $schemeSpecific);
-        return $schemeHandler;
-    }
-
-    /**
-     * Parse the scheme-specific portion of the URI and place its parts into instance variables.
-     *
-     * @param  string $schemeSpecific The scheme-specific portion to parse
-     * @throws Zend_Uri_Exception When scheme-specific decoposition fails
-     * @throws Zend_Uri_Exception When authority decomposition fails
-     * @return void
-     */
-    protected function _parseUri($schemeSpecific)
-    {
-        // High-level decomposition parser
-        $pattern = '~^((//)([^/?#]*))([^?#]*)(\?([^#]*))?(#(.*))?$~';
-        $status  = @preg_match($pattern, $schemeSpecific, $matches);
-        if ($status === false) {
-            require_once 'Zend/Uri/Exception.php';
-            throw new Zend_Uri_Exception('Internal error: scheme-specific decomposition failed');
-        }
-
-        // Failed decomposition; no further processing needed
-        if ($status === false) {
-            return;
-        }
-
-        // Save URI components that need no further decomposition
-        $this->_path     = isset($matches[4]) === true ? $matches[4] : '';
-        $this->_query    = isset($matches[6]) === true ? $matches[6] : '';
-        $this->_fragment = isset($matches[8]) === true ? $matches[8] : '';
-
-        // Additional decomposition to get username, password, host, and port
-        $combo   = isset($matches[3]) === true ? $matches[3] : '';
-        $pattern = '~^(([^:@]*)(:([^@]*))?@)?([^:]+)(:(.*))?$~';
-        $status  = @preg_match($pattern, $combo, $matches);
-        if ($status === false) {
-            require_once 'Zend/Uri/Exception.php';
-            throw new Zend_Uri_Exception('Internal error: authority decomposition failed');
-        }
-
-        // Failed decomposition; no further processing needed
-        if ($status === false) {
-            return;
-        }
-
-        // Save remaining URI components
-        $this->_username = isset($matches[2]) === true ? $matches[2] : '';
-        $this->_password = isset($matches[4]) === true ? $matches[4] : '';
-        $this->_host     = isset($matches[5]) === true ? $matches[5] : '';
-        $this->_port     = isset($matches[7]) === true ? $matches[7] : '';
-
-    }
-
-    /**
-     * Returns a URI based on current values of the instance variables. If any
-     * part of the URI does not pass validation, then an exception is thrown.
-     *
-     * @throws Zend_Uri_Exception When one or more parts of the URI are invalid
-     * @return string
-     */
-    public function getUri()
-    {
-        if ($this->valid() === false) {
-            require_once 'Zend/Uri/Exception.php';
-            throw new Zend_Uri_Exception('One or more parts of the URI are invalid');
-        }
-
-        $password = strlen($this->_password) > 0 ? ":$this->_password" : '';
-        $auth     = strlen($this->_username) > 0 ? "$this->_username$password@" : '';
-        $port     = strlen($this->_port) > 0 ? ":$this->_port" : '';
-        $query    = strlen($this->_query) > 0 ? "?$this->_query" : '';
-        $fragment = strlen($this->_fragment) > 0 ? "#$this->_fragment" : '';
-
-        return $this->_scheme
-             . '://'
-             . $auth
-             . $this->_host
-             . $port
-             . $this->_path
-             . $query
-             . $fragment;
-    }
-
-    /**
-     * Validate the current URI from the instance variables. Returns true if and only if all
-     * parts pass validation.
-     *
-     * @return boolean
-     */
-    public function valid()
-    {
-        // Return true if and only if all parts of the URI have passed validation
-        return $this->validateUsername()
-           and $this->validatePassword()
-           and $this->validateHost()
-           and $this->validatePort()
-           and $this->validatePath()
-           and $this->validateQuery()
-           and $this->validateFragment();
-    }
-
-    /**
-     * Returns the username portion of the URL, or FALSE if none.
-     *
-     * @return string
-     */
-    public function getUsername()
-    {
-        return strlen($this->_username) > 0 ? $this->_username : false;
-    }
-
-    /**
-     * Returns true if and only if the username passes validation. If no username is passed,
-     * then the username contained in the instance variable is used.
-     *
-     * @param  string $username The HTTP username
-     * @throws Zend_Uri_Exception When username validation fails
-     * @return boolean
-     * @link   http://www.faqs.org/rfcs/rfc2396.html
-     */
-    public function validateUsername($username = null)
-    {
-        if ($username === null) {
-            $username = $this->_username;
-        }
-
-        // If the username is empty, then it is considered valid
-        if (strlen($username) === 0) {
-            return true;
-        }
-
-        // Check the username against the allowed values
-        $status = @preg_match('/^(?:' . $this->_regex['escaped'] . '|[' .
-            self::CHAR_ALNUM . self::CHAR_MARK . ';:&=+$,' . '])+$/', $username);
-
-        if ($status === false) {
-            require_once 'Zend/Uri/Exception.php';
-            throw new Zend_Uri_Exception('Internal error: username validation failed');
-        }
-
-        return $status === 1;
-    }
-
-    /**
-     * Sets the username for the current URI, and returns the old username
-     *
-     * @param  string $username The HTTP username
-     * @throws Zend_Uri_Exception When $username is not a valid HTTP username
-     * @return string
-     */
-    public function setUsername($username)
-    {
-        if ($this->validateUsername($username) === false) {
-            require_once 'Zend/Uri/Exception.php';
-            throw new Zend_Uri_Exception("Username \"$username\" is not a valid HTTP username");
-        }
-
-        $oldUsername     = $this->_username;
-        $this->_username = $username;
-
-        return $oldUsername;
-    }
-
-    /**
-     * Returns the password portion of the URL, or FALSE if none.
-     *
-     * @return string
-     */
-    public function getPassword()
-    {
-        return strlen($this->_password) > 0 ? $this->_password : false;
-    }
-
-    /**
-     * Returns true if and only if the password passes validation. If no password is passed,
-     * then the password contained in the instance variable is used.
-     *
-     * @param  string $password The HTTP password
-     * @throws Zend_Uri_Exception When password validation fails
-     * @return boolean
-     * @link   http://www.faqs.org/rfcs/rfc2396.html
-     */
-    public function validatePassword($password = null)
-    {
-        if ($password === null) {
-            $password = $this->_password;
-        }
-
-        // If the password is empty, then it is considered valid
-        if (strlen($password) === 0) {
-            return true;
-        }
-
-        // If the password is nonempty, but there is no username, then it is considered invalid
-        if (strlen($password) > 0 and strlen($this->_username) === 0) {
-            return false;
-        }
-
-        // Check the password against the allowed values
-        $status = @preg_match('/^(?:' . $this->_regex['escaped'] . '|[' .
-            self::CHAR_ALNUM . self::CHAR_MARK . ';:&=+$,' . '])+$/', $password);
-
-        if ($status === false) {
-            require_once 'Zend/Uri/Exception.php';
-            throw new Zend_Uri_Exception('Internal error: password validation failed.');
-        }
-
-        return $status == 1;
-    }
-
-    /**
-     * Sets the password for the current URI, and returns the old password
-     *
-     * @param  string $password The HTTP password
-     * @throws Zend_Uri_Exception When $password is not a valid HTTP password
-     * @return string
-     */
-    public function setPassword($password)
-    {
-        if ($this->validatePassword($password) === false) {
-            require_once 'Zend/Uri/Exception.php';
-            throw new Zend_Uri_Exception("Password \"$password\" is not a valid HTTP password.");
-        }
-
-        $oldPassword     = $this->_password;
-        $this->_password = $password;
-
-        return $oldPassword;
-    }
-
-    /**
-     * Returns the domain or host IP portion of the URL, or FALSE if none.
-     *
-     * @return string
-     */
-    public function getHost()
-    {
-        return strlen($this->_host) > 0 ? $this->_host : false;
-    }
-
-    /**
-     * Returns true if and only if the host string passes validation. If no host is passed,
-     * then the host contained in the instance variable is used.
-     *
-     * @param  string $host The HTTP host
-     * @return boolean
-     * @uses   Zend_Filter
-     */
-    public function validateHost($host = null)
-    {
-        if ($host === null) {
-            $host = $this->_host;
-        }
-
-        // If the host is empty, then it is considered invalid
-        if (strlen($host) === 0) {
-            return false;
-        }
-
-        // Check the host against the allowed values; delegated to Zend_Filter.
-        $validate = new Zend_Validate_Hostname(Zend_Validate_Hostname::ALLOW_ALL);
-
-        return $validate->isValid($host);
-    }
-
-    /**
-     * Sets the host for the current URI, and returns the old host
-     *
-     * @param  string $host The HTTP host
-     * @throws Zend_Uri_Exception When $host is nota valid HTTP host
-     * @return string
-     */
-    public function setHost($host)
-    {
-        if ($this->validateHost($host) === false) {
-            require_once 'Zend/Uri/Exception.php';
-            throw new Zend_Uri_Exception("Host \"$host\" is not a valid HTTP host");
-        }
-
-        $oldHost     = $this->_host;
-        $this->_host = $host;
-
-        return $oldHost;
-    }
-
-    /**
-     * Returns the TCP port, or FALSE if none.
-     *
-     * @return string
-     */
-    public function getPort()
-    {
-        return strlen($this->_port) > 0 ? $this->_port : false;
-    }
-
-    /**
-     * Returns true if and only if the TCP port string passes validation. If no port is passed,
-     * then the port contained in the instance variable is used.
-     *
-     * @param  string $port The HTTP port
-     * @return boolean
-     */
-    public function validatePort($port = null)
-    {
-        if ($port === null) {
-            $port = $this->_port;
-        }
-
-        // If the port is empty, then it is considered valid
-        if (strlen($port) === 0) {
-            return true;
-        }
-
-        // Check the port against the allowed values
-        return ctype_digit((string) $port) and 1 <= $port and $port <= 65535;
-    }
-
-    /**
-     * Sets the port for the current URI, and returns the old port
-     *
-     * @param  string $port The HTTP port
-     * @throws Zend_Uri_Exception When $port is not a valid HTTP port
-     * @return string
-     */
-    public function setPort($port)
-    {
-        if ($this->validatePort($port) === false) {
-            require_once 'Zend/Uri/Exception.php';
-            throw new Zend_Uri_Exception("Port \"$port\" is not a valid HTTP port.");
-        }
-
-        $oldPort     = $this->_port;
-        $this->_port = $port;
-
-        return $oldPort;
-    }
-
-    /**
-     * Returns the path and filename portion of the URL, or FALSE if none.
-     *
-     * @return string
-     */
-    public function getPath()
-    {
-        return strlen($this->_path) > 0 ? $this->_path : '/';
-    }
-
-    /**
-     * Returns true if and only if the path string passes validation. If no path is passed,
-     * then the path contained in the instance variable is used.
-     *
-     * @param  string $path The HTTP path
-     * @throws Zend_Uri_Exception When path validation fails
-     * @return boolean
-     */
-    public function validatePath($path = null)
-    {
-        if ($path === null) {
-            $path = $this->_path;
-        }
-
-        // If the path is empty, then it is considered valid
-        if (strlen($path) === 0) {
-            return true;
-        }
-
-        // Determine whether the path is well-formed
-        $pattern = '/^' . $this->_regex['path'] . '$/';
-        $status  = @preg_match($pattern, $path);
-        if ($status === false) {
-            require_once 'Zend/Uri/Exception.php';
-            throw new Zend_Uri_Exception('Internal error: path validation failed');
-        }
-
-        return (boolean) $status;
-    }
-
-    /**
-     * Sets the path for the current URI, and returns the old path
-     *
-     * @param  string $path The HTTP path
-     * @throws Zend_Uri_Exception When $path is not a valid HTTP path
-     * @return string
-     */
-    public function setPath($path)
-    {
-        if ($this->validatePath($path) === false) {
-            require_once 'Zend/Uri/Exception.php';
-            throw new Zend_Uri_Exception("Path \"$path\" is not a valid HTTP path");
-        }
-
-        $oldPath     = $this->_path;
-        $this->_path = $path;
-
-        return $oldPath;
-    }
-
-    /**
-     * Returns the query portion of the URL (after ?), or FALSE if none.
-     *
-     * @return string
-     */
-    public function getQuery()
-    {
-        return strlen($this->_query) > 0 ? $this->_query : false;
-    }
-
-    /**
-     * Returns true if and only if the query string passes validation. If no query is passed,
-     * then the query string contained in the instance variable is used.
-     *
-     * @param  string $query The query to validate
-     * @throws Zend_Uri_Exception When query validation fails
-     * @return boolean
-     * @link   http://www.faqs.org/rfcs/rfc2396.html
-     */
-    public function validateQuery($query = null)
-    {
-        if ($query === null) {
-            $query = $this->_query;
-        }
-
-        // If query is empty, it is considered to be valid
-        if (strlen($query) === 0) {
-            return true;
-        }
-
-        // Determine whether the query is well-formed
-        $pattern = '/^' . $this->_regex['uric'] . '*$/';
-        $status  = @preg_match($pattern, $query);
-        if ($status === false) {
-            require_once 'Zend/Uri/Exception.php';
-            throw new Zend_Uri_Exception('Internal error: query validation failed');
-        }
-
-        return $status == 1;
-    }
-
-    /**
-     * Set the query string for the current URI, and return the old query
-     * string This method accepts both strings and arrays.
-     *
-     * @param  string|array $query The query string or array
-     * @throws Zend_Uri_Exception When $query is not a valid query string
-     * @return string              Old query string
-     */
-    public function setQuery($query)
-    {
-        $oldQuery = $this->_query;
-
-        // If query is empty, set an empty string
-        if (empty($query) === true) {
-            $this->_query = '';
-            return $oldQuery;
-        }
-
-        // If query is an array, make a string out of it
-        if (is_array($query) === true) {
-            $query = http_build_query($query, '', '&');
-        } else {
-            // If it is a string, make sure it is valid. If not parse and encode it
-            $query = (string) $query;
-            if ($this->validateQuery($query) === false) {
-                parse_str($query, $queryArray);
-                $query = http_build_query($queryArray, '', '&');
-            }
-        }
-
-        // Make sure the query is valid, and set it
-        if ($this->validateQuery($query) === false) {
-            require_once 'Zend/Uri/Exception.php';
-            throw new Zend_Uri_Exception("'$query' is not a valid query string");
-        }
-
-        $this->_query = $query;
-
-        return $oldQuery;
-    }
-
-    /**
-     * Returns the fragment portion of the URL (after #), or FALSE if none.
-     *
-     * @return string|false
-     */
-    public function getFragment()
-    {
-        return strlen($this->_fragment) > 0 ? $this->_fragment : false;
-    }
-
-    /**
-     * Returns true if and only if the fragment passes validation. If no fragment is passed,
-     * then the fragment contained in the instance variable is used.
-     *
-     * @param  string $fragment Fragment of an URI
-     * @throws Zend_Uri_Exception When fragment validation fails
-     * @return boolean
-     * @link   http://www.faqs.org/rfcs/rfc2396.html
-     */
-    public function validateFragment($fragment = null)
-    {
-        if ($fragment === null) {
-            $fragment = $this->_fragment;
-        }
-
-        // If fragment is empty, it is considered to be valid
-        if (strlen($fragment) === 0) {
-            return true;
-        }
-
-        // Determine whether the fragment is well-formed
-        $pattern = '/^' . $this->_regex['uric'] . '*$/';
-        $status  = @preg_match($pattern, $fragment);
-        if ($status === false) {
-            require_once 'Zend/Uri/Exception.php';
-            throw new Zend_Uri_Exception('Internal error: fragment validation failed');
-        }
-
-        return (boolean) $status;
-    }
-
-    /**
-     * Sets the fragment for the current URI, and returns the old fragment
-     *
-     * @param  string $fragment Fragment of the current URI
-     * @throws Zend_Uri_Exception When $fragment is not a valid HTTP fragment
-     * @return string
-     */
-    public function setFragment($fragment)
-    {
-        if ($this->validateFragment($fragment) === false) {
-            require_once 'Zend/Uri/Exception.php';
-            throw new Zend_Uri_Exception("Fragment \"$fragment\" is not a valid HTTP fragment");
-        }
-
-        $oldFragment     = $this->_fragment;
-        $this->_fragment = $fragment;
-
-        return $oldFragment;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+4+oV54gRQQE9ArALG7RyWDcv9fuXyQZ/gJM94QAi/k6nPMtkrIuI+o5FPqrDmgZGZOrywjMf76Vc
+ivan1YmjIpsOoFPlT+xYCA66opRpAzlbp2il/FqkySfX2DkLSzVuhfG7kJV8vIVaQTn+2lRMag9T
+9rxbY1m7yXJrS+jedvilaBv8AQ94AFU9Ah55/kiuXYTmLxCD0MYZAWKbMUWni3ghzUqGRp2k4ZUH
+ThuimhuathaEpXcr9Dv4caFqJviYUJh6OUP2JLdxrLjc9l1NMpxmkN1LJqKUob0+ZAj+za+gdWL9
+h88CJGJQFUzqadVVDJB/5Myp1z2gUER7x7r1wz9EV233WabvTfzfMnJfsTzobLeJKAQngvJc89Tw
+ILkpEFdkyp5tQ++rE+Vdp+OhUtDZcAYUd3IaA83wG31sAhODDhW0KIQSnTvXvD1BaHy/yCkVdvZV
+628aGqYXiPvERRFM9c6CAvbedW50ScgjNvNpnlh225bHUZYwvizliusa4e9vKg7Ku7aF/7Oa8CBp
+XizPLTT5CGgFr9x3SmV4R0B0OiP5Tbbn6WpnslUooqfSuecUwSeGqPumnM28B+z88GMHB/913d/0
+WZBe3EPze0BZ1L1/IZ5a/8zEISADInxncWWflrPrORx8oDA/HEiF2MmfDEVXpH56pZUMx5EKIB7G
+qipgD8UOsgwfSy3IUL+JXpkp8ovnJTr5Xi3zqnofRttIA6F5snNVxPFhrEIMJAjDXsgqKm2UUgVG
+BEbGZExQXvsnhecI4IM0ynhL5tu3VfirvXBzQwFjnMGJZbuchMgwSbcQHdnaI5LFfPsYlw71ty01
+vNd0L/rXiZHS4w+J4bUUku3sIAns7Ifi7GYLAih6DwpNhkiTTxWjXKP9uQakGe3xnx5nMTEXlfu5
+hwUvwzVBfjv4n3LulAxV18O/pfSpu0ji8ydycVe3I27X48O99Pvq90Y9XQbbOfLheOGkR0Hgh7Vz
+7XiAhtjdI09/bLDElD5uRTetociPXjwteLRwjSgUc2ezhH2zPx4NliA8hSrVX40NxnZPmPnHUp/E
+RHYM9jffeECs/uZRcjRT0iT1GV/iFYtS05pfaO8+QoAJheNcYegB7wMXN2ecn6jlCheMQvejkPPW
+PryS1Ez5p+kr53Bl3JNzj5fqGQJEe+oKvr+lVybDI25IlHpxTipIJx+1mCq6E5n5mrqhG4WKTgre
+p8/LXBQgbBfvBFQO1rGNYXWHkkMw8qinOEwj5kupz1pGM9o4N+ABYh5Dp41hESFt6ML1Klch/mah
+p5rXr7d9bBUC3LBizekLoKMvhQ6fqWG9KLIjR7ERvswDHdWQZhZ6G8MputGgO427NV/JnGLdXwpX
+5La8oa6J0+3uMrEpWNKmCQS7XzT8+jr6H2QUSw+k9IyGGtb0mtT85in9P5f/l2GUMRvjN1r7zhvR
+WfTbrLq87OpTnAAxr+nPshjAT1QWGN+6GHnYaFL/H5uv0AZhQA6N0b05///KDRhU+2Cg7eZ4YTOx
+J07AQaOgulpQUtPcRzs8A2Phe5yQl2Ta9eI9RzaT9HYk0t7/MnkvoU3y5FkuceesjBTqqL5FU08A
+4wnE79hmVcfNZCS5aElSO4rUjTqYHWwa1b3Deb+3yoXmQP6QaTtYSK64i3BBrmcFqvtR/HlApqVE
+bhzZ2VgTdR50yS5KPJfC8X4VgrO2yPocBNr1PzuBJ6s8lwU0NXZReUzwGP3RXPBv0OK1g3HGbLhP
+LMHg46ZpOEwwjGbe7qMzBAnal4RlgsW7zzA9i7CfKNB6p9hbBB85maCICrymG3BC4yCpdt76Vda+
+zzAUM5PbL8dRcUpkg2E76/c8i+S5Bp4QluIumVor3QbW3mjkY7Z0W9ag5E6x8PsRyBmUQp37C26p
+LUD1Yx3vGjrgMi9FBlEZEB2eSOf1YbOVeTTdP8SIXbLG4cH+Vb+ccUg/4+q8ULXf6LKIXyuSYw1s
+XelGzRC8EF/A3fm3jN3Vms3xFRWgS0/wviXV3whiFt/TUKDXCgKOdl+6ESJiMlzoX/+lsyL4GTwr
+BJGI8sZ0++kB4Jf7ci0MLgEYZSlVExVinsWS5SPgEd/26ogm99lIgrZuWqlY+3T5ipqx+LNvvXU6
+3sra757ILvaMjSA2m0OzMRoveBwj5C4XvO01BPj/ndqcWk1msTHHqhypEgvdLxC8plO/8Wp939KH
+UTVLozM44NBkSwmT4xpL8GmmUIshyLvwfOlD90XBMh9tMJykpmJy89b5yw3fxZhvyYNKKpeJqww6
+qsJq1JVs2nTm2EEGCfD4doEia6A96c/Rcf8uiAASgM4tLgq9hE86OjXY6AUIJViDtRM11i/dJusv
+8eMKbV3Xy7KWUpQLPbL1VEuF/o/I/VM3jMQ6RCJI1kvZr0vv8UGI7mCx7034T81zyL7JPLPZ8yci
+5/9meSZfjWm24dal47L5at1WLWsY+VJPQVNH0dh3SkWe7FbQ6+Vslidu78gYXP6jG1Hmvcaa7qR/
+RPiFvfywbUi3/mb7j9y6v1DnDrKWepa1KhNuAcP7/d2zYVF051BfrOfphQ8JwhFQMj27QqRBrjvW
+VDF3p088VIRs9LjSXlrbk4CM0aV/VbSRMs2qXHtyUqhvxFFALPXHMaBlPUjbH4UBn498H5egyGzK
+8wy5l6nxBNNu5n4/mCJNMOpW1aofnTwafXZcUtpMgSUo8XnRwdA+KTs1+Dw3I4d/eGPYCZuHDHXK
+yaVpT8Ra7Y6INFubsbXrHmfJr7G9uC7pmomoXd3ekuxaxOHSPMfr6jP6f5j9f5cEp/iqnhD8o/mT
+ngRqxd8DWssPC3haZdbHLFnfY4ihNRrAg0eKOCFESbTHVStVXCQ3As1tZu4agamrfGJjjuHuadyr
+q08pWRnQ06oruksP9YFz5r2bkqnmkgeeMaD7DPtGMEtdjdgh039OHygNDKyAlw241A78ThgA2Cup
+z9GN6VCm0FmA5DXy+/6otWnEO/icw51+dlVglt6XufpFeGtJYo7TW1iwkxS/LbzW75k4UVRzxSdn
+3pTMxTrnxf4MrE3zOOaRu04uMF/TFrLKd/fmRe7L+kB8fthAf1dd2BfNtoz8iBxW90+69SZ9S49T
+9jBJfyKp2hVzitlXE1QhD7TA9c8OmBCvMZwxAXJogdleGNoNJO4vN5yKbCjxb2Ne20n+3VGnb7Eg
+CPEkWD2JDOMHdeaODreei7aF2PAzHu18mg4TDSCJbLddrIPcnNeLlnoAxoNiOCj7a2jTiAsytM7A
+SuhoycufXEeiR69H/Lj17XluX9WmZqta5pkpFYM7eMngkditkz3G4chb1NurWOR/ZheqX7gsAn0k
+PaCDAQ/BLQM/XPLpeQdmnGFHQHa3W7Ve9d5VdmFXXqVeozj+UC/YZAizvvuxrVrS+6X+WP/cNOY7
+UuswyZ4QO3uGj+bTi+jdaoq2Jz9EGIqVTyv8N6qcYdBeUhSP1Kxv36oXNtIMhSE4HYZ126ieE0Bx
+qII8FcCqXuf3otNDUQCibjgfSGLnbIPeVpzH3YNRpRY2QjX6Q35Zyvp198HxVpipylVr1XjV1+xG
+ayChOxCJTHAmQMGGQpNfP7erN3JdLMEuomm3yYpc0BdylFfeztNK8CZk9uZJimqptV4mWMBJQ17E
+lkkfwmHbHpyEj1UnC4n5+ZfpkL+8K9b6xSkocyrnyPDPUIO/9zskogjK4Z2tKNz+6KdM9+4x3HGt
+8rnFXA4BZge41eIddAfd1hGZB9hDA0R/QGvdcC+DnS2nx/hoUsQPZmRHobpzebbgJJeXFKDEuHa9
+SPFEWRP+QvXdzpbU1vxrjdIom26P9EdD6IRBRRNaXtKf+MsCLD3BuJWJE+PLVWW+57C+317krXMe
+Xw+bB1dDPi5TYK4thQoMl1NtEedixnFHKIGjX29QsPRR9xaLzq/nZCpteK4iby96zT40OeAvH3T+
+GpOSEbJtXsd4Da7Q8OS/25e4gditiS0nXvKPCtP565uuxmHKoH9+5F93r70oqHFXze3D7N8EmY4e
+ibjAeLKrsgWQryGvL4ZQoM1j10isa2AqrKjqYqz3hIBp4z4n9nwqK0kiQw2ABjPYlCzJ4wlr0EfC
+m6pJ29p5zCTCNgvjCNF8OGcq9io8XQ6BVBpV2+nu/x4B+VFa/Slb7Dbg5Exs696wU6v38eJlQaRK
+I+XMv5oJcoBQ6SQlpwsQO5n0j/hBIOLZQilDpm9VSgfqHOQYOaXYxtr80OL7ncMpVrlOB4bDe62s
+PlcH7NQhYglLH5ffDSXM2CDJTAL95d3vl9tkx62fwMEZdplyZ4rpTOjyRxwm+Plfi6Zsq+AJYojJ
+yQ7OklScFrNnbW8BidJKiEazhvSoqM5X1U8hl8dYW+BJYMcqtOzuQUKpEAdyPImMjC2fbig2kt5E
+fY6QkKg882cr7PUezbaTi6pY0zoHZV84GUfqahk53ozBoKE+hzPjbaCkNh7mLq9DuSZKt+vFP3O2
+f8YXA7AyNBass6XS7rzcjynRqcrwn2B0Y8DoAyHEDA3O2SZW7dWcnJU8wLoyMPE0WxaEBdQsQP2c
+j0bl+pMZODp+NekzqBfuksDNYwzdQZq/6lCTy/gPSVm9z49uvZ7c+OdKFSBnoSx6dKSRNSE99EJh
+7EwMbBf2R5KBqgXfM43MlSUTn66mcH6Gqo0t1EnDegoCwQSlO2fgfQA2ZUJAV6FoIUizdWhytAHK
+KpO14K2NmNOhkclUvYKf6sz0zcc0Fb1wTPfOTCQX6iv/Ob8O25dVF/oD6mZGqtnl0+vpjnx3eEVC
+NZ/CmqlZy7PhnwfghGwF01QAuRTaLquG0ho7Pxg9TAdUp5vdKxwn5Des4OO1hzYrIcKC2BxsP16F
+KR1fhDNR+Vla4uVG2+p0U9OggMkK7UHrNSD7cBwHqlIZp3NlySRY05ByHzWNzaa7Ih+H7yvjtaEs
++ZT+YtEO9YhkC8c4PZvrJewP6gREnKnz8n6IStyLe+uznYJfLbPlYfzZoIWjy23daCv5A7NKOVcC
+291ld5VLJljqLOXtebKR+RjgU0BT7nsHgxtfJFT6ydeApkQud/SCClEZsYUa8jBpW3vdxcDtHXO5
+bCFZK7SiMUvXp6TrMrd6RLMfBthGrERSQc6bMoAJbWLY6M1owPMPWS76kslPfAJ/cNtAcZE38EJU
+M1LU7kNkeinvryIjRZCCvMao479vVTanYnagqOfYrs5Ln4ondF2S3rBbvkzc2bB3NG5niHQjpVEN
+tZzuPUCASPyE6JG8e1BgKP+PNYAIEB3VHRenVCOxJt4xZx5WOsxlTdTFISkxBeIqdlk54Z7suki/
+YWzbaxnhW7+/XOjXUOJ0/xzLz20UIu2RGPBsyFcFbcVCDlV/rFvaYMUHmGrVRdeXRa+xl+mZdFZL
+FKKXDiYg6N3jZlt/330cy6bWhMdB5t3RB11kPGA4BBCkuLb0kZ5Pm3544jdjCefnh4SXuFE2xHqB
+T31wDG16KfKYqKXn/sjUo7xcJxyeNn6xV1exho1mSje89Av7W5iYdzyLdhIP+EBTuVmOi8pq1SRK
+g2AE5I0GYwgv3VTwpEuoSREfBOTAlsLja15WXG+0wz0F9wpPLOSHjRsrc4YbpaQpcykUyNSSb0VH
+p3B+INia4QMdWOa7QbDFRwCU9yqXlH/vuTB9BN3/rJEtLSH7syMj9Y1x5iQEH5dJni+6+i3gv6wK
+kGjyKqLYXLTCoF0uIckpNcBlnpanH2lzTBoai5fk5Y701VOk1dYrzd748wc+oE8ZhqhNSr/YAdA4
+IWDDb4ieyrdil+Bii8o6dlYDogFvr4xPxoDSk+MBnG1X4QTMc4YRMt0+m36Kmt4anwRa0y7n07vN
+pHpykWJXWj5Fkix1imUD4GYuygNyqvhqG79fcEy1cSZbDnXg19DAteUdAHTkKZAGy3rkHNjx5F/j
+z2O4Vj1Jl8v8b7oz+TkftszwxkFvTPLLz7m2Ay5vjf6Ow0mfk88CyH/rHgvpL6Y8Fq+X87Kt6JcO
+wDonbpOWm0VN6eGGeNHqeOn+hpF78Q50iUvU7iM5IRwoWaN9focd0PbrGJFx9C+TXL9Hw6yJkZH4
+bxQgroanYpS8qxv4p1B1eUT1QG+Bw5aMxTj1K4Gq6btMumckn/b44/EqN9YksfSbedRlQ2U7i47v
+HpKLS2agKp56L2aRCj7xTKAC19fE6FFxzFP7PFiHArBqV4V8IOV33TWQS98SNWs/z+nGS9Zk8QYN
++cwQI7f8THP8FfFSuIrRufxYXVaXAOt8CttMSbBwHw8hpUr0j+vC6MemRFyqSngCQ6W0WHIdIKFP
+S8nQzf72wZ/vmvGEHLAzzqXncRsAxdOrmS6504QaqL55T8dtRXV2IWadsgNoz01nmdv3XcNQ7UV1
+PHxKX0DDHgDOzGRKGOXiA7aKAbAxqgDi0WGl6aDy223tbczmRbpzb0MpAP/I0Q1OOCOl/Lq5lTxV
+Oni+ejTxqO3/x4BmLk/UKXbs13kDyai1NOl121lXLIbJtcUbNReBOgRT89tlSsQ7i3J/be11ERit
+Daxe0iPHD0d9hGljktS2v0iWB/BYqcpr//uiiT7jbMbUV+tcXr1Fjo43OeDE0E0o0ZABbLELYPS5
+4SWiQ+F0/vP8ja/6s1rQBzarKDbzmrSvkEbZCUCtx5VhO6QnvYA1g8+uY+1vkxMtVfywDOPKx6vV
+TyylP6stGRPTmfsWkHbRnfzs5oXz+8dLS/h/dhhBQRFDxFHyJS/eykBCp7A5hmt8xYlsUQf65hmU
+bfSKYrKMzLgS2oN+1kj8966XzTs7sQLgw0oLyVBNyqd77aVjAiINM7f7eeIXIM8lMfVjd6Tsetje
+B2VnsU5Ph53ZVE1gOpzUPizTt63bJAkkbMJHQs6hvpx/2MVkH1BpKUUaXCr4Ry8O8SU+hw8i14in
+9ajh9JAMc2gU2cDwH0IdLaPeO2b+MQvpXapsKRhmU+tYwtaxNP2wPucajEiTT9Uukqkfog78X3yS
+ZEEUjIKrXLwa51tToo1r7O/SmX+p+5qWgYGkhH93K4/mvXXYpO+JcOTp80JhMGv+xs9zuumao7ZM
+7wVjah8zeZsLrsO0EHhSWJ+Z7ib3Uq8CMOIwyEPeDKjpY/ZPliDFBKPt2ajI0kChIeStCTjlMzcT
+O0h6TaXP2pSPTq0MNkjXqHVGV4oJADH5Oalf6tUEuDkIEkml0/aw2ZDyebg3fXbPdn5ITMWfG1eJ
+So4LZBTI/liLkF+MPn/7IH5wiW/kCikhFYkwqaMEvPjjYFBLJYMLWQPSnNi5Ec1zWlisHOSerX2k
+vy+MRWrVVaH48b2uIiOBGlmHAj9H+B/HuwHJyUbPd0YPtOPrgBJzjR/Y4vMfbu1J8r594YotrB7C
+DgURMVot3ZwVCtMYEdXyGnuLJhYhz/W/ZKAHC+Fiopztz8DXUMGGoCE0XDzJI1kdPTqzRp24ZVwg
+Vj3oY9JYHipUVRA38p5uBp+KGPcRJAo6hCnPqeF7J3v1kw/y/GE9QLeiYdtaC8rAdEkH1O+YKG7/
+enUH5v191Q+joPggKggQpNLNF+BNm49ax+zqMWZQcIFqSUKBM5eX/f9QugGjjYHAPY3Esu0oSI64
+9JroEsWVWoN7kGq61S96aJyZiqWWrW2au0XdaVn1nUmNsazjbRxItDssQXUcDQTWT2YIijYotS9g
+DjhubWqglaJODPKpTgsp5U0OR8Xkgi5W9n3HSsF8hmVkXPBTnnPvfZ1ejXKdtv3vflHrDux+D1wj
+J/jLZlSNfqJmbsOB5gBLROE6M9JbmnfKXTxkNfRm8IyRAS9DOs71irzOwwlifDwqxDTUtxeYG/i/
+O6IMgXpJu02hLRepsks/1CukWdO1VEpDR/U/gHiaqRw0Ffl5aP5j6Q8+SfFS3Qc4C9RGPvrJtaX/
+qUbQHq4MN7OjNwzaZdQc+ls85mk+sxzYsKOixpMH+fQzakFPuMArrPQOhqTI5uMFIrzVWeCLxica
+Vi900sitVbV9NCJkC1+vNcgLCr8sC6sDpnBag0qL359qlgAL44jP2FlerCwOzqApZRejduJrDnqb
+JuBuCSsDqTrsLp1XSc5DcAoy6vOkIWolwA44EGMz1g9SWO6gEOY8g59yn+/XIonem0CxO6ymOaHG
+p9MSfb4L9YMPKfW4lUmqkLNQZXNuwpG5aEfN+zDOvjW7Dfkn9FISMzwWu6FcUaYlDQfKVuogA+by
+9wvkP9XRMV/npl3HMic5qhO59B/of/iO+jRnrijy378625O0YH+bYmGC6HCg0uEZicRYy7KGXEOu
+74PjxWd80zmUf9vZHa8+nqXLSXkAj5iA8Z/QxBQOWmtLQ2DpUO6cBH7+YGZz78uTz2AnDaPyigjC
+s+X8eyKK6l6su1i2TgFkvnkrglUJWs0es2kHuyN/sgycSZed04pSLeWV16jvgTqZCulEyx8amVTN
+VEZmMCXPg6JZ+vJugrWLdi4TssmAN/8MeEKS+ZYd9CGwNn8pptT3xam5SOHGapEVpyHVv7pl6JB4
+70c5UWU+6PQ+ZCtqmcK424eS/QsuX+cZqpKtjErE1Glj6CiOwzU3ivHVYP4pILrHID1UxhumfUmB
+c0hobuBKNjY3dnjLJMWx34gVU46jHvnM2bZRJWx/fDeALVhMoOcR7LTW+uaMoyKWs4oYsbRmYg23
+rzc/JIB7v1/hjSThLrodGZf4jjT18NOU8vMQOPWMMRsdB9bfYRkrH9NWVgbKTQnfbpVdSHvV/tlV
+ajkhjsQTBkh/fePILO+6vrsGRvTEqh3TnwowQbBTeqJYJrBMqj4S+AIXOdSWuT2cOaoepcyziEBO
+1+0gqdrytBG+jG31znmpWQ7N4glsbSggAPc2uvj1toMAtsZlS+sZcIHTrxDosfYQubv/8qN0ylwp
+mSw3NPAPl98OssVthlgyZfsTkwHJaqrj+VebTiY2PrNJifDVuc/LA5Wl7HwL85V5e+GKpRVD6rLm
+pMUYWU8GPVKatLezmfmCUd8FyFTq0iIotGl/ItX5tRwbeQVkBykeaFuXQQ3rXL1GcqSjuULnfKIv
+orlXk9LdfmAosNIwDMtcjk3cMF4/idD7rVG9lyRH4M4DZa2xE3agxNVFS9WsWMm7u0bh9/7/mczA
+1/qotf53yqXVLnLzDqtKruARsayvUNmvqmi/ZlH523OOBp3O5MYh+0M1xwOcqGJRRlFYDiPv8imm
+nJUbaL1QKT1nW/1J2I+L3n7PP/boq+hU2TbEnYUKGGKn9coMH6fjbDrcTCM9+KGt/driSr83DCrt
+isNlin16laZgETOuW4ueoIvDBm9sb5Abn5x/M58cPaTXP9/sJoVqTa6yiuCZq79usVUISxB6tYzY
+82HnlWcr0YX0Hv00QevxePw9MGKSnkhdPhuBsahuX8K/oLAIzbSGl7D7dbjwQPas0460hJKfkgam
+YcCBE0rh7N9OwwyY+39LM7yx/YZcR9GE1upM3eL2JL123Kb0W3Ae9OZNNx+VL7wpM7AbtewbWKxx
+JI276bokzecku5TqS7NBJMSxRFCHb/Jie04JmJ2XB5K8AyrIiR5CcFnKw3BC1ATDxsTcD/DZwHrS
+DN5AGDUpNALG++5kzGYWMnbC9h2yfEJgPZ5UPvaX19L/ldX6sdU0zrDPZ1oldRtbPtYXUapaHc4R
+HzHcqzlPmldvVB7HoSdJCGQQTiw3pGGTVtunsjBVKrJ0kgJD5DC7NK4EWFdTAGIxVWWS+AEERHk2
+PW96N+KjJLKAPqvMwr6uJMQ6GyExvLhFk5vxjj088KjF8CLkiffuXkXWdGPZOq/xty3AF/19UbnG
+KYbMR+Yr82OfL+YCgVGU+jThOlNXVw1JmZ8T+qF43/FXG52BDiB1wGYtEqoOq856wJ3UrCWvsGKr
+2/BQP410mlGqmgXBqsRym4ze4araXfXWtswnjlVbtdmgLUuqAUtPDQc6PzNXIwAvuXqSn7asRNgZ
+d4A8OBadKHlzShw392xkMpNWE/W7Ve2C/Fy5gDGTdV/Rv6z9hCQr8YDTlvq42BMt2oOPEek8GhRF
++bdFmbIf85GF7LxbpegszfEUhTMX2y9RbGElRGIftz/wtTcsU+LFZ4AN0+01AlFRw5yNCkOcObNJ
+MJkgI+A/T76V/01wgLaseVWg6/3p8SOhtVpu0nNe8bJeyNzbVsfWnZjjrz399xZpQoO2uTIh4gj9
+gQ+DS7Rp573gkixJTWyL052T0qXXVzqeoTGkYG1ww0PJ/3RMk4GCdNot0lj62hcyR/Kna/Tr+HQu
+RclywCE8yPIn2tZtV8I3xpskPil9Z4YE1toh969e6OiVsqG5jZaLBDC4AJ3dLJEa+C8sW04JejT2
+zrkEAdXhVRl5axRtKqPZ+hE+ma9pLFOVp1R/2T8iPCcwREXqvMh9yyEpC0WRhkgU6BoyigEeZnXi
+rgW1bLV2GIYmzmpPalhAuUUnsBzKOb4OajNB+BCV9qbuM6QLjjPXC1FFdTRy9OtRwsjWTjFle/cO
+GdUJ8KXlZSLFW1QvqXBz2O4lYkIzYFbjmbimDbiETbijBorivrhzu0e6NJAjQ8wclplXH9G4jUyP
+6uMu0M/rRWkKib5+ZoNOUgLTTSaoWO+aQN62E+b571W2L4YWfhe4QcsktihzTt7ak0o22G4vLKPs
+7M0jSPFcYavlcYfsJjM8slRqJvRyCorTrCQTo4I7/6R6uolWQCb5R3gccm9MsUq71IjskJ2qNCkS
+WyaX+XkjbUwyMYjdkNbbwSxHUAnTru3B5yRgfkzQQUM92xd2fTXlOm/CinsUEWS1NIlwToeTqShk
+4vMukhwvXGG+ef79XckmIhXAmDQULfznwNdz5iIdILIxmplqdlVbXLKHU9xQVgBgapUlY+cefJ8g
+561QHhA/XkxW/aSqn59q2smrNARSPdqmu6A8/v7LcjfnK1albkr4EpA/vLF6/LDkhI3TlgRwL3Jo
+QK7U9cegDU82Pzs8mpWrJ6ha267MbWExJXZPcSBtZlMzyK97YIUF8otg89CMsPg1O9H15KZXH9KB
+V3S1+1tt2D7gs1oXmTRcCnNcUh+Wmfa4QXzyg4TJyJQ5kxfGKpWJHUVlN7jfLO2z4bYp5Kypk9Pa
+bj7vqF8DcUGcpnGRYzH7gnQd8qBOInkkJ4TS8m+dcWjU/oEYan+mobN1GjKs7L9eEMzWc5R6257i
+A+Yp9CAcI6Uj3xKWU+YaJ1e7bKIjWtqWbX5zANVtynu28EBXc6Fai2RfZRuP6zMjmOR6urwboPND
+XPbMRQTaGMr8CMKS8n5J18x62GlcozLEW0atCTuZKvh2A33ZoFaeedYCjsdUvHKRc/p4W/InpIDL
+7gKPE3wdpyQ1fAqJmzXrKdi7vz2LqtKOgwcKMVqNo7ASmAaDxhXVQSpBkGxgEAZLGFySNzVI2UEv
+dtMkZEWzSJT0s9LpofriazJ2Z/GL84tLw1VYQSzC+aKsZqIkhsSZFqsFJrF4pyMpx2e8XuSG+Gxp
+fMka77w5tSbfQmDq4m6rlDGTPIHqt86nbjy1fRLHRKsHVgfaFR5g3Gx/qnXNAv0FErawnzMWYHh5
+0Z7WH084ACoJ0qkurDeWGIPqMLR/1QfIVR53vLxBNCNlN/R2WR/ztCJmv75LPy7DZ16fSjLK95yX
+Ac6R0ZuqbPMr7VxamV+nmRuTrQoFsfHKE/OCe0A0l45Mr7h5Md8WAQSY7hBnPlxEiVKlv+OCem+J
+UbKivX+fZqaAjk0aFj4osdTvfeapmvPzE/AL9bty+mgtdgEcvy4R2ibNuKzO1aU7ypCWOpZuaR0C
+aurI+FAcWL/4fZsI4VrHA6ug8f3XcB3Txki62d1SejV5OBgpTWUpxbBDmQC6tBEBnIJLWM54CqHW
+4CwJEAQxB2UTjoIjoTvecMFO19oTWqT63/SQOBE9GtbNTT/EM6upOUEBSQI8IuyVa6Wep8J0J2c5
+ejZk9uNf/eILEMjxZgL5friH5cjt13ZYZoel6HMqZHAotxb779zoND4HJ4Et1PCwD3jxW+CSrKVX
+y4ERQfKIkua5A55HruhvsQoikQfQ4cKc+nUl3spo3vpaL8tN9LC1HeJRq6164HWdlvbeK00EWAwi
+CMwheonKyzPud7E0o48mV487zFm5/30HTxgKR4wjDjgKyv4l9ZE4ZuUnRoC8DwLQ1fTvTz/c7FO5
+zgK73IlBWiWRIgrRwR2sRteRoYF6uAV3GOSNLZLS8M3S7ztNav/NEB2/M+du63M48WNHKQiazNH5
+x4llZJDoPVi3RpHOTqg8G56hhFCJVbGhOT4VcpGXCNfcAu5/dWy1wc8YYLsutaNGHGAAOcWkVNli
+CG1Sj6l8KqcOuEoEExjHNDbaGhuGYpc1zsz2Z5K0ErNHiZtNniEpszsuc5W/NPf5ReKkH0SgqgEK
+NubuSTgrD3ILzzEiPdna1Xk/NIBREIG4Empp1Jk1h/UZEZ52LJT6qB9VA5ZW0ybgcnxlVw8HQoff
+RwoIeLpjs3J34MDxDShis3ydv9yO+Wt4GOlRyj0IEmynR1JAbTHM3Dihyhp3d1/38tbDbvRrVJRe
+Bzz4h6RkaE5dJFNRB2bLNKG+m5k+iBQu21A86h4kCxIbLtY/b/dwzZ5pZJBgW+sJ+Wo/cccTPnCo
+I1h+a+Gx128jNWR/sa8HU7xDH2BaM8PveBGryG+FAd6CFjxzrBij/RzqEp+jIParPpMJS7elMxiH
+oHnwRvGYZYycOQE8AgyNyLsAGpxF7loxCyjD82AgWvvMgzUtNTkJO/6hLSgQ44OCKYfo6g8UYWPZ
+tWCZXX5b4suGPZ38N6PGj1/qtmssZ419AJj3/mYdpfHXg3/l56RHYYZHplupT/eS7Fe6Ds/9HYiV
+JyD3xMm/UwPlot4DeO4vpFjqj9KlS3HY/q8BTU7gDekYhewVEAQBPX9qZAyzcGRNjrv/MVCjTaHh
+xjII+2vXNWwvRrG2a3zCV/JfvRu177f4JxVW6sZpC59tirlWIYj9MoLEJMtrq65MZ7mFW4r58/+1
+PUr/zPMqyw+xS1uCW1hA3MvG96NhIQOPGzG9qkdfXn5uYFC4l8xoyL6Yz4MlxZNVE1UwoZ1VMO1t
+E8WUh0qdl+jhNA8w8yPTGbzFmGPbEnlRzU6AOnEmX4xfWIECECY4f7mMuhzsDJ8luTx8XpuvhJM5
+Ed97biQrZNFWslMoE4A8iMAV3kzTbJhYLCDep+iUJNy+ZsDwv1+1vRUDCxAGzDvF6vR06K5O0j8g
+7188k8bpj6MRfVWvcuRdee62nCwsfvnuMDGjrkR49q43IGYPvljIjGJtkPaVSVapuvV1rgZ/7Nke
+YWagreGAuFSceryT8XGL8af17vLAKNajBgx4N3iZ5xMTGqxFVQs+2N4HrTpTAeeq3OS03rqok4uS
+ci2hnoe0a+fag1i9YUatPH39fQfboi9L0au8+PPsr51Fpx//bQjy+NgqmBcgbpE8FdkToEpw5yAJ
+FH4bbawB3ANkiVyFBOIYYdOmmdMOih2+lozsmHhqHPGqKYzeBNQEZC1+HfSukwjFevGuQ9xTNIUU
+hgeq9CqJvFxg2kTUmkulZxLMOXOHZ6KzHH7cH+ANNlBoYD39NQ8cgRRW1EzmrVzDc9IBGKrL7mYG
+LXIbzaFgOH4Zml8g581t58iCihe8iW24SeSJRh9kSZ/nAftTpYN2dqxQGl7ZNZU2KMlyLxXjuMIi
+CiDJ3xHcJobvXJS7QeqdizUsJ5TaN0GEeaxe2cK8ui8gZPAYVgLfY6pKXJX4ZPqmkA+2NWSTE8ab
+jaa5TDUq+JhjmfjkheuHYeU7CMITW7XU6GbhxrK0KlXP99rx7TSHAdSHHn5EjcKiWJWv24/qd3XV
+4PbtXcmgsQ9RMVLf7RI0oYitoKC0XW5fQCDA3+O93eoRHvn+hUXYvlM/tiNfCz65o2s3zzNTfEzr
+RxoWmcVCrPNH7os3/7UGktPeGHqgSuwGQHcmwjcPKpBDYi6OBVIOTrPU70l0DW82evDYglSqI5kI
+Y16d1f0PZV9z2fqlwZr38p+MLiZEpz7jcPf4yeXM/nAr5f1zZYeRBvd0ZUr7ACr6ixj/IDc3eghP
+tzl94Gs+Jwu4qK157TApUK1yh33A312R1MtDCJje7qmpvrRpTzIYCFzEAQmDqlUYwwjOiDQAedKb
+5CPocwNWyEpt4argvp6Fjd+Ujc83TyiNSlslLS2yk9BaM6xqv6J/W6a+puFmDZaKONP/Gej8ILuN
+9J6keRK/pmjsibacVxlfOuIxNH7qQ82RWS3Mh4v1UBMpfC5qq0sbBN4EN4ZMQL7sIn5Vmt5wsoZi
+LxEIkCKtBb8TIUxcFo4HaUu8x+kzAlS1Xn04YHIYbFoX4biIHIcqoWwJHyOB0rdcamcxc7Fpp9Kk
+Jt0cOG8P2lQHHG6fKeOdpYBdKtxL+yoFI1Z7vTQPRR4SXnoBlw9C6adejQVpJcN8RTxmGt5UkDLM
+n+9ZdXm3Rg1F8BRaCw30Ad65QCCe7vwS9jxm5/bxbevm3b7tAiSmdpbXex/6uQkaQ7xyPB6p6oMN
+26vFfV7LWzXIEnh8WNWhIqPGIfMQPo+5gvue6isO5LB4cqLDs9lqOUInq/XTk9z3eXrl26vtYdTV
+RYmfhTGG0rLrsIrJ6R3AiK7XI9UVDaU6LK9xRGvW4afoQcU+5ajcBj0g+vUAItN/J3C6sSKjKJrZ
+psoDoTYp3g0Zt9VA49l4WbDnWB5q0laFn1sGAP/HHKIcQ6Y+wjV0zcIxlO4c8V9wWCfc6MgbztNL
+zmZg7lcMLNEmEB8CEBKjpH2qd5K5cniWvoZuiHdDu5SgjFIfU2n50xt4Xf1ScKZ7kvc2h3jlcjW1
+60k9JdpL2mVNNQ9zbb8iZxBnQ9VrFrHHgJX+VKzQDT9oS6GXuGcfIy91i3KvU8PXkB6nN5tW6oo/
+taA0PYlaggbzpPl4rM5oDWvwPgmoiGcXgKSzxRluXgiqDclJEBJXChRwDkvUFHuxipzGwjFAjvnb
+Od+VM/032KlyDrgr5fTYeJ661ohwvurFs8gQ29efzfJpOZQqsXMOtgUMYGXDDO6O1Fg/q+oZVPPa
+2Kp+RMhSrT9lFlZXzUnY5Ml8e0zmziT+tvRTwt9kvztAw3g7ZPqTvX3NFLOJ0tKLWL4LJcR/Db6b
+c6ILAfN47Gggl8Ot0qvT5kQV6+9oP5wneQVLAgZWZ/G2PAUNPGpUt8K8tWugaR+a2FXE3alNphcP
+31J9Plo/msnvX1I/Q5fPEGN/xuNreCYQvxidJmVxH8QcCH6bYtSw/wifVRmzAK1BBhUT8jYqi/ON
+56ZEJpF5tmGLQ6ZgCSOGz7v63A+QMzE+HlSuNtsinx5jk9HzVPKk1pU6mUYa+s6dPG1FHqqd/GxX
+sFsK2icbz4N2bmjhRFzndiX4R99hsoTEzq01T2JmjhcI+fGKXo7/Wer61lCXYCxjYtm0xU4k7CKc
+1iCV/olWsCt4lR9XkyJT9THezvWLZRmToOT6kpzlIBk4bwXCEyoXJpAV8gGhXkHtRLI/l5rgofiJ
+KZwZJbcMgsMAZ/g8fjuIRhlppEoc7sKe6V4K8P/8QadBTHzOiyf72bCIGktETq2QIZNtj4fe351W
+zIehU9H0lXEl9taxepR2upcV+TzCpWqmQwtU9xYHu3Fz+vg1mW6Q9wUXpXp4RIPpyjmDBiYKbvDn
+3xpNw+qsu4it+6J2X0cYIv5QR0sHKhGNpYgcmQ8AOQxJjrc1xgW=

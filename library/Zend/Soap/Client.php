@@ -1,1117 +1,245 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Soap
- * @subpackage Client
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_Soap_Server */
-require_once 'Zend/Soap/Server.php';
-
-/** Zend_Soap_Client_Local */
-require_once 'Zend/Soap/Client/Local.php';
-
-/** Zend_Soap_Client_Common */
-require_once 'Zend/Soap/Client/Common.php';
-
-/**
- * Zend_Soap_Client
- *
- * @category   Zend
- * @package    Zend_Soap
- * @subpackage Client
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Soap_Client
-{
-    /**
-     * Encoding
-     * @var string
-     */
-    protected $_encoding = 'UTF-8';
-
-    /**
-     * Array of SOAP type => PHP class pairings for handling return/incoming values
-     * @var array
-     */
-    protected $_classmap = null;
-
-    /**
-     * Registered fault exceptions
-     * @var array
-     */
-    protected $_faultExceptions = array();
-
-    /**
-     * SOAP version to use; SOAP_1_2 by default, to allow processing of headers
-     * @var int
-     */
-    protected $_soapVersion = SOAP_1_2;
-
-    /** Set of other SoapClient options */
-    protected $_uri                 = null;
-    protected $_location            = null;
-    protected $_style               = null;
-    protected $_use                 = null;
-    protected $_login               = null;
-    protected $_password            = null;
-    protected $_proxy_host          = null;
-    protected $_proxy_port          = null;
-    protected $_proxy_login         = null;
-    protected $_proxy_password      = null;
-    protected $_local_cert          = null;
-    protected $_passphrase          = null;
-    protected $_compression         = null;
-    protected $_connection_timeout  = null;
-    protected $_stream_context      = null;
-    protected $_features            = null;
-    protected $_cache_wsdl          = null;
-
-    /**
-     * WSDL used to access server
-     * It also defines Zend_Soap_Client working mode (WSDL vs non-WSDL)
-     *
-     * @var string
-     */
-    protected $_wsdl = null;
-
-    /**
-     * SoapClient object
-     *
-     * @var SoapClient
-     */
-    protected $_soapClient;
-
-    /**
-     * Last invoked method
-     *
-     * @var string
-     */
-    protected $_lastMethod = '';
-
-    /**
-     * SOAP request headers.
-     *
-     * Array of SoapHeader objects
-     *
-     * @var array
-     */
-    protected $_soapInputHeaders = array();
-
-    /**
-     * Permanent SOAP request headers (shared between requests).
-     *
-     * Array of SoapHeader objects
-     *
-     * @var array
-     */
-    protected $_permanentSoapInputHeaders = array();
-
-    /**
-     * Output SOAP headers.
-     *
-     * Array of SoapHeader objects
-     *
-     * @var array
-     */
-    protected $_soapOutputHeaders = array();
-
-    /**
-     * Constructor
-     *
-     * @param string $wsdl
-     * @param array $options
-     */
-    public function __construct($wsdl = null, $options = null)
-    {
-        if (!extension_loaded('soap')) {
-            require_once 'Zend/Soap/Client/Exception.php';
-            throw new Zend_Soap_Client_Exception('SOAP extension is not loaded.');
-        }
-
-        if ($wsdl !== null) {
-            $this->setWsdl($wsdl);
-        }
-        if ($options !== null) {
-            $this->setOptions($options);
-        }
-    }
-
-    /**
-     * Set wsdl
-     *
-     * @param string $wsdl
-     * @return Zend_Soap_Client
-     */
-    public function setWsdl($wsdl)
-    {
-        $this->_wsdl = $wsdl;
-        $this->_soapClient = null;
-
-        return $this;
-    }
-
-    /**
-     * Get wsdl
-     *
-     * @return string
-     */
-    public function getWsdl()
-    {
-        return $this->_wsdl;
-    }
-
-    /**
-     * Set Options
-     *
-     * Allows setting options as an associative array of option => value pairs.
-     *
-     * @param  array|Zend_Config $options
-     * @return Zend_Soap_Client
-     * @throws Zend_SoapClient_Exception
-     */
-    public function setOptions($options)
-    {
-        if($options instanceof Zend_Config) {
-            $options = $options->toArray();
-        }
-
-        foreach ($options as $key => $value) {
-            switch ($key) {
-                case 'classmap':
-                case 'classMap':
-                    $this->setClassmap($value);
-                    break;
-                case 'encoding':
-                    $this->setEncoding($value);
-                    break;
-                case 'soapVersion':
-                case 'soap_version':
-                    $this->setSoapVersion($value);
-                    break;
-                case 'wsdl':
-                    $this->setWsdl($value);
-                    break;
-                case 'uri':
-                    $this->setUri($value);
-                    break;
-                case 'location':
-                    $this->setLocation($value);
-                    break;
-                case 'style':
-                    $this->setStyle($value);
-                    break;
-                case 'use':
-                    $this->setEncodingMethod($value);
-                    break;
-                case 'login':
-                    $this->setHttpLogin($value);
-                    break;
-                case 'password':
-                    $this->setHttpPassword($value);
-                    break;
-                case 'proxy_host':
-                    $this->setProxyHost($value);
-                    break;
-                case 'proxy_port':
-                    $this->setProxyPort($value);
-                    break;
-                case 'proxy_login':
-                    $this->setProxyLogin($value);
-                    break;
-                case 'proxy_password':
-                    $this->setProxyPassword($value);
-                    break;
-                case 'local_cert':
-                    $this->setHttpsCertificate($value);
-                    break;
-                case 'passphrase':
-                    $this->setHttpsCertPassphrase($value);
-                    break;
-                case 'compression':
-                    $this->setCompressionOptions($value);
-                    break;
-                case 'stream_context':
-                    $this->setStreamContext($value);
-                    break;
-                case 'features':
-                    $this->setSoapFeatures($value);
-                    break;
-                case 'cache_wsdl':
-                    $this->setWsdlCache($value);
-                    break;
-
-                // Not used now
-                // case 'connection_timeout':
-                //     $this->_connection_timeout = $value;
-                //    break;
-
-                default:
-                    require_once 'Zend/Soap/Client/Exception.php';
-                    throw new Zend_Soap_Client_Exception('Unknown SOAP client option');
-                    break;
-            }
-        }
-
-        return $this;
-    }
-
-    /**
-     * Return array of options suitable for using with SoapClient constructor
-     *
-     * @return array
-     */
-    public function getOptions()
-    {
-        $options = array();
-
-        $options['classmap']       = $this->getClassmap();
-        $options['encoding']       = $this->getEncoding();
-        $options['soap_version']   = $this->getSoapVersion();
-        $options['wsdl']           = $this->getWsdl();
-        $options['uri']            = $this->getUri();
-        $options['location']       = $this->getLocation();
-        $options['style']          = $this->getStyle();
-        $options['use']            = $this->getEncodingMethod();
-        $options['login']          = $this->getHttpLogin();
-        $options['password']       = $this->getHttpPassword();
-        $options['proxy_host']     = $this->getProxyHost();
-        $options['proxy_port']     = $this->getProxyPort();
-        $options['proxy_login']    = $this->getProxyLogin();
-        $options['proxy_password'] = $this->getProxyPassword();
-        $options['local_cert']     = $this->getHttpsCertificate();
-        $options['passphrase']     = $this->getHttpsCertPassphrase();
-        $options['compression']    = $this->getCompressionOptions();
-        //$options['connection_timeout'] = $this->_connection_timeout;
-        $options['stream_context'] = $this->getStreamContext();
-        $options['cache_wsdl']     = $this->getWsdlCache();
-        $options['features']       = $this->getSoapFeatures();
-
-        foreach ($options as $key => $value) {
-            if ($value == null) {
-                unset($options[$key]);
-            }
-        }
-
-        return $options;
-    }
-
-    /**
-     * Set SOAP version
-     *
-     * @param  int $version One of the SOAP_1_1 or SOAP_1_2 constants
-     * @return Zend_Soap_Client
-     * @throws Zend_Soap_Client_Exception with invalid soap version argument
-     */
-    public function setSoapVersion($version)
-    {
-        if (!in_array($version, array(SOAP_1_1, SOAP_1_2))) {
-            require_once 'Zend/Soap/Client/Exception.php';
-            throw new Zend_Soap_Client_Exception('Invalid soap version specified. Use SOAP_1_1 or SOAP_1_2 constants.');
-        }
-        $this->_soapVersion = $version;
-
-        $this->_soapClient = null;
-
-        return $this;
-    }
-
-    /**
-     * Get SOAP version
-     *
-     * @return int
-     */
-    public function getSoapVersion()
-    {
-        return $this->_soapVersion;
-    }
-
-    /**
-     * Set classmap
-     *
-     * @param  array $classmap
-     * @return Zend_Soap_Client
-     * @throws Zend_Soap_Client_Exception for any invalid class in the class map
-     */
-    public function setClassmap(array $classmap)
-    {
-        foreach ($classmap as $type => $class) {
-            if (!class_exists($class)) {
-                require_once 'Zend/Soap/Client/Exception.php';
-                throw new Zend_Soap_Client_Exception('Invalid class in class map');
-            }
-        }
-
-        $this->_classmap = $classmap;
-
-        $this->_soapClient = null;
-
-        return $this;
-    }
-
-    /**
-     * Retrieve classmap
-     *
-     * @return mixed
-     */
-    public function getClassmap()
-    {
-        return $this->_classmap;
-    }
-
-    /**
-     * Set encoding
-     *
-     * @param  string $encoding
-     * @return Zend_Soap_Client
-     * @throws Zend_Soap_Client_Exception with invalid encoding argument
-     */
-    public function setEncoding($encoding)
-    {
-        if (!is_string($encoding)) {
-            require_once 'Zend/Soap/Client/Exception.php';
-            throw new Zend_Soap_Client_Exception('Invalid encoding specified');
-        }
-
-        $this->_encoding = $encoding;
-
-        $this->_soapClient = null;
-
-        return $this;
-    }
-
-    /**
-     * Get encoding
-     *
-     * @return string
-     */
-    public function getEncoding()
-    {
-        return $this->_encoding;
-    }
-
-    /**
-     * Check for valid URN
-     *
-     * @param  string $urn
-     * @return true
-     * @throws Zend_Soap_Client_Exception on invalid URN
-     */
-    public function validateUrn($urn)
-    {
-        $segs = parse_url($urn);
-        if (isset($segs['scheme'])) {
-            return true;
-        }
-
-        require_once 'Zend/Soap/Client/Exception.php';
-        throw new Zend_Soap_Client_Exception('Invalid URN');
-    }
-
-    /**
-     * Set URI
-     *
-     * URI in Web Service the target namespace
-     *
-     * @param  string $uri
-     * @return Zend_Soap_Client
-     * @throws Zend_Soap_Client_Exception with invalid uri argument
-     */
-    public function setUri($uri)
-    {
-        $this->validateUrn($uri);
-        $this->_uri = $uri;
-
-        $this->_soapClient = null;
-
-        return $this;
-    }
-
-    /**
-     * Retrieve URI
-     *
-     * @return string
-     */
-    public function getUri()
-    {
-        return $this->_uri;
-    }
-
-    /**
-     * Set Location
-     *
-     * URI in Web Service the target namespace
-     *
-     * @param  string $location
-     * @return Zend_Soap_Client
-     * @throws Zend_Soap_Client_Exception with invalid uri argument
-     */
-    public function setLocation($location)
-    {
-        $this->validateUrn($location);
-        $this->_location = $location;
-
-        $this->_soapClient = null;
-
-        return $this;
-    }
-
-    /**
-     * Retrieve URI
-     *
-     * @return string
-     */
-    public function getLocation()
-    {
-        return $this->_location;
-    }
-
-    /**
-     * Set request style
-     *
-     * @param  int $style One of the SOAP_RPC or SOAP_DOCUMENT constants
-     * @return Zend_Soap_Client
-     * @throws Zend_Soap_Client_Exception with invalid style argument
-     */
-    public function setStyle($style)
-    {
-        if (!in_array($style, array(SOAP_RPC, SOAP_DOCUMENT))) {
-            require_once 'Zend/Soap/Client/Exception.php';
-            throw new Zend_Soap_Client_Exception('Invalid request style specified. Use SOAP_RPC or SOAP_DOCUMENT constants.');
-        }
-
-        $this->_style = $style;
-
-        $this->_soapClient = null;
-
-        return $this;
-    }
-
-    /**
-     * Get request style
-     *
-     * @return int
-     */
-    public function getStyle()
-    {
-        return $this->_style;
-    }
-
-    /**
-     * Set message encoding method
-     *
-     * @param  int $use One of the SOAP_ENCODED or SOAP_LITERAL constants
-     * @return Zend_Soap_Client
-     * @throws Zend_Soap_Client_Exception with invalid message encoding method argument
-     */
-    public function setEncodingMethod($use)
-    {
-        if (!in_array($use, array(SOAP_ENCODED, SOAP_LITERAL))) {
-            require_once 'Zend/Soap/Client/Exception.php';
-            throw new Zend_Soap_Client_Exception('Invalid message encoding method. Use SOAP_ENCODED or SOAP_LITERAL constants.');
-        }
-
-        $this->_use = $use;
-
-        $this->_soapClient = null;
-
-        return $this;
-    }
-
-    /**
-     * Get message encoding method
-     *
-     * @return int
-     */
-    public function getEncodingMethod()
-    {
-        return $this->_use;
-    }
-
-    /**
-     * Set HTTP login
-     *
-     * @param  string $login
-     * @return Zend_Soap_Client
-     */
-    public function setHttpLogin($login)
-    {
-        $this->_login = $login;
-
-        $this->_soapClient = null;
-
-        return $this;
-    }
-
-    /**
-     * Retrieve HTTP Login
-     *
-     * @return string
-     */
-    public function getHttpLogin()
-    {
-        return $this->_login;
-    }
-
-    /**
-     * Set HTTP password
-     *
-     * @param  string $password
-     * @return Zend_Soap_Client
-     */
-    public function setHttpPassword($password)
-    {
-        $this->_password = $password;
-
-        $this->_soapClient = null;
-
-        return $this;
-    }
-
-    /**
-     * Retrieve HTTP Password
-     *
-     * @return string
-     */
-    public function getHttpPassword()
-    {
-        return $this->_password;
-    }
-
-    /**
-     * Set proxy host
-     *
-     * @param  string $proxyHost
-     * @return Zend_Soap_Client
-     */
-    public function setProxyHost($proxyHost)
-    {
-        $this->_proxy_host = $proxyHost;
-
-        $this->_soapClient = null;
-
-        return $this;
-    }
-
-    /**
-     * Retrieve proxy host
-     *
-     * @return string
-     */
-    public function getProxyHost()
-    {
-        return $this->_proxy_host;
-    }
-
-    /**
-     * Set proxy port
-     *
-     * @param  int $proxyPort
-     * @return Zend_Soap_Client
-     */
-    public function setProxyPort($proxyPort)
-    {
-        $this->_proxy_port = (int)$proxyPort;
-
-        $this->_soapClient = null;
-
-        return $this;
-    }
-
-    /**
-     * Retrieve proxy port
-     *
-     * @return int
-     */
-    public function getProxyPort()
-    {
-        return $this->_proxy_port;
-    }
-
-    /**
-     * Set proxy login
-     *
-     * @param  string $proxyLogin
-     * @return Zend_Soap_Client
-     */
-    public function setProxyLogin($proxyLogin)
-    {
-        $this->_proxy_login = $proxyLogin;
-
-        $this->_soapClient = null;
-
-        return $this;
-    }
-
-    /**
-     * Retrieve proxy login
-     *
-     * @return string
-     */
-    public function getProxyLogin()
-    {
-        return $this->_proxy_login;
-    }
-
-    /**
-     * Set proxy password
-     *
-     * @param  string $proxyLogin
-     * @return Zend_Soap_Client
-     */
-    public function setProxyPassword($proxyPassword)
-    {
-        $this->_proxy_password = $proxyPassword;
-
-        $this->_soapClient = null;
-
-        return $this;
-    }
-
-    /**
-     * Set HTTPS client certificate path
-     *
-     * @param  string $localCert local certificate path
-     * @return Zend_Soap_Client
-     * @throws Zend_Soap_Client_Exception with invalid local certificate path argument
-     */
-    public function setHttpsCertificate($localCert)
-    {
-        if (!is_readable($localCert)) {
-            require_once 'Zend/Soap/Client/Exception.php';
-            throw new Zend_Soap_Client_Exception('Invalid HTTPS client certificate path.');
-        }
-
-        $this->_local_cert = $localCert;
-
-        $this->_soapClient = null;
-
-        return $this;
-    }
-
-    /**
-     * Get HTTPS client certificate path
-     *
-     * @return string
-     */
-    public function getHttpsCertificate()
-    {
-        return $this->_local_cert;
-    }
-
-    /**
-     * Set HTTPS client certificate passphrase
-     *
-     * @param  string $passphrase
-     * @return Zend_Soap_Client
-     */
-    public function setHttpsCertPassphrase($passphrase)
-    {
-        $this->_passphrase = $passphrase;
-
-        $this->_soapClient = null;
-
-        return $this;
-    }
-
-    /**
-     * Get HTTPS client certificate passphrase
-     *
-     * @return string
-     */
-    public function getHttpsCertPassphrase()
-    {
-        return $this->_passphrase;
-    }
-
-    /**
-     * Set compression options
-     *
-     * @param  int $compressionOptions
-     * @return Zend_Soap_Client
-     */
-    public function setCompressionOptions($compressionOptions)
-    {
-        $this->_compression = $compressionOptions;
-
-        $this->_soapClient = null;
-
-        return $this;
-    }
-
-    /**
-     * Get Compression options
-     *
-     * @return int
-     */
-    public function getCompressionOptions()
-    {
-        return $this->_compression;
-    }
-
-    /**
-     * Retrieve proxy password
-     *
-     * @return string
-     */
-    public function getProxyPassword()
-    {
-        return $this->_proxy_password;
-    }
-
-    /**
-     * Set Stream Context
-     *
-     * @return Zend_Soap_Client
-     */
-    public function setStreamContext($context)
-    {
-        if(!is_resource($context) || get_resource_type($context) !== "stream-context") {
-            /**
-             * @see Zend_Soap_Client_Exception
-             */
-            require_once "Zend/Soap/Client/Exception.php";
-            throw new Zend_Soap_Client_Exception(
-                "Invalid stream context resource given."
-            );
-        }
-
-        $this->_stream_context = $context;
-        return $this;
-    }
-
-    /**
-     * Get Stream Context
-     *
-     * @return resource
-     */
-    public function getStreamContext()
-    {
-        return $this->_stream_context;
-    }
-
-    /**
-     * Set the SOAP Feature options.
-     *
-     * @param  string|int $feature
-     * @return Zend_Soap_Client
-     */
-    public function setSoapFeatures($feature)
-    {
-        $this->_features = $feature;
-        return $this;
-    }
-
-    /**
-     * Return current SOAP Features options
-     *
-     * @return int
-     */
-    public function getSoapFeatures()
-    {
-        return $this->_features;
-    }
-
-    /**
-     * Set the SOAP Wsdl Caching Options
-     *
-     * @param string|int|boolean $caching
-     * @return Zend_Soap_Client
-     */
-    public function setWsdlCache($options)
-    {
-        $this->_cache_wsdl = $options;
-        return $this;
-    }
-
-    /**
-     * Get current SOAP Wsdl Caching option
-     */
-    public function getWsdlCache()
-    {
-        return $this->_cache_wsdl;
-    }
-
-    /**
-     * Retrieve request XML
-     *
-     * @return string
-     */
-    public function getLastRequest()
-    {
-        if ($this->_soapClient !== null) {
-            return $this->_soapClient->__getLastRequest();
-        }
-
-        return '';
-    }
-
-    /**
-     * Get response XML
-     *
-     * @return string
-     */
-    public function getLastResponse()
-    {
-        if ($this->_soapClient !== null) {
-            return $this->_soapClient->__getLastResponse();
-        }
-
-        return '';
-    }
-
-    /**
-     * Retrieve request headers
-     *
-     * @return string
-     */
-    public function getLastRequestHeaders()
-    {
-        if ($this->_soapClient !== null) {
-            return $this->_soapClient->__getLastRequestHeaders();
-        }
-
-        return '';
-    }
-
-    /**
-     * Retrieve response headers (as string)
-     *
-     * @return string
-     */
-    public function getLastResponseHeaders()
-    {
-        if ($this->_soapClient !== null) {
-            return $this->_soapClient->__getLastResponseHeaders();
-        }
-
-        return '';
-    }
-
-    /**
-     * Retrieve last invoked method
-     *
-     * @return string
-     */
-    public function getLastMethod()
-    {
-        return $this->_lastMethod;
-    }
-
-    /**
-     * Do request proxy method.
-     *
-     * May be overridden in subclasses
-     *
-     * @internal
-     * @param Zend_Soap_Client_Common $client
-     * @param string $request
-     * @param string $location
-     * @param string $action
-     * @param int    $version
-     * @param int    $one_way
-     * @return mixed
-     */
-    public function _doRequest(Zend_Soap_Client_Common $client, $request, $location, $action, $version, $one_way = null)
-    {
-        // Perform request as is
-        if ($one_way == null) {
-            return call_user_func(array($client,'SoapClient::__doRequest'), $request, $location, $action, $version);
-        } else {
-            return call_user_func(array($client,'SoapClient::__doRequest'), $request, $location, $action, $version, $one_way);
-        }
-    }
-
-    /**
-     * Initialize SOAP Client object
-     *
-     * @throws Zend_Soap_Client_Exception
-     */
-    protected function _initSoapClientObject()
-    {
-        $wsdl = $this->getWsdl();
-        $options = array_merge($this->getOptions(), array('trace' => true));
-
-        if ($wsdl == null) {
-            if (!isset($options['location'])) {
-                require_once 'Zend/Soap/Client/Exception.php';
-                throw new Zend_Soap_Client_Exception('\'location\' parameter is required in non-WSDL mode.');
-            }
-            if (!isset($options['uri'])) {
-                require_once 'Zend/Soap/Client/Exception.php';
-                throw new Zend_Soap_Client_Exception('\'uri\' parameter is required in non-WSDL mode.');
-            }
-        } else {
-            if (isset($options['use'])) {
-                require_once 'Zend/Soap/Client/Exception.php';
-                throw new Zend_Soap_Client_Exception('\'use\' parameter only works in non-WSDL mode.');
-            }
-            if (isset($options['style'])) {
-                require_once 'Zend/Soap/Client/Exception.php';
-                throw new Zend_Soap_Client_Exception('\'style\' parameter only works in non-WSDL mode.');
-            }
-        }
-        unset($options['wsdl']);
-
-        $this->_soapClient = new Zend_Soap_Client_Common(array($this, '_doRequest'), $wsdl, $options);
-    }
-
-
-    /**
-     * Perform arguments pre-processing
-     *
-     * My be overridden in descendant classes
-     *
-     * @param array $arguments
-     */
-    protected function _preProcessArguments($arguments)
-    {
-        // Do nothing
-        return $arguments;
-    }
-
-    /**
-     * Perform result pre-processing
-     *
-     * My be overridden in descendant classes
-     *
-     * @param array $arguments
-     */
-    protected function _preProcessResult($result)
-    {
-        // Do nothing
-        return $result;
-    }
-
-    /**
-     * Add SOAP input header
-     *
-     * @param SoapHeader $header
-     * @param boolean $permanent
-     * @return Zend_Soap_Client
-     */
-    public function addSoapInputHeader(SoapHeader $header, $permanent = false)
-    {
-    	if ($permanent) {
-    		$this->_permanentSoapInputHeaders[] = $header;
-    	} else {
-    		$this->_soapInputHeaders[] = $header;
-    	}
-
-    	return $this;
-    }
-
-    /**
-     * Reset SOAP input headers
-     *
-     * @return Zend_Soap_Client
-     */
-    public function resetSoapInputHeaders()
-    {
-        $this->_permanentSoapInputHeaders = array();
-        $this->_soapInputHeaders = array();
-
-        return $this;
-    }
-
-    /**
-     * Get last SOAP output headers
-     *
-     * @return array
-     */
-    public function getLastSoapOutputHeaderObjects()
-    {
-    	return $this->_soapOutputHeaders;
-    }
-
-    /**
-     * Perform a SOAP call
-     *
-     * @param string $name
-     * @param array  $arguments
-     * @return mixed
-     */
-    public function __call($name, $arguments)
-    {
-        if ($this->_soapClient == null) {
-            $this->_initSoapClientObject();
-        }
-
-        $this->_lastMethod = $name;
-
-        $soapHeaders = array_merge($this->_permanentSoapInputHeaders, $this->_soapInputHeaders);
-        $result = $this->_soapClient->__soapCall($name,
-                                                 $this->_preProcessArguments($arguments),
-                                                 null, /* Options are already set to the SOAP client object */
-                                                 (count($soapHeaders) > 0)? $soapHeaders : null,
-                                                 $this->_soapOutputHeaders);
-
-        // Reset non-permanent input headers
-        $this->_soapInputHeaders = array();
-
-        return $this->_preProcessResult($result);
-    }
-
-
-    /**
-     * Return a list of available functions
-     *
-     * @return array
-     * @throws Zend_Soap_Client_Exception
-     */
-    public function getFunctions()
-    {
-        if ($this->getWsdl() == null) {
-            require_once 'Zend/Soap/Client/Exception.php';
-            throw new Zend_Soap_Client_Exception('\'getFunctions\' method is available only in WSDL mode.');
-        }
-
-        if ($this->_soapClient == null) {
-            $this->_initSoapClientObject();
-        }
-
-        return $this->_soapClient->__getFunctions();
-    }
-
-
-    /**
-     * Get used types.
-     *
-     * @return array
-     */
-
-    /**
-     * Return a list of SOAP types
-     *
-     * @return array
-     * @throws Zend_Soap_Client_Exception
-     */
-    public function getTypes()
-    {
-        if ($this->getWsdl() == null) {
-            require_once 'Zend/Soap/Client/Exception.php';
-            throw new Zend_Soap_Client_Exception('\'getTypes\' method is available only in WSDL mode.');
-        }
-
-        if ($this->_soapClient == null) {
-            $this->_initSoapClientObject();
-        }
-
-        return $this->_soapClient->__getTypes();
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+R7Mnw3T3m4xlnemCfcRESOrPOQUc9UqO

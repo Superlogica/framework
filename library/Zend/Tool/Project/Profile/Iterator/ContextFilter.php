@@ -1,203 +1,57 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Tool
- * @subpackage Framework
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id$
- */
-
-/**
- * This class is an iterator that will iterate only over enabled resources
- * 
- * @category   Zend
- * @package    Zend_Tool
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Tool_Project_Profile_Iterator_ContextFilter extends RecursiveFilterIterator
-{
-    
-    /**
-     * @var array 
-     */
-    protected $_acceptTypes = array();
-    
-    /**
-     * @var array 
-     */
-    protected $_denyTypes   = array();
-    
-    /**
-     * @var array 
-     */
-    protected $_acceptNames = array();
-    
-    /**
-     * @var array 
-     */
-    protected $_denyNames   = array();
-    
-    /**
-     * @var array 
-     */
-    protected $_rawOptions = array();
-    
-    /**
-     * __construct()
-     *
-     * @param RecursiveIterator $iterator
-     * @param array $options
-     */
-    public function __construct(RecursiveIterator $iterator, $options = array())
-    {
-        parent::__construct($iterator);
-        $this->_rawOptions = $options;
-        if ($options) {
-            $this->setOptions($options);
-        }
-    }
-    
-    /**
-     * setOptions()
-     *
-     * @param array $options
-     */
-    public function setOptions(Array $options)
-    {
-        foreach ($options as $optionName => $optionValue) {
-            if (substr($optionName, -1, 1) != 's') {
-                $optionName .= 's';
-            }
-            if (method_exists($this, 'set' . $optionName)) {
-                $this->{'set' . $optionName}($optionValue);
-            }
-        }
-    }
-    
-    /**
-     * setAcceptTypes()
-     *
-     * @param array|string $acceptTypes
-     * @return Zend_Tool_Project_Profile_Iterator_ContextFilter
-     */
-    public function setAcceptTypes($acceptTypes)
-    {
-        if (!is_array($acceptTypes)) {
-            $acceptTypes = array($acceptTypes);
-        }
-        
-        $this->_acceptTypes = $acceptTypes;
-        return $this;
-    }
-    
-    /**
-     * setDenyTypes()
-     *
-     * @param array|string $denyTypes
-     * @return Zend_Tool_Project_Profile_Iterator_ContextFilter
-     */
-    public function setDenyTypes($denyTypes)
-    {
-        if (!is_array($denyTypes)) {
-            $denyTypes = array($denyTypes);
-        }
-        
-        $this->_denyTypes = $denyTypes;
-        return $this;
-    }
-    
-    /**
-     * setAcceptNames()
-     *
-     * @param array|string $acceptNames
-     * @return Zend_Tool_Project_Profile_Iterator_ContextFilter
-     */
-    public function setAcceptNames($acceptNames)
-    {
-        if (!is_array($acceptNames)) {
-            $acceptNames = array($acceptNames);
-        }
-        
-        $this->_acceptNames = $acceptNames;
-        return $this;
-    }
-    
-    /**
-     * setDenyNames()
-     *
-     * @param array|string $denyNames
-     * @return Zend_Tool_Project_Profile_Iterator_ContextFilter
-     */
-    public function setDenyNames($denyNames)
-    {
-        if (!is_array($denyNames)) {
-            $denyNames = array($denyNames);
-        }
-        
-        $this->_denyNames = $denyNames;
-        return $this;
-    }
-    
-    /**
-     * accept() is required by teh RecursiveFilterIterator
-     *
-     * @return bool
-     */
-    public function accept()
-    {
-        $currentItem = $this->current();
-        
-        if (in_array($currentItem->getName(), $this->_acceptNames)) {
-            return true;
-        } elseif (in_array($currentItem->getName(), $this->_denyNames)) {
-            return false;
-        }
-        
-        foreach ($this->_acceptTypes as $acceptType) {
-            if ($currentItem->getContent() instanceof $acceptType) {
-                return true;
-            }
-        }
-        
-        foreach ($this->_denyTypes as $denyType) {
-            if ($currentItem->getContext() instanceof $denyType) {
-                return false;
-            }
-        }
-        
-        return true;
-    }
-    
-    /**
-     * getChildren()
-     * 
-     * This is here due to a bug/design issue in PHP
-     * @link 
-     *
-     * @return unknown
-     */
-    function getChildren()
-    {
-
-        if (empty($this->ref)) {
-            $this->ref = new ReflectionClass($this);
-        }
-
-        return $this->ref->newInstance($this->getInnerIterator()->getChildren(), $this->_rawOptions);
-    }
-    
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

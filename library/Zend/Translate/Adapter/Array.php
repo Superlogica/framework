@@ -1,94 +1,34 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Translate
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @version    $Id: $
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-
-/** Zend_Locale */
-require_once 'Zend/Locale.php';
-
-/** Zend_Translate_Adapter */
-require_once 'Zend/Translate/Adapter.php';
-
-
-/**
- * @category   Zend
- * @package    Zend_Translate
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Translate_Adapter_Array extends Zend_Translate_Adapter
-{
-    private $_data = array();
-
-    /**
-     * Generates the adapter
-     *
-     * @param  array               $data     Translation data
-     * @param  string|Zend_Locale  $locale   OPTIONAL Locale/Language to set, identical with locale identifier,
-     *                                       see Zend_Locale for more information
-     * @param  array               $options  OPTIONAL Options to set
-     */
-    public function __construct($data, $locale = null, array $options = array())
-    {
-        parent::__construct($data, $locale, $options);
-    }
-
-    /**
-     * Load translation data
-     *
-     * @param  string|array  $data
-     * @param  string        $locale  Locale/Language to add data for, identical with locale identifier,
-     *                                see Zend_Locale for more information
-     * @param  array         $options OPTIONAL Options to use
-     * @return array
-     */
-    protected function _loadTranslationData($data, $locale, array $options = array())
-    {
-        $this->_data = array();
-        if (!is_array($data)) {
-            if (file_exists($data)) {
-                ob_start();
-                $data = include($data);
-                ob_end_clean();
-            }
-        }
-        if (!is_array($data)) {
-            require_once 'Zend/Translate/Exception.php';
-            throw new Zend_Translate_Exception("Error including array or file '".$data."'");
-        }
-
-        if (!isset($this->_data[$locale])) {
-            $this->_data[$locale] = array();
-        }
-
-        $this->_data[$locale] = $data + $this->_data[$locale];
-        return $this->_data;
-    }
-
-    /**
-     * returns the adapters name
-     *
-     * @return string
-     */
-    public function toString()
-    {
-        return "Array";
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+JiXCc4Dqg9qkrvuCJhqHqQPTzUh9

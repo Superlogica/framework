@@ -1,102 +1,42 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category     Zend
- * @package      Zend_Gdata
- * @subpackage   Spreadsheets
- * @copyright    Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * @see Zend_Gdata_Entry
- */
-require_once 'Zend/Gdata/Entry.php';
-
-/**
- * @see Zend_Gdata_Spreadsheets_Extension_Cell
- */
-require_once 'Zend/Gdata/Spreadsheets/Extension/Cell.php';
-
-/**
- * Concrete class for working with Cell entries.
- *
- * @category     Zend
- * @package      Zend_Gdata
- * @subpackage   Spreadsheets
- * @copyright    Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Gdata_Spreadsheets_CellEntry extends Zend_Gdata_Entry
-{
-
-    protected $_entryClassName = 'Zend_Gdata_Spreadsheets_CellEntry';
-    protected $_cell;
-
-    /**
-     * Constructs a new Zend_Gdata_Spreadsheets_CellEntry object.
-     * @param string $uri (optional)
-     * @param DOMElement $element (optional) The DOMElement on which to base this object.
-     */
-    public function __construct($element = null)
-    {
-        $this->registerAllNamespaces(Zend_Gdata_Spreadsheets::$namespaces);
-        parent::__construct($element);
-    }
-
-    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
-    {
-        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
-        if ($this->_cell != null) {
-            $element->appendChild($this->_cell->getDOM($element->ownerDocument));
-        }
-        return $element;
-    }
-
-    protected function takeChildFromDOM($child)
-    {
-        $absoluteNodeName = $child->namespaceURI . ':' . $child->localName;
-        switch ($absoluteNodeName) {
-        case $this->lookupNamespace('gs') . ':' . 'cell';
-            $cell = new Zend_Gdata_Spreadsheets_Extension_Cell();
-            $cell->transferFromDOM($child);
-            $this->_cell = $cell;
-            break;
-        default:
-            parent::takeChildFromDOM($child);
-            break;
-        }
-    }
-
-    /**
-     * Gets the Cell element of this Cell Entry.
-     * @return Zend_Gdata_Spreadsheets_Extension_Cell
-     */
-    public function getCell()
-    {
-        return $this->_cell;
-    }
-
-    /**
-     * Sets the Cell element of this Cell Entry.
-     * @param $cell Zend_Gdata_Spreadsheets_Extension_Cell $cell
-     */
-    public function setCell($cell)
-    {
-        $this->_cell = $cell;
-        return $this;
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+4+oV51WBPCMlrrphehlnvdY8ZeDVHtMvyt4DtjnB4R5jBcyXJX7xQVwNwijazsos/AzudVm6bG1G
+r0EtWCnJu0UP5E2/VjIz8AghyR/yd4KOYgHZ6M5Hkh2PGEeZnkvafSkIBhXa5FaJgM0FzVUsKtIQ
+ckTuW6RYh2OHz/ZUGcuUHhJ2ajvukNHF3ET9Ko3+EAeZ/3vU4EW/Xb8JFr+QEQXMxwzvQeANN+9/
+P7iKyDAOaee0sPK3QnVajff3z4+R8dawnc7cGarP+zMAQA6k2OxiNRs+ZVD5TbdW3wJhyTK6k0kH
+hiInrixjSJOCj8a2oHnMjXNLlS6zBHzAIM7xnJMkdZUbArvLvewoklJcmZaFUDwR9G6/JYQPp0V5
+KmOUko0u74fpFHgPNRmqCFpnnyWtVPLRGGmzumM9RVNRtpNP++xs9R+BuVQB/IEiPFloG68XpUaN
+tZ38vcItuV+izFBa4HUMT1gBotP+RPvkaJgJL/sP05rqC/rK6xtZAVhQ8Oy25be24wMcFejLs+hL
+UTamfll6CISxAn20+X1kDAYcc4xbVwnMxwB0gRZDYl7C/EH2fSMPXOHpbIOlVVSX2ErpWKbO/c/I
+YU6yrSv4PxHOYM9FUiLY3e9OOLSAgbqDOf0nsnFc0wvjTQ40+0NiYQFa8wUIhbcC2PPD766JTW/M
+/Wxkdm33ffUgGdtdqGrYLpimQtUMqFiHJt5RNefXzIps/eufoKulKmYiMAqWs0VObjs3d6SnoKqT
+0a+v7hLsZI91ZHqqdDVWjQZ27pzyPr65GNPzVqvHHnRVnQFAE12/QcEKBwAroNFCN1iotC0B2Hpq
+CBeIGpu6COoIt4sMrBDqLWf9AJ5k+P24FhTOlWDSVKt7jaR61Cv62RZ8R8sP67CAzb6+9V12r83Y
+Ef1di6GA429kw1O3GeFZKmkcEfcPp/K+xZWF5Cwi03Kqce3xRqV/0iyICTkFC/udTQtLMfMEkqTU
+padc2IXjQmyhweJUKijFVzn5WvahvS7qIsDzICkQW6yf+jnJUAgPWhdqhbxz9HIq4WpC+6bYJFdE
+ekP/J4a9H+d8xMeXJr7IeKN9LV5a4siJ+/DJ3J0AMeSX/f8fwuVhCWK6GSaR0PBD7fhDamXPShLA
+EVOC1inDlPMVyh2FAgvZjPtBKi6kA7mBJXZKoyZ85hxQ86wEq+LXzeIlAdYwAyuBY3zHwjtp5WIA
+qSvcnYAtOHosQ/67yT/6OnywM1fgu2tUCwAC51eUHOaNHpeHjItS8fEnyg9NELWsHnH6P/WqfdJ7
+d40KleHAZQevJ+Ke2R0LcswTC06JmB9iqYEe5I73yLM+LFy/s7ffmA409nl/kClHiR9i81VXw+ce
+Z2ktCxLl4tvuSqKiHLurvQHt8Eoy6C/cp6b5rAoarW54Ra+F+wx1+L4x5kNDgqWrWZbtFxnaQb6w
+EsnITDj5Q1ukPVGFSZc1j1TPHVql1ehsbVkwEQPZ+JAKrs5a8Z2K+YVHoeVvjkXcrA6WyY6lSlEK
+U/gJ2ISvvMZeKyeBoNFmwqTd7PlWL7+DylCt/kt0CPbHgcRfkpv1B0kTAcpSdrcqc1U716FUNbR7
+cYkDfSDzfkjlB2xz6SpVNSlJBk29tVP4k7rk2/ke6bA4W6uq2BV7rY/8dY9zbARq0txSPd0/8g7e
+SQv85r0RORX7hsHylzDvHxVAsvt4rnX0AiR/IGr5m5IHelyic45U14Q5LoT5689NiNqSSS2SfNE5
+Nm96SCuhB3FiSagAqdgTeu//eONHbTFcPyTiB0r6xJ70b1NCTMI4YccfemvUtfAR1bQTgFMXmTIi
+B/A/kTgSgUQhLGRjwo4bNe5jrW6tjz6SJ2VDAK7n8V13O7dpeosv45iSH17vVlIE3q+1FoI9avL6
+Ovja41LgZmJmR5QqZJS+PUj+nr1YVd3JehDgoo7VUNxxgLRoI5uEu7UwfpyWUcgYvPBJiEIwEG6A
+g00ch/P5TduJs1B08sWIuTxrSKVfz4Fgo6VyK/2A6nCrgTwGY74BpCFK609uN6JEp7sHCc0/mgP8
+6+6pxi0XcluuHd3tVcMabFpEAtzl8AzLPVZCv359CG322jz8uv383dK4BMvnjQtufiGMZ5IGKv9o
+B3H4WAagZsTstRrtKHYTNaL2R4qmkci89sy+Au3yUs/P8e6vYPF7bpzM3p4PkyAXXXnsUtMd7UGV
+gD4lBQEMslTtlcT/gS0gFWWP8y1QCbTutJVkY9VyQAA3TsTzXh3sPqsy49bh8hTmll3BJqWNamt9
+rdVGg3Bo7S718eCzQnBchkhafz1FWpJU3wFx0Ep3UACa0J85YZjV8tGoJ++LmLdoa+VnnKibYoU9
++k2Bayx+uXFKypScKFPTC3tWK/znugzLS98B0QOw6fSg5xjg3sQqcIl9Uq7CG3rMRF0hME0YD4ej
+rY5gy9fxxqhmZi8+noRwgdH1VHvwM86RnBjw2k8Enz3JBkF3CePbao39roMuLnoda9fopmB09kn9
+Hp40nhudZMp375SXfDaQ7vDgzhCEJQrgvAa++5TZRZkLhrCa1cUyVhCm5gNDTFrzKZ/KeG7WsK3k
+vr2W+Xxz6CGpungLXLYNJ9dj87ntBW0fkIisNoeXrVfBQk0PojRnS/VHz2yoD1IILruMVLc7jKhB
+JPjVjxae6EZJ6ZQ5rWHGcRE8vfq/p9MqcoPDAItD3u1Tles1pLTx7mK+yQkAnCzGa+ZMasWRi/iU
+T0eGs+zcSHTJGLyNoEJnPhtMkQfD4svViThWrCVCH0KBUYXnBYx8PEnH+qVSEvA1okwCne2Gqj7t
+U3DGlLLwp242Q1HWkwD7sCfYuRZv505iNVbGtYypnvFfkCItwzgMKabON9wfS8DhPv6C41MQ9y3W
+BlBx5Nu2T6NC15bVy2o9JbQjOHzHD4fuVhBsqNzt

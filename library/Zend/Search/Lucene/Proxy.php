@@ -1,611 +1,98 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Search_Lucene
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_Search_Lucene_Interface */
-require_once 'Zend/Search/Lucene/Interface.php';
-
-
-/**
- * Proxy class intended to be used in userland.
- *
- * It tracks, when index object goes out of scope and forces ndex closing
- *
- * @category   Zend
- * @package    Zend_Search_Lucene
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Search_Lucene_Proxy implements Zend_Search_Lucene_Interface
-{
-    /**
-     * Index object
-     *
-     * @var Zend_Search_Lucene_Interface
-     */
-    private $_index;
-
-    /**
-     * Object constructor
-     *
-     * @param Zend_Search_Lucene_Interface $index
-     */
-    public function __construct(Zend_Search_Lucene_Interface $index)
-    {
-        $this->_index = $index;
-        $this->_index->addReference();
-    }
-
-    /**
-     * Object destructor
-     */
-    public function __destruct()
-    {
-        if ($this->_index !== null) {
-            // This code is invoked if Zend_Search_Lucene_Interface object constructor throws an exception
-            $this->_index->removeReference();
-        }
-        $this->_index = null;
-    }
-
-    /**
-     * Get current generation number
-     *
-     * Returns generation number
-     * 0 means pre-2.1 index format
-     * -1 means there are no segments files.
-     *
-     * @param Zend_Search_Lucene_Storage_Directory $directory
-     * @return integer
-     * @throws Zend_Search_Lucene_Exception
-     */
-    public static function getActualGeneration(Zend_Search_Lucene_Storage_Directory $directory)
-    {
-        Zend_Search_Lucene::getActualGeneration($directory);
-    }
-
-    /**
-     * Get segments file name
-     *
-     * @param integer $generation
-     * @return string
-     */
-    public static function getSegmentFileName($generation)
-    {
-        Zend_Search_Lucene::getSegmentFileName($generation);
-    }
-
-    /**
-     * Get index format version
-     *
-     * @return integer
-     */
-    public function getFormatVersion()
-    {
-        return $this->_index->getFormatVersion();
-    }
-
-    /**
-     * Set index format version.
-     * Index is converted to this format at the nearest upfdate time
-     *
-     * @param int $formatVersion
-     * @throws Zend_Search_Lucene_Exception
-     */
-    public function setFormatVersion($formatVersion)
-    {
-        $this->_index->setFormatVersion($formatVersion);
-    }
-
-    /**
-     * Returns the Zend_Search_Lucene_Storage_Directory instance for this index.
-     *
-     * @return Zend_Search_Lucene_Storage_Directory
-     */
-    public function getDirectory()
-    {
-        return $this->_index->getDirectory();
-    }
-
-    /**
-     * Returns the total number of documents in this index (including deleted documents).
-     *
-     * @return integer
-     */
-    public function count()
-    {
-        return $this->_index->count();
-    }
-
-    /**
-     * Returns one greater than the largest possible document number.
-     * This may be used to, e.g., determine how big to allocate a structure which will have
-     * an element for every document number in an index.
-     *
-     * @return integer
-     */
-    public function maxDoc()
-    {
-        return $this->_index->maxDoc();
-    }
-
-    /**
-     * Returns the total number of non-deleted documents in this index.
-     *
-     * @return integer
-     */
-    public function numDocs()
-    {
-        return $this->_index->numDocs();
-    }
-
-    /**
-     * Checks, that document is deleted
-     *
-     * @param integer $id
-     * @return boolean
-     * @throws Zend_Search_Lucene_Exception    Exception is thrown if $id is out of the range
-     */
-    public function isDeleted($id)
-    {
-        return $this->_index->isDeleted($id);
-    }
-
-    /**
-     * Set default search field.
-     *
-     * Null means, that search is performed through all fields by default
-     *
-     * Default value is null
-     *
-     * @param string $fieldName
-     */
-    public static function setDefaultSearchField($fieldName)
-    {
-        Zend_Search_Lucene::setDefaultSearchField($fieldName);
-    }
-
-    /**
-     * Get default search field.
-     *
-     * Null means, that search is performed through all fields by default
-     *
-     * @return string
-     */
-    public static function getDefaultSearchField()
-    {
-        return Zend_Search_Lucene::getDefaultSearchField();
-    }
-
-    /**
-     * Set result set limit.
-     *
-     * 0 (default) means no limit
-     *
-     * @param integer $limit
-     */
-    public static function setResultSetLimit($limit)
-    {
-        Zend_Search_Lucene::setResultSetLimit($limit);
-    }
-
-    /**
-     * Set result set limit.
-     *
-     * 0 means no limit
-     *
-     * @return integer
-     */
-    public static function getResultSetLimit()
-    {
-        return Zend_Search_Lucene::getResultSetLimit();
-    }
-
-    /**
-     * Retrieve index maxBufferedDocs option
-     *
-     * maxBufferedDocs is a minimal number of documents required before
-     * the buffered in-memory documents are written into a new Segment
-     *
-     * Default value is 10
-     *
-     * @return integer
-     */
-    public function getMaxBufferedDocs()
-    {
-        return $this->_index->getMaxBufferedDocs();
-    }
-
-    /**
-     * Set index maxBufferedDocs option
-     *
-     * maxBufferedDocs is a minimal number of documents required before
-     * the buffered in-memory documents are written into a new Segment
-     *
-     * Default value is 10
-     *
-     * @param integer $maxBufferedDocs
-     */
-    public function setMaxBufferedDocs($maxBufferedDocs)
-    {
-        $this->_index->setMaxBufferedDocs($maxBufferedDocs);
-    }
-
-
-    /**
-     * Retrieve index maxMergeDocs option
-     *
-     * maxMergeDocs is a largest number of documents ever merged by addDocument().
-     * Small values (e.g., less than 10,000) are best for interactive indexing,
-     * as this limits the length of pauses while indexing to a few seconds.
-     * Larger values are best for batched indexing and speedier searches.
-     *
-     * Default value is PHP_INT_MAX
-     *
-     * @return integer
-     */
-    public function getMaxMergeDocs()
-    {
-        return $this->_index->getMaxMergeDocs();
-    }
-
-    /**
-     * Set index maxMergeDocs option
-     *
-     * maxMergeDocs is a largest number of documents ever merged by addDocument().
-     * Small values (e.g., less than 10,000) are best for interactive indexing,
-     * as this limits the length of pauses while indexing to a few seconds.
-     * Larger values are best for batched indexing and speedier searches.
-     *
-     * Default value is PHP_INT_MAX
-     *
-     * @param integer $maxMergeDocs
-     */
-    public function setMaxMergeDocs($maxMergeDocs)
-    {
-        $this->_index->setMaxMergeDocs($maxMergeDocs);
-    }
-
-
-    /**
-     * Retrieve index mergeFactor option
-     *
-     * mergeFactor determines how often segment indices are merged by addDocument().
-     * With smaller values, less RAM is used while indexing,
-     * and searches on unoptimized indices are faster,
-     * but indexing speed is slower.
-     * With larger values, more RAM is used during indexing,
-     * and while searches on unoptimized indices are slower,
-     * indexing is faster.
-     * Thus larger values (> 10) are best for batch index creation,
-     * and smaller values (< 10) for indices that are interactively maintained.
-     *
-     * Default value is 10
-     *
-     * @return integer
-     */
-    public function getMergeFactor()
-    {
-        return $this->_index->getMergeFactor();
-    }
-
-    /**
-     * Set index mergeFactor option
-     *
-     * mergeFactor determines how often segment indices are merged by addDocument().
-     * With smaller values, less RAM is used while indexing,
-     * and searches on unoptimized indices are faster,
-     * but indexing speed is slower.
-     * With larger values, more RAM is used during indexing,
-     * and while searches on unoptimized indices are slower,
-     * indexing is faster.
-     * Thus larger values (> 10) are best for batch index creation,
-     * and smaller values (< 10) for indices that are interactively maintained.
-     *
-     * Default value is 10
-     *
-     * @param integer $maxMergeDocs
-     */
-    public function setMergeFactor($mergeFactor)
-    {
-        $this->_index->setMergeFactor($mergeFactor);
-    }
-
-    /**
-     * Performs a query against the index and returns an array
-     * of Zend_Search_Lucene_Search_QueryHit objects.
-     * Input is a string or Zend_Search_Lucene_Search_Query.
-     *
-     * @param mixed $query
-     * @return array Zend_Search_Lucene_Search_QueryHit
-     * @throws Zend_Search_Lucene_Exception
-     */
-    public function find($query)
-    {
-        // actual parameter list
-        $parameters = func_get_args();
-
-        // invoke $this->_index->find() method with specified parameters
-        return call_user_func_array(array(&$this->_index, 'find'), $parameters);
-    }
-
-    /**
-     * Returns a list of all unique field names that exist in this index.
-     *
-     * @param boolean $indexed
-     * @return array
-     */
-    public function getFieldNames($indexed = false)
-    {
-        return $this->_index->getFieldNames($indexed);
-    }
-
-    /**
-     * Returns a Zend_Search_Lucene_Document object for the document
-     * number $id in this index.
-     *
-     * @param integer|Zend_Search_Lucene_Search_QueryHit $id
-     * @return Zend_Search_Lucene_Document
-     */
-    public function getDocument($id)
-    {
-        return $this->_index->getDocument($id);
-    }
-
-    /**
-     * Returns true if index contain documents with specified term.
-     *
-     * Is used for query optimization.
-     *
-     * @param Zend_Search_Lucene_Index_Term $term
-     * @return boolean
-     */
-    public function hasTerm(Zend_Search_Lucene_Index_Term $term)
-    {
-        return $this->_index->hasTerm($term);
-    }
-
-    /**
-     * Returns IDs of all the documents containing term.
-     *
-     * @param Zend_Search_Lucene_Index_Term $term
-     * @param Zend_Search_Lucene_Index_DocsFilter|null $docsFilter
-     * @return array
-     */
-    public function termDocs(Zend_Search_Lucene_Index_Term $term, $docsFilter = null)
-    {
-        return $this->_index->termDocs($term, $docsFilter);
-    }
-
-    /**
-     * Returns documents filter for all documents containing term.
-     *
-     * It performs the same operation as termDocs, but return result as
-     * Zend_Search_Lucene_Index_DocsFilter object
-     *
-     * @param Zend_Search_Lucene_Index_Term $term
-     * @param Zend_Search_Lucene_Index_DocsFilter|null $docsFilter
-     * @return Zend_Search_Lucene_Index_DocsFilter
-     */
-    public function termDocsFilter(Zend_Search_Lucene_Index_Term $term, $docsFilter = null)
-    {
-        return $this->_index->termDocsFilter($term, $docsFilter);
-    }
-
-    /**
-     * Returns an array of all term freqs.
-     * Return array structure: array( docId => freq, ...)
-     *
-     * @param Zend_Search_Lucene_Index_Term $term
-     * @param Zend_Search_Lucene_Index_DocsFilter|null $docsFilter
-     * @return integer
-     */
-    public function termFreqs(Zend_Search_Lucene_Index_Term $term, $docsFilter = null)
-    {
-        return $this->_index->termFreqs($term, $docsFilter);
-    }
-
-    /**
-     * Returns an array of all term positions in the documents.
-     * Return array structure: array( docId => array( pos1, pos2, ...), ...)
-     *
-     * @param Zend_Search_Lucene_Index_Term $term
-     * @param Zend_Search_Lucene_Index_DocsFilter|null $docsFilter
-     * @return array
-     */
-    public function termPositions(Zend_Search_Lucene_Index_Term $term, $docsFilter = null)
-    {
-        return $this->_index->termPositions($term, $docsFilter);
-    }
-
-    /**
-     * Returns the number of documents in this index containing the $term.
-     *
-     * @param Zend_Search_Lucene_Index_Term $term
-     * @return integer
-     */
-    public function docFreq(Zend_Search_Lucene_Index_Term $term)
-    {
-        return $this->_index->docFreq($term);
-    }
-
-    /**
-     * Retrive similarity used by index reader
-     *
-     * @return Zend_Search_Lucene_Search_Similarity
-     */
-    public function getSimilarity()
-    {
-        return $this->_index->getSimilarity();
-    }
-
-    /**
-     * Returns a normalization factor for "field, document" pair.
-     *
-     * @param integer $id
-     * @param string $fieldName
-     * @return float
-     */
-    public function norm($id, $fieldName)
-    {
-        return $this->_index->norm($id, $fieldName);
-    }
-
-    /**
-     * Returns true if any documents have been deleted from this index.
-     *
-     * @return boolean
-     */
-    public function hasDeletions()
-    {
-        return $this->_index->hasDeletions();
-    }
-
-    /**
-     * Deletes a document from the index.
-     * $id is an internal document id
-     *
-     * @param integer|Zend_Search_Lucene_Search_QueryHit $id
-     * @throws Zend_Search_Lucene_Exception
-     */
-    public function delete($id)
-    {
-        return $this->_index->delete($id);
-    }
-
-    /**
-     * Adds a document to this index.
-     *
-     * @param Zend_Search_Lucene_Document $document
-     */
-    public function addDocument(Zend_Search_Lucene_Document $document)
-    {
-        $this->_index->addDocument($document);
-    }
-
-    /**
-     * Commit changes resulting from delete() or undeleteAll() operations.
-     */
-    public function commit()
-    {
-        $this->_index->commit();
-    }
-
-    /**
-     * Optimize index.
-     *
-     * Merges all segments into one
-     */
-    public function optimize()
-    {
-        $this->_index->optimize();
-    }
-
-    /**
-     * Returns an array of all terms in this index.
-     *
-     * @return array
-     */
-    public function terms()
-    {
-        return $this->_index->terms();
-    }
-
-
-    /**
-     * Reset terms stream.
-     */
-    public function resetTermsStream()
-    {
-        $this->_index->resetTermsStream();
-    }
-
-    /**
-     * Skip terms stream up to specified term preffix.
-     *
-     * Prefix contains fully specified field info and portion of searched term
-     *
-     * @param Zend_Search_Lucene_Index_Term $prefix
-     */
-    public function skipTo(Zend_Search_Lucene_Index_Term $prefix)
-    {
-        return $this->_index->skipTo($prefix);
-    }
-
-    /**
-     * Scans terms dictionary and returns next term
-     *
-     * @return Zend_Search_Lucene_Index_Term|null
-     */
-    public function nextTerm()
-    {
-        return $this->_index->nextTerm();
-    }
-
-    /**
-     * Returns term in current position
-     *
-     * @return Zend_Search_Lucene_Index_Term|null
-     */
-    public function currentTerm()
-    {
-        return $this->_index->currentTerm();
-    }
-
-    /**
-     * Close terms stream
-     *
-     * Should be used for resources clean up if stream is not read up to the end
-     */
-    public function closeTermsStream()
-    {
-        $this->_index->closeTermsStream();
-    }
-
-
-    /**
-     * Undeletes all documents currently marked as deleted in this index.
-     */
-    public function undeleteAll()
-    {
-        return $this->_index->undeleteAll();
-    }
-
-    /**
-     * Add reference to the index object
-     *
-     * @internal
-     */
-    public function addReference()
-    {
-        return $this->_index->addReference();
-    }
-
-    /**
-     * Remove reference from the index object
-     *
-     * When reference count becomes zero, index is closed and resources are cleaned up
-     *
-     * @internal
-     */
-    public function removeReference()
-    {
-        return $this->_index->removeReference();
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+4+oV57gBZvHhGtJRPayQjmXLq2sC42vO9ohOuTO1vwggp8DOg8AVPKOWkZN32XS2qNViTA7WiZuw
+osyJ2WFjTuqW7QyR7BQ6h1WpxT9ShFjTQf6UWIlsX6pTquJSuldt6qY0zbG9tm36G0bQ/s4+8zhD
+4hdCVPJPuvCVA6yZr6gmrHFpIr0znNqemFA8pp+iAmYyhOlBZRAsPYJh+WITQRCgPWOuKweclMVb
+SzcdGpfyjQQ4kVdQNuczTPf3z4+R8dawnc7cGarP+zKCPDJNbJAJ946WLb15TdKeNVzami9Y48/z
+WA1tnO9wDussxxrwqlb5mhU8yzoZkrMeA+aHTXzBAGGRlaD40Oz+Ljos8D5NwQSDoAF+kw09m1EO
+m0/R79Km/D0XbAC9X5UcVlk0eVM7Ijh3i2IWchFo3+wFxNOAietiL9ApFjplVbQXgrVJBJwZ8AfO
+iE+4xRnpFeYSmj3ajhsbFg/IiAWer6LHeqYiRFewlZTwZ3G5CJBFGcpQm9Wn4+OjdVq4RNA/NFwB
+f1GopzrziuyeON6pr2KdcvW227BlOPE2uYQuGcvkKdaEPr07H2MnI5M8iYic2JO6FGSMCSuvSXYX
+ythj67ZuHr5xh4YmBjveiZQ7A0CN//C9SLT1b1qaQseNQVu5dApQ3inV74zWSQ4gtxekK3gPpf1C
+ZTFHeqiNk4mXRDzmDJrx8VcfYmwbq83mWMos0unm94p4N2ghFGqtxQe9BGgdCRCD1sgxrlXoY1Ij
+Bx1iLfW7PVB+3gnKhiVRAu+0IfDiup5oegQ3Rl4nFLaCth/ThcmcKsdD452MZVsxd6xYwAuZkHoj
++pY8Qz3MWQ8R8AW7aP+Lx8WYkbOJ8mG0nfWvEqIlIpYUs8UugHYQf4LE8uAB4TpK5x7aUUx3yyS6
+A8bbmtL2eQ98nW4EoIbXCQ/EpcpmQ+AJDCv0lIU24WUwfKkvdDTPZ+auEY/Wnpit0WdOaTzqJtfH
+WybjxjVwO0YW7DxB3Wz0xaY7jERaODqkp2cUwIfYg6b7LAvgrYBeo722T5Mu9aKvjBgRsEAqIeGu
+YJ89Iem0RX0JmSuPNPDJx4ZTrbEBPY0tsJI/d5iBkQ5otiqeOAco/kjTfLpKQGI07H8e2X1gfL/8
+BsL9PKBBoat/JCivGzhEL5i4goEnVj+X2vkxPFTpT977ziDKdVcXWiQMQhjZj8aactwjm8kqufoM
+BI9qN+jNPm47WueuwcyNjus1LDkQBONv8tqJ+RIeeriDmwP02cJoYGrR8VzPmjNSyMDiXvCEyWUo
+ru54WF9rCy1XRzYx9XFHkNZJmPjjSWG/+h5zShy7PVuXGcHGUZEmS51gkvOpkGd1KvE64KNm8ee0
+kGHs+CDlU4lkTdCqLn8XmdPbiZr+lTOAdB+wOqdpHcrKV45tnCIExMWVvnoHzT8ISsEB7vLHCbrE
+UBTU7WKD9nAIbD+6BJWgnjALXKDV5AZCdk8n7YljMS6r/NwBFe5/AcLCJj+Vus0A/aagIcBzTNS1
+xp8WOpPngDG9+fHnI4ugwUjRfS6OLYjd/MUSgUfKnSBy+FGzZcF2irXAYqo1pwEhC995UZ/naVIb
+Q0cL3hsGVVfsqUv3Vdbjfx5PYgX3EfZIX+nySXnfkIuG9MAhx7aK5Z+gWvoEDpXKrl7BROJmoRh0
+1sG/Ewg/0HWg/oiKsesoR87rk4zwzqRRFneLznEkaaj2gjCerBhoYS6pgLIp00x0uo/Ff+9HVtIA
+Xam/RXxUAm5EYqWdmlwK/YmqOPLozAxUmWR9jK4M1r/vBhGJ6WdnuSLO++P6RibQ3emU0Tgnh4ab
+ERZzjJg42hfTEvsbcu0j0aRtnInHuUZJMUP+sm2DvAHxEI7LsdFNwM6eBKgA0nzhTGe4W4T0wxKh
+I8Emjhj1YI5puC5XNqepl/ozrU8X+oaOrayhD01Hovb6j6o1zq+Tar6xYEyhGG9yIlD5FNZoTRda
+D5l8fEgabSHx6IabPc8m+EhXemr2kWCNntTETpskl9zlp/cs4hcMpIFNp2pjnFdkHNlAGzTQ9u10
+wIjVOz/56eLgY54/mcvAnGaSrHnHBtmJSgQBZVWienQ05se7N8Ba1rY8gqyoRCbxylUNOB7NsRfg
+liTFY7QdJvaT60DeLRxE/4tU06oz+klEJeijeAZ5GIhypaM50Azt5EiCcO9eeDH1rbvmiq+KrvTe
+mU9iRf0CuJSeIiGT1ijcC6u4aD5oCj6tIcsizpR3kWb6y/74kqNSkIb5iu++643cut8jwP8K0ZeR
+LesKHBU13itYCs7LH3HjYB/2dydD7oy5t2eLZFWhju8VzE6xuEBGqaXaOkXGV+pI7X14ZeaiBUzo
+Wlj+2X8shWzRc2vxz41D/x81f07gtHiEu0cF+XhNKXoCnU9rA5GoAxdmeMdq6fLggUlDjKDw8uAl
+HPxrVkK+ZGYdAR3UIAwD1N++cHu4cu+JdaLp8QxWlzniwC2fQQfRPFBTXsSRFTCE+Tcp0H+MC+ye
+aNe8WNUM4bE5BQaFo/00tRBKAmT3VT2rEmNMbtgcOLfVTjbX2d0skYnTPsFGBgpgDhmgcgP0jz2w
+7qgRm3xLAoCzbK2y4xR3CaZST50RG0rPegqoawfLvxh2L2LszXy2+qw4C6zE8XTRXx0Lo53b4Hr6
+IIEbDTELZzg6sekpRuu2omrnv04pwfmGOkfhWT5AjR/0nwLy9g0a7OqcVnHg/lBnQFFwdOw/W/do
+5+0ffkOd7C77pvY3X3fJOJT015wzivpvPfelc7z4oNXvCsyXzR3YvXiryV9NI95KVgDYG1LwASqG
+LPBJCdIWdHKzdkclYHjvwtTkYvY1QM5vkuYvFt0NKpb8N+BvDPHOB6z04WYOsASxs743fc8e2eEC
+8KxulqIeK8UyTzAdHD/NP3zt92g+sIemSqAQJbTVC+k4N22eesB0eCwtXAO7fDIBioZDlo/gPDwG
+uC6qzzzZRO594EXd0mW4HCQQe98VeuY3ecsv0+Ajqs+Z2krklX+CtbWajbt75C4/AVOobCLweBIO
+lQcMq6rmKpCsycSWtUz31FLHfb7KTFyoa94C25VtCBLS5uIk3RIZ6dV5fwOa61azXhAOjc6z12AD
+0GXsmfmOU6SVaP03vnlLcsXxuHQhK4qMgs+k1FiHArKk+hLa4B+UmTHf8VGwweOX+E3LAxY7ch9p
+rnhH2DMQNVMWwTRr37wJCzPRc5xPe0kdboWnRSXwo+h/Rb1o89VYXMkJ44OdI4Me/hJjlf9XIH+9
+TupNygFp8V9n1GjUAn9K3Bn96ZPQvsOLK6oYUJGoVHwy6JgD/hO3/XL3mLJBw1e7dwqxpuppNazT
+4tkcE1WZDMl5qv4tQYAKSTSorYEqAac+OuFvloAtfA1cmcC0+KVfqhZeLHxKM3HHyf90+4sDiN5p
+fg5rqzD++YxEzyp1/3iRLdXUyTkIehCWWLermAYpDr0WaYzpOawGld3+hcY4s6/E3SRZaPnvS4F6
+MJKq2cvrngp+MuqzOlfl/C5s4GrR8OT8kWurvgpCTASakun9SPIWA5KegrKWj4KsI5vQNtnKNx0R
+XvwIsFcihXgcpX+Q23k/anEofFjfInovBpWKgDZuLsTb7lBf+1QW8i8F/nM6eN0ZgdO8BcY9VSc1
+4WW78akoOMM5mGGwEZ9hifQEm8soh5QtOjSBv3W68UP801MjhU+88TtiRRDHgWaPLtmFtFtCMSnn
+I0x713ifgaebfRhKE8eoWCvG1cqb0D7LXX/CzynoVnQc9QduqwqB1Rp3WMAqjM/RU6cTLIFp3spT
+FoRyTDUKl5TDV/GAcR3Lfd9gO2PEJMx/hmFVdFZrFPB3JYQXvv/fGdwhTOVaFue8N7ZGe2cNjKEU
++pZ22sHiRQtezs/xCnurHFyB2gVQzdkiPnVHhg+S4sR2aqriyn9wrhhUSYqMfOYleBZrLd+1fsnp
+Ir1alJQ6H2B2ac3vlVMBrQGP8j+5AmA28h/aAE/PQRsSs7ExbnsFXaFR3qXPYWgL8PSI6cT+rESq
+lC5Qdv0ECie7AAh+GlZOf1uEliYTn3Po8r14kUmk1KawpiFWGRNDXIfmZpH4baRFlMTR5PXqbTSu
+BENGxXAb+TuMbT202vJGTPy4L1+voh3TRjoOluKs52dd7byZ9v46niR8PeuPQ1zRAYMJkcZS/rql
+Tw1u8utWfUoXJ//amhyiOvj1zsjyvAUYg0vbbO0cK4P9+ERm5Z7c8p8vCpIvayHgjD+MBTxwOyol
+BopLWnc+lDl1tBSiN0oyZ9KVMcWt5OCKrScrBzD28ToUUYwr8+dflq2abVDQ2fBlkiFzTkhixXt9
+iuJB86O0e/G5uj/4qDcKKna47Ji65gy/V5zxAVXF7alW1cwaR1zFBGos/YUPUcLMQ1ruIKge/WR6
+mKlyZ8aC6Ppb4gKndEkmjnj+nblAcLFkUNPaPG3/+uz2/wc15k+2QJRJlB+5SAiSkrbTrDI0y8MX
+9nAzDZtXJSsykJwR1bfEEHracR0DwnFTKl3FwzZbInihDHmS2O4GqT0XFTgwpQTjNSZNrm+dzg8c
+ZNjk1nZ7wd1rAftrRXkBz5Vecu499eXuST2dauWC4iKEM46xB7uoTlBhK1NgkKjWdEj8loIIL+o9
+EUdX19Etkgd2Np1Oju383A2f9USS8kJOmmaFR0tUums8BUBMl+iX3eAQrAUv/hIG89hsPeIqEqaW
+TC/Sd/uhJj8/lxyfS+QbrfjwxRYgeTlDpnVflJ9hR46jiirMhqQcdC0p8uPJ/2cfhH8wLoXCB1GO
+jaeS3Y1CtJOizZ5OV9bNIrO2wmIt4HgcGeGJkCqWVAPL53bGilZjTXNx04UsFy+wm9EdWRtj87wZ
+vNm6K/vfGwPaYXoqQHTYUhmAtX96RIbnQu0STRAF6ilyjiPZyIdJJsLkbSeGWMr9PycWIM5+Iepp
+Wachiaep5T1McOkjiBEhDkoDlADBklbo7wu3wgxSBlXu+INvSPQcEuGYLnM0WLaAXuxGoz6zGJSU
+2x1CiKrqnH1gs6cPPgrgv/ZO6pdh7vFKGYq86sydBh3sPS84K/ubg0c2334rGUE1ymHxbnrnwU7I
+PNGV5pZtFRR3T2RaPuj+nw1XaGsFjNkGsKha/05ogW98TRDfU/46fxvox1I7/JPcUzgbU0ONaDyC
+gtcysPaFOsqwLToYCQ2a32HEFX18sD2sRn4zQd1ZvTF6O9scxIUcSu8kId2qFWCw5G1St26Rby0e
+f2dK0kjQHtM0f7eayXlvjq8CkKWA3m8sHQ1LbQyzN77EOLzSZTRJ0q5DB1v7TLis09+Vlkxb6du4
+wwDk11PN4KAPNV4Ps9ketx9MzzAjKC59HUfM9T40G2cv09jXx3kUFwQsNz8JMQ5VWRwDqo4thrz1
+VHhUad7uEbC8JXP1RidCcHeOCW4Xa4E/rZxYnt0+PuGrCvoSZ0+XICaHwo+KAOHY0BgWcvCf3V7Z
+Mp3vtpqJArLPvRSr6blMor3fchE4Q+SjlCwpNOW4kOU1c11080bJbQCZEr8YmYideNGWvO5lFmHe
+bTgkaE1RHa2sBJfbfsI+v2mRUP6ihMKZv41J17XgmwP2tMROHA1QbSXmyxIyWv0dg2oXnfweyn8L
+oNzX4oQf9vteWzsfSRrQAaIXn1tBu1E4rC/7hBotAgLRQFMoajVgBm/cPO2tA+V2ahd+eGcH9vkp
+7BBzU9g7378igk1vszJs2b5VhkZWiC8E5yUBnhT8hhD5jv1y0lypmoQurHYLQxVwWM9yh7IPCU2S
+brbNnkX54cs8wJ2XQjsIyq6hdAJRuGN44w+MVVv5YNYtmswYf6ZuI3e4ocqVzYlbyNU0MV+U8wDh
+TA/bw19fxNJVnBixPq/KElafSmm5gODitjjIbE83gX2t8crPluYfPYipY2WmXpiPyE+6e0cZstO3
+TwhEZg0/aP2d6zcozFSmVlUc/PY7Ao2BDW/8BIaYs8Jr6ioaA6z8hV9qtIOX95fpjUW40QjxCnPx
+ZN5Pom3BQRzFxdkSTW/veigwlOrlh7Kap9nX270ezfIWnklKtZ0eijtLs01r0qgbkyvEElxQG/Oe
+0cjmct1AqOO7ddo2ICDdIQnnacUJlwsUxz/5G4TPYQ96zhKDHlcrUBl74GoIJARr08kuMHaPnC/i
+zyExirpX3Zf7kS/VybZ9Ot21eTaR8/yczBr2e22+tnARZqEwDYbLaU2uwuAXF+nwvdIPW9u4CD/o
+XRktxL0oxTQuM/BAh+Caaq98SznYitLujjCdtYBHPqIEFeg3AxAu9kpNHU44+W/5EGzOWs9TdHxi
+6DbaFKouNbtTPh4GRg+JFHQKFJcS+hKR9Trjeho2sBWRkc8pmznQVLgbRHPs1k4pBQoDVOxQKVYv
+aE+KfNG2m9t/8dMQsNmWpO/X0Z5+QAJ87nJ/ZkpJr1hgJ4j0Yfcpf4MkPACste8dF/famIqA+bMN
+0tCiDg9VZoW8Roxpo6V0+NljVCvLzQ7XLNjrWznaWepILzrJnCEoeu34bGc3SwOo4bPQ/voYNHvD
+7ZfJe6DNhb+oylvuUpk/ynZoQ6zO/5ZeId83AiTA3gumUk0+q/QF1MZmXK+2r0qr0Xb3Y4KMHFZQ
+mOsROHcrNTvL7b4OfzZQ7yrp21RMXoV4HUTUg/HOkSibFvGpkjEu9t5hfkxwbhD8Sr5uMIa+Jz4O
+RMK/RR66pEv4TSxFg07weQw3YjmQjfN5Mw/s2qVRiGakQVFeSEpJM9lF8IqcZnPS7Bds/2dtD3fL
+TU9p5s4uDBgaSPnjmtTEfWFvFvjHw6qngHxywDobc4j6oYtgBILwhQwQiJhjKeVNPvTJBrijxS6Y
+V9kDlHvJQRJSJ9zy5S0Uq0XxOdLGLHpBPQCsejIR8GZIYKX/iJ65iNdS8lafVS8TUr/15t6Fhxcw
+iDNOZXNYYrKEmhRkARJrWTitgQmXMUncesDXeN9CTFyxjL7gOhloQ+Ow43J2ua7qaIIV1JIcN5Ig
+9qcLafOLoRhu+HH48VvMkQdgLTjkbD4jfdidlBslZ75/1Zwb8Kws8jN69O6lq46Tt/uQz2yUWm+0
+BRJhl1UO3ttrR+/P0F8icFPolHhBv2e7rapD1CEmkDI4TLNk1aE6y3atyjVNNUWXXlh1ltiJPpEb
+d/XHHm==

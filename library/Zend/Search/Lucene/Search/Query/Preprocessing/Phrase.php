@@ -1,273 +1,92 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Search_Lucene
- * @subpackage Search
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-
-/** Zend_Search_Lucene_Search_Query_Processing */
-require_once 'Zend/Search/Lucene/Search/Query/Preprocessing.php';
-
-/** Zend_Search_Lucene_Search_Query_Phrase */
-require_once 'Zend/Search/Lucene/Search/Query/Phrase.php';
-
-/** Zend_Search_Lucene_Search_Query_Insignificant */
-require_once 'Zend/Search/Lucene/Search/Query/Insignificant.php';
-
-/** Zend_Search_Lucene_Search_Query_Empty */
-require_once 'Zend/Search/Lucene/Search/Query/Empty.php';
-
-/** Zend_Search_Lucene_Search_Query_Term */
-require_once 'Zend/Search/Lucene/Search/Query/Term.php';
-
-/** Zend_Search_Lucene_Index_Term */
-require_once 'Zend/Search/Lucene/Index/Term.php';
-
-
-/**
- * It's an internal abstract class intended to finalize ase a query processing after query parsing.
- * This type of query is not actually involved into query execution.
- *
- * @category   Zend
- * @package    Zend_Search_Lucene
- * @subpackage Search
- * @internal
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Search_Lucene_Search_Query_Preprocessing_Phrase extends Zend_Search_Lucene_Search_Query_Preprocessing
-{
-    /**
-     * Phrase to find.
-     *
-     * @var string
-     */
-    private $_phrase;
-
-    /**
-     * Phrase encoding (field name is always provided using UTF-8 encoding since it may be retrieved from index).
-     *
-     * @var string
-     */
-    private $_phraseEncoding;
-
-
-    /**
-     * Field name.
-     *
-     * @var string
-     */
-    private $_field;
-
-    /**
-     * Sets the number of other words permitted between words in query phrase.
-     * If zero, then this is an exact phrase search.  For larger values this works
-     * like a WITHIN or NEAR operator.
-     *
-     * The slop is in fact an edit-distance, where the units correspond to
-     * moves of terms in the query phrase out of position.  For example, to switch
-     * the order of two words requires two moves (the first move places the words
-     * atop one another), so to permit re-orderings of phrases, the slop must be
-     * at least two.
-     * More exact matches are scored higher than sloppier matches, thus search
-     * results are sorted by exactness.
-     *
-     * The slop is zero by default, requiring exact matches.
-     *
-     * @var integer
-     */
-    private $_slop;
-
-    /**
-     * Class constructor.  Create a new preprocessing object for prase query.
-     *
-     * @param string $phrase          Phrase to search.
-     * @param string $phraseEncoding  Phrase encoding.
-     * @param string $fieldName       Field name.
-     */
-    public function __construct($phrase, $phraseEncoding, $fieldName)
-    {
-    	$this->_phrase         = $phrase;
-    	$this->_phraseEncoding = $phraseEncoding;
-    	$this->_field          = $fieldName;
-    }
-
-    /**
-     * Set slop
-     *
-     * @param integer $slop
-     */
-    public function setSlop($slop)
-    {
-        $this->_slop = $slop;
-    }
-
-
-    /**
-     * Get slop
-     *
-     * @return integer
-     */
-    public function getSlop()
-    {
-        return $this->_slop;
-    }
-
-    /**
-     * Re-write query into primitive queries in the context of specified index
-     *
-     * @param Zend_Search_Lucene_Interface $index
-     * @return Zend_Search_Lucene_Search_Query
-     */
-    public function rewrite(Zend_Search_Lucene_Interface $index)
-    {
-// Allow to use wildcards within phrases
-// They are either removed by text analyzer or used as a part of keyword for keyword fields
-//
-//        if (strpos($this->_phrase, '?') !== false || strpos($this->_phrase, '*') !== false) {
-//            require_once 'Zend/Search/Lucene/Search/QueryParserException.php';
-//            throw new Zend_Search_Lucene_Search_QueryParserException('Wildcards are only allowed in a single terms.');
-//        }
-
-    	// Split query into subqueries if field name is not specified
-    	if ($this->_field === null) {
-    		$query = new Zend_Search_Lucene_Search_Query_Boolean();
-            $query->setBoost($this->getBoost());
-
-            if (Zend_Search_Lucene::getDefaultSearchField() === null) {
-                $searchFields = $index->getFieldNames(true);
-            } else {
-                $searchFields = array(Zend_Search_Lucene::getDefaultSearchField());
-            }
-
-            foreach ($searchFields as $fieldName) {
-                $subquery = new Zend_Search_Lucene_Search_Query_Preprocessing_Phrase($this->_phrase,
-                                                                                     $this->_phraseEncoding,
-                                                                                     $fieldName);
-                $subquery->setSlop($this->getSlop());
-
-                $query->addSubquery($subquery->rewrite($index));
-            }
-
-            $this->_matches = $query->getQueryTerms();
-            return $query;
-    	}
-
-    	// Recognize exact term matching (it corresponds to Keyword fields stored in the index)
-    	// encoding is not used since we expect binary matching
-    	$term = new Zend_Search_Lucene_Index_Term($this->_phrase, $this->_field);
-    	if ($index->hasTerm($term)) {
-            $query = new Zend_Search_Lucene_Search_Query_Term($term);
-    		$query->setBoost($this->getBoost());
-
-    		$this->_matches = $query->getQueryTerms();
-    		return $query;
-    	}
-
-
-    	// tokenize phrase using current analyzer and process it as a phrase query
-        $tokens = Zend_Search_Lucene_Analysis_Analyzer::getDefault()->tokenize($this->_phrase, $this->_phraseEncoding);
-
-        if (count($tokens) == 0) {
-        	$this->_matches = array();
-            return new Zend_Search_Lucene_Search_Query_Insignificant();
-        }
-
-        if (count($tokens) == 1) {
-            $term  = new Zend_Search_Lucene_Index_Term($tokens[0]->getTermText(), $this->_field);
-            $query = new Zend_Search_Lucene_Search_Query_Term($term);
-            $query->setBoost($this->getBoost());
-
-            $this->_matches = $query->getQueryTerms();
-            return $query;
-        }
-
-        //It's non-trivial phrase query
-        $position = -1;
-        $query = new Zend_Search_Lucene_Search_Query_Phrase();
-        foreach ($tokens as $token) {
-            $position += $token->getPositionIncrement();
-            $term = new Zend_Search_Lucene_Index_Term($token->getTermText(), $this->_field);
-            $query->addTerm($term, $position);
-            $query->setSlop($this->getSlop());
-        }
-        $this->_matches = $query->getQueryTerms();
-        return $query;
-    }
-
-    /**
-     * Query specific matches highlighting
-     *
-     * @param Zend_Search_Lucene_Search_Highlighter_Interface $highlighter  Highlighter object (also contains doc for highlighting)
-     */
-    protected function _highlightMatches(Zend_Search_Lucene_Search_Highlighter_Interface $highlighter)
-    {
-    	/** Skip fields detection. We don't need it, since we expect all fields presented in the HTML body and don't differentiate them */
-
-        /** Skip exact term matching recognition, keyword fields highlighting is not supported */
-
-        /** Skip wildcard queries recognition. Supported wildcards are removed by text analyzer */
-
-        // tokenize phrase using current analyzer and process it as a phrase query
-        $tokens = Zend_Search_Lucene_Analysis_Analyzer::getDefault()->tokenize($this->_phrase, $this->_phraseEncoding);
-
-        if (count($tokens) == 0) {
-            // Do nothing
-            return;
-        }
-
-        if (count($tokens) == 1) {
-            $highlighter->highlight($tokens[0]->getTermText());
-            return;
-        }
-
-        //It's non-trivial phrase query
-        $words = array();
-        foreach ($tokens as $token) {
-            $words[] = $token->getTermText();
-        }
-        $highlighter->highlight($words);
-    }
-
-    /**
-     * Print a query
-     *
-     * @return string
-     */
-    public function __toString()
-    {
-        // It's used only for query visualisation, so we don't care about characters escaping
-        if ($this->_field !== null) {
-            $query = $this->_field . ':';
-        } else {
-        	$query = '';
-        }
-
-        $query .= '"' . $this->_phrase . '"';
-
-        if ($this->_slop != 0) {
-            $query .= '~' . $this->_slop;
-        }
-
-        if ($this->getBoost() != 1) {
-            $query .= '^' . round($this->getBoost(), 4);
-        }
-
-        return $query;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

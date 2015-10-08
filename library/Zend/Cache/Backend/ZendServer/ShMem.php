@@ -1,101 +1,34 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Cache
- * @subpackage Zend_Cache_Backend
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-
-/** @see Zend_Cache_Backend_Interface */
-require_once 'Zend/Cache/Backend/Interface.php';
-
-/** @see Zend_Cache_Backend_ZendServer */
-require_once 'Zend/Cache/Backend/ZendServer.php';
-
-
-/**
- * @package    Zend_Cache
- * @subpackage Zend_Cache_Backend
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Cache_Backend_ZendServer_ShMem extends Zend_Cache_Backend_ZendServer implements Zend_Cache_Backend_Interface
-{
-    /**
-     * Constructor
-     *
-     * @param  array $options associative array of options
-     * @throws Zend_Cache_Exception
-     */
-    public function __construct(array $options = array())
-    {
-        if (!function_exists('zend_shm_cache_store')) {
-            Zend_Cache::throwException('Zend_Cache_ZendServer_ShMem backend has to be used within Zend Server environment.');
-        }
-        parent::__construct($options);
-    }
-
-    /**
-     * Store data
-     *
-     * @var mixed  $data        Object to store
-     * @var string $id          Cache id
-     * @var int    $timeToLive  Time to live in seconds
-     *
-     */
-    protected function _store($data, $id, $timeToLive)
-    {
-        if (zend_shm_cache_store($this->_options['namespace'] . '::' . $id,
-                                  $data,
-                                  $timeToLive) === false) {
-            $this->_log('Store operation failed.');
-            return false;
-        }
-        return true;
-    }
-
-    /**
-     * Fetch data
-     *
-     * @var mixed  $data        Object to store
-     * @var string $id          Cache id
-     * @var int    $timeToLive  Time to live in seconds
-     */
-    protected function _fetch($id)
-    {
-        return zend_shm_cache_fetch($this->_options['namespace'] . '::' . $id);
-    }
-
-    /**
-     * Unset data
-     *
-     * @var string $id          Cache id
-     * @return boolean true if no problem
-     */
-    protected function _unset($id)
-    {
-        return zend_shm_cache_delete($this->_options['namespace'] . '::' . $id);
-    }
-
-    /**
-     * Clear cache
-     */
-    protected function _clear()
-    {
-        zend_shm_cache_clear($this->_options['namespace']);
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

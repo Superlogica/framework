@@ -1,284 +1,94 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_InfoCard
- * @subpackage Zend_InfoCard_Xml
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Saml.php 9094 2008-03-30 18:36:55Z thomas $
- */
-
-/**
- * Zend_InfoCard_Xml_Element
- */
-require_once 'Zend/InfoCard/Xml/Element.php';
-
-/**
- * Zend_InfoCard_Xml_Assertion_Interface
- */
-require_once 'Zend/InfoCard/Xml/Assertion/Interface.php';
-
-/**
- * A Xml Assertion Document in SAML Token format
- *
- * @category   Zend
- * @package    Zend_InfoCard
- * @subpackage Zend_InfoCard_Xml
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_InfoCard_Xml_Assertion_Saml
-    extends Zend_InfoCard_Xml_Element
-    implements Zend_InfoCard_Xml_Assertion_Interface
-{
-
-    /**
-     * Audience Restriction Condition
-     */
-    const CONDITION_AUDIENCE = 'AudienceRestrictionCondition';
-
-    /**
-     * The URI for a 'bearer' confirmation
-     */
-    const CONFIRMATION_BEARER = 'urn:oasis:names:tc:SAML:1.0:cm:bearer';
-
-    /**
-     * The amount of time in seconds to buffer when checking conditions to ensure
-     * that differences between client/server clocks don't interfer too much
-     */
-    const CONDITION_TIME_ADJ = 3600; // +- 5 minutes
-
-    protected function _getServerName() {
-        return $_SERVER['SERVER_NAME'];
-    }
-
-    protected function _getServerPort() {
-        return $_SERVER['SERVER_PORT'];
-    }
-
-    /**
-     * Validate the conditions array returned from the getConditions() call
-     *
-     * @param array $conditions An array of condtions for the assertion taken from getConditions()
-     * @return mixed Boolean true on success, an array of condition, error message on failure
-     */
-    public function validateConditions(Array $conditions)
-    {
-
-        $currentTime = time();
-
-        if(!empty($conditions)) {
-
-            foreach($conditions as $condition => $conditionValue) {
-                switch(strtolower($condition)) {
-                    case 'audiencerestrictioncondition':
-
-                        $serverName = $this->_getServerName();
-                        $serverPort = $this->_getServerPort();
-
-                        $self_aliases[] = $serverName;
-                        $self_aliases[] = "{{$serverName}:{$serverPort}";
-
-                        $found = false;
-                        if(is_array($conditionValue)) {
-                            foreach($conditionValue as $audience) {
-
-                                list(,,$audience) = explode('/', $audience);
-                                if(in_array($audience, $self_aliases)) {
-                                    $found = true;
-                                    break;
-                                }
-                            }
-                        }
-
-                        if(!$found) {
-                            return array($condition, 'Could not find self in allowed audience list');
-                        }
-
-                        break;
-                    case 'notbefore':
-                        $notbeforetime = strtotime($conditionValue);
-
-                        if($currentTime < $notbeforetime) {
-                            if($currentTime + self::CONDITION_TIME_ADJ < $notbeforetime) {
-                                return array($condition, 'Current time is before specified window');
-                            }
-                        }
-
-                        break;
-                    case 'notonorafter':
-                        $notonoraftertime = strtotime($conditionValue);
-
-                        if($currentTime >= $notonoraftertime) {
-                            if($currentTime - self::CONDITION_TIME_ADJ >= $notonoraftertime) {
-                                return array($condition, 'Current time is after specified window');
-                            }
-                        }
-
-                        break;
-
-                }
-            }
-        }
-        return true;
-    }
-
-    /**
-     * Get the Assertion URI for this type of Assertion
-     *
-     * @return string the Assertion URI
-     */
-    public function getAssertionURI()
-    {
-        return Zend_InfoCard_Xml_Assertion::TYPE_SAML;
-    }
-
-    /**
-     * Get the Major Version of the SAML Assertion
-     *
-     * @return integer The major version number
-     */
-    public function getMajorVersion()
-    {
-        return (int)(string)$this['MajorVersion'];
-    }
-
-    /**
-     * The Minor Version of the SAML Assertion
-     *
-     * @return integer The minor version number
-     */
-    public function getMinorVersion()
-    {
-        return (int)(string)$this['MinorVersion'];
-    }
-
-    /**
-     * Get the Assertion ID of the assertion
-     *
-     * @return string The Assertion ID
-     */
-    public function getAssertionID()
-    {
-        return (string)$this['AssertionID'];
-    }
-
-    /**
-     * Get the Issuer URI of the assertion
-     *
-     * @return string the URI of the assertion Issuer
-     */
-    public function getIssuer()
-    {
-        return (string)$this['Issuer'];
-    }
-
-    /**
-     * Get the Timestamp of when the assertion was issued
-     *
-     * @return integer a UNIX timestamp representing when the assertion was issued
-     */
-    public function getIssuedTimestamp()
-    {
-        return strtotime((string)$this['IssueInstant']);
-    }
-
-    /**
-     * Return an array of conditions which the assertions are predicated on
-     *
-     * @throws Zend_InfoCard_Xml_Exception
-     * @return array an array of conditions
-     */
-    public function getConditions()
-    {
-
-        list($conditions) = $this->xpath("//saml:Conditions");
-
-        if(!($conditions instanceof Zend_InfoCard_Xml_Element)) {
-            throw new Zend_InfoCard_Xml_Exception("Unable to find the saml:Conditions block");
-        }
-
-        $retval = array();
-
-        foreach($conditions->children('urn:oasis:names:tc:SAML:1.0:assertion') as $key => $value) {
-            switch($key) {
-                case self::CONDITION_AUDIENCE:
-                    foreach($value->children('urn:oasis:names:tc:SAML:1.0:assertion') as $audience_key => $audience_value) {
-                        if($audience_key == 'Audience') {
-                            $retval[$key][] = (string)$audience_value;
-                        }
-                    }
-                    break;
-            }
-        }
-
-        $retval['NotBefore'] = (string)$conditions['NotBefore'];
-        $retval['NotOnOrAfter'] = (string)$conditions['NotOnOrAfter'];
-
-        return $retval;
-    }
-
-    /**
-     * Get they KeyInfo element for the Subject KeyInfo block
-     *
-     * @todo Not Yet Implemented
-     * @ignore
-     */
-    public function getSubjectKeyInfo()
-    {
-        /**
-         * @todo Not sure if this is part of the scope for now..
-         */
-
-        if($this->getConfirmationMethod() == self::CONFIRMATION_BEARER) {
-            throw new Zend_InfoCard_Xml_Exception("Cannot get Subject Key Info when Confirmation Method was Bearer");
-        }
-    }
-
-    /**
-     * Return the Confirmation Method URI used in the Assertion
-     *
-     * @return string The confirmation method URI
-     */
-    public function getConfirmationMethod()
-    {
-        list($confirmation) = $this->xPath("//saml:ConfirmationMethod");
-        return (string)$confirmation;
-    }
-
-    /**
-     * Return an array of attributes (claims) contained within the assertion
-     *
-     * @return array An array of attributes / claims within the assertion
-     */
-    public function getAttributes()
-    {
-        $attributes = $this->xPath('//saml:Attribute');
-
-        $retval = array();
-        foreach($attributes as $key => $value) {
-
-            $retkey = (string)$value['AttributeNamespace'].'/'.(string)$value['AttributeName'];
-
-            $retval[$retkey]['name'] = (string)$value['AttributeName'];
-            $retval[$retkey]['namespace'] = (string)$value['AttributeNamespace'];
-
-            list($aValue) = $value->children('urn:oasis:names:tc:SAML:1.0:assertion');
-            $retval[$retkey]['value'] = (string)$aValue;
-        }
-
-        return $retval;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+BKYNwZTwdaMA9AQwTmh/NW==

@@ -1,624 +1,246 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category  Zend
- * @package   Zend_Currency
- * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   http://framework.zend.com/license/new-bsd     New BSD License
- * @version   $Id: Currency.php 6137 2007-08-19 14:55:27Z shreef $
- */
-
-/**
- * include needed classes
- */
-require_once 'Zend/Locale.php';
-require_once 'Zend/Locale/Data.php';
-require_once 'Zend/Locale/Format.php';
-
-/**
- * Class for handling currency notations
- *
- * @category  Zend
- * @package   Zend_Currency
- * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Currency
-{
-    // Constants for defining what currency symbol should be displayed
-    const NO_SYMBOL     = 1;
-    const USE_SYMBOL    = 2;
-    const USE_SHORTNAME = 3;
-    const USE_NAME      = 4;
-
-    // Constants for defining the position of the currencysign
-    const STANDARD = 8;
-    const RIGHT    = 16;
-    const LEFT     = 32;
-
-    /**
-     * Locale for this currency
-     *
-     * @var string
-     */
-    private $_locale = null;
-
-    /**
-     * Options array
-     *
-     * The following options are available
-     * 'position'  => Position for the currency sign
-     * 'script'    => Script for the output
-     * 'format'    => Locale for numeric output
-     * 'display'   => Currency detail to show
-     * 'precision' => Precision for the currency
-     * 'name'      => Name for this currency
-     * 'currency'  => 3 lettered international abbreviation
-     * 'symbol'    => Currency symbol
-     *
-     * @var array
-     * @see Zend_Locale
-     */
-    protected $_options = array(
-        'position'  => self::STANDARD,
-        'script'    => null,
-        'format'    => null,
-        'display'   => self::NO_SYMBOL,
-        'precision' => 2,
-        'name'      => null,
-        'currency'  => null,
-        'symbol'    => null
-    );
-
-    /**
-     * Creates a currency instance. Every supressed parameter is used from the actual or the given locale.
-     *
-     * @param  string             $currency OPTIONAL currency short name
-     * @param  string|Zend_Locale $locale   OPTIONAL locale name
-     * @throws Zend_Currency_Exception When currency is invalid
-     */
-    public function __construct($currency = null, $locale = null)
-    {
-        if (Zend_Locale::isLocale($currency, true, false)) {
-            $temp     = $locale;
-            $locale   = $currency;
-            $currency = $temp;
-        }
-
-        $this->setLocale($locale);
-
-        // Get currency details
-        $this->_options['currency'] = self::getShortName($currency, $this->_locale);
-        $this->_options['name']     = self::getName($currency, $this->_locale);
-        $this->_options['symbol']   = self::getSymbol($currency, $this->_locale);
-
-        if (($this->_options['currency'] === null) and ($this->_options['name'] === null)) {
-            require_once 'Zend/Currency/Exception.php';
-            throw new Zend_Currency_Exception("Currency '$currency' not found");
-        }
-
-        // Get the format
-        $this->_options['display']  = self::NO_SYMBOL;
-        if (empty($this->_options['symbol']) === false) {
-            $this->_options['display'] = self::USE_SYMBOL;
-        } else if (empty($this->_options['currency']) === false) {
-            $this->_options['display'] = self::USE_SHORTNAME;
-        }
-    }
-
-    /**
-     * Returns a localized currency string
-     *
-     * @param  integer|float $value   Currency value
-     * @param  array         $options OPTIONAL options to set temporary
-     * @throws Zend_Currency_Exception When the value is not a number
-     * @return string
-     */
-    public function toCurrency($value, array $options = array())
-    {
-        // Validate the passed number
-        if ((isset($value) === false) or (is_numeric($value) === false)) {
-            require_once 'Zend/Currency/Exception.php';
-            throw new Zend_Currency_Exception("Value '$value' has to be numeric");
-        }
-
-        $options = $this->_checkOptions($options) + $this->_options;
-
-        // Format the number
-        $format = $options['format'];
-        $locale = $this->_locale;
-        if (empty($format) === true) {
-            $format = Zend_Locale_Data::getContent($this->_locale, 'currencynumber');
-        } else if (Zend_Locale::isLocale($format, true, false)) {
-            $locale = $format;
-            $format = Zend_Locale_Data::getContent($format, 'currencynumber');
-        }
-
-        $symbols  = Zend_Locale_Data::getList($locale, 'symbols');
-        $original = $value;
-        $value    = Zend_Locale_Format::toNumber($value, array('locale'        => $locale,
-                                                               'number_format' => $format,
-                                                               'precision'     => $options['precision']));
-
-        if ($options['position'] !== self::STANDARD) {
-            $value = str_replace('¤', '', $value);
-            $space = '';
-            if (iconv_strpos($value, ' ') !== false) {
-                $value = str_replace(' ', '', $value);
-                $space = ' ';
-            }
-
-            if ($options['position'] == self::LEFT) {
-                $value = '¤' . $space . $value;
-            } else {
-                $value = $value . $space . '¤';
-            }
-        }
-
-        // Localize the number digits
-        if (empty($options['script']) === false) {
-            $value = Zend_Locale_Format::convertNumerals($value, 'Latn', $options['script']);
-        }
-
-        // Get the sign to be placed next to the number
-        if (is_numeric($options['display']) === false) {
-            $sign = $options['display'];
-        } else {
-            switch($options['display']) {
-                case self::USE_SYMBOL:
-                    $sign = $this->_extractPattern($options['symbol'], $original);
-                    break;
-
-                case self::USE_SHORTNAME:
-                    $sign = $options['currency'];
-                    break;
-
-                case self::USE_NAME:
-                    $sign = $options['name'];
-                    break;
-
-                default:
-                    $sign = '';
-                    $value = str_replace(' ', '', $value);
-                    break;
-            }
-        }
-
-        $value = str_replace('¤', $sign, $value);
-        return $value;
-    }
-
-    /**
-     * Internal method to extract the currency pattern
-     * when a choice is given based on the given value
-     *
-     * @param  string $pattern
-     * @param  float|integer $value
-     * @return string
-     */
-    private function _extractPattern($pattern, $value)
-    {
-        if (strpos($pattern, '|') === false) {
-            return $pattern;
-        }
-
-        $patterns = explode('|', $pattern);
-        $token    = $pattern;
-        $value    = trim(str_replace('¤', '', $value));
-        krsort($patterns);
-        foreach($patterns as $content) {
-            if (strpos($content, '<') !== false) {
-                $check = iconv_substr($content, 0, iconv_strpos($content, '<'));
-                $token = iconv_substr($content, iconv_strpos($content, '<') + 1);
-                if ($check < $value) {
-                    return $token;
-                }
-            } else {
-                $check = iconv_substr($content, 0, iconv_strpos($content, '≤'));
-                $token = iconv_substr($content, iconv_strpos($content, '≤') + 1);
-                if ($check <= $value) {
-                    return $token;
-                }
-            }
-
-        }
-
-        return $token;
-    }
-
-    /**
-     * Sets the formating options of the localized currency string
-     * If no parameter is passed, the standard setting of the
-     * actual set locale will be used
-     *
-     * @param  array $options (Optional) Options to set
-     * @return Zend_Currency
-     */
-    public function setFormat(array $options = array())
-    {
-        $this->_options = $this->_checkOptions($options) + $this->_options;
-        return $this;
-    }
-
-    /**
-     * Internal function for checking static given locale parameter
-     *
-     * @param  string             $currency (Optional) Currency name
-     * @param  string|Zend_Locale $locale   (Optional) Locale to display informations
-     * @throws Zend_Currency_Exception When locale contains no region
-     * @return string The extracted locale representation as string
-     */
-    private function _checkParams($currency = null, $locale = null)
-    {
-        // Manage the params
-        if ((empty($locale)) and (!empty($currency)) and
-            (Zend_Locale::isLocale($currency, true, false))) {
-            $locale   = $currency;
-            $currency = null;
-        }
-
-        // Validate the locale and get the country short name
-        $country = null;
-        if ((Zend_Locale::isLocale($locale, true, false)) and (strlen($locale) > 4)) {
-            $country = substr($locale, (strpos($locale, '_') + 1));
-        } else {
-            require_once 'Zend/Currency/Exception.php';
-            throw new Zend_Currency_Exception("No region found within the locale '" . (string) $locale . "'");
-        }
-
-        // Get the available currencies for this country
-        $data = Zend_Locale_Data::getContent($locale, 'currencytoregion', $country);
-        if ((empty($currency) === false) and (empty($data) === false)) {
-            $abbreviation = $currency;
-        } else {
-            $abbreviation = $data;
-        }
-
-        return array('locale' => $locale, 'currency' => $currency, 'name' => $abbreviation, 'country' => $country);
-    }
-
-    /**
-     * Returns the actual or details of other currency symbols,
-     * when no symbol is available it returns the currency shortname (f.e. FIM for Finnian Mark)
-     *
-     * @param  string             $currency (Optional) Currency name
-     * @param  string|Zend_Locale $locale   (Optional) Locale to display informations
-     * @return string
-     */
-    public function getSymbol($currency = null, $locale = null)
-    {
-        if (($currency === null) and ($locale === null)) {
-            return $this->_options['symbol'];
-        }
-
-        $params = self::_checkParams($currency, $locale);
-
-        // Get the symbol
-        $symbol = Zend_Locale_Data::getContent($params['locale'], 'currencysymbol', $params['currency']);
-        if (empty($symbol) === true) {
-            $symbol = Zend_Locale_Data::getContent($params['locale'], 'currencysymbol', $params['name']);
-        }
-
-        if (empty($symbol) === true) {
-            return null;
-        }
-
-        return $symbol;
-    }
-
-    /**
-     * Returns the actual or details of other currency shortnames
-     *
-     * @param  string             $currency OPTIONAL Currency's name
-     * @param  string|Zend_Locale $locale   OPTIONAL The locale
-     * @return string
-     */
-    public function getShortName($currency = null, $locale = null)
-    {
-        if (($currency === null) and ($locale === null)) {
-            return $this->_options['currency'];
-        }
-
-        $params = self::_checkParams($currency, $locale);
-
-        // Get the shortname
-        if (empty($params['currency']) === true) {
-            return $params['name'];
-        }
-
-        $list = Zend_Locale_Data::getContent($params['locale'], 'currencytoname', $params['currency']);
-        if (empty($list) === true) {
-            $list = Zend_Locale_Data::getContent($params['locale'], 'nametocurrency', $params['currency']);
-            if (empty($list) === false) {
-                $list = $params['currency'];
-            }
-        }
-
-        if (empty($list) === true) {
-            return null;
-        }
-
-        return $list;
-    }
-
-    /**
-     * Returns the actual or details of other currency names
-     *
-     * @param  string             $currency (Optional) Currency's short name
-     * @param  string|Zend_Locale $locale   (Optional) The locale
-     * @return string
-     */
-    public function getName($currency = null, $locale = null)
-    {
-        if (($currency === null) and ($locale === null)) {
-            return $this->_options['name'];
-        }
-
-        $params = self::_checkParams($currency, $locale);
-
-        // Get the name
-        $name = Zend_Locale_Data::getContent($params['locale'], 'nametocurrency', $params['currency']);
-        if (empty($name) === true) {
-            $name = Zend_Locale_Data::getContent($params['locale'], 'nametocurrency', $params['name']);
-        }
-
-        if (empty($name) === true) {
-            return null;
-        }
-
-        return $name;
-    }
-
-    /**
-     * Returns a list of regions where this currency is or was known
-     *
-     * @param  string $currency OPTIONAL Currency's short name
-     * @throws Zend_Currency_Exception When no currency was defined
-     * @return array List of regions
-     */
-    public function getRegionList($currency = null)
-    {
-        if ($currency === null) {
-            $currency = $this->_options['currency'];
-        }
-
-        if (empty($currency) === true) {
-            require_once 'Zend/Currency/Exception.php';
-            throw new Zend_Currency_Exception('No currency defined');
-        }
-
-        $data = Zend_Locale_Data::getContent('', 'regiontocurrency', $currency);
-
-        $result = explode(' ', $data);
-        return $result;
-    }
-
-    /**
-     * Returns a list of currencies which are used in this region
-     * a region name should be 2 charachters only (f.e. EG, DE, US)
-     * If no region is given, the actual region is used
-     *
-     * @param  string $region OPTIONAL Region to return the currencies for
-     * @return array List of currencies
-     */
-    public function getCurrencyList($region = null)
-    {
-        if (empty($region) === true) {
-            if (strlen($this->_locale) > 4) {
-                $region = substr($this->_locale, (strpos($this->_locale, '_') + 1));
-            }
-        }
-
-        return Zend_Locale_Data::getList('', 'regiontocurrency', $region);
-    }
-
-    /**
-     * Returns the actual currency name
-     *
-     * @return string
-     */
-    public function toString()
-    {
-        return (empty($this->_options['name']) === false) ? $this->_options['name'] : $this->_options['currency'];
-    }
-
-    /**
-     * Returns the currency name
-     *
-     * @return string
-     */
-    public function __toString()
-    {
-        return $this->toString();
-    }
-
-    /**
-     * Returns the set cache
-     *
-     * @return Zend_Cache_Core The set cache
-     */
-    public static function getCache()
-    {
-        $cache = Zend_Locale_Data::getCache();
-        return $cache;
-    }
-
-    /**
-     * Sets a cache for Zend_Currency
-     *
-     * @param  Zend_Cache_Core $cache Cache to set
-     * @return void
-     */
-    public static function setCache(Zend_Cache_Core $cache)
-    {
-        Zend_Locale_Data::setCache($cache);
-    }
-
-    /**
-     * Returns true when a cache is set
-     *
-     * @return boolean
-     */
-    public static function hasCache()
-    {
-        return Zend_Locale_Data::hasCache();
-    }
-
-    /**
-     * Removes any set cache
-     *
-     * @return void
-     */
-    public static function removeCache()
-    {
-        Zend_Locale_Data::removeCache();
-    }
-
-    /**
-     * Clears all set cache data
-     *
-     * @return void
-     */
-    public static function clearCache()
-    {
-        Zend_Locale_Data::clearCache();
-    }
-
-    /**
-     * Sets a new locale for data retreivement
-     * Example: 'de_XX' will be set to 'de' because 'de_XX' does not exist
-     * 'xx_YY' will be set to 'root' because 'xx' does not exist
-     *
-     * @param  string|Zend_Locale $locale (Optional) Locale for parsing input
-     * @throws Zend_Currency_Exception When the given locale does not exist
-     * @return Zend_Currency Provides fluent interface
-     */
-    public function setLocale($locale = null)
-    {
-        require_once 'Zend/Locale.php';
-        try {
-            $this->_locale = Zend_Locale::findLocale($locale);
-        } catch (Zend_Locale_Exception $e) {
-            require_once 'Zend/Currency/Exception.php';
-            throw new Zend_Currency_Exception($e->getMessage());
-        }
-
-        // Get currency details
-        $this->_options['currency'] = $this->getShortName(null, $this->_locale);
-        $this->_options['name']     = $this->getName(null, $this->_locale);
-        $this->_options['symbol']   = $this->getSymbol(null, $this->_locale);
-
-        return $this;
-    }
-
-    /**
-     * Returns the actual set locale
-     *
-     * @return string
-     */
-    public function getLocale()
-    {
-        return $this->_locale;
-    }
-
-    /**
-     * Internal method for checking the options array
-     *
-     * @param  array $options Options to check
-     * @throws Zend_Currency_Exception On unknown position
-     * @throws Zend_Currency_Exception On unknown locale
-     * @throws Zend_Currency_Exception On unknown display
-     * @throws Zend_Currency_Exception On precision not between -1 and 30
-     * @throws Zend_Currency_Exception On problem with script conversion
-     * @throws Zend_Currency_Exception On unknown options
-     * @return array
-     */
-    private function _checkOptions(array $options = array())
-    {
-        if (count($options) === 0) {
-            return $this->_options;
-        }
-
-        foreach ($options as $name => $value) {
-            $name = strtolower($name);
-            if ($name !== 'format') {
-                if (gettype($value) === 'string') {
-                    $value = strtolower($value);
-                }
-            }
-
-            switch($name) {
-                case 'position':
-                    if (($value !== self::STANDARD) and ($value !== self::RIGHT) and ($value !== self::LEFT)) {
-                        require_once 'Zend/Currency/Exception.php';
-                        throw new Zend_Currency_Exception("Unknown position '" . $value . "'");
-                    }
-
-                    break;
-
-                case 'format':
-                    if ((empty($value) === false) and (Zend_Locale::isLocale($value, null, false) === false)) {
-                        require_once 'Zend/Currency/Exception.php';
-                        throw new Zend_Currency_Exception("'" .
-                            ((gettype($value) === 'object') ? get_class($value) : $value)
-                            . "' is not a known locale.");
-                    }
-                    break;
-
-                case 'display':
-                    if (is_numeric($value) and ($value !== self::NO_SYMBOL) and ($value !== self::USE_SYMBOL) and
-                        ($value !== self::USE_SHORTNAME) and ($value !== self::USE_NAME)) {
-                        require_once 'Zend/Currency/Exception.php';
-                        throw new Zend_Currency_Exception("Unknown display '$value'");
-                    }
-                    break;
-
-                case 'precision':
-                    if ($value === null) {
-                        $value = -1;
-                    }
-
-                    if (($value < -1) or ($value > 30)) {
-                        require_once 'Zend/Currency/Exception.php';
-                        throw new Zend_Currency_Exception("'$value' precision has to be between -1 and 30.");
-                    }
-                    break;
-
-                case 'script':
-                    try {
-                        Zend_Locale_Format::convertNumerals(0, $options['script']);
-                    } catch (Zend_Locale_Exception $e) {
-                        require_once 'Zend/Currency/Exception.php';
-                        throw new Zend_Currency_Exception($e->getMessage());
-                    }
-                    break;
-
-                case 'name':
-                    // Break intentionally omitted
-                case 'currency':
-                    // Break intentionally omitted
-                case 'symbol':
-                    // Unchecked options
-                    break;
-
-                default:
-                    require_once 'Zend/Currency/Exception.php';
-                    throw new Zend_Currency_Exception("Unknown option: '$name' = '$value'");
-                    break;
-            }
-        }
-
-        return $options;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+huU9t2SnKdYNBKpt9BvvGsxe

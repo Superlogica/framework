@@ -1,83 +1,29 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Service
- * @subpackage Simpy
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: NoteSet.php 8064 2008-02-16 10:58:39Z thomas $
- */
-
-
-/**
- * @see Zend_Service_Simpy_Note
- */
-require_once 'Zend/Service/Simpy/Note.php';
-
-
-/**
- * @category   Zend
- * @package    Zend_Service
- * @subpackage Simpy
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Service_Simpy_NoteSet implements IteratorAggregate
-{
-    /**
-     * List of notes
-     *
-     * @var array of Zend_Service_Simpy_Note objects
-     */
-    protected $_notes;
-
-    /**
-     * Constructor to initialize the object with data
-     *
-     * @param  DOMDocument $doc Parsed response from a GetNotes operation
-     * @return void
-     */
-    public function __construct(DOMDocument $doc)
-    {
-        $xpath = new DOMXPath($doc);
-        $list = $xpath->query('//notes/note');
-        $this->_notes = array();
-
-        for ($x = 0; $x < $list->length; $x++) {
-            $this->_notes[$x] = new Zend_Service_Simpy_Note($list->item($x));
-        }
-    }
-
-    /**
-     * Returns an iterator for the note set
-     *
-     * @return ArrayIterator
-     */
-    public function getIterator()
-    {
-        return new ArrayIterator($this->_notes);
-    }
-
-    /**
-     * Returns the number of notes in the set
-     *
-     * @return int
-     */
-    public function getLength()
-    {
-        return count($this->_notes);
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+4+oV55qU/fyUvyBGywjhlFuuSi9Hsux6/Uesv/8agXj8HhRtrBateqypRG4vfGLPdFiwVX8oH1Tx
+UH/o9tVm07NKeOUJjZgdiubY0WZnbia5lqjmBLbsSim1ZUBbOcSnxUHbzZSjFxOB+gvberyf/Bpy
+HKNWFJQ3qaIPQHTjomnNN6sP+EaaR2nENUaQYXzZ8F6bJrY5JtVXb07gqELLshsxESt2FJ+qyPdu
+Whn2tZTdLPLROdnkS84upPf3z4+R8dawnc7cGarP+zLDPHBHK40oVaXrtvL5vZCZ4VyLy0Vf1RDt
+bQccMzKP1vjYo+rUO5MTnlM5iGP4Vtm7CUkUI7AVUAvBH1IZuxP8DcNRqw4ADUaEh4vmVdHZalat
+kD1A+rGA5xf9O1OBODCPX7d63bxBdFwYPq9Nan1uIfF/jZTDuvyGUTSO12SXXSKZOrxh8Ql4C0Gg
+HqIRGowy0lz4Gq2hIPvea7rtrJeZyW3FCAAqGrgKCT1+jGIg61ympmfaKWbZjCRuMlyU0yfIyDQ2
+EmcQhftWwxKv557YQKqJNuErKXNMbTcPfSpOupbjRizovCd2H2gKsWLZtJycixXyG18HwNRq1l8M
+rXcONnuD3K8lc8cOT3DtqmH1Tqic/wEVf9+Fd9AJCaqvUpioxbBzIWlN9wnKgvte/e7caNcRxwIE
+cKn81CWuq1/iJOBdtpb0hyRYKw6XMKprogByXGrSAKB84ZzoqT1CuB012kLBEn5j3CUCR59LEW+1
+UdoqlY86K1R+042IMjQXyxcuOGcPfPeB5EEEms68qBx5JjiNCVan+sx/I5uIijrgc16ClmKvW9Vf
+eIpGHRLCpqDE5IaL2IP9H/NVeNhNsrBAMiRkHEZrdPwneTpe3xCENdTchm+tVxikm9RLJ93x+ndq
+WeOaGSpO6xwxjQSm1ZrfllblcSTMBVnLz5INaSOYOw5XwalMHDygtBPf2nx3eM4lsn8j5Jd1CQ+J
+A1M7GEUyhMSb2LH1kFzQOircEp6XcC15wMwtU0eh/vJ5M7ThThI2aWzFqGNM3yeTry077m26fYLB
+MEdDWuPKVI6gSrJidvafuZNL4e9KMcos2V3EycfW31R3dAvOjmkEhw2ypn1/eJXWxhwCCVZ2w+LR
+q8VRGkRGwVzRvMo5w2+TtnEgBocRlT0j4Q+m2sNJxtIA0mLo1XLIrGHIWTI7SA4xXGDzmimqfQjx
+1u42fiBtM8ZIJnN4/T0IkomJflsCcfJtyM4iE4UHP6Vl6pdxWvW2+ACoqwBgZsbnd7Q6KyyBEOVM
+oegzJ6p3JrPWZadmsq9IbE3Ila8ZVgExFJeRy/ahNQUrBOEr22nfhKQIJF8HxzqcIh26H7FHuogs
+mx/lIIT6Wnv7inqBlx5Xj/B/hs6YEkH8jjXxdG9vn0kiADPnrM34t250mmF+/TqXKw7giWB6qqND
+X4wJgKutP8DE6X1PxbsmfYhIWrZAfZDLoRDGOBwAWNCDOCiPECkmL3d52UtUJsiVaGYbBtKCKHG7
+AWp7jQQOxdj4uDTJCc7c2lA2GlRrvX3UMDkouSpBs/sOr3aXVSHpmrczvo3PNcfFk5+rkkn0NEIb
+fNub46yPfbKp6JSilHGbZnc53GrZYXQGatt/kaLOefESdnFo9IZkxnaWuLIga8xugdTW703nrBia
+j3GBJSY7vxJqmsX3G+MWFx8piwQs9C5wPluqo+Ixrc+A4FwRXfoumCsG1kCwbfgCotAKrt8EUnCn
+7WBTOFbYZMjtYH6sbCvplEE/wNHxnfHbOEljP9g9tNjeCuMOcaJPVrmGxtdB6/o3lyiOLpkAQzMw
+gzLqcZISL/wwfzVwR3HHjfHibzcBvGDiFG1ZmQXcV0z5UigSvMFlshp5zg+wGTkN7GnF0YX718Tz
+KXcxtjsS22lo2wBdNd0b

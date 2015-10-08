@@ -1,390 +1,141 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Tool
- * @subpackage Framework
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id$
- */
-
-/**
- * @see Zend_Reflection_Class
- */
-require_once 'Zend/Reflection/Class.php';
-
-/**
- * @see Zend_Tool_Framework_Registry
- */
-require_once 'Zend/Tool/Framework/Registry/EnabledInterface.php';
-
-/**
- * @see Zend_Tool_Framework_Action_Base
- */
-require_once 'Zend/Tool/Framework/Action/Base.php';
-
-/**
- * The purpose of Zend_Tool_Framework_Provider_Signature is to derive 
- * callable signatures from the provided provider.
- * 
- * @category   Zend
- * @package    Zend_Tool
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Tool_Framework_Provider_Signature implements Zend_Tool_Framework_Registry_EnabledInterface
-{
-
-    /**
-     * @var Zend_Tool_Framework_Registry
-     */
-    protected $_registry = null;
-    
-    /**
-     * @var Zend_Tool_Framework_Provider_Interface
-     */
-    protected $_provider = null;
-    
-    /**
-     * @var string
-     */
-    protected $_name = null;
-    
-    /**
-     * @var array
-     */
-    protected $_specialties = array();
-    
-    /**
-     * @var array
-     */
-    protected $_actionableMethods = array();
-    
-    /**
-     * @var unknown_type
-     */
-    protected $_actions = array();
-
-    /**
-     * @var Zend_Reflection_Class
-     */
-    protected $_providerReflection = null;
-
-    /**
-     * @var bool
-     */
-    protected $_isProcessed = false;
-    
-    /**
-     * Constructor
-     *
-     * @param Zend_Tool_Framework_Provider_Interface $provider
-     */
-    public function __construct(Zend_Tool_Framework_Provider_Interface $provider)
-    {
-        $this->_provider = $provider;
-        $this->_providerReflection = new Zend_Reflection_Class($provider);
-    }
-
-    /**
-     * setRegistry()
-     *
-     * @param Zend_Tool_Framework_Registry_Interface $registry
-     * @return Zend_Tool_Framework_Provider_Signature
-     */
-    public function setRegistry(Zend_Tool_Framework_Registry_Interface $registry)
-    {
-        $this->_registry = $registry;
-        return $this;
-    }
-    
-    public function process()
-    {
-        if ($this->_isProcessed) {
-            return;
-        }
-        
-        $this->_process();
-    }
-    
-    /**
-     * getName() of the provider
-     *
-     * @return unknown
-     */
-    public function getName()
-    {
-        return $this->_name;
-    }
-
-    /**
-     * Get the provider for this signature
-     *
-     * @return Zend_Tool_Framework_Provider_Interface
-     */
-    public function getProvider()
-    {
-        return $this->_provider;
-    }
-
-    /**
-     * getProviderReflection()
-     *
-     * @return Zend_Reflection_Class
-     */
-    public function getProviderReflection()
-    {
-        return $this->_providerReflection;
-    }
-    
-    /**
-     * getSpecialities()
-     *
-     * @return array
-     */
-    public function getSpecialties()
-    {
-        return $this->_specialties;
-    }
-
-    /**
-     * getActions()
-     * 
-     * @return array Array of Actions
-     */
-    public function getActions()
-    {
-        return $this->_actions;
-    }
-    
-    /**
-     * getActionableMethods()
-     *
-     * @return array
-     */
-    public function getActionableMethods()
-    {
-        return $this->_actionableMethods;
-    }
-
-    /**
-     * getActionableMethod() - Get an actionable method by name, this will return an array of 
-     * useful information about what can be exectued on this provider
-     *
-     * @param string $methodName
-     * @return array
-     */
-    public function getActionableMethod($methodName)
-    {
-        if (isset($this->_actionableMethods[$methodName])) {
-            return $this->_actionableMethods[$methodName];
-        }
-        
-        return false;
-    }
-    
-    /**
-     * getActionableMethodByActionName() - Get an actionable method by its action name, this 
-     * will return an array of useful information about what can be exectued on this provider
-     *
-     * @param string $actionName
-     * @return array
-     */
-    public function getActionableMethodByActionName($actionName)
-    {
-        foreach ($this->_actionableMethods as $actionableMethod) {
-            if ($actionName == $actionableMethod['actionName']) {
-                return $actionableMethod;
-            }
-        }
-
-        return false;
-    }
-
-    /**
-     * _process() is called at construction time and is what will build the signature information
-     * for determining what is actionable
-     *
-     */
-    protected function _process()
-    {
-        $this->_isProcessed = true;
-        $this->_processName();
-        $this->_processSpecialties();
-        $this->_processActionableMethods();
-    }
-
-    /**
-     * _processName();
-     *
-     */
-    protected function _processName()
-    {
-        if (method_exists($this->_provider, 'getName')) {
-            $this->_name = $this->_provider->getName();
-        }
-
-        if ($this->_name == null) {
-            $className = get_class($this->_provider);
-            $name = substr($className, strrpos($className, '_')+1);
-            $name = preg_replace('#(Provider|Manifest)$#', '', $name);
-            $this->_name = $name;
-        }
-    }
-
-    /**
-     * _processSpecialties() - Break out the specialty names for this provider
-     *
-     */
-    protected function _processSpecialties()
-    {
-        $specialties = array();
-
-        if ($this->_providerReflection->hasMethod('getSpecialties')) {
-            $specialties = $this->_provider->getSpecialties();
-            if (!is_array($specialties)) {
-                require_once 'Zend/Tool/Framework/Provider/Exception.php';
-                throw new Zend_Tool_Framework_Provider_Exception(
-                    'Provider ' . get_class($this->_provider) . ' must return an array for method getSpecialties().'
-                    );
-            }
-        } else {
-            $defaultProperties = $this->_providerReflection->getDefaultProperties();
-            $specialties = (isset($defaultProperties['_specialties'])) ? $defaultProperties['_specialties'] : array();
-            if (!is_array($specialties)) {
-                require_once 'Zend/Tool/Framework/Provider/Exception.php';
-                throw new Zend_Tool_Framework_Provider_Exception(
-                    'Provider ' . get_class($this->_provider) . '\'s property $_specialties must be an array.'
-                    );
-            }
-        }
-
-        $this->_specialties = array_merge(array('_Global'), $specialties);
-
-    }
-
-    /**
-     * _processActionableMethods() - process all methods that can be called on this provider.
-     *
-     */
-    protected function _processActionableMethods()
-    {
-
-        $specialtyRegex = '#(.*)(' . implode('|', $this->_specialties) . ')$#i';
-
-
-        $methods = $this->_providerReflection->getMethods();
-
-        $actionableMethods = array();
-        foreach ($methods as $method) {
-
-            $methodName = $method->getName();
-
-            /**
-             * the following will determine what methods are actually actionable
-             * public, non-static, non-underscore prefixed, classes that dont
-             * contain the name "
-             */ 
-            if (!$method->getDeclaringClass()->isInstantiable() 
-                || !$method->isPublic() 
-                || $methodName[0] == '_' 
-                || $method->isStatic()
-                || in_array($methodName, array('getContextClasses', 'getName')) // other protected public methods will nee to go here
-                ) {
-                continue;
-            }
-            
-            /**
-             * check to see if the method was a required method by a Zend_Tool_* interface
-             */
-            foreach ($method->getDeclaringClass()->getInterfaces() as $methodDeclaringClassInterface) {
-                if (strpos($methodDeclaringClassInterface->getName(), 'Zend_Tool_') === 0 
-                    && $methodDeclaringClassInterface->hasMethod($methodName)) {
-                    continue 2;
-                }
-            }
-
-            $actionableName = ucfirst($methodName);
-
-            if (substr($actionableName, -6) == 'Action') {
-                $actionableName = substr($actionableName, 0, -6);
-            }
-
-            $actionableMethods[$methodName]['methodName'] = $methodName;
-
-            $matches = null;
-            if (preg_match($specialtyRegex, $actionableName, $matches)) {
-                $actionableMethods[$methodName]['actionName'] = $matches[1];
-                $actionableMethods[$methodName]['specialty'] = $matches[2];
-            } else {
-                $actionableMethods[$methodName]['actionName'] = $actionableName;
-                $actionableMethods[$methodName]['specialty'] = '_Global';
-            }
-
-            // get the action, and create non-existent actions when they dont exist (the true part below)
-            $action = $this->_registry->getActionRepository()->getAction($actionableMethods[$methodName]['actionName']);
-            if ($action == null) {
-                $action = new Zend_Tool_Framework_Action_Base($actionableMethods[$methodName]['actionName']);
-                $this->_registry->getActionRepository()->addAction($action);
-            }
-            $actionableMethods[$methodName]['action'] = $action;
-
-            if (!in_array($actionableMethods[$methodName]['action'], $this->_actions)) {
-                $this->_actions[] = $actionableMethods[$methodName]['action'];
-            }
-
-            $parameterInfo = array();
-            $position = 1;
-            foreach ($method->getParameters() as $parameter) {
-                $currentParam = $parameter->getName();
-                $parameterInfo[$currentParam]['position']    = $position++;
-                $parameterInfo[$currentParam]['optional']    = $parameter->isOptional();
-                $parameterInfo[$currentParam]['default']     = ($parameter->isOptional()) ? $parameter->getDefaultValue() : null;
-                $parameterInfo[$currentParam]['name']        = $currentParam;
-                $parameterInfo[$currentParam]['type']        = 'string';
-                $parameterInfo[$currentParam]['description'] = null;
-            }
-
-            $matches = null;
-            if (($docComment = $method->getDocComment()) != '' &&
-                (preg_match_all('/@param\s+(\w+)+\s+(\$\S+)\s+(.*?)(?=(?:\*\s*@)|(?:\*\/))/s', $docComment, $matches)))
-            {
-                for ($i=0; $i <= count($matches[0])-1; $i++) {
-                    $currentParam = ltrim($matches[2][$i], '$');
-
-                    if ($currentParam != '' && isset($parameterInfo[$currentParam])) {
-
-                        $parameterInfo[$currentParam]['type'] = $matches[1][$i];
-
-                        $descriptionSource = $matches[3][$i];
-
-                        if ($descriptionSource != '') {
-                            $parameterInfo[$currentParam]['description'] = trim($descriptionSource);
-                        }
-
-                    }
-
-                }
-
-            }
-
-            $actionableMethods[$methodName]['parameterInfo'] = $parameterInfo;
-
-        }
-
-        $this->_actionableMethods = $actionableMethods;
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

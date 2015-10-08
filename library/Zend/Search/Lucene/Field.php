@@ -1,225 +1,54 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Search_Lucene
- * @subpackage Document
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-
-/**
- * A field is a section of a Document.  Each field has two parts,
- * a name and a value. Values may be free text or they may be atomic
- * keywords, which are not further processed. Such keywords may
- * be used to represent dates, urls, etc.  Fields are optionally
- * stored in the index, so that they may be returned with hits
- * on the document.
- *
- * @category   Zend
- * @package    Zend_Search_Lucene
- * @subpackage Document
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Search_Lucene_Field
-{
-    /**
-     * Field name
-     *
-     * @var string
-     */
-    public $name;
-
-    /**
-     * Field value
-     * 
-     * @var boolean
-     */
-    public $value;
-    
-    /**
-     * Field is to be stored in the index for return with search hits.
-     * 
-     * @var boolean
-     */
-    public $isStored    = false;
-    
-    /**
-     * Field is to be indexed, so that it may be searched on.
-     * 
-     * @var boolean
-     */
-    public $isIndexed   = true;
-
-    /**
-     * Field should be tokenized as text prior to indexing.
-     * 
-     * @var boolean
-     */
-    public $isTokenized = true;
-    /**
-     * Field is stored as binary.
-     * 
-     * @var boolean
-     */
-    public $isBinary    = false;
-
-    /**
-     * Field are stored as a term vector
-     * 
-     * @var boolean
-     */
-    public $storeTermVector = false;
-
-    /**
-     * Field boost factor
-     * It's not stored directly in the index, but affects on normalization factor
-     *
-     * @var float
-     */
-    public $boost = 1.0;
-
-    /**
-     * Field value encoding.
-     *
-     * @var string
-     */
-    public $encoding;
-
-    /**
-     * Object constructor
-     *
-     * @param string $name
-     * @param string $value
-     * @param string $encoding
-     * @param boolean $isStored
-     * @param boolean $isIndexed
-     * @param boolean $isTokenized
-     * @param boolean $isBinary
-     */
-    public function __construct($name, $value, $encoding, $isStored, $isIndexed, $isTokenized, $isBinary = false)
-    {
-        $this->name  = $name;
-        $this->value = $value;
-
-        if (!$isBinary) {
-            $this->encoding    = $encoding;
-            $this->isTokenized = $isTokenized;
-        } else {
-            $this->encoding    = '';
-            $this->isTokenized = false;
-        }
-
-        $this->isStored  = $isStored;
-        $this->isIndexed = $isIndexed;
-        $this->isBinary  = $isBinary;
-
-        $this->storeTermVector = false;
-        $this->boost           = 1.0;
-    }
-
-
-    /**
-     * Constructs a String-valued Field that is not tokenized, but is indexed
-     * and stored.  Useful for non-text fields, e.g. date or url.
-     *
-     * @param string $name
-     * @param string $value
-     * @param string $encoding
-     * @return Zend_Search_Lucene_Field
-     */
-    public static function keyword($name, $value, $encoding = '')
-    {
-        return new self($name, $value, $encoding, true, true, false);
-    }
-
-
-    /**
-     * Constructs a String-valued Field that is not tokenized nor indexed,
-     * but is stored in the index, for return with hits.
-     *
-     * @param string $name
-     * @param string $value
-     * @param string $encoding
-     * @return Zend_Search_Lucene_Field
-     */
-    public static function unIndexed($name, $value, $encoding = '')
-    {
-        return new self($name, $value, $encoding, true, false, false);
-    }
-
-
-    /**
-     * Constructs a Binary String valued Field that is not tokenized nor indexed,
-     * but is stored in the index, for return with hits.
-     *
-     * @param string $name
-     * @param string $value
-     * @param string $encoding
-     * @return Zend_Search_Lucene_Field
-     */
-    public static function binary($name, $value)
-    {
-        return new self($name, $value, '', true, false, false, true);
-    }
-
-    /**
-     * Constructs a String-valued Field that is tokenized and indexed,
-     * and is stored in the index, for return with hits.  Useful for short text
-     * fields, like "title" or "subject". Term vector will not be stored for this field.
-     *
-     * @param string $name
-     * @param string $value
-     * @param string $encoding
-     * @return Zend_Search_Lucene_Field
-     */
-    public static function text($name, $value, $encoding = '')
-    {
-        return new self($name, $value, $encoding, true, true, true);
-    }
-
-
-    /**
-     * Constructs a String-valued Field that is tokenized and indexed,
-     * but that is not stored in the index.
-     *
-     * @param string $name
-     * @param string $value
-     * @param string $encoding
-     * @return Zend_Search_Lucene_Field
-     */
-    public static function unStored($name, $value, $encoding = '')
-    {
-        return new self($name, $value, $encoding, false, true, true);
-    }
-
-    /**
-     * Get field value in UTF-8 encoding
-     *
-     * @return string
-     */
-    public function getUtf8Value()
-    {
-        if (strcasecmp($this->encoding, 'utf8' ) == 0  ||
-            strcasecmp($this->encoding, 'utf-8') == 0 ) {
-                return $this->value;
-        } else {
-            
-            return (PHP_OS != 'AIX') ? iconv($this->encoding, 'UTF-8', $this->value) : iconv('ISO8859-1', 'UTF-8', $this->value);
-        }
-    }
-}
-
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+FWXaT+iAfMqUCY8=

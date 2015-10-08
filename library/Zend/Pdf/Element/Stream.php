@@ -1,124 +1,31 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Pdf
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-
-/**
- * @see Zend_Pdf
- */
-require_once 'Zend/Pdf.php';
-
-/**
- * @see Zend_Pdf_Element
- */
-require_once 'Zend/Pdf/Element.php';
-
-/**
- * @see Zend_Memory
- */
-require_once 'Zend/Memory.php';
-
-/**
- * PDF file 'stream' element implementation
- *
- * @category   Zend
- * @package    Zend_Pdf
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Pdf_Element_Stream extends Zend_Pdf_Element
-{
-    /**
-     * Object value
-     *
-     * @var Zend_Memory_Container
-     */
-    public $value;
-
-
-    /**
-     * Object constructor
-     *
-     * @param string $val
-     */
-    public function __construct($val)
-    {
-        $this->value = Zend_Pdf::getMemoryManager()->create($val);
-    }
-
-
-    /**
-     * Return type of the element.
-     *
-     * @return integer
-     */
-    public function getType()
-    {
-        return Zend_Pdf_Element::TYPE_STREAM;
-    }
-
-
-    /**
-     * Stream length.
-     * (Method is used to avoid string copying, which may occurs in some cases)
-     *
-     * @return integer
-     */
-    public function length()
-    {
-        return strlen($this->value->getRef());
-    }
-
-
-    /**
-     * Clear stream
-     *
-     */
-    public function clear()
-    {
-        $ref = &$this->value->getRef();
-        $ref = '';
-        $this->value->touch();
-    }
-
-
-    /**
-     * Append value to a stream
-     *
-     * @param mixed $val
-     */
-    public function append($val)
-    {
-        $ref = &$this->value->getRef();
-        $ref .= (string)$val;
-        $this->value->touch();
-    }
-
-
-    /**
-     * Return object as string
-     *
-     * @param Zend_Pdf_Factory $factory
-     * @return string
-     */
-    public function toString($factory = null)
-    {
-        return "stream\n" . $this->value->getRef() . "\nendstream";
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

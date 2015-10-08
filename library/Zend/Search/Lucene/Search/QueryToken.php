@@ -1,224 +1,65 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Search_Lucene
- * @subpackage Search
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * @category   Zend
- * @package    Zend_Search_Lucene
- * @subpackage Search
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Search_Lucene_Search_QueryToken
-{
-    /**
-     * Token types.
-     */
-    const TT_WORD                 = 0;  // Word
-    const TT_PHRASE               = 1;  // Phrase (one or several quoted words)
-    const TT_FIELD                = 2;  // Field name in 'field:word', field:<phrase> or field:(<subquery>) pairs
-    const TT_FIELD_INDICATOR      = 3;  // ':'
-    const TT_REQUIRED             = 4;  // '+'
-    const TT_PROHIBITED           = 5;  // '-'
-    const TT_FUZZY_PROX_MARK      = 6;  // '~'
-    const TT_BOOSTING_MARK        = 7;  // '^'
-    const TT_RANGE_INCL_START     = 8;  // '['
-    const TT_RANGE_INCL_END       = 9;  // ']'
-    const TT_RANGE_EXCL_START     = 10; // '{'
-    const TT_RANGE_EXCL_END       = 11; // '}'
-    const TT_SUBQUERY_START       = 12; // '('
-    const TT_SUBQUERY_END         = 13; // ')'
-    const TT_AND_LEXEME           = 14; // 'AND' or 'and'
-    const TT_OR_LEXEME            = 15; // 'OR'  or 'or'
-    const TT_NOT_LEXEME           = 16; // 'NOT' or 'not'
-    const TT_TO_LEXEME            = 17; // 'TO'  or 'to'
-    const TT_NUMBER               = 18; // Number, like: 10, 0.8, .64, ....
-
-
-    /**
-     * Returns all possible lexeme types.
-     * It's used for syntax analyzer state machine initialization
-     *
-     * @return array
-     */
-    public static function getTypes()
-    {
-        return array(   self::TT_WORD,
-                        self::TT_PHRASE,
-                        self::TT_FIELD,
-                        self::TT_FIELD_INDICATOR,
-                        self::TT_REQUIRED,
-                        self::TT_PROHIBITED,
-                        self::TT_FUZZY_PROX_MARK,
-                        self::TT_BOOSTING_MARK,
-                        self::TT_RANGE_INCL_START,
-                        self::TT_RANGE_INCL_END,
-                        self::TT_RANGE_EXCL_START,
-                        self::TT_RANGE_EXCL_END,
-                        self::TT_SUBQUERY_START,
-                        self::TT_SUBQUERY_END,
-                        self::TT_AND_LEXEME,
-                        self::TT_OR_LEXEME,
-                        self::TT_NOT_LEXEME,
-                        self::TT_TO_LEXEME,
-                        self::TT_NUMBER
-                     );
-    }
-
-
-    /**
-     * TokenCategories
-     */
-    const TC_WORD           = 0;   // Word
-    const TC_PHRASE         = 1;   // Phrase (one or several quoted words)
-    const TC_NUMBER         = 2;   // Nubers, which are used with syntax elements. Ex. roam~0.8
-    const TC_SYNTAX_ELEMENT = 3;   // +  -  ( )  [ ]  { }  !  ||  && ~ ^
-
-
-    /**
-     * Token type.
-     *
-     * @var integer
-     */
-    public $type;
-
-    /**
-     * Token text.
-     *
-     * @var integer
-     */
-    public $text;
-
-    /**
-     * Token position within query.
-     *
-     * @var integer
-     */
-    public $position;
-
-
-    /**
-     * IndexReader constructor needs token type and token text as a parameters.
-     *
-     * @param integer $tokenCategory
-     * @param string  $tokText
-     * @param integer $position
-     */
-    public function __construct($tokenCategory, $tokenText, $position)
-    {
-        $this->text     = $tokenText;
-        $this->position = $position + 1; // Start from 1
-
-        switch ($tokenCategory) {
-            case self::TC_WORD:
-                if (  strtolower($tokenText) == 'and') {
-                    $this->type = self::TT_AND_LEXEME;
-                } else if (strtolower($tokenText) == 'or') {
-                    $this->type = self::TT_OR_LEXEME;
-                } else if (strtolower($tokenText) == 'not') {
-                    $this->type = self::TT_NOT_LEXEME;
-                } else if (strtolower($tokenText) == 'to') {
-                    $this->type = self::TT_TO_LEXEME;
-                } else {
-                    $this->type = self::TT_WORD;
-                }
-                break;
-
-            case self::TC_PHRASE:
-                $this->type = self::TT_PHRASE;
-                break;
-
-            case self::TC_NUMBER:
-                $this->type = self::TT_NUMBER;
-                break;
-
-            case self::TC_SYNTAX_ELEMENT:
-                switch ($tokenText) {
-                    case ':':
-                        $this->type = self::TT_FIELD_INDICATOR;
-                        break;
-
-                    case '+':
-                        $this->type = self::TT_REQUIRED;
-                        break;
-
-                    case '-':
-                        $this->type = self::TT_PROHIBITED;
-                        break;
-
-                    case '~':
-                        $this->type = self::TT_FUZZY_PROX_MARK;
-                        break;
-
-                    case '^':
-                        $this->type = self::TT_BOOSTING_MARK;
-                        break;
-
-                    case '[':
-                        $this->type = self::TT_RANGE_INCL_START;
-                        break;
-
-                    case ']':
-                        $this->type = self::TT_RANGE_INCL_END;
-                        break;
-
-                    case '{':
-                        $this->type = self::TT_RANGE_EXCL_START;
-                        break;
-
-                    case '}':
-                        $this->type = self::TT_RANGE_EXCL_END;
-                        break;
-
-                    case '(':
-                        $this->type = self::TT_SUBQUERY_START;
-                        break;
-
-                    case ')':
-                        $this->type = self::TT_SUBQUERY_END;
-                        break;
-
-                    case '!':
-                        $this->type = self::TT_NOT_LEXEME;
-                        break;
-
-                    case '&&':
-                        $this->type = self::TT_AND_LEXEME;
-                        break;
-
-                    case '||':
-                        $this->type = self::TT_OR_LEXEME;
-                        break;
-
-                    default:
-                        require_once 'Zend/Search/Lucene/Exception.php';
-                        throw new Zend_Search_Lucene_Exception('Unrecognized query syntax lexeme: \'' . $tokenText . '\'');
-                }
-                break;
-
-            case self::TC_NUMBER:
-                $this->type = self::TT_NUMBER;
-
-            default:
-                require_once 'Zend/Search/Lucene/Exception.php';
-                throw new Zend_Search_Lucene_Exception('Unrecognized lexeme type: \'' . $tokenCategory . '\'');
-        }
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

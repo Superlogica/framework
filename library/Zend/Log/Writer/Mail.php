@@ -1,278 +1,66 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Log
- * @subpackage Writer
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Mail.php 13626 2009-01-14 18:24:57Z matthew $
- */
-
-/** Zend_Log_Writer_Abstract */
-require_once 'Zend/Log/Writer/Abstract.php';
-
-/** Zend_Log_Exception */
-require_once 'Zend/Log/Exception.php';
-
-/** Zend_Log_Formatter_Simple*/
-require_once 'Zend/Log/Formatter/Simple.php';
-
-/**
- * Class used for writing log messages to email via Zend_Mail.
- *
- * Allows for emailing log messages at and above a certain level via a
- * Zend_Mail object.  Note that this class only sends the email upon
- * completion, so any log entries accumulated are sent in a single email.
- *
- * @category   Zend
- * @package    Zend_Log
- * @subpackage Writer
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Mail.php 13626 2009-01-14 18:24:57Z matthew $
- */
-class Zend_Log_Writer_Mail extends Zend_Log_Writer_Abstract
-{
-    /**
-     * Array of formatted events to include in message body.
-     *
-     * @var array
-     */
-    protected $_eventsToMail = array();
-
-    /**
-     * Array of formatted lines for use in an HTML email body; these events
-     * are formatted with an optional formatter if the caller is using
-     * Zend_Layout.
-     *
-     * @var array
-     */
-    protected $_layoutEventsToMail = array();
-
-    /**
-     * Zend_Mail instance to use
-     *
-     * @var Zend_Mail
-     */
-    protected $_mail;
-
-    /**
-     * Zend_Layout instance to use; optional.
-     *
-     * @var Zend_Layout
-     */
-    protected $_layout;
-
-    /**
-     * Optional formatter for use when rendering with Zend_Layout.
-     *
-     * @var Zend_Log_Formatter_Interface
-     */
-    protected $_layoutFormatter;
-
-    /**
-     * Array keeping track of the number of entries per priority level.
-     *
-     * @var array
-     */
-    protected $_numEntriesPerPriority = array();
-
-    /**
-     * Subject prepend text.
-     *
-     * Can only be used of the Zend_Mail object has not already had its
-     * subject line set.  Using this will cause the subject to have the entry
-     * counts per-priority level appended to it.
-     *
-     * @var string|null
-     */
-    protected $_subjectPrependText;
-
-    /**
-     * Class constructor.
-     *
-     * Constructs the mail writer; requires a Zend_Mail instance, and takes an
-     * optional Zend_Layout instance.  If Zend_Layout is being used,
-     * $this->_layout->events will be set for use in the layout template.
-     *
-     * @param  Zend_Mail $mail Mail instance
-     * @param  Zend_Layout $layout Layout instance; optional
-     * @return void
-     */
-    public function __construct(Zend_Mail $mail, Zend_Layout $layout = null)
-    {
-        $this->_mail      = $mail;
-        $this->_layout    = $layout;
-        $this->_formatter = new Zend_Log_Formatter_Simple();
-    }
-
-    /**
-     * Places event line into array of lines to be used as message body.
-     *
-     * Handles the formatting of both plaintext entries, as well as those
-     * rendered with Zend_Layout.
-     *
-     * @param  array $event Event data
-     * @return void
-     */
-    protected function _write($event)
-    {
-        // Track the number of entries per priority level.
-        if (!isset($this->_numEntriesPerPriority[$event['priorityName']])) {
-            $this->_numEntriesPerPriority[$event['priorityName']] = 1;
-        } else {
-            $this->_numEntriesPerPriority[$event['priorityName']]++;
-        }
-
-        $formattedEvent = $this->_formatter->format($event);
-
-        // All plaintext events are to use the standard formatter.
-        $this->_eventsToMail[] = $formattedEvent;
-
-        // If we have a Zend_Layout instance, use a specific formatter for the
-        // layout if one exists.  Otherwise, just use the event with its
-        // default format.
-        if ($this->_layout) {
-            if ($this->_layoutFormatter) {
-                $this->_layoutEventsToMail[] =
-                    $this->_layoutFormatter->format($event);
-            } else {
-                $this->_layoutEventsToMail[] = $formattedEvent;
-            }
-        }
-    }
-
-    /**
-     * Gets instance of Zend_Log_Formatter_Instance used for formatting a
-     * message using Zend_Layout, if applicable.
-     *
-     * @return Zend_Log_Formatter_Interface|null The formatter, or null.
-     */
-    public function getLayoutFormatter()
-    {
-        return $this->_layoutFormatter;
-    }
-
-    /**
-     * Sets a specific formatter for use with Zend_Layout events.
-     *
-     * Allows use of a second formatter on lines that will be rendered with
-     * Zend_Layout.  In the event that Zend_Layout is not being used, this
-     * formatter cannot be set, so an exception will be thrown.
-     *
-     * @param  Zend_Log_Formatter_Interface $formatter
-     * @return Zend_Log_Writer_Mail
-     * @throws Zend_Log_Exception
-     */
-    public function setLayoutFormatter(Zend_Log_Formatter_Interface $formatter)
-    {
-        if (!$this->_layout) {
-            throw new Zend_Log_Exception(
-                'cannot set formatter for layout; ' .
-                    'a Zend_Layout instance is not in use');
-        }
-
-        $this->_layoutFormatter = $formatter;
-        return $this;
-    }
-
-    /**
-     * Allows caller to have the mail subject dynamically set to contain the
-     * entry counts per-priority level.
-     *
-     * Sets the text for use in the subject, with entry counts per-priority
-     * level appended to the end.  Since a Zend_Mail subject can only be set
-     * once, this method cannot be used if the Zend_Mail object already has a
-     * subject set.
-     *
-     * @param  string $subject Subject prepend text.
-     * @return Zend_Log_Writer_Mail
-     */
-    public function setSubjectPrependText($subject)
-    {
-        if ($this->_mail->getSubject()) {
-            throw new Zend_Log_Exception(
-                'subject already set on mail; ' .
-                    'cannot set subject prepend text');
-        }
-
-        $this->_subjectPrependText = (string) $subject;
-        return $this;
-    }
-
-    /**
-     * Sends mail to recipient(s) if log entries are present.  Note that both
-     * plaintext and HTML portions of email are handled here.
-     *
-     * @return void
-     */
-    public function shutdown()
-    {
-        // If there are events to mail, use them as message body.  Otherwise,
-        // there is no mail to be sent.
-        if (empty($this->_eventsToMail)) {
-            return;
-        }
-
-        if ($this->_subjectPrependText !== null) {
-            // Tack on the summary of entries per-priority to the subject
-            // line and set it on the Zend_Mail object.
-            $numEntries = $this->_getFormattedNumEntriesPerPriority();
-            $this->_mail->setSubject(
-                "{$this->_subjectPrependText} ({$numEntries})");
-        }
-
-
-        // Always provide events to mail as plaintext.
-        $this->_mail->setBodyText(implode('', $this->_eventsToMail));
-
-        // If a Zend_Layout instance is being used, set its "events"
-        // value to the lines formatted for use with the layout.
-        if ($this->_layout) {
-            // Set the required "messages" value for the layout.  Here we
-            // are assuming that the layout is for use with HTML.
-            $this->_layout->events =
-                implode('', $this->_layoutEventsToMail);
-            $this->_mail->setBodyHtml($this->_layout->render());
-        }
-
-        // Finally, send the mail, but re-throw any exceptions at the
-        // proper level of abstraction.
-        try {
-            $this->_mail->send();
-        } catch (Exception $e) {
-            throw new Zend_Log_Exception(
-                $e->getMessage(),
-                $e->getCode());
-        }
-    }
-
-    /**
-     * Gets a string of number of entries per-priority level that occurred, or
-     * an emptry string if none occurred.
-     *
-     * @return string
-     */
-    protected function _getFormattedNumEntriesPerPriority()
-    {
-        $strings = array();
-
-        foreach ($this->_numEntriesPerPriority as $priority => $numEntries) {
-            $strings[] = "{$priority}={$numEntries}";
-        }
-
-        return implode(', ', $strings);
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

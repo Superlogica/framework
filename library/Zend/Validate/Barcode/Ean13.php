@@ -1,112 +1,39 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Validate
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Ean13.php 11791 2008-10-09 18:19:13Z andries $
- */
-
-
-/**
- * @see Zend_Validate_Abstract
- */
-require_once 'Zend/Validate/Abstract.php';
-
-
-/**
- * @category   Zend
- * @package    Zend_Validate
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Validate_Barcode_Ean13 extends Zend_Validate_Abstract
-{
-    /**
-     * Validation failure message key for when the value is
-     * an invalid barcode
-     */
-    const INVALID = 'invalid';
-
-    /**
-     * Validation failure message key for when the value is
-     * not 13 characters long
-     */
-    const INVALID_LENGTH = 'invalidLength';
-
-    /**
-     * Validation failure message key for when the value
-     * does not only contain numeric characters
-     */
-    const NOT_NUMERIC = 'ean13NotNumeric';
-
-    /**
-     * Validation failure message template definitions
-     *
-     * @var array
-     */
-    protected $_messageTemplates = array(
-        self::INVALID        => "'%value%' is an invalid EAN-13 barcode",
-        self::INVALID_LENGTH => "'%value%' should be 13 characters",
-        self::NOT_NUMERIC    => "'%value%' should contain only numeric characters",
-    );
-
-    /**
-     * Defined by Zend_Validate_Interface
-     *
-     * Returns true if and only if $value contains a valid barcode
-     *
-     * @param  string $value
-     * @return boolean
-     */
-    public function isValid($value)
-    {
-        if (false === ctype_digit($value)) {
-            $this->_error(self::NOT_NUMERIC);
-            return false;
-        }
-
-        $valueString = (string) $value;
-        $this->_setValue($valueString);
-
-        if (strlen($valueString) !== 13) {
-            $this->_error(self::INVALID_LENGTH);
-            return false;
-        }
-
-        $barcode = strrev(substr($valueString, 0, -1));
-        $oddSum  = 0;
-        $evenSum = 0;
-
-        for ($i = 0; $i < 12; $i++) {
-            if ($i % 2 === 0) {
-                $oddSum += $barcode[$i] * 3;
-            } elseif ($i % 2 === 1) {
-                $evenSum += $barcode[$i];
-            }
-        }
-
-        $calculation = ($oddSum + $evenSum) % 10;
-        $checksum    = ($calculation === 0) ? 0 : 10 - $calculation;
-
-        if ($valueString[12] != $checksum) {
-            $this->_error(self::INVALID);
-            return false;
-        }
-
-        return true;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

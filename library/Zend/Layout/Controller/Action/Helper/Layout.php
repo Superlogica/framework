@@ -1,186 +1,53 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Controller
- * @subpackage Zend_Controller_Action
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @version    $Id: Layout.php 11508 2008-09-24 14:21:30Z doctorrock83 $
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_Controller_Action_Helper_Abstract */
-require_once 'Zend/Controller/Action/Helper/Abstract.php';
-
-/**
- * Helper for interacting with Zend_Layout objects
- *
- * @uses       Zend_Controller_Action_Helper_Abstract
- * @category   Zend
- * @package    Zend_Controller
- * @subpackage Zend_Controller_Action
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Layout_Controller_Action_Helper_Layout extends Zend_Controller_Action_Helper_Abstract
-{
-    /**
-     * @var Zend_Controller_Front
-     */
-    protected $_frontController;
-
-    /**
-     * @var Zend_Layout
-     */
-    protected $_layout;
-
-    /**
-     * @var bool
-     */
-    protected $_isActionControllerSuccessful = false;
-    
-    /**
-     * Constructor
-     * 
-     * @param  Zend_Layout $layout 
-     * @return void
-     */
-    public function __construct(Zend_Layout $layout = null)
-    {
-        if (null !== $layout) {
-            $this->setLayoutInstance($layout);
-        } else {
-            /**
-             * @see Zend_Layout
-             */
-            require_once 'Zend/Layout.php';
-            $layout = Zend_Layout::getMvcInstance();
-        }
-        
-        if (null !== $layout) {
-            $pluginClass = $layout->getPluginClass();
-            $front = $this->getFrontController();
-            if ($front->hasPlugin($pluginClass)) {
-                $plugin = $front->getPlugin($pluginClass);
-                $plugin->setLayoutActionHelper($this);
-            }
-        }
-    }
-
-    public function init()
-    {
-        $this->_isActionControllerSuccessful = false;
-    }
-
-    /**
-     * Get front controller instance
-     * 
-     * @return Zend_Controller_Front
-     */
-    public function getFrontController()
-    {
-        if (null === $this->_frontController) {
-            /**
-             * @see Zend_Controller_Front
-             */
-            require_once 'Zend/Controller/Front.php';
-            $this->_frontController = Zend_Controller_Front::getInstance();
-        }
-
-        return $this->_frontController;
-    }
-    
-    /**
-     * Get layout object
-     * 
-     * @return Zend_Layout
-     */
-    public function getLayoutInstance()
-    {
-        if (null === $this->_layout) {
-            /**
-             * @see Zend_Layout
-             */
-            require_once 'Zend/Layout.php';
-            if (null === ($this->_layout = Zend_Layout::getMvcInstance())) {
-                $this->_layout = new Zend_Layout();
-            }
-        }
-
-        return $this->_layout;
-    }
-
-    /**
-     * Set layout object
-     * 
-     * @param  Zend_Layout $layout 
-     * @return Zend_Layout_Controller_Action_Helper_Layout
-     */
-    public function setLayoutInstance(Zend_Layout $layout)
-    {
-        $this->_layout = $layout;
-        return $this;
-    }
-
-    /**
-     * Mark Action Controller (according to this plugin) as Running successfully
-     *
-     * @return Zend_Layout_Controller_Action_Helper_Layout
-     */
-    public function postDispatch()
-    {
-        $this->_isActionControllerSuccessful = true;
-        return $this;
-    }
-    
-    /**
-     * Did the previous action successfully complete?
-     *
-     * @return bool
-     */
-    public function isActionControllerSuccessful()
-    {
-        return $this->_isActionControllerSuccessful;
-    }
-    
-    /**
-     * Strategy pattern; call object as method
-     *
-     * Returns layout object
-     * 
-     * @return Zend_Layout
-     */
-    public function direct()
-    {
-        return $this->getLayoutInstance();
-    }
-
-    /**
-     * Proxy method calls to layout object
-     * 
-     * @param  string $method 
-     * @param  array $args 
-     * @return mixed
-     */
-    public function __call($method, $args)
-    {
-        $layout = $this->getLayoutInstance();
-        if (method_exists($layout, $method)) {
-            return call_user_func_array(array($layout, $method), $args);
-        }
-
-        require_once 'Zend/Layout/Exception.php';
-        throw new Zend_Layout_Exception(sprintf("Invalid method '%s' called on layout action helper", $method));
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+Umsya3ZYvqA/xFdnc0==

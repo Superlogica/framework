@@ -1,59 +1,30 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Db
- * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * Zend_Db_Adapter_Exception
- */
-require_once 'Zend/Db/Adapter/Exception.php';
-
-/**
- * Zend_Db_Adapter_Oracle_Exception
- *
- * @category   Zend
- * @package    Zend_Db
- * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Db_Adapter_Oracle_Exception extends Zend_Db_Adapter_Exception
-{
-   protected $message = 'Unknown exception';
-   protected $code = 0;
-
-   function __construct($error = null, $code = 0) {
-       if (is_array($error)) {
-            if (!isset($error['offset'])) {
-                $this->message = $error['code'] .' '. $error['message'];
-            } else {
-                $this->message = $error['code'] .' '. $error['message']." "
-                               . substr($error['sqltext'], 0, $error['offset'])
-                               . "*"
-                               . substr($error['sqltext'], $error['offset']);
-            }
-            $this->code = $error['code'];
-       } else if (is_string($error)) {
-           $this->message = $error;
-       }
-       if (!$this->code && $code) {
-           $this->code = $code;
-       }
-   }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+z+Uj4zBA6H3qTwFmrw4Ms27Pwk1HTy2cK7rMY0==

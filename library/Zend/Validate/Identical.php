@@ -1,117 +1,31 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Validate
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Identical.php 8118 2008-02-18 16:10:32Z matthew $
- */
-
-/** Zend_Validate_Abstract */
-require_once 'Zend/Validate/Abstract.php';
-
-/**
- * @category   Zend
- * @package    Zend_Validate
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Validate_Identical extends Zend_Validate_Abstract
-{
-    /**#@+
-     * Error codes
-     * @const string
-     */
-    const NOT_SAME      = 'notSame';
-    const MISSING_TOKEN = 'missingToken';
-    /**#@-*/
-
-    /**
-     * Error messages
-     * @var array
-     */
-    protected $_messageTemplates = array(
-        self::NOT_SAME      => 'Tokens do not match',
-        self::MISSING_TOKEN => 'No token was provided to match against',
-    );
-
-    /**
-     * Original token against which to validate
-     * @var string
-     */
-    protected $_token;
-
-    /**
-     * Sets validator options
-     *
-     * @param  string $token
-     * @return void
-     */
-    public function __construct($token = null)
-    {
-        if (null !== $token) {
-            $this->setToken($token);
-        }
-    }
-
-    /**
-     * Set token against which to compare
-     * 
-     * @param  string $token 
-     * @return Zend_Validate_Identical
-     */
-    public function setToken($token)
-    {
-        $this->_token = (string) $token;
-        return $this;
-    }
-
-    /**
-     * Retrieve token
-     * 
-     * @return string
-     */
-    public function getToken()
-    {
-        return $this->_token;
-    }
-
-    /**
-     * Defined by Zend_Validate_Interface
-     *
-     * Returns true if and only if a token has been set and the provided value 
-     * matches that token.
-     *
-     * @param  string $value
-     * @return boolean
-     */
-    public function isValid($value)
-    {
-        $this->_setValue($value);
-        $token = $this->getToken();
-
-        if (empty($token)) {
-            $this->_error(self::MISSING_TOKEN);
-            return false;
-        }
-
-        if ($value !== $token)  {
-            $this->_error(self::NOT_SAME);
-            return false;
-        }
-
-        return true;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+VCBjYv7SYrmANFAA2b3wI8WQ2Xcq1vJCOG==

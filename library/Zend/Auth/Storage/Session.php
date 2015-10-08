@@ -1,150 +1,32 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Auth
- * @subpackage Zend_Auth_Storage
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Session.php 8862 2008-03-16 15:36:00Z thomas $
- */
-
-
-/**
- * @see Zend_Auth_Storage_Interface
- */
-require_once 'Zend/Auth/Storage/Interface.php';
-
-
-/**
- * @see Zend_Session
- */
-require_once 'Zend/Session.php';
-
-
-/**
- * @category   Zend
- * @package    Zend_Auth
- * @subpackage Zend_Auth_Storage
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Auth_Storage_Session implements Zend_Auth_Storage_Interface
-{
-    /**
-     * Default session namespace
-     */
-    const NAMESPACE_DEFAULT = 'Zend_Auth';
-
-    /**
-     * Default session object member name
-     */
-    const MEMBER_DEFAULT = 'storage';
-
-    /**
-     * Object to proxy $_SESSION storage
-     *
-     * @var Zend_Session_Namespace
-     */
-    protected $_session;
-
-    /**
-     * Session namespace
-     *
-     * @var mixed
-     */
-    protected $_namespace;
-
-    /**
-     * Session object member
-     *
-     * @var mixed
-     */
-    protected $_member;
-
-    /**
-     * Sets session storage options and initializes session namespace object
-     *
-     * @param  mixed $namespace
-     * @param  mixed $member
-     * @return void
-     */
-    public function __construct($namespace = self::NAMESPACE_DEFAULT, $member = self::MEMBER_DEFAULT)
-    {
-        $this->_namespace = $namespace;
-        $this->_member    = $member;
-        $this->_session   = new Zend_Session_Namespace($this->_namespace);
-    }
-
-    /**
-     * Returns the session namespace
-     *
-     * @return string
-     */
-    public function getNamespace()
-    {
-        return $this->_namespace;
-    }
-
-    /**
-     * Returns the name of the session object member
-     *
-     * @return string
-     */
-    public function getMember()
-    {
-        return $this->_member;
-    }
-
-    /**
-     * Defined by Zend_Auth_Storage_Interface
-     *
-     * @return boolean
-     */
-    public function isEmpty()
-    {
-        return !isset($this->_session->{$this->_member});
-    }
-
-    /**
-     * Defined by Zend_Auth_Storage_Interface
-     *
-     * @return mixed
-     */
-    public function read()
-    {
-        return $this->_session->{$this->_member};
-    }
-
-    /**
-     * Defined by Zend_Auth_Storage_Interface
-     *
-     * @param  mixed $contents
-     * @return void
-     */
-    public function write($contents)
-    {
-        $this->_session->{$this->_member} = $contents;
-    }
-
-    /**
-     * Defined by Zend_Auth_Storage_Interface
-     *
-     * @return void
-     */
-    public function clear()
-    {
-        unset($this->_session->{$this->_member});
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+T0+ypfy2+m==

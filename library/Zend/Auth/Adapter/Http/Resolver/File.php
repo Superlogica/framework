@@ -1,167 +1,51 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Auth
- * @subpackage Zend_Auth_Adapter_Http
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: File.php 8862 2008-03-16 15:36:00Z thomas $
- */
-
-
-/**
- * @see Zend_Auth_Adapter_Http_Resolver_Interface
- */
-require_once 'Zend/Auth/Adapter/Http/Resolver/Interface.php';
-
-
-/**
- * HTTP Authentication File Resolver
- *
- * @category   Zend
- * @package    Zend_Auth
- * @subpackage Zend_Auth_Adapter_Http
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Auth_Adapter_Http_Resolver_File implements Zend_Auth_Adapter_Http_Resolver_Interface
-{
-    /**
-     * Path to credentials file
-     *
-     * @var string
-     */
-    protected $_file;
-
-    /**
-     * Constructor
-     *
-     * @param  string $path Complete filename where the credentials are stored
-     * @return void
-     */
-    public function __construct($path = '')
-    {
-        if (!empty($path)) {
-            $this->setFile($path);
-        }
-    }
-
-    /**
-     * Set the path to the credentials file
-     *
-     * @param  string $path
-     * @throws Zend_Auth_Adapter_Http_Resolver_Exception
-     * @return Zend_Auth_Adapter_Http_Resolver_File Provides a fluent interface
-     */
-    public function setFile($path)
-    {
-        if (empty($path) || !is_readable($path)) {
-            /**
-             * @see Zend_Auth_Adapter_Http_Resolver_Exception
-             */
-            require_once 'Zend/Auth/Adapter/Http/Resolver/Exception.php';
-            throw new Zend_Auth_Adapter_Http_Resolver_Exception('Path not readable: ' . $path);
-        }
-        $this->_file = $path;
-
-        return $this;
-    }
-
-    /**
-     * Returns the path to the credentials file
-     *
-     * @return string
-     */
-    public function getFile()
-    {
-        return $this->_file;
-    }
-
-    /**
-     * Resolve credentials
-     *
-     * Only the first matching username/realm combination in the file is
-     * returned. If the file contains credentials for Digest authentication,
-     * the returned string is the password hash, or h(a1) from RFC 2617. The
-     * returned string is the plain-text password for Basic authentication.
-     *
-     * The expected format of the file is:
-     *   username:realm:sharedSecret
-     *
-     * That is, each line consists of the user's username, the applicable
-     * authentication realm, and the password or hash, each delimited by
-     * colons.
-     *
-     * @param  string $username Username
-     * @param  string $realm    Authentication Realm
-     * @throws Zend_Auth_Adapter_Http_Resolver_Exception
-     * @return string|false User's shared secret, if the user is found in the
-     *         realm, false otherwise.
-     */
-    public function resolve($username, $realm)
-    {
-        if (empty($username)) {
-            /**
-             * @see Zend_Auth_Adapter_Http_Resolver_Exception
-             */
-            require_once 'Zend/Auth/Adapter/Http/Resolver/Exception.php';
-            throw new Zend_Auth_Adapter_Http_Resolver_Exception('Username is required');
-        } else if (!ctype_print($username) || strpos($username, ':') !== false) {
-            /**
-             * @see Zend_Auth_Adapter_Http_Resolver_Exception
-             */
-            require_once 'Zend/Auth/Adapter/Http/Resolver/Exception.php';
-            throw new Zend_Auth_Adapter_Http_Resolver_Exception('Username must consist only of printable characters, '
-                                                              . 'excluding the colon');
-        }
-        if (empty($realm)) {
-            /**
-             * @see Zend_Auth_Adapter_Http_Resolver_Exception
-             */
-            require_once 'Zend/Auth/Adapter/Http/Resolver/Exception.php';
-            throw new Zend_Auth_Adapter_Http_Resolver_Exception('Realm is required');
-        } else if (!ctype_print($realm) || strpos($realm, ':') !== false) {
-            /**
-             * @see Zend_Auth_Adapter_Http_Resolver_Exception
-             */
-            require_once 'Zend/Auth/Adapter/Http/Resolver/Exception.php';
-            throw new Zend_Auth_Adapter_Http_Resolver_Exception('Realm must consist only of printable characters, '
-                                                              . 'excluding the colon.');
-        }
-
-        // Open file, read through looking for matching credentials
-        $fp = @fopen($this->_file, 'r');
-        if (!$fp) {
-            /**
-             * @see Zend_Auth_Adapter_Http_Resolver_Exception
-             */
-            require_once 'Zend/Auth/Adapter/Http/Resolver/Exception.php';
-            throw new Zend_Auth_Adapter_Http_Resolver_Exception('Unable to open password file: ' . $this->_file);
-        }
-
-        // No real validation is done on the contents of the password file. The
-        // assumption is that we trust the administrators to keep it secure.
-        while (($line = fgetcsv($fp, 512, ':')) !== false) {
-            if ($line[0] == $username && $line[1] == $realm) {
-                $password = $line[2];
-                fclose($fp);
-                return $password;
-            }
-        }
-
-        fclose($fp);
-        return false;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+N6s2EjFMIZUrc/NHEIAVifcvJJ8=

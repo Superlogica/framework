@@ -1,441 +1,116 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @package    Zend_Pdf
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-
-/** Zend_Pdf_ElementFactory_Interface */
-require_once 'Zend/Pdf/ElementFactory/Interface.php';
-
-/** Zend_Pdf_ElementFactory_Proxy */
-require_once 'Zend/Pdf/ElementFactory/Proxy.php';
-
-/** Zend_Pdf_Element */
-require_once 'Zend/Pdf/Element.php';
-
-/** Zend_Pdf_Element_Array */
-require_once 'Zend/Pdf/Element/Array.php';
-
-/** Zend_Pdf_Element_String_Binary */
-require_once 'Zend/Pdf/Element/String/Binary.php';
-
-/** Zend_Pdf_Element_Boolean */
-require_once 'Zend/Pdf/Element/Boolean.php';
-
-/** Zend_Pdf_Element_Dictionary */
-require_once 'Zend/Pdf/Element/Dictionary.php';
-
-/** Zend_Pdf_Element_Name */
-require_once 'Zend/Pdf/Element/Name.php';
-
-/** Zend_Pdf_Element_Numeric */
-require_once 'Zend/Pdf/Element/Numeric.php';
-
-/** Zend_Pdf_Element_Object */
-require_once 'Zend/Pdf/Element/Object.php';
-
-/** Zend_Pdf_Element_Reference */
-require_once 'Zend/Pdf/Element/Reference.php';
-
-/** Zend_Pdf_Element_Object_Stream */
-require_once 'Zend/Pdf/Element/Object/Stream.php';
-
-/** Zend_Pdf_Element_String */
-require_once 'Zend/Pdf/Element/String.php';
-
-/** Zend_Pdf_Element_Null */
-require_once 'Zend/Pdf/Element/Null.php';
-
-/** Zend_Pdf_UpdateInfoContainer */
-require_once 'Zend/Pdf/UpdateInfoContainer.php';
-
-
-/**
- * PDF element factory.
- * Responsibility is to log PDF changes
- *
- * @package    Zend_Pdf
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Pdf_ElementFactory implements Zend_Pdf_ElementFactory_Interface
-{
-    /**
-     * List of the modified objects.
-     * Also contains new and removed objects
-     *
-     * Array: ojbectNumber => Zend_Pdf_Element_Object
-     *
-     * @var array
-     */
-    private $_modifiedObjects = array();
-
-    /**
-     * List of the removed objects
-     *
-     * Array: ojbectNumber => Zend_Pdf_Element_Object
-     *
-     * @var array
-     */
-    private $_removedObjects = array();
-
-    /**
-     * List of registered objects.
-     * Used for resources clean up when factory is destroyed.
-     *
-     * Array of Zend_Pdf_Element objects
-     *
-     * @var array
-     */
-    private $_registeredObjects = array();
-
-    /**
-     * PDF object counter.
-     * Actually it's an object number for new PDF object
-     *
-     * @var integer
-     */
-    private $_objectCount;
-
-
-    /**
-     * List of the attached object factories.
-     * Array of Zend_Pdf_ElementFactory_Interface objects
-     *
-     * @var array
-     */
-    private $_attachedFactories = array();
-
-
-    /**
-     * Factory internal id
-     *
-     * @var integer
-     */
-    private $_factoryId;
-
-    /**
-     * Identity, used for factory id generation
-     *
-     * @var integer
-     */
-    private static $_identity = 0;
-
-
-    /**
-     * Internal cache to save calculated shifts
-     *
-     * @var array
-     */
-    private $_shiftCalculationCache = array();
-
-
-    /**
-     * Object constructor
-     *
-     * @param integer $objCount
-     */
-    public function __construct($objCount)
-    {
-        $this->_objectCount       = (int)$objCount;
-        $this->_factoryId         = self::$_identity++;
-    }
-
-
-    /**
-     * Factory generator
-     *
-     * @param integer $objCount
-     * @return Zend_Pdf_ElementFactory_Interface
-     */
-    static public function createFactory($objCount)
-    {
-        return new Zend_Pdf_ElementFactory_Proxy(new Zend_Pdf_ElementFactory($objCount));
-    }
-
-    /**
-     * Close factory and clean-up resources
-     *
-     * @internal
-     */
-    public function close()
-    {
-        $this->_modifiedObjects   = null;
-        $this->_removedObjects    = null;
-        $this->_attachedFactories = null;
-
-        foreach ($this->_registeredObjects as $obj) {
-            $obj->cleanUp();
-        }
-        $this->_registeredObjects = null;
-    }
-
-    /**
-     * Get source factory object
-     *
-     * @return Zend_Pdf_ElementFactory
-     */
-    public function resolve()
-    {
-        return $this;
-    }
-
-    /**
-     * Get factory ID
-     *
-     * @return integer
-     */
-    public function getId()
-    {
-        return $this->_factoryId;
-    }
-
-    /**
-     * Set object counter
-     *
-     * @param integer $objCount
-     */
-    public function setObjectCount($objCount)
-    {
-        $this->_objectCount = (int)$objCount;
-    }
-
-    /**
-     * Get object counter
-     *
-     * @return integer
-     */
-    public function getObjectCount()
-    {
-        $count = $this->_objectCount;
-
-        foreach ($this->_attachedFactories as $attached) {
-            $count += $attached->getObjectCount() - 1; // -1 as "0" object is a special case and shared between factories
-        }
-
-        return $count;
-    }
-
-
-    /**
-     * Attach factory to the current;
-     *
-     * @param Zend_Pdf_ElementFactory_Interface $factory
-     */
-    public function attach(Zend_Pdf_ElementFactory_Interface $factory)
-    {
-        if ( $factory === $this || isset($this->_attachedFactories[$factory->getId()])) {
-            /**
-             * Don't attach factory twice.
-             * We do not check recusively because of nature of attach operation
-             * (Pages are always attached to the Documents, Fonts are always attached
-             * to the pages even if pages already use Document level object factory and so on)
-             */
-            return;
-        }
-
-        $this->_attachedFactories[$factory->getId()] = $factory;
-    }
-
-
-    /**
-     * Calculate object enumeration shift.
-     *
-     * @internal
-     * @param Zend_Pdf_ElementFactory_Interface $factory
-     * @return integer
-     */
-    public function calculateShift(Zend_Pdf_ElementFactory_Interface $factory)
-    {
-        if ($factory === $this) {
-            return 0;
-        }
-
-        if (isset($this->_shiftCalculationCache[$factory->_factoryId])) {
-            return $this->_shiftCalculationCache[$factory->_factoryId];
-        }
-
-        $shift = $this->_objectCount - 1;
-
-        foreach ($this->_attachedFactories as $subFactory) {
-            $subFactoryShift = $subFactory->calculateShift($factory);
-
-            if ($subFactoryShift != -1) {
-                // context found
-                $this->_shiftCalculationCache[$factory->_factoryId] = $shift + $subFactoryShift;
-                return $shift + $subFactoryShift;
-            } else {
-                $shift += $subFactory->getObjectCount()-1;
-            }
-        }
-
-        $this->_shiftCalculationCache[$factory->_factoryId] = -1;
-        return -1;
-    }
-
-    /**
-     * Retrive object enumeration shift.
-     *
-     * @param Zend_Pdf_ElementFactory_Interface $factory
-     * @return integer
-     * @throws Zend_Pdf_Exception
-     */
-    public function getEnumerationShift(Zend_Pdf_ElementFactory_Interface $factory)
-    {
-        if (($shift = $this->calculateShift($factory)) == -1) {
-            throw new Zend_Pdf_Exception('Wrong object context');
-        }
-
-        return $shift;
-    }
-
-    /**
-     * Mark object as modified in context of current factory.
-     *
-     * @param Zend_Pdf_Element_Object $obj
-     * @throws Zend_Pdf_Exception
-     */
-    public function markAsModified(Zend_Pdf_Element_Object $obj)
-    {
-        if ($obj->getFactory() !== $this) {
-            throw new Zend_Pdf_Exception('Object is not generated by this factory');
-        }
-
-        $this->_modifiedObjects[$obj->getObjNum()] = $obj;
-    }
-
-
-    /**
-     * Remove object in context of current factory.
-     *
-     * @param Zend_Pdf_Element_Object $obj
-     * @throws Zend_Pdf_Exception
-     */
-    public function remove(Zend_Pdf_Element_Object $obj)
-    {
-        if (!$obj->compareFactory($this)) {
-            throw new Zend_Pdf_Exception('Object is not generated by this factory');
-        }
-
-        $this->_modifiedObjects[$obj->getObjNum()] = $obj;
-        $this-> _removedObjects[$obj->getObjNum()] = $obj;
-    }
-
-
-    /**
-     * Generate new Zend_Pdf_Element_Object
-     *
-     * @todo Reusage of the freed object. It's not a support of new feature, but only improvement.
-     *
-     * @param Zend_Pdf_Element $objectValue
-     * @return Zend_Pdf_Element_Object
-     */
-    public function newObject(Zend_Pdf_Element $objectValue)
-    {
-        $obj = new Zend_Pdf_Element_Object($objectValue, $this->_objectCount++, 0, $this);
-        $this->_modifiedObjects[$obj->getObjNum()] = $obj;
-        return $obj;
-    }
-
-    /**
-     * Generate new Zend_Pdf_Element_Object_Stream
-     *
-     * @todo Reusage of the freed object. It's not a support of new feature, but only improvement.
-     *
-     * @param mixed $objectValue
-     * @return Zend_Pdf_Element_Object_Stream
-     */
-    public function newStreamObject($streamValue)
-    {
-        $obj = new Zend_Pdf_Element_Object_Stream($streamValue, $this->_objectCount++, 0, $this);
-        $this->_modifiedObjects[$obj->getObjNum()] = $obj;
-        return $obj;
-    }
-
-
-    /**
-     * Enumerate modified objects.
-     * Returns array of Zend_Pdf_UpdateInfoContainer
-     *
-     * @param Zend_Pdf_ElementFactory_Interface $rootFactory
-     * @return array
-     */
-    public function listModifiedObjects($rootFactory = null)
-    {
-        if ($rootFactory == null) {
-            $rootFactory = $this;
-            $shift = 0;
-        } else {
-            $shift = $rootFactory->getEnumerationShift($this);
-        }
-
-        ksort($this->_modifiedObjects);
-
-        $result = array();
-        foreach ($this->_modifiedObjects as $objNum => $obj) {
-            if (key_exists($objNum, $this->_removedObjects)) {
-                $result[$objNum+$shift] = new Zend_Pdf_UpdateInfoContainer($objNum + $shift,
-                                                                           $obj->getGenNum()+1,
-                                                                           true);
-            } else {
-                $result[$objNum+$shift] = new Zend_Pdf_UpdateInfoContainer($objNum + $shift,
-                                                                           $obj->getGenNum(),
-                                                                           false,
-                                                                           $obj->dump($rootFactory));
-            }
-        }
-
-        foreach ($this->_attachedFactories as $factory) {
-            $result += $factory->listModifiedObjects($rootFactory);
-        }
-
-        return $result;
-    }
-
-    /**
-     * Register object in the factory
-     *
-     * It's used to clear "parent object" referencies when factory is closed and clean up resources
-     *
-     * @param Zend_Pdf_Element_Object $obj
-     */
-    public function registerObject($obj)
-    {
-        $this->_registeredObjects[] = $obj;
-    }
-
-    /**
-     * Check if PDF file was modified
-     *
-     * @return boolean
-     */
-    public function isModified()
-    {
-        if (count($this->_modifiedObjects) != 0) {
-            return true;
-        }
-
-        foreach ($this->_attachedFactories as $subFactory) {
-            if ($subFactory->isModified()) {
-                return true;
-            }
-        }
-
-        return false;
-    }
-}
-
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+RIms1ZHu8KrWVd0Pb7atpuM+ETLvrG==

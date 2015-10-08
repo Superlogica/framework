@@ -1,202 +1,34 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @package    Zend_Pdf
- * @subpackage FileParser
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * Abstract helper class for {@link Zend_Pdf_FileParser} that provides the
- * data source for parsing.
- *
- * Concrete subclasses allow for parsing of in-memory, filesystem, and other
- * sources through a common API. These subclasses also take care of error
- * handling and other mundane tasks.
- *
- * Subclasses must implement at minimum {@link __construct()},
- * {@link __destruct()}, {@link readBytes()}, and {@link readAllBytes()}.
- * Subclasses should also override {@link moveToOffset()} and
- * {@link __toString()} as appropriate.
- *
- * @package    Zend_Pdf
- * @subpackage FileParser
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-abstract class Zend_Pdf_FileParserDataSource
-{
-  /**** Instance Variables ****/
-
-
-    /**
-     * Total size in bytes of the data source.
-     * @var integer
-     */
-    protected $_size = 0;
-
-    /**
-     * Byte offset of the current read position within the data source.
-     * @var integer
-     */
-    protected $_offset = 0;
-
-
-
-  /**** Public Interface ****/
-
-
-  /* Abstract Methods */
-
-    /**
-     * Object constructor. Opens the data source for parsing.
-     *
-     * Must set $this->_size to the total size in bytes of the data source.
-     *
-     * Upon return the data source can be interrogated using the primitive
-     * methods described here.
-     *
-     * If the data source cannot be opened for any reason (such as insufficient
-     * permissions, missing file, etc.), will throw an appropriate exception.
-     *
-     * @throws Zend_Pdf_Exception
-     */
-    abstract public function __construct();
-
-    /**
-     * Object destructor. Closes the data source.
-     *
-     * May also perform cleanup tasks such as deleting temporary files.
-     */
-    abstract public function __destruct();
-
-    /**
-     * Returns the specified number of raw bytes from the data source at the
-     * byte offset of the current read position.
-     *
-     * Must advance the read position by the number of bytes read by updating
-     * $this->_offset.
-     *
-     * Throws an exception if there is insufficient data to completely fulfill
-     * the request or if an error occurs.
-     *
-     * @param integer $byteCount Number of bytes to read.
-     * @return string
-     * @throws Zend_Pdf_Exception
-     */
-    abstract public function readBytes($byteCount);
-
-    /**
-     * Returns the entire contents of the data source as a string.
-     *
-     * This method may be called at any time and so must preserve the byte
-     * offset of the read position, both through $this->_offset and whatever
-     * other additional pointers (such as the seek position of a file pointer)
-     * that might be used.
-     *
-     * @return string
-     */
-    abstract public function readAllBytes();
-
-
-  /* Object Magic Methods */
-
-    /**
-     * Returns a description of the object for debugging purposes.
-     *
-     * Subclasses should override this method to provide a more specific
-     * description of the actual object being represented.
-     *
-     * @return string
-     */
-    public function __toString()
-    {
-        return get_class($this);
-    }
-
-
-  /* Accessors */
-
-    /**
-     * Returns the byte offset of the current read position within the data
-     * source.
-     *
-     * @return integer
-     */
-    public function getOffset()
-    {
-        return $this->_offset;
-    }
-
-    /**
-     * Returns the total size in bytes of the data source.
-     *
-     * @return integer
-     */
-    public function getSize()
-    {
-        return $this->_size;
-    }
-
-
-  /* Primitive Methods */
-
-    /**
-     * Moves the current read position to the specified byte offset.
-     *
-     * Throws an exception you attempt to move before the beginning or beyond
-     * the end of the data source.
-     *
-     * If a subclass needs to perform additional tasks (such as performing a
-     * fseek() on a filesystem source), it should do so after calling this
-     * parent method.
-     *
-     * @param integer $offset Destination byte offset.
-     * @throws Zend_Pdf_Exception
-     */
-    public function moveToOffset($offset)
-    {
-        if ($this->_offset == $offset) {
-            return;    // Not moving; do nothing.
-        }
-        if ($offset < 0) {
-            require_once 'Zend/Pdf/Exception.php';
-            throw new Zend_Pdf_Exception('Attempt to move before start of data source',
-                                         Zend_Pdf_Exception::MOVE_BEFORE_START_OF_FILE);
-        }
-        if ($offset >= $this->_size) {    // Offsets are zero-based.
-            require_once 'Zend/Pdf/Exception.php';
-            throw new Zend_Pdf_Exception('Attempt to move beyond end of data source',
-                                         Zend_Pdf_Exception::MOVE_BEYOND_END_OF_FILE);
-        }
-        $this->_offset = $offset;
-    }
-
-    /**
-     * Shifts the current read position within the data source by the specified
-     * number of bytes.
-     *
-     * You may move forward (positive numbers) or backward (negative numbers).
-     * Throws an exception you attempt to move before the beginning or beyond
-     * the end of the data source.
-     *
-     * @param integer $byteCount Number of bytes to skip.
-     * @throws Zend_Pdf_Exception
-     */
-    public function skipBytes($byteCount)
-    {
-        $this->moveToOffset($this->_offset + $byteCount);
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

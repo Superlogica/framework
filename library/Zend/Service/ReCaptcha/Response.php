@@ -1,159 +1,39 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Service
- * @subpackage ReCaptcha
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * Zend_Service_ReCaptcha_Response
- *
- * @category   Zend
- * @package    Zend_Service
- * @subpackage ReCaptcha
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id$
- */
-class Zend_Service_ReCaptcha_Response
-{
-    /**
-     * Status
-     *
-     * true if the response is valid or false otherwise
-     *
-     * @var boolean
-     */
-    protected $_status = null;
-
-    /**
-     * Error code
-     *
-     * The error code if the status is false. The different error codes can be found in the
-     * recaptcha API docs.
-     *
-     * @var string
-     */
-    protected $_errorCode = null;
-
-    /**
-     * Class constructor used to construct a response
-     *
-     * @param string $status
-     * @param string $errorCode
-     * @param Zend_Http_Response $httpResponse If this is set the content will override $status and $errorCode
-     */
-    public function __construct($status = null, $errorCode = null, Zend_Http_Response $httpResponse = null)
-    {
-        if ($status !== null) {
-            $this->setStatus($status);
-        }
-
-        if ($errorCode !== null) {
-            $this->setErrorCode($errorCode);
-        }
-
-        if ($httpResponse !== null) {
-            $this->setFromHttpResponse($httpResponse);
-        }
-    }
-
-    /**
-     * Set the status
-     *
-     * @param string $status
-     * @return Zend_Service_ReCaptcha_Response
-     */
-    public function setStatus($status)
-    {
-        if ($status === 'true') {
-            $this->_status = true;
-        } else {
-            $this->_status = false;
-        }
-
-        return $this;
-    }
-
-    /**
-     * Get the status
-     *
-     * @return boolean
-     */
-    public function getStatus()
-    {
-        return $this->_status;
-    }
-
-    /**
-     * Alias for getStatus()
-     *
-     * @return boolean
-     */
-    public function isValid()
-    {
-        return $this->getStatus();
-    }
-
-    /**
-     * Set the error code
-     *
-     * @param string $errorCode
-     * @return Zend_Service_ReCaptcha_Response
-     */
-    public function setErrorCode($errorCode)
-    {
-        $this->_errorCode = $errorCode;
-
-        return $this;
-    }
-
-    /**
-     * Get the error code
-     *
-     * @return string
-     */
-    public function getErrorCode()
-    {
-        return $this->_errorCode;
-    }
-
-    /**
-     * Populate this instance based on a Zend_Http_Response object
-     *
-     * @param Zend_Http_Response $response
-     * @return Zend_Service_ReCaptcha_Response
-     */
-    public function setFromHttpResponse(Zend_Http_Response $response)
-    {
-        $body = $response->getBody();
-
-        $parts = explode("\n", $body, 2);
-
-        if (count($parts) !== 2) {
-            $status = 'false';
-            $errorCode = '';
-        } else {
-            list($status, $errorCode) = $parts;
-        }
-
-        $this->setStatus($status);
-        $this->setErrorCode($errorCode);
-
-        return $this;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

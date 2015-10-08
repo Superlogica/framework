@@ -1,143 +1,41 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_View
- * @subpackage Helper
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * Helper for returning the current server URL (optionally with request URI)
- *
- * @category   Zend
- * @package    Zend_View
- * @subpackage Helper
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_View_Helper_ServerUrl
-{
-    /**
-     * Scheme
-     *
-     * @var string
-     */
-    protected $_scheme;
-
-    /**
-     * Host (including port)
-     *
-     * @var string
-     */
-    protected $_host;
-
-    /**
-     * Constructor
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        if (isset($_SERVER['HTTPS']) && ($_SERVER['HTTPS'] == 'on' || $_SERVER['HTTPS'] === true)) {
-            $scheme = 'https';
-        } else {
-            $scheme = 'http';
-        }
-        $this->setScheme($scheme);
-
-        if (isset($_SERVER['HTTP_HOST']) && !empty($_SERVER['HTTP_HOST'])) {
-            $this->setHost($_SERVER['HTTP_HOST']);
-        } else if (isset($_SERVER['SERVER_NAME'], $_SERVER['SERVER_PORT'])) {
-            $name = $_SERVER['SERVER_NAME'];
-            $port = $_SERVER['SERVER_PORT'];
-
-            if (($scheme == 'http' && $port == 80) ||
-                ($scheme == 'https' && $port == 443)) {
-                $this->setHost($name);
-            } else {
-                $this->setHost($name . ':' . $port);
-            }
-        }
-    }
-
-    /**
-     * View helper entry point:
-     * Returns the current host's URL like http://site.com
-     *
-     * @param  string|boolean $requestUri  [optional] if true, the request URI
-     *                                     found in $_SERVER will be appended
-     *                                     as a path. If a string is given, it
-     *                                     will be appended as a path. Default
-     *                                     is to not append any path.
-     * @return string                      server url
-     */
-    public function serverUrl($requestUri = null)
-    {
-        if ($requestUri === true) {
-            $path = $_SERVER['REQUEST_URI'];
-        } else if (is_string($requestUri)) {
-            $path = $requestUri;
-        } else {
-            $path = '';
-        }
-
-        return $this->getScheme() . '://' . $this->getHost() . $path;
-    }
-
-    /**
-     * Returns host
-     *
-     * @return string  host
-     */
-    public function getHost()
-    {
-        return $this->_host;
-    }
-
-    /**
-     * Sets host
-     *
-     * @param  string $host                new host
-     * @return Zend_View_Helper_ServerUrl  fluent interface, returns self
-     */
-    public function setHost($host)
-    {
-        $this->_host = $host;
-        return $this;
-    }
-
-    /**
-     * Returns scheme (typically http or https)
-     *
-     * @return string  scheme (typically http or https)
-     */
-    public function getScheme()
-    {
-        return $this->_scheme;
-    }
-
-    /**
-     * Sets scheme (typically http or https)
-     *
-     * @param  string $scheme              new scheme (typically http or https)
-     * @return Zend_View_Helper_ServerUrl  fluent interface, returns self
-     */
-    public function setScheme($scheme)
-    {
-        $this->_scheme = $scheme;
-        return $this;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

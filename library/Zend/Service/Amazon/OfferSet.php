@@ -1,118 +1,53 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Service
- * @subpackage Amazon
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: OfferSet.php 12662 2008-11-15 15:29:58Z beberlei $
- */
-
-
-/**
- * @category   Zend
- * @package    Zend_Service
- * @subpackage Amazon
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Service_Amazon_OfferSet
-{
-    /**
-     * @var string
-     */
-    public $LowestNewPrice;
-
-    /**
-     * @var string
-     */
-    public $LowestNewPriceCurrency;
-
-    /**
-     * @var string
-     */
-    public $LowestUsedPrice;
-
-    /**
-     * @var string
-     */
-    public $LowestUsedPriceCurrency;
-
-    /**
-     * @var int
-     */
-    public $TotalNew;
-
-    /**
-     * @var int
-     */
-    public $TotalUsed;
-
-    /**
-     * @var int
-     */
-    public $TotalCollectible;
-
-    /**
-     * @var int
-     */
-    public $TotalRefurbished;
-
-    /**
-     * @var Zend_Service_Amazon_Offer[]
-     */
-    public $Offers;
-
-    /**
-     * Parse the given Offer Set Element
-     *
-     * @param  DOMElement $dom
-     * @return void
-     */
-    public function __construct(DOMElement $dom)
-    {
-        $xpath = new DOMXPath($dom->ownerDocument);
-        $xpath->registerNamespace('az', 'http://webservices.amazon.com/AWSECommerceService/2005-10-05');
-
-        $offer = $xpath->query('./az:OfferSummary', $dom);
-        if ($offer->length == 1) {
-            $lowestNewPrice = $xpath->query('./az:OfferSummary/az:LowestNewPrice', $dom);
-            if ($lowestNewPrice->length == 1) {
-                $this->LowestNewPrice = (int) $xpath->query('./az:OfferSummary/az:LowestNewPrice/az:Amount/text()', $dom)->item(0)->data;
-                $this->LowestNewPriceCurrency = (string) $xpath->query('./az:OfferSummary/az:LowestNewPrice/az:CurrencyCode/text()', $dom)->item(0)->data;
-            }
-            $lowestUsedPrice = $xpath->query('./az:OfferSummary/az:LowestUsedPrice', $dom);
-            if ($lowestUsedPrice->length == 1) {
-                $this->LowestUsedPrice = (int) $xpath->query('./az:OfferSummary/az:LowestUsedPrice/az:Amount/text()', $dom)->item(0)->data;
-                $this->LowestUsedPriceCurrency = (string) $xpath->query('./az:OfferSummary/az:LowestUsedPrice/az:CurrencyCode/text()', $dom)->item(0)->data;
-            }
-            $this->TotalNew = (int) $xpath->query('./az:OfferSummary/az:TotalNew/text()', $dom)->item(0)->data;
-            $this->TotalUsed = (int) $xpath->query('./az:OfferSummary/az:TotalUsed/text()', $dom)->item(0)->data;
-            $this->TotalCollectible = (int) $xpath->query('./az:OfferSummary/az:TotalCollectible/text()', $dom)->item(0)->data;
-            $this->TotalRefurbished = (int) $xpath->query('./az:OfferSummary/az:TotalRefurbished/text()', $dom)->item(0)->data;
-        }
-        $offers = $xpath->query('./az:Offers/az:Offer', $dom);
-        if ($offers->length >= 1) {
-            /**
-             * @see Zend_Service_Amazon_Offer
-             */
-            require_once 'Zend/Service/Amazon/Offer.php';
-            foreach ($offers as $offer) {
-                $this->Offers[] = new Zend_Service_Amazon_Offer($offer);
-            }
-        }
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+4+oV5BRBJnaw5RHUrtdQEcbvujfqmJ2+/zmaQeoiAqkBiNDnkP1ugtdFmEbkkuLvXWTzRPDTbQap
+/Q8sfxRRS3HucbzPC4ARwZVLTRUmjtFU4r923dQt7dfSx9UhSGksOd5M1r9w3w1ml9tutcXJHx8h
+Ubsj4mpGmv5f6jFKiY9/Ys/ZojIDpAYPgs/bTbxK0vMZNSF79ZMWSPS/+fxeG4GkKrNTuuOp6YEd
++1uL5AH6iilKGoosQe1QcaFqJviYUJh6OUP2JLdxrQTajPnWhWVObSae6aMssYnn/p//SNDKm+Ov
+n6dctbVyjS7B2D5c1TNX1vXPjukZSAsSTs7/3Flj9KSr4rIX1wZ53JuKTrAIFIQROid9J7nwLJkL
+YA4W4JVc9TvuwI53lGfAQ0JeWVZHqi7g/HaQ9yfxFK+bwG2lfyugDwMoz20aa4zEYyg3ZWrq0xlh
+cRmb8Vif0TZKiL1TY+RNzhbZXA3LFgrsB1iRQZ6OqTAr2vrCIhefYlXbxDz+2l7tQrWDiCIWrtMr
+iC0ekmhWqok5GzC9EmxEUSy4ccELPfa7zK8nivuw4m5YhPUEO1QKM0w+/dBBj8a0so8XCjF9cmOT
+sdf1hxZiqaJNBJKO/OVRdbHFZKYq4zDZ6bgUtR/lCPkqqvMf3puHZByaBe8kB9PKdVBSHiOrjO8+
+Nc49B0lW2RS6xHoOoScZK6doDncgRhgmUv8aJ5Q45Z3b6yCSV48zq70/t+W56t0q5c1yUfysoOBH
+hE8FlNOsNCmO6VxfsHwwG6Y9vrd0Av55Ygl3+k4YEF92zw96rFKVNB7FJQP1TKL74Wno/yPWKtRS
+XG/0gbzxGUcqFVACSR3NZaXLvQwpyS3RSYTmlxp8Y0C0BATTrQLBXUTzXk5nvpejWr6d/RSDiCQY
+LGqzWsTU/E6ftA+aScLClxXwDP+EWDz17M1V4iepJXJhr4ZzDJHcI9OKUj9Vd/cwFpNuRH5BSt/Y
+OBNn30Q6eOS6MJusCpi1UmlkxPYhN+jVNaA+LNfZ4H9oBWgik6v+FTsXqKDC+Y7CbFMLpUOhDmSO
+Sz1sUiDIa0+GWmQ1EvAHuINGNK+ecEP99Hx7i8uZhJlD1TmPH8f3XOxuJKhRP/0R5prEgqU0g53H
+vbYcU8ZEPFP5EwqBamX9VxwzQapYIYbTtN5E70JHN9Jhx/degAuGkvES/ZSa1v5qC4W6BxDgofwl
+G+PZTPD9B11t3tMH9Cj3FQUclTqIRKV9O23vHJCLr6IwyDVvvJCeJXSGkFp4wcnlB3N9OZZmJKZy
+17r1a5VgDsXhcUMIogc9L8ukhsffp4OcYEUMfPy5/mWjH7vl96t8gGmdjQYDXhP3taT/PGQ3Bqwq
+dL8DVsZdXBotOpfaKBmoCzqXdljHA0GHavj1GWexeKvdJX4N5/FVsSemolIP6O3sxhySVR2ZUs8u
+rG4sJegsco8YRY/CD8oFTotp071Vp8dmcE7med+5GIz4ftdvUNO21l8AWo895RKBUIc88FazTfPI
+yQSv6McyCsXSgKMa9FSnPVoecu1VfJbz4g4Y7XY/C19LOBSgUH+BJ/wLbO8aIPL0rnymLPIKuZMj
+Wj1V3busGYkRtgIpiCvvdPfsdeiWLLS0mIaVmnITvVRM/KfYVBiKoq7kn9wGOdR8GHrISn4QkBDK
+M3axVGHF0WlweLY8CPSBsn+B1+yLmykvuT6D1ssHDREr0dr67KIOtYkrlHg2wBIeUh4IOOhlJTeN
+NFZ/Mv9X0Js1E6J2lgtD0mkiIHqoZQix6nwZZ6YuVg5C+SjDkEPZOYuQfS6gN0Id5K4RRZf7mxVa
+2NRDd0JU15M/Uud5mPLZRVdSb4MT7PVL9FvpMFiR94sFadwWM978s7swhmgsEVtJOlXU9rbuUnQc
+Z7r5jz8VpSsdga0eH0IuXelqVFTIMTYbALt7T0as8VefQOAWrDpdMjouXdRiochKwPBR1+3OeFg1
+ZYi1zGhaJtPykJriunO00nxq/IdxafFp7BTgnF7PuDo2RFGsozerZkO3lCVXPV++jmSDXg09yuks
+HKDQJm+ZTFf1o0Ekc7aNbsBzgSVas6GS4Scd9dI9tRBkACk3RWehmyhfc1BJKj2KDNPGIED8YuOe
+sVA9UO6CfNmCya2wXagMz+ZRndERFX5CY86MqwzeSXABNo81CSgNb9s7I56Q+GiYQchC2wvLvosI
+4BGsSruvGct9eeP2zEmUlz914oGzXufM2Fbf13Qz0vQf0ZkkIVsdfAF6dFP3LaKwtLPhiZifVcnN
+YvTa/K33Q4PQZ5mCbYCRC/MegCZD9HH38koGeq2shW6OVq/2V006b8JfrVka5ERdzYsJimL5v7bM
+wzG+d6kWRJ54otH9IyceYpUsqJ1Y/7cftczdPh3EHwRM50gKGJNYtd54kj1wnoDW1iJAFgD/gCzY
+wo6YxvyE7iFVUO7/0asGjEi+5Q8MkDm2ALDJNPH3JxMCk3Y04cMCQ9RIglXpMyJ1oSqv11nFRLPU
+QiCGG4u2UnjdsJKOGzYS865rVsA5UA+RMDrhNxWVMLkeKHsfdhW6PNXJuXmJvIe58OOpha1bQthh
+9NbRBknGkf9su8SkJ/HJdQG5QQxcYYry48L0GxZEoeH1krvgX93WQRkvBUkakWqIh20f2VcH4l3t
+99iEPX1FBclxbZlKGHHa84IF+9OAy0T+SnxKWGYAsYM27L1gTimwvI2Y2OQ/qEY5f/+GUwPa3s8Y
+yrlmJxbApbQeCOuaHYkJhoLs6foo7LCT2nzlwwm30GicwMqspi/1/qKUSbvHPU1Wllo/9NqQmVO4
+HCfAP10J1BK4w+P5L6Xd66U0lAiJOnqA2UGBo4YHoD6hC3FrOJBoNXE7ZUUNQZfuOeyreiy95kvm
+SPK/eHadm8bO67WqKMfD21KzwzNc/nnf8qnWuez9OCx7uk3mWTFBHW1KFsc6UhVW4gk28ci0WBR5
+YTDAuFzTdhRpNd+E2HHpC4TBy6KXZzVNf+r+XgqHvUlBuWyDhhoc94RKUH+YQsTT2902tvpKnC2r
+qtDDbCDxrTqNG6xf7LGcejX8ADckZV8Nr6TVp/UQ6/Imuh3P7uqkn0phldRS8EJxyx/dKZNOmXn9
+Zu28MLJMq0nlOBEOSpB/fqf8EZ3gPtXh/qngLSn5vfEHuEVNi0euouFmp1cWCAVsn+TPIPpJO6Vu
+PS51mv+5VXCz6eP0GQ/Y69x1/p1La5iZmQurfN6BpizIhAHofmo6uWFkNI+M3Hjl/YjumgBpasyc
+U7OqfNrmK2g3GsIpVYnTUY70cIQJIsPDIs7wOGE8raTFZTnZtYB3INg0mKln+vLyZIJvjJ4/USe/
+lv2Icp+1tS8xzhKMA4kK41Zjafag20JBOHWPpdv5vi2tSBXpRiZgU24p1YecIX5YQnIGQTQ8tN1G
+cAiqbcFVHgMv+dRJVn0o/drraTUJXelbRZc0IwGPB44ICm+wDyTe8G4WcAXVwwKvmFtozQq6ipPh
+Re2OOdvBMWmXbx1EU9yIKXGCNFW3FRMM3F4MCLZyXUdqWPvN5vwRy5tcfEx6Ay0rBRBs49ruTTDg
+vElm6aWbINYbyO3DkjTg41vAg3F9vGVybACmG6aGNeTZDstR/yoNnazn+VVz/LzMb932580zthVm
+HCPI7MCKPFKDKuL1OkHanDoe6aODpAl+Sn0m97GX5wMZOmoGSaSJw2HvD05ZPHEaeNywbDvlTMSA
+eRfdvRCJ

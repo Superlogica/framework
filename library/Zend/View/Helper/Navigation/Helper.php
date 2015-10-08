@@ -1,211 +1,32 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_View
- * @subpackage Helper
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * Interface for navigational helpers
- *
- * @category   Zend
- * @package    Zend_View
- * @subpackage Helper
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-interface Zend_View_Helper_Navigation_Helper
-{
-    /**
-     * Sets navigation container the helper should operate on by default
-     *
-     * @param  Zend_Navigation_Container $container  [optional] container to
-     *                                               operate on. Default is
-     *                                               null, which indicates that
-     *                                               the container should be
-     *                                               reset.
-     * @return Zend_View_Helper_Navigation_Helper    fluent interface, returns
-     *                                               self
-     */
-    public function setContainer(Zend_Navigation_Container $container = null);
-
-    /**
-     * Returns the navigation container the helper operates on by default
-     *
-     * @return Zend_Navigation_Container  navigation container
-     */
-    public function getContainer();
-
-    /**
-     * Sets translator to use in helper
-     *
-     * @param  mixed $translator                   [optional] translator.
-     *                                             Expects an object of type
-     *                                             {@link Zend_Translate_Adapter}
-     *                                             or {@link Zend_Translate},
-     *                                             or null. Default is null.
-     * @return Zend_View_Helper_Navigation_Helper  fluent interface, returns
-     *                                             self
-     */
-    public function setTranslator($translator = null);
-
-    /**
-     * Returns translator used in helper
-     *
-     * @return Zend_Translate_Adapter|null  translator or null
-     */
-    public function getTranslator();
-
-    /**
-     * Sets ACL to use when iterating pages
-     *
-     * @param  Zend_Acl $acl                       [optional] ACL instance
-     * @return Zend_View_Helper_Navigation_Helper  fluent interface, returns
-     *                                             self
-     */
-    public function setAcl(Zend_Acl $acl = null);
-
-    /**
-     * Returns ACL or null if it isn't set using {@link setAcl()} or
-     * {@link setDefaultAcl()}
-     *
-     * @return Zend_Acl|null  ACL object or null
-     */
-    public function getAcl();
-
-    /**
-     * Sets ACL role to use when iterating pages
-     *
-     * @param  mixed $role                         [optional] role to set.
-     *                                             Expects a string, an
-     *                                             instance of type
-     *                                             {@link Zend_Acl_Role_Interface},
-     *                                             or null. Default is null.
-     * @throws Zend_View_Exception                 if $role is invalid
-     * @return Zend_View_Helper_Navigation_Helper  fluent interface, returns
-     *                                             self
-     */
-    public function setRole($role = null);
-
-    /**
-     * Returns ACL role to use when iterating pages, or null if it isn't set
-     *
-     * @return string|Zend_Acl_Role_Interface|null  role or null
-     */
-    public function getRole();
-
-    /**
-     * Sets whether ACL should be used
-     *
-     * @param  bool $useAcl                        [optional] whether ACL
-     *                                             should be used. Default is
-     *                                             true.
-     * @return Zend_View_Helper_Navigation_Helper  fluent interface, returns
-     *                                             self
-     */
-    public function setUseAcl($useAcl = true);
-
-    /**
-     * Returns whether ACL should be used
-     *
-     * @return bool  whether ACL should be used
-     */
-    public function getUseAcl();
-    
-    /**
-     * Return renderInvisible flag
-     *
-     * @return bool
-     */
-    public function getRenderInvisible();
-
-    /**
-     * Render invisible items?
-     *
-     * @param  bool $renderInvisible                       [optional] boolean flag
-     * @return Zend_View_Helper_Navigation_HelperAbstract  fluent interface
-     *                                                     returns self
-     */
-    public function setRenderInvisible($renderInvisible = true);
-
-    /**
-     * Sets whether translator should be used
-     *
-     * @param  bool $useTranslator                 [optional] whether
-     *                                             translator should be used.
-     *                                             Default is true.
-     * @return Zend_View_Helper_Navigation_Helper  fluent interface, returns
-     *                                             self
-     */
-    public function setUseTranslator($useTranslator = true);
-
-    /**
-     * Returns whether translator should be used
-     *
-     * @return bool  whether translator should be used
-     */
-    public function getUseTranslator();
-
-    /**
-     * Checks if the helper has a container
-     *
-     * @return bool  whether the helper has a container or not
-     */
-    public function hasContainer();
-
-    /**
-     * Checks if the helper has an ACL instance
-     *
-     * @return bool  whether the helper has a an ACL instance or not
-     */
-    public function hasAcl();
-
-    /**
-     * Checks if the helper has an ACL role
-     *
-     * @return bool  whether the helper has a an ACL role or not
-     */
-    public function hasRole();
-
-    /**
-     * Checks if the helper has a translator
-     *
-     * @return bool  whether the helper has a translator or not
-     */
-    public function hasTranslator();
-
-    /**
-     * Magic overload: Should proxy to {@link render()}.
-     *
-     * @return string
-     */
-    public function __toString();
-
-    /**
-     * Renders helper
-     *
-     * @param  Zend_Navigation_Container $container  [optional] container to
-     *                                               render. Default is null,
-     *                                               which indicates that the
-     *                                               helper should render the
-     *                                               container returned by
-     *                                               {@link getContainer()}.
-     * @return string                                helper output
-     * @throws Zend_View_Exception                   if unable to render
-     */
-    public function render(Zend_Navigation_Container $container = null);
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+cYHRaPY5fFSI44krHT7zD/cm/Y+t2hl5tm==

@@ -1,118 +1,28 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Service
- * @subpackage Technorati
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: KeyInfoResult.php 8064 2008-02-16 10:58:39Z thomas $
- */
-
-
-/**
- * Represents a single Technorati KeyInfo query result object.
- * It provides information about your Technorati API Key daily usage.
- * 
- * @category   Zend
- * @package    Zend_Service
- * @subpackage Technorati
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Service_Technorati_KeyInfoResult
-{
-    /**
-     * Technorati API key
-     *
-     * @var     string
-     * @access  protected
-     */
-    protected $_apiKey;
-
-    /**
-     * Number of queries used today
-     *
-     * @var     int
-     * @access  protected
-     */
-    protected $_apiQueries;
-
-    /**
-     * Total number of available queries per day
-     *
-     * @var     int
-     * @access  protected
-     */
-    protected $_maxQueries;
-    
-
-    /**
-     * Constructs a new object from DOM Element.
-     * Parses given Key element from $dom and sets API key string.
-     *
-     * @param   DomElement $dom the ReST fragment for this object
-     * @param   string $apiKey  the API Key string
-     */
-    public function __construct(DomDocument $dom, $apiKey = null)
-    {
-        // $this->_dom   = $dom;
-        // $this->_xpath = new DOMXPath($dom);
-        $xpath = new DOMXPath($dom);
-
-        $this->_apiQueries   = (int) $xpath->query('/tapi/document/result/apiqueries/text()')->item(0)->data;
-        $this->_maxQueries   = (int) $xpath->query('/tapi/document/result/maxqueries/text()')->item(0)->data;
-        $this->setApiKey($apiKey);
-    }
-    
-    
-    /**
-     * Returns API Key string.
-     * 
-     * @return  string  API Key string
-     */
-    public function getApiKey() {
-        return $this->_apiKey;
-    }
-    
-    /**
-     * Returns the number of queries sent today.
-     * 
-     * @return  int     number of queries sent today
-     */
-    public function getApiQueries() {
-        return $this->_apiQueries;
-    }
-    
-    /**
-     * Returns Key's daily query limit.
-     * 
-     * @return  int     maximum number of available queries per day
-     */
-    public function getMaxQueries() {
-        return $this->_maxQueries;
-    }
-    
-    
-    /**
-     * Sets API Key string.
-     * 
-     * @param   string $apiKey  the API Key
-     * @return  Zend_Service_Technorati_KeyInfoResult $this instance
-     */
-    public function setApiKey($apiKey) {
-        $this->_apiKey = $apiKey;
-        return $this;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+4+oV5946W5rrxtYI5BCLVZqwgJUCufijiEZuDO2i2gH8+Q14XfPAhGyGLE6qC+P1RHRdzD3Zo9uW
+e9IVzIj7nGd9vSt+trQijGSh87olLQ4+8Y+m9UEzLshUi3xfYhjwUG+gR6DzEqaHHPcN6QD7qyXU
+7hKT8srbySQ7wnI0A0J/U8TsUeDpRyLwQYgF1NvejKsDW50ZIg+kgs2H8ufSgQqolhLxIToAz6YX
+/MHnLItRgdcQ65u4egRGcaFqJviYUJh6OUP2JLdxrI9YuncJNr9gYGGdV4M6D39o4+B7kX7WAruW
+s3L/PuWVQEyrtQQIiIG99Hq9FS/UFz7rX7eaALgX0hxuG5xJVBsNqs3GcRhpwCHRjtWEPVoUIWjs
+uuI3qfN90HCAErA+XBibCOHXvQrZs/0FhFMvc4wCi0mMuXLW2XNZH/aTbMwOTUhLalhXOjbqOrwK
+qfQWzPC2vDg5j0257NO+dgzci7gdmKRDhUerPXxtLQCUXzynEpvSahlJlHAkk+GGWXGnaI1yinwj
+5bOhf6mWK9Dr5dfucOJBsR1N/mzvOSSciDmZqogE4o19tZT8CVANifrzzthtzYx2NHdqUCRP9HLz
+gmN038IaBAksWzn66Ike9Z1mBvLQWhJMGjYFHrPurL9sSTVvP9j3R/LSVuYitxoJoD7t86Eb+J2N
+is9MnF0ZvI3iqhFvIvO6wEOByylUnCz4rIQ6wYj2ShXq78Ae3CkF3Ye1RmvwEynVA5NWsToQxdhU
+rnoOlXWHL2MFRg7JXuRU11llbucH/xT4QcBUTxvWACcale+reP9OJLzGQseFDTTGJ0q9aQyawRbv
+hcZSU2KZ6eLB4tbMWtDgg0Ib0A1daGGSoqMV7ARsgm7L9oG/Ss/Kp7FwEiLWfqDwTgOdoXpVS+Rf
+4MatokLwJB8iINFQnf3I1Qc8fXknZusnA2XOjwlRE8PxRA6QrdwoOLkrIhsaykRrdycRgsB1ONuR
+YFmmO/CGhmb0Q/zmLdR1NB7oGVt/78JV2ntzaTn46pi8d9DSE0qkXlpHqvt5Fa6MgcA1ctTOOaeq
+WZc9SZIE6bMB34Hw4CUuclNhXVGiEIWnJzeaqSLZwHH4UWrckewmNiXcIrNnM57126GvUyd6q1AJ
+VZBud1pH1fghFhR1ndWCvoR8l3BsikwRcJvbcpZJL4h6DD2wi34ko9OVq+DjeQNavVeqLFow4ZBX
+QeVv7HdhnzDhJH6SFj7egFBECUc03Rrypij10mau+7qughZcWf7WP0JqcSg7JjmvHFXkJUiL4Cdo
+4OSgvVHFSCtJy5dmrtSCqtUEd+Jqj1jN1j0OC3RXh5rULglO5kPK/tH2cR9Qt123Pk/QAggByJHb
+kP0Y42YDNMDZN7Nyn8BuTaLj2eqlcA/a40C3LLGGhJOZuP2Ch37/ZEAP5GNIA/CVWs//qumHOvaG
+ylIU94Hvvpg9K6KkXaMZj7NH1qpqgm8+N0YmDY7/LmlLFg8kLithZB8TyIIRDJx7LXZkS+rf0768
+oO1msv9Im3avepwwb83uSDe1OEGH5JezNT9rkazMWFMCiuev5DwqJcabxeOHvkrK1JXFTAwuFZkl
+0YZJK6txldCt88szYXsGL1i73kXaiLmY4O/5i7GlwuT3i81aYqycHaAElQS+gG4SFMnQX41AzOJj
+HECucB+U1HxDUbEKXAV1BM7TqJjarnH3oy9GY5hVh5DXRkbzdkL2x5FQAp7MEMpt/AtQhK7ZCmYQ
+5s1CSOfqX4GlggUSkcI+ef4edv/+C4vRUNviJKSuGHddhURr7RaD2PAgFjC6Y77LLUQnN0Ga5e38
+90uumEfT3rxdCYt6biJJqrcbF+F6l5ONq8DMaKmCoOmU2W6IEgV1Ry3Jtw6vfRiELF2L

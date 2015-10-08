@@ -1,259 +1,60 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Form
- * @subpackage Element
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_Form_Element_Xhtml */
-require_once 'Zend/Form/Element/Xhtml.php';
-
-/**
- * CSRF form protection
- * 
- * @category   Zend
- * @package    Zend_Form
- * @subpackage Element
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Hash.php 11332 2008-09-10 16:35:45Z matthew $
- */
-class Zend_Form_Element_Hash extends Zend_Form_Element_Xhtml
-{
-    /**
-     * Use formHidden view helper by default
-     * @var string
-     */
-    public $helper = 'formHidden';
-
-    /**
-     * Actual hash used.
-     * 
-     * @var mixed
-     */
-    protected $_hash;
-
-    /**
-     * Salt for CSRF token
-     * @var string
-     */
-    protected $_salt = 'salt';
-
-    /**
-     * @var Zend_Session_Namespace
-     */
-    protected $_session;
-
-    /**
-     * TTL for CSRF token
-     * @var int
-     */
-    protected $_timeout = 300;
-
-    /**
-     * Constructor
-     *
-     * Creates session namespace for CSRF token, and adds validator for CSRF 
-     * token.
-     * 
-     * @param  string|array|Zend_Config $spec 
-     * @param  array|Zend_Config $options 
-     * @return void
-     */
-    public function __construct($spec, $options = null)
-    {
-        parent::__construct($spec, $options);
-
-        $this->setAllowEmpty(false)
-             ->setRequired(true)
-             ->initCsrfValidator();
-    }
-
-    /**
-     * Set session object
-     * 
-     * @param  Zend_Session_Namespace $session 
-     * @return Zend_Form_Element_Hash
-     */
-    public function setSession($session)
-    {
-        $this->_session = $session;
-        return $this;
-    }
-
-    /**
-     * Get session object
-     *
-     * Instantiate session object if none currently exists
-     * 
-     * @return Zend_Session_Namespace
-     */
-    public function getSession()
-    {
-        if (null === $this->_session) {
-            require_once 'Zend/Session/Namespace.php';
-            $this->_session = new Zend_Session_Namespace($this->getSessionName());
-        }
-        return $this->_session;
-    }
-
-    /**
-     * Initialize CSRF validator
-     *
-     * Creates Session namespace, and initializes CSRF token in session. 
-     * Additionally, adds validator for validating CSRF token.
-     * 
-     * @return Zend_Form_Element_Hash
-     */
-    public function initCsrfValidator()
-    {
-        $session = $this->getSession();
-        if (isset($session->hash)) {
-            $rightHash = $session->hash;
-        } else {
-            $rightHash = null;
-        }
-
-        $this->addValidator('Identical', true, array($rightHash));
-        return $this;
-    }
-
-    /**
-     * Salt for CSRF token
-     *
-     * @param  string $salt
-     * @return Zend_Form_Element_Hash
-     */
-    public function setSalt($salt)
-    {
-        $this->_salt = (string) $salt;
-        return $this;
-    }
-
-    /**
-     * Retrieve salt for CSRF token
-     *
-     * @return string
-     */
-    public function getSalt()
-    {
-        return $this->_salt;
-    }
-
-    /**
-     * Retrieve CSRF token
-     *
-     * If no CSRF token currently exists, generates one.
-     * 
-     * @return string
-     */
-    public function getHash()
-    {
-        if (null === $this->_hash) {
-            $this->_generateHash();
-        }
-        return $this->_hash;
-    }
-
-    /**
-     * Get session namespace for CSRF token
-     *
-     * Generates a session namespace based on salt, element name, and class.
-     * 
-     * @return string
-     */
-    public function getSessionName()
-    {
-        return __CLASS__ . '_' . $this->getSalt() . '_' . $this->getName();
-    }
-
-    /**
-     * Set timeout for CSRF session token
-     * 
-     * @param  int $ttl 
-     * @return Zend_Form_Element_Hash
-     */
-    public function setTimeout($ttl)
-    {
-        $this->_timeout = (int) $ttl;
-        return $this;
-    }
-
-    /**
-     * Get CSRF session token timeout
-     * 
-     * @return int
-     */
-    public function getTimeout()
-    {
-        return $this->_timeout;
-    }
-
-    /**
-     * Override getLabel() to always be empty
-     * 
-     * @return null
-     */
-    public function getLabel()
-    {
-        return null;
-    }
-
-    /**
-     * Initialize CSRF token in session
-     * 
-     * @return void
-     */
-    public function initCsrfToken()
-    {
-        $session = $this->getSession();
-        $session->setExpirationHops(1, null, true);
-        $session->setExpirationSeconds($this->getTimeout());
-        $session->hash = $this->getHash();
-    }
-
-    /**
-     * Render CSRF token in form
-     * 
-     * @param  Zend_View_Interface $view 
-     * @return string
-     */
-    public function render(Zend_View_Interface $view = null)
-    {
-        $this->initCsrfToken();
-        return parent::render($view);
-    }
-
-    /**
-     * Generate CSRF token
-     *
-     * Generates CSRF token and stores both in {@link $_hash} and element 
-     * value.
-     * 
-     * @return void
-     */
-    protected function _generateHash()
-    {
-        $this->_hash = md5(
-            mt_rand(1,1000000) 
-            .  $this->getSalt() 
-            .  $this->getName() 
-            .  mt_rand(1,1000000)
-        );
-        $this->setValue($this->_hash);
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

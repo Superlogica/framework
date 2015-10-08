@@ -1,151 +1,51 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Pdf
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-
-/** Zend_Pdf_Element */
-require_once 'Zend/Pdf/Element.php';
-
-/** Zend_Pdf_PhpArray */
-require_once 'Zend/Pdf/PhpArray.php';
-
-
-
-/**
- * PDF file 'array' element implementation
- *
- * @category   Zend
- * @package    Zend_Pdf
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Pdf_Element_Array extends Zend_Pdf_Element
-{
-    /**
-     * Object value
-     * Array of Zend_Pdf_Element objects.
-     * Appropriate methods must (!) be used to modify it to provide correct
-     * work with objects and references.
-     *
-     * @var Zend_Pdf_PhpArray
-     */
-    private $_items;
-
-
-    /**
-     * Object constructor
-     *
-     * @param array $val   - array of Zend_Pdf_Element objects
-     * @throws Zend_Pdf_Exception
-     */
-    public function __construct($val = null)
-    {
-        $this->_items = new Zend_Pdf_PhpArray();
-
-        if ($val !== null  &&  is_array($val)) {
-            foreach ($val as $element) {
-                if (!$element instanceof Zend_Pdf_Element) {
-                    throw new Zend_Pdf_Exception('Array elements must be Zend_Pdf_Element objects');
-                }
-                $this->_items[] = $element;
-            }
-        } else if ($val !== null){
-            throw new Zend_Pdf_Exception('Argument must be an array');
-        }
-    }
-
-
-    /**
-     * Provides access to $this->_items
-     *
-     * @param string $property
-     * @return Zend_Pdf_PhpArray
-     */
-    public function __get($property) {
-        if ($property=='items') {
-            return $this->_items;
-        }
-        throw new Exception('Undefined property: Zend_Pdf_Element_Array::$' . $property);
-    }
-
-
-    /**
-     * Provides read-only access to $this->_items;
-     *
-     * @param unknown_type $offset
-     * @param unknown_type $value
-     */
-    public function __set($property, $value) {
-        if ($property=='items') {
-            throw new Exception('Array container cannot be overwritten');
-        }
-        throw new Exception('Undefined property: Zend_Pdf_Element_Array::$' . $property);
-    }
-
-    /**
-     * Return type of the element.
-     *
-     * @return integer
-     */
-    public function getType()
-    {
-        return Zend_Pdf_Element::TYPE_ARRAY;
-    }
-
-
-    /**
-     * Return object as string
-     *
-     * @param Zend_Pdf_Factory $factory
-     * @return string
-     */
-    public function toString($factory = null)
-    {
-        $outStr = '[';
-        $lastNL = 0;
-
-        foreach ($this->_items as $element) {
-            if (strlen($outStr) - $lastNL > 128)  {
-                $outStr .= "\n";
-                $lastNL = strlen($outStr);
-            }
-
-            $outStr .= $element->toString($factory) . ' ';
-        }
-        $outStr .= ']';
-
-        return $outStr;
-    }
-
-    /**
-     * Convert PDF element to PHP type.
-     *
-     * Dictionary is returned as an associative array
-     *
-     * @return mixed
-     */
-    public function toPhp()
-    {
-        foreach ($this->_items as $item) {
-            $phpArray[] = $item->toPhp();
-        }
-
-        return $phpArray;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+bBz1x1FIe5wAiRnErRgR

@@ -1,331 +1,94 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Wildfire
- * @subpackage Channel
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_Wildfire_Channel_Interface */
-require_once 'Zend/Wildfire/Channel/Interface.php';
-
-/** Zend_Controller_Request_Abstract */
-require_once('Zend/Controller/Request/Abstract.php');
-
-/** Zend_Controller_Response_Abstract */
-require_once('Zend/Controller/Response/Abstract.php');
-
-/** Zend_Controller_Plugin_Abstract */
-require_once 'Zend/Controller/Plugin/Abstract.php';
-
-/** Zend_Wildfire_Protocol_JsonStream */
-require_once 'Zend/Wildfire/Protocol/JsonStream.php';
-
-/** Zend_Controller_Front **/
-require_once 'Zend/Controller/Front.php';
-
-/**
- * Implements communication via HTTP request and response headers for Wildfire Protocols.
- *
- * @category   Zend
- * @package    Zend_Wildfire
- * @subpackage Channel
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Wildfire_Channel_HttpHeaders extends Zend_Controller_Plugin_Abstract implements Zend_Wildfire_Channel_Interface
-{
-    /**
-     * The string to be used to prefix the headers.
-     * @var string
-     */
-    protected static $_headerPrefix = 'X-WF-';
-
-    /**
-     * Singleton instance
-     * @var Zend_Wildfire_Channel_HttpHeaders
-     */
-    protected static $_instance = null;
-
-    /**
-     * The index of the plugin in the controller dispatch loop plugin stack
-     * @var integer
-     */
-    protected static $_controllerPluginStackIndex = 999;
-
-    /**
-     * The protocol instances for this channel
-     * @var array
-     */
-    protected $_protocols = null;
-
-    /**
-     * Initialize singleton instance.
-     *
-     * @param string $class OPTIONAL Subclass of Zend_Wildfire_Channel_HttpHeaders
-     * @return Zend_Wildfire_Channel_HttpHeaders Returns the singleton Zend_Wildfire_Channel_HttpHeaders instance
-     * @throws Zend_Wildfire_Exception
-     */
-    public static function init($class = null)
-    {
-        if (self::$_instance !== null) {
-            require_once 'Zend/Wildfire/Exception.php';
-            throw new Zend_Wildfire_Exception('Singleton instance of Zend_Wildfire_Channel_HttpHeaders already exists!');
-        }
-        if ($class !== null) {
-            if (!is_string($class)) {
-                require_once 'Zend/Wildfire/Exception.php';
-                throw new Zend_Wildfire_Exception('Third argument is not a class string');
-            }
-
-            if (!class_exists($class)) {
-                require_once 'Zend/Loader.php';
-                Zend_Loader::loadClass($class);
-            }
-
-            self::$_instance = new $class();
-
-            if (!self::$_instance instanceof Zend_Wildfire_Channel_HttpHeaders) {
-                self::$_instance = null;
-                require_once 'Zend/Wildfire/Exception.php';
-                throw new Zend_Wildfire_Exception('Invalid class to third argument. Must be subclass of Zend_Wildfire_Channel_HttpHeaders.');
-            }
-        } else {
-            self::$_instance = new self();
-        }
-
-        return self::$_instance;
-    }
-
-
-    /**
-     * Get or create singleton instance
-     *
-     * @param $skipCreate boolean True if an instance should not be created
-     * @return Zend_Wildfire_Channel_HttpHeaders
-     */
-    public static function getInstance($skipCreate=false)
-    {
-        if (self::$_instance===null && $skipCreate!==true) {
-            return self::init();
-        }
-        return self::$_instance;
-    }
-
-    /**
-     * Destroys the singleton instance
-     *
-     * Primarily used for testing.
-     *
-     * @return void
-     */
-    public static function destroyInstance()
-    {
-        self::$_instance = null;
-    }
-
-    /**
-     * Get the instance of a give protocol for this channel
-     *
-     * @param string $uri The URI for the protocol
-     * @return object Returns the protocol instance for the diven URI
-     */
-    public function getProtocol($uri)
-    {
-        if (!isset($this->_protocols[$uri])) {
-            $this->_protocols[$uri] = $this->_initProtocol($uri);
-        }
-
-        $this->_registerControllerPlugin();
-
-        return $this->_protocols[$uri];
-    }
-
-    /**
-     * Initialize a new protocol
-     *
-     * @param string $uri The URI for the protocol to be initialized
-     * @return object Returns the new initialized protocol instance
-     * @throws Zend_Wildfire_Exception
-     */
-    protected function _initProtocol($uri)
-    {
-        switch ($uri) {
-            case Zend_Wildfire_Protocol_JsonStream::PROTOCOL_URI;
-                return new Zend_Wildfire_Protocol_JsonStream();
-        }
-        require_once 'Zend/Wildfire/Exception.php';
-        throw new Zend_Wildfire_Exception('Tyring to initialize unknown protocol for URI "'.$uri.'".');
-    }
-
-
-    /**
-     * Flush all data from all protocols and send all data to response headers.
-     *
-     * @return boolean Returns TRUE if data was flushed
-     */
-    public function flush()
-    {
-        if (!$this->_protocols || !$this->isReady()) {
-            return false;
-        }
-
-        foreach ( $this->_protocols as $protocol ) {
-
-            $payload = $protocol->getPayload($this);
-
-            if ($payload) {
-                foreach( $payload as $message ) {
-
-                    $this->getResponse()->setHeader(self::$_headerPrefix.$message[0],
-                                                    $message[1], true);
-                }
-            }
-        }
-        return true;
-    }
-
-    /**
-     * Set the index of the plugin in the controller dispatch loop plugin stack
-     *
-     * @param integer $index The index of the plugin in the stack
-     * @return integer The previous index.
-     */
-    public static function setControllerPluginStackIndex($index)
-    {
-        $previous = self::$_controllerPluginStackIndex;
-        self::$_controllerPluginStackIndex = $index;
-        return $previous;
-    }
-
-    /**
-     * Register this object as a controller plugin.
-     *
-     * @return void
-     */
-    protected function _registerControllerPlugin()
-    {
-        $controller = Zend_Controller_Front::getInstance();
-        if (!$controller->hasPlugin(get_class($this))) {
-            $controller->registerPlugin($this, self::$_controllerPluginStackIndex);
-        }
-    }
-
-
-    /*
-     * Zend_Wildfire_Channel_Interface
-     */
-
-    /**
-     * Determine if channel is ready.
-     *
-     * The channel is ready as long as the request and response objects are initialized,
-     * can send headers and the FirePHP header exists in the User-Agent.
-     * 
-     * If the header does not exist in the User-Agent, no appropriate client
-     * is making this request and the messages should not be sent.
-     * 
-     * A timing issue arises when messages are logged before the request/response
-     * objects are initialized. In this case we do not yet know if the client
-     * will be able to accept the messages. If we consequently indicate that
-     * the channel is not ready, these messages will be dropped which is in
-     * most cases not the intended behaviour. The intent is to send them at the
-     * end of the request when the request/response objects will be available
-     * for sure.
-     * 
-     * If the request/response objects are not yet initialized we assume if messages are
-     * logged, the client will be able to receive them. As soon as the request/response
-     * objects are availoable and a message is logged this assumption is challenged.
-     * If the client cannot accept the messages any further messages are dropped
-     * and messages sent prior are kept but discarded when the channel is finally
-     * flushed at the end of the request.
-     * 
-     * When the channel is flushed the $forceCheckRequest option is used to force
-     * a check of the request/response objects. This is the last verification to ensure
-     * messages are only sent when the client can accept them.
-     * 
-     * @param boolean $forceCheckRequest OPTIONAL Set to TRUE if the request must be checked
-     * @return boolean Returns TRUE if channel is ready.
-     */
-    public function isReady($forceCheckRequest=false)
-    {
-        if (!$forceCheckRequest
-            && !$this->_request
-            && !$this->_response) {
-        
-            return true;
-        }
-
-        return ($this->getResponse()->canSendHeaders() &&
-                preg_match_all('/\s?FirePHP\/([\.|\d]*)\s?/si',
-                               $this->getRequest()->getHeader('User-Agent'),$m));
-    }
-
-
-    /*
-     * Zend_Controller_Plugin_Abstract
-     */
-
-    /**
-     * Flush messages to headers as late as possible but before headers have been sent.
-     *
-     * @return void
-     */
-    public function dispatchLoopShutdown()
-    {
-        $this->flush();
-    }
-
-    /**
-     * Get the request object
-     *
-     * @return Zend_Controller_Request_Abstract
-     * @throws Zend_Wildfire_Exception
-     */
-    public function getRequest()
-    {
-        if (!$this->_request) {
-            $controller = Zend_Controller_Front::getInstance();
-            $this->setRequest($controller->getRequest());
-        }
-        if (!$this->_request) {
-            require_once 'Zend/Wildfire/Exception.php';
-            throw new Zend_Wildfire_Exception('Request objects not initialized.');
-        }
-        return $this->_request;
-    }
-
-    /**
-     * Get the response object
-     *
-     * @return Zend_Controller_Response_Abstract
-     * @throws Zend_Wildfire_Exception
-     */
-    public function getResponse()
-    {
-        if (!$this->_response) {
-            $response = Zend_Controller_Front::getInstance()->getResponse();
-            if ($response) {
-                $this->setResponse($response);
-            }
-        }
-        if (!$this->_response) {
-            require_once 'Zend/Wildfire/Exception.php';
-            throw new Zend_Wildfire_Exception('Response objects not initialized.');
-        }
-        return $this->_response;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+BI8TWe/5+8dAK1oiAPElE0==

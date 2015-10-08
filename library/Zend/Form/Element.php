@@ -1,2122 +1,657 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Form
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_Filter */
-require_once 'Zend/Filter.php';
-
-/** Zend_Validate_Interface */
-require_once 'Zend/Validate/Interface.php';
-
-/**
- * Zend_Form_Element
- *
- * @category   Zend
- * @package    Zend_Form
- * @subpackage Element
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Element.php 13615 2009-01-13 19:52:10Z norm2782 $
- */
-class Zend_Form_Element implements Zend_Validate_Interface
-{
-    /**
-     * Element Constants
-     */
-    const DECORATOR = 'DECORATOR';
-    const FILTER    = 'FILTER';
-    const VALIDATE  = 'VALIDATE';
-
-    /**
-     * Default view helper to use
-     * @var string
-     */
-    public $helper = 'formText';
-
-    /**
-     * 'Allow empty' flag
-     * @var bool
-     */
-    protected $_allowEmpty = true;
-
-    /**
-     * Flag indicating whether or not to insert NotEmpty validator when element is required
-     * @var bool
-     */
-    protected $_autoInsertNotEmptyValidator = true;
-
-    /**
-     * Array to which element belongs
-     * @var string
-     */
-    protected $_belongsTo;
-
-    /**
-     * Element decorators
-     * @var array
-     */
-    protected $_decorators = array();
-
-    /**
-     * Element description
-     * @var string
-     */
-    protected $_description;
-
-    /**
-     * Should we disable loading the default decorators?
-     * @var bool
-     */
-    protected $_disableLoadDefaultDecorators = false;
-
-    /**
-     * Custom error messages
-     * @var array
-     */
-    protected $_errorMessages = array();
-
-    /**
-     * Validation errors
-     * @var array
-     */
-    protected $_errors = array();
-
-    /**
-     * Element filters
-     * @var array
-     */
-    protected $_filters = array();
-
-    /**
-     * Ignore flag (used when retrieving values at form level)
-     * @var bool
-     */
-    protected $_ignore = false;
-
-    /**
-     * Does the element represent an array?
-     * @var bool
-     */
-    protected $_isArray = false;
-
-    /**
-     * Is the error marked as in an invalid state?
-     * @var bool
-     */
-    protected $_isError = false;
-
-    /**
-     * Element label
-     * @var string
-     */
-    protected $_label;
-
-    /**
-     * Plugin loaders for filter and validator chains
-     * @var array
-     */
-    protected $_loaders = array();
-
-    /**
-     * Formatted validation error messages
-     * @var array
-     */
-    protected $_messages = array();
-
-    /**
-     * Element name
-     * @var string
-     */
-    protected $_name;
-
-    /**
-     * Order of element
-     * @var int
-     */
-    protected $_order;
-
-    /**
-     * Required flag
-     * @var bool
-     */
-    protected $_required = false;
-
-    /**
-     * @var Zend_Translate
-     */
-    protected $_translator;
-
-    /**
-     * Is translation disabled?
-     * @var bool
-     */
-    protected $_translatorDisabled = false;
-
-    /**
-     * Element type
-     * @var string
-     */
-    protected $_type;
-
-    /**
-     * Array of initialized validators
-     * @var array Validators
-     */
-    protected $_validators = array();
-
-    /**
-     * Array of un-initialized validators
-     * @var array
-     */
-    protected $_validatorRules = array();
-
-    /**
-     * Element value
-     * @var mixed
-     */
-    protected $_value;
-
-    /**
-     * @var Zend_View_Interface
-     */
-    protected $_view;
-
-    /**
-     * Constructor
-     *
-     * $spec may be:
-     * - string: name of element
-     * - array: options with which to configure element
-     * - Zend_Config: Zend_Config with options for configuring element
-     *
-     * @param  string|array|Zend_Config $spec
-     * @return void
-     * @throws Zend_Form_Exception if no element name after initialization
-     */
-    public function __construct($spec, $options = null)
-    {
-        if (is_string($spec)) {
-            $this->setName($spec);
-        } elseif (is_array($spec)) {
-            $this->setOptions($spec);
-        } elseif ($spec instanceof Zend_Config) {
-            $this->setConfig($spec);
-        }
-
-        if (is_string($spec) && is_array($options)) {
-            $this->setOptions($options);
-        } elseif (is_string($spec) && ($options instanceof Zend_Config)) {
-            $this->setConfig($options);
-        }
-
-        if (null === $this->getName()) {
-            require_once 'Zend/Form/Exception.php';
-            throw new Zend_Form_Exception('Zend_Form_Element requires each element to have a name');
-        }
-
-        /**
-         * Extensions
-         */
-        $this->init();
-
-        /**
-         * Register ViewHelper decorator by default
-         */
-        $this->loadDefaultDecorators();
-    }
-
-    /**
-     * Initialize object; used by extending classes
-     *
-     * @return void
-     */
-    public function init()
-    {
-    }
-
-    /**
-     * Set flag to disable loading default decorators
-     *
-     * @param  bool $flag
-     * @return Zend_Form_Element
-     */
-    public function setDisableLoadDefaultDecorators($flag)
-    {
-        $this->_disableLoadDefaultDecorators = (bool) $flag;
-        return $this;
-    }
-
-    /**
-     * Should we load the default decorators?
-     *
-     * @return bool
-     */
-    public function loadDefaultDecoratorsIsDisabled()
-    {
-        return $this->_disableLoadDefaultDecorators;
-    }
-
-    /**
-     * Load default decorators
-     *
-     * @return void
-     */
-    public function loadDefaultDecorators()
-    {
-        if ($this->loadDefaultDecoratorsIsDisabled()) {
-            return;
-        }
-
-        $decorators = $this->getDecorators();
-        if (empty($decorators)) {
-            $this->addDecorator('ViewHelper')
-                ->addDecorator('Errors')
-                ->addDecorator('Description', array('tag' => 'p', 'class' => 'description'))
-                ->addDecorator('HtmlTag', array('tag' => 'dd',
-                                                'id'  => $this->getName() . '-element'))
-                ->addDecorator('Label', array('tag' => 'dt'));
-        }
-    }
-
-    /**
-     * Set object state from options array
-     *
-     * @param  array $options
-     * @return Zend_Form_Element
-     */
-    public function setOptions(array $options)
-    {
-        if (isset($options['prefixPath'])) {
-            $this->addPrefixPaths($options['prefixPath']);
-            unset($options['prefixPath']);
-        }
-
-        if (isset($options['disableTranslator'])) {
-            $this->setDisableTranslator($options['disableTranslator']);
-            unset($options['disableTranslator']);
-        }
-
-        unset($options['options']);
-        unset($options['config']);
-
-        foreach ($options as $key => $value) {
-            $method = 'set' . ucfirst($key);
-
-            if (in_array($method, array('setTranslator', 'setPluginLoader', 'setView'))) {
-                if (!is_object($value)) {
-                    continue;
-                }
-            }
-
-            if (method_exists($this, $method)) {
-                // Setter exists; use it
-                $this->$method($value);
-            } else {
-                // Assume it's metadata
-                $this->setAttrib($key, $value);
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * Set object state from Zend_Config object
-     *
-     * @param  Zend_Config $config
-     * @return Zend_Form_Element
-     */
-    public function setConfig(Zend_Config $config)
-    {
-        return $this->setOptions($config->toArray());
-    }
-
-
-    // Localization:
-
-    /**
-     * Set translator object for localization
-     *
-     * @param  Zend_Translate|null $translator
-     * @return Zend_Form_Element
-     */
-    public function setTranslator($translator = null)
-    {
-        if (null === $translator) {
-            $this->_translator = null;
-        } elseif ($translator instanceof Zend_Translate_Adapter) {
-            $this->_translator = $translator;
-        } elseif ($translator instanceof Zend_Translate) {
-            $this->_translator = $translator->getAdapter();
-        } else {
-            require_once 'Zend/Form/Exception.php';
-            throw new Zend_Form_Exception('Invalid translator specified');
-        }
-        return $this;
-    }
-
-    /**
-     * Retrieve localization translator object
-     *
-     * @return Zend_Translate_Adapter|null
-     */
-    public function getTranslator()
-    {
-        if ($this->translatorIsDisabled()) {
-            return null;
-        }
-
-        if (null === $this->_translator) {
-            require_once 'Zend/Form.php';
-            return Zend_Form::getDefaultTranslator();
-        }
-        return $this->_translator;
-    }
-
-    /**
-     * Indicate whether or not translation should be disabled
-     *
-     * @param  bool $flag
-     * @return Zend_Form_Element
-     */
-    public function setDisableTranslator($flag)
-    {
-        $this->_translatorDisabled = (bool) $flag;
-        return $this;
-    }
-
-    /**
-     * Is translation disabled?
-     *
-     * @return bool
-     */
-    public function translatorIsDisabled()
-    {
-        return $this->_translatorDisabled;
-    }
-
-    // Metadata
-
-    /**
-     * Filter a name to only allow valid variable characters
-     *
-     * @param  string $value
-     * @param  bool $allowBrackets
-     * @return string
-     */
-    public function filterName($value, $allowBrackets = false)
-    {
-        $charset = '^a-zA-Z0-9_\x7f-\xff';
-        if ($allowBrackets) {
-            $charset .= '\[\]';
-        }
-        return preg_replace('/[' . $charset . ']/', '', (string) $value);
-    }
-
-    /**
-     * Set element name
-     *
-     * @param  string $name
-     * @return Zend_Form_Element
-     */
-    public function setName($name)
-    {
-        $name = $this->filterName($name);
-        if ('' === $name) {
-            require_once 'Zend/Form/Exception.php';
-            throw new Zend_Form_Exception('Invalid name provided; must contain only valid variable characters and be non-empty');
-        }
-
-        $this->_name = $name;
-        return $this;
-    }
-
-    /**
-     * Return element name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->_name;
-    }
-
-    /**
-     * Get fully qualified name
-     *
-     * Places name as subitem of array and/or appends brackets.
-     *
-     * @return string
-     */
-    public function getFullyQualifiedName()
-    {
-        $name = $this->getName();
-
-        if (null !== ($belongsTo = $this->getBelongsTo())) {
-            $name = $belongsTo . '[' . $name . ']';
-        }
-
-        if ($this->isArray()) {
-            $name .= '[]';
-        }
-
-        return $name;
-    }
-
-    /**
-     * Get element id
-     *
-     * @return string
-     */
-    public function getId()
-    {
-        if (isset($this->id)) {
-            return $this->id;
-        }
-
-        $id = $this->getFullyQualifiedName();
-
-        // Bail early if no array notation detected
-        if (!strstr($id, '[')) {
-            return $id;
-        }
-
-        // Strip array notation
-        if ('[]' == substr($id, -2)) {
-            $id = substr($id, 0, strlen($id) - 2);
-        }
-        $id = str_replace('][', '-', $id);
-        $id = str_replace(array(']', '['), '-', $id);
-        $id = trim($id, '-');
-
-        return $id;
-    }
-
-    /**
-     * Set element value
-     *
-     * @param  mixed $value
-     * @return Zend_Form_Element
-     */
-    public function setValue($value)
-    {
-        $this->_value = $value;
-        return $this;
-    }
-
-    /**
-     * Filter a value
-     *
-     * @param  string $value
-     * @param  string $key
-     * @return void
-     */
-    protected function _filterValue(&$value, &$key)
-    {
-        foreach ($this->getFilters() as $filter) {
-            $value = $filter->filter($value);
-        }
-    }
-
-    /**
-     * Retrieve filtered element value
-     *
-     * @return mixed
-     */
-    public function getValue()
-    {
-        $valueFiltered = $this->_value;
-
-        if ($this->isArray() && is_array($valueFiltered)) {
-            array_walk_recursive($valueFiltered, array($this, '_filterValue'));
-        } else {
-            $this->_filterValue($valueFiltered, $valueFiltered);
-        }
-
-        return $valueFiltered;
-    }
-
-    /**
-     * Retrieve unfiltered element value
-     *
-     * @return mixed
-     */
-    public function getUnfilteredValue()
-    {
-        return $this->_value;
-    }
-
-    /**
-     * Set element label
-     *
-     * @param  string $label
-     * @return Zend_Form_Element
-     */
-    public function setLabel($label)
-    {
-        $this->_label = (string) $label;
-        return $this;
-    }
-
-    /**
-     * Retrieve element label
-     *
-     * @return string
-     */
-    public function getLabel()
-    {
-        return $this->_label;
-    }
-
-    /**
-     * Set element order
-     *
-     * @param  int $order
-     * @return Zend_Form_Element
-     */
-    public function setOrder($order)
-    {
-        $this->_order = (int) $order;
-        return $this;
-    }
-
-    /**
-     * Retrieve element order
-     *
-     * @return int
-     */
-    public function getOrder()
-    {
-        return $this->_order;
-    }
-
-    /**
-     * Set required flag
-     *
-     * @param  bool $flag Default value is true
-     * @return Zend_Form_Element
-     */
-    public function setRequired($flag = true)
-    {
-        $this->_required = (bool) $flag;
-        return $this;
-    }
-
-    /**
-     * Is the element required?
-     *
-     * @return bool
-     */
-    public function isRequired()
-    {
-        return $this->_required;
-    }
-
-    /**
-     * Set flag indicating whether a NotEmpty validator should be inserted when element is required
-     *
-     * @param  bool $flag
-     * @return Zend_Form_Element
-     */
-    public function setAutoInsertNotEmptyValidator($flag)
-    {
-        $this->_autoInsertNotEmptyValidator = (bool) $flag;
-        return $this;
-    }
-
-    /**
-     * Get flag indicating whether a NotEmpty validator should be inserted when element is required
-     *
-     * @return bool
-     */
-    public function autoInsertNotEmptyValidator()
-    {
-        return $this->_autoInsertNotEmptyValidator;
-    }
-
-    /**
-     * Set element description
-     *
-     * @param  string $description
-     * @return Zend_Form_Element
-     */
-    public function setDescription($description)
-    {
-        $this->_description = (string) $description;
-        return $this;
-    }
-
-    /**
-     * Retrieve element description
-     *
-     * @return string
-     */
-    public function getDescription()
-    {
-        return $this->_description;
-    }
-
-    /**
-     * Set 'allow empty' flag
-     *
-     * When the allow empty flag is enabled and the required flag is false, the
-     * element will validate with empty values.
-     *
-     * @param  bool $flag
-     * @return Zend_Form_Element
-     */
-    public function setAllowEmpty($flag)
-    {
-        $this->_allowEmpty = (bool) $flag;
-        return $this;
-    }
-
-    /**
-     * Get 'allow empty' flag
-     *
-     * @return bool
-     */
-    public function getAllowEmpty()
-    {
-        return $this->_allowEmpty;
-    }
-
-    /**
-     * Set ignore flag (used when retrieving values at form level)
-     *
-     * @param  bool $flag
-     * @return Zend_Form_Element
-     */
-    public function setIgnore($flag)
-    {
-        $this->_ignore = (bool) $flag;
-        return $this;
-    }
-
-    /**
-     * Get ignore flag (used when retrieving values at form level)
-     *
-     * @return bool
-     */
-    public function getIgnore()
-    {
-        return $this->_ignore;
-    }
-
-    /**
-     * Set flag indicating if element represents an array
-     *
-     * @param  bool $flag
-     * @return Zend_Form_Element
-     */
-    public function setIsArray($flag)
-    {
-        $this->_isArray = (bool) $flag;
-        return $this;
-    }
-
-    /**
-     * Is the element representing an array?
-     *
-     * @return bool
-     */
-    public function isArray()
-    {
-        return $this->_isArray;
-    }
-
-    /**
-     * Set array to which element belongs
-     *
-     * @param  string $array
-     * @return Zend_Form_Element
-     */
-    public function setBelongsTo($array)
-    {
-        $array = $this->filterName($array, true);
-        if (!empty($array)) {
-            $this->_belongsTo = $array;
-        }
-
-        return $this;
-    }
-
-    /**
-     * Return array name to which element belongs
-     *
-     * @return string
-     */
-    public function getBelongsTo()
-    {
-        return $this->_belongsTo;
-    }
-
-    /**
-     * Return element type
-     *
-     * @return string
-     */
-    public function getType()
-    {
-        if (null === $this->_type) {
-            $this->_type = get_class($this);
-        }
-
-        return $this->_type;
-    }
-
-    /**
-     * Set element attribute
-     *
-     * @param  string $name
-     * @param  mixed $value
-     * @return Zend_Form_Element
-     * @throws Zend_Form_Exception for invalid $name values
-     */
-    public function setAttrib($name, $value)
-    {
-        $name = (string) $name;
-        if ('_' == $name[0]) {
-            require_once 'Zend/Form/Exception.php';
-            throw new Zend_Form_Exception(sprintf('Invalid attribute "%s"; must not contain a leading underscore', $name));
-        }
-
-        if (null === $value) {
-            unset($this->$name);
-        } else {
-            $this->$name = $value;
-        }
-
-        return $this;
-    }
-
-    /**
-     * Set multiple attributes at once
-     *
-     * @param  array $attribs
-     * @return Zend_Form_Element
-     */
-    public function setAttribs(array $attribs)
-    {
-        foreach ($attribs as $key => $value) {
-            $this->setAttrib($key, $value);
-        }
-
-        return $this;
-    }
-
-    /**
-     * Retrieve element attribute
-     *
-     * @param  string $name
-     * @return string
-     */
-    public function getAttrib($name)
-    {
-        $name = (string) $name;
-        if (isset($this->$name)) {
-            return $this->$name;
-        }
-
-        return null;
-    }
-
-    /**
-     * Return all attributes
-     *
-     * @return array
-     */
-    public function getAttribs()
-    {
-        $attribs = get_object_vars($this);
-        foreach ($attribs as $key => $value) {
-            if ('_' == substr($key, 0, 1)) {
-                unset($attribs[$key]);
-            }
-        }
-
-        return $attribs;
-    }
-
-    /**
-     * Overloading: retrieve object property
-     *
-     * Prevents access to properties beginning with '_'.
-     *
-     * @param  string $key
-     * @return mixed
-     */
-    public function __get($key)
-    {
-        if ('_' == $key[0]) {
-            require_once 'Zend/Form/Exception.php';
-            throw new Zend_Form_Exception(sprintf('Cannot retrieve value for protected/private property "%s"', $key));
-        }
-
-        if (!isset($this->$key)) {
-            return null;
-        }
-
-        return $this->$key;
-    }
-
-    /**
-     * Overloading: set object property
-     *
-     * @param  string $key
-     * @param  mixed $value
-     * @return voide
-     */
-    public function __set($key, $value)
-    {
-        $this->setAttrib($key, $value);
-    }
-
-    /**
-     * Overloading: allow rendering specific decorators
-     *
-     * Call renderDecoratorName() to render a specific decorator.
-     *
-     * @param  string $method
-     * @param  array $args
-     * @return string
-     * @throws Zend_Form_Exception for invalid decorator or invalid method call
-     */
-    public function __call($method, $args)
-    {
-        if ('render' == substr($method, 0, 6)) {
-            $decoratorName = substr($method, 6);
-            if (false !== ($decorator = $this->getDecorator($decoratorName))) {
-                $decorator->setElement($this);
-                $seed = '';
-                if (0 < count($args)) {
-                    $seed = array_shift($args);
-                }
-                return $decorator->render($seed);
-            }
-
-            require_once 'Zend/Form/Element/Exception.php';
-            throw new Zend_Form_Element_Exception(sprintf('Decorator by name %s does not exist', $decoratorName));
-        }
-
-        require_once 'Zend/Form/Element/Exception.php';
-        throw new Zend_Form_Element_Exception(sprintf('Method %s does not exist', $method));
-    }
-
-    // Loaders
-
-    /**
-     * Set plugin loader to use for validator or filter chain
-     *
-     * @param  Zend_Loader_PluginLoader_Interface $loader
-     * @param  string $type 'decorator', 'filter', or 'validate'
-     * @return Zend_Form_Element
-     * @throws Zend_Form_Exception on invalid type
-     */
-    public function setPluginLoader(Zend_Loader_PluginLoader_Interface $loader, $type)
-    {
-        $type = strtoupper($type);
-        switch ($type) {
-            case self::DECORATOR:
-            case self::FILTER:
-            case self::VALIDATE:
-                $this->_loaders[$type] = $loader;
-                return $this;
-            default:
-                require_once 'Zend/Form/Exception.php';
-                throw new Zend_Form_Exception(sprintf('Invalid type "%s" provided to setPluginLoader()', $type));
-        }
-    }
-
-    /**
-     * Retrieve plugin loader for validator or filter chain
-     *
-     * Instantiates with default rules if none available for that type. Use
-     * 'decorator', 'filter', or 'validate' for $type.
-     *
-     * @param  string $type
-     * @return Zend_Loader_PluginLoader
-     * @throws Zend_Loader_Exception on invalid type.
-     */
-    public function getPluginLoader($type)
-    {
-        $type = strtoupper($type);
-        switch ($type) {
-            case self::FILTER:
-            case self::VALIDATE:
-                $prefixSegment = ucfirst(strtolower($type));
-                $pathSegment   = $prefixSegment;
-            case self::DECORATOR:
-                if (!isset($prefixSegment)) {
-                    $prefixSegment = 'Form_Decorator';
-                    $pathSegment   = 'Form/Decorator';
-                }
-                if (!isset($this->_loaders[$type])) {
-                    require_once 'Zend/Loader/PluginLoader.php';
-                    $this->_loaders[$type] = new Zend_Loader_PluginLoader(
-                        array('Zend_' . $prefixSegment . '_' => 'Zend/' . $pathSegment . '/')
-                    );
-                }
-                return $this->_loaders[$type];
-            default:
-                require_once 'Zend/Form/Exception.php';
-                throw new Zend_Form_Exception(sprintf('Invalid type "%s" provided to getPluginLoader()', $type));
-        }
-    }
-
-    /**
-     * Add prefix path for plugin loader
-     *
-     * If no $type specified, assumes it is a base path for both filters and
-     * validators, and sets each according to the following rules:
-     * - decorators: $prefix = $prefix . '_Decorator'
-     * - filters: $prefix = $prefix . '_Filter'
-     * - validators: $prefix = $prefix . '_Validate'
-     *
-     * Otherwise, the path prefix is set on the appropriate plugin loader.
-     *
-     * @param  string $path
-     * @return Zend_Form_Element
-     * @throws Zend_Form_Exception for invalid type
-     */
-    public function addPrefixPath($prefix, $path, $type = null)
-    {
-        $type = strtoupper($type);
-        switch ($type) {
-            case self::DECORATOR:
-            case self::FILTER:
-            case self::VALIDATE:
-                $loader = $this->getPluginLoader($type);
-                $loader->addPrefixPath($prefix, $path);
-                return $this;
-            case null:
-                $prefix = rtrim($prefix, '_');
-                $path   = rtrim($path, DIRECTORY_SEPARATOR);
-                foreach (array(self::DECORATOR, self::FILTER, self::VALIDATE) as $type) {
-                    $cType        = ucfirst(strtolower($type));
-                    $pluginPath   = $path . DIRECTORY_SEPARATOR . $cType . DIRECTORY_SEPARATOR;
-                    $pluginPrefix = $prefix . '_' . $cType;
-                    $loader       = $this->getPluginLoader($type);
-                    $loader->addPrefixPath($pluginPrefix, $pluginPath);
-                }
-                return $this;
-            default:
-                require_once 'Zend/Form/Exception.php';
-                throw new Zend_Form_Exception(sprintf('Invalid type "%s" provided to getPluginLoader()', $type));
-        }
-    }
-
-    /**
-     * Add many prefix paths at once
-     *
-     * @param  array $spec
-     * @return Zend_Form_Element
-     */
-    public function addPrefixPaths(array $spec)
-    {
-        if (isset($spec['prefix']) && isset($spec['path'])) {
-            return $this->addPrefixPath($spec['prefix'], $spec['path']);
-        }
-        foreach ($spec as $type => $paths) {
-            if (is_numeric($type) && is_array($paths)) {
-                $type = null;
-                if (isset($paths['prefix']) && isset($paths['path'])) {
-                    if (isset($paths['type'])) {
-                        $type = $paths['type'];
-                    }
-                    $this->addPrefixPath($paths['prefix'], $paths['path'], $type);
-                }
-            } elseif (!is_numeric($type)) {
-                if (!isset($paths['prefix']) || !isset($paths['path'])) {
-                    foreach ($paths as $prefix => $spec) {
-                        if (is_array($spec)) {
-                            foreach ($spec as $path) {
-                                if (!is_string($path)) {
-                                    continue;
-                                }
-                                $this->addPrefixPath($prefix, $path, $type);
-                            }
-                        } elseif (is_string($spec)) {
-                            $this->addPrefixPath($prefix, $spec, $type);
-                        }
-                    }
-                } else {
-                    $this->addPrefixPath($paths['prefix'], $paths['path'], $type);
-                }
-            }
-        }
-        return $this;
-    }
-
-    // Validation
-
-    /**
-     * Add validator to validation chain
-     *
-     * Note: will overwrite existing validators if they are of the same class.
-     *
-     * @param  string|Zend_Validate_Interface $validator
-     * @param  bool $breakChainOnFailure
-     * @param  array $options
-     * @return Zend_Form_Element
-     * @throws Zend_Form_Exception if invalid validator type
-     */
-    public function addValidator($validator, $breakChainOnFailure = false, $options = array())
-    {
-        if ($validator instanceof Zend_Validate_Interface) {
-            $name = get_class($validator);
-
-            if (!isset($validator->zfBreakChainOnFailure)) {
-                $validator->zfBreakChainOnFailure = $breakChainOnFailure;
-            }
-        } elseif (is_string($validator)) {
-            $name      = $validator;
-            $validator = array(
-                'validator' => $validator,
-                'breakChainOnFailure' => $breakChainOnFailure,
-                'options'             => $options,
-            );
-        } else {
-            require_once 'Zend/Form/Exception.php';
-            throw new Zend_Form_Exception('Invalid validator provided to addValidator; must be string or Zend_Validate_Interface');
-        }
-
-
-        $this->_validators[$name] = $validator;
-
-        return $this;
-    }
-
-    /**
-     * Add multiple validators
-     *
-     * @param  array $validators
-     * @return Zend_Form_Element
-     */
-    public function addValidators(array $validators)
-    {
-        foreach ($validators as $validatorInfo) {
-            if (is_string($validatorInfo)) {
-                $this->addValidator($validatorInfo);
-            } elseif ($validatorInfo instanceof Zend_Validate_Interface) {
-                $this->addValidator($validatorInfo);
-            } elseif (is_array($validatorInfo)) {
-                $argc                = count($validatorInfo);
-                $breakChainOnFailure = false;
-                $options             = array();
-                if (isset($validatorInfo['validator'])) {
-                    $validator = $validatorInfo['validator'];
-                    if (isset($validatorInfo['breakChainOnFailure'])) {
-                        $breakChainOnFailure = $validatorInfo['breakChainOnFailure'];
-                    }
-                    if (isset($validatorInfo['options'])) {
-                        $options = $validatorInfo['options'];
-                    }
-                    $this->addValidator($validator, $breakChainOnFailure, $options);
-                } else {
-                    switch (true) {
-                        case (0 == $argc):
-                            break;
-                        case (1 <= $argc):
-                            $validator  = array_shift($validatorInfo);
-                        case (2 <= $argc):
-                            $breakChainOnFailure = array_shift($validatorInfo);
-                        case (3 <= $argc):
-                            $options = array_shift($validatorInfo);
-                        default:
-                            $this->addValidator($validator, $breakChainOnFailure, $options);
-                            break;
-                    }
-                }
-            } else {
-                require_once 'Zend/Form/Exception.php';
-                throw new Zend_Form_Exception('Invalid validator passed to addValidators()');
-            }
-        }
-
-        return $this;
-    }
-
-    /**
-     * Set multiple validators, overwriting previous validators
-     *
-     * @param  array $validators
-     * @return Zend_Form_Element
-     */
-    public function setValidators(array $validators)
-    {
-        $this->clearValidators();
-        return $this->addValidators($validators);
-    }
-
-    /**
-     * Retrieve a single validator by name
-     *
-     * @param  string $name
-     * @return Zend_Validate_Interface|false False if not found, validator otherwise
-     */
-    public function getValidator($name)
-    {
-        if (!isset($this->_validators[$name])) {
-            $len = strlen($name);
-            foreach ($this->_validators as $localName => $validator) {
-                if ($len > strlen($localName)) {
-                    continue;
-                }
-                if (0 === substr_compare($localName, $name, -$len, $len, true)) {
-                    if (is_array($validator)) {
-                        return $this->_loadValidator($validator);
-                    }
-                    return $validator;
-                }
-            }
-            return false;
-        }
-
-        if (is_array($this->_validators[$name])) {
-            return $this->_loadValidator($this->_validators[$name]);
-        }
-
-        return $this->_validators[$name];
-    }
-
-    /**
-     * Retrieve all validators
-     *
-     * @return array
-     */
-    public function getValidators()
-    {
-        $validators = array();
-        foreach ($this->_validators as $key => $value) {
-            if ($value instanceof Zend_Validate_Interface) {
-                $validators[$key] = $value;
-                continue;
-            }
-            $validator = $this->_loadValidator($value);
-            $validators[get_class($validator)] = $validator;
-        }
-        return $validators;
-    }
-
-    /**
-     * Remove a single validator by name
-     *
-     * @param  string $name
-     * @return bool
-     */
-    public function removeValidator($name)
-    {
-        if (isset($this->_validators[$name])) {
-            unset($this->_validators[$name]);
-        } else {
-            $len = strlen($name);
-            foreach (array_keys($this->_validators) as $validator) {
-                if ($len > strlen($validator)) {
-                    continue;
-                }
-                if (0 === substr_compare($validator, $name, -$len, $len, true)) {
-                    unset($this->_validators[$validator]);
-                    break;
-                }
-            }
-        }
-
-        return $this;
-    }
-
-    /**
-     * Clear all validators
-     *
-     * @return Zend_Form_Element
-     */
-    public function clearValidators()
-    {
-        $this->_validators = array();
-        return $this;
-    }
-
-    /**
-     * Validate element value
-     *
-     * If a translation adapter is registered, any error messages will be
-     * translated according to the current locale, using the given error code;
-     * if no matching translation is found, the original message will be
-     * utilized.
-     *
-     * Note: The *filtered* value is validated.
-     *
-     * @param  mixed $value
-     * @param  mixed $context
-     * @return boolean
-     */
-    public function isValid($value, $context = null)
-    {
-        $this->setValue($value);
-        $value = $this->getValue();
-
-        if ((('' === $value) || (null === $value))
-            && !$this->isRequired()
-            && $this->getAllowEmpty()
-        ) {
-            return true;
-        }
-
-        if ($this->isRequired()
-            && $this->autoInsertNotEmptyValidator()
-            && !$this->getValidator('NotEmpty'))
-        {
-            $validators = $this->getValidators();
-            $notEmpty   = array('validator' => 'NotEmpty', 'breakChainOnFailure' => true);
-            array_unshift($validators, $notEmpty);
-            $this->setValidators($validators);
-        }
-
-        $this->_messages = array();
-        $this->_errors   = array();
-        $result          = true;
-        $translator      = $this->getTranslator();
-        $isArray         = $this->isArray();
-        foreach ($this->getValidators() as $key => $validator) {
-            if (method_exists($validator, 'setTranslator')) {
-                $validator->setTranslator($translator);
-            }
-
-            if ($isArray && is_array($value)) {
-                $messages = array();
-                $errors   = array();
-                foreach ($value as $val) {
-                    if (!$validator->isValid($val, $context)) {
-                        $result = false;
-                        if ($this->_hasErrorMessages()) {
-                            $messages = $this->_getErrorMessages();
-                            $errors   = $messages;
-                        } else {
-                            $messages = array_merge($messages, $validator->getMessages());
-                            $errors   = array_merge($errors,   $validator->getErrors());
-                        }
-                    }
-                }
-                if ($result) {
-                    continue;
-                }
-            } elseif ($validator->isValid($value, $context)) {
-                continue;
-            } else {
-                $result = false;
-                if ($this->_hasErrorMessages()) {
-                    $messages = $this->_getErrorMessages();
-                    $errors   = $messages;
-                } else {
-                    $messages = $validator->getMessages();
-                    $errors   = array_keys($messages);
-                }
-            }
-
-            $result          = false;
-            $this->_messages = array_merge($this->_messages, $messages);
-            $this->_errors   = array_merge($this->_errors,   $errors);
-
-            if ($validator->zfBreakChainOnFailure) {
-                break;
-            }
-        }
-
-        return $result;
-    }
-
-    /**
-     * Add a custom error message to return in the event of failed validation
-     *
-     * @param  string $message
-     * @return Zend_Form_Element
-     */
-    public function addErrorMessage($message)
-    {
-        $this->_errorMessages[] = (string) $message;
-        return $this;
-    }
-
-    /**
-     * Add multiple custom error messages to return in the event of failed validation
-     *
-     * @param  array $messages
-     * @return Zend_Form_Element
-     */
-    public function addErrorMessages(array $messages)
-    {
-        foreach ($messages as $message) {
-            $this->addErrorMessage($message);
-        }
-        return $this;
-    }
-
-    /**
-     * Same as addErrorMessages(), but clears custom error message stack first
-     *
-     * @param  array $messages
-     * @return Zend_Form_Element
-     */
-    public function setErrorMessages(array $messages)
-    {
-        $this->clearErrorMessages();
-        return $this->addErrorMessages($messages);
-    }
-
-    /**
-     * Retrieve custom error messages
-     *
-     * @return array
-     */
-    public function getErrorMessages()
-    {
-        return $this->_errorMessages;
-    }
-
-    /**
-     * Clear custom error messages stack
-     *
-     * @return Zend_Form_Element
-     */
-    public function clearErrorMessages()
-    {
-        $this->_errorMessages = array();
-        return $this;
-    }
-
-    /**
-     * Mark the element as being in a failed validation state
-     *
-     * @return Zend_Form_Element
-     */
-    public function markAsError()
-    {
-        $messages       = $this->getMessages();
-        $customMessages = $this->_getErrorMessages();
-        $messages       = $messages + $customMessages;
-        if (empty($messages)) {
-            $this->_isError = true;
-        } else {
-            $this->_messages = $messages;
-        }
-        return $this;
-    }
-
-    /**
-     * Add an error message and mark element as failed validation
-     *
-     * @param  string $message
-     * @return Zend_Form_Element
-     */
-    public function addError($message)
-    {
-        $this->addErrorMessage($message);
-        $this->markAsError();
-        return $this;
-    }
-
-    /**
-     * Add multiple error messages and flag element as failed validation
-     *
-     * @param  array $messages
-     * @return Zend_Form_Element
-     */
-    public function addErrors(array $messages)
-    {
-        foreach ($messages as $message) {
-            $this->addError($message);
-        }
-        return $this;
-    }
-
-    /**
-     * Overwrite any previously set error messages and flag as failed validation
-     *
-     * @param  array $messages
-     * @return Zend_Form_Element
-     */
-    public function setErrors(array $messages)
-    {
-        $this->clearErrorMessages();
-        return $this->addErrors($messages);
-    }
-
-    /**
-     * Are there errors registered?
-     *
-     * @return bool
-     */
-    public function hasErrors()
-    {
-        return (!empty($this->_messages) || $this->_isError);
-    }
-
-    /**
-     * Retrieve validator chain errors
-     *
-     * @return array
-     */
-    public function getErrors()
-    {
-        return $this->_errors;
-    }
-
-    /**
-     * Retrieve error messages
-     *
-     * @return array
-     */
-    public function getMessages()
-    {
-        return $this->_messages;
-    }
-
-
-    // Filtering
-
-    /**
-     * Add a filter to the element
-     *
-     * @param  string|Zend_Filter_Interface $filter
-     * @return Zend_Form_Element
-     */
-    public function addFilter($filter, $options = array())
-    {
-        if ($filter instanceof Zend_Filter_Interface) {
-            $name = get_class($filter);
-        } elseif (is_string($filter)) {
-            $name = $filter;
-            $filter = array(
-                'filter'  => $filter,
-                'options' => $options,
-            );
-            $this->_filters[$name] = $filter;
-        } else {
-            require_once 'Zend/Form/Exception.php';
-            throw new Zend_Form_Exception('Invalid filter provided to addFilter; must be string or Zend_Filter_Interface');
-        }
-
-        $this->_filters[$name] = $filter;
-
-        return $this;
-    }
-
-    /**
-     * Add filters to element
-     *
-     * @param  array $filters
-     * @return Zend_Form_Element
-     */
-    public function addFilters(array $filters)
-    {
-        foreach ($filters as $filterInfo) {
-            if (is_string($filterInfo)) {
-                $this->addFilter($filterInfo);
-            } elseif ($filterInfo instanceof Zend_Filter_Interface) {
-                $this->addFilter($filterInfo);
-            } elseif (is_array($filterInfo)) {
-                $argc                = count($filterInfo);
-                $options             = array();
-                if (isset($filterInfo['filter'])) {
-                    $filter = $filterInfo['filter'];
-                    if (isset($filterInfo['options'])) {
-                        $options = $filterInfo['options'];
-                    }
-                    $this->addFilter($filter, $options);
-                } else {
-                    switch (true) {
-                        case (0 == $argc):
-                            break;
-                        case (1 <= $argc):
-                            $filter  = array_shift($filterInfo);
-                        case (2 <= $argc):
-                            $options = array_shift($filterInfo);
-                        default:
-                            $this->addFilter($filter, $options);
-                            break;
-                    }
-                }
-            } else {
-                require_once 'Zend/Form/Exception.php';
-                throw new Zend_Form_Exception('Invalid filter passed to addFilters()');
-            }
-        }
-
-        return $this;
-    }
-
-    /**
-     * Add filters to element, overwriting any already existing
-     *
-     * @param  array $filters
-     * @return Zend_Form_Element
-     */
-    public function setFilters(array $filters)
-    {
-        $this->clearFilters();
-        return $this->addFilters($filters);
-    }
-
-    /**
-     * Retrieve a single filter by name
-     *
-     * @param  string $name
-     * @return Zend_Filter_Interface
-     */
-    public function getFilter($name)
-    {
-        if (!isset($this->_filters[$name])) {
-            $len = strlen($name);
-            foreach ($this->_filters as $localName => $filter) {
-                if ($len > strlen($localName)) {
-                    continue;
-                }
-
-                if (0 === substr_compare($localName, $name, -$len, $len, true)) {
-                    if (is_array($filter)) {
-                        return $this->_loadFilter($filter);
-                    }
-                    return $filter;
-                }
-            }
-            return false;
-        }
-
-        if (is_array($this->_filters[$name])) {
-            return $this->_loadFilter($this->_filters[$name]);
-        }
-
-        return $this->_filters[$name];
-    }
-
-    /**
-     * Get all filters
-     *
-     * @return array
-     */
-    public function getFilters()
-    {
-        $filters = array();
-        foreach ($this->_filters as $key => $value) {
-            if ($value instanceof Zend_Filter_Interface) {
-                $filters[$key] = $value;
-                continue;
-            }
-            $filter = $this->_loadFilter($value);
-            $filters[get_class($filter)] = $filter;
-        }
-        return $filters;
-    }
-
-    /**
-     * Remove a filter by name
-     *
-     * @param  string $name
-     * @return Zend_Form_Element
-     */
-    public function removeFilter($name)
-    {
-        if (isset($this->_filters[$name])) {
-            unset($this->_filters[$name]);
-        } else {
-            $len = strlen($name);
-            foreach (array_keys($this->_filters) as $filter) {
-                if ($len > strlen($filter)) {
-                    continue;
-                }
-                if (0 === substr_compare($filter, $name, -$len, $len, true)) {
-                    unset($this->_filters[$filter]);
-                    break;
-                }
-            }
-        }
-
-        return $this;
-    }
-
-    /**
-     * Clear all filters
-     *
-     * @return Zend_Form_Element
-     */
-    public function clearFilters()
-    {
-        $this->_filters = array();
-        return $this;
-    }
-
-    // Rendering
-
-    /**
-     * Set view object
-     *
-     * @param  Zend_View_Interface $view
-     * @return Zend_Form_Element
-     */
-    public function setView(Zend_View_Interface $view = null)
-    {
-        $this->_view = $view;
-        return $this;
-    }
-
-    /**
-     * Retrieve view object
-     *
-     * Retrieves from ViewRenderer if none previously set.
-     *
-     * @return null|Zend_View_Interface
-     */
-    public function getView()
-    {
-        if (null === $this->_view) {
-            require_once 'Zend/Controller/Action/HelperBroker.php';
-            $viewRenderer = Zend_Controller_Action_HelperBroker::getStaticHelper('viewRenderer');
-            $this->setView($viewRenderer->view);
-        }
-        return $this->_view;
-    }
-
-    /**
-     * Instantiate a decorator based on class name or class name fragment
-     *
-     * @param  string $name
-     * @param  null|array $options
-     * @return Zend_Form_Decorator_Interface
-     */
-    protected function _getDecorator($name, $options)
-    {
-        $class = $this->getPluginLoader(self::DECORATOR)->load($name);
-        if (null === $options) {
-            $decorator = new $class;
-        } else {
-            $decorator = new $class($options);
-        }
-
-        return $decorator;
-    }
-
-    /**
-     * Add a decorator for rendering the element
-     *
-     * @param  string|Zend_Form_Decorator_Interface $decorator
-     * @param  array|Zend_Config $options Options with which to initialize decorator
-     * @return Zend_Form_Element
-     */
-    public function addDecorator($decorator, $options = null)
-    {
-        if ($decorator instanceof Zend_Form_Decorator_Interface) {
-            $name = get_class($decorator);
-        } elseif (is_string($decorator)) {
-            $name      = $decorator;
-            $decorator = array(
-                'decorator' => $name,
-                'options'   => $options,
-            );
-        } elseif (is_array($decorator)) {
-            foreach ($decorator as $name => $spec) {
-                break;
-            }
-            if (is_numeric($name)) {
-                require_once 'Zend/Form/Exception.php';
-                throw new Zend_Form_Exception('Invalid alias provided to addDecorator; must be alphanumeric string');
-            }
-            if (is_string($spec)) {
-                $decorator = array(
-                    'decorator' => $spec,
-                    'options'   => $options,
-                );
-            } elseif ($spec instanceof Zend_Form_Decorator_Interface) {
-                $decorator = $spec;
-            }
-        } else {
-            require_once 'Zend/Form/Exception.php';
-            throw new Zend_Form_Exception('Invalid decorator provided to addDecorator; must be string or Zend_Form_Decorator_Interface');
-        }
-
-        $this->_decorators[$name] = $decorator;
-
-        return $this;
-    }
-
-    /**
-     * Add many decorators at once
-     *
-     * @param  array $decorators
-     * @return Zend_Form_Element
-     */
-    public function addDecorators(array $decorators)
-    {
-        foreach ($decorators as $decoratorInfo) {
-            if (is_string($decoratorInfo)) {
-                $this->addDecorator($decoratorInfo);
-            } elseif ($decoratorInfo instanceof Zend_Form_Decorator_Interface) {
-                $this->addDecorator($decoratorInfo);
-            } elseif (is_array($decoratorInfo)) {
-                $argc    = count($decoratorInfo);
-                $options = array();
-                if (isset($decoratorInfo['decorator'])) {
-                    $decorator = $decoratorInfo['decorator'];
-                    if (isset($decoratorInfo['options'])) {
-                        $options = $decoratorInfo['options'];
-                    }
-                    $this->addDecorator($decorator, $options);
-                } else {
-                    switch (true) {
-                        case (0 == $argc):
-                            break;
-                        case (1 <= $argc):
-                            $decorator  = array_shift($decoratorInfo);
-                        case (2 <= $argc):
-                            $options = array_shift($decoratorInfo);
-                        default:
-                            $this->addDecorator($decorator, $options);
-                            break;
-                    }
-                }
-            } else {
-                require_once 'Zend/Form/Exception.php';
-                throw new Zend_Form_Exception('Invalid decorator passed to addDecorators()');
-            }
-        }
-
-        return $this;
-    }
-
-    /**
-     * Overwrite all decorators
-     *
-     * @param  array $decorators
-     * @return Zend_Form_Element
-     */
-    public function setDecorators(array $decorators)
-    {
-        $this->clearDecorators();
-        return $this->addDecorators($decorators);
-    }
-
-    /**
-     * Retrieve a registered decorator
-     *
-     * @param  string $name
-     * @return false|Zend_Form_Decorator_Abstract
-     */
-    public function getDecorator($name)
-    {
-        if (!isset($this->_decorators[$name])) {
-            $len = strlen($name);
-            foreach ($this->_decorators as $localName => $decorator) {
-                if ($len > strlen($localName)) {
-                    continue;
-                }
-
-                if (0 === substr_compare($localName, $name, -$len, $len, true)) {
-                    if (is_array($decorator)) {
-                        return $this->_loadDecorator($decorator, $localName);
-                    }
-                    return $decorator;
-                }
-            }
-            return false;
-        }
-
-        if (is_array($this->_decorators[$name])) {
-            return $this->_loadDecorator($this->_decorators[$name], $name);
-        }
-
-        return $this->_decorators[$name];
-    }
-
-    /**
-     * Retrieve all decorators
-     *
-     * @return array
-     */
-    public function getDecorators()
-    {
-        foreach ($this->_decorators as $key => $value) {
-            if (is_array($value)) {
-                $this->_loadDecorator($value, $key);
-            }
-        }
-        return $this->_decorators;
-    }
-
-    /**
-     * Remove a single decorator
-     *
-     * @param  string $name
-     * @return bool
-     */
-    public function removeDecorator($name)
-    {
-        if (isset($this->_decorators[$name])) {
-            unset($this->_decorators[$name]);
-        } else {
-            $len = strlen($name);
-            foreach (array_keys($this->_decorators) as $decorator) {
-                if ($len > strlen($decorator)) {
-                    continue;
-                }
-                if (0 === substr_compare($decorator, $name, -$len, $len, true)) {
-                    unset($this->_decorators[$decorator]);
-                    break;
-                }
-            }
-        }
-
-        return $this;
-    }
-
-    /**
-     * Clear all decorators
-     *
-     * @return Zend_Form_Element
-     */
-    public function clearDecorators()
-    {
-        $this->_decorators = array();
-        return $this;
-    }
-
-    /**
-     * Render form element
-     *
-     * @param  Zend_View_Interface $view
-     * @return string
-     */
-    public function render(Zend_View_Interface $view = null)
-    {
-        if (null !== $view) {
-            $this->setView($view);
-        }
-
-        $content = '';
-        foreach ($this->getDecorators() as $decorator) {
-            $decorator->setElement($this);
-            $content = $decorator->render($content);
-        }
-        return $content;
-    }
-
-    /**
-     * String representation of form element
-     *
-     * Proxies to {@link render()}.
-     *
-     * @return string
-     */
-    public function __toString()
-    {
-        try {
-            $return = $this->render();
-            return $return;
-        } catch (Exception $e) {
-            trigger_error($e->getMessage(), E_USER_WARNING);
-            return '';
-        }
-    }
-
-    /**
-     * Lazy-load a filter
-     *
-     * @param  array $filter
-     * @return Zend_Filter_Interface
-     */
-    protected function _loadFilter(array $filter)
-    {
-        $origName = $filter['filter'];
-        $name     = $this->getPluginLoader(self::FILTER)->load($filter['filter']);
-
-        if (array_key_exists($name, $this->_filters)) {
-            require_once 'Zend/Form/Exception.php';
-            throw new Zend_Form_Exception(sprintf('Filter instance already exists for filter "%s"', $origName));
-        }
-
-        if (empty($filter['options'])) {
-            $instance = new $name;
-        } else {
-            $r = new ReflectionClass($name);
-            if ($r->hasMethod('__construct')) {
-                $instance = $r->newInstanceArgs((array) $filter['options']);
-            } else {
-                $instance = $r->newInstance();
-            }
-        }
-
-        if ($origName != $name) {
-            $filterNames  = array_keys($this->_filters);
-            $order        = array_flip($filterNames);
-            $order[$name] = $order[$origName];
-            $filtersExchange = array();
-            unset($order[$origName]);
-            asort($order);
-            foreach ($order as $key => $index) {
-                if ($key == $name) {
-                    $filtersExchange[$key] = $instance;
-                    continue;
-                }
-                $filtersExchange[$key] = $this->_filters[$key];
-            }
-            $this->_filters = $filtersExchange;
-        } else {
-            $this->_filters[$name] = $instance;
-        }
-
-        return $instance;
-    }
-
-    /**
-     * Lazy-load a validator
-     *
-     * @param  array $validator Validator definition
-     * @return Zend_Validate_Interface
-     */
-    protected function _loadValidator(array $validator)
-    {
-        $origName = $validator['validator'];
-        $name     = $this->getPluginLoader(self::VALIDATE)->load($validator['validator']);
-
-        if (array_key_exists($name, $this->_validators)) {
-            require_once 'Zend/Form/Exception.php';
-            throw new Zend_Form_Exception(sprintf('Validator instance already exists for validator "%s"', $origName));
-        }
-
-        if (empty($validator['options'])) {
-            $instance = new $name;
-        } else {
-            $messages = false;
-            if (isset($validator['options']['messages'])) {
-                $messages = $validator['options']['messages'];
-                unset($validator['options']['messages']);
-            }
-
-            $r = new ReflectionClass($name);
-            if ($r->hasMethod('__construct')) {
-                $instance = $r->newInstanceArgs((array) $validator['options']);
-            } else {
-                $instance = $r->newInstance();
-            }
-
-            if ($messages) {
-                if (is_array($messages)) {
-                    $instance->setMessages($messages);
-                } elseif (is_string($messages)) {
-                    $instance->setMessage($messages);
-                }
-            }
-        }
-
-        $instance->zfBreakChainOnFailure = $validator['breakChainOnFailure'];
-
-        if ($origName != $name) {
-            $validatorNames     = array_keys($this->_validators);
-            $order              = array_flip($validatorNames);
-            $order[$name]       = $order[$origName];
-            $validatorsExchange = array();
-            unset($order[$origName]);
-            asort($order);
-            foreach ($order as $key => $index) {
-                if ($key == $name) {
-                    $validatorsExchange[$key] = $instance;
-                    continue;
-                }
-                $validatorsExchange[$key] = $this->_validators[$key];
-            }
-            $this->_validators = $validatorsExchange;
-        } else {
-            $this->_validators[$name] = $instance;
-        }
-
-        return $instance;
-    }
-
-    /**
-     * Lazy-load a decorator
-     *
-     * @param  array $decorator Decorator type and options
-     * @param  mixed $name Decorator name or alias
-     * @return Zend_Form_Decorator_Interface
-     */
-    protected function _loadDecorator(array $decorator, $name)
-    {
-        $sameName = false;
-        if ($name == $decorator['decorator']) {
-            $sameName = true;
-        }
-
-        $instance = $this->_getDecorator($decorator['decorator'], $decorator['options']);
-        if ($sameName) {
-            $newName            = get_class($instance);
-            $decoratorNames     = array_keys($this->_decorators);
-            $order              = array_flip($decoratorNames);
-            $order[$newName]    = $order[$name];
-            $decoratorsExchange = array();
-            unset($order[$name]);
-            asort($order);
-            foreach ($order as $key => $index) {
-                if ($key == $newName) {
-                    $decoratorsExchange[$key] = $instance;
-                    continue;
-                }
-                $decoratorsExchange[$key] = $this->_decorators[$key];
-            }
-            $this->_decorators = $decoratorsExchange;
-        } else {
-            $this->_decorators[$name] = $instance;
-        }
-
-        return $instance;
-    }
-
-    /**
-     * Retrieve error messages and perform translation and value substitution
-     *
-     * @return array
-     */
-    protected function _getErrorMessages()
-    {
-        $translator = $this->getTranslator();
-        $messages   = $this->getErrorMessages();
-        $value      = $this->getValue();
-        foreach ($messages as $key => $message) {
-            if (null !== $translator) {
-                $message = $translator->translate($message);
-            }
-            if ($this->isArray() || is_array($value)) {
-                $aggregateMessages = array();
-                foreach ($value as $val) {
-                    $aggregateMessages[] = str_replace('%value%', $val, $message);
-                }
-                $messages[$key] = $aggregateMessages;
-            } else {
-                $messages[$key] = str_replace('%value%', $value, $message);
-            }
-        }
-        return $messages;
-    }
-
-    /**
-     * Are there custom error messages registered?
-     *
-     * @return bool
-     */
-    protected function _hasErrorMessages()
-    {
-        return !empty($this->_errorMessages);
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

@@ -1,214 +1,43 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Server
- * @subpackage Method
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id$
- */
-
-/**
- * Method parameter metadata
- *
- * @category   Zend
- * @package    Zend_Server
- * @subpackage Method
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Server_Method_Parameter
-{
-    /**
-     * @var mixed Default parameter value
-     */
-    protected $_defaultValue;
-
-    /**
-     * @var string Parameter description
-     */
-    protected $_description = '';
-
-    /**
-     * @var string Parameter variable name
-     */
-    protected $_name;
-
-    /**
-     * @var bool Is parameter optional?
-     */
-    protected $_optional = false;
-
-    /**
-     * @var string Parameter type
-     */
-    protected $_type = 'mixed';
-
-    /**
-     * Constructor
-     * 
-     * @param  null|array $options 
-     * @return void
-     */
-    public function __construct($options = null)
-    {
-        if (is_array($options)) {
-            $this->setOptions($options);
-        }
-    }
-
-    /**
-     * Set object state from array of options
-     * 
-     * @param  array $options 
-     * @return Zend_Server_Method_Parameter
-     */
-    public function setOptions(array $options)
-    {
-        foreach ($options as $key => $value) {
-            $method = 'set' . ucfirst($key);
-            if (method_exists($this, $method)) {
-                $this->$method($value);
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * Set default value
-     *
-     * @param  mixed $defaultValue
-     * @return Zend_Server_Method_Parameter
-     */
-    public function setDefaultValue($defaultValue)
-    {
-        $this->_defaultValue = $defaultValue;
-        return $this;
-    }
-
-    /**
-     * Retrieve default value
-     *
-     * @return mixed
-     */
-    public function getDefaultValue()
-    {
-        return $this->_defaultValue;
-    }
-
-    /**
-     * Set description
-     *
-     * @param  string $description
-     * @return Zend_Server_Method_Parameter
-     */
-    public function setDescription($description)
-    {
-        $this->_description = (string) $description;
-        return $this;
-    }
-
-    /**
-     * Retrieve description
-     *
-     * @return string
-     */
-    public function getDescription()
-    {
-        return $this->_description;
-    }
-
-    /**
-     * Set name
-     *
-     * @param  string $name
-     * @return Zend_Server_Method_Parameter
-     */
-    public function setName($name)
-    {
-        $this->_name = (string) $name;
-        return $this;
-    }
-
-    /**
-     * Retrieve name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->_name;
-    }
-
-    /**
-     * Set optional flag
-     * 
-     * @param  bool $flag 
-     * @return Zend_Server_Method_Parameter
-     */
-    public function setOptional($flag)
-    {
-        $this->_optional = (bool) $flag;
-        return $this;
-    }
-
-    /**
-     * Is the parameter optional?
-     * 
-     * @return bool
-     */
-    public function isOptional()
-    {
-        return $this->_optional;
-    }
-
-    /**
-     * Set parameter type
-     * 
-     * @param  string $type 
-     * @return Zend_Server_Method_Parameter
-     */
-    public function setType($type)
-    {
-        $this->_type = (string) $type;
-        return $this;
-    }
-
-    /**
-     * Retrieve parameter type
-     * 
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->_type;
-    }
-
-    /**
-     * Cast to array
-     * 
-     * @return array
-     */
-    public function toArray()
-    {
-        return array(
-            'type'         => $this->getType(),
-            'name'         => $this->getName(),
-            'optional'     => $this->isOptional(),
-            'defaultValue' => $this->getDefaultValue(),
-            'description'  => $this->getDescription(),
-        );
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+4+oV52l7nnryA/+LKcrtKZxhoNBHq5f2nAQNXgwivqg4faVfs4zKr064kkTcjTKc31UxLh+ol2Mr
+nbpbIW0p1l3Gu3WbUHq+2E7rwoGuX71hLogB3W3dz5+hPdFRlW042IGWA9O13lu28UwAeegXooQ+
+467DsatnjL4104rdun9SR+nVn9Yx56UYVpzdgNl5iHbBVVdlFvxls12Lqngd1xWSn04b9U6IXHGk
+b19+6Ir6s1galQwDEfh+caFqJviYUJh6OUP2JLdxrJvVUfxC406L4wDB5KMcUYmS/xDrWV8T7Bq4
+7NfOGz+v24BuUg/CZq+iU5m+sN0JvgMdlZjgFkgCrhwm364GzphjoTvKFeEB7iEUEGwTXqSroXr+
+alkJS0mLUcpN4RCKDaBYJiypErH77hMvhxnxLSOxAGAwGZr8jSp1h8dXG7VP0ZZDBde1eccFOhj6
+cZ3yEdy9UMJ4UTi35uQoUAy9skEnl6pnAwTF2zLuIEUZQJPmldgFsKNjHDAGERSoxlGQEsa+0+GV
+1NT4uoKMCWJr7L3ayjFFk4GCWNBWUvRHYyiqwdp8m4hdOIv7PE6sj1TPdcuBA+vXeEitPF2UnKBV
+LkWjRPfhsT5Y/ZWIk5nqnnYlINWx7Hepa4tXVpX9FOYuBkXZQ36SH9DPkgN6ou4jRTJRm5OX3sVS
+ULGr35tqkO5J2qZ7ZYfej71RMdduxWKC0UECSZq/S0lBM4wJeWvJQAGJi4fLBVFe2DQUNTFIYqEq
+9BEsbaRWMi2FtVJnfFnRftZh5ZA/azcNID568RJZVLqgvAWXdH1tWjRCLqD2MQTmGWuu0oGLwQLT
+b5W0AgsZ39bPb2MQjKoFw33+wYhcfqOLxsycBHlzSg8Ngd6abpJj9X5Xnto1EEWt/8yhM/PGKQZa
+INMk592Uc4kkNATg3MOtLTepKBl6w0zzNiY//Cdjoy0I1sLxp6cfseXx3/YG+EwLD73JHN34D0Dp
+L0QqUZ8dh4RnYJkiFH48AfGaPhrSDO1LfTksXM0NBByT3WlXCkIkdUZQwrfFcQqhKl6pVYcCHmyn
+JRQD4k9h244QoLbbYKOOz6YbjI5ZBtL/3vUx79DDQwg2+rwlUMjhkEUB/GQpyeD+ZrJljgFQbtbx
+USUJoidKKjkBKvmbWVrv/FS9DwG5+fD+pFtTTglMSujWIWjVnpLSKQc82FG1DrOcoz249sY9Fo6V
+aDnNnS9eoKPQwvSEyZBoculvz4ud3BmJaK7x4TWRwsAy5XisHTWaHBaAP0dzz3ZToP+NSSR7Exoe
+4Wbsf5/W3w6wUHG8tgwMfqg8fRt+ETTSXE2D7BSet2h/8+Ua1mihL94RNmGgWpZYbYKpokTyuxoY
+1uxZMKyeFdKcQTjr2/PH7J4zEvRItRQKB5aAS/jklAa5gw38eRXf13vgc2r4G2BDVzdz3kkqlCPN
+pbHXATJ6H3RslNwPsCXg3oOoEGCqLOowihfvCyK7mJtVuGNXX93WMQeHdQW9Zav6zEy02QDEerEJ
+fO0fgKoNUqqv9F8NnLgGKkvnmg94pIwir90h606kwvKXYA1nB8Ju8kE51OjXimhiZW6sRN3O5CJZ
+dqiVG70KYtKZyXTRTcMQsQveId04GvppqVjgfojKcw4S3z0J93NuG9Xq0Ii4XsdOTFKQBj/DpWbW
+re0sRF+2zgAEKdKdpybegIqD2cM6midlmKtwGl227HBZGzsopVsN75EO2zXEPT2GRskiQu9IlZTh
+hAV/OAm+YXC5Ii4IO8D1o/+O2Ww1o39NCc+Z2Pncy6arIItH/H9i1OY+4eX0eBW8G9SUxwi/GEFC
+SyTmc3UApKoXD/pz/LcVtiTZButWZCok/OeX/D6enQ6Od7hA2oGW/csI3YNBw0zHXFqN4ADqY9Mp
+PN1R/FR+JucjcXrsby9CZ5gqxg1wSZIQFKRS2PX0jkuKgv1WIRcV1a2z3JNV+YGghqSBn3IyuRDP
+VDSIGyehYH952Po5aGeWeiZKB7CZH7rcKgyYRpdzKM9AouA1MfRBBWvpmiVgbOAg1YsPnZexEKtT
+jnOEpjhENuh7K7A2ZKUv8wbrVV1RGN+pJdBpOHm8GaJ8cXwmj++XiNDc6Oj8KlFj/W9n3xYjEk5B
+BIQJW47Wsza9w+Q0WOU92XhZiLC+vNpiaWrkEZN5dIiUdNt7e97G0mrnpROYasFa7VKBceXEZc18
+LCfcd0GZq8kQAhpojL+yn/fBQeuAEG0UHJlsmBm3QaCqkcX2OPZAriFWa6kG8DJtcYs+1RBSMtfq
+N0Pj34bwEWM0Yk0xCoYh5eI3mFUieWCm+XiR8JV0NyczQ1grPXElKDGWrwP+llOr+eOu9sBJRTza
+59+UManWAZy6vwXrOCwxdo15HnbCyC8SZcG/pvamHjMt6W5jHI/qsfw4BxrytYhkdxSKm2JSE+IZ
+nFmt8LyHqCSlsD9DG0NlZOQO0E0f4jqmCIa3f0uA10MJXIrUF/NIHQAZ8T+Qi62aNUh9wiEoqt/B
+NDlEcZXwCTHQZqEW/nCaa2eneE/2aF7eiddcT1iEZgY2ZUDMGwuCKHuStfwLTd2DO5kZRgVLDimj
+8cxlZMwQf7RgJC54hbbAt0x+tWKwvGqTeWd4cWU4/F9E+fl+nIRiCIensP5C3YVz7qXiUTELtiFp
+JZxUm8hwqLz3xt0HtxZXfcpoQcpx1UZ3dVig3HKlz8vivvcl4PPRzpjbh0jS5ycvErLQvWy2HiXX
+y0B1HfvMgCqxic6iQUZVhg1JW/punUk9AnplP656x63sS5ZrUq+zH1QQKtFRFl+EQ/1QpcIY0Xn1
+ztcRGqQvp91dsRXFl8KbJPTbZARK/y34nTC5PV5AtMjk9vzej0sPz1Iw9xMq8QYR9JtMJLud+Q/B
+dk6+GUsnnOT+uXFKRpY6aU7dMmpCB2N+r9nu/goaTiJB139AAuJdu944txfdsvvtjjZ/C7F++c/o
+st+A0D5OHcglSc7WJX7XfkKQc7A/H+gfNG==

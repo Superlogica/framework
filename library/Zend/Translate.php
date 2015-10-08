@@ -1,179 +1,55 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Translate
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @version    $Id: Date.php 2498 2006-12-23 22:13:38Z thomas $
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * @see Zend_Loader
- */
-require_once 'Zend/Loader.php';
-
-
-/**
- * @category   Zend
- * @package    Zend_Translate
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Translate {
-    /**
-     * Adapter names constants
-     */
-    const AN_ARRAY   = 'Array';
-    const AN_CSV     = 'Csv';
-    const AN_GETTEXT = 'Gettext';
-    const AN_INI     = 'Ini';
-    const AN_QT      = 'Qt';
-    const AN_TBX     = 'Tbx';
-    const AN_TMX     = 'Tmx';
-    const AN_XLIFF   = 'Xliff';
-    const AN_XMLTM   = 'XmlTm';
-
-    const LOCALE_DIRECTORY = 'directory';
-    const LOCALE_FILENAME  = 'filename';
-
-    /**
-     * Adapter
-     *
-     * @var Zend_Translate_Adapter
-     */
-    private $_adapter;
-    private static $_cache = null;
-
-    /**
-     * Generates the standard translation object
-     *
-     * @param  string              $adapter  Adapter to use
-     * @param  array               $data     Translation source data for the adapter
-     *                                       Depends on the Adapter
-     * @param  string|Zend_Locale  $locale   OPTIONAL locale to use
-     * @param  array               $options  OPTIONAL options for the adapter
-     * @throws Zend_Translate_Exception
-     */
-    public function __construct($adapter, $data, $locale = null, array $options = array())
-    {
-        $this->setAdapter($adapter, $data, $locale, $options);
-    }
-
-    /**
-     * Sets a new adapter
-     *
-     * @param  string              $adapter  Adapter to use
-     * @param  string|array        $data     Translation data
-     * @param  string|Zend_Locale  $locale   OPTIONAL locale to use
-     * @param  array               $options  OPTIONAL Options to use
-     * @throws Zend_Translate_Exception
-     */
-    public function setAdapter($adapter, $data, $locale = null, array $options = array())
-    {
-        if (Zend_Loader::isReadable('Zend/Translate/Adapter/' . ucfirst($adapter). '.php')) {
-            $adapter = 'Zend_Translate_Adapter_' . ucfirst($adapter);
-        }
-
-        if (!class_exists($adapter)) {
-            Zend_Loader::loadClass($adapter);
-        }
-
-        if (self::$_cache !== null) {
-            call_user_func(array($adapter, 'setCache'), self::$_cache);
-        }
-        $this->_adapter = new $adapter($data, $locale, $options);
-        if (!$this->_adapter instanceof Zend_Translate_Adapter) {
-            require_once 'Zend/Translate/Exception.php';
-            throw new Zend_Translate_Exception("Adapter " . $adapter . " does not extend Zend_Translate_Adapter");
-        }
-    }
-
-    /**
-     * Returns the adapters name and it's options
-     *
-     * @return Zend_Translate_Adapter
-     */
-    public function getAdapter()
-    {
-        return $this->_adapter;
-    }
-
-    /**
-     * Returns the set cache
-     *
-     * @return Zend_Cache_Core The set cache
-     */
-    public static function getCache()
-    {
-        return self::$_cache;
-    }
-
-    /**
-     * Sets a cache for all instances of Zend_Translate
-     *
-     * @param  Zend_Cache_Core $cache Cache to store to
-     * @return void
-     */
-    public static function setCache(Zend_Cache_Core $cache)
-    {
-        self::$_cache = $cache;
-    }
-
-    /**
-     * Returns true when a cache is set
-     *
-     * @return boolean
-     */
-    public static function hasCache()
-    {
-        if (self::$_cache !== null) {
-            return true;
-        }
-
-        return false;
-    }
-
-    /**
-     * Removes any set cache
-     *
-     * @return void
-     */
-    public static function removeCache()
-    {
-        self::$_cache = null;
-    }
-
-    /**
-     * Clears all set cache data
-     *
-     * @return void
-     */
-    public static function clearCache()
-    {
-        self::$_cache->clean();
-    }
-
-    /**
-     * Calls all methods from the adapter
-     */
-    public function __call($method, array $options)
-    {
-        if (method_exists($this->_adapter, $method)) {
-            return call_user_func_array(array($this->_adapter, $method), $options);
-        }
-        require_once 'Zend/Translate/Exception.php';
-        throw new Zend_Translate_Exception("Unknown method '" . $method . "' called!");
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

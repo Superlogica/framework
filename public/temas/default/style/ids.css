@@ -79,6 +79,19 @@ content: "\f017";
 background-color: #ff7857;
 }
 
+tr.tickets.danger{
+    background-color : #f6ebe9;
+}
+
+tr.tickets.default{
+    background-color : #ebf8fb;
+}
+
+
+tr.tickets.success{
+    background-color : #f3f9e4;
+}
+
 td.tickets.default:before {
 /*Não retirar imagem adicionada apenas para preencher o espaço, mas deve ficar invisível*/
 content: "\f05a";
@@ -129,12 +142,7 @@ visibility: hidden;
     background: url('/temas/default/img/setapbaixo.png') 95% 58% no-repeat,url('/temas/default/img/bg_topo_rodape.png') center;        
 }
 
-.Clients_Shared_Grids_TicketsHistorico, .Clients_Areadocondomino_Grids_TicketsHistorico, .Clients_Areadocliente_Grids_TicketsHistorico{
-    word-break: break-word;    
-}
-
-
-#suporte-topo{
+/*#suporte-topo{
     width: 30px !important;
     float: right;    
     background-image: url('/temas/default/img/suporte.png');
@@ -144,7 +152,7 @@ visibility: hidden;
 
 #suporte-topo:hover{
     background: url('/temas/default/img/suporte.png') center no-repeat,url('/temas/default/img/bg_topo_rodape.png') center;
-}
+}*/
 
 #subtitulo{
    padding-bottom: 5px;
@@ -216,7 +224,7 @@ visibility: hidden;
     font-family: lucida grande, verdana;
     font-size: 12px;
     height: 100%;
-    min-height: 350px;
+    min-height: 505px;
 }
 
 * html #login div#conteudoLogin,#slSocial{
@@ -224,7 +232,7 @@ visibility: hidden;
 }
 
 #blocoSuporteLogin{
-    margin-top: 80%;
+    margin-top: 40%;
 }
 
 * html #blocoSuporteLogin{
@@ -233,14 +241,30 @@ visibility: hidden;
     text-align: center !important;
 }
 
-@media screen and (max-height: 700px){
+@media screen and (max-height: 675px){
+    #login #logo {
+        margin-top: 0;
+        margin-bottom: 20%;
+        margin-left: 20px;
+    }
     #blocoSuporteLogin{
-        margin-top: 10% !important;
+        margin-top: 20% !important;
     }
     #login #logo {
         margin-top: 0 !important;
         margin-bottom: 10%;
+    } 
+    #login div#conteudoLogin,#slSocial{
+        min-height: 465px;
     }    
+}
+@media screen and (max-height: 500px){
+    #blocoSuporteLogin{
+        margin-top: 10% !important;
+    }
+    #login div#conteudoLogin,#slSocial{
+        min-height: 430px;
+    } 
 }
 
 /*#emglobaPaginaLogim{
@@ -535,13 +559,13 @@ fieldset#fieldset-DESPESA_LIQUIDAR{
     color:#AAA !important;
 }
 
-#rodape #api a, #rodape #exportar a{
+#rodape #api a, #rodape #exportar a, #rodape #suporteOpcoes a{
     text-decoration:none;
     width: 100%;
     text-align: left;
 }
 
-#rodape #api:hover, #rodape #exportar:hover{
+#rodape #api:hover, #rodape #exportar:hover, #rodape #suporteOpcoes:hover{
     background-image: url('/temas/default/img/bg_topo_rodape.png');
 }
 
@@ -553,7 +577,7 @@ fieldset#fieldset-DESPESA_LIQUIDAR{
 
 #rodape #exportar #formatos{
     width: 100px;
-    height: 70px;
+    height: 100px;
     position: absolute;
     bottom:0;
     padding-bottom: 0px;
@@ -576,6 +600,41 @@ fieldset#fieldset-DESPESA_LIQUIDAR{
 }
 
 #rodape #exportar #formatos a:hover{
+    background-image: url('/temas/default/img/bg_topo_rodape.png');    
+}
+
+
+#rodape #suporteOpcoes{
+    height: 36px !important;
+    line-height: 20px;
+    padding-top: 10px !important;
+}
+
+#rodape #suporteOpcoes #suporte{
+    width: 171px;
+    height: 43px;
+    position: absolute;
+    bottom:0;
+    padding-bottom: 0px;
+    padding-top: 6px;
+    margin-bottom: 37px;
+    background-image: url('/temas/default/img/bg_topo_rodape.png');
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+#rodape #suporteOpcoes #suporte a{
+    margin: 0 auto;
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+    display: block;
+    padding: 0;
+    border: 0px;
+    text-align: center !important;
+}
+
+#rodape #suporteOpcoes #suporte a:hover{
     background-image: url('/temas/default/img/bg_topo_rodape.png');    
 }
 /*##################*/
@@ -675,4 +734,9 @@ fieldset#fieldset-DESPESA_LIQUIDAR{
 #dadosArrecadacoesExtrasAvulsas{
     margin-top: -60px;
     margin-bottom: 80px;
+}
+
+
+#msgSalva{
+    width:150px;
 }

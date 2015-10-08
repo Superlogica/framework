@@ -1,125 +1,46 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Search_Lucene
- * @subpackage Analysis
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-
-/** Zend_Search_Lucene_Analysis_Analyzer_Common */
-require_once 'Zend/Search/Lucene/Analysis/Analyzer/Common.php';
-
-
-/**
- * @category   Zend
- * @package    Zend_Search_Lucene
- * @subpackage Analysis
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-class Zend_Search_Lucene_Analysis_Analyzer_Common_Utf8 extends Zend_Search_Lucene_Analysis_Analyzer_Common
-{
-    /**
-     * Current char position in an UTF-8 stream
-     *
-     * @var integer
-     */
-    private $_position;
-
-    /**
-     * Current binary position in an UTF-8 stream
-     *
-     * @var integer
-     */
-    private $_bytePosition;
-    
-    /**
-     * Object constructor
-     *
-     * @throws Zend_Search_Lucene_Exception
-     */
-    public function __construct()
-    {
-        if (@preg_match('/\pL/u', 'a') != 1) {
-            // PCRE unicode support is turned off
-            require_once 'Zend/Search/Lucene/Exception.php';
-            throw new Zend_Search_Lucene_Exception('Utf8 analyzer needs PCRE unicode support to be enabled.');
-        }
-    }
-
-    /**
-     * Reset token stream
-     */
-    public function reset()
-    {
-        $this->_position     = 0;
-        $this->_bytePosition = 0;
-
-        // convert input into UTF-8
-        if (strcasecmp($this->_encoding, 'utf8' ) != 0  &&
-            strcasecmp($this->_encoding, 'utf-8') != 0 ) {
-                $this->_input = iconv($this->_encoding, 'UTF-8', $this->_input);
-                $this->_encoding = 'UTF-8';
-        }
-    }
-
-    /**
-     * Tokenization stream API
-     * Get next token
-     * Returns null at the end of stream
-     *
-     * @return Zend_Search_Lucene_Analysis_Token|null
-     */
-    public function nextToken()
-    {
-        if ($this->_input === null) {
-            return null;
-        }
-
-        do {
-            if (! preg_match('/[\p{L}]+/u', $this->_input, $match, PREG_OFFSET_CAPTURE, $this->_bytePosition)) {
-                // It covers both cases a) there are no matches (preg_match(...) === 0)
-                // b) error occured (preg_match(...) === FALSE)
-                return null;
-            }
-
-            // matched string
-            $matchedWord = $match[0][0];
-            
-            // binary position of the matched word in the input stream
-            $binStartPos = $match[0][1];
-            
-            // character position of the matched word in the input stream
-            $startPos = $this->_position + 
-                        iconv_strlen(substr($this->_input,
-                                            $this->_bytePosition,
-                                            $binStartPos - $this->_bytePosition),
-                                     'UTF-8');
-            // character postion of the end of matched word in the input stream
-            $endPos = $startPos + iconv_strlen($matchedWord, 'UTF-8');
-
-            $this->_bytePosition = $binStartPos + strlen($matchedWord);
-            $this->_position     = $endPos;
-
-            $token = $this->normalize(new Zend_Search_Lucene_Analysis_Token($matchedWord, $startPos, $endPos));
-        } while ($token === null); // try again if token is skipped
-
-        return $token;
-    }
-}
-
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+QY7OgBswFMQx

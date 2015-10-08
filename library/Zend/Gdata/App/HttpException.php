@@ -1,120 +1,30 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage App
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * Zend_Gdata_App_Exception
- */
-require_once 'Zend/Gdata/App/Exception.php';
-
-/**
- * Zend_Http_Client_Exception
- */
-require_once 'Zend/Http/Client/Exception.php';
-
-/**
- * Gdata exceptions
- *
- * Class to represent exceptions that occur during Gdata operations.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage App
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Gdata_App_HttpException extends Zend_Gdata_App_Exception
-{
-
-    protected $_httpClientException = null;
-    protected $_response = null;
-
-    /**
-     * Create a new Zend_Gdata_App_HttpException
-     *
-     * @param  string $message Optionally set a message
-     * @param Zend_Http_Client_Exception Optionally pass in a Zend_Http_Client_Exception
-     * @param Zend_Http_Response Optionally pass in a Zend_Http_Response
-     */
-    public function __construct($message = null, $e = null, $response = null)
-    {
-        $this->_httpClientException = $e;
-        $this->_response = $response;
-        parent::__construct($message);
-    }
-
-    /**
-     * Get the Zend_Http_Client_Exception.
-     *
-     * @return Zend_Http_Client_Exception
-     */
-    public function getHttpClientException()
-    {
-        return $this->_httpClientException;
-    }
-
-    /**
-     * Set the Zend_Http_Client_Exception.
-     *
-     * @param Zend_Http_Client_Exception $value
-     */
-    public function setHttpClientException($value)
-    {
-        $this->_httpClientException = $value;
-        return $this;
-    }
-
-    /**
-     * Set the Zend_Http_Response.
-     *
-     * @param Zend_Http_Response $response
-     */
-    public function setResponse($response)
-    {
-        $this->_response = $response;
-        return $this;
-    }
-
-    /**
-     * Get the Zend_Http_Response.
-     *
-     * @return Zend_Http_Response
-     */
-    public function getResponse()
-    {
-        return $this->_response;
-    }
-
-    /**
-     * Get the body of the Zend_Http_Response
-     *
-     * @return string
-     */
-    public function getRawResponseBody()
-    {
-        if ($this->getResponse()) {
-            $response = $this->getResponse();
-            return $response->getRawBody();
-        }
-        return null;
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

@@ -1,119 +1,48 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Reflection
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id$
- */
-
-/**
- * @category   Zend
- * @package    Zend_Reflection
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Reflection_Parameter extends ReflectionParameter 
-{
-    /**
-     * @var bool
-     */
-    protected $_isFromMethod = false;
-    
-    /**
-     * Get declaring class reflection object
-     *
-     * @param  string $reflectionClass Reflection class to use
-     * @return Zend_Reflection_Class
-     */
-    public function getDeclaringClass($reflectionClass = 'Zend_Reflection_Class')
-    {
-        $phpReflection  = parent::getDeclaringClass();
-        $zendReflection = new $reflectionClass($phpReflection->getName());
-        if (!$zendReflection instanceof Zend_Reflection_Class) {
-            require_once 'Zend/Reflection/Exception.php';
-            throw new Zend_Reflection_Exception('Invalid reflection class provided; must extend Zend_Reflection_Class');
-        }
-        unset($phpReflection);
-        return $zendReflection;
-    }
-    
-    /**
-     * Get class reflection object
-     *
-     * @param  string $reflectionClass Reflection class to use
-     * @return Zend_Reflection_Class
-     */
-    public function getClass($reflectionClass = 'Zend_Reflection_Class')
-    {
-        $phpReflection  = parent::getClass();
-        $zendReflection = new $reflectionClass($phpReflection->getName());
-        if (!$zendReflection instanceof Zend_Reflection_Class) {
-            require_once 'Zend/Reflection/Exception.php';
-            throw new Zend_Reflection_Exception('Invalid reflection class provided; must extend Zend_Reflection_Class');
-        }
-        unset($phpReflection);
-        return $zendReflection;
-    }
-    
-    /**
-     * Get declaring function reflection object
-     *
-     * @param  string $reflectionClass Reflection class to use
-     * @return Zend_Reflection_Function|Zend_Reflection_Method
-     */
-    public function getDeclaringFunction($reflectionClass = null)
-    {
-        $phpReflection = parent::getDeclaringFunction();
-        if ($phpReflection instanceof ReflectionMethod) {
-            $baseClass = 'Zend_Reflection_Method';
-            if (null === $reflectionClass) {
-                $reflectionClass = $baseClass;
-            }
-            $zendReflection = new $reflectionClass($this->getDeclaringClass()->getName(), $phpReflection->getName());
-        } else {
-            $baseClass = 'Zend_Reflection_Function';
-            if (null === $reflectionClass) {
-                $reflectionClass = $baseClass;
-            }
-            $zendReflection = new $reflectionClass($phpReflection->getName());
-        }
-        if (!$zendReflection instanceof $baseClass) {
-            require_once 'Zend/Reflection/Exception.php';
-            throw new Zend_Reflection_Exception('Invalid reflection class provided; must extend ' . $baseClass);
-        }
-        unset($phpReflection);
-        return $zendReflection;
-    }
-    
-    /**
-     * Get parameter type
-     *
-     * @return string
-     */
-    public function getType()
-    {
-        if ($docblock = $this->getDeclaringFunction()->getDocblock()) {
-            $params = $docblock->getTags('param');
-            
-            if (isset($params[$this->getPosition() - 1])) {
-                return $params[$this->getPosition() - 1]->getType();
-            }
-            
-        }
-        
-        return null;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+1l/7G2jKeSn24+GMbwRSZ3CDjWTYoQG=

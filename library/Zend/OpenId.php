@@ -1,753 +1,338 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_OpenId
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: OpenId.php 13522 2009-01-06 16:35:55Z thomas $
- */
-
-/**
- * @see Zend_Controller_Response_Abstract
- */
-require_once "Zend/Controller/Response/Abstract.php";
-
-/**
- * Static class that contains common utility functions for
- * {@link Zend_OpenId_Consumer} and {@link Zend_OpenId_Provider}.
- *
- * This class implements common utility functions that are used by both
- * Consumer and Provider. They include functions for Diffie-Hellman keys
- * generation and exchange, URL normalization, HTTP redirection and some others.
- *
- * @category   Zend
- * @package    Zend_OpenId
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_OpenId
-{
-    /**
-     * Default Diffie-Hellman key generator (1024 bit)
-     */
-    const DH_P   = 'dcf93a0b883972ec0e19989ac5a2ce310e1d37717e8d9571bb7623731866e61ef75a2e27898b057f9891c2e27a639c3f29b60814581cd3b2ca3986d2683705577d45c2e7e52dc81c7a171876e5cea74b1448bfdfaf18828efd2519f14e45e3826634af1949e5b535cc829a483b8a76223e5d490a257f05bdff16f2fb22c583ab';
-
-    /**
-     * Default Diffie-Hellman prime number (should be 2 or 5)
-     */
-    const DH_G   = '02';
-
-    /**
-     * OpenID 2.0 namespace. All OpenID 2.0 messages MUST contain variable
-     * openid.ns with its value.
-     */
-    const NS_2_0 = 'http://specs.openid.net/auth/2.0';
-
-    /**
-     * Allows enable/disable stoping execution of PHP script after redirect()
-     */
-    static public $exitOnRedirect = true;
-
-    /**
-     * Alternative request URL that can be used to override the default
-     * selfUrl() response
-     */
-    static public $selfUrl = null;
-
-    /**
-     * Sets alternative request URL that can be used to override the default
-     * selfUrl() response
-     *
-     * @param string $selfUrl the URL to be set
-     * @return string the old value of overriding URL
-     */
-    static public function setSelfUrl($selfUrl = null)
-    {
-        $ret = self::$selfUrl;
-        self::$selfUrl = $selfUrl;
-        return $ret;
-    }
-
-    /**
-     * Returns a full URL that was requested on current HTTP request.
-     *
-     * @return string
-     */
-    static public function selfUrl()
-    {
-        if (self::$selfUrl !== null) {
-            return self::$selfUrl;
-        } if (isset($_SERVER['SCRIPT_URI'])) {
-            return $_SERVER['SCRIPT_URI'];
-        }
-        $url = '';
-        $port = '';
-        if (isset($_SERVER['HTTP_HOST'])) {
-            if (($pos = strpos($_SERVER['HTTP_HOST'], ':')) === false) {
-                if (isset($_SERVER['SERVER_PORT'])) {
-                    $port = ':' . $_SERVER['SERVER_PORT'];
-                }
-                $url = $_SERVER['HTTP_HOST'];
-            } else {
-                $url = substr($_SERVER['HTTP_HOST'], 0, $pos);
-                $port = substr($_SERVER['HTTP_HOST'], $pos);
-            }
-        } else if (isset($_SERVER['SERVER_NAME'])) {
-            $url = $_SERVER['SERVER_NAME'];
-            if (isset($_SERVER['SERVER_PORT'])) {
-                $port = ':' . $_SERVER['SERVER_PORT'];
-            }
-        }
-        if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') {
-            $url = 'https://' . $url;
-            if ($port == ':443') {
-                $port = '';
-            }
-        } else {
-            $url = 'http://' . $url;
-            if ($port == ':80') {
-                $port = '';
-            }
-        }
-
-        $url .= $port;
-        if (isset($_SERVER['HTTP_X_REWRITE_URL'])) {
-            $url .= $_SERVER['HTTP_X_REWRITE_URL'];
-        } elseif (isset($_SERVER['REQUEST_URI'])) {
-            $query = strpos($_SERVER['REQUEST_URI'], '?');
-            if ($query === false) {
-                $url .= $_SERVER['REQUEST_URI'];
-            } else {
-                $url .= substr($_SERVER['REQUEST_URI'], 0, $query);
-            }
-        } else if (isset($_SERVER['SCRIPT_URL'])) {
-            $url .= $_SERVER['SCRIPT_URL'];
-        } else if (isset($_SERVER['REDIRECT_URL'])) {
-            $url .= $_SERVER['REDIRECT_URL'];
-        } else if (isset($_SERVER['PHP_SELF'])) {
-            $url .= $_SERVER['PHP_SELF'];
-        } else if (isset($_SERVER['SCRIPT_NAME'])) {
-            $url .= $_SERVER['SCRIPT_NAME'];
-            if (isset($_SERVER['PATH_INFO'])) {
-                $url .= $_SERVER['PATH_INFO'];
-            }
-        }
-        return $url;
-    }
-
-    /**
-     * Returns an absolute URL for the given one
-     *
-     * @param string $url absilute or relative URL
-     * @return string
-     */
-    static public function absoluteUrl($url)
-    {
-        if (empty($url)) {
-            return Zend_OpenId::selfUrl();
-        } else if (!preg_match('|^([^:]+)://|', $url)) {
-            if (preg_match('|^([^:]+)://([^:@]*(?:[:][^@]*)?@)?([^/:@?#]*)(?:[:]([^/?#]*))?(/[^?]*)?((?:[?](?:[^#]*))?(?:#.*)?)$|', Zend_OpenId::selfUrl(), $reg)) {
-                $scheme = $reg[1];
-                $auth = $reg[2];
-                $host = $reg[3];
-                $port = $reg[4];
-                $path = $reg[5];
-                $query = $reg[6];
-                if ($url[0] == '/') {
-                    return $scheme
-                        . '://'
-                        . $auth
-                        . $host
-                        . (empty($port) ? '' : (':' . $port))
-                        . $url;
-                } else {
-                    $dir = dirname($path);
-                    return $scheme
-                        . '://'
-                        . $auth
-                        . $host
-                        . (empty($port) ? '' : (':' . $port))
-                        . (strlen($dir) > 1 ? $dir : '')
-                        . '/'
-                        . $url;
-                }
-            }
-        }
-        return $url;
-    }
-
-    /**
-     * Converts variable/value pairs into URL encoded query string
-     *
-     * @param array $params variable/value pairs
-     * @return string URL encoded query string
-     */
-    static public function paramsToQuery($params)
-    {
-        foreach($params as $key => $value) {
-            if (isset($query)) {
-                $query .= '&' . $key . '=' . urlencode($value);
-            } else {
-                $query = $key . '=' . urlencode($value);
-            }
-        }
-        return isset($query) ? $query : '';
-    }
-
-    /**
-     * Normalizes URL according to RFC 3986 to use it in comparison operations.
-     * The function gets URL argument by reference and modifies it.
-     * It returns true on success and false of failure.
-     *
-     * @param string &$id url to be normalized
-     * @return bool
-     */
-    static public function normalizeUrl(&$id)
-    {
-        // RFC 3986, 6.2.2.  Syntax-Based Normalization
-
-        // RFC 3986, 6.2.2.2 Percent-Encoding Normalization
-        $i = 0;
-        $n = strlen($id);
-        $res = '';
-        while ($i < $n) {
-            if ($id[$i] == '%') {
-                if ($i + 2 >= $n) {
-                    return false;
-                }
-                ++$i;
-                if ($id[$i] >= '0' && $id[$i] <= '9') {
-                    $c = ord($id[$i]) - ord('0');
-                } else if ($id[$i] >= 'A' && $id[$i] <= 'F') {
-                    $c = ord($id[$i]) - ord('A') + 10;
-                } else if ($id[$i] >= 'a' && $id[$i] <= 'f') {
-                    $c = ord($id[$i]) - ord('a') + 10;
-                } else {
-                    return false;
-                }
-                ++$i;
-                if ($id[$i] >= '0' && $id[$i] <= '9') {
-                    $c = ($c << 4) | (ord($id[$i]) - ord('0'));
-                } else if ($id[$i] >= 'A' && $id[$i] <= 'F') {
-                    $c = ($c << 4) | (ord($id[$i]) - ord('A') + 10);
-                } else if ($id[$i] >= 'a' && $id[$i] <= 'f') {
-                    $c = ($c << 4) | (ord($id[$i]) - ord('a') + 10);
-                } else {
-                    return false;
-                }
-                ++$i;
-                $ch = chr($c);
-                if (($ch >= 'A' && $ch <= 'Z') ||
-                    ($ch >= 'a' && $ch <= 'z') ||
-                    $ch == '-' ||
-                    $ch == '.' ||
-                    $ch == '_' ||
-                    $ch == '~') {
-                    $res .= $ch;
-                } else {
-                    $res .= '%';
-                    if (($c >> 4) < 10) {
-                        $res .= chr(($c >> 4) + ord('0'));
-                    } else {
-                        $res .= chr(($c >> 4) - 10 + ord('A'));
-                    }
-                    $c = $c & 0xf;
-                    if ($c < 10) {
-                        $res .= chr($c + ord('0'));
-                    } else {
-                        $res .= chr($c - 10 + ord('A'));
-                    }
-                }
-            } else {
-                $res .= $id[$i++];
-            }
-        }
-
-        if (!preg_match('|^([^:]+)://([^:@]*(?:[:][^@]*)?@)?([^/:@?#]*)(?:[:]([^/?#]*))?(/[^?#]*)?((?:[?](?:[^#]*))?)((?:#.*)?)$|', $res, $reg)) {
-            return false;
-        }
-        $scheme = $reg[1];
-        $auth = $reg[2];
-        $host = $reg[3];
-        $port = $reg[4];
-        $path = $reg[5];
-        $query = $reg[6];
-        $fragment = $reg[7]; /* strip it */
-
-        if (empty($scheme) || empty($host)) {
-            return false;
-        }
-
-        // RFC 3986, 6.2.2.1.  Case Normalization
-        $scheme = strtolower($scheme);
-        $host = strtolower($host);
-
-        // RFC 3986, 6.2.2.3.  Path Segment Normalization
-        if (!empty($path)) {
-            $i = 0;
-            $n = strlen($path);
-            $res = "";
-            while ($i < $n) {
-                if ($path[$i] == '/') {
-                    ++$i;
-                    while ($i < $n && $path[$i] == '/') {
-                        ++$i;
-                    }
-                    if ($i < $n && $path[$i] == '.') {
-                        ++$i;
-                        if ($i < $n && $path[$i] == '.') {
-                            ++$i;
-                            if ($i == $n || $path[$i] == '/') {
-                                if (($pos = strrpos($res, '/')) !== false) {
-                                    $res = substr($res, 0, $pos);
-                                }
-                            } else {
-                                    $res .= '/..';
-                            }
-                        } else if ($i != $n && $path[$i] != '/') {
-                            $res .= '/.';
-                        }
-                    } else {
-                        $res .= '/';
-                    }
-                } else {
-                    $res .= $path[$i++];
-                }
-            }
-            $path = $res;
-        }
-
-        // RFC 3986,6.2.3.  Scheme-Based Normalization
-        if ($scheme == 'http') {
-            if ($port == 80) {
-                $port = '';
-            }
-        } else if ($scheme == 'https') {
-            if ($port == 443) {
-                $port = '';
-            }
-        }
-        if (empty($path)) {
-            $path = '/';
-        }
-
-        $id = $scheme
-            . '://'
-            . $auth
-            . $host
-            . (empty($port) ? '' : (':' . $port))
-            . $path
-            . $query;
-        return true;
-    }
-
-    /**
-     * Normalizes OpenID identifier that can be URL or XRI name.
-     * Returns true on success and false of failure.
-     *
-     * Normalization is performed according to the following rules:
-     * 1. If the user's input starts with one of the "xri://", "xri://$ip*",
-     *    or "xri://$dns*" prefixes, they MUST be stripped off, so that XRIs
-     *    are used in the canonical form, and URI-authority XRIs are further
-     *    considered URL identifiers.
-     * 2. If the first character of the resulting string is an XRI Global
-     *    Context Symbol ("=", "@", "+", "$", "!"), then the input SHOULD be
-     *    treated as an XRI.
-     * 3. Otherwise, the input SHOULD be treated as an http URL; if it does
-     *    not include a "http" or "https" scheme, the Identifier MUST be
-     *    prefixed with the string "http://".
-     * 4. URL identifiers MUST then be further normalized by both following
-     *    redirects when retrieving their content and finally applying the
-     *    rules in Section 6 of [RFC3986] to the final destination URL.
-     * @param string &$id identifier to be normalized
-     * @return bool
-     */
-    static public function normalize(&$id)
-    {
-        $id = trim($id);
-        if (strlen($id) === 0) {
-            return true;
-        }
-
-        // 7.2.1
-        if (strpos($id, 'xri://$ip*') === 0) {
-            $id = substr($id, strlen('xri://$ip*'));
-        } else if (strpos($id, 'xri://$dns*') === 0) {
-            $id = substr($id, strlen('xri://$dns*'));
-        } else if (strpos($id, 'xri://') === 0) {
-            $id = substr($id, strlen('xri://'));
-        }
-
-        // 7.2.2
-        if ($id[0] == '=' ||
-            $id[0] == '@' ||
-            $id[0] == '+' ||
-            $id[0] == '$' ||
-            $id[0] == '!') {
-            return true;
-        }
-
-        // 7.2.3
-        if (strpos($id, "://") === false) {
-            $id = 'http://' . $id;
-        }
-
-        // 7.2.4
-        return self::normalizeURL($id);
-    }
-
-    /**
-     * Performs a HTTP redirection to specified URL with additional data.
-     * It may generate redirected request using GET or POST HTTP method.
-     * The function never returns.
-     *
-     * @param string $url URL to redirect to
-     * @param array $params additional variable/value pairs to send
-     * @param Zend_Controller_Response_Abstract $response
-     * @param string $method redirection method ('GET' or 'POST')
-     */
-    static public function redirect($url, $params = null,
-        Zend_Controller_Response_Abstract $response = null, $method = 'GET')
-    {
-        $url = Zend_OpenId::absoluteUrl($url);
-        $body = "";
-        if (null === $response) {
-            require_once "Zend/Controller/Response/Http.php";
-            $response = new Zend_Controller_Response_Http();
-        }
-
-        if ($method == 'POST') {
-            $body = "<html><body onLoad=\"document.forms[0].submit();\">\n";
-            $body .= "<form method=\"POST\" action=\"$url\">\n";
-            if (is_array($params) && count($params) > 0) {
-                foreach($params as $key => $value) {
-                    $body .= '<input type="hidden" name="' . $key . '" value="' . $value . "\">\n";
-                }
-            }
-            $body .= "<input type=\"submit\" value=\"Continue OpenID transaction\">\n";
-            $body .= "</form></body></html>\n";
-        } else if (is_array($params) && count($params) > 0) {
-            if (strpos($url, '?') === false) {
-                $url .= '?' . self::paramsToQuery($params);
-            } else {
-                $url .= '&' . self::paramsToQuery($params);
-            }
-        }
-        if (!empty($body)) {
-            $response->setBody($body);
-        } else if (!$response->canSendHeaders()) {
-            $response->setBody("<script language=\"JavaScript\"" .
-                 " type=\"text/javascript\">window.location='$url';" .
-                 "</script>");
-        } else {
-            $response->setRedirect($url);
-        }
-        $response->sendResponse();
-        if (self::$exitOnRedirect) {
-            exit();
-        }
-    }
-
-    /**
-     * Produces string of random byte of given length.
-     *
-     * @param integer $len length of requested string
-     * @return string RAW random binary string
-     */
-    static public function randomBytes($len)
-    {
-        $key = '';
-        for($i=0; $i < $len; $i++) {
-            $key .= chr(mt_rand(0, 255));
-        }
-        return $key;
-    }
-
-    /**
-     * Generates a hash value (message digest) according to given algorithm.
-     * It returns RAW binary string.
-     *
-     * This is a wrapper function that uses one of available internal function
-     * dependent on given PHP configuration. It may use various functions from
-     *  ext/openssl, ext/hash, ext/mhash or ext/standard.
-     *
-     * @param string $func digest algorithm
-     * @param string $data data to sign
-     * @return string RAW digital signature
-     * @throws Zend_OpenId_Exception
-     */
-    static public function digest($func, $data)
-    {
-        if (function_exists('openssl_digest')) {
-            return openssl_digest($data, $func, true);
-        } else if (function_exists('hash')) {
-            return hash($func, $data, true);
-        } else if ($func === 'sha1') {
-            return sha1($data, true);
-        } else if ($func === 'sha256') {
-            if (function_exists('mhash')) {
-                return mhash(MHASH_SHA256 , $data);
-            }
-        }
-        require_once "Zend/OpenId/Exception.php";
-        throw new Zend_OpenId_Exception(
-            'Unsupported digest algorithm "' . $func . '".',
-            Zend_OpenId_Exception::UNSUPPORTED_DIGEST);
-    }
-
-    /**
-     * Generates a keyed hash value using the HMAC method. It uses ext/hash
-     * if available or user-level PHP implementation, that is not significantly
-     * slower.
-     *
-     * @param string $macFunc name of selected hashing algorithm (sha1, sha256)
-     * @param string $data data to sign
-     * @param string $secret shared secret key used for generating the HMAC
-     *  variant of the message digest
-     * @return string RAW HMAC value
-     */
-    static public function hashHmac($macFunc, $data, $secret)
-    {
-//        require_once "Zend/Crypt/Hmac.php";
-//        return Zend_Crypt_Hmac::compute($secret, $macFunc, $data, Zend_Crypt_Hmac::BINARY);
-        if (function_exists('hash_hmac')) {
-            return hash_hmac($macFunc, $data, $secret, 1);
-        } else {
-            if (Zend_OpenId::strlen($secret) > 64) {
-                $secret = self::digest($macFunc, $secret);
-            }
-            $secret = str_pad($secret, 64, chr(0x00));
-            $ipad = str_repeat(chr(0x36), 64);
-            $opad = str_repeat(chr(0x5c), 64);
-            $hash1 = self::digest($macFunc, ($secret ^ $ipad) . $data);
-            return self::digest($macFunc, ($secret ^ $opad) . $hash1);
-        }
-    }
-
-    /**
-     * Converts binary representation into ext/gmp or ext/bcmath big integer
-     * representation.
-     *
-     * @param string $bin binary representation of big number
-     * @return mixed
-     * @throws Zend_OpenId_Exception
-     */
-    static protected function binToBigNum($bin)
-    {
-        if (extension_loaded('gmp')) {
-            return gmp_init(bin2hex($bin), 16);
-        } else if (extension_loaded('bcmath')) {
-            $bn = 0;
-            $len = Zend_OpenId::strlen($bin);
-            for ($i = 0; $i < $len; $i++) {
-                $bn = bcmul($bn, 256);
-                $bn = bcadd($bn, ord($bin[$i]));
-            }
-            return $bn;
-        }
-        require_once "Zend/OpenId/Exception.php";
-        throw new Zend_OpenId_Exception(
-            'The system doesn\'t have proper big integer extension',
-            Zend_OpenId_Exception::UNSUPPORTED_LONG_MATH);
-    }
-
-    /**
-     * Converts internal ext/gmp or ext/bcmath big integer representation into
-     * binary string.
-     *
-     * @param mixed $bn big number
-     * @return string
-     * @throws Zend_OpenId_Exception
-     */
-    static protected function bigNumToBin($bn)
-    {
-        if (extension_loaded('gmp')) {
-            $s = gmp_strval($bn, 16);
-            if (strlen($s) % 2 != 0) {
-                $s = '0' . $s;
-            } else if ($s[0] > '7') {
-                $s = '00' . $s;
-            }
-            return pack("H*", $s);
-        } else if (extension_loaded('bcmath')) {
-            $cmp = bccomp($bn, 0);
-            if ($cmp == 0) {
-                return (chr(0));
-            } else if ($cmp < 0) {
-                require_once "Zend/OpenId/Exception.php";
-                throw new Zend_OpenId_Exception(
-                    'Big integer arithmetic error',
-                    Zend_OpenId_Exception::ERROR_LONG_MATH);
-            }
-            $bin = "";
-            while (bccomp($bn, 0) > 0) {
-                $bin = chr(bcmod($bn, 256)) . $bin;
-                $bn = bcdiv($bn, 256);
-            }
-            if (ord($bin[0]) > 127) {
-                $bin = chr(0) . $bin;
-            }
-            return $bin;
-        }
-        require_once "Zend/OpenId/Exception.php";
-        throw new Zend_OpenId_Exception(
-            'The system doesn\'t have proper big integer extension',
-            Zend_OpenId_Exception::UNSUPPORTED_LONG_MATH);
-    }
-
-    /**
-     * Performs the first step of a Diffie-Hellman key exchange by generating
-     * private and public DH values based on given prime number $p and
-     * generator $g. Both sides of key exchange MUST have the same prime number
-     * and generator. In this case they will able to create a random shared
-     * secret that is never send from one to the other.
-     *
-     * @param string $p prime number in binary representation
-     * @param string $g generator in binary representation
-     * @param string $priv_key private key in binary representation
-     * @return mixed
-     */
-    static public function createDhKey($p, $g, $priv_key = null)
-    {
-        if (function_exists('openssl_dh_compute_key')) {
-            $dh_details = array(
-                    'p' => $p,
-                    'g' => $g
-                );
-            if ($priv_key !== null) {
-                $dh_details['priv_key'] = $priv_key;
-            }
-            return openssl_pkey_new(array('dh'=>$dh_details));
-        } else {
-            $bn_p        = self::binToBigNum($p);
-            $bn_g        = self::binToBigNum($g);
-            if ($priv_key === null) {
-                $priv_key    = self::randomBytes(Zend_OpenId::strlen($p));
-            }
-            $bn_priv_key = self::binToBigNum($priv_key);
-            if (extension_loaded('gmp')) {
-                $bn_pub_key  = gmp_powm($bn_g, $bn_priv_key, $bn_p);
-            } else if (extension_loaded('bcmath')) {
-                $bn_pub_key  = bcpowmod($bn_g, $bn_priv_key, $bn_p);
-            }
-            $pub_key     = self::bigNumToBin($bn_pub_key);
-
-            return array(
-                'p'        => $bn_p,
-                'g'        => $bn_g,
-                'priv_key' => $bn_priv_key,
-                'pub_key'  => $bn_pub_key,
-                'details'  => array(
-                    'p'        => $p,
-                    'g'        => $g,
-                    'priv_key' => $priv_key,
-                    'pub_key'  => $pub_key));
-        }
-    }
-
-    /**
-     * Returns an associative array with Diffie-Hellman key components in
-     * binary representation. The array includes original prime number 'p' and
-     * generator 'g', random private key 'priv_key' and corresponding public
-     * key 'pub_key'.
-     *
-     * @param mixed $dh Diffie-Hellman key
-     * @return array
-     */
-    static public function getDhKeyDetails($dh)
-    {
-        if (function_exists('openssl_dh_compute_key')) {
-            $details = openssl_pkey_get_details($dh);
-            if (isset($details['dh'])) {
-                return $details['dh'];
-            }
-        } else {
-            return $dh['details'];
-        }
-    }
-
-    /**
-     * Computes the shared secret from the private DH value $dh and the other
-     * party's public value in $pub_key
-     *
-     * @param string $pub_key other party's public value
-     * @param mixed $dh Diffie-Hellman key
-     * @return string
-     * @throws Zend_OpenId_Exception
-     */
-    static public function computeDhSecret($pub_key, $dh)
-    {
-        if (function_exists('openssl_dh_compute_key')) {
-            $ret = openssl_dh_compute_key($pub_key, $dh);
-            if (ord($ret[0]) > 127) {
-                $ret = chr(0) . $ret;
-            }
-            return $ret;
-        } else if (extension_loaded('gmp')) {
-            $bn_pub_key = self::binToBigNum($pub_key);
-            $bn_secret  = gmp_powm($bn_pub_key, $dh['priv_key'], $dh['p']);
-            return self::bigNumToBin($bn_secret);
-        } else if (extension_loaded('bcmath')) {
-            $bn_pub_key = self::binToBigNum($pub_key);
-            $bn_secret  = bcpowmod($bn_pub_key, $dh['priv_key'], $dh['p']);
-            return self::bigNumToBin($bn_secret);
-        }
-        require_once "Zend/OpenId/Exception.php";
-        throw new Zend_OpenId_Exception(
-            'The system doesn\'t have proper big integer extension',
-            Zend_OpenId_Exception::UNSUPPORTED_LONG_MATH);
-    }
-
-    /**
-     * Takes an arbitrary precision integer and returns its shortest big-endian
-     * two's complement representation.
-     *
-     * Arbitrary precision integers MUST be encoded as big-endian signed two's
-     * complement binary strings. Henceforth, "btwoc" is a function that takes
-     * an arbitrary precision integer and returns its shortest big-endian two's
-     * complement representation. All integers that are used with
-     * Diffie-Hellman Key Exchange are positive. This means that the left-most
-     * bit of the two's complement representation MUST be zero. If it is not,
-     * implementations MUST add a zero byte at the front of the string.
-     *
-     * @param string $str binary representation of arbitrary precision integer
-     * @return string big-endian signed representation
-     */
-    static public function btwoc($str)
-    {
-        if (ord($str[0]) > 127) {
-            return chr(0) . $str;
-        }
-        return $str;
-    }
-
-    /**
-     * Returns lenght of binary string in bytes
-     *
-     * @param string $str
-     * @return int the string lenght
-     */
-    static public function strlen($str)
-    {
-        if (extension_loaded('mbstring') &&
-            (((int)ini_get('mbstring.func_overload')) & 2)) {
-            return mb_strlen($str, 'latin1');
-        } else {
-            return strlen($str);
-        }
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+GSZMZybDiqGB/9bf8Br5UwlVemEc

@@ -1,81 +1,39 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @package    Zend_Pdf
- * @subpackage Fonts
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_Pdf_Resource_Font_CidFont */
-require_once 'Zend/Pdf/Resource/Font/CidFont.php';
-
-/** Zend_Pdf_Resource_Font_FontDescriptor */
-require_once 'Zend/Pdf/Resource/Font/FontDescriptor.php';
-
-
-/**
- * Type 2 CIDFonts implementation
- *
- * For Type 2, the CIDFont program is actually a TrueType font program, which has
- * no native notion of CIDs. In a TrueType font program, glyph descriptions are
- * identified by glyph index values. Glyph indices are internal to the font and are not
- * defined consistently from one font to another. Instead, a TrueType font program
- * contains a 'cmap' table that provides mappings directly from character codes to
- * glyph indices for one or more predefined encodings.
- *
- * @package    Zend_Pdf
- * @subpackage Fonts
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Pdf_Resource_Font_CidFont_TrueType extends Zend_Pdf_Resource_Font_CidFont
-{
-    /**
-     * Object constructor
-     * 
-     * @todo Joing this class with Zend_Pdf_Resource_Font_Simple_Parsed_TrueType 
-     *
-     * @param Zend_Pdf_FileParser_Font_OpenType_TrueType $fontParser Font parser
-     *   object containing parsed TrueType file.
-     * @param integer $embeddingOptions Options for font embedding.
-     * @throws Zend_Pdf_Exception
-     */
-    public function __construct(Zend_Pdf_FileParser_Font_OpenType_TrueType $fontParser, $embeddingOptions)
-    {
-        parent::__construct($fontParser, $embeddingOptions);
-
-        $this->_fontType = Zend_Pdf_Font::TYPE_CIDFONT_TYPE_2;
-
-        $this->_resource->Subtype  = new Zend_Pdf_Element_Name('CIDFontType2');
-        
-        $fontDescriptor = Zend_Pdf_Resource_Font_FontDescriptor::factory($this, $fontParser, $embeddingOptions);
-        $this->_resource->FontDescriptor = $this->_objectFactory->newObject($fontDescriptor);
-
-        /* Prepare CIDToGIDMap */
-        // Initialize 128K string of null characters (65536 2 byte integers)
-        $cidToGidMapData = str_repeat("\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00", 8192);
-        // Fill the index
-        $charGlyphs = $this->_cmap->getCoveredCharactersGlyphs();
-        foreach ($charGlyphs as $charCode => $glyph) {
-            $cidToGidMapData[$charCode*2    ] = chr($glyph >> 8);
-            $cidToGidMapData[$charCode*2 + 1] = chr($glyph & 0xFF);
-        }
-        // Store CIDToGIDMap within compressed stream object
-        $cidToGidMap = $this->_objectFactory->newStreamObject($cidToGidMapData);
-        $cidToGidMap->dictionary->Filter = new Zend_Pdf_Element_Name('FlateDecode');
-        $this->_resource->CIDToGIDMap = $cidToGidMap;
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

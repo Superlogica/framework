@@ -1,1331 +1,855 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Locale
- * @subpackage Data
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Data.php 15765 2009-05-25 19:59:45Z thomas $
- */
-
-/**
- * include needed classes
- */
-require_once 'Zend/Locale.php';
-
-/**
- * Locale data reader, handles the CLDR
- *
- * @category   Zend
- * @package    Zend_Locale
- * @subpackage Data
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Locale_Data
-{
-    /**
-     * Locale files
-     *
-     * @var ressource
-     * @access private
-     */
-    private static $_ldml = array();
-
-    /**
-     * List of values which are collected
-     *
-     * @var array
-     * @access private
-     */
-    private static $_list = array();
-
-    /**
-     * Internal cache for ldml values
-     *
-     * @var Zend_Cache_Core
-     * @access private
-     */
-    private static $_cache = null;
-
-    /**
-     * Internal option, cache disabled
-     *
-     * @var    boolean
-     * @access private
-     */
-    private static $_cacheDisabled = false;
-
-    /**
-     * Read the content from locale
-     *
-     * Can be called like:
-     * <ldml>
-     *     <delimiter>test</delimiter>
-     *     <second type='myone'>content</second>
-     *     <second type='mysecond'>content2</second>
-     *     <third type='mythird' />
-     * </ldml>
-     *
-     * Case 1: _readFile('ar','/ldml/delimiter')             -> returns [] = test
-     * Case 1: _readFile('ar','/ldml/second[@type=myone]')   -> returns [] = content
-     * Case 2: _readFile('ar','/ldml/second','type')         -> returns [myone] = content; [mysecond] = content2
-     * Case 3: _readFile('ar','/ldml/delimiter',,'right')    -> returns [right] = test
-     * Case 4: _readFile('ar','/ldml/third','type','myone')  -> returns [myone] = mythird
-     *
-     * @param  string $locale
-     * @param  string $path
-     * @param  string $attribute
-     * @param  string $value
-     * @access private
-     * @return array
-     */
-    private static function _readFile($locale, $path, $attribute, $value, $temp)
-    {
-        // without attribute - read all values
-        // with attribute    - read only this value
-        if (!empty(self::$_ldml[(string) $locale])) {
-
-            $result = self::$_ldml[(string) $locale]->xpath($path);
-            if (!empty($result)) {
-                foreach ($result as &$found) {
-
-                    if (empty($value)) {
-
-                        if (empty($attribute)) {
-                            // Case 1
-                            $temp[] = (string) $found;
-                        } else if (empty($temp[(string) $found[$attribute]])){
-                            // Case 2
-                            $temp[(string) $found[$attribute]] = (string) $found;
-                        }
-
-                    } else if (empty ($temp[$value])) {
-
-                        if (empty($attribute)) {
-                            // Case 3
-                            $temp[$value] = (string) $found;
-                        } else {
-                            // Case 4
-                            $temp[$value] = (string) $found[$attribute];
-                        }
-
-                    }
-                }
-            }
-        }
-        return $temp;
-    }
-
-    /**
-     * Find possible routing to other path or locale
-     *
-     * @param  string $locale
-     * @param  string $path
-     * @param  string $attribute
-     * @param  string $value
-     * @param  array  $temp
-     * @throws Zend_Locale_Exception
-     * @access private
-     */
-    private static function _findRoute($locale, $path, $attribute, $value, &$temp)
-    {
-        // load locale file if not already in cache
-        // needed for alias tag when referring to other locale
-        if (empty(self::$_ldml[(string) $locale])) {
-            $filename = dirname(__FILE__) . '/Data/' . $locale . '.xml';
-            if (!file_exists($filename)) {
-                require_once 'Zend/Locale/Exception.php';
-                throw new Zend_Locale_Exception("Missing locale file '$filename' for '$locale' locale.");
-            }
-
-            self::$_ldml[(string) $locale] = simplexml_load_file($filename);
-        }
-
-        // search for 'alias' tag in the search path for redirection
-        $search = '';
-        $tok = strtok($path, '/');
-
-        // parse the complete path
-        if (!empty(self::$_ldml[(string) $locale])) {
-            while ($tok !== false) {
-                $search .=  '/' . $tok;
-                if (strpos($search, '[@') !== false) {
-                    while (strrpos($search, '[@') > strrpos($search, ']')) {
-                        $tok = strtok('/');
-                        if (empty($tok)) {
-                            $search .= '/';
-                        }
-                        $search = $search . '/' . $tok;
-                    }
-                }
-                $result = self::$_ldml[(string) $locale]->xpath($search . '/alias');
-
-                // alias found
-                if (!empty($result)) {
-
-                    $source = $result[0]['source'];
-                    $newpath = $result[0]['path'];
-
-                    // new path - path //ldml is to ignore
-                    if ($newpath != '//ldml') {
-                        // other path - parse to make real path
-
-                        while (substr($newpath,0,3) == '../') {
-                            $newpath = substr($newpath, 3);
-                            $search = substr($search, 0, strrpos($search, '/'));
-                        }
-
-                        // truncate ../ to realpath otherwise problems with alias
-                        $path = $search . '/' . $newpath;
-                        while (($tok = strtok('/'))!== false) {
-                            $path = $path . '/' . $tok;
-                        }
-                    }
-
-                    // reroute to other locale
-                    if ($source != 'locale') {
-                        $locale = $source;
-                    }
-
-                    $temp = self::_getFile($locale, $path, $attribute, $value, $temp);
-                    return false;
-                }
-
-                $tok = strtok('/');
-            }
-        }
-        return true;
-    }
-
-    /**
-     * Read the right LDML file
-     *
-     * @param  string $locale
-     * @param  string $path
-     * @param  string $attribute
-     * @param  string $value
-     * @access private
-     */
-    private static function _getFile($locale, $path, $attribute = false, $value = false, $temp = array())
-    {
-        $result = self::_findRoute($locale, $path, $attribute, $value, $temp);
-        if ($result) {
-            $temp = self::_readFile($locale, $path, $attribute, $value, $temp);
-        }
-
-        // parse required locales reversive
-        // example: when given zh_Hans_CN
-        // 1. -> zh_Hans_CN
-        // 2. -> zh_Hans
-        // 3. -> zh
-        // 4. -> root
-        if (($locale != 'root') && ($result)) {
-            $locale = substr($locale, 0, -strlen(strrchr($locale, '_')));
-            if (!empty($locale)) {
-                $temp = self::_getFile($locale, $path, $attribute, $value, $temp);
-            } else {
-                $temp = self::_getFile('root', $path, $attribute, $value, $temp);
-            }
-        }
-        return $temp;
-    }
-
-    /**
-     * Find the details for supplemental calendar datas
-     *
-     * @param  string $locale Locale for Detaildata
-     * @param  array  $list   List to search
-     * @return string         Key for Detaildata
-     */
-    private static function _calendarDetail($locale, $list)
-    {
-        $ret = "001";
-        foreach ($list as $key => $value) {
-            if (strpos($locale, '_') !== false) {
-                $locale = substr($locale, strpos($locale, '_') + 1);
-            }
-            if (strpos($key, $locale) !== false) {
-                $ret = $key;
-                break;
-            }
-        }
-        return $ret;
-    }
-
-    /**
-     * Internal function for checking the locale
-     *
-     * @param string|Zend_Locale $locale Locale to check
-     * @return string
-     */
-    private static function _checkLocale($locale)
-    {
-        if (empty($locale)) {
-            $locale = new Zend_Locale();
-        }
-
-        if (!(Zend_Locale::isLocale((string) $locale, null, false))) {
-            require_once 'Zend/Locale/Exception.php';
-            throw new Zend_Locale_Exception("Locale (" . (string) $locale . ") is a unknown locale");
-        }
-
-        return (string) $locale;
-    }
-
-    /**
-     * Read the LDML file, get a array of multipath defined value
-     *
-     * @param  string $locale
-     * @param  string $path
-     * @param  string $value
-     * @return array
-     * @access public
-     */
-    public static function getList($locale, $path, $value = false)
-    {
-        $locale = self::_checkLocale($locale);
-
-        if (!isset(self::$_cache) && !self::$_cacheDisabled) {
-            require_once 'Zend/Cache.php';
-            self::$_cache = Zend_Cache::factory(
-                'Core',
-                'File',
-                array('automatic_serialization' => true),
-                array());
-        }
-
-        $val = $value;
-        if (is_array($value)) {
-            $val = implode('_' , $value);
-        }
-
-        $val = urlencode($val);
-        $id = strtr('Zend_LocaleL_' . $locale . '_' . $path . '_' . $val, array('-' => '_', '%' => '_', '+' => '_'));
-        if (!self::$_cacheDisabled && ($result = self::$_cache->load($id))) {
-            return unserialize($result);
-        }
-
-        $temp = array();
-        switch(strtolower($path)) {
-            case 'language':
-                $temp = self::_getFile($locale, '/ldml/localeDisplayNames/languages/language', 'type');
-                break;
-
-            case 'script':
-                $temp = self::_getFile($locale, '/ldml/localeDisplayNames/scripts/script', 'type');
-                break;
-
-            case 'territory':
-                $temp = self::_getFile($locale, '/ldml/localeDisplayNames/territories/territory', 'type');
-                if ($value === 1) {
-                    foreach($temp as $key => $value) {
-                        if ((is_numeric($key) === false) and ($key != 'QO') and ($key != 'QU')) {
-                            unset($temp[$key]);
-                        }
-                    }
-                } else if ($value === 2) {
-                    foreach($temp as $key => $value) {
-                        if (is_numeric($key) or ($key == 'QO') or ($key == 'QU')) {
-                            unset($temp[$key]);
-                        }
-                    }
-                }
-                break;
-
-            case 'variant':
-                $temp = self::_getFile($locale, '/ldml/localeDisplayNames/variants/variant', 'type');
-                break;
-
-            case 'key':
-                $temp = self::_getFile($locale, '/ldml/localeDisplayNames/keys/key', 'type');
-                break;
-
-            case 'type':
-                if (empty($type)) {
-                    $temp = self::_getFile($locale, '/ldml/localeDisplayNames/types/type', 'type');
-                } else {
-                    if (($value == 'calendar') or
-                        ($value == 'collation') or
-                        ($value == 'currency')) {
-                        $temp = self::_getFile($locale, '/ldml/localeDisplayNames/types/type[@key=\'' . $value . '\']', 'type');
-                    } else {
-                        $temp = self::_getFile($locale, '/ldml/localeDisplayNames/types/type[@type=\'' . $value . '\']', 'type');
-                    }
-                }
-                break;
-
-            case 'layout':
-                $temp  = self::_getFile($locale, '/ldml/layout/orientation',                 'lines',      'lines');
-                $temp += self::_getFile($locale, '/ldml/layout/orientation',                 'characters', 'characters');
-                $temp += self::_getFile($locale, '/ldml/layout/inList',                      '',           'inList');
-                $temp += self::_getFile($locale, '/ldml/layout/inText[@type=\'currency\']',  '',           'currency');
-                $temp += self::_getFile($locale, '/ldml/layout/inText[@type=\'dayWidth\']',  '',           'dayWidth');
-                $temp += self::_getFile($locale, '/ldml/layout/inText[@type=\'fields\']',    '',           'fields');
-                $temp += self::_getFile($locale, '/ldml/layout/inText[@type=\'keys\']',      '',           'keys');
-                $temp += self::_getFile($locale, '/ldml/layout/inText[@type=\'languages\']', '',           'languages');
-                $temp += self::_getFile($locale, '/ldml/layout/inText[@type=\'long\']',      '',           'long');
-                $temp += self::_getFile($locale, '/ldml/layout/inText[@type=\'measurementSystemNames\']', '', 'measurementSystemNames');
-                $temp += self::_getFile($locale, '/ldml/layout/inText[@type=\'monthWidth\']',   '',        'monthWidth');
-                $temp += self::_getFile($locale, '/ldml/layout/inText[@type=\'quarterWidth\']', '',        'quarterWidth');
-                $temp += self::_getFile($locale, '/ldml/layout/inText[@type=\'scripts\']',   '',           'scripts');
-                $temp += self::_getFile($locale, '/ldml/layout/inText[@type=\'territories\']',  '',        'territories');
-                $temp += self::_getFile($locale, '/ldml/layout/inText[@type=\'types\']',     '',           'types');
-                $temp += self::_getFile($locale, '/ldml/layout/inText[@type=\'variants\']',  '',           'variants');
-                break;
-
-            case 'characters':
-                $temp  = self::_getFile($locale, '/ldml/characters/exemplarCharacters',                           '', 'characters');
-                $temp += self::_getFile($locale, '/ldml/characters/exemplarCharacters[@type=\'auxiliary\']',      '', 'auxiliary');
-                $temp += self::_getFile($locale, '/ldml/characters/exemplarCharacters[@type=\'currencySymbol\']', '', 'currencySymbol');
-                break;
-
-            case 'delimiters':
-                $temp  = self::_getFile($locale, '/ldml/delimiters/quotationStart',          '', 'quoteStart');
-                $temp += self::_getFile($locale, '/ldml/delimiters/quotationEnd',            '', 'quoteEnd');
-                $temp += self::_getFile($locale, '/ldml/delimiters/alternateQuotationStart', '', 'quoteStartAlt');
-                $temp += self::_getFile($locale, '/ldml/delimiters/alternateQuotationEnd',   '', 'quoteEndAlt');
-                break;
-
-            case 'measurement':
-                $temp  = self::_getFile('supplementalData', '/supplementalData/measurementData/measurementSystem[@type=\'metric\']', 'territories', 'metric');
-                $temp += self::_getFile('supplementalData', '/supplementalData/measurementData/measurementSystem[@type=\'US\']',     'territories', 'US');
-                $temp += self::_getFile('supplementalData', '/supplementalData/measurementData/paperSize[@type=\'A4\']',             'territories', 'A4');
-                $temp += self::_getFile('supplementalData', '/supplementalData/measurementData/paperSize[@type=\'US-Letter\']',      'territories', 'US-Letter');
-                break;
-
-            case 'months':
-                if (empty($value)) {
-                    $value = "gregorian";
-                }
-                $temp  = self::_getFile($locale, '/ldml/dates/calendars/calendar[@type=\'' . $value . '\']/months/default', 'choice', 'context');
-                $temp += self::_getFile($locale, '/ldml/dates/calendars/calendar[@type=\'' . $value . '\']/months/monthContext[@type=\'format\']/default', 'choice', 'default');
-                $temp['format']['abbreviated'] = self::_getFile($locale, '/ldml/dates/calendars/calendar[@type=\'' . $value . '\']/months/monthContext[@type=\'format\']/monthWidth[@type=\'abbreviated\']/month', 'type');
-                $temp['format']['narrow']      = self::_getFile($locale, '/ldml/dates/calendars/calendar[@type=\'' . $value . '\']/months/monthContext[@type=\'format\']/monthWidth[@type=\'narrow\']/month', 'type');
-                $temp['format']['wide']        = self::_getFile($locale, '/ldml/dates/calendars/calendar[@type=\'' . $value . '\']/months/monthContext[@type=\'format\']/monthWidth[@type=\'wide\']/month', 'type');
-                $temp['stand-alone']['abbreviated']  = self::_getFile($locale, '/ldml/dates/calendars/calendar[@type=\'' . $value . '\']/months/monthContext[@type=\'stand-alone\']/monthWidth[@type=\'abbreviated\']/month', 'type');
-                $temp['stand-alone']['narrow']       = self::_getFile($locale, '/ldml/dates/calendars/calendar[@type=\'' . $value . '\']/months/monthContext[@type=\'stand-alone\']/monthWidth[@type=\'narrow\']/month', 'type');
-                $temp['stand-alone']['wide']         = self::_getFile($locale, '/ldml/dates/calendars/calendar[@type=\'' . $value . '\']/months/monthContext[@type=\'stand-alone\']/monthWidth[@type=\'wide\']/month', 'type');
-                break;
-
-            case 'month':
-                if (empty($value)) {
-                    $value = array("gregorian", "format", "wide");
-                }
-                $temp = self::_getFile($locale, '/ldml/dates/calendars/calendar[@type=\'' . $value[0] . '\']/months/monthContext[@type=\'' . $value[1] . '\']/monthWidth[@type=\'' . $value[2] . '\']/month', 'type');
-                break;
-
-            case 'days':
-                if (empty($value)) {
-                    $value = "gregorian";
-                }
-                $temp  = self::_getFile($locale, '/ldml/dates/calendars/calendar[@type=\'' . $value . '\']/days/default', 'choice', 'context');
-                $temp += self::_getFile($locale, '/ldml/dates/calendars/calendar[@type=\'' . $value . '\']/days/dayContext[@type=\'format\']/default', 'choice', 'default');
-                $temp['format']['abbreviated'] = self::_getFile($locale, '/ldml/dates/calendars/calendar[@type=\'' . $value . '\']/days/dayContext[@type=\'format\']/dayWidth[@type=\'abbreviated\']/day', 'type');
-                $temp['format']['narrow']      = self::_getFile($locale, '/ldml/dates/calendars/calendar[@type=\'' . $value . '\']/days/dayContext[@type=\'format\']/dayWidth[@type=\'narrow\']/day', 'type');
-                $temp['format']['wide']        = self::_getFile($locale, '/ldml/dates/calendars/calendar[@type=\'' . $value . '\']/days/dayContext[@type=\'format\']/dayWidth[@type=\'wide\']/day', 'type');
-                $temp['stand-alone']['abbreviated']  = self::_getFile($locale, '/ldml/dates/calendars/calendar[@type=\'' . $value . '\']/days/dayContext[@type=\'stand-alone\']/dayWidth[@type=\'abbreviated\']/day', 'type');
-                $temp['stand-alone']['narrow']       = self::_getFile($locale, '/ldml/dates/calendars/calendar[@type=\'' . $value . '\']/days/dayContext[@type=\'stand-alone\']/dayWidth[@type=\'narrow\']/day', 'type');
-                $temp['stand-alone']['wide']         = self::_getFile($locale, '/ldml/dates/calendars/calendar[@type=\'' . $value . '\']/days/dayContext[@type=\'stand-alone\']/dayWidth[@type=\'wide\']/day', 'type');
-                break;
-
-            case 'day':
-                if (empty($value)) {
-                    $value = array("gregorian", "format", "wide");
-                }
-                $temp = self::_getFile($locale, '/ldml/dates/calendars/calendar[@type=\'' . $value[0] . '\']/days/dayContext[@type=\'' . $value[1] . '\']/dayWidth[@type=\'' . $value[2] . '\']/day', 'type');
-                break;
-
-            case 'week':
-                $minDays   = self::_calendarDetail($locale, self::_getFile('supplementalData', '/supplementalData/weekData/minDays', 'territories'));
-                $firstDay  = self::_calendarDetail($locale, self::_getFile('supplementalData', '/supplementalData/weekData/firstDay', 'territories'));
-                $weekStart = self::_calendarDetail($locale, self::_getFile('supplementalData', '/supplementalData/weekData/weekendStart', 'territories'));
-                $weekEnd   = self::_calendarDetail($locale, self::_getFile('supplementalData', '/supplementalData/weekData/weekendEnd', 'territories'));
-
-                $temp  = self::_getFile('supplementalData', "/supplementalData/weekData/minDays[@territories='" . $minDays . "']", 'count', 'minDays');
-                $temp += self::_getFile('supplementalData', "/supplementalData/weekData/firstDay[@territories='" . $firstDay . "']", 'day', 'firstDay');
-                $temp += self::_getFile('supplementalData', "/supplementalData/weekData/weekendStart[@territories='" . $weekStart . "']", 'day', 'weekendStart');
-                $temp += self::_getFile('supplementalData', "/supplementalData/weekData/weekendEnd[@territories='" . $weekEnd . "']", 'day', 'weekendEnd');
-                break;
-
-            case 'quarters':
-                if (empty($value)) {
-                    $value = "gregorian";
-                }
-                $temp['format']['abbreviated'] = self::_getFile($locale, '/ldml/dates/calendars/calendar[@type=\'' . $value . '\']/quarters/quarterContext[@type=\'format\']/quarterWidth[@type=\'abbreviated\']/quarter', 'type');
-                $temp['format']['narrow']      = self::_getFile($locale, '/ldml/dates/calendars/calendar[@type=\'' . $value . '\']/quarters/quarterContext[@type=\'format\']/quarterWidth[@type=\'narrow\']/quarter', 'type');
-                $temp['format']['wide']        = self::_getFile($locale, '/ldml/dates/calendars/calendar[@type=\'' . $value . '\']/quarters/quarterContext[@type=\'format\']/quarterWidth[@type=\'wide\']/quarter', 'type');
-                $temp['stand-alone']['abbreviated']  = self::_getFile($locale, '/ldml/dates/calendars/calendar[@type=\'' . $value . '\']/quarters/quarterContext[@type=\'stand-alone\']/quarterWidth[@type=\'abbreviated\']/quarter', 'type');
-                $temp['stand-alone']['narrow']       = self::_getFile($locale, '/ldml/dates/calendars/calendar[@type=\'' . $value . '\']/quarters/quarterContext[@type=\'stand-alone\']/quarterWidth[@type=\'narrow\']/quarter', 'type');
-                $temp['stand-alone']['wide']         = self::_getFile($locale, '/ldml/dates/calendars/calendar[@type=\'' . $value . '\']/quarters/quarterContext[@type=\'stand-alone\']/quarterWidth[@type=\'wide\']/quarter', 'type');
-                break;
-
-            case 'quarter':
-                if (empty($value)) {
-                    $value = array("gregorian", "format", "wide");
-                }
-                $temp = self::_getFile($locale, '/ldml/dates/calendars/calendar[@type=\'' . $value[0] . '\']/quarters/quarterContext[@type=\'' . $value[1] . '\']/quarterWidth[@type=\'' . $value[2] . '\']/quarter', 'type');
-                break;
-
-            case 'eras':
-                if (empty($value)) {
-                    $value = "gregorian";
-                }
-                $temp['names']       = self::_getFile($locale, '/ldml/dates/calendars/calendar[@type=\'' . $value . '\']/eras/eraNames/era', 'type');
-                $temp['abbreviated'] = self::_getFile($locale, '/ldml/dates/calendars/calendar[@type=\'' . $value . '\']/eras/eraAbbr/era', 'type');
-                $temp['narrow']      = self::_getFile($locale, '/ldml/dates/calendars/calendar[@type=\'' . $value . '\']/eras/eraNarrow/era', 'type');
-                break;
-
-            case 'era':
-                if (empty($value)) {
-                    $value = array("gregorian", "Abbr");
-                }
-                $temp = self::_getFile($locale, '/ldml/dates/calendars/calendar[@type=\'' . $value[0] . '\']/eras/era' . $value[1] . '/era', 'type');
-                break;
-
-            case 'date':
-                if (empty($value)) {
-                    $value = "gregorian";
-                }
-                $temp  = self::_getFile($locale, '/ldml/dates/calendars/calendar[@type=\'' . $value . '\']/dateFormats/dateFormatLength[@type=\'full\']/dateFormat/pattern', '', 'full');
-                $temp += self::_getFile($locale, '/ldml/dates/calendars/calendar[@type=\'' . $value . '\']/dateFormats/dateFormatLength[@type=\'long\']/dateFormat/pattern', '', 'long');
-                $temp += self::_getFile($locale, '/ldml/dates/calendars/calendar[@type=\'' . $value . '\']/dateFormats/dateFormatLength[@type=\'medium\']/dateFormat/pattern', '', 'medium');
-                $temp += self::_getFile($locale, '/ldml/dates/calendars/calendar[@type=\'' . $value . '\']/dateFormats/dateFormatLength[@type=\'short\']/dateFormat/pattern', '', 'short');
-                break;
-
-            case 'time':
-                if (empty($value)) {
-                    $value = "gregorian";
-                }
-                $temp  = self::_getFile($locale, '/ldml/dates/calendars/calendar[@type=\'' . $value . '\']/timeFormats/timeFormatLength[@type=\'full\']/timeFormat/pattern', '', 'full');
-                $temp += self::_getFile($locale, '/ldml/dates/calendars/calendar[@type=\'' . $value . '\']/timeFormats/timeFormatLength[@type=\'long\']/timeFormat/pattern', '', 'long');
-                $temp += self::_getFile($locale, '/ldml/dates/calendars/calendar[@type=\'' . $value . '\']/timeFormats/timeFormatLength[@type=\'medium\']/timeFormat/pattern', '', 'medium');
-                $temp += self::_getFile($locale, '/ldml/dates/calendars/calendar[@type=\'' . $value . '\']/timeFormats/timeFormatLength[@type=\'short\']/timeFormat/pattern', '', 'short');
-                break;
-
-            case 'datetime':
-                if (empty($value)) {
-                    $value = "gregorian";
-                }
-                $temp = self::_getFile($locale, '/ldml/dates/calendars/calendar[@type=\'' . $value . '\']/dateTimeFormats/availableFormats/dateFormatItem', 'id');
-                break;
-
-            case 'field':
-                if (empty($value)) {
-                    $value = "gregorian";
-                }
-                $temp2 = self::_getFile($locale, '/ldml/dates/calendars/calendar[@type=\'' . $value . '\']/fields/field', 'type');
-                foreach ($temp2 as $key => $keyvalue) {
-                    $temp += self::_getFile($locale, '/ldml/dates/calendars/calendar[@type=\'' . $value . '\']/fields/field[@type=\'' . $key . '\']/displayName', '', $key);
-                }
-                break;
-
-            case 'relative':
-                if (empty($value)) {
-                    $value = "gregorian";
-                }
-                $temp = self::_getFile($locale, '/ldml/dates/calendars/calendar[@type=\'' . $value . '\']/fields/field/relative', 'type');
-                break;
-
-            case 'symbols':
-                $temp  = self::_getFile($locale, '/ldml/numbers/symbols/decimal',         '', 'decimal');
-                $temp += self::_getFile($locale, '/ldml/numbers/symbols/group',           '', 'group');
-                $temp += self::_getFile($locale, '/ldml/numbers/symbols/list',            '', 'list');
-                $temp += self::_getFile($locale, '/ldml/numbers/symbols/percentSign',     '', 'percent');
-                $temp += self::_getFile($locale, '/ldml/numbers/symbols/nativeZeroDigit', '', 'zero');
-                $temp += self::_getFile($locale, '/ldml/numbers/symbols/patternDigit',    '', 'pattern');
-                $temp += self::_getFile($locale, '/ldml/numbers/symbols/plusSign',        '', 'plus');
-                $temp += self::_getFile($locale, '/ldml/numbers/symbols/minusSign',       '', 'minus');
-                $temp += self::_getFile($locale, '/ldml/numbers/symbols/exponential',     '', 'exponent');
-                $temp += self::_getFile($locale, '/ldml/numbers/symbols/perMille',        '', 'mille');
-                $temp += self::_getFile($locale, '/ldml/numbers/symbols/infinity',        '', 'infinity');
-                $temp += self::_getFile($locale, '/ldml/numbers/symbols/nan',             '', 'nan');
-                break;
-
-            case 'nametocurrency':
-                $_temp = self::_getFile($locale, '/ldml/numbers/currencies/currency', 'type');
-                foreach ($_temp as $key => $found) {
-                    $temp += self::_getFile($locale, '/ldml/numbers/currencies/currency[@type=\'' . $key . '\']/displayName', '', $key);
-                }
-                break;
-
-            case 'currencytoname':
-                $_temp = self::_getFile($locale, '/ldml/numbers/currencies/currency', 'type');
-                foreach ($_temp as $key => $keyvalue) {
-                    $val = self::_getFile($locale, '/ldml/numbers/currencies/currency[@type=\'' . $key . '\']/displayName', '', $key);
-                    if (!isset($val[$key])) {
-                        continue;
-                    }
-                    if (!isset($temp[$val[$key]])) {
-                        $temp[$val[$key]] = $key;
-                    } else {
-                        $temp[$val[$key]] .= " " . $key;
-                    }
-                }
-                break;
-
-            case 'currencysymbol':
-                $_temp = self::_getFile($locale, '/ldml/numbers/currencies/currency', 'type');
-                foreach ($_temp as $key => $found) {
-                    $temp += self::_getFile($locale, '/ldml/numbers/currencies/currency[@type=\'' . $key . '\']/symbol', '', $key);
-                }
-                break;
-
-            case 'question':
-                $temp  = self::_getFile($locale, '/ldml/posix/messages/yesstr',  '', 'yes');
-                $temp += self::_getFile($locale, '/ldml/posix/messages/nostr',   '', 'no');
-                break;
-
-            case 'currencyfraction':
-                $_temp = self::_getFile('supplementalData', '/supplementalData/currencyData/fractions/info', 'iso4217');
-                foreach ($_temp as $key => $found) {
-                    $temp += self::_getFile('supplementalData', '/supplementalData/currencyData/fractions/info[@iso4217=\'' . $key . '\']', 'digits', $key);
-                }
-                break;
-
-            case 'currencyrounding':
-                $_temp = self::_getFile('supplementalData', '/supplementalData/currencyData/fractions/info', 'iso4217');
-                foreach ($_temp as $key => $found) {
-                    $temp += self::_getFile('supplementalData', '/supplementalData/currencyData/fractions/info[@iso4217=\'' . $key . '\']', 'rounding', $key);
-                }
-                break;
-
-            case 'currencytoregion':
-                $_temp = self::_getFile('supplementalData', '/supplementalData/currencyData/region', 'iso3166');
-                foreach ($_temp as $key => $keyvalue) {
-                    $temp += self::_getFile('supplementalData', '/supplementalData/currencyData/region[@iso3166=\'' . $key . '\']/currency', 'iso4217', $key);
-                }
-                break;
-
-            case 'regiontocurrency':
-                $_temp = self::_getFile('supplementalData', '/supplementalData/currencyData/region', 'iso3166');
-                foreach ($_temp as $key => $keyvalue) {
-                    $val = self::_getFile('supplementalData', '/supplementalData/currencyData/region[@iso3166=\'' . $key . '\']/currency', 'iso4217', $key);
-                    if (!isset($val[$key])) {
-                        continue;
-                    }
-                    if (!isset($temp[$val[$key]])) {
-                        $temp[$val[$key]] = $key;
-                    } else {
-                        $temp[$val[$key]] .= " " . $key;
-                    }
-                }
-                break;
-
-            case 'regiontoterritory':
-                $_temp = self::_getFile('supplementalData', '/supplementalData/territoryContainment/group', 'type');
-                foreach ($_temp as $key => $found) {
-                    $temp += self::_getFile('supplementalData', '/supplementalData/territoryContainment/group[@type=\'' . $key . '\']', 'contains', $key);
-                }
-                break;
-
-            case 'territorytoregion':
-                $_temp2 = self::_getFile('supplementalData', '/supplementalData/territoryContainment/group', 'type');
-                $_temp = array();
-                foreach ($_temp2 as $key => $found) {
-                    $_temp += self::_getFile('supplementalData', '/supplementalData/territoryContainment/group[@type=\'' . $key . '\']', 'contains', $key);
-                }
-                foreach($_temp as $key => $found) {
-                    $_temp3 = explode(" ", $found);
-                    foreach($_temp3 as $found3) {
-                        if (!isset($temp[$found3])) {
-                            $temp[$found3] = (string) $key;
-                        } else {
-                            $temp[$found3] .= " " . $key;
-                        }
-                    }
-                }
-                break;
-
-            case 'scripttolanguage':
-                $_temp = self::_getFile('supplementalData', '/supplementalData/languageData/language', 'type');
-                foreach ($_temp as $key => $found) {
-                    $temp += self::_getFile('supplementalData', '/supplementalData/languageData/language[@type=\'' . $key . '\']', 'scripts', $key);
-                    if (empty($temp[$key])) {
-                        unset($temp[$key]);
-                    }
-                }
-                break;
-
-            case 'languagetoscript':
-                $_temp2 = self::_getFile('supplementalData', '/supplementalData/languageData/language', 'type');
-                $_temp = array();
-                foreach ($_temp2 as $key => $found) {
-                    $_temp += self::_getFile('supplementalData', '/supplementalData/languageData/language[@type=\'' . $key . '\']', 'scripts', $key);
-                }
-                foreach($_temp as $key => $found) {
-                    $_temp3 = explode(" ", $found);
-                    foreach($_temp3 as $found3) {
-                        if (empty($found3)) {
-                            continue;
-                        }
-                        if (!isset($temp[$found3])) {
-                            $temp[$found3] = (string) $key;
-                        } else {
-                            $temp[$found3] .= " " . $key;
-                        }
-                    }
-                }
-                break;
-
-            case 'territorytolanguage':
-                $_temp = self::_getFile('supplementalData', '/supplementalData/languageData/language', 'type');
-                foreach ($_temp as $key => $found) {
-                    $temp += self::_getFile('supplementalData', '/supplementalData/languageData/language[@type=\'' . $key . '\']', 'territories', $key);
-                    if (empty($temp[$key])) {
-                        unset($temp[$key]);
-                    }
-                }
-                break;
-
-            case 'languagetoterritory':
-                $_temp2 = self::_getFile('supplementalData', '/supplementalData/languageData/language', 'type');
-                $_temp = array();
-                foreach ($_temp2 as $key => $found) {
-                    $_temp += self::_getFile('supplementalData', '/supplementalData/languageData/language[@type=\'' . $key . '\']', 'territories', $key);
-                }
-                foreach($_temp as $key => $found) {
-                    $_temp3 = explode(" ", $found);
-                    foreach($_temp3 as $found3) {
-                        if (empty($found3)) {
-                            continue;
-                        }
-                        if (!isset($temp[$found3])) {
-                            $temp[$found3] = (string) $key;
-                        } else {
-                            $temp[$found3] .= " " . $key;
-                        }
-                    }
-                }
-                break;
-
-            case 'timezonetowindows':
-                $_temp = self::_getFile('supplementalData', '/supplementalData/timezoneData/mapTimezones[@type=\'windows\']/mapZone', 'other');
-                foreach ($_temp as $key => $found) {
-                    $temp += self::_getFile('supplementalData', '/supplementalData/timezoneData/mapTimezones[@type=\'windows\']/mapZone[@other=\'' . $key . '\']', 'type', $key);
-                }
-                break;
-
-            case 'windowstotimezone':
-                $_temp = self::_getFile('supplementalData', '/supplementalData/timezoneData/mapTimezones[@type=\'windows\']/mapZone', 'type');
-                foreach ($_temp as $key => $found) {
-                    $temp += self::_getFile('supplementalData', '/supplementalData/timezoneData/mapTimezones[@type=\'windows\']/mapZone[@type=\'' .$key . '\']', 'other', $key);
-                }
-                break;
-
-            case 'territorytotimezone':
-                $_temp = self::_getFile('supplementalData', '/supplementalData/timezoneData/zoneFormatting/zoneItem', 'type');
-                foreach ($_temp as $key => $found) {
-                    $temp += self::_getFile('supplementalData', '/supplementalData/timezoneData/zoneFormatting/zoneItem[@type=\'' . $key . '\']', 'territory', $key);
-                }
-                break;
-
-            case 'timezonetoterritory':
-                $_temp = self::_getFile('supplementalData', '/supplementalData/timezoneData/zoneFormatting/zoneItem', 'territory');
-                foreach ($_temp as $key => $found) {
-                    $temp += self::_getFile('supplementalData', '/supplementalData/timezoneData/zoneFormatting/zoneItem[@territory=\'' . $key . '\']', 'type', $key);
-                }
-                break;
-
-            case 'citytotimezone':
-                $_temp = self::_getFile($locale, '/ldml/dates/timeZoneNames/zone', 'type');
-                foreach($_temp as $key => $found) {
-                    $temp += self::_getFile($locale, '/ldml/dates/timeZoneNames/zone[@type=\'' . $key . '\']/exemplarCity', '', $key);
-                }
-                break;
-
-            case 'timezonetocity':
-                $_temp  = self::_getFile($locale, '/ldml/dates/timeZoneNames/zone', 'type');
-                $temp = array();
-                foreach($_temp as $key => $found) {
-                    $temp += self::_getFile($locale, '/ldml/dates/timeZoneNames/zone[@type=\'' . $key . '\']/exemplarCity', '', $key);
-                    if (!empty($temp[$key])) {
-                        $temp[$temp[$key]] = $key;
-                    }
-                    unset($temp[$key]);
-                }
-                break;
-
-            case 'phonetoterritory':
-                $_temp = self::_getFile('telephoneCodeData', '/supplementalData/telephoneCodeData/codesByTerritory', 'territory');
-                foreach ($_temp as $key => $keyvalue) {
-                    $temp += self::_getFile('telephoneCodeData', '/supplementalData/telephoneCodeData/codesByTerritory[@territory=\'' . $key . '\']/telephoneCountryCode', 'code', $key);
-                }
-                break;
-
-            case 'territorytophone':
-                $_temp = self::_getFile('telephoneCodeData', '/supplementalData/telephoneCodeData/codesByTerritory', 'territory');
-                foreach ($_temp as $key => $keyvalue) {
-                    $val = self::_getFile('telephoneCodeData', '/supplementalData/telephoneCodeData/codesByTerritory[@territory=\'' . $key . '\']/telephoneCountryCode', 'code', $key);
-                    if (!isset($val[$key])) {
-                        continue;
-                    }
-                    if (!isset($temp[$val[$key]])) {
-                        $temp[$val[$key]] = $key;
-                    } else {
-                        $temp[$val[$key]] .= " " . $key;
-                    }
-                }
-                break;
-
-            case 'numerictoterritory':
-                $_temp = self::_getFile('supplementalData', '/supplementalData/codeMappings/territoryCodes', 'type');
-                foreach ($_temp as $key => $keyvalue) {
-                    $temp += self::_getFile('supplementalData', '/supplementalData/codeMappings/territoryCodes[@type=\'' . $key . '\']', 'numeric', $key);
-                }
-                break;
-
-            case 'territorytonumeric':
-                $_temp = self::_getFile('supplementalData', '/supplementalData/codeMappings/territoryCodes', 'numeric');
-                foreach ($_temp as $key => $keyvalue) {
-                    $temp += self::_getFile('supplementalData', '/supplementalData/codeMappings/territoryCodes[@numeric=\'' . $key . '\']', 'type', $key);
-                }
-                break;
-
-            case 'alpha3toterritory':
-                $_temp = self::_getFile('supplementalData', '/supplementalData/codeMappings/territoryCodes', 'type');
-                foreach ($_temp as $key => $keyvalue) {
-                    $temp += self::_getFile('supplementalData', '/supplementalData/codeMappings/territoryCodes[@type=\'' . $key . '\']', 'alpha3', $key);
-                }
-                break;
-
-            case 'territorytoalpha3':
-                $_temp = self::_getFile('supplementalData', '/supplementalData/codeMappings/territoryCodes', 'alpha3');
-                foreach ($_temp as $key => $keyvalue) {
-                    $temp += self::_getFile('supplementalData', '/supplementalData/codeMappings/territoryCodes[@alpha3=\'' . $key . '\']', 'type', $key);
-                }
-                break;
-
-            default :
-                require_once 'Zend/Locale/Exception.php';
-                throw new Zend_Locale_Exception("Unknown list ($path) for parsing locale data.");
-                break;
-        }
-
-        if (isset(self::$_cache)) {
-            self::$_cache->save( serialize($temp), $id);
-        }
-
-        return $temp;
-    }
-
-    /**
-     * Read the LDML file, get a single path defined value
-     *
-     * @param  string $locale
-     * @param  string $path
-     * @param  string $value
-     * @return string
-     * @access public
-     */
-    public static function getContent($locale, $path, $value = false)
-    {
-        $locale = self::_checkLocale($locale);
-
-        if (!isset(self::$_cache) && !self::$_cacheDisabled) {
-            require_once 'Zend/Cache.php';
-            self::$_cache = Zend_Cache::factory(
-                'Core',
-                'File',
-                array('automatic_serialization' => true),
-                array());
-        }
-
-        $val = $value;
-        if (is_array($value)) {
-            $val = implode('_' , $value);
-        }
-        $val = urlencode($val);
-        $id = strtr('Zend_LocaleC_' . $locale . '_' . $path . '_' . $val, array('-' => '_', '%' => '_', '+' => '_'));
-        if (!self::$_cacheDisabled && ($result = self::$_cache->load($id))) {
-            return unserialize($result);
-        }
-
-        switch(strtolower($path)) {
-            case 'language':
-                $temp = self::_getFile($locale, '/ldml/localeDisplayNames/languages/language[@type=\'' . $value . '\']', 'type');
-                break;
-
-            case 'script':
-                $temp = self::_getFile($locale, '/ldml/localeDisplayNames/scripts/script[@type=\'' . $value . '\']', 'type');
-                break;
-
-            case 'country':
-            case 'territory':
-                $temp = self::_getFile($locale, '/ldml/localeDisplayNames/territories/territory[@type=\'' . $value . '\']', 'type');
-                break;
-
-            case 'variant':
-                $temp = self::_getFile($locale, '/ldml/localeDisplayNames/variants/variant[@type=\'' . $value . '\']', 'type');
-                break;
-
-            case 'key':
-                $temp = self::_getFile($locale, '/ldml/localeDisplayNames/keys/key[@type=\'' . $value . '\']', 'type');
-                break;
-
-            case 'datechars':
-                $temp = self::_getFile($locale, '/ldml/dates/localizedPatternChars', '', 'chars');
-                break;
-
-            case 'defaultcalendar':
-                $temp = self::_getFile($locale, '/ldml/dates/calendars/default', 'choice', 'default');
-                break;
-
-            case 'monthcontext':
-                if (empty ($value)) {
-                    $value = "gregorian";
-                }
-                $temp = self::_getFile($locale, '/ldml/dates/calendars/calendar[@type=\'' . $value . '\']/months/default', 'choice', 'context');
-                break;
-
-            case 'defaultmonth':
-                if (empty ($value)) {
-                    $value = "gregorian";
-                }
-                $temp = self::_getFile($locale, '/ldml/dates/calendars/calendar[@type=\'' . $value . '\']/months/monthContext[@type=\'format\']/default', 'choice', 'default');
-                break;
-
-            case 'month':
-                if (!is_array($value)) {
-                    $temp = $value;
-                    $value = array("gregorian", "format", "wide", $temp);
-                }
-                $temp = self::_getFile($locale, '/ldml/dates/calendars/calendar[@type=\'' . $value[0] . '\']/months/monthContext[@type=\'' . $value[1] . '\']/monthWidth[@type=\'' . $value[2] . '\']/month[@type=\'' . $value[3] . '\']', 'type');
-                break;
-
-            case 'daycontext':
-                if (empty($value)) {
-                    $value = "gregorian";
-                }
-                $temp = self::_getFile($locale, '/ldml/dates/calendars/calendar[@type=\'' . $value . '\']/days/default', 'choice', 'context');
-                break;
-
-            case 'defaultday':
-                if (empty($value)) {
-                    $value = "gregorian";
-                }
-                $temp = self::_getFile($locale, '/ldml/dates/calendars/calendar[@type=\'' . $value . '\']/days/dayContext[@type=\'format\']/default', 'choice', 'default');
-                break;
-
-            case 'day':
-                if (!is_array($value)) {
-                    $temp = $value;
-                    $value = array("gregorian", "format", "wide", $temp);
-                }
-                $temp = self::_getFile($locale, '/ldml/dates/calendars/calendar[@type=\'' . $value[0] . '\']/days/dayContext[@type=\'' . $value[1] . '\']/dayWidth[@type=\'' . $value[2] . '\']/day[@type=\'' . $value[3] . '\']', 'type');
-                break;
-
-            case 'quarter':
-                if (!is_array($value)) {
-                    $temp = $value;
-                    $value = array("gregorian", "format", "wide", $temp);
-                }
-                $temp = self::_getFile($locale, '/ldml/dates/calendars/calendar[@type=\'' . $value[0] . '\']/quarters/quarterContext[@type=\'' . $value[1] . '\']/quarterWidth[@type=\'' . $value[2] . '\']/quarter[@type=\'' . $value[3] . '\']', 'type');
-                break;
-
-            case 'am':
-                if (empty($value)) {
-                    $value = "gregorian";
-                }
-                $temp = self::_getFile($locale, '/ldml/dates/calendars/calendar[@type=\'' . $value . '\']/am', '', 'am');
-                break;
-
-            case 'pm':
-                if (empty($value)) {
-                    $value = "gregorian";
-                }
-                $temp = self::_getFile($locale, '/ldml/dates/calendars/calendar[@type=\'' . $value . '\']/pm', '', 'pm');
-                break;
-
-            case 'era':
-                if (!is_array($value)) {
-                    $temp = $value;
-                    $value = array("gregorian", "Abbr", $temp);
-                }
-                $temp = self::_getFile($locale, '/ldml/dates/calendars/calendar[@type=\'' . $value[0] . '\']/eras/era' . $value[1] . '/era[@type=\'' . $value[2] . '\']', 'type');
-                break;
-
-            case 'defaultdate':
-                if (empty($value)) {
-                    $value = "gregorian";
-                }
-                $temp = self::_getFile($locale, '/ldml/dates/calendars/calendar[@type=\'' . $value . '\']/dateFormats/default', 'choice', 'default');
-                break;
-
-            case 'date':
-                if (empty($value)) {
-                    $value = array("gregorian", "medium");
-                }
-                if (!is_array($value)) {
-                    $temp = $value;
-                    $value = array("gregorian", $temp);
-                }
-                $temp = self::_getFile($locale, '/ldml/dates/calendars/calendar[@type=\'' . $value[0] . '\']/dateFormats/dateFormatLength[@type=\'' . $value[1] . '\']/dateFormat/pattern', '', 'pattern');
-                break;
-
-            case 'defaulttime':
-                if (empty($value)) {
-                    $value = "gregorian";
-                }
-                $temp = self::_getFile($locale, '/ldml/dates/calendars/calendar[@type=\'' . $value . '\']/timeFormats/default', 'choice', 'default');
-                break;
-
-            case 'time':
-                if (empty($value)) {
-                    $value = array("gregorian", "medium");
-                }
-                if (!is_array($value)) {
-                    $temp = $value;
-                    $value = array("gregorian", $temp);
-                }
-                $temp = self::_getFile($locale, '/ldml/dates/calendars/calendar[@type=\'' . $value[0] . '\']/timeFormats/timeFormatLength[@type=\'' . $value[1] . '\']/timeFormat/pattern', '', 'pattern');
-                break;
-
-            case 'datetime':
-                if (empty($value)) {
-                    $value = "gregorian";
-                }
-                $temp = self::_getFile($locale, '/ldml/dates/calendars/calendar[@type=\'' . $value . '\']/dateTimeFormats/dateTimeFormatLength/dateTimeFormat/pattern', '', 'pattern');
-                break;
-
-            case 'field':
-                if (!is_array($value)) {
-                    $temp = $value;
-                    $value = array("gregorian", $temp);
-                }
-                $temp = self::_getFile($locale, '/ldml/dates/calendars/calendar[@type=\'' . $value[0] . '\']/fields/field[@type=\'' . $value[1] . '\']/displayName', '', $value[1]);
-                break;
-
-            case 'relative':
-                if (!is_array($value)) {
-                    $temp = $value;
-                    $value = array("gregorian", $temp);
-                }
-                $temp = self::_getFile($locale, '/ldml/dates/calendars/calendar[@type=\'' . $value[0] . '\']/fields/field/relative[@type=\'' . $value[1] . '\']', '', $value[1]);
-                break;
-
-            case 'decimalnumber':
-                $temp = self::_getFile($locale, '/ldml/numbers/decimalFormats/decimalFormatLength/decimalFormat/pattern', '', 'default');
-                break;
-
-            case 'scientificnumber':
-                $temp = self::_getFile($locale, '/ldml/numbers/scientificFormats/scientificFormatLength/scientificFormat/pattern', '', 'default');
-                break;
-
-            case 'percentnumber':
-                $temp = self::_getFile($locale, '/ldml/numbers/percentFormats/percentFormatLength/percentFormat/pattern', '', 'default');
-                break;
-
-            case 'currencynumber':
-                $temp = self::_getFile($locale, '/ldml/numbers/currencyFormats/currencyFormatLength/currencyFormat/pattern', '', 'default');
-                break;
-
-            case 'nametocurrency':
-                $temp = self::_getFile($locale, '/ldml/numbers/currencies/currency[@type=\'' . $value . '\']/displayName', '', $value);
-                break;
-
-            case 'currencytoname':
-                $temp = self::_getFile($locale, '/ldml/numbers/currencies/currency[@type=\'' . $value . '\']/displayName', '', $value);
-                $_temp = self::_getFile($locale, '/ldml/numbers/currencies/currency', 'type');
-                $temp = array();
-                foreach ($_temp as $key => $keyvalue) {
-                    $val = self::_getFile($locale, '/ldml/numbers/currencies/currency[@type=\'' . $key . '\']/displayName', '', $key);
-                    if (!isset($val[$key]) or ($val[$key] != $value)) {
-                        continue;
-                    }
-                    if (!isset($temp[$val[$key]])) {
-                        $temp[$val[$key]] = $key;
-                    } else {
-                        $temp[$val[$key]] .= " " . $key;
-                    }
-                }
-                break;
-
-            case 'currencysymbol':
-                $temp = self::_getFile($locale, '/ldml/numbers/currencies/currency[@type=\'' . $value . '\']/symbol', '', $value);
-                break;
-
-            case 'question':
-                $temp = self::_getFile($locale, '/ldml/posix/messages/' . $value . 'str',  '', $value);
-                break;
-
-            case 'currencyfraction':
-                if (empty($value)) {
-                    $value = "DEFAULT";
-                }
-                $temp = self::_getFile('supplementalData', '/supplementalData/currencyData/fractions/info[@iso4217=\'' . $value . '\']', 'digits', 'digits');
-                break;
-
-            case 'currencyrounding':
-                if (empty($value)) {
-                    $value = "DEFAULT";
-                }
-                $temp = self::_getFile('supplementalData', '/supplementalData/currencyData/fractions/info[@iso4217=\'' . $value . '\']', 'rounding', 'rounding');
-                break;
-
-            case 'currencytoregion':
-                $temp = self::_getFile('supplementalData', '/supplementalData/currencyData/region[@iso3166=\'' . $value . '\']/currency', 'iso4217', $value);
-                break;
-
-            case 'regiontocurrency':
-                $_temp = self::_getFile('supplementalData', '/supplementalData/currencyData/region', 'iso3166');
-                $temp = array();
-                foreach ($_temp as $key => $keyvalue) {
-                    $val = self::_getFile('supplementalData', '/supplementalData/currencyData/region[@iso3166=\'' . $key . '\']/currency', 'iso4217', $key);
-                    if (!isset($val[$key]) or ($val[$key] != $value)) {
-                        continue;
-                    }
-                    if (!isset($temp[$val[$key]])) {
-                        $temp[$val[$key]] = $key;
-                    } else {
-                        $temp[$val[$key]] .= " " . $key;
-                    }
-                }
-                break;
-
-            case 'regiontoterritory':
-                $temp = self::_getFile('supplementalData', '/supplementalData/territoryContainment/group[@type=\'' . $value . '\']', 'contains', $value);
-                break;
-
-            case 'territorytoregion':
-                $_temp2 = self::_getFile('supplementalData', '/supplementalData/territoryContainment/group', 'type');
-                $_temp = array();
-                foreach ($_temp2 as $key => $found) {
-                    $_temp += self::_getFile('supplementalData', '/supplementalData/territoryContainment/group[@type=\'' . $key . '\']', 'contains', $key);
-                }
-                $temp = array();
-                foreach($_temp as $key => $found) {
-                    $_temp3 = explode(" ", $found);
-                    foreach($_temp3 as $found3) {
-                        if ($found3 !== $value) {
-                            continue;
-                        }
-                        if (!isset($temp[$found3])) {
-                            $temp[$found3] = (string) $key;
-                        } else {
-                            $temp[$found3] .= " " . $key;
-                        }
-                    }
-                }
-                break;
-
-            case 'scripttolanguage':
-                $temp = self::_getFile('supplementalData', '/supplementalData/languageData/language[@type=\'' . $value . '\']', 'scripts', $value);
-                break;
-
-            case 'languagetoscript':
-                $_temp2 = self::_getFile('supplementalData', '/supplementalData/languageData/language', 'type');
-                $_temp = array();
-                foreach ($_temp2 as $key => $found) {
-                    $_temp += self::_getFile('supplementalData', '/supplementalData/languageData/language[@type=\'' . $key . '\']', 'scripts', $key);
-                }
-                $temp = array();
-                foreach($_temp as $key => $found) {
-                    $_temp3 = explode(" ", $found);
-                    foreach($_temp3 as $found3) {
-                        if ($found3 !== $value) {
-                            continue;
-                        }
-                        if (!isset($temp[$found3])) {
-                            $temp[$found3] = (string) $key;
-                        } else {
-                            $temp[$found3] .= " " . $key;
-                        }
-                    }
-                }
-                break;
-
-            case 'territorytolanguage':
-                $temp = self::_getFile('supplementalData', '/supplementalData/languageData/language[@type=\'' . $value . '\']', 'territories', $value);
-                break;
-
-            case 'languagetoterritory':
-                $_temp2 = self::_getFile('supplementalData', '/supplementalData/languageData/language', 'type');
-                $_temp = array();
-                foreach ($_temp2 as $key => $found) {
-                    $_temp += self::_getFile('supplementalData', '/supplementalData/languageData/language[@type=\'' . $key . '\']', 'territories', $key);
-                }
-                $temp = array();
-                foreach($_temp as $key => $found) {
-                    $_temp3 = explode(" ", $found);
-                    foreach($_temp3 as $found3) {
-                        if ($found3 !== $value) {
-                            continue;
-                        }
-                        if (!isset($temp[$found3])) {
-                            $temp[$found3] = (string) $key;
-                        } else {
-                            $temp[$found3] .= " " . $key;
-                        }
-                    }
-                }
-                break;
-
-            case 'timezonetowindows':
-                $temp = self::_getFile('supplementalData', '/supplementalData/timezoneData/mapTimezones[@type=\'windows\']/mapZone[@other=\''.$value.'\']', 'type', $value);
-                break;
-
-            case 'windowstotimezone':
-                $temp = self::_getFile('supplementalData', '/supplementalData/timezoneData/mapTimezones[@type=\'windows\']/mapZone[@type=\''.$value.'\']', 'other', $value);
-                break;
-
-            case 'territorytotimezone':
-                $temp = self::_getFile('supplementalData', '/supplementalData/timezoneData/zoneFormatting/zoneItem[@type=\'' . $value . '\']', 'territory', $value);
-                break;
-
-            case 'timezonetoterritory':
-                $temp = self::_getFile('supplementalData', '/supplementalData/timezoneData/zoneFormatting/zoneItem[@territory=\'' . $value . '\']', 'type', $value);
-                break;
-
-            case 'citytotimezone':
-                $temp = self::_getFile($locale, '/ldml/dates/timeZoneNames/zone[@type=\'' . $value . '\']/exemplarCity', '', $value);
-                break;
-
-            case 'timezonetocity':
-                $_temp  = self::_getFile($locale, '/ldml/dates/timeZoneNames/zone', 'type');
-                $temp = array();
-                foreach($_temp as $key => $found) {
-                    $temp += self::_getFile($locale, '/ldml/dates/timeZoneNames/zone[@type=\'' . $key . '\']/exemplarCity', '', $key);
-                    if (!empty($temp[$key])) {
-                        if ($temp[$key] == $value) {
-                            $temp[$temp[$key]] = $key;
-                        }
-                    }
-                    unset($temp[$key]);
-                }
-                break;
-
-            case 'phonetoterritory':
-                $temp = self::_getFile('telephoneCodeData', '/supplementalData/telephoneCodeData/codesByTerritory[@territory=\'' . $value . '\']/telephoneCountryCode', 'code', $value);
-                break;
-
-            case 'territorytophone':
-                $_temp2 = self::_getFile('telephoneCodeData', '/supplementalData/telephoneCodeData/codesByTerritory', 'territory');
-                $_temp = array();
-                foreach ($_temp2 as $key => $found) {
-                    $_temp += self::_getFile('telephoneCodeData', '/supplementalData/telephoneCodeData/codesByTerritory[@territory=\'' . $key . '\']/telephoneCountryCode', 'code', $key);
-                }
-                $temp = array();
-                foreach($_temp as $key => $found) {
-                    $_temp3 = explode(" ", $found);
-                    foreach($_temp3 as $found3) {
-                        if ($found3 !== $value) {
-                            continue;
-                        }
-                        if (!isset($temp[$found3])) {
-                            $temp[$found3] = (string) $key;
-                        } else {
-                            $temp[$found3] .= " " . $key;
-                        }
-                    }
-                }
-                break;
-
-            case 'numerictoterritory':
-                $temp = self::_getFile('supplementalData', '/supplementalData/codeMappings/territoryCodes[@type=\''.$value.'\']', 'numeric', $value);
-                break;
-
-            case 'territorytonumeric':
-                $temp = self::_getFile('supplementalData', '/supplementalData/codeMappings/territoryCodes[@numeric=\''.$value.'\']', 'type', $value);
-                break;
-
-            case 'alpha3toterritory':
-                $temp = self::_getFile('supplementalData', '/supplementalData/codeMappings/territoryCodes[@type=\''.$value.'\']', 'alpha3', $value);
-                break;
-
-            case 'territorytoalpha3':
-                $temp = self::_getFile('supplementalData', '/supplementalData/codeMappings/territoryCodes[@alpha3=\''.$value.'\']', 'type', $value);
-                break;
-
-            default :
-                require_once 'Zend/Locale/Exception.php';
-                throw new Zend_Locale_Exception("Unknown detail ($path) for parsing locale data.");
-                break;
-        }
-
-        if (is_array($temp)) {
-            $temp = current($temp);
-        }
-        if (isset(self::$_cache)) {
-            self::$_cache->save( serialize($temp), $id);
-        }
-
-        return $temp;
-    }
-
-    /**
-     * Returns the set cache
-     *
-     * @return Zend_Cache_Core The set cache
-     */
-    public static function getCache()
-    {
-        return self::$_cache;
-    }
-
-    /**
-     * Set a cache for Zend_Locale_Data
-     *
-     * @param Zend_Cache_Core $cache A cache frontend
-     */
-    public static function setCache(Zend_Cache_Core $cache)
-    {
-        self::$_cache = $cache;
-    }
-
-    /**
-     * Returns true when a cache is set
-     *
-     * @return boolean
-     */
-    public static function hasCache()
-    {
-        if (self::$_cache !== null) {
-            return true;
-        }
-
-        return false;
-    }
-
-    /**
-     * Removes any set cache
-     *
-     * @return void
-     */
-    public static function removeCache()
-    {
-        self::$_cache = null;
-    }
-
-    /**
-     * Clears all set cache data
-     *
-     * @return void
-     */
-    public static function clearCache()
-    {
-        self::$_cache->clean();
-    }
-
-    /**
-     * Disables the cache
-     *
-     * @param unknown_type $flag
-     */
-    public static function disableCache($flag)
-    {
-        self::$_cacheDisabled = (boolean) $flag;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+ihwezSBz

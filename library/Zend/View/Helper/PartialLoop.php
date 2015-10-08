@@ -1,96 +1,37 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_View
- * @subpackage Helper
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @version    $Id: PartialLoop.php 13031 2008-12-05 02:40:46Z sidhighwind $
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_View_Helper_Partial */
-require_once 'Zend/View/Helper/Partial.php';
-
-/**
- * Helper for rendering a template fragment in its own variable scope; iterates
- * over data provided and renders for each iteration.
- *
- * @package    Zend_View
- * @subpackage Helper
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_View_Helper_PartialLoop extends Zend_View_Helper_Partial
-{
-
-    /**
-     * Marker to where the pointer is at in the loop
-     * @var integer
-     */
-    protected $partialCounter = 0;
-
-    /**
-     * Renders a template fragment within a variable scope distinct from the
-     * calling View object.
-     *
-     * If no arguments are provided, returns object instance.
-     *
-     * @param  string $name Name of view script
-     * @param  string|array $module If $model is empty, and $module is an array,
-     *                              these are the variables to populate in the
-     *                              view. Otherwise, the module in which the
-     *                              partial resides
-     * @param  array $model Variables to populate in the view
-     * @return string
-     */
-    public function partialLoop($name = null, $module = null, $model = null)
-    {
-        if (0 == func_num_args()) {
-            return $this;
-        }
-
-        if ((null === $model) && (null !== $module)) {
-            $model  = $module;
-            $module = null;
-        }
-
-        if (!is_array($model)
-            && (!$model instanceof Traversable)
-            && (is_object($model) && !method_exists($model, 'toArray'))
-        ) {
-            require_once 'Zend/View/Helper/Partial/Exception.php';
-            throw new Zend_View_Helper_Partial_Exception('PartialLoop helper requires iterable data');
-        }
-
-        if (is_object($model)
-            && (!$model instanceof Traversable)
-            && method_exists($model, 'toArray')
-        ) {
-            $model = $model->toArray();
-        }
-
-        $content = '';
-        // reset the counter if it's call again
-        $this->partialCounter = 0;
-        foreach ($model as $item) {
-            // increment the counter variable
-            $this->partialCounter++;
-
-            $content .= $this->partial($name, $module, $item);
-        }
-
-        return $content;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+zG==

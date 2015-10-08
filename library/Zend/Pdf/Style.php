@@ -1,302 +1,68 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @package    Zend_Pdf
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-
-/** Zend_Pdf_Color */
-require_once 'Zend/Pdf/Color.php';
-
-
-/** Zend_Pdf_Element_Numeric */
-require_once 'Zend/Pdf/Element/Numeric.php';
-
-/** Zend_Pdf_Element_Array */
-require_once 'Zend/Pdf/Element/Array.php';
-
-/** Zend_Pdf_Resource_Font */
-require_once 'Zend/Pdf/Resource/Font.php';
-
-
-/**
- * Style object.
- * Style object doesn't directly correspond to any PDF file object.
- * It's utility class, used as a container for style information.
- * It's used by Zend_Pdf_Page class in draw operations.
- *
- * @package    Zend_Pdf
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Pdf_Style
-{
-    /**
-     * Fill color.
-     * Used to fill geometric shapes or text.
-     *
-     * @var Zend_Pdf_Color|null
-     */
-    private $_fillColor = null;
-
-    /**
-     * Line color.
-     * Current color, used for lines and font outlines.
-     *
-     * @var Zend_Pdf_Color|null
-     */
-
-    private $_color;
-
-    /**
-     * Line width.
-     *
-     * @var Zend_Pdf_Element_Numeric
-     */
-    private $_lineWidth;
-
-    /**
-     * Array which describes line dashing pattern.
-     * It's array of numeric:
-     * array($on_length, $off_length, $on_length, $off_length, ...)
-     *
-     * @var array
-     */
-    private $_lineDashingPattern;
-
-    /**
-     * Line dashing phase
-     *
-     * @var float
-     */
-    private $_lineDashingPhase;
-
-    /**
-     * Current font
-     *
-     * @var Zend_Pdf_Resource_Font
-     */
-    private $_font;
-
-    /**
-     * Font size
-     *
-     * @var float
-     */
-    private $_fontSize;
-
-
-
-    /**
-     * Create style.
-     *
-     * @param Zend_Pdf_Style $anotherStyle
-     */
-    public function __construct($anotherStyle = null)
-    {
-        if ($anotherStyle !== null) {
-            $this->_fillColor          = $anotherStyle->_fillColor;
-            $this->_color              = $anotherStyle->_color;
-            $this->_lineWidth          = $anotherStyle->_lineWidth;
-            $this->_lineDashingPattern = $anotherStyle->_lineDashingPattern;
-            $this->_lineDashingPhase   = $anotherStyle->_lineDashingPhase;
-            $this->_font               = $anotherStyle->_font;
-            $this->_fontSize           = $anotherStyle->_fontSize;
-        }
-    }
-
-
-    /**
-     * Set fill color.
-     *
-     * @param Zend_Pdf_Color $color
-     */
-    public function setFillColor(Zend_Pdf_Color $color)
-    {
-        $this->_fillColor = $color;
-    }
-
-    /**
-     * Set line color.
-     *
-     * @param Zend_Pdf_Color $color
-     */
-    public function setLineColor(Zend_Pdf_Color $color)
-    {
-        $this->_color = $color;
-    }
-
-    /**
-     * Set line width.
-     *
-     * @param float $width
-     */
-    public function setLineWidth($width)
-    {
-        $this->_lineWidth = new Zend_Pdf_Element_Numeric($width);
-    }
-
-
-    /**
-     * Set line dashing pattern
-     *
-     * @param array $pattern
-     * @param float $phase
-     */
-    public function setLineDashingPattern($pattern, $phase = 0)
-    {
-        if ($pattern === Zend_Pdf_Page::LINE_DASHING_SOLID) {
-            $pattern = array();
-            $phase   = 0;
-        }
-
-        $this->_lineDashingPattern = $pattern;
-        $this->_lineDashingPhase   = new Zend_Pdf_Element_Numeric($phase);
-    }
-
-
-    /**
-     * Set current font.
-     *
-     * @param Zend_Pdf_Resource_Font $font
-     * @param float $fontSize
-     */
-    public function setFont(Zend_Pdf_Resource_Font $font, $fontSize)
-    {
-        $this->_font = $font;
-        $this->_fontSize = $fontSize;
-    }
-
-    /**
-     * Modify current font size
-     *
-     * @param float $fontSize
-     */
-    public function setFontSize($fontSize)
-    {
-        $this->_fontSize = $fontSize;
-    }
-
-    /**
-     * Get fill color.
-     *
-     * @return Zend_Pdf_Color|null
-     */
-    public function getFillColor()
-    {
-        return $this->_fillColor;
-    }
-
-    /**
-     * Get line color.
-     *
-     * @return Zend_Pdf_Color|null
-     */
-    public function getLineColor()
-    {
-        return $this->_color;
-    }
-
-    /**
-     * Get line width.
-     *
-     * @return float
-     */
-    public function getLineWidth()
-    {
-        return $this->_lineWidth->value;
-    }
-
-    /**
-     * Get line dashing pattern
-     *
-     * @return array
-     */
-    public function getLineDashingPattern()
-    {
-        return $this->_lineDashingPattern;
-    }
-
-
-    /**
-     * Get current font.
-     *
-     * @return Zend_Pdf_Resource_Font $font
-     */
-    public function getFont()
-    {
-        return $this->_font;
-    }
-
-    /**
-     * Get current font size
-     *
-     * @return float $fontSize
-     */
-    public function getFontSize()
-    {
-        return $this->_fontSize;
-    }
-
-    /**
-     * Get line dashing phase
-     *
-     * @return float
-     */
-    public function getLineDashingPhase()
-    {
-        return $this->_lineDashingPhase->value;
-    }
-
-
-    /**
-     * Dump style to a string, which can be directly inserted into content stream
-     *
-     * @return string
-     */
-    public function instructions()
-    {
-        $instructions = '';
-
-        if ($this->_fillColor !== null) {
-            $instructions .= $this->_fillColor->instructions(false);
-        }
-
-        if ($this->_color !== null) {
-            $instructions .= $this->_color->instructions(true);
-        }
-
-        if ($this->_lineWidth !== null) {
-            $instructions .= $this->_lineWidth->toString() . " w\n";
-        }
-
-        if ($this->_lineDashingPattern !== null) {
-            $dashPattern = new Zend_Pdf_Element_Array();
-
-            foreach ($this->_lineDashingPattern as $dashItem) {
-                $dashElement = new Zend_Pdf_Element_Numeric($dashItem);
-                $dashPattern->items[] = $dashElement;
-            }
-
-            $instructions .= $dashPattern->toString() . ' '
-                           . $this->_lineDashingPhase->toString() . " d\n";
-        }
-
-        return $instructions;
-    }
-
-}
-
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+ihZ8LHUQ+pXHDALJdNME

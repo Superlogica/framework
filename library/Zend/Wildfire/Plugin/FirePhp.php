@@ -1,799 +1,311 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Wildfire
- * @subpackage Plugin
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_Controller_Request_Abstract */
-require_once('Zend/Controller/Request/Abstract.php');
-
-/** Zend_Controller_Response_Abstract */
-require_once('Zend/Controller/Response/Abstract.php');
-
-/** Zend_Wildfire_Channel_HttpHeaders */
-require_once 'Zend/Wildfire/Channel/HttpHeaders.php';
-
-/** Zend_Wildfire_Protocol_JsonStream */
-require_once 'Zend/Wildfire/Protocol/JsonStream.php';
-
-/** Zend_Wildfire_Plugin_Interface */
-require_once 'Zend/Wildfire/Plugin/Interface.php';
-
-/**
- * Primary class for communicating with the FirePHP Firefox Extension.
- *
- * @category   Zend
- * @package    Zend_Wildfire
- * @subpackage Plugin
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Wildfire_Plugin_FirePhp implements Zend_Wildfire_Plugin_Interface
-{
-    /**
-     * Plain log style.
-     */
-    const LOG = 'LOG';
-
-    /**
-     * Information style.
-     */
-    const INFO = 'INFO';
-
-    /**
-     * Warning style.
-     */
-    const WARN = 'WARN';
-
-    /**
-     * Error style that increments Firebug's error counter.
-     */
-    const ERROR = 'ERROR';
-
-    /**
-     * Trace style showing message and expandable full stack trace.
-     */
-    const TRACE = 'TRACE';
-
-    /**
-     * Exception style showing message and expandable full stack trace.
-     * Also increments Firebug's error counter.
-     */
-    const EXCEPTION = 'EXCEPTION';
-
-    /**
-     * Table style showing summary line and expandable table
-     */
-    const TABLE = 'TABLE';
-
-    /**
-     * Dump variable to Server panel in Firebug Request Inspector
-     */
-    const DUMP = 'DUMP';
-
-    /**
-     * Start a group in the Firebug Console
-     */
-    const GROUP_START = 'GROUP_START';
-
-    /**
-     * End a group in the Firebug Console
-     */
-    const GROUP_END = 'GROUP_END';
-
-    /**
-     * The plugin URI for this plugin
-     */
-    const PLUGIN_URI = 'http://meta.firephp.org/Wildfire/Plugin/ZendFramework/FirePHP/1.6.2';
-
-    /**
-     * The protocol URI for this plugin
-     */
-    const PROTOCOL_URI = Zend_Wildfire_Protocol_JsonStream::PROTOCOL_URI;
-
-    /**
-     * The structure URI for the Dump structure
-     */
-    const STRUCTURE_URI_DUMP = 'http://meta.firephp.org/Wildfire/Structure/FirePHP/Dump/0.1';
-
-    /**
-     * The structure URI for the Firebug Console structure
-     */
-    const STRUCTURE_URI_FIREBUGCONSOLE = 'http://meta.firephp.org/Wildfire/Structure/FirePHP/FirebugConsole/0.1';
-
-    /**
-     * Singleton instance
-     * @var Zend_Wildfire_Plugin_FirePhp
-     */
-    protected static $_instance = null;
-
-    /**
-     * Flag indicating whether FirePHP should send messages to the user-agent.
-     * @var boolean
-     */
-    protected $_enabled = true;
-
-    /**
-     * The channel via which to send the encoded messages.
-     * @var Zend_Wildfire_Channel_Interface
-     */
-    protected $_channel = null;
-
-    /**
-     * Messages that are buffered to be sent when protocol flushes
-     * @var array
-     */
-    protected $_messages = array();
-
-    /**
-     * Options for the object
-     * @var array
-     */
-    protected $_options = array(
-        'traceOffset' => 1, /* The offset in the trace which identifies the source of the message */
-        'maxTraceDepth' => 99, /* Maximum depth for stack traces */
-        'maxObjectDepth' => 10, /* The maximum depth to traverse objects when encoding */
-        'maxArrayDepth' => 20, /* The maximum depth to traverse nested arrays when encoding */
-        'includeLineNumbers' => true /* Whether to include line and file info for each message */
-    );
-
-    /**
-     * Filters used to exclude object members when encoding
-     * @var array
-     */
-    protected $_objectFilters = array();
-
-    /**
-     * A stack of objects used during encoding to detect recursion
-     * @var array
-     */
-    protected $_objectStack = array();
-
-    /**
-     * Create singleton instance.
-     *
-     * @param string $class OPTIONAL Subclass of Zend_Wildfire_Plugin_FirePhp
-     * @return Zend_Wildfire_Plugin_FirePhp Returns the singleton Zend_Wildfire_Plugin_FirePhp instance
-     * @throws Zend_Wildfire_Exception
-     */
-    public static function init($class = null)
-    {
-        if (self::$_instance !== null) {
-            require_once 'Zend/Wildfire/Exception.php';
-            throw new Zend_Wildfire_Exception('Singleton instance of Zend_Wildfire_Plugin_FirePhp already exists!');
-        }
-        if ($class !== null) {
-            if (!is_string($class)) {
-                require_once 'Zend/Wildfire/Exception.php';
-                throw new Zend_Wildfire_Exception('Third argument is not a class string');
-            }
-
-            if (!class_exists($class)) {
-                require_once 'Zend/Loader.php';
-                Zend_Loader::loadClass($class);
-            }
-            self::$_instance = new $class();
-            if (!self::$_instance instanceof Zend_Wildfire_Plugin_FirePhp) {
-                self::$_instance = null;
-                require_once 'Zend/Wildfire/Exception.php';
-                throw new Zend_Wildfire_Exception('Invalid class to third argument. Must be subclass of Zend_Wildfire_Plugin_FirePhp.');
-            }
-        } else {
-            self::$_instance = new self();
-        }
-
-        return self::$_instance;
-    }
-
-    /**
-     * Constructor
-     * @return void
-     */
-    protected function __construct()
-    {
-        $this->_channel = Zend_Wildfire_Channel_HttpHeaders::getInstance();
-        $this->_channel->getProtocol(self::PROTOCOL_URI)->registerPlugin($this);
-    }
-
-    /**
-     * Get or create singleton instance
-     *
-     * @param $skipCreate boolean True if an instance should not be created
-     * @return Zend_Wildfire_Plugin_FirePhp
-     */
-    public static function getInstance($skipCreate=false)
-    {
-        if (self::$_instance===null && $skipCreate!==true) {
-            return self::init();
-        }
-        return self::$_instance;
-    }
-
-    /**
-     * Destroys the singleton instance
-     *
-     * Primarily used for testing.
-     *
-     * @return void
-     */
-    public static function destroyInstance()
-    {
-        self::$_instance = null;
-    }
-
-    /**
-     * Enable or disable sending of messages to user-agent.
-     * If disabled all headers to be sent will be removed.
-     *
-     * @param boolean $enabled Set to TRUE to enable sending of messages.
-     * @return boolean The previous value.
-     */
-    public function setEnabled($enabled)
-    {
-        $previous = $this->_enabled;
-        $this->_enabled = $enabled;
-        if (!$this->_enabled) {
-            $this->_messages = array();
-            $this->_channel->getProtocol(self::PROTOCOL_URI)->clearMessages($this);
-        }
-        return $previous;
-    }
-
-    /**
-     * Determine if logging to user-agent is enabled.
-     *
-     * @return boolean Returns TRUE if logging is enabled.
-     */
-    public function getEnabled()
-    {
-        return $this->_enabled;
-    }
-
-    /**
-     * Set a single option
-     *
-     * @param  string $key The name of the option
-     * @param  mixed $value The value of the option
-     * @return mixed The previous value of the option
-     */
-    public function setOption($key, $value)
-    {
-      if (!array_key_exists($key,$this->_options)) {
-        throw new Zend_Wildfire_Exception('Option with name "'.$key.'" does not exist!');
-      }
-      $previous = $this->_options[$key];
-      $this->_options[$key] = $value;
-      return $previous;
-    }
-
-    /**
-     * Retrieve a single option
-     *
-     * @param  string $key The name of the option
-     * @return mixed The value of the option
-     */
-    public function getOption($key)
-    {
-      if (!array_key_exists($key,$this->_options)) {
-        throw new Zend_Wildfire_Exception('Option with name "'.$key.'" does not exist!');
-      }
-      return $this->_options[$key];
-    }
-
-    /**
-     * Retrieve all options
-     *
-     * @return array All options
-     */
-    public function getOptions()
-    {
-      return $this->_options;
-    }
-
-    /**
-     * Specify a filter to be used when encoding an object
-     *
-     * Filters are used to exclude object members.
-     *
-     * @param string $Class The class name of the object
-     * @param array $Filter An array of members to exclude
-     * @return void
-     */
-    public function setObjectFilter($class, $filter) {
-      $this->_objectFilters[$class] = $filter;
-    }
-
-    /**
-     * Starts a group in the Firebug Console
-     *
-     * @param string $title The title of the group
-     * @return TRUE if the group instruction was added to the response headers or buffered.
-     */
-    public static function group($title)
-    {
-        return self::send(null, $title, self::GROUP_START);
-    }
-
-    /**
-     * Ends a group in the Firebug Console
-     *
-     * @return TRUE if the group instruction was added to the response headers or buffered.
-     */
-    public static function groupEnd()
-    {
-        return self::send(null, null, self::GROUP_END);
-    }
-
-    /**
-     * Logs variables to the Firebug Console
-     * via HTTP response headers and the FirePHP Firefox Extension.
-     *
-     * @param  mixed  $var   The variable to log.
-     * @param  string  $label OPTIONAL Label to prepend to the log event.
-     * @param  string  $style  OPTIONAL Style of the log event.
-     * @param  array  $options OPTIONAL Options to change how messages are processed and sent
-     * @return boolean Returns TRUE if the variable was added to the response headers or buffered.
-     * @throws Zend_Wildfire_Exception
-     */
-    public static function send($var, $label=null, $style=null, $options=array())
-    {
-        $firephp = self::getInstance();
-
-        if (!$firephp->getEnabled()) {
-            return false;
-        }
-
-        if ($var instanceof Zend_Wildfire_Plugin_FirePhp_Message) {
-
-            if ($var->getBuffered()) {
-                if (!in_array($var, self::$_instance->_messages)) {
-                    self::$_instance->_messages[] = $var;
-                }
-                return true;
-            }
-
-            if ($var->getDestroy()) {
-                return false;
-            }
-
-            $style = $var->getStyle();
-            $label = $var->getLabel();
-            $options = $var->getOptions();
-            $var = $var->getMessage();
-        }
-
-        if (!self::$_instance->_channel->isReady()) {
-            return false;
-        }
-
-        foreach ($options as $name => $value) {
-            if ($value===null) {
-                unset($options[$name]);
-            }
-        }
-        $options = array_merge($firephp->getOptions(), $options);
-
-        $trace = null;
-
-        $skipFinalEncode = false;
-
-        $meta = array();
-        $meta['Type'] = $style;
-
-        if ($var instanceof Exception) {
-
-            $eTrace = $var->getTrace();
-            $eTrace = array_splice($eTrace, 0, $options['maxTraceDepth']);
-
-            $var = array('Class'=>get_class($var),
-                         'Message'=>$var->getMessage(),
-                         'File'=>$var->getFile(),
-                         'Line'=>$var->getLine(),
-                         'Type'=>'throw',
-                         'Trace'=>$firephp->_encodeTrace($eTrace));
-
-            $meta['Type'] = self::EXCEPTION;
-
-            $skipFinalEncode = true;
-
-        } else
-        if ($meta['Type']==self::TRACE) {
-
-            if (!$label && $var) {
-                $label = $var;
-                $var = null;
-            }
-
-            if (!$trace) {
-                $trace = $firephp->_getStackTrace(array_merge($options,
-                                                              array('maxTraceDepth'=>$options['maxTraceDepth']+1)));
-            }
-
-            $var = array('Class'=>$trace[0]['class'],
-                         'Type'=>$trace[0]['type'],
-                         'Function'=>$trace[0]['function'],
-                         'Message'=>$label,
-                         'File'=>isset($trace[0]['file'])?$trace[0]['file']:'',
-                         'Line'=>isset($trace[0]['line'])?$trace[0]['line']:'',
-                         'Args'=>isset($trace[0]['args'])?$firephp->_encodeObject($trace[0]['args']):'',
-                         'Trace'=>$firephp->_encodeTrace(array_splice($trace,1)));
-
-          $skipFinalEncode = true;
-
-        } else
-        if ($meta['Type']==self::TABLE) {
-
-          $var = $firephp->_encodeTable($var);
-
-          $skipFinalEncode = true;
-
-        } else {
-            if ($meta['Type']===null) {
-                $meta['Type'] = self::LOG;
-            }
-        }
-
-        if ($label!=null) {
-            $meta['Label'] = $label;
-        }
-
-        switch ($meta['Type']) {
-            case self::LOG:
-            case self::INFO:
-            case self::WARN:
-            case self::ERROR:
-            case self::EXCEPTION:
-            case self::TRACE:
-            case self::TABLE:
-            case self::DUMP:
-            case self::GROUP_START:
-            case self::GROUP_END:
-                break;
-            default:
-                require_once 'Zend/Wildfire/Exception.php';
-                throw new Zend_Wildfire_Exception('Log style "'.$meta['Type'].'" not recognized!');
-                break;
-        }
-
-        if ($meta['Type'] != self::DUMP && $options['includeLineNumbers']) {
-            if (!isset($meta['File']) || !isset($meta['Line'])) {
-
-                if (!$trace) {
-                    $trace = $firephp->_getStackTrace($options);
-                }
-
-                $meta['File'] = isset($trace[0]['file'])?$trace[0]['file']:'';
-                $meta['Line'] = isset($trace[0]['line'])?$trace[0]['line']:'';
-
-            }
-        } else {
-            unset($meta['File']);
-            unset($meta['Line']);
-        }
-
-        if ($meta['Type'] == self::DUMP) {
-
-          return $firephp->_recordMessage(self::STRUCTURE_URI_DUMP,
-                                          array('key'=>$meta['Label'],
-                                                'data'=>$var),
-                                          $skipFinalEncode);
-
-        } else {
-
-          return $firephp->_recordMessage(self::STRUCTURE_URI_FIREBUGCONSOLE,
-                                          array('data'=>$var,
-                                                'meta'=>$meta),
-                                          $skipFinalEncode);
-        }
-    }
-
-    /**
-     * Gets a stack trace
-     *
-     * @param array $options Options to change how the stack trace is returned
-     * @return array The stack trace
-     */
-    protected function _getStackTrace($options)
-    {
-        $trace = debug_backtrace();
-
-        return array_splice($trace, $options['traceOffset'], $options['maxTraceDepth']);
-    }
-
-    /**
-     * Record a message with the given data in the given structure
-     *
-     * @param string $structure The structure to be used for the data
-     * @param array $data The data to be recorded
-     * @param boolean $skipEncode TRUE if variable encoding should be skipped
-     * @return boolean Returns TRUE if message was recorded
-     * @throws Zend_Wildfire_Exception
-     */
-    protected function _recordMessage($structure, $data, $skipEncode=false)
-    {
-        switch($structure) {
-
-            case self::STRUCTURE_URI_DUMP:
-
-                if (!isset($data['key'])) {
-                    require_once 'Zend/Wildfire/Exception.php';
-                    throw new Zend_Wildfire_Exception('You must supply a key.');
-                }
-                if (!array_key_exists('data',$data)) {
-                    require_once 'Zend/Wildfire/Exception.php';
-                    throw new Zend_Wildfire_Exception('You must supply data.');
-                }
-
-                $value = $data['data'];
-                if (!$skipEncode) {
-                  $value = $this->_encodeObject($data['data']);
-                }
-
-                return $this->_channel->getProtocol(self::PROTOCOL_URI)->
-                           recordMessage($this,
-                                         $structure,
-                                         array($data['key']=>$value));
-
-            case self::STRUCTURE_URI_FIREBUGCONSOLE:
-
-                if (!isset($data['meta']) ||
-                    !is_array($data['meta']) ||
-                    !array_key_exists('Type',$data['meta'])) {
-
-                    require_once 'Zend/Wildfire/Exception.php';
-                    throw new Zend_Wildfire_Exception('You must supply a "Type" in the meta information.');
-                }
-                if (!array_key_exists('data',$data)) {
-                    require_once 'Zend/Wildfire/Exception.php';
-                    throw new Zend_Wildfire_Exception('You must supply data.');
-                }
-
-                $value = $data['data'];
-                if (!$skipEncode) {
-                  $value = $this->_encodeObject($data['data']);
-                }
-
-                return $this->_channel->getProtocol(self::PROTOCOL_URI)->
-                           recordMessage($this,
-                                         $structure,
-                                         array($data['meta'],
-                                               $value));
-
-            default:
-                require_once 'Zend/Wildfire/Exception.php';
-                throw new Zend_Wildfire_Exception('Structure of name "'.$structure.'" is not recognized.');
-                break;
-        }
-        return false;
-    }
-
-    /**
-     * Encodes a table by encoding each row and column with _encodeObject()
-     *
-     * @param array $Table The table to be encoded
-     * @return array
-     */
-    protected function _encodeTable($table)
-    {
-      if (!$table) {
-          return $table;
-      }
-      for ($i=0 ; $i<count($table) ; $i++) {
-          if (is_array($table[$i])) {
-              for ($j=0 ; $j<count($table[$i]) ; $j++) {
-                  $table[$i][$j] = $this->_encodeObject($table[$i][$j]);
-              }
-          }
-        }
-      return $table;
-    }
-
-    /**
-     * Encodes a trace by encoding all "args" with _encodeObject()
-     *
-     * @param array $Trace The trace to be encoded
-     * @return array The encoded trace
-     */
-    protected function _encodeTrace($trace)
-    {
-      if (!$trace) {
-          return $trace;
-      }
-      for ($i=0 ; $i<sizeof($trace) ; $i++) {
-          if (isset($trace[$i]['args'])) {
-              $trace[$i]['args'] = $this->_encodeObject($trace[$i]['args']);
-          }
-      }
-      return $trace;
-    }
-
-    /**
-     * Encode an object by generating an array containing all object members.
-     *
-     * All private and protected members are included. Some meta info about
-     * the object class is added.
-     *
-     * @param mixed $object The object/array/value to be encoded
-     * @return array The encoded object
-     */
-    protected function _encodeObject($object, $objectDepth = 1, $arrayDepth = 1)
-    {
-        $return = array();
-
-        if (is_resource($object)) {
-
-            return '** '.(string)$object.' **';
-
-        } else
-        if (is_object($object)) {
-
-            if ($objectDepth > $this->_options['maxObjectDepth']) {
-              return '** Max Object Depth ('.$this->_options['maxObjectDepth'].') **';
-            }
-
-            foreach ($this->_objectStack as $refVal) {
-                if ($refVal === $object) {
-                    return '** Recursion ('.get_class($object).') **';
-                }
-            }
-            array_push($this->_objectStack, $object);
-
-            $return['__className'] = $class = get_class($object);
-
-            $reflectionClass = new ReflectionClass($class);
-            $properties = array();
-            foreach ( $reflectionClass->getProperties() as $property) {
-                $properties[$property->getName()] = $property;
-            }
-
-            $members = (array)$object;
-
-            foreach ($properties as $just_name => $property) {
-
-                $name = $raw_name = $just_name;
-
-                if ($property->isStatic()) {
-                    $name = 'static:'.$name;
-                }
-                if ($property->isPublic()) {
-                    $name = 'public:'.$name;
-                } else
-                if ($property->isPrivate()) {
-                    $name = 'private:'.$name;
-                    $raw_name = "\0".$class."\0".$raw_name;
-                } else
-                if ($property->isProtected()) {
-                    $name = 'protected:'.$name;
-                    $raw_name = "\0".'*'."\0".$raw_name;
-                }
-
-                if (!(isset($this->_objectFilters[$class])
-                      && is_array($this->_objectFilters[$class])
-                      && in_array($just_name,$this->_objectFilters[$class]))) {
-
-                    if (array_key_exists($raw_name,$members)
-                        && !$property->isStatic()) {
-
-                        $return[$name] = $this->_encodeObject($members[$raw_name], $objectDepth + 1, 1);
-
-                    } else {
-                        if (method_exists($property,'setAccessible')) {
-                            $property->setAccessible(true);
-                            $return[$name] = $this->_encodeObject($property->getValue($object), $objectDepth + 1, 1);
-                        } else
-                        if ($property->isPublic()) {
-                            $return[$name] = $this->_encodeObject($property->getValue($object), $objectDepth + 1, 1);
-                        } else {
-                            $return[$name] = '** Need PHP 5.3 to get value **';
-                        }
-                    }
-                } else {
-                  $return[$name] = '** Excluded by Filter **';
-                }
-            }
-
-            // Include all members that are not defined in the class
-            // but exist in the object
-            foreach($members as $just_name => $value) {
-
-                $name = $raw_name = $just_name;
-
-                if ($name{0} == "\0") {
-                    $parts = explode("\0", $name);
-                    $name = $parts[2];
-                }
-                if (!isset($properties[$name])) {
-                    $name = 'undeclared:'.$name;
-
-                    if (!(isset($this->objectFilters[$class])
-                          && is_array($this->objectFilters[$class])
-                          && in_array($just_name,$this->objectFilters[$class]))) {
-
-                      $return[$name] = $this->_encodeObject($value, $objectDepth + 1, 1);
-                    } else {
-                      $return[$name] = '** Excluded by Filter **';
-                    }
-                }
-            }
-
-            array_pop($this->_objectStack);
-
-        } elseif (is_array($object)) {
-
-            if ($arrayDepth > $this->_options['maxArrayDepth']) {
-              return '** Max Array Depth ('.$this->_options['maxArrayDepth'].') **';
-            }
-
-            foreach ($object as $key => $val) {
-
-              // Encoding the $GLOBALS PHP array causes an infinite loop
-              // if the recursion is not reset here as it contains
-              // a reference to itself. This is the only way I have come up
-              // with to stop infinite recursion in this case.
-              if ($key=='GLOBALS'
-                  && is_array($val)
-                  && array_key_exists('GLOBALS',$val)) {
-
-                  $val['GLOBALS'] = '** Recursion (GLOBALS) **';
-              }
-              $return[$key] = $this->_encodeObject($val, 1, $arrayDepth + 1);
-            }
-        } else {
-            return $object;
-        }
-        return $return;
-    }
-
-    /*
-     * Zend_Wildfire_Plugin_Interface
-     */
-
-    /**
-     * Get the unique indentifier for this plugin.
-     *
-     * @return string Returns the URI of the plugin.
-     */
-    public function getUri()
-    {
-        return self::PLUGIN_URI;
-    }
-
-    /**
-     * Flush any buffered data.
-     *
-     * @param string $protocolUri The URI of the protocol that should be flushed to
-     * @return void
-     */
-    public function flushMessages($protocolUri)
-    {
-        if (!$this->_messages || $protocolUri!=self::PROTOCOL_URI) {
-            return;
-        }
-
-        foreach( $this->_messages as $message ) {
-            if (!$message->getDestroy()) {
-                $this->send($message->getMessage(),
-                            $message->getLabel(),
-                            $message->getStyle(),
-                            $message->getOptions());
-            }
-        }
-
-        $this->_messages = array();
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

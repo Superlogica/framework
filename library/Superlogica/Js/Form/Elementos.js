@@ -73,6 +73,16 @@ var Superlogica_Js_Form_Elementos = new Class({
         return value;
     },
     
+
+    setLabel: function( texto ){
+        
+        if(this.atributo("type") == 'checkbox'){
+           this.maisProximo('.ui-checkbox').encontrar('.btn-link').conteudo(texto); 
+        }else{
+            this.getItem().encontrar('label').conteudo(texto);
+        }
+    },
+
     getSelectedText : function(){
     	if ( !this.eh('select')) return "";
         
@@ -83,6 +93,27 @@ var Superlogica_Js_Form_Elementos = new Class({
         if ( !option ) return '';
         
         return option.conteudo();
+    },
+
+    /**
+     * Retorna todas as opções que contém no combo
+     * @return array
+    */
+    getOpcoesDoCompo : function(){
+
+        if ( !this.eh('select')) return "";
+
+        var opcoesCompo = [];
+        var indice = 0;
+        this.encontrar('option').emCadaElemento(function(){
+
+            var groupOption = this;
+            var elementoGropOption = new Superlogica_Js_Elemento(groupOption);
+            opcoesCompo[indice] = { "LABEL_COMBO" : elementoGropOption.atributo('label').trim() , "VALOR_COMBO" : elementoGropOption.atributo('value').trim() };
+            indice++;
+        });
+
+        return opcoesCompo;
     },
 
     /**
@@ -361,6 +392,15 @@ var Superlogica_Js_Form_Elementos = new Class({
         
         this.$_elemento.addClass('desabilitado');
         
+        if ( this.eh('a.btn') ){
+            this.adicionarClasse("disabled");
+            this.prependBind("click.bindDesabilitar", function(event){
+                event.preventDefault();
+                event.stopImmediatePropagation();
+            });
+        }
+
+
         // 'Readonly' não funciona no botões do datepicker        
         var atributoDesabilitar = 'readonly';
         if ( eliminarFoco === true )
@@ -378,42 +418,51 @@ var Superlogica_Js_Form_Elementos = new Class({
         if ( this.atributo("type") == 'checkbox' || this.atributo('type') == 'radio'){
             this.atributo('disabled', 'disabled');
         }
-        if ( this.eh("select")){         
-
-            // Colocado elemento ao final da página para pegar a largura pois só tem largura quando está visivel na página
-            var formInline = new Superlogica_Js_Elemento("<div class='form-inline'></div>");
-            var elemento = this.clonar();
-            formInline.conteudo( elemento );
-            
-            var formulario = this.getForm();
-            formulario.adicionarHtmlAoFinal( formInline );
-            var larguraSelect = elemento.largura();
-            formInline.remover();
-
-            this.esconder();
-            
-            var inputEscondido = new Superlogica_Js_Form_Elementos( formulario.encontrar('input[selectalvo="'+this.atributo('name')+'"]') );
-            this.atributo( 'selectname', this.atributo('name') );
-            if ( !inputEscondido || inputEscondido.contar()<=0 ){
-                var textSelect = new Superlogica_Js_Form_Elementos("<input></input>");
-                    textSelect.atributo( 'selectalvo', this.atributo('name') )
-                        .setValue( this.getSelectedText() )
-                        .desabilitar()
-                        .css('width', larguraSelect+10 )
-                        .adicionarClasse('form-control')
-                        .inserirDepoisDe( this );
-                
-            }else
-                inputEscondido.setValue( this.getSelectedText() );
+        if ( this.eh("select")){  
+            this.atributo('disabled', 'disabled');
         }
+//        if ( this.eh("select")){         
+//
+//            // Colocado elemento ao final da página para pegar a largura pois só tem largura quando está visivel na página
+//            var formInline = new Superlogica_Js_Elemento("<div class='form-inline'></div>");
+//            var elemento = this.clonar();
+//            formInline.conteudo( elemento );
+//            
+//            var formulario = this.getForm();
+//            formulario.adicionarHtmlAoFinal( formInline );
+//            var larguraSelect = elemento.largura();
+//            formInline.remover();
+//
+//            this.esconder();
+//            
+//            var inputEscondido = new Superlogica_Js_Form_Elementos( formulario.encontrar('input[selectalvo="'+this.atributo('name')+'"]') );
+//            this.atributo( 'selectname', this.atributo('name') );
+//            if ( !inputEscondido || inputEscondido.contar()<=0 ){
+//                var textSelect = new Superlogica_Js_Form_Elementos("<input></input>");
+//                    textSelect.atributo( 'selectalvo', this.atributo('name') )
+//                        .setValue( this.getSelectedText() )
+//                        .desabilitar()
+//                        .css('width', larguraSelect+10 )
+//                        .adicionarClasse('form-control')
+//                        .inserirDepoisDe( this );
+//                
+//            }else
+//                inputEscondido.setValue( this.getSelectedText() );
+//        }
         return this;
     },
+    
     /**
      *  Habilita o elemento
      *  @return Superlogica_Js_Form_Elementos
      */
     habilitar : function(){
         this.removerClasse('desabilitado');  
+
+        if ( this.eh('a.btn') ){
+            this.removerClasse("disabled").unbind("click.bindDesabilitar");
+        }
+
         // 'Readonly' não funciona no botões do datepicker
         this.removerAtributo( 'readonly' );
         this.removerAtributo( 'disabled' );
@@ -423,14 +472,15 @@ var Superlogica_Js_Form_Elementos = new Class({
         if ( this.atributo("type") == 'checkbox' || this.atributo('type') == 'radio'){
             this.removerAtributo('disabled');
         }
-        var selectName = this.atributo('selectname');
-        if ( selectName && selectName.trim() ){
-            var formulario = this.getForm();
-            var select = this;
-            var inputSelect = formulario.encontrar('input[selectalvo="'+selectName+'"]');
-            new Superlogica_Js_Elemento( select ).mostrar();
-            inputSelect.remover();
-        }
+//        var selectName = this.atributo('selectname');
+//        if ( selectName && selectName.trim() ){
+//            var formulario = this.getForm();
+//            var select = this;
+//            var inputSelect = formulario.encontrar('input[selectalvo="'+selectName+'"]');
+//            new Superlogica_Js_Elemento( select ).mostrar();
+//            if ( inputSelect )
+//                inputSelect.remover();
+//        }
         return this;
     },
 
@@ -441,7 +491,7 @@ var Superlogica_Js_Form_Elementos = new Class({
 
         options = Object.append( {/* plugin defaults */
                 aNum: '0123456789',/*  allowed  numeric values */
-                aNeg:  '-',/* allowed negative sign / character */
+                aNeg:  (this.getDados('somente-positivo') ? '' : '-'),/* allowed negative sign / character */
                 aSep:  '.',/* allowed thousand separator character */
                 aDec:  ',',/* allowed decimal separator character */
                 aSign: '',/* allowed currency symbol */
@@ -465,7 +515,7 @@ var Superlogica_Js_Form_Elementos = new Class({
     currency : function(){
         return this.autoNumeric({/* plugin defaults */
             aNum: '0123456789',/*  allowed  numeric values */
-            aNeg: '-',/* allowed negative sign / character */
+            aNeg: (this.getDados('somente-positivo') ? '' : '-'),/* allowed negative sign / character */
             aSep: '.',/* allowed thousand separator character */
             aDec: ',',/* allowed decimal separator character */
             aSign: '',/* allowed currency symbol */
@@ -484,7 +534,7 @@ var Superlogica_Js_Form_Elementos = new Class({
     integer : function( options ){
         options = Object.append({/* plugin defaults */
             aNum: '0123456789',/*  allowed  numeric values */
-            aNeg: '-',/* allowed negative sign / character */
+            aNeg: (this.getDados('somente-positivo') ? '' : '-'),/* allowed negative sign / character */
             aSep: '',/* allowed thousand separator character */
             aDec: ',',/* allowed decimal separator character */
             aSign: '',/* allowed currency symbol */
@@ -645,7 +695,7 @@ var Superlogica_Js_Form_Elementos = new Class({
                         strikeThrough: {visible : false},
                         undo: {visible : false},
                         redo: {visible : false},
-                        justifyFull: {visible : false}
+                        justifyFull: {visible : true}
                     },
                     plugins : {
                         i18n : {
@@ -732,7 +782,7 @@ var Superlogica_Js_Form_Elementos = new Class({
             autocompleteAtual.setDados('requestParams',params);
             var controllerRequest = new Superlogica_Js_Request( urlRequisicao, params );
             if ( cached ){
-                controllerRequest.setTimeOut( 1000 );
+                controllerRequest.setTimeOut( 5000 );
             }
             var processarAutocomplete = function( response ){
                 
@@ -806,7 +856,7 @@ var Superlogica_Js_Form_Elementos = new Class({
                     arrItens['label'] = label;
                     arrItens[autocompleteAtual.atributo("name")] = label;
                     arrItens['responseDados'] = item;
-                    
+
                     arrResponse.push(
                         arrItens
                     );
@@ -1257,8 +1307,8 @@ var Superlogica_Js_Form_Elementos = new Class({
                     var btBusca= this.atributo('id');
                     
                     var location= new Superlogica_Js_Location();
-                    var pesquisa= this.getForm().getElemento('pesquisa').getValue();
-                    
+                    var pesquisa= escape(this.getForm().getElemento('pesquisa').getValue());                    
+               
                     if (btBusca=='buscarEmTudo'){
                         location.setParam('pesquisa',null);
                         location.setParam('pesquisaEmTudo',pesquisa ? pesquisa : null);
@@ -1266,14 +1316,30 @@ var Superlogica_Js_Form_Elementos = new Class({
                         location.setParam('pesquisaEmTudo',null);
                         location.setParam('pesquisa',pesquisa ? pesquisa : null);
                     }
-                    
-                    document.location = location.toString();
+
+                    document.location.href = location.toString();
                 });
     },
 
-    __popularBusca: function (){
+    __popularBusca: function (){        
         var location= new Superlogica_Js_Location();
-        this.getForm().getElemento('pesquisa').setValue(location.getParam('pesquisaEmTudo') ? location.getParam('pesquisaEmTudo') : location.getParam('pesquisa'));
+        var pesquisa = this.__decodificar('pesquisaEmTudo') ? this.__decodificar('pesquisaEmTudo') : this.__decodificar('pesquisa');        
+        var valor = pesquisa ? location.urldecode(pesquisa) : '';        
+        
+        this.getForm().getElemento('pesquisa').setValue( valor );
+    },
+    
+    __decodificar: function (val){        
+        var result = "",
+        tmp = [];
+        location.search
+        .substr(1)
+            .split("&")
+            .forEach(function (item) {
+            tmp = item.split("=");
+            if (tmp[0] === val) result = tmp[1];
+        });
+        return result;   
     },
 
     /**
@@ -1786,6 +1852,7 @@ var Superlogica_Js_Form_Elementos = new Class({
         if ( iconeTitle )
             imgIcone.atributo("title",iconeTitle);
         
+        imgIcone.processarComportamento(imgIcone);
     },
     
     __comportamentoPadraoIcones : function(){
@@ -1828,7 +1895,8 @@ var Superlogica_Js_Form_Elementos = new Class({
     
     //Comportamento para combo
     __hiddenSeUm : function(){
-        if (this.encontrar('option').contar()==1){
+        var option= this.encontrar('option');
+        if (!option || option.contar()==1){
             this.getItem().esconder();
         }
     },
@@ -1854,6 +1922,9 @@ var Superlogica_Js_Form_Elementos = new Class({
             });
             if ( !valid && !somenteValidar ){
                 alert("Alguns campos obrigatórios (em vermelho) não foram preenchidos.");
+                
+                if ( ( console ) && ( console.log ))
+                    console.log( 'campo: ' + elementoInvalido.atributo('name') );
                 elementoInvalido.focar();
             }
             return valid;

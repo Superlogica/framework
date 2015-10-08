@@ -1,1232 +1,432 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category  Zend
- * @package   Zend_Text_Figlet
- * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   http://framework.zend.com/license/new-bsd     New BSD License
- * @version   $Id$
- */
-
-/**
- * Zend_Text_Figlet is a PHP implementation of FIGlet
- *
- * @category  Zend
- * @package   Zend_Text_Figlet
- * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Text_Figlet
-{
-    /**
-     * Smush2 layout modes
-     */
-    const SM_EQUAL     = 0x01;
-    const SM_LOWLINE   = 0x02;
-    const SM_HIERARCHY = 0x04;
-    const SM_PAIR      = 0x08;
-    const SM_BIGX      = 0x10;
-    const SM_HARDBLANK = 0x20;
-    const SM_KERN      = 0x40;
-    const SM_SMUSH     = 0x80;
-
-    /**
-     * Smush mode override modes
-     */
-    const SMO_NO    = 0;
-    const SMO_YES   = 1;
-    const SMO_FORCE = 2;
-
-    /**
-     * Justifications
-     */
-    const JUSTIFICATION_LEFT   = 0;
-    const JUSTIFICATION_CENTER = 1;
-    const JUSTIFICATION_RIGHT  = 2;
-
-    /**
-     * Write directions
-     */
-    const DIRECTION_LEFT_TO_RIGHT = 0;
-    const DIRECTION_RIGHT_TO_LEFT = 1;
-
-    /**
-     * Magic fontfile number
-     */
-    const FONTFILE_MAGIC_NUMBER = 'flf2';
-
-    /**
-     * Array containing all characters of the current font
-     *
-     * @var array
-     */
-    protected $_charList = array();
-
-    /**
-     * Indicates if a font was loaded yet
-     *
-     * @var boolean
-     */
-    protected $_fontLoaded = false;
-
-    /**
-     * Latin-1 codes for German letters, respectively:
-     *
-     * LATIN CAPITAL LETTER A WITH DIAERESIS = A-umlaut
-     * LATIN CAPITAL LETTER O WITH DIAERESIS = O-umlaut
-     * LATIN CAPITAL LETTER U WITH DIAERESIS = U-umlaut
-     * LATIN SMALL LETTER A WITH DIAERESIS = a-umlaut
-     * LATIN SMALL LETTER O WITH DIAERESIS = o-umlaut
-     * LATIN SMALL LETTER U WITH DIAERESIS = u-umlaut
-     * LATIN SMALL LETTER SHARP S = ess-zed
-     *
-     * @var array
-     */
-    protected $_germanChars = array(196, 214, 220, 228, 246, 252, 223);
-
-    /**
-     * Output width, defaults to 80.
-     *
-     * @var integer
-     */
-    protected $_outputWidth = 80;
-
-    /**
-     * Hard blank character
-     *
-     * @var string
-     */
-    protected $_hardBlank;
-
-    /**
-     * Height of the characters
-     *
-     * @var integer
-     */
-    protected $_charHeight;
-
-    /**
-     * Max length of any character
-     *
-     * @var integer
-     */
-    protected $_maxLength;
-
-    /**
-     * Smush mode
-     *
-     * @var integer
-     */
-    protected $_smushMode = 0;
-
-    /**
-     * Smush defined by the font
-     *
-     * @var integer
-     */
-    protected $_fontSmush = 0;
-
-    /**
-     * Smush defined by the user
-     *
-     * @var integer
-     */
-    protected $_userSmush = 0;
-
-    /**
-     * Wether to handle paragraphs || not
-     *
-     * @var boolean
-     */
-    protected $_handleParagraphs = false;
-
-    /**
-     * Justification for the text, according to $_outputWidth
-     *
-     * For using font default, this parameter should be null, else one of
-     * the values of Zend_Text_Figlet::JUSTIFICATION_*
-     *
-     * @var integer
-     */
-    protected $_justification = null;
-
-    /**
-     * Direction of text-writing, namely right to left
-     *
-     * For using font default, this parameter should be null, else one of
-     * the values of Zend_Text_Figlet::DIRECTION_*
-     *
-     * @var integer
-     */
-    protected $_rightToLeft = null;
-
-    /**
-     * Override font file smush layout
-     *
-     * @var integer
-     */
-    protected $_smushOverride = 0;
-
-    /**
-     * Options of the current font
-     *
-     * @var array
-     */
-    protected $_fontOptions = array();
-
-    /**
-     * Previous character width
-     *
-     * @var integer
-     */
-    protected $_previousCharWidth = 0;
-
-    /**
-     * Current character width
-     *
-     * @var integer
-     */
-    protected $_currentCharWidth = 0;
-
-    /**
-     * Current outline length
-     *
-     * @var integer
-     */
-    protected $_outlineLength = 0;
-
-    /**
-     * Maxmimum outline length
-     *
-     * @var integer
-     */
-    protected $_outlineLengthLimit = 0;
-
-    /**
-     * In character line
-     *
-     * @var string
-     */
-    protected $_inCharLine;
-
-    /**
-     * In character line length
-     *
-     * @var integer
-     */
-    protected $_inCharLineLength = 0;
-
-    /**
-     * Maximum in character line length
-     *
-     * @var integer
-     */
-    protected $_inCharLineLengthLimit = 0;
-
-    /**
-     * Current char
-     *
-     * @var array
-     */
-    protected $_currentChar = null;
-
-    /**
-     * Current output line
-     *
-     * @var array
-     */
-    protected $_outputLine;
-
-    /**
-     * Current output
-     *
-     * @var string
-     */
-    protected $_output;
-
-    /**
-     * Option keys to skip when calling setOptions()
-     * 
-     * @var array
-     */
-    protected $_skipOptions = array(
-        'options',
-        'config',
-    );
-
-    /**
-     * Instantiate the FIGlet with a specific font. If no font is given, the
-     * standard font is used. You can also supply multiple options via
-     * the $options variable, which can either be an array or an instance of
-     * Zend_Config.
-     *
-     * @param array|Zend_Config $options Options for the output
-     */
-    public function __construct($options = null)
-    {
-        // Set options
-        if (is_array($options)) {
-            $this->setOptions($options);
-        } else if ($options instanceof Zend_Config) {
-            $this->setConfig($options);
-        }
-
-        // If no font was defined, load default font
-        if (!$this->_fontLoaded) {
-            $this->_loadFont(dirname(__FILE__) . '/Figlet/zend-framework.flf');
-        }
-    }
-
-    /**
-     * Set options from array
-     *
-     * @param  array $options Configuration for Zend_Text_Figlet
-     * @return Zend_Text_Figlet
-     */
-    public function setOptions(array $options)
-    {
-        foreach ($options as $key => $value) {
-            if (in_array(strtolower($key), $this->_skipOptions)) {
-                continue;
-            }
-
-            $method = 'set' . ucfirst($key);
-            if (method_exists($this, $method)) {
-                $this->$method($value);
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * Set options from config object
-     *
-     * @param  Zend_Config $config Configuration for Zend_Text_Figlet
-     * @return Zend_Text_Figlet
-     */
-    public function setConfig(Zend_Config $config)
-    {
-        return $this->setOptions($config->toArray());
-    }
-
-    /**
-     * Set a font to use
-     *
-     * @param  string $font Path to the font
-     * @return Zend_Text_Figlet
-     */
-    public function setFont($font)
-    {
-        $this->_loadFont($font);
-        return $this;
-    }
-
-    /**
-     * Set handling of paragraphs
-     *
-     * @param  boolean $handleParagraphs Wether to handle paragraphs or not
-     * @return Zend_Text_Figlet
-     */
-    public function setHandleParagraphs($handleParagraphs)
-    {
-        $this->_handleParagraphs = (bool) $handleParagraphs;
-        return $this;
-    }
-
-    /**
-     * Set the justification. 0 stands for left aligned, 1 for centered and 2
-     * for right aligned.
-     *
-     * @param  integer $justification Justification of the output text
-     * @return Zend_Text_Figlet
-     */
-    public function setJustification($justification)
-    {
-        $this->_justification = min(3, max(0, (int) $justification));
-        return $this;
-    }
-
-    /**
-     * Set the output width
-     *
-     * @param  integer $outputWidth Output with which should be used for word
-     *                              wrapping and justification
-     * @return Zend_Text_Figlet
-     */
-    public function setOutputWidth($outputWidth)
-    {
-        $this->_outputWidth = max(1, (int) $outputWidth);
-        return $this;
-    }
-
-    /**
-     * Set right to left mode. For writing from left to right, use
-     * Zend_Text_Figlet::DIRECTION_LEFT_TO_RIGHT. For writing from right to left,
-     * use Zend_Text_Figlet::DIRECTION_RIGHT_TO_LEFT.
-     *
-     * @param  integer $rightToLeft Right-to-left mode
-     * @return Zend_Text_Figlet
-     */
-    public function setRightToLeft($rightToLeft)
-    {
-        $this->_rightToLeft = min(1, max(0, (int) $rightToLeft));
-        return $this;
-    }
-
-    /**
-     * Set the smush mode.
-     *
-     * Use one of the constants of Zend_Text_Figlet::SM_*, you may combine them.
-     *
-     * @param  integer $smushMode Smush mode to use for generating text
-     * @return Zend_Text_Figlet
-     */
-    public function setSmushMode($smushMode)
-    {
-        $smushMode = (int) $smushMode;
-
-        if ($smushMode < -1) {
-            $this->_smushOverride = self::SMO_NO;
-        } else {
-            if ($smushMode === 0) {
-                $this->_userSmush = self::SM_KERN;
-            } else if ($smushMode === -1) {
-                $this->_userSmush = 0;
-            } else {
-                $this->_userSmush = (($smushMode & 63) | self::SM_SMUSH);
-            }
-
-            $this->_smushOverride = self::SMO_YES;
-        }
-
-        $this->_setUsedSmush();
-
-        return $this;
-    }
-
-    /**
-     * Render a FIGlet text
-     *
-     * @param  string $text     Text to convert to a figlet text
-     * @param  string $encoding Encoding of the input string
-     * @throws InvalidArgumentException When $text is not a string
-     * @throws Zend_Text_Figlet_Exception    When $text it not properly encoded
-     * @return string
-     */
-    public function render($text, $encoding = 'UTF-8')
-    {
-        if (!is_string($text)) {
-            throw new InvalidArgumentException('$text must be a string');
-        }
-
-        if ($encoding !== 'UTF-8') {
-            $text = iconv($encoding, 'UTF-8', $text);
-        }
-
-        $this->_output     = '';
-        $this->_outputLine = array();
-
-        $this->_clearLine();
-
-        $this->_outlineLengthLimit    = ($this->_outputWidth - 1);
-        $this->_inCharLineLengthLimit = ($this->_outputWidth * 4 + 100);
-
-        $wordBreakMode  = 0;
-        $lastCharWasEol = false;
-        $textLength     = @iconv_strlen($text, 'UTF-8');
-
-        if ($textLength === false) {
-            require_once 'Zend/Text/Figlet/Exception.php';
-            throw new Zend_Text_Figlet_Exception('$text is not encoded with ' . $encoding);
-        }
-
-        for ($charNum = 0; $charNum < $textLength; $charNum++) {
-            // Handle paragraphs
-            $char = iconv_substr($text, $charNum, 1, 'UTF-8');
-
-            if ($char === "\n" && $this->_handleParagraphs && !$lastCharWasEol) {
-                $nextChar = iconv_substr($text, ($charNum + 1), 1, 'UTF-8');
-                if (!$nextChar) {
-                    $nextChar = null;
-                }
-
-                $char = (ctype_space($nextChar)) ? "\n" : ' ';
-            }
-
-            $lastCharWasEol = (ctype_space($char) && $char !== "\t" && $char !== ' ');
-
-            if (ctype_space($char)) {
-                $char = ($char === "\t" || $char === ' ') ? ' ': "\n";
-            }
-
-            // Skip unprintable characters
-            $ordChar = $this->_uniOrd($char);
-            if (($ordChar > 0 && $ordChar < 32 && $char !== "\n") || $ordChar === 127) {
-                continue;
-            }
-
-            // Build the character
-            // Note: The following code is complex and thoroughly tested.
-            // Be careful when modifying!
-            do {
-                $charNotAdded = false;
-
-                if ($wordBreakMode === -1) {
-                    if ($char === ' ') {
-                        break;
-                    } else if ($char === "\n") {
-                        $wordBreakMode = 0;
-                        break;
-                    }
-
-                    $wordBreakMode = 0;
-                }
-
-                if ($char === "\n") {
-                    $this->_appendLine();
-                    $wordBreakMode = false;
-                } else if ($this->_addChar($char)) {
-                    if ($char !== ' ') {
-                        $wordBreakMode = ($wordBreakMode >= 2) ? 3: 1;
-                    } else {
-                        $wordBreakMode = ($wordBreakMode > 0) ? 2: 0;
-                    }
-                } else if ($this->_outlineLength === 0) {
-                    for ($i = 0; $i < $this->_charHeight; $i++) {
-                        if ($this->_rightToLeft === 1 && $this->_outputWidth > 1) {
-                            $offset = (strlen($this->_currentChar[$i]) - $this->_outlineLengthLimit);
-                            $this->_putString(substr($this->_currentChar[$i], $offset));
-                        } else {
-                            $this->_putString($this->_currentChar[$i]);
-                        }
-                    }
-
-                    $wordBreakMode = -1;
-                } else if ($char === ' ') {
-                    if ($wordBreakMode === 2) {
-                        $this->_splitLine();
-                    } else {
-                        $this->_appendLine();
-                    }
-
-                    $wordBreakMode = -1;
-                } else {
-                    if ($wordBreakMode >= 2) {
-                        $this->_splitLine();
-                    } else {
-                        $this->_appendLine();
-                    }
-
-                    $wordBreakMode = ($wordBreakMode === 3) ? 1 : 0;
-                    $charNotAdded  = true;
-                }
-            } while ($charNotAdded);
-        }
-
-        if ($this->_outlineLength !== 0) {
-            $this->_appendLine();
-        }
-
-        return $this->_output;
-    }
-
-    /**
-     * Puts the given string, substituting blanks for hardblanks. If outputWidth
-     * is 1, puts the entire string; otherwise puts at most outputWidth - 1
-     * characters. Puts a newline at the end of the string. The string is left-
-     * justified, centered or right-justified (taking outputWidth as the screen
-     * width) if justification is 0, 1 or 2 respectively.
-     *
-     * @param  string $string The string to add to the output
-     * @return void
-     */
-    protected function _putString($string)
-    {
-        $length = strlen($string);
-
-        if ($this->_outputWidth > 1) {
-            if ($length > ($this->_outputWidth - 1)) {
-                $length = ($this->_outputWidth - 1);
-            }
-
-            if ($this->_justification > 0) {
-                for ($i = 1;
-                     ((3 - $this->_justification) * $i + $length + $this->_justification - 2) < $this->_outputWidth;
-                     $i++) {
-                    $this->_output .= ' ';
-                }
-            }
-        }
-
-        $this->_output .= str_replace($this->_hardBlank, ' ', $string) . "\n";
-    }
-
-    /**
-     * Appends the current line to the output
-     *
-     * @return void
-     */
-    protected function _appendLine()
-    {
-        for ($i = 0; $i < $this->_charHeight; $i++) {
-            $this->_putString($this->_outputLine[$i]);
-        }
-
-        $this->_clearLine();
-    }
-
-    /**
-     * Splits inCharLine at the last word break (bunch of consecutive blanks).
-     * Makes a new line out of the first part and appends it using appendLine().
-     * Makes a new line out of the second part and returns.
-     *
-     * @return void
-     */
-    protected function _splitLine()
-    {
-        $gotSpace = false;
-        for ($i = ($this->_inCharLineLength - 1); $i >= 0; $i--) {
-            if (!$gotSpace && $this->_inCharLine[$i] === ' ') {
-                $gotSpace  = true;
-                $lastSpace = $i;
-            }
-
-            if ($gotSpace && $this->_inCharLine[$i] !== ' ') {
-                break;
-            }
-        }
-
-        $firstLength = ($i + 1);
-        $lastLength  = ($this->_inCharLineLength - $lastSpace - 1);
-
-        $firstPart = '';
-        for ($i = 0; $i < $firstLength; $i++) {
-            $firstPart[$i] = $this->_inCharLine[$i];
-        }
-
-        $lastPart = '';
-        for ($i = 0; $i < $lastLength; $i++) {
-            $lastPart[$i] = $this->_inCharLine[($lastSpace + 1 + $i)];
-        }
-
-        $this->_clearLine();
-
-        for ($i = 0; $i < $firstLength; $i++) {
-            $this->_addChar($firstPart[$i]);
-        }
-
-        $this->_appendLine();
-
-        for ($i = 0; $i < $lastLength; $i++) {
-            $this->_addChar($lastPart[$i]);
-        }
-    }
-
-    /**
-     * Clears the current line
-     *
-     * @return void
-     */
-    protected function _clearLine()
-    {
-        for ($i = 0; $i < $this->_charHeight; $i++) {
-            $this->_outputLine[$i] = '';
-        }
-
-        $this->_outlineLength    = 0;
-        $this->_inCharLineLength = 0;
-    }
-
-    /**
-     * Attempts to add the given character onto the end of the current line.
-     * Returns true if this can be done, false otherwise.
-     *
-     * @param  string $char Character which to add to the output
-     * @return boolean
-     */
-    protected function _addChar($char)
-    {
-        $this->_getLetter($char);
-
-        if ($this->_currentChar === null) {
-            return true;
-        }
-
-        $smushAmount = $this->_smushAmount();
-
-        if (($this->_outlineLength + $this->_currentCharWidth - $smushAmount) > $this->_outlineLengthLimit
-            || ($this->_inCharLineLength + 1) > $this->_inCharLineLengthLimit) {
-            return false;
-        }
-
-        $tempLine = '';
-        for ($row = 0; $row < $this->_charHeight; $row++) {
-            if ($this->_rightToLeft === 1) {
-                $tempLine = $this->_currentChar[$row];
-
-                for ($k = 0; $k < $smushAmount; $k++) {
-                    $position            = ($this->_currentCharWidth - $smushAmount + $k);
-                    $tempLine[$position] = $this->_smushem($tempLine[$position], $this->_outputLine[$row][$k]);
-                }
-
-                $this->_outputLine[$row] = $tempLine . substr($this->_outputLine[$row], $smushAmount);
-            } else {
-                for ($k = 0; $k < $smushAmount; $k++) {
-                    if (($this->_outlineLength - $smushAmount + $k) < 0) {
-                        continue;
-                    }
-
-                    $position = ($this->_outlineLength - $smushAmount + $k);
-                    if (isset($this->_outputLine[$row][$position])) {
-                        $leftChar = $this->_outputLine[$row][$position];
-                    } else {
-                        $leftChar = null;
-                    }
-
-                    $this->_outputLine[$row][$position] = $this->_smushem($leftChar, $this->_currentChar[$row][$k]);
-                }
-
-                $this->_outputLine[$row] .= substr($this->_currentChar[$row], $smushAmount);
-            }
-        }
-
-        $this->_outlineLength                          = strlen($this->_outputLine[0]);
-        $this->_inCharLine[$this->_inCharLineLength++] = $char;
-
-        return true;
-    }
-
-    /**
-     * Gets the requested character and sets current and previous char width.
-     *
-     * @param  string $char The character from which to get the letter of
-     * @return void
-     */
-    protected function _getLetter($char)
-    {
-        if (array_key_exists($this->_uniOrd($char), $this->_charList)) {
-            $this->_currentChar       = $this->_charList[$this->_uniOrd($char)];
-            $this->_previousCharWidth = $this->_currentCharWidth;
-            $this->_currentCharWidth  = strlen($this->_currentChar[0]);
-        } else {
-            $this->_currentChar = null;
-        }
-    }
-
-    /**
-     * Returns the maximum amount that the current character can be smushed into
-     * the current line.
-     *
-     * @return integer
-     */
-    protected function _smushAmount()
-    {
-        if (($this->_smushMode & (self::SM_SMUSH | self::SM_KERN)) === 0) {
-            return 0;
-        }
-
-        $maxSmush = $this->_currentCharWidth;
-        $amount   = $maxSmush;
-
-        for ($row = 0; $row < $this->_charHeight; $row++) {
-            if ($this->_rightToLeft === 1) {
-                $charbd = strlen($this->_currentChar[$row]);
-                while (true) {
-                    if (!isset($this->_currentChar[$row][$charbd])) {
-                        $leftChar = null;
-                    } else {
-                        $leftChar = $this->_currentChar[$row][$charbd];
-                    }
-
-                    if ($charbd > 0 && ($leftChar === null || $leftChar == ' ')) {
-                        $charbd--;
-                    } else {
-                        break;
-                    }
-                }
-
-                $linebd = 0;
-                while (true) {
-                    if (!isset($this->_outputLine[$row][$linebd])) {
-                        $rightChar = null;
-                    } else {
-                        $rightChar = $this->_outputLine[$row][$linebd];
-                    }
-
-                    if ($rightChar === ' ') {
-                        $linebd++;
-                    } else {
-                        break;
-                    }
-                }
-
-                $amount = ($linebd + $this->_currentCharWidth - 1 - $charbd);
-            } else {
-                $linebd = strlen($this->_outputLine[$row]);
-                while (true) {
-                    if (!isset($this->_outputLine[$row][$linebd])) {
-                        $leftChar = null;
-                    } else {
-                        $leftChar = $this->_outputLine[$row][$linebd];
-                    }
-
-                    if ($linebd > 0 && ($leftChar === null || $leftChar == ' ')) {
-                        $linebd--;
-                    } else {
-                        break;
-                    }
-                }
-
-                $charbd = 0;
-                while (true) {
-                    if (!isset($this->_currentChar[$row][$charbd])) {
-                        $rightChar = null;
-                    } else {
-                        $rightChar = $this->_currentChar[$row][$charbd];
-                    }
-
-                    if ($rightChar === ' ') {
-                        $charbd++;
-                    } else {
-                        break;
-                    }
-                }
-
-                $amount = ($charbd + $this->_outlineLength - 1 - $linebd);
-            }
-
-            if (empty($leftChar) || $leftChar === ' ') {
-                $amount++;
-            } else if (!empty($rightChar)) {
-                if ($this->_smushem($leftChar, $rightChar) !== null) {
-                    $amount++;
-                }
-            }
-
-            $maxSmush = min($amount, $maxSmush);
-        }
-
-        return $maxSmush;
-    }
-
-    /**
-     * Given two characters, attempts to smush them into one, according to the
-     * current smushmode. Returns smushed character or false if no smushing can
-     * be done.
-     *
-     * Smushmode values are sum of following (all values smush blanks):
-     *
-     *  1: Smush equal chars (not hardblanks)
-     *  2: Smush '_' with any char in hierarchy below
-     *  4: hierarchy: "|", "/\", "[]", "{}", "()", "<>"
-     *     Each class in hier. can be replaced by later class.
-     *  8: [ + ] -> |, { + } -> |, ( + ) -> |
-     * 16: / + \ -> X, > + < -> X (only in that order)
-     * 32: hardblank + hardblank -> hardblank
-     *
-     * @param  string $leftChar  Left character to smush
-     * @param  string $rightChar Right character to smush
-     * @return string
-     */
-    protected function _smushem($leftChar, $rightChar)
-    {
-        if ($leftChar === ' ') {
-            return $rightChar;
-        }
-
-        if ($rightChar === ' ') {
-            return $leftChar;
-        }
-
-        if ($this->_previousCharWidth < 2 || $this->_currentCharWidth < 2) {
-            // Disallows overlapping if the previous character or the current
-            // character has a width of one or zero.
-            return null;
-        }
-
-        if (($this->_smushMode & self::SM_SMUSH) === 0) {
-            // Kerning
-            return null;
-        }
-
-        if (($this->_smushMode & 63) === 0) {
-            // This is smushing by universal overlapping
-            if ($leftChar === ' ') {
-                return $rightChar;
-            } else if ($rightChar === ' ') {
-                return $leftChar;
-            } else if ($leftChar === $this->_hardBlank) {
-                return $rightChar;
-            } else if ($rightChar === $this->_hardBlank) {
-                return $rightChar;
-            } else if ($this->_rightToLeft === 1) {
-                return $leftChar;
-            } else {
-                // Occurs in the absence of above exceptions
-                return $rightChar;
-            }
-        }
-
-        if (($this->_smushMode & self::SM_HARDBLANK) > 0) {
-            if ($leftChar === $this->_hardBlank && $rightChar === $this->_hardBlank) {
-                return $leftChar;
-            }
-        }
-
-        if ($leftChar === $this->_hardBlank && $rightChar === $this->_hardBlank) {
-            return null;
-        }
-
-        if (($this->_smushMode & self::SM_EQUAL) > 0) {
-            if ($leftChar === $rightChar) {
-                return $leftChar;
-            }
-        }
-
-        if (($this->_smushMode & self::SM_LOWLINE) > 0) {
-            if ($leftChar === '_' && strchr('|/\\[]{}()<>', $rightChar) !== false) {
-                return $rightChar;
-            } else if ($rightChar === '_' && strchr('|/\\[]{}()<>', $leftChar) !== false) {
-                return $leftChar;
-            }
-        }
-
-        if (($this->_smushMode & self::SM_HIERARCHY) > 0) {
-            if ($leftChar === '|' && strchr('/\\[]{}()<>', $rightChar) !== false) {
-                return $rightChar;
-            } else if ($rightChar === '|' && strchr('/\\[]{}()<>', $leftChar) !== false) {
-                return $leftChar;
-            } else if (strchr('/\\', $leftChar) && strchr('[]{}()<>', $rightChar) !== false) {
-                return $rightChar;
-            } else if (strchr('/\\', $rightChar) && strchr('[]{}()<>', $leftChar) !== false) {
-                return $leftChar;
-            } else if (strchr('[]', $leftChar) && strchr('{}()<>', $rightChar) !== false) {
-                return $rightChar;
-            } else if (strchr('[]', $rightChar) && strchr('{}()<>', $leftChar) !== false) {
-                return $leftChar;
-            } else if (strchr('{}', $leftChar) && strchr('()<>', $rightChar) !== false) {
-                return $rightChar;
-            } else if (strchr('{}', $rightChar) && strchr('()<>', $leftChar) !== false) {
-                return $leftChar;
-            } else if (strchr('()', $leftChar) && strchr('<>', $rightChar) !== false) {
-                return $rightChar;
-            } else if (strchr('()', $rightChar) && strchr('<>', $leftChar) !== false) {
-                return $leftChar;
-            }
-        }
-
-        if (($this->_smushMode & self::SM_PAIR) > 0) {
-            if ($leftChar === '[' && $rightChar === ']') {
-                return '|';
-            } else if ($rightChar === '[' && $leftChar === ']') {
-                return '|';
-            } else if ($leftChar === '{' && $rightChar === '}') {
-                return '|';
-            } else if ($rightChar === '{' && $leftChar === '}') {
-                return '|';
-            } else if ($leftChar === '(' && $rightChar === ')') {
-                return '|';
-            } else if ($rightChar === '(' && $leftChar === ')') {
-                return '|';
-            }
-        }
-
-        if (($this->_smushMode & self::SM_BIGX) > 0) {
-            if ($leftChar === '/' && $rightChar === '\\') {
-                return '|';
-            } else if ($rightChar === '/' && $leftChar === '\\') {
-                return 'Y';
-            } else if ($leftChar === '>' && $rightChar === '<') {
-                return 'X';
-            }
-        }
-
-        return null;
-    }
-
-    /**
-     * Load the specified font
-     *
-     * @param  string $fontFile Font file to load
-     * @throws Zend_Text_Figlet_Exception When font file was not found
-     * @throws Zend_Text_Figlet_Exception When GZIP library is required but not found
-     * @throws Zend_Text_Figlet_Exception When font file is not readable
-     * @return void
-     */
-    protected function _loadFont($fontFile)
-    {
-        // Check if the font file exists
-        if (!file_exists($fontFile)) {
-            require_once 'Zend/Text/Figlet/Exception.php';
-            throw new Zend_Text_Figlet_Exception($fontFile . ': Font file not found');
-        }
-
-        // Check if gzip support is required
-        if (substr($fontFile, -3) === '.gz') {
-            if (!function_exists('gzcompress')) {
-                require_once 'Zend/Text/Figlet/Exception.php';
-                throw new Zend_Text_Figlet_Exception('GZIP library is required for '
-                                                     . 'gzip compressed font files');
-            }
-
-            $fontFile   = 'compress.zlib://' . $fontFile;
-            $compressed = true;
-        } else {
-            $compressed = false;
-        }
-
-        // Try to open the file
-        $fp = fopen($fontFile, 'rb');
-        if ($fp === false) {
-            require_once 'Zend/Text/Figlet/Exception.php';
-            throw new Zend_Text_Figlet_Exception($fontFile . ': Could not open file');
-        }
-
-        // If the file is not compressed, lock the stream
-        if (!$compressed) {
-            flock($fp, LOCK_SH);
-        }
-
-        // Get magic
-        $magic = $this->_readMagic($fp);
-
-        // Get the header
-        $numsRead = sscanf(fgets($fp, 1000),
-                           '%*c%c %d %*d %d %d %d %d %d',
-                           $this->_hardBlank,
-                           $this->_charHeight,
-                           $this->_maxLength,
-                           $smush,
-                           $cmtLines,
-                           $rightToLeft,
-                           $this->_fontSmush);
-
-        if ($magic !== self::FONTFILE_MAGIC_NUMBER || $numsRead < 5) {
-            require_once 'Zend/Text/Figlet/Exception.php';
-            throw new Zend_Text_Figlet_Exception($fontFile . ': Not a FIGlet 2 font file');
-        }
-
-        // Set default right to left
-        if ($numsRead < 6) {
-            $rightToLeft = 0;
-        }
-
-        // If no smush2, decode smush into smush2
-        if ($numsRead < 7) {
-            if ($smush === 2) {
-                $this->_fontSmush = self::SM_KERN;
-            } else if ($smush < 0) {
-                $this->_fontSmush = 0;
-            } else {
-                $this->_fontSmush = (($smush & 31) | self::SM_SMUSH);
-            }
-        }
-
-        // Correct char height && maxlength
-        $this->_charHeight = max(1, $this->_charHeight);
-        $this->_maxLength  = max(1, $this->_maxLength);
-
-        // Give ourselves some extra room
-        $this->_maxLength += 100;
-
-        // See if we have to override smush settings
-        $this->_setUsedSmush();
-
-        // Get left to right value
-        if ($this->_rightToLeft === null) {
-            $this->_rightToLeft = $rightToLeft;
-        }
-
-        // Get justification value
-        if ($this->_justification === null) {
-            $this->_justification = (2 * $this->_rightToLeft);
-        }
-
-        // Skip all comment lines
-        for ($line = 1; $line <= $cmtLines; $line++) {
-            $this->_skipToEol($fp);
-        }
-
-        // Fetch all ASCII characters
-        for ($asciiCode = 32; $asciiCode < 127; $asciiCode++) {
-            $this->_charList[$asciiCode] = $this->_loadChar($fp);
-        }
-
-        // Fetch all german characters
-        foreach ($this->_germanChars as $uniCode) {
-            $char = $this->_loadChar($fp);
-
-            if ($char === false) {
-                fclose($fp);
-                return;
-            }
-
-            if (trim(implode('', $char)) !== '') {
-                $this->_charList[$uniCode] = $char;
-            }
-        }
-
-        // At the end fetch all extended characters
-        while (!feof($fp)) {
-            // Get the Unicode
-            list($uniCode) = explode(' ', fgets($fp, 2048));
-
-            if (empty($uniCode)) {
-                continue;
-            }
-
-            // Convert it if required
-            if (substr($uniCode, 0, 2) === '0x') {
-                $uniCode = hexdec(substr($uniCode, 2));
-            } else if (substr($uniCode, 0, 1) === '0' and
-                       $uniCode !== '0' or
-                       substr($uniCode, 0, 2) === '-0') {
-                $uniCode = octdec($uniCode);
-            } else {
-                $uniCode = (int) $uniCode;
-            }
-
-            // Now fetch the character
-            $char = $this->_loadChar($fp);
-
-            if ($char === false) {
-                fclose($fp);
-                return;
-            }
-
-            $this->_charList[$uniCode] = $char;
-        }
-
-        fclose($fp);
-
-        $this->_fontLoaded = true;
-    }
-
-    /**
-     * Set the used smush mode, according to smush override, user smsush and
-     * font smush.
-     *
-     * @return void
-     */
-    protected function _setUsedSmush()
-    {
-        if ($this->_smushOverride === self::SMO_NO) {
-            $this->_smushMode = $this->_fontSmush;
-        } else if ($this->_smushOverride === self::SMO_YES) {
-            $this->_smushMode = $this->_userSmush;
-        } else if ($this->_smushOverride === self::SMO_FORCE) {
-            $this->_smushMode = ($this->_fontSmush | $this->_userSmush);
-        }
-    }
-
-    /**
-     * Reads a four-character magic string from a stream
-     *
-     * @param  resource $fp File pointer to the font file
-     * @return string
-     */
-    protected function _readMagic($fp)
-    {
-        $magic = '';
-
-        for ($i = 0; $i < 4; $i++) {
-            $magic .= fgetc($fp);
-        }
-
-        return $magic;
-    }
-
-    /**
-     * Skip a stream to the end of line
-     *
-     * @param  resource $fp File pointer to the font file
-     * @return void
-     */
-    protected function _skipToEol($fp)
-    {
-        $dummy = fgetc($fp);
-        while ($dummy !== false && !feof($fp)) {
-            if ($dummy === "\n") {
-                return;
-            }
-
-            if ($dummy === "\r") {
-                $dummy = fgetc($fp);
-
-                if (!feof($fp) && $dummy !== "\n") {
-                    fseek($fp, -1, SEEK_SET);
-                }
-
-                return;
-            }
-
-            $dummy = fgetc($fp);
-        }
-    }
-
-    /**
-     * Load a single character from the font file
-     *
-     * @param  resource $fp File pointer to the font file
-     * @return array
-     */
-    protected function _loadChar($fp)
-    {
-        $char = array();
-
-        for ($i = 0; $i < $this->_charHeight; $i++) {
-            if (feof($fp)) {
-                return false;
-            }
-
-            $line = rtrim(fgets($fp, 2048), "\r\n");
-
-            if (preg_match('#(.)\\1?$#', $line, $result) === 1) {
-                $line = str_replace($result[1], '', $line);
-            }
-
-            $char[] = $line;
-        }
-
-        return $char;
-    }
-
-    /**
-     * Unicode compatible ord() method
-     *
-     * @param  string $c The char to get the value from
-     * @return integer
-     */
-    protected function _uniOrd($c)
-    {
-        $h = ord($c[0]);
-
-        if ($h <= 0x7F) {
-            $ord = $h;
-        } else if ($h < 0xC2) {
-            $ord = 0;
-        } else if ($h <= 0xDF) {
-            $ord = (($h & 0x1F) << 6 | (ord($c[1]) & 0x3F));
-        } else if ($h <= 0xEF) {
-            $ord = (($h & 0x0F) << 12 | (ord($c[1]) & 0x3F) << 6 | (ord($c[2]) & 0x3F));
-        } else if ($h <= 0xF4) {
-            $ord = (($h & 0x0F) << 18 | (ord($c[1]) & 0x3F) << 12 |
-                   (ord($c[2]) & 0x3F) << 6 | (ord($c[3]) & 0x3F));
-        } else {
-            $ord = 0;
-        }
-
-        return $ord;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+vFKprREd0FQ47G==

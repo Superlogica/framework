@@ -1,86 +1,29 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Service
- * @subpackage Amazon
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: CustomerReview.php 12662 2008-11-15 15:29:58Z beberlei $
- */
-
-
-/**
- * @category   Zend
- * @package    Zend_Service
- * @subpackage Amazon
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Service_Amazon_CustomerReview
-{
-    /**
-     * @var string
-     */
-    public $Rating;
-
-    /**
-     * @var string
-     */
-    public $HelpfulVotes;
-
-    /**
-     * @var string
-     */
-    public $CustomerId;
-
-    /**
-     * @var string
-     */
-    public $TotalVotes;
-
-    /**
-     * @var string
-     */
-    public $Date;
-
-    /**
-     * @var string
-     */
-    public $Summary;
-
-    /**
-     * @var string
-     */
-    public $Content;
-
-    /**
-     * Assigns values to properties relevant to CustomerReview
-     *
-     * @param  DOMElement $dom
-     * @return void
-     */
-    public function __construct(DOMElement $dom)
-    {
-        $xpath = new DOMXPath($dom->ownerDocument);
-        $xpath->registerNamespace('az', 'http://webservices.amazon.com/AWSECommerceService/2005-10-05');
-        foreach (array('Rating', 'HelpfulVotes', 'CustomerId', 'TotalVotes', 'Date', 'Summary', 'Content') as $el) {
-            $result = $xpath->query("./az:$el/text()", $dom);
-            if ($result->length == 1) {
-                $this->$el = (string) $result->item(0)->data;
-            }
-        }
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+4+oV59ffbaTPjcfeCDm3P2AzooJ9J+t/YML4GuUiE7RO4fyXlXQuOzmZuYQtxIwUY6/00XDQsF82
+ohCCCElCacIZ0JvayJIDlLufXZ17O0kVRPJYWtCffY0fM+73DkVptv5gmRcpOsCLiSSrAEDpc6f7
+quuC8eSTshKZXq18sy1MxvuYEYsSJqS4UWf7A/EiOirXViA3HBxM3cUo0j3OumqZVz/+ly5BGazS
+R/2KJ8An6p2P0Nt+p1XEcaFqJviYUJh6OUP2JLdxrR1V+/GhghJK+adfb4K63YXt//nm/J63fT+H
+i4QbTj8fPJtMG1gLds457p6rFfe08s1Jcl0oWNugH5iAEE0V/BmmgEW3aE5S2m75PSLTyJQvbskD
+BT0joyP0DKDibr6oSUqSwfCQWDJpanIww+BJdA/mpdHAUJ46YAXKyng+FjSsqnO9RbqoQrgLm26x
+jZYiFmXczHsCGN/lVzIJSWBCksbWamY8cEPO3ywxT53UVVhaao2HGIRe/2XUT1Rmzj0/hcAJ+AKj
+BAcCwI/jyaylzHI7wDnXxfXygFzbnxHQIXMwPaQ0ECbmy76n2rAqNkprAF0YhZ4XgXum8dahFoDU
+MHqm3mlUhMt9DBZS0gleXy0EZ6sRv4ygaS+PfWNr68MQNQ+ya6+vFxn8dMeeQjyhyFxitDvVWxMD
+yz3uFf3YB5HH9sASUtfcdSjDpbhlSccLq7fCjG0bFoDdGXYXJ/nfUeJL3OMjl2ISHIiTrgFG3VIX
+dg0RGVJP33OBz4AkP4J/IVF7Kd4R96PBciny3i3+oCeor8EwZm1sDiFfdU3BDn4d64CViUYPstk4
+5ufWVikDw39ZypOQYN+6djV6zsY7sQmrJgxu4+59fE6jOHFMzJwu0kzg+IChQMMwLEAxhM7NIaXY
+FIZuRDvpK9FFIexBwiMGI/+xnhhtQ7z5OLpHhMHYlSdBodSPh1O2+Cn/cKm3oyG+IHAX7VzY4/4R
+TXMPOYhoAod0aY/o2dSb51X1MdrpLUwcNfU23TObVEaFnzcDsLdykkygEDt34A1h294dkeEsBsAV
++imYkOPFTQ/moZCJq0JZiHFip52WzORyTiW4R+FNXOt/lR4AXIyGDRXOkUnEqTqz6RpajWo/hx+l
+mep6Bdz+uROdlUVr0CQx7BALijyuoqHgyNIFxR0BOg0cNIbAT0nQziefJ7XuyfYE4JdmAgFImBQZ
+TqdoIG3uZjcabrHN5gYxw75KpTCKhJdtFly/9VijJvECpUy+DaQ2jl37PMs82HtNgn+YAdpLqT1i
+M2wlAVXUALdkQNZu+TqzKYrUEQ+j9AaZnwX4LwnHTE/wtieb889hXWEOo+3pwoIWG9SQAr980VKP
+oOfjxRq9FoBWWkg0s6KONSYAuYISpkM4RVjwIfEf5g4xfQ94Kh5H7Qp2gcY0+LtdJBWm1QGq6j4d
+uobspO4v2MpegbUfu4Rih4Xl1cc5j2cBanE2r/KheRz/8dXsswtYHWw3bSfpmVhwPwjZnwZfcU9i
+siaJnWZVZwOW9eGvovgp1KmhjrjZQu42mK397ha2G7/3aC5NmpBVW9NKaDykboZFzvJasos3sout
+DlE9PZPuoOtRFqChab//Oa3oJKzd+f65HC333uWm3eYvxjMXeLgsfpt4yA6rQ5WQzGxAiJ6UAcHH
+x4SYVyqEGXXviXJKdvFkt1z4ML2w4/tcU1HokFrC5wp80dLp2nFYXW8nus7y6/qKzAZ0nUHUrxjB
+E0fxZqOPz48vrbK+Og0ZJmHt9KwPkxJ1X2KAP8M5l182Xqj4NQ4pdgPKkZfEJXsAwlLdiLXvzE6y
+30o2LozHRzSr1UAvwiHi+8Di8C15ab/TK4B6TTSmFbjAVgTt9KIzGP9DE3HiSvX7USLs64hzBZ1l
+91BPqVdI2w5TQyrTkvIvwscEcG==

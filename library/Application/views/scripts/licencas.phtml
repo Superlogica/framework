@@ -1,0 +1,18 @@
+<?php
+    $formSelecionarLicencas = new Application_Forms_Licencas_Selecionar();
+    $licenca = Application_Helpers_Session::getInstance()->licenca;
+    $usuario = Application_Helpers_Session::getInstance()->ST_APELIDO_USU;
+    
+    $configVertical =  Application_Helpers_Session::getInstance()->config_vertical;
+    $formSelecionarLicencas->populate(array('LICENCA'=> strtolower($licenca), "ID_LICENCA" => ' '));
+    Superlogica_Js::adicionarCodigo("window.LICENCA = '".$licenca."';");
+    Superlogica_Js::adicionarCodigo("window.usuarioLogado = '".$usuario."';");
+    
+    if( $licenca != 'mmimobiliaria'){
+        Superlogica_Js::adicionarCodigo("window.urlAutenticacaoWhiteLabel = '".$configVertical['multlicencas']['urlauth']."';");
+    }
+
+?>
+<div>
+        <?php echo $formSelecionarLicencas; ?>
+</div>        

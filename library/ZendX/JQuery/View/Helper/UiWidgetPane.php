@@ -1,105 +1,39 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category    ZendX
- * @package     ZendX_JQuery
- * @subpackage  View
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
- * @license     http://framework.zend.com/license/new-bsd     New BSD License
- * @version     $Id: UiWidgetPane.php 20165 2010-01-09 18:57:56Z bkarwin $
- */
-
-/**
- * @see ZendX_JQuery_View_Helper_UiWidget
- */
-require_once "UiWidget.php";
-
-/**
- * jQuery Pane Base class, adds captureStart/captureEnd functionality for panes.
- *
- * @uses 	   ZendX_JQuery_View_Helper_JQuery_Container
- * @package    ZendX_JQuery
- * @subpackage View
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-abstract class ZendX_JQuery_View_Helper_UiWidgetPane extends ZendX_JQuery_View_Helper_UiWidget
-{
-    /**
-     * Capture Lock information
-     *
-     * @var array
-     */
-    protected $_captureLock = array();
-
-    /**
-     * Current capture additional information
-     *
-     * @var array
-     */
-    protected $_captureInfo = array();
-
-    /**
-     * Begin capturing content for layout container
-     *
-     * @param  string $id
-     * @param  string $name
-     * @param  array  $options
-     * @return void
-     */
-    public function captureStart($id, $name, array $options=array())
-    {
-        if (array_key_exists($id, $this->_captureLock)) {
-            require_once 'ZendX/JQuery/View/Exception.php';
-            throw new ZendX_JQuery_View_Exception(sprintf('Lock already exists for id "%s"', $id));
-        }
-
-        $this->_captureLock[$id] = true;
-        $this->_captureInfo[$id] = array(
-            'name'  => $name,
-            'options' => $options,
-        );
-
-        return ob_start();
-    }
-
-    /**
-     * Finish capturing content for layout container
-     *
-     * @param  string $id
-     * @return string
-     */
-    public function captureEnd($id)
-    {
-        if (!array_key_exists($id, $this->_captureLock)) {
-            require_once 'ZendX/JQuery/View/Exception.php';
-            throw new ZendX_JQuery_View_Exception(sprintf('No capture lock exists for id "%s"; nothing to capture', $id));
-        }
-
-        $content = ob_get_clean();
-        extract($this->_captureInfo[$id]);
-        unset($this->_captureLock[$id], $this->_captureInfo[$id]);
-        return $this->_addPane($id, $name, $content, $options);
-    }
-
-    /**
-     * Add an additional pane to the current Widget Container
-     *
-     * @param string $id
-     * @param string $name
-     * @param string $content
-     * @param array  $options
-     */
-    abstract protected function _addPane($id, $name, $content, array $options=array());
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+xzREclIZw6wIMm==

@@ -1,805 +1,306 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Search_Lucene
- * @subpackage Search
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-
-/** Zend_Search_Lucene_Search_Query */
-require_once 'Zend/Search/Lucene/Search/Query.php';
-
-/** Zend_Search_Lucene_Search_Weight_Boolean */
-require_once 'Zend/Search/Lucene/Search/Weight/Boolean.php';
-
-
-/**
- * @category   Zend
- * @package    Zend_Search_Lucene
- * @subpackage Search
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Search_Lucene_Search_Query_Boolean extends Zend_Search_Lucene_Search_Query
-{
-
-    /**
-     * Subqueries
-     * Array of Zend_Search_Lucene_Search_Query
-     *
-     * @var array
-     */
-    private $_subqueries = array();
-
-    /**
-     * Subqueries signs.
-     * If true then subquery is required.
-     * If false then subquery is prohibited.
-     * If null then subquery is neither prohibited, nor required
-     *
-     * If array is null then all subqueries are required
-     *
-     * @var array
-     */
-    private $_signs = array();
-
-    /**
-     * Result vector.
-     *
-     * @var array
-     */
-    private $_resVector = null;
-
-    /**
-     * A score factor based on the fraction of all query subqueries
-     * that a document contains.
-     * float for conjunction queries
-     * array of float for non conjunction queries
-     *
-     * @var mixed
-     */
-    private $_coord = null;
-
-
-    /**
-     * Class constructor.  Create a new Boolean query object.
-     *
-     * if $signs array is omitted then all subqueries are required
-     * it differs from addSubquery() behavior, but should never be used
-     *
-     * @param array $subqueries    Array of Zend_Search_Search_Query objects
-     * @param array $signs    Array of signs.  Sign is boolean|null.
-     * @return void
-     */
-    public function __construct($subqueries = null, $signs = null)
-    {
-        if (is_array($subqueries)) {
-            $this->_subqueries = $subqueries;
-
-            $this->_signs = null;
-            // Check if all subqueries are required
-            if (is_array($signs)) {
-                foreach ($signs as $sign ) {
-                    if ($sign !== true) {
-                        $this->_signs = $signs;
-                        break;
-                    }
-                }
-            }
-        }
-    }
-
-
-    /**
-     * Add a $subquery (Zend_Search_Lucene_Search_Query) to this query.
-     *
-     * The sign is specified as:
-     *     TRUE  - subquery is required
-     *     FALSE - subquery is prohibited
-     *     NULL  - subquery is neither prohibited, nor required
-     *
-     * @param  Zend_Search_Lucene_Search_Query $subquery
-     * @param  boolean|null $sign
-     * @return void
-     */
-    public function addSubquery(Zend_Search_Lucene_Search_Query $subquery, $sign=null) {
-        if ($sign !== true || $this->_signs !== null) {       // Skip, if all subqueries are required
-            if ($this->_signs === null) {                     // Check, If all previous subqueries are required
-                $this->_signs = array();
-                foreach ($this->_subqueries as $prevSubquery) {
-                    $this->_signs[] = true;
-                }
-            }
-            $this->_signs[] = $sign;
-        }
-
-        $this->_subqueries[] = $subquery;
-    }
-
-    /**
-     * Re-write queries into primitive queries
-     *
-     * @param Zend_Search_Lucene_Interface $index
-     * @return Zend_Search_Lucene_Search_Query
-     */
-    public function rewrite(Zend_Search_Lucene_Interface $index)
-    {
-        $query = new Zend_Search_Lucene_Search_Query_Boolean();
-        $query->setBoost($this->getBoost());
-
-        foreach ($this->_subqueries as $subqueryId => $subquery) {
-            $query->addSubquery($subquery->rewrite($index),
-                                ($this->_signs === null)?  true : $this->_signs[$subqueryId]);
-        }
-
-        return $query;
-    }
-
-    /**
-     * Optimize query in the context of specified index
-     *
-     * @param Zend_Search_Lucene_Interface $index
-     * @return Zend_Search_Lucene_Search_Query
-     */
-    public function optimize(Zend_Search_Lucene_Interface $index)
-    {
-        $subqueries = array();
-        $signs      = array();
-
-        // Optimize all subqueries
-        foreach ($this->_subqueries as $id => $subquery) {
-            $subqueries[] = $subquery->optimize($index);
-            $signs[]      = ($this->_signs === null)? true : $this->_signs[$id];
-        }
-
-        // Remove insignificant subqueries
-        foreach ($subqueries as $id => $subquery) {
-            if ($subquery instanceof Zend_Search_Lucene_Search_Query_Insignificant) {
-                // Insignificant subquery has to be removed anyway
-                unset($subqueries[$id]);
-                unset($signs[$id]);
-            }
-        }
-        if (count($subqueries) == 0) {
-            // Boolean query doesn't has non-insignificant subqueries
-            return new Zend_Search_Lucene_Search_Query_Insignificant();
-        }
-        // Check if all non-insignificant subqueries are prohibited
-        $allProhibited = true;
-        foreach ($signs as $sign) {
-            if ($sign !== false) {
-                $allProhibited = false;
-                break;
-            }
-        }
-        if ($allProhibited) {
-            return new Zend_Search_Lucene_Search_Query_Insignificant();
-        }
-
-
-        // Check for empty subqueries
-        foreach ($subqueries as $id => $subquery) {
-            if ($subquery instanceof Zend_Search_Lucene_Search_Query_Empty) {
-                if ($signs[$id] === true) {
-                    // Matching is required, but is actually empty
-                    return new Zend_Search_Lucene_Search_Query_Empty();
-                } else {
-                    // Matching is optional or prohibited, but is empty
-                    // Remove it from subqueries and signs list
-                    unset($subqueries[$id]);
-                    unset($signs[$id]);
-                }
-            }
-        }
-
-        // Check, if reduced subqueries list is empty
-        if (count($subqueries) == 0) {
-            return new Zend_Search_Lucene_Search_Query_Empty();
-        }
-
-        // Check if all non-empty subqueries are prohibited
-        $allProhibited = true;
-        foreach ($signs as $sign) {
-            if ($sign !== false) {
-                $allProhibited = false;
-                break;
-            }
-        }
-        if ($allProhibited) {
-            return new Zend_Search_Lucene_Search_Query_Empty();
-        }
-
-
-        // Check, if reduced subqueries list has only one entry
-        if (count($subqueries) == 1) {
-            // It's a query with only one required or optional clause
-            // (it's already checked, that it's not a prohibited clause)
-
-            if ($this->getBoost() == 1) {
-                return reset($subqueries);
-            }
-
-            $optimizedQuery = clone reset($subqueries);
-            $optimizedQuery->setBoost($optimizedQuery->getBoost()*$this->getBoost());
-
-            return $optimizedQuery;
-        }
-
-
-        // Prepare first candidate for optimized query
-        $optimizedQuery = new Zend_Search_Lucene_Search_Query_Boolean($subqueries, $signs);
-        $optimizedQuery->setBoost($this->getBoost());
-
-
-        $terms        = array();
-        $tsigns       = array();
-        $boostFactors = array();
-
-        // Try to decompose term and multi-term subqueries
-        foreach ($subqueries as $id => $subquery) {
-            if ($subquery instanceof Zend_Search_Lucene_Search_Query_Term) {
-                $terms[]        = $subquery->getTerm();
-                $tsigns[]       = $signs[$id];
-                $boostFactors[] = $subquery->getBoost();
-
-                // remove subquery from a subqueries list
-                unset($subqueries[$id]);
-                unset($signs[$id]);
-           } else if ($subquery instanceof Zend_Search_Lucene_Search_Query_MultiTerm) {
-                $subTerms = $subquery->getTerms();
-                $subSigns = $subquery->getSigns();
-
-                if ($signs[$id] === true) {
-                    // It's a required multi-term subquery.
-                    // Something like '... +(+term1 -term2 term3 ...) ...'
-
-                    // Multi-term required subquery can be decomposed only if it contains
-                    // required terms and doesn't contain prohibited terms:
-                    // ... +(+term1 term2 ...) ... => ... +term1 term2 ...
-                    //
-                    // Check this
-                    $hasRequired   = false;
-                    $hasProhibited = false;
-                    if ($subSigns === null) {
-                        // All subterms are required
-                        $hasRequired = true;
-                    } else {
-                        foreach ($subSigns as $sign) {
-                            if ($sign === true) {
-                                $hasRequired   = true;
-                            } else if ($sign === false) {
-                                $hasProhibited = true;
-                                break;
-                            }
-                        }
-                    }
-                    // Continue if subquery has prohibited terms or doesn't have required terms
-                    if ($hasProhibited  ||  !$hasRequired) {
-                        continue;
-                    }
-
-                    foreach ($subTerms as $termId => $term) {
-                        $terms[]        = $term;
-                        $tsigns[]       = ($subSigns === null)? true : $subSigns[$termId];
-                        $boostFactors[] = $subquery->getBoost();
-                    }
-
-                    // remove subquery from a subqueries list
-                    unset($subqueries[$id]);
-                    unset($signs[$id]);
-
-                } else { // $signs[$id] === null  ||  $signs[$id] === false
-                    // It's an optional or prohibited multi-term subquery.
-                    // Something like '... (+term1 -term2 term3 ...) ...'
-                    // or
-                    // something like '... -(+term1 -term2 term3 ...) ...'
-
-                    // Multi-term optional and required subqueries can be decomposed
-                    // only if all terms are optional.
-                    //
-                    // Check if all terms are optional.
-                    $onlyOptional = true;
-                    if ($subSigns === null) {
-                        // All subterms are required
-                        $onlyOptional = false;
-                    } else {
-                        foreach ($subSigns as $sign) {
-                            if ($sign !== null) {
-                                $onlyOptional = false;
-                                break;
-                            }
-                        }
-                    }
-
-                    // Continue if non-optional terms are presented in this multi-term subquery
-                    if (!$onlyOptional) {
-                        continue;
-                    }
-
-                    foreach ($subTerms as $termId => $term) {
-                        $terms[]  = $term;
-                        $tsigns[] = ($signs[$id] === null)? null  /* optional */ :
-                                                            false /* prohibited */;
-                        $boostFactors[] = $subquery->getBoost();
-                    }
-
-                    // remove subquery from a subqueries list
-                    unset($subqueries[$id]);
-                    unset($signs[$id]);
-                }
-            }
-        }
-
-
-        // Check, if there are no decomposed subqueries
-        if (count($terms) == 0 ) {
-            // return prepared candidate
-            return $optimizedQuery;
-        }
-
-
-        // Check, if all subqueries have been decomposed and all terms has the same boost factor
-        if (count($subqueries) == 0  &&  count(array_unique($boostFactors)) == 1) {
-            $optimizedQuery = new Zend_Search_Lucene_Search_Query_MultiTerm($terms, $tsigns);
-            $optimizedQuery->setBoost(reset($boostFactors)*$this->getBoost());
-
-            return $optimizedQuery;
-        }
-
-
-        // This boolean query can't be transformed to Term/MultiTerm query and still contains
-        // several subqueries
-
-        // Separate prohibited terms
-        $prohibitedTerms        = array();
-        foreach ($terms as $id => $term) {
-            if ($tsigns[$id] === false) {
-                $prohibitedTerms[]        = $term;
-
-                unset($terms[$id]);
-                unset($tsigns[$id]);
-                unset($boostFactors[$id]);
-            }
-        }
-
-        if (count($terms) == 1) {
-            $clause = new Zend_Search_Lucene_Search_Query_Term(reset($terms));
-            $clause->setBoost(reset($boostFactors));
-
-            $subqueries[] = $clause;
-            $signs[]      = reset($tsigns);
-
-            // Clear terms list
-            $terms = array();
-        } else if (count($terms) > 1  &&  count(array_unique($boostFactors)) == 1) {
-            $clause = new Zend_Search_Lucene_Search_Query_MultiTerm($terms, $tsigns);
-            $clause->setBoost(reset($boostFactors));
-
-            $subqueries[] = $clause;
-            // Clause sign is 'required' if clause contains required terms. 'Optional' otherwise.
-            $signs[]      = (in_array(true, $tsigns))? true : null;
-
-            // Clear terms list
-            $terms = array();
-        }
-
-        if (count($prohibitedTerms) == 1) {
-            // (boost factors are not significant for prohibited clauses)
-            $subqueries[] = new Zend_Search_Lucene_Search_Query_Term(reset($prohibitedTerms));
-            $signs[]      = false;
-
-            // Clear prohibited terms list
-            $prohibitedTerms = array();
-        } else if (count($prohibitedTerms) > 1) {
-            // prepare signs array
-            $prohibitedSigns = array();
-            foreach ($prohibitedTerms as $id => $term) {
-                // all prohibited term are grouped as optional into multi-term query
-                $prohibitedSigns[$id] = null;
-            }
-
-            // (boost factors are not significant for prohibited clauses)
-            $subqueries[] = new Zend_Search_Lucene_Search_Query_MultiTerm($prohibitedTerms, $prohibitedSigns);
-            // Clause sign is 'prohibited'
-            $signs[]      = false;
-
-            // Clear terms list
-            $prohibitedTerms = array();
-        }
-
-        /** @todo Group terms with the same boost factors together */
-
-        // Check, that all terms are processed
-        // Replace candidate for optimized query
-        if (count($terms) == 0  &&  count($prohibitedTerms) == 0) {
-            $optimizedQuery = new Zend_Search_Lucene_Search_Query_Boolean($subqueries, $signs);
-            $optimizedQuery->setBoost($this->getBoost());
-        }
-
-        return $optimizedQuery;
-    }
-
-    /**
-     * Returns subqueries
-     *
-     * @return array
-     */
-    public function getSubqueries()
-    {
-        return $this->_subqueries;
-    }
-
-
-    /**
-     * Return subqueries signs
-     *
-     * @return array
-     */
-    public function getSigns()
-    {
-        return $this->_signs;
-    }
-
-
-    /**
-     * Constructs an appropriate Weight implementation for this query.
-     *
-     * @param Zend_Search_Lucene_Interface $reader
-     * @return Zend_Search_Lucene_Search_Weight
-     */
-    public function createWeight(Zend_Search_Lucene_Interface $reader)
-    {
-        $this->_weight = new Zend_Search_Lucene_Search_Weight_Boolean($this, $reader);
-        return $this->_weight;
-    }
-
-
-    /**
-     * Calculate result vector for Conjunction query
-     * (like '<subquery1> AND <subquery2> AND <subquery3>')
-     */
-    private function _calculateConjunctionResult()
-    {
-        $this->_resVector = null;
-
-        if (count($this->_subqueries) == 0) {
-            $this->_resVector = array();
-        }
-
-        $resVectors      = array();
-        $resVectorsSizes = array();
-        $resVectorsIds   = array(); // is used to prevent arrays comparison
-        foreach ($this->_subqueries as $subqueryId => $subquery) {
-            $resVectors[]      = $subquery->matchedDocs();
-            $resVectorsSizes[] = count(end($resVectors));
-            $resVectorsIds[]   = $subqueryId;
-        }
-        // sort resvectors in order of subquery cardinality increasing
-        array_multisort($resVectorsSizes, SORT_ASC, SORT_NUMERIC,
-                        $resVectorsIds,   SORT_ASC, SORT_NUMERIC,
-                        $resVectors);
-
-        foreach ($resVectors as $nextResVector) {
-            if($this->_resVector === null) {
-                $this->_resVector = $nextResVector;
-            } else {
-                //$this->_resVector = array_intersect_key($this->_resVector, $nextResVector);
-
-                /**
-                 * This code is used as workaround for array_intersect_key() slowness problem.
-                 */
-                $updatedVector = array();
-                foreach ($this->_resVector as $id => $value) {
-                    if (isset($nextResVector[$id])) {
-                        $updatedVector[$id] = $value;
-                    }
-                }
-                $this->_resVector = $updatedVector;
-            }
-
-            if (count($this->_resVector) == 0) {
-                // Empty result set, we don't need to check other terms
-                break;
-            }
-        }
-
-        // ksort($this->_resVector, SORT_NUMERIC);
-        // Used algorithm doesn't change elements order
-    }
-
-
-    /**
-     * Calculate result vector for non Conjunction query
-     * (like '<subquery1> AND <subquery2> AND NOT <subquery3> OR <subquery4>')
-     */
-    private function _calculateNonConjunctionResult()
-    {
-        $requiredVectors      = array();
-        $requiredVectorsSizes = array();
-        $requiredVectorsIds   = array(); // is used to prevent arrays comparison
-
-        $optional = array();
-
-        foreach ($this->_subqueries as $subqueryId => $subquery) {
-            if ($this->_signs[$subqueryId] === true) {
-                // required
-                $requiredVectors[]      = $subquery->matchedDocs();
-                $requiredVectorsSizes[] = count(end($requiredVectors));
-                $requiredVectorsIds[]   = $subqueryId;
-            } elseif ($this->_signs[$subqueryId] === false) {
-                // prohibited
-                // Do nothing. matchedDocs() may include non-matching id's
-                // Calculating prohibited vector may take significant time, but do not affect the result
-                // Skipped.
-            } else {
-                // neither required, nor prohibited
-                // array union
-                $optional += $subquery->matchedDocs();
-            }
-        }
-
-        // sort resvectors in order of subquery cardinality increasing
-        array_multisort($requiredVectorsSizes, SORT_ASC, SORT_NUMERIC,
-                        $requiredVectorsIds,   SORT_ASC, SORT_NUMERIC,
-                        $requiredVectors);
-
-        $required = null;
-        foreach ($requiredVectors as $nextResVector) {
-            if($required === null) {
-                $required = $nextResVector;
-            } else {
-                //$required = array_intersect_key($required, $nextResVector);
-
-                /**
-                 * This code is used as workaround for array_intersect_key() slowness problem.
-                 */
-                $updatedVector = array();
-                foreach ($required as $id => $value) {
-                    if (isset($nextResVector[$id])) {
-                        $updatedVector[$id] = $value;
-                    }
-                }
-                $required = $updatedVector;
-            }
-
-            if (count($required) == 0) {
-                // Empty result set, we don't need to check other terms
-                break;
-            }
-        }
-
-
-        if ($required !== null) {
-            $this->_resVector = &$required;
-        } else {
-            $this->_resVector = &$optional;
-        }
-
-        ksort($this->_resVector, SORT_NUMERIC);
-    }
-
-
-    /**
-     * Score calculator for conjunction queries (all subqueries are required)
-     *
-     * @param integer $docId
-     * @param Zend_Search_Lucene_Interface $reader
-     * @return float
-     */
-    public function _conjunctionScore($docId, Zend_Search_Lucene_Interface $reader)
-    {
-        if ($this->_coord === null) {
-            $this->_coord = $reader->getSimilarity()->coord(count($this->_subqueries),
-                                                            count($this->_subqueries) );
-        }
-
-        $score = 0;
-
-        foreach ($this->_subqueries as $subquery) {
-            $subscore = $subquery->score($docId, $reader);
-
-            if ($subscore == 0) {
-                return 0;
-            }
-
-            $score += $subquery->score($docId, $reader) * $this->_coord;
-        }
-
-        return $score * $this->_coord * $this->getBoost();
-    }
-
-
-    /**
-     * Score calculator for non conjunction queries (not all subqueries are required)
-     *
-     * @param integer $docId
-     * @param Zend_Search_Lucene_Interface $reader
-     * @return float
-     */
-    public function _nonConjunctionScore($docId, Zend_Search_Lucene_Interface $reader)
-    {
-        if ($this->_coord === null) {
-            $this->_coord = array();
-
-            $maxCoord = 0;
-            foreach ($this->_signs as $sign) {
-                if ($sign !== false /* not prohibited */) {
-                    $maxCoord++;
-                }
-            }
-
-            for ($count = 0; $count <= $maxCoord; $count++) {
-                $this->_coord[$count] = $reader->getSimilarity()->coord($count, $maxCoord);
-            }
-        }
-
-        $score = 0;
-        $matchedSubqueries = 0;
-        foreach ($this->_subqueries as $subqueryId => $subquery) {
-            $subscore = $subquery->score($docId, $reader);
-
-            // Prohibited
-            if ($this->_signs[$subqueryId] === false && $subscore != 0) {
-                return 0;
-            }
-
-            // is required, but doen't match
-            if ($this->_signs[$subqueryId] === true &&  $subscore == 0) {
-                return 0;
-            }
-
-            if ($subscore != 0) {
-                $matchedSubqueries++;
-                $score += $subscore;
-            }
-        }
-
-        return $score * $this->_coord[$matchedSubqueries] * $this->getBoost();
-    }
-
-    /**
-     * Execute query in context of index reader
-     * It also initializes necessary internal structures
-     *
-     * @param Zend_Search_Lucene_Interface $reader
-     * @param Zend_Search_Lucene_Index_DocsFilter|null $docsFilter
-     */
-    public function execute(Zend_Search_Lucene_Interface $reader, $docsFilter = null)
-    {
-        // Initialize weight if it's not done yet
-        $this->_initWeight($reader);
-
-        if ($docsFilter === null) {
-            // Create local documents filter if it's not provided by upper query
-            $docsFilter = new Zend_Search_Lucene_Index_DocsFilter();
-        }
-
-        foreach ($this->_subqueries as $subqueryId => $subquery) {
-            if ($this->_signs == null  ||  $this->_signs[$subqueryId] === true) {
-                // Subquery is required
-                $subquery->execute($reader, $docsFilter);
-            } else {
-                $subquery->execute($reader);
-            }
-        }
-
-        if ($this->_signs === null) {
-            $this->_calculateConjunctionResult();
-        } else {
-            $this->_calculateNonConjunctionResult();
-        }
-    }
-
-
-
-    /**
-     * Get document ids likely matching the query
-     *
-     * It's an array with document ids as keys (performance considerations)
-     *
-     * @return array
-     */
-    public function matchedDocs()
-    {
-        return $this->_resVector;
-    }
-
-    /**
-     * Score specified document
-     *
-     * @param integer $docId
-     * @param Zend_Search_Lucene_Interface $reader
-     * @return float
-     */
-    public function score($docId, Zend_Search_Lucene_Interface $reader)
-    {
-        if (isset($this->_resVector[$docId])) {
-            if ($this->_signs === null) {
-                return $this->_conjunctionScore($docId, $reader);
-            } else {
-                return $this->_nonConjunctionScore($docId, $reader);
-            }
-        } else {
-            return 0;
-        }
-    }
-
-    /**
-     * Return query terms
-     *
-     * @return array
-     */
-    public function getQueryTerms()
-    {
-        $terms = array();
-
-        foreach ($this->_subqueries as $id => $subquery) {
-            if ($this->_signs === null  ||  $this->_signs[$id] !== false) {
-                $terms = array_merge($terms, $subquery->getQueryTerms());
-            }
-        }
-
-        return $terms;
-    }
-
-    /**
-     * Query specific matches highlighting
-     *
-     * @param Zend_Search_Lucene_Search_Highlighter_Interface $highlighter  Highlighter object (also contains doc for highlighting)
-     */
-    protected function _highlightMatches(Zend_Search_Lucene_Search_Highlighter_Interface $highlighter)
-    {
-        foreach ($this->_subqueries as $id => $subquery) {
-            if ($this->_signs === null  ||  $this->_signs[$id] !== false) {
-                $subquery->_highlightMatches($highlighter);
-            }
-        }
-    }
-
-    /**
-     * Print a query
-     *
-     * @return string
-     */
-    public function __toString()
-    {
-        // It's used only for query visualisation, so we don't care about characters escaping
-
-        $query = '';
-
-        foreach ($this->_subqueries as $id => $subquery) {
-            if ($id != 0) {
-                $query .= ' ';
-            }
-
-            if ($this->_signs === null || $this->_signs[$id] === true) {
-                $query .= '+';
-            } else if ($this->_signs[$id] === false) {
-                $query .= '-';
-            }
-
-            $query .= '(' . $subquery->__toString() . ')';
-        }
-
-        if ($this->getBoost() != 1) {
-            $query = '(' . $query . ')^' . round($this->getBoost(), 4);
-        }
-
-        return $query;
-    }
-}
-
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+B0e34ss9k4k4dpK6zvtWyNCCjnh+h4W=

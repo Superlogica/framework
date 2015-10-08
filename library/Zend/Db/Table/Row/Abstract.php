@@ -1,1171 +1,424 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Db
- * @subpackage Table
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Abstract.php 6332 2007-09-13 00:35:08Z bkarwin $
- */
-
-/**
- * @see Zend_Db
- */
-require_once 'Zend/Db.php';
-
-/**
- * @category   Zend
- * @package    Zend_Db
- * @subpackage Table
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-abstract class Zend_Db_Table_Row_Abstract implements ArrayAccess
-{
-
-    /**
-     * The data for each column in the row (column_name => value).
-     * The keys must match the physical names of columns in the
-     * table for which this row is defined.
-     *
-     * @var array
-     */
-    protected $_data = array();
-
-    /**
-     * This is set to a copy of $_data when the data is fetched from
-     * a database, specified as a new tuple in the constructor, or
-     * when dirty data is posted to the database with save().
-     *
-     * @var array
-     */
-    protected $_cleanData = array();
-
-    /**
-     * Tracks columns where data has been updated. Allows more specific insert and
-     * update operations.
-     *
-     * @var array
-     */
-    protected $_modifiedFields = array();
-
-    /**
-     * Zend_Db_Table_Abstract parent class or instance.
-     *
-     * @var Zend_Db_Table_Abstract
-     */
-    protected $_table = null;
-
-    /**
-     * Connected is true if we have a reference to a live
-     * Zend_Db_Table_Abstract object.
-     * This is false after the Rowset has been deserialized.
-     *
-     * @var boolean
-     */
-    protected $_connected = true;
-
-    /**
-     * A row is marked read only if it contains columns that are not physically represented within
-     * the database schema (e.g. evaluated columns/Zend_Db_Expr columns). This can also be passed
-     * as a run-time config options as a means of protecting row data.
-     *
-     * @var boolean
-     */
-    protected $_readOnly = false;
-
-    /**
-     * Name of the class of the Zend_Db_Table_Abstract object.
-     *
-     * @var string
-     */
-    protected $_tableClass = null;
-
-    /**
-     * Primary row key(s).
-     *
-     * @var array
-     */
-    protected $_primary;
-
-    /**
-     * Constructor.
-     *
-     * Supported params for $config are:-
-     * - table       = class name or object of type Zend_Db_Table_Abstract
-     * - data        = values of columns in this row.
-     *
-     * @param  array $config OPTIONAL Array of user-specified config options.
-     * @return void
-     * @throws Zend_Db_Table_Row_Exception
-     */
-    public function __construct(array $config = array())
-    {
-        if (isset($config['table']) && $config['table'] instanceof Zend_Db_Table_Abstract) {
-            $this->_table = $config['table'];
-            $this->_tableClass = get_class($this->_table);
-        } else if ($this->_tableClass !== null) {
-            if (!class_exists($this->_tableClass)) {
-                require_once 'Zend/Loader.php';
-                Zend_Loader::loadClass($this->_tableClass);
-            }
-            $this->_table = new $this->_tableClass();
-        }
-
-        if (isset($config['data'])) {
-            if (!is_array($config['data'])) {
-                require_once 'Zend/Db/Table/Row/Exception.php';
-                throw new Zend_Db_Table_Row_Exception('Data must be an array');
-            }
-            $this->_data = $config['data'];
-        }
-        if (isset($config['stored']) && $config['stored'] === true) {
-            $this->_cleanData = $this->_data;
-        }
-
-        if (isset($config['readOnly']) && $config['readOnly'] === true) {
-            $this->setReadOnly(true);
-        }
-
-        // Retrieve primary keys from table schema
-        if (($table = $this->_getTable())) {
-            $info = $table->info();
-            $this->_primary = (array) $info['primary'];
-        }
-
-        $this->init();
-    }
-
-    /**
-     * Transform a column name from the user-specified form
-     * to the physical form used in the database.
-     * You can override this method in a custom Row class
-     * to implement column name mappings, for example inflection.
-     *
-     * @param string $columnName Column name given.
-     * @return string The column name after transformation applied (none by default).
-     * @throws Zend_Db_Table_Row_Exception if the $columnName is not a string.
-     */
-    protected function _transformColumn($columnName)
-    {
-        if (!is_string($columnName)) {
-            require_once 'Zend/Db/Table/Row/Exception.php';
-            throw new Zend_Db_Table_Row_Exception('Specified column is not a string');
-        }
-        // Perform no transformation by default
-        return $columnName;
-    }
-
-    /**
-     * Retrieve row field value
-     *
-     * @param  string $columnName The user-specified column name.
-     * @return string             The corresponding column value.
-     * @throws Zend_Db_Table_Row_Exception if the $columnName is not a column in the row.
-     */
-    public function __get($columnName)
-    {
-        $columnName = $this->_transformColumn($columnName);
-        if (!array_key_exists($columnName, $this->_data)) {
-            require_once 'Zend/Db/Table/Row/Exception.php';
-            throw new Zend_Db_Table_Row_Exception("Specified column \"$columnName\" is not in the row");
-        }
-        return $this->_data[$columnName];
-    }
-
-    /**
-     * Set row field value
-     *
-     * @param  string $columnName The column key.
-     * @param  mixed  $value      The value for the property.
-     * @return void
-     * @throws Zend_Db_Table_Row_Exception
-     */
-    public function __set($columnName, $value)
-    {
-        $columnName = $this->_transformColumn($columnName);
-        if (!array_key_exists($columnName, $this->_data)) {
-            require_once 'Zend/Db/Table/Row/Exception.php';
-            throw new Zend_Db_Table_Row_Exception("Specified column \"$columnName\" is not in the row");
-        }
-        $this->_data[$columnName] = $value;
-        $this->_modifiedFields[$columnName] = true;
-    }
-
-    /**
-     * Unset row field value
-     *
-     * @param  string $columnName The column key.
-     * @return Zend_Db_Table_Row_Abstract
-     * @throws Zend_Db_Table_Row_Exception
-     */
-    public function __unset($columnName)
-    {
-        $columnName = $this->_transformColumn($columnName);
-        if (!array_key_exists($columnName, $this->_data)) {
-            require_once 'Zend/Db/Table/Row/Exception.php';
-            throw new Zend_Db_Table_Row_Exception("Specified column \"$columnName\" is not in the row");
-        }
-        if ($this->isConnected() && in_array($columnName, $this->_table->info('primary'))) {
-            require_once 'Zend/Db/Table/Row/Exception.php';
-            throw new Zend_Db_Table_Row_Exception("Specified column \"$columnName\" is a primary key and should not be unset");
-        }
-        unset($this->_data[$columnName]);
-        return $this;
-    }
-
-    /**
-     * Test existence of row field
-     *
-     * @param  string  $columnName   The column key.
-     * @return boolean
-     */
-    public function __isset($columnName)
-    {
-        $columnName = $this->_transformColumn($columnName);
-        return array_key_exists($columnName, $this->_data);
-    }
-
-    /**
-     * Store table, primary key and data in serialized object
-     *
-     * @return array
-     */
-    public function __sleep()
-    {
-        return array('_tableClass', '_primary', '_data', '_cleanData', '_readOnly' ,'_modifiedFields');
-    }
-
-    /**
-     * Setup to do on wakeup.
-     * A de-serialized Row should not be assumed to have access to a live
-     * database connection, so set _connected = false.
-     *
-     * @return void
-     */
-    public function __wakeup()
-    {
-        $this->_connected = false;
-    }
-
-    /**
-     * Proxy to __isset
-     * Required by the ArrayAccess implementation
-     *
-     * @param string $offset
-     * @return boolean
-     */
-    public function offsetExists($offset)
-    {
-        return $this->__isset($offset);
-    }
-
-    /**
-     * Proxy to __get
-     * Required by the ArrayAccess implementation
-     *
-     * @param string $offset
-     * @return string
-     */
-     public function offsetGet($offset)
-     {
-         return $this->__get($offset);
-     }
-
-     /**
-      * Proxy to __set
-      * Required by the ArrayAccess implementation
-      *
-      * @param string $offset
-      * @param mixed $value
-      */
-     public function offsetSet($offset, $value)
-     {
-         $this->__set($offset, $value);
-     }
-
-     /**
-      * Does nothing
-      * Required by the ArrayAccess implementation
-      *
-      * @param string $offset
-      */
-     public function offsetUnset($offset)
-     {
-     }
-
-    /**
-     * Initialize object
-     *
-     * Called from {@link __construct()} as final step of object instantiation.
-     *
-     * @return void
-     */
-    public function init()
-    {
-    }
-
-    /**
-     * Returns the table object, or null if this is disconnected row
-     *
-     * @return Zend_Db_Table_Abstract|null
-     */
-    public function getTable()
-    {
-        return $this->_table;
-    }
-
-    /**
-     * Set the table object, to re-establish a live connection
-     * to the database for a Row that has been de-serialized.
-     *
-     * @param Zend_Db_Table_Abstract $table
-     * @return boolean
-     * @throws Zend_Db_Table_Row_Exception
-     */
-    public function setTable(Zend_Db_Table_Abstract $table = null)
-    {
-        if ($table == null) {
-            $this->_table = null;
-            $this->_connected = false;
-            return false;
-        }
-
-        $tableClass = get_class($table);
-        if (! $table instanceof $this->_tableClass) {
-            require_once 'Zend/Db/Table/Row/Exception.php';
-            throw new Zend_Db_Table_Row_Exception("The specified Table is of class $tableClass, expecting class to be instance of $this->_tableClass");
-        }
-
-        $this->_table = $table;
-        $this->_tableClass = $tableClass;
-
-        $info = $this->_table->info();
-
-        if ($info['cols'] != array_keys($this->_data)) {
-            require_once 'Zend/Db/Table/Row/Exception.php';
-            throw new Zend_Db_Table_Row_Exception('The specified Table does not have the same columns as the Row');
-        }
-
-        if (! array_intersect((array) $this->_primary, $info['primary']) == (array) $this->_primary) {
-
-            require_once 'Zend/Db/Table/Row/Exception.php';
-            throw new Zend_Db_Table_Row_Exception("The specified Table '$tableClass' does not have the same primary key as the Row");
-        }
-
-        $this->_connected = true;
-        return true;
-    }
-
-    /**
-     * Query the class name of the Table object for which this
-     * Row was created.
-     *
-     * @return string
-     */
-    public function getTableClass()
-    {
-        return $this->_tableClass;
-    }
-
-    /**
-     * Test the connected status of the row.
-     *
-     * @return boolean
-     */
-    public function isConnected()
-    {
-        return $this->_connected;
-    }
-
-    /**
-     * Test the read-only status of the row.
-     *
-     * @return boolean
-     */
-    public function isReadOnly()
-    {
-        return $this->_readOnly;
-    }
-
-    /**
-     * Set the read-only status of the row.
-     *
-     * @param boolean $flag
-     * @return boolean
-     */
-    public function setReadOnly($flag)
-    {
-        $this->_readOnly = (bool) $flag;
-    }
-
-    /**
-     * Returns an instance of the parent table's Zend_Db_Table_Select object.
-     *
-     * @return Zend_Db_Table_Select
-     */
-    public function select()
-    {
-        return $this->getTable()->select();
-    }
-
-    /**
-     * Saves the properties to the database.
-     *
-     * This performs an intelligent insert/update, and reloads the
-     * properties with fresh data from the table on success.
-     *
-     * @return mixed The primary key value(s), as an associative array if the
-     *     key is compound, or a scalar if the key is single-column.
-     */
-    public function save()
-    {
-        /**
-         * If the _cleanData array is empty,
-         * this is an INSERT of a new row.
-         * Otherwise it is an UPDATE.
-         */
-        if (empty($this->_cleanData)) {
-            return $this->_doInsert();
-        } else {
-            return $this->_doUpdate();
-        }
-    }
-
-    /**
-     * @return mixed The primary key value(s), as an associative array if the
-     *     key is compound, or a scalar if the key is single-column.
-     */
-    protected function _doInsert()
-    {
-        /**
-         * A read-only row cannot be saved.
-         */
-        if ($this->_readOnly === true) {
-            require_once 'Zend/Db/Table/Row/Exception.php';
-            throw new Zend_Db_Table_Row_Exception('This row has been marked read-only');
-        }
-
-        /**
-         * Run pre-INSERT logic
-         */
-        $this->_insert();
-
-        /**
-         * Execute the INSERT (this may throw an exception)
-         */
-        $data = array_intersect_key($this->_data, $this->_modifiedFields);
-        $primaryKey = $this->_getTable()->insert($data);
-
-        /**
-         * Normalize the result to an array indexed by primary key column(s).
-         * The table insert() method may return a scalar.
-         */
-        if (is_array($primaryKey)) {
-            $newPrimaryKey = $primaryKey;
-        } else {
-        	//ZF-6167 Use tempPrimaryKey temporary to avoid that zend encoding fails.
-            $tempPrimaryKey = (array) $this->_primary;
-        	$newPrimaryKey = array(current($tempPrimaryKey) => $primaryKey);
-        }
-
-        /**
-         * Save the new primary key value in _data.  The primary key may have
-         * been generated by a sequence or auto-increment mechanism, and this
-         * merge should be done before the _postInsert() method is run, so the
-         * new values are available for logging, etc.
-         */
-        $this->_data = array_merge($this->_data, $newPrimaryKey);
-
-        /**
-         * Run post-INSERT logic
-         */
-        $this->_postInsert();
-
-        /**
-         * Update the _cleanData to reflect that the data has been inserted.
-         */
-        $this->_refresh();
-
-        return $primaryKey;
-    }
-
-    /**
-     * @return mixed The primary key value(s), as an associative array if the
-     *     key is compound, or a scalar if the key is single-column.
-     */
-    protected function _doUpdate()
-    {
-        /**
-         * A read-only row cannot be saved.
-         */
-        if ($this->_readOnly === true) {
-            require_once 'Zend/Db/Table/Row/Exception.php';
-            throw new Zend_Db_Table_Row_Exception('This row has been marked read-only');
-        }
-
-        /**
-         * Get expressions for a WHERE clause
-         * based on the primary key value(s).
-         */
-        $where = $this->_getWhereQuery(false);
-
-        /**
-         * Run pre-UPDATE logic
-         */
-        $this->_update();
-
-        /**
-         * Compare the data to the modified fields array to discover
-         * which columns have been changed.
-         */
-        $diffData = array_intersect_key($this->_data, $this->_modifiedFields);
-
-        /**
-         * Were any of the changed columns part of the primary key?
-         */
-        $pkDiffData = array_intersect_key($diffData, array_flip((array)$this->_primary));
-
-        /**
-         * Execute cascading updates against dependent tables.
-         * Do this only if primary key value(s) were changed.
-         */
-        if (count($pkDiffData) > 0) {
-            $depTables = $this->_getTable()->getDependentTables();
-            if (!empty($depTables)) {
-                $db = $this->_getTable()->getAdapter();
-                $pkNew = $this->_getPrimaryKey(true);
-                $pkOld = $this->_getPrimaryKey(false);
-                foreach ($depTables as $tableClass) {
-                    if (!class_exists($tableClass)) {
-                        try {
-                            require_once 'Zend/Loader.php';
-                            Zend_Loader::loadClass($tableClass);
-                        } catch (Zend_Exception $e) {
-                            require_once 'Zend/Db/Table/Row/Exception.php';
-                            throw new Zend_Db_Table_Row_Exception($e->getMessage());
-                        }
-                    }
-                    $t = new $tableClass(array('db' => $db));
-                    $t->_cascadeUpdate($this->getTableClass(), $pkOld, $pkNew);
-                }
-            }
-        }
-
-        /**
-         * Execute the UPDATE (this may throw an exception)
-         * Do this only if data values were changed.
-         * Use the $diffData variable, so the UPDATE statement
-         * includes SET terms only for data values that changed.
-         */
-        if (count($diffData) > 0) {
-            $this->_getTable()->update($diffData, $where);
-        }
-
-        /**
-         * Run post-UPDATE logic.  Do this before the _refresh()
-         * so the _postUpdate() function can tell the difference
-         * between changed data and clean (pre-changed) data.
-         */
-        $this->_postUpdate();
-
-        /**
-         * Refresh the data just in case triggers in the RDBMS changed
-         * any columns.  Also this resets the _cleanData.
-         */
-        $this->_refresh();
-
-        /**
-         * Return the primary key value(s) as an array
-         * if the key is compound or a scalar if the key
-         * is a scalar.
-         */
-        $primaryKey = $this->_getPrimaryKey(true);
-        if (count($primaryKey) == 1) {
-            return current($primaryKey);
-        }
-
-        return $primaryKey;
-    }
-
-    /**
-     * Deletes existing rows.
-     *
-     * @return int The number of rows deleted.
-     */
-    public function delete()
-    {
-        /**
-         * A read-only row cannot be deleted.
-         */
-        if ($this->_readOnly === true) {
-            require_once 'Zend/Db/Table/Row/Exception.php';
-            throw new Zend_Db_Table_Row_Exception('This row has been marked read-only');
-        }
-
-        $where = $this->_getWhereQuery();
-
-        /**
-         * Execute pre-DELETE logic
-         */
-        $this->_delete();
-
-        /**
-         * Execute cascading deletes against dependent tables
-         */
-        $depTables = $this->_getTable()->getDependentTables();
-        if (!empty($depTables)) {
-            $db = $this->_getTable()->getAdapter();
-            $pk = $this->_getPrimaryKey();
-            foreach ($depTables as $tableClass) {
-                if (!class_exists($tableClass)) {
-                    try {
-                        require_once 'Zend/Loader.php';
-                        Zend_Loader::loadClass($tableClass);
-                    } catch (Zend_Exception $e) {
-                        require_once 'Zend/Db/Table/Row/Exception.php';
-                        throw new Zend_Db_Table_Row_Exception($e->getMessage());
-                    }
-                }
-                $t = new $tableClass(array('db' => $db));
-                $t->_cascadeDelete($this->getTableClass(), $pk);
-            }
-        }
-
-        /**
-         * Execute the DELETE (this may throw an exception)
-         */
-        $result = $this->_getTable()->delete($where);
-
-        /**
-         * Execute post-DELETE logic
-         */
-        $this->_postDelete();
-
-        /**
-         * Reset all fields to null to indicate that the row is not there
-         */
-        $this->_data = array_combine(
-            array_keys($this->_data),
-            array_fill(0, count($this->_data), null)
-        );
-
-        return $result;
-    }
-
-    /**
-     * Returns the column/value data as an array.
-     *
-     * @return array
-     */
-    public function toArray()
-    {
-        return (array)$this->_data;
-    }
-
-    /**
-     * Sets all data in the row from an array.
-     *
-     * @param  array $data
-     * @return Zend_Db_Table_Row_Abstract Provides a fluent interface
-     */
-    public function setFromArray(array $data)
-    {
-        $data = array_intersect_key($data, $this->_data);
-
-        foreach ($data as $columnName => $value) {
-            $this->__set($columnName, $value);
-        }
-
-        return $this;
-    }
-
-    /**
-     * Refreshes properties from the database.
-     *
-     * @return void
-     */
-    public function refresh()
-    {
-        return $this->_refresh();
-    }
-
-    /**
-     * Retrieves an instance of the parent table.
-     *
-     * @return Zend_Db_Table_Abstract
-     */
-    protected function _getTable()
-    {
-        if (!$this->_connected) {
-            require_once 'Zend/Db/Table/Row/Exception.php';
-            throw new Zend_Db_Table_Row_Exception('Cannot save a Row unless it is connected');
-        }
-        return $this->_table;
-    }
-
-    /**
-     * Retrieves an associative array of primary keys.
-     *
-     * @param bool $useDirty
-     * @return array
-     */
-    protected function _getPrimaryKey($useDirty = true)
-    {
-        if (!is_array($this->_primary)) {
-            require_once 'Zend/Db/Table/Row/Exception.php';
-            throw new Zend_Db_Table_Row_Exception("The primary key must be set as an array");
-        }
-
-        $primary = array_flip($this->_primary);
-        if ($useDirty) {
-            $array = array_intersect_key($this->_data, $primary);
-        } else {
-            $array = array_intersect_key($this->_cleanData, $primary);
-        }
-        if (count($primary) != count($array)) {
-            require_once 'Zend/Db/Table/Row/Exception.php';
-            throw new Zend_Db_Table_Row_Exception("The specified Table '$this->_tableClass' does not have the same primary key as the Row");
-        }
-        return $array;
-    }
-
-    /**
-     * Constructs where statement for retrieving row(s).
-     *
-     * @param bool $useDirty
-     * @return array
-     */
-    protected function _getWhereQuery($useDirty = true)
-    {
-        $where = array();
-        $db = $this->_getTable()->getAdapter();
-        $primaryKey = $this->_getPrimaryKey($useDirty);
-        $info = $this->_getTable()->info();
-        $metadata = $info[Zend_Db_Table_Abstract::METADATA];
-
-        // retrieve recently updated row using primary keys
-        $where = array();
-        foreach ($primaryKey as $column => $value) {
-            $tableName = $db->quoteIdentifier($info[Zend_Db_Table_Abstract::NAME], true);
-            $type = $metadata[$column]['DATA_TYPE'];
-            $columnName = $db->quoteIdentifier($column, true);
-            $where[] = $db->quoteInto("{$tableName}.{$columnName} = ?", $value, $type);
-        }
-        return $where;
-    }
-
-    /**
-     * Refreshes properties from the database.
-     *
-     * @return void
-     */
-    protected function _refresh()
-    {
-        $where = $this->_getWhereQuery();
-        $row = $this->_getTable()->fetchRow($where);
-
-        if (null === $row) {
-            require_once 'Zend/Db/Table/Row/Exception.php';
-            throw new Zend_Db_Table_Row_Exception('Cannot refresh row as parent is missing');
-        }
-
-        $this->_data = $row->toArray();
-        $this->_cleanData = $this->_data;
-        $this->_modifiedFields = array();
-    }
-
-    /**
-     * Allows pre-insert logic to be applied to row.
-     * Subclasses may override this method.
-     *
-     * @return void
-     */
-    protected function _insert()
-    {
-    }
-
-    /**
-     * Allows post-insert logic to be applied to row.
-     * Subclasses may override this method.
-     *
-     * @return void
-     */
-    protected function _postInsert()
-    {
-    }
-
-    /**
-     * Allows pre-update logic to be applied to row.
-     * Subclasses may override this method.
-     *
-     * @return void
-     */
-    protected function _update()
-    {
-    }
-
-    /**
-     * Allows post-update logic to be applied to row.
-     * Subclasses may override this method.
-     *
-     * @return void
-     */
-    protected function _postUpdate()
-    {
-    }
-
-    /**
-     * Allows pre-delete logic to be applied to row.
-     * Subclasses may override this method.
-     *
-     * @return void
-     */
-    protected function _delete()
-    {
-    }
-
-    /**
-     * Allows post-delete logic to be applied to row.
-     * Subclasses may override this method.
-     *
-     * @return void
-     */
-    protected function _postDelete()
-    {
-    }
-
-    /**
-     * Prepares a table reference for lookup.
-     *
-     * Ensures all reference keys are set and properly formatted.
-     *
-     * @param Zend_Db_Table_Abstract $dependentTable
-     * @param Zend_Db_Table_Abstract $parentTable
-     * @param string                 $ruleKey
-     * @return array
-     */
-    protected function _prepareReference(Zend_Db_Table_Abstract $dependentTable, Zend_Db_Table_Abstract $parentTable, $ruleKey)
-    {
-        $map = $dependentTable->getReference(get_class($parentTable), $ruleKey);
-
-        if (!isset($map[Zend_Db_Table_Abstract::REF_COLUMNS])) {
-            $parentInfo = $parentTable->info();
-            $map[Zend_Db_Table_Abstract::REF_COLUMNS] = array_values((array) $parentInfo['primary']);
-        }
-
-        $map[Zend_Db_Table_Abstract::COLUMNS] = (array) $map[Zend_Db_Table_Abstract::COLUMNS];
-        $map[Zend_Db_Table_Abstract::REF_COLUMNS] = (array) $map[Zend_Db_Table_Abstract::REF_COLUMNS];
-
-        return $map;
-    }
-
-    /**
-     * Query a dependent table to retrieve rows matching the current row.
-     *
-     * @param string|Zend_Db_Table_Abstract  $dependentTable
-     * @param string                         OPTIONAL $ruleKey
-     * @param Zend_Db_Table_Select           OPTIONAL $select
-     * @return Zend_Db_Table_Rowset_Abstract Query result from $dependentTable
-     * @throws Zend_Db_Table_Row_Exception If $dependentTable is not a table or is not loadable.
-     */
-    public function findDependentRowset($dependentTable, $ruleKey = null, Zend_Db_Table_Select $select = null)
-    {
-        $db = $this->_getTable()->getAdapter();
-
-        if (is_string($dependentTable)) {
-            if (!class_exists($dependentTable)) {
-                try {
-                    require_once 'Zend/Loader.php';
-                    Zend_Loader::loadClass($dependentTable);
-                } catch (Zend_Exception $e) {
-                    require_once 'Zend/Db/Table/Row/Exception.php';
-                    throw new Zend_Db_Table_Row_Exception($e->getMessage());
-                }
-            }
-            $dependentTable = new $dependentTable(array('db' => $db));
-        }
-        if (! $dependentTable instanceof Zend_Db_Table_Abstract) {
-            $type = gettype($dependentTable);
-            if ($type == 'object') {
-                $type = get_class($dependentTable);
-            }
-            require_once 'Zend/Db/Table/Row/Exception.php';
-            throw new Zend_Db_Table_Row_Exception("Dependent table must be a Zend_Db_Table_Abstract, but it is $type");
-        }
-
-        if ($select === null) {
-            $select = $dependentTable->select();
-        } else {
-            $select->setTable($dependentTable);
-        }
-
-        $map = $this->_prepareReference($dependentTable, $this->_getTable(), $ruleKey);
-
-        for ($i = 0; $i < count($map[Zend_Db_Table_Abstract::COLUMNS]); ++$i) {
-            $parentColumnName = $db->foldCase($map[Zend_Db_Table_Abstract::REF_COLUMNS][$i]);
-            $value = $this->_data[$parentColumnName];
-            // Use adapter from dependent table to ensure correct query construction
-            $dependentDb = $dependentTable->getAdapter();
-            $dependentColumnName = $dependentDb->foldCase($map[Zend_Db_Table_Abstract::COLUMNS][$i]);
-            $dependentColumn = $dependentDb->quoteIdentifier($dependentColumnName, true);
-            $dependentInfo = $dependentTable->info();
-            $type = $dependentInfo[Zend_Db_Table_Abstract::METADATA][$dependentColumnName]['DATA_TYPE'];
-            $select->where("$dependentColumn = ?", $value, $type);
-        }
-
-        return $dependentTable->fetchAll($select);
-    }
-
-    /**
-     * Query a parent table to retrieve the single row matching the current row.
-     *
-     * @param string|Zend_Db_Table_Abstract $parentTable
-     * @param string                        OPTIONAL $ruleKey
-     * @param Zend_Db_Table_Select          OPTIONAL $select
-     * @return Zend_Db_Table_Row_Abstract   Query result from $parentTable
-     * @throws Zend_Db_Table_Row_Exception If $parentTable is not a table or is not loadable.
-     */
-    public function findParentRow($parentTable, $ruleKey = null, Zend_Db_Table_Select $select = null)
-    {
-        $db = $this->_getTable()->getAdapter();
-
-        if (is_string($parentTable)) {
-            if (!class_exists($parentTable)) {
-                try {
-                    require_once 'Zend/Loader.php';
-                    Zend_Loader::loadClass($parentTable);
-                } catch (Zend_Exception $e) {
-                    require_once 'Zend/Db/Table/Row/Exception.php';
-                    throw new Zend_Db_Table_Row_Exception($e->getMessage());
-                }
-            }
-            $parentTable = new $parentTable(array('db' => $db));
-        }
-        if (! $parentTable instanceof Zend_Db_Table_Abstract) {
-            $type = gettype($parentTable);
-            if ($type == 'object') {
-                $type = get_class($parentTable);
-            }
-            require_once 'Zend/Db/Table/Row/Exception.php';
-            throw new Zend_Db_Table_Row_Exception("Parent table must be a Zend_Db_Table_Abstract, but it is $type");
-        }
-
-        if ($select === null) {
-            $select = $parentTable->select();
-        } else {
-            $select->setTable($parentTable);
-        }
-
-        $map = $this->_prepareReference($this->_getTable(), $parentTable, $ruleKey);
-
-        for ($i = 0; $i < count($map[Zend_Db_Table_Abstract::COLUMNS]); ++$i) {
-            $dependentColumnName = $db->foldCase($map[Zend_Db_Table_Abstract::COLUMNS][$i]);
-            $value = $this->_data[$dependentColumnName];
-            // Use adapter from parent table to ensure correct query construction
-            $parentDb = $parentTable->getAdapter();
-            $parentColumnName = $parentDb->foldCase($map[Zend_Db_Table_Abstract::REF_COLUMNS][$i]);
-            $parentColumn = $parentDb->quoteIdentifier($parentColumnName, true);
-            $parentInfo = $parentTable->info();
-            $type = $parentInfo[Zend_Db_Table_Abstract::METADATA][$parentColumnName]['DATA_TYPE'];
-            $select->where("$parentColumn = ?", $value, $type);
-        }
-
-        return $parentTable->fetchRow($select);
-    }
-
-    /**
-     * @param  string|Zend_Db_Table_Abstract  $matchTable
-     * @param  string|Zend_Db_Table_Abstract  $intersectionTable
-     * @param  string                         OPTIONAL $callerRefRule
-     * @param  string                         OPTIONAL $matchRefRule
-     * @param  Zend_Db_Table_Select           OPTIONAL $select
-     * @return Zend_Db_Table_Rowset_Abstract Query result from $matchTable
-     * @throws Zend_Db_Table_Row_Exception If $matchTable or $intersectionTable is not a table class or is not loadable.
-     */
-    public function findManyToManyRowset($matchTable, $intersectionTable, $callerRefRule = null,
-                                         $matchRefRule = null, Zend_Db_Table_Select $select = null)
-    {
-        $db = $this->_getTable()->getAdapter();
-
-        if (is_string($intersectionTable)) {
-            if (!class_exists($intersectionTable)) {
-                try {
-                    require_once 'Zend/Loader.php';
-                    Zend_Loader::loadClass($intersectionTable);
-                } catch (Zend_Exception $e) {
-                    require_once 'Zend/Db/Table/Row/Exception.php';
-                    throw new Zend_Db_Table_Row_Exception($e->getMessage());
-                }
-            }
-            $intersectionTable = new $intersectionTable(array('db' => $db));
-        }
-        if (! $intersectionTable instanceof Zend_Db_Table_Abstract) {
-            $type = gettype($intersectionTable);
-            if ($type == 'object') {
-                $type = get_class($intersectionTable);
-            }
-            require_once 'Zend/Db/Table/Row/Exception.php';
-            throw new Zend_Db_Table_Row_Exception("Intersection table must be a Zend_Db_Table_Abstract, but it is $type");
-        }
-
-        if (is_string($matchTable)) {
-            if (!class_exists($matchTable)) {
-                try {
-                    require_once 'Zend/Loader.php';
-                    Zend_Loader::loadClass($matchTable);
-                } catch (Zend_Exception $e) {
-                    require_once 'Zend/Db/Table/Row/Exception.php';
-                    throw new Zend_Db_Table_Row_Exception($e->getMessage());
-                }
-            }
-            $matchTable = new $matchTable(array('db' => $db));
-        }
-        if (! $matchTable instanceof Zend_Db_Table_Abstract) {
-            $type = gettype($matchTable);
-            if ($type == 'object') {
-                $type = get_class($matchTable);
-            }
-            require_once 'Zend/Db/Table/Row/Exception.php';
-            throw new Zend_Db_Table_Row_Exception("Match table must be a Zend_Db_Table_Abstract, but it is $type");
-        }
-
-        if ($select === null) {
-            $select = $matchTable->select();
-        } else {
-            $select->setTable($matchTable);
-        }
-
-        // Use adapter from intersection table to ensure correct query construction
-        $interInfo = $intersectionTable->info();
-        $interDb   = $intersectionTable->getAdapter();
-        $interName = $interInfo['name'];
-        $interSchema = isset($interInfo['schema']) ? $interInfo['schema'] : null;
-        $matchInfo = $matchTable->info();
-        $matchName = $matchInfo['name'];
-        $matchSchema = isset($matchInfo['schema']) ? $matchInfo['schema'] : null;
-
-        $matchMap = $this->_prepareReference($intersectionTable, $matchTable, $matchRefRule);
-
-        for ($i = 0; $i < count($matchMap[Zend_Db_Table_Abstract::COLUMNS]); ++$i) {
-            $interCol = $interDb->quoteIdentifier('i' . '.' . $matchMap[Zend_Db_Table_Abstract::COLUMNS][$i], true);
-            $matchCol = $interDb->quoteIdentifier('m' . '.' . $matchMap[Zend_Db_Table_Abstract::REF_COLUMNS][$i], true);
-            $joinCond[] = "$interCol = $matchCol";
-        }
-        $joinCond = implode(' AND ', $joinCond);
-
-        $select->from(array('i' => $interName), Zend_Db_Select::SQL_WILDCARD, $interSchema)
-               ->joinInner(array('m' => $matchName), $joinCond, Zend_Db_Select::SQL_WILDCARD, $matchSchema)
-               ->setIntegrityCheck(false);
-
-        $callerMap = $this->_prepareReference($intersectionTable, $this->_getTable(), $callerRefRule);
-
-        for ($i = 0; $i < count($callerMap[Zend_Db_Table_Abstract::COLUMNS]); ++$i) {
-            $callerColumnName = $db->foldCase($callerMap[Zend_Db_Table_Abstract::REF_COLUMNS][$i]);
-            $value = $this->_data[$callerColumnName];
-            $interColumnName = $interDb->foldCase($callerMap[Zend_Db_Table_Abstract::COLUMNS][$i]);
-            $interCol = $interDb->quoteIdentifier("i.$interColumnName", true);
-            $interInfo = $intersectionTable->info();
-            $type = $interInfo[Zend_Db_Table_Abstract::METADATA][$interColumnName]['DATA_TYPE'];
-            $select->where($interDb->quoteInto("$interCol = ?", $value, $type));
-        }
-
-        $stmt = $select->query();
-
-        $config = array(
-            'table'    => $matchTable,
-            'data'     => $stmt->fetchAll(Zend_Db::FETCH_ASSOC),
-            'rowClass' => $matchTable->getRowClass(),
-            'readOnly' => false,
-            'stored'   => true
-        );
-
-        $rowsetClass = $matchTable->getRowsetClass();
-        if (!class_exists($rowsetClass)) {
-            try {
-                require_once 'Zend/Loader.php';
-                Zend_Loader::loadClass($rowsetClass);
-            } catch (Zend_Exception $e) {
-                require_once 'Zend/Db/Table/Row/Exception.php';
-                throw new Zend_Db_Table_Row_Exception($e->getMessage());
-            }
-        }
-        $rowset = new $rowsetClass($config);
-        return $rowset;
-    }
-
-    /**
-     * Turn magic function calls into non-magic function calls
-     * to the above methods.
-     *
-     * @param string $method
-     * @param array $args OPTIONAL Zend_Db_Table_Select query modifier
-     * @return Zend_Db_Table_Row_Abstract|Zend_Db_Table_Rowset_Abstract
-     * @throws Zend_Db_Table_Row_Exception If an invalid method is called.
-     */
-    public function __call($method, array $args)
-    {
-        $matches = array();
-
-        if (count($args) && $args[0] instanceof Zend_Db_Table_Select) {
-            $select = $args[0];
-        } else {
-            $select = null;
-        }
-
-        /**
-         * Recognize methods for Has-Many cases:
-         * findParent<Class>()
-         * findParent<Class>By<Rule>()
-         * Use the non-greedy pattern repeat modifier e.g. \w+?
-         */
-        if (preg_match('/^findParent(\w+?)(?:By(\w+))?$/', $method, $matches)) {
-            $class    = $matches[1];
-            $ruleKey1 = isset($matches[2]) ? $matches[2] : null;
-            return $this->findParentRow($class, $ruleKey1, $select);
-        }
-
-        /**
-         * Recognize methods for Many-to-Many cases:
-         * find<Class1>Via<Class2>()
-         * find<Class1>Via<Class2>By<Rule>()
-         * find<Class1>Via<Class2>By<Rule1>And<Rule2>()
-         * Use the non-greedy pattern repeat modifier e.g. \w+?
-         */
-        if (preg_match('/^find(\w+?)Via(\w+?)(?:By(\w+?)(?:And(\w+))?)?$/', $method, $matches)) {
-            $class    = $matches[1];
-            $viaClass = $matches[2];
-            $ruleKey1 = isset($matches[3]) ? $matches[3] : null;
-            $ruleKey2 = isset($matches[4]) ? $matches[4] : null;
-            return $this->findManyToManyRowset($class, $viaClass, $ruleKey1, $ruleKey2, $select);
-        }
-
-        /**
-         * Recognize methods for Belongs-To cases:
-         * find<Class>()
-         * find<Class>By<Rule>()
-         * Use the non-greedy pattern repeat modifier e.g. \w+?
-         */
-        if (preg_match('/^find(\w+?)(?:By(\w+))?$/', $method, $matches)) {
-            $class    = $matches[1];
-            $ruleKey1 = isset($matches[2]) ? $matches[2] : null;
-            return $this->findDependentRowset($class, $ruleKey1, $select);
-        }
-
-        require_once 'Zend/Db/Table/Row/Exception.php';
-        throw new Zend_Db_Table_Row_Exception("Unrecognized method '$method()'");
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+GPb6EubwDyKYCAEiWZti9W==

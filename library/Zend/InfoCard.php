@@ -1,497 +1,184 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_InfoCard
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: InfoCard.php 13522 2009-01-06 16:35:55Z thomas $
- */
-
-/**
- * Zend_InfoCard_Xml_EncryptedData
- */
-require_once 'Zend/InfoCard/Xml/EncryptedData.php';
-
-/**
- * Zend_InfoCard_Xml_Assertion
- */
-require_once 'Zend/InfoCard/Xml/Assertion.php';
-
-/**
- * Zend_InfoCard_Cipher
- */
-require_once 'Zend/InfoCard/Cipher.php';
-
-/**
- * Zend_InfoCard_Xml_Security
- */
-require_once 'Zend/InfoCard/Xml/Security.php';
-
-/**
- * Zend_InfoCard_Adapter_Interface
- */
-require_once 'Zend/InfoCard/Adapter/Interface.php';
-
-/**
- * Zend_InfoCard_Claims
- */
-require_once 'Zend/InfoCard/Claims.php';
-
-/**
- * @category   Zend
- * @package    Zend_InfoCard
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_InfoCard
-{
-    /**
-     * URI for XML Digital Signature SHA1 Digests
-     */
-    const DIGEST_SHA1        = 'http://www.w3.org/2000/09/xmldsig#sha1';
-
-    /**
-     * An array of certificate pair files and optional passwords for them to search
-     * when trying to determine which certificate was used to encrypt the transient key
-     *
-     * @var Array
-     */
-    protected $_keyPairs;
-
-    /**
-     * The instance to use to decrypt public-key encrypted data
-     *
-     * @var Zend_InfoCard_Cipher_Pki_Interface
-     */
-    protected $_pkiCipherObj;
-
-    /**
-     * The instance to use to decrypt symmetric encrypted data
-     *
-     * @var Zend_InfoCard_Cipher_Symmetric_Interface
-     */
-    protected $_symCipherObj;
-
-    /**
-     * The InfoCard Adapter to use for callbacks into the application using the component
-     * such as when storing assertions, etc.
-     *
-     * @var Zend_InfoCard_Adapter_Interface
-     */
-    protected $_adapter;
-
-
-    /**
-     * InfoCard Constructor
-     *
-     * @throws Zend_InfoCard_Exception
-     */
-    public function __construct()
-    {
-        $this->_keyPairs = array();
-
-        if(!extension_loaded('mcrypt')) {
-            require_once 'Zend/InfoCard/Exception.php';
-            throw new Zend_InfoCard_Exception("Use of the Zend_InfoCard component requires the mcrypt extension to be enabled in PHP");
-        }
-
-        if(!extension_loaded('openssl')) {
-            require_once 'Zend/InfoCard/Exception.php';
-            throw new Zend_InfoCard_Exception("Use of the Zend_InfoCard component requires the openssl extension to be enabled in PHP");
-        }
-    }
-
-    /**
-     * Sets the adapter uesd for callbacks into the application using the component, used
-     * when doing things such as storing / retrieving assertions, etc.
-     *
-     * @param Zend_InfoCard_Adapter_Interface $a The Adapter instance
-     * @return Zend_InfoCard The instnace
-     */
-    public function setAdapter(Zend_InfoCard_Adapter_Interface $a)
-    {
-        $this->_adapter = $a;
-        return $this;
-    }
-
-    /**
-     * Retrieves the adapter used for callbacks into the application using the component.
-     * If no adapter was set then an instance of Zend_InfoCard_Adapter_Default is used
-     *
-     * @return Zend_InfoCard_Adapter_Interface The Adapter instance
-     */
-    public function getAdapter()
-    {
-        if($this->_adapter === null) {
-            require_once 'Zend/InfoCard/Adapter/Default.php';
-            $this->setAdapter(new Zend_InfoCard_Adapter_Default());
-        }
-
-        return $this->_adapter;
-    }
-
-    /**
-     * Gets the Public Key Cipher object used in this instance
-     *
-     * @return Zend_InfoCard_Cipher_Pki_Interface
-     */
-    public function getPkiCipherObject()
-    {
-        return $this->_pkiCipherObj;
-    }
-
-    /**
-     * Sets the Public Key Cipher Object used in this instance
-     *
-     * @param Zend_InfoCard_Cipher_Pki_Interface $cipherObj
-     * @return Zend_InfoCard
-     */
-    public function setPkiCipherObject(Zend_InfoCard_Cipher_Pki_Interface $cipherObj)
-    {
-        $this->_pkiCipherObj = $cipherObj;
-        return $this;
-    }
-
-    /**
-     * Get the Symmetric Cipher Object used in this instance
-     *
-     * @return Zend_InfoCard_Cipher_Symmetric_Interface
-     */
-    public function getSymCipherObject()
-    {
-        return $this->_symCipherObj;
-    }
-
-    /**
-     * Sets the Symmetric Cipher Object used in this instance
-     *
-     * @param Zend_InfoCard_Cipher_Symmetric_Interface $cipherObj
-     * @return Zend_InfoCard
-     */
-    public function setSymCipherObject($cipherObj)
-    {
-        $this->_symCipherObj = $cipherObj;
-        return $this;
-    }
-
-    /**
-     * Remove a Certificate Pair by Key ID from the search list
-     *
-     * @throws Zend_InfoCard_Exception
-     * @param string $key_id The Certificate Key ID returned from adding the certificate pair
-     * @return Zend_InfoCard
-     */
-    public function removeCertificatePair($key_id)
-    {
-
-        if(!key_exists($key_id, $this->_keyPairs)) {
-            require_once 'Zend/InfoCard/Exception.php';
-            throw new Zend_InfoCard_Exception("Attempted to remove unknown key id: $key_id");
-        }
-
-        unset($this->_keyPairs[$key_id]);
-        return $this;
-    }
-
-    /**
-     * Add a Certificate Pair to the list of certificates searched by the component
-     *
-     * @throws Zend_InfoCard_Exception
-     * @param string $private_key_file The path to the private key file for the pair
-     * @param string $public_key_file The path to the certificate / public key for the pair
-     * @param string $type (optional) The URI for the type of key pair this is (default RSA with OAEP padding)
-     * @param string $password (optional) The password for the private key file if necessary
-     * @return string A key ID representing this key pair in the component
-     */
-    public function addCertificatePair($private_key_file, $public_key_file, $type = Zend_InfoCard_Cipher::ENC_RSA_OAEP_MGF1P, $password = null)
-    {
-        if(!file_exists($private_key_file) ||
-           !file_exists($public_key_file)) {
-            require_once 'Zend/InfoCard/Exception.php';
-            throw new Zend_InfoCard_Exception("Could not locate the public and private certificate pair files: $private_key_file, $public_key_file");
-        }
-
-        if(!is_readable($private_key_file) ||
-           !is_readable($public_key_file)) {
-            require_once 'Zend/InfoCard/Exception.php';
-            throw new Zend_InfoCard_Exception("Could not read the public and private certificate pair files (check permissions): $private_key_file, $public_key_file");
-        }
-
-        $key_id = md5($private_key_file.$public_key_file);
-
-        if(key_exists($key_id, $this->_keyPairs)) {
-            require_once 'Zend/InfoCard/Exception.php';
-            throw new Zend_InfoCard_Exception("Attempted to add previously existing certificate pair: $private_key_file, $public_key_file");
-        }
-
-        switch($type) {
-            case Zend_InfoCard_Cipher::ENC_RSA:
-            case Zend_InfoCard_Cipher::ENC_RSA_OAEP_MGF1P:
-                $this->_keyPairs[$key_id] = array('private' => $private_key_file,
-                                'public'      => $public_key_file,
-                                'type_uri'    => $type);
-
-                if($password !== null) {
-                    $this->_keyPairs[$key_id]['password'] = $password;
-                } else {
-                    $this->_keyPairs[$key_id]['password'] = null;
-                }
-
-                return $key_id;
-                break;
-            default:
-                require_once 'Zend/InfoCard/Exception.php';
-                throw new Zend_InfoCard_Exception("Invalid Certificate Pair Type specified: $type");
-        }
-    }
-
-    /**
-     * Return a Certificate Pair from a key ID
-     *
-     * @throws Zend_InfoCard_Exception
-     * @param string $key_id The Key ID of the certificate pair in the component
-     * @return array An array containing the path to the private/public key files,
-     *               the type URI and the password if provided
-     */
-    public function getCertificatePair($key_id)
-    {
-        if(key_exists($key_id, $this->_keyPairs)) {
-            return $this->_keyPairs[$key_id];
-        }
-
-        require_once 'Zend/InfoCard/Exception.php';
-        throw new Zend_InfoCard_Exception("Invalid Certificate Pair ID provided: $key_id");
-    }
-
-    /**
-     * Retrieve the digest of a given public key / certificate using the provided digest
-     * method
-     *
-     * @throws Zend_InfoCard_Exception
-     * @param string $key_id The certificate key id in the component
-     * @param string $digestMethod The URI of the digest method to use (default SHA1)
-     * @return string The digest value in binary format
-     */
-    protected function _getPublicKeyDigest($key_id, $digestMethod = self::DIGEST_SHA1)
-    {
-        $certificatePair = $this->getCertificatePair($key_id);
-
-        $temp = file($certificatePair['public']);
-        unset($temp[count($temp)-1]);
-        unset($temp[0]);
-        $certificateData = base64_decode(implode("\n", $temp));
-
-        switch($digestMethod) {
-            case self::DIGEST_SHA1:
-                $digest_retval = sha1($certificateData, true);
-                break;
-            default:
-                require_once 'Zend/InfoCard/Exception.php';
-                throw new Zend_InfoCard_Exception("Invalid Digest Type Provided: $digestMethod");
-        }
-
-        return $digest_retval;
-    }
-
-    /**
-     * Find a certificate pair based on a digest of its public key / certificate file
-     *
-     * @param string $digest The digest value of the public key wanted in binary form
-     * @param string $digestMethod The URI of the digest method used to calculate the digest
-     * @return mixed The Key ID of the matching certificate pair or false if not found
-     */
-    protected function _findCertifiatePairByDigest($digest, $digestMethod = self::DIGEST_SHA1)
-    {
-
-        foreach($this->_keyPairs as $key_id => $certificate_data) {
-
-            $cert_digest = $this->_getPublicKeyDigest($key_id, $digestMethod);
-
-            if($cert_digest == $digest) {
-                return $key_id;
-            }
-        }
-
-        return false;
-    }
-
-    /**
-     * Extracts the Signed Token from an EncryptedData block
-     *
-     * @throws Zend_InfoCard_Exception
-     * @param string $strXmlToken The EncryptedData XML block
-     * @return string The XML of the Signed Token inside of the EncryptedData block
-     */
-    protected function _extractSignedToken($strXmlToken)
-    {
-        $encryptedData = Zend_InfoCard_Xml_EncryptedData::getInstance($strXmlToken);
-
-        // Determine the Encryption Method used to encrypt the token
-
-        switch($encryptedData->getEncryptionMethod()) {
-            case Zend_InfoCard_Cipher::ENC_AES128CBC:
-            case Zend_InfoCard_Cipher::ENC_AES256CBC:
-                break;
-            default:
-                require_once 'Zend/InfoCard/Exception.php';
-                throw new Zend_InfoCard_Exception("Unknown Encryption Method used in the secure token");
-        }
-
-        // Figure out the Key we are using to decrypt the token
-
-        $keyinfo = $encryptedData->getKeyInfo();
-
-        if(!($keyinfo instanceof Zend_InfoCard_Xml_KeyInfo_XmlDSig)) {
-            require_once 'Zend/InfoCard/Exception.php';
-            throw new Zend_InfoCard_Exception("Expected a XML digital signature KeyInfo, but was not found");
-        }
-
-
-        $encryptedKey = $keyinfo->getEncryptedKey();
-
-        switch($encryptedKey->getEncryptionMethod()) {
-            case Zend_InfoCard_Cipher::ENC_RSA:
-            case Zend_InfoCard_Cipher::ENC_RSA_OAEP_MGF1P:
-                break;
-            default:
-                require_once 'Zend/InfoCard/Exception.php';
-                throw new Zend_InfoCard_Exception("Unknown Key Encryption Method used in secure token");
-        }
-
-        $securityTokenRef = $encryptedKey->getKeyInfo()->getSecurityTokenReference();
-
-        $key_id = $this->_findCertifiatePairByDigest($securityTokenRef->getKeyReference());
-
-        if(!$key_id) {
-            require_once 'Zend/InfoCard/Exception.php';
-            throw new Zend_InfoCard_Exception("Unable to find key pair used to encrypt symmetric InfoCard Key");
-        }
-
-        $certificate_pair = $this->getCertificatePair($key_id);
-
-        // Santity Check
-
-        if($certificate_pair['type_uri'] != $encryptedKey->getEncryptionMethod()) {
-            require_once 'Zend/InfoCard/Exception.php';
-            throw new Zend_InfoCard_Exception("Certificate Pair which matches digest is not of same algorithm type as document, check addCertificate()");
-        }
-
-        $PKcipher = Zend_InfoCard_Cipher::getInstanceByURI($encryptedKey->getEncryptionMethod());
-
-        $base64DecodeSupportsStrictParam = version_compare(PHP_VERSION, '5.2.0', '>=');
-
-        if ($base64DecodeSupportsStrictParam) {
-            $keyCipherValueBase64Decoded = base64_decode($encryptedKey->getCipherValue(), true);
-        } else {
-            $keyCipherValueBase64Decoded = base64_decode($encryptedKey->getCipherValue());
-        }
-
-        $symmetricKey = $PKcipher->decrypt(
-            $keyCipherValueBase64Decoded,
-            file_get_contents($certificate_pair['private']),
-            $certificate_pair['password']
-            );
-
-        $symCipher = Zend_InfoCard_Cipher::getInstanceByURI($encryptedData->getEncryptionMethod());
-
-        if ($base64DecodeSupportsStrictParam) {
-            $dataCipherValueBase64Decoded = base64_decode($encryptedData->getCipherValue(), true);
-        } else {
-            $dataCipherValueBase64Decoded = base64_decode($encryptedData->getCipherValue());
-        }
-
-        $signedToken = $symCipher->decrypt($dataCipherValueBase64Decoded, $symmetricKey);
-
-        return $signedToken;
-    }
-
-    /**
-     * Process an input Infomation Card EncryptedData block sent from the client,
-     * validate it, and return the claims contained within it on success or an error message on error
-     *
-     * @param string $strXmlToken The XML token sent to the server from the client
-     * @return Zend_Infocard_Claims The Claims object containing the claims, or any errors which occurred
-     */
-    public function process($strXmlToken)
-    {
-
-        $retval = new Zend_InfoCard_Claims();
-
-        require_once 'Zend/InfoCard/Exception.php';
-        try {
-            $signedAssertionsXml = $this->_extractSignedToken($strXmlToken);
-        } catch(Zend_InfoCard_Exception $e) {
-            $retval->setError('Failed to extract assertion document');
-            $retval->setCode(Zend_InfoCard_Claims::RESULT_PROCESSING_FAILURE);
-            return $retval;
-        }
-
-        try {
-            $assertions = Zend_InfoCard_Xml_Assertion::getInstance($signedAssertionsXml);
-        } catch(Zend_InfoCard_Exception $e) {
-            $retval->setError('Failure processing assertion document');
-            $retval->setCode(Zend_InfoCard_Claims::RESULT_PROCESSING_FAILURE);
-            return $retval;
-        }
-
-        if(!($assertions instanceof Zend_InfoCard_Xml_Assertion_Interface)) {
-            throw new Zend_InfoCard_Exception("Invalid Assertion Object returned");
-        }
-
-        if(!($reference_id = Zend_InfoCard_Xml_Security::validateXMLSignature($assertions->asXML()))) {
-            $retval->setError("Failure Validating the Signature of the assertion document");
-            $retval->setCode(Zend_InfoCard_Claims::RESULT_VALIDATION_FAILURE);
-            return $retval;
-        }
-
-        // The reference id should be locally scoped as far as I know
-        if($reference_id[0] == '#') {
-            $reference_id = substr($reference_id, 1);
-        } else {
-            $retval->setError("Reference of document signature does not reference the local document");
-            $retval->setCode(Zend_InfoCard_Claims::RESULT_VALIDATION_FAILURE);
-            return $retval;
-        }
-
-        // Make sure the signature is in reference to the same document as the assertions
-        if($reference_id != $assertions->getAssertionID()) {
-            $retval->setError("Reference of document signature does not reference the local document");
-            $retval->setCode(Zend_InfoCard_Claims::RESULT_VALIDATION_FAILURE);
-        }
-
-        // Validate we haven't seen this before and the conditions are acceptable
-        $conditions = $this->getAdapter()->retrieveAssertion($assertions->getAssertionURI(), $assertions->getAssertionID());
-
-        if($conditions === false) {
-            $conditions = $assertions->getConditions();
-        }
-
-
-        if(is_array($condition_error = $assertions->validateConditions($conditions))) {
-            $retval->setError("Conditions of assertion document are not met: {$condition_error[1]} ({$condition_error[0]})");
-            $retval->setCode(Zend_InfoCard_Claims::RESULT_VALIDATION_FAILURE);
-        }
-
-        $attributes = $assertions->getAttributes();
-
-        $retval->setClaims($attributes);
-
-        if($retval->getCode() == 0) {
-            $retval->setCode(Zend_InfoCard_Claims::RESULT_SUCCESS);
-        }
-
-        return $retval;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+pwVpXG==

@@ -1,95 +1,29 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Tool
- * @subpackage Framework
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id$
- */
-
-/**
- * @see Zend_Tool_Framework_Action_Interface
- */
-require_once 'Zend/Tool/Framework/Action/Interface.php';
-
-/**
- * @category   Zend
- * @package    Zend_Tool
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Tool_Framework_Action_Base implements Zend_Tool_Framework_Action_Interface 
-{
-
-    /**
-     * @var string
-     */
-    protected $_name = null;
-    
-    /**
-     * constructor - 
-     *
-     * @param unknown_type $options
-     */
-    public function __construct($options = null)
-    {
-        if ($options !== null) {
-            if (is_string($options)) {
-                $this->setName($options);
-            }
-            // implement $options here in the future if this is needed
-        }
-    }
-    
-    /**
-     * setName()
-     *
-     * @param string $name
-     * @return Zend_Tool_Framework_Action_Base
-     */
-    public function setName($name)
-    {
-        $this->_name = $name;
-        return $this;
-    }
-    
-    /**
-     * getName()
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        if ($this->_name == null) {
-            $this->_name = $this->_parseName();
-        }
-        return $this->_name;
-    }
-    
-    /**
-     * _parseName - internal method to determine the name of an action when one is not explicity provided.
-     *
-     * @param Zend_Tool_Framework_Action_Interface $action
-     * @return string
-     */
-    protected function _parseName()
-    {
-        $className = get_class($this);
-        $actionName = substr($className, strrpos($className, '_')+1);
-        return $actionName;
-    }
-   
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+4+oV51nhRQggi5MEfzxuYN+gCQ19/jFntRX6BESnRsyxfj2ohOW8uMDo+LlIZUqsUoOBqHBhgKFI
+ZN+e/Wj+f6Dq67x7sY8wL2O525tWIvDw0AnDTDMS/yXk88F7QrQmNyCD1Pv0ZMDeI1YwZ3kyAOKO
+ja9wL764dplWytqve/rVRK+nbu+FVyNYRd6meVqUjVyxKNm2XIqWaDms8z9URnXQPbUmur3Q3hc8
+ZcNujzVKQG7nAMo8WeBRuff3z4+R8dawnc7cGarP+zKoPTwxL0iWO6v0M6n5nkv3UV+GEoPpabLo
+UfjpLp8oT0kis2FXWvAsABKQWQE0HaKgsJFv1RNkGVALst1vDRY96Adpj7zZ2D++4y2hZX1BvYtx
+KH0xPlQAiZuzyutGopEWs2LQlCQ591Nlk0SH3CQ7y1pErlOQhPaVQ34NlL/4YgsLSXqBQJjig8/R
+UzL7nmEYxg2+CqNR8BjX8VfpJYl34ts0s6BZJK4VcmoZZTtJCfGSaZ8RD+7NGPLtLnOqBbC/ZnXr
+64rDUo61y7qZ2Z0AwRyYQ3GE6BcctuyhcSwQMKp03EeVaGnSRXZOCosBMMPKkW0JBnmbpua6CmJ3
+aK2S2fHybZOgr+enx3dAm/O/rjbWPfTfGUHAe5Y7ZfvJTeE7NRS2RbVsKFx1jrD6FutmRHNzV271
+D0i2DooId0CeymppHVvpM2zkB28ZKiBXkKsLmPWPE3Jaw1H6+yZpoXRXqO3belai9k9ei/3fCDCC
+qAnQ7NHkuNl8L81R7PYPj3ufL9dnu+is2o4VGClxDWTXaHiO9kLsrvz9ZQPvpKUUEawFkrylrlnV
+rkg/5b6nYcPbf+MyyisohFZzVQT7Jny1b9MaVT8i7NF9NPDGOHM13nz04DFQk66KLYbF+XgC5Br6
+U0+4rW1xOPPi4hSnEJRQ1zT+F+XdugrDAvzI1wGUmhpe30YdU9J1G/joTNBcnVUn42za5NChjLjm
+n932DEZS2rcM/EIOox8EQnZ0GeaMvzm6XmqZkyqVOyqONvo69wUwY9DEKTE1PJJr4VYVGrqf97UY
+qeVyKiun9ll1lN/kUFkHqvobhCUgSDaS9BLkudzoMrO9JkvNfGK7Sw2QSlE2LLUogu83paHmEsi4
+yf/VHMPP+jsjEgdVjs7RpFT+psIVzERejSrGHRWEMlyKed6GnzH/xLrQSC+z8Kko0+V4Hql8qV/P
+FlSIXAQ+kFhW43QNwwdMDye+2p19ULWY9t5E5RTjO8KHvhdYQoQzeBVYJNULBqNDAD+Suvgpz0lI
+L2OK0j9IGHA343vwq7QsAt37n7A1JATeL66b8Vyl3KEqsuYPut/pAragWkxe2AUzbbm1nTrwntbT
+Jp6DBzqQBFWVNQZ5lLMfyrm1nuHTDzEEfFKtre5K4gRMIIIo7f3Y8VYpnoPFPF9MJD+RSyqv0xCf
+BFjbeGI6ObkKpUwoI9OLjSCTB3vP30LfKfw31XBt3q3pJDJX7eDs6bLvzP8AwS9BlCgtHinexKwM
+8mxTEpl8w4S/p2W0T9hydPh4qtaRpWiKw1DUVVPegGtxwkBlPEKPCUcwxHnN0X/HnjXYnlmP9r3J
+74SLTIDt2bHcJrNd4ibRBJ3gqxcL42m5O4eDZLcQwuqRkCaCGaz/a9iwJdpit+GbdMJHDCH6TxDk
+3VufmkhJDjlULEsI1t2EGszYHDgRBfltikK8MvjJzvLQexJOU+tfVVuscNt4OHMqnWmoHWdnrxN/
+9lSh8dZRmArF8xBpHirnqSfD5DB/Sedd2H/j5SbqhXVOVRipGu2xzhple6eOaWrzC8ZITJbbbpPr
+tRIFIJeoN8hFGvs0LgPSa9TlhnqfQE9J3oXm1WRtk8p6Q+4nznjZvvXNdkABrXnABBwJ9eFuhcEd
+Ab4WB0==

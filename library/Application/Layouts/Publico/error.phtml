@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <?php
+           echo $this->render('head.phtml'); // Está dentro da pasta de layouts
+           $config = Zend_Registry::get('config');            
+            $hashBackground = $config->areadocliente_background;
+            if ( $hashBackground ){
+                $locationBackground = new Superlogica_Location();
+                $locationBackground->setController("publico")->setAction('background');
+            }
+            
+            $configVertical = Shared_Helpers_Vertical::getConfigs();
+            $backgroundDefault = $configVertical['background']['areadocliente'] ? $configVertical['background']['areadocliente'] : 'bg_areadocliente.jpg';
+?>
+    </head>
+    <body>
+        
+        <div class="background" style="background-image: url(<?php echo $hashBackground ? $locationBackground->toString() : APPLICATION_CLIENT_TEMA_URL . '/img/'.$backgroundDefault ?>);"></div>
+
+        <div class="container container-xs-height">
+
+            <div class="row row-xs-height">
+
+                <div class="col-xs-12 col-md-12 col-lg-12 col-xs-height">
+
+                    <div class="item">
+                    
+                        <div class="content blocoDestaquePersonalizado container-fluid">
+                            <?php echo $this->layout()->content; ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                
+    </body>
+</html>

@@ -1,136 +1,25 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_View
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-
-/**
- * Interface class for Zend_View compatible template engine implementations
- *
- * @category   Zend
- * @package    Zend_View
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-interface Zend_View_Interface
-{
-    /**
-     * Return the template engine object, if any
-     *
-     * If using a third-party template engine, such as Smarty, patTemplate,
-     * phplib, etc, return the template engine object. Useful for calling
-     * methods on these objects, such as for setting filters, modifiers, etc.
-     *
-     * @return mixed
-     */
-    public function getEngine();
-
-    /**
-     * Set the path to find the view script used by render()
-     *
-     * @param string|array The directory (-ies) to set as the path. Note that
-     * the concrete view implentation may not necessarily support multiple
-     * directories.
-     * @return void
-     */
-    public function setScriptPath($path);
-
-    /**
-     * Retrieve all view script paths
-     *
-     * @return array
-     */
-    public function getScriptPaths();
-
-    /**
-     * Set a base path to all view resources
-     *
-     * @param  string $path
-     * @param  string $classPrefix
-     * @return void
-     */
-    public function setBasePath($path, $classPrefix = 'Zend_View');
-
-    /**
-     * Add an additional path to view resources
-     *
-     * @param  string $path
-     * @param  string $classPrefix
-     * @return void
-     */
-    public function addBasePath($path, $classPrefix = 'Zend_View');
-
-    /**
-     * Assign a variable to the view
-     *
-     * @param string $key The variable name.
-     * @param mixed $val The variable value.
-     * @return void
-     */
-    public function __set($key, $val);
-
-    /**
-     * Allows testing with empty() and isset() to work
-     *
-     * @param string $key
-     * @return boolean
-     */
-    public function __isset($key);
-
-    /**
-     * Allows unset() on object properties to work
-     *
-     * @param string $key
-     * @return void
-     */
-    public function __unset($key);
-
-    /**
-     * Assign variables to the view script via differing strategies.
-     *
-     * Suggested implementation is to allow setting a specific key to the
-     * specified value, OR passing an array of key => value pairs to set en
-     * masse.
-     *
-     * @see __set()
-     * @param string|array $spec The assignment strategy to use (key or array of key
-     * => value pairs)
-     * @param mixed $value (Optional) If assigning a named variable, use this
-     * as the value.
-     * @return void
-     */
-    public function assign($spec, $value = null);
-
-    /**
-     * Clear all assigned variables
-     *
-     * Clears all variables assigned to Zend_View either via {@link assign()} or
-     * property overloading ({@link __get()}/{@link __set()}).
-     *
-     * @return void
-     */
-    public function clearVars();
-
-    /**
-     * Processes a view script and returns the output.
-     *
-     * @param string $name The script script name to process.
-     * @return string The script output.
-     */
-    public function render($name);
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+4+oV56viX4vDodnX7DWHRL48RpKhxQw0RmqFczmUPXrPd86UXSstsvK/xV17DRXYzOkc3t01FX1Y
+Q3I9gOqVpirM2R7HP3Ucmb0ZXl1aDd5ozkdoOoJLwm6bxWE3EUQnvfBN1NdJiL2pA4P3laAc7chT
+HLlu/oxnpsH+Zmidcd8QDqj68g5YdmPYczGb6J3eJVDnVJYgHONNk0+PR5MIoiowVEGHA6elrQLn
+P+XUWhAmOzrHvcOZcxlSgvf3z4+R8dawnc7cGarP+zMgOT/u4gpQD7+LQzr5LZDkNlyE1wtKPTUf
+v5o8vLVxMoj/R2989LtM/Tv9fCa7deN/JRblpBmL0UOhbcDgqBe8Js+yQLpk91NM3TOcCwFiyD/+
+IvOABqgtG4krkQupV9Mq1QVfUC4IjK2UmHSjlssLH2hghyUgIUXwZi6eSFOfheAzEZD3BGCWQG93
+YVsHLfUfbwsNeeXxWhFs3Fo0hWqRVdjVfM5K5UvH8GRLdj4dbQf1eb7cYaXrR+5NNZibwfWIZbBY
+E2408srgp+6AI6JFC9UqGaUrM9TmKVj1+4Vtvbz2c7/e/YTOZFnvmrNgN0+7NGELlhMP9QTEf7j/
+R66lUR87P5ngjIq+G9axlmdIszfn8MpY6P3CEZHIx60gNRU/OjKGomRQGUKCjTYH46UWFcAiWv4M
+QTrbtgn94AkbmY/WiIloK1TiA1GP2hI+MV+PrRGKIy4Dww6Q5GrbQZC0Yb1QC/OL3b7QUHfAHmFm
+iLuV51e3zIwTfvIxoB6sR2rRCds7ujQ6m39GRluEkT7Im6FzAYShgeET+JLsuwAMqUhLODlcuWQV
+msR1deXictB237b0BDBCYgzoisKaZX5MiUazJsRy5O9UZp7ZHO+k5uc6Lh8gHZEo/X/CcBdMBN8s
+LAGdTLIr8zQiosAHW9eg8PU1C4+HivfK+/ANzM0XK2+mygm03erTplXdMuKxAc/f45/7vNU78fQ5
+dRMqEi2rpRILb86W89G21wrNV2z+oRBxmVbfenKwZqaFUzIjH2KHGb+VwQYw8z6yGIV7BYs76z5F
+A+53ABHTnn75S7+3RNqWzQnHjAIesvRp0rFNdeGLfr4SYJlXwsP9bf/jUty8w3FBqQYh1rMmg/1L
+Xy8lNbmcjA+fCM1AkFNkWr0Cbn5HBmuWD6ghKS/+TAZsyJbRvun9zJwoDleCagqRO4cEAiyYLIPd
+kXuzZshHlwe6i3ByaTPmHyQsGW4BfMdIzo6RGkbkW108rSK/TRMbHhpfIbeZT1a0O9v9gnOiUCwp
+gLhSfDicn4O10lejwiqhNmjPOvck8uLKgEpod/866zxvPTXv/YTku2EzuQbOn2wvAFsL5yGDEgXH
+rHf+/oVVdTDH3TxrBlL6xlDFvrFRHwQEXAVXKD2hm/RTTOr+CgrX/1TnbgBS3zztjGBZagt798TU
+jEbs5ks2RMdkwu69t6K2k71MreWLIUtonvOxXUYcH3fFsTTJmtyOVTB5ghbq9oIeAZX4wAcygr9A
+l17OadBqifVAYiCrWMGm9SRNuay8CLgBhSCaUY0oxn/FllBNO/AMaZS0t7o3UrvfQKKe8rWxJhdj
+HrvaK/M16rVT9hdtXd+glD8U8u+/TBLekqkR3dSC6CYyJbMT8ogpGxJMlbNz19K=

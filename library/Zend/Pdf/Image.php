@@ -1,244 +1,51 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @package    Zend_Pdf
- * @subpackage Images
- * @copyright  Copyright (c) 2006 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_Pdf_FileParserDataSource */
-require_once 'Zend/Pdf/FileParserDataSource.php';
-
-/** Zend_Pdf_FileParserDataSource_File */
-require_once 'Zend/Pdf/FileParserDataSource/File.php';
-
-/** Zend_Pdf_FileParserDataSource_String */
-require_once 'Zend/Pdf/FileParserDataSource/String.php';
-
-/**
- * Abstract factory class which vends {@link Zend_Pdf_Resource_Image} objects.
- *
- * This class is also the home for image-related constants because the name of
- * the true base class ({@link Zend_Pdf_Resource_Image}) is not intuitive for the
- * end user.
- *
- * @package    Zend_Pdf
- * @subpackage Images
- * @copyright  Copyright (c) 2006 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-abstract class Zend_Pdf_Image
-{
-  /**** Class Constants ****/
-
-
-  /* Image Types */
-
-    const TYPE_UNKNOWN = 0;
-    const TYPE_JPEG = 1;
-    const TYPE_PNG = 2;
-    const TYPE_TIFF = 3;
-
-  /* TIFF Constants */
-
-    const TIFF_FIELD_TYPE_BYTE=1;
-    const TIFF_FIELD_TYPE_ASCII=2;
-    const TIFF_FIELD_TYPE_SHORT=3;
-    const TIFF_FIELD_TYPE_LONG=4;
-    const TIFF_FIELD_TYPE_RATIONAL=5;
-
-    const TIFF_TAG_IMAGE_WIDTH=256;
-    const TIFF_TAG_IMAGE_LENGTH=257; //Height
-    const TIFF_TAG_BITS_PER_SAMPLE=258;
-    const TIFF_TAG_COMPRESSION=259;
-    const TIFF_TAG_PHOTOMETRIC_INTERPRETATION=262;
-    const TIFF_TAG_STRIP_OFFSETS=273;
-    const TIFF_TAG_SAMPLES_PER_PIXEL=277;
-    const TIFF_TAG_STRIP_BYTE_COUNTS=279;
-
-    const TIFF_COMPRESSION_UNCOMPRESSED = 1;
-    const TIFF_COMPRESSION_CCITT1D = 2;
-    const TIFF_COMPRESSION_GROUP_3_FAX = 3;
-    const TIFF_COMPRESSION_GROUP_4_FAX  = 4;
-    const TIFF_COMPRESSION_LZW = 5;
-    const TIFF_COMPRESSION_JPEG = 6;
-    const TIFF_COMPRESSION_FLATE = 8;
-    const TIFF_COMPRESSION_FLATE_OBSOLETE_CODE = 32946;
-    const TIFF_COMPRESSION_PACKBITS = 32773;
-
-    const TIFF_PHOTOMETRIC_INTERPRETATION_WHITE_IS_ZERO=0;
-    const TIFF_PHOTOMETRIC_INTERPRETATION_BLACK_IS_ZERO=1;
-    const TIFF_PHOTOMETRIC_INTERPRETATION_RGB=2;
-    const TIFF_PHOTOMETRIC_INTERPRETATION_RGB_INDEXED=3;
-    const TIFF_PHOTOMETRIC_INTERPRETATION_CMYK=5;
-    const TIFF_PHOTOMETRIC_INTERPRETATION_YCBCR=6;
-    const TIFF_PHOTOMETRIC_INTERPRETATION_CIELAB=8;
-
-  /* PNG Constants */
-
-    const PNG_COMPRESSION_DEFAULT_STRATEGY = 0;
-    const PNG_COMPRESSION_FILTERED = 1;
-    const PNG_COMPRESSION_HUFFMAN_ONLY = 2;
-    const PNG_COMPRESSION_RLE = 3;
-
-    const PNG_FILTER_NONE = 0;
-    const PNG_FILTER_SUB = 1;
-    const PNG_FILTER_UP = 2;
-    const PNG_FILTER_AVERAGE = 3;
-    const PNG_FILTER_PAETH = 4;
-
-    const PNG_INTERLACING_DISABLED = 0;
-    const PNG_INTERLACING_ENABLED = 1;
-
-    const PNG_CHANNEL_GRAY = 0;
-    const PNG_CHANNEL_RGB = 2;
-    const PNG_CHANNEL_INDEXED = 3;
-    const PNG_CHANNEL_GRAY_ALPHA = 4;
-    const PNG_CHANNEL_RGB_ALPHA = 6;
-
-  /**** Public Interface ****/
-
-
-  /* Factory Methods */
-
-    /**
-     * Returns a {@link Zend_Pdf_Resource_Image} object by file path.
-     *
-     * @param string $filePath Full path to the image file.
-     * @return Zend_Pdf_Resource_Image
-     * @throws Zend_Pdf_Exception
-     */
-    public static function imageWithPath($filePath)
-    {
-
-        /**
-         * use old implementation
-         * @todo switch to new implementation
-         */
-        require_once 'Zend/Pdf/Resource/ImageFactory.php';
-        return Zend_Pdf_Resource_ImageFactory::factory($filePath);
-
-
-        /* Create a file parser data source object for this file. File path and
-         * access permission checks are handled here.
-         */
-        $dataSource = new Zend_Pdf_FileParserDataSource_File($filePath);
-
-        /* Attempt to determine the type of image. We can't always trust file
-         * extensions, but try that first since it's fastest.
-         */
-        $fileExtension = strtolower(pathinfo($filePath, PATHINFO_EXTENSION));
-
-        /* If it turns out that the file is named improperly and we guess the
-         * wrong type, we'll get null instead of an image object.
-         */
-        switch ($fileExtension) {
-            case 'tif':
-                //Fall through to next case;
-            case 'tiff':
-                $image = Zend_Pdf_Image::_extractTiffImage($dataSource);
-                break;
-            case 'png':
-                $image = Zend_Pdf_Image::_extractPngImage($dataSource);
-                break;
-            case 'jpg':
-                //Fall through to next case;
-            case 'jpe':
-                //Fall through to next case;
-            case 'jpeg':
-                $image = Zend_Pdf_Image::_extractJpegImage($dataSource);
-                break;
-            default:
-                throw new Zend_Pdf_Exception("Cannot create image resource. File extension not known or unsupported type.");
-                break;
-        }
-
-        /* Done with the data source object.
-         */
-        $dataSource = null;
-
-        if ($image !== null) {
-            return $image;
-
-        } else {
-            /* The type of image could not be determined. Give up.
-             */
-            throw new Zend_Pdf_Exception("Cannot determine image type: $filePath",
- Zend_Pdf_Exception::CANT_DETERMINE_IMAGE_TYPE);
-         }
-    }
-
-
-
-  /**** Internal Methods ****/
-
-
-  /* Image Extraction Methods */
-
-    /**
-     * Attempts to extract a JPEG Image from the data source.
-     *
-     * @param Zend_Pdf_FileParserDataSource $dataSource
-     * @return Zend_Pdf_Resource_Image_Jpeg May also return null if
-     *   the data source does not appear to contain valid image data.
-     * @throws Zend_Pdf_Exception
-     */
-    protected static function _extractJpegImage($dataSource)
-    {
-        $imageParser = new Zend_Pdf_FileParser_Image_Jpeg($dataSource);
-        $image = new Zend_Pdf_Resource_Image_Jpeg($imageParser);
-        unset($imageParser);
-
-        return $image;
-    }
-
-    /**
-     * Attempts to extract a PNG Image from the data source.
-     *
-     * @param Zend_Pdf_FileParserDataSource $dataSource
-     * @return Zend_Pdf_Resource_Image_Png May also return null if
-     *   the data source does not appear to contain valid image data.
-     * @throws Zend_Pdf_Exception
-     */
-    protected static function _extractPngImage($dataSource)
-    {
-        $imageParser = new Zend_Pdf_FileParser_Image_PNG($dataSource);
-        $image = new Zend_Pdf_Resource_Image_PNG($imageParser);
-        unset($imageParser);
-
-        return $image;
-    }
-
-    /**
-     * Attempts to extract a TIFF Image from the data source.
-     *
-     * @param Zend_Pdf_FileParserDataSource $dataSource
-     * @return Zend_Pdf_Resource_Image_Tiff May also return null if
-     *   the data source does not appear to contain valid image data.
-     * @throws Zend_Pdf_Exception
-     */
-    protected static function _extractTiffImage($dataSource)
-    {
-        $imageParser = new Zend_Pdf_FileParser_Image_Tiff($dataSource);
-        $image = new Zend_Pdf_Resource_Image_Tiff($imageParser);
-        unset($imageParser);
-
-        return $image;
-    }
-
-}
-
-
-
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+vYqZNuBSnEQQOvjVVj7FeAt1sAK=

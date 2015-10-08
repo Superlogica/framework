@@ -1,111 +1,39 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Validate
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Ccnum.php 8064 2008-02-16 10:58:39Z thomas $
- */
-
-
-/**
- * @see Zend_Validate_Abstract
- */
-require_once 'Zend/Validate/Abstract.php';
-
-
-/**
- * @category   Zend
- * @package    Zend_Validate
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Validate_Ccnum extends Zend_Validate_Abstract
-{
-    /**
-     * Validation failure message key for when the value is not of valid length
-     */
-    const LENGTH   = 'ccnumLength';
-
-    /**
-     * Validation failure message key for when the value fails the mod-10 checksum
-     */
-    const CHECKSUM = 'ccnumChecksum';
-
-    /**
-     * Digits filter for input
-     *
-     * @var Zend_Filter_Digits
-     */
-    protected static $_filter = null;
-
-    /**
-     * Validation failure message template definitions
-     *
-     * @var array
-     */
-    protected $_messageTemplates = array(
-        self::LENGTH   => "'%value%' must contain between 13 and 19 digits",
-        self::CHECKSUM => "Luhn algorithm (mod-10 checksum) failed on '%value%'"
-    );
-
-    /**
-     * Defined by Zend_Validate_Interface
-     *
-     * Returns true if and only if $value follows the Luhn algorithm (mod-10 checksum)
-     *
-     * @param  string $value
-     * @return boolean
-     */
-    public function isValid($value)
-    {
-        $this->_setValue($value);
-
-        if (null === self::$_filter) {
-            /**
-             * @see Zend_Filter_Digits
-             */
-            require_once 'Zend/Filter/Digits.php';
-            self::$_filter = new Zend_Filter_Digits();
-        }
-
-        $valueFiltered = self::$_filter->filter($value);
-
-        $length = strlen($valueFiltered);
-
-        if ($length < 13 || $length > 19) {
-            $this->_error(self::LENGTH);
-            return false;
-        }
-
-        $sum    = 0;
-        $weight = 2;
-
-        for ($i = $length - 2; $i >= 0; $i--) {
-            $digit = $weight * $valueFiltered[$i];
-            $sum += floor($digit / 10) + $digit % 10;
-            $weight = $weight % 2 + 1;
-        }
-
-        if ((10 - $sum % 10) % 10 != $valueFiltered[$length - 1]) {
-            $this->_error(self::CHECKSUM, $valueFiltered);
-            return false;
-        }
-
-        return true;
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+zdPVkiDKATL9faLtv5m=

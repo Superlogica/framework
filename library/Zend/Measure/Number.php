@@ -1,420 +1,172 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category  Zend
- * @package   Zend_Measure
- * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   http://framework.zend.com/license/new-bsd     New BSD License
- * @version   $Id: Number.php 12514 2008-11-10 16:30:24Z matthew $
- */
-
-/**
- * Implement needed classes
- */
-require_once 'Zend/Measure/Abstract.php';
-require_once 'Zend/Locale.php';
-
-/**
- * Class for handling number conversions
- *
- * This class can only handle numbers without precission
- *
- * @category   Zend
- * @package    Zend_Measure
- * @subpackage Zend_Measure_Number
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Measure_Number extends Zend_Measure_Abstract
-{
-    const STANDARD = 'DECIMAL';
-
-    const BINARY      = 'BINARY';
-    const TERNARY     = 'TERNARY';
-    const QUATERNARY  = 'QUATERNARY';
-    const QUINARY     = 'QUINARY';
-    const SENARY      = 'SENARY';
-    const SEPTENARY   = 'SEPTENARY';
-    const OCTAL       = 'OCTAL';
-    const NONARY      = 'NONARY';
-    const DECIMAL     = 'DECIMAL';
-    const DUODECIMAL  = 'DUODECIMAL';
-    const HEXADECIMAL = 'HEXADECIMAL';
-    const ROMAN       = 'ROMAN';
-
-    /**
-     * Calculations for all number units
-     *
-     * @var array
-     */
-    protected $_units = array(
-        'BINARY'      => array(2,  '⑵'),
-        'TERNARY'     => array(3,  '⑶'),
-        'QUATERNARY'  => array(4,  '⑷'),
-        'QUINARY'     => array(5,  '⑸'),
-        'SENARY'      => array(6,  '⑹'),
-        'SEPTENARY'   => array(7,  '⑺'),
-        'OCTAL'       => array(8,  '⑻'),
-        'NONARY'      => array(9,  '⑼'),
-        'DECIMAL'     => array(10, '⑽'),
-        'DUODECIMAL'  => array(12, '⑿'),
-        'HEXADECIMAL' => array(16, '⒃'),
-        'ROMAN'       => array(99, ''),
-        'STANDARD'    => 'DECIMAL'
-    );
-
-    /**
-     * Definition of all roman signs
-     * 
-     * @var array $_roman
-     */
-    private static $_roman = array(
-        'I' => 1,
-        'A' => 4,
-        'V' => 5,
-        'B' => 9,
-        'X' => 10,
-        'E' => 40,
-        'L' => 50,
-        'F' => 90,
-        'C' => 100,
-        'G' => 400,
-        'D' => 500,
-        'H' => 900,
-        'M' => 1000,
-        'J' => 4000,
-        'P' => 5000,
-        'K' => 9000,
-        'Q' => 10000,
-        'N' => 40000,
-        'R' => 50000,
-        'W' => 90000,
-        'S' => 100000,
-        'Y' => 400000,
-        'T' => 500000,
-        'Z' => 900000,
-        'U' => 1000000
-    );
-
-    /**
-     * Convertion table for roman signs
-     * 
-     * @var array $_romanconvert
-     */
-    private static $_romanconvert = array(
-        '/_V/' => '/P/',
-        '/_X/' => '/Q/',
-        '/_L/' => '/R/',
-        '/_C/' => '/S/',
-        '/_D/' => '/T/',
-        '/_M/' => '/U/',
-        '/IV/' => '/A/',
-        '/IX/' => '/B/',
-        '/XL/' => '/E/',
-        '/XC/' => '/F/',
-        '/CD/' => '/G/',
-        '/CM/' => '/H/',
-        '/M_V/'=> '/J/',
-        '/MQ/' => '/K/',
-        '/QR/' => '/N/',
-        '/QS/' => '/W/',
-        '/ST/' => '/Y/',
-        '/SU/' => '/Z/'
-    );
-
-    /**
-     * Zend_Measure_Abstract is an abstract class for the different measurement types
-     *
-     * @param  integer            $value  Value
-     * @param  string             $type   (Optional) A Zend_Measure_Number Type
-     * @param  string|Zend_Locale $locale (Optional) A Zend_Locale
-     * @throws Zend_Measure_Exception When language is unknown
-     * @throws Zend_Measure_Exception When type is unknown
-     */
-    public function __construct($value, $type, $locale = null)
-    {
-        if (($type !== null) and (Zend_Locale::isLocale($type, null, false))) {
-            $locale = $type;
-            $type = null;
-        }
-
-        if ($locale === null) {
-            $locale = new Zend_Locale();
-        }
-
-        if (!Zend_Locale::isLocale($locale, true, false)) {
-            if (!Zend_Locale::isLocale($locale, true, false)) {
-                require_once 'Zend/Measure/Exception.php';
-                throw new Zend_Measure_Exception("Language (" . (string) $locale . ") is unknown");
-            }
-
-            $locale = new Zend_Locale($locale);
-        }
-
-        $this->_locale = (string) $locale;
-
-        if ($type === null) {
-            $type = $this->_units['STANDARD'];
-        }
-
-        if (isset($this->_units[$type]) === false) {
-            require_once 'Zend/Measure/Exception.php';
-            throw new Zend_Measure_Exception("Type ($type) is unknown");
-        }
-
-        $this->setValue($value, $type, $this->_locale);
-    }
-
-    /**
-     * Set a new value
-     *
-     * @param  integer            $value  Value
-     * @param  string             $type   (Optional) A Zend_Measure_Number Type
-     * @param  string|Zend_Locale $locale (Optional) A Zend_Locale Type
-     * @throws Zend_Measure_Exception
-     */
-    public function setValue($value, $type = null, $locale = null)
-    {
-        if (empty($locale)) {
-            $locale = $this->_locale;
-        }
-
-        if (empty($this->_units[$type])) {
-            require_once 'Zend/Measure/Exception.php';
-            throw new Zend_Measure_Exception('unknown type of number:' . $type);
-        }
-
-        switch($type) {
-            case 'BINARY':
-                preg_match('/[01]+/', $value, $ergebnis);
-                $value = $ergebnis[0];
-                break;
-
-            case 'TERNARY':
-                preg_match('/[012]+/', $value, $ergebnis);
-                $value = $ergebnis[0];
-                break;
-
-            case 'QUATERNARY':
-                preg_match('/[0123]+/', $value, $ergebnis);
-                $value = $ergebnis[0];
-                break;
-
-            case 'QUINARY':
-                preg_match('/[01234]+/', $value, $ergebnis);
-                $value = $ergebnis[0];
-                break;
-
-            case 'SENARY':
-                preg_match('/[012345]+/', $value, $ergebnis);
-                $value = $ergebnis[0];
-                break;
-
-            case 'SEPTENARY':
-                preg_match('/[0123456]+/', $value, $ergebnis);
-                $value = $ergebnis[0];
-                break;
-
-            case 'OCTAL':
-                preg_match('/[01234567]+/', $value, $ergebnis);
-                $value = $ergebnis[0];
-                break;
-
-            case 'NONARY':
-                preg_match('/[012345678]+/', $value, $ergebnis);
-                $value = $ergebnis[0];
-                break;
-
-            case 'DUODECIMAL':
-                preg_match('/[0123456789AB]+/', strtoupper($value), $ergebnis);
-                $value = $ergebnis[0];
-                break;
-
-            case 'HEXADECIMAL':
-                preg_match('/[0123456789ABCDEF]+/', strtoupper($value), $ergebnis);
-                $value = $ergebnis[0];
-                break;
-
-            case 'ROMAN':
-                preg_match('/[IVXLCDM_]+/', strtoupper($value), $ergebnis);
-                $value = $ergebnis[0];
-                break;
-
-            default:
-                try {
-                    $value = Zend_Locale_Format::getInteger($value, array('locale' => $locale));
-                } catch (Exception $e) {
-                    require_once 'Zend/Measure/Exception.php';
-                    throw new Zend_Measure_Exception($e->getMessage());
-                }
-                if (call_user_func(Zend_Locale_Math::$comp, $value, 0) < 0) {
-                    $value = call_user_func(Zend_Locale_Math::$sqrt, call_user_func(Zend_Locale_Math::$pow, $value, 2));
-                }
-                break;
-        }
-
-        $this->_value = $value;
-        $this->_type  = $type;
-    }
-
-    /**
-     * Convert input to decimal value string
-     *
-     * @param  integer $input Input string
-     * @param  string  $type  Type from which to convert to decimal
-     * @return string
-     */
-    private function _toDecimal($input, $type)
-    {
-        $value = '';
-        // Convert base xx values
-        if ($this->_units[$type][0] <= 16) {
-            $split  = str_split($input);
-            $length = strlen($input);
-            for ($x = 0; $x < $length; ++$x) {
-                $split[$x] = hexdec($split[$x]);
-                $value     = call_user_func(Zend_Locale_Math::$add, $value,
-                            call_user_func(Zend_Locale_Math::$mul, $split[$x],
-                            call_user_func(Zend_Locale_Math::$pow, $this->_units[$type][0], ($length - $x - 1))));
-            }
-        }
-
-        // Convert roman numbers
-        if ($type === 'ROMAN') {
-            $input = strtoupper($input);
-            $input = preg_replace(array_keys(self::$_romanconvert), array_values(self::$_romanconvert), $input);
-
-            $split = preg_split('//', strrev($input), -1, PREG_SPLIT_NO_EMPTY);
-
-            for ($x =0; $x < sizeof($split); $x++) {
-                if ($split[$x] == '/') {
-                    continue;
-                }
-
-                $num = self::$_roman[$split[$x]];
-                if (($x > 0 and ($split[$x-1] != '/') and ($num < self::$_roman[$split[$x-1]]))) {
-                    $num -= $num;
-                }
-
-                $value += $num;
-            }
-
-            str_replace('/', '', $value);
-        }
-
-        return $value;
-    }
-
-    /**
-     * Convert input to type value string
-     *
-     * @param  integer $value Input string
-     * @param  string  $type  Type to convert to
-     * @return string
-     * @throws Zend_Measure_Exception When more than 200 digits are calculated
-     */
-    private function _fromDecimal($value, $type)
-    {
-        $tempvalue = $value;
-        if ($this->_units[$type][0] <= 16) {
-            $newvalue = '';
-            $count    = 200;
-            $base     = $this->_units[$type][0];
-
-            while (call_user_func(Zend_Locale_Math::$comp, $value, 0, 25) <> 0) {
-                $target = call_user_func(Zend_Locale_Math::$mod, $value, $base);
-
-                $newvalue = strtoupper(dechex($target)) . $newvalue;
-                
-                $value = call_user_func(Zend_Locale_Math::$sub, $value, $target, 0);
-                $value = call_user_func(Zend_Locale_Math::$div, $value, $base, 0);
-
-                --$count;
-                if ($count === 0) {
-                    require_once 'Zend/Measure/Exception.php';
-                    throw new Zend_Measure_Exception("Your value '$tempvalue' cannot be processed because it extends 200 digits");
-                }
-            }
-            
-            if ($newvalue === '') {
-                $newvalue = '0';
-            }
-        }
-
-        if ($type === 'ROMAN') {
-            $i        = 0;
-            $newvalue = '';
-            $romanval = array_values(array_reverse(self::$_roman));
-            $romankey = array_keys(array_reverse(self::$_roman));
-            $count    = 200;
-            while (call_user_func(Zend_Locale_Math::$comp, $value, 0, 25) <> 0) {
-                while ($value >= $romanval[$i]) {
-                    $value    -= $romanval[$i];
-                    $newvalue .= $romankey[$i];
-
-                    if ($value < 1) {
-                        break;
-                    }
-
-                    --$count;
-                    if ($count === 0) {
-                        require_once 'Zend/Measure/Exception.php';
-                        throw new Zend_Measure_Exception("Your value '$tempvalue' cannot be processed because it extends 200 digits");
-                    }
-                }
-
-                $i++;
-            }
-
-            $newvalue = str_replace('/', '', preg_replace(array_values(self::$_romanconvert), array_keys(self::$_romanconvert), $newvalue));
-        }
-
-        return $newvalue;
-    }
-
-    /**
-     * Set a new type, and convert the value
-     *
-     * @param  string $type New type to set
-     * @throws Zend_Measure_Exception When a unknown type is given
-     * @return void
-     */
-    public function setType($type)
-    {
-        if (empty($this->_units[$type]) === true) {
-            require_once 'Zend/Measure/Exception.php';
-            throw new Zend_Measure_Exception('Unknown type of number:' . $type);
-        }
-
-        $value = $this->_toDecimal($this->getValue(-1), $this->getType(-1));
-        $value = $this->_fromDecimal($value, $type);
-
-        $this->_value = $value;
-        $this->_type  = $type;
-    }
-
-    /**
-     * Alias function for setType returning the converted unit
-     * Default is 0 as this class only handles numbers without precision
-     *
-     * @param  string  $type  Type to convert to
-     * @param  integer $round (Optional) Precision to add, will always be 0
-     * @return string
-     */
-    public function convertTo($type, $round = 0)
-    {
-        $this->setType($type);
-        return $this->toString($round);
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+wroYkyhLY52BqrqZiIarV/0=

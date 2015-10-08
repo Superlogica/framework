@@ -1,658 +1,128 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Oauth
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Config.php 23484 2010-12-10 03:57:59Z mjh_ca $
- */
-
-/** Zend_Oauth */
-require_once 'Zend/Oauth.php';
-
-/** Zend_Uri */
-require_once 'Zend/Uri.php';
-
-/** Zend_Oauth_Config_Interface */
-require_once 'Zend/Oauth/Config/ConfigInterface.php';
-
-/**
- * @category   Zend
- * @package    Zend_Oauth
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Oauth_Config implements Zend_Oauth_Config_ConfigInterface
-{
-    /**
-     * Signature method used when signing all parameters for an HTTP request
-     *
-     * @var string
-     */
-    protected $_signatureMethod = 'HMAC-SHA1';
-
-    /**
-     * Three request schemes are defined by OAuth, of which passing
-     * all OAuth parameters by Header is preferred. The other two are
-     * POST Body and Query String.
-     *
-     * @var string
-     */
-    protected $_requestScheme = Zend_Oauth::REQUEST_SCHEME_HEADER;
-
-    /**
-     * Preferred request Method - one of GET or POST - which Zend_Oauth
-     * will enforce as standard throughout the library. Generally a default
-     * of POST works fine unless a Provider specifically requires otherwise.
-     *
-     * @var string
-     */
-    protected $_requestMethod = Zend_Oauth::POST;
-
-    /**
-     * OAuth Version; This defaults to 1.0 - Must not be changed!
-     *
-     * @var string
-     */
-    protected $_version = '1.0';
-
-    /**
-     * This optional value is used to define where the user is redirected to
-     * after authorizing a Request Token from an OAuth Providers website.
-     * It's optional since a Provider may ask for this to be defined in advance
-     * when registering a new application for a Consumer Key.
-     *
-     * @var string
-     */
-    protected $_callbackUrl = null;
-
-    /**
-     * The URL root to append default OAuth endpoint paths.
-     *
-     * @var string
-     */
-    protected $_siteUrl = null;
-
-    /**
-     * The URL to which requests for a Request Token should be directed.
-     * When absent, assumed siteUrl+'/request_token'
-     *
-     * @var string
-     */
-    protected $_requestTokenUrl = null;
-
-    /**
-     * The URL to which requests for an Access Token should be directed.
-     * When absent, assumed siteUrl+'/access_token'
-     *
-     * @var string
-     */
-    protected $_accessTokenUrl = null;
-
-    /**
-     * The URL to which users should be redirected to authorize a Request Token.
-     * When absent, assumed siteUrl+'/authorize'
-     *
-     * @var string
-     */
-    protected $_authorizeUrl = null;
-
-    /**
-     * An OAuth application's Consumer Key.
-     *
-     * @var string
-     */
-    protected $_consumerKey = null;
-
-    /**
-     * Every Consumer Key has a Consumer Secret unless you're in RSA-land.
-     *
-     * @var string
-     */
-    protected $_consumerSecret = null;
-
-    /**
-     * If relevant, a PEM encoded RSA private key encapsulated as a
-     * Zend_Crypt_Rsa Key
-     *
-     * @var Zend_Crypt_Rsa_Key_Private
-     */
-    protected $_rsaPrivateKey = null;
-
-    /**
-     * If relevant, a PEM encoded RSA public key encapsulated as a
-     * Zend_Crypt_Rsa Key
-     *
-     * @var Zend_Crypt_Rsa_Key_Public
-     */
-    protected $_rsaPublicKey = null;
-
-    /**
-     * Generally this will nearly always be an Access Token represented as a
-     * Zend_Oauth_Token_Access object.
-     *
-     * @var Zend_Oauth_Token
-     */
-    protected $_token = null;
-
-    /**
-     * Constructor; create a new object with an optional array|Zend_Config
-     * instance containing initialising options.
-     *
-     * @param  array|Zend_Config $options
-     * @return void
-     */
-    public function __construct($options = null)
-    {
-        if ($options !== null) {
-            if ($options instanceof Zend_Config) {
-                $options = $options->toArray();
-            }
-            $this->setOptions($options);
-        }
-    }
-
-    /**
-     * Parse option array or Zend_Config instance and setup options using their
-     * relevant mutators.
-     *
-     * @param  array|Zend_Config $options
-     * @return Zend_Oauth_Config
-     */
-    public function setOptions(array $options)
-    {
-        foreach ($options as $key => $value) {
-            switch ($key) {
-                case 'consumerKey':
-                    $this->setConsumerKey($value);
-                    break;
-                case 'consumerSecret':
-                    $this->setConsumerSecret($value);
-                    break;
-                case 'signatureMethod':
-                    $this->setSignatureMethod($value);
-                    break;
-                case 'version':
-                    $this->setVersion($value);
-                    break;
-                case 'callbackUrl':
-                    $this->setCallbackUrl($value);
-                    break;
-                case 'siteUrl':
-                    $this->setSiteUrl($value);
-                    break;
-                case 'requestTokenUrl':
-                    $this->setRequestTokenUrl($value);
-                    break;
-                case 'accessTokenUrl':
-                    $this->setAccessTokenUrl($value);
-                    break;
-                case 'userAuthorizationUrl':
-                    $this->setUserAuthorizationUrl($value);
-                    break;
-                case 'authorizeUrl':
-                    $this->setAuthorizeUrl($value);
-                    break;
-                case 'requestMethod':
-                    $this->setRequestMethod($value);
-                    break;
-                case 'rsaPrivateKey':
-                    $this->setRsaPrivateKey($value);
-                    break;
-                case 'rsaPublicKey':
-                    $this->setRsaPublicKey($value);
-                    break;
-            }
-        }
-        if (isset($options['requestScheme'])) {
-            $this->setRequestScheme($options['requestScheme']);
-        }
-
-        return $this;
-    }
-
-    /**
-     * Set consumer key
-     *
-     * @param  string $key
-     * @return Zend_Oauth_Config
-     */
-    public function setConsumerKey($key)
-    {
-        $this->_consumerKey = $key;
-        return $this;
-    }
-
-    /**
-     * Get consumer key
-     *
-     * @return string
-     */
-    public function getConsumerKey()
-    {
-        return $this->_consumerKey;
-    }
-
-    /**
-     * Set consumer secret
-     *
-     * @param  string $secret
-     * @return Zend_Oauth_Config
-     */
-    public function setConsumerSecret($secret)
-    {
-        $this->_consumerSecret = $secret;
-        return $this;
-    }
-
-    /**
-     * Get consumer secret
-     *
-     * Returns RSA private key if set; otherwise, returns any previously set
-     * consumer secret.
-     *
-     * @return string
-     */
-    public function getConsumerSecret()
-    {
-        if ($this->_rsaPrivateKey !== null) {
-            return $this->_rsaPrivateKey;
-        }
-        return $this->_consumerSecret;
-    }
-
-    /**
-     * Set signature method
-     *
-     * @param  string $method
-     * @return Zend_Oauth_Config
-     * @throws Zend_Oauth_Exception if unsupported signature method specified
-     */
-    public function setSignatureMethod($method)
-    {
-        $method = strtoupper($method);
-        if (!in_array($method, array(
-                'HMAC-SHA1', 'HMAC-SHA256', 'RSA-SHA1', 'PLAINTEXT'
-            ))
-        ) {
-            require_once 'Zend/Oauth/Exception.php';
-            throw new Zend_Oauth_Exception('Unsupported signature method: '
-                . $method
-                . '. Supported are HMAC-SHA1, RSA-SHA1, PLAINTEXT and HMAC-SHA256');
-        }
-        $this->_signatureMethod = $method;;
-        return $this;
-    }
-
-    /**
-     * Get signature method
-     *
-     * @return string
-     */
-    public function getSignatureMethod()
-    {
-        return $this->_signatureMethod;
-    }
-
-    /**
-     * Set request scheme
-     *
-     * @param  string $scheme
-     * @return Zend_Oauth_Config
-     * @throws Zend_Oauth_Exception if invalid scheme specified, or if POSTBODY set when request method of GET is specified
-     */
-    public function setRequestScheme($scheme)
-    {
-        $scheme = strtolower($scheme);
-        if (!in_array($scheme, array(
-                Zend_Oauth::REQUEST_SCHEME_HEADER,
-                Zend_Oauth::REQUEST_SCHEME_POSTBODY,
-                Zend_Oauth::REQUEST_SCHEME_QUERYSTRING,
-            ))
-        ) {
-            require_once 'Zend/Oauth/Exception.php';
-            throw new Zend_Oauth_Exception(
-                '\'' . $scheme . '\' is an unsupported request scheme'
-            );
-        }
-        if ($scheme == Zend_Oauth::REQUEST_SCHEME_POSTBODY
-            && $this->getRequestMethod() == Zend_Oauth::GET
-        ) {
-            require_once 'Zend/Oauth/Exception.php';
-            throw new Zend_Oauth_Exception(
-                'Cannot set POSTBODY request method if HTTP method set to GET'
-            );
-        }
-        $this->_requestScheme = $scheme;
-        return $this;
-    }
-
-    /**
-     * Get request scheme
-     *
-     * @return string
-     */
-    public function getRequestScheme()
-    {
-        return $this->_requestScheme;
-    }
-
-    /**
-     * Set version
-     *
-     * @param  string $version
-     * @return Zend_Oauth_Config
-     */
-    public function setVersion($version)
-    {
-        $this->_version = $version;
-        return $this;
-    }
-
-    /**
-     * Get version
-     *
-     * @return string
-     */
-    public function getVersion()
-    {
-        return $this->_version;
-    }
-
-    /**
-     * Set callback URL
-     *
-     * @param  string $url
-     * @return Zend_Oauth_Config
-     * @throws Zend_Oauth_Exception for invalid URLs
-     */
-    public function setCallbackUrl($url)
-    {
-        if (!Zend_Uri::check($url)) {
-            require_once 'Zend/Oauth/Exception.php';
-            throw new Zend_Oauth_Exception(
-                '\'' . $url . '\' is not a valid URI'
-            );
-        }
-        $this->_callbackUrl = $url;
-        return $this;
-    }
-
-    /**
-     * Get callback URL
-     *
-     * @return string
-     */
-    public function getCallbackUrl()
-    {
-        return $this->_callbackUrl;
-    }
-
-    /**
-     * Set site URL
-     *
-     * @param  string $url
-     * @return Zend_Oauth_Config
-     * @throws Zend_Oauth_Exception for invalid URLs
-     */
-    public function setSiteUrl($url)
-    {
-        if (!Zend_Uri::check($url)) {
-            require_once 'Zend/Oauth/Exception.php';
-            throw new Zend_Oauth_Exception(
-                '\'' . $url . '\' is not a valid URI'
-            );
-        }
-        $this->_siteUrl = $url;
-        return $this;
-    }
-
-    /**
-     * Get site URL
-     *
-     * @return string
-     */
-    public function getSiteUrl()
-    {
-        return $this->_siteUrl;
-    }
-
-    /**
-     * Set request token URL
-     *
-     * @param  string $url
-     * @return Zend_Oauth_Config
-     * @throws Zend_Oauth_Exception for invalid URLs
-     */
-    public function setRequestTokenUrl($url)
-    {
-        if (!Zend_Uri::check($url)) {
-            require_once 'Zend/Oauth/Exception.php';
-            throw new Zend_Oauth_Exception(
-                '\'' . $url . '\' is not a valid URI'
-            );
-        }
-        $this->_requestTokenUrl = rtrim($url, '/');
-        return $this;
-    }
-
-    /**
-     * Get request token URL
-     *
-     * If no request token URL has been set, but a site URL has, returns the
-     * site URL with the string "/request_token" appended.
-     *
-     * @return string
-     */
-    public function getRequestTokenUrl()
-    {
-        if (!$this->_requestTokenUrl && $this->_siteUrl) {
-            return $this->_siteUrl . '/request_token';
-        }
-        return $this->_requestTokenUrl;
-    }
-
-    /**
-     * Set access token URL
-     *
-     * @param  string $url
-     * @return Zend_Oauth_Config
-     * @throws Zend_Oauth_Exception for invalid URLs
-     */
-    public function setAccessTokenUrl($url)
-    {
-        if (!Zend_Uri::check($url)) {
-            require_once 'Zend/Oauth/Exception.php';
-            throw new Zend_Oauth_Exception(
-                '\'' . $url . '\' is not a valid URI'
-            );
-        }
-        $this->_accessTokenUrl = rtrim($url, '/');
-        return $this;
-    }
-
-    /**
-     * Get access token URL
-     *
-     * If no access token URL has been set, but a site URL has, returns the
-     * site URL with the string "/access_token" appended.
-     *
-     * @return string
-     */
-    public function getAccessTokenUrl()
-    {
-        if (!$this->_accessTokenUrl && $this->_siteUrl) {
-            return $this->_siteUrl . '/access_token';
-        }
-        return $this->_accessTokenUrl;
-    }
-
-    /**
-     * Set user authorization URL
-     *
-     * @param  string $url
-     * @return Zend_Oauth_Config
-     * @throws Zend_Oauth_Exception for invalid URLs
-     */
-    public function setUserAuthorizationUrl($url)
-    {
-        return $this->setAuthorizeUrl($url);
-    }
-
-    /**
-     * Set authorization URL
-     *
-     * @param  string $url
-     * @return Zend_Oauth_Config
-     * @throws Zend_Oauth_Exception for invalid URLs
-     */
-    public function setAuthorizeUrl($url)
-    {
-        if (!Zend_Uri::check($url)) {
-            require_once 'Zend/Oauth/Exception.php';
-            throw new Zend_Oauth_Exception(
-                '\'' . $url . '\' is not a valid URI'
-            );
-        }
-        $this->_authorizeUrl = rtrim($url, '/');
-        return $this;
-    }
-
-    /**
-     * Get user authorization URL
-     *
-     * @return string
-     */
-    public function getUserAuthorizationUrl()
-    {
-        return $this->getAuthorizeUrl();
-    }
-
-    /**
-     * Get authorization URL
-     *
-     * If no authorization URL has been set, but a site URL has, returns the
-     * site URL with the string "/authorize" appended.
-     *
-     * @return string
-     */
-    public function getAuthorizeUrl()
-    {
-        if (!$this->_authorizeUrl && $this->_siteUrl) {
-            return $this->_siteUrl . '/authorize';
-        }
-        return $this->_authorizeUrl;
-    }
-
-    /**
-     * Set request method
-     *
-     * @param  string $method
-     * @return Zend_Oauth_Config
-     * @throws Zend_Oauth_Exception for invalid request methods
-     */
-    public function setRequestMethod($method)
-    {
-        $method = strtoupper($method);
-        if (!in_array($method, array(
-                Zend_Oauth::GET,
-                Zend_Oauth::POST,
-                Zend_Oauth::PUT,
-                Zend_Oauth::DELETE,
-            ))
-        ) {
-            require_once 'Zend/Oauth/Exception.php';
-            throw new Zend_Oauth_Exception('Invalid method: ' . $method);
-        }
-        $this->_requestMethod = $method;
-        return $this;
-    }
-
-    /**
-     * Get request method
-     *
-     * @return string
-     */
-    public function getRequestMethod()
-    {
-        return $this->_requestMethod;
-    }
-
-    /**
-     * Set RSA public key
-     *
-     * @param  Zend_Crypt_Rsa_Key_Public $key
-     * @return Zend_Oauth_Config
-     */
-    public function setRsaPublicKey(Zend_Crypt_Rsa_Key_Public $key)
-    {
-        $this->_rsaPublicKey = $key;
-        return $this;
-    }
-
-    /**
-     * Get RSA public key
-     *
-     * @return Zend_Crypt_Rsa_Key_Public
-     */
-    public function getRsaPublicKey()
-    {
-        return $this->_rsaPublicKey;
-    }
-
-    /**
-     * Set RSA private key
-     *
-     * @param  Zend_Crypt_Rsa_Key_Private $key
-     * @return Zend_Oauth_Config
-     */
-    public function setRsaPrivateKey(Zend_Crypt_Rsa_Key_Private $key)
-    {
-        $this->_rsaPrivateKey = $key;
-        return $this;
-    }
-
-    /**
-     * Get RSA private key
-     *
-     * @return Zend_Crypt_Rsa_Key_Private
-     */
-    public function getRsaPrivateKey()
-    {
-        return $this->_rsaPrivateKey;
-    }
-
-    /**
-     * Set OAuth token
-     *
-     * @param  Zend_Oauth_Token $token
-     * @return Zend_Oauth_Config
-     */
-    public function setToken(Zend_Oauth_Token $token)
-    {
-        $this->_token = $token;
-        return $this;
-    }
-
-    /**
-     * Get OAuth token
-     *
-     * @return Zend_Oauth_Token
-     */
-    public function getToken()
-    {
-        return $this->_token;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+UPhtT8V4BH/1wJ+isq3Ncg4UKbBC

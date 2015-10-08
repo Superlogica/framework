@@ -1,170 +1,41 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- * 
- * @category   Zend
- * @package    Zend_Mail
- * @subpackage Transport
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Sendmail.php 8064 2008-02-16 10:58:39Z thomas $
- */
-
-
-/**
- * @see Zend_Mail_Transport_Abstract
- */
-require_once 'Zend/Mail/Transport/Abstract.php';
-
-
-/**
- * Class for sending eMails via the PHP internal mail() function
- *
- * @category   Zend
- * @package    Zend_Mail
- * @subpackage Transport
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Mail_Transport_Sendmail extends Zend_Mail_Transport_Abstract
-{
-    /**
-     * Subject
-     * @var string
-     * @access public
-     */
-    public $subject = null;
-
-
-    /**
-     * Config options for sendmail parameters
-     *
-     * @var string
-     */
-    public $parameters;
-
-
-    /**
-     * EOL character string
-     * @var string
-     * @access public
-     */
-    public $EOL = PHP_EOL;
-
-
-    /**
-     * Constructor.
-     *
-     * @param  string $parameters OPTIONAL (Default: null)
-     * @return void
-     */
-    public function __construct($parameters = null)
-    {
-        $this->parameters = $parameters;
-    }
-
-
-    /**
-     * Send mail using PHP native mail()
-     *
-     * @access public
-     * @return void
-     * @throws Zend_Mail_Transport_Exception on mail() failure
-     */
-    public function _sendMail()
-    {
-        if ($this->parameters === null) {
-            $result = mail(
-                $this->recipients,
-                $this->_mail->getSubject(),
-                $this->body,
-                $this->header);
-        } else {
-            $result = mail(
-                $this->recipients,
-                $this->_mail->getSubject(),
-                $this->body,
-                $this->header,
-                $this->parameters);
-        }
-        if (!$result) {
-            /**
-             * @see Zend_Mail_Transport_Exception
-             */
-            require_once 'Zend/Mail/Transport/Exception.php';
-            throw new Zend_Mail_Transport_Exception('Unable to send mail');
-        }
-    }
-
-
-    /**
-     * Format and fix headers
-     *
-     * mail() uses its $to and $subject arguments to set the To: and Subject:
-     * headers, respectively. This method strips those out as a sanity check to
-     * prevent duplicate header entries.
-     *
-     * @access  protected
-     * @param   array $headers
-     * @return  void
-     * @throws  Zend_Mail_Transport_Exception
-     */
-    protected function _prepareHeaders($headers)
-    {
-        if (!$this->_mail) {
-            /**
-             * @see Zend_Mail_Transport_Exception
-             */
-            require_once 'Zend/Mail/Transport/Exception.php';
-            throw new Zend_Mail_Transport_Exception('_prepareHeaders requires a registered Zend_Mail object');
-        }
-
-        // mail() uses its $to parameter to set the To: header, and the $subject
-        // parameter to set the Subject: header. We need to strip them out.
-        if (0 === strpos(PHP_OS, 'WIN')) {
-            // If the current recipients list is empty, throw an error
-            if (empty($this->recipients)) {
-                /**
-                 * @see Zend_Mail_Transport_Exception
-                 */
-                require_once 'Zend/Mail/Transport/Exception.php';
-                throw new Zend_Mail_Transport_Exception('Missing To addresses');
-            }
-        } else {
-            // All others, simply grab the recipients and unset the To: header
-            if (!isset($headers['To'])) {
-                /**
-                 * @see Zend_Mail_Transport_Exception
-                 */
-                require_once 'Zend/Mail/Transport/Exception.php';
-                throw new Zend_Mail_Transport_Exception('Missing To header');
-            }
-
-            unset($headers['To']['append']);
-            $this->recipients = implode(',', $headers['To']);
-        }
-
-        // Remove recipient header
-        unset($headers['To']);
-
-        // Remove subject header, if present
-        if (isset($headers['Subject'])) {
-            unset($headers['Subject']);
-        }
-
-        // Prepare headers
-        parent::_prepareHeaders($headers);
-    }
-
-}
-
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+KdBeTdFagduYQPYoZlasqxD2lD0X

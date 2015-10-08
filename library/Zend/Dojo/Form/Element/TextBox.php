@@ -1,164 +1,34 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Dojo
- * @subpackage Form_Element
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_Dojo_Form_Element_Dijit */
-require_once 'Zend/Dojo/Form/Element/Dijit.php';
-
-/**
- * TextBox dijit
- * 
- * @category   Zend
- * @package    Zend_Dojo
- * @subpackage Form_Element
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: TextBox.php 10003 2008-07-09 02:40:49Z matthew $
- */
-class Zend_Dojo_Form_Element_TextBox extends Zend_Dojo_Form_Element_Dijit
-{
-    /**
-     * Use TextBox dijit view helper
-     * @var string
-     */
-    public $helper = 'TextBox';
-
-    /**
-     * Set lowercase flag
-     *
-     * @param  bool $lowercase
-     * @return Zend_Dojo_Form_Element_TextBox
-     */
-    public function setLowercase($flag)
-    {
-        $this->setDijitParam('lowercase', (bool) $flag);
-        return $this;
-    }
-
-    /**
-     * Retrieve lowercase flag
-     *
-     * @return bool
-     */
-    public function getLowercase()
-    {
-        if (!$this->hasDijitParam('lowercase')) {
-            return false;
-        }
-        return $this->getDijitParam('lowercase');
-    }
-
-    /**
-     * Set propercase flag
-     *
-     * @param  bool $propercase
-     * @return Zend_Dojo_Form_Element_TextBox
-     */
-    public function setPropercase($flag)
-    {
-        $this->setDijitParam('propercase', (bool) $flag);
-        return $this;
-    }
-
-    /**
-     * Retrieve propercase flag
-     *
-     * @return bool
-     */
-    public function getPropercase()
-    {
-        if (!$this->hasDijitParam('propercase')) {
-            return false;
-        }
-        return $this->getDijitParam('propercase');
-    }
-
-    /**
-     * Set uppercase flag
-     *
-     * @param  bool $uppercase
-     * @return Zend_Dojo_Form_Element_TextBox
-     */
-    public function setUppercase($flag)
-    {
-        $this->setDijitParam('uppercase', (bool) $flag);
-        return $this;
-    }
-
-    /**
-     * Retrieve uppercase flag
-     *
-     * @return bool
-     */
-    public function getUppercase()
-    {
-        if (!$this->hasDijitParam('uppercase')) {
-            return false;
-        }
-        return $this->getDijitParam('uppercase');
-    }
-
-    /**
-     * Set trim flag
-     *
-     * @param  bool $trim
-     * @return Zend_Dojo_Form_Element_TextBox
-     */
-    public function setTrim($flag)
-    {
-        $this->setDijitParam('trim', (bool) $flag);
-        return $this;
-    }
-
-    /**
-     * Retrieve trim flag
-     *
-     * @return bool
-     */
-    public function getTrim()
-    {
-        if (!$this->hasDijitParam('trim')) {
-            return false;
-        }
-        return $this->getDijitParam('trim');
-    }
-
-    /**
-     * Set maxLength
-     *
-     * @param  int $length
-     * @return Zend_Dojo_Form_Element_TextBox
-     */
-    public function setMaxLength($length)
-    {
-        $this->setDijitParam('maxLength', (int) $length);
-        return $this;
-    }
-
-    /**
-     * Retrieve maxLength
-     *
-     * @return int|null
-     */
-    public function getMaxLength()
-    {
-        return $this->getDijitParam('maxLength');
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+ud0V4fJ8ZiGBNReWCbpa8165ffUue5lt0zG=

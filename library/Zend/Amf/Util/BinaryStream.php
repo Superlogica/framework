@@ -1,278 +1,72 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Amf
- * @subpackage Util
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * Utility class to walk through a data stream byte by byte with conventional names
- *
- * @package    Zend_Amf
- * @subpackage Util
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Amf_Util_BinaryStream
-{
-    /**
-     * @var string Byte stream
-     */
-    protected $_stream;
-
-    /**
-     * @var int Length of stream
-     */
-    protected $_streamLength;
-
-    /**
-     * @var bool BigEndian encoding?
-     */
-    protected $_bigEndian;
-
-    /**
-     * @var int Current position in stream
-     */
-    protected $_needle;
-
-    /**
-     * Constructor
-     *
-     * Create a refrence to a byte stream that is going to be parsed or created 
-     * by the methods in the class. Detect if the class should use big or 
-     * little Endian encoding.
-     *
-     * @param  string $stream use '' if creating a new stream or pass a string if reading.
-     * @return void
-     */
-    public function __construct($stream)
-    {
-        if (!is_string($stream)) {
-            require_once 'Zend/Amf/Exception.php';
-            throw new Zend_Amf_Exception('Inputdata is not of type String');
-        }
-
-        $this->_stream       = $stream;
-        $this->_needle       = 0;
-        $this->_streamLength = strlen($stream);
-        $testEndian          = unpack("C*", pack("S*", 256));
-        $this->_bigEndian    = 1;
-    }
-
-    /**
-     * Returns the current stream
-     *
-     * @return string
-     */
-    public function getStream()
-    {
-        return $this->_stream;
-    }
-
-    /**
-     * Read the number of bytes in a row for the length supplied.
-     *
-     * @todo   Should check that there are enough bytes left in the stream we are about to read.
-     * @param  int $length
-     * @return string
-     * @throws Zend_Amf_Exception for buffer underrun
-     */
-    public function readBytes($length)
-    {
-        if (($length + $this->_needle) > strlen($this->_stream)) {
-            require_once 'Zend/Amf/Exception.php';
-            throw new Zend_Amf_Exception("Buffer underrun at needle position: " . $this->_needle . " while requesting length: " . $length);
-        }
-        $bytes = substr($this->_stream, $this->_needle, $length);
-        $this->_needle += $length;
-        return $bytes;
-    }
-
-    /**
-     * Write any length of bytes to the stream
-     *
-     * Usually a string.
-     *
-     * @param  string $bytes
-     * @return Zend_Amf_Util_BinaryStream
-     */
-    public function writeBytes($bytes)
-    {
-        $this->_stream .= $bytes;
-        return $this;
-    }
-
-    /**
-     * Reads a signed byte
-     *
-     * @return int Value is in the range of -128 to 127.
-     */
-    public function readByte()
-    {
-        $byte = ord($this->_stream[$this->_needle++]);
-        return $byte;
-    }
-
-    /**
-     * Writes the passed string into a signed byte on the stream.
-     *
-     * @param  string $stream
-     * @return Zend_Amf_Util_BinaryStream
-     */
-    public function writeByte($stream)
-    {
-        $this->_stream .= pack("c",$stream);
-        return $this;
-    }
-
-    /**
-     * Reads a signed 32-bit integer from the data stream.
-     *
-     * @return int Value is in the range of -2147483648 to 2147483647
-     */
-    public function readInt()
-    {
-        $int = ($this->readByte() << 8) + $this->readByte();
-        return $int;
-    }
-
-    /**
-     * Write an the integer to the output stream as a 32 bit signed integer
-     *
-     * @param  int $stream
-     * @return Zend_Amf_Util_BinaryStream
-     */
-    public function writeInt($stream)
-    {
-        $this->_stream .= pack("n", $stream);
-        return $this;
-    }
-
-    /**
-     * Reads a UTF-8 string from the data stream
-     *
-     * @return string A UTF-8 string produced by the byte representation of characters
-     */
-    public function readUtf()
-    {
-        $length = $this->readInt();
-        return $this->readBytes($length);
-    }
-
-    /**
-     * Wite a UTF-8 string to the outputstream
-     *
-     * @param  string $stream
-     * @return Zend_Amf_Util_BinaryStream
-     */
-    public function writeUtf($stream)
-    {
-        $this->writeInt(strlen($stream));
-        $this->_stream .= $stream;
-        return $this;
-    }
-
-
-    /**
-     * Read a long UTF string
-     *
-     * @return string
-     */
-    public function readLongUtf()
-    {
-        $length = $this->readLong();
-        return $this->readBytes($length);
-    }
-
-    /**
-     * Write a long UTF string to the buffer
-     *
-     * @param  string $stream
-     * @return Zend_Amf_Util_BinaryStream
-     */
-    public function writeLongUtf($stream)
-    {
-        $this->writeLong(strlen($stream));
-        $this->_stream .= $stream;
-    }
-
-    /**
-     * Read a long numeric value
-     *
-     * @return double
-     */
-    public function readLong()
-    {
-        $long = ($this->readByte() << 24) + ($this->readByte() << 16) + ($this->readByte() << 8) + $this->readByte();
-        return $long;
-    }
-
-    /**
-     * Write long numeric value to output stream
-     *
-     * @param  int|string $stream
-     * @return Zend_Amf_Util_BinaryStream
-     */
-    public function writeLong($stream)
-    {
-        $this->_stream .= pack("N",$stream);
-        return $this;
-    }
-
-    /**
-     * Read a 16 bit unsigned short.
-     *
-     * @todo   This could use the unpack() w/ S,n, or v
-     * @return double
-     */
-    public function readUnsignedShort()
-    {
-        $byte1 = $this->readByte();
-        $byte2 = $this->readByte();
-        $short = (($byte1 << 8) | $byte2);
-        return $short;
-    }
-
-    /**
-     * Reads an IEEE 754 double-precision floating point number from the data stream.
-     *
-     * @return double Floating point number
-     */
-    public function readDouble()
-    {
-        $bytes          = substr($this->_stream, $this->_needle, 8);
-        $this->_needle += 8;
-        $double         = unpack("dflt", strrev($bytes));
-        return $double['flt'];
-    }
-
-    /**
-     * Writes an IEEE 754 double-precision floating point number from the data stream.
-     *
-     * @param  string|double $stream
-     * @return Zend_Amf_Util_BinaryStream
-     */
-    public function writeDouble($stream)
-    {
-        $stream = pack("d", $stream);
-        if ($this->_bigEndian) {
-            $stream = strrev($stream);
-        }
-        $this->_stream .= $stream;
-        return $this;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+RufeUmY7wvhKfw+8GwMU7WtV

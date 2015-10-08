@@ -1,84 +1,32 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category  Zend
- * @package   Zend_Validate
- * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   http://framework.zend.com/license/new-bsd     New BSD License
- * @version   $Id: $
- */
-
-/**
- * @see Zend_Validate_File_Exists
- */
-require_once 'Zend/Validate/File/Exists.php';
-
-/**
- * Validator which checks if the destination file does not exist
- *
- * @category  Zend
- * @package   Zend_Validate
- * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Validate_File_NotExists extends Zend_Validate_File_Exists
-{
-    /**
-     * @const string Error constants
-     */
-    const DOES_EXIST = 'fileNotExistsDoesExist';
-
-    /**
-     * @var array Error message templates
-     */
-    protected $_messageTemplates = array(
-        self::DOES_EXIST => "The file '%value%' does exist"
-    );
-
-    /**
-     * Defined by Zend_Validate_Interface
-     *
-     * Returns true if and only if the file does not exist in the set destinations
-     *
-     * @param  string  $value Real file to check for
-     * @param  array   $file  File data from Zend_File_Transfer
-     * @return boolean
-     */
-    public function isValid($value, $file = null)
-    {
-        $directories = $this->getDirectory(true);
-        if (($file !== null) and (!empty($file['destination']))) {
-            $directories[] = $file['destination'];
-        } else if (!isset($file['name'])) {
-            $file['name'] = $value;
-        }
-
-        foreach ($directories as $directory) {
-            if (empty($directory)) {
-                continue;
-            }
-
-            $check = true;
-            if (file_exists($directory . DIRECTORY_SEPARATOR . $file['name'])) {
-                return $this->_throw($file, self::DOES_EXIST);
-            }
-        }
-
-        if (!isset($check)) {
-            return $this->_throw($file, self::DOES_EXIST);
-        }
-
-        return true;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

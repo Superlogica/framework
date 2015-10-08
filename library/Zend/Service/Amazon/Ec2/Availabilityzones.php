@@ -1,73 +1,35 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Service_Amazon
- * @subpackage Ec2
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id$
- */
-
-require_once 'Zend/Service/Amazon/Ec2/Abstract.php';
-
-/**
- * An Amazon EC2 interface to query which Availibity Zones your account has access to.
- *
- * @category   Zend
- * @package    Zend_Service_Amazon
- * @subpackage Ec2
- * @copyright  Copyright (c) 22005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Service_Amazon_Ec2_Availabilityzones extends Zend_Service_Amazon_Ec2_Abstract
-{
-    /**
-     * Describes availability zones that are currently available to the account
-     * and their states.
-     *
-     * @param string|array $zoneName            Name of an availability zone.
-     * @return array                            An array that contains all the return items.  Keys: zoneName and zoneState.
-     */
-    public function describe($zoneName = null)
-    {
-        $params = array();
-        $params['Action'] = 'DescribeAvailabilityZones';
-
-        if(is_array($zoneName) && !empty($zoneName)) {
-            foreach($zoneName as $k=>$name) {
-                $params['ZoneName.' . ($k+1)] = $name;
-            }
-        } elseif($zoneName) {
-            $params['ZoneName.1'] = $zoneName;
-        }
-
-        $response = $this->sendRequest($params);
-
-        $xpath  = $response->getXPath();
-        $nodes  = $xpath->query('//ec2:item');
-
-        $return = array();
-        foreach ($nodes as $k => $node) {
-            $item = array();
-            $item['zoneName']   = $xpath->evaluate('string(ec2:zoneName/text())', $node);
-            $item['zoneState']  = $xpath->evaluate('string(ec2:zoneState/text())', $node);
-
-            $return[] = $item;
-            unset($item);
-        }
-
-        return $return;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

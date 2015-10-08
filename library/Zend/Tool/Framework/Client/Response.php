@@ -1,223 +1,62 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Tool
- * @subpackage Framework
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id$
- */
-
-/**
- * @category   Zend
- * @package    Zend_Tool
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Tool_Framework_Client_Response
-{
-    /**
-     * @var callback|null
-     */
-    protected $_callback = null;
-    
-    /**
-     * @var array
-     */
-    protected $_content = array();
-    
-    /**
-     * @var Zend_Tool_Framework_Exception
-     */
-    protected $_exception = null;
-    
-    /**
-     * @var null|array
-     */
-    protected $_decorators = null;
-    
-    /**
-     * @var array
-     */
-    protected $_defaultDecoratorOptions = array();
-
-    /**
-     * setContentCallback()
-     *
-     * @param callback $callback
-     * @return Zend_Tool_Framework_Client_Response
-     */
-    public function setContentCallback($callback)
-    {
-        if (!is_callable($callback)) {
-            require_once 'Zend/Tool/Framework/Client/Exception.php';
-            throw new Zend_Tool_Framework_Client_Exception('The callback provided is not callable');
-        }
-        $this->_callback = $callback;
-        return $this;
-    }
-    
-    /**
-     * setContent()
-     *
-     * @param string $content
-     * @return Zend_Tool_Framework_Client_Response
-     */
-    public function setContent($content, Array $decoratorOptions = array())
-    {
-        $this->_applyDecorators($content, $decoratorOptions);
-        
-        $this->_content = array();
-        $this->appendContent($content);
-        return $this;
-    }
-
-    /**
-     * appendCallback
-     *
-     * @param string $content
-     * @return Zend_Tool_Framework_Client_Response
-     */
-    public function appendContent($content, Array $decoratorOptions = array())
-    {
-        $content = $this->_applyDecorators($content, $decoratorOptions);
-        
-        if ($this->_callback !== null) {
-            call_user_func($this->_callback, $content);
-        }
-
-        $this->_content[] = $content;
-
-        return $this;
-    }
-
-    /**
-     * setDefaultDecoratorOptions()
-     *
-     * @param array $decoratorOptions
-     * @param bool $mergeIntoExisting
-     * @return Zend_Tool_Framework_Client_Response
-     */
-    public function setDefaultDecoratorOptions(Array $decoratorOptions, $mergeIntoExisting = false)
-    {
-        if ($mergeIntoExisting == false) {
-            $this->_defaultDecoratorOptions = array();
-        }
-
-        $this->_defaultDecoratorOptions = array_merge($this->_defaultDecoratorOptions, $decoratorOptions);
-        return $this;
-    }
-    
-    /**
-     * getContent()
-     *
-     * @return string
-     */
-    public function getContent()
-    {
-        return implode('', $this->_content);
-    }
-
-    /**
-     * isException()
-     *
-     * @return bool
-     */
-    public function isException()
-    {
-        return isset($this->_exception);
-    }
-
-    /**
-     * setException()
-     *
-     * @param Exception $exception
-     * @return Zend_Tool_Framework_Client_Response
-     */
-    public function setException(Exception $exception)
-    {
-        $this->_exception = $exception;
-        return $this;
-    }
-
-    /**
-     * getException()
-     *
-     * @return Exception
-     */
-    public function getException()
-    {
-        return $this->_exception;
-    }
-
-    /**
-     * Add Content Decorator
-     *
-     * @param Zend_Tool_Framework_Client_Response_ContentDecorator_Interface $contentDecorator
-     * @return unknown
-     */
-    public function addContentDecorator(Zend_Tool_Framework_Client_Response_ContentDecorator_Interface $contentDecorator)
-    {
-        $decoratorName = strtolower($contentDecorator->getName());
-        $this->_decorators[$decoratorName] = $contentDecorator;
-        return $this;
-    }
-    
-    /**
-     * getContentDecorators()
-     *
-     * @return array
-     */
-    public function getContentDecorators()
-    {
-        return $this->_decorators;
-    }
-    
-    /**
-     * __toString() to cast to a string
-     *
-     * @return string
-     */
-    public function __toString()
-    {
-        return (string) implode('', $this->_content);
-    }
-    
-    /**
-     * _applyDecorators() apply a group of decorators
-     *
-     * @param string $content
-     * @param array $decoratorOptions
-     * @return string
-     */
-    protected function _applyDecorators($content, Array $decoratorOptions)
-    {
-        $options = array_merge($this->_defaultDecoratorOptions, $decoratorOptions);
-        
-        $options = array_change_key_case($options, CASE_LOWER);
-        
-        if ($options) {
-            foreach ($this->_decorators as $decoratorName => $decorator) {
-                if (array_key_exists($decoratorName, $options)) {
-                    $content = $decorator->decorate($content, $options[$decoratorName]);
-                }
-            }
-        }
-        
-        return $content;
-        
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+DFgLVsvo4CFkFkzEfBF/AzTV

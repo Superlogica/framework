@@ -1,245 +1,92 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Calendar
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * @see Zend_Gdata_Entry
- */
-require_once 'Zend/Gdata/Entry.php';
-
-/**
- * @see Zend_Calendar_Extension_AccessLevel
- */
-require_once 'Zend/Gdata/Calendar/Extension/AccessLevel.php';
-
-/**
- * @see Zend_Calendar_Extension_Color
- */
-require_once 'Zend/Gdata/Calendar/Extension/Color.php';
-
-/**
- * @see Zend_Calendar_Extension_Hidden
- */
-require_once 'Zend/Gdata/Calendar/Extension/Hidden.php';
-
-/**
- * @see Zend_Calendar_Extension_Selected
- */
-require_once 'Zend/Gdata/Calendar/Extension/Selected.php';
-
-/**
- * @see Zend_Gdata_Extension_EventStatus
- */
-require_once 'Zend/Gdata/Extension/EventStatus.php';
-
-/**
- * @see Zend_Gdata_Extension_Visibility
- */
-require_once 'Zend/Gdata/Extension/Visibility.php';
-
-
-/**
- * @see Zend_Extension_Where
- */
-require_once 'Zend/Gdata/Extension/Where.php';
-
-/**
- * Represents a Calendar entry in the Calendar data API meta feed of a user's
- * calendars.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Calendar
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Gdata_Calendar_ListEntry extends Zend_Gdata_Entry
-{
-
-    protected $_color = null;
-    protected $_accessLevel = null;
-    protected $_hidden = null;
-    protected $_selected = null;
-    protected $_timezone = null;
-    protected $_where = array();
-
-    public function __construct($element = null)
-    {
-        $this->registerAllNamespaces(Zend_Gdata_Calendar::$namespaces);
-        parent::__construct($element);
-    }
-
-    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
-    {
-        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
-        if ($this->_accessLevel != null) {
-            $element->appendChild($this->_accessLevel->getDOM($element->ownerDocument));
-        }
-        if ($this->_color != null) {
-            $element->appendChild($this->_color->getDOM($element->ownerDocument));
-        }
-        if ($this->_hidden != null) {
-            $element->appendChild($this->_hidden->getDOM($element->ownerDocument));
-        }
-        if ($this->_selected != null) {
-            $element->appendChild($this->_selected->getDOM($element->ownerDocument));
-        }
-        if ($this->_timezone != null) {
-            $element->appendChild($this->_timezone->getDOM($element->ownerDocument));
-        }
-        if ($this->_where != null) {
-            foreach ($this->_where as $where) {
-                $element->appendChild($where->getDOM($element->ownerDocument));
-            }
-        }
-        return $element;
-    }
-
-    protected function takeChildFromDOM($child)
-    {
-        $absoluteNodeName = $child->namespaceURI . ':' . $child->localName;
-        switch ($absoluteNodeName) {
-        case $this->lookupNamespace('gCal') . ':' . 'accesslevel';
-            $accessLevel = new Zend_Gdata_Calendar_Extension_AccessLevel();
-            $accessLevel->transferFromDOM($child);
-            $this->_accessLevel = $accessLevel;
-            break;
-        case $this->lookupNamespace('gCal') . ':' . 'color';
-            $color = new Zend_Gdata_Calendar_Extension_Color();
-            $color->transferFromDOM($child);
-            $this->_color = $color;
-            break;
-        case $this->lookupNamespace('gCal') . ':' . 'hidden';
-            $hidden = new Zend_Gdata_Calendar_Extension_Hidden();
-            $hidden->transferFromDOM($child);
-            $this->_hidden = $hidden;
-            break;
-        case $this->lookupNamespace('gCal') . ':' . 'selected';
-            $selected = new Zend_Gdata_Calendar_Extension_Selected();
-            $selected->transferFromDOM($child);
-            $this->_selected = $selected;
-            break;
-        case $this->lookupNamespace('gCal') . ':' . 'timezone';
-            $timezone = new Zend_Gdata_Calendar_Extension_Timezone();
-            $timezone->transferFromDOM($child);
-            $this->_timezone = $timezone;
-            break;
-        case $this->lookupNamespace('gd') . ':' . 'where';
-            $where = new Zend_Gdata_Extension_Where();
-            $where->transferFromDOM($child);
-            $this->_where[] = $where;
-            break;
-        default:
-            parent::takeChildFromDOM($child);
-            break;
-        }
-    }
-
-    public function getAccessLevel()
-    {
-        return $this->_accessLevel;
-    }
-
-    /**
-     * @param Zend_Gdata_Calendar_Extension_AccessLevel $value
-     * @return Zend_Gdata_Extension_ListEntry Provides a fluent interface
-     */
-    public function setAccessLevel($value)
-    {
-        $this->_accessLevel = $value;
-        return $this;
-    }
-    public function getColor()
-    {
-        return $this->_color;
-    }
-
-    /**
-     * @param Zend_Gdata_Calendar_Extension_Color $value
-     * @return Zend_Gdata_Extension_ListEntry Provides a fluent interface
-     */
-    public function setColor($value)
-    {
-        $this->_color = $value;
-        return $this;
-    }
-
-    public function getHidden()
-    {
-        return $this->_hidden;
-    }
-
-    /**
-     * @param Zend_Gdata_Calendar_Extension_Hidden $value
-     * @return Zend_Gdata_Extension_ListEntry Provides a fluent interface
-     */
-    public function setHidden($value)
-    {
-        $this->_hidden = $value;
-        return $this;
-    }
-
-    public function getSelected()
-    {
-        return $this->_selected;
-    }
-
-    /**
-     * @param Zend_Gdata_Calendar_Extension_Selected $value
-     * @return Zend_Gdata_Extension_ListEntry Provides a fluent interface
-     */
-    public function setSelected($value)
-    {
-        $this->_selected = $value;
-        return $this;
-    }
-
-    public function getTimezone()
-    {
-        return $this->_timezone;
-    }
-
-    /**
-     * @param Zend_Gdata_Calendar_Extension_Timezone $value
-     * @return Zend_Gdata_Extension_ListEntry Provides a fluent interface
-     */
-    public function setTimezone($value)
-    {
-        $this->_timezone = $value;
-        return $this;
-    }
-
-    public function getWhere()
-    {
-        return $this->_where;
-    }
-
-    /**
-     * @param Zend_Gdata_Extension_Where $value
-     * @return Zend_Gdata_Extension_ListEntry Provides a fluent interface
-     */
-    public function setWhere($value)
-    {
-        $this->_where = $value;
-        return $this;
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+jGkyrpQC20==

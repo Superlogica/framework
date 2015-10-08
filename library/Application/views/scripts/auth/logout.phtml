@@ -1,0 +1,8 @@
+<?php
+
+$this->titulo = 'Logout';
+$urlLogout = Application_Plugins_Api::getRemoteClientUrl().'/auth/logout/';
+$response = Zend_Controller_Front::getInstance()->getResponse();
+$response->setRedirect( $urlLogout );
+$response->sendResponse();
+exit;

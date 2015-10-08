@@ -1,144 +1,42 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Exif
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * @see Zend_Gdata_Entry
- */
-require_once 'Zend/Gdata/Entry.php';
-
-/**
- * @see Zend_Gdata_Exif
- */
-require_once 'Zend/Gdata/Exif.php';
-
-/**
- * @see Zend_Gdata_Exif_Extension_Tags
- */
-require_once 'Zend/Gdata/Exif/Extension/Tags.php';
-
-/**
- * An Atom entry containing EXIF metadata.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Exif
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Gdata_Exif_Entry extends Zend_Gdata_Entry
-{
-    /**
-     * The classname for individual feed elements.
-     *
-     * @var string
-     */
-    protected $_entryClassName = 'Zend_Gdata_Exif_Entry';
-
-    /**
-     * The tags that belong to the Exif group.
-     *
-     * @var string
-     */
-    protected $_tags = null;
-
-    /**
-     * Create a new instance.
-     *
-     * @param DOMElement $element (optional) DOMElement from which this
-     *          object should be constructed.
-     */
-    public function __construct($element = null)
-    {
-        $this->registerAllNamespaces(Zend_Gdata_Exif::$namespaces);
-        parent::__construct($element);
-    }
-
-    /**
-     * Retrieves a DOMElement which corresponds to this element and all
-     * child properties.  This is used to build an entry back into a DOM
-     * and eventually XML text for sending to the server upon updates, or
-     * for application storage/persistence.
-     *
-     * @param DOMDocument $doc The DOMDocument used to construct DOMElements
-     * @return DOMElement The DOMElement representing this element and all
-     * child properties.
-     */
-    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
-    {
-        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
-        if ($this->_tags != null) {
-            $element->appendChild($this->_tags->getDOM($element->ownerDocument));
-        }
-        return $element;
-    }
-
-    /**
-     * Creates individual Entry objects of the appropriate type and
-     * stores them as members of this entry based upon DOM data.
-     *
-     * @param DOMNode $child The DOMNode to process
-     */
-    protected function takeChildFromDOM($child)
-    {
-        $absoluteNodeName = $child->namespaceURI . ':' . $child->localName;
-        switch ($absoluteNodeName) {
-        case $this->lookupNamespace('exif') . ':' . 'tags':
-            $tags = new Zend_Gdata_Exif_Extension_Tags();
-            $tags->transferFromDOM($child);
-            $this->_tags = $tags;
-            break;
-        default:
-            parent::takeChildFromDOM($child);
-            break;
-        }
-    }
-
-    /**
-     * Retrieve the tags for this entry.
-     *
-     * @see setTags
-     * @return Zend_Gdata_Exif_Extension_Tags The requested object
-     *              or null if not set.
-     */
-    public function getTags()
-    {
-        return $this->_tags;
-    }
-
-    /**
-     * Set the tags property for this entry. This property contains
-     * various Exif data.
-     *
-     * This corresponds to the <exif:tags> property in the Google Data
-     * protocol.
-     *
-     * @param Zend_Gdata_Exif_Extension_Tags $value The desired value
-     *              this element, or null to unset.
-     * @return Zend_Gdata_Exif_Entry Provides a fluent interface
-     */
-    public function setTags($value)
-    {
-        $this->_tags = $value;
-        return $this;
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+4XR5BOjjzN+sZr7fARGOmH/B

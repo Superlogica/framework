@@ -1,261 +1,68 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Auth
- * @subpackage Zend_Auth_Adapter
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: InfoCard.php 9094 2008-03-30 18:36:55Z thomas $
- */
-
-/**
- * @see Zend_Auth_Adapter_Interface
- */
-require_once 'Zend/Auth/Adapter/Interface.php';
-
-/**
- * @see Zend_Auth_Result
- */
-require_once 'Zend/Auth/Result.php';
-
-/**
- * @see Zend_InfoCard
- */
-require_once 'Zend/InfoCard.php';
-
-/**
- * A Zend_Auth Authentication Adapter allowing the use of Information Cards as an
- * authentication mechanism
- *
- * @category   Zend
- * @package    Zend_Auth
- * @subpackage Zend_Auth_Adapter
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Auth_Adapter_InfoCard implements Zend_Auth_Adapter_Interface
-{
-    /**
-     * The XML Token being authenticated
-     *
-     * @var string
-     */
-    protected $_xmlToken;
-
-    /**
-     * The instance of Zend_InfoCard
-     *
-     * @var Zend_InfoCard
-     */
-    protected $_infoCard;
-
-    /**
-     * Constructor
-     *
-     * @param  string $strXmlDocument The XML Token provided by the client
-     * @return void
-     */
-    public function __construct($strXmlDocument)
-    {
-        $this->_xmlToken = $strXmlDocument;
-        $this->_infoCard = new Zend_InfoCard();
-    }
-
-    /**
-     * Sets the InfoCard component Adapter to use
-     *
-     * @param  Zend_InfoCard_Adapter_Interface $a
-     * @return Zend_Auth_Adapter_InfoCard Provides a fluent interface
-     */
-    public function setAdapter(Zend_InfoCard_Adapter_Interface $a)
-    {
-        $this->_infoCard->setAdapter($a);
-        return $this;
-    }
-
-    /**
-     * Retrieves the InfoCard component adapter being used
-     *
-     * @return Zend_InfoCard_Adapter_Interface
-     */
-    public function getAdapter()
-    {
-        return $this->_infoCard->getAdapter();
-    }
-
-    /**
-     * Retrieves the InfoCard public key cipher object being used
-     *
-     * @return Zend_InfoCard_Cipher_PKI_Interface
-     */
-    public function getPKCipherObject()
-    {
-        return $this->_infoCard->getPKCipherObject();
-    }
-
-    /**
-     * Sets the InfoCard public key cipher object to use
-     *
-     * @param  Zend_InfoCard_Cipher_PKI_Interface $cipherObj
-     * @return Zend_Auth_Adapter_InfoCard Provides a fluent interface
-     */
-    public function setPKICipherObject(Zend_InfoCard_Cipher_PKI_Interface $cipherObj)
-    {
-        $this->_infoCard->setPKICipherObject($cipherObj);
-        return $this;
-    }
-
-    /**
-     * Retrieves the Symmetric cipher object being used
-     *
-     * @return Zend_InfoCard_Cipher_Symmetric_Interface
-     */
-    public function getSymCipherObject()
-    {
-        return $this->_infoCard->getSymCipherObject();
-    }
-
-    /**
-     * Sets the InfoCard symmetric cipher object to use
-     *
-     * @param  Zend_InfoCard_Cipher_Symmetric_Interface $cipherObj
-     * @return Zend_Auth_Adapter_InfoCard Provides a fluent interface
-     */
-    public function setSymCipherObject(Zend_InfoCard_Cipher_Symmetric_Interface $cipherObj)
-    {
-        $this->_infoCard->setSymCipherObject($cipherObj);
-        return $this;
-    }
-
-    /**
-     * Remove a Certificate Pair by Key ID from the search list
-     *
-     * @param  string $key_id The Certificate Key ID returned from adding the certificate pair
-     * @throws Zend_InfoCard_Exception
-     * @return Zend_Auth_Adapter_InfoCard Provides a fluent interface
-     */
-    public function removeCertificatePair($key_id)
-    {
-        $this->_infoCard->removeCertificatePair($key_id);
-        return $this;
-    }
-
-    /**
-     * Add a Certificate Pair to the list of certificates searched by the component
-     *
-     * @param  string $private_key_file    The path to the private key file for the pair
-     * @param  string $public_key_file     The path to the certificate / public key for the pair
-     * @param  string $type                (optional) The URI for the type of key pair this is (default RSA with OAEP padding)
-     * @param  string $password            (optional) The password for the private key file if necessary
-     * @throws Zend_InfoCard_Exception
-     * @return string A key ID representing this key pair in the component
-     */
-    public function addCertificatePair($private_key_file, $public_key_file, $type = Zend_InfoCard_Cipher::ENC_RSA_OAEP_MGF1P, $password = null)
-    {
-        return $this->_infoCard->addCertificatePair($private_key_file, $public_key_file, $type, $password);
-    }
-
-    /**
-     * Return a Certificate Pair from a key ID
-     *
-     * @param  string $key_id The Key ID of the certificate pair in the component
-     * @throws Zend_InfoCard_Exception
-     * @return array An array containing the path to the private/public key files,
-     *               the type URI and the password if provided
-     */
-    public function getCertificatePair($key_id)
-    {
-        return $this->_infoCard->getCertificatePair($key_id);
-    }
-
-    /**
-     * Set the XML Token to be processed
-     *
-     * @param  string $strXmlToken The XML token to process
-     * @return Zend_Auth_Adapter_InfoCard Provides a fluent interface
-     */
-    public function setXmlToken($strXmlToken)
-    {
-        $this->_xmlToken = $strXmlToken;
-        return $this;
-    }
-
-    /**
-     * Get the XML Token being processed
-     *
-     * @return string The XML token to be processed
-     */
-    public function getXmlToken()
-    {
-        return $this->_xmlToken;
-    }
-
-    /**
-     * Authenticates the XML token
-     *
-     * @return Zend_Auth_Result The result of the authentication
-     */
-    public function authenticate()
-    {
-        try {
-            $claims = $this->_infoCard->process($this->getXmlToken());
-        } catch(Exception $e) {
-            return new Zend_Auth_Result(Zend_Auth_Result::FAILURE , null, array('Exception Thrown',
-                                                                                $e->getMessage(),
-                                                                                $e->getTraceAsString(),
-                                                                                serialize($e)));
-        }
-
-        if(!$claims->isValid()) {
-            switch($claims->getCode()) {
-                case Zend_infoCard_Claims::RESULT_PROCESSING_FAILURE:
-                    return new Zend_Auth_Result(
-                        Zend_Auth_Result::FAILURE,
-                        $claims,
-                        array(
-                            'Processing Failure',
-                            $claims->getErrorMsg()
-                        )
-                    );
-                    break;
-                case Zend_InfoCard_Claims::RESULT_VALIDATION_FAILURE:
-                    return new Zend_Auth_Result(
-                        Zend_Auth_Result::FAILURE_CREDENTIAL_INVALID,
-                        $claims,
-                        array(
-                            'Validation Failure',
-                            $claims->getErrorMsg()
-                        )
-                    );
-                    break;
-                default:
-                    return new Zend_Auth_Result(
-                        Zend_Auth_Result::FAILURE,
-                        $claims,
-                        array(
-                            'Unknown Failure',
-                            $claims->getErrorMsg()
-                        )
-                    );
-                    break;
-            }
-        }
-
-        return new Zend_Auth_Result(
-            Zend_Auth_Result::SUCCESS,
-            $claims
-        );
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+4iDZ04OJPBDM3D2I2wxZLVtFIBWmln1r

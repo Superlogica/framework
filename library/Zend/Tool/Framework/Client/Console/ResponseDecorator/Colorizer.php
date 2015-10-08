@@ -1,67 +1,30 @@
-<?php
-
-class Zend_Tool_Framework_Client_Console_ResponseDecorator_Colorizer 
-    implements Zend_Tool_Framework_Client_Response_ContentDecorator_Interface 
-{
-    
-    protected $_colorOptions = array(
-        // blacks
-        'black'     => '30m',
-        'hiBlack'   => '1;30m',
-        'bgBlack'   => '40m',
-        // reds
-        'red'       => '31m',
-        'hiRed'     => '1:31m',
-        'bgRed'     => '41m',
-        // greens
-        'green'     => '32m',
-        'hiGreen'   => '1;32m',
-        'bgGreen'   => '42m',
-        // yellows
-        'yellow'    => '33m',
-        'hiYellow'  => '1;33m',
-        'bgYellow'  => '43m',
-        // blues
-        'blue'      => '34m',
-        'hiBlue'    => '1;34m',
-        'bgBlue'    => '44m',
-        // magentas
-        'magenta'   => '35m',
-        'hiMagenta' => '1;35m',
-        'bgMagenta' => '45m',
-        // cyans
-        'cyan'      => '36m',
-        'hiCyan'    => '1;36m',
-        'bgCyan'    => '46m',
-        // whites
-        'white'     => '37m',
-        'hiWhite'   => '1;37m',
-        'bgWhite'   => '47m'
-        );
-    
-    public function getName()
-    {
-        return 'color';
-    }
-    
-    public function decorate($content, $color)
-    {
-        if (is_string($color)) {
-            $color = array($color);
-        }
-        
-        $newContent = '';
-        
-        foreach ($color as $c) {
-            if (array_key_exists($c, $this->_colorOptions)) {
-                $newContent .= "\033[" . $this->_colorOptions[$c];
-            }
-        }
-        
-        $newContent .= $content . "\033[m";
-        
-        return $newContent;
-    }
-    
-    
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

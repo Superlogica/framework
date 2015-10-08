@@ -1,220 +1,71 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_CodeGenerator
- * @subpackage PHP
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id$
- */
-
-/**
- * @see Zend_CodeGenerator_Php_Abstract
- */
-require_once 'Zend/CodeGenerator/Php/Abstract.php';
-
-/**
- * @see Zend_CodeGenerator_Php_Docblock_Tag
- */
-require_once 'Zend/CodeGenerator/Php/Docblock/Tag.php';
-
-/**
- * @category   Zend
- * @package    Zend_CodeGenerator
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_CodeGenerator_Php_Docblock extends Zend_CodeGenerator_Php_Abstract
-{
-    /**
-     * @var string
-     */
-    protected $_shortDescription = null;
-    
-    /**
-     * @var string
-     */
-    protected $_longDescription = null;
-    
-    /**
-     * @var array
-     */
-    protected $_tags = array();
-
-    /**
-     * @var string
-     */
-    protected $_indentation = '';
-    
-    /**
-     * fromReflection() - Build a docblock generator object from a reflection object
-     *
-     * @param Zend_Reflection_Docblock $reflectionDocblock
-     * @return Zend_CodeGenerator_Php_Docblock
-     */
-    public static function fromReflection(Zend_Reflection_Docblock $reflectionDocblock)
-    {
-        $docblock = new self();
-        
-        $docblock->setSourceContent($reflectionDocblock->getContents());
-        $docblock->setSourceDirty(false);
-        
-        $docblock->setShortDescription($reflectionDocblock->getShortDescription());
-        $docblock->setLongDescription($reflectionDocblock->getLongDescription());
-        
-        foreach ($reflectionDocblock->getTags() as $tag) {
-            $docblock->setTag(Zend_CodeGenerator_Php_Docblock_Tag::fromReflection($tag));
-        }
-        
-        return $docblock;
-    }
-    
-    /**
-     * setShortDescription()
-     *
-     * @param string $shortDescription
-     * @return Zend_CodeGenerator_Php_Docblock
-     */
-    public function setShortDescription($shortDescription)
-    {
-        $this->_shortDescription = $shortDescription;
-        return $this;
-    }
-    
-    /**
-     * getShortDescription()
-     *
-     * @return string
-     */
-    public function getShortDescription()
-    {
-        return $this->_shortDescription;
-    }
-    
-    /**
-     * setLongDescription()
-     *
-     * @param string $longDescription
-     * @return Zend_CodeGenerator_Php_Docblock
-     */
-    public function setLongDescription($longDescription)
-    {
-        $this->_longDescription = $longDescription;
-        return $this;
-    }
-    
-    /**
-     * getLongDescription()
-     *
-     * @return string
-     */
-    public function getLongDescription()
-    {
-        return $this->_longDescription;
-    }
-    
-    /**
-     * setTags()
-     *
-     * @param array $tags
-     * @return Zend_CodeGenerator_Php_Docblock
-     */
-    public function setTags(Array $tags)
-    {
-        foreach ($tags as $tag) {
-            $this->setTag($tag);
-        }
-        
-        return $this;
-    }
-    
-    /**
-     * setTag()
-     *
-     * @param array|Zend_CodeGenerator_Php_Docblock_Tag $tag
-     * @return Zend_CodeGenerator_Php_Docblock
-     */
-    public function setTag($tag)
-    {
-        if (is_array($tag)) {
-            $tag = new Zend_CodeGenerator_Php_Docblock_Tag($tag);
-        } elseif (!$tag instanceof Zend_CodeGenerator_Php_Docblock_Tag) {
-            require_once 'Zend/CodeGenerator/Php/Exception.php';
-            throw new Zend_CodeGenerator_Php_Exception(
-                'setTag() expects either an array of method options or an '
-                . 'instance of Zend_CodeGenerator_Php_Docblock_Tag'
-                );
-        }
-        
-        $this->_tags[] = $tag;
-        return $this;
-    }
-    
-    /**
-     * getTags
-     *
-     * @return array Array of Zend_CodeGenerator_Php_Docblock_Tag
-     */
-    public function getTags()
-    {
-        return $this->_tags;
-    }
-    
-    /**
-     * generate()
-     *
-     * @return string
-     */
-    public function generate()
-    {
-        if (!$this->isSourceDirty()) {
-            return $this->_docCommentize($this->getSourceContent());
-        }
-        
-        $output  = '';
-        if (null !== ($sd = $this->getShortDescription())) {
-            $output .= $sd . PHP_EOL . PHP_EOL;
-        }
-        if (null !== ($ld = $this->getLongDescription())) {
-            $output .= $ld . PHP_EOL . PHP_EOL;
-        }
-
-        foreach ($this->getTags() as $tag) {
-            $output .= $tag->generate();
-        }
-        
-        return $this->_docCommentize(trim($output));
-    }
-    
-    /**
-     * _docCommentize()
-     *
-     * @param string $content
-     * @return string
-     */
-    protected function _docCommentize($content)
-    {
-        $indent = $this->getIndentation();
-        $output = '/**' . PHP_EOL;
-        $content = wordwrap($content, 80, "\n");
-        $lines = explode("\n", $content);
-        foreach ($lines as $line) {
-            $output .= $indent . ' * ' . $line . PHP_EOL;
-        }
-        $output .= $indent . ' */' . PHP_EOL;
-        return $output;
-    }
-    
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

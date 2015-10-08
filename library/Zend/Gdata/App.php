@@ -1,1208 +1,389 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage App
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * Zend_Gdata_Feed
- */
-require_once 'Zend/Gdata/Feed.php';
-
-/**
- * Zend_Gdata_Http_Client
- */
-require_once 'Zend/Http/Client.php';
-
-/**
- * Zend_Version
- */
-require_once 'Zend/Version.php';
-
-/**
- * Zend_Gdata_App_MediaSource
- */
-require_once 'Zend/Gdata/App/MediaSource.php';
-
-/**
- * Provides Atom Publishing Protocol (APP) functionality.  This class and all
- * other components of Zend_Gdata_App are designed to work independently from
- * other Zend_Gdata components in order to interact with generic APP services.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage App
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Gdata_App
-{
-
-    /** Default major protocol version.
-      *
-      * @see _majorProtocolVersion
-      */
-    const DEFAULT_MAJOR_PROTOCOL_VERSION = 1;
-
-    /** Default minor protocol version.
-      *
-      * @see _minorProtocolVersion
-      */
-    const DEFAULT_MINOR_PROTOCOL_VERSION = null;
-
-    /**
-     * Client object used to communicate
-     *
-     * @var Zend_Http_Client
-     */
-    protected $_httpClient;
-
-    /**
-     * Client object used to communicate in static context
-     *
-     * @var Zend_Http_Client
-     */
-    protected static $_staticHttpClient = null;
-
-    /**
-     * Override HTTP PUT and DELETE request methods?
-     *
-     * @var boolean
-     */
-    protected static $_httpMethodOverride = false;
-
-    /**
-     * Enable gzipped responses?
-     *
-     * @var boolean
-     */
-    protected static $_gzipEnabled = false;
-
-    /**
-     * Use verbose exception messages.  In the case of HTTP errors,
-     * use the body of the HTTP response in the exception message.
-     *
-     * @var boolean
-     */
-    protected static $_verboseExceptionMessages = true;
-
-    /**
-     * Default URI to which to POST.
-     *
-     * @var string
-     */
-    protected $_defaultPostUri = null;
-
-    /**
-     * Packages to search for classes when using magic __call method, in order.
-     *
-     * @var array
-     */
-    protected $_registeredPackages = array(
-            'Zend_Gdata_App_Extension',
-            'Zend_Gdata_App');
-
-    /**
-     * Maximum number of redirects to follow during HTTP operations
-     *
-     * @var int
-     */
-    protected static $_maxRedirects = 5;
-
-    /**
-      * Indicates the major protocol version that should be used.
-      * At present, recognized values are either 1 or 2. However, any integer
-      * value >= 1 is considered valid.
-      *
-      * Under most circumtances, this will be automatically set by
-      * Zend_Gdata_App subclasses.
-      *
-      * @see setMajorProtocolVersion()
-      * @see getMajorProtocolVersion()
-      */
-    protected $_majorProtocolVersion;
-
-    /**
-      * Indicates the minor protocol version that should be used. Can be set
-      * to either an integer >= 0, or NULL if no minor version should be sent
-      * to the server.
-      *
-      * At present, this field is not used by any Google services, but may be
-      * used in the future.
-      *
-      * Under most circumtances, this will be automatically set by
-      * Zend_Gdata_App subclasses.
-      *
-      * @see setMinorProtocolVersion()
-      * @see getMinorProtocolVersion()
-      */
-    protected $_minorProtocolVersion;
-
-    /**
-     * Whether we want to use XML to object mapping when fetching data.
-     *
-     * @var boolean
-     */
-    protected $_useObjectMapping = true;
-
-    /**
-     * Create Gdata object
-     *
-     * @param Zend_Http_Client $client
-     * @param string $applicationId
-     */
-    public function __construct($client = null, $applicationId = 'MyCompany-MyApp-1.0')
-    {
-        $this->setHttpClient($client, $applicationId);
-        // Set default protocol version. Subclasses should override this as
-        // needed once a given service supports a new version.
-        $this->setMajorProtocolVersion(self::DEFAULT_MAJOR_PROTOCOL_VERSION);
-        $this->setMinorProtocolVersion(self::DEFAULT_MINOR_PROTOCOL_VERSION);
-    }
-
-    /**
-     * Adds a Zend Framework package to the $_registeredPackages array.
-     * This array is searched when using the magic __call method below
-     * to instantiante new objects.
-     *
-     * @param string $name The name of the package (eg Zend_Gdata_App)
-     * @return void
-     */
-    public function registerPackage($name)
-    {
-        array_unshift($this->_registeredPackages, $name);
-    }
-
-    /**
-     * Retrieve feed as string or object
-     *
-     * @param string $uri The uri from which to retrieve the feed
-     * @param string $className The class which is used as the return type
-     * @return string|Zend_Gdata_App_Feed Returns string only if the object
-     *                                    mapping has been disabled explicitly
-     *                                    by passing false to the
-     *                                    useObjectMapping() function.
-     */
-    public function getFeed($uri, $className='Zend_Gdata_App_Feed')
-    {
-        return $this->importUrl($uri, $className, null);
-    }
-
-    /**
-     * Retrieve entry as string or object
-     *
-     * @param string $uri
-     * @param string $className The class which is used as the return type
-     * @return string|Zend_Gdata_App_Entry Returns string only if the object
-     *                                     mapping has been disabled explicitly
-     *                                     by passing false to the
-     *                                     useObjectMapping() function.
-     */
-    public function getEntry($uri, $className='Zend_Gdata_App_Entry')
-    {
-        return $this->importUrl($uri, $className, null);
-    }
-
-    /**
-     * Get the Zend_Http_Client object used for communication
-     *
-     * @return Zend_Http_Client
-     */
-    public function getHttpClient()
-    {
-        return $this->_httpClient;
-    }
-
-    /**
-     * Set the Zend_Http_Client object used for communication
-     *
-     * @param Zend_Http_Client $client The client to use for communication
-     * @throws Zend_Gdata_App_HttpException
-     * @return Zend_Gdata_App Provides a fluent interface
-     */
-    public function setHttpClient($client,
-        $applicationId = 'MyCompany-MyApp-1.0')
-    {
-        if ($client === null) {
-            $client = new Zend_Http_Client();
-        }
-        if (!$client instanceof Zend_Http_Client) {
-            require_once 'Zend/Gdata/App/HttpException.php';
-            throw new Zend_Gdata_App_HttpException(
-                'Argument is not an instance of Zend_Http_Client.');
-        }
-        $userAgent = $applicationId . ' Zend_Framework_Gdata/' .
-            Zend_Version::VERSION;
-        $client->setHeaders('User-Agent', $userAgent);
-        $client->setConfig(array(
-            'strictredirects' => true
-            )
-        );
-        $this->_httpClient = $client;
-        Zend_Gdata::setStaticHttpClient($client);
-        return $this;
-    }
-
-    /**
-     * Set the static HTTP client instance
-     *
-     * Sets the static HTTP client object to use for retrieving the feed.
-     *
-     * @param  Zend_Http_Client $httpClient
-     * @return void
-     */
-    public static function setStaticHttpClient(Zend_Http_Client $httpClient)
-    {
-        self::$_staticHttpClient = $httpClient;
-    }
-
-
-    /**
-     * Gets the HTTP client object. If none is set, a new Zend_Http_Client will be used.
-     *
-     * @return Zend_Http_Client
-     */
-    public static function getStaticHttpClient()
-    {
-        if (!self::$_staticHttpClient instanceof Zend_Http_Client) {
-            $client = new Zend_Http_Client();
-            $userAgent = 'Zend_Framework_Gdata/' . Zend_Version::VERSION;
-            $client->setHeaders('User-Agent', $userAgent);
-            $client->setConfig(array(
-                'strictredirects' => true
-                )
-            );
-            self::$_staticHttpClient = $client;
-        }
-        return self::$_staticHttpClient;
-    }
-
-    /**
-     * Toggle using POST instead of PUT and DELETE HTTP methods
-     *
-     * Some feed implementations do not accept PUT and DELETE HTTP
-     * methods, or they can't be used because of proxies or other
-     * measures. This allows turning on using POST where PUT and
-     * DELETE would normally be used; in addition, an
-     * X-Method-Override header will be sent with a value of PUT or
-     * DELETE as appropriate.
-     *
-     * @param  boolean $override Whether to override PUT and DELETE with POST.
-     * @return void
-     */
-    public static function setHttpMethodOverride($override = true)
-    {
-        self::$_httpMethodOverride = $override;
-    }
-
-    /**
-     * Get the HTTP override state
-     *
-     * @return boolean
-     */
-    public static function getHttpMethodOverride()
-    {
-        return self::$_httpMethodOverride;
-    }
-
-    /**
-     * Toggle requesting gzip encoded responses
-     *
-     * @param  boolean $enabled Whether or not to enable gzipped responses
-     * @return void
-     */
-    public static function setGzipEnabled($enabled = false)
-    {
-        if ($enabled && !function_exists('gzinflate')) {
-            require_once 'Zend/Gdata/App/InvalidArgumentException.php';
-            throw new Zend_Gdata_App_InvalidArgumentException(
-                    'You cannot enable gzipped responses if the zlib module ' .
-                    'is not enabled in your PHP installation.');
-
-        }
-        self::$_gzipEnabled = $enabled;
-    }
-
-    /**
-     * Get the HTTP override state
-     *
-     * @return boolean
-     */
-    public static function getGzipEnabled()
-    {
-        return self::$_gzipEnabled;
-    }
-
-    /**
-     * Get whether to use verbose exception messages
-     *
-     * In the case of HTTP errors,  use the body of the HTTP response
-     * in the exception message.
-     *
-     * @return boolean
-     */
-    public static function getVerboseExceptionMessages()
-    {
-        return self::$_verboseExceptionMessages;
-    }
-
-    /**
-     * Set whether to use verbose exception messages
-     *
-     * In the case of HTTP errors, use the body of the HTTP response
-     * in the exception message.
-     *
-     * @param boolean $verbose Whether to use verbose exception messages
-     */
-    public static function setVerboseExceptionMessages($verbose)
-    {
-        self::$_verboseExceptionMessages = $verbose;
-    }
-
-    /**
-     * Set the maximum number of redirects to follow during HTTP operations
-     *
-     * @param int $maxRedirects Maximum number of redirects to follow
-     * @return void
-     */
-    public static function setMaxRedirects($maxRedirects)
-    {
-        self::$_maxRedirects = $maxRedirects;
-    }
-
-    /**
-     * Get the maximum number of redirects to follow during HTTP operations
-     *
-     * @return int Maximum number of redirects to follow
-     */
-    public static function getMaxRedirects()
-    {
-        return self::$_maxRedirects;
-    }
-
-    /**
-     * Set the major protocol version that should be used. Values < 1 will
-     * cause a Zend_Gdata_App_InvalidArgumentException to be thrown.
-     *
-     * @see _majorProtocolVersion
-     * @param int $value The major protocol version to use.
-     * @throws Zend_Gdata_App_InvalidArgumentException
-     */
-    public function setMajorProtocolVersion($value)
-    {
-        if (!($value >= 1)) {
-            require_once('Zend/Gdata/App/InvalidArgumentException.php');
-            throw new Zend_Gdata_App_InvalidArgumentException(
-                    'Major protocol version must be >= 1');
-        }
-        $this->_majorProtocolVersion = $value;
-    }
-
-    /**
-     * Get the major protocol version that is in use.
-     *
-     * @see _majorProtocolVersion
-     * @return int The major protocol version in use.
-     */
-    public function getMajorProtocolVersion()
-    {
-        return $this->_majorProtocolVersion;
-    }
-
-    /**
-     * Set the minor protocol version that should be used. If set to NULL, no
-     * minor protocol version will be sent to the server. Values < 0 will
-     * cause a Zend_Gdata_App_InvalidArgumentException to be thrown.
-     *
-     * @see _minorProtocolVersion
-     * @param (int|NULL) $value The minor protocol version to use.
-     * @throws Zend_Gdata_App_InvalidArgumentException
-     */
-    public function setMinorProtocolVersion($value)
-    {
-        if (!($value >= 0)) {
-            require_once('Zend/Gdata/App/InvalidArgumentException.php');
-            throw new Zend_Gdata_App_InvalidArgumentException(
-                    'Minor protocol version must be >= 0');
-        }
-        $this->_minorProtocolVersion = $value;
-    }
-
-    /**
-     * Get the minor protocol version that is in use.
-     *
-     * @see _minorProtocolVersion
-     * @return (int|NULL) The major protocol version in use, or NULL if no
-     *         minor version is specified.
-     */
-    public function getMinorProtocolVersion()
-    {
-        return $this->_minorProtocolVersion;
-    }
-
-    /**
-     * Provides pre-processing for HTTP requests to APP services.
-     *
-     * 1. Checks the $data element and, if it's an entry, extracts the XML,
-     *    multipart data, edit link (PUT,DELETE), etc.
-     * 2. If $data is a string, sets the default content-type  header as
-     *    'application/atom+xml' if it's not already been set.
-     * 3. Adds a x-http-method override header and changes the HTTP method
-     *    to 'POST' if necessary as per getHttpMethodOverride()
-     *
-     * @param string $method The HTTP method for the request - 'GET', 'POST',
-     *                       'PUT', 'DELETE'
-     * @param string $url The URL to which this request is being performed,
-     *                    or null if found in $data
-     * @param array $headers An associative array of HTTP headers for this
-     *                       request
-     * @param mixed $data The Zend_Gdata_App_Entry or XML for the
-     *                    body of the request
-     * @param string $contentTypeOverride The override value for the
-     *                                    content type of the request body
-     * @return array An associative array containing the determined
-     *               'method', 'url', 'data', 'headers', 'contentType'
-     */
-    public function prepareRequest($method,
-                                   $url = null,
-                                   $headers = array(),
-                                   $data = null,
-                                   $contentTypeOverride = null)
-    {
-        // As a convenience, if $headers is null, we'll convert it back to
-        // an empty array.
-        if ($headers === null) {
-            $headers = array();
-        }
-
-        $rawData = null;
-        $finalContentType = null;
-        if ($url == null) {
-            $url = $this->_defaultPostUri;
-        }
-
-        if (is_string($data)) {
-            $rawData = $data;
-            if ($contentTypeOverride === null) {
-                $finalContentType = 'application/atom+xml';
-            }
-        } elseif ($data instanceof Zend_Gdata_App_MediaEntry) {
-            $rawData = $data->encode();
-            if ($data->getMediaSource() !== null) {
-                $finalContentType = $rawData->getContentType();
-                $headers['MIME-version'] = '1.0';
-                $headers['Slug'] = $data->getMediaSource()->getSlug();
-            } else {
-                $finalContentType = 'application/atom+xml';
-            }
-            if ($method == 'PUT' || $method == 'DELETE') {
-                $editLink = $data->getEditLink();
-                if ($editLink != null) {
-                    $url = $editLink->getHref();
-                }
-            }
-        } elseif ($data instanceof Zend_Gdata_App_Entry) {
-            $rawData = $data->saveXML();
-            $finalContentType = 'application/atom+xml';
-            if ($method == 'PUT' || $method == 'DELETE') {
-                $editLink = $data->getEditLink();
-                if ($editLink != null) {
-                    $url = $editLink->getHref();
-                }
-            }
-        } elseif ($data instanceof Zend_Gdata_App_MediaSource) {
-            $rawData = $data->encode();
-            if ($data->getSlug() !== null) {
-                $headers['Slug'] = $data->getSlug();
-            }
-            $finalContentType = $data->getContentType();
-        }
-
-        if ($method == 'DELETE') {
-            $rawData = null;
-        }
-
-        // Set an If-Match header if:
-        //   - This isn't a DELETE
-        //   - If this isn't a GET, the Etag isn't weak
-        //   - A similar header (If-Match/If-None-Match) hasn't already been
-        //     set.
-        if ($method != 'DELETE' && (
-                !array_key_exists('If-Match', $headers) &&
-                !array_key_exists('If-None-Match', $headers)
-                ) ) {
-            $allowWeak = $method == 'GET';
-            if ($ifMatchHeader = $this->generateIfMatchHeaderData(
-                    $data, $allowWeak)) {
-                $headers['If-Match'] = $ifMatchHeader;
-            }
-        }
-
-        if ($method != 'POST' && $method != 'GET' && Zend_Gdata_App::getHttpMethodOverride()) {
-            $headers['x-http-method-override'] = $method;
-            $method = 'POST';
-        } else {
-            $headers['x-http-method-override'] = null;
-        }
-
-        if ($contentTypeOverride != null) {
-            $finalContentType = $contentTypeOverride;
-        }
-
-        return array('method' => $method, 'url' => $url,
-            'data' => $rawData, 'headers' => $headers,
-            'contentType' => $finalContentType);
-    }
-
-    /**
-     * Performs a HTTP request using the specified method
-     *
-     * @param string $method The HTTP method for the request - 'GET', 'POST',
-     *                       'PUT', 'DELETE'
-     * @param string $url The URL to which this request is being performed
-     * @param array $headers An associative array of HTTP headers
-     *                       for this request
-     * @param string $body The body of the HTTP request
-     * @param string $contentType The value for the content type
-     *                                of the request body
-     * @param int $remainingRedirects Number of redirects to follow if request
-     *                              s results in one
-     * @return Zend_Http_Response The response object
-     */
-    public function performHttpRequest($method, $url, $headers = null,
-        $body = null, $contentType = null, $remainingRedirects = null)
-    {
-        require_once 'Zend/Http/Client/Exception.php';
-        if ($remainingRedirects === null) {
-            $remainingRedirects = self::getMaxRedirects();
-        }
-        if ($headers === null) {
-            $headers = array();
-        }
-        // Append a Gdata version header if protocol v2 or higher is in use.
-        // (Protocol v1 does not use this header.)
-        $major = $this->getMajorProtocolVersion();
-        $minor = $this->getMinorProtocolVersion();
-        if ($major >= 2) {
-            $headers['GData-Version'] = $major +
-                    (($minor === null) ? '.' + $minor : '');
-        }
-
-        // check the overridden method
-        if (($method == 'POST' || $method == 'PUT') && $body === null &&
-            $headers['x-http-method-override'] != 'DELETE') {
-                require_once 'Zend/Gdata/App/InvalidArgumentException.php';
-                throw new Zend_Gdata_App_InvalidArgumentException(
-                        'You must specify the data to post as either a ' .
-                        'string or a child of Zend_Gdata_App_Entry');
-        }
-        if ($url === null) {
-            require_once 'Zend/Gdata/App/InvalidArgumentException.php';
-            throw new Zend_Gdata_App_InvalidArgumentException(
-                'You must specify an URI to which to post.');
-        }
-        $headers['Content-Type'] = $contentType;
-        if (Zend_Gdata_App::getGzipEnabled()) {
-            // some services require the word 'gzip' to be in the user-agent
-            // header in addition to the accept-encoding header
-            if (strpos($this->_httpClient->getHeader('User-Agent'),
-                'gzip') === false) {
-                $headers['User-Agent'] =
-                    $this->_httpClient->getHeader('User-Agent') . ' (gzip)';
-            }
-            $headers['Accept-encoding'] = 'gzip, deflate';
-        } else {
-            $headers['Accept-encoding'] = 'identity';
-        }
-
-        // Make sure the HTTP client object is 'clean' before making a request
-        // In addition to standard headers to reset via resetParameters(),
-        // also reset the Slug header
-        $this->_httpClient->resetParameters();
-        $this->_httpClient->setHeaders('Slug', null);
-
-        // Set the params for the new request to be performed
-        $this->_httpClient->setHeaders($headers);
-        $this->_httpClient->setUri($url);
-        $this->_httpClient->setConfig(array('maxredirects' => 0));
-
-        // Set the proper adapter if we are handling a streaming upload
-        $usingMimeStream = false;
-        $oldHttpAdapter = null;
-
-        if ($body instanceof Zend_Gdata_MediaMimeStream) {
-            $usingMimeStream = true;
-            $this->_httpClient->setRawDataStream($body, $contentType);
-            $oldHttpAdapter = $this->_httpClient->getAdapter();
-
-            if ($oldHttpAdapter instanceof Zend_Http_Client_Adapter_Proxy) {
-                require_once 'Zend/Gdata/HttpAdapterStreamingProxy.php';
-                $newAdapter = new Zend_Gdata_HttpAdapterStreamingProxy();
-            } else {
-                require_once 'Zend/Gdata/HttpAdapterStreamingSocket.php';
-                $newAdapter = new Zend_Gdata_HttpAdapterStreamingSocket();
-            }
-            $this->_httpClient->setAdapter($newAdapter);
-        } else {
-            $this->_httpClient->setRawData($body, $contentType);
-        }
-
-        try {
-            $response = $this->_httpClient->request($method);
-            // reset adapter
-            if ($usingMimeStream) {
-                $this->_httpClient->setAdapter($oldHttpAdapter);
-            }
-        } catch (Zend_Http_Client_Exception $e) {
-            // reset adapter
-            if ($usingMimeStream) {
-                $this->_httpClient->setAdapter($oldHttpAdapter);
-            }
-            require_once 'Zend/Gdata/App/HttpException.php';
-            throw new Zend_Gdata_App_HttpException($e->getMessage(), $e);
-        }
-        if ($response->isRedirect() && $response->getStatus() != '304') {
-            if ($remainingRedirects > 0) {
-                $newUrl = $response->getHeader('Location');
-                $response = $this->performHttpRequest(
-                    $method, $newUrl, $headers, $body,
-                    $contentType, $remainingRedirects);
-            } else {
-                require_once 'Zend/Gdata/App/HttpException.php';
-                throw new Zend_Gdata_App_HttpException(
-                        'Number of redirects exceeds maximum', null, $response);
-            }
-        }
-        if (!$response->isSuccessful()) {
-            require_once 'Zend/Gdata/App/HttpException.php';
-            $exceptionMessage = 'Expected response code 200, got ' .
-                $response->getStatus();
-            if (self::getVerboseExceptionMessages()) {
-                $exceptionMessage .= "\n" . $response->getBody();
-            }
-            $exception = new Zend_Gdata_App_HttpException($exceptionMessage);
-            $exception->setResponse($response);
-            throw $exception;
-        }
-        return $response;
-    }
-
-    /**
-     * Imports a feed located at $uri.
-     *
-     * @param  string $uri
-     * @param  Zend_Http_Client $client The client used for communication
-     * @param  string $className The class which is used as the return type
-     * @throws Zend_Gdata_App_Exception
-     * @return string|Zend_Gdata_App_Feed Returns string only if the object
-     *                                    mapping has been disabled explicitly
-     *                                    by passing false to the
-     *                                    useObjectMapping() function.
-     */
-    public static function import($uri, $client = null,
-        $className='Zend_Gdata_App_Feed')
-    {
-        $app = new Zend_Gdata_App($client);
-        $requestData = $app->prepareRequest('GET', $uri);
-        $response = $app->performHttpRequest(
-            $requestData['method'], $requestData['url']);
-
-        $feedContent = $response->getBody();
-        if (!$this->_useObjectMapping) {
-            return $feedContent;
-        }
-        $feed = self::importString($feedContent, $className);
-        if ($client != null) {
-            $feed->setHttpClient($client);
-        }
-        return $feed;
-    }
-
-    /**
-     * Imports the specified URL (non-statically).
-     *
-     * @param  string $url The URL to import
-     * @param  string $className The class which is used as the return type
-     * @param array $extraHeaders Extra headers to add to the request, as an
-     *        array of string-based key/value pairs.
-     * @throws Zend_Gdata_App_Exception
-     * @return string|Zend_Gdata_App_Feed Returns string only if the object
-     *                                    mapping has been disabled explicitly
-     *                                    by passing false to the
-     *                                    useObjectMapping() function.
-     */
-    public function importUrl($url, $className='Zend_Gdata_App_Feed',
-        $extraHeaders = array())
-    {
-        $response = $this->get($url, $extraHeaders);
-
-        $feedContent = $response->getBody();
-        if (!$this->_useObjectMapping) {
-            return $feedContent;
-        }
-        
-        $protocolVersionStr = $response->getHeader('GData-Version');
-        $majorProtocolVersion = null;
-        $minorProtocolVersion = null;
-        if ($protocolVersionStr !== null) {
-            // Extract protocol major and minor version from header
-            $delimiterPos = strpos($protocolVersionStr, '.');
-            $length = strlen($protocolVersionStr);
-            $major = substr($protocolVersionStr, 0, $delimiterPos);
-            $minor = substr($protocolVersionStr, $delimiterPos + 1, $length);
-            $majorProtocolVersion = $major;
-            $minorProtocolVersion = $minor;
-        }
-
-        $feed = self::importString($feedContent, $className,
-            $majorProtocolVersion, $minorProtocolVersion);
-        if ($this->getHttpClient() != null) {
-            $feed->setHttpClient($this->getHttpClient());
-        }
-        $etag = $response->getHeader('ETag');
-        if ($etag !== null) {
-            $feed->setEtag($etag);
-        }
-        return $feed;
-    }
-
-
-    /**
-     * Imports a feed represented by $string.
-     *
-     * @param string $string
-     * @param string $className The class which is used as the return type
-     * @param integer $majorProcolVersion (optional) The major protocol version
-     *        of the data model object that is to be created.
-     * @param integer $minorProcolVersion (optional) The minor protocol version
-     *        of the data model object that is to be created.
-     * @throws Zend_Gdata_App_Exception
-     * @return Zend_Gdata_App_Feed
-     */
-    public static function importString($string,
-        $className='Zend_Gdata_App_Feed', $majorProtocolVersion = null,
-        $minorProtocolVersion = null)
-    {
-        // Load the feed as an XML DOMDocument object
-        @ini_set('track_errors', 1);
-        $doc = new DOMDocument();
-        $success = @$doc->loadXML($string);
-        @ini_restore('track_errors');
-
-        if (!$success) {
-            require_once 'Zend/Gdata/App/Exception.php';
-            throw new Zend_Gdata_App_Exception(
-                "DOMDocument cannot parse XML: $php_errormsg");
-        }
-
-        $feed = new $className();
-        $feed->setMajorProtocolVersion($majorProtocolVersion);
-        $feed->setMinorProtocolVersion($minorProtocolVersion);
-        $feed->transferFromXML($string);
-        $feed->setHttpClient(self::getstaticHttpClient());
-        return $feed;
-    }
-
-
-    /**
-     * Imports a feed from a file located at $filename.
-     *
-     * @param  string $filename
-     * @param  string $className The class which is used as the return type
-     * @param  string $useIncludePath Whether the include_path should be searched
-     * @throws Zend_Gdata_App_Exception
-     * @return Zend_Gdata_Feed
-     */
-    public static function importFile($filename,
-            $className='Zend_Gdata_App_Feed', $useIncludePath = false)
-    {
-        @ini_set('track_errors', 1);
-        $feed = @file_get_contents($filename, $useIncludePath);
-        @ini_restore('track_errors');
-        if ($feed === false) {
-            require_once 'Zend/Gdata/App/Exception.php';
-            throw new Zend_Gdata_App_Exception(
-                "File could not be loaded: $php_errormsg");
-        }
-        return self::importString($feed, $className);
-    }
-
-    /**
-     * GET a URI using client object.
-     *
-     * @param string $uri GET URI
-     * @param array $extraHeaders Extra headers to add to the request, as an
-     *        array of string-based key/value pairs.
-     * @throws Zend_Gdata_App_HttpException
-     * @return Zend_Http_Response
-     */
-    public function get($uri, $extraHeaders = array())
-    {
-        $requestData = $this->prepareRequest('GET', $uri, $extraHeaders);
-        return $this->performHttpRequest(
-            $requestData['method'], $requestData['url'],
-            $requestData['headers']);
-    }
-
-    /**
-     * POST data with client object
-     *
-     * @param mixed $data The Zend_Gdata_App_Entry or XML to post
-     * @param string $uri POST URI
-     * @param array $headers Additional HTTP headers to insert.
-     * @param string $contentType Content-type of the data
-     * @param array $extraHeaders Extra headers to add to the request, as an
-     *        array of string-based key/value pairs.
-     * @return Zend_Http_Response
-     * @throws Zend_Gdata_App_Exception
-     * @throws Zend_Gdata_App_HttpException
-     * @throws Zend_Gdata_App_InvalidArgumentException
-     */
-    public function post($data, $uri = null, $remainingRedirects = null,
-            $contentType = null, $extraHeaders = null)
-    {
-        $requestData = $this->prepareRequest(
-            'POST', $uri, $extraHeaders, $data, $contentType);
-        return $this->performHttpRequest(
-                $requestData['method'], $requestData['url'],
-                $requestData['headers'], $requestData['data'],
-                $requestData['contentType']);
-    }
-
-    /**
-     * PUT data with client object
-     *
-     * @param mixed $data The Zend_Gdata_App_Entry or XML to post
-     * @param string $uri PUT URI
-     * @param array $headers Additional HTTP headers to insert.
-     * @param string $contentType Content-type of the data
-     * @param array $extraHeaders Extra headers to add to the request, as an
-     *        array of string-based key/value pairs.
-     * @return Zend_Http_Response
-     * @throws Zend_Gdata_App_Exception
-     * @throws Zend_Gdata_App_HttpException
-     * @throws Zend_Gdata_App_InvalidArgumentException
-     */
-    public function put($data, $uri = null, $remainingRedirects = null,
-            $contentType = null, $extraHeaders = null)
-    {
-        $requestData = $this->prepareRequest(
-            'PUT', $uri, $extraHeaders, $data, $contentType);
-        return $this->performHttpRequest(
-                $requestData['method'], $requestData['url'],
-                $requestData['headers'], $requestData['data'],
-                $requestData['contentType']);
-    }
-
-    /**
-     * DELETE entry with client object
-     *
-     * @param mixed $data The Zend_Gdata_App_Entry or URL to delete
-     * @return void
-     * @throws Zend_Gdata_App_Exception
-     * @throws Zend_Gdata_App_HttpException
-     * @throws Zend_Gdata_App_InvalidArgumentException
-     */
-    public function delete($data, $remainingRedirects = null)
-    {
-        if (is_string($data)) {
-            $requestData = $this->prepareRequest('DELETE', $data);
-        } else {
-            $headers = array();
-
-            $requestData = $this->prepareRequest(
-                'DELETE', null, $headers, $data);
-        }
-        return $this->performHttpRequest($requestData['method'],
-                                         $requestData['url'],
-                                         $requestData['headers'],
-                                         '',
-                                         $requestData['contentType'],
-                                         $remainingRedirects);
-    }
-
-    /**
-     * Inserts an entry to a given URI and returns the response as a
-     * fully formed Entry.
-     *
-     * @param mixed  $data The Zend_Gdata_App_Entry or XML to post
-     * @param string $uri POST URI
-     * @param string $className The class of entry to be returned.
-     * @param array $extraHeaders Extra headers to add to the request, as an
-     *        array of string-based key/value pairs.
-     * @return Zend_Gdata_App_Entry The entry returned by the service after
-     *         insertion.
-     */
-    public function insertEntry($data, $uri, $className='Zend_Gdata_App_Entry',
-        $extraHeaders = array())
-    {
-        $response = $this->post($data, $uri, null, null, $extraHeaders);
-
-        $returnEntry = new $className($response->getBody());
-        $returnEntry->setHttpClient(self::getstaticHttpClient());
-
-        $etag = $response->getHeader('ETag');
-        if ($etag !== null) {
-            $returnEntry->setEtag($etag);
-        }
-
-        return $returnEntry;
-    }
-
-    /**
-     * Update an entry
-     *
-     * @param mixed $data Zend_Gdata_App_Entry or XML (w/ID and link rel='edit')
-     * @param string|null The URI to send requests to, or null if $data
-     *        contains the URI.
-     * @param string|null The name of the class that should be deserialized
-     *        from the server response. If null, then 'Zend_Gdata_App_Entry'
-     *        will be used.
-     * @param array $extraHeaders Extra headers to add to the request, as an
-     *        array of string-based key/value pairs.
-     * @return Zend_Gdata_App_Entry The entry returned from the server
-     * @throws Zend_Gdata_App_Exception
-     */
-    public function updateEntry($data, $uri = null, $className = null,
-        $extraHeaders = array())
-    {
-        if ($className === null && $data instanceof Zend_Gdata_App_Entry) {
-            $className = get_class($data);
-        } elseif ($className === null) {
-            $className = 'Zend_Gdata_App_Entry';
-        }
-
-        $response = $this->put($data, $uri, null, null, $extraHeaders);
-        $returnEntry = new $className($response->getBody());
-        $returnEntry->setHttpClient(self::getstaticHttpClient());
-
-        $etag = $response->getHeader('ETag');
-        if ($etag !== null) {
-            $returnEntry->setEtag($etag);
-        }
-
-        return $returnEntry;
-    }
-
-    /**
-     * Provides a magic factory method to instantiate new objects with
-     * shorter syntax than would otherwise be required by the Zend Framework
-     * naming conventions.  For instance, to construct a new
-     * Zend_Gdata_Calendar_Extension_Color, a developer simply needs to do
-     * $gCal->newColor().  For this magic constructor, packages are searched
-     * in the same order as which they appear in the $_registeredPackages
-     * array
-     *
-     * @param string $method The method name being called
-     * @param array $args The arguments passed to the call
-     * @throws Zend_Gdata_App_Exception
-     */
-    public function __call($method, $args)
-    {
-        if (preg_match('/^new(\w+)/', $method, $matches)) {
-            $class = $matches[1];
-            $foundClassName = null;
-            foreach ($this->_registeredPackages as $name) {
-                 try {
-                     if (!class_exists($name . '_' . $class)) {
-                        require_once 'Zend/Loader.php';
-                        @Zend_Loader::loadClass($name . '_' . $class);
-                     }
-                     $foundClassName = $name . '_' . $class;
-                     break;
-                 } catch (Zend_Exception $e) {
-                     // package wasn't here- continue searching
-                 }
-            }
-            if ($foundClassName != null) {
-                $reflectionObj = new ReflectionClass($foundClassName);
-                $instance = $reflectionObj->newInstanceArgs($args);
-                if ($instance instanceof Zend_Gdata_App_FeedEntryParent) {
-                    $instance->setHttpClient($this->_httpClient);
-
-                    // Propogate version data
-                    $instance->setMajorProtocolVersion(
-                            $this->_majorProtocolVersion);
-                    $instance->setMinorProtocolVersion(
-                            $this->_minorProtocolVersion);
-                }
-                return $instance;
-            } else {
-                require_once 'Zend/Gdata/App/Exception.php';
-                throw new Zend_Gdata_App_Exception(
-                        "Unable to find '${class}' in registered packages");
-            }
-        } else {
-            require_once 'Zend/Gdata/App/Exception.php';
-            throw new Zend_Gdata_App_Exception("No such method ${method}");
-        }
-    }
-
-    /**
-     * Retrieve all entries for a feed, iterating through pages as necessary.
-     * Be aware that calling this function on a large dataset will take a
-     * significant amount of time to complete. In some cases this may cause
-     * execution to timeout without proper precautions in place.
-     *
-     * @param $feed The feed to iterate through.
-     * @return mixed A new feed of the same type as the one originally
-     *          passed in, containing all relevent entries.
-     */
-    public function retrieveAllEntriesForFeed($feed) {
-        $feedClass = get_class($feed);
-        $reflectionObj = new ReflectionClass($feedClass);
-        $result = $reflectionObj->newInstance();
-        do {
-            foreach ($feed as $entry) {
-                $result->addEntry($entry);
-            }
-
-            $next = $feed->getLink('next');
-            if ($next !== null) {
-                $feed = $this->getFeed($next->href, $feedClass);
-            } else {
-                $feed = null;
-            }
-        }
-        while ($feed != null);
-        return $result;
-    }
-
-    /**
-     * This method enables logging of requests by changing the
-     * Zend_Http_Client_Adapter used for performing the requests.
-     * NOTE: This will not work if you have customized the adapter
-     * already to use a proxy server or other interface.
-     *
-     * @param $logfile The logfile to use when logging the requests
-     */
-    public function enableRequestDebugLogging($logfile)
-    {
-        $this->_httpClient->setConfig(array(
-            'adapter' => 'Zend_Gdata_App_LoggingHttpClientAdapterSocket',
-            'logfile' => $logfile
-            ));
-    }
-
-    /**
-     * Retrieve next set of results based on a given feed.
-     *
-     * @param Zend_Gdata_App_Feed $feed The feed from which to
-     *          retreive the next set of results.
-     * @param string $className (optional) The class of feed to be returned.
-     *          If null, the next feed (if found) will be the same class as
-     *          the feed that was given as the first argument.
-     * @return Zend_Gdata_App_Feed|null Returns a
-     *          Zend_Gdata_App_Feed or null if no next set of results
-     *          exists.
-     */
-    public function getNextFeed($feed, $className = null)
-    {
-        $nextLink = $feed->getNextLink();
-        if (!$nextLink) {
-            return null;
-        }
-        $nextLinkHref = $nextLink->getHref();
-
-        if ($className === null) {
-            $className = get_class($feed);
-        }
-
-        return $this->getFeed($nextLinkHref, $className);
-    }
-
-    /**
-     * Retrieve previous set of results based on a given feed.
-     *
-     * @param Zend_Gdata_App_Feed $feed The feed from which to
-     *          retreive the previous set of results.
-     * @param string $className (optional) The class of feed to be returned.
-     *          If null, the previous feed (if found) will be the same class as
-     *          the feed that was given as the first argument.
-     * @return Zend_Gdata_App_Feed|null Returns a
-     *          Zend_Gdata_App_Feed or null if no previous set of results
-     *          exists.
-     */
-    public function getPreviousFeed($feed, $className = null)
-    {
-        $previousLink = $feed->getPreviousLink();
-        if (!$previousLink) {
-            return null;
-        }
-        $previousLinkHref = $previousLink->getHref();
-
-        if ($className === null) {
-            $className = get_class($feed);
-        }
-
-        return $this->getFeed($previousLinkHref, $className);
-    }
-
-    /**
-     * Returns the data for an If-Match header based on the current Etag
-     * property. If Etags are not supported by the server or cannot be
-     * extracted from the data, then null will be returned.
-     *
-     * @param boolean $allowWeak If false, then if a weak Etag is detected,
-     *        then return null rather than the Etag.
-     * @return string|null $data
-     */
-    public function generateIfMatchHeaderData($data, $allowWeek)
-    {
-        $result = '';
-        // Set an If-Match header if an ETag has been set (version >= 2 only)
-        if ($this->_majorProtocolVersion >= 2 &&
-                $data instanceof Zend_Gdata_App_Entry) {
-            $etag = $data->getEtag();
-            if (($etag !== null) &&
-                    ($allowWeek || substr($etag, 0, 2) != 'W/')) {
-                $result = $data->getEtag();
-            }
-        }
-        return $result;
-    }
-
-    /**
-     * Determine whether service object is using XML to object mapping.
-     *
-     * @return boolean True if service object is using XML to object mapping,
-     *                 false otherwise.
-     */
-    public function usingObjectMapping()
-    {
-        return $this->_useObjectMapping;
-    }
-
-    /**
-     * Enable/disable the use of XML to object mapping.
-     *
-     * @param boolean $value Pass in true to use the XML to object mapping.
-     *                       Pass in false or null to disable it.
-     * @return void
-     */
-    public function useObjectMapping($value)
-    {
-        if ($value === True) {
-            $this->_useObjectMapping = true;
-        } else {
-            $this->_useObjectMapping = false;
-        }
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

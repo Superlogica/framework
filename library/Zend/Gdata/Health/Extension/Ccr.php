@@ -1,125 +1,44 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Health
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Ccr.php 13522 2009-01-06 16:35:55Z thomas $
- */
-
-/**
- * @see Zend_Gdata_App_Extension_Element
- */
-require_once 'Zend/Gdata/App/Extension/Element.php';
-
-/**
- * Concrete class for working with CCR elements.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Health
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Gdata_Health_Extension_Ccr extends Zend_Gdata_App_Extension_Element
-{
-    protected $_rootNamespace = 'ccr';
-    protected $_rootElement = 'ContinuityOfCareRecord';
-    protected $_ccrDom = null;
-
-    /**
-     * Creates a Zend_Gdata_Health_Extension_Ccr entry, representing CCR data
-     *
-     * @param DOMElement $element (optional) DOMElement from which this
-     *          object should be constructed.
-     */
-    public function __construct($element = null)
-    {
-        foreach (Zend_Gdata_Health::$namespaces as $nsPrefix => $nsUri) {
-            $this->registerNamespace($nsPrefix, $nsUri);
-        }
-    }
-
-    /**
-     * Transfers each child and attribute into member variables.
-     * This is called when XML is received over the wire and the data
-     * model needs to be built to represent this XML.
-     *
-     * @param DOMNode $node The DOMNode that represents this object's data
-     */
-    public function transferFromDOM($node)
-    {
-        $this->_ccrDom = $node;
-    }
-
-    /**
-     * Retrieves a DOMElement which corresponds to this element and all
-     * child properties.  This is used to build an entry back into a DOM
-     * and eventually XML text for sending to the server upon updates, or
-     * for application storage/persistence.
-     *
-     * @param DOMDocument $doc The DOMDocument used to construct DOMElements
-     * @return DOMElement The DOMElement representing this element and all
-     * child properties.
-     */
-    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
-    {
-        if ($doc === null) {
-            $doc = new DOMDocument('1.0', 'utf-8');
-        }
-        $domElement = $doc->importNode($this->_ccrDom, true);
-        return $domElement;
-    }
-
-    /**
-     * Magic helper that allows drilling down and returning specific elements
-     * in the CCR. For example, to retrieve the users medications
-     * (/ContinuityOfCareRecord/Body/Medications) from the entry's CCR, call
-     * $entry->getCcr()->getMedications().  Similarly, getConditions() would
-     * return extract the user's conditions.
-     *
-     * @param string $name Name of the function to call
-     * @return array.<DOMElement> A list of the appropriate CCR data
-     */
-    public function __call($name, $args)
-    {
-        $matches = array();
-
-        if (substr($name, 0, 3) === 'get') {
-            $category = substr($name, 3);
-
-            switch ($category) {
-                case 'Conditions':
-                    $category = 'Problems';
-                    break;
-                case 'Allergies':
-                    $category = 'Alerts';
-                    break;
-                case 'TestResults':
-                    // TestResults is an alias for LabResults
-                case 'LabResults':
-                    $category = 'Results';
-                    break;
-                default:
-                    // $category is already well formatted
-            }
-
-            return $this->_ccrDom->getElementsByTagNameNS($this->lookupNamespace('ccr'), $category);
-        } else {
-            return null;
-        }
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

@@ -1,0 +1,27 @@
+<style type="text/css">
+    .panel.panel-body {
+        padding: 30px;
+    }
+    
+    #conteudo.full {
+        margin-left: 0px;
+    }
+</style>
+<?php
+
+$this->assign("titulo", " ");
+$this->desabilitarImpressao = true;
+
+$avisos = new Application_Helpers_Avisos();
+if ( count($avisos) ){
+    echo '<div class="col-md-10 col-sm-12 col-md-offset-1">';
+    foreach ( $avisos as $aviso ){
+        echo '<div class="aviso '. ( !$aviso['visualizado'] ? 'nao-visualizado' : '' ) .'" style="background: none;">'.$aviso['conteudo'].'</div>';
+    }
+    echo '</div>';
+} else {
+?>
+    <strong>Nenhum aviso.</strong>
+<?php    
+}
+?>

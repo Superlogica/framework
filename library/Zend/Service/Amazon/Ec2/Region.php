@@ -1,73 +1,35 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Service_Amazon
- * @subpackage Ec2
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id$
- */
-
-require_once 'Zend/Service/Amazon/Ec2/Abstract.php';
-/**
- * An Amazon EC2 interface to query which Regions your account has access to.
- *
- * @category   Zend
- * @package    Zend_Service_Amazon
- * @subpackage Ec2
- * @copyright  Copyright (c) 22005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Service_Amazon_Ec2_Region extends Zend_Service_Amazon_Ec2_Abstract
-{
-
-    /**
-     * Describes availability zones that are currently available to the account
-     * and their states.
-     *
-     * @param string|array $region              Name of an region.
-     * @return array                            An array that contains all the return items.  Keys: regionName and regionUrl.
-     */
-    public function describe($region = null)
-    {
-        $params = array();
-        $params['Action'] = 'DescribeRegions';
-
-        if(is_array($region) && !empty($region)) {
-            foreach($region as $k=>$name) {
-                $params['Region.' . ($k+1)] = $name;
-            }
-        } elseif($region) {
-            $params['Region.1'] = $region;
-        }
-
-        $response = $this->sendRequest($params);
-
-        $xpath  = $response->getXPath();
-        $nodes  = $xpath->query('//ec2:item');
-
-        $return = array();
-        foreach ($nodes as $k => $node) {
-            $item = array();
-            $item['regionName']   = $xpath->evaluate('string(ec2:regionName/text())', $node);
-            $item['regionUrl']  = $xpath->evaluate('string(ec2:regionUrl/text())', $node);
-
-            $return[] = $item;
-            unset($item);
-        }
-
-        return $return;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

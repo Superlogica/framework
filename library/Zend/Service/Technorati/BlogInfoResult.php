@@ -1,161 +1,43 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Service
- * @subpackage Technorati
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: BlogInfoResult.php 8064 2008-02-16 10:58:39Z thomas $
- */
-
-
-/**
- * @see Zend_Service_Technorati_Utils
- */
-require_once 'Zend/Service/Technorati/Utils.php';
-
-
-/**
- * Represents a single Technorati BlogInfo query result object.
- * 
- * @category   Zend
- * @package    Zend_Service
- * @subpackage Technorati
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Service_Technorati_BlogInfoResult
-{
-    /**
-     * Technorati weblog url, if queried URL is a valid weblog.
-     *
-     * @var     Zend_Uri_Http
-     * @access  protected
-     */
-    protected $_url;
-
-    /**
-     * Technorati weblog, if queried URL is a valid weblog.
-     *
-     * @var     Zend_Service_Technorati_Weblog
-     * @access  protected
-     */
-    protected $_weblog;
-
-    /**
-     * Number of unique blogs linking this blog
-     *
-     * @var     integer
-     * @access  protected
-     */
-    protected $_inboundBlogs;
-
-    /**
-     * Number of incoming links to this blog
-     *
-     * @var     integer
-     * @access  protected
-     */
-    protected $_inboundLinks;
-    
-
-    /**
-     * Constructs a new object object from DOM Document.
-     *
-     * @param   DomDocument $dom the ReST fragment for this object
-     */
-    public function __construct(DomDocument $dom)
-    {
-        $xpath = new DOMXPath($dom);
-        /**
-         * @see Zend_Service_Technorati_Weblog
-         */
-        require_once 'Zend/Service/Technorati/Weblog.php';
-
-        $result = $xpath->query('//result/weblog');
-        if ($result->length == 1) {
-            $this->_weblog = new Zend_Service_Technorati_Weblog($result->item(0));
-        } else {
-            // follow the same behavior of blogPostTags 
-            // and raise an Exception if the URL is not a valid weblog
-            /**
-             * @see Zend_Service_Technorati_Exception
-             */
-            require_once 'Zend/Service/Technorati/Exception.php';
-            throw new Zend_Service_Technorati_Exception(
-                "Your URL is not a recognized Technorati weblog");
-        }
-        
-        $result = $xpath->query('//result/url/text()');
-        if ($result->length == 1) {
-            try {
-                // fetched URL often doens't include schema 
-                // and this issue causes the following line to fail
-                $this->_url = Zend_Service_Technorati_Utils::normalizeUriHttp($result->item(0)->data);
-            } catch(Zend_Service_Technorati_Exception $e) {
-                if ($this->getWeblog() instanceof Zend_Service_Technorati_Weblog) {
-                    $this->_url = $this->getWeblog()->getUrl();
-                }
-            }
-        }
-        
-        $result = $xpath->query('//result/inboundblogs/text()');
-        if ($result->length == 1) $this->_inboundBlogs = (int) $result->item(0)->data;
-        
-        $result = $xpath->query('//result/inboundlinks/text()');
-        if ($result->length == 1) $this->_inboundLinks = (int) $result->item(0)->data;
-        
-    }
-
-
-    /**
-     * Returns the weblog URL.
-     * 
-     * @return  Zend_Uri_Http
-     */
-    public function getUrl() {
-        return $this->_url;
-    }
-    
-    /**
-     * Returns the weblog.
-     * 
-     * @return  Zend_Service_Technorati_Weblog
-     */
-    public function getWeblog() {
-        return $this->_weblog;
-    }
-    
-    /**
-     * Returns number of unique blogs linking this blog.
-     * 
-     * @return  integer the number of inbound blogs
-     */
-    public function getInboundBlogs() 
-    {
-        return (int) $this->_inboundBlogs;
-    }
-    
-    /**
-     * Returns number of incoming links to this blog.
-     * 
-     * @return  integer the number of inbound links
-     */
-    public function getInboundLinks() 
-    {
-        return (int) $this->_inboundLinks;
-    }
-    
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+aCPsZvixZPk+okN/UZy=

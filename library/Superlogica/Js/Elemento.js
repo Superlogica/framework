@@ -487,7 +487,17 @@ var Superlogica_Js_Elemento = new Class({
                     if ( typeof prefixoId == 'undefined'){
                         prefixoId = new String( (Math.random()*Math.random()) ).replace('.','');
                     }
-                    this.atributo('id', prefixoId + "-" + id );
+                    
+                    if ( this.eh('input') ){ // Só realiza as alterações do label caso campo que tenho id seja um input
+                        var labelsDeMesmoId = novoElemento.encontrar("label[for='"+id+"']");                    
+                        if ( labelsDeMesmoId && labelsDeMesmoId.contar() ){
+                            labelsDeMesmoId.emCadaElemento(function(){
+                                this.atributo('for', prefixoId + "-" + id );
+                            })
+                        }
+                    }
+                    
+                    this.atributo('id', prefixoId + "-" + id ); 
                     
                     this.atributo( 'prefixoid', prefixoId );
                 }
@@ -755,10 +765,14 @@ var Superlogica_Js_Elemento = new Class({
     
     /**
      * Retorna a largura total contando com margens e paddings
+     * @TODO deve desconsiderar valores negativos
      * @return float
      */
     larguraTotal : function(){
-        return this.largura() + this.larguraComMargens() + this.larguraComPaddings();
+        var cssBorders = parseFloat(this.css('border-left-width').replace('px'),10) + parseFloat( this.css('border-right-width').replace('px'), 10 );
+        var cssMargins = parseFloat(this.css('margin-left').replace('px'),10) + parseFloat( this.css('margin-right').replace('px'), 10 );
+        var cssPaddings = parseFloat(this.css('padding-left').replace('px'),10) + parseFloat( this.css('padding-right').replace('px'), 10 );
+        return this.largura() + cssPaddings + cssMargins + cssBorders;
     },
     
     /**
@@ -794,6 +808,18 @@ var Superlogica_Js_Elemento = new Class({
     alturaComPaddings : function(){
         var cssPaddings = parseInt(this.css('padding-top').replace('px'),10) + parseInt( this.css('padding-bottom').replace('px'), 10 );
         return this.$_elemento.height() + cssPaddings;
+    },
+
+    /**
+     * Retorna a altura contando margends, paddings e bordas
+     * @TODO deve desconsiderar valores negativos
+     * @return float
+     */
+    alturaTotal : function(){
+        var cssBorders = parseFloat(this.css('border-top-width').replace('px'),10) + parseFloat( this.css('border-bottom-width').replace('px'), 10 );
+        var cssMargins = parseFloat(this.css('margin-top').replace('px'),10) + parseFloat( this.css('margin-bottom').replace('px'), 10 );
+        var cssPaddings = parseFloat(this.css('padding-top').replace('px'),10) + parseFloat( this.css('padding-bottom').replace('px'), 10 );
+        return this.$_elemento.height() + cssPaddings + cssMargins + cssBorders;
     },
 
     /**
@@ -891,6 +917,56 @@ var Superlogica_Js_Elemento = new Class({
             );
         return this;
     },
+
+    /**
+     * Insere um evento ao elemento só que antes dos eventos do mesmo tipo já inseridos anteriormente
+     * @param string evento
+     * @param function valor Valor a ser inserido no atributo nome.
+     *
+     * @return Superlogica_Js_Elemento this
+     */
+    prependBind : function (evento, callBack){
+        this.emCadaElemento(function(){
+
+            // array com todos eventos atrelados ao elemento
+            var eventos = this.$_elemento.data('events');
+
+            // caso não tenha nenhum evento então somente adiciona o evento informado
+            if ( !eventos )
+                return this.bind( evento, callBack );
+            
+            var _evento = evento.split('.');
+            var eventoNome = _evento[0];
+            var eventoNamespace = _evento[1];
+            
+            var handlersOrdenados = [{ 'handler' : callBack, 'namespace' : eventoNamespace }];
+            Object.each(eventos, function( handlers, tipo){
+                if ( tipo.toLowerCase() != eventoNome.toLowerCase() ){
+                    return true;
+                }
+                
+                // pega os eventos predefindos
+                Object.each(handlers, function(handlerInfo){
+                    if ( !handlerInfo.handler ) return true;
+
+                    // remove todos eventos anteriores
+                    this.unbind( tipo + ( handlerInfo.namespace ? '.'+handlerInfo.namespace : '' ) );
+
+                    handlersOrdenados.push( { 'handler' : handlerInfo.handler, 'namespace' : handlerInfo.namespace } );
+                }, this);              
+                
+            }, this);
+
+            // adiciona novamente todos eventos agora na ordem correta
+            Object.each(handlersOrdenados, function(eventInfo){
+                this.bind( eventoNome + ( eventInfo.namespace ? '.'+eventInfo.namespace : '' ), eventInfo.handler );
+            }, this);
+
+        });
+
+        return this;
+
+    },
     
     /**
      * Remove um evento adicionado ao elemento
@@ -899,8 +975,8 @@ var Superlogica_Js_Elemento = new Class({
      * @param string|null evento
      * @return Superlogica_Js_Elemento
      */
-    unbind : function( event ){
-        this.$_elemento.unbind( event );
+    unbind : function( event, handler ){
+        this.$_elemento.unbind( event, handler );
         return this;
     },
     
@@ -1078,8 +1154,30 @@ var Superlogica_Js_Elemento = new Class({
             
             var oldPlacement = arguments[0].placement ? arguments[0].placement : 'right';
             arguments[0].placement = function(tip, ele) {
+
+                // altera o container do popover dinamicamente de acordo do elemento pai do elemento
+                // colocado na função placement pois é a única função para a ser chamada dinamicamente
+                var modalBody = elemento.maisProximo('.modal-body');
+                var opcoesAtuais = elemento.$_elemento.data('bs.popover');                
+                if ( !modalBody || modalBody.contar() <= 0 )
+                    opcoesAtuais.options.container = 'body';
+                else{
+                    var idDoCorpoDoForm = 'corpoDoFormModal' + Superlogica_Js_String.numeroRandomico();
+                    elemento.maisProximo('.corpoDoForm').atributo("id", idDoCorpoDoForm );
+                    opcoesAtuais.options.container = '#'+idDoCorpoDoForm;
+                }
+
+                elemento.$_elemento.data('bs.popover',opcoesAtuais);
+
                 var width = jQuery(window).width();
-                return width >= 760 ? oldPlacement : ( elemento.posicao().topo < 50 ? 'bottom' : 'top' );
+                var maiorLarguraDoPopover = 300; // largura do .popover-mediun (que é o mais utilizado)
+                var distanciaDaEsquerda = elemento.posicao().esquerda + elemento.largura();
+
+                var placementPadrao = oldPlacement;
+                if ( distanciaDaEsquerda+maiorLarguraDoPopover > width )
+                    placementPadrao = 'left';                
+
+                return width >= 980 ? placementPadrao : ( elemento.posicao().topo < 50 ? 'bottom' : 'top' );
             };
 
         }
@@ -1168,7 +1266,9 @@ var Superlogica_Js_Elemento = new Class({
     title : function( title, width ){
         this.popover({
             'content' : title, 
-            'trigger' : 'hover'
+            'trigger' : 'hover',
+            'placement' : this.atributo('hint-placement'),
+            'html' : true                                                           //adicionado em 02/12/2014 por Felipe, para uso de HTML em hint
         });
         return this;
     },
@@ -1211,7 +1311,15 @@ var Superlogica_Js_Elemento = new Class({
             );
     },
     
-    openDialogo : function(){
+    openDialogo : function( tituloForm, tituloAssistente, tamanhoHorizontal, tamanhoVertical, recarregarComportamentos ){
+        
+        if ( typeof recarregarComportamentos == 'undefined')
+            recarregarComportamentos = true;
+        
+        if ( !tituloForm ) tituloForm = 'auto';        
+        if ( !tituloAssistente ) tituloAssistente = 'auto';        
+        if ( !tamanhoHorizontal ) tamanhoHorizontal = 'auto';        
+        if ( !tamanhoVertical ) tamanhoVertical = 'auto';        
         
         var elementoConfiguracoesForm = this;
         var form = this;
@@ -1222,23 +1330,49 @@ var Superlogica_Js_Elemento = new Class({
                 elementoConfiguracoesForm = this;
         }
 
-        var larguraModal = 'modal-lg';
-        var atributoLarguraModal = form.atributo('largura_modal') ? form.atributo('largura_modal') : elementoConfiguracoesForm.atributo('largura_modal');
-        if ( atributoLarguraModal ){
+        var larguraModal = '';
+        if ( tamanhoHorizontal == 'min' ) larguraModal = 'modal-md';
+        else if ( tamanhoHorizontal == 'max' ) larguraModal = 'modal-lg';
+        else{
             
-            if ( atributoLarguraModal == 'large')
-                larguraModal = 'modal-lg';
-        }else if ( (form.eh('form') || form.eh('.form_grid')) && ( !form.encontrar('.subForm') ) ) 
-            larguraModal = 'modal-md';
+            larguraModal = 'modal-lg';
+            if ( (elementoConfiguracoesForm.eh('form') || form.eh('.form_grid')) && ( !form.encontrar('.subForm') ) ) 
+                larguraModal = 'modal-md';
+        }
+             
+        var tamanhoForm = '';
+        if ( tamanhoVertical == 'min' ) tamanhoForm = 'max-height';/*tamanho vertical do form*/
+        else if ( tamanhoVertical == 'max' ) tamanhoForm = 'height';
+        else{
+            tamanhoForm = elementoConfiguracoesForm.temClasse('assistente_superlogica') ? 'height' : 'max-height';
+        }
         
-        var tamanhoForm = elementoConfiguracoesForm.temClasse('assistente_superlogica') ? 'height' : 'max-height';
-        var classHeader = elementoConfiguracoesForm.temClasse('assistente_superlogica') && form.encontrar('.titleWizard') ? ' blocoEscondido' : '';
+        var classHeader = elementoConfiguracoesForm.temClasse('assistente_superlogica') && (form.encontrar('.titleWizard') || form.encontrar('.noTitleWizard')) ? ' blocoEscondido' : '';
+        if ( tituloForm != undefined ){
+            
+            if ( tituloForm == 1 ) classHeader = '';
+            else if ( tituloForm == 0 ) classHeader = 'blocoEscondido';
+        }
         
+//        var classTitleWizard = elementoConfiguracoesForm.temClasse('assistente_superlogica') && (form.encontrar('.titleWizard') || form.encontrar('.noTitleWizard')) ? ' blocoEscondido' : '';
+        if ( tituloAssistente != undefined ){
+            
+            if ( tituloAssistente == 1 ){
+                form.atributo('force_titulo', '1');
+            }else if ( tituloAssistente == 0 ){
+                form.atributo('force_titulo', '-1');
+            }
+        }
+        
+        var btnFecharDialogo = "<button name='FECHAR_DIALOG' type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button>";
+        if ( parseInt(elementoConfiguracoesForm.atributo('comFechar')) === 0 ){
+            btnFecharDialogo = '';
+        }
+
         var htmlDialog = "<div class='modal' id='myModal' tabindex='-1' role='dialog' aria-labelledby='myModalLabel' aria-hidden='true'>\n\
                               <div class='modal-dialog "+ larguraModal +"'>\n\
                                   <div class='modal-content'>\n\
-                                      <div class='modal-header " + classHeader + "'>\n\
-                                          <button name='FECHAR_DIALOG' type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button>\n\
+                                      <div class='modal-header " + classHeader + "'>"+btnFecharDialogo+"\
                                           <h4 class='modal-title' id='myModalLabel'>Modal title</h4>\n\
                                       </div>\n\
                                       <div class='modal-body'> </div>\n\
@@ -1262,14 +1396,17 @@ var Superlogica_Js_Elemento = new Class({
                 corpoDoForm.adicionarHtmlAoInicio( titleWizard );
         }
         
-        elementoDialog.encontrar('button[name=FECHAR_DIALOG]').bind('click', function(){
-            
-            var elementoFechar = form.getElemento('fechar');
-            if ( elementoFechar ){                
-                elementoFechar.simularClique();
-            }
-            return true;
-        });
+        var btnFechar = elementoDialog.encontrar('button[name=FECHAR_DIALOG]');
+        if ( btnFechar ){
+            btnFechar.bind('click', function(){
+                if( !instanceOf(form, Superlogica_Js_Form) ) return true;
+                var elementoFechar = form.getElemento('fechar');
+                if ( elementoFechar ){                
+                    elementoFechar.simularClique();
+                }
+                return true;
+            });
+        }
         
         var elementoWindow = new Superlogica_Js_Elemento( window );
         elementoWindow.bind('resize.open_dialog', function(event){
@@ -1277,12 +1414,36 @@ var Superlogica_Js_Elemento = new Class({
             if ( !corpoDoForm ){
                 elementoWindow.unbind('resize.open_dialog');
             }
-            var alturaPx = elementoWindow.altura() - 200;
-            corpoDoForm.css( tamanhoForm, alturaPx + 'px' );
+            
+
+            if ( corpoDoForm ){
+                
+                var tamanhoDesconsiderar = 87;
+                
+                var titleHeader = elementoDialog.encontrar('.modal-header');       
+                var botoesPadroesForm = form.encontrar('.botoesPadroes');         
+                if ( ( titleHeader ) && ( titleHeader.eh(':visible') ) ){                    
+                    tamanhoDesconsiderar = 75;
+                } 
+                
+                if ( ( botoesPadroesForm ) && ( botoesPadroesForm.eh(':visible') ) ){
+                    
+                    tamanhoDesconsiderar = 65;
+                    if (! ( ( titleHeader ) && ( titleHeader.eh(':visible') ) ) ){  
+                        
+                        tamanhoDesconsiderar = 75;
+                    }
+                }                
+                
+                var alturaPx = ( ( elementoWindow.altura() )* tamanhoDesconsiderar )/100;                
+                corpoDoForm.css( tamanhoForm, alturaPx + 'px' );            
+            }            
         });   
 
         form.removerAtributo('carregado');
-        form.maisProximo('.modal-body').carregarComportamentos( false );
+
+        if ( recarregarComportamentos )
+            form.maisProximo('.modal-body').carregarComportamentos( false );
 
         form.mostrar();
         
@@ -1317,7 +1478,8 @@ var Superlogica_Js_Elemento = new Class({
         elementoDialog.bind('hidden.bs.modal', function(){
             new Superlogica_Js_Elemento( this) .remover();
         });   
-
+        
+        return elementoDialog;
         
     },
     
@@ -1474,7 +1636,86 @@ var Superlogica_Js_Elemento = new Class({
      *
      *
      */
+    
+    __replica : function(){        
+        this.bind('change keyup', function(){
+            if ( this.atributo("replicandoelemento") || this.atributo("replicaoff") ){
+                this.removerAtributo('replicandoelemento');
+                return true;
+            }
 
+            var elementoAtual = new Superlogica_Js_Form_Elementos(this);
+            var valorAtual =  elementoAtual[ elementoAtual.eh('input,select,textarea') ? 'getJson' : 'conteudo']();            
+            var nomeReplica = this.atributo('replica');
+            
+            var formulario = new Superlogica_Js_Form( this.maisProximo('form') );            
+            var elementosReplica = formulario.encontrar('[replica="'+nomeReplica+'"]');            
+            if (!elementosReplica || elementosReplica.contar() <= 1 )
+                return true;            
+            elementosReplica.emCadaElemento(function(){                
+                if ( this.$_elemento[0] == elementoAtual.$_elemento[0] || this.atributo("replicaoff") )
+                    return true;                
+                var elemento = new Superlogica_Js_Form_Elementos(this);
+                elemento.atributo("replicandoelemento",'1');
+                elemento[ elemento.eh('input,select,textarea') ? 'setValue' : 'conteudo' ]( valorAtual );                
+            });
+        });        
+    },
+    
+    __soma : function(){
+        this.bind('change keyup', function(){
+            var nomeSoma = this.atributo('somarem');
+            var formulario = new Superlogica_Js_Form( this.maisProximo('form') );
+            if ( !formulario || formulario.contar() <= 0 ){
+                return true;
+            }
+            var elementosSoma = formulario.encontrar('[somarem="'+nomeSoma+'"]');
+            if ( !elementosSoma ){
+                return true; 
+            }
+            var total = 0;            
+            elementosSoma.emCadaElemento(function(){               
+                var elemento = new Superlogica_Js_Form_Elementos(this);                
+                
+                var valorItem = parseFloat( elemento[ elemento.eh('input,select,textarea') ? 'getJson' : 'conteudo' ]() );
+                if ( isNaN(valorItem) )
+                    valorItem = 0;
+                total += valorItem;
+            });            
+            if ( nomeSoma.indexOf('#') === -1 || nomeSoma.indexOf('.') === -1 ){                
+                formulario.getElemento(nomeSoma).setValue(total);
+            }else{
+                new Superlogica_Js_Elemento( nomeSoma ).conteudo( total );
+                
+            }
+            
+        });
+    },
+    
+    /**
+    * Se um elemento contiver esse comportamento, ao clicar sobre ele
+    * a visibilidade será alterada da classe/id informada no atributo "divclass"/"divid"/"proximo", respectivamente e se esconderá
+    * Se DivId e DivClass tiverem valor, procurará os DivClass dentro do DivId
+    * Além disso todos os divs com classe definida por 'divclassgrupo' também
+    * vão perder a visibilidade
+    *
+    * @atributo divclass
+    * @atributo divid
+    * @atributo prefixoId
+    * @atributo divclassgrupo
+    * 
+    * @param Superlogica_Js_Elemento
+    *
+    */
+    __cliqueAlteraPropriaVisibilidade: function(elemento, contexto){
+        
+        this.bind('click.cliqueAlteraPropriaVisibilidade', function(evento){
+            console.log('oi');
+            this.trocarVisibilidade();
+        });
+
+    },
+    
     /**
         * Se um elemento contiver esse comportamento, ao clicar sobre ele
         * a visibilidade será alterada da classe/id informada no atributo "divclass"/"divid", respectivamente ou dele própria, se nehuma das 2
@@ -1490,9 +1731,9 @@ var Superlogica_Js_Elemento = new Class({
         * @param Superlogica_Js_Elemento
         *
         */
-    __cliqueAlteraVisibilidade: function(elemento, contexto){
+        __cliqueAlteraVisibilidade: function(elemento, contexto){
         
-        this.bind('click', function(evento){
+        this.bind('click.cliqueAlteraVisibilidade', function(evento){
             
             evento.preventDefault();
             var alvo = null;
@@ -1523,15 +1764,21 @@ var Superlogica_Js_Elemento = new Class({
             //DivId
             var id = this.atributo('divid');
             var seletorMaisProximo = this.atributo('maisProximo');
-            var divClass = this.atributoToArray('divclass');            
-            if ( id || seletorMaisProximo ){
+            var divClass = this.atributoToArray('divclass');     
+            var seletorProximo = this.atributo('proximo');
+            
+            if ( id || seletorMaisProximo || seletorProximo){
                 encontrou = true;
                 var prefixoId = this.atributo('prefixoId');
+                
                 if ( typeof prefixoId != 'undefined'){
                     id = prefixoId+'-'+id ;
                 }
-                if ( id && !seletorMaisProximo )
+                
+                if ( id && !seletorMaisProximo && !seletorProximo )
                     alvo = new Superlogica_Js_Elemento('#' + id);
+                else if ( seletorProximo ) 
+                   alvo = this.proximo( seletorProximo );
                 else
                     alvo = this.maisProximo( seletorMaisProximo );
                 
@@ -1539,20 +1786,19 @@ var Superlogica_Js_Elemento = new Class({
                     if ( divClass.length == 0 ){
                         alvo.trocarVisibilidade();
                     } else {
+                        
                         Object.each( divClass, function( seletor ){
                             var alvo2 = alvo.encontrar( '.'+seletor );
                             if (alvo2 != null){
                                 alvo2.trocarVisibilidade();
                             }
                         });
-                                
-
                     }
                 }
 
             }
             if (encontrou) return ;
-
+            
             //DivClass                    
             if ( divClass ){
                 encontrou = true;
@@ -1561,9 +1807,9 @@ var Superlogica_Js_Elemento = new Class({
                     alvo.trocarVisibilidade();
                 }
             }
-            if (encontrou) return ;
-                        
-
+            if (encontrou) return ;            
+            
+            
             // se não tiver atributos DivClass ou DivId, esconde a si mesmo
             this.esconder();
         });
@@ -1658,6 +1904,144 @@ var Superlogica_Js_Elemento = new Class({
             return true;
         });
     },
+    
+    sortable : function(){
+        this.$_elemento.sortable.apply( this.$_elemento, arguments);
+        return this;
+    },
+            
+    __mostrarElementosMouseover : function(){
+        this.delegate('.mouseovercontainer', 'mouseover', function(){
+            var elementos = this.encontrar('.blocoInvisivel')
+            if ( elementos )
+                elementos.removerClasse('blocoInvisivel').adicionarClasse('blocoVisivel');
+        }).delegate('.mouseovercontainer', 'mouseout', function(){
+            var elementos = this.encontrar('.blocoVisivel')
+            if ( elementos )
+                elementos.removerClasse('blocoVisivel').adicionarClasse('blocoInvisivel');
+        });
+    },
+
+    /**
+     * Executa um comportamento passado como parâmetro
+     * Responsável por chamar comportamentos especificos dos elementos como: aposAbrirFormDialog, etc
+     * @param  {String} atributoComportamento 
+     * @return {void}                       
+     */
+    executarComportamento : function( atributoComportamento ){
+        
+        var argumentosComportamento = [];
+        for ( var x=1; x<arguments.length; x++){
+            argumentosComportamento.push(arguments[x]);
+        }
+
+        var comportamentos = this.atributoToArray(atributoComportamento);
+        Object.each( comportamentos, function( comportamento ){
+            if ( typeof this['__'+comportamento] == 'function'){
+                this['__'+comportamento].apply( this, argumentosComportamento);
+            }
+        }, this);
+
+    },
+    
+    __abrirFormDialog : function(){
+
+      this.bind('click', function(){
+        var nomeForm = this.getDados('nome-form');
+        if ( nomeForm.indexOf('#') !== -1 ){
+            var form = new Superlogica_Js_Form(nomeForm).clonar();
+            form.openDialogo();
+            this.executarComportamento('aposAbrirFormDialog', form.encontrar('form'));
+        }else{
+            this.getForm(nomeForm, function( container ){
+                container.openDialogo(false);
+                this.executarComportamento('aposAbrirFormDialog', container.encontrar('form'));
+            });
+        }
+      });
+
+    },
+
+    /**
+     * Adicionar comportamento para recarregar a página apos submeter
+     * @param  {Superlogica_Js_Form} form 
+     * @return {void}      
+     */
+    __adicionarAposSubmeterRecarregarPagina : function( form ){
+      form.atributo('aposSubmeter', jQuery.trim( (form.atributo('aposSubmeter') ? form.atributo('aposSubmeter') : '') + ' recarregarPaginaAposSubmeterComSucesso') );
+    },
+
+    getForm : function(nomeForm, callback, naoProcessarComportamentos, viaProxy){
+        this.inserirLoadingImg();
+
+        var displayGroups = this.getDados('display-groups');
+        var opcoesConstrutor = this.getDados('opcoes-construtor');
+        var formAtributos = this.getDados('form-atributos');        
+        var elemento = this;
+        var locationForms = new Superlogica_Js_Location();
+        locationForms.setController('forms').setAction('index').setApi(true).setParam({}).viaProxy(viaProxy? true : false);
+        var request = new Superlogica_Js_Request( locationForms.toString(), {
+            'nome': nomeForm,
+            'interno' : viaProxy ? 0 : 1,
+            'displayGroups' : displayGroups ? displayGroups : 0,
+            'opcoesConstrutor' : opcoesConstrutor ? opcoesConstrutor : 0, 
+            'formAtributos' : formAtributos ? formAtributos : 0
+        });
+        var nomeCacheForm = 'FORM'+nomeForm + JSON.encode(displayGroups) + JSON.encode(opcoesConstrutor) + JSON.encode(formAtributos);
+        
+        if ( typeof window.jsAdicionados == 'undefined')
+            window.jsAdicionados = {};
+
+        request.enviarAssincrono(function( response ){
+        if ( response.isValid() ){
+            var dados = response.getData();
+            dados.html = Superlogica_Js_String.html_entity_decode( dados.html, 'ENT_QUOTES' );
+            Object.each( dados.urls, function( url, chave ){
+                var location = new Superlogica_Js_Location();
+                location.setController(url.controller)
+                        .setAction(url.action)
+                        .setParams(url.params)
+                        .viaProxy(viaProxy? true : false);
+                if ( url.api )
+                    location.setApi(true);            
+
+                dados.html = dados.html.replace( '%url_form'+chave+'%', location.toString() );
+            });
+
+            if ( !window.jsAdicionados['FORM'+nomeForm] ){
+                window.jsAdicionados['FORM'+nomeForm] = true;
+                dados.js = Superlogica_Js_String.html_entity_decode( dados.js, 'ENT_QUOTES' );
+                dados.html_append = Superlogica_Js_String.html_entity_decode( dados.html_append, 'ENT_QUOTES' );
+
+                if ( dados.js ){
+                    new Superlogica_Js_Elemento('head').adicionarHtmlAoFinal(
+                        new Superlogica_Js_Elemento('<script></script>').conteudo(dados.js)
+                    );
+                }
+                if( dados.html_append ){         
+                    new Superlogica_Js_Elemento('#Superlogica_Layout_Codigos_Append').adicionarHtmlAoFinal(
+                        dados.html_append 
+                    );                    
+                }
+            }
+            var form = new Superlogica_Js_Form( '<div>'+dados.html+'</div>' );
+
+            if (!naoProcessarComportamentos){
+                var divEnvolvida = new Superlogica_Js_Elemento('<div></div>');
+                new Superlogica_Js_Elemento('#Superlogica_Layout_Codigos_Append').adicionarHtmlAoFinal( divEnvolvida );
+                divEnvolvida.conteudo(form);
+                divEnvolvida.carregarComportamentos();
+            }
+
+            callback.apply( elemento, [form] );
+            
+        }
+
+        elemento.removerLoadingImg();
+        
+      }, nomeCacheForm );
+        
+    },
 
     __configurarImpressao : function(){
         if (!(navigator.platform=='Win32')){            
@@ -1674,7 +2058,90 @@ var Superlogica_Js_Elemento = new Class({
                 var displayConfigurarImpressao= formulario.getDisplayGroup("DISPLAY_CONFIGURARIMPRESSAO");                
                 displayConfigurarImpressao.mostrar(); 
         });
-    }  
+    },
+
+    inserirLoadingImg : function( handler ){
+        
+        if( !handler )
+            handler = this;
+        
+        if ( !handler.eh( '.btn') )
+            handler.adicionarClasse('blocoEscondido');
+
+        var loadingImg = new Superlogica_Js_Elemento('<img class="imgLoading" />')
+            .atributo('src', APPLICATION_CONF["APPLICATION_CLIENT_TEMA_URL"] + '/img/load.gif')
+            .atributo('alt', 'Carregando... aguarde.' )
+            .atributo('height','5')
+            .atributo('width','21');
+
+        if ( handler.eh( '.btn') ){
+            loadingImg.css({
+                'margin-left':'5px',
+                'display':'inline-block'
+            });
+            handler.adicionarHtmlAoFinal( loadingImg );
+        }else if ( this.maisProximo('.input-icone').contar() ){
+            loadingImg.css({
+                'position' : 'absolute',
+                'top' : '14px',
+                'right' : '10px'
+            });
+            loadingImg.inserirDepoisDe( handler );
+        }else{
+            loadingImg.atributo('style', 'margin-top:5px;');
+            loadingImg.inserirDepoisDe( handler );
+        }
+    },
+
+    /**
+     * Remove a imagem de loading
+     */
+    removerLoadingImg : function(){
+
+        var imgLoading;
+        if ( this.eh( '.btn') ){
+            imgLoading = this.encontrar('.imgLoading');
+        }else{
+            imgLoading = this.proximo();
+        }
+
+        if ( !imgLoading )
+            return true;
+
+        if ( imgLoading.eh('.imgLoading') )
+            imgLoading.remover();
+
+        this.removerClasse('blocoEscondido');
+
+    },
+
+    fecharAjuda : function(){
+        
+        var notificacao = this.maisProximo('.foobar-container-row');
+        if ( notificacao && notificacao.contar() ){
+            Superlogica_Js_Elemento.fecharNotificacao();
+        }else{
+            Superlogica_Js_Elemento.fecharModal();
+        }
+    }
+    
 });
 
+Superlogica_Js_Elemento.adicionarJsAPagina = function(js, quoted){    
+    if ( quoted )
+        js = Superlogica_Js_String.html_entity_decode( js, "ENT_QUOTES" );
+
+    new Superlogica_Js_Elemento("body").adicionarHtmlAoFinal(
+        new Superlogica_Js_Elemento("<script></script>").conteudo(js)
+    );   
+
+}
+
+Superlogica_Js_Elemento.fecharModal = function(){    
+    new Superlogica_Js_Elemento("#myModal").$_elemento.modal("hide");    
+};
+
+Superlogica_Js_Elemento.fecharNotificacao = function(){    
+    jQuery.foobar('close');
+};
 

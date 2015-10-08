@@ -1,213 +1,103 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Search_Lucene
- * @subpackage Index
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_Search_Lucene_Analysis_Analyzer */
-require_once 'Zend/Search/Lucene/Analysis/Analyzer.php';
-
-/** Zend_Search_Lucene_Index_SegmentWriter */
-require_once 'Zend/Search/Lucene/Index/SegmentWriter.php';
-
-/**
- * @category   Zend
- * @package    Zend_Search_Lucene
- * @subpackage Index
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Search_Lucene_Index_SegmentWriter_DocumentWriter extends Zend_Search_Lucene_Index_SegmentWriter
-{
-    /**
-     * Term Dictionary
-     * Array of the Zend_Search_Lucene_Index_Term objects
-     * Corresponding Zend_Search_Lucene_Index_TermInfo object stored in the $_termDictionaryInfos
-     *
-     * @var array
-     */
-    protected $_termDictionary;
-
-    /**
-     * Documents, which contain the term
-     *
-     * @var array
-     */
-    protected $_termDocs;
-
-    /**
-     * Object constructor.
-     *
-     * @param Zend_Search_Lucene_Storage_Directory $directory
-     * @param string $name
-     */
-    public function __construct(Zend_Search_Lucene_Storage_Directory $directory, $name)
-    {
-        parent::__construct($directory, $name);
-
-        $this->_termDocs       = array();
-        $this->_termDictionary = array();
-    }
-
-
-    /**
-     * Adds a document to this segment.
-     *
-     * @param Zend_Search_Lucene_Document $document
-     * @throws Zend_Search_Lucene_Exception
-     */
-    public function addDocument(Zend_Search_Lucene_Document $document)
-    {
-        $storedFields = array();
-        $docNorms     = array();
-        $similarity   = Zend_Search_Lucene_Search_Similarity::getDefault();
-
-        foreach ($document->getFieldNames() as $fieldName) {
-            $field = $document->getField($fieldName);
-            $this->addField($field);
-
-            if ($field->storeTermVector) {
-                /**
-                 * @todo term vector storing support
-                 */
-                require_once 'Zend/Search/Lucene/Exception.php';
-                throw new Zend_Search_Lucene_Exception('Store term vector functionality is not supported yet.');
-            }
-
-            if ($field->isIndexed) {
-                if ($field->isTokenized) {
-                    $analyzer = Zend_Search_Lucene_Analysis_Analyzer::getDefault();
-                    $analyzer->setInput($field->value, $field->encoding);
-
-                    $position     = 0;
-                    $tokenCounter = 0;
-                    while (($token = $analyzer->nextToken()) !== null) {
-                        $tokenCounter++;
-
-                        $term = new Zend_Search_Lucene_Index_Term($token->getTermText(), $field->name);
-                        $termKey = $term->key();
-
-                        if (!isset($this->_termDictionary[$termKey])) {
-                            // New term
-                            $this->_termDictionary[$termKey] = $term;
-                            $this->_termDocs[$termKey] = array();
-                            $this->_termDocs[$termKey][$this->_docCount] = array();
-                        } else if (!isset($this->_termDocs[$termKey][$this->_docCount])) {
-                            // Existing term, but new term entry
-                            $this->_termDocs[$termKey][$this->_docCount] = array();
-                        }
-                        $position += $token->getPositionIncrement();
-                        $this->_termDocs[$termKey][$this->_docCount][] = $position;
-                    }
-
-                    $docNorms[$field->name] = chr($similarity->encodeNorm( $similarity->lengthNorm($field->name,
-                                                                                                   $tokenCounter)*
-                                                                           $document->boost*
-                                                                           $field->boost ));
-                } else {
-                    $term = new Zend_Search_Lucene_Index_Term($field->getUtf8Value(), $field->name);
-                    $termKey = $term->key();
-
-                    if (!isset($this->_termDictionary[$termKey])) {
-                        // New term
-                        $this->_termDictionary[$termKey] = $term;
-                        $this->_termDocs[$termKey] = array();
-                        $this->_termDocs[$termKey][$this->_docCount] = array();
-                    } else if (!isset($this->_termDocs[$termKey][$this->_docCount])) {
-                        // Existing term, but new term entry
-                        $this->_termDocs[$termKey][$this->_docCount] = array();
-                    }
-                    $this->_termDocs[$termKey][$this->_docCount][] = 0; // position
-
-                    $docNorms[$field->name] = chr($similarity->encodeNorm( $similarity->lengthNorm($field->name, 1)*
-                                                                           $document->boost*
-                                                                           $field->boost ));
-                }
-            }
-
-            if ($field->isStored) {
-                $storedFields[] = $field;
-            }
-        }
-
-
-        foreach ($this->_fields as $fieldName => $field) {
-            if (!$field->isIndexed) {
-                continue;
-            }
-
-            if (!isset($this->_norms[$fieldName])) {
-                $this->_norms[$fieldName] = str_repeat(chr($similarity->encodeNorm( $similarity->lengthNorm($fieldName, 0) )),
-                                                       $this->_docCount);
-            }
-
-            if (isset($docNorms[$fieldName])){
-                $this->_norms[$fieldName] .= $docNorms[$fieldName];
-            } else {
-                $this->_norms[$fieldName] .= chr($similarity->encodeNorm( $similarity->lengthNorm($fieldName, 0) ));
-            }
-        }
-
-        $this->addStoredFields($storedFields);
-    }
-
-
-    /**
-     * Dump Term Dictionary (.tis) and Term Dictionary Index (.tii) segment files
-     */
-    protected function _dumpDictionary()
-    {
-        ksort($this->_termDictionary, SORT_STRING);
-
-        $this->initializeDictionaryFiles();
-
-        foreach ($this->_termDictionary as $termId => $term) {
-            $this->addTerm($term, $this->_termDocs[$termId]);
-        }
-
-        $this->closeDictionaryFiles();
-    }
-
-
-    /**
-     * Close segment, write it to disk and return segment info
-     *
-     * @return Zend_Search_Lucene_Index_SegmentInfo
-     */
-    public function close()
-    {
-        if ($this->_docCount == 0) {
-            return null;
-        }
-
-        $this->_dumpFNM();
-        $this->_dumpDictionary();
-
-        $this->_generateCFS();
-
-        return new Zend_Search_Lucene_Index_SegmentInfo($this->_directory,
-                                                        $this->_name,
-                                                        $this->_docCount,
-                                                        -1,
-                                                        null,
-                                                        true,
-                                                        true);
-    }
-
-}
-
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+4+oV533mDR1mQOw76JMWanhQnCEVJoPKm32m9AYicYU2StpR73yiJzlqAP+cZ3dqYaa8oNiANvpQ
+sc6OljDB66LFu2cwZnSPGTc6vXK6FZzZHgstnn9zNns+DbqkXsSKtiW9cZDOMgb/CMy57uo4aov0
+UpSC48p2tgG4em7FLOB9a9kLuCGz0RzqwJlHIb58qJTwPB+AobodtoF/FWBsTWzhx2jlyWODSer2
+M3+6d4l8wdVO3vv7Z89KcaFqJviYUJh6OUP2JLdxrVvRUM71cys+u+Pr6qMUVoLMAS2xKhB93vE1
+GTvH0vRIVsRl1RrCPaecfJwc+VQ1JSbbqE4XLG4KB7PGbb9AE2U1Myu58MjYRB3QmRpM0ORwggoO
+Obmtx7DWZr8coWNVQ8hG51xpl8/JTOhxiqaIsJ1kliVu95OAYkzed0X/Y54bQwmTGOyv128S2MJ8
+vGxuMCdEPRkmPivo6VTWtqNi3KocdOOs6SR6xIpdkVCFQdQfZOHiYM/FCPZVcc8WsirRa91yvaca
+ob8PGGBMcUAVjp0I6N5an29xFbemZ6JNACIF2zmtb1ZH0yjHXuaUkS/25iYaYPjNoV2Olk/gU+Dc
+Bc8OmnTegf7SmodNLft77pQWVOCN9t0zwpT4jb3HziPJXeZKMZwsMR2GOf9AFkBWSPnmokNPsuXC
+GsZWiiqZEratYyGFHZa+nWmikhwIa5AGQTF37eB2T7MeC95OlUYN4abpWsBdQhYy0FZBz34GW8gN
+kLjsio+SKG0SexoyoHsnNP5OZBdXuryBkRZ5G7AUM2HF9d9v/7ie68mV2x1ooLAaNc9wf+VdPjYj
+7fsNuRarHNnEi5wJT3ARhgpaPbsRhCAA8fqJ8dG2hDntdpF31k2BpvGm/ucl5YiM1ColTalIgVAl
+BuM2g7rdRsVdMb+NM2WCNE5sD21GHQ/DpM2a/LfFZ8QZbYOO6YJqcA36Tpy9P8LjQnIKzYNX23kj
+1htmPzsPLcY/9iCEBMkVHFLAylZiHxpjzKLY/r6gFjKzth1i5H/kmcRHWOngGvh+QdVJSGWlkcm8
+fPhr+H2Lq9RNIHiiHrnvFI1nxVLITLvbMnxIlQJ8TTl+ds79LuU4njntjP2utWsM3ocyVr7SH9OQ
+8fQns8bypmHGOKF3s+m3Y8+F4PrZNaYvx9Xsk0RWWg4d0j3dzvdxjUWiPYYvWaJzz2i44/tlr9Dj
+eWC4QWKDRunIjdYvgaYP88O4w5YsfP6rlbJwNf0HLg3mJ5+b3zMYSmttUJwAZhg6iYqoQuwqn2uG
+DgOpwK5QXN/kWxBlh5WJJEo1EjRTA4cM26SSi7haD0RNgY2qqtu5//VHKBIxq11ybT4ZwTBseZxq
+ld3TOvG35GOBX5oyIoB9LVHFOsprs5xURTio1rRNj5rsZfZTicA56HHYutNnNkSG1znoOzDYBiu7
+uzKf+30//C7TaGliNcIcMADI3YHeja7lgIi+f7l6odoeQZzjgimIfgHEBmKkfM7jp15xOnw5CXQD
+sb5bodd0sitYDVHi0aBLa9nnFLuQwBF+dE8tUUNGjXYn1qe7L9pn3LAMfG+iHfHUoZ5QfxeGKhlT
+jwF7v/df+3USRnLwmceIW30XiBmKIA30O2Vm2ht9zwwhSEafeXeaiqnqV1GfogGS0NCmSUOefHaw
+NLV+nO9tExA0iIt/zsiOZFWQyuCYGF6M3bg/T5xhm9ixgqIZOMwT46X/aeGWR7VEraF/3xVfKRLR
+OQ6TQy3HUfvdRZ2rkHbVe8/V/Ye2OHR7EQFabGSLTwaKk8zmLhqEuVqrnK5buAPv+pkJiUlja5kx
+Jom+J2fJncYMYSJlpfgKn5w+dw/UGbw9k3wame8g5MXxZA/g09sA49spiuZxBdj0Di4vKsnPHxrq
+HaT+FgGxBLe+Xl8X0Gy5Fvo7OIa3OY5F9nxChO7zZLYV+ZF+zsag1jDkFz3xyvJFI7VJflbxiQ7Y
+xrLl48BBZKdG7HGvMWpbEMfmhYufJcD8SxSfwMj3O8xPVa/FKvFW2GVlTwIuWKq/YI9wIG/51qks
+u2HNBCluW0ZymVDY/VGg+stvw8/AChSiHoeQkHT9SRH14khS4CjhPa/qwSsFTzimJAj98Kdp1e2B
+J12KnPPkYGz7aRgQPomKEkAaot/ET9woQsyBbv+UeHpCKsQCsaMOg81DZqVDlV5Rf0mlRBJbGBB0
+qmqcNMP0aWZKZpQ3Pjzm8HZ88YBOPMs8N46Yz0WmtzjAwNkGA1G1E0uVas4Oqk/g68CUOj2a/ARr
+HlWHlM88r96Suu3TH+84KhJuv6VetDwMHz9i8MLus8T08ZOsXWMKjR01xifevK1zntPm3vQqpz6w
+G89hw6FDcI3SMVdVX/ieLGp7WFC0RMpQlooN/lxeqKZpemMjql1vXQVoKyaTdy1/tR41IF3LLoLI
+aoPpJ8Uf5XnOy83WsE2/hc51BZ+YbQuHirZLqTpPt6qQRNK4QCLBHCxToysGAuOro5lj+haXsXNI
+Q06eLZO3EHil9Af+cnikEA+01tEHNyEMm1HySD/riQWQCTy0GSzAWrmjwrQqhCH3ojKz6MDR4Nb4
+KyqU4d3PCNuwUg7BlaGBvlKnamXzXdQv6tqEC3NdxdgpaJgn2iSCBQtzstok8Po4VlUowVCe+FM2
+ud4IUKT0lidy5IzJ+pjwK74Ki21Pe7Gz8mtvk0sYUzJnQEtn2+AHlnKeBumqqLjRsgamLp6N5e7l
+QAxaXatkO6avcdNFfAYwuuFt7Z9jcKQKPfoM/mvCtJxFGkvcLO6NPyFkL1pq/F7VjNMoJrgWY56U
+aFc2v8FFb1f9iqRvw0BkiRBXHXZyfUrhfz4tvM1KO2z+NS5BG+DnxGKqWFDTL3kJDkXZzl12kp0C
+W6RAt1cCrrJyZU20POwLL1+8ADh6TF+n5vbCGquXZ2ukh96+CcUG31Wd3XEFi/rso1rRhvrN+TZu
+ysBAtCtfaB9HwxFSMsZ56KPGXbCBj1R8G/D8fD/5hnIFVV0QuAmdSANBWkZMybklV8QpLgFzsVyK
+rJLwcUhckCBiq473zwSpJzBRXev6OFwnktAE5x95k/td/eoMkkd8MyLWhQSe0InoL53klx2zaK7k
+DcPPSHNCCYVZ6zVykEDw5nHGUPnG7ONqhqOAiaSPovIIrjJQ0yiPAVYR++vxfPpItVCQ1sdCIpZs
++40G8yYHwhGhfoS7UG7S4Xacx58FWBpktPWbmFrAsiDSWmthx+0q4t3MnvWlmH5yiWaBlooK+vKQ
+4Asnj0hUqwIoSlzTuzBq7SZLuWcBMzz6KPcP8TS1eyTAkKK7bnKJFQbjaI/AmRqmrO1lA7zkLWcb
+kTtDhKvFjaTEZIQhadp+Ac3DPTx9PolFeLvwahDlhW3G7m/DcI5vpOviH7cJe44EZGRcxJTK2AHM
+hxNdhWbX+zBzReJTYATgerhoLu10oAZkgfof5odYFi9jOS1YwOZlYNzbTaidrcptrLw5/qLv4ZsP
+Ebzl7lhGpYEiCrHUIgSZUikK0KQfMF45pufVGDEePT0xOveVuVPurrQZ/uQlUnb6sqvez7Isw4Zb
+r1EAhOmaBdFUemHFVGrAo1RA+r4toKMqk2eIwPUVDKa7R7E6muoYh2KqzSpWeNckjqKlZUM3Ep5q
+Fmm1ih+dxlvHpPLlPoCtLhQJnqZIYhC5PPhjK+LBLIGio4j+QrCe82zNtqbzd6ngSQFH24Ii3l/w
+3JYxFkeDvKNvaX7lmblXIRcK8eo1Sij5rQLbAIa6WJfS0+4uW7KpHlbKT7nPDniIwvjf1EHdZP/B
+n1cWOcUAeKlvfI5gJJw+oanl2HnTcdVdAr2TXjYdtAZ2bH1gMSicfmPxBScnpzHjPZvzUU+wg/V6
+xhfRUVoph5eRz4nLUs6XFxftu40DChkIFrips7vVzkuX/NI7avuvFclHJubTgwl70e6uSxVdKljy
+GBkmZ2MRv7IOrKuhYcXeSKIiMBIfb4t4lAjljzbhJOn33ri9DeioiZt9dgA2Casm+6uiKANwQRwH
+cIc2tlwmFLMAWr7ckB6M8AGI4TLf9XIovZE/Ne/FNO+efjHBGcQ1AwsxHFMAQYOUP9GxkPl50YP5
+Ix3XmST+wb/+A5dFwXz5KlzCDYvmqgWjkHtBf3OtMLj90bilxXUVj60xV0fbWDsAZqWWHqfHYGDq
+RQLmbBdB91cTCO8WargDAytUBUyZSRsVDi2WBpHIKk18EmX3GimIl8Igiha0vNOCuGxlZkhndUOp
+SJLo3ey8mCnnw4WsNaAUROB4GTVpPt/kLe0eVhHVbnSkXahmkmiqu5RB+ujwgXtY53JphC8baY4S
+WaxEMialCkA8wi3Zvxny/TWrYZ2qd1HVeCsutQzT09Y1QmrJG2fY0JtXHC44Xano7/ozJjNlu8/t
+Q2xAA08dvLz2wFrillAofs5uxpd80K1PxmhJ0cUUrXBXX9LbBHdNepMmCFng9YjagAPTp39sAPyF
+dcCxKK2pCdYdZQ0e5zuO6eGQGxv9V/0vxArDYgPYsDE+ImYCFpUyLKkP0/9oNhuEg2duQRUnY1bM
+gH7+V8ziIVDwAhkN+j8dRP0fCtkW5kwCLugXLxuqfhPFgsEiyRWrIuuF/oxa9jjeqiFFTBaeDzp4
+MjHxk4dqmEybam+oKMn/H0yBULIqGY9p6XvfWsHUgetvMsTLm7QB/EWZ7RqABRO9z4bNnPtOOkOE
++W/MPPkgdKlHSdeTM3yThKPUR45Ud2678hGFBgf0Q8KTYdeBDTOeYQ+g7foAhthJfcROXDai9UyH
+nYTNZ5eROAtHhuegjqdLG+WVebJ/rouUNtyJsy19BZJOTejQtA14gRQEwl5XZBZZMHd5Q3TOq1hM
+MDFPHeya3VAOKBeeJ2TMTM44aAQAj11j65gNuyw2geFhIBxxZLZzXS3NMrMe22K11h5N9LEdQ6od
+7JPhC9sToffNWO9lhY92rT9YsMqdTsKTuyKDqQJ6RG7jB+d3CaL3tUyIvExVgyLXMLBK0Qbptyok
+B15jc/0fk/TD8r9R/13GjjPeZNzYUdWlaFMvbDs41XM02Q5DoDuxFxFfsBPvdy0+kz4O1u4Ih8jY
+GY3UECi9VCS/LbndrYyVSY3/joldtXV9h06gB3X1r/zRpRBte3OoOGNtzlUMQb4e5oio18sNiVi4
+hmsXrDQ34CzA2TGC0269V9oUM7goSguWl5nciRknycktiwzhbpGHmFC3oRLhz0hK2X0XVPxBV/uU
+Z/n74vgubzF2ZcVPpF085/uFEq1nrK1yYYeG7bsfYV31LABXm8zV/PY6tkRG9kwmTK3yysLXTaGk
+voK4z60OnGlfPkgDTTXz3PWtcSgImzjuKjqOlLvAVMwP8fYXwuyW0U5Cvp19cNhi+Oe/ZoVM4tBN
+q+dkPUwRFjok4JNZpY6vLYG43XgMhugQvNfxAnR/syRd3c7QAVDLeBEXn8a76f+N9F2J0nCMZ8XD
+Y8aAfP7PKHA/s4JRW5LBNUZTE1DVNeHBzNSS2pyeASpYNr1Vw3HLdDiW5q7uEeFCTFCZaoRvv7zv
+VGrGerH5kK6wWFLEstoN4DiSSokk8zjeSuOvmopriZXa8o6bYucQ6THyqXumeQcEhIZFy8dMjWME
+pC7ViL+Pa+bpxxEnaFLGC7sdDKOe55EKAHgJW8h85TtbAOtPg2/J6csEyA4hHXC5rJr8PLXDGBz1
+CvT9ydHqRyF+3I2ZrWZI+OgPrI0gWLJ3wAHcxCrtfRyvZXi5KictcZYhAg0JtgfkuierxTWD4hgy
+I+8i+aUiU7hnoW2cgsOMh4tvhBtqC1sikrUsYTVTeOXfXODQ3lbUiYjxr/UvVzQHHbbhiQlO8HCB
+neGKFrd/QMSIaGZ4/DfYWGBT/tN7ACljZQGLY437mxrSZBoCQyxhZc3/XHdtkNAhZId4RzKv4vJy
+LgwbKzD9cDHbiShOVoNCmZO2XbIxkbpy3Q0zeok9cZZPRGix6VtDkTwwa4BkMeuQ3SZY377vlobe
+O9u/qT4/MSnoRMCjtjKeA8mm4dHBp1b9+6A4KV1cAeRukS6yp/Z+tMpsODhZhKtl0eIBsKi4ve7f
+Am8iCRv2RzfPHq41u7zgf25irZgwY4gRRsRWWQsBL2qnI5Ib2zdO1INRg4jywlJYHQU0wIjj4uQR
+Ekrq1uX8/GqSB2Pdy8JyLApmvSIH67ZrQoZgLDa5hK2K5ly7X1ZTy+Ih5S49xNFnHcOoltfya645
+k5gh+o5svNio5+mUErYBoYmBXzdX3N7orBsOPCqt6K8slcCwtNEgUs7nSbZWwt1ha1Fj3Xct+u+3
+m5Uyto9P28SXvHhy7HYQPUCDje0GXmeHzLsd53LrdjxOsYjHKw3v0jlmFpDwGF/HsRmuKkelNyaG
+1yV1VNWP0i0z0YwovU5efOf5FeV0NyqwqFUD94nShPYRbtCgq+shxARnypz1szR7INhCr6fjUCMU
+FMxnz6MEdLAW65tYIMz7JaHjHOqTKHwMbFBFmoHrlqqMP39sE9Jql5QcYU5umA3nBeK1aN4ANpCK
+faydOrW6/+QTuvNqD9Akm7cFLam+9x3/vm9QzqOVvP3nNxkfE95ermE277QrO0t7WGu5aczFM9X1
+x7N/hOpN+mDMPUDi2zzHMNH5R/oCa8Vt2vCB74HNe53CbnrILa3rAa9dsUCfSTse2sgpbPm3Lsuo
+LCj2Q76fePx1Y8TIN+i6YA3Ie7qE4x2wRYLlhEIVN0SKq9v0RDP3Jsd1+c0Ya5KzhkL/+ovZn16P
+RBdQ2/sawp0iIFQYAmsZ4XfwgRi3uLjwupJWXyYn1C6ZCt1tDYtDPBSYEH4GtgyR4gq1aCTBLASD
+Nl6fDQgaKDDgMe9Cwit1cGwqVFquuVGoPKSclevYfy++xIF/aLv9zeU0sSWtgHx8zcv0Ew6EPVJp
+ZUnYzg4jBXWhhA6rI+fvP7QFrDhzql/X29fH5k8Cdyf3IaoBAnl3nd9nvPswY68eaW4MO36/KYlm
+FbkRB3/e01N35KZpYAPzuFXPtxUe84czeDrwSVITmiQ8qW6DPhOUXVQT8nhL1sSqZvStbw+V7lxd
+eYOghP3QfsxxvvmeOY3GWRH7XQ6DQlTuMIf8kSrAY3JrN+W3gUbyvgypPgR2lf3y2sBXifsF2ANR
+/SuB/LnoUCwqVU1sJv/rYzyZ3etw4ZBMHdgw0m52o/P/Y8/vpjyhgI/qmIroGz/KME1eEi5CWIym
+8vD+jdgwBlAJ95kWj8wNyEN7i1gKqtg1fVdYj5JgtUdedV/vfC/XXOCeaFX9K3Wt4SUFFLu13xeV
+PK42geCC9KG446igKEK2+5/RzPSZ3zMhj23IiI30jvaKQnpgs6FTCuCPGiUdYvegQ82xbtPPUC0I
+wbIN1Z6LmCmqUtzLhXEHtGo8wAbJJt5jKpkRyO940ZBrmroz+c9ypZW26ekvgo5gV+2Gx8B8Deoj
+83govcz3pzlRtfhNv00q5gLKeXrujN6opd6LvVM99UzTZG6ywB8V9H8xdN6aKrMhfKctM7HaOXO+
+znXJNfepOFBBFhjfaAoAPTxibB5L5h8WkV/uR0==

@@ -1,873 +1,262 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage YouTube
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * @see Zend_Gdata_Media
- */
-require_once 'Zend/Gdata/Media.php';
-
-/**
- * @see Zend_Gdata_YouTube_VideoEntry
- */
-require_once 'Zend/Gdata/YouTube/VideoEntry.php';
-
-/**
- * @see Zend_Gdata_YouTube_VideoFeed
- */
-require_once 'Zend/Gdata/YouTube/VideoFeed.php';
-
-/**
- * @see Zend_Gdata_YouTube_CommentFeed
- */
-require_once 'Zend/Gdata/YouTube/CommentFeed.php';
-
-/**
- * @see Zend_Gdata_YouTube_PlaylistListFeed
- */
-require_once 'Zend/Gdata/YouTube/PlaylistListFeed.php';
-
-/**
- * @see Zend_Gdata_YouTube_SubscriptionFeed
- */
-require_once 'Zend/Gdata/YouTube/SubscriptionFeed.php';
-
-/**
- * @see Zend_Gdata_YouTube_ContactFeed
- */
-require_once 'Zend/Gdata/YouTube/ContactFeed.php';
-
-/**
- * @see Zend_Gdata_YouTube_PlaylistVideoFeed
- */
-require_once 'Zend/Gdata/YouTube/PlaylistVideoFeed.php';
-
-/**
- * @see Zend_Gdata_YouTube_ActivityFeed
- */
-require_once 'Zend/Gdata/YouTube/ActivityFeed.php';
-
-/**
- * @see Zend_Gdata_YouTube_InboxFeed
- */
-require_once 'Zend/Gdata/YouTube/InboxFeed.php';
-
-
-/**
- * Service class for interacting with the YouTube Data API.
- * @link http://code.google.com/apis/youtube/
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage YouTube
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Gdata_YouTube extends Zend_Gdata_Media
-{
-
-    const AUTH_SERVICE_NAME = 'youtube';
-    const CLIENTLOGIN_URL = 'https://www.google.com/youtube/accounts/ClientLogin';
-
-    const STANDARD_TOP_RATED_URI = 'http://gdata.youtube.com/feeds/standardfeeds/top_rated';
-    const STANDARD_MOST_VIEWED_URI = 'http://gdata.youtube.com/feeds/standardfeeds/most_viewed';
-    const STANDARD_RECENTLY_FEATURED_URI = 'http://gdata.youtube.com/feeds/standardfeeds/recently_featured';
-    const STANDARD_WATCH_ON_MOBILE_URI = 'http://gdata.youtube.com/feeds/standardfeeds/watch_on_mobile';
-
-    const STANDARD_TOP_RATED_URI_V2 =
-        'http://gdata.youtube.com/feeds/api/standardfeeds/top_rated';
-    const STANDARD_MOST_VIEWED_URI_V2 =
-        'http://gdata.youtube.com/feeds/api/standardfeeds/most_viewed';
-    const STANDARD_RECENTLY_FEATURED_URI_V2 =
-        'http://gdata.youtube.com/feeds/api/standardfeeds/recently_featured';
-    const STANDARD_WATCH_ON_MOBILE_URI_V2 =
-        'http://gdata.youtube.com/feeds/api/standardfeeds/watch_on_mobile';
-
-    const USER_URI = 'http://gdata.youtube.com/feeds/api/users';
-    const VIDEO_URI = 'http://gdata.youtube.com/feeds/api/videos';
-    const PLAYLIST_REL = 'http://gdata.youtube.com/schemas/2007#playlist';
-    const USER_UPLOADS_REL = 'http://gdata.youtube.com/schemas/2007#user.uploads';
-    const USER_PLAYLISTS_REL = 'http://gdata.youtube.com/schemas/2007#user.playlists';
-    const USER_SUBSCRIPTIONS_REL = 'http://gdata.youtube.com/schemas/2007#user.subscriptions';
-    const USER_CONTACTS_REL = 'http://gdata.youtube.com/schemas/2007#user.contacts';
-    const USER_FAVORITES_REL = 'http://gdata.youtube.com/schemas/2007#user.favorites';
-    const VIDEO_RESPONSES_REL = 'http://gdata.youtube.com/schemas/2007#video.responses';
-    const VIDEO_RATINGS_REL = 'http://gdata.youtube.com/schemas/2007#video.ratings';
-    const VIDEO_COMPLAINTS_REL = 'http://gdata.youtube.com/schemas/2007#video.complaints';
-    const ACTIVITY_FEED_URI = 'http://gdata.youtube.com/feeds/api/events';
-    const FRIEND_ACTIVITY_FEED_URI =
-        'http://gdata.youtube.com/feeds/api/users/default/friendsactivity';
-
-    /**
-     * The URI of the in-reply-to schema for comments in reply to
-     * other comments.
-     *
-     * @var string
-     */
-     const IN_REPLY_TO_SCHEME =
-         'http://gdata.youtube.com/schemas/2007#in-reply-to';
-
-    /**
-     * The URI of the inbox feed for the currently authenticated user.
-     *
-     * @var string
-     */
-    const INBOX_FEED_URI =
-        'http://gdata.youtube.com/feeds/api/users/default/inbox';
-
-    /**
-     * The maximum number of users for which activity can be requested for,
-     * as enforced by the API.
-     *
-     * @var integer
-     */
-    const ACTIVITY_FEED_MAX_USERS = 20;
-
-    /**
-     * The suffix for a feed of favorites.
-     *
-     * @var string
-     */
-    const FAVORITES_URI_SUFFIX = 'favorites';
-
-    /**
-     * The suffix for the user's upload feed.
-     *
-     * @var string
-     */
-    const UPLOADS_URI_SUFFIX = 'uploads';
-
-    /**
-     * The suffix for a feed of video responses.
-     *
-     * @var string
-     */
-    const RESPONSES_URI_SUFFIX = 'responses';
-
-    /**
-     * The suffix for a feed of related videos.
-     *
-     * @var string
-     */
-    const RELATED_URI_SUFFIX = 'related';
-
-    /**
-     * The suffix for a feed of messages (inbox entries).
-     *
-     * @var string
-     */
-    const INBOX_URI_SUFFIX = 'inbox';
-
-    /**
-     * Namespaces used for Zend_Gdata_YouTube
-     *
-     * @var array
-     */
-    public static $namespaces = array(
-        array('yt', 'http://gdata.youtube.com/schemas/2007', 1, 0),
-        array('georss', 'http://www.georss.org/georss', 1, 0),
-        array('gml', 'http://www.opengis.net/gml', 1, 0),
-        array('media', 'http://search.yahoo.com/mrss/', 1, 0)
-    );
-
-    /**
-     * Create Zend_Gdata_YouTube object
-     *
-     * @param Zend_Http_Client $client (optional) The HTTP client to use when
-     *          when communicating with the Google servers.
-     * @param string $applicationId The identity of the app in the form of
-     *        Company-AppName-Version
-     * @param string $clientId The clientId issued by the YouTube dashboard
-     * @param string $developerKey The developerKey issued by the YouTube dashboard
-     */
-    public function __construct($client = null,
-        $applicationId = 'MyCompany-MyApp-1.0', $clientId = null,
-        $developerKey = null)
-    {
-        $this->registerPackage('Zend_Gdata_YouTube');
-        $this->registerPackage('Zend_Gdata_YouTube_Extension');
-        $this->registerPackage('Zend_Gdata_Media');
-        $this->registerPackage('Zend_Gdata_Media_Extension');
-
-        // NOTE This constructor no longer calls the parent constructor
-        $this->setHttpClient($client, $applicationId, $clientId, $developerKey);
-    }
-
-    /**
-     * Set the Zend_Http_Client object used for communication
-     *
-     * @param Zend_Http_Client $client The client to use for communication
-     * @throws Zend_Gdata_App_HttpException
-     * @return Zend_Gdata_App Provides a fluent interface
-     */
-    public function setHttpClient($client,
-        $applicationId = 'MyCompany-MyApp-1.0', $clientId = null,
-        $developerKey = null)
-    {
-        if ($client === null) {
-            $client = new Zend_Http_Client();
-        }
-        if (!$client instanceof Zend_Http_Client) {
-            require_once 'Zend/Gdata/App/HttpException.php';
-            throw new Zend_Gdata_App_HttpException(
-                'Argument is not an instance of Zend_Http_Client.');
-        }
-
-        if ($clientId != null) {
-            $client->setHeaders('X-GData-Client', $clientId);
-        }
-
-        if ($developerKey != null) {
-            $client->setHeaders('X-GData-Key', 'key='. $developerKey);
-        }
-
-        return parent::setHttpClient($client, $applicationId);
-    }
-
-    /**
-     * Retrieves a feed of videos.
-     *
-     * @param mixed $location (optional) The URL to query or a
-     *         Zend_Gdata_Query object from which a URL can be determined
-     * @return Zend_Gdata_YouTube_VideoFeed The feed of videos found at the
-     *         specified URL.
-     */
-    public function getVideoFeed($location = null)
-    {
-        if ($location == null) {
-            $uri = self::VIDEO_URI;
-        } else if ($location instanceof Zend_Gdata_Query) {
-            $uri = $location->getQueryUrl();
-        } else {
-            $uri = $location;
-        }
-        return parent::getFeed($uri, 'Zend_Gdata_YouTube_VideoFeed');
-    }
-
-    /**
-     * Retrieves a specific video entry.
-     *
-     * @param mixed $videoId The ID of the video to retrieve.
-     * @param mixed $location (optional) The URL to query or a
-     *         Zend_Gdata_Query object from which a URL can be determined.
-     * @param boolean $fullEntry (optional) Retrieve the full metadata for the
-     *         entry. Only possible if entry belongs to currently authenticated
-     *         user. An exception will be thrown otherwise.
-     * @throws Zend_Gdata_App_HttpException
-     * @return Zend_Gdata_YouTube_VideoEntry The video entry found at the
-     *         specified URL.
-     */
-    public function getVideoEntry($videoId = null, $location = null,
-        $fullEntry = false)
-    {
-        if ($videoId !== null) {
-            if ($fullEntry) {
-                return $this->getFullVideoEntry($videoId);
-            } else {
-                $uri = self::VIDEO_URI . "/" . $videoId;
-            }
-        } else if ($location instanceof Zend_Gdata_Query) {
-            $uri = $location->getQueryUrl();
-        } else {
-            $uri = $location;
-        }
-        return parent::getEntry($uri, 'Zend_Gdata_YouTube_VideoEntry');
-    }
-
-    /**
-     * Retrieves a video entry from the user's upload feed.
-     *
-     * @param mixed $videoID The ID of the video to retrieve.
-     * @throws Zend_Gdata_App_HttpException
-     * @return Zend_Gdata_YouTube_VideoEntry|null The video entry to be
-     *          retrieved, or null if it was not found or the user requesting it
-     *          did not have the appropriate permissions.
-     */
-    public function getFullVideoEntry($videoId)
-    {
-        $uri = self::USER_URI . "/default/" .
-            self::UPLOADS_URI_SUFFIX . "/$videoId";
-        return parent::getEntry($uri, 'Zend_Gdata_YouTube_VideoEntry');
-    }
-
-    /**
-     * Retrieves a feed of videos related to the specified video ID.
-     *
-     * @param string $videoId The videoId of interest
-     * @param mixed $location (optional) The URL to query or a
-     *         Zend_Gdata_Query object from which a URL can be determined
-     * @return Zend_Gdata_YouTube_VideoFeed The feed of videos found at the
-     *         specified URL.
-     */
-    public function getRelatedVideoFeed($videoId = null, $location = null)
-    {
-        if ($videoId !== null) {
-            $uri = self::VIDEO_URI . "/" . $videoId . "/" .
-                self::RELATED_URI_SUFFIX;
-        } else if ($location instanceof Zend_Gdata_Query) {
-            $uri = $location->getQueryUrl();
-        } else {
-            $uri = $location;
-        }
-        return parent::getFeed($uri, 'Zend_Gdata_YouTube_VideoFeed');
-    }
-
-    /**
-     * Retrieves a feed of video responses related to the specified video ID.
-     *
-     * @param string $videoId The videoId of interest
-     * @param mixed $location (optional) The URL to query or a
-     *         Zend_Gdata_Query object from which a URL can be determined
-     * @return Zend_Gdata_YouTube_VideoFeed The feed of videos found at the
-     *         specified URL.
-     */
-    public function getVideoResponseFeed($videoId = null, $location = null)
-    {
-        if ($videoId !== null) {
-            $uri = self::VIDEO_URI . "/" . $videoId . "/" .
-                self::RESPONSES_URI_SUFFIX;
-        } else if ($location instanceof Zend_Gdata_Query) {
-            $uri = $location->getQueryUrl();
-        } else {
-            $uri = $location;
-        }
-        return parent::getFeed($uri, 'Zend_Gdata_YouTube_VideoFeed');
-    }
-
-    /**
-     * Retrieves a feed of comments related to the specified video ID.
-     *
-     * @param string $videoId The videoId of interest
-     * @param mixed $location (optional) The URL to query or a
-     *         Zend_Gdata_Query object from which a URL can be determined
-     * @return Zend_Gdata_YouTube_CommentFeed The feed of videos found at the
-     *         specified URL.
-     */
-    public function getVideoCommentFeed($videoId = null, $location = null)
-    {
-        if ($videoId !== null) {
-            $uri = self::VIDEO_URI . "/" . $videoId . "/comments";
-        } else if ($location instanceof Zend_Gdata_Query) {
-            $uri = $location->getQueryUrl();
-        } else {
-            $uri = $location;
-        }
-        return parent::getFeed($uri, 'Zend_Gdata_YouTube_CommentFeed');
-    }
-
-    /**
-     * Retrieves a feed of comments related to the specified video ID.
-     *
-     * @param mixed $location (optional) The URL to query or a
-     *         Zend_Gdata_Query object from which a URL can be determined
-     * @return Zend_Gdata_YouTube_CommentFeed The feed of videos found at the
-     *         specified URL.
-     */
-    public function getTopRatedVideoFeed($location = null)
-    {
-        $standardFeedUri = self::STANDARD_TOP_RATED_URI;
-
-        if ($this->getMajorProtocolVersion() == 2) {
-            $standardFeedUri = self::STANDARD_TOP_RATED_URI_V2;
-        }
-
-        if ($location == null) {
-            $uri = $standardFeedUri;
-        } else if ($location instanceof Zend_Gdata_Query) {
-            if ($location instanceof Zend_Gdata_YouTube_VideoQuery) {
-                if (!isset($location->url)) {
-                    $location->setFeedType('top rated');
-                }
-            }
-            $uri = $location->getQueryUrl();
-        } else {
-            $uri = $location;
-        }
-        return parent::getFeed($uri, 'Zend_Gdata_YouTube_VideoFeed');
-    }
-
-
-    /**
-     * Retrieves a feed of the most viewed videos.
-     *
-     * @param mixed $location (optional) The URL to query or a
-     *         Zend_Gdata_Query object from which a URL can be determined
-     * @return Zend_Gdata_YouTube_VideoFeed The feed of videos found at the
-     *         specified URL.
-     */
-    public function getMostViewedVideoFeed($location = null)
-    {
-        $standardFeedUri = self::STANDARD_MOST_VIEWED_URI;
-
-        if ($this->getMajorProtocolVersion() == 2) {
-            $standardFeedUri = self::STANDARD_MOST_VIEWED_URI_V2;
-        }
-
-        if ($location == null) {
-            $uri = $standardFeedUri;
-        } else if ($location instanceof Zend_Gdata_Query) {
-            if ($location instanceof Zend_Gdata_YouTube_VideoQuery) {
-                if (!isset($location->url)) {
-                    $location->setFeedType('most viewed');
-                }
-            }
-            $uri = $location->getQueryUrl();
-        } else {
-            $uri = $location;
-        }
-        return parent::getFeed($uri, 'Zend_Gdata_YouTube_VideoFeed');
-    }
-
-    /**
-     * Retrieves a feed of recently featured videos.
-     *
-     * @param mixed $location (optional) The URL to query or a
-     *         Zend_Gdata_Query object from which a URL can be determined
-     * @return Zend_Gdata_YouTube_VideoFeed The feed of videos found at the
-     *         specified URL.
-     */
-    public function getRecentlyFeaturedVideoFeed($location = null)
-    {
-        $standardFeedUri = self::STANDARD_RECENTLY_FEATURED_URI;
-
-        if ($this->getMajorProtocolVersion() == 2) {
-            $standardFeedUri = self::STANDARD_RECENTLY_FEATURED_URI_V2;
-        }
-
-        if ($location == null) {
-            $uri = $standardFeedUri;
-        } else if ($location instanceof Zend_Gdata_Query) {
-            if ($location instanceof Zend_Gdata_YouTube_VideoQuery) {
-                if (!isset($location->url)) {
-                    $location->setFeedType('recently featured');
-                }
-            }
-            $uri = $location->getQueryUrl();
-        } else {
-            $uri = $location;
-        }
-        return parent::getFeed($uri, 'Zend_Gdata_YouTube_VideoFeed');
-    }
-
-    /**
-     * Retrieves a feed of videos recently featured for mobile devices.
-     * These videos will have RTSP links in the $entry->mediaGroup->content
-     *
-     * @param mixed $location (optional) The URL to query or a
-     *         Zend_Gdata_Query object from which a URL can be determined
-     * @return Zend_Gdata_YouTube_VideoFeed The feed of videos found at the
-     *         specified URL.
-     */
-    public function getWatchOnMobileVideoFeed($location = null)
-    {
-        $standardFeedUri = self::STANDARD_WATCH_ON_MOBILE_URI;
-
-        if ($this->getMajorProtocolVersion() == 2) {
-            $standardFeedUri = self::STANDARD_WATCH_ON_MOBILE_URI_V2;
-        }
-
-        if ($location == null) {
-            $uri = $standardFeedUri;
-        } else if ($location instanceof Zend_Gdata_Query) {
-            if ($location instanceof Zend_Gdata_YouTube_VideoQuery) {
-                if (!isset($location->url)) {
-                    $location->setFeedType('watch on mobile');
-                }
-            }
-            $uri = $location->getQueryUrl();
-        } else {
-            $uri = $location;
-        }
-        return parent::getFeed($uri, 'Zend_Gdata_YouTube_VideoFeed');
-    }
-
-    /**
-     * Retrieves a feed which lists a user's playlist
-     *
-     * @param string $user (optional) The username of interest
-     * @param mixed $location (optional) The URL to query or a
-     *         Zend_Gdata_Query object from which a URL can be determined
-     * @return Zend_Gdata_YouTube_PlaylistListFeed The feed of playlists
-     */
-    public function getPlaylistListFeed($user = null, $location = null)
-    {
-        if ($user !== null) {
-            $uri = self::USER_URI . '/' . $user . '/playlists';
-        } else if ($location instanceof Zend_Gdata_Query) {
-            $uri = $location->getQueryUrl();
-        } else {
-            $uri = $location;
-        }
-        return parent::getFeed($uri, 'Zend_Gdata_YouTube_PlaylistListFeed');
-    }
-
-    /**
-     * Retrieves a feed of videos in a particular playlist
-     *
-     * @param mixed $location (optional) The URL to query or a
-     *         Zend_Gdata_Query object from which a URL can be determined
-     * @return Zend_Gdata_YouTube_PlaylistVideoFeed The feed of videos found at
-     *         the specified URL.
-     */
-    public function getPlaylistVideoFeed($location)
-    {
-        if ($location instanceof Zend_Gdata_Query) {
-            $uri = $location->getQueryUrl();
-        } else {
-            $uri = $location;
-        }
-        return parent::getFeed($uri, 'Zend_Gdata_YouTube_PlaylistVideoFeed');
-    }
-
-    /**
-     * Retrieves a feed of a user's subscriptions
-     *
-     * @param string $user (optional) The username of interest
-     * @param mixed $location (optional) The URL to query or a
-     *         Zend_Gdata_Query object from which a URL can be determined
-     * @return Zend_Gdata_YouTube_SubscriptionListFeed The feed of subscriptions
-     */
-    public function getSubscriptionFeed($user = null, $location = null)
-    {
-        if ($user !== null) {
-            $uri = self::USER_URI . '/' . $user . '/subscriptions';
-        } else if ($location instanceof Zend_Gdata_Query) {
-            $uri = $location->getQueryUrl();
-        } else {
-            $uri = $location;
-        }
-        return parent::getFeed($uri, 'Zend_Gdata_YouTube_SubscriptionFeed');
-    }
-
-    /**
-     * Retrieves a feed of a user's contacts
-     *
-     * @param string $user (optional) The username of interest
-     * @param mixed $location (optional) The URL to query or a
-     *         Zend_Gdata_Query object from which a URL can be determined
-     * @return Zend_Gdata_YouTube_ContactFeed The feed of contacts
-     */
-    public function getContactFeed($user = null, $location = null)
-    {
-        if ($user !== null) {
-            $uri = self::USER_URI . '/' . $user . '/contacts';
-        } else if ($location instanceof Zend_Gdata_Query) {
-            $uri = $location->getQueryUrl();
-        } else {
-            $uri = $location;
-        }
-        return parent::getFeed($uri, 'Zend_Gdata_YouTube_ContactFeed');
-    }
-
-    /**
-     * Retrieves a user's uploads
-     *
-     * @param string $user (optional) The username of interest
-     * @param mixed $location (optional) The URL to query or a
-     *         Zend_Gdata_Query object from which a URL can be determined
-     * @return Zend_Gdata_YouTube_VideoFeed The videos uploaded by the user
-     */
-    public function getUserUploads($user = null, $location = null)
-    {
-        if ($user !== null) {
-            $uri = self::USER_URI . '/' . $user . '/' .
-                   self::UPLOADS_URI_SUFFIX;
-        } else if ($location instanceof Zend_Gdata_Query) {
-            $uri = $location->getQueryUrl();
-        } else {
-            $uri = $location;
-        }
-        return parent::getFeed($uri, 'Zend_Gdata_YouTube_VideoFeed');
-    }
-
-    /**
-     * Retrieves a user's favorites
-     *
-     * @param string $user (optional) The username of interest
-     * @param mixed $location (optional) The URL to query or a
-     *         Zend_Gdata_Query object from which a URL can be determined
-     * @return Zend_Gdata_YouTube_VideoFeed The videos favorited by the user
-     */
-    public function getUserFavorites($user = null, $location = null)
-    {
-        if ($user !== null) {
-            $uri = self::USER_URI . '/' . $user . '/' .
-                   self::FAVORITES_URI_SUFFIX;
-        } else if ($location instanceof Zend_Gdata_Query) {
-            $uri = $location->getQueryUrl();
-        } else {
-            $uri = $location;
-        }
-        return parent::getFeed($uri, 'Zend_Gdata_YouTube_VideoFeed');
-    }
-
-    /**
-     * Retrieves a user's profile as an entry
-     *
-     * @param string $user (optional) The username of interest
-     * @param mixed $location (optional) The URL to query or a
-     *         Zend_Gdata_Query object from which a URL can be determined
-     * @return Zend_Gdata_YouTube_UserProfileEntry The user profile entry
-     */
-    public function getUserProfile($user = null, $location = null)
-    {
-        if ($user !== null) {
-            $uri = self::USER_URI . '/' . $user;
-        } else if ($location instanceof Zend_Gdata_Query) {
-            $uri = $location->getQueryUrl();
-        } else {
-            $uri = $location;
-        }
-        return parent::getEntry($uri, 'Zend_Gdata_YouTube_UserProfileEntry');
-    }
-
-    /**
-     * Helper function for parsing a YouTube token response
-     *
-     * @param string $response The service response
-     * @throws Zend_Gdata_App_Exception
-     * @return array An array containing the token and URL
-     */
-    public static function parseFormUploadTokenResponse($response)
-    {
-        // Load the feed as an XML DOMDocument object
-        @ini_set('track_errors', 1);
-        $doc = new DOMDocument();
-        $success = @$doc->loadXML($response);
-        @ini_restore('track_errors');
-
-        if (!$success) {
-            require_once 'Zend/Gdata/App/Exception.php';
-            throw new Zend_Gdata_App_Exception(
-                "Zend_Gdata_YouTube::parseFormUploadTokenResponse - " .
-                "DOMDocument cannot parse XML: $php_errormsg");
-        }
-        $responseElement = $doc->getElementsByTagName('response')->item(0);
-
-        $urlText = null;
-        $tokenText = null;
-        if ($responseElement != null) {
-            $urlElement =
-                $responseElement->getElementsByTagName('url')->item(0);
-            $tokenElement =
-                $responseElement->getElementsByTagName('token')->item(0);
-
-            if ($urlElement && $urlElement->hasChildNodes() &&
-                $tokenElement && $tokenElement->hasChildNodes()) {
-
-                $urlText = $urlElement->firstChild->nodeValue;
-                $tokenText = $tokenElement->firstChild->nodeValue;
-            }
-        }
-
-        if ($tokenText != null && $urlText != null) {
-            return array('token' => $tokenText, 'url' => $urlText);
-        } else {
-            require_once 'Zend/Gdata/App/Exception.php';
-            throw new Zend_Gdata_App_Exception(
-                'Form upload token not found in response');
-        }
-    }
-
-    /**
-     * Retrieves a YouTube token
-     *
-     * @param Zend_Gdata_YouTube_VideoEntry $videoEntry The video entry
-     * @param string $url The location as a string URL
-     * @throws Zend_Gdata_App_Exception
-     * @return array An array containing a token and URL
-     */
-    public function getFormUploadToken($videoEntry,
-        $url='http://gdata.youtube.com/action/GetUploadToken')
-    {
-        if ($url != null && is_string($url)) {
-            // $response is a Zend_Http_response object
-            $response = $this->post($videoEntry, $url);
-            return self::parseFormUploadTokenResponse($response->getBody());
-        } else {
-            require_once 'Zend/Gdata/App/Exception.php';
-            throw new Zend_Gdata_App_Exception(
-                'Url must be provided as a string URL');
-        }
-    }
-
-    /**
-     * Retrieves the activity feed for users
-     *
-     * @param mixed $usernames A string identifying the usernames for which to
-     *              retrieve activity for. This can also be a Zend_Gdata_Query
-     *              object from which a URL can be determined.
-     * @throws Zend_Gdata_App_VersionException if using version less than 2.
-     * @return Zend_Gdata_YouTube_ActivityFeed
-     */
-    public function getActivityForUser($username)
-    {
-        if ($this->getMajorProtocolVersion() == 1) {
-            require_once 'Zend/Gdata/App/VersionException.php';
-            throw new Zend_Gdata_App_VersionException('User activity feeds ' .
-                'are not available in API version 1.');
-        }
-
-        $uri = null;
-        if ($username instanceof Zend_Gdata_Query) {
-            $uri = $username->getQueryUrl();
-        } else {
-            if (count(explode(',', $username)) >
-                self::ACTIVITY_FEED_MAX_USERS) {
-                require_once 'Zend/Gdata/App/InvalidArgumentException.php';
-                throw new Zend_Gdata_App_InvalidArgumentException(
-                    'Activity feed can only retrieve for activity for up to ' .
-                    self::ACTIVITY_FEED_MAX_USERS .  ' users per request');
-            }
-            $uri = self::ACTIVITY_FEED_URI . '?author=' . $username;
-        }
-
-        return parent::getFeed($uri, 'Zend_Gdata_YouTube_ActivityFeed');
-    }
-
-    /**
-     * Retrieve the activity of the currently authenticated users friend.
-     *
-     * @throws Zend_Gdata_App_Exception if not logged in.
-     * @return Zend_Gdata_YouTube_ActivityFeed
-     */
-    public function getFriendActivityForCurrentUser()
-    {
-        if (!$this->isAuthenticated()) {
-            require_once 'Zend/Gdata/App/Exception.php';
-            throw new Zend_Gdata_App_Exception('You must be authenticated to ' .
-                'use the getFriendActivityForCurrentUser function in Zend_' .
-                'Gdata_YouTube.');
-        }
-        return parent::getFeed(self::FRIEND_ACTIVITY_FEED_URI,
-            'Zend_Gdata_YouTube_ActivityFeed');
-    }
-
-    /**
-     * Retrieve a feed of messages in the currently authenticated user's inbox.
-     *
-     * @throws Zend_Gdata_App_Exception if not logged in.
-     * @return Zend_Gdata_YouTube_InboxFeed|null
-     */
-    public function getInboxFeedForCurrentUser()
-    {
-        if (!$this->isAuthenticated()) {
-            require_once 'Zend/Gdata/App/Exception.php';
-            throw new Zend_Gdata_App_Exception('You must be authenticated to ' .
-                'use the getInboxFeedForCurrentUser function in Zend_' .
-                'Gdata_YouTube.');
-        }
-
-        return parent::getFeed(self::INBOX_FEED_URI,
-            'Zend_Gdata_YouTube_InboxFeed');
-    }
-
-    /**
-     * Send a video message.
-     *
-     * Note: Either a Zend_Gdata_YouTube_VideoEntry or a valid video ID must
-     * be provided.
-     *
-     * @param string $body The body of the message
-     * @param Zend_Gdata_YouTube_VideoEntry (optional) The video entry to send
-     * @param string $videoId The id of the video to send
-     * @param string $recipientUserName The username of the recipient
-     * @throws Zend_Gdata_App_InvalidArgumentException if no valid
-     *         Zend_Gdata_YouTube_VideoEntry or videoId were provided
-     * @return Zend_Gdata_YouTube_InboxEntry|null The
-     *         Zend_Gdata_YouTube_Inbox_Entry representing the sent message.
-     *
-     */
-    public function sendVideoMessage($body, $videoEntry = null,
-        $videoId = null, $recipientUserName)
-    {
-        if (!$videoId && !$videoEntry) {
-            require_once 'Zend/Gdata/App/InvalidArgumentException.php';
-            throw new Zend_Gdata_App_InvalidArgumentException(
-                'Expecting either a valid videoID or a videoEntry object in ' .
-                'Zend_Gdata_YouTube->sendVideoMessage().');
-        }
-
-        $messageEntry = new Zend_Gdata_YouTube_InboxEntry();
-
-        if ($this->getMajorProtocolVersion() == null ||
-            $this->getMajorProtocolVersion() == 1) {
-
-            if (!$videoId) {
-                $videoId = $videoEntry->getVideoId();
-            } elseif (strlen($videoId) < 12) {
-                //Append the full URI
-                $videoId = self::VIDEO_URI . '/' . $videoId;
-            }
-
-            $messageEntry->setId($this->newId($videoId));
-            // TODO there seems to be a bug where v1 inbox entries dont
-            // retain their description...
-            $messageEntry->setDescription(
-                new Zend_Gdata_YouTube_Extension_Description($body));
-
-        } else {
-            if (!$videoId) {
-                $videoId = $videoEntry->getVideoId();
-                $videoId = substr($videoId, strrpos($videoId, ':'));
-            }
-            $messageEntry->setId($this->newId($videoId));
-            $messageEntry->setSummary($this->newSummary($body));
-        }
-
-        $insertUrl = 'http://gdata.youtube.com/feeds/api/users/' .
-            $recipientUserName . '/inbox';
-        $response = $this->insertEntry($messageEntry, $insertUrl,
-            'Zend_Gdata_YouTube_InboxEntry');
-        return $response;
-    }
-
-    /**
-     * Post a comment in reply to an existing comment
-     *
-     * @param $commentEntry Zend_Gdata_YouTube_CommentEntry The comment entry
-     *        to reply to
-     * @param $commentText string The text of the comment to post
-     * @return A Zend_Gdata_YouTube_CommentEntry representing the posted
-     *         comment
-     */
-    public function replyToCommentEntry($commentEntry, $commentText)
-    {
-        $newComment = $this->newCommentEntry();
-        $newComment->content = $this->newContent()->setText($commentText);
-        $commentId = $commentEntry->getId();
-        $commentIdArray = explode(':', $commentId);
-
-        // create a new link element
-        $inReplyToLinkHref = self::VIDEO_URI . '/' . $commentIdArray[3] .
-            '/comments/' . $commentIdArray[5];
-        $inReplyToLink = $this->newLink($inReplyToLinkHref,
-            self::IN_REPLY_TO_SCHEME, $type="application/atom+xml");
-        $links = $newComment->getLink();
-        $links[] = $inReplyToLink;
-        $newComment->setLink($links);
-        $commentFeedPostUrl = self::VIDEO_URI . '/' . $commentIdArray[3] .
-            '/comments';
-        return $this->insertEntry($newComment,
-            $commentFeedPostUrl, 'Zend_Gdata_YouTube_CommentEntry');
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+lI+neAIWAz6j

@@ -1,875 +1,335 @@
-<?php
-
-/**
- * FPDF Tag Based Multicell - FPDF class extension
- * Copyright (c) 2005-2010, http://www.interpid.eu
- *
- * FPDF Tag Based Multicell is licensed under the terms of the GNU Open Source GPL 3.0
- * license.
- *
- * Commercial use is prohibited. Visit <http://www.interpid.eu/fpdf-components>
- * if you need to obtain a commercial license.
- *
- * This program is free software: you can redistribute it and/or modify it under
- * the terms of the GNU General Public License as published by the Free Software
- * Foundation, either version 3 of the License, or any later version.
- *
- * This program is distributed in the hope that it will be useful, but WITHOUT
- * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
- * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
- * details.
- *
- * You should have received a copy of the GNU General Public License along with
- * this program. If not, see <http://www.gnu.org/licenses/gpl.html>.
- *
- * 
- * Version:             1.4.2
- * Date:                2005/12/08
- * Last Modification:   2008/02/24
- * Author:              Bintintan Andrei <andy@interpid.eu>
-
-
-  /**
-  Modifications:
-  2007.01.21
-  - added left, top, right and bottom padding to the MultiCellTag Functions
-  2006.09.18
-  - added YPOS parameter to the tab for super/subscript posibility. ypos = '-1' means the relative position to the normal Y.
-  2006.07.30
-  - added Paragraph Support(a sort of) - paragraphs can be specified with size='integer value' and PARAGRAPH_STRING character
-  2006.05.18
-  - removed the NBLines functions
-  - added mt_StringToLines function
-  - modified  MultiCellTag to accept as data parameter an array type like the return from  mt_StringToLines function
-  - these modifications does not affect the main class behavior, they are used for further developement and class extensions
- */
-if (!defined('PARAGRAPH_STRING'))
-    define('PARAGRAPH_STRING', '~~~');
-
-/**
- * MultiCellTag Class
- * The intern functions are prefaced with mt_, not be be overwritten
- * 
- * @author 	andy@interpid.eu
- * @version 1.4
- * 
- */
-class Pdf_Multicelltag extends Pdf_FPDF {
-
-    /**
-     * Valid Tag Maximum Width
-     *
-     * @access 	protected
-     * @var		integer
-     */
-    protected $wt_TagWidthMax = 10;
-
-    /**
-     * The current active tag
-     *
-     * @access	protected
-     * @var		string
-     */
-    protected $wt_Current_Tag = '';
-
-    /**
-     * Tags Font Information 
-     *
-     * @access 	protected
-     * @var		struct
-     */
-    protected $wt_FontInfo;
-
-    /**
-     * Parsed string data info
-     *
-     * @access 	protected
-     * @var		struct
-     */
-    protected $wt_DataInfo;
-
-    /**
-     * Data Extra Info 
-     *
-     * @access 	protected
-     * @var		struct
-     */
-    protected $wt_DataExtraInfo;
-
-    /**
-     * Temporary Info
-     *
-     * @access 	protected
-     * @var		struct
-     */
-    protected $wt_TempData;
-
-    /**
-     * Sets the Tags Maximum width
-     * 
-     * @access 	public
-     * @param 	numeric $iWidth - the width of the tags
-     * @return 	void
-     */
-    public function setTagWidthMax($iWidth = 10) {
-        $this->wt_TagWidthMax = $iWidth;
-    }
-
-    /**
-     * Resets the current class internal variables to default values
-     * 
-     * @access 	protected
-     * @param 	none
-     * @return 	void
-     */
-    protected function mt_Reset_Datas() {
-        $this->wt_Current_Tag = "";
-        $this->wt_DataInfo = array();
-        $this->wt_DataExtraInfo = array(
-            "LAST_LINE_BR" => "", //CURRENT LINE BREAK TYPE
-            "CURRENT_LINE_BR" => "", //LAST LINE BREAK TYPE
-            "TAB_WIDTH" => 10   //The tab WIDTH IS IN mm
-        );
-
-        //if another measure unit is used ... calculate your OWN
-
-        $this->wt_DataExtraInfo["TAB_WIDTH"] *= (72 / 25.4) / $this->k;
-
-
-        /*
-          $this->wt_FontInfo - do not reset, once read ... is OK!!!
-         */
-    }
-
-//function mt_Reset_Datas(){
-
-    /**
-     * Sets current tag to specified style
-     *
-     * @access 	public
-     * @param 	string $tag - tag name
-     * @param	string $family - text font family name
-     * @param	string $style - text font style
-     * @param	numeric $size - text font size
-     * @param	array $color - text color
-     * @return	void
-     */
-    public function SetStyle($tag, $family, $style, $size, $color) {
-
-        if ($tag == "ttags")
-            $this->Error(">> ttags << is reserved TAG Name.");
-        if ($tag == "")
-            $this->Error("Empty TAG Name.");
-
-        //use case insensitive tags
-        $tag = trim(strtoupper($tag));
-        $this->TagStyle[$tag]['family'] = trim($family);
-        $this->TagStyle[$tag]['style'] = trim($style);
-        $this->TagStyle[$tag]['size'] = trim($size);
-        $this->TagStyle[$tag]['color'] = trim($color);
-    }
-
-//function SetStyle
-
-    /**
-     * Sets current tag to specified style
-     * 		- if the tag name is not in the tag list then de "DEFAULT" tag is saved.
-     * 		This includes a fist call of the function mt_SaveCurrentStyle()
-     *
-     * @access 	protected
-     * @param 	string $tag - tag name
-     * @return	void
-     */
-    protected function mt_ApplyStyle($tag) {
-
-        //use case insensitive tags
-        $tag = trim(strtoupper($tag));
-
-        if ($this->wt_Current_Tag == $tag)
-            return;
-
-        if (($tag == "") || (!isset($this->TagStyle[$tag])))
-            $tag = "DEFAULT";
-
-        $this->wt_Current_Tag = $tag;
-
-        $style = & $this->TagStyle[$tag];
-
-        if (isset($style)) {
-            $this->SetFont($style['family'], $style['style'], $style['size']);
-            //this is textcolor in FPDF format
-            if (isset($style['textcolor_fpdf'])) {
-                $this->TextColor = $style['textcolor_fpdf'];
-                $this->ColorFlag = ($this->FillColor != $this->TextColor);
-            } else {
-                if ($style['color'] <> "") {//if we have a specified color
-                    $temp = explode(",", $style['color']);
-                    $this->SetTextColor($temp[0], $temp[1], $temp[2]);
-                }//fi
-            }
-            /**/
-        }//isset
-    }
-
-//function mt_ApplyStyle($tag){
-
-    /**
-     * Save the current settings as a tag default style under the DEFAUTLT tag name
-     * 
-     * @access 	protected
-     * @param 	none
-     * @return 	void
-     */
-    protected function mt_SaveCurrentStyle() {
-        $this->TagStyle['DEFAULT']['family'] = $this->FontFamily;
-        ;
-        $this->TagStyle['DEFAULT']['style'] = $this->FontStyle;
-        $this->TagStyle['DEFAULT']['size'] = $this->FontSizePt;
-        $this->TagStyle['DEFAULT']['textcolor_fpdf'] = $this->TextColor;
-        $this->TagStyle['DEFAULT']['color'] = "";
-    }
-
-//function mt_SaveCurrentStyle
-
-    /**
-     * Divides $this->wt_DataInfo and returnes a line from this variable
-     *
-     * @access 	protected
-     * @param	numeric $w - the width of the text
-     * @return 	array $aLine - array() -> contains informations to draw a line
-     */
-    protected function mt_MakeLine($w) {
-
-        $aDataInfo = & $this->wt_DataInfo;
-        $aExtraInfo = & $this->wt_DataExtraInfo;
-
-        //last line break >> current line break
-        $aExtraInfo['LAST_LINE_BR'] = $aExtraInfo['CURRENT_LINE_BR'];
-        $aExtraInfo['CURRENT_LINE_BR'] = "";
-
-        if ($w == 0)
-            $w = $this->w - $this->rMargin - $this->x;
-
-        $wmax = ($w - 2 * $this->cMargin) * 1000; //max width
-
-        $aLine = array(); //this will contain the result
-        $return_result = false; //if break and return result
-        $reset_spaces = false;
-
-        $line_width = 0; //line string width
-        $total_chars = 0; //total characters included in the result string
-        $space_count = 0; //numer of spaces in the result string
-        $fw = & $this->wt_FontInfo; //font info array
-
-        $last_sepch = ""; //last separator character
-
-        foreach ($aDataInfo as $key => $val) {
-
-            $s = $val['text'];
-
-            $tag = &$val['tag'];
-
-            $bParagraph = false;
-            if (($s == "\t") && ($tag == 'pparg')) {
-                $bParagraph = true;
-                $s = "\t"; //place instead a TAB
-            }
-
-            $s_lenght = strlen($s);
-
-            $i = 0; //from where is the string remain
-            $j = 0; //untill where is the string good to copy -- leave this == 1->> copy at least one character!!!
-            $str = "";
-            $s_width = 0; //string width
-            $last_sep = -1; //last separator position
-            $last_sepwidth = 0;
-            $last_sepch_width = 0;
-            $ante_last_sep = -1; //ante last separator position
-            $spaces = 0;
-
-            //parse the whole string
-            while ($i < $s_lenght) {
-                $c = $s[$i];
-
-                if ($c == "\n") {//Explicit line break
-                    $i++; //ignore/skip this caracter
-                    $aExtraInfo['CURRENT_LINE_BR'] = "BREAK";
-                    $return_result = true;
-                    $reset_spaces = true;
-                    break;
-                }
-
-                //space
-                if ($c == " ") {
-                    $space_count++; //increase the number of spaces
-                    $spaces++;
-                }
-
-                //	Font Width / Size Array
-                if (!isset($fw[$tag]) || ($tag == "")) {
-                    //if this font was not used untill now,
-                    $this->mt_ApplyStyle($tag);
-                    $fw[$tag]['w'] = $this->CurrentFont['cw']; //width
-                    $fw[$tag]['s'] = $this->FontSize; //size
-                }
-
-                $char_width = $fw[$tag]['w'][$c] * $fw[$tag]['s'];
-
-                //separators
-                if (is_int(strpos(" ,.:;", $c))) {
-
-                    $ante_last_sep = $last_sep;
-                    $ante_last_sepch = $last_sepch;
-                    $ante_last_sepwidth = $last_sepwidth;
-                    $ante_last_sepch_width = $last_sepch_width;
-
-                    $last_sep = $i; //last separator position
-                    $last_sepch = $c; //last separator char
-                    $last_sepch_width = $char_width; //last separator char
-                    $last_sepwidth = $s_width;
-                }
-
-                if ($c == "\t") {//TAB
-                    $c = $s[$i] = "";
-                    $char_width = $aExtraInfo['TAB_WIDTH'] * 1000;
-                }
-
-                if ($bParagraph == true) {
-                    $c = $s[$i] = "";
-                    $char_width = $this->wt_TempData['LAST_TAB_REQSIZE'] * 1000 - $this->wt_TempData['LAST_TAB_SIZE'];
-                    if ($char_width < 0)
-                        $char_width = 0;
-                }
-
-
-
-                $line_width += $char_width;
-
-                if ($line_width > $wmax) {//Automatic line break
-                    $aExtraInfo['CURRENT_LINE_BR'] = "AUTO";
-
-                    if ($total_chars == 0) {
-                        /* This MEANS that the $w (width) is lower than a char width...
-                          Put $i and $j to 1 ... otherwise infinite while */
-                        $i = 1;
-                        $j = 1;
-                        $return_result = true; //YES RETURN THE RESULT!!!
-                        break;
-                    }//fi
-
-                    if ($last_sep <> -1) {
-                        //we have a separator in this tag!!!
-                        //untill now there one separator
-                        if (($last_sepch == $c) && ($last_sepch != " ") && ($ante_last_sep <> -1)) {
-                            /* 	this is the last character and it is a separator, if it is a space the leave it...
-                              Have to jump back to the last separator... even a space
-                             */
-                            $last_sep = $ante_last_sep;
-                            $last_sepch = $ante_last_sepch;
-                            $last_sepwidth = $ante_last_sepwidth;
-                        }
-
-                        if ($last_sepch == " ") {
-                            $j = $last_sep; //just ignore the last space (it is at end of line)
-                            $i = $last_sep + 1;
-                            if ($spaces > 0)
-                                $spaces--;
-                            $s_width = $last_sepwidth;
-                        }else {
-                            $j = $last_sep + 1;
-                            $i = $last_sep + 1;
-                            $s_width = $last_sepwidth + $last_sepch_width;
-                        }
-                    } elseif (count($aLine) > 0) {
-                        //we have elements in the last tag!!!!
-                        if ($last_sepch == " ") {//the last tag ends with a space, have to remove it
-                            $temp = & $aLine[count($aLine) - 1];
-
-                            if ($temp['text'][strlen($temp['text']) - 1] == " ") {
-
-                                $temp['text'] = substr($temp['text'], 0, strlen($temp['text']) - 1);
-                                $temp['width'] -= $fw[$temp['tag']]['w'][" "] * $fw[$temp['tag']]['s'];
-                                $temp['spaces']--;
-
-                                //imediat return from this function
-                                break 2;
-                            } else {
-                                #die("should not be!!!");
-                            }//fi
-                        }//fi
-                    }//fi else
-
-                    $return_result = true;
-                    break;
-                }//fi - Auto line break
-                //increase the string width ONLY when it is added!!!!
-                $s_width += $char_width;
-
-                $i++;
-                $j = $i;
-                $total_chars++;
-            }//while
-
-            $str = substr($s, 0, $j);
-
-            $sTmpStr = & $aDataInfo[$key]['text'];
-            $sTmpStr = substr($sTmpStr, $i, strlen($sTmpStr));
-
-            if (($sTmpStr == "") || ($sTmpStr === FALSE))//empty
-                array_shift($aDataInfo);
-
-            if ($val['text'] == $str) {
-                
-            }
-
-            if (!isset($val['href']))
-                $val['href'] = '';
-            if (!isset($val['ypos']))
-                $val['ypos'] = 0;
-
-            //we have a partial result
-            array_push($aLine, array(
-                'text' => $str,
-                'tag' => $val['tag'],
-                'href' => $val['href'],
-                'width' => $s_width,
-                'spaces' => $spaces,
-                'ypos' => $val['ypos']
-            ));
-
-            $this->wt_TempData['LAST_TAB_SIZE'] = $s_width;
-            $this->wt_TempData['LAST_TAB_REQSIZE'] = (isset($val['size'])) ? $val['size'] : 0;
-
-            if ($return_result)
-                break; //break this for
-        }//foreach
-        // Check the first and last tag -> if first and last caracters are " " space remove them!!!"
-
-        if ((count($aLine) > 0) && ($aExtraInfo['LAST_LINE_BR'] == "AUTO")) {
-            //first tag
-            $temp = & $aLine[0];
-            if ((strlen($temp['text']) > 0) && ($temp['text'][0] == " ")) {
-                $temp['text'] = substr($temp['text'], 1, strlen($temp['text']));
-                $temp['width'] -= $fw[$temp['tag']]['w'][" "] * $fw[$temp['tag']]['s'];
-                $temp['spaces']--;
-            }
-
-            //last tag
-            $temp = & $aLine[count($aLine) - 1];
-            if ((strlen($temp['text']) > 0) && ($temp['text'][strlen($temp['text']) - 1] == " ")) {
-                $temp['text'] = substr($temp['text'], 0, strlen($temp['text']) - 1);
-                $temp['width'] -= $fw[$temp['tag']]['w'][" "] * $fw[$temp['tag']]['s'];
-                $temp['spaces']--;
-            }
-        }
-
-        if ($reset_spaces) {//this is used in case of a "Explicit Line Break"
-            //put all spaces to 0 so in case of "J" align there is no space extension
-            for ($k = 0; $k < count($aLine); $k++)
-                $aLine[$k]['spaces'] = 0;
-        }//fi
-
-        return $aLine;
-    }
-
-//function mt_MakeLine
-
-    /**
-      Draws a MultiCell with TAG recognition parameters
-      @param		$w - with of the cell
-      $h - height of the cell
-      $pData - string or data to be printed
-      $border - border
-      $align	- align
-      $fill - fill
-      $pad_left - pad left
-      $pad_top - pad top
-      $pad_right - pad right
-      $pad_bottom - pad bottom
-      $pDataIsString - true if $pData is a string
-      - false if $pData is an array containing lines formatted with $this->mt_MakeLine($w) function
-      (the false option is used in relation with mt_StringToLines, to avoid double formatting of a string
-
-      These paramaters are the same and have the same behavior as at Multicell function
-      @return     void
-     */
-
-    /**
-     * Draws a MultiCell with TAG recognition parameters
-     *
-     * @param 	numeric $w - with of the cell
-     * @param	numeric $h - height of the lines in the cell
-     * @param 	string $pData - string or formatted data to be putted in the multicell
-     * @param	string or numeric $border
-     * 				Indicates if borders must be drawn around the cell block. The value can be either a number: 
-     * 						0 = no border
-     * 						1 = frame border
-     * 				or a string containing some or all of the following characters (in any order): 
-     * 						L: left
-     * 						T: top
-     * 						R: right
-     * 						B: bottom
-     * @param	string $align - Sets the text alignment
-     * 				Possible values:
-     * 						L: left
-     * 						R: right
-     * 						C: center
-     * 						J: justified
-     * @param	numeric $fill - Indicates if the cell background must be painted (1) or transparent (0). Default value: 0.
-     * @param 	numeric $pad_left - Left pad
-     * @param	numeric $pad_top - Top pad
-     * @param	numeric $pad_right - Right pad
-     * @param	numeric $pad_bottom - Bottom pad
-     * @param	boolean $pDataIsString
-     * 						- true if $pData is a string
-     * 						- false if $pData is an array containing lines formatted with $this->mt_MakeLine($w) function
-     * 							(the false option is used in relation with mt_StringToLines, to avoid double formatting of a string
-     * @return 	void
-     */
-    public function MultiCellTag($w, $h, $pData, $border=0, $align='J', $fill=0, $pad_left=0, $pad_top=0, $pad_right=0, $pad_bottom=0, $pDataIsString = true) {
-
-        //save the current style settings, this will be the default in case of no style is specified
-        $this->mt_SaveCurrentStyle();
-        $this->mt_Reset_Datas();
-
-        $utf8_decoded_here = false;
-
-        //if data is string
-        if ($pDataIsString === true) {
-
-            //IF UTF8 Support is needed then
-            if (isset($this->utf8_support) && isset($this->utf8_decoded)) {
-                if (($this->utf8_support) && (!$this->utf8_decoded)) {
-                    $pData = utf8_decode($pData);
-                    $utf8_decoded_here = true;
-                    $this->utf8_decoded = true;
-                }
-            }
-            $this->mt_DivideByTags($pData);
-        }
-
-        $b = $b1 = $b2 = $b3 = ''; //borders
-
-        if ($w == 0)
-            $w = $this->w - $this->rMargin - $this->x;
-
-        /**
-         * If the vertical padding is bigger than the width then we ignore it
-         * In this case we put them to 0.
-         */
-        if (($pad_left + $pad_right) > $w) {
-            $pad_left = 0;
-            $pad_right = 0;
-        }
-
-        $w_text = $w - $pad_left - $pad_right;
-
-        //save the current X position, we will have to jump back!!!!
-        $startX = $this->GetX();
-
-        if ($border) {
-            if ($border == 1) {
-                $border = 'LTRB';
-                $b1 = 'LRT'; //without the bottom
-                $b2 = 'LR'; //without the top and bottom
-                $b3 = 'LRB'; //without the top
-            } else {
-                $b2 = '';
-                if (is_int(strpos($border, 'L')))
-                    $b2.='L';
-                if (is_int(strpos($border, 'R')))
-                    $b2.='R';
-                $b1 = is_int(strpos($border, 'T')) ? $b2 . 'T' : $b2;
-                $b3 = is_int(strpos($border, 'B')) ? $b2 . 'B' : $b2;
-            }
-
-            //used if there is only one line
-            $b = '';
-            $b .= is_int(strpos($border, 'L')) ? 'L' : "";
-            $b .= is_int(strpos($border, 'R')) ? 'R' : "";
-            $b .= is_int(strpos($border, 'T')) ? 'T' : "";
-            $b .= is_int(strpos($border, 'B')) ? 'B' : "";
-        }
-
-        $first_line = true;
-        $last_line = false;
-
-        if ($pDataIsString === true) {
-            $last_line = !(count($this->wt_DataInfo) > 0);
-        } else {
-            $last_line = !(count($pData) > 0);
-        }
-
-        while (!$last_line) {
-
-            if ($first_line && ($pad_top > 0)) {
-                /**
-                 * If this is the first line and there is top_padding
-                 */
-                $this->MultiCell($w, $pad_top, '', $b1, $align, 1);
-                $b1 = str_replace('T', '', $b1);
-                $b = str_replace('T', '', $b);
-            }
-
-            if ($fill == 1) {
-                //fill in the cell at this point and write after the text without filling
-                $this->Cell($w, $h, "", 0, 0, "", 1);
-                $this->SetX($startX); //restore the X position
-            }
-
-            if ($pDataIsString === true) {
-                //make a line
-                $str_data = $this->mt_MakeLine($w_text);
-                //check for last line
-                $last_line = !(count($this->wt_DataInfo) > 0);
-            } else {
-                //make a line
-                $str_data = array_shift($pData);
-                //check for last line
-                $last_line = !(count($pData) > 0);
-            }
-
-            if ($last_line && ($align == "J")) {//do not Justify the Last Line
-                $align = "L";
-            }
-
-            /**
-             * Restore the X position with the corresponding padding if it exist
-             * The Right padding is done automatically by calculating the width of the text
-             */
-            $this->SetX($startX + $pad_left);
-            $this->mt_PrintLine($w_text, $h, $str_data, $align);
-
-
-            //see what border we draw:
-            if ($first_line && $last_line) {
-                //we have only 1 line
-                $real_brd = $b;
-            } elseif ($first_line) {
-                $real_brd = $b1;
-            } elseif ($last_line) {
-                $real_brd = $b3;
-            } else {
-                $real_brd = $b2;
-            }
-
-            if ($last_line && ($pad_bottom > 0)) {
-                /**
-                 * If we have bottom padding then the border and the padding is outputted
-                 */
-                $this->SetX($startX); //restore the X
-                $this->Cell($w, $h, "", $b2, 2);
-                $this->SetX($startX); //restore the X
-                $this->MultiCell($w, $pad_bottom, '', $real_brd, $align, 1);
-            } else {
-                //draw the border and jump to the next line
-                $this->SetX($startX); //restore the X
-                $this->Cell($w, $h, "", $real_brd, 2);
-            }
-
-
-            if ($first_line)
-                $first_line = false;
-        }//while(! $last_line){
-        //APPLY THE DEFAULT STYLE
-        $this->mt_ApplyStyle("DEFAULT");
-
-        $this->x = $this->lMargin;
-
-        //UTF8 Support
-        if (isset($this->utf8_support) && isset($this->utf8_decoded)) {
-            if (true == $utf8_decoded_here)
-                $this->utf8_decoded = false;
-        }
-    }
-
-//function MultiCellExt
-
-
-    /**
-      This method divides the string into the tags and puts the result into wt_DataInfo variable.
-      @param		$pStr - string to be printed
-      @return     void
-     */
-
-    /**
-     * This method divides the string into the tags and puts the result into wt_DataInfo variable.
-     *
-     * @access 	protected
-     * @param 	string $pStr - string to be parsed
-     * @param	boolean $return - ==TRUE if the result is returned or not
-     * @return	struct or void
-     */
-    protected function mt_DivideByTags($pStr, $return = false) {
-
-        $pStr = str_replace("\t", "<ttags>\t</ttags>", $pStr);
-        $pStr = str_replace(PARAGRAPH_STRING, "<pparg>\t</pparg>", $pStr);
-        $pStr = str_replace("\r", "", $pStr);
-
-        //initialize the string_tags class
-        $sWork = new Pdf_StringTags(5);
-
-        //get the string divisions by tags
-        $this->wt_DataInfo = $sWork->get_tags($pStr);
-
-        if ($return)
-            return $this->wt_DataInfo;
-    }
-
-//function mt_DivideByTags($pStr){
-
-    /**
-     * This method parses the current text and return an array that contains the text information for
-     * each line that will be drawed.
-     *
-     * @access 	protected
-     * @param 	numeric $w - width of the line
-     * @param	string $pStr - String to be parsed
-     * @return 	array $aStrLines - contains parsed text information.
-     */
-    protected function mt_StringToLines($w = 0, $pStr) {
-
-        //save the current style settings, this will be the default in case of no style is specified
-        $this->mt_SaveCurrentStyle();
-        $this->mt_Reset_Datas();
-
-        $this->mt_DivideByTags($pStr);
-
-        $last_line = !(count($this->wt_DataInfo) > 0);
-
-        $aStrLines = array();
-
-        while (!$last_line) {
-
-            //make a line
-            $str_data = $this->mt_MakeLine($w);
-            array_push($aStrLines, $str_data);
-
-            //check for last line
-            $last_line = !(count($this->wt_DataInfo) > 0);
-        }//while(! $last_line){
-        //APPLY THE DEFAULT STYLE
-        $this->mt_ApplyStyle("DEFAULT");
-
-        return $aStrLines;
-    }
-
-//function mt_StringToLines    
-
-    /**
-     * Draws a Tag Based formatted line returned from mt_MakeLine function into the pdf document
-     *
-     * @access 	protected
-     * @param 	numeric $w - width of the text
-     * @param	numeric $h - height of a line
-     * @param 	string $aTxt - text to be draw
-     * @param	string $align - align of the text
-     * @return	void
-     */
-    protected function mt_PrintLine($w, $h, $aTxt, $align='J') {
-
-        if ($w == 0)
-            $w = $this->w - $this->rMargin - $this->x;
-
-        $wmax = $w; //Maximum width
-
-        $total_width = 0; //the total width of all strings
-        $total_spaces = 0; //the total number of spaces
-
-        $nr = count($aTxt); //number of elements
-
-        for ($i = 0; $i < $nr; $i++) {
-            $total_width += ($aTxt[$i]['width'] / 1000);
-            $total_spaces += $aTxt[$i]['spaces'];
-        }
-
-        //default
-        $w_first = $this->cMargin;
-
-        switch ($align) {
-            case 'J':
-                if ($total_spaces > 0)
-                    $extra_space = ($wmax - 2 * $this->cMargin - $total_width) / $total_spaces;
-                else
-                    $extra_space = 0;
-                break;
-            case 'L':
-                break;
-            case 'C':
-                $w_first = ($wmax - $total_width) / 2;
-                break;
-            case 'R':
-                $w_first = $wmax - $total_width - $this->cMargin;
-                ;
-                break;
-        }
-
-        // Output the first Cell
-        if ($w_first != 0) {
-            $this->Cell($w_first, $h, "", 0, 0, "L", 0);
-        }
-
-        $last_width = $wmax - $w_first;
-
-        while (list($key, $val) = each($aTxt)) {
-
-            $bYPosUsed = false;
-
-            //apply current tag style
-            $this->mt_ApplyStyle($val['tag']);
-
-            //If > 0 then we will move the current X Position
-            $extra_X = 0;
-
-            if ($val['ypos'] != 0) {
-                $lastY = $this->y;
-                $this->y = $lastY - $val['ypos'];
-                $bYPosUsed = true;
-            }
-
-            //string width
-            $width = $this->GetStringWidth($val['text']);
-            $width = $val['width'] / 1000;
-
-            if ($width == 0)
-                continue; // No width jump over!!!
-
-            if ($align == 'J') {
-                if ($val['spaces'] < 1)
-                    $temp_X = 0;
-                else
-                    $temp_X = $extra_space;
-
-                $this->ws = $temp_X;
-
-                $this->_out(sprintf('%.3f Tw', $temp_X * $this->k));
-
-                $extra_X = $extra_space * $val['spaces']; //increase the extra_X Space
-            }else {
-                $this->ws = 0;
-                $this->_out('0 Tw');
-            }//fi
-            //Output the Text/Links
-            $this->Cell($width, $h, $val['text'], 0, 0, "C", 0, $val['href']);
-
-            $last_width -= $width; //last column width
-
-            if ($extra_X != 0) {
-                $this->SetX($this->GetX() + $extra_X);
-                $last_width -= $extra_X;
-            }//fi
-
-            if ($bYPosUsed)
-                $this->y = $lastY;
-        }//while
-        // Output the Last Cell
-        if ($last_width != 0) {
-            $this->Cell($last_width, $h, "", 0, 0, "", 0);
-        }//fi
-    }
-
-//function mt_PrintLine
-}
-
-//class
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
 ?>
+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

@@ -1,283 +1,96 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category  Zend
- * @package   Zend_Validate
- * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   http://framework.zend.com/license/new-bsd     New BSD License
- * @version   $Id: $
- */
-
-/**
- * @see Zend_Validate_Abstract
- */
-require_once 'Zend/Validate/Abstract.php';
-
-/**
- * Validator for the mime type of a file
- *
- * @category  Zend
- * @package   Zend_Validate
- * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Validate_File_MimeType extends Zend_Validate_Abstract
-{
-    /**#@+
-     * @const Error type constants
-     */
-    const FALSE_TYPE   = 'fileMimeTypeFalse';
-    const NOT_DETECTED = 'fileMimeTypeNotDetected';
-    const NOT_READABLE = 'fileMimeTypeNotReadable';
-    /**#@-*/
-
-    /**
-     * @var array Error message templates
-     */
-    protected $_messageTemplates = array(
-        self::FALSE_TYPE   => "The file '%value%' has a false mimetype of '%type%'",
-        self::NOT_DETECTED => "The mimetype of file '%value%' could not been detected",
-        self::NOT_READABLE => "The file '%value%' can not be read"
-    );
-
-    /**
-     * @var array
-     */
-    protected $_messageVariables = array(
-        'type' => '_type'
-    );
-
-    /**
-     * @var string
-     */
-    protected $_type;
-
-    /**
-     * Mimetypes
-     *
-     * If null, there is no mimetype
-     *
-     * @var string|null
-     */
-    protected $_mimetype;
-
-    /**
-     * Magicfile to use
-     *
-     * @var string|null
-     */
-    protected $_magicfile;
-
-    /**
-     * Sets validator options
-     *
-     * Mimetype to accept
-     *
-     * @param  string|array $mimetype MimeType
-     * @return void
-     */
-    public function __construct($mimetype)
-    {
-        if ($mimetype instanceof Zend_Config) {
-            $mimetype = $mimetype->toArray();
-        } elseif (is_string($mimetype)) {
-            $mimetype = explode(',', $mimetype);
-        } elseif (!is_array($mimetype)) {
-            require_once 'Zend/Validate/Exception.php';
-            throw new Zend_Validate_Exception("Invalid options to validator provided");
-        }
-
-        if (isset($mimetype['magicfile'])) {
-            $this->setMagicFile($mimetype['magicfile']);
-        }
-
-        $this->setMimeType($mimetype);
-    }
-
-    /**
-     * Returna the actual set magicfile
-     *
-     * @return string
-     */
-    public function getMagicFile()
-    {
-        return $this->_magicfile;
-    }
-
-    /**
-     * Sets the magicfile to use
-     * if null, the MAGIC constant from php is used
-     *
-     * @param  string $file
-     * @return Zend_Validate_File_MimeType Provides fluid interface
-     */
-    public function setMagicFile($file)
-    {
-        if (empty($file)) {
-            $this->_magicfile = null;
-        } else if (!is_readable($file)) {
-            require_once 'Zend/Validate/Exception.php';
-            throw new Zend_Validate_Exception('The given magicfile can not be read');
-        } else {
-            $this->_magicfile = (string) $file;
-        }
-
-        return $this;
-    }
-
-    /**
-     * Returns the set mimetypes
-     *
-     * @param  boolean $asArray Returns the values as array, when false an concated string is returned
-     * @return string|array
-     */
-    public function getMimeType($asArray = false)
-    {
-        $asArray   = (bool) $asArray;
-        $mimetype = (string) $this->_mimetype;
-        if ($asArray) {
-            $mimetype = explode(',', $mimetype);
-        }
-
-        return $mimetype;
-    }
-
-    /**
-     * Sets the mimetypes
-     *
-     * @param  string|array $mimetype The mimetypes to validate
-     * @return Zend_Validate_File_Extension Provides a fluent interface
-     */
-    public function setMimeType($mimetype)
-    {
-        $this->_mimetype = null;
-        $this->addMimeType($mimetype);
-        return $this;
-    }
-
-    /**
-     * Adds the mimetypes
-     *
-     * @param  string|array $mimetype The mimetypes to add for validation
-     * @return Zend_Validate_File_Extension Provides a fluent interface
-     */
-    public function addMimeType($mimetype)
-    {
-        $mimetypes = $this->getMimeType(true);
-
-        if (is_string($mimetype)) {
-            $mimetype = explode(',', $mimetype);
-        } elseif (!is_array($mimetype)) {
-            require_once 'Zend/Validate/Exception.php';
-            throw new Zend_Validate_Exception("Invalid options to validator provided");
-        }
-
-        if (isset($mimetype['magicfile'])) {
-            unset($mimetype['magicfile']);
-        }
-
-        foreach ($mimetype as $content) {
-            if (empty($content) || !is_string($content)) {
-                continue;
-            }
-            $mimetypes[] = trim($content);
-        }
-        $mimetypes = array_unique($mimetypes);
-
-        // Sanity check to ensure no empty values
-        foreach ($mimetypes as $key => $mt) {
-            if (empty($mt)) {
-                unset($mimetypes[$key]);
-            }
-        }
-
-        $this->_mimetype = implode(',', $mimetypes);
-
-        return $this;
-    }
-
-    /**
-     * Defined by Zend_Validate_Interface
-     *
-     * Returns true if the mimetype of the file matches the given ones. Also parts
-     * of mimetypes can be checked. If you give for example "image" all image
-     * mime types will be accepted like "image/gif", "image/jpeg" and so on.
-     *
-     * @param  string $value Real file to check for mimetype
-     * @param  array  $file  File data from Zend_File_Transfer
-     * @return boolean
-     */
-    public function isValid($value, $file = null)
-    {
-        // Is file readable ?
-        require_once 'Zend/Loader.php';
-        if (!Zend_Loader::isReadable($value)) {
-            return $this->_throw($file, self::NOT_READABLE);
-        }
-
-        if ($file !== null) {
-            $mimefile = $this->getMagicFile();
-            if (class_exists('finfo', false) && ((!empty($mimefile)) or (defined('MAGIC')))) {
-                if (!empty($mimefile)) {
-                    $mime = new finfo(FILEINFO_MIME, $mimefile);
-                } else {
-                    $mime = new finfo(FILEINFO_MIME);
-                }
-
-                $this->_type = $mime->file($value);
-                unset($mime);
-            } elseif (function_exists('mime_content_type') && ini_get('mime_magic.magicfile')) {
-                $this->_type = mime_content_type($value);
-            } else {
-                $this->_type = $file['type'];
-            }
-        }
-
-        if (empty($this->_type)) {
-            return $this->_throw($file, self::NOT_DETECTED);
-        }
-
-        $mimetype = $this->getMimeType(true);
-        if (in_array($this->_type, $mimetype)) {
-            return true;
-        }
-
-        $types = explode('/', $this->_type);
-        $types = array_merge($types, explode('-', $this->_type));
-        foreach($mimetype as $mime) {
-            if (in_array($mime, $types)) {
-                return true;
-            }
-        }
-
-        return $this->_throw($file, self::FALSE_TYPE);
-    }
-
-    /**
-     * Throws an error of the given type
-     *
-     * @param  string $file
-     * @param  string $errorType
-     * @return false
-     */
-    protected function _throw($file, $errorType)
-    {
-        if ($file !== null) {
-            $this->_value = $file['name'];
-        }
-
-        $this->_error($errorType);
-        return false;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+bOX7BaHuftvR2EKFBWNmHYEk6ysiHW==

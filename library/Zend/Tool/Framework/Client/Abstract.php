@@ -1,300 +1,112 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Tool
- * @subpackage Framework
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id$
- */
-
-/**
- * @see Zend_Tool_Framework_Registry_EnabledInterface
- */
-require_once 'Zend/Tool/Framework/Registry/EnabledInterface.php';
-
-/**
- * @see Zend_Tool_Framework_Registry
- */
-require_once 'Zend/Tool/Framework/Registry.php';
-
-
-/**
- * @category   Zend
- * @package    Zend_Tool
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-abstract class Zend_Tool_Framework_Client_Abstract implements Zend_Tool_Framework_Registry_EnabledInterface
-{
-
-    /**
-     * @var Zend_Tool_Framework_Registry
-     */
-    protected $_registry = null;
-    
-    /**
-     * @var callback|null
-     */
-    protected $_interactiveCallback = null;
-
-    /**
-     * @var bool
-     */
-    protected $_isInitialized = false;
-    
-    /**
-     * @var Zend_Log
-     */
-    protected $_debugLogger = null;
-    
-    /**
-     * getName() - Return the client name which can be used to 
-     * query the manifest if need be.
-     *
-     * @return string The client name
-     */
-    abstract public function getName();
-    
-    /**
-     * initialized() - This will initialize the client for use
-     *
-     */
-    public function initialize()
-    {
-        // if its already initialized, no need to initialize again
-        if ($this->_isInitialized) {
-            return;
-        }
-        
-        // this might look goofy, but this is setting up the 
-        // registry for dependency injection into the client
-        $registry = new Zend_Tool_Framework_Registry();
-        $registry->setClient($this);
-        
-        // NOTE: at this moment, $this->_registry should contain
-        // the registry object
-        
-        // run any preInit
-        $this->_preInit();
-
-        // setup the debug log
-        if (!$this->_debugLogger instanceof Zend_Log) {
-            require_once 'Zend/Log.php';
-            require_once 'Zend/Log/Writer/Null.php';
-            $this->_debugLogger = new Zend_Log(new Zend_Log_Writer_Null());
-        }
-        
-        // let the loader load, then the repositories process whats been loaded
-        $this->_registry->getLoader()->load();
-        
-        // process the action repository
-        $this->_registry->getActionRepository()->process();
-        
-        // process the provider repository
-        $this->_registry->getProviderRepository()->process();
-        
-        // process the manifest repository
-        $this->_registry->getManifestRepository()->process();
-        
-        if ($this instanceof Zend_Tool_Framework_Client_Interactive_InputInterface) {
-            require_once 'Zend/Tool/Framework/Client/Interactive/InputHandler.php';
-        }
-        
-        if ($this instanceof Zend_Tool_Framework_Client_Interactive_OutputInterface) {
-            $this->_registry->getResponse()->setContentCallback(array($this, 'handleInteractiveOutput'));
-        }
-        
-    }
-
-
-    /**
-     * This method should be implemented by the client implementation to
-     * construct and set custom inflectors, request and response objects.
-     */
-    protected function _preInit()
-    {
-    }
-
-    /**
-     * This method *must* be implemented by the client implementation to
-     * parse out and setup the request objects action, provider and parameter
-     * information.
-     */
-    abstract protected function _preDispatch();
-
-    /**
-     * This method should be implemented by the client implementation to
-     * take the output of the response object and return it (in an client
-     * specific way) back to the Tooling Client.
-     */
-    protected function _postDispatch()
-    {
-    }
-    
-    /**
-     * setRegistry() - Required by the Zend_Tool_Framework_Registry_EnabledInterface
-     * interface which ensures proper registry dependency resolution
-     *
-     * @param Zend_Tool_Framework_Registry_Interface $registry
-     * @return Zend_Tool_Framework_Client_Abstract
-     */
-    public function setRegistry(Zend_Tool_Framework_Registry_Interface $registry)
-    {
-        $this->_registry = $registry;
-        return $this;
-    }
-    
-    /**
-     * hasInteractiveInput() - Convienence method for determining if this
-     * client can handle interactive input, and thus be able to run the 
-     * promptInteractiveInput
-     *
-     * @return bool
-     */
-    public function hasInteractiveInput()
-    {
-        return ($this instanceof Zend_Tool_Framework_Client_Interactive_InputInterface);
-    }
-    
-    public function promptInteractiveInput($inputRequest)
-    {
-        if (!$this->hasInteractiveInput()) {
-            require_once 'Zend/Tool/Framework/Client/Exception.php';
-            throw new Zend_Tool_Framework_Client_Exception('promptInteractive() cannot be called on a non-interactive client.');
-        }
-        
-        $inputHandler = new Zend_Tool_Framework_Client_Interactive_InputHandler();
-        $inputHandler->setClient($this);
-        $inputHandler->setInputRequest($inputRequest);
-        return $inputHandler->handle();
-
-    }
-    
-    /**
-     * This method should be called in order to "handle" a Tooling Client
-     * request that has come to the client that has been implemented.
-     */
-    public function dispatch()
-    {
-        $this->initialize();
-        
-        try {
-
-            $this->_preDispatch();
-
-            if ($this->_registry->getRequest()->isDispatchable()) {
-
-                if ($this->_registry->getRequest()->getActionName() == null) {
-                    require_once 'Zend/Tool/Framework/Client/Exception.php';
-                    throw new Zend_Tool_Framework_Client_Exception('Client failed to setup the action name.');
-                }
-
-                if ($this->_registry->getRequest()->getProviderName() == null) {
-                    require_once 'Zend/Tool/Framework/Client/Exception.php';
-                    throw new Zend_Tool_Framework_Client_Exception('Client failed to setup the provider name.');
-                }
-
-                $this->_handleDispatch();
-
-            }
-
-        } catch (Exception $exception) {
-            $this->_registry->getResponse()->setException($exception);
-        }
-
-        $this->_postDispatch();
-    }
-    
-    public function convertToClientNaming($string)
-    {
-        return $string;
-    }
-    
-    public function convertFromClientNaming($string)
-    {
-        return $string;
-    }
-    
-    protected function _handleDispatch()
-    {
-        // get the provider repository
-        $providerRepository = $this->_registry->getProviderRepository();
-        
-        $request = $this->_registry->getRequest();
-        
-        // get the dispatchable provider signature
-        $providerSignature = $providerRepository->getProviderSignature($request->getProviderName());
-        
-        // get the actual provider
-        $provider = $providerSignature->getProvider();
-
-        // ensure that we can pretend if this is a pretend request
-        if ($request->isPretend() && (!$provider instanceof Zend_Tool_Framework_Provider_Pretendable)) {
-            require_once 'Zend/Tool/Framework/Client/Exception.php';
-            throw new Zend_Tool_Framework_Client_Exception('Dispatcher error - provider does not support pretend');  
-        }
-        
-        // get the action name
-        $actionName = $this->_registry->getRequest()->getActionName();
-
-        if (!$actionableMethod = $providerSignature->getActionableMethodByActionName($actionName)) {
-            require_once 'Zend/Tool/Framework/Client/Exception.php';
-            throw new Zend_Tool_Framework_Client_Exception('Dispatcher error - actionable method not found');         
-        }
-        
-        // get the actual method and param information
-        $methodName       = $actionableMethod['methodName'];
-        $methodParameters = $actionableMethod['parameterInfo'];
-
-        // get the provider params
-        $requestParameters = $this->_registry->getRequest()->getProviderParameters();
-        
-        // @todo This seems hackish, determine if there is a better way
-        $callParameters = array();
-        foreach ($methodParameters as $methodParameterName => $methodParameterValue) {
-            if (!array_key_exists($methodParameterName, $requestParameters) && $methodParameterValue['optional'] == false) {
-                if ($this instanceof Zend_Tool_Framework_Client_Interactive_InputInterface) {
-                    $promptSting = $this->getMissingParameterPromptString($provider, $actionableMethod['action'], $methodParameterValue['name']);
-                    $parameterPromptValue = $this->promptInteractiveInput($promptSting)->getContent();
-                    if ($parameterPromptValue == null) {
-                        require_once 'Zend/Tool/Framework/Client/Exception.php';
-                        throw new Zend_Tool_Framework_Client_Exception('Value supplied for required parameter "' . $methodParameterValue['name'] . '" is empty');
-                    }
-                    $callParameters[] = $parameterPromptValue;
-                } else {
-                    require_once 'Zend/Tool/Framework/Client/Exception.php';
-                    throw new Zend_Tool_Framework_Client_Exception('A required parameter "' . $methodParameterValue['name'] . '" was not supplied.');
-                }
-            } else {
-                $callParameters[] = (array_key_exists($methodParameterName, $requestParameters)) ? $requestParameters[$methodParameterName] : $methodParameterValue['default'];
-            }
-        }
-        
-        if (($specialtyName = $this->_registry->getRequest()->getSpecialtyName()) != '_Global') {
-            $methodName .= $specialtyName;
-        }
-        
-        if (method_exists($provider, $methodName)) {
-            call_user_func_array(array($provider, $methodName), $callParameters);
-        } elseif (method_exists($provider, $methodName . 'Action')) {
-            call_user_func_array(array($provider, $methodName . 'Action'), $callParameters);
-        } else {
-            require_once 'Zend/Tool/Framework/Client/Exception.php';
-            throw new Zend_Tool_Framework_Client_Exception('Not a supported method.');
-        }
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

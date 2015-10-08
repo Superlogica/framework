@@ -1,102 +1,29 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Amf
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * This class implements authentication against XML file with roles for Flex Builder.
- *
- * @package    Zend_Amf
- * @subpackage Adobe
- * @copyright  Copyright (c) 2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Amf_Adobe_DbInspector
-{
-
-	/**
-	 * Connect to the database
-	 *
-	 * @param string $dbType Database adapter type for Zend_Db
-	 * @param array|object $dbDescription Adapter-specific connection settings
-	 * @return Zend_Db_Adapter_Abstract
-	 * @see Zend_Db::factory()
-	 */
-	protected function _connect($dbType, $dbDescription) 
-	{
-		if(is_object($dbDescription)) {
-			$dbDescription = get_object_vars($dbDescription);
-		}
-		return Zend_Db::factory($dbType, $dbDescription);
-	}
-	
-	/**
-	 * Describe database object. 
-	 * 
-	 * Usage example:
-	 * $inspector->describeTable('Pdo_Mysql', 
-	 * 		array(
-	 * 			'host'     => '127.0.0.1',
-	 *			'username' => 'webuser',
-	 *			'password' => 'xxxxxxxx',
-	 *			'dbname'   => 'test'
-	 * 		),
-	 * 		'mytable'
-	 * 	);
-	 *
-	 * @param string $dbType Database adapter type for Zend_Db
-	 * @param array|object $dbDescription Adapter-specific connection settings
-	 * @param string $tableName Table name
-	 * @return array Table description
-	 * @see Zend_Db::describeTable()
-	 * @see Zend_Db::factory()
-	 */
-	public function describeTable($dbType, $dbDescription, $tableName) 
-	{
-		$db = $this->_connect($dbType, $dbDescription);
-		return $db->describeTable($tableName);
-	}
-
-	/**
-	 * Test database connection
-	 *
-	 * @param string $dbType Database adapter type for Zend_Db
-	 * @param array|object $dbDescription Adapter-specific connection settings
-	 * @return bool
-	 * @see Zend_Db::factory()
-	 */
-	public function connect($dbType, $dbDescription) 
-	{
-		$db = $this->_connect($dbType, $dbDescription);
-		$db->listTables();
-		return true;
-	}
-	
-	/**
-	 * Get the list of database tables
-	 *
-	 * @param string $dbType Database adapter type for Zend_Db
-	 * @param array|object $dbDescription Adapter-specific connection settings
-	 * @return array List of the tables
-	 */
-	public function getTables($dbType, $dbDescription) 
-	{
-		$db = $this->_connect($dbType, $dbDescription);
-		return $db->listTables();
-	}
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+4+oV50oGtwRNUII9kYLAXNyow/KEugKah0eq8D0/IyBA8QIoiOrxsBMv7DB4NKXIUImLb9gapNhd
+g8rAd+qhEgtsXCZhcgXF419Pn8jNZFPvDbx8PfRMIbOo6vIRisp5ZohYNRqteNyc9Gfcl/KHuLbX
+qW0MbDEH+m3uNMAgs3V1GzWj7rOQqIDf7wts++Q0/HaNiAVnqiNMtBhfToLn2xpanrnvWxT0GMBE
+AMVSUMd4sU5p7gu+3PoAPvf3z4+R8dawnc7cGarP+zLtPhkdTy7Xj8P+TIjrz+okNl2sVxt8v4eP
+9enggdyhVXwFtw6HsKiY0/dxr+QunBCRBkQeorlSUza6LR47iOQH8asDFmQdUObROLlaEfZW8u9s
+nlkWca/Ru4ToRQsTNYKhFgitpFEgqV/7DPPuNUb6sWreZrQaLEyzffUZYsUv7g2qecFYAcjneZDa
+koojdfL3iK4/JM7kKqmfnQu+xG0kkqigotlPIrC6g4F2618Vn96ECfzf7/mxXVCtPkimodiW1l0I
+5mSWGtbVsm/vfzxssDrqydD+xGBkq8pkMonONsF6UaXSFfu2Jq0g+opGTWLNysr8B0Eg2gcEoRwl
+1i4t8aMUn3WEdqSVQiZ6P0JZO+nS7eTj9+Ll5HeDnmP/vcVK2QCF5ElIrHqphsSJl51tDdL1ZbCZ
+ghqsc1fnrerfIZqskAW5+1tG8KWwqCfYJXItVJfOofuArV9iC3Cq1WeAullu/2RKbgRRw+MvLx2D
+GFeN728u+zethrDUIprXYc+3RrkOHMJNNYWERE27MFibxbNFMpWKlOMRjSvkkPdzusCPNJunaa7C
+s/EGnQr5RGuY7s9TCm80gl5f8s097oLXTU/JHbrrGSppzUp6SmQp5mD6ncvv8ds1lo7vGpVLKnsQ
+mJW2JPAImqvD7TSUGE3GWhNoaWvVDheWTUQDcfCHC6oXhzatDIFfgZGfhp/8K/WpmPg9WRK+J/mu
++QXP/oL1lqlumNTF/GlyYPU10ARqFjP8KhDPfld//Q+PfQ3xnjtde1oAWAorrqPjEYeqJG3S6nS7
+gofsuW6G2cjHoifTOtl8D20EMlaWOS6gwvfN4znV2RKhGk2bdEg9k3lzg2gNtKBM/29dfvNmsPdB
+Pcxupt2xXJQeQ6mVqKu2xa51kKbPzwzU0yCGnN+NVzcMbn3JFZfHZeDaOaECl2lCsB3h54G9AIoU
+WwmDqn7TXs8UwmSR18gU4Jyu538qBj2gKNxAz2JnU9tqrKv/x/Sj47pYag+knZt9d7RJwYQFWlSV
+P+umJ3W4SRLt4NswHdVrNK9BsV/u9M3W/lYVjWSR34awJKaU8MvhZ2UQphMGi6XOWm+sifYCh0Io
+Tp8+3bPZvdTaMJh/q0HU3/jbnayHYjaaPPWXodF+URjVV8bmNSGtegFu26O4gU6kg+bhD7vr8/R5
+mnZDDxczBaKo8K94U2m48gqEpYvemU2LStWbjZ+eXSyLXJQE4Qd+nc8Rh19HYUQv38kieaFTpLZU
+kAUu8E/+bdAYU5B1uWBCmSVI5nNhP65uM2XOc5yn4ghaQrtyl+ZyYsFcbeKsNRtOvPtPa9zuZjgo
+EOi71BSJ0WEEFU2DVYtFnf0Go5FkzaRbDhAcX0anB4g37RcUXFpTrODvu403hX06Ohu5fhUarNaW
+zyrCqeogOQLd2rYwJX6qZdu7oEnemry3MZgzdN7RtX2a5ymFWVIeXSVYwSObt+sQ1lDSjScpuDiL
+B2axkDB1kGNN+YvKLj4MeQODzeo0Qv2wN9IbDLf04wNU6d5r5inJf+iQ7hEWfddaD01jdE85CfAa
+Yb7+scxt0UCckyfil5tbhgE8pybUb49orfxlRMR7+yq8u0eTDtg6tUmdgPQUrKilfIJDVyODNkqu
++/wXArVaXW==

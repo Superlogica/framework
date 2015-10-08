@@ -1,120 +1,35 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Dojo
- * @subpackage Form_Element
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_Dojo_Form_Element_NumberTextBox */
-require_once 'Zend/Dojo/Form/Element/NumberTextBox.php';
-
-/**
- * CurrencyTextBox dijit
- * 
- * @uses       Zend_Dojo_Form_Element_NumberTextBox
- * @package    Zend_Dojo
- * @subpackage Form_Element
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: CurrencyTextBox.php 10079 2008-07-14 10:56:37Z matthew $
- */
-class Zend_Dojo_Form_Element_CurrencyTextBox extends Zend_Dojo_Form_Element_NumberTextBox
-{
-    /**
-     * Use CurrencyTextBox dijit view helper
-     * @var string
-     */
-    public $helper = 'CurrencyTextBox';
-
-    /**
-     * Set currency
-     *
-     * @param  string $currency
-     * @return Zend_Dojo_Form_Element_CurrencyTextBox
-     */
-    public function setCurrency($currency)
-    {
-        $this->setDijitParam('currency', (string) $currency);
-        return $this;
-    }
-
-    /**
-     * Retrieve currency
-     *
-     * @return string|null
-     */
-    public function getCurrency()
-    {
-        return $this->getDijitParam('currency');
-    }
-
-    /**
-     * Set currency symbol
-     *
-     * Casts to string, uppercases, and trims to three characters.
-     *
-     * @param  string $symbol
-     * @return Zend_Dojo_Form_Element_CurrencyTextBox
-     */
-    public function setSymbol($symbol)
-    {
-        $symbol = strtoupper((string) $symbol);
-        $length = strlen($symbol);
-        if (3 > $length) {
-            require_once 'Zend/Form/Element/Exception.php';
-            throw new Zend_Form_Element_Exception('Invalid symbol provided; please provide ISO 4217 alphabetic currency code');
-        }
-        if (3 < $length) {
-            $symbol = substr($symbol, 0, 3);
-        }
-
-        $this->setConstraint('symbol', $symbol);
-        return $this;
-    }
-
-    /**
-     * Retrieve symbol
-     *
-     * @return string|null
-     */
-    public function getSymbol()
-    {
-        return $this->getConstraint('symbol');
-    }
-
-    /**
-     * Set whether currency is fractional
-     *
-     * @param  bool $flag
-     * @return Zend_Dojo_Form_Element_CurrencyTextBox
-     */
-    public function setFractional($flag)
-    {
-        $this->setConstraint('fractional', (bool) $flag);
-        return $this;
-    }
-
-    /**
-     * Get whether or not to present fractional values
-     * 
-     * @return bool
-     */
-    public function getFractional()
-    {
-        return ('true' == $this->getConstraint('fractional'));
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+AkwmGqta7tlg+Jrm8WVBPUGue7u0kLiODzq=

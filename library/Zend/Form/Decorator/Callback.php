@@ -1,128 +1,37 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Form
- * @subpackage Decorator
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_Form_Decorator_Abstract */
-require_once 'Zend/Form/Decorator/Abstract.php';
-
-/**
- * Zend_Form_Decorator_Callback
- *
- * Execute an arbitrary callback to decorate an element. Callbacks should take 
- * three arguments, $content, $element, and $options:
- *
- * function mycallback($content, $element, array $options)
- * {
- * }
- *
- * and should return a string. ($options are whatever options were provided to 
- * the decorator.)
- *
- * To specify a callback, pass a valid callback as the 'callback' option.
- *
- * Callback results will be either appended, prepended, or replace the provided
- * content. To replace the content, specify a placement of boolean false; 
- * defaults to append content.
- * 
- * @category   Zend
- * @package    Zend_Form
- * @subpackage Decorator
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Callback.php 15916 2009-06-06 14:47:55Z matthew $
- */
-class Zend_Form_Decorator_Callback extends Zend_Form_Decorator_Abstract
-{
-    /**
-     * Callback
-     * @var string|array
-     */
-    protected $_callback;
-
-    /**
-     * Set callback
-     * 
-     * @param  callback $callback 
-     * @return Zend_Form_Decorator_Callback
-     * @throws Zend_Form_Exception
-     */
-    public function setCallback($callback)
-    {
-        if (!is_callable($callback)) {
-            require_once 'Zend/Form/Exception.php';
-            throw new Zend_Form_Exception('Invalid callback provided to callback decorator');
-        }
-        $this->_callback = $callback;
-        return $this;
-    }
-
-    /**
-     * Get registered callback
-     *
-     * If not previously registered, checks to see if it exists in registered 
-     * options.
-     * 
-     * @return null|string|array
-     */
-    public function getCallback()
-    {
-        if (null === $this->_callback) {
-            if (null !== ($callback = $this->getOption('callback'))) {
-                $this->setCallback($callback);
-                $this->removeOption('callback');
-            }
-        }
-
-        return $this->_callback;
-    }
-
-    /**
-     * Render 
-     *
-     * If no callback registered, returns callback. Otherwise, gets return 
-     * value of callback and either appends, prepends, or replaces passed in
-     * content.
-     *
-     * @param  string $content 
-     * @return string
-     */
-    public function render($content)
-    {
-        $callback = $this->getCallback();
-        if (null === $callback) {
-            return $content;
-        }
-
-        $placement = $this->getPlacement();
-        $separator = $this->getSeparator();
-
-        $response = call_user_func($callback, $content, $this->getElement(), $this->getOptions());
-
-        switch ($placement) {
-            case self::APPEND:
-                return $content . $separator . $response;
-            case self::PREPEND:
-                return $response . $separator . $content;
-            default:
-                // replace content
-                return $response;
-        }
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

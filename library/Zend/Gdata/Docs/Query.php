@@ -1,221 +1,47 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Docs
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * Zend_Gdata_Query
- */
-require_once('Zend/Gdata/Query.php');
-
-/**
- * Assists in constructing queries for Google Document List documents
- *
- * @link http://code.google.com/apis/gdata/spreadsheets/
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Docs
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Gdata_Docs_Query extends Zend_Gdata_Query
-{
-
-    /**
-     * The base URL for retrieving a document list
-     *
-     * @var string
-     */
-    const DOCUMENTS_LIST_FEED_URI = 'http://docs.google.com/feeds/documents';
-
-    /**
-     * The generic base URL used by some inherited methods
-     *
-     * @var string
-     */
-    protected $_defaultFeedUri = self::DOCUMENTS_LIST_FEED_URI;
-
-    /**
-     * The visibility to be used when querying for the feed. A request for a 
-     * feed with private visbility requires the user to be authenricated. 
-     * Private is the only avilable visibility for the documents list.
-     *
-     * @var string
-     */
-    protected $_visibility = 'private';
-
-    /**
-     * The projection determines how much detail should be given in the
-     * result of the query. Full is the only valid projection for the
-     * documents list.
-     *
-     * @var string
-     */
-    protected $_projection = 'full';
-
-    /**
-     * Constructs a new instance of a Zend_Gdata_Docs_Query object.
-     */
-    public function __construct()
-    {
-        parent::__construct();
-    }
-
-    /**
-     * Sets the projection for this query. Common values for projection 
-     * include 'full'.
-     *
-     * @param string $value
-     * @return Zend_Gdata_Docs_Query Provides a fluent interface
-     */
-    public function setProjection($value)
-    {
-        $this->_projection = $value;
-        return $this;
-    }
-
-    /**
-     * Sets the visibility for this query. Common values for visibility
-     * include 'private'.
-     *
-     * @return Zend_Gdata_Docs_Query Provides a fluent interface
-     */
-    public function setVisibility($value)
-    {
-        $this->_visibility = $value;
-        return $this;
-    }
-
-    /**
-     * Gets the projection for this query.
-     *
-     * @return string projection
-     */
-    public function getProjection()
-    {
-        return $this->_projection;
-    }
-
-    /**
-     * Gets the visibility for this query.
-     *
-     * @return string visibility
-     */
-    public function getVisibility()
-    {
-        return $this->_visibility;
-    }
-
-    /**
-     * Sets the title attribute for this query. The title parameter is used
-     * to restrict the results to documents whose titles either contain or 
-     * completely match the title.
-     *
-     * @param string $value
-     * @return Zend_Gdata_Docs_Query Provides a fluent interface
-     */
-    public function setTitle($value)
-    {
-        if ($value !== null) {
-            $this->_params['title'] = $value;
-        } else {
-            unset($this->_params['title']);
-        }
-        return $this;
-    }
-
-    /**
-     * Gets the title attribute for this query.
-     *
-     * @return string title
-     */
-    public function getTitle()
-    {
-        if (array_key_exists('title', $this->_params)) {
-            return $this->_params['title'];
-        } else {
-            return null;
-        }
-    }
-
-    /**
-     * Sets the title-exact attribute for this query.
-     * If title-exact is set to true, the title query parameter will be used
-     * in an exact match. Only documents with a title identical to the
-     * title parameter will be returned.
-     *
-     * @param boolean $value Use either true or false
-     * @return Zend_Gdata_Docs_Query Provides a fluent interface
-     */
-    public function setTitleExact($value)
-    {
-        if ($value) {
-            $this->_params['title-exact'] = $value;
-        } else {
-            unset($this->_params['title-exact']);
-        }
-        return $this;
-    }
-
-    /**
-     * Gets the title-exact attribute for this query.
-     *
-     * @return string title-exact
-     */
-    public function getTitleExact()
-    {
-        if (array_key_exists('title-exact', $this->_params)) {
-            return $this->_params['title-exact'];
-        } else {
-            return false;
-        }
-    }
-
-    /**
-     * Gets the full query URL for this query.
-     *
-     * @return string url
-     */
-    public function getQueryUrl()
-    {
-        $uri = $this->_defaultFeedUri;
-
-        if ($this->_visibility !== null) {
-            $uri .= '/' . $this->_visibility;
-        } else {
-            require_once 'Zend/Gdata/App/Exception.php';
-            throw new Zend_Gdata_App_Exception(
-                'A visibility must be provided for cell queries.');
-        }
-
-        if ($this->_projection !== null) {
-            $uri .= '/' . $this->_projection;
-        } else {
-            require_once 'Zend/Gdata/App/Exception.php';
-            throw new Zend_Gdata_App_Exception(
-                'A projection must be provided for cell queries.');
-        }
-
-        $uri .= $this->getQueryString();
-        return $uri;
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

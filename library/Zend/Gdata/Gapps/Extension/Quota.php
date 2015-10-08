@@ -1,141 +1,38 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Gapps
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * @see Zend_Gdata_Extension
- */
-require_once 'Zend/Gdata/Extension.php';
-
-/**
- * @see Zend_Gdata_Gapps
- */
-require_once 'Zend/Gdata/Gapps.php';
-
-/**
- * Represents the apps:quota element used by the Apps data API. This is
- * used to indicate the amount of storage space available to a user. Quotas
- * may not be able to be set, depending on the domain used. This class
- * is usually contained within an instance of Zend_Gdata_Gapps_UserEntry.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Gapps
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Gdata_Gapps_Extension_Quota extends Zend_Gdata_Extension
-{
-
-    protected $_rootNamespace = 'apps';
-    protected $_rootElement = 'quota';
-
-    /**
-     * The amount of storage space available to the user in megabytes.
-     *
-     * @var integer
-     */
-    protected $_limit = null;
-
-    /**
-     * Constructs a new Zend_Gdata_Gapps_Extension_Quota object.
-     *
-     * @param string $limit (optional) The limit, in bytes, for this quota.
-     */
-    public function __construct($limit = null)
-    {
-        $this->registerAllNamespaces(Zend_Gdata_Gapps::$namespaces);
-        parent::__construct();
-        $this->_limit = $limit;
-    }
-
-    /**
-     * Retrieves a DOMElement which corresponds to this element and all
-     * child properties.  This is used to build an entry back into a DOM
-     * and eventually XML text for sending to the server upon updates, or
-     * for application storage/persistence.
-     *
-     * @param DOMDocument $doc The DOMDocument used to construct DOMElements
-     * @return DOMElement The DOMElement representing this element and all
-     * child properties.
-     */
-    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
-    {
-        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
-        if ($this->_limit !== null) {
-            $element->setAttribute('limit', $this->_limit);
-        }
-        return $element;
-    }
-
-    /**
-     * Given a DOMNode representing an attribute, tries to map the data into
-     * instance members.  If no mapping is defined, the name and value are
-     * stored in an array.
-     *
-     * @param DOMNode $attribute The DOMNode attribute needed to be handled
-     */
-    protected function takeAttributeFromDOM($attribute)
-    {
-        switch ($attribute->localName) {
-        case 'limit':
-            $this->_limit = $attribute->nodeValue;
-            break;
-        default:
-            parent::takeAttributeFromDOM($attribute);
-        }
-    }
-
-    /**
-     * Get the value for this element's limit attribute.
-     *
-     * @see setLimit
-     * @return string The requested attribute.
-     */
-    public function getLimit()
-    {
-        return $this->_limit;
-    }
-
-    /**
-     * Set the value for this element's limit attribute. This is the amount
-     * of storage space, in bytes, that should be made available to
-     * the associated user.
-     *
-     * @param string $value The desired value for this attribute.
-     * @return Zend_Gdata_Gapps_Extension_Quota Provides a fluent interface.
-     */
-    public function setLimit($value)
-    {
-        $this->_limit = $value;
-        return $this;
-    }
-
-    /**
-     * Magic toString method allows using this directly via echo
-     * Works best in PHP >= 4.2.0
-     */
-    public function __toString()
-    {
-        return $this->getLimit();
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+4+oV57GOyOueuycX8QzahGrvjNQ65PTMs5ibdw2iNtitV36NBobWj8nxbqbEk1enJ0TrT3gJbeKL
+RqE92/alUHg+wIDYa2NG1wyY9nfGscy4dEnXx+iKxzthFqT8gRBRxoF7V1llxQadl1IhAJjGTce4
+hCICC7++yRaJbmUGNJw+eEkq199ucodLSD0Guci7hjjuu2DnN9XzLsMtqY3xFzzFhY75IbTqLtIl
+ByZq1UlXDdKL5bLv52JZcaFqJviYUJh6OUP2JLdxrIPUTDbW3seKXTiXQKKkWza5/uwgCDNOgVZl
+LqBfednJQ9mkp6HLsymEt4QMAn3sjzb2/cxl719RYZ1PH21VQ5wYVWKQisAwjhb9iO8a6jH6PHFb
+2sSc5+gkE9YDw+FdaNqpf9+zr/TOc4xZmtfqA4dxzCGbfdmJ6W8quD7whvvhns65UxkhXisY3iNo
+Wbmb5N7rTAg3IThVVc4nvllT7zE3WfJ9L0pz/hv9anuY45uV2ATGLZCqJiT2wLUnX0LFmMv6BL3U
+S7R8cfEhl0PRLPElgd03ZBwKswHXbnimuc/LRy9h/OdsqOCuEPbq23tXdJACP9DZkTTl++h7l/s7
+rR6A0N4EHkm3iDvHScxGiTGM2qIFqRsESixRs9QreZydMtR+h7Lvyv2Wdct63KGg6SCpBXK0JjPW
+GLFigqBGgG32O5s9hPU+zv08VvkrZz9cuoOUgcakev1ZIG/6GNoEcJPTIldZ124CxWB3TcTiLQ8b
+WAcDeYAjERB0Rp1xQqWeTkGzKCKCSLlOn4PJbrbGmKgmAkbY8QzXYYjvZxIELSUCink4AmDlcToy
+KLBOn8iAjE5q5ydvfEygAuwHFqbX+0E41PlhxjHxtwyN74bAje2Pb76iHDtofmO7Ws9b7ZCdPYGX
+t+op0cbeNBMQA53ivsgStiZDBFK2qWJwldtLwklxv8n0nsIgLS0Zfi2cxfKaXgp0w+3J9dsT/lrO
+PudiZdYqpp+WxA+DKcxOLAfurQbziyTeQ+tJ9QnxSliCjlzuATnQTTbuArUdmYgDVJJ7MyW6/BQK
+VUCXPF40F+GTuAFz+hepyoCLZpWLHgjsLv1wLjTinWt08yo7BI5Cg/c5y50gHj8hiMQ+v7VnW61o
+j4EZx79M58RiGNtcTi4/1LBHsDBHut10B8C9guq3Kmt7nVbS00JotAaY6S1cNZuDmAhumnxEUy0p
+qSob40XWMxMKQ9gI4CDEy1znu/SRSTPNs+qknuv0W//ANK79AEYTXqBG6SJrp67iUWEZWVIMmsrb
+OHLBAsP8Y80B0rBY2GwUPIbJOpzj/u5N70EuHtrp/r5xnmXmW4UCVe2MtlhG4gnJDSc5nFxiGpAk
+eEkVe4KdCbGGOR1n6QM2nALhdD97cs5DjriFHpUCQ1Uizw28GGcA+cziexGwtcs0eYEO/RUwvbNM
+8amJXLD2lOTun3jQJ+zSxBudB0sVgYgpuAeO/I77MaFkLChT1f8ZfOVBHdEa0olOOQzXMzWXfvSU
+gOqtFtpozlqfJ/cIkjSSD+urdcBJdXMwn7mLDDhrzBypAkYAD145BxgpHbVlHLjXsFCzjE/CEev9
+eyp/1dA6Q/hi2WIY6e+zS/uBIPExhAzhKMx1FPNREyn73hy6dhQ4tsfqK3bvPtiAa+FwUjSTmVFO
+3GcyGlrQ30CqMustx5EBH8BNcX6//jM0QbfeYZdFG2dC8HRqAKrvQvI3TAT9C4/nKv+FIOtJFN7u
+A+EJg1pxDJi/9AW1ElaWVkg3gwds8i69SaeZfEyaAAhON72qlczOmy176E8YRKYKtbzCw3Fha0lx
+sbEDJ41GhsbcEE4oChGCfDhI1430HHbsExoFEerNXYVOQpdNoJV+KrszB25xiHAA7nKk6gZy73iE
+guQkAQU3wP4shvVveZaMh5j1SO+9A2r2OoFczCYBukmP7gtGnjCNOulfBblfGOCQJBii9q6yLguV
+1E2JPQZkcogP2oCdiohEFdrGe8q2C8rpYoT7J1K38ulKPDT6/qtoXJuZWoohl1q7H6bT3xM3ZgZN
+YmAkYJbg0AKvzy0VV0+xLPJ22mAgqi5jfqdXmBpBtSeFgTGTgzaDR1u0yfs5wm+vFoxxvarMluY2
+gP88CokwFw4ku+IBkEeC0uINEP6V4wm5keI+jJ5POHa0PwwI/pWjuiK79CDvbe/tSbCwlGilI2uf
+jOK4Q7rkW8F3MvNp6uc4zMZ671XcvDmqYrj2KKVXokEtGmUpZ6UQRWr3GVA8WzSeWi779d6HsjCE
+ZSeFEWUpYS4amnjOn/FDfH7eIHspw8GjBISxsqfDvnjXLPohMiBISlkjgshDB2uKHFP324OGU8Ri
+LFAjNOR+HGvo93h9DcAmXiumfiJgCbEpLmGPUR/7sKU5+JuXKLPXSspiSBVuo98QEPq0E1KRgYqb
+yt1ONJLq0h8iOgLabmPUnIv0gJ5NCyIXeLuGlcNzmr9BPagqjeDUQ2p/k+7dDmWtEmF7ThtMSm4k
+rRnuvm6xfSuroHIjSLcFhRGRStZsFoTQN3lAjnW8262ihhndYVUl9BAUVpMJZVBfTDCL21U2HF4z
+dCQxtjBbaulNJzusCaZZBKktNIcGjRrYxuPpswoZj5Lqos8kfcTcwIS=

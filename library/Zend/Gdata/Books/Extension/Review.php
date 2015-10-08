@@ -1,153 +1,43 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Books
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc.
- * (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * @see Zend_Gdata_Extension
- */
-require_once 'Zend/Gdata/Extension.php';
-
-/**
- * User-provided review
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Books
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc.
- * (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Gdata_Books_Extension_Review extends Zend_Gdata_Extension
-{
-
-    protected $_rootNamespace = 'gbs';
-    protected $_rootElement = 'review';
-    protected $_lang = null;
-    protected $_type = null;
-
-    /**
-     * Constructor for Zend_Gdata_Books_Extension_Review which
-     * User-provided review
-     *
-     * @param string|null $lang Review language.
-     * @param string|null $type Type of text construct (typically text, html,
-     *        or xhtml).
-     * @param string|null $value Text content of the review.
-     */
-    public function __construct($lang = null, $type = null, $value = null)
-    {
-        $this->registerAllNamespaces(Zend_Gdata_Books::$namespaces);
-        parent::__construct();
-        $this->_lang = $lang;
-        $this->_type = $type;
-        $this->_text = $value;
-    }
-
-    /**
-     * Retrieves DOMElement which corresponds to this element and all
-     * child properties. This is used to build this object back into a DOM
-     * and eventually XML text for sending to the server upon updates, or
-     * for application storage/persistance.
-     *
-     * @param DOMDocument $doc The DOMDocument used to construct DOMElements
-     * @return DOMElement The DOMElement representing this element and all
-     * child properties.
-     */
-    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
-    {
-        $element = parent::getDOM($doc);
-        if ($this->_lang !== null) {
-            $element->setAttribute('lang', $this->_lang);
-        }
-        if ($this->_type !== null) {
-            $element->setAttribute('type', $this->_type);
-        }
-        return $element;
-    }
-
-    /**
-     * Extracts XML attributes from the DOM and converts them to the
-     * appropriate object members.
-     *
-     * @param DOMNode $attribute The DOMNode attribute to be handled.
-     */
-    protected function takeAttributeFromDOM($attribute)
-    {
-        switch ($attribute->localName) {
-        case 'lang':
-            $this->_lang = $attribute->nodeValue;
-            break;
-        case 'type':
-            $this->_type = $attribute->nodeValue;
-            break;
-        default:
-            parent::takeAttributeFromDOM($attribute);
-        }
-    }
-
-    /**
-     * Returns the language of link title
-     *
-     * @return string The lang
-     */
-    public function getLang()
-    {
-        return $this->_lang;
-    }
-
-    /**
-     * Returns the type of text construct (typically 'text', 'html' or 'xhtml')
-     *
-     * @return string The type
-     */
-    public function getType()
-    {
-        return $this->_type;
-    }
-
-    /**
-     * Sets the language of link title
-     *
-     * @param string $lang language of link title
-     * @return Zend_Gdata_Books_Extension_Review Provides a fluent interface
-     */
-    public function setLang($lang)
-    {
-        $this->_lang = $lang;
-        return $this;
-    }
-
-    /**
-     * Sets the type of text construct (typically 'text', 'html' or 'xhtml')
-     *
-     * @param string $type type of text construct (typically 'text', 'html' or 'xhtml')
-     * @return Zend_Gdata_Books_Extension_Review Provides a fluent interface
-     */
-    public function setType($type)
-    {
-        $this->_type = $type;
-        return $this;
-    }
-
-
-}
-
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

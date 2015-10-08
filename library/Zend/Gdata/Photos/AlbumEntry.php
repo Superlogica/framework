@@ -1,609 +1,150 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Photos
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * @see Zend_Gdata_Entry
- */
-require_once 'Zend/Gdata/Entry.php';
-
-/**
- * @see Zend_Gdata_Photos_Extension_Access
- */
-require_once 'Zend/Gdata/Photos/Extension/Access.php';
-
-/**
- * @see Zend_Gdata_Photos_Extension_BytesUsed
- */
-require_once 'Zend/Gdata/Photos/Extension/BytesUsed.php';
-
-/**
- * @see Zend_Gdata_Photos_Extension_Location
- */
-require_once 'Zend/Gdata/Photos/Extension/Location.php';
-
-/**
- * @see Zend_Gdata_Photos_Extension_Name
- */
-require_once 'Zend/Gdata/Photos/Extension/Name.php';
-
-/**
- * @see Zend_Gdata_Photos_Extension_NumPhotos
- */
-require_once 'Zend/Gdata/Photos/Extension/NumPhotos.php';
-
-/**
- * @see Zend_Gdata_Photos_Extension_NumPhotosRemaining
- */
-require_once 'Zend/Gdata/Photos/Extension/NumPhotosRemaining.php';
-
-/**
- * @see Zend_Gdata_Photos_Extension_CommentCount
- */
-require_once 'Zend/Gdata/Photos/Extension/CommentCount.php';
-
-/**
- * @see Zend_Gdata_Photos_Extension_CommentingEnabled
- */
-require_once 'Zend/Gdata/Photos/Extension/CommentingEnabled.php';
-
-/**
- * @see Zend_Gdata_Photos_Extension_Id
- */
-require_once 'Zend/Gdata/Photos/Extension/Id.php';
-
-/**
- * @see Zend_Gdata_Geo_Extension_GeoRssWhere
- */
-require_once 'Zend/Gdata/Geo/Extension/GeoRssWhere.php';
-
-/**
- * @see Zend_Gdata_Media_Extension_MediaGroup
- */
-require_once 'Zend/Gdata/Media/Extension/MediaGroup.php';
-
-/**
- * @see Zend_Gdata_App_Extension_Category
- */
-require_once 'Zend/Gdata/App/Extension/Category.php';
-
-/**
- * Data model class for a Photo Album Entry.
- *
- * To transfer user entries to and from the servers, including
- * creating new entries, refer to the service class,
- * Zend_Gdata_Photos.
- *
- * This class represents <atom:entry> in the Google Data protocol.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Photos
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Gdata_Photos_AlbumEntry extends Zend_Gdata_Entry
-{
-
-    protected $_entryClassName = 'Zend_Gdata_Photos_AlbumEntry';
-
-    /**
-     * gphoto:id element
-     *
-     * @var Zend_Gdata_Photos_Extension_Id
-     */
-    protected $_gphotoId = null;
-
-    /**
-     * gphoto:access element
-     *
-     * @var Zend_Gdata_Photos_Extension_Access
-     */
-    protected $_gphotoAccess = null;
-
-    /**
-     * gphoto:location element
-     *
-     * @var Zend_Gdata_Photos_Extension_Location
-     */
-    protected $_gphotoLocation = null;
-
-    /**
-     * gphoto:user element
-     *
-     * @var Zend_Gdata_Photos_Extension_User
-     */
-    protected $_gphotoUser = null;
-
-    /**
-     * gphoto:nickname element
-     *
-     * @var Zend_Gdata_Photos_Extension_Nickname
-     */
-    protected $_gphotoNickname = null;
-
-    /**
-     * gphoto:timestamp element
-     *
-     * @var Zend_Gdata_Photos_Extension_Timestamp
-     */
-    protected $_gphotoTimestamp = null;
-
-    /**
-     * gphoto:name element
-     *
-     * @var Zend_Gdata_Photos_Extension_Name
-     */
-    protected $_gphotoName = null;
-
-    /**
-     * gphoto:numphotos element
-     *
-     * @var Zend_Gdata_Photos_Extension_NumPhotos
-     */
-    protected $_gphotoNumPhotos = null;
-
-    /**
-     * gphoto:commentCount element
-     *
-     * @var Zend_Gdata_Photos_Extension_CommentCount
-     */
-    protected $_gphotoCommentCount = null;
-
-    /**
-     * gphoto:commentingEnabled element
-     *
-     * @var Zend_Gdata_Photos_Extension_CommentingEnabled
-     */
-    protected $_gphotoCommentingEnabled = null;
-
-    /**
-     * media:group element
-     *
-     * @var Zend_Gdata_Media_MediaGroup
-     */
-    protected $_mediaGroup = null;
-
-    /**
-     * georss:where element
-     *
-     * @var Zend_Gdata_Geo_Extension_GeoRssWhere
-     */
-    protected $_geoRssWhere = null;
-
-    /**
-     * Create a new instance.
-     *
-     * @param DOMElement $element (optional) DOMElement from which this
-     *          object should be constructed.
-     */
-    public function __construct($element = null)
-    {
-        $this->registerAllNamespaces(Zend_Gdata_Photos::$namespaces);
-        parent::__construct($element);
-
-        $category = new Zend_Gdata_App_Extension_Category(
-            'http://schemas.google.com/photos/2007#album',
-            'http://schemas.google.com/g/2005#kind');
-        $this->setCategory(array($category));
-    }
-
-    /**
-     * Retrieves a DOMElement which corresponds to this element and all
-     * child properties.  This is used to build an entry back into a DOM
-     * and eventually XML text for application storage/persistence.
-     *
-     * @param DOMDocument $doc The DOMDocument used to construct DOMElements
-     * @return DOMElement The DOMElement representing this element and all
-     *          child properties.
-     */
-    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
-    {
-        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
-        if ($this->_gphotoTimestamp !== null) {
-            $element->appendChild($this->_gphotoTimestamp->getDOM($element->ownerDocument));
-        }
-        if ($this->_gphotoUser !== null) {
-            $element->appendChild($this->_gphotoUser->getDOM($element->ownerDocument));
-        }
-        if ($this->_gphotoNickname !== null) {
-            $element->appendChild($this->_gphotoNickname->getDOM($element->ownerDocument));
-        }
-        if ($this->_gphotoAccess !== null) {
-            $element->appendChild($this->_gphotoAccess->getDOM($element->ownerDocument));
-        }
-        if ($this->_gphotoLocation !== null) {
-            $element->appendChild($this->_gphotoLocation->getDOM($element->ownerDocument));
-        }
-        if ($this->_gphotoName !== null) {
-            $element->appendChild($this->_gphotoName->getDOM($element->ownerDocument));
-        }
-        if ($this->_gphotoNumPhotos !== null) {
-            $element->appendChild($this->_gphotoNumPhotos->getDOM($element->ownerDocument));
-        }
-        if ($this->_gphotoCommentCount !== null) {
-            $element->appendChild($this->_gphotoCommentCount->getDOM($element->ownerDocument));
-        }
-        if ($this->_gphotoCommentingEnabled !== null) {
-            $element->appendChild($this->_gphotoCommentingEnabled->getDOM($element->ownerDocument));
-        }
-        if ($this->_gphotoId !== null) {
-            $element->appendChild($this->_gphotoId->getDOM($element->ownerDocument));
-        }
-        if ($this->_mediaGroup !== null) {
-            $element->appendChild($this->_mediaGroup->getDOM($element->ownerDocument));
-        }
-        return $element;
-    }
-
-    /**
-     * Creates individual Entry objects of the appropriate type and
-     * stores them as members of this entry based upon DOM data.
-     *
-     * @param DOMNode $child The DOMNode to process
-     */
-    protected function takeChildFromDOM($child)
-    {
-        $absoluteNodeName = $child->namespaceURI . ':' . $child->localName;
-
-        switch ($absoluteNodeName) {
-            case $this->lookupNamespace('gphoto') . ':' . 'access';
-                $access = new Zend_Gdata_Photos_Extension_Access();
-                $access->transferFromDOM($child);
-                $this->_gphotoAccess = $access;
-                break;
-            case $this->lookupNamespace('gphoto') . ':' . 'location';
-                $location = new Zend_Gdata_Photos_Extension_Location();
-                $location->transferFromDOM($child);
-                $this->_gphotoLocation = $location;
-                break;
-            case $this->lookupNamespace('gphoto') . ':' . 'name';
-                $name = new Zend_Gdata_Photos_Extension_Name();
-                $name->transferFromDOM($child);
-                $this->_gphotoName = $name;
-                break;
-            case $this->lookupNamespace('gphoto') . ':' . 'numphotos';
-                $numPhotos = new Zend_Gdata_Photos_Extension_NumPhotos();
-                $numPhotos->transferFromDOM($child);
-                $this->_gphotoNumPhotos = $numPhotos;
-                break;
-            case $this->lookupNamespace('gphoto') . ':' . 'commentCount';
-                $commentCount = new Zend_Gdata_Photos_Extension_CommentCount();
-                $commentCount->transferFromDOM($child);
-                $this->_gphotoCommentCount = $commentCount;
-                break;
-            case $this->lookupNamespace('gphoto') . ':' . 'commentingEnabled';
-                $commentingEnabled = new Zend_Gdata_Photos_Extension_CommentingEnabled();
-                $commentingEnabled->transferFromDOM($child);
-                $this->_gphotoCommentingEnabled = $commentingEnabled;
-                break;
-            case $this->lookupNamespace('gphoto') . ':' . 'id';
-                $id = new Zend_Gdata_Photos_Extension_Id();
-                $id->transferFromDOM($child);
-                $this->_gphotoId = $id;
-                break;
-            case $this->lookupNamespace('gphoto') . ':' . 'user';
-                $user = new Zend_Gdata_Photos_Extension_User();
-                $user->transferFromDOM($child);
-                $this->_gphotoUser = $user;
-                break;
-            case $this->lookupNamespace('gphoto') . ':' . 'timestamp';
-                $timestamp = new Zend_Gdata_Photos_Extension_Timestamp();
-                $timestamp->transferFromDOM($child);
-                $this->_gphotoTimestamp = $timestamp;
-                break;
-            case $this->lookupNamespace('gphoto') . ':' . 'nickname';
-                $nickname = new Zend_Gdata_Photos_Extension_Nickname();
-                $nickname->transferFromDOM($child);
-                $this->_gphotoNickname = $nickname;
-                break;
-            case $this->lookupNamespace('georss') . ':' . 'where';
-                $geoRssWhere = new Zend_Gdata_Geo_Extension_GeoRssWhere();
-                $geoRssWhere->transferFromDOM($child);
-                $this->_geoRssWhere = $geoRssWhere;
-                break;
-            case $this->lookupNamespace('media') . ':' . 'group';
-                $mediaGroup = new Zend_Gdata_Media_Extension_MediaGroup();
-                $mediaGroup->transferFromDOM($child);
-                $this->_mediaGroup = $mediaGroup;
-                break;
-            default:
-                parent::takeChildFromDOM($child);
-                break;
-        }
-    }
-
-    /**
-     * Get the value for this element's gphoto:access attribute.
-     *
-     * @see setGphotoAccess
-     * @return string The requested attribute.
-     */
-    public function getGphotoAccess()
-    {
-        return $this->_gphotoAccess;
-    }
-
-    /**
-     * Set the value for this element's gphoto:access attribute.
-     *
-     * @param string $value The desired value for this attribute.
-     * @return Zend_Gdata_Photos_Extension_Access The element being modified.
-     */
-    public function setGphotoAccess($value)
-    {
-        $this->_gphotoAccess = $value;
-        return $this;
-    }
-
-    /**
-     * Get the value for this element's gphoto:location attribute.
-     *
-     * @see setGphotoLocation
-     * @return string The requested attribute.
-     */
-    public function getGphotoLocation()
-    {
-        return $this->_gphotoLocation;
-    }
-
-    /**
-     * Set the value for this element's gphoto:location attribute.
-     *
-     * @param string $value The desired value for this attribute.
-     * @return Zend_Gdata_Photos_Extension_Location The element being modified.
-     */
-    public function setGphotoLocation($value)
-    {
-        $this->_location = $value;
-        return $this;
-    }
-
-    /**
-     * Get the value for this element's gphoto:name attribute.
-     *
-     * @see setGphotoName
-     * @return string The requested attribute.
-     */
-    public function getGphotoName()
-    {
-        return $this->_gphotoName;
-    }
-
-    /**
-     * Set the value for this element's gphoto:name attribute.
-     *
-     * @param string $value The desired value for this attribute.
-     * @return Zend_Gdata_Photos_Extension_Name The element being modified.
-     */
-    public function setGphotoName($value)
-    {
-        $this->_gphotoName = $value;
-        return $this;
-    }
-
-    /**
-     * Get the value for this element's gphoto:numphotos attribute.
-     *
-     * @see setGphotoNumPhotos
-     * @return string The requested attribute.
-     */
-    public function getGphotoNumPhotos()
-    {
-        return $this->_gphotoNumPhotos;
-    }
-
-    /**
-     * Set the value for this element's gphoto:numphotos attribute.
-     *
-     * @param string $value The desired value for this attribute.
-     * @return Zend_Gdata_Photos_Extension_NumPhotos The element being modified.
-     */
-    public function setGphotoNumPhotos($value)
-    {
-        $this->_gphotoNumPhotos = $value;
-        return $this;
-    }
-
-    /**
-     * Get the value for this element's gphoto:commentCount attribute.
-     *
-     * @see setGphotoCommentCount
-     * @return string The requested attribute.
-     */
-    public function getGphotoCommentCount()
-    {
-        return $this->_gphotoCommentCount;
-    }
-
-    /**
-     * Set the value for this element's gphoto:commentCount attribute.
-     *
-     * @param string $value The desired value for this attribute.
-     * @return Zend_Gdata_Photos_Extension_CommentCount The element being modified.
-     */
-    public function setGphotoCommentCount($value)
-    {
-        $this->_gphotoCommentCount = $value;
-        return $this;
-    }
-
-    /**
-     * Get the value for this element's gphoto:commentingEnabled attribute.
-     *
-     * @see setGphotoCommentingEnabled
-     * @return string The requested attribute.
-     */
-    public function getGphotoCommentingEnabled()
-    {
-        return $this->_gphotoCommentingEnabled;
-    }
-
-    /**
-     * Set the value for this element's gphoto:commentingEnabled attribute.
-     *
-     * @param string $value The desired value for this attribute.
-     * @return Zend_Gdata_Photos_Extension_CommentingEnabled The element being modified.
-     */
-    public function setGphotoCommentingEnabled($value)
-    {
-        $this->_gphotoCommentingEnabled = $value;
-        return $this;
-    }
-
-    /**
-     * Get the value for this element's gphoto:id attribute.
-     *
-     * @see setGphotoId
-     * @return string The requested attribute.
-     */
-    public function getGphotoId()
-    {
-        return $this->_gphotoId;
-    }
-
-    /**
-     * Set the value for this element's gphoto:id attribute.
-     *
-     * @param string $value The desired value for this attribute.
-     * @return Zend_Gdata_Photos_Extension_Id The element being modified.
-     */
-    public function setGphotoId($value)
-    {
-        $this->_gphotoId = $value;
-        return $this;
-    }
-
-    /**
-     * Get the value for this element's georss:where attribute.
-     *
-     * @see setGeoRssWhere
-     * @return string The requested attribute.
-     */
-    public function getGeoRssWhere()
-    {
-        return $this->_geoRssWhere;
-    }
-
-    /**
-     * Set the value for this element's georss:where attribute.
-     *
-     * @param string $value The desired value for this attribute.
-     * @return Zend_Gdata_Geo_Extension_GeoRssWhere The element being modified.
-     */
-    public function setGeoRssWhere($value)
-    {
-        $this->_geoRssWhere = $value;
-        return $this;
-    }
-
-    /**
-     * Get the value for this element's media:group attribute.
-     *
-     * @see setMediaGroup
-     * @return string The requested attribute.
-     */
-    public function getMediaGroup()
-    {
-        return $this->_mediaGroup;
-    }
-
-    /**
-     * Set the value for this element's media:group attribute.
-     *
-     * @param string $value The desired value for this attribute.
-     * @return Zend_Gdata_Media_Extension_MediaGroup The element being modified.
-     */
-    public function setMediaGroup($value)
-    {
-        $this->_mediaGroup = $value;
-        return $this;
-    }
-
-    /**
-     * Get the value for this element's gphoto:user attribute.
-     *
-     * @see setGphotoUser
-     * @return string The requested attribute.
-     */
-    public function getGphotoUser()
-    {
-        return $this->_gphotoUser;
-    }
-
-    /**
-     * Set the value for this element's gphoto:user attribute.
-     *
-     * @param string $value The desired value for this attribute.
-     * @return Zend_Gdata_Photos_Extension_User The element being modified.
-     */
-    public function setGphotoUser($value)
-    {
-        $this->_gphotoUser = $value;
-        return $this;
-    }
-
-    /**
-     * Get the value for this element's gphoto:nickname attribute.
-     *
-     * @see setGphotoNickname
-     * @return string The requested attribute.
-     */
-    public function getGphotoNickname()
-    {
-        return $this->_gphotoNickname;
-    }
-
-    /**
-     * Set the value for this element's gphoto:nickname attribute.
-     *
-     * @param string $value The desired value for this attribute.
-     * @return Zend_Gdata_Photos_Extension_Nickname The element being modified.
-     */
-    public function setGphotoNickname($value)
-    {
-        $this->_gphotoNickname = $value;
-        return $this;
-    }
-
-    /**
-     * Get the value for this element's gphoto:timestamp attribute.
-     *
-     * @see setGphotoTimestamp
-     * @return string The requested attribute.
-     */
-    public function getGphotoTimestamp()
-    {
-        return $this->_gphotoTimestamp;
-    }
-
-    /**
-     * Set the value for this element's gphoto:timestamp attribute.
-     *
-     * @param string $value The desired value for this attribute.
-     * @return Zend_Gdata_Photos_Extension_Timestamp The element being modified.
-     */
-    public function setGphotoTimestamp($value)
-    {
-        $this->_gphotoTimestamp = $value;
-        return $this;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+4+oV54Ln005DvVWs7AcL8af5bU/QYXCbPq5tKDaA5Z/QvbFs2IRMIym29PgJdjXTZHn01jZ7/JSO
+APT09xVAYD+lvqO4A/isoKYmsvH2RSKE7DzTgS0iELKpAlajIGw31XxCNURHe3VF8QQgbE/ll5F6
+iC55jvlF4uHFpKKQY9uoEwTa44Kuzk19nYwMGmgA/Dumta6/XLS4XfDPtGPWOk/GfnGDbRwe/mPT
+qsFLeW5zP8sOeTDiwNhMPAkQG/HFco9vEiPXva9DMVlLts0DUfdgdy3yPuAgHHxotM/Xwd+Gq7UY
+2xzKtLUnTQbQB+2EfE77waUSYFuFrV4XNU9ufZzAUN1JeIedarszkX/8SdT9lRkd0TsrjCxjfB4m
+VjqCOwxK/7NMkVA7MjKw6HjJT5BzFsaZnuBI6d1OyKqLX9YEMAEpyRl4/ZcnzU1Q06HKjs5IVyiX
+3EKB9wn3Obdwpxqn0p3exoNiTyI88Bl57bPa7nEapK6NALM5VeZablykXaF5Sa3uVFdjga/xPkGh
+Lakf2pDlHjCQBCQcB2kb1rs4/Jg4CmNhJm6vRHzgLiy0sXNOu7RqJnX37lsDky7qZnue7IinyZfY
+XLUhbB5cjrKAsStr2Gf89t272RYR+6LjLF+nU1+m8dal1xFJuckAlcghQeIf+Gw8OEgWDwdtB5LC
+lVTR4uR+ffiqU3KYw3iaI99Sgdb3I8pFT7n6UfF1a4bG55MIEebJ5Swl49J9rqPK9ZhIeTSlk6yV
+Tt6t6/OuMkwSHYn/SPEYmHbIZFIytaDK4KRhMPnCW+ZD4YffHhvcZTkGogdNPwmLwe9QofiLSPA/
+Y0MPEZBry/QUITN4JEu0inksWjpCpQpZBIKnLola3RZ2bWwfHCf/o6nfXDjNhLJNjOl2Khd8gjJ2
+kshTALSBRqzVYwiAdj4Asf2Kc2wVRPXThd6KQspOyNu+1d9QsZeaZMPUbD/7cMdHaZY724qI/z3W
+CV+vLSEO3JAbi/6Rh8E3a9dJEJaI1+uNNmfpYmvMCRzbln6GKvYZ2+gC/J1wE9fkH+g/GNwnVVka
+kwipx3ImL1fdHvOf4v/NqCZ2CvwyvQsEnTdrURFIRnOP6T7lNG3MEpjnbHP2RRR7jfKMVLm8lskV
+CeBe7q09HCUossVD+zTFBIhSC2cD9oBILeFVnj/f3LIR3M1hgMbkoDMb05jLiEzEi0hO9ALmKd95
+nfrYC3Blhd5V17K05oYNpYhFQuNq11bqUtgLSu8WEAkaF+vrIoEVEBeHVOwuEwhNyQi4sBgsOsbD
+5qeq9zZs9p4ZhlzZsTFkODy+kmnuJE2oqWAsEyl+djl1EUGclwm0oCVwUnW4zaxvKnexje+wVGhK
+sg1i2wHAQ0heujhZdCtx/YNqmVEm8rOV3fwixQeJ2mKSy929GFWUpA5a81XZKXyngPPmD7ih67WJ
+7l2sSEes3RD+koyYU/xjPTg6l/loMKYr4dhVARzPK80g1qr8XX0VIN+YJYo2u51wzhmJeRvuswqg
+E4rDwfBEpIiz/8MFOIjtNN+WtsWnnsR5/3iwNcZK6YaEK00okaw2DW98gDyA9gWZbLJRoIcdWOWv
+kOr+3xcnpqQh+mSpZIlDZEcQJEV4iGIXqNBcFXB9n7SCaY5ksXTFBDjy7tWMdrwg64KpYV8aki3r
+D5SiElLLKGWYBTX3hcHCyt6Rh4OWIJz0nGlxfDfL640LaIcXtwNMq94bHtqufOETxSsdbvr5pkal
+M4waGJdTgHarfz18OvqIa9b/cRHd2sXo6tm8w8L4hxYKTK9iNAdHutteViP1O6wSD7Ngj4EvlXO1
+gBQHQU50AjjV90qSPzERO7n6P+24BOUb0UDuffjPgXcg1PLLCWYzb0xG0yl5vR+/bjzgzTaah6DY
+bUs7LdDT2nMNT7z4LrQQg1fuDkA1lT66KCRYCpjTWaPqEkZrL7g7Mj2EP6GilC+Tzu8nVGPOsHnS
+c86GkIeALgHfFcbF1FSGZYp739WaxX2VFiswLVNImz9rbQnmdR21wVJhcunyq1SwyUcN7xSiYGsb
+EW4Rcc890HBCiPGmosbdWES/UMms0FpIAJAXpa+Vj6ueKwEpnE6uohAi75rCtdutlaDv899i4G7f
+OLBOQdr580dHD3kxWTFXJc0nog57C42NRS6myuxViaS+4odDaDD9KA0hlh4obWlpJaPVb+P2WKf5
+/SIoJiZZwSlGdDxjGuu53tFITMOhm2oG/a4U1lfoVZN1504QIj4v+y0ZO/bm3D3G/aLvc/7Bf6E0
+WP50GiYxs/xtWbr9pOt2a4NECgUlUZfWdwE2VidhdGZAd8XgmiOmny7dCeFQ3kxI6bv1rD1Sreox
+Kat8AbH8GTg6BvXIDNOYzbRFrMhF/7D08bEKbU9jO7KS6JQIxnDf0XdZxWEELAb5/fQ+Jjmg19FT
+iENWN7ZzUSWL44LmrHpp1lnLWF7TJbMCjcEtowW8DxUtGKR9Z49HpMkVhJ8vYq0I9BkxJ+yHiTtZ
+onwo8fyG61+9ycomo3NZtz3fxm3KPgv2Ce+jmsf64zRBkP5XzQelFQ1u0igSktT8/+7FIXXnKFmx
+DXVyTst3EFoykEEFfeHO1qDdcSRRlk0KaZ4NvYcdfafsnNfkuV6vGhCjHn8AnyvQzF96IKyIyDAJ
+sU5uS3CvmyDlGh0YEFDeUG/Oc+pUYCZGw5rHjGRxkihOy+5ZTWpuemxjPH6a4l+C/zypN8XKpACZ
+Rkz3SJ8vY7IZIaGXJyjAkd75KI0hcbPmCNhgsNZA5FXNHB6wKBFNCnJ+IMrzYOxtM3FYnRPqSEQo
+HDJOjwO1p47jhyxoqnllUVb5+uxRaPL29RFK01eSL8INoylvtpqm7MYPGUyv1ERUC7amk+SnG2Ko
+xZAFMEyeaokkHQE0hl6P6Bxu3rtuxRjND/EyKNkF4kJe71jxDe6716pSmI86G1uh8u3/+1oI2E54
+x4eQ8LI9TMSVRh+4FvK4FKsAIAjtY7F8YQIvxehUaIEfUquqginZlEGkqai5VHunMH9RjFzII8gz
+QAcnhvg0+qflmPMKwo2QO99nH+41tP05FXmZGuNoj0cwPWTZ9AN+OggphWRHO2EJj743/+OAjDcx
+jZAQXad5GhzyLNGCbL2z8u6CEpS2vJizeVkThYe9NP3maHWgjuEuPuFyFYJxtRjSjqQ92u/ZrHWZ
+S2ZA2tI/1G0Nx15DVCY0thkc0FyhljdM/zD6r0o/99hle+nUG1bkQL5CyY6TOjDZ+6Lc75n23mZu
+Hh0PxFsZjOODxf7ldxXAPS6GJLNfd4PE/EUQGP2wwPBe6KYvO197ChfZbcqkZSHcvhclaiedpIll
+D0wrIQAUFG5GRZim42HWj9YuycIf9Eoorwu1k60iLMaNjUACqIP7RLKlq9wlvjySW5izUtYejz9d
+5St9wBSbJ5yKZM6Do9kc6rj+AkWK7PhdO8uqBJWEsHopqojdIiilsMedztgsIvGiEDJcDfeSpfjl
+Gy58Obfy2U/pIFhTDaRqud2YX4ce7Y11ijlbQympphxagDMLWizs4hxnwJFmY+hOSO0B3KtacZEa
+ioxm61w8voGfgbR/cmmNYNs0p8LhkRQ0/g37BRLQZHB/6DjxP231BVyBeO7Tlq9lbZsOAKJYH1+n
+c46WYiv90qeFbIJtC+iUOTsmzihLNEb0fzjOGoQt0bhROCbXTLZpGJ22RG6dlBsWKVXgHi+X0xlR
+wgZDeG+RB9N1vuMJunbbTTLS9iGkVCw33F+ZjYlhVxOez8yl5F/ZrnP9C87LuKvqs96kTbkqdBGq
+QzEJ+LWSo1JcCZku9Fi+aibeX/PujiGcgm3IPqzSXrKuTrEAZemToklaetSDOLXselQvVDzYI/fo
+ZjqIRH57y6irKx3szYhmvomDmJM1Q/hRZMNDgrujSyjZJPXLl2knu2lBBKkZn/Zbxe7pQOIuRp77
+D+9gOk9xBUb95PNfxtXkGfhpGqXoz3Mt/i+ICx5xBmtUIMIXZmQfwRsUbcvAl3zzbX8JLpVoO0g4
+L0omKRrFygMVQxBtob0CkcMQk1OzHS9la+nguoKjiNNXyDyfkoYV2ZvbEGkOI7BDxqL1LcWhAdN1
+Sz+ZL7ONWd+90Du+D6PWaS487e4wTKO/nf1kjVSlwV7oZCc9TDh2gOiB4DI9MsLLj7fcjlleeINm
+MFpoTUY+mYEASgFmt/pzwVMfMmOZwi08RBrVI0RyhTUlKXPR3d42zLHly4XAWvbjzUP6Gxl2XFHC
+lUO4Ofv0kQxi5cB8YzTDlszx0s0kTPpvz45JRdqXGY226yeIKBO4bHUTJUuaUi8z+D9uzbzPSCjG
+CY5VR27iGIC4uU585sdK8fmzrCLMhhEkBM0WJ8IdLwHn74OEukrPVqf+3lu2On2mi+1CQwwiN1Ys
+pB1lUlASwXkfiQiCYVINYwYII2RRwXkYs9zq95//e2G22dfGnWN8Y8RUQmAaYViMknnQmaRmBYEQ
+hTDj/h80d9pRnDFVob4ZzK44+cX3+zrdVF+ByeDm21EifnADGVqilZNFFWf/iAn6ki5icXjPJ8gM
+5EGePJ36vFXMNZE3qwvq/sVt2Y2Bd0txeJ3O4CbsukYgtRVaupZJ+qo6VUalMG33cClEpjEWSEua
+o/17dWAQPyzasxgLQ+GPL1IJgUAFTzcU8GXQbWnp6eOfwLYekR2wrdq6G6v9oO071G/dnPWlpLBg
+r5fRQJ4K8q50j8srgf0kAh8iQwU2hwTJbr9jgXgCjXwx1b5vQmXv7u1A0re9PzT7VH7ymRv1/ZhF
+TV/xuqKRlkXfSZCDCBdsaZBjUKyV7OaOq0wII3gy4YLtxTfALRDOdLlyK7zAA5dmHIlaRtP62iYY
+6pwCn+F629QXFrMdMgIOPHUxqMhOc2/FHQS7uxfr3yvyUs0/HGoZOnVwvWzvDEcZ1zkjL/GS/ZQF
+SzRao7cayFa2g/LMzrn9shwqlvwbM9+4YReIuOY0zy7FRvsGoSEr+Mw543sI2/lT/VqRKyk5Gs5Z
++HXjX1UWE6gg5ffIZCDG6i1+vLSNYX1+D7+eSGXftydqU6W75UKlB7WswRvREy2Mc4yakkjRN7z4
+Yctky5w7dBXB6iuCZ+AGLI5yeRcCeYBYWNE3lfyJd+VvewlIusRw+oF5eaW7sE3tp5Zbq/VYtP+e
+Nq08Ar5LBBPBxlcpuGgga3KYPfVp2tx3wCah8gw+UQt9Mj4Ghdpp+dnxFM9BHhMqpguppN7RT8na
+fYy/z75U4kzUdw8x+ustfSIsWe8frS2bljsku4EgmS17Sq2znS0snKniyNGVLmz2XbQXsjsxaUpI
+WNokyibqgAxoafk8Mskw+1J9FfEXL5+0dDg3Ud98L382Sa7mUZtj1FkAwhMPhVCBQBmlsh4XSqRN
+FweI7h16hXA4UPKYi8H80BGbweJkhObtP1QbNN+IZ5Riol+BfbG/fHbu2vHgQJr+LDCA6vhhj6W4
+mwMKlsWujka3iLLgJkv9nsj/JXlcah1LceYje9evQ7/4E9Hw7iyb09iosBPX3lO+wplA7nV5OFok
+3eoXzdc8Kcx6Fn7VRusQNbbS1k0wqyTACfshJ2YJuFGoQ9vwZrTewHDNhF3t5btp2ASH0VXdonWC
+ixkxTJFKBvgbrzkb9ZsT6U8NNYpH24JIdVrO86aZqgAp5dPpRwmbXmSnRU+gp63VsHc+Z4LJtm2k
+Niyfjw9FtsPqhPVGtcOQoqmIbPZ3IuHs9pbBenf9AOgj5fZEFkENlGBBO1USKtDmoH7gCtUJBnip
+BZY6EKwqrs5YOoJB+ty0OryCrhaYGZFt5TMFCk97p0YP9gM06Vy1dH3SK8o+O0Ig5UmnJxdR+LCe
+FeJRE7hDZ2lLuF+1ymkpKqFvTetf8zmcJlivsezayEZ1s6nlx/EMR3/OWMvk41gmgQqj3mvD6o6J
+1XoH8tB4b7ChMy2j9Q+Codo+ssF+G90pvqu2BOIwUxzJw8be2OFfWt91Gs6BT1eeKsw2UZPj/3K2
+kaTf1uNfxsqdr8C01siHufzZFcn3oXJ7AyQxhtAx4l+AzvE9JugKGrN/Fyn67NH8lSe9Re5/KPUN
+56yGftBpos7icrtF95mTsQt+lQgrQxnSu0vJj0NW3DGJJYPjFQiGIfPRsJEqG3+Uj7bgLBhl2sok
+H/emEv0qhpPoY/zoaCfyGKZL4FCVEvNB7dxcfjm1V3WFDufE7CGnfMfOvOcHQTJ1nWvtQzYxzlnP
+oxD0umGLQiCPp2YjdbMaudFBJcLlRYN7bREgrKG4R0Qum9u5Tw6srfbY1xpGrI/OjyI/difb/NTt
+MMoxYfnWCCHuHjydCIieZlQjS28sMu0+tz7NZbl6VWPKhGwIVaPpPPNTmNbh9er/ACLfDZ93GToa
+zHsm3xtSCHImmg1BK4eKL3q5trM2UG7YarCXM4g3KZJUZ+RV/m0elgd9LS01npJBTT4iAQ3REEkY
+zNxCMSYN2gzIVF6FWViWrOqJiIQDNBO0ds1H7TJn3o7eLjix84f3dL+Gwk308WgEUBwipjyukwnv
+z3S4ez2BGjxOJVeDlUk/xAXlXT00vl0DOweIEMqicpsdmPb8zHpcaIOpYlSZ99OdiCspAsgG1EDf
+Mm8gog3xWan/vZtZdVT7fm2rzJJTBGO/ECLH+jYmQHGcYh11z3Vn6GWqnpEotrWJzueWx0slUPy1
+HYYzHHxJvFTY033+WHXXduqk2Q9ZNM5SLx/1H8u5V6G7mGAhGztAqUQ6BnPzYTb/vnxbCJi5pJVO
+njAyobEXyORV6rOtNsaQ45ECkjtAW0tkTji3Bc3ZsRXfGz65b3I1sZTZYF4j/frYSLN/EY/p2ZWf
+DOXXohhup1D+g/SwAqC0cYOGLVyW25wB9wIeTsy/ng4JgaarUYe02+zibuvnGQxIU1+hUFE2zjIy
+XgWxscHRdJUF2qoTi2DI6R38npD9x4r7aTfBggf5u+U6mGEBExxEzsPIm4VDQXjK6aIfGPUgYUMo
+SPJjORmkwzytcELdzQb+LLosia+YAMBh5uaFtT9SDdrsoNbvjM81/noXE6VWAqSAbDdQOKkfnDSp
+PvBbcTLUvsP+Rrgf199zmIsdZ6sOqQ2PXMVMCk0ha0vSTK+S2LisZYZFhQ/fCl5zRIbl/9eU1icF
+en1uNrBo5tvxXUuCshQXFUtbgz0cQi3fZpgoHgSImg4t7kgmw+Hu+bZRIRQED15Q/s7ZphBbIsKw
++F1bjHBh4CmnzCAYX3GAMsqkz69TyKvB9mjspLc4PhKVkWSwpZMcfypK9r3dyAntGT7BcS3TG74H
+Y3j794QocYmaweLSmDPcGW/0TgrsGWkucUPDievAisOpgzH7CgCsKNge5T0JjLSwD72fDPVMM1Y8
+xTRq6KJ8Pawm6bpdmOEUB0oVAFoBSVBlxywpFHfxo8o7dZhuws4sxzzQvpdiZcuUeuneLeWQycza
+IVvkWkSIEtleo8Jt9woKg0ihyZ+3irGqoZeR5+R2xQGapDe7keGnyWKYGkgdxWNaUsCaNX/aUYrE
+eyY1Mo5mcD3XNBvGT6QAcVMQ6uytVP8XEGz7McQv7lDSVkCYOyVHK8rX2kO6b241OexQOfEk6+UG
+3JuoeRk+enZKlBcnSorhpH9s8vStQSguKAtlU4GYfdsmsNF99gZt8BHKw9cwwW0ktjaTfLLupoUc
+okFQJzXEMpEgI92OH+jUdWaal1IzlzCirJ5aI922ute0YkJuEyTygtR33CV/SITH1D4j1kG/mvtl
+L6FInoTPgGH8lyVzRmvc3Xzkx7h7QC76P5XSLglOKCuCqOci4EqZozd2sGbfvjUyUNFYJjUmjMFb
+9kiAvS7RCejLmqUvWs7p6UM5dAu0PEvguIwcfws5gPtgzpYpC0a9wOrME+cKMGO7KbVy3If+Mc2e
+MlfQBEjLyuDdye4Qj4ft4oyvk/i6qoncddW35gGpx1FFe2d6PB0/tVeemwlw4s5H6R8mRoWPZjZ5
+AcevSrx/buStaOoiQ4YmdKTRb65ZeMUjOE3Mfu3CdJCdIyOwFdYtfT/PCNSCRjVT0uu7nUe9C3Ph
+QVD5jsL1GgvxlNUPDfV8lrZ21tEA8nDwf7e6UMlCcyf5kk40l43jxm2+EF4rJ/4BFkvnP79zW8C0
+Lg8eAzXjv4INxE7AauWI/Lp0NWSFuYjAZ6BZ/wLNOm0PADV6/YYxBlrVP4zpXoFYvL2dtzngOPG+
+YOjYYK3QXKMiKVkb6Flyu96uIzDmQfo5hoktKDsXKld46hQQmhCfSnswqZtOHwFv0e9mCPaIsTtx
+kkmHdXwWtsr6VYotpE8Qn9u0UMPoVg+kktCBEG9QJWQmHAonpfBq6o1M3Jza5HVM2NzyNqn6VkA4
+EoUb9uOXUGAizfSxuZIIAn0wDqo9kgVs86zNp2naKxNeJmKBBm/5C2MQPbjNEJ7myITyDmBkWhgE
+XVtWLjmzWXc4KGs8kwANyuwoa7cNU18OxrxlsJUx6NMs/wPFysXMepOPhxGoaIDPbL/BhfPZK+fY
+o9s2oydAxFf8uFuQ53MCJkaisCSueQJkmwWXYSkY1Po7UI0u9mj9OyR3jRaJur2ncRlkcoUI7cS5
+mRCFUByNg53kN2paWfxBAGYMTUhXpxsT+aJWZh36tjKRy0GJ63v96HY9wyNp1KVgJTFVgibNfc4Y
+8yktKpAeMtw8ezHT+NSiNApQyWNCnrN8u1W/yVGlMy7ctB4K59bNUTojkIuxK2XbUl+QXMDSQcne
+ZkBCloDOJqUruKsFYxDNy8Smt7IHKbwf7XloWyOA+RkPkxGx3qmgWo9mOFcSn0JZf33Fjnn+64uG
+yGfQlvVUK5RYd+9FTI9h9tgwsjdMeYTspb/sh72OAawByjZ7lO8BaeFDW6O8ZL2NZduA8Qsg7sdL
+OV5mA5A1K0B5OjbI51752Mpdss2NOhegNvTGbnQEDcfuMQ9+TtE3pFy5Xvh0N3XLRBUVTCONAm9C
+DSSAd6ESgxBuFyYh5cRa0fhP3lBXE14gK6Y4aBdaIu82CywHWWce8BQchJhTYPdk2svaD8KIk35I
+vWF9+S6vjBLkfH4GlGf86JPmrkRvE+eOCAyADRcexmBfqRPSMRPFzeW8qM7K5qVjtTh+iLI+K06J
+NtDx50LEuQ+WgYWFHpKY0sEbXh04I9g3prKMq0O4mM04ny/UAdDz5W3no8E4Rig7GqE/0+Thc4q7
+Hl+zgYCpy3vDW9APUcq3t2TN0TcnBnRYW3fF6gyde1yp6znnDJNEETld2HSQlabzE47n/ePDyJJB
+5LjYDHc1n0aFuUlqHPhdwuk25MqMoTxYD3sSRfhOTzsmehfmHP/ubktJj/v5vccBOd5+MgyxzGzF
+erWgFJwih9KlQJ5pdWT+YLhwkuqOFZMXpe1j9SWoJNjVePtL7gmRdVXK5Tohpx+SH5Sz8T5mP+7h
+g8LkSE2S99Y81nK3zL3iTY51N558JG+GVnEgFPNbnSsMW6d7YI4f5B+9wJx0Q+4406oZCs3NXGyB
+PER4FQr5PNE/c8FlenI6stN9nPHel7kX9NzXlz9toEcbaWFG3Py7EDLrsQEUuOYMCIR7QaMZcGyu
+RW/03n23u67WLDhPxxp147hks5d/9Qn0SxZGThN4858PbXg5SxynIbp+PCDrNjAoOG5IUSbJE9XD
+i+y3ixwZRicOW+FcoutFTii6lqL4EN/HTiTpmY6KgCWXpccxcP2bbXsea3yKj0jvdlj9WEYrW09P
+DZWmXXW7EPGTOyZtvnlq8gaSpyg5EpB/U22L0Gy1OuzuBfw3s19hIQLO6daJlgZPe0ys/n/wk1d/
+Kna/MUj2PDEwABFl7B4p6nE85AF1nQsvm5B0Q9pwc8pybmpVZDKxLqq3hmwDTSYVHcz/rNvr/X1a
+xluZpxLUHLj5U61xTf1smqXfJEq/5hDDGGr0Y4GaEKfDlHF52l7va2UqSmLVvCsu1C9Zd9hpYMEe
+TXqfqMGE1p+LMshDmD8AYMNJRLwKZc+vKmwcQkKR/1asI/Uru6+olyT5OEUvZhp6iTTzgKq9FGfT
+UZCOLkGtET+xzB0n7YiMBAwjqUYSfQ//noI74qjQJobYnL7QlE5+Wft5S+eOfoPD3q1vbQcYruPd
+eEQudVBvTip1ImrORJ0MA+EB68I3jkmsnyrFfnpYtcI0UVhvxwX93LTLpkgqvbtJOU3uN9m52uf5
+WXIBBM6/ih80g9k8fv1Qd2bELvTfGAwwMkikMAM7tb+uaRwldzgFEYT5g4MJK7IRScU+SudStufu
++z4bNr9eciijboDUEPPx0WGczYlR1psQn8Zia6KsgT5R1NhfM5/snovOgMwL938btIdLUN9+JV+M
+vTpXQDUU5F76Y3kLah1U3VAJ0/L/kTSGENGHEYz1tkONXDt3AyJGs/cA41CjVtBncAD5nDi0QfU7
+mNEccRLqREx+JzeNcCxhY+EcvvHIuPdRgAD7qzgumilwKEkNhjmtVJsadP/fnFQ77qVQXXUWXd64
+XtPEPVBDnn92tk+K0ll/tee4fizyRPqBH1quJLQofelEGaUNPAHwqrJp/2beDtJQ3lzUEv5W7wnS
+O8Vf5GEPfMkIKX5GSQaVu6pZsj2NXqqIqFcBnkL2rEDCR2zMYM3EYwodKEhz1CBJFg6431j1pMeX
+4uX0TeNKmQ+3MeQWDQ/GSrWoNBo3NIS37kXKNPhrmnUPRNpUdwAEkJaDXlmdR/TkBUTbeIlV/Lq7
+uALgaN+Q1HRDUjZUgswoONh/qhKl0YUsnPoa/HLphImcAV5zR+KH6wdOcbMFNBi21CaaBIy381Te
+mX62b3YPLvGZ6JCe4H9pktoHW5pUMu/NCW+Nup+zt1xdoAbDzQRGxrNOPm8greF1AiCr2uVNC84h
+nYCXn+kPPKvjg7JOV3JD+IvATcQ27fqKa0XpxQZteYfqFNQx6cAbLH/Q6rHujknCBaDBh4PnCI5i
+Oxwoqik+vYkm+N2TsGYUlRkvnTm1dxjD2/3ahVTqYcQG7zCm/dINT85ILsgTxvUuZEO7fSJYzqvQ
+8dLG2WHZBqN8OHiVm/slnIXusPH0otZMRRVc7WRtfi3x4BUtgiky2bGJYSdQHlRyEGtVkrKP/30j
+9t3wZt0YZ7RPfzB4gT25iJ1yJ7u/cOFZNY7mQmwDyfAdHt3rW59Fb0G45kaSeqJthQttC7W=

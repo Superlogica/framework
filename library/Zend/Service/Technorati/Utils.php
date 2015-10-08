@@ -1,136 +1,33 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Service
- * @subpackage Technorati
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Utils.php 8064 2008-02-16 10:58:39Z thomas $
- */
-
-
-/**
- * Collection of utilities for various Zend_Service_Technorati classes.
- *
- * @category   Zend
- * @package    Zend_Service
- * @subpackage Technorati
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Service_Technorati_Utils
-{
-    /**
-     * Parses, validates and returns a valid Zend_Uri object
-     * from given $input.
-     *
-     * @param   string|Zend_Uri_Http $input
-     * @return  null|Zend_Uri_Http
-     * @throws  Zend_Service_Technorati_Exception
-     * @static
-     */
-    public static function normalizeUriHttp($input)
-    {
-        // allow null as value
-        if ($input === null) {
-            return null;
-        }
-
-        /**
-         * @see Zend_Uri
-         */
-        require_once 'Zend/Uri.php';
-        if ($input instanceof Zend_Uri_Http) {
-            $uri = $input;
-        } else {
-            try {
-                $uri = Zend_Uri::factory((string) $input);
-            }
-            // wrap exception under Zend_Service_Technorati_Exception object
-            catch (Exception $e) {
-                /**
-                 * @see Zend_Service_Technorati_Exception
-                 */
-                require_once 'Zend/Service/Technorati/Exception.php';
-                throw new Zend_Service_Technorati_Exception($e->getMessage());
-            }
-        }
-
-        // allow inly Zend_Uri_Http objects or child classes
-        if (!($uri instanceof Zend_Uri_Http)) {
-            /**
-             * @see Zend_Service_Technorati_Exception
-             */
-            require_once 'Zend/Service/Technorati/Exception.php'; 
-            throw new Zend_Service_Technorati_Exception(
-                "Invalid URL $uri, only HTTP(S) protocols can be used");
-        }
-        
-        return $uri;
-    }
-    /**
-     * Parses, validates and returns a valid Zend_Date object
-     * from given $input.
-     * 
-     * $input can be either a string, an integer or a Zend_Date object.
-     * If $input is string or int, it will be provided to Zend_Date as it is.
-     * If $input is a Zend_Date object, the object instance will be returned. 
-     *
-     * @param   mixed|Zend_Date $input
-     * @return  null|Zend_Date
-     * @throws  Zend_Service_Technorati_Exception
-     * @static
-     */
-    public static function normalizeDate($input)
-    {
-        /**
-         * @see Zend_Date
-         */
-        require_once 'Zend/Date.php';
-        /**
-         * @see Zend_Locale
-         */
-        require_once 'Zend/Locale.php';
-        
-        // allow null as value and return valid Zend_Date objects
-        if (($input === null) || ($input instanceof Zend_Date)) {
-            return $input;
-        }
-        
-        // due to a BC break as of ZF 1.5 it's not safe to use Zend_Date::isDate() here
-        // see ZF-2524, ZF-2334
-        if (@strtotime($input) !== FALSE) {
-            return new Zend_Date($input);
-        } else {
-            /**
-             * @see Zend_Service_Technorati_Exception
-             */
-            require_once 'Zend/Service/Technorati/Exception.php';
-            throw new Zend_Service_Technorati_Exception("'$input' is not a valid Date/Time");
-        }
-    }
-    
-    /**
-     * @todo public static function xpathQueryAndSet() {}
-     */
-
-    /**
-     * @todo public static function xpathQueryAndSetIf() {}
-     */
-
-    /**
-     * @todo public static function xpathQueryAndSetUnless() {}
-     */
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

@@ -1,148 +1,45 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Media
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * @see Zend_Gdata_App_Extension
- */
-require_once 'Zend/Gdata/App/Extension.php';
-
-/**
- * Represents the media:restriction element
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Media
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Gdata_Media_Extension_MediaRestriction extends Zend_Gdata_Extension
-{
-
-    protected $_rootElement = 'restriction';
-    protected $_rootNamespace = 'media';
-
-    /**
-     * @var string
-     */
-    protected $_relationship = null;
-
-    /**
-     * @var string
-     */
-    protected $_type = null;
-
-    /**
-     * Constructs a new MediaRestriction element
-     *
-     * @param string $text
-     * @param string $relationship
-     * @param string $type
-     */
-    public function __construct($text = null, $relationship = null,  $type = null)
-    {
-        $this->registerAllNamespaces(Zend_Gdata_Media::$namespaces);
-        parent::__construct();
-        $this->_text = $text;
-        $this->_relationship = $relationship;
-        $this->_type = $type;
-    }
-
-    /**
-     * Retrieves a DOMElement which corresponds to this element and all
-     * child properties.  This is used to build an entry back into a DOM
-     * and eventually XML text for sending to the server upon updates, or
-     * for application storage/persistence.
-     *
-     * @param DOMDocument $doc The DOMDocument used to construct DOMElements
-     * @return DOMElement The DOMElement representing this element and all
-     * child properties.
-     */
-    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
-    {
-        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
-        if ($this->_relationship !== null) {
-            $element->setAttribute('relationship', $this->_relationship);
-        }
-        if ($this->_type !== null) {
-            $element->setAttribute('type', $this->_type);
-        }
-        return $element;
-    }
-
-    /**
-     * Given a DOMNode representing an attribute, tries to map the data into
-     * instance members.  If no mapping is defined, the name and value are
-     * stored in an array.
-     *
-     * @param DOMNode $attribute The DOMNode attribute needed to be handled
-     */
-    protected function takeAttributeFromDOM($attribute)
-    {
-        switch ($attribute->localName) {
-        case 'relationship':
-            $this->_relationship = $attribute->nodeValue;
-            break;
-        case 'type':
-            $this->_type = $attribute->nodeValue;
-            break;
-        default:
-            parent::takeAttributeFromDOM($attribute);
-        }
-    }
-
-    /**
-     * @return string
-     */
-    public function getRelationship()
-    {
-        return $this->_relationship;
-    }
-
-    /**
-     * @param string $value
-     * @return Zend_Gdata_Media_Extension_MediaRestriction Provides a fluent interface
-     */
-    public function setRelationship($value)
-    {
-        $this->_relationship = $value;
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->_type;
-    }
-
-    /**
-     * @param string $value
-     * @return Zend_Gdata_Media_Extension_MediaRestriction Provides a fluent interface
-     */
-    public function setType($value)
-    {
-        $this->_type = $value;
-        return $this;
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

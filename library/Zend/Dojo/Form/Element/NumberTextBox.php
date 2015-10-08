@@ -1,173 +1,41 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Dojo
- * @subpackage Form_Element
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_Dojo_Form_Element_ValidationTextBox */
-require_once 'Zend/Dojo/Form/Element/ValidationTextBox.php';
-
-/**
- * NumberTextBox dijit
- * 
- * @uses       Zend_Dojo_Form_Element_ValidationTextBox
- * @package    Zend_Dojo
- * @subpackage Form_Element
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: NumberTextBox.php 10079 2008-07-14 10:56:37Z matthew $
- */
-class Zend_Dojo_Form_Element_NumberTextBox extends Zend_Dojo_Form_Element_ValidationTextBox
-{
-    /**
-     * Use NumberTextBox dijit view helper
-     * @var string
-     */
-    public $helper = 'NumberTextBox';
-
-    /**
-     * Allowed numeric type formats
-     * @var array
-     */
-    protected $_allowedTypes = array(
-        'decimal',
-        'scientific',
-        'percent',
-        'currency',
-    );
-
-    /**
-     * Set locale
-     *
-     * @param  string $locale
-     * @return Zend_Dojo_Form_Element_NumberTextBox
-     */
-    public function setLocale($locale)
-    {
-        $this->setConstraint('locale', (string) $locale);
-        return $this;
-    }
-
-    /**
-     * Retrieve locale
-     *
-     * @return string|null
-     */
-    public function getLocale()
-    {
-        return $this->getConstraint('locale');
-    }
-
-    /**
-     * Set numeric format pattern
-     *
-     * @param  string $pattern
-     * @return Zend_Dojo_Form_Element_NumberTextBox
-     */
-    public function setPattern($pattern)
-    {
-        $this->setConstraint('pattern', (string) $pattern);
-        return $this;
-    }
-
-    /**
-     * Retrieve numeric format pattern
-     *
-     * @return string|null
-     */
-    public function getPattern()
-    {
-        return $this->getConstraint('pattern');
-    }
-
-    /**
-     * Set numeric format type
-     *
-     * @see    $_allowedTypes
-     * @param  string $type
-     * @return Zend_Dojo_Form_Element_NumberTextBox
-     */
-    public function setType($type)
-    {
-        $type = strtolower($type);
-        if (!in_array($type, $this->_allowedTypes)) {
-            require_once 'Zend/Form/Element/Exception.php';
-            throw new Zend_Form_Element_Exception(sprintf('Invalid numeric type "%s" specified', $type));
-        }
-
-        $this->setConstraint('type', $type);
-        return $this;
-    }
-
-    /**
-     * Retrieve type
-     *
-     * @return string|null
-     */
-    public function getType()
-    {
-        return $this->getConstraint('type');
-    }
-
-    /**
-     * Set decimal places
-     *
-     * @param  int $places
-     * @return Zend_Dojo_Form_Element_NumberTextBox
-     */
-    public function setPlaces($places)
-    {
-        $this->setConstraint('places', (int) $places);
-        return $this;
-    }
-
-    /**
-     * Retrieve decimal places
-     *
-     * @return int|null
-     */
-    public function getPlaces()
-    {
-        return $this->getConstraint('places');
-    }
-
-    /**
-     * Set strict flag
-     *
-     * @param  bool $strict
-     * @return Zend_Dojo_Form_Element_NumberTextBox
-     */
-    public function setStrict($flag)
-    {
-        $this->setConstraint('strict', (bool) $flag);
-        return $this;
-    }
-
-    /**
-     * Retrieve strict flag
-     *
-     * @return bool
-     */
-    public function getStrict()
-    {
-        if (!$this->hasConstraint('strict')) {
-            return false;
-        }
-        return ('true' == $this->getConstraint('strict'));
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

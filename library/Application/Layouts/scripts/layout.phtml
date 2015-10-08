@@ -1,4 +1,20 @@
 <?php
+
+$session = Application_Helpers_Session::getInstance();
+if(!$session->config_vertical)
+    $session->config_vertical = array();
+$configVertical =  $session->config_vertical;
+$menuExibirLojaApps = $configVertical['menu']['exibirlojaapps'];
+$headTitulo = $configVertical['head']['titulo'];
+
+$areaDoCliente = new Superlogica_Location();
+if ($configVertical['contratacao']['whitelabel']) {
+    $linkContratar = $areaDoCliente->setController('contaswhitelabel')->setAction($configVertical['contratacao']['whitelabel'])->viaProxy(true)->setParams(array())->toString();
+} else {
+    $linkContratar = $areaDoCliente->setController('contasuperlogica')->setAction('index')->viaProxy(true)->setParams(array())->toString();
+}
+
+
 $frontendOptions = array(
     'lifetime' => 60 * 60 * 24, // Tempo do cache em 1 dia
     "automatic_serialization" => true,
@@ -10,12 +26,14 @@ $backendOptions = array(
 );
 
 
-
 Superlogica_Js::adicionarCodigo('
-
-if ( document != window.parent.document ){
-        new Superlogica_Js_Elemento("body").adicionarClasse("embedded");
-        } ', 0, true);
+try{
+    if ( document != window.parent.document ){
+        new Superlogica_Js_Elemento("body").adicionarClasse("embedded").encontrar("#conteudo-container").removerClasse("col-sm-11");
+    }
+}catch(e){
+    new Superlogica_Js_Elemento("body").adicionarClasse("embedded");
+}', 0, true);
 
 $cache = Zend_Cache::factory('Core',
                 'File',
@@ -89,6 +107,44 @@ if (APPLICATION_ID == 'financeiro') {
 }
 
 Superlogica_Js::adicionarCodigo('Superlogica_Js_Elemento.implement({
+
+        __abrirFormStatus : function(){
+
+            this.bind("click", function(){
+
+                var location = new Superlogica_Js_Location();
+                location.setController("ajudapadrao")
+                    .setParams({})
+                    .setAction("meustatus")
+                    .setApi(true);
+
+                var request = new Superlogica_Js_Request( location.toString() );
+                var response = request.getResponse();
+
+                if( !response.isValid() ) return;
+
+                var ajuda = response.getData();
+                
+                if(ajuda){
+                    mostrarAjuda(ajuda);
+                    }
+            })
+                    
+        },
+
+        __verificarExportacaoRodape : function(){
+            this.bind("mousedown keydown", function(event){
+                var locationExportacao = new Superlogica_Js_Location( this.atributo("href") );                 
+                if ( typeof window.aoExportar == "function" ){
+                    var format = locationExportacao.getParam("format");
+                    var parametros = window.aoExportar( format );
+                    parametros["format"] = format;
+                    locationExportacao.setParams(parametros);
+                }
+                this.atributo("href", locationExportacao.toString() );
+            });
+        },
+        
         __fecharFormatosExportar : function(){
             this.bind("click", function(evento){                
                 evento.preventDefault();                
@@ -108,10 +164,33 @@ Superlogica_Js::adicionarCodigo('Superlogica_Js_Elemento.implement({
                 formatosexportar.esconder();
             });
         },
+        __obterSuporte : function(){
+            this.bind("mouseleave", function(evento){
+            evento.preventDefault();                
+                var suporteOpcao = new Superlogica_Js_Elemento("#suporte");
+                suporteOpcao.esconder();
+            });
+        }, 
         
-        __inserirInput : function(){
-            var inputBusca = new Superlogica_Js_Elemento("'."<input id='inputPesquisa' type='text' name='pesquisa' comportamentos='Form_Elementos.popularBusca Form_Elementos.esconderFormBusca' class='form-control' />".'");
+        __fecharSuporte : function(){
+            this.bind("click", function(evento){                
+    
+                var suporteOpcao = new Superlogica_Js_Elemento("#suporte");
+                var statusUsuarioSuporte = new Superlogica_Js_Elemento("#statusUsuarioSuporte");
+                var linkSuporte = new Superlogica_Js_Elemento("#linkSuporte");
 
+                if(suporteOpcao.eh(":visible")){
+                    suporteOpcao.esconder();
+                }else{
+                    suporteOpcao.mostrar();
+                }                
+            });
+        }, 
+        __inserirInput : function(){
+            var inputBusca = new Superlogica_Js_Elemento("'."<input id='inputPesquisa' type='text' name='pesquisa' comportamentos='Form_Elementos.popularBusca Form_Elementos.esconderFormBusca Form_Elementos.simularCliqueBuscar hint' class='form-control' />".'");
+            if (this.atributo("hintBusca"))
+                inputBusca.atributo("title", this.atributo("hintBusca"));
+                
             inputBusca.inserirAntesDe(  new Superlogica_Js_Elemento("#buscar") );
         }, 
         
@@ -144,7 +223,16 @@ Superlogica_Js::adicionarCodigo('Superlogica_Js_Elemento.implement({
                 window.print();
 		return false;
             });
-        }
+        },
+        
+        __simularCliqueBuscar : function(){
+            this.bind("keyup", function(evento){ 
+                if (evento.keyCode == "13") {            
+                    new Superlogica_Js_Elemento("#buscar").simularClique();
+                }
+            });
+        },
+
     });'
 ); 
 
@@ -181,6 +269,31 @@ if ($cachedContent && $controllerName != 'error' ) {
         $arrMenu['mais']['pages'] = $maisItensDoMenu + $itemMais;          
     }
     
+    //Caso o app não queira exibir a opção loja de apps no menu
+    //Mas continua a exibir os apps instalados para acessa-los
+    if( (!$menuExibirLojaApps) && ($arrMenu['apps']) ){
+        
+        $arPages = $arrMenu['apps']['pages'];  
+
+        foreach( $arPages as $key => $page){ 
+
+                if ( ($page['id'] == 'tabLoja') || ($key == 'loja') ) {
+                    unset($arPages[$key]);
+                }
+                if (($page['params']['id_appstore']) == $session->vertical_idapp) {
+                    unset($arPages[$key]);
+                }
+        }
+        $countPags = count( $arrMenu['apps']['pages'] );
+        if( $countPags == 0){
+            unset($arrMenu['apps']);
+        }else{
+            $arrMenu['apps']['controller'] = '';
+            $arrMenu['apps']['action'] = '';
+            $arrMenu['apps']['pages'] = $arPages;
+        }
+    }
+    
     $_menu = new Zend_Navigation( $arrMenu );
 
     $menu = $this->navigation()->bootstrapmenu()->setUlClass('nav nav-sidebar')->setContainer($_menu)->setMaxDepth(1);
@@ -201,39 +314,18 @@ if ($cachedContent && $controllerName != 'error' ) {
 
 try{
     $this->licencas = $this->render('licencas.phtml');
-    $this->configuracoes = $this->render('configuracoes.phtml');
+    // $this->configuracoes = $this->render('configuracoes.phtml');
 }catch( Exception $e){}
 
 $titulo = $this->titulo ? $titulo . ' ' . $this->titulo : $titulo;
 Superlogica_Js::adicionarCodigo('Superlogica_Js_Elemento.implement({
-
-    __logout : function(){
-        this.bind("click", function(event){
-            event.preventDefault();
-            var locationProxyLogout = new Superlogica_Js_Location();
-                locationProxyLogout.setController("auth").setAction("logout").setParam("getUrl",1).setApi(true).viaProxy(true);
-            
-            var request = new Superlogica_Js_Request( locationProxyLogout.toString() );
-            var response = request.getResponse();
-            var url = response.getData().url;
-            
-            var locationLogout = new Superlogica_Js_Location();
-                locationLogout.setApi(true).setController("auth").setAction("logout");
-            
-            var request = new Superlogica_Js_Request( locationLogout.toString() );
-            var response = request.getResponse();
-            if ( response.isValid() )
-                window.location.href = url;
-        });
-    },
-    
     __mostraFormBreadCrumbs : function (){
         var linkAlvo = this;
         var divAlvo = new Superlogica_Js_Elemento("#div-"+this.atributo("class"));
-        this.bind("click",function(){
+        this.bind("click",function(){            
             divAlvo.mostrar();
             if(divAlvo.encontrar("input")){
-                divAlvo.encontrar("input").focar();
+                divAlvo.encontrar("input[type=text]").focar();
                 linkAlvo.esconder();
                 event.stopPropagation();
             }
@@ -244,6 +336,28 @@ Superlogica_Js::adicionarCodigo('Superlogica_Js_Elemento.implement({
             linkAlvo.mostrar();
         });
     },
+
+    __logout : function(){
+        this.bind("click", function(event){
+            event.preventDefault();
+            var locationProxyLogout = new Superlogica_Js_Location();
+                locationProxyLogout.setController("auth").setAction("logout").setParam("getUrl",1).setApi(true).viaProxy(true);
+            
+            var request = new Superlogica_Js_Request( locationProxyLogout.toString() );
+            var response = request.getResponse();
+            var url = response.getData().url;
+                        
+            var locationLogout = new Superlogica_Js_Location();
+                locationLogout.setApi(true).setController("auth").setAction("logout");
+            
+            var request = new Superlogica_Js_Request( locationLogout.toString() );
+            var response = request.getResponse();
+            if ( response.isValid() ){
+                    window.location.href = url;
+            }
+        });
+    },
+    
     __toogleMenu : function (){
         var body = new Superlogica_Js_Elemento("body");
         var main = new Superlogica_Js_Elemento("main");
@@ -331,66 +445,68 @@ Superlogica_Js::adicionarCodigo('Superlogica_Js_Elemento.implement({
 });');
 
 if($session->vencimentoSoftware){ 
-    Superlogica_Js::adicionarCodigo('Superlogica_Js_Elemento.implement({
-        __contratar : function (){
-            this.bind("click",function(){
-                var location=  new Superlogica_Js_Location()
-                                               .setApi(true)
-                                               .setParams({})
-                                               .setController("comercial")
-                                               .setAction("contratar");
-                 var request= new Superlogica_Js_Request(location.toString());
-                 var response= request.getResponse();
-            });
-        }
-    });');
-    $linkContratar = 'https://superlogica.superlogica.net/clients/areadocliente/';
-    $vencimentoSoftware= '<div id="trial">Seu período de degustação expira em '.$session->vencimentoSoftware.'  <a href="'.$linkContratar.'" comportamentos="contratar"  class="link"><img src="'.APPLICATION_CLIENT_TEMA_URL.'/img/contratar.png" title="Contrate agora" alt="Contrate agora" border="0" /></a></div>';
+    Superlogica_Js::adicionarCodigo('
+        Superlogica_Js_Elemento.implement({
+
+            __abrirFormStatusContratar : function(){
+                this.bind("click", function(){
+
+                    var location = new Superlogica_Js_Location();
+                    location.setController("ajudapadrao")
+                        .setParams({})
+                        .setAction("meustatus")
+                        .setApi(true);
+
+                    var request = new Superlogica_Js_Request( location.toString() );
+                    var response = request.getResponse();
+
+                    if( !response.isValid() ) return;
+
+                    var ajuda = response.getData();
+
+                    if(ajuda){
+                        mostrarAjuda(ajuda);
+                        }
+                })
+
+            },
+            
+            __contratar : function (){
+                this.bind("click",function(){
+                    var location=  new Superlogica_Js_Location()
+                                                   .setApi(true)
+                                                   .viaProxy(true)
+                                                   .setParams({})
+                                                   .setController("comercial")		
+                                                   .setAction("contratar");		
+                     var request= new Superlogica_Js_Request(location.toString());
+                     var response= request.getResponse();
+                });
+            }
+        
+        });           
+    ');
+    
+    $vencimento .= ($session->vencimentoSoftware > 1) ? $session->vencimentoSoftware . ' dias' : $session->vencimentoSoftware . ' dia';    
+    $vencimentoSoftware= '<div id="trial">Seu período de degustação expira em ' . $vencimento . '  <a href="#" comportamentos="contratar abrirFormStatusContratar"  class="link"><img src="'.APPLICATION_CLIENT_TEMA_URL.'/img/contratar.png" title="Contrate agora" alt="Contrate agora" border="0" /></a> '. $mensagemContratacao.'</div>';    
+
+    if($configVertical['contratacao']['whitelabel']){
+        $vencimentoSoftware= '<div id="trial">Seu período de degustação expira em '.$vencimento.'  <a href="'.$linkContratar.'" comportamentos="contratar"  class="link"><img src="'.APPLICATION_CLIENT_TEMA_URL.'/img/contratar.png" title="Contrate agora" alt="Contrate agora" border="0" /></a></div>';
+    }
+    
 }
 
-
-if($session->apps_para_instalar>0){
-    
-        Superlogica_Js::adicionarCodigo('
-            new Superlogica_Js_Cron(
-                new Superlogica_Js_Location()
-                    .setController("apps")
-                    .setAction("autoInstalar")
-                    .setApi(true)
-                    .viaProxy(true)
-                    .setParams({})
-                    .toString(),
-                    "cron"
-                )
-                .parar(200,"",false)
-                .executar();
-
-                setTimeout(function(){
-                    new Superlogica_Js_Cron(
-                        new Superlogica_Js_Location()
-                            .setController("apps")
-                            .setAction("autoInstalar")
-                            .setApi(true)
-                            .viaProxy(true)
-                            .setParams({})
-                            .toString(),
-                            "cron"
-                    )
-                    .aoProcessar(function( response ){
-                        var status = response.getStatus();        
-                        var data = response.getData();
-                        if ( status == 423 ){
-                            this.alterarMensagem(data["msg"],true,false);
-                        }
-                    })
-                    .executar();
-                }, 1000 );
-        ');
-    }
-
-
 if (!$titulo) {
-    throw new Exception('Página sem título. Controller: ' . $request->getControllerName() . '. Action: ' . $request->getActionName());
+//    throw new Exception('Página sem título. Controller: ' . $request->getControllerName() . '. Action: ' . $request->getActionName());
+}
+
+$request = Zend_Controller_Front::getInstance()->getRequest();
+if ( $request->getParam('comAjudaPadraoInterna') ){
+    $this->comAjuda = $request->getParam('comAjudaPadraoInterna');
+}
+if ( $this->comAjuda ){
+    Application_Helpers_Ajuda::setController($this->comAjuda);
+    Application_Helpers_Ajuda::adicionarJs();
 }
 
 $bodyId = $request->getControllerName().'_';
@@ -401,14 +517,16 @@ $bodyId .= Zend_Controller_Front::getInstance()->getRouter()->getCurrentRouteNam
         echo $this->render('head.phtml'); // Está dentro da pasta de layouts
         $baseUrl = Zend_Controller_Front::getInstance()->getBaseUrl();
         $this->headTitle(strip_tags($titulo));
-        if( MODULE_ID != 'MODULE_ID' )
-            echo $this->headTitle(" :: Superlógica " . ucwords(MODULE_ID));
-         else
-             echo $this->headTitle(" :: Superlógica ");
+        
+        if( $headTitulo ){
+            echo $this->headTitle( $headTitulo );
+        }else{
+             echo $this->headTitle(" :: Superlógica ".$session->vertical );
+        }
 
         ?>
     </head>
-    <body  data-ng-app="app"  id="<?php echo $bodyId;?>" class="col-h-100 module_id_<?=MODULE_ID?> <?=(APPLICATION_ENV != 'production') ? ' ambienteTeste' : ''?>  <?= ($session->vencimentoSoftware) ? ' periodo-trial' : '' ?>" data-custom-background="" data-off-canvas-nav="">
+    <body  data-ng-app="app"  id="<?php echo $bodyId;?>" class="col-h-100 module_id_<?=MODULE_ID?> <?php echo $this->exibirTituloIframe ? 'exibirTituloIframe' : '' ?> <?=(APPLICATION_ENV != 'production') ? ' ambienteTeste' : ''?>  <?= ($session->vencimentoSoftware) ? ' periodo-trial' : '' ?>" data-custom-background="" data-off-canvas-nav="">
 
         <div class="navbar-static-top" data-ng-controller="AppCtrl">
             <div data-ng-hide="isSpecificPage()" data-ng-cloak="">
@@ -425,19 +543,19 @@ $bodyId .= Zend_Controller_Front::getInstance()->getRouter()->getCurrentRouteNam
 
             <div class="row col-h-100">
                 <!-- start: Main Menu -->
-                <div class="sidebar col-h-100 col-md-2 col-sm-1">
+                <div class="sidebar minified col-h-100 col-md-2 col-sm-1">
                        <div class="sidebar-collapse collapse">
                         <?php echo $menuString;?>
-                    </div>
+                       </div>
                     <a href="#" comportamentos="toogleMenu" id="main-menu-min" class="visible-md visible-lg full blocoEscondido"><i class="fa fa-angle-double-left"></i></a>
                 </div>
                 <!-- end: Main Menu -->
 
                 <!-- start: Content -->
-                <div class="col-md-10 col-sm-11 main" style="min-height: 204px;">
+                <div id="conteudo-container" class="col-md-10 col-sm-11 main" style="min-height: 204px;">
                     <div class="row">
                         <div class="col-lg-12">
-                            <div id="conteudo" class="page page-tasks ng-scope">
+                            <div id="conteudo" class="page page-tasks ng-scope full">
                                 <!--SubMenus em abas-->
                                 <?php  if($this->abas) echo $abas; ?>
                                 <?php 
@@ -452,10 +570,33 @@ $bodyId .= Zend_Controller_Front::getInstance()->getRouter()->getCurrentRouteNam
 
                                         <?php 
                                         
-                                            $botao= new Superlogica_Button();
-                                                        
-                                            if($this->comBusca){   
+                                            $botao= new Superlogica_Button();                                                        
+                                            if($this->relatorios){                                                
                                                 
+                                                $relatorio =  new Superlogica_Button();                             
+                                                $relatorio->addLink('Imprimir esta tela', '', '', '', 'imprimirTela', '');                                            
+                                            
+                                                $locationSubmenu= new Superlogica_Location();
+                                                $locationSubmenu->setParams(array())->setController('relatorios')->setAction('index');    
+                                                
+                                                foreach($this->relatorios as $item)
+                                                    $relatorio->addLink($item[1], (string)$locationSubmenu->setId($item[0])->setParams($item[2]));                                                           
+
+                                                $botao->addDropDown('', $relatorio, false, array('class' => 'btn-warning'), 'glyphicon glyphicon-print');                                                      
+                                                
+                                            } else if ($this->imprimirPdf) {
+                                                $botao->addLink('Imprimir', '', '', 'glyphicon glyphicon-print', 'imprimirPdf', array('class' => 'btn-warning'));
+                                            } else if ( !$this->desabilitarImpressao ) {
+                                               $botao->addLink('Imprimir esta tela', '', '', 'glyphicon glyphicon-print', 'imprimirTela', array('class' => 'btn-warning'));
+                                            }
+                                            
+                                            if(is_array($this->configuracoes)){                                                
+                                                $configuracoes = new Superlogica_Button();
+                                                $botao->addFormDialog("Configurações", "Forms_Configuracoes_Index", false, '', array('class'=>'btn-warning', 'data-opcoes-construtor' => Superlogica_Array::toAtributo(array('comBotaoFechar'=>true)), 'data-display-groups' => Superlogica_Array::toAtributo( $this->configuracoes ) ), 'glyphicon glyphicon-cog', '', false);
+                                            }
+                                            
+                                            if($this->comBusca){   
+                                                                                                
                                                 $request = Zend_Controller_Front::getInstance()->getRequest();
                                                 $pesquisa = $request->getParam( 'pesquisaEmTudo', '' );
                                                 if( $pesquisa === '' )
@@ -468,7 +609,8 @@ $bodyId .= Zend_Controller_Front::getInstance()->getRouter()->getCurrentRouteNam
                                                 $btBuscar =  new Superlogica_Button();
                                                 $btBuscar->addLink( 'Buscar', '', true, '', 'Form_Elementos.submeterBusca ', array('id'=>'buscar'));    
                                                 if ($this->buscarEmTudo) 
-                                                    $btBuscar->addLink( 'Buscar em tudo', '', false, '', 'Form_Elementos.submeterBusca', array('id'=>'buscar'));                                             
+                                                    $btBuscar->addLink( 'Buscar em tudo', '', false, '', 'Form_Elementos.submeterBusca', array('id'=>'buscarEmTudo')); 
+                                                    $btBuscar->addLink( '', '', false, 'fa fa-times', 'Form_Elementos.limparBusca');                                             
                                         ?>
                                         
 
@@ -476,7 +618,7 @@ $bodyId .= Zend_Controller_Front::getInstance()->getRouter()->getCurrentRouteNam
                                             <form id="formBusca" action="">
 
                                                 <span class="pull-right">
-                                                    <span class="input-group" comportamentos="inserirInput">
+                                                    <span class="input-group" comportamentos="inserirInput" hintBusca="<?php echo $this->hintBusca?>">
                                                             <?php echo $btBuscar->toString(); ?>
                                                     </span> 
                                                 </span>
@@ -525,7 +667,7 @@ $bodyId .= Zend_Controller_Front::getInstance()->getRouter()->getCurrentRouteNam
 
                             $slLayout = Superlogica_Layout::getInstance();
                             $codigosSlLayout = $slLayout->getCodigos(true);
-                            if ( $codigosSlLayout )
+//                            if ( $codigosSlLayout )
                                 echo '<div id="Superlogica_Layout_Codigos_Append" class="blocoEscondido">'.$codigosSlLayout.'</div>';
                             ?>                    
                         </div>
@@ -537,21 +679,20 @@ $bodyId .= Zend_Controller_Front::getInstance()->getRouter()->getCurrentRouteNam
         <div class="clearfix"></div>
         <footer id="rodape">
             <div class="row conteudo">
-                <div class="col-sm-3 secao" id="tempo-execucao">
+                <div class="col-sm-2 secao" id="tempo-execucao">
                     Executado em:
                     <?php global $time_start; echo round(round(microtime(true), 4) - $time_start, 4); ?>s
                 </div>
-                <div class="col-sm-3 text-right secao" id="fechamento">
+                <div class="col-sm-4 text-right secao" id="fechamento">
                     <?php echo $fechamento;?>
                 </div>
-                <div class="col-sm-3 text-right secao" id="api">
-                        <?php
-                            $locationPgAtual = new Superlogica_Location();
-                            $locationPgAtual->setApi(true);
-                        ?>                                
-                    <a href='<?php echo $locationPgAtual->toString(); ?>' target="_blank" >API</a><br />
-                </div>
-                <div class="col-sm-3 secao" id="exportar">
+                
+                 <?php  if( $configVertical['rodape']['api'] ){?>
+                    <div class="col-sm-2 text-right secao" id="api">                           
+                        <a href='http://superlogica.com/developers/' target="_blank" >API</a><br />
+                    </div>
+                <?php } ?>
+                <!-- <div class="col-sm-3 secao" id="exportar">
                     <div id="formatos" class="blocoEscondido" comportamentos="formatosExportar">
                         <?php
                             $locationPgAtual = new Superlogica_Location();
@@ -563,11 +704,50 @@ $bodyId .= Zend_Controller_Front::getInstance()->getRouter()->getCurrentRouteNam
                         <?php } ?>
                     </div>                                    
                     <a href="#" comportamentos="fecharFormatosExportar">Exportar</a>
+                </div> -->
+                <div class="col-sm-2 secao" id="exportar">
+                    <div id="formatos" class="blocoEscondido" comportamentos="formatosExportar">
+                        <?php
+                            $locationPgAtual = new Superlogica_Location();
+                            $locationPgAtual->setApi(true)->setParam('render',null);
+                            $arServerFormats = array('csv', 'xls');
+                        ?>
+                        <?php for ($x = 0; count($arServerFormats) > $x; $x++) { ?>
+                            <a href='<?php echo $locationPgAtual->setParam( 'format', $arServerFormats[$x] )->toString(); ?>' target="_blank" comportamentos="verificarExportacaoRodape"><?php echo $arServerFormats[$x]; ?></a>
+                        <?php } ?>
+                        <?php
+                            $locationPgAtualApi = new Superlogica_Location();
+                            $locationPgAtualApi->setApi(true)->setParam('render',null);
+                        ?> 
+                        <a href='<?php echo $locationPgAtualApi->toString(); ?>' target="_blank" comportamentos="verificarExportacaoRodape">json</a>
+                    </div>                                    
+                    <a href="#" comportamentos="fecharFormatosExportar">Exportar</a>
                 </div>
+                
+              <?php  if( ($configVertical['rodape']['suporte']) && !($configVertical['rodape']['naoexibirnotrial'] && $session->vencimentoSoftware) ){ ?>  
+                    <div class="col-sm-2 secao" id="suporteOpcoes">
+                        <div id="suporte" class="blocoEscondido" comportamentos="obterSuporte">
+                            <?php
+                            $locationSuporte = new Superlogica_Location();
+                            $locationSuporte->setController('suporte')->setAction('index')->setParams(array())->setApi(false)->viaProxy(true);
+                            $_locationSuporte = $configVertical['suporte']['url'] ? $configVertical['suporte']['url']: $locationSuporte->toString();
+                            //Usado para controlar no HEAP o uso dessa opção
+                            $classId = $configVertical['rodape']['suporteclasseid'] ? $configVertical['rodape']['suporteclasseid'] : 'linkSuporte';
+                            ?>
+                        </div>                                    
+                        <a href="<?php echo $_locationSuporte; ?>" id="<?php echo $classId;  ?>" comportamentos="" data="" >Suporte</a>
+                    </div>
+              <?php } ?> 
+                
             </div>
         </footer> 
         <?php
-            if( APPLICATION_ENV == 'production'){
+        
+        if ( $this->comAjuda ){
+            echo Application_Helpers_Ajuda::getHtml();
+        }
+
+        if( APPLICATION_ENV == 'production'){
         ?>
             <!-- Google analytics -->
             <script type="text/javascript">

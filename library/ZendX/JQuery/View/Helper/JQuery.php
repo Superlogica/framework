@@ -1,167 +1,42 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category    ZendX
- * @package     ZendX_JQuery
- * @subpackage  View
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
- * @license     http://framework.zend.com/license/new-bsd     New BSD License
- * @version     $Id: JQuery.php 20184 2010-01-10 21:22:54Z freak $
- */
-
-/**
- * @see ZendX_JQuery
- */
-require_once "ZendX/JQuery.php";
-
-/**
- * @see Zend_Registry
- */
-require_once 'Zend/Registry.php';
-
-/**
- * @see Zend_View_Helper_Abstract
- */
-require_once 'Zend/View/Helper/Abstract.php';
-
-/**
- * @see ZendX_JQuery_View_Helper_JQuery_Container
- */
-require_once "ZendX/JQuery/View/Helper/JQuery/Container.php";
-
-/**
- * jQuery Helper. Functions as a stack for code and loads all jQuery dependencies.
- *
- * @uses 	   Zend_Json
- * @package    ZendX_JQuery
- * @subpackage View
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class ZendX_JQuery_View_Helper_JQuery extends Zend_View_Helper_Abstract
-{
-    /**
-     * @var Zend_View_Interface
-     */
-    public $view;
-
-	/**
-	 * jQuery no Conflict Mode
-	 *
-	 * @see	      http://docs.jquery.com/Using_jQuery_with_Other_Libraries
-	 * @staticvar Boolean Status of noConflict Mode
-	 */
-    private static $noConflictMode = false;
-
-   /**
-     * Initialize helper
-     *
-     * Retrieve container from registry or create new container and store in
-     * registry.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $registry = Zend_Registry::getInstance();
-        if (!isset($registry[__CLASS__])) {
-            require_once 'ZendX/JQuery/View/Helper/JQuery/Container.php';
-            $container = new ZendX_JQuery_View_Helper_JQuery_Container();
-            $registry[__CLASS__] = $container;
-        }
-        $this->_container = $registry[__CLASS__];
-    }
-
-	/**
-	 * Return jQuery View Helper class, to execute jQuery library related functions.
-	 *
-	 * @return ZendX_JQuery_View_Helper_JQuery_Container
-	 */
-    public function jQuery()
-    {
-        return $this->_container;
-    }
-
-    /**
-     * Set view object
-     *
-     * @param  Zend_View_Interface $view
-     * @return void
-     */
-    public function setView(Zend_View_Interface $view)
-    {
-        $this->view = $view;
-        $this->_container->setView($view);
-    }
-
-    /**
-     * Proxy to container methods
-     *
-     * @param  string $method
-     * @param  array  $args
-     * @return mixed
-     * @throws Zend_View_Exception For invalid method calls
-     */
-    public function __call($method, $args)
-    {
-        if (!method_exists($this->_container, $method)) {
-            require_once 'Zend/View/Exception.php';
-            throw new Zend_View_Exception(sprintf('Invalid method "%s" called on jQuery view helper', $method));
-        }
-
-        return call_user_func_array(array($this->_container, $method), $args);
-    }
-
-	/**
-	 * Enable the jQuery internal noConflict Mode to work with
-	 * other Javascript libraries. Will setup jQuery in the variable
-	 * $j instead of $ to overcome conflicts.
-	 *
-	 * @link http://docs.jquery.com/Using_jQuery_with_Other_Libraries
-	 */
-    public static function enableNoConflictMode()
-    {
-    	self::$noConflictMode = true;
-    }
-
-	/**
-	 * Disable noConflict Mode of jQuery if this was previously enabled.
-	 *
-	 * @return void
-	 */
-    public static function disableNoConflictMode()
-    {
-    	self::$noConflictMode = false;
-    }
-
-	/**
-	 * Return current status of the jQuery no Conflict Mode
-	 *
-	 * @return Boolean
-	 */
-    public static function getNoConflictMode()
-    {
-    	return self::$noConflictMode;
-    }
-
-    /**
-     * Return current jQuery handler based on noConflict mode settings.
-     *
-     * @return String
-     */
-    public static function getJQueryHandler()
-    {
-        return ((self::getNoConflictMode()==true)?'$j':'$');
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

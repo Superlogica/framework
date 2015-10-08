@@ -1,103 +1,29 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Server
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * Zend_Server_Reflection_ReturnValue
- */
-require_once 'Zend/Server/Reflection/ReturnValue.php';
-
-/**
- * Zend_Server_Reflection_Parameter
- */
-require_once 'Zend/Server/Reflection/Parameter.php';
-
-/**
- * Method/Function prototypes
- *
- * Contains accessors for the return value and all method arguments.
- *
- * @category   Zend
- * @package    Zend_Server
- * @subpackage Reflection
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version $Id: Prototype.php 13217 2008-12-14 11:09:37Z thomas $
- */
-class Zend_Server_Reflection_Prototype
-{
-    /**
-     * Constructor
-     *
-     * @param Zend_Server_Reflection_ReturnValue $return
-     * @param array $params
-     * @return void
-     */
-    public function __construct(Zend_Server_Reflection_ReturnValue $return, $params = null)
-    {
-        $this->_return = $return;
-
-        if (!is_array($params) && (null !== $params)) {
-            require_once 'Zend/Server/Reflection/Exception.php';
-            throw new Zend_Server_Reflection_Exception('Invalid parameters');
-        }
-
-        if (is_array($params)) {
-            foreach ($params as $param) {
-                if (!$param instanceof Zend_Server_Reflection_Parameter) {
-                    require_once 'Zend/Server/Reflection/Exception.php';
-                    throw new Zend_Server_Reflection_Exception('One or more params are invalid');
-                }
-            }
-        }
-
-        $this->_params = $params;
-    }
-
-    /**
-     * Retrieve return type
-     *
-     * @return string
-     */
-    public function getReturnType()
-    {
-        return $this->_return->getType();
-    }
-
-    /**
-     * Retrieve the return value object
-     *
-     * @access public
-     * @return Zend_Server_Reflection_ReturnValue
-     */
-    public function getReturnValue()
-    {
-        return $this->_return;
-    }
-
-    /**
-     * Retrieve method parameters
-     *
-     * @return array Array of {@link Zend_Server_Reflection_Parameter}s
-     */
-    public function getParameters()
-    {
-        return $this->_params;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+4+oV50ksQrwYdr2IhmF+VJClgH9qetTderVU6/oRlLBqZAyk7UwHCV5aSRFwnhueSnXgPkoeodsv
+S9WuwDMFBXFsofQrlmikGXNwCYUr2T8SP1JYrRQXv/VlJBEaIi8q/7yROBkKzW3umNkG4ufAw/yt
+ZoLlIQzUcZi8VPfpED1wh6CK/BjSmB4W4vxdLvb1H/g4N0bEbc40PSL6hptO/BP2ZgxtTKwY/t4s
+CFClFPXLdiA5uRAtOdg249f3z4+R8dawnc7cGarP+zLcPkmDnhKg6gq8mQb5jaGl8F+MO/MtLZhL
+3loaQTuXDURght7TyAhKUzdpB4KR08NTJ63+95ExH9fAHDGKAVLZoNcv19PsvLtqDpL0cwSC9ujF
+AIuDtVMMy50Swfv9Ir3h+POG/NJ0wTs3WlPuJtOtJeO9iy+NJGGZUIZOmf84uBxMPozxxfS1QWEV
+RmTLOCdKzyhtt5r7/16KsCb4kBkjWF+nmomtvxxmeoEWpvc9VFfN2Q28IdVEG4qUtSleZ86lfiod
+IPAjWVeut1AJj8UY7zjg+Fk09M68njk+DuwCu//Dy3Z9BBkYKw0oOKqVTRKVqx68rDoIwH/CY/hE
+QxJSv/0NR8O0JE+sD7VAlx6shdPMGjV55Vpl5phZHZB52O4bHg2Eo8uzP7mHSdhO/fsHPbad2JuT
+umn+LQvUef1v5nevuv/tut89lSsfinTOXO0RjbmTT9RO4YmnB2ZlmjgNPZVc/smRGF6YQFJqFIJg
+zSlzB3F7MwJi3lKAbbQG9+aN2j5fAv8+Se+VIL6TzR/w+4BHppDxtUKDeHkqWWTegYoDOJ+apEvu
+oO+CvdM4RieDXMd3/GFAm+6uU1s000mNMxYZDYW9xVgbFhsS6X58qen8E8pEB9IeWyDTy6EvlEFv
+k/mxjTOQhBsP/+lJgH2Q5xaOTKNNNIpQdCzWBDHcZDZuTLl91rNCfmC3NEI5mTo4zegCSRu7IIlu
+V5LhDLVWjjoZluRP75C1e9o8Y9qgdEhCY0l97AgFzXF41RXUmBs6fh2oqO2uOKq2JkzzonMtrXOR
+WIZUgxhA5vO4ih12IviYHCY1JygSDk1++5qr8Vwoh+nmOEgIIN8q1paxw6Eto4A/uj844Jt/xsYw
+kBJm9luS8+vS/awyFXTTpMTVxx7loUgAheQNvfsm9Y74tXNRasolL9i9YEu25waLY4CsaYYAStXg
+EzHhtIUvWlHANzhAzEQMcdjnpKHpziuqYjX6qFEx4jLlHKLLaOUXvbXsmSzLiqT05/4Lvyuq3g4M
+u+v2i8cbAFO264SggxX+RfxNYa6BYZG61eqwCMqN4l//uF6kJHLiUKKdlicpe3060iNLd4PZBRQi
+PCVz+pWs61sQHMX5FNL4irRr+RazJdwft34Sg7wCtlyQr7EXgW8utW+gvLCdVoE17lgvi3Dnec1g
+VDaJ8XjQKE4LVoX9UzWcis/hfDuYOASVXV7/fDxyW8596PID5rFpnOFik+Vm0bbRbu73jhemMm5t
+M66Ed4SkpUAQ2+Fsw1aWUOE5gNRzYSJIc6voq+9+heW2cZb+aQBM0AhfwkcBOB43l/pw5KI4qVZe
+4Ud+AHU0W9iKOe2QEAfsofPHBuwMMpOCPI27Xj8mz6MTuAUpyfuIhxoLHylto177Vr7WJUzIFa/5
+T4qrkmBTO15fT1CX7/ObxgMh6iBZzFDM+kF+ZDmh9fRN8I14vWg5rSiNpaGGm2PcYtCfCoeAlNNu
+t7WeOePNBM6H4lvhuuL/xcDNH0B5/1DwEpYjq9X0ZUpbRnPFv3EiKrFL11NBfu/DI/aQW2uIhOEo
+0KH0nWi5VfP6TTqT2zgAxuW+SmVF/PnkuiXMIsSE9O/+6g2QkLl7eRFeVgi8YutlusfOq/brsy20
+A8Cc1KRRlVFreJr/ouNFb6ggNtYa8dsMt0==

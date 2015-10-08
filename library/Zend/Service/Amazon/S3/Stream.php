@@ -1,497 +1,155 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Service
- * @subpackage Amazon_S3
- * @copyright  Copyright (c) 2005-2008, Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: S3.php 9786 2008-06-24 23:50:25Z jplock $
- */
-
-/**
- * @see Zend_Service_Amazon_S3
- */
-require_once 'Zend/Service/Amazon/S3.php';
-
-/**
- * Amazon S3 PHP stream wrapper
- *
- * @category   Zend
- * @package    Zend_Service
- * @subpackage Amazon_S3
- * @copyright  Copyright (c) 2005-2008, Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Service_Amazon_S3_Stream
-{
-    /**
-     * @var boolean Write the buffer on fflush()?
-     */
-    private $_writeBuffer = false;
-
-    /**
-     * @var integer Current read/write position
-     */
-    private $_position = 0;
-
-    /**
-     * @var integer Total size of the object as returned by S3 (Content-length)
-     */
-    private $_objectSize = 0;
-
-    /**
-     * @var string File name to interact with
-     */
-    private $_objectName = null;
-
-    /**
-     * @var string Current read/write buffer
-     */
-    private $_objectBuffer = null;
-
-    /**
-     * @var array Available buckets
-     */
-    private $_bucketList = array();
-
-    /**
-     * @var Zend_Service_Amazon_S3
-     */
-    private $_s3 = null;
-
-    /**
-     * Retrieve client for this stream type
-     *
-     * @param  string $path
-     * @return Zend_Service_Amazon_S3
-     */
-    protected function _getS3Client($path)
-    {
-        if ($this->_s3 === null) {
-            $url = explode(':', $path);
-
-            if (!$url) {
-                /**
-                 * @see Zend_Service_Amazon_S3_Exception
-                 */
-                require_once 'Zend/Service/Amazon/S3/Exception.php';
-                throw new Zend_Service_Amazon_S3_Exception("Unable to parse URL $path");
-            }
-
-            $this->_s3 = Zend_Service_Amazon_S3::getWrapperClient($url[0]);
-            if (!$this->_s3) {
-                /**
-                 * @see Zend_Service_Amazon_S3_Exception
-                 */
-                require_once 'Zend/Service/Amazon/S3/Exception.php';
-                throw new Zend_Service_Amazon_S3_Exception("Unknown client for wrapper {$url[0]}");
-            }
-        }
-
-        return $this->_s3;
-    }
-
-    /**
-     * Extract object name from URL
-     *
-     * @param string $path
-     * @return string
-     */
-    protected function _getNamePart($path)
-    {
-        $url = parse_url($path);
-        if ($url['host']) {
-            return !empty($url['path']) ? $url['host'].$url['path'] : $url['host'];
-        }
-
-        return '';
-    }
-    /**
-     * Open the stream
-     *
-     * @param  string  $path
-     * @param  string  $mode
-     * @param  integer $options
-     * @param  string  $opened_path
-     * @return boolean
-     */
-    public function stream_open($path, $mode, $options, $opened_path)
-    {
-        $name = $this->_getNamePart($path);
-        // If we open the file for writing, just return true. Create the object
-        // on fflush call
-        if (strpbrk($mode, 'wax')) {
-            $this->_objectName = $name;
-            $this->_objectBuffer = null;
-            $this->_objectSize = 0;
-            $this->_position = 0;
-            $this->_writeBuffer = true;
-            $this->_getS3Client($path);
-            return true;
-        }
-        else {
-            // Otherwise, just see if the file exists or not
-            $info = $this->_getS3Client($path)->getInfo($name);
-            if ($info) {
-                $this->_objectName = $name;
-                $this->_objectBuffer = null;
-                $this->_objectSize = $info['size'];
-                $this->_position = 0;
-                $this->_writeBuffer = false;
-                $this->_getS3Client($path);
-                return true;
-            }
-        }
-        return false;
-    }
-
-    /**
-     * Close the stream
-     *
-     * @return void
-     */
-    public function stream_close()
-    {
-        $this->_objectName = null;
-        $this->_objectBuffer = null;
-        $this->_objectSize = 0;
-        $this->_position = 0;
-        $this->_writeBuffer = false;
-        unset($this->_s3);
-    }
-
-    /**
-     * Read from the stream
-     *
-     * @param  integer $count
-     * @return string
-     */
-    public function stream_read($count)
-    {
-        if (!$this->_objectName) {
-            return false;
-        }
-
-        $range_start = $this->_position;
-        $range_end = $this->_position+$count;
-
-        // Only fetch more data from S3 if we haven't fetched any data yet (postion=0)
-        // OR, the range end position is greater than the size of the current object
-        // buffer AND if the range end position is less than or equal to the object's
-        // size returned by S3
-        if (($this->_position == 0) || (($range_end > strlen($this->_objectBuffer)) && ($range_end <= $this->_objectSize))) {
-
-            $headers = array(
-                'Range' => "$range_start-$range_end"
-            );
-
-            $response = $this->_s3->_makeRequest('GET', $this->_objectName, null, $headers);
-
-            if ($response->getStatus() == 200) {
-                $this->_objectBuffer .= $response->getBody();
-            }
-        }
-
-        $data = substr($this->_objectBuffer, $this->_position, $count);
-        $this->_position += strlen($data);
-        return $data;
-    }
-
-    /**
-     * Write to the stream
-     *
-     * @param  string $data
-     * @return integer
-     */
-    public function stream_write($data)
-    {
-        if (!$this->_objectName) {
-            return 0;
-        }
-        $len = strlen($data);
-        $this->_objectBuffer .= $data;
-        $this->_objectSize += $len;
-        // TODO: handle current position for writing!
-        return $len;
-    }
-
-    /**
-     * End of the stream?
-     *
-     * @return boolean
-     */
-    public function stream_eof()
-    {
-        if (!$this->_objectName) {
-            return true;
-        }
-
-        return ($this->_position >= $this->_objectSize);
-    }
-
-    /**
-     * What is the current read/write position of the stream
-     *
-     * @return integer
-     */
-    public function stream_tell()
-    {
-        return $this->_position;
-    }
-
-    /**
-     * Update the read/write position of the stream
-     *
-     * @param  integer $offset
-     * @param  integer $whence
-     * @return boolean
-     */
-    public function stream_seek($offset, $whence)
-    {
-        if (!$this->_objectName) {
-            return false;
-        }
-
-        switch ($whence) {
-            case SEEK_CUR:
-                // Set position to current location plus $offset
-                $new_pos = $this->_position + $offset;
-                break;
-            case SEEK_END:
-                // Set position to end-of-file plus $offset
-                $new_pos = $this->_objectSize + $offset;
-                break;
-            case SEEK_SET:
-            default:
-                // Set position equal to $offset
-                $new_pos = $offset;
-                break;
-        }
-        $ret = ($new_pos >= 0 && $new_pos <= $this->_objectSize);
-        if ($ret) {
-            $this->_position = $new_pos;
-        }
-        return $ret;
-    }
-
-    /**
-     * Flush current cached stream data to storage
-     *
-     * @return boolean
-     */
-    public function stream_flush()
-    {
-        // If the stream wasn't opened for writing, just return false
-        if (!$this->_writeBuffer) {
-            return false;
-        }
-
-        $ret = $this->_s3->putObject($this->_objectName, $this->_objectBuffer);
-
-        $this->_objectBuffer = null;
-
-        return $ret;
-    }
-
-    /**
-     * Returns data array of stream variables
-     *
-     * @return array
-     */
-    public function stream_stat()
-    {
-        if (!$this->_objectName) {
-            return false;
-        }
-
-        $stat = array();
-        $stat['dev'] = 0;
-        $stat['ino'] = 0;
-        $stat['mode'] = 0777;
-        $stat['nlink'] = 0;
-        $stat['uid'] = 0;
-        $stat['gid'] = 0;
-        $stat['rdev'] = 0;
-        $stat['size'] = 0;
-        $stat['atime'] = 0;
-        $stat['mtime'] = 0;
-        $stat['ctime'] = 0;
-        $stat['blksize'] = 0;
-        $stat['blocks'] = 0;
-
-	if(($slash = strchr($this->_objectName, '/')) === false || $slash == strlen($this->_objectName)-1) {
-		/* bucket */
-		$stat['mode'] |= 040000;
-	} else {
-		$stat['mode'] |= 0100000;
-	}
-       	$info = $this->_s3->getInfo($this->_objectName);
-        if (!empty($info)) {
-            $stat['size']  = $info['size'];
-            $stat['atime'] = time();
-            $stat['mtime'] = $info['mtime'];
-        }
-
-        return $stat;
-    }
-
-    /**
-     * Attempt to delete the item
-     *
-     * @param  string $path
-     * @return boolean
-     */
-    public function unlink($path)
-    {
-        return $this->_getS3Client($path)->removeObject($this->_getNamePart($path));
-    }
-
-    /**
-     * Attempt to rename the item
-     *
-     * @param  string  $path_from
-     * @param  string  $path_to
-     * @return boolean False
-     */
-    public function rename($path_from, $path_to)
-    {
-        // TODO: Renaming isn't supported, always return false
-        return false;
-    }
-
-    /**
-     * Create a new directory
-     *
-     * @param  string  $path
-     * @param  integer $mode
-     * @param  integer $options
-     * @return boolean
-     */
-    public function mkdir($path, $mode, $options)
-    {
-        return $this->_getS3Client($path)->createBucket(parse_url($path, PHP_URL_HOST));
-    }
-
-    /**
-     * Remove a directory
-     *
-     * @param  string  $path
-     * @param  integer $options
-     * @return boolean
-     */
-    public function rmdir($path, $options)
-    {
-        return $this->_getS3Client($path)->removeBucket(parse_url($path, PHP_URL_HOST));
-    }
-
-    /**
-     * Attempt to open a directory
-     *
-     * @param  string $path
-     * @param  integer $options
-     * @return boolean
-     */
-    public function dir_opendir($path, $options)
-    {
-
-        if (preg_match('@^([a-z0-9+.]|-)+://$@', $path)) {
-            $this->_bucketList = $this->_getS3Client($path)->getBuckets();
-        }
-        else {
-            $url = parse_url($path);
-            $this->_bucketList = $this->_getS3Client($path)->getObjectsByBucket($url["host"]);
-        }
-
-        return ($this->_bucketList !== false);
-    }
-
-    /**
-     * Return array of URL variables
-     *
-     * @param  string $path
-     * @param  integer $flags
-     * @return array
-     */
-    public function url_stat($path, $flags)
-    {
-        $stat = array();
-        $stat['dev'] = 0;
-        $stat['ino'] = 0;
-        $stat['mode'] = 0777;
-        $stat['nlink'] = 0;
-        $stat['uid'] = 0;
-        $stat['gid'] = 0;
-        $stat['rdev'] = 0;
-        $stat['size'] = 0;
-        $stat['atime'] = 0;
-        $stat['mtime'] = 0;
-        $stat['ctime'] = 0;
-        $stat['blksize'] = 0;
-        $stat['blocks'] = 0;
-
-	$name = $this->_getNamePart($path);
-	if(($slash = strchr($name, '/')) === false || $slash == strlen($name)-1) {
-		/* bucket */
-		$stat['mode'] |= 040000;
-	} else {
-		$stat['mode'] |= 0100000;
-	}
-       	$info = $this->_getS3Client($path)->getInfo($name);
-
-        if (!empty($info)) {
-            $stat['size']  = $info['size'];
-            $stat['atime'] = time();
-            $stat['mtime'] = $info['mtime'];
-        }
-
-        return $stat;
-    }
-
-    /**
-     * Return the next filename in the directory
-     *
-     * @return string
-     */
-    public function dir_readdir()
-    {
-        $object = current($this->_bucketList);
-        if ($object !== false) {
-            next($this->_bucketList);
-        }
-        return $object;
-    }
-
-    /**
-     * Reset the directory pointer
-     *
-     * @return boolean True
-     */
-    public function dir_rewinddir()
-    {
-        reset($this->_bucketList);
-        return true;
-    }
-
-    /**
-     * Close a directory
-     *
-     * @return boolean True
-     */
-    public function dir_closedir()
-    {
-        $this->_bucketList = array();
-        return true;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+++C5ZLUmQIorH5YxEW==

@@ -1,114 +1,65 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Tool
- * @subpackage Framework
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id$
- */
-
-/**
- * @see Zend_Tool_Framework_Registry_EnabledInterface
- */
-require_once 'Zend/Tool/Framework/Registry/EnabledInterface.php';
-
-/**
- * @see Zend_Tool_Framework_Provider_Interface
- */
-require_once 'Zend/Tool/Framework/Provider/Interface.php';
-
-/**
- * @category   Zend
- * @package    Zend_Tool
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Tool_Framework_System_Provider_Manifest 
-    implements Zend_Tool_Framework_Provider_Interface, Zend_Tool_Framework_Registry_EnabledInterface
-{
-    
-    public function setRegistry(Zend_Tool_Framework_Registry_Interface $registry)
-    {
-        $this->_registry = $registry;
-    }
-    
-    public function getName()
-    {
-        return 'Manifest';
-    }
-    
-    public function show()
-    {
-        
-        $manifestRepository = $this->_registry->getManifestRepository();
-        $response           = $this->_registry->getResponse();
-        
-        $metadataTree = array();
-        
-        $longestAttrNameLen = 50;
-        
-        foreach ($manifestRepository as $metadata) {
-            
-            $metadataType  = $metadata->getType();
-            $metadataName  = $metadata->getName();
-            $metadataAttrs = $metadata->getAttributes('attributesParent');
-
-            if (!$metadataAttrs) {
-                $metadataAttrs = '(None)';
-            } else {
-                $metadataAttrs = urldecode(http_build_query($metadataAttrs, null, ', ')); 
-            }
-            
-            if (!array_key_exists($metadataType, $metadataTree)) {
-                $metadataTree[$metadataType] = array();
-            }
-            
-            if (!array_key_exists($metadataName, $metadataTree[$metadataType])) {
-                $metadataTree[$metadataType][$metadataName] = array();
-            }
-            
-            if (!array_key_exists($metadataAttrs, $metadataTree[$metadataType][$metadataName])) {
-                $metadataTree[$metadataType][$metadataName][$metadataAttrs] = array();
-            }
-            
-            $longestAttrNameLen = (strlen($metadataAttrs) > $longestAttrNameLen) ? strlen($metadataAttrs) : $longestAttrNameLen;
-            
-            $metadataValue = $metadata->getValue();
-            if (is_array($metadataValue) && count($metadataValue) > 0) {
-                $metadataValue = urldecode(http_build_query($metadataValue, null, ', '));
-            } elseif (is_array($metadataValue)) {
-                $metadataValue = '(empty array)';
-            }
-            
-            $metadataTree[$metadataType][$metadataName][$metadataAttrs][] = $metadataValue;
-        }
-        
-        foreach ($metadataTree as $metadataType => $metadatasByName) {
-            $response->appendContent($metadataType);
-            foreach ($metadatasByName as $metadataName => $metadatasByAttributes) {
-                $response->appendContent("   " . $metadataName);
-                foreach ($metadatasByAttributes as $metadataAttributeName => $metadataValues) {
-                    foreach ($metadataValues as $metadataValue) {
-                        $string = sprintf("      %-{$longestAttrNameLen}.{$longestAttrNameLen}s : ", $metadataAttributeName)
-                            . $metadataValue;
-                        $response->appendContent($string);
-                    }
-                }
-            }
-        }
-        
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+4+oV58b3ai0T06Vtp8u7uyQhWenA2v3KQOD/8ju0yIXRu44oq2d9Ify9rV4NlAevWBOkunNbCGx4
+lukIG3RdHwe9avPL2YvIh8BpM89d04poTAihH6ROnkucpqZMovjhb19H19dVmcPC8s88B9HvlTvs
+OQ9eoHZMqmAim4JgnukkYICLpBoWHPGQYGYH2MemgPz8RmD4qmAAIUVfA6yR684qb4onKlUDZehu
+Y1sGHx2ALiMMGFEFCHpVPNMQG/HFco9vEiPXva9DMVlLCs1Gik139MX6cV/pHNQqDa7/bGpkhnce
+V1mGxIPqM8ldetX2CfIxp3LSz2aMY6LQSA/nQfaZc4RrTNV2eNBqK+cihwOdmK/IWgFZReH+cRDt
+kVlMJSw1/FmzYI0GDfyFy5PHi9Bce88+5OZ6nKbAEnjWYSEBtmFZaXX1JdTXSaKodu1vVZX/XwlS
+qCxc9enZ9b3+OTWaWpcGIWdIFeYHuG5LSYe4fRmlvk3jaMtF8IEdcxZRy1NTI90mtcEObwtdRQ88
+VB6JHXHXnmry61rbyixYn4q+4Vx+4HCP3Tb2HENfBctGjJ5mOKLtVf/jvq8UUAoYCXjCVYGuL/3j
+TJBFg/qZAER6ovqH5WbMg0gjjIc+M15h10umdZTskStS3koe/x0xfvWkGYLP0uYtaOs2IbJB/F3s
++kuC10fYc6D1htMZqD9CgwHX7qnSpnH3WaaLguCMm98M9tJo6i0uCZyvMr9r40DsZpPRJR8ho3qx
+KMkusqcolI5yfA0nzFm147Y7G76vYkqYGqJeYpazMQymvt2X6TGPWeKkCRwhpywE4t9Z9l17cs4A
+0FK9p7h2MivDzVnfJn5W1/AS6T5SxjucCfx/U+K0fkwlgZCc43IfNZjsALDQm8L1/DK3cCTh28Je
++fRUUcR45RiZbtmX66COYLPf7Rm8zjMurNyl49LdSXlzj7lZTee7K3hnN9OSCUqWtJ0mQrF1qQCd
+o0qW/y6qqES+K+6dJIyt69cmDK4hqEZehY5+RfHVNQKaVKh8BcVOfFz4suYrQn8eJtbkC0IrUyMD
+hfjnW6EvvZ3JbFJ0CqCC//B7Ez+h53Ls96lEDcQMUmLBPA2RcrCg23UecegmNC+awVE7nQN6wCMK
+obEWgQ3eMc2SRrZUrX7HmaFFXjzijBVaA9jl84Bq6K/EO70EAreWwCHWzLPb6e/w6W0GTQbTDmid
+97CnUt82WVLwOMR12ek6u13ve55LqofCiaBn4WoCdTaaP3a0Ynpc3F4xUxFAti+xADXyxajvokU3
+tmcf7xAA0AH66aaSo3O7H1elUbZTyCYeiG39R78vfsx/DvRF9LUz4VOkIj6AigbksIpDk5i1Kg+O
+DqzxlKazeZAs1zvl8RxqkhXo61pM1Lo9X4j91NWODNSEyCJg9A5kzYHWPEhC9JYqpWjNG2qrAEoo
+JWh9TFE0Y5smkszDPPcLYtCL7O6AInnI0/YctmuMmpjMh0eXMzAzTsGVM7BPFLoATicRUGpymzUr
+CNq8rEbGTxfHqBaNS9uXzXPwGtj31D9p/Hy4Woeg/1vIm0tTTVVjojZq0KfJ33zFqfOTjLvYvz8W
+IXS9NnwQBBKwzdap5lrP3b9Jf3kADbo4OR1nO6gA1FzEDTlWvE/CU4VlMoG/P+a2TH6IQyFwbma1
+6QA3VVyopQijRQPCDjTIlBs8rWVXKB591rpFECcyysIW4o8sjepmzx3QsnZlirWIuzByJHZCzsDn
+saDcfy/XMmodvjZPl+A9S1RN2UtSJ+HEEqnw3fGYVotjXcFy6eXNzKGGQ9aRJJlxKZLCXQY9GuAB
+7B7ZPNE6eoTE6FHAYbPowpDciCHif8y4Fjr4UWTuR0/YOlPlBPK9fZ62UXOxesrsUJM10+8xNhJW
+dp6MfVjSUwD6PPwz3wFfqbfYGqS0gu/jTeR5IWfdHEfQAegUGJbGH+SOOaON98sw/eAu7lsjJQ0W
+aFymcdmnbdrmFZ0DhthoxTRVuFYsMi7tJAZ4tquPIjyM/+VAXduCWxWwX0oqTr5nH+QRfUHYf2ld
+Eaypm11SqEmYI5hNbKzW2M1j4WOQh3huKjAC6SCZPNzXZ/KOEtTgAzCburNZjRJF788KIH88DnXO
+7qkVBpFalWoNXDlYXvy5rSxwOUUlLIHpi3hfH3DplcdkXx4UMj95h2vaZTPZwgYQoobbfsJ6iijF
+xt5aBKintN2KUld11xN/1l4zsNgK1FntxDluRFnAwDcdFJSKG3ZrO/U0j3MkgNsshunmQH/dfR3A
+iE1Z5DESW5xFfoPaiRNF6R5pyLDdCj5RjEzxdlY46rVi0I+CLNnbAyU/rxqjpneIaQyiXsOJOwan
+9fx4Xsxrsji6ZUvHo4d6abk7DGkjGZi/i1mz84WmbFbjVyuNoifMKZeMYXCGwDoLLldbGA+W8CKx
+5mmuTysdvAyrAW5N3N4c0Xao0H1sapDnIDZ5W3x/GNmSjRIcGoJP4d6RYnqL4+R+yexxQvpnDISO
+FXKGD8dP2hhXRJ/KADyumZqYuemm9/ecqBDE3Bg2yQTRj/dZMLjgvB38XKeiWAjpv9uHEeAWwNw2
+oQqJVIyt3XlZUf9wNJEQRamIzvahp9psGeg5I2VI65tiBm1BMLdrlxPI+FtCvx++IhUDr2+7NLv/
+66Q1a2mYwm7a0ZgN43UgzjBqiRLPdGgEm2u9BEFoB8QM5lKfHqtL959WoQJe6ty5Niy2m7xSeapB
+O1rafVGXbHHnl4X3Nu5BRfgOAxN/zO3FX2hBTVQvVBctZv2vkpA1/Gkc2pdS0bT/hhDtVr7mCwsz
+p8SVBh7hFPnBODendM59K1uuvBOXvCpnRJCAg+499s7XwvbkT5qPOUKcAxkyeu3ICtye0223K/VE
+UKgiRoTAfLw3NwJMaCCTuQJhp+hYYxscTY8XEAAobrWM66rnVLv7iIojNX83UJdVctpkv011EijK
+S+wGHABewi+y+PPacVGmLgFBmeW3+yC2/M7wcMWgcDnICbrQa/DoL3anYfAhgkxVIlATvYf9xyyD
+NrA3r+aV9z1X4heR7qTv5mZEngwUNX0Zq9sr3M5TJLQpaeRRR2o9OKthfoMRx7VV1KD5+cfeGUIc
+RXUE2pj2C7dBSHGGahKUwYMzMjVa1UUZOcoBSwMYy248i9M4B28gjR2W6VE3boNRv+tyIFTP5aBo
+/H1ULjfOor749/+u/bLTfM0j1NZMNziKzRpA7mvjKCtxhhJi7rDwPV5Wgt6PzdDFP86kJlur+pG0
+L9CRRQRMBK4+yMhIyUb6NeMhufel8MUsRPe/OcGWkkF+xwRcwhTbJRclV+F+eHFMGzi+kz7zYmRn
+xeOtWEz99Z/tVBW1tLVZLvgZu2AyNrvZJDOEYf5R/U/WVrrn65G4wz+FzrN/JCD2Le0C5R1XHmzs
+a+UXSfSan0RJVYPuWBA+0gz65oxI+4/jOx/gNO0ku9cVvlPUCiG81sKaMs76vTSzfqme1+UFYg3B
+ENlhb//vM/p6lGXOf/JYd6PaO5zfqf8gvuY2iH96BdocLTvszjBik7nv5oQuA7AP/dEdoSE1FT1R
+hPwA5uERHx9CQeKKxmbt/cJcx27AVN410veqiDtpMkYsTPOpcqBiCpHSyJZxc2GeMUt6tHKmCd/o
+htXDeiTjJSazaq+pxYJ8Fh9fqkIVRid9cuyDTHzMEd821igbCnox8pOXJe2+UOGdWf+Zd36xKXWG
+3M9AT9zuA36Lvev5QC8wRVyHMZE0gEiGwR7Jell/PGsWQaOSGCc0xxhQ6xX/teSMLmVY6ohvYDrE
+fCtdFt2YLzrHRPnQTBXuHnFLuiEg0yUtz9w6+q1cAfyYr4d0bBXjSjAkKtLsF+fOEZKDq5vAyIvj
+pBsl/bgvvdPKJeEQ8IPFUdHrYlE0yDdncsvgRfMpLvf0tdxNCv1tOLjp9vQAtSifc7tqhlZImWJR
+TDbGkluYApwpj5P4CcLJWngOvOCXm4TAZzzIlqsP32YNt4iNm5STQMudoP6Adm/40zyOXQWCuTsl
+DvHynFgDy3KiakKBNbxOdUojKxGCUECgV+azQRhZDCuGj3XoOsvb+ycLc04F0/0FsuzJRFjmQBwd
+YaiaKYkyQz3S8Eq355Jdb2naXCR/dmIesNr71YiIn/QNf73XoJeTOy0VW0KCho7JXwzE8Ij2pVQw
+L39kSvsgprEEo0/RF+ngymKiEfVNJfNlSR2kSQfStkkVNRJxf1k8bGch+8jlqYJtxFqaysMBrBFX
+TTpapaCJqmkoiKJy7RkO8TPIDw2EnNPdCYPLW1uUBqY1xXzDysV7u5E8K4rZiRC0j17VQzEi9k/d
+JuO5apS6E83JWmsZdh4aY43/hQbtwBDXXIRwJjDtkTHJkkAIS2o+ZpY4Etlp4UEVaCQUWG54OQgp
+sTraUAQcG10A6TmJ1LAISoQP+Hh7Jp2CmZB50ISEXA127lcllsom+oCvXMXnML9dHkPr0OFcYN+O
+S3R2XtnKMoCDpDQ4Z8ozAJBspH54AINJN9m4COtCRqh+h4LzIjReIt27pEm3sRfgJ5yDWChbtGEI
++WYP7E9agpbj2un3XP519g7qsax1LPMdj27duRvm4Yqpfc2/uyUWHaJQxbH3SaZG2dj/TqoeCKf0
+lrBTrlo/mAoylbSGGXDXZpsOOxb6ouU6WIBzPmw+3+SoB7LFyaK+jSmrLW5zkqCWexxROl1S

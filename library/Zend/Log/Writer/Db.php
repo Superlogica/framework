@@ -1,113 +1,37 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Log
- * @subpackage Writer
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Db.php 14336 2009-03-16 21:12:38Z wil $
- */
-
-/** Zend_Log_Writer_Abstract */
-require_once 'Zend/Log/Writer/Abstract.php';
-
-/**
- * @category   Zend
- * @package    Zend_Log
- * @subpackage Writer
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Db.php 14336 2009-03-16 21:12:38Z wil $
- */
-class Zend_Log_Writer_Db extends Zend_Log_Writer_Abstract
-{
-    /**
-     * Database adapter instance
-     * @var Zend_Db_Adapter
-     */
-    private $_db;
-
-    /**
-     * Name of the log table in the database
-     * @var string
-     */
-    private $_table;
-
-    /**
-     * Relates database columns names to log data field keys.
-     *
-     * @var null|array
-     */
-    private $_columnMap;
-
-    /**
-     * Class constructor
-     *
-     * @param Zend_Db_Adapter $db   Database adapter instance
-     * @param string $table         Log table in database
-     * @param array $columnMap
-     */
-    public function __construct($db, $table, $columnMap = null)
-    {
-        $this->_db    = $db;
-        $this->_table = $table;
-        $this->_columnMap = $columnMap;
-    }
-
-    /**
-     * Formatting is not possible on this writer
-     */
-    public function setFormatter($formatter)
-    {
-        require_once 'Zend/Log/Exception.php';
-        throw new Zend_Log_Exception(get_class() . ' does not support formatting');
-    }
-
-    /**
-     * Remove reference to database adapter
-     *
-     * @return void
-     */
-    public function shutdown()
-    {
-        $this->_db = null;
-    }
-
-    /**
-     * Write a message to the log.
-     *
-     * @param  array  $event  event data
-     * @return void
-     */
-    protected function _write($event)
-    {
-        if ($this->_db === null) {
-            require_once 'Zend/Log/Exception.php';
-            throw new Zend_Log_Exception('Database adapter is null');
-        }
-
-        if ($this->_columnMap === null) {
-            $dataToInsert = $event;
-        } else {
-            $dataToInsert = array();
-            foreach ($this->_columnMap as $columnName => $fieldKey) {
-                $dataToInsert[$columnName] = $event[$fieldKey];
-            }
-        }
-
-        $this->_db->insert($this->_table, $dataToInsert);
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+Vl2RjiWQ33HDbYs9qA2na32PPjvc5QmUFWlA

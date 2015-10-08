@@ -1,94 +1,35 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Search_Lucene
- * @subpackage Analysis
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-
-/** Zend_Search_Lucene_Analysis_Analyzer_Common */
-require_once 'Zend/Search/Lucene/Analysis/Analyzer/Common.php';
-
-
-/**
- * @category   Zend
- * @package    Zend_Search_Lucene
- * @subpackage Analysis
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-class Zend_Search_Lucene_Analysis_Analyzer_Common_TextNum extends Zend_Search_Lucene_Analysis_Analyzer_Common
-{
-    /**
-     * Current position in a stream
-     *
-     * @var integer
-     */
-    private $_position;
-
-    /**
-     * Reset token stream
-     */
-    public function reset()
-    {
-        $this->_position = 0;
-
-        if ($this->_input === null) {
-            return;
-        }
-
-        // convert input into ascii
-        if (PHP_OS != 'AIX') {
-            $this->_input = iconv($this->_encoding, 'ASCII//TRANSLIT', $this->_input);
-        }
-        $this->_encoding = 'ASCII';
-    }
-
-    /**
-     * Tokenization stream API
-     * Get next token
-     * Returns null at the end of stream
-     *
-     * @return Zend_Search_Lucene_Analysis_Token|null
-     */
-    public function nextToken()
-    {
-        if ($this->_input === null) {
-            return null;
-        }
-
-        do {
-            if (! preg_match('/[a-zA-Z0-9]+/', $this->_input, $match, PREG_OFFSET_CAPTURE, $this->_position)) {
-                // It covers both cases a) there are no matches (preg_match(...) === 0)
-                // b) error occured (preg_match(...) === FALSE)
-                return null;
-            }
-
-            $str = $match[0][0];
-            $pos = $match[0][1];
-            $endpos = $pos + strlen($str);
-
-            $this->_position = $endpos;
-
-            $token = $this->normalize(new Zend_Search_Lucene_Analysis_Token($str, $pos, $endpos));
-        } while ($token === null); // try again if token is skipped
-
-        return $token;
-    }
-}
-
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+3fWjhNwSbgDAvykjL2xISxiI3z13

@@ -1,167 +1,47 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Service
- * @subpackage Amazon
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id$
- */
-
-require_once 'Zend/Service/Abstract.php';
-
-/**
- * Abstract Amazon class that handles the credentials for any of the Web Services that
- * Amazon offers
- *
- * @category   Zend
- * @package    Zend_Service
- * @subpackage Amazon
- * @copyright  Copyright (c) 22005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-abstract class Zend_Service_Amazon_Abstract extends Zend_Service_Abstract
-{
-    /**
-     * @var string Amazon Access Key
-     */
-    protected static $_defaultAccessKey = null;
-
-    /**
-     * @var string Amazon Secret Key
-     */
-    protected static $_defaultSecretKey = null;
-
-    /**
-     * @var string Amazon Region
-     */
-    protected static $_defaultRegion = null;
-
-    /**
-     * @var string Amazon Secret Key
-     */
-    protected $_secretKey;
-
-    /**
-     * @var string Amazon Access Key
-     */
-    protected $_accessKey;
-
-    /**
-     * @var string Amazon Region
-     */
-    protected $_region;
-
-    /**
-     * An array that contains all the valid Amazon Ec2 Regions.
-     *
-     * @var array
-     */
-    protected static $_validEc2Regions = array('eu-west-1', 'us-east-1');
-
-    /**
-     * Set the keys to use when accessing SQS.
-     *
-     * @param  string $access_key       Set the default Access Key
-     * @param  string $secret_key       Set the default Secret Key
-     * @return void
-     */
-    public static function setKeys($accessKey, $secretKey)
-    {
-        self::$_defaultAccessKey = $accessKey;
-        self::$_defaultSecretKey = $secretKey;
-    }
-
-    /**
-     * Set which region you are working in.  It will append the
-     * end point automaticly
-     *
-     * @param string $region
-     */
-    public static function setRegion($region)
-    {
-        if(in_array(strtolower($region), self::$_validEc2Regions, true)) {
-            self::$_defaultRegion = $region;
-        } else {
-            require_once 'Zend/Service/Amazon/Exception.php';
-            throw new Zend_Service_Amazon_Exception('Invalid Amazon Ec2 Region');
-        }
-    }
-
-    /**
-     * Create Amazon Sqs client.
-     *
-     * @param  string $access_key       Override the default Access Key
-     * @param  string $secret_key       Override the default Secret Key
-     * @param  string $region           Sets the AWS Region
-     * @return void
-     */
-    public function __construct($accessKey=null, $secretKey=null, $region=null)
-    {
-        if(!$accessKey) {
-            $accessKey = self::$_defaultAccessKey;
-        }
-        if(!$secretKey) {
-            $secretKey = self::$_defaultSecretKey;
-        }
-        if(!$region) {
-            $region = self::$_defaultRegion;
-        } else {
-            // make rue the region is valid
-            if(!empty($region) && !in_array(strtolower($region), self::$_validEc2Regions, true)) {
-                require_once 'Zend/Service/Amazon/Exception.php';
-                throw new Zend_Service_Amazon_Exception('Invalid Amazon Ec2 Region');
-            }
-        }
-
-        if(!$accessKey || !$secretKey) {
-            require_once 'Zend/Service/Amazon/Exception.php';
-            throw new Zend_Service_Amazon_Exception("AWS keys were not supplied");
-        }
-        $this->_accessKey = $accessKey;
-        $this->_secretKey = $secretKey;
-        $this->_region = $region;
-    }
-
-    /**
-     * Method to fetch the AWS Region
-     *
-     * @return string
-     */
-    protected function _getRegion()
-    {
-        return (!empty($this->_region)) ? $this->_region . '.' : '';
-    }
-
-    /**
-     * Method to fetch the Access Key
-     *
-     * @return string
-     */
-    protected function _getAccessKey()
-    {
-        return $this->_accessKey;
-    }
-
-    /**
-     * Method to fetch the Secret AWS Key
-     *
-     * @return string
-     */
-    protected function _getSecretKey()
-    {
-        return $this->_secretKey;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

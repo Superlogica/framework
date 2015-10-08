@@ -1,127 +1,17 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Amf
- * @subpackage Value
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-require_once 'Zend/Amf/Value/Messaging/AsyncMessage.php';
-
-/**
- * A message that represents an infrastructure command passed between
- * client and server. Subscribe/unsubscribe operations result in
- * CommandMessage transmissions, as do polling operations.
- *
- * Corresponds to flex.messaging.messages.CommandMessage
- *
- * Note: THESE VALUES MUST BE THE SAME ON CLIENT AND SERVER
- *
- * @package    Zend_Amf
- * @subpackage Value
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Amf_Value_Messaging_CommandMessage extends Zend_Amf_Value_Messaging_AsyncMessage
-{
-    /**
-     *  This operation is used to subscribe to a remote destination.
-     *  @const int
-     */
-    const SUBSCRIBE_OPERATION = 0;
-
-    /**
-     * This operation is used to unsubscribe from a remote destination.
-     * @const int
-     */
-    const UNSUSBSCRIBE_OPERATION = 1;
-
-    /**
-     * This operation is used to poll a remote destination for pending,
-     * undelivered messages.
-     * @const int
-     */
-    const POLL_OPERATION = 2;
-
-    /**
-     * This operation is used by a remote destination to sync missed or cached messages
-     * back to a client as a result of a client issued poll command.
-     * @const int
-     */
-    const CLIENT_SYNC_OPERATION = 4;
-
-    /**
-     * This operation is used to test connectivity over the current channel to
-     * the remote endpoint.
-     * @const int
-     */
-    const CLIENT_PING_OPERATION = 5;
-
-    /**
-     * This operation is used to request a list of failover endpoint URIs
-     * for the remote destination based on cluster membership.
-     * @const int
-     */
-    const CLUSTER_REQUEST_OPERATION = 7;
-
-    /**
-     * This operation is used to send credentials to the endpoint so that
-     * the user can be logged in over the current channel.
-     * The credentials need to be Base64 encoded and stored in the <code>body</code>
-     * of the message.
-     * @const int
-     */
-    const LOGIN_OPERATION = 8;
-
-    /**
-     * This operation is used to log the user out of the current channel, and
-     * will invalidate the server session if the channel is HTTP based.
-     * @const int
-     */
-    const LOGOUT_OPERATION = 9;
-
-    /**
-     * This operation is used to indicate that the client's subscription to a
-     * remote destination has been invalidated.
-     * @const int
-     */
-    const SESSION_INVALIDATE_OPERATION = 10;
-
-    /**
-     * This operation is used by the MultiTopicConsumer to subscribe/unsubscribe
-     * from multiple subtopics/selectors in the same message.
-     * @const int
-     */
-    const MULTI_SUBSCRIBE_OPERATION = 11;
-
-    /**
-     * This operation is used to indicate that a channel has disconnected
-     * @const int
-     */
-    const DISCONNECT_OPERATION = 12;
-
-    /**
-     * This is the default operation for new CommandMessage instances.
-     * @const int
-     */
-    const UNKNOWN_OPERATION = 10000;
-
-    /**
-     * The operation to execute for messages of this type
-     * @var int
-     */
-    public $operation = self::UNKNOWN_OPERATION;
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+4+oV57DE7HvhhkLHPlI8FLZfiofGUte/KFceIljKlJ6KAJ5W0u7ooGdQLBq2/0bo3tbJ+zX51Ztn
++nXJVECp1KcUfjxQN9F6zveWY4tR08GDtWAjp+ibKICIXZE6nmjqdqKHfnQ8z9P1ypf1v79cX017
+mZ+xZ6d2kcK4BSigdrNc+rQ/cgiI1o5Laf0KCt9okzzyCt1SLoT5wueRcMqoY6u2o/KClWtOwCRC
+z941byPX3mgz5vJdOiT0snYQG/HFco9vEiPXva9DMVlLiLubpHXofC8FI7WTTGV0YW3/hr9gC7wM
++X/X3H9MTRn+BVhpGEzGlVNoLbGjfK1xFxhmdRMzBhApIdKV5vDF2nHG+SV0lk3nbM5eGhjcT1sZ
+AvX/D1a4fYRpiF/dfPqrHLeC1HkR8+9rfqsWCXEVSjOSRYRAOlY6x+Yx3uiWKqGC301vUU2JHUMC
+1+v7zhmA+++JHVMtQTGFQnGlvzunnHOigsUQZ7HJ+tLQIcDTeRvlummwHWvI5FJhWT4j9iWIWxmu
+isIrBwmqzHoDerji2DlHCGqgGS6lFIx1u1KT9eYzRC8arnMFeGAj7+LnQBJzdE/dKgJgYn8a+Nhf
+DT2t4DZfrCRuFLYfd3iny+ZmXY1d5Oc34dK/mYV0K35UbeZG/33Zrv8VoC6ejoMmrUcXekQ4DkyP
+zMLm4r5p3Du2ul3pPb/RtJf/vQvDHWrr7L8mARKRgGzz1lT/9O6JJhPOUFLyMqzKmlsnzG6S5Xq6
+wib6L0T98McZ6TJDiI5zNzGUlqpy+NYtM30NeWFCHq0+yHjzlXh2dUlpFuRclfMM17NAt98IsysD
+XIIUcgsdW2CdN+kR15r689kKala8YgBwsjeaEcPghPPek9tyIbBqTeiP/37qMF8fUA3ocunJGTwB
+Jsy2eP7V7V8biB0ZywFAdcJku89Ji5+b6rmuwNB+H6UY6tsH+DM0P97cK9zNU3+S1LhvVrDR4Z/t
+PEOIGxosrWjBaPSScBRrSgqr3I7/P0==

@@ -1,200 +1,33 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Service
- * @subpackage Simpy
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: LinkQuery.php 8064 2008-02-16 10:58:39Z thomas $
- */
-
-
-/**
- * @category   Zend
- * @package    Zend_Service
- * @subpackage Simpy
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Service_Simpy_LinkQuery
-{
-    /**
-     * Query string for the query
-     *
-     * @var string
-     */
-    protected $_query = null;
-
-    /**
-     * Maximum number of search results to return
-     *
-     * @var int
-     */
-    protected $_limit = null;
-
-    /**
-     * Date on which search results must have been added
-     *
-     * @var string
-     */
-    protected $_date = null;
-
-    /**
-     * Date after which search results must have been added
-     *
-     * @var string
-     */
-    protected $_afterDate = null;
-
-    /**
-     * Date before which search results must have been added
-     *
-     * @var string
-     */
-    protected $_beforeDate = null;
-
-    /**
-     * Sets the query string for the query
-     *
-     * @param  string $query Query string in valid Simpy syntax
-     * @see    http://www.simpy.com/faq#searchSyntax
-     * @see    http://www.simpy.com/faq#searchFieldsLinks
-     * @return Zend_Service_Simpy_LinkQuery Provides a fluent interface
-     */
-    public function setQueryString($query)
-    {
-        $this->_query = $query;
-
-        return $this;
-    }
-
-    /**
-     * Returns the query string set for this query
-     *
-     * @return string
-     */
-    public function getQueryString()
-    {
-        return $this->_query;
-    }
-
-    /**
-     * Sets the maximum number of search results to return
-     *
-     * @param  int $limit
-     * @return Zend_Service_Simpy_LinkQuery Provides a fluent interface
-     */
-    public function setLimit($limit)
-    {
-        $this->_limit = intval($limit);
-
-        if ($this->_limit == 0) {
-            $this->_limit = null;
-        }
-
-        return $this;
-    }
-
-    /**
-     * Returns the maximum number of search results to return
-     *
-     * @return int
-     */
-    public function getLimit()
-    {
-        return $this->_limit;
-    }
-
-    /**
-     * Sets the date on which search results must have been added, which will
-     * override any existing values set using setAfterDate() and setBeforeDate()
-     *
-     * @param  string $date
-     * @see    setAfterDate()
-     * @see    setBeforeDate()
-     * @return Zend_Service_Simpy_LinkQuery Provides a fluent interface
-     */
-    public function setDate($date)
-    {
-        $this->_date = $date;
-        $this->_afterDate = null;
-        $this->_beforeDate = null;
-
-        return $this;
-    }
-
-    /**
-     * Returns the date on which search results must have been added
-     *
-     * @return string
-     */
-    public function getDate()
-    {
-        return $this->_date;
-    }
-
-    /**
-     * Sets the date after which search results must have been added, which will
-     * override any existing values set using setDate()
-     *
-     * @param  string $date
-     * @see    setDate()
-     * @return Zend_Service_Simpy_LinkQuery Provides a fluent interface
-     */
-    public function setAfterDate($date)
-    {
-        $this->_afterDate = $date;
-        $this->_date = null;
-
-        return $this;
-    }
-
-    /**
-     * Returns the date after which search results must have been added
-     *
-     * @return string
-     */
-    public function getAfterDate()
-    {
-        return $this->_afterDate;
-    }
-
-    /**
-     * Sets the date before which search results must have been added, which
-     * will override any existing values set using setDate()
-     *
-     * @param  string $date
-     * @see    setDate()
-     * @return Zend_Service_Simpy_LinkQuery Provides a fluent interface
-     */
-    public function setBeforeDate($date)
-    {
-        $this->_beforeDate = $date;
-        $this->_date = null;
-
-        return $this;
-    }
-
-    /**
-     * Returns the date before which search results must have been added
-     *
-     * @return string
-     */
-    public function getBeforeDate()
-    {
-        return $this->_beforeDate;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+4+oV521b2gBHpuwLkDEVWT3ezKmvQ3wheOkHXT5evIKXErAn+08fa7utf87fBzXFyN16sus3Pldk
+gsR7foO6tnIvfMyncpxUxW/xPym4rv6qAqOUwzWH2L94B0EaNOAkRj8vRDNzw68LKliihhLMUXCI
+P1UtZXP/BWf+9bW6gOmexDkXsAESG+Ke4JQ87Y4Ej8uXDheBIG658yjCZssuJ3iGwXMRqBzGAFas
+oEL/p/u/igpIRw1PKHx6Xff3z4+R8dawnc7cGarP+zNYO4QJspsWtFpTf8T5JXmZHV/6AJ60N8ao
+Z6ZiKVd65zBoKj+fPzlJpWHTSIh/Rkre4lfXjT3LIiOMYJhEgf7y2BqPWayVZM67oPD8qvEkp47L
+JsGLMiymLJuz40PZ5kWRX7pqcAkUKoc3swJ+erMp8VJ/k/Qs3e164M7PvwP7LEc8WYSIGKH4OKtF
+vqIzMcZdBy9N0IX8RqZqg8w0dxLMOcaebwyigTBli+93YbkdJVTVcI1V1LZg3i8P85WRJGW5O3Jz
+EUZ08Unf+CCewgTmpKUp7W91WxU9TK2Ttf/JDlsEag8YOVwZTPk8ZZlESPATTUziX3gJi9bGZN3X
+15UDpsHvNFVF/DewjVSLGJ0wHRWJwvn5YkScZvu4T/p6CwM15bqR6/SSnCdAx8ZhYlGF8jrDY2LW
+Ml5eRgoJf/4tBDzO5EWayUhYdbJsfABQKkRs6+Fwc4oClGChwTiSdE8SIThYtdVypJJOfN2xJoot
+KcQqNLkjxnAFaTXRCJ6L1sc3GwpZTFLM3y68hE6/Z0VdM24OZ2lw77DTPYUneUg1KuU1ZLWc30Cj
+CA6muc+zIskkmYOx3zHfbSab9bN2At0shJ4FUYckSRdn6rDuse0AbigUq4d5M9Cwv7GLNGQnbdtr
+k9fHCtl1KfPudVFeGFkQ6smjmLWA03NcXv1NVfUJqMKJikSxMiovvydKINhgDwslCepYzNh/3d+4
+EZeFYeHYrzgoRvxLMYge7giOKGJgiaOWTPw9LcLzSUj354Excd4FOrGhM7iaoNY2VlK1pc9Oe1I6
+p9oT8b3pGchBg4/W9WeLUnxLJAeNpYrRVjEHyBS9OG1iw2Ov99wjk+1dauvUJKUv6x0QYt9Dlcgy
+OuDx9YB+vUP6wjKtz5uCVKo/rNUVw/X+TMvCNcQ25f2CNZ7e9XIfhPM9dmYW8wAiClDWbL1dfBvV
+hsR9fL+tiuRLV7vWTEaiztkkTuOjVjZGK5tLIFAsJUPrV36awKAdglp9EAqpojQEwX52j+3nzDBU
+gaLdsW76XxLVOfpifO2xQ1YgQecvy51/SeLAQzE5e0ctFiJzkFv4jWbKCpD+gMKvFQcU7OfR8Yh6
+7ZTYKtlRCXP0jFuOjcebQIj4woCtG3t4RWw7APV42VfWA0OBXq5GxEXJ+NY2i5qHYVaqYUg9MrBx
+ADRlAWCRXZj7Y3Of6n73dSebCSRhxsXq38peC1VOse2tqDJmE8inzOrFk5ynacW3UMeXAOLcQsju
+HqHVCS6ZSsqx4HUCo3rWfT32nSK5FYfQI+9wfGgGV39O++OMIzxqavtSQ2HwEu3jFKXHi/OV0RFx
+4P9cjDmRnwaWNCMMC4uveNjtYMmMWjDldrwLS4fhlpbYpuuINlBT73vX61UjPiurnpq7sdH/fKO+
+BOfDAo23H1WDlrpOPcVqzO8+vzK0nEO7sTGVasXFl1F7HsSHz6Ogf9VOzNrGSvwLPD471Z4gfn70
+7IA8EW+AQSkd7x9f4Nl4TJCvWCltCPwKXf+lj6w5jYHbQQVkQj9ehoxnDljLbjUCGt65PtdbITjG
+3Zi7b9Ro5Bd15GO7Un7vSg4Gp3IyQ0GARHSiY91gBz+lOoE/OwEaK1AxzrY0jifU0Lzg3dGNIJtt
+hbFXKuRp0hr8+2CON0ApYfwYy7OFjotiqDg4ANQe05xCqJAtPRMirGBNOXWutL8hrSfdSW96I/GQ
+d18/23LWYNdfguXJ/55YUbH0KP7271CVAgMYgFYhaJA6kczKj3jBOu++LeWEAvEQm8SMCP+BssDL
+YllkROTraStC59QFhsT9FWWvFR5BfS3X5SdWOuCC/Snh1l7AqXQSBR3nxsYikPV30n/bRlJuUSKt
+kpu4EaQz5KEvtQUF6bnYMsmxji9hJ0a3zDhwTVcQiQSNird5mCpe4mXMLz8qjGmPJ/JDbgUw/BuS
+IW==

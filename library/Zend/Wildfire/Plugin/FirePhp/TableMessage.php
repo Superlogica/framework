@@ -1,164 +1,49 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Wildfire
- * @subpackage Plugin
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_Wildfire_Plugin_FirePhp */
-require_once 'Zend/Wildfire/Plugin/FirePhp.php';
-
-/** Zend_Wildfire_Plugin_FirePhp_Message */
-require_once 'Zend/Wildfire/Plugin/FirePhp/Message.php';
-
-/**
- * A message envelope that can be updated for the duration of the requet before
- * it gets flushed at the end of the request.
- * 
- * @category   Zend
- * @package    Zend_Wildfire
- * @subpackage Plugin
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Wildfire_Plugin_FirePhp_TableMessage extends Zend_Wildfire_Plugin_FirePhp_Message
-{
-    /**
-     * The header of the table containing all columns
-     * @var array
-     */
-    protected $_header = null;
-    
-    /**
-     * The rows of the table
-     * $var array
-     */ 
-    protected $_rows = array();
-    
-    /**
-     * Constructor
-     * 
-     * @param string $label The label of the table
-     */
-    function __construct($label)
-    {
-        parent::__construct(Zend_Wildfire_Plugin_FirePhp::TABLE, null);
-        $this->setLabel($label);
-    }
-    
-    /**
-     * Set the table header
-     * 
-     * @param array $header The header columns
-     * @return void
-     */
-    public function setHeader($header)
-    {
-        $this->_header = $header;
-    }
-    
-    /**
-     * Append a row to the end of the table.
-     * 
-     * @param array $row An array of column values representing a row.
-     * @return void
-     */
-    public function addRow($row)
-    {
-        $this->_rows[] = $row;
-    }
-    
-    /**
-     * Get the actual message to be sent in its final format.
-     * 
-     * @return mixed Returns the message to be sent.
-     */
-    public function getMessage()
-    {
-        $table = $this->_rows;
-        if($this->_header) {
-            array_unshift($table,$this->_header);
-        }
-        return $table;
-    }
-
-    /**
-     * Returns the row at the given index
-     *
-     * @param integer $index The index of the row
-     * @return array Returns the row
-     * @throws Zend_Wildfire_Exception
-     */
-    public function getRowAt($index)
-    {
-        $count = $this->getRowCount();
-        
-        if($index < 0 || $index > $count-1) {
-            require_once 'Zend/Wildfire/Exception.php';
-            throw new Zend_Wildfire_Exception('Row index('.$index.') out of bounds('.$count.')!');
-        }
-      
-        return $this->_rows[$index];
-    }
-
-    /**
-     * Sets the row on the given index to a new row
-     *
-     * @param integer $index The index of the row
-     * @param array $row The new data for the row
-     * @throws Zend_Wildfire_Exception
-     */
-    public function setRowAt($index, $row)
-    {
-        $count = $this->getRowCount();
-        
-        if($index < 0 || $index > $count-1) {
-            require_once 'Zend/Wildfire/Exception.php';
-            throw new Zend_Wildfire_Exception('Row index('.$index.') out of bounds('.$count.')!');
-        }
-      
-        $this->_rows[$index] = $row;
-    }
-
-    /**
-     * Returns the number of rows
-     *
-     * @return integer
-     */
-    public function getRowCount()
-    {
-        return count($this->_rows);
-    }
-
-    /**
-     * Returns the last row of the table
-     *
-     * @return array Returns the last row
-     * @throws Zend_Wildfire_Exception
-     */
-    public function getLastRow()
-    {
-        $count = $this->getRowCount();
-        
-        if($count==0) {
-            require_once 'Zend/Wildfire/Exception.php';
-            throw new Zend_Wildfire_Exception('Cannot get last row as no rows exist!');
-        }
-
-        return $this->_rows[$count-1];
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

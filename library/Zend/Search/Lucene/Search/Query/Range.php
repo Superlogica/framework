@@ -1,373 +1,140 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Search_Lucene
- * @subpackage Search
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-
-/** Zend_Search_Lucene_Search_Query */
-require_once 'Zend/Search/Lucene/Search/Query.php';
-
-/** Zend_Search_Lucene_Search_Query_MultiTerm */
-require_once 'Zend/Search/Lucene/Search/Query/MultiTerm.php';
-
-
-/**
- * @category   Zend
- * @package    Zend_Search_Lucene
- * @subpackage Search
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Search_Lucene_Search_Query_Range extends Zend_Search_Lucene_Search_Query
-{
-    /**
-     * Lower term.
-     *
-     * @var Zend_Search_Lucene_Index_Term
-     */
-    private $_lowerTerm;
-
-    /**
-     * Upper term.
-     *
-     * @var Zend_Search_Lucene_Index_Term
-     */
-    private $_upperTerm;
-
-
-    /**
-     * Search field
-     *
-     * @var string
-     */
-    private $_field;
-
-    /**
-     * Inclusive
-     *
-     * @var boolean
-     */
-    private $_inclusive;
-
-    /**
-     * Matched terms.
-     *
-     * Matched terms list.
-     * It's filled during the search (rewrite operation) and may be used for search result
-     * post-processing
-     *
-     * Array of Zend_Search_Lucene_Index_Term objects
-     *
-     * @var array
-     */
-    private $_matches = null;
-
-
-    /**
-     * Zend_Search_Lucene_Search_Query_Range constructor.
-     *
-     * @param Zend_Search_Lucene_Index_Term|null $lowerTerm
-     * @param Zend_Search_Lucene_Index_Term|null $upperTerm
-     * @param boolean $inclusive
-     * @throws Zend_Search_Lucene_Exception
-     */
-    public function __construct($lowerTerm, $upperTerm, $inclusive)
-    {
-        if ($lowerTerm === null  &&  $upperTerm === null) {
-            require_once 'Zend/Search/Lucene/Exception.php';
-            throw new Zend_Search_Lucene_Exception('At least one term must be non-null');
-        }
-        if ($lowerTerm !== null  &&  $upperTerm !== null  &&  $lowerTerm->field != $upperTerm->field) {
-            require_once 'Zend/Search/Lucene/Exception.php';
-            throw new Zend_Search_Lucene_Exception('Both terms must be for the same field');
-        }
-
-        $this->_field     = ($lowerTerm !== null)? $lowerTerm->field : $upperTerm->field;
-        $this->_lowerTerm = $lowerTerm;
-        $this->_upperTerm = $upperTerm;
-        $this->_inclusive = $inclusive;
-    }
-
-    /**
-     * Get query field name
-     *
-     * @return string|null
-     */
-    public function getField()
-    {
-        return $this->_field;
-    }
-
-    /**
-     * Get lower term
-     *
-     * @return Zend_Search_Lucene_Index_Term|null
-     */
-    public function getLowerTerm()
-    {
-        return $this->_lowerTerm;
-    }
-
-    /**
-     * Get upper term
-     *
-     * @return Zend_Search_Lucene_Index_Term|null
-     */
-    public function getUpperTerm()
-    {
-        return $this->_upperTerm;
-    }
-
-    /**
-     * Get upper term
-     *
-     * @return boolean
-     */
-    public function isInclusive()
-    {
-        return $this->_inclusive;
-    }
-
-    /**
-     * Re-write query into primitive queries in the context of specified index
-     *
-     * @param Zend_Search_Lucene_Interface $index
-     * @return Zend_Search_Lucene_Search_Query
-     */
-    public function rewrite(Zend_Search_Lucene_Interface $index)
-    {
-        $this->_matches = array();
-
-        if ($this->_field === null) {
-            // Search through all fields
-            $fields = $index->getFieldNames(true /* indexed fields list */);
-        } else {
-            $fields = array($this->_field);
-        }
-
-        $maxTerms = Zend_Search_Lucene::getTermsPerQueryLimit();
-        foreach ($fields as $field) {
-            $index->resetTermsStream();
-
-            if ($this->_lowerTerm !== null) {
-                $lowerTerm = new Zend_Search_Lucene_Index_Term($this->_lowerTerm->text, $field);
-
-                $index->skipTo($lowerTerm);
-
-                if (!$this->_inclusive  &&
-                    $index->currentTerm() == $lowerTerm) {
-                    // Skip lower term
-                    $index->nextTerm();
-                }
-            } else {
-                $index->skipTo(new Zend_Search_Lucene_Index_Term('', $field));
-            }
-
-
-            if ($this->_upperTerm !== null) {
-                // Walk up to the upper term
-                $upperTerm = new Zend_Search_Lucene_Index_Term($this->_upperTerm->text, $field);
-
-                while ($index->currentTerm() !== null          &&
-                       $index->currentTerm()->field == $field  &&
-                       $index->currentTerm()->text  <  $upperTerm->text) {
-                    $this->_matches[] = $index->currentTerm();
-
-                    if ($maxTerms != 0  &&  count($this->_matches) > $maxTerms) {
-                        require_once 'Zend/Search/Lucene/Exception.php';
-                        throw new Zend_Search_Lucene_Exception('Terms per query limit is reached.');
-                    }
-
-                    $index->nextTerm();
-                }
-
-                if ($this->_inclusive  &&  $index->currentTerm() == $upperTerm) {
-                    // Include upper term into result
-                    $this->_matches[] = $upperTerm;
-                }
-            } else {
-                // Walk up to the end of field data
-                while ($index->currentTerm() !== null  &&  $index->currentTerm()->field == $field) {
-                    $this->_matches[] = $index->currentTerm();
-
-                    if ($maxTerms != 0  &&  count($this->_matches) > $maxTerms) {
-                        require_once 'Zend/Search/Lucene/Exception.php';
-                        throw new Zend_Search_Lucene_Exception('Terms per query limit is reached.');
-                    }
-
-                    $index->nextTerm();
-                }
-            }
-
-            $index->closeTermsStream();
-        }
-
-        if (count($this->_matches) == 0) {
-            return new Zend_Search_Lucene_Search_Query_Empty();
-        } else if (count($this->_matches) == 1) {
-            return new Zend_Search_Lucene_Search_Query_Term(reset($this->_matches));
-        } else {
-            $rewrittenQuery = new Zend_Search_Lucene_Search_Query_MultiTerm();
-
-            foreach ($this->_matches as $matchedTerm) {
-                $rewrittenQuery->addTerm($matchedTerm);
-            }
-
-            return $rewrittenQuery;
-        }
-    }
-
-    /**
-     * Optimize query in the context of specified index
-     *
-     * @param Zend_Search_Lucene_Interface $index
-     * @return Zend_Search_Lucene_Search_Query
-     */
-    public function optimize(Zend_Search_Lucene_Interface $index)
-    {
-        require_once 'Zend/Search/Lucene/Exception.php';
-        throw new Zend_Search_Lucene_Exception('Range query should not be directly used for search. Use $query->rewrite($index)');
-    }
-
-    /**
-     * Return query terms
-     *
-     * @return array
-     * @throws Zend_Search_Lucene_Exception
-     */
-    public function getQueryTerms()
-    {
-        if ($this->_matches === null) {
-            require_once 'Zend/Search/Lucene/Exception.php';
-            throw new Zend_Search_Lucene_Exception('Search or rewrite operations have to be performed before.');
-        }
-
-        return $this->_matches;
-    }
-
-    /**
-     * Constructs an appropriate Weight implementation for this query.
-     *
-     * @param Zend_Search_Lucene_Interface $reader
-     * @return Zend_Search_Lucene_Search_Weight
-     * @throws Zend_Search_Lucene_Exception
-     */
-    public function createWeight(Zend_Search_Lucene_Interface $reader)
-    {
-        require_once 'Zend/Search/Lucene/Exception.php';
-        throw new Zend_Search_Lucene_Exception('Range query should not be directly used for search. Use $query->rewrite($index)');
-    }
-
-
-    /**
-     * Execute query in context of index reader
-     * It also initializes necessary internal structures
-     *
-     * @param Zend_Search_Lucene_Interface $reader
-     * @param Zend_Search_Lucene_Index_DocsFilter|null $docsFilter
-     * @throws Zend_Search_Lucene_Exception
-     */
-    public function execute(Zend_Search_Lucene_Interface $reader, $docsFilter = null)
-    {
-        require_once 'Zend/Search/Lucene/Exception.php';
-        throw new Zend_Search_Lucene_Exception('Range query should not be directly used for search. Use $query->rewrite($index)');
-    }
-
-    /**
-     * Get document ids likely matching the query
-     *
-     * It's an array with document ids as keys (performance considerations)
-     *
-     * @return array
-     * @throws Zend_Search_Lucene_Exception
-     */
-    public function matchedDocs()
-    {
-        require_once 'Zend/Search/Lucene/Exception.php';
-        throw new Zend_Search_Lucene_Exception('Range query should not be directly used for search. Use $query->rewrite($index)');
-    }
-
-    /**
-     * Score specified document
-     *
-     * @param integer $docId
-     * @param Zend_Search_Lucene_Interface $reader
-     * @return float
-     * @throws Zend_Search_Lucene_Exception
-     */
-    public function score($docId, Zend_Search_Lucene_Interface $reader)
-    {
-        require_once 'Zend/Search/Lucene/Exception.php';
-        throw new Zend_Search_Lucene_Exception('Range query should not be directly used for search. Use $query->rewrite($index)');
-    }
-
-    /**
-     * Query specific matches highlighting
-     *
-     * @param Zend_Search_Lucene_Search_Highlighter_Interface $highlighter  Highlighter object (also contains doc for highlighting)
-     */
-    protected function _highlightMatches(Zend_Search_Lucene_Search_Highlighter_Interface $highlighter)
-    {
-        $words = array();
-
-        $docBody = $highlighter->getDocument()->getFieldUtf8Value('body');
-        $tokens = Zend_Search_Lucene_Analysis_Analyzer::getDefault()->tokenize($docBody, 'UTF-8');
-
-        $lowerTermText = ($this->_lowerTerm !== null)? $this->_lowerTerm->text : null;
-        $upperTermText = ($this->_upperTerm !== null)? $this->_upperTerm->text : null;
-
-        if ($this->_inclusive) {
-	        foreach ($tokens as $token) {
-	            $termText = $token->getTermText();
-	            if (($lowerTermText == null  ||  $lowerTermText <= $termText)  &&
-	                ($upperTermText == null  ||  $termText <= $upperTermText)) {
-	                $words[] = $termText;
-	            }
-	        }
-        } else {
-            foreach ($tokens as $token) {
-                $termText = $token->getTermText();
-                if (($lowerTermText == null  ||  $lowerTermText < $termText)  &&
-                    ($upperTermText == null  ||  $termText < $upperTermText)) {
-                    $words[] = $termText;
-                }
-            }
-        }
-
-        $highlighter->highlight($words);
-    }
-
-    /**
-     * Print a query
-     *
-     * @return string
-     */
-    public function __toString()
-    {
-        // It's used only for query visualisation, so we don't care about characters escaping
-        return (($this->_field === null)? '' : $this->_field . ':')
-             . (($this->_inclusive)? '[' : '{')
-             . (($this->_lowerTerm !== null)?  $this->_lowerTerm->text : 'null')
-             . ' TO '
-             . (($this->_upperTerm !== null)?  $this->_upperTerm->text : 'null')
-             . (($this->_inclusive)? ']' : '}')
-             . (($this->getBoost() != 1)? '^' . round($this->getBoost(), 4) : '');
-    }
-}
-
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+oHlwAaKlJdO8fqApJwG=

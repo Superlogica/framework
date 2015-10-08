@@ -1,276 +1,58 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Db
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Db.php 15577 2009-05-14 12:43:34Z matthew $
- */
-
-
-/**
- * Class for connecting to SQL databases and performing common operations.
- *
- * @category   Zend
- * @package    Zend_Db
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Db
-{
-
-    /**
-     * Use the PROFILER constant in the config of a Zend_Db_Adapter.
-     */
-    const PROFILER = 'profiler';
-
-    /**
-     * Use the CASE_FOLDING constant in the config of a Zend_Db_Adapter.
-     */
-    const CASE_FOLDING = 'caseFolding';
-
-    /**
-     * Use the AUTO_QUOTE_IDENTIFIERS constant in the config of a Zend_Db_Adapter.
-     */
-    const AUTO_QUOTE_IDENTIFIERS = 'autoQuoteIdentifiers';
-
-    /**
-     * Use the ALLOW_SERIALIZATION constant in the config of a Zend_Db_Adapter.
-     */
-    const ALLOW_SERIALIZATION = 'allowSerialization';
-
-    /**
-     * Use the AUTO_RECONNECT_ON_UNSERIALIZE constant in the config of a Zend_Db_Adapter.
-     */
-    const AUTO_RECONNECT_ON_UNSERIALIZE = 'autoReconnectOnUnserialize';
-
-    /**
-     * Use the INT_TYPE, BIGINT_TYPE, and FLOAT_TYPE with the quote() method.
-     */
-    const INT_TYPE    = 0;
-    const BIGINT_TYPE = 1;
-    const FLOAT_TYPE  = 2;
-
-    /**
-     * PDO constant values discovered by this script result:
-     *
-     * $list = array(
-     *    'PARAM_BOOL', 'PARAM_NULL', 'PARAM_INT', 'PARAM_STR', 'PARAM_LOB',
-     *    'PARAM_STMT', 'PARAM_INPUT_OUTPUT', 'FETCH_LAZY', 'FETCH_ASSOC',
-     *    'FETCH_NUM', 'FETCH_BOTH', 'FETCH_OBJ', 'FETCH_BOUND',
-     *    'FETCH_COLUMN', 'FETCH_CLASS', 'FETCH_INTO', 'FETCH_FUNC',
-     *    'FETCH_GROUP', 'FETCH_UNIQUE', 'FETCH_CLASSTYPE', 'FETCH_SERIALIZE',
-     *    'FETCH_NAMED', 'ATTR_AUTOCOMMIT', 'ATTR_PREFETCH', 'ATTR_TIMEOUT',
-     *    'ATTR_ERRMODE', 'ATTR_SERVER_VERSION', 'ATTR_CLIENT_VERSION',
-     *    'ATTR_SERVER_INFO', 'ATTR_CONNECTION_STATUS', 'ATTR_CASE',
-     *    'ATTR_CURSOR_NAME', 'ATTR_CURSOR', 'ATTR_ORACLE_NULLS',
-     *    'ATTR_PERSISTENT', 'ATTR_STATEMENT_CLASS', 'ATTR_FETCH_TABLE_NAMES',
-     *    'ATTR_FETCH_CATALOG_NAMES', 'ATTR_DRIVER_NAME',
-     *    'ATTR_STRINGIFY_FETCHES', 'ATTR_MAX_COLUMN_LEN', 'ERRMODE_SILENT',
-     *    'ERRMODE_WARNING', 'ERRMODE_EXCEPTION', 'CASE_NATURAL',
-     *    'CASE_LOWER', 'CASE_UPPER', 'NULL_NATURAL', 'NULL_EMPTY_STRING',
-     *    'NULL_TO_STRING', 'ERR_NONE', 'FETCH_ORI_NEXT',
-     *    'FETCH_ORI_PRIOR', 'FETCH_ORI_FIRST', 'FETCH_ORI_LAST',
-     *    'FETCH_ORI_ABS', 'FETCH_ORI_REL', 'CURSOR_FWDONLY', 'CURSOR_SCROLL',
-     *    'ERR_CANT_MAP', 'ERR_SYNTAX', 'ERR_CONSTRAINT', 'ERR_NOT_FOUND',
-     *    'ERR_ALREADY_EXISTS', 'ERR_NOT_IMPLEMENTED', 'ERR_MISMATCH',
-     *    'ERR_TRUNCATED', 'ERR_DISCONNECTED', 'ERR_NO_PERM',
-     * );
-     *
-     * $const = array();
-     * foreach ($list as $name) {
-     *    $const[$name] = constant("PDO::$name");
-     * }
-     * var_export($const);
-     */
-    const ATTR_AUTOCOMMIT = 0;
-    const ATTR_CASE = 8;
-    const ATTR_CLIENT_VERSION = 5;
-    const ATTR_CONNECTION_STATUS = 7;
-    const ATTR_CURSOR = 10;
-    const ATTR_CURSOR_NAME = 9;
-    const ATTR_DRIVER_NAME = 16;
-    const ATTR_ERRMODE = 3;
-    const ATTR_FETCH_CATALOG_NAMES = 15;
-    const ATTR_FETCH_TABLE_NAMES = 14;
-    const ATTR_MAX_COLUMN_LEN = 18;
-    const ATTR_ORACLE_NULLS = 11;
-    const ATTR_PERSISTENT = 12;
-    const ATTR_PREFETCH = 1;
-    const ATTR_SERVER_INFO = 6;
-    const ATTR_SERVER_VERSION = 4;
-    const ATTR_STATEMENT_CLASS = 13;
-    const ATTR_STRINGIFY_FETCHES = 17;
-    const ATTR_TIMEOUT = 2;
-    const CASE_LOWER = 2;
-    const CASE_NATURAL = 0;
-    const CASE_UPPER = 1;
-    const CURSOR_FWDONLY = 0;
-    const CURSOR_SCROLL = 1;
-    const ERR_ALREADY_EXISTS = NULL;
-    const ERR_CANT_MAP = NULL;
-    const ERR_CONSTRAINT = NULL;
-    const ERR_DISCONNECTED = NULL;
-    const ERR_MISMATCH = NULL;
-    const ERR_NO_PERM = NULL;
-    const ERR_NONE = '00000';
-    const ERR_NOT_FOUND = NULL;
-    const ERR_NOT_IMPLEMENTED = NULL;
-    const ERR_SYNTAX = NULL;
-    const ERR_TRUNCATED = NULL;
-    const ERRMODE_EXCEPTION = 2;
-    const ERRMODE_SILENT = 0;
-    const ERRMODE_WARNING = 1;
-    const FETCH_ASSOC = 2;
-    const FETCH_BOTH = 4;
-    const FETCH_BOUND = 6;
-    const FETCH_CLASS = 8;
-    const FETCH_CLASSTYPE = 262144;
-    const FETCH_COLUMN = 7;
-    const FETCH_FUNC = 10;
-    const FETCH_GROUP = 65536;
-    const FETCH_INTO = 9;
-    const FETCH_LAZY = 1;
-    const FETCH_NAMED = 11;
-    const FETCH_NUM = 3;
-    const FETCH_OBJ = 5;
-    const FETCH_ORI_ABS = 4;
-    const FETCH_ORI_FIRST = 2;
-    const FETCH_ORI_LAST = 3;
-    const FETCH_ORI_NEXT = 0;
-    const FETCH_ORI_PRIOR = 1;
-    const FETCH_ORI_REL = 5;
-    const FETCH_SERIALIZE = 524288;
-    const FETCH_UNIQUE = 196608;
-    const NULL_EMPTY_STRING = 1;
-    const NULL_NATURAL = 0;
-    const NULL_TO_STRING = NULL;
-    const PARAM_BOOL = 5;
-    const PARAM_INPUT_OUTPUT = -2147483648;
-    const PARAM_INT = 1;
-    const PARAM_LOB = 3;
-    const PARAM_NULL = 0;
-    const PARAM_STMT = 4;
-    const PARAM_STR = 2;
-
-    /**
-     * Factory for Zend_Db_Adapter_Abstract classes.
-     *
-     * First argument may be a string containing the base of the adapter class
-     * name, e.g. 'Mysqli' corresponds to class Zend_Db_Adapter_Mysqli.  This
-     * is case-insensitive.
-     *
-     * First argument may alternatively be an object of type Zend_Config.
-     * The adapter class base name is read from the 'adapter' property.
-     * The adapter config parameters are read from the 'params' property.
-     *
-     * Second argument is optional and may be an associative array of key-value
-     * pairs.  This is used as the argument to the adapter constructor.
-     *
-     * If the first argument is of type Zend_Config, it is assumed to contain
-     * all parameters, and the second argument is ignored.
-     *
-     * @param  mixed $adapter String name of base adapter class, or Zend_Config object.
-     * @param  mixed $config  OPTIONAL; an array or Zend_Config object with adapter parameters.
-     * @return Zend_Db_Adapter_Abstract
-     * @throws Zend_Db_Exception
-     */
-    public static function factory($adapter, $config = array())
-    {
-        if ($config instanceof Zend_Config) {
-            $config = $config->toArray();
-        }
-
-        /*
-         * Convert Zend_Config argument to plain string
-         * adapter name and separate config object.
-         */
-        if ($adapter instanceof Zend_Config) {
-            if (isset($adapter->params)) {
-                $config = $adapter->params->toArray();
-            }
-            if (isset($adapter->adapter)) {
-                $adapter = (string) $adapter->adapter;
-            } else {
-                $adapter = null;
-            }
-        }
-
-        /*
-         * Verify that adapter parameters are in an array.
-         */
-        if (!is_array($config)) {
-            /**
-             * @see Zend_Db_Exception
-             */
-            require_once 'Zend/Db/Exception.php';
-            throw new Zend_Db_Exception('Adapter parameters must be in an array or a Zend_Config object');
-        }
-
-        /*
-         * Verify that an adapter name has been specified.
-         */
-        if (!is_string($adapter) || empty($adapter)) {
-            /**
-             * @see Zend_Db_Exception
-             */
-            require_once 'Zend/Db/Exception.php';
-            throw new Zend_Db_Exception('Adapter name must be specified in a string');
-        }
-
-        /*
-         * Form full adapter class name
-         */
-        $adapterNamespace = 'Zend_Db_Adapter';
-        if (isset($config['adapterNamespace'])) {
-            if ($config['adapterNamespace'] != '') {
-                $adapterNamespace = $config['adapterNamespace'];
-            }
-            unset($config['adapterNamespace']);
-        }
-        $adapterName = strtolower($adapterNamespace . '_' . $adapter);
-        $adapterName = str_replace(' ', '_', ucwords(str_replace('_', ' ', $adapterName)));
-
-        /*
-         * Load the adapter class.  This throws an exception
-         * if the specified class cannot be loaded.
-         */
-        if (!class_exists($adapterName)) {
-            require_once 'Zend/Loader.php';
-            Zend_Loader::loadClass($adapterName);
-        }
-
-        /*
-         * Create an instance of the adapter class.
-         * Pass the config to the adapter class constructor.
-         */
-        $dbAdapter = new $adapterName($config);
-
-        /*
-         * Verify that the object created is a descendent of the abstract adapter type.
-         */
-        if (! $dbAdapter instanceof Zend_Db_Adapter_Abstract) {
-            /**
-             * @see Zend_Db_Exception
-             */
-            require_once 'Zend/Db/Exception.php';
-            throw new Zend_Db_Exception("Adapter class '$adapterName' does not extend Zend_Db_Adapter_Abstract");
-        }
-
-        return $dbAdapter;
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

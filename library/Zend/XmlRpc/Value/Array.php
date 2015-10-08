@@ -1,78 +1,34 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_XmlRpc
- * @subpackage Value
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Array.php 9096 2008-03-30 19:04:05Z thomas $
- */
-
-
-/**
- * Zend_XmlRpc_Value_Collection
- */
-require_once 'Zend/XmlRpc/Value/Collection.php';
-
-
-/**
- * @category   Zend
- * @package    Zend_XmlRpc
- * @subpackage Value
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_XmlRpc_Value_Array extends Zend_XmlRpc_Value_Collection
-{
-    /**
-     * Set the value of an array native type
-     *
-     * @param array $value
-     */
-    public function __construct($value)
-    {
-        $this->_type = self::XMLRPC_TYPE_ARRAY;
-        parent::__construct($value);
-    }
-
-
-    /**
-     * Return the XML code that represent an array native MXL-RPC value
-     *
-     * @return string
-     */
-    public function saveXML()
-    {
-        if (!$this->_as_xml) {   // The XML code was not calculated yet
-            $dom   = new DOMDocument('1.0');
-            $value = $dom->appendChild($dom->createElement('value'));
-            $array = $value->appendChild($dom->createElement('array'));
-            $data  = $array->appendChild($dom->createElement('data'));
-
-            if (is_array($this->_value)) {
-                foreach ($this->_value as $val) {
-                    /* @var $val Zend_XmlRpc_Value */
-                    $data->appendChild($dom->importNode($val->getAsDOM(), true));
-                }
-            }
-
-            $this->_as_dom = $value;
-            $this->_as_xml = $this->_stripXmlDeclaration($dom);
-        }
-
-        return $this->_as_xml;
-    }
-}
-
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

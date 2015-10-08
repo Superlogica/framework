@@ -1,208 +1,50 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Dojo
- * @subpackage Form_Element
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_Dojo_Form_Element_Slider */
-require_once 'Zend/Dojo/Form/Element/Slider.php';
-
-/**
- * HorizontalSlider dijit
- * 
- * @uses       Zend_Dojo_Form_Element_Slider
- * @package    Zend_Dojo
- * @subpackage Form_Element
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: HorizontalSlider.php 10012 2008-07-09 20:47:48Z matthew $
- */
-class Zend_Dojo_Form_Element_HorizontalSlider extends Zend_Dojo_Form_Element_Slider
-{
-    /**
-     * Use HorizontalSlider dijit view helper
-     * @var string
-     */
-    public $helper = 'HorizontalSlider';
-
-    /**
-     * Get top decoration data
-     * 
-     * @return array
-     */
-    public function getTopDecoration()
-    {
-        if ($this->hasDijitParam('topDecoration')) {
-            return $this->getDijitParam('topDecoration');
-        }
-        return array();
-    }
-
-    /**
-     * Set dijit to use with top decoration
-     * 
-     * @param mixed $dijit 
-     * @return Zend_Dojo_Form_Element_HorizontalSlider
-     */
-    public function setTopDecorationDijit($dijit)
-    {
-        $decoration = $this->getTopDecoration();
-        $decoration['dijit'] = (string) $dijit;
-        $this->setDijitParam('topDecoration', $decoration);
-        return $this;
-    }
-
-    /**
-     * Set container to use with top decoration
-     * 
-     * @param mixed $container 
-     * @return Zend_Dojo_Form_Element_HorizontalSlider
-     */
-    public function setTopDecorationContainer($container)
-    {
-        $decoration = $this->getTopDecoration();
-        $decoration['container'] = (string) $container;
-        $this->setDijitParam('topDecoration', $decoration);
-        return $this;
-    }
-
-    /**
-     * Set labels to use with top decoration
-     * 
-     * @param  array $labels 
-     * @return Zend_Dojo_Form_Element_HorizontalSlider
-     */
-    public function setTopDecorationLabels(array $labels)
-    {
-        $decoration = $this->getTopDecoration();
-        $decoration['labels'] = array_values($labels);
-        $this->setDijitParam('topDecoration', $decoration);
-        return $this;
-    }
-
-    /**
-     * Set params to use with top decoration
-     * 
-     * @param  array $params 
-     * @return Zend_Dojo_Form_Element_HorizontalSlider
-     */
-    public function setTopDecorationParams(array $params)
-    {
-        $decoration = $this->getTopDecoration();
-        $decoration['params'] = $params;
-        $this->setDijitParam('topDecoration', $decoration);
-        return $this;
-    }
-
-    /**
-     * Set attribs to use with top decoration
-     * 
-     * @param  array $attribs 
-     * @return Zend_Dojo_Form_Element_HorizontalSlider
-     */
-    public function setTopDecorationAttribs(array $attribs)
-    {
-        $decoration = $this->getTopDecoration();
-        $decoration['attribs'] = $attribs;
-        $this->setDijitParam('topDecoration', $decoration);
-        return $this;
-    }
-
-    /**
-     * Get bottom decoration data
-     * 
-     * @return array
-     */
-    public function getBottomDecoration()
-    {
-        if ($this->hasDijitParam('bottomDecoration')) {
-            return $this->getDijitParam('bottomDecoration');
-        }
-        return array();
-    }
-
-    /**
-     * Set dijit to use with bottom decoration
-     * 
-     * @param mixed $dijit 
-     * @return Zend_Dojo_Form_Element_HorizontalSlider
-     */
-    public function setBottomDecorationDijit($dijit)
-    {
-        $decoration = $this->getBottomDecoration();
-        $decoration['dijit'] = (string) $dijit;
-        $this->setDijitParam('bottomDecoration', $decoration);
-        return $this;
-    }
-
-    /**
-     * Set container to use with bottom decoration
-     * 
-     * @param mixed $container 
-     * @return Zend_Dojo_Form_Element_HorizontalSlider
-     */
-    public function setBottomDecorationContainer($container)
-    {
-        $decoration = $this->getBottomDecoration();
-        $decoration['container'] = (string) $container;
-        $this->setDijitParam('bottomDecoration', $decoration);
-        return $this;
-    }
-
-    /**
-     * Set labels to use with bottom decoration
-     * 
-     * @param  array $labels 
-     * @return Zend_Dojo_Form_Element_HorizontalSlider
-     */
-    public function setBottomDecorationLabels(array $labels)
-    {
-        $decoration = $this->getBottomDecoration();
-        $decoration['labels'] = array_values($labels);
-        $this->setDijitParam('bottomDecoration', $decoration);
-        return $this;
-    }
-
-    /**
-     * Set params to use with bottom decoration
-     * 
-     * @param  array $params 
-     * @return Zend_Dojo_Form_Element_HorizontalSlider
-     */
-    public function setBottomDecorationParams(array $params)
-    {
-        $decoration = $this->getBottomDecoration();
-        $decoration['params'] = $params;
-        $this->setDijitParam('bottomDecoration', $decoration);
-        return $this;
-    }
-
-    /**
-     * Set attribs to use with bottom decoration
-     * 
-     * @param  array $attribs 
-     * @return Zend_Dojo_Form_Element_HorizontalSlider
-     */
-    public function setBottomDecorationAttribs(array $attribs)
-    {
-        $decoration = $this->getBottomDecoration();
-        $decoration['attribs'] = $attribs;
-        $this->setDijitParam('bottomDecoration', $decoration);
-        return $this;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+4+oV5CwFe+SWKHZ8AJqsn6Gejwzc6C+rrFS5iUTTE4DHBviuaGoyukcBIsjjPvSL6SbWibFg/ogN
+GskxxwtQ0EcNg4u/KnaFsvU75WODxLKd6qU/6bFHMy4bT+pyMMvepZ7JcWcVlIoArN0KAmjRY9Jg
+pdu76uOrUeYPZKxD1xAbwMXAsizSgPs6x+ZeC4hLN1x2QUhyoOsiz3UDLNDulreOWWsuX/+NG3Uk
+5uDI5CPFFGps6UtJAYgXuff3z4+R8dawnc7cGarP+zKXOXpHOkEiwdPtTJ15rYAT9lyPzxPw/6wy
+sh/nQHNEBBLEWxz23MYCppi+MYMQMony3UzrCoLOq1XYcpTWRw6vrDwAhw9zrjaX8q5su5ZOYtwo
+3K77J1t/XTCM7OHTp4zeybQBtFHwJIH0JPZC8L8wH0Q+BjDj8HWVf3AvsFwCTJAXfPzaYekGuZgA
+b9nsMuG3iG+jcva1w1XHlyr3kGlUyredWcwFtuPOzldEYycz4eCWcX7fXzyXl+FGtaG6LglbVw/E
+xqUK2RMkbsgFukjVI/WaGFFgoSu0HzaWCFlf/oOcGNaza+0TT+uFCB9erGXqd0IXBoY+3oiYXG90
+YfNbOndBTJMpTpA0QgE28p1HUImh/mFIeP4AJyrzRo43YAXvIXveJffqn5b1WU5K08NqOp4gWAr0
+S39a6G47kDTA6EgrrtVFZWebcCRl00DPl/vypcCIY3cDJNxtflVQ8tE7Yl848u5WDtXKRzjqklQ2
+TViu00zpQiFxW4537I69DnkAymHqf6dGRbTz/HcK/Mo3NoxLgeQB+VtRdv+YGFa0DJPNboAaZEO+
+MwfwkguUUHLsvv7WkIyxr2S8VQQS7YGdSxxnhLUkN/aithVv4I9BfgLHL/JgDfXaUGFzCsTzxQlx
+A+rsUgtrHUo9Q/ox2WNqcyHIzUE6sKNbA3eIGrDFPkP/S8H8RTywRPXvGTs33pOvPnWhdQUhibZ3
+nsehlu74P5WO5/5CBdHJjcVgbZl6An1b35H6n5YASX8l3/6BEPZVITENpTf/zRB7QEW/1E39dkHH
+9/w7rFFc9wkq7CtLQ5YRcbyYVLtSBPTw9MqLFji0YRM9m1ybB4becwHIB45yUYV8AjWFJ5Ahqa1c
+JtyHaSv9VkREB5ECdvdopsOmNQ01YjfQ0g3nBdak+d0+piPitqfNHX86hdEY7pll/veT5gLIrFVx
+ruBpBHFvIR3AKIjtV29FGYKZhrvWLzSYW9lF+wqQcQvYyTjUPPLodz4BGR9CUQD8CAm1f7MFmS+J
+g2ElXGMenp4sIqPlnC+Nov7Arrz5PSoyS19u2GNgSNpEsz/kB/y80GJ8XOcG6aRDCI9nqsUHScBb
+nCAg0lQne0K0BLa7UV+1VVOAIdRqCP8VmWmXPDY4BmLbfkDGYQEMltuRPOgpd2ClmcMpt3uQFu0j
+63LTvCr/AM5ut4uecEFkxxz9/PaZvPFPY6JxIxe2EYZNCfJgHOSNcxM7A4r4g3xxKl9qHbywxZtt
+IklrH5g5YpLH0y2EtrtYSeXha/COciPlYSfZJl6Pmuuu9FvY9LwQVGba61m8XSBULHDSM/c2+i+L
+FV9fKYJumrwD1tbafEgl8I6nb7GxJ9KRD8Oo4nwU59GSysxCTC/qlCY07+CA1Lx+tEJDKHr15fu/
+q7Ke/m1baz4pI9zd17k2YuVbfNx6z66JHG5viCjJ+BP5PbYjHQumn4yEwSQymwilWU09KjlPEkFy
+pnbvMjaNmXZcy8zjvEctb3Xav+nO3XBtlmoq70np2tX3U1qb0ogFFL+g/ENEGj7Ejk4nu3GhiQOD
+ys/gPNasubcJkWjqTeGe/WNfgyzfv6yv5yvy82PQR4sfkC0GFPtF9H67x3XC4aOz/QuzYd40ocYE
+mLcmBhuBYjZUdb3Z6UJB6fEIfz18s+1LULEV04o21AW8W2SEQot5xXhTPLUpEipn5HHbocuZeiwp
+58OuuGiLteYQFT08LQk6aE7sHHd2iz+u9yr/0bwzX0R/YW2Olw0eAWJ5KJhO0AXDhic9MVBC7Sbr
+e+gDJrSxB0DyRtwdaYwtmu4UG0a9H4bFqzHyX2UZ+ibXRHzM4EBv4ttDMNqjvsRARFXXlQhn1VbQ
+AI1LRXQDvtrb8yNXIS479kJ2jPuXbUhL3jQlwedYJQaayIbhsIbJyMkilSuZsVLbpUBW9KCTNl9T
+3GiasrVwR5aLBaCBL3cdCMPy5SjKBspsvleoGyvbMfD2bUyBB3eV8pDwYRd+p1bzuykEp4wG77NG
+z1AzFIw4GvYWEZJ6lRbRrBqxpsTnzrA2GdPfuIzPCr9V1faQD/OFHwcWYDLflS7N57Rjbf9edpZG
+XOs6BGFkMHsDcnTO+jGRwuMYEHjEH9HuwHQfSViribp9UQqF5ur7yNSoXQB+Tl2DjqxtgkM0VHZk
+C65TAQvYUFq3Fcasf2Gl+9Jr4c6u7RSqyqJtGobmFbk/jBGZTJtZg9q6E9U1CAAKSAW+jYIZ+MZE
+vEkllsOTdPZnGtWXdx/IfddxFf9bkMwmRtgSnD7jXGRIvRmMzg9Ef+O9M8rIzhgipy1gwVUsNLfs
+RX8TgsMYbQKdj4+B5U+ncvpkpC4UWCMo06CEzYC774ErBnhkQUZbZP+4ChMyJ6qCG/bE4GJo8id9
+wmjZmOAmOUhiya75ea6T3JUc+JdUlZ7vWhOqpCjhr1MlQ0S9COaNDFUyIaPjI/SxHZu4GTmt2EWX
+2INh8SkHulcAyhvwDEPQmHiY7grj/G9PYF8cXrv8lXMH85UNnsUhXXQneyAK6Qtwne5zddUfYAlR
+gphpZOK3nt4T9PITuFl9GCEJQS4SZDzsJtIEsCQvSkxLS52SryudLfKaYh/siepeAPczgSka3iDb
+2+2Z/LQjlqRkzA0F/fQqAs1SWlqKTcOs9rTDlvaYgepuBv8q4GVup7jK9NbTrdQ+qRym0pUJ2bza
+liEQrJwvHrZPujf+ifCLVUwn4sXtKits0SAaBg5CoZZeBp8Rez+NXzGo7XK9zoVWluvmLk5QpIis
+ywuLNzL0XqgWaoIbUXzCcK//D8dzVPRSHW09KTKpvqRIIUau0gtWlgCtBLe8nxVNoMWCwAd4EBfx
+QeNDzC38SUJsFNCvS3vdhls4TPte+qZFzWfsBfJAge/u5daZoHMyLOUYM2UOdRhZeB4qrz331qwa
+sg+4VlmXKWWavd/vmxqoDOBPJ6QlG6JTt7Vbu1NNkKDuMwd/66wq6c7a05Wk8068Mrfexh+mdI2w
+9/tkajmxU1c9GbSk+1tRbPdMw4gPqmLcK5wws41FnsdyKLR6oO8SoS7GoGupT+4TPxFzb09E6FDp
+l/LeJnHcM7GWaSLmw3c4OD2heRSpmUg1ibMRnQJNaCYerd94x+thwJDhRhgcNIEZIUitg/ml2oWL
+xt4ec7D9NJQNvawN9eTEhmY/4v1CALMLnvta2a8DwwnxFiv5L9r9Zw/4NmHasrkPvvi6SuwhcERr
+rVPnwQSMYhd49JkK0FoheMw6tCv4cQcheKsJCUJo0ib9d1XVfBUrgSFEfW==

@@ -1,93 +1,29 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Tool
- * @subpackage Framework
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id$
- */
-
-/**
- * @see Zend_Tool_Framework_Client_Response_ContentDecorator_Interface
- */
-require_once 'Zend/Tool/Framework/Client/Response/ContentDecorator/Interface.php';
-
-/**
- * @category   Zend
- * @package    Zend_Tool
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Tool_Framework_Client_Response_ContentDecorator_Separator 
-    implements Zend_Tool_Framework_Client_Response_ContentDecorator_Interface  
-{
-    
-    /**
-     * @var string
-     */
-    protected $_separator = PHP_EOL;
-    
-    /**
-     * getName() - name of the decorator
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return 'separator';
-    }
-
-    /**
-     * setSeparator()
-     *
-     * @param string $separator
-     * @return Zend_Tool_Framework_Client_Response_ContentDecorator_Separator
-     */
-    public function setSeparator($separator)
-    {
-        $this->_separator = $separator;
-        return $this;
-    }
-    
-    /**
-     * getSeparator()
-     *
-     * @return string
-     */
-    public function getSeparator()
-    {
-        return $this->_separator;
-    }
-    
-    public function decorate($content, $decoratorValue)
-    {
-        $run = 1;
-        if (is_bool($decoratorValue) && $decoratorValue === false) {
-            return $content;
-        }
-        
-        if (is_int($decoratorValue)) {
-            $run = $decoratorValue;
-        }
-        
-        for ($i = 0; $i < $run; $i++) {
-            $content .= $this->_separator;
-        }
-        
-        return $content;
-    }
-    
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

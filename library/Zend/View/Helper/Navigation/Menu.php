@@ -1,639 +1,206 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_View
- * @subpackage Helper
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * @see Zend_View_Helper_Navigation_HelperAbstract
- */
-require_once 'Zend/View/Helper/Navigation/HelperAbstract.php';
-
-/**
- * Helper for rendering menus from navigation containers
- *
- * @category   Zend
- * @package    Zend_View
- * @subpackage Helper
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_View_Helper_Navigation_Menu
-    extends Zend_View_Helper_Navigation_HelperAbstract
-{
-    /**
-     * CSS class to use for the ul element
-     *
-     * @var string
-     */
-    protected $_ulClass = 'navigation';
-
-    /**
-     * Whether only active branch should be rendered
-     *
-     * @var bool
-     */
-    protected $_onlyActiveBranch = false;
-
-    /**
-     * Whether parents should be rendered when only rendering active branch
-     *
-     * @var bool
-     */
-    protected $_renderParents = true;
-
-    /**
-     * Partial view script to use for rendering menu
-     *
-     * @var string|array
-     */
-    protected $_partial = null;
-
-    /**
-     * View helper entry point:
-     * Retrieves helper and optionally sets container to operate on
-     *
-     * @param  Zend_Navigation_Container $container  [optional] container to
-     *                                               operate on
-     * @return Zend_View_Helper_Navigation_Menu      fluent interface,
-     *                                               returns self
-     */
-    public function menu(Zend_Navigation_Container $container = null)
-    {
-        if (null !== $container) {
-            $this->setContainer($container);
-        }
-
-        return $this;
-    }
-
-    // Accessors:
-
-    /**
-     * Sets CSS class to use for the first 'ul' element when rendering
-     *
-     * @param  string $ulClass                   CSS class to set
-     * @return Zend_View_Helper_Navigation_Menu  fluent interface, returns self
-     */
-    public function setUlClass($ulClass)
-    {
-        if (is_string($ulClass)) {
-            $this->_ulClass = $ulClass;
-        }
-
-        return $this;
-    }
-
-    /**
-     * Returns CSS class to use for the first 'ul' element when rendering
-     *
-     * @return string  CSS class
-     */
-    public function getUlClass()
-    {
-        return $this->_ulClass;
-    }
-
-    /**
-     * Sets a flag indicating whether only active branch should be rendered
-     *
-     * @param  bool $flag                        [optional] render only active
-     *                                           branch. Default is true.
-     * @return Zend_View_Helper_Navigation_Menu  fluent interface, returns self
-     */
-    public function setOnlyActiveBranch($flag = true)
-    {
-        $this->_onlyActiveBranch = (bool) $flag;
-        return $this;
-    }
-
-    /**
-     * Returns a flag indicating whether only active branch should be rendered
-     *
-     * By default, this value is false, meaning the entire menu will be
-     * be rendered.
-     *
-     * @return bool  whether only active branch should be rendered
-     */
-    public function getOnlyActiveBranch()
-    {
-        return $this->_onlyActiveBranch;
-    }
-
-    /**
-     * Enables/disables rendering of parents when only rendering active branch
-     *
-     * See {@link setOnlyActiveBranch()} for more information.
-     *
-     * @param  bool $flag                        [optional] render parents when
-     *                                           rendering active branch.
-     *                                           Default is true.
-     * @return Zend_View_Helper_Navigation_Menu  fluent interface, returns self
-     */
-    public function setRenderParents($flag = true)
-    {
-        $this->_renderParents = (bool) $flag;
-        return $this;
-    }
-
-    /**
-     * Returns flag indicating whether parents should be rendered when rendering
-     * only the active branch
-     *
-     * By default, this value is true.
-     *
-     * @return bool  whether parents should be rendered
-     */
-    public function getRenderParents()
-    {
-        return $this->_renderParents;
-    }
-
-    /**
-     * Sets which partial view script to use for rendering menu
-     *
-     * @param  string|array $partial             partial view script or null. If
-     *                                           an array is given, it is
-     *                                           expected to contain two values;
-     *                                           the partial view script to use,
-     *                                           and the module where the script
-     *                                           can be found.
-     * @return Zend_View_Helper_Navigation_Menu  fluent interface, returns self
-     */
-    public function setPartial($partial)
-    {
-        if (null === $partial || is_string($partial) || is_array($partial)) {
-            $this->_partial = $partial;
-        }
-
-        return $this;
-    }
-
-    /**
-     * Returns partial view script to use for rendering menu
-     *
-     * @return string|array|null
-     */
-    public function getPartial()
-    {
-        return $this->_partial;
-    }
-
-    // Public methods:
-
-    /**
-     * Returns an HTML string containing an 'a' element for the given page if
-     * the page's href is not empty, and a 'span' element if it is empty
-     *
-     * Overrides {@link Zend_View_Helper_Navigation_Abstract::htmlify()}.
-     *
-     * @param  Zend_Navigation_Page $page  page to generate HTML for
-     * @return string                      HTML string for the given page
-     */
-    public function htmlify(Zend_Navigation_Page $page)
-    {
-        // get label and title for translating
-        $label = $page->getLabel();
-        $title = $page->getTitle();
-
-        // translate label and title?
-        if ($this->getUseTranslator() && $t = $this->getTranslator()) {
-            if (is_string($label) && !empty($label)) {
-                $label = $t->translate($label);
-            }
-            if (is_string($title) && !empty($title)) {
-                $title = $t->translate($title);
-            }
-        }
-
-        // get attribs for element
-        $attribs = array(
-            'id'     => $page->getId(),
-            'title'  => $title,
-            'class'  => $page->getClass()
-        );
-
-        // does page have a href?
-        if ($href = $page->getHref()) {
-            $element = 'a';
-            $attribs['href'] = $href;
-            $attribs['target'] = $page->getTarget();
-        } else {
-            $element = 'span';
-        }
-
-        return '<' . $element . $this->_htmlAttribs($attribs) . '>'
-             . $this->view->escape($label)
-             . '</' . $element . '>';
-    }
-
-    /**
-     * Normalizes given render options
-     *
-     * @param  array $options  [optional] options to normalize
-     * @return array           normalized options
-     */
-    protected function _normalizeOptions(array $options = array())
-    {
-        if (isset($options['indent'])) {
-            $options['indent'] = $this->_getWhitespace($options['indent']);
-        } else {
-            $options['indent'] = $this->getIndent();
-        }
-
-        if (isset($options['ulClass']) && $options['ulClass'] !== null) {
-            $options['ulClass'] = (string) $options['ulClass'];
-        } else {
-            $options['ulClass'] = $this->getUlClass();
-        }
-
-        if (array_key_exists('minDepth', $options)) {
-            if (null !== $options['minDepth']) {
-                $options['minDepth'] = (int) $options['minDepth'];
-            }
-        } else {
-            $options['minDepth'] = $this->getMinDepth();
-        }
-
-        if ($options['minDepth'] < 0 || $options['minDepth'] === null) {
-            $options['minDepth'] = 0;
-        }
-
-        if (array_key_exists('maxDepth', $options)) {
-            if (null !== $options['maxDepth']) {
-                $options['maxDepth'] = (int) $options['maxDepth'];
-            }
-        } else {
-            $options['maxDepth'] = $this->getMaxDepth();
-        }
-
-        if (!isset($options['onlyActiveBranch'])) {
-            $options['onlyActiveBranch'] = $this->getOnlyActiveBranch();
-        }
-
-        if (!isset($options['renderParents'])) {
-            $options['renderParents'] = $this->getRenderParents();
-        }
-
-        return $options;
-    }
-
-    // Render methods:
-
-    /**
-     * Renders the deepest active menu within [$minDepth, $maxDeth], (called
-     * from {@link renderMenu()})
-     *
-     * @param  Zend_Navigation_Container $container  container to render
-     * @param  array                     $active     active page and depth
-     * @param  string                    $ulClass    CSS class for first UL
-     * @param  string                    $indent     initial indentation
-     * @param  int|null                  $minDepth   minimum depth
-     * @param  int|null                  $maxDepth   maximum depth
-     * @return string                                rendered menu
-     */
-    protected function _renderDeepestMenu(Zend_Navigation_Container $container,
-                                          $ulClass,
-                                          $indent,
-                                          $minDepth,
-                                          $maxDepth)
-    {
-        if (!$found = $this->findActive($container, $minDepth, $maxDepth)) {
-            return '';
-        }
-
-        $foundPage  = $found['page'];
-        $foundDepth = $found['depth'];
-
-        // render children or siblings?
-        if (!$foundPage->hasPages()) {
-            // found pages has no children; render siblings
-            $foundPage = $foundPage->getParent();
-        } else if (is_int($maxDepth) && $foundDepth +1 > $maxDepth) {
-            // children are below max depth; render siblings
-            $foundPage = $foundPage->getParent();
-        }
-
-        $ulClass = $ulClass ? ' class="' . $ulClass . '"' : '';
-        $html = $indent . '<ul' . $ulClass . '>' . self::EOL;
-
-        foreach ($foundPage as $page) {
-            if (!$this->accept($page)) {
-                continue;
-            }
-            $liClass = $page->isActive(true) ? ' class="active"' : '';
-            $html .= $indent . '    <li' . $liClass . '>' . self::EOL;
-            $html .= $indent . '        ' . $this->htmlify($page) . self::EOL;
-            $html .= $indent . '    </li>' . self::EOL;
-        }
-
-        $html .= $indent . '</ul>';
-
-        return $html;
-    }
-
-    /**
-     * Renders a normal menu (called from {@link renderMenu()})
-     *
-     * @param  Zend_Navigation_Container $container   container to render
-     * @param  string                    $ulClass     CSS class for first UL
-     * @param  string                    $indent      initial indentation
-     * @param  int|null                  $minDepth    minimum depth
-     * @param  int|null                  $maxDepth    maximum depth
-     * @param  bool                      $onlyActive  render only active branch?
-     * @return string
-     */
-    protected function _renderMenu(Zend_Navigation_Container $container,
-                                   $ulClass,
-                                   $indent,
-                                   $minDepth,
-                                   $maxDepth,
-                                   $onlyActive)
-    {
-        $html = '';
-
-        // find deepest active
-        if ($found = $this->findActive($container, $minDepth, $maxDepth)) {
-            $foundPage = $found['page'];
-            $foundDepth = $found['depth'];
-        } else {
-            $foundPage = null;
-        }
-
-        // create iterator
-        $iterator = new RecursiveIteratorIterator($container,
-                            RecursiveIteratorIterator::SELF_FIRST);
-        if (is_int($maxDepth)) {
-            $iterator->setMaxDepth($maxDepth);
-        }
-
-        // iterate container
-        $prevDepth = -1;
-        foreach ($iterator as $page) {
-            $depth = $iterator->getDepth();
-            $isActive = $page->isActive(true);
-            if ($depth < $minDepth || !$this->accept($page)) {
-                // page is below minDepth or not accepted by acl/visibilty
-                continue;
-            } else if ($onlyActive && !$isActive) {
-                // page is not active itself, but might be in the active branch
-                $accept = false;
-                if ($foundPage) {
-                    if ($foundPage->hasPage($page)) {
-                        // accept if page is a direct child of the active page
-                        $accept = true;
-                    } else if ($foundPage->getParent()->hasPage($page)) {
-                        // page is a sibling of the active page...
-                        if (!$foundPage->hasPages() ||
-                            is_int($maxDepth) && $foundDepth + 1 > $maxDepth) {
-                            // accept if active page has no children, or the
-                            // children are too deep to be rendered
-                            $accept = true;
-                        }
-                    }
-                }
-
-                if (!$accept) {
-                    continue;
-                }
-            }
-
-            // make sure indentation is correct
-            $depth -= $minDepth;
-            $myIndent = $indent . str_repeat('        ', $depth);
-
-            if ($depth > $prevDepth) {
-                // start new ul tag
-                if ($ulClass && $depth ==  0) {
-                    $ulClass = ' class="' . $ulClass . '"';
-                } else {
-                    $ulClass = '';
-                }
-                $html .= $myIndent . '<ul' . $ulClass . '>' . self::EOL;
-            } else if ($prevDepth > $depth) {
-                // close li/ul tags until we're at current depth
-                for ($i = $prevDepth; $i > $depth; $i--) {
-                    $ind = $indent . str_repeat('        ', $i);
-                    $html .= $ind . '    </li>' . self::EOL;
-                    $html .= $ind . '</ul>' . self::EOL;
-                }
-                // close previous li tag
-                $html .= $myIndent . '    </li>' . self::EOL;
-            } else {
-                // close previous li tag
-                $html .= $myIndent . '    </li>' . self::EOL;
-            }
-
-            // render li tag and page
-            $liClass = $isActive ? ' class="active"' : '';
-            $html .= $myIndent . '    <li' . $liClass . '>' . self::EOL
-                   . $myIndent . '        ' . $this->htmlify($page) . self::EOL;
-
-            // store as previous depth for next iteration
-            $prevDepth = $depth;
-        }
-
-        if ($html) {
-            // done iterating container; close open ul/li tags
-            for ($i = $prevDepth+1; $i > 0; $i--) {
-                $myIndent = $indent . str_repeat('        ', $i-1);
-                $html .= $myIndent . '    </li>' . self::EOL
-                       . $myIndent . '</ul>' . self::EOL;
-            }
-            $html = rtrim($html, self::EOL);
-        }
-
-        return $html;
-    }
-
-    /**
-     * Renders helper
-     *
-     * Renders a HTML 'ul' for the given $container. If $container is not given,
-     * the container registered in the helper will be used.
-     *
-     * Available $options:
-     *
-     *
-     * @param  Zend_Navigation_Container $container  [optional] container to
-     *                                               create menu from. Default
-     *                                               is to use the container
-     *                                               retrieved from
-     *                                               {@link getContainer()}.
-     * @param  array                     $options    [optional] options for
-     *                                               controlling rendering
-     * @return string                                rendered menu
-     */
-    public function renderMenu(Zend_Navigation_Container $container = null,
-                               array $options = array())
-    {
-        if (null === $container) {
-            $container = $this->getContainer();
-        }
-
-        $options = $this->_normalizeOptions($options);
-
-        if ($options['onlyActiveBranch'] && !$options['renderParents']) {
-            $html = $this->_renderDeepestMenu($container,
-                                              $options['ulClass'],
-                                              $options['indent'],
-                                              $options['minDepth'],
-                                              $options['maxDepth']);
-        } else {
-            $html = $this->_renderMenu($container,
-                                       $options['ulClass'],
-                                       $options['indent'],
-                                       $options['minDepth'],
-                                       $options['maxDepth'],
-                                       $options['onlyActiveBranch']);
-        }
-
-        return $html;
-    }
-
-    /**
-     * Renders the inner-most sub menu for the active page in the $container
-     *
-     * This is a convenience method which is equivalent to the following call:
-     * <code>
-     * renderMenu($container, array(
-     *     'indent'           => $indent,
-     *     'ulClass'          => $ulClass,
-     *     'minDepth'         => null,
-     *     'maxDepth'         => null,
-     *     'onlyActiveBranch' => true,
-     *     'renderParents'    => false
-     * ));
-     * </code>
-     *
-     * @param  Zend_Navigation_Container $container  [optional] container to
-     *                                               render. Default is to render
-     *                                               the container registered in
-     *                                               the helper.
-     * @param  string                    $ulClass    [optional] CSS class to
-     *                                               use for UL element. Default
-     *                                               is to use the value from
-     *                                               {@link getUlClass()}.
-     * @param  string|int                $indent     [optional] indentation as
-     *                                               a string or number of
-     *                                               spaces. Default is to use
-     *                                               the value retrieved from
-     *                                               {@link getIndent()}.
-     * @return string                                rendered content
-     */
-    public function renderSubMenu(Zend_Navigation_Container $container = null,
-                                  $ulClass = null,
-                                  $indent = null)
-    {
-        return $this->renderMenu($container, array(
-            'indent'           => $indent,
-            'ulClass'          => $ulClass,
-            'minDepth'         => null,
-            'maxDepth'         => null,
-            'onlyActiveBranch' => true,
-            'renderParents'    => false
-        ));
-    }
-
-    /**
-     * Renders the given $container by invoking the partial view helper
-     *
-     * The container will simply be passed on as a model to the view script
-     * as-is, and will be available in the partial script as 'container', e.g.
-     * <code>echo 'Number of pages: ', count($this->container);</code>.
-     *
-     * @param  Zend_Navigation_Container $container  [optional] container to
-     *                                               pass to view script. Default
-     *                                               is to use the container
-     *                                               registered in the helper.
-     * @param  string|array             $partial     [optional] partial view
-     *                                               script to use. Default is to
-     *                                               use the partial registered
-     *                                               in the helper. If an array
-     *                                               is given, it is expected to
-     *                                               contain two values; the
-     *                                               partial view script to use,
-     *                                               and the module where the
-     *                                               script can be found.
-     * @return string                                helper output
-     */
-    public function renderPartial(Zend_Navigation_Container $container = null,
-                                  $partial = null)
-    {
-        if (null === $container) {
-            $container = $this->getContainer();
-        }
-
-        if (null === $partial) {
-            $partial = $this->getPartial();
-        }
-
-        if (empty($partial)) {
-            require_once 'Zend/View/Exception.php';
-            throw new Zend_View_Exception(
-                    'Unable to render menu: No partial view script provided');
-        }
-
-        $model = array(
-            'container' => $container
-        );
-
-        if (is_array($partial)) {
-            if (count($partial) != 2) {
-                require_once 'Zend/View/Exception.php';
-                throw new Zend_View_Exception(
-                        'Unable to render menu: A view partial supplied as ' .
-                        'an array must contain two values: partial view ' .
-                        'script and module where script can be found');
-            }
-
-            return $this->view->partial($partial[0], $partial[1], $model);
-        }
-
-        return $this->view->partial($partial, null, $model);
-    }
-
-    // Zend_View_Helper_Navigation_Helper:
-
-    /**
-     * Renders menu
-     *
-     * Implements {@link Zend_View_Helper_Navigation_Helper::render()}.
-     *
-     * If a partial view is registered in the helper, the menu will be rendered
-     * using the given partial script. If no partial is registered, the menu
-     * will be rendered as an 'ul' element by the helper's internal method.
-     *
-     * @see renderPartial()
-     * @see renderMenu()
-     *
-     * @param  Zend_Navigation_Container $container  [optional] container to
-     *                                               render. Default is to
-     *                                               render the container
-     *                                               registered in the helper.
-     * @return string                                helper output
-     */
-    public function render(Zend_Navigation_Container $container = null)
-    {
-        if ($partial = $this->getPartial()) {
-            return $this->renderPartial($container, $partial);
-        } else {
-            return $this->renderMenu($container);
-        }
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

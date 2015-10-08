@@ -1,49 +1,33 @@
-<?php
-
-class Zend_Tool_Framework_Client_Interactive_InputHandler
-{
-    
-    /**
-     * @var Zend_Tool_Framework_Client_Interactive_InputInterface
-     */
-    protected $_client = null;
-    
-    protected $_inputRequest = null;
-    
-    public function setClient(Zend_Tool_Framework_Client_Interactive_InputInterface $client)
-    {
-        $this->_client = $client;
-        return $this;
-    }
-    
-    public function setInputRequest($inputRequest)
-    {
-        if (is_string($inputRequest)) {
-            require_once 'Zend/Tool/Framework/Client/Interactive/InputRequest.php';
-            $inputRequest = new Zend_Tool_Framework_Client_Interactive_InputRequest($inputRequest);
-        } elseif (!$inputRequest instanceof Zend_Tool_Framework_Client_Interactive_InputRequest) {
-            require_once 'Zend/Tool/Framework/Client/Exception.php';
-            throw new Zend_Tool_Framework_Client_Exception('promptInteractive() requires either a string or an instance of Zend_Tool_Framework_Client_Interactive_InputRequest.');
-        }
-        
-        $this->_inputRequest = $inputRequest;
-        return $this;
-    }
-    
-    public function handle()
-    {
-        $inputResponse = $this->_client->handleInteractiveInputRequest($this->_inputRequest);
-        
-        if (is_string($inputResponse)) {
-            require_once 'Zend/Tool/Framework/Client/Interactive/InputResponse.php';
-            $inputResponse = new Zend_Tool_Framework_Client_Interactive_InputResponse($inputResponse); 
-        } elseif (!$inputResponse instanceof Zend_Tool_Framework_Client_Interactive_InputResponse) {
-            require_once 'Zend/Tool/Framework/Client/Exception.php';
-            throw new Zend_Tool_Framework_Client_Exception('The registered $_interactiveCallback for the client must either return a string or an instance of Zend_Tool_Framework_Client_Interactive_InputResponse.');
-        }
-        
-        return $inputResponse;
-    }
-    
-    
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

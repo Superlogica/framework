@@ -1,183 +1,39 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Dom
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * Results for DOM XPath query
- * 
- * @package    Zend_Dom
- * @subpackage Query
- * @uses       Iterator
- * @copyright  Copyright (C) 2008 - Present, Zend Technologies, Inc.
- * @license    New BSD {@link http://framework.zend.com/license/new-bsd}
- * @version    $Id: Result.php 12507 2008-11-10 16:29:09Z matthew $
- */
-class Zend_Dom_Query_Result implements Iterator,Countable
-{
-    /**
-     * Number of results
-     * @var int
-     */
-    protected $_count;
-
-    /**
-     * CSS Selector query
-     * @var string
-     */
-    protected $_cssQuery;
-
-    /**
-     * @var DOMDocument
-     */
-    protected $_document;
-
-    /**
-     * @var DOMNodeList
-     */
-    protected $_nodeList;
-
-    /**
-     * Current iterator position
-     * @var int
-     */
-    protected $_position = 0;
-
-    /**
-     * @var DOMXPath
-     */
-    protected $_xpath;
-
-    /**
-     * XPath query
-     * @var string
-     */
-    protected $_xpathQuery;
-
-    /**
-     * Constructor
-     * 
-     * @param  string $cssQuery 
-     * @param  string|array $xpathQuery 
-     * @param  DOMDocument $document 
-     * @param  DOMNodeList $nodeList
-     * @return void
-     */
-    public function  __construct($cssQuery, $xpathQuery, DOMDocument $document, DOMNodeList $nodeList)
-    {
-        $this->_cssQuery   = $cssQuery;
-        $this->_xpathQuery = $xpathQuery;
-        $this->_document   = $document;
-        $this->_nodeList   = $nodeList;
-    }
-
-    /**
-     * Retrieve CSS Query
-     * 
-     * @return string
-     */
-    public function getCssQuery()
-    {
-        return $this->_cssQuery;
-    }
-
-    /**
-     * Retrieve XPath query
-     * 
-     * @return string
-     */
-    public function getXpathQuery()
-    {
-        return $this->_xpathQuery;
-    }
-
-    /**
-     * Retrieve DOMDocument
-     * 
-     * @return DOMDocument
-     */
-    public function getDocument()
-    {
-        return $this->_document;
-    }
-
-    /**
-     * Iterator: rewind to first element
-     * 
-     * @return void
-     */
-    public function rewind()
-    {
-        $this->_position = 0;
-        return $this->_nodeList->item(0);
-    }
-
-    /**
-     * Iterator: is current position valid?
-     * 
-     * @return bool
-     */
-    public function valid()
-    {
-        if (in_array($this->_position, range(0, $this->_nodeList->length - 1)) && $this->_nodeList->length > 0) {
-            return true;
-        }
-        return false;
-    }
-
-    /**
-     * Iterator: return current element
-     * 
-     * @return DOMElement
-     */
-    public function current()
-    {
-        return $this->_nodeList->item($this->_position);
-    }
-
-    /**
-     * Iterator: return key of current element
-     * 
-     * @return int
-     */
-    public function key()
-    {
-        return $this->_position;
-    }
-
-    /**
-     * Iterator: move to next element
-     * 
-     * @return void
-     */
-    public function next()
-    {
-        ++$this->_position;
-        return $this->_nodeList->item($this->_position);
-    }
-
-    /**
-     * Countable: get count
-     * 
-     * @return int
-     */
-    public function count()
-    {
-        return $this->_nodeList->length;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+3hHFMgWA9WAG2LR4Mgp5jwdCSfj2

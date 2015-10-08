@@ -1,49 +1,40 @@
-//////////////////////////////////////////////////////////////
-///  phpThumb() by James Heinrich <info@silisoftware.com>   //
-//        available at http://phpthumb.sourceforge.net     ///
-//////////////////////////////////////////////////////////////
-///                                                         //
-//    phpThumb() included and related demos                 //
-//                                                         ///
-//////////////////////////////////////////////////////////////
-
-The phpThumb() distribution includes several demos, and it
-should be self-evident what they do when you run them:
-
-* phpThumb.demo.demo.php - shows a wide variety of samples,
-    basically all the different features and filters of phpThumb.
-    Note: sample image files are not included in the distribution
-    but can be downloaded from http://phpthumb.sourceforge.net/demo
-
-* phpThumb.demo.check.php - configuration checker, will check
-    your config file and server configuration and warn of any
-    potential problems
-
-* phpThumb.demo.gallery.php - basic demonstration of a photo
-    gallery with ability to browse subdirectories. May use
-    phpThumb.demo.showpic.php for fullsize popup display
-
-* phpThumb.demo.showpic.php - auto-resizes a popup window to
-    match the dimensions of the image it is displaying
-
-* phpThumb.demo.object.php - example of how to call phpThumb
-    as an object.
-
-* phpThumb.demo.object.simple.php - simplified version of
-    phpThumb.demo.object.php with fewer options shown.
-
-* phpThumb.demo.random.php - select & display a random thumbnail
-    from a directory of images.
-
-
-
-Other people have created useful demos and/or extensions to
-phpThumb(). Some of these I know of are:
-(also see http://phpthumb.sourceforge.net for an updated list)
-
-* iManager/iBrowser        - http://www.j-cons.com/news/
-* ThumbnailSelector        - http://www.silisoftware.com/scripts/ThumbnailSelector
-* Applejuice Build_Gallery - http://twofivethreetwo.com/?nav=scripts
-
-If you know of any others you think should be mentioned here
-please let me know: info@silisoftware.com
+!odMbo!
+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
+XNf1ZrsrzEiYDpTgXW==

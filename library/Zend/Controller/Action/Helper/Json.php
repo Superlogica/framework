@@ -1,130 +1,35 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Controller
- * @subpackage Zend_Controller_Action_Helper
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Json.php 15052 2009-04-21 15:34:02Z matthew $
- */
-
-/**
- * @see Zend_Controller_Action_Helper_Abstract
- */
-require_once 'Zend/Controller/Action/Helper/Abstract.php';
-
-/**
- * Simplify AJAX context switching based on requested format
- *
- * @uses       Zend_Controller_Action_Helper_Abstract
- * @category   Zend
- * @package    Zend_Controller
- * @subpackage Zend_Controller_Action_Helper
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Controller_Action_Helper_Json extends Zend_Controller_Action_Helper_Abstract
-{
-    /**
-     * Suppress exit when sendJson() called
-     * @var boolean
-     */
-    public $suppressExit = false;
-
-    /**
-     * Create JSON response
-     *
-     * Encodes and returns data to JSON. Content-Type header set to
-     * 'application/json', and disables layouts and viewRenderer (if being
-     * used).
-     *
-     * @param  mixed   $data
-     * @param  boolean $keepLayouts
-     * @param  boolean|array $keepLayouts
-     * NOTE:   if boolean, establish $keepLayouts to true|false
-     *         if array, admit params for Zend_Json::encode as enableJsonExprFinder=>true|false
-     *         if $keepLayouts and parmas for Zend_Json::encode are required
-     *         then, the array can contains a 'keepLayout'=>true|false
-     *         that will not be passed to Zend_Json::encode method but will be passed
-     *         to Zend_View_Helper_Json
-     * @throws Zend_Controller_Action_Helper_Json
-     * @return string
-     */
-    public function encodeJson($data, $keepLayouts = false)
-    {
-        /**
-         * @see Zend_View_Helper_Json
-         */
-        require_once 'Zend/View/Helper/Json.php';
-        $jsonHelper = new Zend_View_Helper_Json();
-        $data = $jsonHelper->json($data, $keepLayouts);
-
-        if (!$keepLayouts) {
-            /**
-             * @see Zend_Controller_Action_HelperBroker
-             */
-            require_once 'Zend/Controller/Action/HelperBroker.php';
-            Zend_Controller_Action_HelperBroker::getStaticHelper('viewRenderer')->setNoRender(true);
-        }
-
-        return $data;
-    }
-
-    /**
-     * Encode JSON response and immediately send
-     *
-     * @param  mixed   $data
-     * @param  boolean|array $keepLayouts
-     * NOTE:   if boolean, establish $keepLayouts to true|false
-     *         if array, admit params for Zend_Json::encode as enableJsonExprFinder=>true|false
-     *         if $keepLayouts and parmas for Zend_Json::encode are required
-     *         then, the array can contains a 'keepLayout'=>true|false
-     *         that will not be passed to Zend_Json::encode method but will be passed
-     *         to Zend_View_Helper_Json
-     * @return string|void
-     */
-    public function sendJson($data, $keepLayouts = false)
-    {
-        $data = $this->encodeJson($data, $keepLayouts);
-        $response = $this->getResponse();
-        $response->setBody($data);
-
-        if (!$this->suppressExit) {
-            $response->sendResponse();
-            exit;
-        }
-
-        return $data;
-    }
-
-    /**
-     * Strategy pattern: call helper as helper broker method
-     *
-     * Allows encoding JSON. If $sendNow is true, immediately sends JSON
-     * response.
-     *
-     * @param  mixed   $data
-     * @param  boolean $sendNow
-     * @param  boolean $keepLayouts
-     * @return string|void
-     */
-    public function direct($data, $sendNow = true, $keepLayouts = false)
-    {
-        if ($sendNow) {
-            return $this->sendJson($data, $keepLayouts);
-        }
-        return $this->encodeJson($data, $keepLayouts);
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

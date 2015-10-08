@@ -1,563 +1,150 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Dojo
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Data.php 11282 2008-09-08 16:05:59Z matthew $
- */
-
-/**
- * dojo.data support for Zend Framework
- * 
- * @uses       ArrayAccess
- * @uses       Iterator
- * @uses       Countable
- * @package    Zend_Dojo
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Dojo_Data implements ArrayAccess,Iterator,Countable 
-{
-    /**
-     * Identifier field of item
-     * @var string|int
-     */
-    protected $_identifier;
-
-    /**
-     * Collected items
-     * @var array
-     */
-    protected $_items = array();
-
-    /**
-     * Label field of item
-     * @var string
-     */
-    protected $_label;
-
-    /**
-     * Data container metadata
-     * @var array
-     */
-    protected $_metadata = array();
-
-    /**
-     * Constructor
-     * 
-     * @param  string|null $identifier 
-     * @param  array|Traversable|null $items 
-     * @param  string|null $label 
-     * @return void
-     */
-    public function __construct($identifier = null, $items = null, $label = null) 
-    { 
-        if (null !== $identifier) { 
-            $this->setIdentifier($identifier); 
-        } 
-        if (null !== $items) { 
-            $this->setItems($items); 
-        } 
-        if (null !== $label) { 
-            $this->setLabel($label); 
-        } 
-    } 
- 
-    /**
-     * Set the items to collect
-     *
-     * @param array|Traversable $items
-     * @return Zend_Dojo_Data
-     */
-    public function setItems($items)
-    {
-        $this->clearItems();
-        return $this->addItems($items);
-    }
-
-    /**
-     * Set an individual item, optionally by identifier (overwrites)
-     *
-     * @param  array|object $item
-     * @param  string|null $identifier
-     * @return Zend_Dojo_Data
-     */
-    public function setItem($item, $id = null)
-    {
-        $item = $this->_normalizeItem($item, $id);
-        $this->_items[$item['id']] = $item['data'];
-        return $this;
-    }
-
-    /**
-     * Add an individual item, optionally by identifier
-     *
-     * @param  array|object $item
-     * @param  string|null $id
-     * @return Zend_Dojo_Data
-     */
-    public function addItem($item, $id = null)
-    {
-        $item = $this->_normalizeItem($item, $id);
-
-        if ($this->hasItem($item['id'])) {
-            require_once 'Zend/Dojo/Exception.php';
-            throw new Zend_Dojo_Exception('Overwriting items using addItem() is not allowed');
-        }
-
-        $this->_items[$item['id']] = $item['data'];
-
-        return $this;
-    }
-
-    /**
-     * Add multiple items at once
-     *
-     * @param  array|Traversable $items
-     * @return Zend_Dojo_Data
-     */
-    public function addItems($items)
-    {
-        if (!is_array($items) && (!is_object($items) || !($items instanceof Traversable))) {
-            require_once 'Zend/Dojo/Exception.php';
-            throw new Zend_Dojo_Exception('Only arrays and Traversable objects may be added to ' . __CLASS__);
-        }
-
-        foreach ($items as $item) {
-            $this->addItem($item);
-        }
-
-        return $this;
-    }
-
-    /**
-     * Get all items as an array
-     *
-     * Serializes items to arrays.
-     *
-     * @return array
-     */
-    public function getItems()
-    {
-        return $this->_items;
-    }
-
-    /**
-     * Does an item with the given identifier exist?
-     * 
-     * @param  string|int $id 
-     * @return bool
-     */
-    public function hasItem($id)
-    {
-        return array_key_exists($id, $this->_items);
-    }
-
-    /**
-     * Retrieve an item by identifier
-     *
-     * Item retrieved will be flattened to an array.
-     *
-     * @param  string $id
-     * @return array
-     */
-    public function getItem($id)
-    {
-        if (!$this->hasItem($id)) {
-            return null;
-        }
-
-        return $this->_items[$id];
-    }
-
-    /**
-     * Remove item by identifier
-     *
-     * @param  string $id
-     * @return Zend_Dojo_Data
-     */
-    public function removeItem($id)
-    {
-        if ($this->hasItem($id)) {
-            unset($this->_items[$id]);
-        }
-
-        return $this;
-    }
-
-    /**
-     * Remove all items at once
-     *
-     * @return Zend_Dojo_Data
-     */
-    public function clearItems()
-    {
-        $this->_items = array();
-        return $this;
-    }
-
- 
-    /**
-     * Set identifier for item lookups
-     *
-     * @param  string|int|null $identifier
-     * @return Zend_Dojo_Data
-     */
-    public function setIdentifier($identifier)
-    {
-        if (null === $identifier) {
-            $this->_identifier = null;
-        } elseif (is_string($identifier)) {
-            $this->_identifier = $identifier;
-        } elseif (is_numeric($identifier)) {
-            $this->_identifier = (int) $identifier;
-        } else {
-            require_once 'Zend/Dojo/Exception.php';
-            throw new Zend_Dojo_Exception('Invalid identifier; please use a string or integer');
-        }
-
-        return $this;
-    }
-
-    /**
-     * Retrieve current item identifier
-     *
-     * @return string|int|null
-     */
-    public function getIdentifier()
-    {
-        return $this->_identifier;
-    }
-
- 
-    /**
-     * Set label to use for displaying item associations
-     *
-     * @param  string|null $label
-     * @return Zend_Dojo_Data
-     */
-    public function setLabel($label)
-    {
-        if (null === $label) {
-            $this->_label = null;
-        } else {
-            $this->_label = (string) $label;
-        }
-        return $this;
-    }
-
-    /**
-     * Retrieve item association label
-     *
-     * @return string|null
-     */
-    public function getLabel()
-    {
-        return $this->_label;
-    }
-
-    /**
-     * Set metadata by key or en masse
-     * 
-     * @param  string|array $spec 
-     * @param  mixed $value 
-     * @return Zend_Dojo_Data
-     */
-    public function setMetadata($spec, $value = null)
-    {
-        if (is_string($spec) && (null !== $value)) {
-            $this->_metadata[$spec] = $value;
-        } elseif (is_array($spec)) {
-            foreach ($spec as $key => $value) {
-                $this->setMetadata($key, $value);
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * Get metadata item or all metadata
-     * 
-     * @param  null|string $key Metadata key when pulling single metadata item
-     * @return mixed
-     */
-    public function getMetadata($key = null)
-    {
-        if (null === $key) {
-            return $this->_metadata;
-        }
-
-        if (array_key_exists($key, $this->_metadata)) {
-            return $this->_metadata[$key];
-        }
-
-        return null;
-    }
-
-    /**
-     * Clear individual or all metadata item(s)
-     * 
-     * @param  null|string $key 
-     * @return Zend_Dojo_Data
-     */
-    public function clearMetadata($key = null)
-    {
-        if (null === $key) {
-            $this->_metadata = array();
-        } elseif (array_key_exists($key, $this->_metadata)) {
-            unset($this->_metadata[$key]);
-        }
-        return $this;
-    }
-
-    /**
-     * Load object from array
-     * 
-     * @param  array $data 
-     * @return Zend_Dojo_Data
-     */
-    public function fromArray(array $data)
-    {
-        if (array_key_exists('identifier', $data)) {
-            $this->setIdentifier($data['identifier']);
-        }
-        if (array_key_exists('label', $data)) {
-            $this->setLabel($data['label']);
-        }
-        if (array_key_exists('items', $data) && is_array($data['items'])) {
-            $this->setItems($data['items']);
-        } else {
-            $this->clearItems();
-        }
-        return $this;
-    }
-
-    /**
-     * Load object from JSON
-     * 
-     * @param  string $json 
-     * @return Zend_Dojo_Data
-     */
-    public function fromJson($json)
-    {
-        if (!is_string($json)) {
-            require_once 'Zend/Dojo/Exception.php';
-            throw new Zend_Dojo_Exception('fromJson() expects JSON input');
-        }
-        require_once 'Zend/Json.php';
-        $data = Zend_Json::decode($json);
-        return $this->fromArray($data);
-    }
-
-    /**
-     * Seralize entire data structure, including identifier and label, to array
-     * 
-     * @return array
-     */
-    public function toArray()
-    {
-        if (null === ($identifier = $this->getIdentifier())) {
-            require_once 'Zend/Dojo/Exception.php';
-            throw new Zend_Dojo_Exception('Serialization requires that an identifier be present in the object; first call setIdentifier()');
-        }
-
-        $array = array(
-            'identifier' => $identifier,
-            'items'      => array_values($this->getItems()),
-        );
-
-        $metadata = $this->getMetadata();
-        if (!empty($metadata)) {
-            foreach ($metadata as $key => $value) {
-                $array[$key] = $value;
-            }
-        }
-
-        if (null !== ($label = $this->getLabel())) {
-            $array['label'] = $label;
-        }
-
-        return $array;
-    }
- 
-    /**
-     * Serialize to JSON (dojo.data format)
-     *
-     * @return string
-     */
-    public function toJson()
-    {
-        require_once 'Zend/Json.php';
-        return Zend_Json::encode($this->toArray());
-    }
-
-    /**
-     * Serialize to string (proxy to {@link toJson()})
-     *
-     * @return string
-     */
-    public function __toString()
-    {
-        return $this->toJson();
-    }
-
-    /**
-     * ArrayAccess: does offset exist?
-     *
-     * @param  string|int $offset
-     * @return bool
-     */
-    public function offsetExists($offset)
-    {
-        return (null !== $this->getItem($offset));
-    }
-
-    /**
-     * ArrayAccess: retrieve by offset
-     *
-     * @param  string|int $offset
-     * @return array
-     */
-    public function offsetGet($offset)
-    {
-        return $this->getItem($offset);
-    }
-
-    /**
-     * ArrayAccess: set value by offset
-     *
-     * @param  string $offset
-     * @param  array|object|null $value
-     * @return void
-     */
-    public function offsetSet($offset, $value)
-    {
-        $this->setItem($value, $offset);
-    }
-
-    /**
-     * ArrayAccess: unset value by offset
-     *
-     * @param  string $offset
-     * @return void
-     */
-    public function offsetUnset($offset)
-    {
-        $this->removeItem($offset);
-    }
-
-    /**
-     * Iterator: get current value
-     *
-     * @return array
-     */
-    public function current()
-    {
-        return current($this->_items);
-    }
-
-    /**
-     * Iterator: get current key
-     *
-     * @return string|int
-     */
-    public function key()
-    {
-        return key($this->_items);
-    }
-
-    /**
-     * Iterator: get next item
-     *
-     * @return void
-     */
-    public function next()
-    {
-        return next($this->_items);
-    }
-
-    /**
-     * Iterator: rewind to first value in collection
-     *
-     * @return void
-     */
-    public function rewind()
-    {
-        return reset($this->_items);
-    }
-
-    /**
-     * Iterator: is item valid?
-     *
-     * @return bool
-     */
-    public function valid()
-    {
-        return (bool) $this->current();
-    }
-
-    /**
-     * Countable: how many items are present
-     *
-     * @return int
-     */
-    public function count()
-    {
-        return count($this->_items);
-    }
-
-    /**
-     * Normalize an item to attach to the collection 
-     * 
-     * @param  array|object $item 
-     * @param  string|int|null $id 
-     * @return array
-     */
-    protected function _normalizeItem($item, $id)
-    {
-        if (null === ($identifier = $this->getIdentifier())) {
-            require_once 'Zend/Dojo/Exception.php';
-            throw new Zend_Dojo_Exception('You must set an identifier prior to adding items');
-        }
-
-        if (!is_object($item) && !is_array($item)) {
-            require_once 'Zend/Dojo/Exception.php';
-            throw new Zend_Dojo_Exception('Only arrays and objects may be attached');
-        }
-
-        if (is_object($item)) {
-            if (method_exists($item, 'toArray')) {
-                $item = $item->toArray();
-            } else {
-                $item = get_object_vars($item);
-            }
-        }
-
-        if ((null === $id) && !array_key_exists($identifier, $item)) {
-            require_once 'Zend/Dojo/Exception.php';
-            throw new Zend_Dojo_Exception('Item must contain a column matching the currently set identifier');
-        } elseif (null === $id) {
-            $id = $item[$identifier];
-        } else {
-            $item[$identifier] = $id;
-        }
-
-        return array(
-            'id'   => $id,
-            'data' => $item,
-        );
-    }
-} 
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

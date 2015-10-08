@@ -1,221 +1,60 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Tool
- * @subpackage Framework
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id$
- */
-
-/**
- * @see Zend_Tool_Framework_Metadata_Interface
- */
-require_once 'Zend/Tool/Framework/Metadata/Interface.php';
-
-/**
- * @category   Zend
- * @package    Zend_Tool
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Tool_Framework_Metadata_Basic implements Zend_Tool_Framework_Metadata_Interface
-{
-    
-    /**#@+
-     * Search constants
-     */
-    const ATTRIBUTES_ALL        = 'attributesAll';
-    const ATTRIBUTES_NO_PARENT  = 'attributesParent';
-    /**#@-*/
-    
-    /**#@+
-     * @var string
-     */
-    protected $_type        = 'Basic';
-    protected $_name        = null;
-    protected $_value       = null;
-    /**#@-*/
-    
-    /**
-     * @var mixed
-     */
-    protected $_reference   = null;
-
-    /**
-     * Constructor - allows for the setting of options
-     *
-     * @param array $options
-     */
-    public function __construct(Array $options = array())
-    {
-        if ($options) {
-            $this->setOptions($options);
-        }
-    }
-    
-    /**
-     * setOptions() - standard issue implementation, this will set any 
-     * options that are supported via a set method.
-     *
-     * @param array $options
-     * @return Zend_Tool_Framework_Metadata_Basic
-     */
-    public function setOptions(Array $options)
-    {
-        foreach ($options as $optionName => $optionValue) {
-            $setMethod = 'set' . $optionName;
-            if (method_exists($this, $setMethod)) {
-                $this->{$setMethod}($optionValue);
-            }
-        }
-        
-        return $this;
-    }
-
-    /**
-     * getType()
-     * 
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->_type;
-    }
-    
-    /**
-     * setType()
-     * 
-     * @param string $type
-     * @return Zend_Tool_Framework_Metadata_Basic
-     */
-    public function setType($type)
-    {
-        $this->_type = $type;
-        return $this;
-    }
-
-    /**
-     * getName()
-     * 
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->_name;
-    }
-    
-    /**
-     * setName()
-     * 
-     * @param string $name
-     * @return Zend_Tool_Framework_Metadata_Basic
-     */
-    public function setName($name)
-    {
-        $this->_name = $name;
-        return $this;
-    }
-    
-    /**
-     * getValue() 
-     * 
-     * @return mixed
-     */
-    public function getValue()
-    {
-        return $this->_value;
-    }
-    
-    /**
-     * setValue()
-     * 
-     * @param unknown_type $Value
-     * @return Zend_Tool_Framework_Metadata_Basic
-     */
-    public function setValue($value)
-    {
-        $this->_value = $value;
-        return $this;
-    }
-
-    /**
-     * setReference()
-     *
-     * @param mixed $reference
-     * @return Zend_Tool_Framework_Metadata_Basic
-     */
-    public function setReference($reference)
-    {
-        $this->_reference = $reference;
-        return $this;
-    }
-    
-    /**
-     * getReference()
-     *
-     * @return mixed
-     */
-    public function getReference()
-    {
-        return $this->_reference;
-    }
-    
-    /**
-     * getAttributes() - this will retrieve any attributes of this object that exist as properties
-     * This is most useful for printing metadata.
-     *
-     * @param const $type
-     * @return array
-     */
-    public function getAttributes($type = self::ATTRIBUTES_ALL, $stringRepresentationOfNonScalars = false)
-    {
-        $thisReflection = new ReflectionObject($this);
-            
-        $metadataPairValues = array();
-
-        foreach (get_object_vars($this) as $varName => $varValue) {
-            if ($type == self::ATTRIBUTES_NO_PARENT && ($thisReflection->getProperty($varName)->getDeclaringClass()->getName() == 'Zend_Tool_Framework_Metadata_Basic')) {
-                continue;
-            }
-            
-            if ($stringRepresentationOfNonScalars) {
-                
-                if (is_object($varValue)) {
-                    $varValue = '(object)';
-                }
-                
-                if (is_null($varValue)) {
-                    $varValue = '(null)';
-                }
-                
-            }
-            
-            $metadataPairValues[ltrim($varName, '_')] = $varValue;
-        }
-        
-        return $metadataPairValues;
-    }
-    
-    /**
-     * __toString() - string representation of this object 
-     *
-     * @return string
-     */
-    public function __toString()
-    {
-        return 'Type: ' . $this->_type . ', Name: ' . $this->_name . ', Value: ' . (is_array($this->_value) ? http_build_query($this->_value) : (string) $this->_value);
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

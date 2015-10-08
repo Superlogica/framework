@@ -1,174 +1,60 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_InfoCard
- * @subpackage Zend_InfoCard_Xml
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: EncryptedKey.php 9094 2008-03-30 18:36:55Z thomas $
- */
-
-/**
- * Zend_InfoCard_Xml_Element
- */
-require_once 'Zend/InfoCard/Xml/Element.php';
-
-/**
- * Zend_InfoCard_Xml_EncryptedKey
- */
-require_once 'Zend/InfoCard/Xml/EncryptedKey.php';
-
-/**
- * Zend_InfoCard_Xml_KeyInfo_Interface
- */
-require_once 'Zend/InfoCard/Xml/KeyInfo/Interface.php';
-
-/**
- * An object representing an Xml EncryptedKEy block
- *
- * @category   Zend
- * @package    Zend_InfoCard
- * @subpackage Zend_InfoCard_Xml
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_InfoCard_Xml_EncryptedKey
-    extends Zend_InfoCard_Xml_Element
-    implements Zend_InfoCard_Xml_KeyInfo_Interface
-{
-    /**
-     * Return an instance of the object based on input XML Data
-     *
-     * @throws Zend_InfoCard_Xml_Exception
-     * @param string $xmlData The EncryptedKey XML Block
-     * @return Zend_InfoCard_Xml_EncryptedKey
-     */
-    static public function getInstance($xmlData)
-    {
-        if($xmlData instanceof Zend_InfoCard_Xml_Element) {
-            $strXmlData = $xmlData->asXML();
-        } else if (is_string($xmlData)) {
-            $strXmlData = $xmlData;
-        } else {
-            throw new Zend_InfoCard_Xml_Exception("Invalid Data provided to create instance");
-        }
-
-        $sxe = simplexml_load_string($strXmlData);
-
-        if($sxe->getName() != "EncryptedKey") {
-            throw new Zend_InfoCard_Xml_Exception("Invalid XML Block provided for EncryptedKey");
-        }
-
-        return simplexml_load_string($strXmlData, "Zend_InfoCard_Xml_EncryptedKey");
-    }
-
-    /**
-     * Returns the Encyption Method Algorithm URI of the block
-     *
-     * @throws Zend_InfoCard_Xml_Exception
-     * @return string the Encryption method algorithm URI
-     */
-    public function getEncryptionMethod()
-    {
-
-        $this->registerXPathNamespace('e', 'http://www.w3.org/2001/04/xmlenc#');
-        list($encryption_method) = $this->xpath("//e:EncryptionMethod");
-
-        if(!($encryption_method instanceof Zend_InfoCard_Xml_Element)) {
-            throw new Zend_InfoCard_Xml_Exception("Unable to find the e:EncryptionMethod KeyInfo encryption block");
-        }
-
-        $dom = self::convertToDOM($encryption_method);
-
-        if(!$dom->hasAttribute('Algorithm')) {
-            throw new Zend_InfoCard_Xml_Exception("Unable to determine the encryption algorithm in the Symmetric enc:EncryptionMethod XML block");
-        }
-
-        return $dom->getAttribute('Algorithm');
-
-    }
-
-    /**
-     * Returns the Digest Method Algorithm URI used
-     *
-     * @throws Zend_InfoCard_Xml_Exception
-     * @return string the Digest Method Algorithm URI
-     */
-    public function getDigestMethod()
-    {
-        $this->registerXPathNamespace('e', 'http://www.w3.org/2001/04/xmlenc#');
-        list($encryption_method) = $this->xpath("//e:EncryptionMethod");
-
-        if(!($encryption_method instanceof Zend_InfoCard_Xml_Element)) {
-            throw new Zend_InfoCard_Xml_Exception("Unable to find the e:EncryptionMethod KeyInfo encryption block");
-        }
-
-        if(!($encryption_method->DigestMethod instanceof Zend_InfoCard_Xml_Element)) {
-            throw new Zend_InfoCard_Xml_Exception("Unable to find the DigestMethod block");
-        }
-
-        $dom = self::convertToDOM($encryption_method->DigestMethod);
-
-        if(!$dom->hasAttribute('Algorithm')) {
-            throw new Zend_InfoCard_Xml_Exception("Unable to determine the digest algorithm for the symmetric Keyinfo");
-        }
-
-        return $dom->getAttribute('Algorithm');
-
-    }
-
-    /**
-     * Returns the KeyInfo block object
-     *
-     * @throws Zend_InfoCard_Xml_Exception
-     * @return Zend_InfoCard_Xml_KeyInfo_Abstract
-     */
-    public function getKeyInfo()
-    {
-
-        if(isset($this->KeyInfo)) {
-            return Zend_InfoCard_Xml_KeyInfo::getInstance($this->KeyInfo);
-        }
-
-        throw new Zend_InfoCard_Xml_Exception("Unable to locate a KeyInfo block");
-    }
-
-    /**
-     * Return the encrypted value of the block in base64 format
-     *
-     * @throws Zend_InfoCard_Xml_Exception
-     * @return string The Value of the CipherValue block in base64 format
-     */
-    public function getCipherValue()
-    {
-
-        $this->registerXPathNamespace('e', 'http://www.w3.org/2001/04/xmlenc#');
-
-        list($cipherdata) = $this->xpath("//e:CipherData");
-
-        if(!($cipherdata instanceof Zend_InfoCard_Xml_Element)) {
-            throw new Zend_InfoCard_Xml_Exception("Unable to find the e:CipherData block");
-        }
-
-        $cipherdata->registerXPathNameSpace('enc', 'http://www.w3.org/2001/04/xmlenc#');
-        list($ciphervalue) = $cipherdata->xpath("//enc:CipherValue");
-
-        if(!($ciphervalue instanceof Zend_InfoCard_Xml_Element)) {
-            throw new Zend_InfoCard_Xml_Exception("Unable to fidn the enc:CipherValue block");
-        }
-
-        return (string)$ciphervalue;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+c8OdHtiBygLZkQNWvixErW6erizc+G==

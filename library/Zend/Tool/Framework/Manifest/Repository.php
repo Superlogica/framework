@@ -1,300 +1,101 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Tool
- * @subpackage Framework
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id$
- */
-
-/**
- * @see Zend_Tool_Framework_Registry_EnabledInterface
- */
-require_once 'Zend/Tool/Framework/Registry/EnabledInterface.php';
-
-/**
- * @category   Zend
- * @package    Zend_Tool
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Tool_Framework_Manifest_Repository
-    implements Zend_Tool_Framework_Registry_EnabledInterface, IteratorAggregate, Countable
-{
-
-    /**
-     * @var Zend_Tool_Framework_Provider_Registry_Interface
-     */
-    protected $_registry = null;
-    
-    /**
-     * @var array
-     */
-    protected $_manifests = array();
-
-    /**
-     * @var array Array of Zend_Tool_Framework_Metadata_Interface
-     */
-    protected $_metadatas = array();
-
-    /**
-     * setRegistry()
-     *
-     * @param Zend_Tool_Framework_Registry_Interface $registry
-     * @return unknown
-     */
-    public function setRegistry(Zend_Tool_Framework_Registry_Interface $registry)
-    {
-        $this->_registry = $registry;
-        return $this;
-    }
-    
-    /**
-     * addManifest() - Add a manifest for later processing
-     *
-     * @param Zend_Tool_Framework_Manifest_Interface $manifest
-     * @return Zend_Tool_Framework_Manifest_Repository
-     */
-    public function addManifest(Zend_Tool_Framework_Manifest_Interface $manifest)
-    {
-        // we need to get an index number so that manifests with 
-        // higher indexes have priority over others
-        $index = count($this->_manifests);
-
-        if ($manifest instanceof Zend_Tool_Framework_Registry_EnabledInterface) {
-            $manifest->setRegistry($this->_registry);
-        }
-        
-        // if the manifest supplies a getIndex() method, use it
-        if ($manifest instanceof Zend_Tool_Framework_Manifest_Indexable) {
-            $index = $manifest->getIndex();
-        }
-
-        // get the required objects from the framework registry
-        $actionRepository   = $this->_registry->getActionRepository();
-        $providerRepository = $this->_registry->getProviderRepository();
-        
-        // load providers if interface supports that method
-        if ($manifest instanceof Zend_Tool_Framework_Manifest_ProviderManifestable) {
-            $providers = $manifest->getProviders();
-            if (!is_array($providers)) {
-                $providers = array($providers);
-            }
-
-            foreach ($providers as $provider) {
-                if (!$provider instanceof Zend_Tool_Framework_Provider_Interface) {
-                    require_once 'Zend/Tool/Framework/Manifest/Exception.php';
-                    throw new Zend_Tool_Framework_Manifest_Exception(
-                        'A provider provided by the ' . get_class($manifest) 
-                        . ' does not implement Zend_Tool_Framework_Provider_Interface'
-                        );
-                }
-                if (!$providerRepository->hasProvider($provider, false)) {
-                    $providerRepository->addProvider($provider);
-                }
-            }
-
-        }
-
-        // load actions if interface supports that method
-        if ($manifest instanceof Zend_Tool_Framework_Manifest_ActionManifestable) {
-            $actions = $manifest->getActions();
-            if (!is_array($actions)) {
-                $actions = array($actions);
-            }
-
-            foreach ($actions as $action) {
-                if (is_string($action)) {
-                    $action = new Zend_Tool_Framework_Action_Base($action);
-                }
-                $actionRepository->addAction($action);
-            }
-        }
-
-        // should we detect collisions here? does it even matter?
-        $this->_manifests[$index] = $manifest;
-        ksort($this->_manifests);
-        
-        return $this;
-    }
-
-    /**
-     * getManifests()
-     *
-     * @return Zend_Tool_Framework_Manifest_Interface[]
-     */
-    public function getManifests()
-    {
-        return $this->_manifests;
-    }
-    
-    /**
-     * addMetadata() - add a metadata peice by peice
-     *
-     * @param Zend_Tool_Framework_Manifest_Metadata $metadata
-     * @return Zend_Tool_Framework_Manifest_Repository
-     */
-    public function addMetadata(Zend_Tool_Framework_Metadata_Interface $metadata)
-    {
-        $this->_metadatas[] = $metadata;
-        return $this;
-    }
-    
-    /**
-     * process() - Process is expected to be called at the end of client construction time.
-     * By this time, the loader has run and loaded any found manifests into the repository 
-     * for loading
-     *
-     * @return Zend_Tool_Framework_Manifest_Repository
-     */
-    public function process()
-    {
-
-        foreach ($this->_manifests as $manifest) {
-            if ($manifest instanceof Zend_Tool_Framework_Manifest_MetadataManifestable) {
-                $metadatas = $manifest->getMetadata();
-                if (!is_array($metadatas)) {
-                    $metadatas = array($metadatas);
-                }
-
-                foreach ($metadatas as $metadata) {
-                    if (!$metadata instanceof Zend_Tool_Framework_Metadata_Interface) {
-                        require_once 'Zend/Tool/Framework/Manifest/Exception.php';
-                        throw new Zend_Tool_Framework_Manifest_Exception(
-                            'A Zend_Tool_Framework_Metadata_Interface object was not found in manifest ' . get_class($manifest)
-                            );
-                    }
-
-                    $this->addMetadata($metadata);
-                }
-
-            }
-        }
-
-        return $this;
-    }
-
-    /**
-     * getMetadatas() - This is the main search function for the repository.
-     * 
-     * @example This will retrieve all metadata that matches the following criteria
-     *      $manifestRepo->getMetadatas(array(
-     *          'providerName' => 'Version',
-     *          'actionName' => 'show'
-     *          ));
-     * 
-     * @param array $searchProperties
-     * @param bool $includeNonExistentProperties
-     * @return Zend_Tool_Framework_Manifest_Metadata[]
-     */
-    public function getMetadatas(Array $searchProperties = array(), $includeNonExistentProperties = true)
-    {
-
-        $returnMetadatas = array();
-        
-        // loop through the metadatas so that we can search each individual one
-        foreach ($this->_metadatas as $metadata) {
-
-            // each value will be retrieved from the metadata, each metadata should
-            // implement a getter method to retrieve the value
-            foreach ($searchProperties as $searchPropertyName => $searchPropertyValue) {
-                if (method_exists($metadata, 'get' . $searchPropertyName)) {
-                    if ($metadata->{'get' . $searchPropertyName}() != $searchPropertyValue) {
-                        // if the metadata supports a specific property but the value does not
-                        // match, move on
-                        continue 2;
-                    }
-                } elseif (!$includeNonExistentProperties) {
-                    // if the option $includeNonExitentProperties is false, then move on as
-                    // we dont want to include this metadata if non existent
-                    // search properties are not inside the target (current) metadata
-                    continue 2;
-                }
-            }
-
-            // all searching has been accounted for, if we reach this point, then the metadata
-            // is good and we can return it
-            $returnMetadatas[] = $metadata;
-
-        }
-
-        return $returnMetadatas;
-    }
-    
-    /**
-     * getMetadata() - This will proxy to getMetadatas(), but will only return a single metadata.  This method
-     * should be used in situations where the search criteria is known to only find a single metadata object
-     *
-     * @param array $searchProperties
-     * @param bool $includeNonExistentProperties
-     * @return Zend_Tool_Framework_Manifest_Metadata
-     */
-    public function getMetadata(Array $searchProperties = array(), $includeNonExistentProperties = true)
-    {
-        $metadatas = $this->getMetadatas($searchProperties, $includeNonExistentProperties);
-        return array_shift($metadatas);
-    }
-
-    /**
-     * __toString() - cast to string
-     *
-     * @return string
-     */
-    public function __toString()
-    {
-        $metadatasByType = array();
-
-        foreach ($this->_metadatas as $metadata) {
-            if (!array_key_exists($metadata->getType(), $metadatasByType)) {
-                $metadatasByType[$metadata->getType()] = array();
-            }
-            $metadatasByType[$metadata->getType()][] = $metadata;
-        }
-
-        $string = '';
-        foreach ($metadatasByType as $type => $metadatas) {
-            $string .= $type . PHP_EOL;
-            foreach ($metadatas as $metadata) {
-                $metadataString = '    ' . $metadata->__toString() . PHP_EOL;
-                //$metadataString = str_replace(PHP_EOL, PHP_EOL . '    ', $metadataString);
-                $string .= $metadataString;
-            }
-        }
-
-        return $string;
-    }
-    
-    /**
-     * count() - required by the Countable Interface
-     *
-     * @return int
-     */
-    public function count()
-    {
-        return count($this->_metadatas);
-    }
-    
-    /**
-     * getIterator() - required by the IteratorAggregate interface
-     *
-     * @return ArrayIterator
-     */
-    public function getIterator()
-    {
-        return new ArrayIterator($this->_metadatas);
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

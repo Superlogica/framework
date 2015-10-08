@@ -1,277 +1,76 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Search_Lucene
- * @subpackage Search
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-
-/** Zend_Search_Lucene_FSM */
-require_once 'Zend/Search/Lucene/FSM.php';
-
-/** Zend_Search_Lucene_Search_QueryToken */
-require_once 'Zend/Search/Lucene/Search/QueryToken.php';
-
-/** Zend_Search_Lucene_Search_QueryParser */
-require_once 'Zend/Search/Lucene/Search/QueryParser.php';
-
-/**
- * @category   Zend
- * @package    Zend_Search_Lucene
- * @subpackage Search
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Search_Lucene_Search_BooleanExpressionRecognizer extends Zend_Search_Lucene_FSM
-{
-    /** State Machine states */
-    const ST_START           = 0;
-    const ST_LITERAL         = 1;
-    const ST_NOT_OPERATOR    = 2;
-    const ST_AND_OPERATOR    = 3;
-    const ST_OR_OPERATOR     = 4;
-
-    /** Input symbols */
-    const IN_LITERAL         = 0;
-    const IN_NOT_OPERATOR    = 1;
-    const IN_AND_OPERATOR    = 2;
-    const IN_OR_OPERATOR     = 3;
-
-
-    /**
-     * NOT operator signal
-     *
-     * @var boolean
-     */
-    private $_negativeLiteral = false;
-
-    /**
-     * Current literal
-     *
-     * @var mixed
-     */
-    private $_literal;
-
-
-    /**
-     * Set of boolean query conjunctions
-     *
-     * Each conjunction is an array of conjunction elements
-     * Each conjunction element is presented with two-elements array:
-     * array(<literal>, <is_negative>)
-     *
-     * So, it has a structure:
-     * array( array( array(<literal>, <is_negative>), // first literal of first conjuction
-     *               array(<literal>, <is_negative>), // second literal of first conjuction
-     *               ...
-     *               array(<literal>, <is_negative>)
-     *             ), // end of first conjuction
-     *        array( array(<literal>, <is_negative>), // first literal of second conjuction
-     *               array(<literal>, <is_negative>), // second literal of second conjuction
-     *               ...
-     *               array(<literal>, <is_negative>)
-     *             ), // end of second conjuction
-     *        ...
-     *      ) // end of structure
-     *
-     * @var array
-     */
-    private $_conjunctions = array();
-
-    /**
-     * Current conjuction
-     *
-     * @var array
-     */
-    private $_currentConjunction = array();
-
-
-    /**
-     * Object constructor
-     */
-    public function __construct()
-    {
-        parent::__construct( array(self::ST_START,
-                                   self::ST_LITERAL,
-                                   self::ST_NOT_OPERATOR,
-                                   self::ST_AND_OPERATOR,
-                                   self::ST_OR_OPERATOR),
-                             array(self::IN_LITERAL,
-                                   self::IN_NOT_OPERATOR,
-                                   self::IN_AND_OPERATOR,
-                                   self::IN_OR_OPERATOR));
-
-        $emptyOperatorAction    = new Zend_Search_Lucene_FSMAction($this, 'emptyOperatorAction');
-        $emptyNotOperatorAction = new Zend_Search_Lucene_FSMAction($this, 'emptyNotOperatorAction');
-
-        $this->addRules(array( array(self::ST_START,        self::IN_LITERAL,        self::ST_LITERAL),
-                               array(self::ST_START,        self::IN_NOT_OPERATOR,   self::ST_NOT_OPERATOR),
-
-                               array(self::ST_LITERAL,      self::IN_AND_OPERATOR,   self::ST_AND_OPERATOR),
-                               array(self::ST_LITERAL,      self::IN_OR_OPERATOR,    self::ST_OR_OPERATOR),
-                               array(self::ST_LITERAL,      self::IN_LITERAL,        self::ST_LITERAL,      $emptyOperatorAction),
-                               array(self::ST_LITERAL,      self::IN_NOT_OPERATOR,   self::ST_NOT_OPERATOR, $emptyNotOperatorAction),
-
-                               array(self::ST_NOT_OPERATOR, self::IN_LITERAL,        self::ST_LITERAL),
-
-                               array(self::ST_AND_OPERATOR, self::IN_LITERAL,        self::ST_LITERAL),
-                               array(self::ST_AND_OPERATOR, self::IN_NOT_OPERATOR,   self::ST_NOT_OPERATOR),
-
-                               array(self::ST_OR_OPERATOR,  self::IN_LITERAL,        self::ST_LITERAL),
-                               array(self::ST_OR_OPERATOR,  self::IN_NOT_OPERATOR,   self::ST_NOT_OPERATOR),
-                             ));
-
-        $notOperatorAction     = new Zend_Search_Lucene_FSMAction($this, 'notOperatorAction');
-        $orOperatorAction      = new Zend_Search_Lucene_FSMAction($this, 'orOperatorAction');
-        $literalAction         = new Zend_Search_Lucene_FSMAction($this, 'literalAction');
-
-
-        $this->addEntryAction(self::ST_NOT_OPERATOR, $notOperatorAction);
-        $this->addEntryAction(self::ST_OR_OPERATOR,  $orOperatorAction);
-        $this->addEntryAction(self::ST_LITERAL,      $literalAction);
-    }
-
-
-    /**
-     * Process next operator.
-     *
-     * Operators are defined by class constants: IN_AND_OPERATOR, IN_OR_OPERATOR and IN_NOT_OPERATOR
-     *
-     * @param integer $operator
-     */
-    public function processOperator($operator)
-    {
-        $this->process($operator);
-    }
-
-    /**
-     * Process expression literal.
-     *
-     * @param integer $operator
-     */
-    public function processLiteral($literal)
-    {
-        $this->_literal = $literal;
-
-        $this->process(self::IN_LITERAL);
-    }
-
-    /**
-     * Finish an expression and return result
-     *
-     * Result is a set of boolean query conjunctions
-     *
-     * Each conjunction is an array of conjunction elements
-     * Each conjunction element is presented with two-elements array:
-     * array(<literal>, <is_negative>)
-     *
-     * So, it has a structure:
-     * array( array( array(<literal>, <is_negative>), // first literal of first conjuction
-     *               array(<literal>, <is_negative>), // second literal of first conjuction
-     *               ...
-     *               array(<literal>, <is_negative>)
-     *             ), // end of first conjuction
-     *        array( array(<literal>, <is_negative>), // first literal of second conjuction
-     *               array(<literal>, <is_negative>), // second literal of second conjuction
-     *               ...
-     *               array(<literal>, <is_negative>)
-     *             ), // end of second conjuction
-     *        ...
-     *      ) // end of structure
-     *
-     * @return array
-     * @throws Zend_Search_Lucene_Exception
-     */
-    public function finishExpression()
-    {
-        if ($this->getState() != self::ST_LITERAL) {
-            require_once 'Zend/Search/Lucene/Exception.php';
-            throw new Zend_Search_Lucene_Exception('Literal expected.');
-        }
-
-        $this->_conjunctions[] = $this->_currentConjunction;
-
-        return $this->_conjunctions;
-    }
-
-
-
-    /*********************************************************************
-     * Actions implementation
-     *********************************************************************/
-
-    /**
-     * default (omitted) operator processing
-     */
-    public function emptyOperatorAction()
-    {
-        if (Zend_Search_Lucene_Search_QueryParser::getDefaultOperator() == Zend_Search_Lucene_Search_QueryParser::B_AND) {
-            // Do nothing
-        } else {
-            $this->orOperatorAction();
-        }
-
-        // Process literal
-        $this->literalAction();
-    }
-
-    /**
-     * default (omitted) + NOT operator processing
-     */
-    public function emptyNotOperatorAction()
-    {
-        if (Zend_Search_Lucene_Search_QueryParser::getDefaultOperator() == Zend_Search_Lucene_Search_QueryParser::B_AND) {
-            // Do nothing
-        } else {
-            $this->orOperatorAction();
-        }
-
-        // Process NOT operator
-        $this->notOperatorAction();
-    }
-
-
-    /**
-     * NOT operator processing
-     */
-    public function notOperatorAction()
-    {
-        $this->_negativeLiteral = true;
-    }
-
-    /**
-     * OR operator processing
-     * Close current conjunction
-     */
-    public function orOperatorAction()
-    {
-        $this->_conjunctions[]     = $this->_currentConjunction;
-        $this->_currentConjunction = array();
-    }
-
-    /**
-     * Literal processing
-     */
-    public function literalAction()
-    {
-        // Add literal to the current conjunction
-        $this->_currentConjunction[] = array($this->_literal, !$this->_negativeLiteral);
-
-        // Switch off negative signal
-        $this->_negativeLiteral = false;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

@@ -1,130 +1,53 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Cache
- * @subpackage Zend_Cache_Frontend
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-
-/**
- * @see Zend_Cache_Core
- */
-require_once 'Zend/Cache/Core.php';
-
-
-/**
- * @package    Zend_Cache
- * @subpackage Zend_Cache_Frontend
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Cache_Frontend_Function extends Zend_Cache_Core
-{
-    /**
-     * This frontend specific options
-     *
-     * ====> (boolean) cache_by_default :
-     * - if true, function calls will be cached by default
-     *
-     * ====> (array) cached_functions :
-     * - an array of function names which will be cached (even if cache_by_default = false)
-     *
-     * ====> (array) non_cached_functions :
-     * - an array of function names which won't be cached (even if cache_by_default = true)
-     *
-     * @var array options
-     */
-    protected $_specificOptions = array(
-        'cache_by_default' => true,
-        'cached_functions' => array(),
-        'non_cached_functions' => array()
-    );
-
-    /**
-     * Constructor
-     *
-     * @param  array $options Associative array of options
-     * @return void
-     */
-    public function __construct(array $options = array())
-    {
-        while (list($name, $value) = each($options)) {
-            $this->setOption($name, $value);
-        }
-        $this->setOption('automatic_serialization', true);
-    }
-
-    /**
-     * Main method : call the specified function or get the result from cache
-     *
-     * @param  string $name             Function name
-     * @param  array  $parameters       Function parameters
-     * @param  array  $tags             Cache tags
-     * @param  int    $specificLifetime If != false, set a specific lifetime for this cache record (null => infinite lifetime)
-     * @param  int   $priority         integer between 0 (very low priority) and 10 (maximum priority) used by some particular backends             
-     * @return mixed Result
-     */
-    public function call($name, $parameters = array(), $tags = array(), $specificLifetime = false, $priority = 8)
-    {
-        $cacheBool1 = $this->_specificOptions['cache_by_default'];
-        $cacheBool2 = in_array($name, $this->_specificOptions['cached_functions']);
-        $cacheBool3 = in_array($name, $this->_specificOptions['non_cached_functions']);
-        $cache = (($cacheBool1 || $cacheBool2) && (!$cacheBool3));
-        if (!$cache) {
-            // We do not have not cache
-            return call_user_func_array($name, $parameters);
-        }
-        $id = $this->_makeId($name, $parameters);
-        if ($this->test($id)) {
-            // A cache is available
-            $result = $this->load($id);
-            $output = $result[0];
-            $return = $result[1];
-        } else {
-            // A cache is not available
-            ob_start();
-            ob_implicit_flush(false);
-            $return = call_user_func_array($name, $parameters);
-            $output = ob_get_contents();
-            ob_end_clean();
-            $data = array($output, $return);
-            $this->save($data, $id, $tags, $specificLifetime, $priority);
-        }
-        echo $output;
-        return $return;
-    }
-
-    /**
-     * Make a cache id from the function name and parameters
-     *
-     * @param  string $name       Function name
-     * @param  array  $parameters Function parameters
-     * @throws Zend_Cache_Exception
-     * @return string Cache id
-     */
-    private function _makeId($name, $parameters)
-    {
-        if (!is_string($name)) {
-            Zend_Cache::throwException('Incorrect function name');
-        }
-        if (!is_array($parameters)) {
-            Zend_Cache::throwException('parameters argument must be an array');
-        }
-        return md5($name . serialize($parameters));
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

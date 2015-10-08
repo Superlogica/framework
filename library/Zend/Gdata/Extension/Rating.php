@@ -1,239 +1,63 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Gdata
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * @see Zend_Gdata_Extension
- */
-require_once 'Zend/Gdata/Extension.php';
-
-/**
- * Implements the gd:rating element
- *
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Gdata
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Gdata_Extension_Rating extends Zend_Gdata_Extension
-{
-
-    protected $_rootElement = 'rating';
-    protected $_min = null;
-    protected $_max = null;
-    protected $_numRaters = null;
-    protected $_average = null;
-    protected $_value = null;
-
-    /**
-     * Constructs a new Zend_Gdata_Extension_Rating object.
-     *
-     * @param integer $average (optional) Average rating.
-     * @param integer $min (optional) Minimum rating.
-     * @param integer $max (optional) Maximum rating.
-     * @param integer $numRaters (optional) Number of raters.
-     * @param integer $value (optional) The value of the rating.
-     */
-    public function __construct($average = null, $min = null,
-            $max = null, $numRaters = null, $value = null)
-    {
-        parent::__construct();
-        $this->_average = $average;
-        $this->_min = $min;
-        $this->_max = $max;
-        $this->_numRaters = $numRaters;
-        $this->_value = $value;
-    }
-
-    /**
-     * Retrieves a DOMElement which corresponds to this element and all
-     * child properties.  This is used to build an entry back into a DOM
-     * and eventually XML text for sending to the server upon updates, or
-     * for application storage/persistence.
-     *
-     * @param DOMDocument $doc The DOMDocument used to construct DOMElements
-     * @return DOMElement The DOMElement representing this element and all
-     *          child properties.
-     */
-    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
-    {
-        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
-        if ($this->_min !== null) {
-            $element->setAttribute('min', $this->_min);
-        }
-        if ($this->_max !== null) {
-            $element->setAttribute('max', $this->_max);
-        }
-        if ($this->_numRaters !== null) {
-            $element->setAttribute('numRaters', $this->_numRaters);
-        }
-        if ($this->_average !== null) {
-            $element->setAttribute('average', $this->_average);
-        }
-        if ($this->_value !== null) {
-            $element->setAttribute('value', $this->_value);
-        }
-
-        return $element;
-    }
-
-    /**
-     * Given a DOMNode representing an attribute, tries to map the data into
-     * instance members.  If no mapping is defined, the name and value are
-     * stored in an array.
-     *
-     * @param DOMNode $attribute The DOMNode attribute needed to be handled
-     */
-    protected function takeAttributeFromDOM($attribute)
-    {
-        switch ($attribute->localName) {
-            case 'min':
-                $this->_min = $attribute->nodeValue;
-                break;
-            case 'max':
-                $this->_max = $attribute->nodeValue;
-                break;
-            case 'numRaters':
-                $this->_numRaters = $attribute->nodeValue;
-                break;
-            case 'average':
-                $this->_average = $attribute->nodeValue;
-                break;
-            case 'value':
-                $this->_value = $attribute->nodeValue;
-            default:
-                parent::takeAttributeFromDOM($attribute);
-        }
-    }
-
-    /**
-     * Get the value for this element's min attribute.
-     *
-     * @return integer The requested attribute.
-     */
-    public function getMin()
-    {
-        return $this->_min;
-    }
-
-    /**
-     * Set the value for this element's min attribute.
-     *
-     * @param bool $value The desired value for this attribute.
-     * @return Zend_Gdata_Extension_Rating The element being modified.
-     */
-    public function setMin($value)
-    {
-        $this->_min = $value;
-        return $this;
-    }
-
-    /**
-     * Get the value for this element's numRaters attribute.
-     *
-     * @return integer The requested attribute.
-     */
-    public function getNumRaters()
-    {
-        return $this->_numRaters;
-    }
-
-    /**
-     * Set the value for this element's numRaters attribute.
-     *
-     * @param bool $value The desired value for this attribute.
-     * @return Zend_Gdata_Extension_Rating The element being modified.
-     */
-    public function setNumRaters($value)
-    {
-        $this->_numRaters = $value;
-        return $this;
-    }
-
-    /**
-     * Get the value for this element's average attribute.
-     *
-     * @return integer The requested attribute.
-     */
-    public function getAverage()
-    {
-        return $this->_average;
-    }
-
-    /**
-     * Set the value for this element's average attribute.
-     *
-     * @param bool $value The desired value for this attribute.
-     * @return Zend_Gdata_Extension_Rating The element being modified.
-     */
-    public function setAverage($value)
-    {
-        $this->_average = $value;
-        return $this;
-    }
-
-    /**
-     * Get the value for this element's max attribute.
-     *
-     * @return integer The requested attribute.
-     */
-    public function getMax()
-    {
-        return $this->_max;
-    }
-
-    /**
-     * Set the value for this element's max attribute.
-     *
-     * @param bool $value The desired value for this attribute.
-     * @return Zend_Gdata_Extension_Rating The element being modified.
-     */
-    public function setMax($value)
-    {
-        $this->_max = $value;
-        return $this;
-    }
-
-    /**
-     * Get the value for this element's value attribute.
-     *
-     * @return integer The requested attribute.
-     */
-    public function getValue()
-    {
-        return $this->_value;
-    }
-
-    /**
-     * Set the value for this element's value attribute.
-     *
-     * @param bool $value The desired value for this attribute.
-     * @return Zend_Gdata_Extension_Rating The element being modified.
-     */
-    public function setValue($value)
-    {
-        $this->_value = $value;
-        return $this;
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+7HeF6n1m5iQe03D5r0==

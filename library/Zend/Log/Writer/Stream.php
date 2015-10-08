@@ -1,104 +1,39 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Log
- * @subpackage Writer
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Stream.php 14131 2009-02-21 20:13:38Z shahar $
- */
-
-/** Zend_Log_Writer_Abstract */
-require_once 'Zend/Log/Writer/Abstract.php';
-
-/** Zend_Log_Formatter_Simple */
-require_once 'Zend/Log/Formatter/Simple.php';
-
-/**
- * @category   Zend
- * @package    Zend_Log
- * @subpackage Writer
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Stream.php 14131 2009-02-21 20:13:38Z shahar $
- */
-class Zend_Log_Writer_Stream extends Zend_Log_Writer_Abstract
-{
-    /**
-     * Holds the PHP stream to log to.
-     * @var null|stream
-     */
-    protected $_stream = null;
-
-    /**
-     * Class Constructor
-     *
-     * @param  streamOrUrl     Stream or URL to open as a stream
-     * @param  mode            Mode, only applicable if a URL is given
-     */
-    public function __construct($streamOrUrl, $mode = 'a')
-    {
-        if (is_resource($streamOrUrl)) {
-            if (get_resource_type($streamOrUrl) != 'stream') {
-                require_once 'Zend/Log/Exception.php';
-                throw new Zend_Log_Exception('Resource is not a stream');
-            }
-
-            if ($mode != 'a') {
-                require_once 'Zend/Log/Exception.php';
-                throw new Zend_Log_Exception('Mode cannot be changed on existing streams');
-            }
-
-            $this->_stream = $streamOrUrl;
-        } else {
-            if (! $this->_stream = @fopen($streamOrUrl, $mode, false)) {
-                require_once 'Zend/Log/Exception.php';
-                $msg = "\"$streamOrUrl\" cannot be opened with mode \"$mode\"";
-                throw new Zend_Log_Exception($msg);
-            }
-        }
-
-        $this->_formatter = new Zend_Log_Formatter_Simple();
-    }
-
-    /**
-     * Close the stream resource.
-     *
-     * @return void
-     */
-    public function shutdown()
-    {
-        if (is_resource($this->_stream)) {
-            fclose($this->_stream);
-        }
-    }
-
-    /**
-     * Write a message to the log.
-     *
-     * @param  array  $event  event data
-     * @return void
-     */
-    protected function _write($event)
-    {
-        $line = $this->_formatter->format($event);
-
-        if (false === @fwrite($this->_stream, $line)) {
-            require_once 'Zend/Log/Exception.php';
-            throw new Zend_Log_Exception("Unable to write to stream");
-        }
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+wvEqT5gSdrn3pTY4NYbpS+o2hwk2pYe=

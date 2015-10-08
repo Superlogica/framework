@@ -1,1475 +1,568 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category  Zend
- * @package   Zend_File_Transfer
- * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   http://framework.zend.com/license/new-bsd     New BSD License
- * @version   $Id: $
- */
-
-/**
- * Abstract class for file transfers (Downloads and Uploads)
- *
- * @category  Zend
- * @package   Zend_File_Transfer
- * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   http://framework.zend.com/license/new-bsd     New BSD License
- */
-abstract class Zend_File_Transfer_Adapter_Abstract
-{
-    /**@+
-     * @const string Plugin loader Constants
-     */
-    const FILTER    = 'FILTER';
-    const VALIDATE  = 'VALIDATE';
-    /**@-*/
-
-    /**
-     * Internal list of breaks
-     *
-     * @var array
-     */
-    protected $_break = array();
-
-    /**
-     * Internal list of filters
-     *
-     * @var array
-     */
-    protected $_filters = array();
-
-    /**
-     * Plugin loaders for filter and validation chains
-     *
-     * @var array
-     */
-    protected $_loaders = array();
-
-    /**
-     * Internal list of messages
-     *
-     * @var array
-     */
-    protected $_messages = array();
-
-    /**
-     * @var Zend_Translate
-     */
-    protected $_translator;
-
-    /**
-     * Is translation disabled?
-     *
-     * @var bool
-     */
-    protected $_translatorDisabled = false;
-
-    /**
-     * Internal list of validators
-     * @var array
-     */
-    protected $_validators = array();
-
-    /**
-     * Internal list of files
-     * This array looks like this:
-     *     array(form => array( - Form is the name within the form or, if not set the filename
-     *         name,            - Original name of this file
-     *         type,            - Mime type of this file
-     *         size,            - Filesize in bytes
-     *         tmp_name,        - Internalally temporary filename for uploaded files
-     *         error,           - Error which has occured
-     *         destination,     - New destination for this file
-     *         validators,      - Set validator names for this file
-     *         files            - Set file names for this file
-     *     ))
-     *
-     * @var array
-     */
-    protected $_files = array();
-
-    /**
-     * TMP directory
-     * @var string
-     */
-    protected $_tmpDir;
-
-    /**
-     * Available options for file transfers
-     */
-    protected $_options = array(
-        'ignoreNoFile'  => false,
-        'useByteString' => true,
-        'magicFile'     => null
-    );
-
-    /**
-     * Send file
-     *
-     * @param  mixed $options
-     * @return bool
-     */
-    abstract public function send($options = null);
-
-    /**
-     * Receive file
-     *
-     * @param  mixed $options
-     * @return bool
-     */
-    abstract public function receive($options = null);
-
-    /**
-     * Is file sent?
-     *
-     * @param  array|string|null $files
-     * @return bool
-     */
-    abstract public function isSent($files = null);
-
-    /**
-     * Is file received?
-     *
-     * @param  array|string|null $files
-     * @return bool
-     */
-    abstract public function isReceived($files = null);
-
-    /**
-     * Has a file been uploaded ?
-     *
-     * @param  array|string|null $files
-     * @return bool
-     */
-    abstract public function isUploaded($files = null);
-
-    /**
-     * Has the file been filtered ?
-     *
-     * @param array|string|null $files
-     * @return bool
-     */
-    abstract public function isFiltered($files = null);
-
-    /**
-     * Retrieve progress of transfer
-     *
-     * @return float
-     */
-    public static function getProgress()
-    {
-        require_once 'Zend/File/Transfer/Exception.php';
-        throw new Zend_File_Transfer_Exception('Method must be implemented within the adapter');
-    }
-
-    /**
-     * Set plugin loader to use for validator or filter chain
-     *
-     * @param  Zend_Loader_PluginLoader_Interface $loader
-     * @param  string $type 'filter', or 'validate'
-     * @return Zend_File_Transfer_Adapter_Abstract
-     * @throws Zend_File_Transfer_Exception on invalid type
-     */
-    public function setPluginLoader(Zend_Loader_PluginLoader_Interface $loader, $type)
-    {
-        $type = strtoupper($type);
-        switch ($type) {
-            case self::FILTER:
-            case self::VALIDATE:
-                $this->_loaders[$type] = $loader;
-                return $this;
-            default:
-                require_once 'Zend/File/Transfer/Exception.php';
-                throw new Zend_File_Transfer_Exception(sprintf('Invalid type "%s" provided to setPluginLoader()', $type));
-        }
-    }
-
-    /**
-     * Retrieve plugin loader for validator or filter chain
-     *
-     * Instantiates with default rules if none available for that type. Use
-     * 'filter' or 'validate' for $type.
-     *
-     * @param  string $type
-     * @return Zend_Loader_PluginLoader
-     * @throws Zend_File_Transfer_Exception on invalid type.
-     */
-    public function getPluginLoader($type)
-    {
-        $type = strtoupper($type);
-        switch ($type) {
-            case self::FILTER:
-            case self::VALIDATE:
-                $prefixSegment = ucfirst(strtolower($type));
-                $pathSegment   = $prefixSegment;
-                if (!isset($this->_loaders[$type])) {
-                    $paths         = array(
-                        'Zend_' . $prefixSegment . '_'     => 'Zend/' . $pathSegment . '/',
-                        'Zend_' . $prefixSegment . '_File' => 'Zend/' . $pathSegment . '/File',
-                    );
-
-                    require_once 'Zend/Loader/PluginLoader.php';
-                    $this->_loaders[$type] = new Zend_Loader_PluginLoader($paths);
-                } else {
-                    $loader = $this->_loaders[$type];
-                    $prefix = 'Zend_' . $prefixSegment . '_File_';
-                    if (!$loader->getPaths($prefix)) {
-                        $loader->addPrefixPath($prefix, str_replace('_', '/', $prefix));
-                    }
-                }
-                return $this->_loaders[$type];
-            default:
-                require_once 'Zend/File/Transfer/Exception.php';
-                throw new Zend_File_Transfer_Exception(sprintf('Invalid type "%s" provided to getPluginLoader()', $type));
-        }
-    }
-
-    /**
-     * Add prefix path for plugin loader
-     *
-     * If no $type specified, assumes it is a base path for both filters and
-     * validators, and sets each according to the following rules:
-     * - filters:    $prefix = $prefix . '_Filter'
-     * - validators: $prefix = $prefix . '_Validate'
-     *
-     * Otherwise, the path prefix is set on the appropriate plugin loader.
-     *
-     * @param  string $path
-     * @return Zend_File_Transfer_Adapter_Abstract
-     * @throws Zend_File_Transfer_Exception for invalid type
-     */
-    public function addPrefixPath($prefix, $path, $type = null)
-    {
-        $type = strtoupper($type);
-        switch ($type) {
-            case self::FILTER:
-            case self::VALIDATE:
-                $loader = $this->getPluginLoader($type);
-                $loader->addPrefixPath($prefix, $path);
-                return $this;
-            case null:
-                $prefix = rtrim($prefix, '_');
-                $path   = rtrim($path, DIRECTORY_SEPARATOR);
-                foreach (array(self::FILTER, self::VALIDATE) as $type) {
-                    $cType        = ucfirst(strtolower($type));
-                    $pluginPath   = $path . DIRECTORY_SEPARATOR . $cType . DIRECTORY_SEPARATOR;
-                    $pluginPrefix = $prefix . '_' . $cType;
-                    $loader       = $this->getPluginLoader($type);
-                    $loader->addPrefixPath($pluginPrefix, $pluginPath);
-                }
-                return $this;
-            default:
-                require_once 'Zend/File/Transfer/Exception.php';
-                throw new Zend_File_Transfer_Exception(sprintf('Invalid type "%s" provided to getPluginLoader()', $type));
-        }
-    }
-
-    /**
-     * Add many prefix paths at once
-     *
-     * @param  array $spec
-     * @return Zend_File_Transfer_Exception
-     */
-    public function addPrefixPaths(array $spec)
-    {
-        if (isset($spec['prefix']) && isset($spec['path'])) {
-            return $this->addPrefixPath($spec['prefix'], $spec['path']);
-        }
-        foreach ($spec as $type => $paths) {
-            if (is_numeric($type) && is_array($paths)) {
-                $type = null;
-                if (isset($paths['prefix']) && isset($paths['path'])) {
-                    if (isset($paths['type'])) {
-                        $type = $paths['type'];
-                    }
-                    $this->addPrefixPath($paths['prefix'], $paths['path'], $type);
-                }
-            } elseif (!is_numeric($type)) {
-                if (!isset($paths['prefix']) || !isset($paths['path'])) {
-                    foreach ($paths as $prefix => $spec) {
-                        if (is_array($spec)) {
-                            foreach ($spec as $path) {
-                                if (!is_string($path)) {
-                                    continue;
-                                }
-                                $this->addPrefixPath($prefix, $path, $type);
-                            }
-                        } elseif (is_string($spec)) {
-                            $this->addPrefixPath($prefix, $spec, $type);
-                        }
-                    }
-                } else {
-                    $this->addPrefixPath($paths['prefix'], $paths['path'], $type);
-                }
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * Adds a new validator for this class
-     *
-     * @param  string|array $validator           Type of validator to add
-     * @param  boolean      $breakChainOnFailure If the validation chain should stop an failure
-     * @param  string|array $options             Options to set for the validator
-     * @param  string|array $files               Files to limit this validator to
-     * @return Zend_File_Transfer_Adapter
-     */
-    public function addValidator($validator, $breakChainOnFailure = false, $options = null, $files = null)
-    {
-        if ($validator instanceof Zend_Validate_Interface) {
-            $name = get_class($validator);
-        } elseif (is_string($validator)) {
-            $name      = $this->getPluginLoader(self::VALIDATE)->load($validator);
-            $validator = new $name($options);
-            if (is_array($options) && isset($options['messages'])) {
-                if (is_array($options['messages'])) {
-                    $validator->setMessages($options['messages']);
-                } elseif (is_string($options['messages'])) {
-                    $validator->setMessage($options['messages']);
-                }
-
-                unset($options['messages']);
-            }
-        } else {
-            require_once 'Zend/File/Transfer/Exception.php';
-            throw new Zend_File_Transfer_Exception('Invalid validator provided to addValidator; must be string or Zend_Validate_Interface');
-        }
-
-        $this->_validators[$name] = $validator;
-        $this->_break[$name]      = $breakChainOnFailure;
-        $files                    = $this->_getFiles($files, true, true);
-        foreach ($files as $file) {
-            $this->_files[$file]['validators'][] = $name;
-            $this->_files[$file]['validated']    = false;
-        }
-
-        return $this;
-    }
-
-    /**
-     * Add Multiple validators at once
-     *
-     * @param  array $validators
-     * @param  string|array $files
-     * @return Zend_File_Transfer_Adapter_Abstract
-     */
-    public function addValidators(array $validators, $files = null)
-    {
-        foreach ($validators as $name => $validatorInfo) {
-            if ($validatorInfo instanceof Zend_Validate_Interface) {
-                $this->addValidator($validatorInfo, null, null, $files);
-            } else if (is_string($validatorInfo)) {
-                if (!is_int($name)) {
-                    $this->addValidator($name, null, $validatorInfo, $files);
-                } else {
-                    $this->addValidator($validatorInfo, null, null, $files);
-                }
-            } else if (is_array($validatorInfo)) {
-                $argc                = count($validatorInfo);
-                $breakChainOnFailure = false;
-                $options             = array();
-                if (isset($validatorInfo['validator'])) {
-                    $validator = $validatorInfo['validator'];
-                    if (isset($validatorInfo['breakChainOnFailure'])) {
-                        $breakChainOnFailure = $validatorInfo['breakChainOnFailure'];
-                    }
-
-                    if (isset($validatorInfo['options'])) {
-                        $options = $validatorInfo['options'];
-                    }
-
-                    $this->addValidator($validator, $breakChainOnFailure, $options, $files);
-                } else {
-                    if (is_string($name)) {
-                        $validator = $name;
-                        $options   = $validatorInfo;
-                        $this->addValidator($validator, $breakChainOnFailure, $options, $files);
-                    } else {
-                        switch (true) {
-                            case (0 == $argc):
-                                break;
-                            case (1 <= $argc):
-                                $validator  = array_shift($validatorInfo);
-                            case (2 <= $argc):
-                                $breakChainOnFailure = array_shift($validatorInfo);
-                            case (3 <= $argc):
-                                $options = array_shift($validatorInfo);
-                            case (4 <= $argc):
-                                $files = array_shift($validatorInfo);
-                            default:
-                                $this->addValidator($validator, $breakChainOnFailure, $options, $files);
-                                break;
-                        }
-                    }
-                }
-            } else {
-                require_once 'Zend/File/Transfer/Exception.php';
-                throw new Zend_File_Transfer_Exception('Invalid validator passed to addValidators()');
-            }
-        }
-
-        return $this;
-    }
-
-    /**
-     * Sets a validator for the class, erasing all previous set
-     *
-     * @param  string|array $validator Validator to set
-     * @param  string|array $files     Files to limit this validator to
-     * @return Zend_File_Transfer_Adapter
-     */
-    public function setValidators(array $validators, $files = null)
-    {
-        $this->clearValidators();
-        return $this->addValidators($validators, $files);
-    }
-
-    /**
-     * Determine if a given validator has already been registered
-     *
-     * @param  string $name
-     * @return bool
-     */
-    public function hasValidator($name)
-    {
-        return (false !== $this->_getValidatorIdentifier($name));
-    }
-
-    /**
-     * Retrieve individual validator
-     *
-     * @param  string $name
-     * @return Zend_Validate_Interface|null
-     */
-    public function getValidator($name)
-    {
-        if (false === ($identifier = $this->_getValidatorIdentifier($name))) {
-            return null;
-        }
-        return $this->_validators[$identifier];
-    }
-
-    /**
-     * Returns all set validators
-     *
-     * @param  string|array $files (Optional) Returns the validator for this files
-     * @return null|array List of set validators
-     */
-    public function getValidators($files = null)
-    {
-        $files = $this->_getFiles($files, true, true);
-
-        if (empty($files)) {
-            return $this->_validators;
-        }
-
-        $validators = array();
-        foreach ($files as $file) {
-            if (!empty($this->_files[$file]['validators'])) {
-                $validators += $this->_files[$file]['validators'];
-            }
-        }
-        $validators = array_unique($validators);
-
-        $result = array();
-        foreach ($validators as $validator) {
-            $result[$validator] = $this->_validators[$validator];
-        }
-
-        return $result;
-    }
-
-    /**
-     * Remove an individual validator
-     *
-     * @param  string $name
-     * @return Zend_File_Transfer_Adapter_Abstract
-     */
-    public function removeValidator($name)
-    {
-        if (false === ($key = $this->_getValidatorIdentifier($name))) {
-            return $this;
-        }
-
-        unset($this->_validators[$key]);
-        foreach (array_keys($this->_files) as $file) {
-            if (empty($this->_files[$file]['validators'])) {
-                continue;
-            }
-
-            $index = array_search($key, $this->_files[$file]['validators']);
-            if ($index === false) {
-                continue;
-            }
-
-            unset($this->_files[$file]['validators'][$index]);
-            $this->_files[$file]['validated'] = false;
-        }
-
-        return $this;
-    }
-
-    /**
-     * Remove all validators
-     *
-     * @return Zend_File_Transfer_Adapter_Abstract
-     */
-    public function clearValidators()
-    {
-        $this->_validators = array();
-        foreach (array_keys($this->_files) as $file) {
-            $this->_files[$file]['validators'] = array();
-            $this->_files[$file]['validated']  = false;
-        }
-
-        return $this;
-    }
-
-    /**
-     * Sets Options for adapters
-     *
-     * @param array $options Options to set
-     * @param array $files   (Optional) Files to set the options for
-     */
-    public function setOptions($options = array(), $files = null) {
-        $file = $this->_getFiles($files, false, true);
-
-        if (is_array($options)) {
-            foreach ($options as $name => $value) {
-                foreach ($file as $key => $content) {
-                    if (array_key_exists($name, $this->_options)) {
-                        $this->_files[$key]['options'][$name] = (boolean) $value;
-                    } else {
-                        require_once 'Zend/File/Transfer/Exception.php';
-                        throw new Zend_File_Transfer_Exception("Unknown option: $name = $value");
-                    }
-                }
-            }
-        }
-
-        return $this;
-    }
-
-    /**
-     * Returns set options for adapters or files
-     *
-     * @param  array $files (Optional) Files to return the options for
-     * @return array Options for given files
-     */
-    public function getOptions($files = null) {
-        $file = $this->_getFiles($files, false, true);
-
-        foreach ($file as $key => $content) {
-            if (isset($this->_files[$key]['options'])) {
-                $options[$key] = $this->_files[$key]['options'];
-            } else {
-                $options[$key] = array();
-            }
-        }
-
-        return $options;
-    }
-
-    /**
-     * Checks if the files are valid
-     *
-     * @param  string|array $files (Optional) Files to check
-     * @return boolean True if all checks are valid
-     */
-    public function isValid($files = null)
-    {
-        $check = $this->_getFiles($files, false, true);
-        if (empty($check)) {
-            return false;
-        }
-
-        $translator      = $this->getTranslator();
-        $this->_messages = array();
-        $break           = false;
-        foreach($check as $key => $content) {
-            if (array_key_exists('validators', $content) &&
-                in_array('Zend_Validate_File_Count', $content['validators'])) {
-                $validator = $this->_validators['Zend_Validate_File_Count'];
-                $validator->addFile($content['tmp_name']);
-                $count = $content;
-            }
-        }
-
-        if (isset($count)) {
-            if (!$validator->isValid($count['tmp_name'], $count)) {
-                $this->_messages += $validator->getMessages();
-            }
-        }
-
-        foreach ($check as $key => $content) {
-            $fileerrors  = array();
-            if (array_key_exists('validator', $content) && $content['validated']) {
-                continue;
-            }
-
-            if (array_key_exists('validators', $content)) {
-                foreach ($content['validators'] as $class) {
-                    $validator = $this->_validators[$class];
-                    if (method_exists($validator, 'setTranslator')) {
-                        $validator->setTranslator($translator);
-                    }
-
-                    if (($class === 'Zend_Validate_File_Upload') and (empty($content['tmp_name']))) {
-                        $tocheck = $key;
-                    } else {
-                        $tocheck = $content['tmp_name'];
-                    }
-
-                    if (!$validator->isValid($tocheck, $content)) {
-                        $fileerrors += $validator->getMessages();
-                    }
-
-                    if (!empty($content['options']['ignoreNoFile']) and (isset($fileerrors['fileUploadErrorNoFile']))) {
-                        unset($fileerrors['fileUploadErrorNoFile']);
-                        break;
-                    }
-
-                    if (($class === 'Zend_Validate_File_Upload') and (count($fileerrors) > 0)) {
-                        break;
-                    }
-
-                    if (($this->_break[$class]) and (count($fileerrors) > 0)) {
-                        $break = true;
-                        break;
-                    }
-                }
-            }
-
-            if (count($fileerrors) > 0) {
-                $this->_files[$key]['validated'] = false;
-            } else {
-                $this->_files[$key]['validated'] = true;
-            }
-
-            $this->_messages += $fileerrors;
-            if ($break) {
-                break;
-            }
-        }
-
-        if (count($this->_messages) > 0) {
-            return false;
-        }
-
-        return true;
-    }
-
-    /**
-     * Returns found validation messages
-     *
-     * @return array
-     */
-    public function getMessages()
-    {
-        return $this->_messages;
-    }
-
-    /**
-     * Retrieve error codes
-     *
-     * @return array
-     */
-    public function getErrors()
-    {
-        return array_keys($this->_messages);
-    }
-
-    /**
-     * Are there errors registered?
-     *
-     * @return boolean
-     */
-    public function hasErrors()
-    {
-        return (!empty($this->_messages));
-    }
-
-    /**
-     * Adds a new filter for this class
-     *
-     * @param  string|array $filter Type of filter to add
-     * @param  string|array $options   Options to set for the filter
-     * @param  string|array $files     Files to limit this filter to
-     * @return Zend_File_Transfer_Adapter
-     */
-    public function addFilter($filter, $options = null, $files = null)
-    {
-        if ($filter instanceof Zend_Filter_Interface) {
-            $class = get_class($filter);
-        } elseif (is_string($filter)) {
-            $class  = $this->getPluginLoader(self::FILTER)->load($filter);
-            $filter = new $class($options);
-        } else {
-            require_once 'Zend/File/Transfer/Exception.php';
-            throw new Zend_File_Transfer_Exception('Invalid filter specified');
-        }
-
-        $this->_filters[$class] = $filter;
-        $files                  = $this->_getFiles($files, true, true);
-        foreach ($files as $file) {
-            $this->_files[$file]['filters'][] = $class;
-        }
-
-        return $this;
-    }
-
-    /**
-     * Add Multiple filters at once
-     *
-     * @param  array $filters
-     * @param  string|array $files
-     * @return Zend_File_Transfer_Adapter_Abstract
-     */
-    public function addFilters(array $filters, $files = null)
-    {
-        foreach ($filters as $key => $spec) {
-            if ($spec instanceof Zend_Filter_Interface) {
-                $this->addFilter($spec, null, $files);
-                continue;
-            }
-
-            if (is_string($key)) {
-                $this->addFilter($key, $spec, $files);
-                continue;
-            }
-
-            if (is_int($key)) {
-                if (is_string($spec)) {
-                    $this->addFilter($spec, null, $files);
-                    continue;
-                }
-
-                if (is_array($spec)) {
-                    if (!array_key_exists('filter', $spec)) {
-                        continue;
-                    }
-
-                    $filter = $spec['filter'];
-                    unset($spec['filter']);
-                    $this->addFilter($filter, $spec, $files);
-                    continue;
-                }
-
-                continue;
-            }
-        }
-
-        return $this;
-    }
-
-    /**
-     * Sets a filter for the class, erasing all previous set
-     *
-     * @param  string|array $filter Filter to set
-     * @param  string|array $files     Files to limit this filter to
-     * @return Zend_File_Transfer_Adapter
-     */
-    public function setFilters(array $filters, $files = null)
-    {
-        $this->clearFilters();
-        return $this->addFilters($filters, $files);
-    }
-
-    /**
-     * Determine if a given filter has already been registered
-     *
-     * @param  string $name
-     * @return bool
-     */
-    public function hasFilter($name)
-    {
-        return (false !== $this->_getFilterIdentifier($name));
-    }
-
-    /**
-     * Retrieve individual filter
-     *
-     * @param  string $name
-     * @return Zend_Filter_Interface|null
-     */
-    public function getFilter($name)
-    {
-        if (false === ($identifier = $this->_getFilterIdentifier($name))) {
-            return null;
-        }
-        return $this->_filters[$identifier];
-    }
-
-    /**
-     * Returns all set filters
-     *
-     * @param  string|array $files (Optional) Returns the filter for this files
-     * @return array List of set filters
-     * @throws Zend_File_Transfer_Exception When file not found
-     */
-    public function getFilters($files = null)
-    {
-        if ($files === null) {
-            return $this->_filters;
-        }
-
-        $files   = $this->_getFiles($files, true, true);
-        $filters = array();
-        foreach ($files as $file) {
-            if (!empty($this->_files[$file]['filters'])) {
-                $filters += $this->_files[$file]['filters'];
-            }
-        }
-
-        $filters = array_unique($filters);
-        $result  = array();
-        foreach ($filters as $filter) {
-            $result[] = $this->_filters[$filter];
-        }
-
-        return $result;
-    }
-
-    /**
-     * Remove an individual filter
-     *
-     * @param  string $name
-     * @return Zend_File_Transfer_Adapter_Abstract
-     */
-    public function removeFilter($name)
-    {
-        if (false === ($key = $this->_getFilterIdentifier($name))) {
-            return $this;
-        }
-
-        unset($this->_filters[$key]);
-        foreach (array_keys($this->_files) as $file) {
-            if (empty($this->_files[$file]['filters'])) {
-                continue;
-            }
-
-            $index = array_search($key, $this->_files[$file]['filters']);
-            if ($index === false) {
-                continue;
-            }
-
-            unset($this->_files[$file]['filters'][$index]);
-        }
-        return $this;
-    }
-
-    /**
-     * Remove all filters
-     *
-     * @return Zend_File_Transfer_Adapter_Abstract
-     */
-    public function clearFilters()
-    {
-        $this->_filters = array();
-        foreach (array_keys($this->_files) as $file) {
-            $this->_files[$file]['filters'] = array();
-        }
-        return $this;
-    }
-
-    /**
-     * Returns all set files
-     *
-     * @return array List of set files
-     * @throws Zend_File_Transfer_Exception Not implemented
-     */
-    public function getFile()
-    {
-        require_once 'Zend/File/Transfer/Exception.php';
-        throw new Zend_File_Transfer_Exception('Method not implemented');
-    }
-
-    /**
-     * Retrieves the filename of transferred files.
-     *
-     * @param  string  $fileelement (Optional) Element to return the filename for
-     * @param  boolean $path        (Optional) Should the path also be returned ?
-     * @return string|array
-     */
-    public function getFileName($file = null, $path = true)
-    {
-        $files     = $this->_getFiles($file, true, true);
-        $result    = array();
-        $directory = "";
-        foreach($files as $file) {
-            if (empty($this->_files[$file]['name'])) {
-                continue;
-            }
-
-            if ($path === true) {
-                $directory = $this->getDestination($file) . DIRECTORY_SEPARATOR;
-            }
-
-            $result[$file] = $directory . $this->_files[$file]['name'];
-        }
-
-        if (count($result) == 1) {
-            return current($result);
-        }
-
-        return $result;
-    }
-
-    /**
-     * Retrieve additional internal file informations for files
-     *
-     * @param  string $file (Optional) File to get informations for
-     * @return array
-     */
-    public function getFileInfo($file = null)
-    {
-        return $this->_getFiles($file);
-    }
-
-    /**
-     * Adds one or more files
-     *
-     * @param  string|array $file      File to add
-     * @param  string|array $validator Validators to use for this file, must be set before
-     * @param  string|array $filter    Filters to use for this file, must be set before
-     * @return Zend_File_Transfer_Adapter_Abstract
-     * @throws Zend_File_Transfer_Exception Not implemented
-     */
-    public function addFile($file, $validator = null, $filter = null)
-    {
-        require_once 'Zend/File/Transfer/Exception.php';
-        throw new Zend_File_Transfer_Exception('Method not implemented');
-    }
-
-    /**
-     * Returns all set types
-     *
-     * @return array List of set types
-     * @throws Zend_File_Transfer_Exception Not implemented
-     */
-    public function getType()
-    {
-        require_once 'Zend/File/Transfer/Exception.php';
-        throw new Zend_File_Transfer_Exception('Method not implemented');
-    }
-
-    /**
-     * Adds one or more type of files
-     *
-     * @param  string|array $type Type of files to add
-     * @param  string|array $validator Validators to use for this file, must be set before
-     * @param  string|array $filter    Filters to use for this file, must be set before
-     * @return Zend_File_Transfer_Adapter_Abstract
-     * @throws Zend_File_Transfer_Exception Not implemented
-     */
-    public function addType($type, $validator = null, $filter = null)
-    {
-        require_once 'Zend/File/Transfer/Exception.php';
-        throw new Zend_File_Transfer_Exception('Method not implemented');
-    }
-
-    /**
-     * Sets a new destination for the given files
-     *
-     * @deprecated Will be changed to be a filter!!!
-     * @param  string       $destination New destination directory
-     * @param  string|array $files       Files to set the new destination for
-     * @return Zend_File_Transfer_Abstract
-     * @throws Zend_File_Transfer_Exception when the given destination is not a directory or does not exist
-     */
-    public function setDestination($destination, $files = null)
-    {
-        $orig = $files;
-        $destination = rtrim($destination, "/\\");
-        if (!is_dir($destination)) {
-            require_once 'Zend/File/Transfer/Exception.php';
-            throw new Zend_File_Transfer_Exception('The given destination is no directory or does not exist');
-        }
-
-        if (!is_writable($destination)) {
-            require_once 'Zend/File/Transfer/Exception.php';
-            throw new Zend_File_Transfer_Exception('The given destination is not writeable');
-        }
-
-        if ($files === null) {
-            foreach ($this->_files as $file => $content) {
-                $this->_files[$file]['destination'] = $destination;
-            }
-        } else {
-            $files = $this->_getFiles($files, true, true);
-            if (empty($this->_files) and is_string($orig)) {
-                $this->_files[$orig]['destination'] = $destination;
-            }
-
-            foreach ($files as $file) {
-                $this->_files[$file]['destination'] = $destination;
-            }
-        }
-
-        return $this;
-    }
-
-    /**
-     * Retrieve destination directory value
-     *
-     * @param  null|string|array $files
-     * @return null|string|array
-     */
-    public function getDestination($files = null)
-    {
-        $files        = $this->_getFiles($files, false);
-        $destinations = array();
-        foreach ($files as $key => $content) {
-            if (isset($this->_files[$key]['destination'])) {
-                $destinations[$key] = $this->_files[$key]['destination'];
-            } else {
-                $tmpdir = $this->_getTmpDir();
-                $this->setDestination($tmpdir, $key);
-                $destinations[$key] = $tmpdir;
-            }
-        }
-
-        if (empty($destinations)) {
-            $destinations = $this->_getTmpDir();
-        } else if (count($destinations) == 1) {
-            $destinations = current($destinations);
-        }
-
-        return $destinations;
-    }
-
-    /**
-     * Set translator object for localization
-     *
-     * @param  Zend_Translate|null $translator
-     * @return Zend_File_Transfer_Abstract
-     */
-    public function setTranslator($translator = null)
-    {
-        if (null === $translator) {
-            $this->_translator = null;
-        } elseif ($translator instanceof Zend_Translate_Adapter) {
-            $this->_translator = $translator;
-        } elseif ($translator instanceof Zend_Translate) {
-            $this->_translator = $translator->getAdapter();
-        } else {
-            require_once 'Zend/File/Transfer/Exception.php';
-            throw new Zend_File_Transfer_Exception('Invalid translator specified');
-        }
-
-        return $this;
-    }
-
-    /**
-     * Retrieve localization translator object
-     *
-     * @return Zend_Translate_Adapter|null
-     */
-    public function getTranslator()
-    {
-        if ($this->translatorIsDisabled()) {
-            return null;
-        }
-
-        return $this->_translator;
-    }
-
-    /**
-     * Indicate whether or not translation should be disabled
-     *
-     * @param  bool $flag
-     * @return Zend_File_Transfer_Abstract
-     */
-    public function setDisableTranslator($flag)
-    {
-        $this->_translatorDisabled = (bool) $flag;
-        return $this;
-    }
-
-    /**
-     * Is translation disabled?
-     *
-     * @return bool
-     */
-    public function translatorIsDisabled()
-    {
-        return $this->_translatorDisabled;
-    }
-
-    /**
-     * Returns the hash for a given file
-     *
-     * @param  string       $hash  Hash algorithm to use
-     * @param  string|array $files Files to return the hash for
-     * @return string|array Hashstring
-     * @throws Zend_File_Transfer_Exception On unknown hash algorithm
-     */
-    public function getHash($hash = 'crc32', $files = null)
-    {
-        if (!in_array($hash, hash_algos())) {
-            require_once 'Zend/File/Transfer/Exception.php';
-            throw new Zend_File_Transfer_Exception('Unknown hash algorithm');
-        }
-
-        $files  = $this->_getFiles($files);
-        $result = array();
-        foreach($files as $key => $value) {
-            if (file_exists($value['name'])) {
-                $result[$key] = hash_file($hash, $value['name']);
-            } else if (file_exists($value['tmp_name'])) {
-                $result[$key] = hash_file($hash, $value['tmp_name']);
-            } else {
-                require_once 'Zend/File/Transfer/Exception.php';
-                throw new Zend_File_Transfer_Exception("File '{$value['name']}' does not exist");
-            }
-        }
-
-        if (count($result) == 1) {
-            return current($result);
-        }
-
-        return $result;
-    }
-
-    /**
-     * Returns the real filesize of the file
-     *
-     * @param string|array $files Files to get the filesize from
-     * @throws Zend_File_Transfer_Exception When the file does not exist
-     * @return string|array Filesize
-     */
-    public function getFileSize($files = null)
-    {
-        $files  = $this->_getFiles($files);
-        $result = array();
-        foreach($files as $key => $value) {
-            if (file_exists($value['name'])) {
-                $size = sprintf("%u", @filesize($value['name']));
-            } else if (file_exists($value['tmp_name'])) {
-                $size = sprintf("%u", @filesize($value['tmp_name']));
-            } else {
-                require_once 'Zend/File/Transfer/Exception.php';
-                throw new Zend_File_Transfer_Exception("File '{$value['name']}' does not exist");
-            }
-
-            if ($value['options']['useByteString']) {
-                $result[$key] = self::_toByteString($size);
-            } else {
-                $result[$key] = $size;
-            }
-        }
-
-        if (count($result) == 1) {
-            return current($result);
-        }
-
-        return $result;
-    }
-
-    /**
-     * Returns the real mimetype of the file
-     * Uses fileinfo, when not available mime_magic and as last fallback a manual given mimetype
-     *
-     * @param string|array $files Files to get the mimetype from
-     * @throws Zend_File_Transfer_Exception When the file does not exist
-     * @return string|array Filesize
-     */
-    public function getMimeType($files = null)
-    {
-        $files  = $this->_getFiles($files);
-        $result = array();
-        foreach($files as $key => $value) {
-            if (file_exists($value['name'])) {
-                $file = $value['name'];
-            } else if (file_exists($value['tmp_name'])) {
-                $file = $value['tmp_name'];
-            } else {
-                require_once 'Zend/File/Transfer/Exception.php';
-                throw new Zend_File_Transfer_Exception("File '{$value['name']}' does not exist");
-            }
-
-            if (class_exists('finfo', false) && ((!empty($value['options']['magicFile'])) or (defined('MAGIC')))) {
-                if (!empty($value['options']['magicFile'])) {
-                    $mime = new finfo(FILEINFO_MIME, $value['options']['magicFile']);
-                } else {
-                    $mime = new finfo(FILEINFO_MIME);
-                }
-
-                $result[$key] = $mime->file($file);
-                unset($mime);
-            } elseif (function_exists('mime_content_type') && ini_get('mime_magic.magicfile')) {
-                $result[$key] = mime_content_type($file);
-            } else {
-                $result[$key] = $value['type'];
-            }
-
-            if (empty($result[$key])) {
-                require_once 'Zend/File/Transfer/Exception.php';
-                throw new Zend_File_Transfer_Exception("The mimetype of file '{$value['name']}' could not been detected");
-            }
-        }
-
-        if (count($result) == 1) {
-            return current($result);
-        }
-
-        return $result;
-    }
-
-    /**
-     * Returns the formatted size
-     *
-     * @param  integer $size
-     * @return string
-     */
-    protected static function _toByteString($size)
-    {
-        $sizes = array('B', 'kB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB');
-        for ($i=0; $size >= 1024 && $i < 9; $i++) {
-            $size /= 1024;
-        }
-
-        return round($size, 2) . $sizes[$i];
-    }
-
-    /**
-     * Internal function to filter all given files
-     *
-     * @param  string|array $files (Optional) Files to check
-     * @return boolean False on error
-     */
-    protected function _filter($files = null)
-    {
-        $check           = $this->_getFiles($files);
-        foreach ($check as $name => $content) {
-            if (array_key_exists('filters', $content)) {
-                foreach ($content['filters'] as $class) {
-                    $filter = $this->_filters[$class];
-                    try {
-                        $result = $filter->filter($this->getFileName($name));
-
-                        $this->_files[$name]['destination'] = dirname($result);
-                        $this->_files[$name]['name']        = basename($result);
-                    } catch (Zend_Filter_Exception $e) {
-                        $this->_messages += array($e->getMessage());
-                    }
-                }
-            }
-        }
-
-        if (count($this->_messages) > 0) {
-            return false;
-        }
-
-        return true;
-    }
-
-    /**
-     * Determine system TMP directory and detect if we have read access
-     *
-     * @return string
-     * @throws Zend_File_Transfer_Exception if unable to determine directory
-     */
-    protected function _getTmpDir()
-    {
-        if (null === $this->_tmpDir) {
-            $tmpdir = array();
-            if (function_exists('sys_get_temp_dir')) {
-                $tmpdir[] = sys_get_temp_dir();
-            }
-
-            if (!empty($_ENV['TMP'])) {
-                $tmpdir[] = realpath($_ENV['TMP']);
-            }
-
-            if (!empty($_ENV['TMPDIR'])) {
-                $tmpdir[] = realpath($_ENV['TMPDIR']);
-            }
-
-            if (!empty($_ENV['TEMP'])) {
-                $tmpdir[] = realpath($_ENV['TEMP']);
-            }
-
-            $upload = ini_get('upload_tmp_dir');
-            if ($upload) {
-                $tmpdir[] = realpath($upload);
-            }
-
-            foreach($tmpdir as $directory) {
-                if ($this->_isPathWriteable($directory)) {
-                    $this->_tmpDir = $directory;
-                }
-            }
-
-            if (empty($this->_tmpDir)) {
-                // Attemp to detect by creating a temporary file
-                $tempFile = tempnam(md5(uniqid(rand(), TRUE)), '');
-                if ($tempFile) {
-                    $this->_tmpDir = realpath(dirname($tempFile));
-                    unlink($tempFile);
-                } else {
-                    require_once 'Zend/File/Transfer/Exception.php';
-                    throw new Zend_File_Transfer_Exception('Could not determine temp directory');
-                }
-            }
-
-            $this->_tmpDir = rtrim($this->_tmpDir, "/\\");
-        }
-        return $this->_tmpDir;
-    }
-
-    /**
-     * Tries to detect if we can read and write to the given path
-     *
-     * @param string $path
-     */
-    protected function _isPathWriteable($path)
-    {
-        $tempFile = rtrim($path, "/\\");
-        $tempFile .= '/' . 'test.1';
-
-        $result = @file_put_contents($tempFile, 'TEST');
-
-        if ($result == false) {
-            return false;
-        }
-
-        $result = @unlink($tempFile);
-
-        if ($result == false) {
-            return false;
-        }
-
-        return true;
-    }
-
-    /**
-     * Returns found files based on internal file array and given files
-     *
-     * @param  string|array $files       (Optional) Files to return
-     * @param  boolean      $names       (Optional) Returns only names on true, else complete info
-     * @param  boolean      $noexception (Optional) Allows throwing an exception, otherwise returns an empty array
-     * @return array Found files
-     * @throws Zend_File_Transfer_Exception On false filename
-     */
-    protected function _getFiles($files, $names = false, $noexception = false)
-    {
-        $check = array();
-
-        if (is_string($files)) {
-            $files = array($files);
-        }
-
-        if (is_array($files)) {
-            foreach ($files as $find) {
-                $found = array();
-                foreach ($this->_files as $file => $content) {
-                    if (!isset($content['name'])) {
-                        continue;
-                    }
-
-                    if (($content['name'] === $find) && isset($content['multifiles'])) {
-                        foreach ($content['multifiles'] as $multifile) {
-                            $found[] = $multifile;
-                        }
-                        break;
-                    }
-
-                    if ($file === $find) {
-                        $found[] = $file;
-                        break;
-                    }
-
-                    if ($content['name'] === $find) {
-                        $found[] = $file;
-                        break;
-                    }
-                }
-
-                if (empty($found)) {
-                    if ($noexception !== false) {
-                        return array();
-                    }
-
-                    require_once 'Zend/File/Transfer/Exception.php';
-                    throw new Zend_File_Transfer_Exception(sprintf('"%s" not found by file transfer adapter', $find));
-                }
-
-                foreach ($found as $checked) {
-                    $check[$checked] = $this->_files[$checked];
-                }
-            }
-        }
-
-        if ($files === null) {
-            $check = $this->_files;
-            $keys  = array_keys($check);
-            foreach ($keys as $key) {
-                if (isset($check[$key]['multifiles'])) {
-                    unset($check[$key]);
-                }
-            }
-        }
-
-        if ($names) {
-            $check = array_keys($check);
-        }
-
-        return $check;
-    }
-
-    /**
-     * Retrieve internal identifier for a named validator
-     *
-     * @param  string $name
-     * @return string
-     */
-    protected function _getValidatorIdentifier($name)
-    {
-        if (array_key_exists($name, $this->_validators)) {
-            return $name;
-        }
-
-        foreach (array_keys($this->_validators) as $test) {
-            if (preg_match('/' . preg_quote($name) . '$/i', $test)) {
-                return $test;
-            }
-        }
-
-        return false;
-    }
-
-    /**
-     * Retrieve internal identifier for a named filter
-     *
-     * @param  string $name
-     * @return string
-     */
-    protected function _getFilterIdentifier($name)
-    {
-        if (array_key_exists($name, $this->_filters)) {
-            return $name;
-        }
-
-        foreach (array_keys($this->_filters) as $test) {
-            if (preg_match('/' . preg_quote($name) . '$/i', $test)) {
-                return $test;
-            }
-        }
-
-        return false;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+KqUxlrPDp8WLbtT/4aFJd8gYXTaouG==

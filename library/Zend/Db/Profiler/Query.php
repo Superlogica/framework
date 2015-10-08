@@ -1,199 +1,42 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Db
- * @subpackage Profiler
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Query.php 9101 2008-03-30 19:54:38Z thomas $
- */
-
-
-/**
- * @category   Zend
- * @package    Zend_Db
- * @subpackage Profiler
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Db_Profiler_Query
-{
-
-    /**
-     * SQL query string or user comment, set by $query argument in constructor.
-     *
-     * @var string
-     */
-    protected $_query = '';
-
-    /**
-     * One of the Zend_Db_Profiler constants for query type, set by $queryType argument in constructor.
-     *
-     * @var integer
-     */
-    protected $_queryType = 0;
-
-    /**
-     * Unix timestamp with microseconds when instantiated.
-     *
-     * @var float
-     */
-    protected $_startedMicrotime = null;
-
-    /**
-     * Unix timestamp with microseconds when self::queryEnd() was called.
-     *
-     * @var integer
-     */
-    protected $_endedMicrotime = null;
-
-    /**
-     * @var array
-     */
-    protected $_boundParams = array();
-
-    /**
-     * @var array
-     */
-
-    /**
-     * Class constructor.  A query is about to be started, save the query text ($query) and its
-     * type (one of the Zend_Db_Profiler::* constants).
-     *
-     * @param  string  $query
-     * @param  integer $queryType
-     * @return void
-     */
-    public function __construct($query, $queryType)
-    {
-        $this->_query = $query;
-        $this->_queryType = $queryType;
-        // by default, and for backward-compatibility, start the click ticking
-        $this->start();
-    }
-
-    /**
-     * Clone handler for the query object.
-     * @return void
-     */
-    public function __clone()
-    {
-        $this->_boundParams = array();
-        $this->_endedMicrotime = null;
-        $this->start();
-    }
-
-    /**
-     * Starts the elapsed time click ticking.
-     * This can be called subsequent to object creation,
-     * to restart the clock.  For instance, this is useful
-     * right before executing a prepared query.
-     *
-     * @return void
-     */
-    public function start()
-    {
-        $this->_startedMicrotime = microtime(true);
-    }
-
-    /**
-     * Ends the query and records the time so that the elapsed time can be determined later.
-     *
-     * @return void
-     */
-    public function end()
-    {
-        $this->_endedMicrotime = microtime(true);
-    }
-
-    /**
-     * Returns true if and only if the query has ended.
-     *
-     * @return boolean
-     */
-    public function hasEnded()
-    {
-        return $this->_endedMicrotime !== null;
-    }
-
-    /**
-     * Get the original SQL text of the query.
-     *
-     * @return string
-     */
-    public function getQuery()
-    {
-        return $this->_query;
-    }
-
-    /**
-     * Get the type of this query (one of the Zend_Db_Profiler::* constants)
-     *
-     * @return integer
-     */
-    public function getQueryType()
-    {
-        return $this->_queryType;
-    }
-
-    /**
-     * @param string $param
-     * @param mixed $variable
-     * @return void
-     */
-    public function bindParam($param, $variable)
-    {
-        $this->_boundParams[$param] = $variable;
-    }
-
-    /**
-     * @param array $param
-     * @return void
-     */
-    public function bindParams(array $params)
-    {
-        if (array_key_exists(0, $params)) {
-            array_unshift($params, null);
-            unset($params[0]);
-        }
-        foreach ($params as $param => $value) {
-            $this->bindParam($param, $value);
-        }
-    }
-
-    /**
-     * @return array
-     */
-    public function getQueryParams()
-    {
-        return $this->_boundParams;
-    }
-
-    /**
-     * Get the elapsed time (in seconds) that the query ran.
-     * If the query has not yet ended, false is returned.
-     *
-     * @return float|false
-     */
-    public function getElapsedSecs()
-    {
-        if (null === $this->_endedMicrotime) {
-            return false;
-        }
-
-        return $this->_endedMicrotime - $this->_startedMicrotime;
-    }
-}
-
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+1RwYW90zQ+QgSuHPQeF7bZEraiCt+0==

@@ -1,78 +1,32 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Paginator
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Sliding.php 10013 2008-07-09 21:08:06Z norm2782 $
- */
-
-/**
- * @see Zend_Paginator_ScrollingStyle_Interface
- */
-require_once 'Zend/Paginator/ScrollingStyle/Interface.php';
-
-/**
- * A Yahoo! Search-like scrolling style.  The cursor will advance to 
- * the middle of the range, then remain there until the user reaches 
- * the end of the page set, at which point it will continue on to 
- * the end of the range and the last page in the set.
- *
- * @link       http://search.yahoo.com/search?p=Zend+Framework
- * @category   Zend
- * @package    Zend_Paginator
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Paginator_ScrollingStyle_Sliding implements Zend_Paginator_ScrollingStyle_Interface
-{
-    /**
-     * Returns an array of "local" pages given a page number and range.
-     * 
-     * @param  Zend_Paginator $paginator
-     * @param  integer $pageRange (Optional) Page range
-     * @return array
-     */
-    public function getPages(Zend_Paginator $paginator, $pageRange = null)
-    {
-        if ($pageRange === null) {
-            $pageRange = $paginator->getPageRange();
-        }
-
-        $pageNumber = $paginator->getCurrentPageNumber();
-        $pageCount  = count($paginator);
-        
-        if ($pageRange > $pageCount) {
-            $pageRange = $pageCount;
-        }
-        
-        $delta = ceil($pageRange / 2);
-
-        if ($pageNumber - $delta > $pageCount - $pageRange) {
-            $lowerBound = $pageCount - $pageRange + 1;
-            $upperBound = $pageCount; 
-        } else {
-            if ($pageNumber - $delta < 0) {
-                $delta = $pageNumber;
-            }
-            
-            $offset     = $pageNumber - $delta;
-            $lowerBound = $offset + 1; 
-            $upperBound = $offset + $pageRange;
-        }
-
-        return $paginator->getPagesInRange($lowerBound, $upperBound);
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

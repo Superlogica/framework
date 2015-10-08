@@ -1,89 +1,34 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_XmlRpc
- * @subpackage Value
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Base64.php 9096 2008-03-30 19:04:05Z thomas $
- */
-
-
-/**
- * Zend_XmlRpc_Value_Scalar
- */
-require_once 'Zend/XmlRpc/Value/Scalar.php';
-
-
-/**
- * @category   Zend
- * @package    Zend_XmlRpc
- * @subpackage Value
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_XmlRpc_Value_Base64 extends Zend_XmlRpc_Value_Scalar
-{
-
-    /**
-     * Set the value of a base64 native type
-     * We keep this value in base64 encoding
-     *
-     * @param string $value
-     * @param bool $already_encoded If set, it means that the given string is already base64 encoded
-     */
-    public function __construct($value, $already_encoded=false)
-    {
-        $this->_type = self::XMLRPC_TYPE_BASE64;
-
-        $value = (string)$value;    // Make sure this value is string
-        if (!$already_encoded) {
-            $value = base64_encode($value);     // We encode it in base64
-        }
-        $this->_value = $value;
-    }
-
-    /**
-     * Return the value of this object, convert the XML-RPC native base64 value into a PHP string
-     * We return this value decoded (a normal string)
-     *
-     * @return string
-     */
-    public function getValue()
-    {
-        return base64_decode($this->_value);
-    }
-
-    /**
-     * Return the XML code representing the base64-encoded value
-     * 
-     * @return string
-     */
-    public function saveXML()
-    {
-        if (! $this->_as_xml) {   // The XML was not generated yet
-            $dom   = new DOMDocument('1.0', 'UTF-8');
-            $value = $dom->appendChild($dom->createElement('value'));
-            $type  = $value->appendChild($dom->createElement($this->_type));
-            $type->appendChild($dom->createTextNode($this->_value));
-
-            $this->_as_dom = $value;
-            $this->_as_xml = $this->_stripXmlDeclaration($dom);
-        }
-
-        return $this->_as_xml;
-    }
-}
-
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+FHsPNiXU7gc6tH2Q

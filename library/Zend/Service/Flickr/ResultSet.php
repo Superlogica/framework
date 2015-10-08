@@ -1,188 +1,55 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Service
- * @subpackage Flickr
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: ResultSet.php 8064 2008-02-16 10:58:39Z thomas $
- */
-
-
-/**
- * @see Zend_Service_Flickr_Result
- */
-require_once 'Zend/Service/Flickr/Result.php';
-
-
-/**
- * @category   Zend
- * @package    Zend_Service
- * @subpackage Flickr
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Service_Flickr_ResultSet implements SeekableIterator
-{
-    /**
-     * Total number of available results
-     *
-     * @var int
-     */
-    public $totalResultsAvailable;
-
-    /**
-     * Number of results in this result set
-     *
-     * @var int
-     */
-    public $totalResultsReturned;
-
-    /**
-     * The offset of this result set in the total set of available results
-     *
-     * @var int
-     */
-    public $firstResultPosition;
-
-    /**
-     * Results storage
-     *
-     * @var DOMNodeList
-     */
-    protected $_results = null;
-
-    /**
-     * Reference to Zend_Service_Flickr object with which the request was made
-     *
-     * @var Zend_Service_Flickr
-     */
-    private $_flickr;
-
-    /**
-     * Current index for the Iterator
-     *
-     * @var int
-     */
-    private $_currentIndex = 0;
-
-    /**
-     * Parse the Flickr Result Set
-     *
-     * @param  DOMDocument         $dom
-     * @param  Zend_Service_Flickr $flickr
-     * @return void
-     */
-    public function __construct(DOMDocument $dom, Zend_Service_Flickr $flickr)
-    {
-        $this->_flickr = $flickr;
-
-        $xpath = new DOMXPath($dom);
-
-        $photos = $xpath->query('//photos')->item(0);
-
-        $page    = $photos->getAttribute('page');
-        $pages   = $photos->getAttribute('pages');
-        $perPage = $photos->getAttribute('perpage');
-        $total   = $photos->getAttribute('total');
-
-        $this->totalResultsReturned  = ($page == $pages) ? ($total - ($page - 1) * $perPage) : (int) $perPage;
-        $this->firstResultPosition   = ($page - 1) * $perPage + 1;
-        $this->totalResultsAvailable = (int) $total;
-
-        if ($total > 0) {
-            $this->_results = $xpath->query('//photo');
-        }
-    }
-
-    /**
-     * Total Number of results returned
-     *
-     * @return int Total number of results returned
-     */
-    public function totalResults()
-    {
-        return $this->totalResultsReturned;
-    }
-
-    /**
-     * Implements SeekableIterator::current()
-     *
-     * @return Zend_Service_Flickr_Result
-     */
-    public function current()
-    {
-        return new Zend_Service_Flickr_Result($this->_results->item($this->_currentIndex), $this->_flickr);
-    }
-
-    /**
-     * Implements SeekableIterator::key()
-     *
-     * @return int
-     */
-    public function key()
-    {
-        return $this->_currentIndex;
-    }
-
-    /**
-     * Implements SeekableIterator::next()
-     *
-     * @return void
-     */
-    public function next()
-    {
-        $this->_currentIndex += 1;
-    }
-
-    /**
-     * Implements SeekableIterator::rewind()
-     *
-     * @return void
-     */
-    public function rewind()
-    {
-        $this->_currentIndex = 0;
-    }
-
-    /**
-     * Implements SeekableIterator::seek()
-     *
-     * @param  int $index
-     * @throws OutOfBoundsException
-     * @return void
-     */
-    public function seek($index)
-    {
-        $indexInt = (int) $index;
-        if ($indexInt >= 0 && (null === $this->_results || $indexInt < $this->_results->length)) {
-            $this->_currentIndex = $indexInt;
-        } else {
-            throw new OutOfBoundsException("Illegal index '$index'");
-        }
-    }
-
-    /**
-     * Implements SeekableIterator::valid()
-     *
-     * @return boolean
-     */
-    public function valid()
-    {
-        return null !== $this->_results && $this->_currentIndex < $this->_results->length;
-    }
-}
-
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

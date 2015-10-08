@@ -1,117 +1,37 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Media
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * @see Zend_Gdata_App_Extension
- */
-require_once 'Zend/Gdata/App/Extension.php';
-
-/**
- * Represents the media:title element in MediaRSS
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Media
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Gdata_Media_Extension_MediaTitle extends Zend_Gdata_Extension
-{
-
-    protected $_rootElement = 'title';
-    protected $_rootNamespace = 'media';
-
-    /**
-     * @var string
-     */
-    protected $_type = null;
-
-    /**
-     * Constructs a MediaTitle element
-     *
-     * @param string $text
-     * @param string $type
-     */
-    public function __construct($text = null, $type = null)
-    {
-        $this->registerAllNamespaces(Zend_Gdata_Media::$namespaces);
-        parent::__construct();
-        $this->_type = $type;
-        $this->_text = $text;
-    }
-
-    /**
-     * Retrieves a DOMElement which corresponds to this element and all
-     * child properties.  This is used to build an entry back into a DOM
-     * and eventually XML text for sending to the server upon updates, or
-     * for application storage/persistence.
-     *
-     * @param DOMDocument $doc The DOMDocument used to construct DOMElements
-     * @return DOMElement The DOMElement representing this element and all
-     * child properties.
-     */
-    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
-    {
-        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
-        if ($this->_type !== null) {
-            $element->setAttribute('type', $this->_type);
-        }
-        return $element;
-    }
-
-    /**
-     * Given a DOMNode representing an attribute, tries to map the data into
-     * instance members.  If no mapping is defined, the name and value are
-     * stored in an array.
-     *
-     * @param DOMNode $attribute The DOMNode attribute needed to be handled
-     */
-    protected function takeAttributeFromDOM($attribute)
-    {
-        switch ($attribute->localName) {
-        case 'type':
-            $this->_type = $attribute->nodeValue;
-            break;
-        default:
-            parent::takeAttributeFromDOM($attribute);
-        }
-    }
-
-    /**
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->_type;
-    }
-
-    /**
-     * @param string $value
-     * @return Zend_Gdata_Media_Extension_MediaTitle Provides a fluent interface
-     */
-    public function setType($value)
-    {
-        $this->_type = $value;
-        return $this;
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

@@ -1,334 +1,142 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Search_Lucene
- * @subpackage Search
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-
-/** Zend_Search_Lucene_Search_Query_Processing */
-require_once 'Zend/Search/Lucene/Search/Query/Preprocessing.php';
-
-/** Zend_Search_Lucene_Search_Query_Phrase */
-require_once 'Zend/Search/Lucene/Search/Query/Phrase.php';
-
-/** Zend_Search_Lucene_Search_Query_Insignificant */
-require_once 'Zend/Search/Lucene/Search/Query/Insignificant.php';
-
-/** Zend_Search_Lucene_Search_Query_Empty */
-require_once 'Zend/Search/Lucene/Search/Query/Empty.php';
-
-/** Zend_Search_Lucene_Search_Query_Term */
-require_once 'Zend/Search/Lucene/Search/Query/Term.php';
-
-/** Zend_Search_Lucene_Index_Term */
-require_once 'Zend/Search/Lucene/Index/Term.php';
-
-
-/**
- * It's an internal abstract class intended to finalize ase a query processing after query parsing.
- * This type of query is not actually involved into query execution.
- *
- * @category   Zend
- * @package    Zend_Search_Lucene
- * @subpackage Search
- * @internal
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Search_Lucene_Search_Query_Preprocessing_Term extends Zend_Search_Lucene_Search_Query_Preprocessing
-{
-    /**
-     * word (query parser lexeme) to find.
-     *
-     * @var string
-     */
-    private $_word;
-
-    /**
-     * Word encoding (field name is always provided using UTF-8 encoding since it may be retrieved from index).
-     *
-     * @var string
-     */
-    private $_encoding;
-
-
-    /**
-     * Field name.
-     *
-     * @var string
-     */
-    private $_field;
-
-    /**
-     * Class constructor.  Create a new preprocessing object for prase query.
-     *
-     * @param string $word       Non-tokenized word (query parser lexeme) to search.
-     * @param string $encoding   Word encoding.
-     * @param string $fieldName  Field name.
-     */
-    public function __construct($word, $encoding, $fieldName)
-    {
-        $this->_word     = $word;
-        $this->_encoding = $encoding;
-        $this->_field    = $fieldName;
-    }
-
-    /**
-     * Re-write query into primitive queries in the context of specified index
-     *
-     * @param Zend_Search_Lucene_Interface $index
-     * @return Zend_Search_Lucene_Search_Query
-     */
-    public function rewrite(Zend_Search_Lucene_Interface $index)
-    {
-        if ($this->_field === null) {
-            $query = new Zend_Search_Lucene_Search_Query_MultiTerm();
-            $query->setBoost($this->getBoost());
-
-            $hasInsignificantSubqueries = false;
-
-            if (Zend_Search_Lucene::getDefaultSearchField() === null) {
-            	$searchFields = $index->getFieldNames(true);
-            } else {
-            	$searchFields = array(Zend_Search_Lucene::getDefaultSearchField());
-            }
-
-            foreach ($searchFields as $fieldName) {
-            	$subquery = new Zend_Search_Lucene_Search_Query_Preprocessing_Term($this->_word,
-                                                                                   $this->_encoding,
-                                                                                   $fieldName);
-                $rewrittenSubquery = $subquery->rewrite($index);
-                foreach ($rewrittenSubquery->getQueryTerms() as $term) {
-                	$query->addTerm($term);
-                }
-
-                if ($rewrittenSubquery instanceof Zend_Search_Lucene_Search_Query_Insignificant) {
-                	$hasInsignificantSubqueries = true;
-                }
-            }
-
-            if (count($query->getTerms()) == 0) {
-            	$this->_matches = array();
-            	if ($hasInsignificantSubqueries) {
-            		return new Zend_Search_Lucene_Search_Query_Insignificant();
-            	} else {
-            		return new Zend_Search_Lucene_Search_Query_Empty();
-            	}
-            }
-
-            $this->_matches = $query->getQueryTerms();
-            return $query;
-        }
-
-        // -------------------------------------
-        // Recognize exact term matching (it corresponds to Keyword fields stored in the index)
-        // encoding is not used since we expect binary matching
-        $term = new Zend_Search_Lucene_Index_Term($this->_word, $this->_field);
-        if ($index->hasTerm($term)) {
-            $query = new Zend_Search_Lucene_Search_Query_Term($term);
-            $query->setBoost($this->getBoost());
-
-            $this->_matches = $query->getQueryTerms();
-            return $query;
-        }
-
-
-        // -------------------------------------
-        // Recognize wildcard queries
-
-        /** @todo check for PCRE unicode support may be performed through Zend_Environment in some future */
-        if (@preg_match('/\pL/u', 'a') == 1) {
-        	$word = iconv($this->_encoding, 'UTF-8', $this->_word);
-        	$wildcardsPattern = '/[*?]/u';
-        	$subPatternsEncoding = 'UTF-8';
-        } else {
-        	$word = $this->_word;
-        	$wildcardsPattern = '/[*?]/';
-            $subPatternsEncoding = $this->_encoding;
-        }
-
-        $subPatterns = preg_split($wildcardsPattern, $word, -1, PREG_SPLIT_OFFSET_CAPTURE);
-
-        if (count($subPatterns) > 1) {
-        	// Wildcard query is recognized
-
-        	$pattern = '';
-
-            foreach ($subPatterns as $id => $subPattern) {
-            	// Append corresponding wildcard character to the pattern before each sub-pattern (except first)
-                if ($id != 0) {
-                	$pattern .= $word[ $subPattern[1] - 1 ];
-                }
-
-                // Check if each subputtern is a single word in terms of current analyzer
-                $tokens = Zend_Search_Lucene_Analysis_Analyzer::getDefault()->tokenize($subPattern[0], $subPatternsEncoding);
-                if (count($tokens) > 1) {
-                    require_once 'Zend/Search/Lucene/Search/QueryParserException.php';
-                    throw new Zend_Search_Lucene_Search_QueryParserException('Wildcard search is supported only for non-multiple word terms');
-                }
-                foreach ($tokens as $token) {
-                    $pattern .= $token->getTermText();
-                }
-            }
-
-            $term  = new Zend_Search_Lucene_Index_Term($pattern, $this->_field);
-            $query = new Zend_Search_Lucene_Search_Query_Wildcard($term);
-            $query->setBoost($this->getBoost());
-
-            // Get rewritten query. Important! It also fills terms matching container.
-            $rewrittenQuery = $query->rewrite($index);
-            $this->_matches = $query->getQueryTerms();
-
-            return $rewrittenQuery;
-        }
-
-
-        // -------------------------------------
-        // Recognize one-term multi-term and "insignificant" queries
-        $tokens = Zend_Search_Lucene_Analysis_Analyzer::getDefault()->tokenize($this->_word, $this->_encoding);
-
-        if (count($tokens) == 0) {
-        	$this->_matches = array();
-            return new Zend_Search_Lucene_Search_Query_Insignificant();
-        }
-
-        if (count($tokens) == 1) {
-            $term  = new Zend_Search_Lucene_Index_Term($tokens[0]->getTermText(), $this->_field);
-            $query = new Zend_Search_Lucene_Search_Query_Term($term);
-            $query->setBoost($this->getBoost());
-
-            $this->_matches = $query->getQueryTerms();
-            return $query;
-        }
-
-        //It's not insignificant or one term query
-        $query = new Zend_Search_Lucene_Search_Query_MultiTerm();
-
-        /**
-         * @todo Process $token->getPositionIncrement() to support stemming, synonyms and other
-         * analizer design features
-         */
-        foreach ($tokens as $token) {
-            $term = new Zend_Search_Lucene_Index_Term($token->getTermText(), $this->_field);
-            $query->addTerm($term, true); // all subterms are required
-        }
-
-        $query->setBoost($this->getBoost());
-
-        $this->_matches = $query->getQueryTerms();
-        return $query;
-    }
-
-    /**
-     * Query specific matches highlighting
-     *
-     * @param Zend_Search_Lucene_Search_Highlighter_Interface $highlighter  Highlighter object (also contains doc for highlighting)
-     */
-    protected function _highlightMatches(Zend_Search_Lucene_Search_Highlighter_Interface $highlighter)
-    {
-        /** Skip fields detection. We don't need it, since we expect all fields presented in the HTML body and don't differentiate them */
-
-        /** Skip exact term matching recognition, keyword fields highlighting is not supported */
-
-        // -------------------------------------
-        // Recognize wildcard queries
-        /** @todo check for PCRE unicode support may be performed through Zend_Environment in some future */
-        if (@preg_match('/\pL/u', 'a') == 1) {
-            $word = iconv($this->_encoding, 'UTF-8', $this->_word);
-            $wildcardsPattern = '/[*?]/u';
-            $subPatternsEncoding = 'UTF-8';
-        } else {
-            $word = $this->_word;
-            $wildcardsPattern = '/[*?]/';
-            $subPatternsEncoding = $this->_encoding;
-        }
-        $subPatterns = preg_split($wildcardsPattern, $word, -1, PREG_SPLIT_OFFSET_CAPTURE);
-        if (count($subPatterns) > 1) {
-            // Wildcard query is recognized
-
-            $pattern = '';
-
-            foreach ($subPatterns as $id => $subPattern) {
-                // Append corresponding wildcard character to the pattern before each sub-pattern (except first)
-                if ($id != 0) {
-                    $pattern .= $word[ $subPattern[1] - 1 ];
-                }
-
-                // Check if each subputtern is a single word in terms of current analyzer
-                $tokens = Zend_Search_Lucene_Analysis_Analyzer::getDefault()->tokenize($subPattern[0], $subPatternsEncoding);
-                if (count($tokens) > 1) {
-                	// Do nothing (nothing is highlighted)
-                    return;
-                }
-                foreach ($tokens as $token) {
-                    $pattern .= $token->getTermText();
-                }
-            }
-
-            $term  = new Zend_Search_Lucene_Index_Term($pattern, $this->_field);
-            $query = new Zend_Search_Lucene_Search_Query_Wildcard($term);
-
-            $query->_highlightMatches($highlighter);
-            return;
-        }
-
-        // -------------------------------------
-        // Recognize one-term multi-term and "insignificant" queries
-        $tokens = Zend_Search_Lucene_Analysis_Analyzer::getDefault()->tokenize($this->_word, $this->_encoding);
-
-        if (count($tokens) == 0) {
-            // Do nothing
-            return;
-        }
-
-        if (count($tokens) == 1) {
-            $highlighter->highlight($tokens[0]->getTermText());
-            return;
-        }
-
-        //It's not insignificant or one term query
-        $words = array();
-        foreach ($tokens as $token) {
-            $words[] = $token->getTermText();
-        }
-        $highlighter->highlight($words);
-    }
-
-    /**
-     * Print a query
-     *
-     * @return string
-     */
-    public function __toString()
-    {
-        // It's used only for query visualisation, so we don't care about characters escaping
-        if ($this->_field !== null) {
-            $query = $this->_field . ':';
-        } else {
-            $query = '';
-        }
-
-        $query .= $this->_word;
-
-        if ($this->getBoost() != 1) {
-            $query .= '^' . round($this->getBoost(), 4);
-        }
-
-        return $query;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

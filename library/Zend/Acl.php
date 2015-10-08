@@ -1,1036 +1,347 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Acl
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Acl.php 9417 2008-05-08 16:28:31Z darby $
- */
-
-
-/**
- * @see Zend_Acl_Resource_Interface
- */
-require_once 'Zend/Acl/Resource/Interface.php';
-
-
-/**
- * @see Zend_Acl_Role_Registry
- */
-require_once 'Zend/Acl/Role/Registry.php';
-
-
-/**
- * @see Zend_Acl_Assert_Interface
- */
-require_once 'Zend/Acl/Assert/Interface.php';
-
-
-/**
- * @category   Zend
- * @package    Zend_Acl
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Acl
-{
-    /**
-     * Rule type: allow
-     */
-    const TYPE_ALLOW = 'TYPE_ALLOW';
-
-    /**
-     * Rule type: deny
-     */
-    const TYPE_DENY  = 'TYPE_DENY';
-
-    /**
-     * Rule operation: add
-     */
-    const OP_ADD = 'OP_ADD';
-
-    /**
-     * Rule operation: remove
-     */
-    const OP_REMOVE = 'OP_REMOVE';
-
-    /**
-     * Role registry
-     *
-     * @var Zend_Acl_Role_Registry
-     */
-    protected $_roleRegistry = null;
-
-    /**
-     * Resource tree
-     *
-     * @var array
-     */
-    protected $_resources = array();
-
-    /**
-     * ACL rules; whitelist (deny everything to all) by default
-     *
-     * @var array
-     */
-    protected $_rules = array(
-        'allResources' => array(
-            'allRoles' => array(
-                'allPrivileges' => array(
-                    'type'   => self::TYPE_DENY,
-                    'assert' => null
-                    ),
-                'byPrivilegeId' => array()
-                ),
-            'byRoleId' => array()
-            ),
-        'byResourceId' => array()
-        );
-
-    /**
-     * Adds a Role having an identifier unique to the registry
-     *
-     * The $parents parameter may be a reference to, or the string identifier for,
-     * a Role existing in the registry, or $parents may be passed as an array of
-     * these - mixing string identifiers and objects is ok - to indicate the Roles
-     * from which the newly added Role will directly inherit.
-     *
-     * In order to resolve potential ambiguities with conflicting rules inherited
-     * from different parents, the most recently added parent takes precedence over
-     * parents that were previously added. In other words, the first parent added
-     * will have the least priority, and the last parent added will have the
-     * highest priority.
-     *
-     * @param  Zend_Acl_Role_Interface              $role
-     * @param  Zend_Acl_Role_Interface|string|array $parents
-     * @uses   Zend_Acl_Role_Registry::add()
-     * @return Zend_Acl Provides a fluent interface
-     */
-    public function addRole(Zend_Acl_Role_Interface $role, $parents = null)
-    {
-        $this->_getRoleRegistry()->add($role, $parents);
-
-        return $this;
-    }
-
-    /**
-     * Returns the identified Role
-     *
-     * The $role parameter can either be a Role or Role identifier.
-     *
-     * @param  Zend_Acl_Role_Interface|string $role
-     * @uses   Zend_Acl_Role_Registry::get()
-     * @return Zend_Acl_Role_Interface
-     */
-    public function getRole($role)
-    {
-        return $this->_getRoleRegistry()->get($role);
-    }
-
-    /**
-     * Returns true if and only if the Role exists in the registry
-     *
-     * The $role parameter can either be a Role or a Role identifier.
-     *
-     * @param  Zend_Acl_Role_Interface|string $role
-     * @uses   Zend_Acl_Role_Registry::has()
-     * @return boolean
-     */
-    public function hasRole($role)
-    {
-        return $this->_getRoleRegistry()->has($role);
-    }
-
-    /**
-     * Returns true if and only if $role inherits from $inherit
-     *
-     * Both parameters may be either a Role or a Role identifier. If
-     * $onlyParents is true, then $role must inherit directly from
-     * $inherit in order to return true. By default, this method looks
-     * through the entire inheritance DAG to determine whether $role
-     * inherits from $inherit through its ancestor Roles.
-     *
-     * @param  Zend_Acl_Role_Interface|string $role
-     * @param  Zend_Acl_Role_Interface|string $inherit
-     * @param  boolean                        $onlyParents
-     * @uses   Zend_Acl_Role_Registry::inherits()
-     * @return boolean
-     */
-    public function inheritsRole($role, $inherit, $onlyParents = false)
-    {
-        return $this->_getRoleRegistry()->inherits($role, $inherit, $onlyParents);
-    }
-
-    /**
-     * Removes the Role from the registry
-     *
-     * The $role parameter can either be a Role or a Role identifier.
-     *
-     * @param  Zend_Acl_Role_Interface|string $role
-     * @uses   Zend_Acl_Role_Registry::remove()
-     * @return Zend_Acl Provides a fluent interface
-     */
-    public function removeRole($role)
-    {
-        $this->_getRoleRegistry()->remove($role);
-
-        if ($role instanceof Zend_Acl_Role_Interface) {
-            $roleId = $role->getRoleId();
-        } else {
-            $roleId = $role;
-        }
-
-        foreach ($this->_rules['allResources']['byRoleId'] as $roleIdCurrent => $rules) {
-            if ($roleId === $roleIdCurrent) {
-                unset($this->_rules['allResources']['byRoleId'][$roleIdCurrent]);
-            }
-        }
-        foreach ($this->_rules['byResourceId'] as $resourceIdCurrent => $visitor) {
-            foreach ($visitor['byRoleId'] as $roleIdCurrent => $rules) {
-                if ($roleId === $roleIdCurrent) {
-                    unset($this->_rules['byResourceId'][$resourceIdCurrent]['byRoleId'][$roleIdCurrent]);
-                }
-            }
-        }
-
-        return $this;
-    }
-
-    /**
-     * Removes all Roles from the registry
-     *
-     * @uses   Zend_Acl_Role_Registry::removeAll()
-     * @return Zend_Acl Provides a fluent interface
-     */
-    public function removeRoleAll()
-    {
-        $this->_getRoleRegistry()->removeAll();
-
-        foreach ($this->_rules['allResources']['byRoleId'] as $roleIdCurrent => $rules) {
-            unset($this->_rules['allResources']['byRoleId'][$roleIdCurrent]);
-        }
-        foreach ($this->_rules['byResourceId'] as $resourceIdCurrent => $visitor) {
-            foreach ($visitor['byRoleId'] as $roleIdCurrent => $rules) {
-                unset($this->_rules['byResourceId'][$resourceIdCurrent]['byRoleId'][$roleIdCurrent]);
-            }
-        }
-
-        return $this;
-    }
-
-    /**
-     * Adds a Resource having an identifier unique to the ACL
-     *
-     * The $parent parameter may be a reference to, or the string identifier for,
-     * the existing Resource from which the newly added Resource will inherit.
-     *
-     * @param  Zend_Acl_Resource_Interface        $resource
-     * @param  Zend_Acl_Resource_Interface|string $parent
-     * @throws Zend_Acl_Exception
-     * @return Zend_Acl Provides a fluent interface
-     */
-    public function add(Zend_Acl_Resource_Interface $resource, $parent = null)
-    {
-        $resourceId = $resource->getResourceId();
-
-        if ($this->has($resourceId)) {
-            require_once 'Zend/Acl/Exception.php';
-            throw new Zend_Acl_Exception("Resource id '$resourceId' already exists in the ACL");
-        }
-
-        $resourceParent = null;
-
-        if (null !== $parent) {
-            try {
-                if ($parent instanceof Zend_Acl_Resource_Interface) {
-                    $resourceParentId = $parent->getResourceId();
-                } else {
-                    $resourceParentId = $parent;
-                }
-                $resourceParent = $this->get($resourceParentId);
-            } catch (Zend_Acl_Exception $e) {
-                throw new Zend_Acl_Exception("Parent Resource id '$resourceParentId' does not exist");
-            }
-            $this->_resources[$resourceParentId]['children'][$resourceId] = $resource;
-        }
-
-        $this->_resources[$resourceId] = array(
-            'instance' => $resource,
-            'parent'   => $resourceParent,
-            'children' => array()
-            );
-
-        return $this;
-    }
-
-    /**
-     * Returns the identified Resource
-     *
-     * The $resource parameter can either be a Resource or a Resource identifier.
-     *
-     * @param  Zend_Acl_Resource_Interface|string $resource
-     * @throws Zend_Acl_Exception
-     * @return Zend_Acl_Resource_Interface
-     */
-    public function get($resource)
-    {
-        if ($resource instanceof Zend_Acl_Resource_Interface) {
-            $resourceId = $resource->getResourceId();
-        } else {
-            $resourceId = (string) $resource;
-        }
-
-        if (!$this->has($resource)) {
-            require_once 'Zend/Acl/Exception.php';
-            throw new Zend_Acl_Exception("Resource '$resourceId' not found");
-        }
-
-        return $this->_resources[$resourceId]['instance'];
-    }
-
-    /**
-     * Returns true if and only if the Resource exists in the ACL
-     *
-     * The $resource parameter can either be a Resource or a Resource identifier.
-     *
-     * @param  Zend_Acl_Resource_Interface|string $resource
-     * @return boolean
-     */
-    public function has($resource)
-    {
-        if ($resource instanceof Zend_Acl_Resource_Interface) {
-            $resourceId = $resource->getResourceId();
-        } else {
-            $resourceId = (string) $resource;
-        }
-
-        return isset($this->_resources[$resourceId]);
-    }
-
-    /**
-     * Returns true if and only if $resource inherits from $inherit
-     *
-     * Both parameters may be either a Resource or a Resource identifier. If
-     * $onlyParent is true, then $resource must inherit directly from
-     * $inherit in order to return true. By default, this method looks
-     * through the entire inheritance tree to determine whether $resource
-     * inherits from $inherit through its ancestor Resources.
-     *
-     * @param  Zend_Acl_Resource_Interface|string $resource
-     * @param  Zend_Acl_Resource_Interface|string $inherit
-     * @param  boolean                            $onlyParent
-     * @throws Zend_Acl_Resource_Registry_Exception
-     * @return boolean
-     */
-    public function inherits($resource, $inherit, $onlyParent = false)
-    {
-        try {
-            $resourceId     = $this->get($resource)->getResourceId();
-            $inheritId = $this->get($inherit)->getResourceId();
-        } catch (Zend_Acl_Exception $e) {
-            throw $e;
-        }
-
-        if (null !== $this->_resources[$resourceId]['parent']) {
-            $parentId = $this->_resources[$resourceId]['parent']->getResourceId();
-            if ($inheritId === $parentId) {
-                return true;
-            } else if ($onlyParent) {
-                return false;
-            }
-        } else {
-            return false;
-        }
-
-        while (null !== $this->_resources[$parentId]['parent']) {
-            $parentId = $this->_resources[$parentId]['parent']->getResourceId();
-            if ($inheritId === $parentId) {
-                return true;
-            }
-        }
-
-        return false;
-    }
-
-    /**
-     * Removes a Resource and all of its children
-     *
-     * The $resource parameter can either be a Resource or a Resource identifier.
-     *
-     * @param  Zend_Acl_Resource_Interface|string $resource
-     * @throws Zend_Acl_Exception
-     * @return Zend_Acl Provides a fluent interface
-     */
-    public function remove($resource)
-    {
-        try {
-            $resourceId = $this->get($resource)->getResourceId();
-        } catch (Zend_Acl_Exception $e) {
-            throw $e;
-        }
-
-        $resourcesRemoved = array($resourceId);
-        if (null !== ($resourceParent = $this->_resources[$resourceId]['parent'])) {
-            unset($this->_resources[$resourceParent->getResourceId()]['children'][$resourceId]);
-        }
-        foreach ($this->_resources[$resourceId]['children'] as $childId => $child) {
-            $this->remove($childId);
-            $resourcesRemoved[] = $childId;
-        }
-
-        foreach ($resourcesRemoved as $resourceIdRemoved) {
-            foreach ($this->_rules['byResourceId'] as $resourceIdCurrent => $rules) {
-                if ($resourceIdRemoved === $resourceIdCurrent) {
-                    unset($this->_rules['byResourceId'][$resourceIdCurrent]);
-                }
-            }
-        }
-
-        unset($this->_resources[$resourceId]);
-
-        return $this;
-    }
-
-    /**
-     * Removes all Resources
-     *
-     * @return Zend_Acl Provides a fluent interface
-     */
-    public function removeAll()
-    {
-        foreach ($this->_resources as $resourceId => $resource) {
-            foreach ($this->_rules['byResourceId'] as $resourceIdCurrent => $rules) {
-                if ($resourceId === $resourceIdCurrent) {
-                    unset($this->_rules['byResourceId'][$resourceIdCurrent]);
-                }
-            }
-        }
-
-        $this->_resources = array();
-
-        return $this;
-    }
-
-    /**
-     * Adds an "allow" rule to the ACL
-     *
-     * @param  Zend_Acl_Role_Interface|string|array     $roles
-     * @param  Zend_Acl_Resource_Interface|string|array $resources
-     * @param  string|array                             $privileges
-     * @param  Zend_Acl_Assert_Interface                $assert
-     * @uses   Zend_Acl::setRule()
-     * @return Zend_Acl Provides a fluent interface
-     */
-    public function allow($roles = null, $resources = null, $privileges = null, Zend_Acl_Assert_Interface $assert = null)
-    {
-        return $this->setRule(self::OP_ADD, self::TYPE_ALLOW, $roles, $resources, $privileges, $assert);
-    }
-
-    /**
-     * Adds a "deny" rule to the ACL
-     *
-     * @param  Zend_Acl_Role_Interface|string|array     $roles
-     * @param  Zend_Acl_Resource_Interface|string|array $resources
-     * @param  string|array                             $privileges
-     * @param  Zend_Acl_Assert_Interface                $assert
-     * @uses   Zend_Acl::setRule()
-     * @return Zend_Acl Provides a fluent interface
-     */
-    public function deny($roles = null, $resources = null, $privileges = null, Zend_Acl_Assert_Interface $assert = null)
-    {
-        return $this->setRule(self::OP_ADD, self::TYPE_DENY, $roles, $resources, $privileges, $assert);
-    }
-
-    /**
-     * Removes "allow" permissions from the ACL
-     *
-     * @param  Zend_Acl_Role_Interface|string|array     $roles
-     * @param  Zend_Acl_Resource_Interface|string|array $resources
-     * @param  string|array                             $privileges
-     * @uses   Zend_Acl::setRule()
-     * @return Zend_Acl Provides a fluent interface
-     */
-    public function removeAllow($roles = null, $resources = null, $privileges = null)
-    {
-        return $this->setRule(self::OP_REMOVE, self::TYPE_ALLOW, $roles, $resources, $privileges);
-    }
-
-    /**
-     * Removes "deny" restrictions from the ACL
-     *
-     * @param  Zend_Acl_Role_Interface|string|array     $roles
-     * @param  Zend_Acl_Resource_Interface|string|array $resources
-     * @param  string|array                             $privileges
-     * @uses   Zend_Acl::setRule()
-     * @return Zend_Acl Provides a fluent interface
-     */
-    public function removeDeny($roles = null, $resources = null, $privileges = null)
-    {
-        return $this->setRule(self::OP_REMOVE, self::TYPE_DENY, $roles, $resources, $privileges);
-    }
-
-    /**
-     * Performs operations on ACL rules
-     *
-     * The $operation parameter may be either OP_ADD or OP_REMOVE, depending on whether the
-     * user wants to add or remove a rule, respectively:
-     *
-     * OP_ADD specifics:
-     *
-     *      A rule is added that would allow one or more Roles access to [certain $privileges
-     *      upon] the specified Resource(s).
-     *
-     * OP_REMOVE specifics:
-     *
-     *      The rule is removed only in the context of the given Roles, Resources, and privileges.
-     *      Existing rules to which the remove operation does not apply would remain in the
-     *      ACL.
-     *
-     * The $type parameter may be either TYPE_ALLOW or TYPE_DENY, depending on whether the
-     * rule is intended to allow or deny permission, respectively.
-     *
-     * The $roles and $resources parameters may be references to, or the string identifiers for,
-     * existing Resources/Roles, or they may be passed as arrays of these - mixing string identifiers
-     * and objects is ok - to indicate the Resources and Roles to which the rule applies. If either
-     * $roles or $resources is null, then the rule applies to all Roles or all Resources, respectively.
-     * Both may be null in order to work with the default rule of the ACL.
-     *
-     * The $privileges parameter may be used to further specify that the rule applies only
-     * to certain privileges upon the Resource(s) in question. This may be specified to be a single
-     * privilege with a string, and multiple privileges may be specified as an array of strings.
-     *
-     * If $assert is provided, then its assert() method must return true in order for
-     * the rule to apply. If $assert is provided with $roles, $resources, and $privileges all
-     * equal to null, then a rule having a type of:
-     *
-     *      TYPE_ALLOW will imply a type of TYPE_DENY, and
-     *
-     *      TYPE_DENY will imply a type of TYPE_ALLOW
-     *
-     * when the rule's assertion fails. This is because the ACL needs to provide expected
-     * behavior when an assertion upon the default ACL rule fails.
-     *
-     * @param  string                                   $operation
-     * @param  string                                   $type
-     * @param  Zend_Acl_Role_Interface|string|array     $roles
-     * @param  Zend_Acl_Resource_Interface|string|array $resources
-     * @param  string|array                             $privileges
-     * @param  Zend_Acl_Assert_Interface                $assert
-     * @throws Zend_Acl_Exception
-     * @uses   Zend_Acl_Role_Registry::get()
-     * @uses   Zend_Acl::get()
-     * @return Zend_Acl Provides a fluent interface
-     */
-    public function setRule($operation, $type, $roles = null, $resources = null, $privileges = null,
-                            Zend_Acl_Assert_Interface $assert = null)
-    {
-        // ensure that the rule type is valid; normalize input to uppercase
-        $type = strtoupper($type);
-        if (self::TYPE_ALLOW !== $type && self::TYPE_DENY !== $type) {
-            require_once 'Zend/Acl/Exception.php';
-            throw new Zend_Acl_Exception("Unsupported rule type; must be either '" . self::TYPE_ALLOW . "' or '"
-                                       . self::TYPE_DENY . "'");
-        }
-
-        // ensure that all specified Roles exist; normalize input to array of Role objects or null
-        if (!is_array($roles)) {
-            $roles = array($roles);
-        } else if (0 === count($roles)) {
-            $roles = array(null);
-        }
-        $rolesTemp = $roles;
-        $roles = array();
-        foreach ($rolesTemp as $role) {
-            if (null !== $role) {
-                $roles[] = $this->_getRoleRegistry()->get($role);
-            } else {
-                $roles[] = null;
-            }
-        }
-        unset($rolesTemp);
-
-        // ensure that all specified Resources exist; normalize input to array of Resource objects or null
-        if (!is_array($resources)) {
-            $resources = array($resources);
-        } else if (0 === count($resources)) {
-            $resources = array(null);
-        }
-        $resourcesTemp = $resources;
-        $resources = array();
-        foreach ($resourcesTemp as $resource) {
-            if (null !== $resource) {
-                $resources[] = $this->get($resource);
-            } else {
-                $resources[] = null;
-            }
-        }
-        unset($resourcesTemp);
-
-        // normalize privileges to array
-        if (null === $privileges) {
-            $privileges = array();
-        } else if (!is_array($privileges)) {
-            $privileges = array($privileges);
-        }
-
-        switch ($operation) {
-
-            // add to the rules
-            case self::OP_ADD:
-                foreach ($resources as $resource) {
-                    foreach ($roles as $role) {
-                        $rules =& $this->_getRules($resource, $role, true);
-                        if (0 === count($privileges)) {
-                            $rules['allPrivileges']['type']   = $type;
-                            $rules['allPrivileges']['assert'] = $assert;
-                            if (!isset($rules['byPrivilegeId'])) {
-                                $rules['byPrivilegeId'] = array();
-                            }
-                        } else {
-                            foreach ($privileges as $privilege) {
-                                $rules['byPrivilegeId'][$privilege]['type']   = $type;
-                                $rules['byPrivilegeId'][$privilege]['assert'] = $assert;
-                            }
-                        }
-                    }
-                }
-                break;
-
-            // remove from the rules
-            case self::OP_REMOVE:
-                foreach ($resources as $resource) {
-                    foreach ($roles as $role) {
-                        $rules =& $this->_getRules($resource, $role);
-                        if (null === $rules) {
-                            continue;
-                        }
-                        if (0 === count($privileges)) {
-                            if (null === $resource && null === $role) {
-                                if ($type === $rules['allPrivileges']['type']) {
-                                    $rules = array(
-                                        'allPrivileges' => array(
-                                            'type'   => self::TYPE_DENY,
-                                            'assert' => null
-                                            ),
-                                        'byPrivilegeId' => array()
-                                        );
-                                }
-                                continue;
-                            }
-                            if ($type === $rules['allPrivileges']['type']) {
-                                unset($rules['allPrivileges']);
-                            }
-                        } else {
-                            foreach ($privileges as $privilege) {
-                                if (isset($rules['byPrivilegeId'][$privilege]) &&
-                                    $type === $rules['byPrivilegeId'][$privilege]['type']) {
-                                    unset($rules['byPrivilegeId'][$privilege]);
-                                }
-                            }
-                        }
-                    }
-                }
-                break;
-
-            default:
-                require_once 'Zend/Acl/Exception.php';
-                throw new Zend_Acl_Exception("Unsupported operation; must be either '" . self::OP_ADD . "' or '"
-                                           . self::OP_REMOVE . "'");
-        }
-
-        return $this;
-    }
-
-    /**
-     * Returns true if and only if the Role has access to the Resource
-     *
-     * The $role and $resource parameters may be references to, or the string identifiers for,
-     * an existing Resource and Role combination.
-     *
-     * If either $role or $resource is null, then the query applies to all Roles or all Resources,
-     * respectively. Both may be null to query whether the ACL has a "blacklist" rule
-     * (allow everything to all). By default, Zend_Acl creates a "whitelist" rule (deny
-     * everything to all), and this method would return false unless this default has
-     * been overridden (i.e., by executing $acl->allow()).
-     *
-     * If a $privilege is not provided, then this method returns false if and only if the
-     * Role is denied access to at least one privilege upon the Resource. In other words, this
-     * method returns true if and only if the Role is allowed all privileges on the Resource.
-     *
-     * This method checks Role inheritance using a depth-first traversal of the Role registry.
-     * The highest priority parent (i.e., the parent most recently added) is checked first,
-     * and its respective parents are checked similarly before the lower-priority parents of
-     * the Role are checked.
-     *
-     * @param  Zend_Acl_Role_Interface|string     $role
-     * @param  Zend_Acl_Resource_Interface|string $resource
-     * @param  string                             $privilege
-     * @uses   Zend_Acl::get()
-     * @uses   Zend_Acl_Role_Registry::get()
-     * @return boolean
-     */
-    public function isAllowed($role = null, $resource = null, $privilege = null)
-    {
-        if (null !== $role) {
-            $role = $this->_getRoleRegistry()->get($role);
-        }
-
-        if (null !== $resource) {
-            $resource = $this->get($resource);
-        }
-
-        if (null === $privilege) {
-            // query on all privileges
-            do {
-                // depth-first search on $role if it is not 'allRoles' pseudo-parent
-                if (null !== $role && null !== ($result = $this->_roleDFSAllPrivileges($role, $resource, $privilege))) {
-                    return $result;
-                }
-
-                // look for rule on 'allRoles' psuedo-parent
-                if (null !== ($rules = $this->_getRules($resource, null))) {
-                    foreach ($rules['byPrivilegeId'] as $privilege => $rule) {
-                        if (self::TYPE_DENY === ($ruleTypeOnePrivilege = $this->_getRuleType($resource, null, $privilege))) {
-                            return false;
-                        }
-                    }
-                    if (null !== ($ruleTypeAllPrivileges = $this->_getRuleType($resource, null, null))) {
-                        return self::TYPE_ALLOW === $ruleTypeAllPrivileges;
-                    }
-                }
-
-                // try next Resource
-                $resource = $this->_resources[$resource->getResourceId()]['parent'];
-
-            } while (true); // loop terminates at 'allResources' pseudo-parent
-        } else {
-            // query on one privilege
-            do {
-                // depth-first search on $role if it is not 'allRoles' pseudo-parent
-                if (null !== $role && null !== ($result = $this->_roleDFSOnePrivilege($role, $resource, $privilege))) {
-                    return $result;
-                }
-
-                // look for rule on 'allRoles' pseudo-parent
-                if (null !== ($ruleType = $this->_getRuleType($resource, null, $privilege))) {
-                    return self::TYPE_ALLOW === $ruleType;
-                } else if (null !== ($ruleTypeAllPrivileges = $this->_getRuleType($resource, null, null))) {
-                    return self::TYPE_ALLOW === $ruleTypeAllPrivileges;
-                }
-
-                // try next Resource
-                $resource = $this->_resources[$resource->getResourceId()]['parent'];
-
-            } while (true); // loop terminates at 'allResources' pseudo-parent
-        }
-    }
-
-    /**
-     * Returns the Role registry for this ACL
-     *
-     * If no Role registry has been created yet, a new default Role registry
-     * is created and returned.
-     *
-     * @return Zend_Acl_Role_Registry
-     */
-    protected function _getRoleRegistry()
-    {
-        if (null === $this->_roleRegistry) {
-            $this->_roleRegistry = new Zend_Acl_Role_Registry();
-        }
-        return $this->_roleRegistry;
-    }
-
-    /**
-     * Performs a depth-first search of the Role DAG, starting at $role, in order to find a rule
-     * allowing/denying $role access to all privileges upon $resource
-     *
-     * This method returns true if a rule is found and allows access. If a rule exists and denies access,
-     * then this method returns false. If no applicable rule is found, then this method returns null.
-     *
-     * @param  Zend_Acl_Role_Interface     $role
-     * @param  Zend_Acl_Resource_Interface $resource
-     * @return boolean|null
-     */
-    protected function _roleDFSAllPrivileges(Zend_Acl_Role_Interface $role, Zend_Acl_Resource_Interface $resource = null)
-    {
-        $dfs = array(
-            'visited' => array(),
-            'stack'   => array()
-            );
-
-        if (null !== ($result = $this->_roleDFSVisitAllPrivileges($role, $resource, $dfs))) {
-            return $result;
-        }
-
-        while (null !== ($role = array_pop($dfs['stack']))) {
-            if (!isset($dfs['visited'][$role->getRoleId()])) {
-                if (null !== ($result = $this->_roleDFSVisitAllPrivileges($role, $resource, $dfs))) {
-                    return $result;
-                }
-            }
-        }
-
-        return null;
-    }
-
-    /**
-     * Visits an $role in order to look for a rule allowing/denying $role access to all privileges upon $resource
-     *
-     * This method returns true if a rule is found and allows access. If a rule exists and denies access,
-     * then this method returns false. If no applicable rule is found, then this method returns null.
-     *
-     * This method is used by the internal depth-first search algorithm and may modify the DFS data structure.
-     *
-     * @param  Zend_Acl_Role_Interface     $role
-     * @param  Zend_Acl_Resource_Interface $resource
-     * @param  array                  $dfs
-     * @return boolean|null
-     * @throws Zend_Acl_Exception
-     */
-    protected function _roleDFSVisitAllPrivileges(Zend_Acl_Role_Interface $role, Zend_Acl_Resource_Interface $resource = null,
-                                                 &$dfs = null)
-    {
-        if (null === $dfs) {
-            /**
-             * @see Zend_Acl_Exception
-             */
-            require_once 'Zend/Acl/Exception.php';
-            throw new Zend_Acl_Exception('$dfs parameter may not be null');
-        }
-
-        if (null !== ($rules = $this->_getRules($resource, $role))) {
-            foreach ($rules['byPrivilegeId'] as $privilege => $rule) {
-                if (self::TYPE_DENY === ($ruleTypeOnePrivilege = $this->_getRuleType($resource, $role, $privilege))) {
-                    return false;
-                }
-            }
-            if (null !== ($ruleTypeAllPrivileges = $this->_getRuleType($resource, $role, null))) {
-                return self::TYPE_ALLOW === $ruleTypeAllPrivileges;
-            }
-        }
-
-        $dfs['visited'][$role->getRoleId()] = true;
-        foreach ($this->_getRoleRegistry()->getParents($role) as $roleParentId => $roleParent) {
-            $dfs['stack'][] = $roleParent;
-        }
-
-        return null;
-    }
-
-    /**
-     * Performs a depth-first search of the Role DAG, starting at $role, in order to find a rule
-     * allowing/denying $role access to a $privilege upon $resource
-     *
-     * This method returns true if a rule is found and allows access. If a rule exists and denies access,
-     * then this method returns false. If no applicable rule is found, then this method returns null.
-     *
-     * @param  Zend_Acl_Role_Interface     $role
-     * @param  Zend_Acl_Resource_Interface $resource
-     * @param  string                      $privilege
-     * @return boolean|null
-     * @throws Zend_Acl_Exception
-     */
-    protected function _roleDFSOnePrivilege(Zend_Acl_Role_Interface $role, Zend_Acl_Resource_Interface $resource = null,
-                                            $privilege = null)
-    {
-        if (null === $privilege) {
-            /**
-             * @see Zend_Acl_Exception
-             */
-            require_once 'Zend/Acl/Exception.php';
-            throw new Zend_Acl_Exception('$privilege parameter may not be null');
-        }
-
-        $dfs = array(
-            'visited' => array(),
-            'stack'   => array()
-            );
-
-        if (null !== ($result = $this->_roleDFSVisitOnePrivilege($role, $resource, $privilege, $dfs))) {
-            return $result;
-        }
-
-        while (null !== ($role = array_pop($dfs['stack']))) {
-            if (!isset($dfs['visited'][$role->getRoleId()])) {
-                if (null !== ($result = $this->_roleDFSVisitOnePrivilege($role, $resource, $privilege, $dfs))) {
-                    return $result;
-                }
-            }
-        }
-
-        return null;
-    }
-
-    /**
-     * Visits an $role in order to look for a rule allowing/denying $role access to a $privilege upon $resource
-     *
-     * This method returns true if a rule is found and allows access. If a rule exists and denies access,
-     * then this method returns false. If no applicable rule is found, then this method returns null.
-     *
-     * This method is used by the internal depth-first search algorithm and may modify the DFS data structure.
-     *
-     * @param  Zend_Acl_Role_Interface     $role
-     * @param  Zend_Acl_Resource_Interface $resource
-     * @param  string                      $privilege
-     * @param  array                       $dfs
-     * @return boolean|null
-     * @throws Zend_Acl_Exception
-     */
-    protected function _roleDFSVisitOnePrivilege(Zend_Acl_Role_Interface $role, Zend_Acl_Resource_Interface $resource = null,
-                                                $privilege = null, &$dfs = null)
-    {
-        if (null === $privilege) {
-            /**
-             * @see Zend_Acl_Exception
-             */
-            require_once 'Zend/Acl/Exception.php';
-            throw new Zend_Acl_Exception('$privilege parameter may not be null');
-        }
-
-        if (null === $dfs) {
-            /**
-             * @see Zend_Acl_Exception
-             */
-            require_once 'Zend/Acl/Exception.php';
-            throw new Zend_Acl_Exception('$dfs parameter may not be null');
-        }
-
-        if (null !== ($ruleTypeOnePrivilege = $this->_getRuleType($resource, $role, $privilege))) {
-            return self::TYPE_ALLOW === $ruleTypeOnePrivilege;
-        } else if (null !== ($ruleTypeAllPrivileges = $this->_getRuleType($resource, $role, null))) {
-            return self::TYPE_ALLOW === $ruleTypeAllPrivileges;
-        }
-
-        $dfs['visited'][$role->getRoleId()] = true;
-        foreach ($this->_getRoleRegistry()->getParents($role) as $roleParentId => $roleParent) {
-            $dfs['stack'][] = $roleParent;
-        }
-
-        return null;
-    }
-
-    /**
-     * Returns the rule type associated with the specified Resource, Role, and privilege
-     * combination.
-     *
-     * If a rule does not exist or its attached assertion fails, which means that
-     * the rule is not applicable, then this method returns null. Otherwise, the
-     * rule type applies and is returned as either TYPE_ALLOW or TYPE_DENY.
-     *
-     * If $resource or $role is null, then this means that the rule must apply to
-     * all Resources or Roles, respectively.
-     *
-     * If $privilege is null, then the rule must apply to all privileges.
-     *
-     * If all three parameters are null, then the default ACL rule type is returned,
-     * based on whether its assertion method passes.
-     *
-     * @param  Zend_Acl_Resource_Interface $resource
-     * @param  Zend_Acl_Role_Interface     $role
-     * @param  string                      $privilege
-     * @return string|null
-     */
-    protected function _getRuleType(Zend_Acl_Resource_Interface $resource = null, Zend_Acl_Role_Interface $role = null,
-                                    $privilege = null)
-    {
-        // get the rules for the $resource and $role
-        if (null === ($rules = $this->_getRules($resource, $role))) {
-            return null;
-        }
-
-        // follow $privilege
-        if (null === $privilege) {
-            if (isset($rules['allPrivileges'])) {
-                $rule = $rules['allPrivileges'];
-            } else {
-                return null;
-            }
-        } else if (!isset($rules['byPrivilegeId'][$privilege])) {
-            return null;
-        } else {
-            $rule = $rules['byPrivilegeId'][$privilege];
-        }
-
-        // check assertion if necessary
-        if (null === $rule['assert'] || $rule['assert']->assert($this, $role, $resource, $privilege)) {
-            return $rule['type'];
-        } else if (null !== $resource || null !== $role || null !== $privilege) {
-            return null;
-        } else if (self::TYPE_ALLOW === $rule['type']) {
-            return self::TYPE_DENY;
-        } else {
-            return self::TYPE_ALLOW;
-        }
-    }
-
-    /**
-     * Returns the rules associated with a Resource and a Role, or null if no such rules exist
-     *
-     * If either $resource or $role is null, this means that the rules returned are for all Resources or all Roles,
-     * respectively. Both can be null to return the default rule set for all Resources and all Roles.
-     *
-     * If the $create parameter is true, then a rule set is first created and then returned to the caller.
-     *
-     * @param  Zend_Acl_Resource_Interface $resource
-     * @param  Zend_Acl_Role_Interface     $role
-     * @param  boolean                     $create
-     * @return array|null
-     */
-    protected function &_getRules(Zend_Acl_Resource_Interface $resource = null, Zend_Acl_Role_Interface $role = null,
-                                  $create = false)
-    {
-        // create a reference to null
-        $null = null;
-        $nullRef =& $null;
-
-        // follow $resource
-        do {
-            if (null === $resource) {
-                $visitor =& $this->_rules['allResources'];
-                break;
-            }
-            $resourceId = $resource->getResourceId();
-            if (!isset($this->_rules['byResourceId'][$resourceId])) {
-                if (!$create) {
-                    return $nullRef;
-                }
-                $this->_rules['byResourceId'][$resourceId] = array();
-            }
-            $visitor =& $this->_rules['byResourceId'][$resourceId];
-        } while (false);
-
-
-        // follow $role
-        if (null === $role) {
-            if (!isset($visitor['allRoles'])) {
-                if (!$create) {
-                    return $nullRef;
-                }
-                $visitor['allRoles']['byPrivilegeId'] = array();
-            }
-            return $visitor['allRoles'];
-        }
-        $roleId = $role->getRoleId();
-        if (!isset($visitor['byRoleId'][$roleId])) {
-            if (!$create) {
-                return $nullRef;
-            }
-            $visitor['byRoleId'][$roleId]['byPrivilegeId'] = array();
-        }
-        return $visitor['byRoleId'][$roleId];
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+feF6Drq=

@@ -1,180 +1,47 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Gapps
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * @see Zend_Gdata_Extension
- */
-require_once 'Zend/Gdata/Extension.php';
-
-/**
- * @see Zend_Gdata_Gapps
- */
-require_once 'Zend/Gdata/Gapps.php';
-
-/**
- * Represents the apps:name element used by the Apps data API. This is used
- * to represent a user's full name. This class is usually contained within
- * instances of Zend_Gdata_Gapps_UserEntry.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Gapps
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Gdata_Gapps_Extension_Name extends Zend_Gdata_Extension
-{
-
-    protected $_rootNamespace = 'apps';
-    protected $_rootElement = 'name';
-
-    /**
-     * The associated user's family name.
-     *
-     * @var string
-     */
-    protected $_familyName = null;
-
-    /**
-     * The associated user's given name.
-     *
-     * @var string
-     */
-    protected $_givenName = null;
-
-    /**
-     * Constructs a new Zend_Gdata_Gapps_Extension_Name object.
-     *
-     * @param string $familyName (optional) The familyName to be set for this
-     *          object.
-     * @param string $givenName (optional) The givenName to be set for this
-     *          object.
-     */
-    public function __construct($familyName = null, $givenName = null)
-    {
-        $this->registerAllNamespaces(Zend_Gdata_Gapps::$namespaces);
-        parent::__construct();
-        $this->_familyName = $familyName;
-        $this->_givenName = $givenName;
-    }
-
-    /**
-     * Retrieves a DOMElement which corresponds to this element and all
-     * child properties.  This is used to build an entry back into a DOM
-     * and eventually XML text for sending to the server upon updates, or
-     * for application storage/persistence.
-     *
-     * @param DOMDocument $doc The DOMDocument used to construct DOMElements
-     * @return DOMElement The DOMElement representing this element and all
-     * child properties.
-     */
-    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
-    {
-        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
-        if ($this->_familyName !== null) {
-            $element->setAttribute('familyName', $this->_familyName);
-        }
-        if ($this->_givenName !== null) {
-            $element->setAttribute('givenName', $this->_givenName);
-        }
-        return $element;
-    }
-
-    /**
-     * Given a DOMNode representing an attribute, tries to map the data into
-     * instance members.  If no mapping is defined, the name and value are
-     * stored in an array.
-     *
-     * @param DOMNode $attribute The DOMNode attribute needed to be handled
-     */
-    protected function takeAttributeFromDOM($attribute)
-    {
-        switch ($attribute->localName) {
-        case 'familyName':
-            $this->_familyName = $attribute->nodeValue;
-            break;
-        case 'givenName':
-            $this->_givenName = $attribute->nodeValue;
-            break;
-        default:
-            parent::takeAttributeFromDOM($attribute);
-        }
-    }
-
-    /**
-     * Get the value for this element's familyName attribute.
-     *
-     * @see setFamilyName
-     * @return string The requested attribute.
-     */
-    public function getFamilyName()
-    {
-        return $this->_familyName;
-    }
-
-    /**
-     * Set the value for this element's familyName attribute. This
-     * represents a user's family name.
-     *
-     * @param string $value The desired value for this attribute.
-     * @return Zend_Gdata_Gapps_Extension_Name Provides a fluent interface..
-     */
-    public function setFamilyName($value)
-    {
-        $this->_familyName = $value;
-        return $this;
-    }
-
-    /**
-     * Get the value for this element's givenName attribute.
-     *
-     * @see setGivenName
-     * @return string The requested attribute.
-     */
-    public function getGivenName()
-    {
-        return $this->_givenName;
-    }
-
-    /**
-     * Set the value for this element's givenName attribute. This
-     * represents a user's given name.
-     *
-     * @param string $value The desired value for this attribute.
-     * @return Zend_Gdata_Gapps_Extension_Name Provides a fluent interface.
-     */
-    public function setGivenName($value)
-    {
-        $this->_givenName = $value;
-        return $this;
-    }
-
-    /**
-     * Magic toString method allows using this directly via echo
-     * Works best in PHP >= 4.2.0
-     */
-    public function __toString()
-    {
-        return $this->getGivenName() . ' ' . $this->getFamilyName();
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+LtwAuzfAs4qX89E1lm88rbKjijeaXiQaAro55m==

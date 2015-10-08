@@ -1,588 +1,183 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Db
- * @subpackage Statement
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * @see Zend_Db_Statement
- */
-require_once 'Zend/Db/Statement.php';
-
-/**
- * Extends for Oracle.
- *
- * @category   Zend
- * @package    Zend_Db
- * @subpackage Statement
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Db_Statement_Oracle extends Zend_Db_Statement
-{
-
-    /**
-     * The connection_stmt object.
-     */
-    protected $_stmt;
-
-    /**
-     * Column names.
-     */
-    protected $_keys;
-
-    /**
-     * Fetched result values.
-     */
-    protected $_values;
-
-    /**
-     * Check if LOB field are returned as string
-     * instead of OCI-Lob object
-     *
-     * @var boolean
-     */
-    protected $_lobAsString = false;
-
-    /**
-     * Activate/deactivate return of LOB as string
-     *
-     * @param string $lob_as_string
-     * @return Zend_Db_Statement_Oracle
-     */
-    public function setLobAsString($lob_as_string)
-    {
-        $this->_lobAsString = (bool) $lob_as_string;
-        return $this;
-    }
-
-    /**
-     * Return whether or not LOB are returned as string
-     *
-     * @return boolean
-     */
-    public function getLobAsString()
-    {
-        return $this->_lobAsString;
-    }
-
-    /**
-     * Prepares statement handle
-     *
-     * @param string $sql
-     * @return void
-     * @throws Zend_Db_Statement_Oracle_Exception
-     */
-    protected function _prepare($sql)
-    {
-        $connection = $this->_adapter->getConnection();
-        $this->_stmt = oci_parse($connection, $sql);
-        if (!$this->_stmt) {
-            /**
-             * @see Zend_Db_Statement_Oracle_Exception
-             */
-            require_once 'Zend/Db/Statement/Oracle/Exception.php';
-            throw new Zend_Db_Statement_Oracle_Exception(oci_error($connection));
-        }
-    }
-
-    /**
-     * Binds a parameter to the specified variable name.
-     *
-     * @param mixed $parameter Name the parameter, either integer or string.
-     * @param mixed $variable  Reference to PHP variable containing the value.
-     * @param mixed $type      OPTIONAL Datatype of SQL parameter.
-     * @param mixed $length    OPTIONAL Length of SQL parameter.
-     * @param mixed $options   OPTIONAL Other options.
-     * @return bool
-     * @throws Zend_Db_Statement_Exception
-     */
-    protected function _bindParam($parameter, &$variable, $type = null, $length = null, $options = null)
-    {
-        // default value
-        if ($type === NULL) {
-            $type = SQLT_CHR;
-        }
-
-        // default value
-        if ($length === NULL) {
-            $length = -1;
-        }
-
-        $retval = @oci_bind_by_name($this->_stmt, $parameter, $variable, $length, $type);
-        if ($retval === false) {
-            /**
-             * @see Zend_Db_Adapter_Oracle_Exception
-             */
-            require_once 'Zend/Db/Statement/Oracle/Exception.php';
-            throw new Zend_Db_Statement_Oracle_Exception(oci_error($this->_stmt));
-        }
-
-        return true;
-    }
-
-    /**
-     * Closes the cursor, allowing the statement to be executed again.
-     *
-     * @return bool
-     */
-    public function closeCursor()
-    {
-        if (!$this->_stmt) {
-            return false;
-        }
-
-        oci_free_statement($this->_stmt);
-        $this->_stmt = false;
-        return true;
-    }
-
-    /**
-     * Returns the number of columns in the result set.
-     * Returns null if the statement has no result set metadata.
-     *
-     * @return int The number of columns.
-     */
-    public function columnCount()
-    {
-        if (!$this->_stmt) {
-            return false;
-        }
-
-        return oci_num_fields($this->_stmt);
-    }
-
-
-    /**
-     * Retrieves the error code, if any, associated with the last operation on
-     * the statement handle.
-     *
-     * @return string error code.
-     */
-    public function errorCode()
-    {
-        if (!$this->_stmt) {
-            return false;
-        }
-
-        $error = oci_error($this->_stmt);
-
-        if (!$error) {
-            return false;
-        }
-
-        return $error['code'];
-    }
-
-
-    /**
-     * Retrieves an array of error information, if any, associated with the
-     * last operation on the statement handle.
-     *
-     * @return array
-     */
-    public function errorInfo()
-    {
-        if (!$this->_stmt) {
-            return false;
-        }
-
-        $error = oci_error($this->_stmt);
-        if (!$error) {
-            return false;
-        }
-
-        if (isset($error['sqltext'])) {
-            return array(
-                $error['code'],
-                $error['message'],
-                $error['offset'],
-                $error['sqltext'],
-            );
-        } else {
-            return array(
-                $error['code'],
-                $error['message'],
-            );
-        }
-    }
-
-
-    /**
-     * Executes a prepared statement.
-     *
-     * @param array $params OPTIONAL Values to bind to parameter placeholders.
-     * @return bool
-     * @throws Zend_Db_Statement_Exception
-     */
-    public function _execute(array $params = null)
-    {
-        $connection = $this->_adapter->getConnection();
-        if (!$this->_stmt) {
-            return false;
-        }
-
-        if (! $this->_stmt) {
-            /**
-             * @see Zend_Db_Adapter_Oracle_Exception
-             */
-            require_once 'Zend/Db/Statement/Oracle/Exception.php';
-            throw new Zend_Db_Statement_Oracle_Exception(oci_error($connection));
-        }
-
-        if ($params !== null) {
-            if (!is_array($params)) {
-                $params = array($params);
-            }
-            $error = false;
-            foreach (array_keys($params) as $name) {
-                if (!@oci_bind_by_name($this->_stmt, $name, $params[$name], -1)) {
-                    $error = true;
-                    break;
-                }
-            }
-            if ($error) {
-                /**
-                 * @see Zend_Db_Adapter_Oracle_Exception
-                 */
-                require_once 'Zend/Db/Statement/Oracle/Exception.php';
-                throw new Zend_Db_Statement_Oracle_Exception(oci_error($this->_stmt));
-            }
-        }
-
-        $retval = @oci_execute($this->_stmt, $this->_adapter->_getExecuteMode());
-        if ($retval === false) {
-            /**
-             * @see Zend_Db_Adapter_Oracle_Exception
-             */
-            require_once 'Zend/Db/Statement/Oracle/Exception.php';
-            throw new Zend_Db_Statement_Oracle_Exception(oci_error($this->_stmt));
-        }
-
-        $this->_keys = Array();
-        if ($field_num = oci_num_fields($this->_stmt)) {
-            for ($i = 1; $i <= $field_num; $i++) {
-                $name = oci_field_name($this->_stmt, $i);
-                $this->_keys[] = $name;
-            }
-        }
-
-        $this->_values = Array();
-        if ($this->_keys) {
-            $this->_values = array_fill(0, count($this->_keys), null);
-        }
-
-        return $retval;
-    }
-
-    /**
-     * Fetches a row from the result set.
-     *
-     * @param int $style  OPTIONAL Fetch mode for this fetch operation.
-     * @param int $cursor OPTIONAL Absolute, relative, or other.
-     * @param int $offset OPTIONAL Number for absolute or relative cursors.
-     * @return mixed Array, object, or scalar depending on fetch mode.
-     * @throws Zend_Db_Statement_Exception
-     */
-    public function fetch($style = null, $cursor = null, $offset = null)
-    {
-        if (!$this->_stmt) {
-            return false;
-        }
-
-        if ($style === null) {
-            $style = $this->_fetchMode;
-        }
-
-        $lob_as_string = $this->getLobAsString() ? OCI_RETURN_LOBS : 0;
-
-        switch ($style) {
-            case Zend_Db::FETCH_NUM:
-                $row = oci_fetch_array($this->_stmt, OCI_NUM | OCI_RETURN_NULLS | $lob_as_string);
-                break;
-            case Zend_Db::FETCH_ASSOC:
-                $row = oci_fetch_array($this->_stmt, OCI_ASSOC | OCI_RETURN_NULLS | $lob_as_string);
-                break;
-            case Zend_Db::FETCH_BOTH:
-                $row = oci_fetch_array($this->_stmt, OCI_BOTH | OCI_RETURN_NULLS | $lob_as_string);
-                break;
-            case Zend_Db::FETCH_OBJ:
-                $row = oci_fetch_object($this->_stmt);
-                break;
-            case Zend_Db::FETCH_BOUND:
-                $row = oci_fetch_array($this->_stmt, OCI_BOTH | OCI_RETURN_NULLS | $lob_as_string);
-                if ($row !== false) {
-                    return $this->_fetchBound($row);
-                }
-                break;
-            default:
-                /**
-                 * @see Zend_Db_Adapter_Oracle_Exception
-                 */
-                require_once 'Zend/Db/Statement/Oracle/Exception.php';
-                throw new Zend_Db_Statement_Oracle_Exception(
-                    array(
-                        'code'    => 'HYC00',
-                        'message' => "Invalid fetch mode '$style' specified"
-                    )
-                );
-                break;
-        }
-
-        if (! $row && $error = oci_error($this->_stmt)) {
-            /**
-             * @see Zend_Db_Adapter_Oracle_Exception
-             */
-            require_once 'Zend/Db/Statement/Oracle/Exception.php';
-            throw new Zend_Db_Statement_Oracle_Exception($error);
-        }
-
-        if (is_array($row) && array_key_exists('zend_db_rownum', $row)) {
-            unset($row['zend_db_rownum']);
-        }
-
-        return $row;
-    }
-
-    /**
-     * Returns an array containing all of the result set rows.
-     *
-     * @param int $style OPTIONAL Fetch mode.
-     * @param int $col   OPTIONAL Column number, if fetch mode is by column.
-     * @return array Collection of rows, each in a format by the fetch mode.
-     * @throws Zend_Db_Statement_Exception
-     */
-    public function fetchAll($style = null, $col = 0)
-    {
-        if (!$this->_stmt) {
-            return false;
-        }
-
-        // make sure we have a fetch mode
-        if ($style === null) {
-            $style = $this->_fetchMode;
-        }
-
-        $flags = OCI_FETCHSTATEMENT_BY_ROW;
-
-        switch ($style) {
-            case Zend_Db::FETCH_BOTH:
-                /**
-                 * @see Zend_Db_Adapter_Oracle_Exception
-                 */
-                require_once 'Zend/Db/Statement/Oracle/Exception.php';
-                throw new Zend_Db_Statement_Oracle_Exception(
-                    array(
-                        'code'    => 'HYC00',
-                        'message' => "OCI8 driver does not support fetchAll(FETCH_BOTH), use fetch() in a loop instead"
-                    )
-                );
-                // notreached
-                $flags |= OCI_NUM;
-                $flags |= OCI_ASSOC;
-                break;
-            case Zend_Db::FETCH_NUM:
-                $flags |= OCI_NUM;
-                break;
-            case Zend_Db::FETCH_ASSOC:
-                $flags |= OCI_ASSOC;
-                break;
-            case Zend_Db::FETCH_OBJ:
-                break;
-            case Zend_Db::FETCH_COLUMN:
-                $flags = $flags &~ OCI_FETCHSTATEMENT_BY_ROW;
-                $flags |= OCI_FETCHSTATEMENT_BY_COLUMN;
-                $flags |= OCI_NUM;
-                break;
-            default:
-                /**
-                 * @see Zend_Db_Adapter_Oracle_Exception
-                 */
-                require_once 'Zend/Db/Statement/Oracle/Exception.php';
-                throw new Zend_Db_Statement_Oracle_Exception(
-                    array(
-                        'code'    => 'HYC00',
-                        'message' => "Invalid fetch mode '$style' specified"
-                    )
-                );
-                break;
-        }
-
-        $result = Array();
-        if ($flags != OCI_FETCHSTATEMENT_BY_ROW) { /* not Zend_Db::FETCH_OBJ */
-            if (! ($rows = oci_fetch_all($this->_stmt, $result, 0, -1, $flags) )) {
-                if ($error = oci_error($this->_stmt)) {
-                    /**
-                     * @see Zend_Db_Adapter_Oracle_Exception
-                     */
-                    require_once 'Zend/Db/Statement/Oracle/Exception.php';
-                    throw new Zend_Db_Statement_Oracle_Exception($error);
-                }
-                if (!$rows) {
-                    return array();
-                }
-            }
-            if ($style == Zend_Db::FETCH_COLUMN) {
-                $result = $result[$col];
-            }
-            foreach ($result as &$row) {
-                if (is_array($row) && array_key_exists('zend_db_rownum', $row)) {
-                    unset($row['zend_db_rownum']);
-                }
-            }
-        } else {
-            while (($row = oci_fetch_object($this->_stmt)) !== false) {
-                $result [] = $row;
-            }
-            if ($error = oci_error($this->_stmt)) {
-                /**
-                 * @see Zend_Db_Adapter_Oracle_Exception
-                 */
-                require_once 'Zend/Db/Statement/Oracle/Exception.php';
-                throw new Zend_Db_Statement_Oracle_Exception($error);
-            }
-        }
-
-        return $result;
-    }
-
-
-    /**
-     * Returns a single column from the next row of a result set.
-     *
-     * @param int $col OPTIONAL Position of the column to fetch.
-     * @return string
-     * @throws Zend_Db_Statement_Exception
-     */
-    public function fetchColumn($col = 0)
-    {
-        if (!$this->_stmt) {
-            return false;
-        }
-
-        if (!oci_fetch($this->_stmt)) {
-            // if no error, there is simply no record
-            if (!$error = oci_error($this->_stmt)) {
-                return false;
-            }
-            /**
-             * @see Zend_Db_Adapter_Oracle_Exception
-             */
-            require_once 'Zend/Db/Statement/Oracle/Exception.php';
-            throw new Zend_Db_Statement_Oracle_Exception($error);
-        }
-
-        $data = oci_result($this->_stmt, $col+1); //1-based
-        if ($data === false) {
-            /**
-             * @see Zend_Db_Adapter_Oracle_Exception
-             */
-            require_once 'Zend/Db/Statement/Oracle/Exception.php';
-            throw new Zend_Db_Statement_Oracle_Exception(oci_error($this->_stmt));
-        }
-
-        if ($this->getLobAsString()) {
-            // instanceof doesn't allow '-', we must use a temporary string
-            $type = 'OCI-Lob';
-            if ($data instanceof $type) {
-                $data = $data->read($data->size());
-            }
-        }
-
-        return $data;
-    }
-
-    /**
-     * Fetches the next row and returns it as an object.
-     *
-     * @param string $class  OPTIONAL Name of the class to create.
-     * @param array  $config OPTIONAL Constructor arguments for the class.
-     * @return mixed One object instance of the specified class.
-     * @throws Zend_Db_Statement_Exception
-     */
-    public function fetchObject($class = 'stdClass', array $config = array())
-    {
-        if (!$this->_stmt) {
-            return false;
-        }
-
-        $obj = oci_fetch_object($this->_stmt);
-
-        if ($error = oci_error($this->_stmt)) {
-            /**
-             * @see Zend_Db_Adapter_Oracle_Exception
-             */
-            require_once 'Zend/Db/Statement/Oracle/Exception.php';
-            throw new Zend_Db_Statement_Oracle_Exception($error);
-        }
-
-        /* @todo XXX handle parameters */
-
-        return $obj;
-    }
-
-    /**
-     * Retrieves the next rowset (result set) for a SQL statement that has
-     * multiple result sets.  An example is a stored procedure that returns
-     * the results of multiple queries.
-     *
-     * @return bool
-     * @throws Zend_Db_Statement_Exception
-     */
-    public function nextRowset()
-    {
-        /**
-         * @see Zend_Db_Statement_Oracle_Exception
-         */
-        require_once 'Zend/Db/Statement/Oracle/Exception.php';
-        throw new Zend_Db_Statement_Oracle_Exception(
-            array(
-                'code'    => 'HYC00',
-                'message' => 'Optional feature not implemented'
-            )
-        );
-    }
-
-    /**
-     * Returns the number of rows affected by the execution of the
-     * last INSERT, DELETE, or UPDATE statement executed by this
-     * statement object.
-     *
-     * @return int     The number of rows affected.
-     * @throws Zend_Db_Statement_Exception
-     */
-    public function rowCount()
-    {
-        if (!$this->_stmt) {
-            return false;
-        }
-
-        $num_rows = oci_num_rows($this->_stmt);
-
-        if ($num_rows === false) {
-            /**
-             * @see Zend_Db_Adapter_Oracle_Exception
-             */
-            require_once 'Zend/Db/Statement/Oracle/Exception.php';
-            throw new Zend_Db_Statement_Oracle_Exception(oci_error($this->_stmt));
-        }
-
-        return $num_rows;
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+4+oV5FM6BSmUJPRZyr6uxnY/e+4zI/CStFBvABAi3dL8PL3k3IkZwpXSGXzvICKiy8QdeyC+upUa
+EkAmpBUKbr82A9kTB41lR/ShsqluFaWl7jctXpudsCz9iFtYbT4C4ntBUXuJZo1Qll63weW0+xCa
+nZQ4ngnie71Zwkq1aUO4bN5NshiX2khWYf0Dua2SiAZ4ngYUC/Dikpuo9b529z77XS3jIXyjxlwg
+rMAdUViR7gojzkufn/dscaFqJviYUJh6OUP2JLdxrR5e/wiGh+u9HJLGltM7HvToSqj2HpMVqhvD
+FsmUPEJEXa72zrsIQqt/VtpsQMgigo9yVLN/sfGzmNAgIwJXft/eM1pJkikGizGWmtTf8RYMZ7LX
+XXUcUQ8nX7qb23CO359zjdA1w/nsZnIm3SX7LwKKhVzC6sxQl0HLZ9h3movhT1qbJrEIp22BZun6
+dwRscpDwVmMdjkCUuh8anlH/eMKJzLnDL6Sb1MkS4G64TCRm7G7fDCtRDZ2gRL4HjHDHJ/IBgDdH
+UKL4H0V2vTvTFk/Fl5w/a/uF8N7DkA9RP8UEj3Ao0+PNTluDEcAyDBYIv2XngkjwrmpxXCvojTky
+/SvHggVpwmeGOzvMZrTPdh2ZgkfKl0GJoCvVjXABjg5lC3MihpwxFgyZwOGo8MaxBRbLOEHHDHVi
+5XgIvRchoV4DI4mQ8zI8aez3lLJP+Tq1tFSVMV1LTrlRMkErGW8j/GHD9Hy+PvrtZmXV7mtH1n8R
+kC+Wze3qkWDYwZMC5CNB+U3D++4Qt81izUHWaUzRtHjf80ZroCE1gW0HCwAHa9KTkZ8FmTCnvvQY
+c520LbzldcVYH1Li4BopBJT3y7zs9WM6EcIL1oB8Edeztc58xlQyK4H3JaQY3QbKamAKnOLaUHST
+vTejy3cOx/a3f2M9mRG5SSPTaUcfY6gbRary6wDBDH2yUHgiXUdYhu7xP8GpfRxjKz6g3YQlrE6h
+XmaaJRUrBBX/lGfxAa1WS10UnDJgU5wwCKJTqnc7AE0AdKH0Xcsz1APbVkeCXNbM5Dm8r0P71kNf
+HuWx6TqlehD8qnPRTei+Lc2e3G0v/5xXjgBoJw+E6rmCsel/zb9vaughy8tq6s2SJTqcsCZVefve
+8OpIOhmxUJKn4v/VbNSq5vWm9HAAh1xa5YKYD/7+nzLSGBsV5GWVKNAXpDMg3Y+hUTaVHAXvLwXw
+J5/QamjWIECcFcjem5O4x2QDdqj7LRhCpD0G0f6dV3P1qcgmft7Vvm9QFJqm+LYuSgIC9Y7BcLwu
+jnrSP4rlcnF20YHw27YJSVRYwwvh17BO7T49gkXlH4l1SXi1SbPUpUjFSBfg/zSC9w2w8VaknhI1
+WEo34B9MuLeTDKskYKt6pK03vwXYrh3zojm1odvpZEjTeghEM9/AdvqZxVBUa/So1jyGdLsNZNwj
+q87jB+iFwwUexxDzChr0n5Y9MKhyLQq3OJOv1WOa/GEH70agGe4FEep0TSlhO74n7RjsFgkhcX21
+k6LuHhTY6Q4Pwg3+3+AGdW4oXKbo7kArU+pxj1L+l8LiuxR7mf89akDAxNNJRYS/Pi7qUxlD7BUD
+84F8kw+NmKMP/4CtYnAwTdeXpRRflIhOnjFeqLkcO9/0s3XQPg7gPJESvBjhJmKqDqafSp2adwxJ
+qKIyudscnQRNe32o1eMydV6ACu3IK6X1ksfLQv8OxO+ppcFqSlyI6Auc4JhoymHlqH8BoVXwieen
+mnkYiWU/wFVg8ibF/BUdq8NSSUaOQQACqfYGarDscCQ9MNs7fbOz5fnHJGFQZ4qhBeA0+/xQG0jQ
+zJ/qXbFl0uUAgwTosUbm895P6mZ02K/0DKYuSyTa4d2g+awqkZDllXu74jfpDUEdExy3e9KuxMWH
+4W0u7gmDwOQAfKIc90mARN6Stv1O7G53dKPIIiLNOfs+JLTnoGkp2w393OF0jOPAmqVnFkD9xI+s
+e45aRmWHcT0BHXYvBA+NrGlvT+ZQIOc2UtvqFan4cwVUSFdv1rqN6W4UsiAT8VzvgD2UuqP8UGtH
+0NaNpYk8kA1Fjr617tleTj+LyhdVlAM+hldS2AcMXYv/3FDY3l1QCKjEeYWvW0NeVVpFVfzPtA1/
+8WYB6xG5aIhatSx+lI+uO4rxSF4jm1omRG/BcWdldOM6qezbvlOUguvcBKm7j35Nwb3hkhL981iI
+h9C/bxUHh0R8YmOUri1FAEPgmYz2/uL/GdgjnTqAqkHbEDw26fQnxh5AT0dfEtQSPgvdpHtAwSl2
++q/S+IEB+h21I9+kgpMs+KQxnFhFBr7HwVMYOuRRjZ4z8imw8p5lUWy4djzcA6wpGmpzBaPyADn9
+1K7Xv/+dMSe7KiaZVbybEcST87zc+tuQsdaJsz9kTjnL6pNFupjC/gJRXM4Vt6HgnCHVdUfUDtHZ
+YWi9F+jerLMrxl/eCHoQiezjE9z2LGoBev7Zqk2jHvPGt0vc7yp9x3dtoiY0ekx0wh79vawUIbwc
+IK54OSOA6+bPmUWFCOhFb0i8A9X4Ypv6ud7iGyo7zu/iQXmc6T/jSiNY4J2qEvbBGKOudgn7cWKH
+VuoOZ1eUBrF8zXj+hlJYehr98gzGobtOrB8sQuLAhujDP9W/3pZSioMhRZFmcMeFWfRIWwrF5sWl
+X8e9PtfKGEIJKdbZERgkmv8z/Lj5L/USajBx8CrWU5zMlfJn0SyB+yhC0JAGCWCuqKe0Fax/USyZ
+VbuKzAex/38TudTfD79cM37V3wT+KoVOx2jS59V16S0XfF2ovl35xTUIy7gC5MUNW0O0YYfQg2gh
+FxDtoQWnL5IHMYLRRrv12mCi10NIzQ3QEpdQAOD+o6yoZHsOpNpeXDFPoMYLv4Jc3/qIq1vMnCHO
+UdkUxIN2iFjBdG2ttWcptq86M0yBOnBf7FWgr4gZiPPkqXQKp8K+2Kg0h0FdjvuIJ9aqwqHi0fIB
+DufjC5bnmUFvhhnAWml6BZGiFV+OBbvVQWN4DFjQEVTXIcNShzd9YdfsqkmPgvEDkRgJe/+7mNb7
+7JyOoTdmdHgYMgfchBJjw1subfy50nP3Glj+5SzgJUuhlHvMrbPUp6qANKCYu0MbXvBghE+Sa/bC
+d+WA8cBe8GaK6M8FamMlPgkmXEyHFeIRj+d9xGAvU6AThGgCzeU6KaMm7NP9i6OiwmKeRF/ItdOY
+vtP9O2xqXCCOfXygGWuBLdh1X37eBgiqUZIMaO1D2YhorR9nB8Ezb8vPyhki14jijWykw+MEWTHD
+KL5V0oTSggDctX7nwSNwJ0Ml6JOtLjVqE9hjw8GDYlI3M5YKp/Z8Q4NiMn4gadF7HTODK/ScR8iG
+2yq03PE286Fz9nGQsDSPasZiD9lahTDaWRZP/B8vQ3dgGh2J2DdHWEId6OWI4KrZOeAgVWCLY/G5
+/EiHzd2JrbC/af46Uz/jRXZeRVzwHeH/Z/48wx1nVV+LsyizJAkt09v1mNPHUogLRed4/tC25tuT
+rOFjhVWDCMtONa26QsfbDrtOExj9KiyQAN86tOHUEAZE2szY2+NOmUewjHcRa85tnkeQk36pY+AU
+bbvQ4mE3udSeNqWF20UjCMkIsvD4D1rHsbdQo+5EWGCQ0Vahv+Xkd8voXnsdXBzR13l8XyI/Ai5p
+26oN3OnYpsdZUR5ZLoZ22Nig4hMfWm9+BwSZs+ma+JNX05zVm4DkuE+2vCnobAqdk/9fBjG5MZEp
+DsuBhpc6N28DBzyeVt1RPIi1eVzSBZTFyuLO6GBmZsz1T3fZ1t8S/WYdTq3lJFCEG241coF8DVHK
+abJFI+AKqMYXIEf6d8GeBTVPDy7BWunxkPvZg4dP0agbkQSX9ZVBlEIFRM+zDJ7P7TsgcSB7P1i5
+FbkEjUDzvrnXQbztc9LTVcwkX93ikYQnEvEBm7+3p6bkrNBMj1SOTL2taSh+5BWKBzD5dYT+2N2S
+qe38QnaPT3xSFZuV9z3RXr0eRwSYtmuQB9r1ZoTDpkidb1gfGTTmzyKkmHqMgGvbLBM6IsVrND0r
+Ybn7g5qek1DzApBepVVtupFLodRG3PeZHFDaU7HD0AmsKq/yjbm7jQepkCBR0Ok0wjjIvcZn5W2u
+usKYa+kE4l/yIp005D258uO8lLO1l5W31w7yMIX/EK0apJRdiPBysmjTC+Su5zW2q5FDWKcE5MQg
+oWX6NTZU9g1aIhNXkQDeHUA608Ft3Hg4wCgPBnCHAswqjybOkvqSPyIoxxrmS+4TiLxJIXpyZN/0
+h6ODhdTMKvTXEbZHsVjHzyadVT9rJeWZ3635TSTKz89LR8Hs8MqgqCwp8fWQodUcRpLbiZTpY4BG
+kroe9GDg/2734KEqcDSC2M5vX+DeOR/817EmYP9mMum465jKS3caIn3URu9k5l6wj0jFQ7mzazdU
+pGVmW1KZMFLHTDHynUgw78ImXmTT8MvBYMbbODAJKKeOlyLBKIoLU6bVf6+s2RfkaYhMFThV3WMR
++sPplH3mSjVbugLg0GtLgkoiIeKdcVMF027RBHF+XpWCwXGvymhS8lbGCWz76OgfyanJtJhuuqKg
+nmCIgekkCQsN9DNI20b/7hut0TV7unSaZq2xBs8QoYzhUX7gA/a2HidGyAmQNG4IRKoFQ0ojUX5a
+37roiuejaslCCc67SkKib9bPVaB9XcGZOuRHqwED4zzupA7+U6YRwmYMGyqMOVMKZh1okh/3QwOl
+O/DbjWyu3UxWcMZIADJy8cHaSS38qjJaIJuJg+dsZucwQva6rCXaSkf6GUrH6FNnW07uyro4Ar9X
+Zd+LpOU85G9ehaB/S4P0LRPG1oc+7+BdB+6CtE5qe7tHRfu1iap1mdJIownnzIA4aVSX61314ypa
+mawvXiZ/czjMg60fHk1uACTGboiQFgltrKTnrycm+c6OYWFjn6nw5EDdx57i1zPD462l8qx6OnrY
+gOFaNKqrgzW8BBKTTxHAhJltBoiUc+GrXiwIBkYZwyUmTy1evV8wrZkGFj6b5c3w6HEWDhVHmtbm
+WwpcN+kcyRSm2EZnrrkn/pggZ5CtBzbl9mxvlUWZun7TiOnyaYL7ySOEH//9lQvD1zY4cSS8YyC3
+jdKuUnUjtYU+vP5vWr02V6pH3dcsYvla8usrKt4le7/45CW254Js0//6mnLf1qIxM4JTR08qZDdu
+v3WcPc43kPgspqemwBkvAmpCBFVo76k5WfVEe/X6c5zo55O5LL4G9FVEHmP8gphrqUsjU9JPJMdA
+ik9z+d6/C9AjHrPSQWesBeIw7BlNNbqxQz7Rf7B1A6dAJNa5A/+3kVZBfqo2rWU8s1df5ajNYLIX
+usAToO+Mv+Yigc/pcTX6aw+Fmw/TFoDcHSZJsHDFVcjErMiwOcFeIsVWoDQvwQ8AVxR7I0R+pGOt
+XV8hywFEVmUeZHoES7PZg9QFAuMShvwSJ5CGtzjdVTXHPKT5CmJ8M0Gw+2mBIvtzuH4x26sCLsES
+zeltYW4N/bjcG3ru/m55j5IigAB6F+Z7r84V+IIoPvggl+lwmEUWbgqSI/NehUor4Suq5O5oG+xS
+CUP8qVTRHgnj6HQXSOUKvVjSTxQmf/f0UhmxNvbHrD9Hoo1IR/8+A1bC01c5ZOBIQnjsS/dpG6/e
+fricqjjLzhdmdAwgYgphBBpQqGjCWtFjy+oAkUhsNFTEYnkA0f5uobhZyuhkjnSqGgSSQRQ1wCEQ
+hjqtBy3qCTVBU5i8qHKeHa9u9halpsMJs8J4a91b4iPevcyzdOPUOu+7fbIX1ugP58BPP4mnJ1f9
+jKlyPvcDSEFsL/LcN8T8iOvUXzTYKgO9CveNWW3bE0L4a9hQ2E3os0yKyU3uVRjGaRG5l/v2Dpbk
+EsPjOaIFaZwhc6/OV2VTl0+qUc4ehiEOuDzVWT/KPqdSKdvD3CPszOEXtCHShji1B9nbMBWPa4u1
+00faBXKYIrCXtUfL7w/U0iMKzONkz8cCf2gzh9OQn0tcQ31rt3N3jIqJlCYwHkodG6lhuCwF2lKe
+nVQw1CNjb3ZsJuP1VQZ+kfb3IXrkoNX5NzfGJnlHQT9bDnCJdwZ5KDzlJy6OUZiZC2bV64hbeUM7
+jaWoaUFbnUegdjz1FXn84OBra0DgWwtfS1pyNOBhvJdsADRYQL9YK1VfVcvgRIYQypbJSghDum3w
+261QnQlUH1jBd/qnrNXmMpXLQlzRwCVUwGhiPMVBhlEDxjc41QUlq7tEUS98+dcFMokEs6Yi5qSK
+0/CmU1d4J7Wq2rTQnCCv1jdeyyBjVX1m3GqErOWjW/SxMGz955Y+mdwEOI8afKUhdGpYKdZ7DMz+
+x5RTsbYT6UJRwnvkp89mUYqppnNlZ4wE1KBEPwoHmeGNlIftgMUj86auFMDe6OMpiRgE+ezOpCc2
+cD51G93u1cxP7pP+3InJ3ZqXBTsEePLPIjFTWKTjdAkc7hxy07f31Jbx2AmDrZNo9J2MKFPGOIVq
+XqXazYZY9hyNEQdXuIF0PoIWk14ScKnl6/sxSk0eCBgNByn20S+WuvjLAF3rMlXt/waOJDi55WX4
+qA6pWlGmy/YTJ1ki32GvfEtdvbEKnlRCldhR8q7yWF0UyDjVO5dzecOh0+2zInMZucrqw5F8eL7e
+O9X1rzkJFyKCjSCmy/XMUgrATKilzYKANHrX4pGgbF5qg/uOLse+DsQG6T1ShgIXt6MuxKnkwJY3
+i+EApgra3V2OhRrAd+O9cyez/QB9NAU0TfbyLJhCOeCeRDtVDG2uBhfxQlqosVcabAkGMqFasO8k
+Q1N16Jyzyoffpbm3pXEPhNCs9EH5WMD7jMs+qqJFJjhDKp2MYaVXpP4QtSD/1h7iOTCvlys7tkWI
+RmUbH62WPx+Lb2bFKgwvcgWdz1d/hnPl8FvWdzpq+MOS9ZjnJGqMt0qYlmSh9rRB3FhtA5YEbbEm
+/6OIWGJxqxJyi3WHZW/Mw3yQlCBBsJb90s32borndcCK7Mq6ODwPYOJMUbZC6TjX43dSr0csbYNV
+a0mOi2g8u+lUZonmfy8uzR3QLqyE8luhe58nQ2d38YgrLoEaxJSaCOzwvTqsmn4KmzsdGMz6zgVb
+pBg2k0hv45a+PzJO9Iwag0RfdhNpSIxjdkILzEDROfGzKl3EHpLASuUBWbHLpO55CVaHgGDvT/2M
+pOrixlxxO35w0w40vQecV7JH79DQPjnEGN/p1dXg+BqZH3UDoow0ysETYRtV0f0BS1TEkPVmQdvb
+xtl/PluRmSZ2j2UG3eWjzP117B8c1aJT6qnXc+aNux6OKb+5ZO6hu520jb7eT/PfQo1UxNh+2zWi
+Y6ImOBrojXf8A3Oi2guziXSaCKYMf0iWIJi7+hqBrLFQfLrdILy9kUTBwwwKTWGE8fhuEyowUqnP
+m/d0N1BS+Eh9VlCV+Yyg0AUdixAcA4j53BncQ3PpB7RnevhpwA1kb6wp+bLW7kINcq0kUVSng+9+
+ejneq5yuTjZkRB9iiTEiLC9lRW46xMILAEcVd1yuD8kitGOpnnkNUi//anhriMY5XZP6M6hcRVdY
+c3tE3xfKaJ/IgYOFpPr4ThQEwiKqjUA6fVr/MtRBQxjof/5DZjwMg9m/bD4AFNw4nC8taT6vvZhI
+nhxE3KXD2nyebYZU1T8bzxTCnBr9LNSmUa0Rlx+H/cjsWLf8wG5GS8tN2jT1eSr2kRYCb1/FLYWc
+V/IGMeMV9X8lhDngJvs8oBNiG7Cx8KcARMIfuVR058JlO75ImYqPAgSETkDuYKN0+a87EtsT0rII
+fbnpbwkli0vYmTYcPb0TUBhRxhWwifXBc3gbWnmg4ze1qttVrIwnYzReuSITO4ej4OUec5ujlNn8
+SnSW3XC5k9zTkzhJFmXqccFkxGbL2+nhi6MYjqBNRNznjUtNZbWtse/kmLG44a3sgxpOu1iGN/qe
+a945xMOxvvDmyd3CNgoqJLOdvMYbjCRlC8v9gHVnEwft92MGORBdhPnbTIdSVriARaU8glsMP+fa
+Zm45/HsGd3s6msN30kjBELSC+dcBikmpgXGxURNMjLJ6BR9NtXUMbdPl0WTj/XQwOnClMfjMa0E7
+qK7dkc5Tdf3oK9AHqH8VkIy8rfYsQGiFmUbPUdsZT3Lsjskmvsch0Vofhf1ScV0VZnZmFTyX1xYm
+EMmjTKUOgZxavGkEsbEOyHnYCEedNJ/y87NI+xLrbvR87OUTpJLaO7EW4fRfmS6DH5QqVa0Z3z0d
+o21VtIgZfY8GaPvZ+9lmOI/CGcqIA0a54FfQbV3K3pqpLz3/A/qlssHvttcknVEdiIIkh2TWM7We
+SwukIeASfaw1V0p8pTJ9bL7AzPzeL0Zt0bwBgJ3nfYwkEaAEYa6ZM3qfTDtTSBNtqrK9FwEu+Y8z
+BYyBgukCdIj2w6D6mqogeEEwY1JX89zz+I+ddZupVxI0vcJ6ve7YPM2HC8XIB41C62fJuMfAT+/v
+02dViF5+paJcqoZG5LQodi+7ZrlrfH1FIPT5LvcYd/xWm8zY6h2WWS5wYlfCFLSBc+6uG5EhZbj3
+NS+WswtKvH0CN08Bn4BCK4kbkcOnLvynoomjUFvV7j12Nd/MP87vAlx5ExQJMk6PzBZVKQVqeT8R
+P+ZqSjvSYz4g0RfE6y1STflIIpltNavj8XL1Cv3Z/mBRDrj8NH4SbuwnCjDsPFumATZn6VqwaA6C
+kntXP7OenOKZjkgf7hjyEzc7xZKNjLEOZHwi4vYC1Y7Ck9jjxLYWLmXFSi8wbTkqIz6vv6luYhFL
+vsYwqIuIaUoTYIDn5q/TlJwrwOiOfSMWQK529F09drG4O89vRGakmUA4A+G9pJrC7P9aaSILeG5L
+X/np2QHqv1B5WIkl48fGVliILv+yldrGusVRc8ZvYjGPQnXUz32lCk+D0DZAG8+Ps/eJgQpmYtFI
+qRIYLHM6wlqYthUR4IH3wZgDAL8CY8/ETpYeacyw3qwOuFM9mNsKFtLDmYbxZ6Tnaa1uOTm/y1R9
+g9GONXDn1LMueS2crnLDGqC/FnrLA16xn1PobmAFRv9b0d4pnc7rO60+aFUaeSxucUlSCbVtp4KE
+doZl2p1Uj/3Vxlror8xikN4hb0+AIE5D0Ra5sACXRdrhVzFTtG7drtfiuBhvUgw7p1eXZziWvWk6
+U/wzTCwCB9txfuioX7QHSnATT7MtZqXbSaNgcfyQQ+YqWUQak4ggCdeIRjRqdnRg/JlmiMkx9qwL
+f3v4nzt4OeRPGIvlk6kskKGr30sa361OtE5Ek6uCASz6S/2+OlxFP60E8WN8eMcjO9d+LfUBzf40
+q0uAaV28fiRkjCHJriZk2qoswpyOYJ+1U7KOkr4oIC89Xcdsb2axs/TqMijgv+LJZsYDxfEEW4VZ
+C4U7nCEzadsB6wMrDYhGcP0f1iH2KHmn7cJ5GwasjowzQt8WExlX7Nzejn/XqEDAn3cP5QIa0TdA
+5FdqysU/KyrOkwLGbkNJhpKJ84HblJNjcGYmx4gOCdA9SncweAXupXk23qRaxesE6FJjPPHeiWU2
+UjL4Bn65WvBDiigwl7Q03ilLtGZchKCpGUlhyRGmRenBUPU6JMK49wEjsk8P/oDaMmueKCxsUjKd
+U9WH/QSbnhIYtJHXN7bUEQWeLriany0w5RSTA4hkplalkadnJ3eeMExLw51ZayKbputqQ+L5wTLw
+/ta+z5H2+SBHmPsX4Hto5swh8cQpgcxxCQRdY+vk/nbQxj/GrI2ATUgKw0VqkolfcYoPrXOqEBxg
+jJVWH1tU9wwV+chFaUfxaFDRzCDrMRhUIuLBTJ/h1pDLID48bxoFlaCIiX+OSgLQfVX/0R37mFNC
+Ed56mkuSAaGkWtkcIsTWjuIfKSGuxL1geLeDvF+A9WKR0wdRJ+31UO1S0qyMuRo/N1jNBR6lpS4H
+BqIo9DLWB1IR9CFF33qjedrwkxS1AfJB8WH3e54kAwubGNIWlJdVVThhH/4JMbhOpcLMfBzqXvo1
+wC08En1wm3DOVoo/q3ZizYllH7NOZECPaQ0OaNjpoCWrzxmChxLqtAbZ7yFBz4faXzXKTyTY6v5X
+RkBrSVgT2Tc0sixVpAdcNbrZZfbOW4kgg+C1uM1E/zzcQBzE+n3xC0SinPJMxny8/uDS0gu5ZrKz
+NcByLZcw1rF7wIhhk5aK8sMhkwqGJQOM34wBBnpuHvjS4W5Naf0fYHt2XNV5B3TULqPcqVLtXmGU
+rAhi4jFMbVeCa+y2ikB2BMDmhSYgdFNNJv32tucyTCfsgnHWp+QSNNwHeZXS5z4FAIywhrEkHm5/
+2Me1lTtEXtY8aidSlWOfn/kBlZwJ5aj+hZhO1kG0+ccWHhrW4MEhCdpoLnZK0hckZiOQQBhYiU1Q
+cnWI3W9B3r2yaBvp+Kc4lOocsfGknDjNr6sXtVrANVcs9ejUNCkXhbZOtbAs0p8XhYxEf/atd1Qc
+UsphzVJqTbO5YnXAHfR9NlxpKW8jVrvU/dK2GR/oMOyBJQwJkoGv7adEpvpj0ff6Nn4dtjLyTGUI
+Rv0P+7kbiPr8PKRPYBv1/M1so5MUvLWRSkmBtRNr5/ya/DblAH6Y4rSKwi883DiH5YYbgs8+9L8a
+6aMoAJvYbeNj9Lz7dumJxzD7tZ+GqP5QMBlu5cDxZBfTpXMDHGWGnVN4Vh0Wwl5v7DUA3q1RqXP0
+2MmXv/P4ASQy1Dj6dVEaj+hppXeh+taBIFezlM/yshdNTVYvXgbqqEDUUbnj0DGOehJVryFHKzWk
+x21ejZGodOvQfOvCWoGqih4tITIKoo/okQPxG8dyLe7KzY0stpMtLGPkGFNaiRIutI/+VmIhcp41
+aNF8pgwCwVWlTBpGkIMT0pOWt2s0uLcterfGN7A7FM9ln2YpxlNsBX+5ldFvc2jC9NeFD/E6Ke4H
+A51GUpMPDeS/uoAQVxg3LUVW2TrKmPn+mdULaR5leEQFIl3u0lkS+9ByHXMDmuXMtwStm902h5rW
+9Q7v3SrsLsD8UjP7fY+Spz2Bt2cKP4ekFsVB2C7WGiVgorzpu7K0i4P8u+b5TDIzQw+OiszhsP92
+o2snYSZIDFeHJ4/r2sSCI1al7e/iqQcKO3EEXy9nJXlUPrm3AHnujJ/bebtsPXIhdRJYNhPEpjZX
+cDxJ5RuWQMNHpHKqOCROEwGNwyd9FaywoxBPWrpUuw+cmwq9u85n5r6yzOjY1hnkNp6uGP7DVHQo
+pEanzDsNcU+49jZzkaEDyVoo/kIydOwgdm4tFWWAJSCaOBJvhaco38Zb42hLnsE/rF/Ig0aJWWWK
+OQhy8SY7TCf6ykeIU6t2UzuQXiSt1xxIYbDaODwGlZOmFhE4oIxlz3EsjJ7rDgBigLyGUCnfD/kh
+wAojdXEG+ZHoin5fu2I8IjKLiSWStV5DbkWg9GlO8VTgsB91KG89toDeqMq0Y20lkzoG3wCk0m06
+9p5S4EFhTraKJxj3Vx2ATD3x2ic7t147J5yljJNYhTK5/9F4hB6CaRK6yysL3OnXZoARC5bMwoWW
+H4dNumKaTgU9dchtruq95EnZR9/+2Xu/s5Ng7JcLQBIKo6UlLy6v/LD2xg0OeHvFfoEeZnybXm8e
+VGJPJGFBCiOidbuP4Pt+BIrzGiHMvNjo1SgXqfI/XgEWpvdEiMbl6kNw/OoF5w01sn036RvYiEOD
+3KTCP+sammmJiALnhM8k6IH/neu+YJzqHRRTIJgCmDcyYJY2ZfVRx+a860WO1cEDrN8W6kxniuv+
+69WamM3fK9FW165ixfnRz3y0UgpUQ759fM9czoZZ+yLweLMai6+ogpZ/VAjBGBkJYLZS9c71+kr1
+hH/f+FR1CsXGclLZxdauwOYjxeceGfYukl8QJCvbJRyDtULohM2Io5qnYA0qJWEXVz2RMveRI/Q3
++FkAmew4yu3DpMv0AoeEuADMfHx4eMd3Vaire6D8m0uJ1SRMStQZdbc6rILsFNKWMKLgsiDxsxru
+uq5zGy2gtjlNFMQI4wtUoKhyikYk3Qt+qs0ICu+Gdquo6Lc1QRwuYuO8daQspS0td9Pw9BC/Pmj5
+80/AZalMenbXgtIQ1A5g+Vue9TDVUYw8bBdhDQWdsgCT2YTEUP/l6PjVjVgiI5KE0F1KEAVau9OX
++mbHdOaDkj+pbzxHPv8t1g74WVPc9Mgvf7YLECLHAkTVRmOViZgTTd7qvPSF0jB+HpKCLTYBNdkS
+yVlv2rh34JSpjBgGtUdcwOmu/GswlYjUOlQaoGlXsTXcT3AHL4WT4gjjsp+RXsxUknNQMLwlLsq5
+FZbGQvpLokGWejWlcdmjo7kKGeYLh8Ze8Fwc8HsSPTWAO9JdqPrAhS+26Ge/QOShO6nCFanfPNRV
++VRkrZx6Ww1IG1h7224ucmrCtFjFZvEIlB5x3RnMEFrGQN5nZ4raZr6EjnVeKYvh92BxDcu0ho3r
+MAyv3IR/ibaPkaJgtBwbAMzqnA9NKYNOvmacBX7Pzjy2bq9ayzwGs0+PWMHj/zmwyXzaTofEppU/
+x81YQybATSp0hHrdgQTyT7U7gRR8YRLsszsoyU8M1JDljC1yMVuDdPNiy0a8TcA6gpwCkeHEldS1
+ejV0542OInn3jU4NaDv0RqrHuZF926GULU8hoXssplLwgpYBYJNvXh1VHJh3HeN5DTSSGoX5lzx8
+pIR4rxv5+nsstXeTIdQKrF/Ie3hzZAHlPsXcN5wK0Pug/G8lHRKwiokydTBoli3/XFAAI9WL88RE
+rjIc5Rc9ChhKDZEZozcyQVtCBBP1VIDaLT1tfEgM43i7Zvzj5Y/kqzXgYaTbdlvAhEpqcweN/CKX
+T3t8SF23U2W+iHk29LVWz5uxmKENdCN/U57PSJ3cSFBKPho86jRKB9KFBY0g0nsGrrQv6pRiDX7Z
+s1ADpyGI0Zy1gcweKyb2krrdXeqm0RgG4rGACr1aqeGMQmt9u9GSKKfA90MiubjDYsU0W6UJ94zf
+OxERty+VxHIlOZJ2WUuCLyXITpz9SB+dNKezORexs3aZVbdK9Esvw956E/LdH581Lb5BZ7lqK3Va
+NP5Q5XTlmBFH6AlXPLWuQb/ZSnT1V4s38UBAp9QXOHEBVF+Ar63vWPEk03wl53weKVaJWMyYG30A
+9BQpIQNmY/n6A2Xke6ttymQ+jHTboryzbZgNXi/krqPJ0hdRFJIjLf2vVf5QVwcST/sJmE8jqSqg
+Rjt7yJDgnWh9k+wot3c2lvPS4RCiEyNe2/u75pYyC8uCs/WM2drDo8yk2gcEGYPpzXvESJ+geH9T
+kBsg9gpzrEJ9BdZDwT9g9wBpGlyfy0LFL6akLfjp921YFldR38LQn/18keFU0k573T7TAtex5yyG
+oIBe57KIcSspgESAzL+gbyUMGXZQHfkTzxpyhPBKYdwuBSgE/gvrbeejTWCChhURpJrcofG7lAzN
+sqO/Emx2vFa6ILnJ9wLqhTyo0E3Nq6XeFvXbr34ZUsyVX8hu5ZY7bpY6nHC741G/BEJ49XI6CQco
+NssmhNZI3jHaZkg4eGkYRMeODGaoGv6zhH4YGdnY5Q6CFSf4ZtLMoeYzv3RnrxgWbWnnIUnGDC1g
+e/HerhLpefLRoY39PEG88xeiSt20vDTUJI+Nr81AyPe3GuhvWPN+OMx+n2hBXzbxXTDyXnVh+CVQ
+berOJGChgHmPDNkL7diP1X6hs1Q2XGKwFsEAjbQPlMpIeut/7Hjy8BBzZzeO

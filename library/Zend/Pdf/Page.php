@@ -1,1600 +1,654 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @package    Zend_Pdf
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_Pdf_Resource_Font */
-require_once 'Zend/Pdf/Resource/Font.php';
-
-/** Zend_Pdf_Style */
-require_once 'Zend/Pdf/Style.php';
-
-/** Zend_Pdf_Element_Dictionary */
-require_once 'Zend/Pdf/Element/Dictionary.php';
-
-/** Zend_Pdf_Element_Reference */
-require_once 'Zend/Pdf/Element/Reference.php';
-
-/** Zend_Pdf_ElementFactory */
-require_once 'Zend/Pdf/ElementFactory.php';
-
-/** Zend_Pdf_Color */
-require_once 'Zend/Pdf/Color.php';
-
-/** Zend_Pdf_Color_GrayScale */
-require_once 'Zend/Pdf/Color/GrayScale.php';
-
-/** Zend_Pdf_Color_Rgb */
-require_once 'Zend/Pdf/Color/Rgb.php';
-
-/** Zend_Pdf_Color_Cmyk */
-require_once 'Zend/Pdf/Color/Cmyk.php';
-
-/**
- * PDF Page
- *
- * @package    Zend_Pdf
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Pdf_Page
-{
-  /**** Class Constants ****/
-
-
-  /* Page Sizes */
-
-    /**
-     * Size representing an A4 page in portrait (tall) orientation.
-     */
-    const SIZE_A4                = '595:842:';
-
-    /**
-     * Size representing an A4 page in landscape (wide) orientation.
-     */
-    const SIZE_A4_LANDSCAPE      = '842:595:';
-
-    /**
-     * Size representing a US Letter page in portrait (tall) orientation.
-     */
-    const SIZE_LETTER            = '612:792:';
-
-    /**
-     * Size representing a US Letter page in landscape (wide) orientation.
-     */
-    const SIZE_LETTER_LANDSCAPE  = '792:612:';
-
-
-  /* Shape Drawing */
-
-    /**
-     * Stroke the path only. Do not fill.
-     */
-    const SHAPE_DRAW_STROKE      = 0;
-
-    /**
-     * Fill the path only. Do not stroke.
-     */
-    const SHAPE_DRAW_FILL        = 1;
-
-    /**
-     * Fill and stroke the path.
-     */
-    const SHAPE_DRAW_FILL_AND_STROKE = 2;
-
-
-  /* Shape Filling Methods */
-
-    /**
-     * Fill the path using the non-zero winding rule.
-     */
-    const FILL_METHOD_NON_ZERO_WINDING = 0;
-
-    /**
-     * Fill the path using the even-odd rule.
-     */
-    const FILL_METHOD_EVEN_ODD        = 1;
-
-
-  /* Line Dash Types */
-
-    /**
-     * Solid line dash.
-     */
-    const LINE_DASHING_SOLID = 0;
-
-
-
-    /**
-     * Reference to the object with page dictionary.
-     *
-     * @var Zend_Pdf_Element_Reference
-     */
-    protected $_pageDictionary;
-
-    /**
-     * PDF objects factory.
-     *
-     * @var Zend_Pdf_ElementFactory_Interface
-     */
-    protected $_objFactory = null;
-
-    /**
-     * Flag which signals, that page is created separately from any PDF document or
-     * attached to anyone.
-     *
-     * @var boolean
-     */
-    protected $_attached;
-
-    /**
-     * Stream of the drawing instractions.
-     *
-     * @var string
-     */
-    protected $_contents = '';
-
-    /**
-     * Current style
-     *
-     * @var Zend_Pdf_Style
-     */
-    protected $_style = null;
-
-    /**
-     * Counter for the "Save" operations
-     *
-     * @var integer
-     */
-    protected $_saveCount = 0;
-
-    /**
-     * Safe Graphics State semafore
-     *
-     * If it's false, than we can't be sure Graphics State is restored withing
-     * context of previous contents stream (ex. drawing coordinate system may be rotated).
-     * We should encompass existing content with save/restore GS operators
-     *
-     * @var boolean
-     */
-    protected $_safeGS;
-
-    /**
-     * Current font
-     *
-     * @var Zend_Pdf_Resource_Font
-     */
-    protected $_font = null;
-
-    /**
-     * Current font size
-     *
-     * @var float
-     */
-    protected $_fontSize;
-
-    /**
-     * Object constructor.
-     * Constructor signatures:
-     *
-     * 1. Load PDF page from a parsed PDF file.
-     *    Object factory is created by PDF parser.
-     * ---------------------------------------------------------
-     * new Zend_Pdf_Page(Zend_Pdf_Element_Dictionary       $pageDict,
-     *                   Zend_Pdf_ElementFactory_Interface $factory);
-     * ---------------------------------------------------------
-     *
-     * 2. Clone PDF page.
-     *    New page is created in the same context as source page. Object factory is shared.
-     *    Thus it will be attached to the document, but need to be placed into Zend_Pdf::$pages array
-     *    to be included into output.
-     * ---------------------------------------------------------
-     * new Zend_Pdf_Page(Zend_Pdf_Page $page);
-     * ---------------------------------------------------------
-     *
-     * 3. Create new page with a specified pagesize.
-     *    If $factory is null then it will be created and page must be attached to the document to be
-     *    included into output.
-     * ---------------------------------------------------------
-     * new Zend_Pdf_Page(string $pagesize, Zend_Pdf_ElementFactory_Interface $factory = null);
-     * ---------------------------------------------------------
-     *
-     * 4. Create new page with a specified pagesize (in default user space units).
-     *    If $factory is null then it will be created and page must be attached to the document to be
-     *    included into output.
-     * ---------------------------------------------------------
-     * new Zend_Pdf_Page(numeric $width, numeric $height, Zend_Pdf_ElementFactory_Interface $factory = null);
-     * ---------------------------------------------------------
-     *
-     *
-     * @param mixed $param1
-     * @param mixed $param2
-     * @param mixed $param3
-     * @throws Zend_Pdf_Exception
-     */
-    public function __construct($param1, $param2 = null, $param3 = null)
-    {
-        if ($param1 instanceof Zend_Pdf_Element_Reference &&
-            $param1->getType() == Zend_Pdf_Element::TYPE_DICTIONARY &&
-            $param2 instanceof Zend_Pdf_ElementFactory_Interface &&
-            $param3 === null
-           ) {
-            $this->_pageDictionary = $param1;
-            $this->_objFactory     = $param2;
-            $this->_attached       = true;
-            $this->_safeGS         = false;
-
-            return;
-
-        } else if ($param1 instanceof Zend_Pdf_Page && $param2 === null && $param3 === null) {
-            // Clone existing page.
-            // Let already existing content and resources to be shared between pages
-            // We don't give existing content modification functionality, so we don't need "deep copy"
-            $this->_objFactory = $param1->_objFactory;
-            $this->_attached   = &$param1->_attached;
-            $this->_safeGS     = false;
-
-            $this->_pageDictionary = $this->_objFactory->newObject(new Zend_Pdf_Element_Dictionary());
-
-            foreach ($param1->_pageDictionary->getKeys() as $key) {
-                if ($key == 'Contents') {
-                    // Clone Contents property
-
-                    $this->_pageDictionary->Contents = new Zend_Pdf_Element_Array();
-
-                    if ($param1->_pageDictionary->Contents->getType() != Zend_Pdf_Element::TYPE_ARRAY) {
-                        // Prepare array of content streams and add existing stream
-                        $this->_pageDictionary->Contents->items[] = $param1->_pageDictionary->Contents;
-                    } else {
-                        // Clone array of the content streams
-                        foreach ($param1->_pageDictionary->Contents->items as $srcContentStream) {
-                            $this->_pageDictionary->Contents->items[] = $srcContentStream;
-                        }
-                    }
-                } else {
-                    $this->_pageDictionary->$key = $param1->_pageDictionary->$key;
-                }
-            }
-
-            return;
-        } else if (is_string($param1) &&
-                   ($param2 === null || $param2 instanceof Zend_Pdf_ElementFactory_Interface) &&
-                   $param3 === null) {
-            $this->_objFactory = ($param2 !== null)? $param2 : Zend_Pdf_ElementFactory::createFactory(1);
-            $this->_attached   = false;
-            $this->_safeGS     = true; /** New page created. That's users App responsibility to track GS changes */
-
-            switch (strtolower($param1)) {
-                case 'a4':
-                    $param1 = Zend_Pdf_Page::SIZE_A4;
-                    break;
-                case 'a4-landscape':
-                    $param1 = Zend_Pdf_Page::SIZE_A4_LANDSCAPE;
-                    break;
-                case 'letter':
-                    $param1 = Zend_Pdf_Page::SIZE_LETTER;
-                    break;
-                case 'letter-landscape':
-                    $param1 = Zend_Pdf_Page::SIZE_LETTER_LANDSCAPE;
-                    break;
-                default:
-                    // should be in "x:y" form
-            }
-
-            $pageDim = explode(':', $param1);
-            if(count($pageDim) == 3) {
-                $pageWidth  = $pageDim[0];
-                $pageHeight = $pageDim[1];
-            } else {
-                /**
-                 * @todo support of user defined pagesize notations, like:
-                 *       "210x297mm", "595x842", "8.5x11in", "612x792"
-                 */
-                require_once 'Zend/Pdf/Exception.php';
-                throw new Zend_Pdf_Exception('Wrong pagesize notation.');
-            }
-            /**
-             * @todo support of pagesize recalculation to "default user space units"
-             */
-
-        } else if (is_numeric($param1) && is_numeric($param2) &&
-                   ($param3 === null || $param3 instanceof Zend_Pdf_ElementFactory_Interface)) {
-            $this->_objFactory = ($param3 !== null)? $param3 : Zend_Pdf_ElementFactory::createFactory(1);
-            $this->_attached = false;
-            $this->_safeGS   = true; /** New page created. That's users App responsibility to track GS changes */
-            $pageWidth  = $param1;
-            $pageHeight = $param2;
-
-        } else {
-            require_once 'Zend/Pdf/Exception.php';
-            throw new Zend_Pdf_Exception('Unrecognized method signature, wrong number of arguments or wrong argument types.');
-        }
-
-        $this->_pageDictionary = $this->_objFactory->newObject(new Zend_Pdf_Element_Dictionary());
-        $this->_pageDictionary->Type         = new Zend_Pdf_Element_Name('Page');
-        $this->_pageDictionary->LastModified = new Zend_Pdf_Element_String(Zend_Pdf::pdfDate());
-        $this->_pageDictionary->Resources    = new Zend_Pdf_Element_Dictionary();
-        $this->_pageDictionary->MediaBox     = new Zend_Pdf_Element_Array();
-        $this->_pageDictionary->MediaBox->items[] = new Zend_Pdf_Element_Numeric(0);
-        $this->_pageDictionary->MediaBox->items[] = new Zend_Pdf_Element_Numeric(0);
-        $this->_pageDictionary->MediaBox->items[] = new Zend_Pdf_Element_Numeric($pageWidth);
-        $this->_pageDictionary->MediaBox->items[] = new Zend_Pdf_Element_Numeric($pageHeight);
-        $this->_pageDictionary->Contents     = new Zend_Pdf_Element_Array();
-    }
-
-
-    /**
-     * Clone operator
-     *
-     * @throws Zend_Pdf_Exception
-     */
-    public function __clone()
-    {
-        require_once 'Zend/Pdf/Exception.php';
-        throw new Zend_Pdf_Exception('Cloning Zend_Pdf_Page object using \'clone\' keyword is not supported. Use \'new Zend_Pdf_Page($srcPage)\' syntax');
-    }
-
-    /**
-     * Attach resource to the page
-     *
-     * @param string $type
-     * @param Zend_Pdf_Resource $resource
-     * @return string
-     */
-    protected function _attachResource($type, Zend_Pdf_Resource $resource)
-    {
-        // Check that Resources dictionary contains appropriate resource set
-        if ($this->_pageDictionary->Resources->$type === null) {
-            $this->_pageDictionary->Resources->touch();
-            $this->_pageDictionary->Resources->$type = new Zend_Pdf_Element_Dictionary();
-        } else {
-            $this->_pageDictionary->Resources->$type->touch();
-        }
-
-        // Check, that resource is already attached to resource set.
-        $resObject = $resource->getResource();
-        foreach ($this->_pageDictionary->Resources->$type->getKeys() as $ResID) {
-            if ($this->_pageDictionary->Resources->$type->$ResID === $resObject) {
-                return $ResID;
-            }
-        }
-
-        $idCounter = 1;
-        do {
-            $newResName = $type[0] . $idCounter++;
-        } while ($this->_pageDictionary->Resources->$type->$newResName !== null);
-
-        $this->_pageDictionary->Resources->$type->$newResName = $resObject;
-        $this->_objFactory->attach($resource->getFactory());
-
-        return $newResName;
-    }
-
-    /**
-     * Add procedureSet to the Page description
-     *
-     * @param string $procSetName
-     */
-    protected function _addProcSet($procSetName)
-    {
-        // Check that Resources dictionary contains ProcSet entry
-        if ($this->_pageDictionary->Resources->ProcSet === null) {
-            $this->_pageDictionary->Resources->touch();
-            $this->_pageDictionary->Resources->ProcSet = new Zend_Pdf_Element_Array();
-        } else {
-            $this->_pageDictionary->Resources->ProcSet->touch();
-        }
-
-        foreach ($this->_pageDictionary->Resources->ProcSet->items as $procSetEntry) {
-            if ($procSetEntry->value == $procSetName) {
-                // Procset is already included into a ProcSet array
-                return;
-            }
-        }
-
-        $this->_pageDictionary->Resources->ProcSet->items[] = new Zend_Pdf_Element_Name($procSetName);
-    }
-
-    /**
-     * Retrive PDF file reference to the page
-     *
-     * @return Zend_Pdf_Element_Dictionary
-     */
-    public function getPageDictionary()
-    {
-        return $this->_pageDictionary;
-    }
-
-    /**
-     * Dump current drawing instructions into the content stream.
-     *
-     * @todo Don't forget to close all current graphics operations (like path drawing)
-     *
-     * @throws Zend_Pdf_Exception
-     */
-    public function flush()
-    {
-        if ($this->_saveCount != 0) {
-            require_once 'Zend/Pdf/Exception.php';
-            throw new Zend_Pdf_Exception('Saved graphics state is not restored');
-        }
-
-        if ($this->_contents == '') {
-            return;
-        }
-
-        if ($this->_pageDictionary->Contents->getType() != Zend_Pdf_Element::TYPE_ARRAY) {
-            /**
-             * It's a stream object.
-             * Prepare Contents page attribute for update.
-             */
-            $this->_pageDictionary->touch();
-
-            $currentPageContents = $this->_pageDictionary->Contents;
-            $this->_pageDictionary->Contents = new Zend_Pdf_Element_Array();
-            $this->_pageDictionary->Contents->items[] = $currentPageContents;
-        } else {
-            $this->_pageDictionary->Contents->touch();
-        }
-
-        if ((!$this->_safeGS)  &&  (count($this->_pageDictionary->Contents->items) != 0)) {
-            /**
-             * Page already has some content which is not treated as safe.
-             *
-             * Add save/restore GS operators
-             */
-            $this->_addProcSet('PDF');
-
-            $newContentsArray = new Zend_Pdf_Element_Array();
-            $newContentsArray->items[] = $this->_objFactory->newStreamObject(" q\n");
-            foreach ($this->_pageDictionary->Contents->items as $contentStream) {
-                $newContentsArray->items[] = $contentStream;
-            }
-            $newContentsArray->items[] = $this->_objFactory->newStreamObject(" Q\n");
-
-            $this->_pageDictionary->touch();
-            $this->_pageDictionary->Contents = $newContentsArray;
-
-            $this->_safeGS = true;
-        }
-
-        $this->_pageDictionary->Contents->items[] =
-                $this->_objFactory->newStreamObject($this->_contents);
-
-        $this->_contents = '';
-    }
-
-    /**
-     * Prepare page to be rendered into PDF.
-     *
-     * @todo Don't forget to close all current graphics operations (like path drawing)
-     *
-     * @param Zend_Pdf_ElementFactory_Interface $objFactory
-     * @throws Zend_Pdf_Exception
-     */
-    public function render(Zend_Pdf_ElementFactory_Interface $objFactory)
-    {
-        $this->flush();
-
-        if ($objFactory === $this->_objFactory) {
-            // Page is already attached to the document.
-            return;
-        }
-
-        if ($this->_attached) {
-            require_once 'Zend/Pdf/Exception.php';
-            throw new Zend_Pdf_Exception('Page is attached to one documen, but rendered in context of another.');
-            /**
-             * @todo Page cloning must be implemented here instead of exception.
-             *       PDF objects (ex. fonts) can be shared between pages.
-             *       Thus all referenced objects, which can be modified, must be cloned recursively,
-             *       to avoid producing wrong object references in a context of source PDF.
-             */
-
-            //...
-        } else {
-            $objFactory->attach($this->_objFactory);
-        }
-    }
-
-
-
-    /**
-     * Set fill color.
-     *
-     * @param Zend_Pdf_Color $color
-     * @return Zend_Pdf_Page
-     */
-    public function setFillColor(Zend_Pdf_Color $color)
-    {
-        $this->_addProcSet('PDF');
-        $this->_contents .= $color->instructions(false);
-
-        return $this;
-    }
-
-    /**
-     * Set line color.
-     *
-     * @param Zend_Pdf_Color $color
-     * @return Zend_Pdf_Page
-     */
-    public function setLineColor(Zend_Pdf_Color $color)
-    {
-        $this->_addProcSet('PDF');
-        $this->_contents .= $color->instructions(true);
-
-        return $this;
-    }
-
-    /**
-     * Set line width.
-     *
-     * @param float $width
-     * @return Zend_Pdf_Page
-     */
-    public function setLineWidth($width)
-    {
-        $this->_addProcSet('PDF');
-        $widthObj = new Zend_Pdf_Element_Numeric($width);
-        $this->_contents .= $widthObj->toString() . " w\n";
-
-        return $this;
-    }
-
-    /**
-     * Set line dashing pattern
-     *
-     * Pattern is an array of floats: array(on_length, off_length, on_length, off_length, ...)
-     * Phase is shift from the beginning of line.
-     *
-     * @param array $pattern
-     * @param array $phase
-     * @return Zend_Pdf_Page
-     */
-    public function setLineDashingPattern($pattern, $phase = 0)
-    {
-        $this->_addProcSet('PDF');
-
-        if ($pattern === Zend_Pdf_Page::LINE_DASHING_SOLID) {
-            $pattern = array();
-            $phase   = 0;
-        }
-
-        $dashPattern  = new Zend_Pdf_Element_Array();
-        $phaseEleemnt = new Zend_Pdf_Element_Numeric($phase);
-
-        foreach ($pattern as $dashItem) {
-            $dashElement = new Zend_Pdf_Element_Numeric($dashItem);
-            $dashPattern->items[] = $dashElement;
-        }
-
-        $this->_contents .= $dashPattern->toString() . ' '
-                         . $phaseEleemnt->toString() . " d\n";
-
-        return $this;
-    }
-
-    /**
-     * Set current font.
-     *
-     * @param Zend_Pdf_Resource_Font $font
-     * @param float $fontSize
-     * @return Zend_Pdf_Page
-     */
-    public function setFont(Zend_Pdf_Resource_Font $font, $fontSize)
-    {
-        $this->_addProcSet('Text');
-        $fontName = $this->_attachResource('Font', $font);
-
-        $this->_font     = $font;
-        $this->_fontSize = $fontSize;
-
-        $fontNameObj = new Zend_Pdf_Element_Name($fontName);
-        $fontSizeObj = new Zend_Pdf_Element_Numeric($fontSize);
-        $this->_contents .= $fontNameObj->toString() . ' ' . $fontSizeObj->toString() . " Tf\n";
-
-        return $this;
-    }
-
-    /**
-     * Set the style to use for future drawing operations on this page
-     *
-     * @param Zend_Pdf_Style $style
-     * @return Zend_Pdf_Page
-     */
-    public function setStyle(Zend_Pdf_Style $style)
-    {
-        $this->_style = $style;
-
-        $this->_addProcSet('Text');
-        $this->_addProcSet('PDF');
-        if ($style->getFont() !== null) {
-            $this->setFont($style->getFont(), $style->getFontSize());
-        }
-        $this->_contents .= $style->instructions($this->_pageDictionary->Resources);
-
-        return $this;
-    }
-
-    /**
-     * Set the transparancy
-     *
-     * $alpha == 0  - transparent
-     * $alpha == 1  - opaque
-     *
-     * Transparency modes, supported by PDF:
-     * Normal (default), Multiply, Screen, Overlay, Darken, Lighten, ColorDodge, ColorBurn, HardLight,
-     * SoftLight, Difference, Exclusion
-     *
-     * @param float $alpha
-     * @param string $mode
-     * @throws Zend_Pdf_Exception
-     * @return Zend_Pdf_Page
-     */
-    public function setAlpha($alpha, $mode = 'Normal')
-    {
-        if (!in_array($mode, array('Normal', 'Multiply', 'Screen', 'Overlay', 'Darken', 'Lighten', 'ColorDodge',
-                                   'ColorBurn', 'HardLight', 'SoftLight', 'Difference', 'Exclusion'))) {
-            require_once 'Zend/Pdf/Exception.php';
-            throw new Zend_Pdf_Exception('Unsupported transparency mode.');
-        }
-        if (!is_numeric($alpha)  ||  $alpha < 0  ||  $alpha > 1) {
-            require_once 'Zend/Pdf/Exception.php';
-            throw new Zend_Pdf_Exception('Alpha value must be numeric between 0 (transparent) and 1 (opaque).');
-        }
-
-        $this->_addProcSet('Text');
-        $this->_addProcSet('PDF');
-
-        $resources = $this->_pageDictionary->Resources;
-
-        // Check if Resources dictionary contains ExtGState entry
-        if ($resources->ExtGState === null) {
-            $resources->touch();
-            $resources->ExtGState = new Zend_Pdf_Element_Dictionary();
-        } else {
-            $resources->ExtGState->touch();
-        }
-
-        $idCounter = 1;
-        do {
-            $gStateName = 'GS' . $idCounter++;
-        } while ($resources->ExtGState->$gStateName !== null);
-
-
-        $gStateDictionary = new Zend_Pdf_Element_Dictionary();
-        $gStateDictionary->Type = new Zend_Pdf_Element_Name('ExtGState');
-        $gStateDictionary->BM   = new Zend_Pdf_Element_Name($mode);
-        $gStateDictionary->CA   = new Zend_Pdf_Element_Numeric($alpha);
-        $gStateDictionary->ca   = new Zend_Pdf_Element_Numeric($alpha);
-
-        $resources->ExtGState->$gStateName = $this->_objFactory->newObject($gStateDictionary);
-
-        $gStateNameObj = new Zend_Pdf_Element_Name($gStateName);
-        $this->_contents .= $gStateNameObj->toString() . " gs\n";
-
-        return $this;
-    }
-
-
-    /**
-     * Get current font.
-     *
-     * @return Zend_Pdf_Resource_Font $font
-     */
-    public function getFont()
-    {
-        return $this->_font;
-    }
-
-    /**
-     * Extract resources attached to the page
-     *
-     * This method is not intended to be used in userland, but helps to optimize some document wide operations
-     *
-     * returns array of Zend_Pdf_Element_Dictionary objects
-     *
-     * @internal
-     * @return array
-     */
-    public function extractResources()
-    {
-        return $this->_pageDictionary->Resources;
-    }
-
-    /**
-     * Extract fonts attached to the page
-     *
-     * returns array of Zend_Pdf_Resource_Font_Extracted objects
-     *
-     * @return array
-     */
-    public function extractFonts()
-    {
-        if ($this->_pageDictionary->Resources->Font === null) {
-            // Page doesn't have any font attached
-            // Return empty array
-            return array();
-        }
-
-        $fontResources = $this->_pageDictionary->Resources->Font;
-
-        $fontResourcesUnique = array();
-        foreach ($fontResources->getKeys() as $fontResourceName) {
-            $fontDictionary = $fontResources->$fontResourceName;
-
-            if (! ($fontDictionary instanceof Zend_Pdf_Element_Reference  ||
-                   $fontDictionary instanceof Zend_Pdf_Element_Object) ) {
-                // Font dictionary has to be an indirect object or object reference
-                continue;
-            }
-
-            $fontResourcesUnique[$fontDictionary->toString($this->_objFactory)] = $fontDictionary;
-        }
-
-        $fonts = array();
-        require_once 'Zend/Pdf/Exception.php';
-        foreach ($fontResourcesUnique as $resourceReference => $fontDictionary) {
-            try {
-                // Try to extract font
-                $extractedFont = new Zend_Pdf_Resource_Font_Extracted($fontDictionary);
-
-                $fonts[$resourceReference] = $extractedFont;
-            } catch (Zend_Pdf_Exception $e) {
-                if ($e->getMessage() != 'Unsupported font type.') {
-                    throw $e;
-                }
-            }
-        }
-
-        return $fonts;
-    }
-
-    /**
-     * Extract font attached to the page by specific font name
-     *
-     * $fontName should be specified in UTF-8 encoding
-     *
-     * @return Zend_Pdf_Resource_Font_Extracted|null
-     */
-    public function extractFont($fontName)
-    {
-        if ($this->_pageDictionary->Resources->Font === null) {
-            // Page doesn't have any font attached
-            return null;
-        }
-
-        $fontResources = $this->_pageDictionary->Resources->Font;
-
-        require_once 'Zend/Pdf/Exception.php';
-        foreach ($fontResources->getKeys() as $fontResourceName) {
-            $fontDictionary = $fontResources->$fontResourceName;
-
-            if (! ($fontDictionary instanceof Zend_Pdf_Element_Reference  ||
-                   $fontDictionary instanceof Zend_Pdf_Element_Object) ) {
-                // Font dictionary has to be an indirect object or object reference
-                continue;
-            }
-
-            if ($fontDictionary->BaseFont->value != $fontName) {
-                continue;
-            }
-
-            try {
-                // Try to extract font
-                return new Zend_Pdf_Resource_Font_Extracted($fontDictionary);
-            } catch (Zend_Pdf_Exception $e) {
-                if ($e->getMessage() != 'Unsupported font type.') {
-                    throw $e;
-                }
-
-                // Continue searhing font with specified name
-            }
-        }
-
-        return null;
-    }
-
-    /**
-     * Get current font size
-     *
-     * @return float $fontSize
-     */
-    public function getFontSize()
-    {
-        return $this->_fontSize;
-    }
-
-    /**
-     * Return the style, applied to the page.
-     *
-     * @return Zend_Pdf_Style|null
-     */
-    public function getStyle()
-    {
-        return $this->_style;
-    }
-
-
-    /**
-     * Save the graphics state of this page.
-     * This takes a snapshot of the currently applied style, position, clipping area and
-     * any rotation/translation/scaling that has been applied.
-     *
-     * @todo check for the open paths
-     * @throws Zend_Pdf_Exception    - if a save is performed with an open path
-     * @return Zend_Pdf_Page
-     */
-    public function saveGS()
-    {
-        $this->_saveCount++;
-
-        $this->_addProcSet('PDF');
-        $this->_contents .= " q\n";
-
-        return $this;
-    }
-
-    /**
-     * Restore the graphics state that was saved with the last call to saveGS().
-     *
-     * @throws Zend_Pdf_Exception   - if there is no previously saved state
-     * @return Zend_Pdf_Page
-     */
-    public function restoreGS()
-    {
-        if ($this->_saveCount-- <= 0) {
-            require_once 'Zend/Pdf/Exception.php';
-            throw new Zend_Pdf_Exception('Restoring graphics state which is not saved');
-        }
-        $this->_contents .= " Q\n";
-
-        return $this;
-    }
-
-
-    /**
-     * Intersect current clipping area with a circle.
-     *
-     * @param float $x
-     * @param float $y
-     * @param float $radius
-     * @param float $startAngle
-     * @param float $endAngle
-     * @return Zend_Pdf_Page
-     */
-    public function clipCircle($x, $y, $radius, $startAngle = null, $endAngle = null)
-    {
-        $this->clipEllipse($x - $radius, $y - $radius,
-                           $x + $radius, $y + $radius,
-                           $startAngle, $endAngle);
-
-        return $this;
-    }
-
-    /**
-     * Intersect current clipping area with a polygon.
-     *
-     * Method signatures:
-     * drawEllipse($x1, $y1, $x2, $y2);
-     * drawEllipse($x1, $y1, $x2, $y2, $startAngle, $endAngle);
-     *
-     * @todo process special cases with $x2-$x1 == 0 or $y2-$y1 == 0
-     *
-     * @param float $x1
-     * @param float $y1
-     * @param float $x2
-     * @param float $y2
-     * @param float $startAngle
-     * @param float $endAngle
-     * @return Zend_Pdf_Page
-     */
-    public function clipEllipse($x1, $y1, $x2, $y2, $startAngle = null, $endAngle = null)
-    {
-        $this->_addProcSet('PDF');
-
-        if ($x2 < $x1) {
-            $temp = $x1;
-            $x1   = $x2;
-            $x2   = $temp;
-        }
-        if ($y2 < $y1) {
-            $temp = $y1;
-            $y1   = $y2;
-            $y2   = $temp;
-        }
-
-        $x = ($x1 + $x2)/2.;
-        $y = ($y1 + $y2)/2.;
-
-        $xC = new Zend_Pdf_Element_Numeric($x);
-        $yC = new Zend_Pdf_Element_Numeric($y);
-
-        if ($startAngle !== null) {
-            if ($startAngle != 0) { $startAngle = fmod($startAngle, M_PI*2); }
-            if ($endAngle   != 0) { $endAngle   = fmod($endAngle,   M_PI*2); }
-
-            if ($startAngle > $endAngle) {
-                $endAngle += M_PI*2;
-            }
-
-            $clipPath    = $xC->toString() . ' ' . $yC->toString() . " m\n";
-            $clipSectors = (int)ceil(($endAngle - $startAngle)/M_PI_4);
-            $clipRadius  = max($x2 - $x1, $y2 - $y1);
-
-            for($count = 0; $count <= $clipSectors; $count++) {
-                $pAngle = $startAngle + ($endAngle - $startAngle)*$count/(float)$clipSectors;
-
-                $pX = new Zend_Pdf_Element_Numeric($x + cos($pAngle)*$clipRadius);
-                $pY = new Zend_Pdf_Element_Numeric($y + sin($pAngle)*$clipRadius);
-                $clipPath .= $pX->toString() . ' ' . $pY->toString() . " l\n";
-            }
-
-            $this->_contents .= $clipPath . "h\nW\nn\n";
-        }
-
-        $xLeft  = new Zend_Pdf_Element_Numeric($x1);
-        $xRight = new Zend_Pdf_Element_Numeric($x2);
-        $yUp    = new Zend_Pdf_Element_Numeric($y2);
-        $yDown  = new Zend_Pdf_Element_Numeric($y1);
-
-        $xDelta  = 2*(M_SQRT2 - 1)*($x2 - $x1)/3.;
-        $yDelta  = 2*(M_SQRT2 - 1)*($y2 - $y1)/3.;
-        $xr = new Zend_Pdf_Element_Numeric($x + $xDelta);
-        $xl = new Zend_Pdf_Element_Numeric($x - $xDelta);
-        $yu = new Zend_Pdf_Element_Numeric($y + $yDelta);
-        $yd = new Zend_Pdf_Element_Numeric($y - $yDelta);
-
-        $this->_contents .= $xC->toString() . ' ' . $yUp->toString() . " m\n"
-                         .  $xr->toString() . ' ' . $yUp->toString() . ' '
-                         .    $xRight->toString() . ' ' . $yu->toString() . ' '
-                         .      $xRight->toString() . ' ' . $yC->toString() . " c\n"
-                         .  $xRight->toString() . ' ' . $yd->toString() . ' '
-                         .    $xr->toString() . ' ' . $yDown->toString() . ' '
-                         .      $xC->toString() . ' ' . $yDown->toString() . " c\n"
-                         .  $xl->toString() . ' ' . $yDown->toString() . ' '
-                         .    $xLeft->toString() . ' ' . $yd->toString() . ' '
-                         .      $xLeft->toString() . ' ' . $yC->toString() . " c\n"
-                         .  $xLeft->toString() . ' ' . $yu->toString() . ' '
-                         .    $xl->toString() . ' ' . $yUp->toString() . ' '
-                         .      $xC->toString() . ' ' . $yUp->toString() . " c\n"
-                         .  "h\nW\nn\n";
-
-        return $this;
-    }
-
-
-    /**
-     * Intersect current clipping area with a polygon.
-     *
-     * @param array $x  - array of float (the X co-ordinates of the vertices)
-     * @param array $y  - array of float (the Y co-ordinates of the vertices)
-     * @param integer $fillMethod
-     * @return Zend_Pdf_Page
-     */
-    public function clipPolygon($x, $y, $fillMethod = Zend_Pdf_Page::FILL_METHOD_NON_ZERO_WINDING)
-    {
-        $this->_addProcSet('PDF');
-
-        $firstPoint = true;
-        foreach ($x as $id => $xVal) {
-            $xObj = new Zend_Pdf_Element_Numeric($xVal);
-            $yObj = new Zend_Pdf_Element_Numeric($y[$id]);
-
-            if ($firstPoint) {
-                $path = $xObj->toString() . ' ' . $yObj->toString() . " m\n";
-                $firstPoint = false;
-            } else {
-                $path .= $xObj->toString() . ' ' . $yObj->toString() . " l\n";
-            }
-        }
-
-        $this->_contents .= $path;
-
-        if ($fillMethod == Zend_Pdf_Page::FILL_METHOD_NON_ZERO_WINDING) {
-            $this->_contents .= " h\n W\nn\n";
-        } else {
-            // Even-Odd fill method.
-            $this->_contents .= " h\n W*\nn\n";
-        }
-
-        return $this;
-    }
-
-    /**
-     * Intersect current clipping area with a rectangle.
-     *
-     * @param float $x1
-     * @param float $y1
-     * @param float $x2
-     * @param float $y2
-     * @return Zend_Pdf_Page
-     */
-    public function clipRectangle($x1, $y1, $x2, $y2)
-    {
-        $this->_addProcSet('PDF');
-
-        $x1Obj      = new Zend_Pdf_Element_Numeric($x1);
-        $y1Obj      = new Zend_Pdf_Element_Numeric($y1);
-        $widthObj   = new Zend_Pdf_Element_Numeric($x2 - $x1);
-        $height2Obj = new Zend_Pdf_Element_Numeric($y2 - $y1);
-
-        $this->_contents .= $x1Obj->toString() . ' ' . $y1Obj->toString() . ' '
-                         .      $widthObj->toString() . ' ' . $height2Obj->toString() . " re\n"
-                         .  " W\nn\n";
-
-        return $this;
-    }
-
-    /**
-     * Draw a Zend_Pdf_ContentStream at the specified position on the page
-     *
-     * @param ZPdfContentStream $cs
-     * @param float $x1
-     * @param float $y1
-     * @param float $x2
-     * @param float $y2
-     * @return Zend_Pdf_Page
-     */
-    public function drawContentStream($cs, $x1, $y1, $x2, $y2)
-    {
-        /** @todo implementation */
-        return $this;
-    }
-
-    /**
-     * Draw a circle centered on x, y with a radius of radius.
-     *
-     * Method signatures:
-     * drawCircle($x, $y, $radius);
-     * drawCircle($x, $y, $radius, $fillType);
-     * drawCircle($x, $y, $radius, $startAngle, $endAngle);
-     * drawCircle($x, $y, $radius, $startAngle, $endAngle, $fillType);
-     *
-     *
-     * It's not a really circle, because PDF supports only cubic Bezier curves.
-     * But _very_ good approximation.
-     * It differs from a real circle on a maximum 0.00026 radiuses
-     * (at PI/8, 3*PI/8, 5*PI/8, 7*PI/8, 9*PI/8, 11*PI/8, 13*PI/8 and 15*PI/8 angles).
-     * At 0, PI/4, PI/2, 3*PI/4, PI, 5*PI/4, 3*PI/2 and 7*PI/4 it's exactly a tangent to a circle.
-     *
-     * @param float $x
-     * @param float $y
-     * @param float $radius
-     * @param mixed $param4
-     * @param mixed $param5
-     * @param mixed $param6
-     * @return Zend_Pdf_Page
-     */
-    public function  drawCircle($x, $y, $radius, $param4 = null, $param5 = null, $param6 = null)
-    {
-        $this->drawEllipse($x - $radius, $y - $radius,
-                           $x + $radius, $y + $radius,
-                           $param4, $param5, $param6);
-
-        return $this;
-    }
-
-    /**
-     * Draw an ellipse inside the specified rectangle.
-     *
-     * Method signatures:
-     * drawEllipse($x1, $y1, $x2, $y2);
-     * drawEllipse($x1, $y1, $x2, $y2, $fillType);
-     * drawEllipse($x1, $y1, $x2, $y2, $startAngle, $endAngle);
-     * drawEllipse($x1, $y1, $x2, $y2, $startAngle, $endAngle, $fillType);
-     *
-     * @todo process special cases with $x2-$x1 == 0 or $y2-$y1 == 0
-     *
-     * @param float $x1
-     * @param float $y1
-     * @param float $x2
-     * @param float $y2
-     * @param mixed $param5
-     * @param mixed $param6
-     * @param mixed $param7
-     * @return Zend_Pdf_Page
-     */
-    public function drawEllipse($x1, $y1, $x2, $y2, $param5 = null, $param6 = null, $param7 = null)
-    {
-        if ($param5 === null) {
-            // drawEllipse($x1, $y1, $x2, $y2);
-            $startAngle = null;
-            $fillType = Zend_Pdf_Page::SHAPE_DRAW_FILL_AND_STROKE;
-        } else if ($param6 === null) {
-            // drawEllipse($x1, $y1, $x2, $y2, $fillType);
-            $startAngle = null;
-            $fillType = $param5;
-        } else {
-            // drawEllipse($x1, $y1, $x2, $y2, $startAngle, $endAngle);
-            // drawEllipse($x1, $y1, $x2, $y2, $startAngle, $endAngle, $fillType);
-            $startAngle = $param5;
-            $endAngle   = $param6;
-
-            if ($param7 === null) {
-                $fillType = Zend_Pdf_Page::SHAPE_DRAW_FILL_AND_STROKE;
-            } else {
-                $fillType = $param7;
-            }
-        }
-
-        $this->_addProcSet('PDF');
-
-        if ($x2 < $x1) {
-            $temp = $x1;
-            $x1   = $x2;
-            $x2   = $temp;
-        }
-        if ($y2 < $y1) {
-            $temp = $y1;
-            $y1   = $y2;
-            $y2   = $temp;
-        }
-
-        $x = ($x1 + $x2)/2.;
-        $y = ($y1 + $y2)/2.;
-
-        $xC = new Zend_Pdf_Element_Numeric($x);
-        $yC = new Zend_Pdf_Element_Numeric($y);
-
-        if ($startAngle !== null) {
-            if ($startAngle != 0) { $startAngle = fmod($startAngle, M_PI*2); }
-            if ($endAngle   != 0) { $endAngle   = fmod($endAngle,   M_PI*2); }
-
-            if ($startAngle > $endAngle) {
-                $endAngle += M_PI*2;
-            }
-
-            $clipPath    = $xC->toString() . ' ' . $yC->toString() . " m\n";
-            $clipSectors = (int)ceil(($endAngle - $startAngle)/M_PI_4);
-            $clipRadius  = max($x2 - $x1, $y2 - $y1);
-
-            for($count = 0; $count <= $clipSectors; $count++) {
-                $pAngle = $startAngle + ($endAngle - $startAngle)*$count/(float)$clipSectors;
-
-                $pX = new Zend_Pdf_Element_Numeric($x + cos($pAngle)*$clipRadius);
-                $pY = new Zend_Pdf_Element_Numeric($y + sin($pAngle)*$clipRadius);
-                $clipPath .= $pX->toString() . ' ' . $pY->toString() . " l\n";
-            }
-
-            $this->_contents .= "q\n" . $clipPath . "h\nW\nn\n";
-        }
-
-        $xLeft  = new Zend_Pdf_Element_Numeric($x1);
-        $xRight = new Zend_Pdf_Element_Numeric($x2);
-        $yUp    = new Zend_Pdf_Element_Numeric($y2);
-        $yDown  = new Zend_Pdf_Element_Numeric($y1);
-
-        $xDelta  = 2*(M_SQRT2 - 1)*($x2 - $x1)/3.;
-        $yDelta  = 2*(M_SQRT2 - 1)*($y2 - $y1)/3.;
-        $xr = new Zend_Pdf_Element_Numeric($x + $xDelta);
-        $xl = new Zend_Pdf_Element_Numeric($x - $xDelta);
-        $yu = new Zend_Pdf_Element_Numeric($y + $yDelta);
-        $yd = new Zend_Pdf_Element_Numeric($y - $yDelta);
-
-        $this->_contents .= $xC->toString() . ' ' . $yUp->toString() . " m\n"
-                         .  $xr->toString() . ' ' . $yUp->toString() . ' '
-                         .    $xRight->toString() . ' ' . $yu->toString() . ' '
-                         .      $xRight->toString() . ' ' . $yC->toString() . " c\n"
-                         .  $xRight->toString() . ' ' . $yd->toString() . ' '
-                         .    $xr->toString() . ' ' . $yDown->toString() . ' '
-                         .      $xC->toString() . ' ' . $yDown->toString() . " c\n"
-                         .  $xl->toString() . ' ' . $yDown->toString() . ' '
-                         .    $xLeft->toString() . ' ' . $yd->toString() . ' '
-                         .      $xLeft->toString() . ' ' . $yC->toString() . " c\n"
-                         .  $xLeft->toString() . ' ' . $yu->toString() . ' '
-                         .    $xl->toString() . ' ' . $yUp->toString() . ' '
-                         .      $xC->toString() . ' ' . $yUp->toString() . " c\n";
-
-        switch ($fillType) {
-            case Zend_Pdf_Page::SHAPE_DRAW_FILL_AND_STROKE:
-                $this->_contents .= " B*\n";
-                break;
-            case Zend_Pdf_Page::SHAPE_DRAW_FILL:
-                $this->_contents .= " f*\n";
-                break;
-            case Zend_Pdf_Page::SHAPE_DRAW_STROKE:
-                $this->_contents .= " S\n";
-                break;
-        }
-
-        if ($startAngle !== null) {
-            $this->_contents .= "Q\n";
-        }
-
-        return $this;
-    }
-
-    /**
-     * Draw an image at the specified position on the page.
-     *
-     * @param Zend_Pdf_Image $image
-     * @param float $x1
-     * @param float $y1
-     * @param float $x2
-     * @param float $y2
-     * @return Zend_Pdf_Page
-     */
-    public function drawImage(Zend_Pdf_Resource_Image $image, $x1, $y1, $x2, $y2)
-    {
-        $this->_addProcSet('PDF');
-
-        $imageName    = $this->_attachResource('XObject', $image);
-        $imageNameObj = new Zend_Pdf_Element_Name($imageName);
-
-        $x1Obj     = new Zend_Pdf_Element_Numeric($x1);
-        $y1Obj     = new Zend_Pdf_Element_Numeric($y1);
-        $widthObj  = new Zend_Pdf_Element_Numeric($x2 - $x1);
-        $heightObj = new Zend_Pdf_Element_Numeric($y2 - $y1);
-
-        $this->_contents .= "q\n"
-                         .  '1 0 0 1 ' . $x1Obj->toString() . ' ' . $y1Obj->toString() . " cm\n"
-                         .  $widthObj->toString() . ' 0 0 ' . $heightObj->toString() . " 0 0 cm\n"
-                         .  $imageNameObj->toString() . " Do\n"
-                         .  "Q\n";
-
-        return $this;
-    }
-
-    /**
-     * Draw a LayoutBox at the specified position on the page.
-     *
-     * @param Zend_Pdf_Element_LayoutBox $box
-     * @param float $x
-     * @param float $y
-     * @return Zend_Pdf_Page
-     */
-    public function drawLayoutBox($box, $x, $y)
-    {
-        /** @todo implementation */
-        return $this;
-    }
-
-    /**
-     * Draw a line from x1,y1 to x2,y2.
-     *
-     * @param float $x1
-     * @param float $y1
-     * @param float $x2
-     * @param float $y2
-     * @return Zend_Pdf_Page
-     */
-    public function drawLine($x1, $y1, $x2, $y2)
-    {
-        $this->_addProcSet('PDF');
-
-        $x1Obj = new Zend_Pdf_Element_Numeric($x1);
-        $y1Obj = new Zend_Pdf_Element_Numeric($y1);
-        $x2Obj = new Zend_Pdf_Element_Numeric($x2);
-        $y2Obj = new Zend_Pdf_Element_Numeric($y2);
-
-        $this->_contents .= $x1Obj->toString() . ' ' . $y1Obj->toString() . " m\n"
-                         .  $x2Obj->toString() . ' ' . $y2Obj->toString() . " l\n S\n";
-
-        return $this;
-    }
-
-    /**
-     * Draw a polygon.
-     *
-     * If $fillType is Zend_Pdf_Page::SHAPE_DRAW_FILL_AND_STROKE or
-     * Zend_Pdf_Page::SHAPE_DRAW_FILL, then polygon is automatically closed.
-     * See detailed description of these methods in a PDF documentation
-     * (section 4.4.2 Path painting Operators, Filling)
-     *
-     * @param array $x  - array of float (the X co-ordinates of the vertices)
-     * @param array $y  - array of float (the Y co-ordinates of the vertices)
-     * @param integer $fillType
-     * @param integer $fillMethod
-     * @return Zend_Pdf_Page
-     */
-    public function drawPolygon($x, $y,
-                                $fillType = Zend_Pdf_Page::SHAPE_DRAW_FILL_AND_STROKE,
-                                $fillMethod = Zend_Pdf_Page::FILL_METHOD_NON_ZERO_WINDING)
-    {
-        $this->_addProcSet('PDF');
-
-        $firstPoint = true;
-        foreach ($x as $id => $xVal) {
-            $xObj = new Zend_Pdf_Element_Numeric($xVal);
-            $yObj = new Zend_Pdf_Element_Numeric($y[$id]);
-
-            if ($firstPoint) {
-                $path = $xObj->toString() . ' ' . $yObj->toString() . " m\n";
-                $firstPoint = false;
-            } else {
-                $path .= $xObj->toString() . ' ' . $yObj->toString() . " l\n";
-            }
-        }
-
-        $this->_contents .= $path;
-
-        switch ($fillType) {
-            case Zend_Pdf_Page::SHAPE_DRAW_FILL_AND_STROKE:
-                if ($fillMethod == Zend_Pdf_Page::FILL_METHOD_NON_ZERO_WINDING) {
-                    $this->_contents .= " b\n";
-                } else {
-                    // Even-Odd fill method.
-                    $this->_contents .= " b*\n";
-                }
-                break;
-            case Zend_Pdf_Page::SHAPE_DRAW_FILL:
-                if ($fillMethod == Zend_Pdf_Page::FILL_METHOD_NON_ZERO_WINDING) {
-                    $this->_contents .= " h\n f\n";
-                } else {
-                    // Even-Odd fill method.
-                    $this->_contents .= " h\n f*\n";
-                }
-                break;
-            case Zend_Pdf_Page::SHAPE_DRAW_STROKE:
-                $this->_contents .= " S\n";
-                break;
-        }
-
-        return $this;
-    }
-
-    /**
-     * Draw a rectangle.
-     *
-     * Fill types:
-     * Zend_Pdf_Page::SHAPE_DRAW_FILL_AND_STROKE - fill rectangle and stroke (default)
-     * Zend_Pdf_Page::SHAPE_DRAW_STROKE      - stroke rectangle
-     * Zend_Pdf_Page::SHAPE_DRAW_FILL        - fill rectangle
-     *
-     * @param float $x1
-     * @param float $y1
-     * @param float $x2
-     * @param float $y2
-     * @param integer $fillType
-     * @return Zend_Pdf_Page
-     */
-    public function drawRectangle($x1, $y1, $x2, $y2, $fillType = Zend_Pdf_Page::SHAPE_DRAW_FILL_AND_STROKE)
-    {
-        $this->_addProcSet('PDF');
-
-        $x1Obj      = new Zend_Pdf_Element_Numeric($x1);
-        $y1Obj      = new Zend_Pdf_Element_Numeric($y1);
-        $widthObj   = new Zend_Pdf_Element_Numeric($x2 - $x1);
-        $height2Obj = new Zend_Pdf_Element_Numeric($y2 - $y1);
-
-        $this->_contents .= $x1Obj->toString() . ' ' . $y1Obj->toString() . ' '
-                             .  $widthObj->toString() . ' ' . $height2Obj->toString() . " re\n";
-
-        switch ($fillType) {
-            case Zend_Pdf_Page::SHAPE_DRAW_FILL_AND_STROKE:
-                $this->_contents .= " B*\n";
-                break;
-            case Zend_Pdf_Page::SHAPE_DRAW_FILL:
-                $this->_contents .= " f*\n";
-                break;
-            case Zend_Pdf_Page::SHAPE_DRAW_STROKE:
-                $this->_contents .= " S\n";
-                break;
-        }
-
-        return $this;
-    }
-
-    /**
-     * Draw a line of text at the specified position.
-     *
-     * @param string $text
-     * @param float $x
-     * @param float $y
-     * @param string $charEncoding (optional) Character encoding of source text.
-     *   Defaults to current locale.
-     * @throws Zend_Pdf_Exception
-     * @return Zend_Pdf_Page
-     */
-    public function drawText($text, $x, $y, $charEncoding = '')
-    {
-        if ($this->_font === null) {
-            require_once 'Zend/Pdf/Exception.php';
-            throw new Zend_Pdf_Exception('Font has not been set');
-        }
-
-        $this->_addProcSet('Text');
-
-        $textObj = new Zend_Pdf_Element_String($this->_font->encodeString($text, $charEncoding));
-        $xObj    = new Zend_Pdf_Element_Numeric($x);
-        $yObj    = new Zend_Pdf_Element_Numeric($y);
-
-        $this->_contents .= "BT\n"
-                         .  $xObj->toString() . ' ' . $yObj->toString() . " Td\n"
-                         .  $textObj->toString() . " Tj\n"
-                         .  "ET\n";
-
-        return $this;
-    }
-
-    /**
-     * Return the height of this page in points.
-     *
-     * @return float
-     */
-    public function getHeight()
-    {
-        return $this->_pageDictionary->MediaBox->items[3]->value -
-               $this->_pageDictionary->MediaBox->items[1]->value;
-    }
-
-    /**
-     * Return the width of this page in points.
-     *
-     * @return float
-     */
-    public function getWidth()
-    {
-        return $this->_pageDictionary->MediaBox->items[2]->value -
-               $this->_pageDictionary->MediaBox->items[0]->value;
-    }
-
-     /**
-     * Close the path by drawing a straight line back to it's beginning.
-     *
-     * @throws Zend_Pdf_Exception    - if a path hasn't been started with pathMove()
-     * @return Zend_Pdf_Page
-     */
-    public function pathClose()
-    {
-        /** @todo implementation */
-        return $this;
-    }
-
-    /**
-     * Continue the open path in a straight line to the specified position.
-     *
-     * @param float $x  - the X co-ordinate to move to
-     * @param float $y  - the Y co-ordinate to move to
-     * @return Zend_Pdf_Page
-     */
-    public function pathLine($x, $y)
-    {
-        /** @todo implementation */
-        return $this;
-    }
-
-    /**
-     * Start a new path at the specified position. If a path has already been started,
-     * move the cursor without drawing a line.
-     *
-     * @param float $x  - the X co-ordinate to move to
-     * @param float $y  - the Y co-ordinate to move to
-     * @return Zend_Pdf_Page
-     */
-    public function pathMove($x, $y)
-    {
-        /** @todo implementation */
-        return $this;
-    }
-
-    /**
-     * Writes the raw data to the page's content stream.
-     *
-     * Be sure to consult the PDF reference to ensure your syntax is correct. No
-     * attempt is made to ensure the validity of the stream data.
-     *
-     * @param string $data
-     * @param string $procSet (optional) Name of ProcSet to add.
-     * @return Zend_Pdf_Page
-     */
-    public function rawWrite($data, $procSet = null)
-    {
-        if (! empty($procSet)) {
-            $this->_addProcSet($procSet);
-        }
-        $this->_contents .= $data;
-
-        return $this;
-    }
-
-    /**
-     * Rotate the page.
-     *
-     * @param float $x  - the X co-ordinate of rotation point
-     * @param float $y  - the Y co-ordinate of rotation point
-     * @param float $angle - rotation angle
-     * @return Zend_Pdf_Page
-     */
-    public function rotate($x, $y, $angle)
-    {
-        $cos  = new Zend_Pdf_Element_Numeric(cos($angle));
-        $sin  = new Zend_Pdf_Element_Numeric(sin($angle));
-        $mSin = new Zend_Pdf_Element_Numeric(-$sin->value);
-
-        $xObj = new Zend_Pdf_Element_Numeric($x);
-        $yObj = new Zend_Pdf_Element_Numeric($y);
-
-        $mXObj = new Zend_Pdf_Element_Numeric(-$x);
-        $mYObj = new Zend_Pdf_Element_Numeric(-$y);
-
-
-        $this->_addProcSet('PDF');
-        $this->_contents .= '1 0 0 1 ' . $xObj->toString() . ' ' . $yObj->toString() . " cm\n"
-                         .  $cos->toString() . ' ' . $sin->toString() . ' ' . $mSin->toString() . ' ' . $cos->toString() . " 0 0 cm\n"
-                         .  '1 0 0 1 ' . $mXObj->toString() . ' ' . $mYObj->toString() . " cm\n";
-
-        return $this;
-    }
-
-    /**
-     * Scale coordination system.
-     *
-     * @param float $xScale - X dimention scale factor
-     * @param float $yScale - Y dimention scale factor
-     * @return Zend_Pdf_Page
-     */
-    public function scale($xScale, $yScale)
-    {
-        $xScaleObj = new Zend_Pdf_Element_Numeric($xScale);
-        $yScaleObj = new Zend_Pdf_Element_Numeric($yScale);
-
-        $this->_addProcSet('PDF');
-        $this->_contents .= $xScaleObj->toString() . ' 0 0 ' . $yScaleObj->toString() . " 0 0 cm\n";
-
-        return $this;
-    }
-
-    /**
-     * Translate coordination system.
-     *
-     * @param float $xShift - X coordinate shift
-     * @param float $yShift - Y coordinate shift
-     * @return Zend_Pdf_Page
-     */
-    public function translate($xShift, $yShift)
-    {
-        $xShiftObj = new Zend_Pdf_Element_Numeric($xShift);
-        $yShiftObj = new Zend_Pdf_Element_Numeric($yShift);
-
-        $this->_addProcSet('PDF');
-        $this->_contents .= '1 0 0 1 ' . $xShiftObj->toString() . ' ' . $yShiftObj->toString() . " cm\n";
-
-        return $this;
-    }
-
-    /**
-     * Translate coordination system.
-     *
-     * @param float $x  - the X co-ordinate of axis skew point
-     * @param float $y  - the Y co-ordinate of axis skew point
-     * @param float $xAngle - X axis skew angle
-     * @param float $yAngle - Y axis skew angle
-     * @return Zend_Pdf_Page
-     */
-    public function skew($x, $y, $xAngle, $yAngle)
-    {
-        $tanXObj = new Zend_Pdf_Element_Numeric(tan($xAngle));
-        $tanYObj = new Zend_Pdf_Element_Numeric(-tan($yAngle));
-
-        $xObj = new Zend_Pdf_Element_Numeric($x);
-        $yObj = new Zend_Pdf_Element_Numeric($y);
-
-        $mXObj = new Zend_Pdf_Element_Numeric(-$x);
-        $mYObj = new Zend_Pdf_Element_Numeric(-$y);
-
-        $this->_addProcSet('PDF');
-        $this->_contents .= '1 0 0 1 ' . $xObj->toString() . ' ' . $yObj->toString() . " cm\n"
-                         .  '1 ' . $tanXObj->toString() . ' ' . $tanYObj->toString() . " 1 0 0 cm\n"
-                         .  '1 0 0 1 ' . $mXObj->toString() . ' ' . $mYObj->toString() . " cm\n";
-
-        return $this;
-    }
-}
-
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+ad2vrMZWA0==

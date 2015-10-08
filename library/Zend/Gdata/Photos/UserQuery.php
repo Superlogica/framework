@@ -1,354 +1,62 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Photos
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * @see Zend_Gdata_Gapps_Query
- */
-require_once('Zend/Gdata/Gapps/Query.php');
-
-/**
- * Assists in constructing queries for user entries.
- * Instances of this class can be provided in many places where a URL is
- * required.
- *
- * For information on submitting queries to a server, see the
- * service class, Zend_Gdata_Photos.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Photos
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Gdata_Photos_UserQuery extends Zend_Gdata_Query
-{
-
-    /**
-     * Indicates the format of data returned in Atom feeds. Can be either
-     * 'api' or 'base'. Default value is 'api'.
-     *
-     * @var string
-     */
-    protected $_projection = 'api';
-    
-    /**
-     * Indicates whether to request a feed or entry in queries. Default
-     * value is 'feed';
-     *
-     * @var string
-     */
-    protected $_type = 'feed';
-    
-    /**
-     * A string which, if not null, indicates which user should
-     * be retrieved by this query. If null, the default user will be used
-     * instead.
-     *
-     * @var string
-     */
-    protected $_user = Zend_Gdata_Photos::DEFAULT_USER;
-    
-    /**
-     * Create a new Query object with default values.
-     */
-    public function __construct()
-    {
-        parent::__construct();
-    }
-    
-    /**
-     * Set's the format of data returned in Atom feeds. Can be either 
-     * 'api' or 'base'. Normally, 'api' will be desired. Default is 'api'.
-     *
-     * @param string $value
-     * @return Zend_Gdata_Photos_UserQuery Provides a fluent interface
-     */
-    public function setProjection($value)
-    {
-        $this->_projection = $value;
-        return $this;
-    }
-
-    /**
-     * Gets the format of data in returned in Atom feeds.
-     *
-     * @see setProjection
-     * @return string projection
-     */
-    public function getProjection()
-    {
-        return $this->_projection;
-    }
-    
-    /**
-     * Set's the type of data returned in queries. Can be either 
-     * 'feed' or 'entry'. Normally, 'feed' will be desired. Default is 'feed'.
-     *
-     * @param string $value
-     * @return Zend_Gdata_Photos_UserQuery Provides a fluent interface
-     */
-    public function setType($value)
-    {
-        $this->_type = $value;
-        return $this;
-    }
-
-    /**
-     * Gets the type of data in returned in queries.
-     *
-     * @see setType
-     * @return string type
-     */
-    public function getType()
-    {
-        return $this->_type;
-    }
-
-    /**
-     * Set the user to query for. When set, this user's feed will be
-     * returned. If not set or null, the default user's feed will be returned
-     * instead.
-     *
-     * @param string $value The user to retrieve, or null for the default
-     *          user.
-     */
-     public function setUser($value)
-     {
-         if ($value !== null) {
-             $this->_user = $value;
-         } else {
-             $this->_user = Zend_Gdata_Photos::DEFAULT_USER;
-         }
-     }
-
-    /**
-     * Get the user which is to be returned.
-     *
-     * @see setUser
-     * @return string The visibility to retrieve.
-     */
-    public function getUser()
-    {
-        return $this->_user;
-    }
-
-    /**
-     * Set the visibility filter for entries returned. Only entries which 
-     * match this value will be returned. If null or unset, the default 
-     * value will be used instead.
-     * 
-     * Valid values are 'all' (default), 'public', and 'private'. 
-     *
-     * @param string $value The visibility to filter by, or null to use the 
-     *          default value.
-     */
-     public function setAccess($value)
-     {
-         if ($value !== null) {
-             $this->_params['access'] = $value;
-         } else {
-             unset($this->_params['access']);
-         }
-     }
-
-    /**
-     * Get the visibility filter for entries returned.
-     *
-     * @see setAccess
-     * @return string The visibility to filter by, or null for the default
-     *          user.
-     */
-    public function getAccess()
-    {
-        return $this->_params['access'];
-    }
-
-    /**
-     * Set the tag for entries that are returned. Only entries which 
-     * match this value will be returned. If null or unset, this filter will
-     * not be applied.
-     * 
-     * See http://code.google.com/apis/picasaweb/reference.html#Parameters
-     * for a list of valid values.
-     *
-     * @param string $value The tag to filter by, or null if no
-     *          filter is to be applied.
-     */
-     public function setTag($value)
-     {
-         if ($value !== null) {
-             $this->_params['tag'] = $value;
-         } else {
-             unset($this->_params['tag']);
-         }
-     }
-
-    /**
-     * Get the tag filter for entries returned.
-     *
-     * @see setTag
-     * @return string The tag to filter by, or null if no filter
-     *          is to be applied.
-     */
-    public function getTag()
-    {
-        return $this->_params['tag'];
-    }
-    
-    /**
-     * Set the kind of entries that are returned. Only entries which 
-     * match this value will be returned. If null or unset, this filter will
-     * not be applied.
-     * 
-     * See http://code.google.com/apis/picasaweb/reference.html#Parameters
-     * for a list of valid values.
-     *
-     * @param string $value The kind to filter by, or null if no
-     *          filter is to be applied.
-     */
-     public function setKind($value)
-     {
-         if ($value !== null) {
-             $this->_params['kind'] = $value;
-         } else {
-             unset($this->_params['kind']);
-         }
-     }
-
-    /**
-     * Get the kind of entries to be returned.
-     *
-     * @see setKind
-     * @return string The kind to filter by, or null if no filter
-     *          is to be applied.
-     */
-    public function getKind()
-    {
-        return $this->_params['kind'];
-    }
-    
-    /**
-     * Set the maximum image size for entries returned. Only entries which 
-     * match this value will be returned. If null or unset, this filter will
-     * not be applied.
-     * 
-     * See http://code.google.com/apis/picasaweb/reference.html#Parameters
-     * for a list of valid values.
-     *
-     * @param string $value The image size to filter by, or null if no
-     *          filter is to be applied.
-     */
-     public function setImgMax($value)
-     {
-         if ($value !== null) {
-             $this->_params['imgmax'] = $value;
-         } else {
-             unset($this->_params['imgmax']);
-         }
-     }
-
-    /**
-     * Get the maximum image size filter for entries returned.
-     *
-     * @see setImgMax
-     * @return string The image size size to filter by, or null if no filter
-     *          is to be applied.
-     */
-    public function getImgMax()
-    {
-        return $this->_params['imgmax'];
-    }
-    
-    /**
-     * Set the thumbnail size filter for entries returned. Only entries which 
-     * match this value will be returned. If null or unset, this filter will
-     * not be applied.
-     * 
-     * See http://code.google.com/apis/picasaweb/reference.html#Parameters
-     * for a list of valid values.
-     *
-     * @param string $value The thumbnail size to filter by, or null if no
-     *          filter is to be applied.
-     */
-     public function setThumbsize($value)
-     {
-         if ($value !== null) {
-             $this->_params['thumbsize'] = $value;
-         } else {
-             unset($this->_params['thumbsize']);
-         }
-     }
-
-    /**
-     * Get the thumbnail size filter for entries returned.
-     *
-     * @see setThumbsize
-     * @return string The thumbnail size to filter by, or null if no filter
-     *          is to be applied.
-     */
-    public function getThumbsize()
-    {
-        return $this->_params['thumbsize'];
-    }
-    
-    /**
-     * Returns the URL generated for this query, based on it's current
-     * parameters.
-     *
-     * @return string A URL generated based on the state of this query.
-     * @throws Zend_Gdata_App_InvalidArgumentException
-     */
-    public function getQueryUrl($incomingUri = null)
-    {
-        $uri = Zend_Gdata_Photos::PICASA_BASE_URI;
-        
-        if ($this->getType() !== null) {
-            $uri .= '/' . $this->getType();
-        } else {
-            require_once 'Zend/Gdata/App/InvalidArgumentException.php';
-            throw new Zend_Gdata_App_InvalidArgumentException(
-                    'Type must be feed or entry, not null');
-        }
-        
-        if ($this->getProjection() !== null) {
-            $uri .= '/' . $this->getProjection();
-        } else {
-            require_once 'Zend/Gdata/App/InvalidArgumentException.php';
-            throw new Zend_Gdata_App_InvalidArgumentException(
-                    'Projection must not be null');
-        }
-        
-        if ($this->getUser() !== null) {
-            $uri .= '/user/' . $this->getUser();
-        } else {
-            // Should never occur due to setter behavior
-            require_once 'Zend/Gdata/App/InvalidArgumentException.php';
-            throw new Zend_Gdata_App_InvalidArgumentException(
-                    'User must not be null');
-        }
-        
-        $uri .= $incomingUri;
-        $uri .= $this->getQueryString();
-        return $uri;
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+y6v2qz4rx4ox/GG6VG==

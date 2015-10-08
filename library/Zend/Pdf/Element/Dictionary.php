@@ -1,181 +1,62 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Pdf
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-
-/** Zend_Pdf_Element */
-require_once 'Zend/Pdf/Element.php';
-
-
-/**
- * PDF file 'dictionary' element implementation
- *
- * @category   Zend
- * @package    Zend_Pdf
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Pdf_Element_Dictionary extends Zend_Pdf_Element
-{
-    /**
-     * Dictionary elements
-     * Array of Zend_Pdf_Element objects ('name' => Zend_Pdf_Element)
-     *
-     * @var array
-     */
-    private $_items = array();
-
-
-    /**
-     * Object constructor
-     *
-     * @param array $val   - array of Zend_Pdf_Element objects
-     * @throws Zend_Pdf_Exception
-     */
-    public function __construct($val = null)
-    {
-        if ($val === null) {
-            return;
-        } else if (!is_array($val)) {
-            throw new Zend_Pdf_Exception('Argument must be an array');
-        }
-
-        foreach ($val as $name => $element) {
-            if (!$element instanceof Zend_Pdf_Element) {
-                throw new Zend_Pdf_Exception('Array elements must be Zend_Pdf_Element objects');
-            }
-            if (!is_string($name)) {
-                throw new Zend_Pdf_Exception('Array keys must be strings');
-            }
-            $this->_items[$name] = $element;
-        }
-    }
-
-
-    /**
-     * Add element to an array
-     *
-     * @name Zend_Pdf_Element_Name $name
-     * @param Zend_Pdf_Element $val   - Zend_Pdf_Element object
-     * @throws Zend_Pdf_Exception
-     */
-    public function add(Zend_Pdf_Element_Name $name, Zend_Pdf_Element $val)
-    {
-        $this->_items[$name->value] = $val;
-    }
-
-    /**
-     * Return dictionary keys
-     *
-     * @return array
-     */
-    public function getKeys()
-    {
-        return array_keys($this->_items);
-    }
-
-
-    /**
-     * Get handler
-     *
-     * @param string $property
-     * @return Zend_Pdf_Element | null
-     */
-    public function __get($item)
-    {
-        $element = isset($this->_items[$item]) ? $this->_items[$item]
-                                               : null;
-
-        return $element;
-    }
-
-    /**
-     * Set handler
-     *
-     * @param string $property
-     * @param  mixed $value
-     */
-    public function __set($item, $value)
-    {
-        if ($value === null) {
-            unset($this->_items[$item]);
-        } else {
-            $this->_items[$item] = $value;
-        }
-    }
-
-    /**
-     * Return type of the element.
-     *
-     * @return integer
-     */
-    public function getType()
-    {
-        return Zend_Pdf_Element::TYPE_DICTIONARY;
-    }
-
-
-    /**
-     * Return object as string
-     *
-     * @param Zend_Pdf_Factory $factory
-     * @return string
-     */
-    public function toString($factory = null)
-    {
-        $outStr = '<<';
-        $lastNL = 0;
-
-        foreach ($this->_items as $name => $element) {
-            if (!is_object($element)) {
-                throw new Zend_Pdf_Exception('Wrong data');
-            }
-
-            if (strlen($outStr) - $lastNL > 128)  {
-                $outStr .= "\n";
-                $lastNL = strlen($outStr);
-            }
-
-            $nameObj = new Zend_Pdf_Element_Name($name);
-            $outStr .= $nameObj->toString($factory) . ' ' . $element->toString($factory) . ' ';
-        }
-        $outStr .= '>>';
-
-        return $outStr;
-    }
-
-
-    /**
-     * Convert PDF element to PHP type.
-     *
-     * Dictionary is returned as an associative array
-     *
-     * @return mixed
-     */
-    public function toPhp()
-    {
-        $phpArray = array();
-
-        foreach ($this->_items as $itemName => $item) {
-            $phpArray[$itemName] = $item->toPhp();
-        }
-
-        return $phpArray;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
++QBtyaYQ

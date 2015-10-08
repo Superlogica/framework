@@ -1,127 +1,37 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @package    Zend_Pdf
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-
-/** Zend_Pdf_Element_Dictionary */
-require_once 'Zend/Pdf/Element/Dictionary.php';
-
-
-/**
- * PDF file trailer
- *
- * @package    Zend_Pdf
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-abstract class Zend_Pdf_Trailer
-{
-    private static $_allowedKeys = array('Size', 'Prev', 'Root', 'Encrypt', 'Info', 'ID', 'Index', 'W', 'XRefStm', 'DocChecksum');
-
-    /**
-     * Trailer dictionary.
-     *
-     * @var Zend_Pdf_Element_Dictionary
-     */
-    private $_dict;
-
-    /**
-     * Check if key is correct
-     *
-     * @param string $key
-     * @throws Zend_Pdf_Exception
-     */
-    private function _checkDictKey($key)
-    {
-        if ( !in_array($key, self::$_allowedKeys) ) {
-            /** @todo Make warning (log entry) instead of an exception */
-            throw new Zend_Pdf_Exception("Unknown trailer dictionary key: '$key'.");
-        }
-    }
-
-
-    /**
-     * Object constructor
-     *
-     * @param Zend_Pdf_Element_Dictionary $dict
-     */
-    public function __construct(Zend_Pdf_Element_Dictionary $dict)
-    {
-        $this->_dict   = $dict;
-
-        foreach ($this->_dict->getKeys() as $dictKey) {
-            $this->_checkDictKey($dictKey);
-        }
-    }
-
-    /**
-     * Get handler
-     *
-     * @param string $property
-     * @return mixed
-     */
-    public function __get($property)
-    {
-        return $this->_dict->$property;
-    }
-
-    /**
-     * Set handler
-     *
-     * @param string $property
-     * @param  mixed $value
-     */
-    public function __set($property, $value)
-    {
-        $this->_checkDictKey($property);
-        $this->_dict->$property = $value;
-    }
-
-    /**
-     * Return string trailer representation
-     *
-     * @return string
-     */
-    public function toString()
-    {
-        return "trailer\n" . $this->_dict->toString() . "\n";
-    }
-
-
-    /**
-     * Get length of source PDF
-     *
-     * @return string
-     */
-    abstract public function getPDFLength();
-
-    /**
-     * Get PDF String
-     *
-     * @return string
-     */
-    abstract public function getPDFString();
-
-    /**
-     * Get header of free objects list
-     * Returns object number of last free object
-     *
-     * @return integer
-     */
-    abstract public function getLastFreeObject();
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+efN/+Bli

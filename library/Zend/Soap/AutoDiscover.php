@@ -1,485 +1,206 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Soap
- * @subpackage AutoDiscover
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: AutoDiscover.php 14918 2009-04-15 16:07:53Z beberlei $
- */
-
-require_once 'Zend/Server/Interface.php';
-require_once 'Zend/Soap/Wsdl.php';
-require_once 'Zend/Server/Reflection.php';
-require_once 'Zend/Server/Abstract.php';
-require_once 'Zend/Uri.php';
-
-/**
- * Zend_Soap_AutoDiscover
- *
- * @category   Zend
- * @package    Zend_Soap
- * @subpackage AutoDiscover
- */
-class Zend_Soap_AutoDiscover implements Zend_Server_Interface {
-    /**
-     * @var Zend_Soap_Wsdl
-     */
-    protected $_wsdl = null;
-
-    /**
-     * @var Zend_Server_Reflection
-     */
-    protected $_reflection = null;
-
-    /**
-     * @var array
-     */
-    protected $_functions = array();
-
-    /**
-     * @var boolean
-     */
-    protected $_strategy;
-
-    /**
-     * Url where the WSDL file will be available at.
-     *
-     * @var WSDL Uri
-     */
-    protected $_uri;
-
-    /**
-     * soap:body operation style options
-     *
-     * @var array
-     */
-    protected $_operationBodyStyle = array('use' => 'encoded', 'encodingStyle' => "http://schemas.xmlsoap.org/soap/encoding/");
-
-    /**
-     * soap:operation style
-     *
-     * @var array
-     */
-    protected $_bindingStyle = array('style' => 'rpc', 'transport' => 'http://schemas.xmlsoap.org/soap/http');
-
-    /**
-     * Constructor
-     *
-     * @param boolean|string|Zend_Soap_Wsdl_Strategy_Interface $strategy
-     * @param string|Zend_Uri $uri
-     */
-    public function __construct($strategy = true, $uri=null)
-    {
-        $this->_reflection = new Zend_Server_Reflection();
-        $this->setComplexTypeStrategy($strategy);
-
-        if($uri !== null) {
-            $this->setUri($uri);
-        }
-    }
-
-    /**
-     * Set the location at which the WSDL file will be availabe.
-     *
-     * @see Zend_Soap_Exception
-     * @throws Zend_Soap_AutoDiscover_Exception
-     * @param  Zend_Uri|string $uri
-     * @return Zend_Soap_AutoDiscover
-     */
-    public function setUri($uri)
-    {
-        if(!is_string($uri) && !($uri instanceof Zend_Uri)) {
-            require_once "Zend/Soap/AutoDiscover/Exception.php";
-            throw new Zend_Soap_AutoDiscover_Exception("No uri given to Zend_Soap_AutoDiscover::setUri as string or Zend_Uri instance.");
-        }
-        $this->_uri = $uri;
-
-        // change uri in WSDL file also if existant
-        if($this->_wsdl instanceof Zend_Soap_Wsdl) {
-            $this->_wsdl->setUri($uri);
-        }
-
-        return $this;
-    }
-
-    /**
-     * Return the current Uri that the SOAP WSDL Service will be located at.
-     *
-     * @return Zend_Uri
-     */
-    public function getUri()
-    {
-        if($this->_uri !== null) {
-            $uri = $this->_uri;
-        } else {
-            $schema     = $this->getSchema();
-            $host       = $this->getHostName();
-            $scriptName = $this->getRequestUriWithoutParameters();
-            $uri = Zend_Uri::factory($schema . '://' . $host . $scriptName);
-            $this->setUri($uri);
-        }
-        return $uri;
-    }
-
-    /**
-     * Set options for all the binding operations soap:body elements.
-     *
-     * By default the options are set to 'use' => 'encoded' and
-     * 'encodingStyle' => "http://schemas.xmlsoap.org/soap/encoding/".
-     *
-     * @see    Zend_Soap_AutoDiscover_Exception
-     * @param  array $operationStyle
-     * @return Zend_Soap_AutoDiscover
-     */
-    public function setOperationBodyStyle(array $operationStyle=array())
-    {
-        if(!isset($operationStyle['use'])) {
-            require_once "Zend/Soap/AutoDiscover/Exception.php";
-            throw new Zend_Soap_AutoDiscover_Exception("Key 'use' is required in Operation soap:body style.");
-        }
-        $this->_operationBodyStyle = $operationStyle;
-        return $this;
-    }
-
-    /**
-     * Set Binding soap:binding style.
-     *
-     * By default 'style' is 'rpc' and 'transport' is 'http://schemas.xmlsoap.org/soap/http'.
-     *
-     * @param  array $bindingStyle
-     * @return Zend_Soap_AutoDiscover
-     */
-    public function setBindingStyle(array $bindingStyle=array())
-    {
-        if(isset($bindingStyle['style'])) {
-            $this->_bindingStyle['style'] = $bindingStyle['style'];
-        }
-        if(isset($bindingStyle['transport'])) {
-            $this->_bindingStyle['transport'] = $bindingStyle['transport'];
-        }
-        return $this;
-    }
-
-    /**
-     * Detect and returns the current HTTP/HTTPS Schema
-     *
-     * @return string
-     */
-    protected function getSchema()
-    {
-        $schema = "http";
-        if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') {
-            $schema = 'https';
-        }
-        return $schema;
-    }
-
-    /**
-     * Detect and return the current hostname
-     *
-     * @return string
-     */
-    protected function getHostName()
-    {
-        if(isset($_SERVER['HTTP_HOST'])) {
-            $host = $_SERVER['HTTP_HOST'];
-        } else {
-            $host = $_SERVER['SERVER_NAME'];
-        }
-        return $host;
-    }
-
-    /**
-     * Detect and return the current script name without parameters
-     *
-     * @return string
-     */
-    protected function getRequestUriWithoutParameters()
-    {
-        if (isset($_SERVER['HTTP_X_REWRITE_URL'])) { // check this first so IIS will catch
-            $requestUri = $_SERVER['HTTP_X_REWRITE_URL'];
-        } elseif (isset($_SERVER['REQUEST_URI'])) {
-            $requestUri = $_SERVER['REQUEST_URI'];
-        } elseif (isset($_SERVER['ORIG_PATH_INFO'])) { // IIS 5.0, PHP as CGI
-            $requestUri = $_SERVER['ORIG_PATH_INFO'];
-        } else {
-            $requestUri = $_SERVER['SCRIPT_NAME'];
-        }
-        if( ($pos = strpos($requestUri, "?")) !== false) {
-            $requestUri = substr($requestUri, 0, $pos);
-        }
-
-        return $requestUri;
-    }
-
-    /**
-     * Set the strategy that handles functions and classes that are added AFTER this call.
-     *
-     * @param  boolean|string|Zend_Soap_Wsdl_Strategy_Interface $strategy
-     * @return Zend_Soap_AutoDiscover
-     */
-    public function setComplexTypeStrategy($strategy)
-    {
-        $this->_strategy = $strategy;
-        if($this->_wsdl instanceof  Zend_Soap_Wsdl) {
-            $this->_wsdl->setComplexTypeStrategy($strategy);
-        }
-
-        return $this;
-    }
-
-    /**
-     * Set the Class the SOAP server will use
-     *
-     * @param string $class Class Name
-     * @param string $namespace Class Namspace - Not Used
-     * @param array $argv Arguments to instantiate the class - Not Used
-     */
-    public function setClass($class, $namespace = '', $argv = null)
-    {
-        $uri = $this->getUri();
-
-        $wsdl = new Zend_Soap_Wsdl($class, $uri, $this->_strategy);
-
-        $port = $wsdl->addPortType($class . 'Port');
-        $binding = $wsdl->addBinding($class . 'Binding', 'tns:' .$class. 'Port');
-
-        $wsdl->addSoapBinding($binding, $this->_bindingStyle['style'], $this->_bindingStyle['transport']);
-        $wsdl->addService($class . 'Service', $class . 'Port', 'tns:' . $class . 'Binding', $uri);
-        foreach ($this->_reflection->reflectClass($class)->getMethods() as $method) {
-            /* <wsdl:portType>'s */
-            $portOperation = $wsdl->addPortOperation($port, $method->getName(), 'tns:' .$method->getName(). 'Request', 'tns:' .$method->getName(). 'Response');
-            $desc = $method->getDescription();
-            if (strlen($desc) > 0) {
-                /** @todo check, what should be done for portoperation documentation */
-                //$wsdl->addDocumentation($portOperation, $desc);
-            }
-            /* </wsdl:portType>'s */
-
-            $this->_functions[] = $method->getName();
-
-            $selectedPrototype = null;
-            $maxNumArgumentsOfPrototype = -1;
-            foreach ($method->getPrototypes() as $prototype) {
-                $numParams = count($prototype->getParameters());
-                if($numParams > $maxNumArgumentsOfPrototype) {
-                    $maxNumArgumentsOfPrototype = $numParams;
-                    $selectedPrototype = $prototype;
-                }
-            }
-
-            if($selectedPrototype != null) {
-                $prototype = $selectedPrototype;
-                $args = array();
-                foreach($prototype->getParameters() as $param) {
-                    $args[$param->getName()] = $wsdl->getType($param->getType());
-                }
-                $message = $wsdl->addMessage($method->getName() . 'Request', $args);
-                if (strlen($desc) > 0) {
-                    //$wsdl->addDocumentation($message, $desc);
-                }
-                if ($prototype->getReturnType() != "void") {
-                    $returnName = 'return';
-                    $message = $wsdl->addMessage($method->getName() . 'Response', array($returnName => $wsdl->getType($prototype->getReturnType())));
-                }
-
-                /* <wsdl:binding>'s */
-                $operation = $wsdl->addBindingOperation($binding, $method->getName(),  $this->_operationBodyStyle, $this->_operationBodyStyle);
-                $wsdl->addSoapOperation($operation, $uri . '#' .$method->getName());
-                /* </wsdl:binding>'s */
-            }
-        }
-        $this->_wsdl = $wsdl;
-    }
-
-    /**
-     * Add a Single or Multiple Functions to the WSDL
-     *
-     * @param string $function Function Name
-     * @param string $namespace Function namespace - Not Used
-     */
-    public function addFunction($function, $namespace = '')
-    {
-        static $port;
-        static $operation;
-        static $binding;
-
-        if (!is_array($function)) {
-            $function = (array) $function;
-        }
-
-        $uri = $this->getUri();
-
-        if (!($this->_wsdl instanceof Zend_Soap_Wsdl)) {
-            $parts = explode('.', basename($_SERVER['SCRIPT_NAME']));
-            $name = $parts[0];
-            $wsdl = new Zend_Soap_Wsdl($name, $uri, $this->_strategy);
-
-            $port = $wsdl->addPortType($name . 'Port');
-            $binding = $wsdl->addBinding($name . 'Binding', 'tns:' .$name. 'Port');
-
-            $wsdl->addSoapBinding($binding, $this->_bindingStyle['style'], $this->_bindingStyle['transport']);
-            $wsdl->addService($name . 'Service', $name . 'Port', 'tns:' . $name . 'Binding', $uri);
-        } else {
-            $wsdl = $this->_wsdl;
-        }
-
-        foreach ($function as $func) {
-            $method = $this->_reflection->reflectFunction($func);
-            foreach ($method->getPrototypes() as $prototype) {
-                $args = array();
-                foreach ($prototype->getParameters() as $param) {
-                    $args[$param->getName()] = $wsdl->getType($param->getType());
-                }
-                $message = $wsdl->addMessage($method->getName() . 'Request', $args);
-                $desc = $method->getDescription();
-                if (strlen($desc) > 0) {
-                    //$wsdl->addDocumentation($message, $desc);
-                }
-                if($prototype->getReturnType() != "void") {
-                    $returnName = "return";
-                    $message = $wsdl->addMessage($method->getName() . 'Response', array($returnName => $wsdl->getType($prototype->getReturnType())));
-                }
-                 /* <wsdl:portType>'s */
-                   $portOperation = $wsdl->addPortOperation($port, $method->getName(), 'tns:' .$method->getName(). 'Request', 'tns:' .$method->getName(). 'Response');
-                if (strlen($desc) > 0) {
-                    //$wsdl->addDocumentation($portOperation, $desc);
-                }
-                   /* </wsdl:portType>'s */
-
-                /* <wsdl:binding>'s */
-                $operation = $wsdl->addBindingOperation($binding, $method->getName(), $this->_operationBodyStyle, $this->_operationBodyStyle);
-                $wsdl->addSoapOperation($operation, $uri . '#' .$method->getName());
-                /* </wsdl:binding>'s */
-
-                $this->_functions[] = $method->getName();
-
-                // We will only add one prototype
-                break;
-            }
-        }
-        $this->_wsdl = $wsdl;
-    }
-
-    /**
-     * Action to take when an error occurs
-     *
-     * @param string $fault
-     * @param string|int $code
-     */
-    public function fault($fault = null, $code = null)
-    {
-        require_once "Zend/Soap/AutoDiscover/Exception.php";
-        throw new Zend_Soap_AutoDiscover_Exception("Function has no use in AutoDiscover.");
-    }
-
-    /**
-     * Handle the Request
-     *
-     * @param string $request A non-standard request - Not Used
-     */
-    public function handle($request = false)
-    {
-        if (!headers_sent()) {
-            header('Content-Type: text/xml');
-        }
-        $this->_wsdl->dump();
-    }
-
-    /**
-     * Proxy to WSDL dump function
-     *
-     * @param string $filename
-     */
-    public function dump($filename)
-    {
-        if($this->_wsdl !== null) {
-            return $this->_wsdl->dump($filename);
-        } else {
-            /**
-             * @see Zend_Soap_AutoDiscover_Exception
-             */
-            require_once "Zend/Soap/AutoDiscover/Exception.php";
-            throw new Zend_Soap_AutoDiscover_Exception("Cannot dump autodiscovered contents, WSDL file has not been generated yet.");
-        }
-    }
-
-    /**
-     * Proxy to WSDL toXml() function
-     */
-    public function toXml()
-    {
-        if($this->_wsdl !== null) {
-            return $this->_wsdl->toXml();
-        } else {
-            /**
-             * @see Zend_Soap_AutoDiscover_Exception
-             */
-            require_once "Zend/Soap/AutoDiscover/Exception.php";
-            throw new Zend_Soap_AutoDiscover_Exception("Cannot return autodiscovered contents, WSDL file has not been generated yet.");
-        }
-    }
-
-    /**
-     * Return an array of functions in the WSDL
-     *
-     * @return array
-     */
-    public function getFunctions()
-    {
-        return $this->_functions;
-    }
-
-    /**
-     * Load Functions
-     *
-     * @param unknown_type $definition
-     */
-    public function loadFunctions($definition)
-    {
-        require_once "Zend/Soap/AutoDiscover/Exception.php";
-        throw new Zend_Soap_AutoDiscover_Exception("Function has no use in AutoDiscover.");
-    }
-
-    /**
-     * Set Persistance
-     *
-     * @param int $mode
-     */
-    public function setPersistence($mode)
-    {
-        require_once "Zend/Soap/AutoDiscover/Exception.php";
-        throw new Zend_Soap_AutoDiscover_Exception("Function has no use in AutoDiscover.");
-    }
-
-    /**
-     * Returns an XSD Type for the given PHP type
-     *
-     * @param string $type PHP Type to get the XSD type for
-     * @return string
-     */
-    public function getType($type)
-    {
-        if (!($this->_wsdl instanceof Zend_Soap_Wsdl)) {
-            /** @todo Exception throwing may be more correct */
-
-            // WSDL is not defined yet, so we can't recognize type in context of current service
-            return '';
-        } else {
-            return $this->_wsdl->getType($type);
-        }
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+EEav74ltcabtgHzU/4vxL48RTWYYkvlkYwG=

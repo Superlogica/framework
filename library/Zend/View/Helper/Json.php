@@ -1,80 +1,31 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_View
- * @subpackage Helper
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @version    $Id: Json.php 15113 2009-04-23 16:54:22Z matthew $
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_Json */
-require_once 'Zend/Json.php';
-
-/** Zend_Controller_Front */
-require_once 'Zend/Controller/Front.php';
-
-/** Zend_View_Helper_Abstract.php */
-require_once 'Zend/View/Helper/Abstract.php';
-
-/**
- * Helper for simplifying JSON responses
- *
- * @package    Zend_View
- * @subpackage Helper
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_View_Helper_Json extends Zend_View_Helper_Abstract
-{
-    /**
-     * Encode data as JSON, disable layouts, and set response header
-     *
-     * If $keepLayouts is true, does not disable layouts.
-     *
-     * @param  mixed $data
-     * @param  bool $keepLayouts
-     * NOTE:   if boolean, establish $keepLayouts to true|false
-     *         if array, admit params for Zend_Json::encode as enableJsonExprFinder=>true|false
-     *         this array can contains a 'keepLayout'=>true|false
-     *         that will not be passed to Zend_Json::encode method but will be used here
-     * @return string|void
-     */
-    public function json($data, $keepLayouts = false)
-    {
-        $options = array();
-        if (is_array($keepLayouts))
-        {
-            $options     = $keepLayouts;
-            $keepLayouts = (array_key_exists('keepLayouts', $keepLayouts))
-                            ? $keepLayouts['keepLayouts']
-                            : false;
-            unset($options['keepLayouts']);
-        }
-
-        $data = Zend_Json::encode($data, null, $options);
-        if (!$keepLayouts) {
-            require_once 'Zend/Layout.php';
-            $layout = Zend_Layout::getMvcInstance();
-            if ($layout instanceof Zend_Layout) {
-                $layout->disableLayout();
-            }
-        }
-
-        $response = Zend_Controller_Front::getInstance()->getResponse();
-        $response->setHeader('Content-Type', 'application/json');
-        return $data;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+ZeJrTW==

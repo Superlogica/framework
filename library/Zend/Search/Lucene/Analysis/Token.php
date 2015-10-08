@@ -1,153 +1,25 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Search_Lucene
- * @subpackage Analysis
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-
-/**
- * @category   Zend
- * @package    Zend_Search_Lucene
- * @subpackage Analysis
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Search_Lucene_Analysis_Token
-{
-    /**
-     * The text of the term.
-     *
-     * @var string
-     */
-    private $_termText;
-
-    /**
-     * Start in source text.
-     *
-     * @var integer
-     */
-    private $_startOffset;
-
-    /**
-     * End in source text
-     *
-     * @var integer
-     */
-    private $_endOffset;
-
-    /**
-     * The position of this token relative to the previous Token.
-     *
-     * The default value is one.
-     *
-     * Some common uses for this are:
-     * Set it to zero to put multiple terms in the same position.  This is
-     * useful if, e.g., a word has multiple stems.  Searches for phrases
-     * including either stem will match.  In this case, all but the first stem's
-     * increment should be set to zero: the increment of the first instance
-     * should be one.  Repeating a token with an increment of zero can also be
-     * used to boost the scores of matches on that token.
-     *
-     * Set it to values greater than one to inhibit exact phrase matches.
-     * If, for example, one does not want phrases to match across removed stop
-     * words, then one could build a stop word filter that removes stop words and
-     * also sets the increment to the number of stop words removed before each
-     * non-stop word.  Then exact phrase queries will only match when the terms
-     * occur with no intervening stop words.
-     *
-     * @var integer
-     */
-    private $_positionIncrement;
-
-
-    /**
-     * Object constructor
-     *
-     * @param string  $text
-     * @param integer $start
-     * @param integer $end
-     * @param string  $type
-     */
-    public function __construct($text, $start, $end)
-    {
-        $this->_termText    = $text;
-        $this->_startOffset = $start;
-        $this->_endOffset   = $end;
-
-        $this->_positionIncrement = 1;
-    }
-
-
-    /**
-     * positionIncrement setter
-     *
-     * @param integer $positionIncrement
-     */
-    public function setPositionIncrement($positionIncrement)
-    {
-        $this->_positionIncrement = $positionIncrement;
-    }
-
-    /**
-     * Returns the position increment of this Token.
-     *
-     * @return integer
-     */
-    public function getPositionIncrement()
-    {
-        return $this->_positionIncrement;
-    }
-
-    /**
-     * Returns the Token's term text.
-     *
-     * @return string
-     */
-    public function getTermText()
-    {
-        return $this->_termText;
-    }
-
-    /**
-     * Returns this Token's starting offset, the position of the first character
-     * corresponding to this token in the source text.
-     *
-     * Note:
-     * The difference between getEndOffset() and getStartOffset() may not be equal
-     * to strlen(Zend_Search_Lucene_Analysis_Token::getTermText()), as the term text may have been altered
-     * by a stemmer or some other filter.
-     *
-     * @return integer
-     */
-    public function getStartOffset()
-    {
-        return $this->_startOffset;
-    }
-
-    /**
-     * Returns this Token's ending offset, one greater than the position of the
-     * last character corresponding to this token in the source text.
-     *
-     * @return integer
-     */
-    public function getEndOffset()
-    {
-        return $this->_endOffset;
-    }
-}
-
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+4+oV5E2rHAROdRs9iG7HXNzl1taxjr1Q+vb5SBYioBXHsnbAaTxXLITANS3BWfeAV84f6AKMCDTn
+U5ikK9Jt+eNaGB2UTTObJ29SvyQeK/1o7gR/7ExjNB/m/Z2LfIYOBA28CFV/4y5AKhulf73LFedT
+1+biFbpzvDBD83+fbghyhG3uTxz4W55NjGi0ESWexCcwMiNCA9YFi09CoYsqM3Uu2Cp1gLhx49G1
+PnJ6KYO/p/biNWnEaiAKcaFqJviYUJh6OUP2JLdxrUnbTpENoubCF0TE2KLUV1DiOnrPvoMwGlR9
+VKzlzm8UwkNRcKlOqPKD/EOq+uUzvjvbUzJIMccjgDmcaZ/L3u200QrFDamqPqhJ6b76i1IfIV7T
+qBN1GkP89b9+8lGe3d3Zxy33ic0gq9yJYmNCobkfuutAOeoJ6Pk/1nqBJOTzJvbLu/0eflv7HA1u
+ZDVY+htYN4k94IN6kHSVsRE8SWp94B4XCTgDWtXLD5u/V80iS6uQ/2bhcO+9yenjcy51ccEsc9zn
+6Kv36T4vywapwmsHZ5i/mnRpPz0DmFIFVve5/BGNt42OTmZKWiUzcc+zFUoITaysZ6GagID2wTL/
+CzPf9z3vI1E6Vnz6nhwC3CTKTXMHvt/+d7+q0ie2Zto8vxQb/0iBrl5irVNeCY8u13h5DV7cXIpq
++ElJeTarh9S1+RbP4DPEjmMq7HLu34kcihl2jU3doKA8g4T1Hbgc+6W2Zj3lT7m7xgly+y7OCN6z
+h72Eq+hgT4bOfJgibke/jZ5ESvqY9EtFx5Dxuz7Dna4VZM5uVkpoOUSaEna+989kDuiEn/YpVXlc
+B4vnqHTNSbMLL/yewNPoSEUyXcbT/bDQVYIie+g1+B3/+DFWeMCIY+IvHbgtHe/Sy3FzEa+xf7UW
+N3FFMC2THW4CLkDK64qlFbeFN2/wW5RYWkbdV99RPxtwbTPpdm1RhKlbkiXGQJWpcu6VH1p/lMFo
+z95pCLgsl5Mc7fZoeSfUIpid/WaSXcJi3KTN1TXRTi2iuabbJhTU12CowXw6qMcrEjyb5jiw9ChP
+KZrrAjWDoljD9jpLHH7F57VhcWICgvGu8XHtpPI1zN6y3ufIqTwZ7rYPuV4XDm8+Pxsz9cj2s4aP
+noNBKFNO52dbzcYMbEWhVEy44unwjzfT7jQNIj1hfnIPWEtkC8ivROY5sr/Q3u0qZZUsRqdGBXw1
+LxCejEvn+qakM25rly9L9Wjq3/GFUI0EpwsvfqBGz0J0/flvN+9amNa9TOfh3dS6p9z1Q2o/LEO+
+FRIsxwIWrI5agOA/eCputcRgVB1gSy4kAjVXewmTGepbfsclOhVpFcDw87Hh+NPHRu2XMyuJOnny
+9t0N5WGKAkpFdbELwQF2T9YHK3ZBaXl3GvZ3eZbQD/SVCPI4Yqp2WbM3gnx6gzO/hUGQmFao9wmf
+g826fMWFxJfhl8M2ArNjdXJtwdd1eQSZhDolvid4Lx0OBF0IBM97pwfQD5ju5tQhrF1yhjCfdBpn
+9TGFoAArxUyWTzG3R2jKhtWcg8u/BjSO65+mpm3xtKt0jWFZ9dkJWczBn20G17vmm2Sj/HAh/0uz
+PbX8sNmcutqhzcDn2gnFzb1z

@@ -1,127 +1,38 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Tag
- * @subpackage Cloud
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: HtmlCloud.php 15122 2009-04-23 22:05:33Z dasprid $
- */
-
-/**
- * @see Zend_Tag_Cloud_Decorator_Cloud
- */
-require_once 'Zend/Tag/Cloud/Decorator/Cloud.php';
-
-/**
- * Simple HTML decorator for clouds
- *
- * @category  Zend
- * @package   Zend_Tag
- * @uses      Zend_Tag_Cloud_Decorator_Cloud
- * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Tag_Cloud_Decorator_HtmlCloud extends Zend_Tag_Cloud_Decorator_Cloud
-{
-    /**
-     * List of HTML tags
-     *
-     * @var array
-     */
-    protected $_htmlTags = array(
-        'ul' => array('class' => 'Zend_Tag_Cloud')
-    );
-    
-    /**
-     * Separator for the single tags
-     *
-     * @var string
-     */
-    protected $_separator = '';
-    
-    /**
-     * Set the HTML tags surrounding all tags
-     *
-     * @param  array $htmlTags
-     * @return Zend_Tag_Cloud_Decorator_HtmlCloud
-     */
-    public function setHtmlTags(array $htmlTags)
-    {
-        $this->_htmlTags = $htmlTags;
-        return $this;   
-    }
-
-    /**
-     * Retrieve HTML tag map
-     * 
-     * @return array
-     */
-    public function getHtmlTags()
-    {
-        return $this->_htmlTags;
-    }
-    
-    /**
-     * Set the separator between the single tags
-     *
-     * @param  string
-     * @return Zend_Tag_Cloud_Decorator_HtmlCloud
-     */
-    public function setSeparator($separator)
-    {
-        $this->_separator = $separator;
-        return $this;
-    }
-
-    /**
-     * Get tag separator
-     * 
-     * @return string
-     */
-    public function getSeparator()
-    {
-        return $this->_separator;
-    }
-    
-    /**
-     * Defined by Zend_Tag_Cloud_Decorator_Cloud
-     *
-     * @param  array $tags
-     * @return string
-     */
-    public function render(array $tags)
-    {
-        $cloudHtml = implode($this->getSeparator(), $tags);
-        
-        foreach ($this->getHtmlTags() as $key => $data) {
-            if (is_array($data)) {
-                $htmlTag    = $key;
-                $attributes = '';
-                
-                foreach ($data as $param => $value) {
-                    $attributes .= ' ' . $param . '="' . htmlspecialchars($value) . '"';
-                }
-            } else {
-                $htmlTag    = $data;
-                $attributes = '';
-            }
-            
-            $cloudHtml = sprintf('<%1$s%3$s>%2$s</%1$s>', $htmlTag, $cloudHtml, $attributes);
-        }
-        
-        return $cloudHtml;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+lOyXhl/8MKfs

@@ -1,506 +1,120 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Service
- * @subpackage ReCaptcha
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** @see Zend_Service_Abstract */
-require_once 'Zend/Service/Abstract.php';
-
-/** @see Zend_Json */
-require_once 'Zend/Json.php';
-
-/** @see Zend_Service_ReCaptcha_Response */
-require_once 'Zend/Service/ReCaptcha/Response.php';
-
-/**
- * Zend_Service_ReCaptcha
- *
- * @category   Zend
- * @package    Zend_Service
- * @subpackage ReCaptcha
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id$
- */
-class Zend_Service_ReCaptcha extends Zend_Service_Abstract
-{
-    /**
-     * URI to the regular API
-     *
-     * @var string
-     */
-    const API_SERVER = 'http://api.recaptcha.net';
-
-    /**
-     * URI to the secure API
-     *
-     * @var string
-     */
-    const API_SECURE_SERVER = 'https://api-secure.recaptcha.net';
-
-    /**
-     * URI to the verify server
-     *
-     * @var string
-     */
-    const VERIFY_SERVER = 'http://api-verify.recaptcha.net/verify';
-
-    /**
-     * Public key used when displaying the captcha
-     *
-     * @var string
-     */
-    protected $_publicKey = null;
-
-    /**
-     * Private key used when verifying user input
-     *
-     * @var string
-     */
-    protected $_privateKey = null;
-
-    /**
-     * Ip address used when verifying user input
-     *
-     * @var string
-     */
-    protected $_ip = null;
-
-    /**
-     * Parameters for the object
-     *
-     * @var array
-     */
-    protected $_params = array(
-        'ssl' => false, /* Use SSL or not when generating the recaptcha */
-        'error' => null, /* The error message to display in the recaptcha */
-        'xhtml' => false /* Enable XHTML output (this will not be XHTML Strict
-                            compliant since the IFRAME is necessary when
-                            Javascript is disabled) */
-    );
-
-    /**
-     * Options for tailoring reCaptcha
-     *
-     * See the different options on http://recaptcha.net/apidocs/captcha/client.html
-     *
-     * @var array
-     */
-    protected $_options = array(
-        'theme' => 'red',
-        'lang' => 'en',
-    );
-
-    /**
-     * Response from the verify server
-     *
-     * @var Zend_Service_ReCaptcha_Response
-     */
-    protected $_response = null;
-
-    /**
-     * Class constructor
-     *
-     * @param string $publicKey
-     * @param string $privateKey
-     * @param array $params
-     * @param array $options
-     * @param string $ip
-     * @param array|Zend_Config $params
-     */
-    public function __construct($publicKey = null, $privateKey = null,
-                                $params = null, $options = null, $ip = null)
-    {
-        if ($publicKey !== null) {
-            $this->setPublicKey($publicKey);
-        }
-
-        if ($privateKey !== null) {
-            $this->setPrivateKey($privateKey);
-        }
-
-        if ($ip !== null) {
-            $this->setIp($ip);
-        } else if (isset($_SERVER['REMOTE_ADDR'])) {
-            $this->setIp($_SERVER['REMOTE_ADDR']);
-        }
-
-        if ($params !== null) {
-            $this->setParams($params);
-        }
-
-        if ($options !== null) {
-            $this->setOptions($options);
-        }
-    }
-
-    /**
-     * Serialize as string
-     *
-     * When the instance is used as a string it will display the recaptcha.
-     * Since we can't throw exceptions within this method we will trigger
-     * a user warning instead.
-     *
-     * @return string
-     */
-    public function __toString()
-    {
-        try {
-            $return = $this->getHtml();
-        } catch (Exception $e) {
-            $return = '';
-            trigger_error($e->getMessage(), E_USER_WARNING);
-        }
-
-        return $return;
-    }
-
-    /**
-     * Set the ip property
-     *
-     * @param string $ip
-     * @return Zend_Service_ReCaptcha
-     */
-    public function setIp($ip)
-    {
-        $this->_ip = $ip;
-
-        return $this;
-    }
-
-    /**
-     * Get the ip property
-     *
-     * @return string
-     */
-    public function getIp()
-    {
-        return $this->_ip;
-    }
-
-    /**
-     * Set a single parameter
-     *
-     * @param string $key
-     * @param string $value
-     * @return Zend_Service_ReCaptcha
-     */
-    public function setParam($key, $value)
-    {
-        $this->_params[$key] = $value;
-
-        return $this;
-    }
-
-    /**
-     * Set parameters
-     *
-     * @param array|Zend_Config $params
-     * @return Zend_Service_ReCaptcha
-     * @throws Zend_Service_ReCaptcha_Exception
-     */
-    public function setParams($params)
-    {
-        if ($params instanceof Zend_Config) {
-            $params = $params->toArray();
-        }
-
-        if (is_array($params)) {
-            foreach ($params as $k => $v) {
-                $this->setParam($k, $v);
-            }
-        } else {
-            /** @see Zend_Service_ReCaptcha_Exception */
-            require_once 'Zend/Service/ReCaptcha/Exception.php';
-
-            throw new Zend_Service_ReCaptcha_Exception(
-                'Expected array or Zend_Config object'
-            );
-        }
-
-        return $this;
-    }
-
-    /**
-     * Get the parameter array
-     *
-     * @return array
-     */
-    public function getParams()
-    {
-        return $this->_params;
-    }
-
-    /**
-     * Get a single parameter
-     *
-     * @param string $key
-     * @return mixed
-     */
-    public function getParam($key)
-    {
-        return $this->_params[$key];
-    }
-
-    /**
-     * Set a single option
-     *
-     * @param string $key
-     * @param string $value
-     * @return Zend_Service_ReCaptcha
-     */
-    public function setOption($key, $value)
-    {
-        $this->_options[$key] = $value;
-
-        return $this;
-    }
-
-    /**
-     * Set options
-     *
-     * @param array|Zend_Config $options
-     * @return Zend_Service_ReCaptcha
-     * @throws Zend_Service_ReCaptcha_Exception
-     */
-    public function setOptions($options)
-    {
-        if ($options instanceof Zend_Config) {
-            $options = $options->toArray();
-        }
-
-        if (is_array($options)) {
-            foreach ($options as $k => $v) {
-                $this->setOption($k, $v);
-            }
-        } else {
-            /** @see Zend_Service_ReCaptcha_Exception */
-            require_once 'Zend/Service/ReCaptcha/Exception.php';
-
-            throw new Zend_Service_ReCaptcha_Exception(
-                'Expected array or Zend_Config object'
-            );
-        }
-
-        return $this;
-    }
-
-    /**
-     * Get the options array
-     *
-     * @return array
-     */
-    public function getOptions()
-    {
-        return $this->_options;
-    }
-
-    /**
-     * Get a single option
-     *
-     * @param string $key
-     * @return mixed
-     */
-    public function getOption($key)
-    {
-        return $this->_options[$key];
-    }
-
-    /**
-     * Get the public key
-     *
-     * @return string
-     */
-    public function getPublicKey()
-    {
-        return $this->_publicKey;
-    }
-
-    /**
-     * Set the public key
-     *
-     * @param string $publicKey
-     * @return Zend_Service_ReCaptcha
-     */
-    public function setPublicKey($publicKey)
-    {
-        $this->_publicKey = $publicKey;
-
-        return $this;
-    }
-
-    /**
-     * Get the private key
-     *
-     * @return string
-     */
-    public function getPrivateKey()
-    {
-        return $this->_privateKey;
-    }
-
-    /**
-     * Set the private key
-     *
-     * @param string $privateKey
-     * @return Zend_Service_ReCaptcha
-     */
-    public function setPrivateKey($privateKey)
-    {
-        $this->_privateKey = $privateKey;
-
-        return $this;
-    }
-
-    /**
-     * Get the HTML code for the captcha
-     *
-     * This method uses the public key to fetch a recaptcha form.
-     *
-     * @return string
-     * @throws Zend_Service_ReCaptcha_Exception
-     */
-    public function getHtml()
-    {
-        if ($this->_publicKey === null) {
-            /** @see Zend_Service_ReCaptcha_Exception */
-            require_once 'Zend/Service/ReCaptcha/Exception.php';
-
-            throw new Zend_Service_ReCaptcha_Exception('Missing public key');
-        }
-
-        $host = self::API_SERVER;
-
-        if ($this->_params['ssl'] === true) {
-            $host = self::API_SECURE_SERVER;
-        }
-
-        $htmlBreak = '<br>';
-        $htmlInputClosing = '>';
-
-        if ($this->_params['xhtml'] === true) {
-            $htmlBreak = '<br />';
-            $htmlInputClosing = '/>';
-        }
-
-        $errorPart = '';
-
-        if (!empty($this->_params['error'])) {
-            $errorPart = '&error=' . urlencode($this->_params['error']);
-        }
-
-        $reCaptchaOptions = '';
-
-        if (!empty($this->_options)) {
-            $encoded = Zend_Json::encode($this->_options);
-            $reCaptchaOptions = <<<SCRIPT
-<script type="text/javascript">
-    var RecaptchaOptions = {$encoded};
-</script>
-SCRIPT;
-        }
-
-        $return = $reCaptchaOptions;
-        $return .= <<<HTML
-<script type="text/javascript"
-   src="{$host}/challenge?k={$this->_publicKey}{$errorPart}">
-</script>
-HTML;
-        $return .= <<<HTML
-<noscript>
-   <iframe src="{$host}/noscript?k={$this->_publicKey}{$errorPart}"
-       height="300" width="500" frameborder="0"></iframe>{$htmlBreak}
-   <textarea name="recaptcha_challenge_field" rows="3" cols="40">
-   </textarea>
-   <input type="hidden" name="recaptcha_response_field"
-       value="manual_challenge"{$htmlInputClosing}
-</noscript>
-HTML;
-
-        return $return;
-    }
-
-    /**
-     * Post a solution to the verify server
-     *
-     * @param string $challengeField
-     * @param string $responseField
-     * @return Zend_Http_Response
-     * @throws Zend_Service_ReCaptcha_Exception
-     */
-    protected function _post($challengeField, $responseField)
-    {
-        if ($this->_privateKey === null) {
-            /** @see Zend_Service_ReCaptcha_Exception */
-            require_once 'Zend/Service/ReCaptcha/Exception.php';
-
-            throw new Zend_Service_ReCaptcha_Exception('Missing private key');
-        }
-
-        if ($this->_ip === null) {
-            /** @see Zend_Service_ReCaptcha_Exception */
-            require_once 'Zend/Service/ReCaptcha/Exception.php';
-
-            throw new Zend_Service_ReCaptcha_Exception('Missing ip address');
-        }
-
-        if (empty($challengeField)) {
-            /** @see Zend_Service_ReCaptcha_Exception */
-            require_once 'Zend/Service/ReCaptcha/Exception.php';
-            throw new Zend_Service_ReCaptcha_Exception('Missing challenge field');
-        }
-
-        if (empty($responseField)) {
-            /** @see Zend_Service_ReCaptcha_Exception */
-            require_once 'Zend/Service/ReCaptcha/Exception.php';
-
-            throw new Zend_Service_ReCaptcha_Exception('Missing response field');
-        }
-
-        /* Fetch an instance of the http client */
-        $httpClient = self::getHttpClient();
-
-        $postParams = array('privatekey' => $this->_privateKey,
-                            'remoteip'   => $this->_ip,
-                            'challenge'  => $challengeField,
-                            'response'   => $responseField);
-
-        /* Make the POST and return the response */
-        return $httpClient->setUri(self::VERIFY_SERVER)
-                          ->setParameterPost($postParams)
-                          ->request(Zend_Http_Client::POST);
-    }
-
-    /**
-     * Verify the user input
-     *
-     * This method calls up the post method and returns a
-     * Zend_Service_ReCaptcha_Response object.
-     *
-     * @param string $challengeField
-     * @param string $responseField
-     * @return Zend_Service_ReCaptcha_Response
-     */
-    public function verify($challengeField, $responseField)
-    {
-        $response = $this->_post($challengeField, $responseField);
-
-        return new Zend_Service_ReCaptcha_Response(null, null, $response);
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

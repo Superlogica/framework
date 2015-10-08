@@ -1,84 +1,31 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_XmlRpc
- * @subpackage Value
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Boolean.php 9096 2008-03-30 19:04:05Z thomas $
- */
-
-
-/**
- * Zend_XmlRpc_Value_Scalar
- */
-require_once 'Zend/XmlRpc/Value/Scalar.php';
-
-
-/**
- * @category   Zend
- * @package    Zend_XmlRpc
- * @subpackage Value
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_XmlRpc_Value_Boolean extends Zend_XmlRpc_Value_Scalar
-{
-
-    /**
-     * Set the value of a boolean native type
-     * We hold the boolean type as an integer (0 or 1)
-     *
-     * @param bool $value
-     */
-    public function __construct($value)
-    {
-        $this->_type = self::XMLRPC_TYPE_BOOLEAN;
-        // Make sure the value is boolean and then convert it into a integer
-        // The double convertion is because a bug in the ZendOptimizer in PHP version 5.0.4
-        $this->_value = (int)(bool)$value;
-    }
-
-    /**
-     * Return the value of this object, convert the XML-RPC native boolean value into a PHP boolean
-     *
-     * @return bool
-     */
-    public function getValue()
-    {
-        return (bool)$this->_value;
-    }
-
-    /**
-     * Return the XML-RPC serialization of the boolean value
-     *
-     * @return string
-     */
-    public function saveXML()
-    {
-        if (! $this->_as_xml) {   // The XML was not generated yet
-            $dom   = new DOMDocument('1.0', 'UTF-8');
-            $value = $dom->appendChild($dom->createElement('value'));
-            $type  = $value->appendChild($dom->createElement($this->_type));
-            $type->appendChild($dom->createTextNode($this->_value));
-
-            $this->_as_dom = $value;
-            $this->_as_xml = $this->_stripXmlDeclaration($dom);
-        }
-
-        return $this->_as_xml;
-    }
-}
-
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+a4is9itjcud8l+E41s4=

@@ -1,152 +1,31 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Service
- * @subpackage Technorati
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: CosmosResult.php 8064 2008-02-16 10:58:39Z thomas $
- */
-
-
-/** 
- * @see Zend_Service_Technorati_Result 
- */
-require_once 'Zend/Service/Technorati/Result.php';
-
-
-/**
- * Represents a single Technorati Cosmos query result object. 
- * It is never returned as a standalone object, 
- * but it always belongs to a valid Zend_Service_Technorati_CosmosResultSet object.
- * 
- * @category   Zend
- * @package    Zend_Service
- * @subpackage Technorati
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Service_Technorati_CosmosResult extends Zend_Service_Technorati_Result
-{
-    /**
-     * Technorati weblog object that links queried URL.
-     * 
-     * @var     Zend_Service_Technorati_Weblog
-     * @access  protected
-     */
-    protected $_weblog;
-
-    /**
-     * The nearest permalink tracked for queried URL.
-     * 
-     * @var     Zend_Uri_Http
-     * @access  protected
-     */
-    protected $_nearestPermalink;
-
-    /**
-     * The excerpt of the blog/page linking queried URL.
-     * 
-     * @var     string
-     * @access  protected
-     */
-    protected $_excerpt;
-
-    /**
-     * The the datetime the link was created.
-     * 
-     * @var     Zend_Date
-     * @access  protected
-     */
-    protected $_linkCreated;
-
-    /**
-     * The URL of the specific link target page
-     * 
-     * @var     Zend_Uri_Http
-     * @access  protected
-     */
-    protected $_linkUrl;
-
-
-    /**
-     * Constructs a new object object from DOM Element.
-     *
-     * @param   DomElement $dom the ReST fragment for this object
-     */
-    public function __construct(DomElement $dom)
-    {
-        $this->_fields = array( '_nearestPermalink' => 'nearestpermalink',
-                                '_excerpt'          => 'excerpt',
-                                '_linkCreated'      => 'linkcreated',
-                                '_linkUrl'          => 'linkurl');
-        parent::__construct($dom);
-
-        // weblog object field
-        $this->_parseWeblog();
-        
-        // filter fields
-        $this->_nearestPermalink = Zend_Service_Technorati_Utils::normalizeUriHttp($this->_nearestPermalink);
-        $this->_linkUrl = Zend_Service_Technorati_Utils::normalizeUriHttp($this->_linkUrl);
-        $this->_linkCreated = Zend_Service_Technorati_Utils::normalizeDate($this->_linkCreated);
-    }
-
-    /**
-     * Returns the weblog object that links queried URL.
-     * 
-     * @return  Zend_Service_Technorati_Weblog
-     */
-    public function getWeblog() {
-        return $this->_weblog;
-    }
-
-    /**
-     * Returns the nearest permalink tracked for queried URL.
-     * 
-     * @return  Zend_Uri_Http
-     */
-    public function getNearestPermalink() {
-        return $this->_nearestPermalink;
-    }
-
-    /**
-     * Returns the excerpt of the blog/page linking queried URL.
-     * 
-     * @return  string
-     */
-    public function getExcerpt() {
-        return $this->_excerpt;
-    }
-    
-    /**
-     * Returns the datetime the link was created.
-     * 
-     * @return  Zend_Date
-     */
-    public function getLinkCreated() {
-        return $this->_linkCreated;
-    }
-    
-    /**
-     * If queried URL is a valid blog,
-     * returns the URL of the specific link target page.
-     * 
-     * @return  Zend_Uri_Http
-     */
-    public function getLinkUrl() {
-        return $this->_linkUrl;
-    }
-    
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+aCSFlVeTw+joT14rdN6JSAyEciwv

@@ -1,273 +1,88 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Health
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * @see Zend_Gdata
- */
-require_once 'Zend/Gdata.php';
-
-/**
- * @see Zend_Gdata_Health_ProfileFeed
- */
-require_once 'Zend/Gdata/Health/ProfileFeed.php';
-
-/**
- * @see Zend_Gdata_Health_ProfileListFeed
- */
-require_once 'Zend/Gdata/Health/ProfileListFeed.php';
-
-/**
- * @see Zend_Gdata_Health_ProfileListEntry
- */
-require_once 'Zend/Gdata/Health/ProfileListEntry.php';
-
-/**
- * @see Zend_Gdata_Health_ProfileEntry
- */
-require_once 'Zend/Gdata/Health/ProfileEntry.php';
-
-/**
- * Service class for interacting with the Google Health Data API
- *
- * @link http://code.google.com/apis/health
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Health
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Gdata_Health extends Zend_Gdata
-{
-    /**
-     * URIs of the AuthSub/OAuth feeds.
-     */
-    const AUTHSUB_PROFILE_FEED_URI = 
-        'https://www.google.com/health/feeds/profile/default';
-    const AUTHSUB_REGISTER_FEED_URI = 
-        'https://www.google.com/health/feeds/register/default';
-
-    /**
-     * URIs of the ClientLogin feeds.
-     */
-    const CLIENTLOGIN_PROFILELIST_FEED_URI = 
-        'https://www.google.com/health/feeds/profile/list';
-    const CLIENTLOGIN_PROFILE_FEED_URI = 
-        'https://www.google.com/health/feeds/profile/ui';
-    const CLIENTLOGIN_REGISTER_FEED_URI = 
-        'https://www.google.com/health/feeds/register/ui';
-
-    /**
-     * Authentication service names for Google Health and the H9 Sandbox.
-     */
-    const HEALTH_SERVICE_NAME = 'health';
-    const H9_SANDBOX_SERVICE_NAME = 'weaver';
-
-    /**
-     * Profile ID used for all API interactions.  This can only be set when
-     * using ClientLogin for authentication.
-     *
-     * @var string
-     */
-    private $_profileID = null;
-
-    /**
-     * True if API calls should be made to the H9 developer sandbox at /h9
-     * rather than /health
-     *
-     * @var bool
-     */
-    private $_useH9Sandbox = false;
-
-    public static $namespaces =
-        array('ccr' => 'urn:astm-org:CCR',
-              'batch' => 'http://schemas.google.com/gdata/batch',
-              'h9m' => 'http://schemas.google.com/health/metadata',
-              'gAcl' => 'http://schemas.google.com/acl/2007',
-              'gd' => 'http://schemas.google.com/g/2005');
-
-    /**
-     * Create Zend_Gdata_Health object
-     *
-     * @param Zend_Http_Client $client (optional) The HTTP client to use when
-     *     when communicating with the Google Health servers.
-     * @param string $applicationId The identity of the application in the form
-     *     of Company-AppName-Version
-     * @param bool $useH9Sandbox True if the H9 Developer's Sandbox should be
-     *     used instead of production Google Health.
-     */
-    public function __construct($client = null, $applicationId = 'MyCompany-MyApp-1.0', $useH9Sandbox = false)
-    {
-        $this->registerPackage('Zend_Gdata_Health');
-        $this->registerPackage('Zend_Gdata_Health_Extension_Ccr');
-        parent::__construct($client, $applicationId);
-        $this->_useH9Sandbox = $useH9Sandbox;
-    }
-
-    /**
-     * Gets the id of the user's profile
-     *
-     * @return string The profile id
-     */
-    public function getProfileID()
-    {
-        return $this->_profileID;
-    }
-
-    /**
-     * Sets which of the user's profiles will be used
-     *
-     * @param string $id The profile ID
-     * @return Zend_Gdata_Health Provides a fluent interface
-     */
-    public function setProfileID($id) {
-        $this->_profileID = $id;
-        return $this;
-    }
-
-     /**
-     * Retrieves the list of profiles associated with the user's ClientLogin
-     * credentials.
-     *
-     * @param string $query The query of the feed as a URL or Query object
-     * @return Zend_Gdata_Feed
-     */
-    public function getHealthProfileListFeed($query = null)
-    {
-        if ($this->_httpClient->getClientLoginToken() === null) {
-            require_once 'Zend/Gdata/App/AuthException.php';
-            throw new Zend_Gdata_App_AuthException(
-                'Profiles list feed is only available when using ClientLogin');
-        }
-
-        if($query === null)  {
-            $uri = self::CLIENTLOGIN_PROFILELIST_FEED_URI;
-        } else if ($query instanceof Zend_Gdata_Query) {
-            $uri = $query->getQueryUrl();
-        } else {
-            $uri = $query;
-        }
-
-        // use correct feed for /h9 or /health
-        if ($this->_useH9Sandbox) {
-            $uri = preg_replace('/\/health\//', '/h9/', $uri);
-        }
-
-        return parent::getFeed($uri, 'Zend_Gdata_Health_ProfileListFeed');
-    }
-
-    /**
-     * Retrieve a user's profile as a feed object.  If ClientLogin is used, the
-     * profile associated with $this->_profileID is returned, otherwise
-     * the profile associated with the AuthSub token is read.
-     *
-     * @param mixed $query The query for the feed, as a URL or Query
-     * @return Zend_Gdata_Health_ProfileFeed
-     */
-    public function getHealthProfileFeed($query = null)
-    {
-        if ($this->_httpClient->getClientLoginToken() !== null &&
-            $this->getProfileID() == null) {
-            require_once 'Zend/Gdata/App/AuthException.php';
-            throw new Zend_Gdata_App_AuthException(
-                'Profile ID must not be null. Did you call setProfileID()?');
-        }
-
-        if ($query instanceof Zend_Gdata_Query) {
-            $uri = $query->getQueryUrl();
-        } else if ($this->_httpClient->getClientLoginToken() !== null &&
-                   $query == null) {
-            $uri = self::CLIENTLOGIN_PROFILE_FEED_URI . '/' . $this->getProfileID();
-        } else if ($query === null) {
-            $uri = self::AUTHSUB_PROFILE_FEED_URI;
-        } else {
-            $uri = $query;
-        }
-
-        // use correct feed for /h9 or /health
-        if ($this->_useH9Sandbox) {
-            $uri = preg_replace('/\/health\//', '/h9/', $uri);
-        }
-
-        return parent::getFeed($uri, 'Zend_Gdata_Health_ProfileFeed');
-    }
-
-    /**
-     * Retrieve a profile entry object
-     *
-     * @param mixed $query The query for the feed, as a URL or Query
-     * @return Zend_Gdata_Health_ProfileEntry
-     */
-    public function getHealthProfileEntry($query = null)
-    {
-        if ($query === null) {
-            require_once 'Zend/Gdata/App/InvalidArgumentException.php';
-            throw new Zend_Gdata_App_InvalidArgumentException(
-                'Query must not be null');
-        } else if ($query instanceof Zend_Gdata_Query) {
-            $uri = $query->getQueryUrl();
-        } else {
-            $uri = $query;
-        }
-        return parent::getEntry($uri, 'Zend_Gdata_Health_ProfileEntry');
-    }
-
-    /**
-     * Posts a new notice using the register feed.  This function constructs
-     * the atom profile entry.
-     *
-     * @param string $subject The subject line of the notice
-     * @param string $body The message body of the notice
-     * @param string $bodyType The (optional) type of message body
-     *     (text, xhtml, html, etc.)
-     * @param string $ccrXML The (optional) CCR to add to the user's profile
-     * @return Zend_Gdata_Health_ProfileEntry
-     */
-    public function sendHealthNotice($subject, $body, $bodyType = null, $ccrXML = null)
-    {
-        if ($this->_httpClient->getClientLoginToken()) {
-            $profileID = $this->getProfileID();
-            if ($profileID !== null) {
-                $uri = self::CLIENTLOGIN_REGISTER_FEED_URI . '/' . $profileID;
-            } else {
-                require_once 'Zend/Gdata/App/AuthException.php';
-                throw new Zend_Gdata_App_AuthException(
-                    'Profile ID must not be null. Did you call setProfileID()?');
-            }
-        } else {
-            $uri = self::AUTHSUB_REGISTER_FEED_URI;
-        }
-
-        $entry = new Zend_Gdata_Health_ProfileEntry();
-        $entry->title = $this->newTitle($subject);
-        $entry->content = $this->newContent($body);
-        $entry->content->type = $bodyType ? $bodyType : 'text';
-        $entry->setCcr($ccrXML);
-
-        // use correct feed for /h9 or /health
-        if ($this->_useH9Sandbox) {
-            $uri = preg_replace('/\/health\//', '/h9/', $uri);
-        }
-
-        return $this->insertEntry($entry, $uri, 'Zend_Gdata_Health_ProfileEntry');
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+cF1k6uRRx9x5eoeZkpRBgPC=

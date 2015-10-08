@@ -1,285 +1,73 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Oauth
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Token.php 23484 2010-12-10 03:57:59Z mjh_ca $
- */
-
-/** Zend_Oauth_Http_Utility */
-require_once 'Zend/Oauth/Http/Utility.php';
-
-/**
- * @category   Zend
- * @package    Zend_Oauth
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-abstract class Zend_Oauth_Token
-{
-    /**@+
-     * Token constants
-     */
-    const TOKEN_PARAM_KEY                = 'oauth_token';
-    const TOKEN_SECRET_PARAM_KEY         = 'oauth_token_secret';
-    const TOKEN_PARAM_CALLBACK_CONFIRMED = 'oauth_callback_confirmed';
-    /**@-*/
-
-    /**
-     * Token parameters
-     *
-     * @var array
-     */
-    protected $_params = array();
-
-    /**
-     * OAuth response object
-     *
-     * @var Zend_Http_Response
-     */
-    protected $_response = null;
-
-    /**
-     * @var Zend_Oauth_Http_Utility
-     */
-    protected $_httpUtility = null;
-
-    /**
-     * Constructor; basic setup for any Token subclass.
-     *
-     * @param  null|Zend_Http_Response $response
-     * @param  null|Zend_Oauth_Http_Utility $utility
-     * @return void
-     */
-    public function __construct(
-        Zend_Http_Response $response = null,
-        Zend_Oauth_Http_Utility $utility = null
-    ) {
-        if ($response !== null) {
-            $this->_response = $response;
-            $params = $this->_parseParameters($response);
-            if (count($params) > 0) {
-                $this->setParams($params);
-            }
-        }
-        if ($utility !== null) {
-            $this->_httpUtility = $utility;
-        } else {
-            $this->_httpUtility = new Zend_Oauth_Http_Utility;
-        }
-    }
-
-    /**
-     * Attempts to validate the Token parsed from the HTTP response - really
-     * it's just very basic existence checks which are minimal.
-     *
-     * @return bool
-     */
-    public function isValid()
-    {
-        if (isset($this->_params[self::TOKEN_PARAM_KEY])
-            && !empty($this->_params[self::TOKEN_PARAM_KEY])
-            && isset($this->_params[self::TOKEN_SECRET_PARAM_KEY])
-        ) {
-            return true;
-        }
-        return false;
-    }
-
-    /**
-     * Return the HTTP response object used to initialise this instance.
-     *
-     * @return Zend_Http_Response
-     */
-    public function getResponse()
-    {
-        return $this->_response;
-    }
-
-    /**
-     * Sets the value for the this Token's secret which may be used when signing
-     * requests with this Token.
-     *
-     * @param  string $secret
-     * @return Zend_Oauth_Token
-     */
-    public function setTokenSecret($secret)
-    {
-        $this->setParam(self::TOKEN_SECRET_PARAM_KEY, $secret);
-        return $this;
-    }
-
-    /**
-     * Retrieve this Token's secret which may be used when signing
-     * requests with this Token.
-     *
-     * @return string
-     */
-    public function getTokenSecret()
-    {
-        return $this->getParam(self::TOKEN_SECRET_PARAM_KEY);
-    }
-
-    /**
-     * Sets the value for a parameter (e.g. token secret or other) and run
-     * a simple filter to remove any trailing newlines.
-     *
-     * @param  string $key
-     * @param  string $value
-     * @return Zend_Oauth_Token
-     */
-    public function setParam($key, $value)
-    {
-        $this->_params[$key] = trim($value, "\n");
-        return $this;
-    }
-
-    /**
-     * Sets the value for some parameters (e.g. token secret or other) and run
-     * a simple filter to remove any trailing newlines.
-     *
-     * @param  array $params
-     * @return Zend_Oauth_Token
-     */
-    public function setParams(array $params)
-    {
-        foreach ($params as $key=>$value) {
-            $this->setParam($key, $value);
-        }
-        return $this;
-    }
-
-    /**
-     * Get the value for a parameter (e.g. token secret or other).
-     *
-     * @param  string $key
-     * @return mixed
-     */
-    public function getParam($key)
-    {
-        if (isset($this->_params[$key])) {
-            return $this->_params[$key];
-        }
-        return null;
-    }
-
-    /**
-     * Sets the value for a Token.
-     *
-     * @param  string $token
-     * @return Zend_Oauth_Token
-     */
-    public function setToken($token)
-    {
-        $this->setParam(self::TOKEN_PARAM_KEY, $token);
-        return $this;
-    }
-
-    /**
-     * Gets the value for a Token.
-     *
-     * @return string
-     */
-    public function getToken()
-    {
-        return $this->getParam(self::TOKEN_PARAM_KEY);
-    }
-
-    /**
-     * Generic accessor to enable access as public properties.
-     *
-     * @return string
-     */
-    public function __get($key)
-    {
-        return $this->getParam($key);
-    }
-
-    /**
-     * Generic mutator to enable access as public properties.
-     *
-     * @param  string $key
-     * @param  string $value
-     * @return void
-     */
-    public function __set($key, $value)
-    {
-        $this->setParam($key, $value);
-    }
-
-    /**
-     * Convert Token to a string, specifically a raw encoded query string.
-     *
-     * @return string
-     */
-    public function toString()
-    {
-        return $this->_httpUtility->toEncodedQueryString($this->_params);
-    }
-
-    /**
-     * Convert Token to a string, specifically a raw encoded query string.
-     * Aliases to self::toString()
-     *
-     * @return string
-     */
-    public function __toString()
-    {
-        return $this->toString();
-    }
-
-    /**
-     * Parse a HTTP response body and collect returned parameters
-     * as raw url decoded key-value pairs in an associative array.
-     *
-     * @param  Zend_Http_Response $response
-     * @return array
-     */
-    protected function _parseParameters(Zend_Http_Response $response)
-    {
-        $params = array();
-        $body   = $response->getBody();
-        if (empty($body)) {
-            return;
-        }
-
-        // validate body based on acceptable characters...todo
-        $parts = explode('&', $body);
-        foreach ($parts as $kvpair) {
-            $pair = explode('=', $kvpair);
-            $params[rawurldecode($pair[0])] = rawurldecode($pair[1]);
-        }
-        return $params;
-    }
-
-    /**
-     * Limit serialisation stored data to the parameters
-     */
-    public function __sleep()
-    {
-        return array('_params');
-    }
-
-    /**
-     * After serialisation, re-instantiate a HTTP utility class for use
-     */
-    public function __wakeup()
-    {
-        if ($this->_httpUtility === null) {
-            $this->_httpUtility = new Zend_Oauth_Http_Utility;
-        }
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+iCIX4Jjzsm==

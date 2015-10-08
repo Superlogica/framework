@@ -1,245 +1,49 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Wildfire
- * @subpackage Plugin
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-
-/**
- * A message envelope that can be passed to Zend_Wildfire_Plugin_FirePhp to be
- * logged to Firebug instead of a variable.
- * 
- * @category   Zend
- * @package    Zend_Wildfire
- * @subpackage Plugin
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Wildfire_Plugin_FirePhp_Message
-{
-    /**
-     * The style of the message
-     * @var string
-     */
-    protected $_style = null;
-    
-    /**
-     * The label of the message
-     * @var string
-     */
-    protected $_label = null;
-    
-    /**
-     * The message value
-     * @var mixed
-     */
-    protected $_message = null;
-    
-    /**
-     * Flag indicating if message buffering is enabled
-     * @var boolean
-     */
-    protected $_buffered = false;
-
-    /**
-     * Flag indicating if message should be destroyed and not delivered
-     * @var boolean
-     */
-    protected $_destroy = false;
-    
-    /**
-     * Random unique ID used to identify message in comparison operations
-     * @var string
-     */
-    protected $_ruid = false;
-
-    /**
-     * Options for the object
-     * @var array
-     */
-    protected $_options = array(
-        'traceOffset' => null, /* The offset in the trace which identifies the source of the message */
-        'includeLineNumbers' => null /* Whether to include line and file info for this message */
-    );
-
-    /**
-     * Creates a new message with the given style and message
-     * 
-     * @param string $style Style of the message.
-     * @param mixed $message The message
-     * @return void
-     */
-    function __construct($style, $message)
-    {
-        $this->_style = $style;
-        $this->_message = $message;
-        $this->_ruid = md5(microtime().mt_rand());
-    }
-    
-    /**
-     * Set the label of the message
-     * 
-     * @param string $label The label to be set
-     * @return void
-     */
-    public function setLabel($label)
-    {
-        $this->_label = $label;
-    }
-    
-    /**
-     * Get the label of the message
-     * 
-     * @return string The label of the message
-     */
-    public function getLabel()
-    {
-        return $this->_label;
-    }
-    
-    /**
-     * Enable or disable message buffering
-     * 
-     * If a message is buffered it can be updated for the duration of the
-     * request and is only flushed at the end of the request.
-     * 
-     * @param boolean $buffered TRUE to enable buffering FALSE otherwise
-     * @return boolean Returns previous buffering value
-     */
-    public function setBuffered($buffered)
-    {
-        $previous = $this->_buffered;
-        $this->_buffered = $buffered;
-        return $previous;
-    }
-
-    /**
-     * Determine if buffering is enabled or disabled
-     * 
-     * @return boolean Returns TRUE if buffering is enabled, FALSE otherwise. 
-     */
-    public function getBuffered()
-    {
-        return $this->_buffered;
-    }
-    
-    /**
-     * Destroy the message to prevent delivery
-     * 
-     * @param boolean $destroy TRUE to destroy FALSE otherwise
-     * @return boolean Returns previous destroy value
-     */
-    public function setDestroy($destroy)
-    {
-        $previous = $this->_destroy;
-        $this->_destroy = $destroy;
-        return $previous;
-    }
-    
-    /**
-     * Determine if message should be destroyed
-     * 
-     * @return boolean Returns TRUE if message should be destroyed, FALSE otherwise. 
-     */
-    public function getDestroy()
-    {
-        return $this->_destroy;
-    }
-
-    /**
-     * Set the style of the message
-     * 
-     * @return void
-     */
-    public function setStyle($style)
-    {
-        $this->_style = $style;
-    }
-
-    /**
-     * Get the style of the message
-     * 
-     * @return string The style of the message
-     */
-    public function getStyle()
-    {
-        return $this->_style;
-    }
-
-    /**
-     * Set the actual message to be sent in its final format.
-     * 
-     * @return void
-     */
-    public function setMessage($message)
-    {
-        $this->_message = $message;
-    }
-
-    /**
-     * Get the actual message to be sent in its final format.
-     * 
-     * @return mixed Returns the message to be sent.
-     */
-    public function getMessage()
-    {
-        return $this->_message;
-    }
-    
-    /**
-     * Set a single option
-     * 
-     * @param  string $key The name of the option
-     * @param  mixed $value The value of the option
-     * @return mixed The previous value of the option
-     */
-    public function setOption($key, $value)
-    {
-      if(!array_key_exists($key,$this->_options)) {
-        throw new Zend_Wildfire_Exception('Option with name "'.$key.'" does not exist!');
-      }
-      $previous = $this->_options[$key];
-      $this->_options[$key] = $value;
-      return $previous;
-    }
-
-    /**
-     * Retrieve a single option
-     * 
-     * @param  string $key The name of the option
-     * @return mixed The value of the option
-     */
-    public function getOption($key)
-    {
-      if(!array_key_exists($key,$this->_options)) {
-        throw new Zend_Wildfire_Exception('Option with name "'.$key.'" does not exist!');
-      }
-      return $this->_options[$key];
-    }
-
-    /**
-     * Retrieve all options
-     * 
-     * @return array All options
-     */
-    public function getOptions()
-    {
-      return $this->_options;
-    }    
-}
-
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+78eCWQqA+S5nHkxSREKhZHtHoX6Pj7ELIMG=

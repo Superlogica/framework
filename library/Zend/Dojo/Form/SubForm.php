@@ -1,94 +1,34 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Dojo
- * @subpackage Form
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_Form_SubForm */
-require_once 'Zend/Form/SubForm.php';
-
-/**
- * Dijit-enabled SubForm
- * 
- * @uses       Zend_Form_SubForm
- * @package    Zend_Dojo
- * @subpackage Form
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: SubForm.php 10038 2008-07-10 21:45:16Z matthew $
- */
-class Zend_Dojo_Form_SubForm extends Zend_Form_SubForm
-{
-    /**
-     * Has the dojo view helper path been registered?
-     * @var bool
-     */
-    protected $_dojoViewPathRegistered = false;
-
-    /**
-     * Constructor
-     * 
-     * @param  array|Zend_Config|null $options 
-     * @return void
-     */
-    public function __construct($options = null)
-    {
-        $this->addPrefixPath('Zend_Dojo_Form_Decorator', 'Zend/Dojo/Form/Decorator', 'decorator')
-             ->addPrefixPath('Zend_Dojo_Form_Element', 'Zend/Dojo/Form/Element', 'element')
-             ->addElementPrefixPath('Zend_Dojo_Form_Decorator', 'Zend/Dojo/Form/Decorator', 'decorator')
-             ->addDisplayGroupPrefixPath('Zend_Dojo_Form_Decorator', 'Zend/Dojo/Form/Decorator')
-             ->setDefaultDisplayGroupClass('Zend_Dojo_Form_DisplayGroup');
-        parent::__construct($options);
-    }
-
-    /**
-     * Load the default decorators
-     * 
-     * @return void
-     */
-    public function loadDefaultDecorators()
-    {
-        if ($this->loadDefaultDecoratorsIsDisabled()) {
-            return;
-        }
-
-        $decorators = $this->getDecorators();
-        if (empty($decorators)) {
-            $this->addDecorator('FormElements')
-                 ->addDecorator('HtmlTag', array('tag' => 'dl'))
-                 ->addDecorator('ContentPane');
-        }
-    }
-
-    /**
-     * Get view 
-     * 
-     * @return Zend_View_Interface
-     */
-    public function getView()
-    {
-        $view = parent::getView();
-        if (!$this->_dojoViewPathRegistered) {
-            if (false === $view->getPluginLoader('helper')->getPaths('Zend_Dojo_View_Helper')) {
-                $view->addHelperPath('Zend/Dojo/View/Helper', 'Zend_Dojo_View_Helper');
-            }
-            $this->_dojoViewPathRegistered = true;
-        }
-        return $view;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

@@ -7,6 +7,8 @@ var Superlogica_Js_Grid = new Class({
 
     _closestInstance : null,
     
+    _naoZebrar : false,
+    
     /**
      * Delimitadores, da esquerda, das variáveis
      */
@@ -151,6 +153,8 @@ var Superlogica_Js_Grid = new Class({
             'click',
             function(evento){
                 
+                this.simularEvento('blur');
+                
                 var acao = this.atributo('acao');
                 
                 var infoBotao = grid._getInfoBotao(acao);
@@ -196,7 +200,7 @@ var Superlogica_Js_Grid = new Class({
                 }
             }
             if ( typeof grid['_aoMarcar'] == 'function')
-                grid['_aoMarcar']( grid.getData(  parseInt( this.atributo('indice') ) ) );
+                grid['_aoMarcar']( grid.getData(  parseInt( this.atributo('indice') ) ),this.atributo('indice') );
 
         });                
 
@@ -646,7 +650,7 @@ var Superlogica_Js_Grid = new Class({
      * Função chamada após desenhar uma ou várias linhas
      */
     _depoisDeDesenharLinha : function(){
-        
+
         if ( Object.getLength( this.getData() ) <= 0 ){
             this._inserirMsgVazio();
             this._removerRodape();
@@ -791,13 +795,15 @@ var Superlogica_Js_Grid = new Class({
      * Desenha a paginação dentro do rodapé
      */
     _HTMLDesenharPaginacao : function(){
-        if( this.getOption('fimPaginacao') ){
 
-            var paginacao = this._getHTMLPaginacao();
-            if ( paginacao )
-                paginacao.remover();
+        var paginacao = this._getHTMLPaginacao();
+        if ( paginacao )
+            paginacao.remover();
+        
+        if ( this.getOption('fimPaginacao') )
+            return true;        
 
-        }else if( parseInt( this.getOption('comPaginacao') ) === 1 || this.getOption('comPaginacao') == 'auto' || this.getOption('comPaginacao') == 'todos' ){
+        if( parseInt( this.getOption('comPaginacao') ) === 1 || this.getOption('comPaginacao') == 'auto' || this.getOption('comPaginacao') == 'todos' ){
 
             var jsClassName = this.getOption('jsClassName');
             var linkMaisItens = new Superlogica_Js_Elemento('<a href="javascript:void(0);" comportamentos="'+jsClassName+'.proximaPagina" class="paginacaoMaisItens">Mais Itens</a>');
@@ -816,7 +822,8 @@ var Superlogica_Js_Grid = new Class({
             var linhaPaginacao = new Superlogica_Js_Elemento( '<tr class="'+this._cssGrid['paginacao']+'"></tr>' );
                 linhaPaginacao.adicionarHtmlAoFinal( colunaPaginacao );
 
-            this._getHTMLRodape().adicionarHtmlAoFinal( linhaPaginacao );
+            this._getHTMLRodape().adicionarHtmlAoInicio( linhaPaginacao );
+            linhaPaginacao.carregarComportamentos();
 
         }
     },
@@ -1143,6 +1150,12 @@ var Superlogica_Js_Grid = new Class({
             if (response===false)
                 return true;            
         }else if ( indiceLinha === -1 ){
+
+            if ( typeof this['_antesSalvarFormLote'+botao.capitalize() ] == 'function' ){
+                var resultado = this['_antesSalvarFormLote'+botao.capitalize()]( botao, formulario, this.getDadosLinhasMarcadas() ); 
+                if ( resultado===false ) return;
+            }
+
             response = this._submeterFormEmLote( botao, formulario );
             if( response === null){
                 alert( this._msgNenhumItemMarcado );
@@ -1420,8 +1433,9 @@ var Superlogica_Js_Grid = new Class({
 
     },
 
-    _abrirFormDefault : function( divClonado ){  
-        divClonado.adicionarClasse('form_grid').openDialogo();
+    _abrirFormDefault : function( divClonado ){
+        
+        new Superlogica_Js_Form( divClonado.adicionarClasse('form_grid') ).openDialogo();    
     },
 
     _fecharFormDefault : function( formulario, response, indiceLinha ){
@@ -1464,7 +1478,10 @@ var Superlogica_Js_Grid = new Class({
     _zebrar : function( indice ){
         var referencia = this.getClosestInstance();
         indice = !isNaN(parseInt(indice)) ? indice : parseInt( this.atributo('indice') );
-        this.adicionarClasse( indice%2 == 0 ?  referencia._cssGrid['linhaPar'] : referencia._cssGrid['linhaImpar'] );
+        if ( this._naoZebrar == true )
+            this.adicionarClasse( referencia._cssGrid['linhaPar'] );
+        else
+            this.adicionarClasse( indice%2 == 0 ?  referencia._cssGrid['linhaPar'] : referencia._cssGrid['linhaImpar'] );
     },
 
     /**
@@ -1655,7 +1672,7 @@ var Superlogica_Js_Grid = new Class({
         var urlRecarregar = '';
         var location = new Superlogica_Js_Location();
             location.setApi(true).setParam('format', null );
-            
+
         if ( typeof  this._aoRecarregar == 'function'){
             urlRecarregar = this._aoRecarregar();
             if ( instanceOf( urlRecarregar, Superlogica_Js_Location ))
@@ -1672,10 +1689,16 @@ var Superlogica_Js_Grid = new Class({
         var request = new Superlogica_Js_Request( location.toString() );
         var grid = this;
         request.enviarAssincrono(function( response ){
-            if ( response.isValid() )
-                grid.removerLinhas().adicionarLinhas( response.getData(-1) );
+            if ( response.isValid() ){
+                var dadosGrid = response.getData(-1);
+                if ( dadosGrid && Object.getLength(dadosGrid) == grid.getItensPorPagina() ){
+                    grid._setPaginaAtual( parseInt( location.getParam('pagina') ) );
+                    grid.setOption('fimPaginacao', false );
+                }
+                grid.removerLinhas().adicionarLinhas( dadosGrid );
+            }
         });
-        
+
         return this;
                 
     },

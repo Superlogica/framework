@@ -1,152 +1,39 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Dojo
- * @subpackage Form_Element
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_Dojo_Form_Element_DateTextBox */
-require_once 'Zend/Dojo/Form/Element/DateTextBox.php';
-
-/**
- * TimeTextBox dijit
- * 
- * @uses       Zend_Dojo_Form_Element_DateTextBox
- * @package    Zend_Dojo
- * @subpackage Form_Element
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: TimeTextBox.php 10079 2008-07-14 10:56:37Z matthew $
- */
-class Zend_Dojo_Form_Element_TimeTextBox extends Zend_Dojo_Form_Element_DateTextBox
-{
-    /**
-     * Use TimeTextBox dijit view helper
-     * @var string
-     */
-    public $helper = 'TimeTextBox';
-
-    /**
-     * Validate ISO 8601 time format
-     * 
-     * @param  string $format 
-     * @return true
-     * @throws Zend_Form_Element_Exception
-     */
-    protected function _validateIso8601($format)
-    {
-        if (!preg_match('/^T\d{2}:\d{2}:\d{2}$/', $format)) {
-            require_once 'Zend/Form/Element/Exception.php';
-            throw new Zend_Form_Element_Exception(sprintf('Invalid format "%s" provided; must match T:00:00:00 format', $format));
-        }
-        return true;
-    }
-
-    /**
-     * Set time format pattern
-     *
-     * @param  string $pattern
-     * @return Zend_Dojo_Form_Element_NumberTextBox
-     */
-    public function setTimePattern($pattern)
-    {
-        $this->setConstraint('timePattern', (string) $pattern);
-        return $this;
-    }
-
-    /**
-     * Retrieve time format pattern
-     *
-     * @return string|null
-     */
-    public function getTimePattern()
-    {
-        return $this->getConstraint('timePattern');
-    }
-
-    /**
-     * Set clickableIncrement
-     *
-     * @param  string $format
-     * @return Zend_Dojo_Form_Element_NumberTextBox
-     */
-    public function setClickableIncrement($format)
-    {
-        $format = (string) $format;
-        $this->_validateIso8601($format);
-        $this->setConstraint('clickableIncrement', $format);
-        return $this;
-    }
-
-    /**
-     * Retrieve clickableIncrement
-     *
-     * @return string|null
-     */
-    public function getClickableIncrement()
-    {
-        return $this->getConstraint('clickableIncrement');
-    }
-
-    /**
-     * Set visibleIncrement
-     *
-     * @param  string $format
-     * @return Zend_Dojo_Form_Element_NumberTextBox
-     */
-    public function setVisibleIncrement($format)
-    {
-        $format = (string) $format;
-        $this->_validateIso8601($format);
-        $this->setConstraint('visibleIncrement', $format);
-        return $this;
-    }
-
-    /**
-     * Retrieve visibleIncrement
-     *
-     * @return string|null
-     */
-    public function getVisibleIncrement()
-    {
-        return $this->getConstraint('visibleIncrement');
-    }
-
-    /**
-     * Set visibleRange
-     *
-     * @param  string $format
-     * @return Zend_Dojo_Form_Element_NumberTextBox
-     */
-    public function setVisibleRange($format)
-    {
-        $format = (string) $format;
-        $this->_validateIso8601($format);
-        $this->setConstraint('visibleRange', $format);
-        return $this;
-    }
-
-    /**
-     * Retrieve visibleRange
-     *
-     * @return string|null
-     */
-    public function getVisibleRange()
-    {
-        return $this->getConstraint('visibleRange');
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+4+oV5Bo3fPCpRXwatZGmi7fxxHe83di6E12kBjy9ZO9tObQ2c0wPhw93LnDwVht3SH/CSpwsR6VR
+mAOkdOKb/TYbLlxedMPeSWHPYkDpS2SukGxUMR0CTcIPpd79yKzRhQs7E/kWJo9VAI3WJrSZKPjU
+lmUClUYX67NIYDCQBEpOucqCxrHzkxT5Wxpv85msciapnienhHGfUR3ZKq0E1N+zTJEadMWYqLgq
+lQ5hIxBs2Q5BbjytA0n6HPf3z4+R8dawnc7cGarP+zLvNwFJYz592aFqu2151ec42OOz7BLI43D4
+jmmZfJH9X8Sqc++EHNyv+Cyw9GVGUn50/OXS3enkuCxDp+bXhThs514Ca1VYgqgiyELdNIKdPm9p
+CaFMV7S5iWu1rmf1oIcUgRPQ8ouaHGd6xSR3Qd4iumHyrDInCM58/qEk2oG6V+OiSXCwVjqh4/EW
+Pp227reLfGRi7Tn6RucfV7WrJZGBvQZIP5sNSkQkrBahgUajd6EvG7qdL9ouNXlexlDDraLN2/DF
+MsfIwHUNAztfv526QtldrMCP6YzN/PddqBtlva8UdtBO41QB7doeYtyeY8FFUc1ktnMSflzHe9Zy
+pORll+q5SlUgH1uN4vrRzGaNuHr47JrAuZDlqONT8b6Sgst0Ci0jNWDUgttSJNqPn9MHJo74nPhP
+CaCHVDxaDGG3XK1Z1vM9DUZj49ysgqs1bfL1RiMTvAW7OuVT6yXXWFK3PVHd+1wp52qxsYFa8NGT
+/rYn4RZxFWTNT9g+PYEa9VLMzBcpuGRAuEtHjBFe21nXsNdeViriIHBDl/ZjOKcPh5OmEJNKYFK5
+ubc25i9SjvLKC3UjCKYTRPs4Ej0L18yHr9hCbYHyrHn6jBTz3jMLP2tdrrunKguApsiwaH4VSKZI
+ejxve8fFLgNgbfSGK1mkh61DxbCGdI6AZ4mSGaJ7V+0zq8aM+r+RMairFU5h+yHwerQz6zg/InPL
+P6d+DKsPSasEieSg1bblOovcA7l4y7XTjetAKbm/ycEchelnjNZQrPR6mjLf1zWzU0LenurbBkbw
+cY618o6rRDpqPOQMJTF6kHggHwTBwNu9wqh7gfOvKwcUARLzp6CxtMhZxqzROEAzSr2Plnj4qBg6
+IBOJ55dZFnv7p/khK78F1eaOa8lLsHorNc3l3a+7FsQcNBRnlAfPt2T7bL6Z/dq+EAZJz16Oewld
+nxJKD/ioUDb77RG0ATiuiCrGkFJW9yUIlR3JX/2l2ejTQC02v1lN3MGEoToijVDSFNb6NkRGeiVB
+jTplXVDdOoKbJ4vmQHp8TBufJKfEIV7g2S5bOpM99oPA5SFeagpDlmtCOQDxZ7UcM4txKLnIsdgt
+feMTz3YVUdHQzxXANuV81ptfMSMU/8T37uSYE+bLoHwd7+V29j9/QK3ETY89jAb0aJb/gUTsNxCq
+s4sui7X0Se/jLg98epF9kL0GTjHmXvWWNwTMy9Lyr+UXlqoOEBmg3840U8MNw25JTH13GOdMB14j
+qQtyYRpf0VJl1+I+VxQ/j41aqGP04jw5piA16dhRyRtTMNhD5DSlnsd/K+BhIzX6vfmvUHflSR0d
+4ESqD36eW7X04/ltvLngYb5EBqD6iPw0nA0h34o0THacggymFuqgL0HJqphWb82YXfF0PpPSAztr
+a4PRsopCQZVN4PcDywrj0q3VOuqUFr79wA2+I/YfqqNFGRMWNDAIgwqkRzcg7CHrgJyk4nRfPW+B
+RY3aJjyo2XncgqTG5aSWv60+gIHRlByNHVEhOGbNhkWsWWHu5HKEhY0lQE0nx9QVW0HglFwpBwIS
+T4wM6Epml25pMNHA1Db9d6sEw8rYA1YWZH1bUkfOwQfaCV/08f6+I7U9JijjC0OxdAWqeINtUvMa
+m+a4vT/RWPw9xb4nrmMYMIX+uhu44ro7uYDnEzPHrBMAHvoeTj9l+oTjVuGCFZxOcSzAc2hevaR0
+5xGMM+q1Eg3Yls098gbK9SvH2r925iykgHPzzvvEvohKwl688bZJz2zV4eBfqTTjVtUcxcgzh2AF
+SG9M3alohzhgfzOJDTf8n9/KbjipIX1jXnlad3dSW4iwEAQnybpxMGweXH1l2zw9affOPSkbQHnl
+eiXjAw5K3WmLEGALebc7M9xOqZ70v9YxMMC/AQO+BsiLzgyd2IPQudgb5ll/xHveLPHTxMfbBt3P
+HoJb8znt6wI1Pt8E9ckHV9UcMRGIgswV9ETvFs2ZGpybtfUc5hiKvbdJHH8ICUSdethAPa7NI3DR
+YhinzYa5sPOIEGT0+FmBYeX7GK4brB9BEEboFjV5K1UqC2v3uVoiIWxm3PHi3VkzLNCvPZsrSqvC
+o9N5Dq2VLbSWYQbKVeID9M0t3afTGthkRv+0LLtHTwib8smMe7hvh4YmmbOBHNKBL1YiyzrWPHr6
+MloHopCAQzzMqSQXEnTqXHSqA9N3nA2ADip7/RXU1qohBNtJFYk6khNV3JN/dyWvws9KmbJ/WBtw
+NudlMoDGddwL/nQ2GBYX6pK1cjdlOAFJwqJXjoda8oRjUTN0fkKRpaV8tkcGnkn+t1WVk/diDmAP
+/qfs+VSsUN7umjJ4iD3JVlsyGJuSvDwunBBbSsjnVl/JIzkHKCnlzNcqj8xKuDmO5lv9R5intb41
+ULdgtOV/3TEk9qcAFdM2AjfpYpRLVCfTL3iJuxC8UKsZ

@@ -1,403 +1,232 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Pdf
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_Pdf_Color */
-require_once 'Zend/Pdf/Color.php';
-
-/** Zend_Pdf_Color_Rgb */
-require_once 'Zend/Pdf/Color/Rgb.php';
-
-/** Zend_Pdf_GrayScale */
-require_once 'Zend/Pdf/Color/GrayScale.php';
-
-/**
- * HTML color implementation
- *
- * Factory class which vends Zend_Pdf_Color objects from typical HTML
- * representations.
- *
- * @category   Zend
- * @package    Zend_Pdf
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Pdf_Color_Html extends Zend_Pdf_Color
-{
-
-    /**
-     * Color
-     *
-     * @var Zend_Pdf_Color
-     */
-    private $_color;
-
-    /**
-     * Class constructor.
-     *
-     * @param mixed $color
-     * @throws Zend_Pdf_Exception
-     */
-    public function __construct($color)
-    {
-        $this->_color = self::color($color);
-    }
-
-
-    /**
-     * Instructions, which can be directly inserted into content stream
-     * to switch color.
-     * Color set instructions differ for stroking and nonstroking operations.
-     *
-     * @param boolean $stroking
-     * @return string
-     */
-    public function instructions($stroking)
-    {
-        return $this->_color->instructions($stroking);
-    }
-
-    /**
-     * Creates a Zend_Pdf_Color object from the HTML representation.
-     *
-     * @param string $color May either be a hexidecimal number of the form
-     *    #rrggbb or one of the 140 well-known names (black, white, blue, etc.)
-     * @return Zend_Pdf_Color
-     */
-    public static function color($color)
-    {
-        $pattern = '/^#([A-Fa-f0-9]{2})([A-Fa-f0-9]{2})([A-Fa-f0-9]{2})$/';
-        if (preg_match($pattern, $color, $matches)) {
-            $r = round((hexdec($matches[1]) / 255), 3);
-            $g = round((hexdec($matches[2]) / 255), 3);
-            $b = round((hexdec($matches[3]) / 255), 3);
-            if (($r == $g) && ($g == $b)) {
-                return new Zend_Pdf_Color_GrayScale($r);
-            } else {
-                return new Zend_Pdf_Color_Rgb($r, $g, $b);
-            }
-        } else {
-            return Zend_Pdf_Color_Html::namedColor($color);
-        }
-    }
-
-    /**
-     * Creates a Zend_Pdf_Color object from the named color.
-     *
-     * @param string $color One of the 140 well-known color names (black, white,
-     *    blue, etc.)
-     * @return Zend_Pdf_Color
-     */
-    public static function namedColor($color)
-    {
-        switch (strtolower($color)) {
-            case 'aqua':
-                $r = 0.0;   $g = 1.0;   $b = 1.0;   break;
-            case 'black':
-                $r = 0.0;   $g = 0.0;   $b = 0.0;   break;
-            case 'blue':
-                $r = 0.0;   $g = 0.0;   $b = 1.0;   break;
-            case 'fuchsia':
-                $r = 1.0;   $g = 0.0;   $b = 1.0;   break;
-            case 'gray':
-                $r = 0.502; $g = 0.502; $b = 0.502; break;
-            case 'green':
-                $r = 0.0;   $g = 0.502; $b = 0.0;   break;
-            case 'lime':
-                $r = 0.0;   $g = 1.0;   $b = 0.0;   break;
-            case 'maroon':
-                $r = 0.502; $g = 0.0;   $b = 0.0;   break;
-            case 'navy':
-                $r = 0.0;   $g = 0.0;   $b = 0.502; break;
-            case 'olive':
-                $r = 0.502; $g = 0.502; $b = 0.0;   break;
-            case 'purple':
-                $r = 0.502; $g = 0.0;   $b = 0.502; break;
-            case 'red':
-                $r = 1.0;   $g = 0.0;   $b = 0.0;   break;
-            case 'silver':
-                $r = 0.753; $g = 0.753; $b = 0.753; break;
-            case 'teal':
-                $r = 0.0;   $g = 0.502; $b = 0.502; break;
-            case 'white':
-                $r = 1.0;   $g = 1.0;   $b = 1.0;   break;
-            case 'yellow':
-                $r = 1.0;   $g = 1.0;   $b = 0.0;   break;
-
-            case 'aliceblue':
-                $r = 0.941; $g = 0.973; $b = 1.0;   break;
-            case 'antiquewhite':
-                $r = 0.980; $g = 0.922; $b = 0.843; break;
-            case 'aquamarine':
-                $r = 0.498; $g = 1.0;   $b = 0.831; break;
-            case 'azure':
-                $r = 0.941; $g = 1.0;   $b = 1.0;   break;
-            case 'beige':
-                $r = 0.961; $g = 0.961; $b = 0.863; break;
-            case 'bisque':
-                $r = 1.0;   $g = 0.894; $b = 0.769; break;
-            case 'blanchedalmond':
-                $r = 1.0;   $g = 1.0;   $b = 0.804; break;
-            case 'blueviolet':
-                $r = 0.541; $g = 0.169; $b = 0.886; break;
-            case 'brown':
-                $r = 0.647; $g = 0.165; $b = 0.165; break;
-            case 'burlywood':
-                $r = 0.871; $g = 0.722; $b = 0.529; break;
-            case 'cadetblue':
-                $r = 0.373; $g = 0.620; $b = 0.627; break;
-            case 'chartreuse':
-                $r = 0.498; $g = 1.0;   $b = 0.0;   break;
-            case 'chocolate':
-                $r = 0.824; $g = 0.412; $b = 0.118; break;
-            case 'coral':
-                $r = 1.0;   $g = 0.498; $b = 0.314; break;
-            case 'cornflowerblue':
-                $r = 0.392; $g = 0.584; $b = 0.929; break;
-            case 'cornsilk':
-                $r = 1.0;   $g = 0.973; $b = 0.863; break;
-            case 'crimson':
-                $r = 0.863; $g = 0.078; $b = 0.235; break;
-            case 'cyan':
-                $r = 0.0;   $g = 1.0;   $b = 1.0;   break;
-            case 'darkblue':
-                $r = 0.0;   $g = 0.0;   $b = 0.545; break;
-            case 'darkcyan':
-                $r = 0.0;   $g = 0.545; $b = 0.545; break;
-            case 'darkgoldenrod':
-                $r = 0.722; $g = 0.525; $b = 0.043; break;
-            case 'darkgray':
-                $r = 0.663; $g = 0.663; $b = 0.663; break;
-            case 'darkgreen':
-                $r = 0.0;   $g = 0.392; $b = 0.0;   break;
-            case 'darkkhaki':
-                $r = 0.741; $g = 0.718; $b = 0.420; break;
-            case 'darkmagenta':
-                $r = 0.545; $g = 0.0;   $b = 0.545; break;
-            case 'darkolivegreen':
-                $r = 0.333; $g = 0.420; $b = 0.184; break;
-            case 'darkorange':
-                $r = 1.0;   $g = 0.549; $b = 0.0;   break;
-            case 'darkorchid':
-                $r = 0.6;   $g = 0.196; $b = 0.8;   break;
-            case 'darkred':
-                $r = 0.545; $g = 0.0;   $b = 0.0;   break;
-            case 'darksalmon':
-                $r = 0.914; $g = 0.588; $b = 0.478; break;
-            case 'darkseagreen':
-                $r = 0.561; $g = 0.737; $b = 0.561; break;
-            case 'darkslateblue':
-                $r = 0.282; $g = 0.239; $b = 0.545; break;
-            case 'darkslategray':
-                $r = 0.184; $g = 0.310; $b = 0.310; break;
-            case 'darkturquoise':
-                $r = 0.0;   $g = 0.808; $b = 0.820; break;
-            case 'darkviolet':
-                $r = 0.580; $g = 0.0;   $b = 0.827; break;
-            case 'deeppink':
-                $r = 1.0;   $g = 0.078; $b = 0.576; break;
-            case 'deepskyblue':
-                $r = 0.0;   $g = 0.749; $b = 1.0;   break;
-            case 'dimgray':
-                $r = 0.412; $g = 0.412; $b = 0.412; break;
-            case 'dodgerblue':
-                $r = 0.118; $g = 0.565; $b = 1.0;   break;
-            case 'firebrick':
-                $r = 0.698; $g = 0.133; $b = 0.133; break;
-            case 'floralwhite':
-                $r = 1.0;   $g = 0.980; $b = 0.941; break;
-            case 'forestgreen':
-                $r = 0.133; $g = 0.545; $b = 0.133; break;
-            case 'gainsboro':
-                $r = 0.863; $g = 0.863; $b = 0.863; break;
-            case 'ghostwhite':
-                $r = 0.973; $g = 0.973; $b = 1.0;   break;
-            case 'gold':
-                $r = 1.0;   $g = 0.843; $b = 0.0;   break;
-            case 'goldenrod':
-                $r = 0.855; $g = 0.647; $b = 0.125; break;
-            case 'greenyellow':
-                $r = 0.678; $g = 1.0;   $b = 0.184; break;
-            case 'honeydew':
-                $r = 0.941; $g = 1.0;   $b = 0.941; break;
-            case 'hotpink':
-                $r = 1.0;   $g = 0.412; $b = 0.706; break;
-            case 'indianred':
-                $r = 0.804; $g = 0.361; $b = 0.361; break;
-            case 'indigo':
-                $r = 0.294; $g = 0.0;   $b = 0.510; break;
-            case 'ivory':
-                $r = 1.0;   $g = 0.941; $b = 0.941; break;
-            case 'khaki':
-                $r = 0.941; $g = 0.902; $b = 0.549; break;
-            case 'lavender':
-                $r = 0.902; $g = 0.902; $b = 0.980; break;
-            case 'lavenderblush':
-                $r = 1.0;   $g = 0.941; $b = 0.961; break;
-            case 'lawngreen':
-                $r = 0.486; $g = 0.988; $b = 0.0;   break;
-            case 'lemonchiffon':
-                $r = 1.0;   $g = 0.980; $b = 0.804; break;
-            case 'lightblue':
-                $r = 0.678; $g = 0.847; $b = 0.902; break;
-            case 'lightcoral':
-                $r = 0.941; $g = 0.502; $b = 0.502; break;
-            case 'lightcyan':
-                $r = 0.878; $g = 1.0;   $b = 1.0;   break;
-            case 'lightgoldenrodyellow':
-                $r = 0.980; $g = 0.980; $b = 0.824; break;
-            case 'lightgreen':
-                $r = 0.565; $g = 0.933; $b = 0.565; break;
-            case 'lightgrey':
-                $r = 0.827; $g = 0.827; $b = 0.827; break;
-            case 'lightpink':
-                $r = 1.0;   $g = 0.714; $b = 0.757; break;
-            case 'lightsalmon':
-                $r = 1.0;   $g = 0.627; $b = 0.478; break;
-            case 'lightseagreen':
-                $r = 0.125; $g = 0.698; $b = 0.667; break;
-            case 'lightskyblue':
-                $r = 0.529; $g = 0.808; $b = 0.980; break;
-            case 'lightslategray':
-                $r = 0.467; $g = 0.533; $b = 0.6;   break;
-            case 'lightsteelblue':
-                $r = 0.690; $g = 0.769; $b = 0.871; break;
-            case 'lightyellow':
-                $r = 1.0;   $g = 1.0;   $b = 0.878; break;
-            case 'limegreen':
-                $r = 0.196; $g = 0.804; $b = 0.196; break;
-            case 'linen':
-                $r = 0.980; $g = 0.941; $b = 0.902; break;
-            case 'magenta':
-                $r = 1.0;   $g = 0.0;   $b = 1.0;   break;
-            case 'mediumaquamarine':
-                $r = 0.4;   $g = 0.804; $b = 0.667; break;
-            case 'mediumblue':
-                $r = 0.0;   $g = 0.0;   $b = 0.804; break;
-            case 'mediumorchid':
-                $r = 0.729; $g = 0.333; $b = 0.827; break;
-            case 'mediumpurple':
-                $r = 0.576; $g = 0.439; $b = 0.859; break;
-            case 'mediumseagreen':
-                $r = 0.235; $g = 0.702; $b = 0.443; break;
-            case 'mediumslateblue':
-                $r = 0.482; $g = 0.408; $b = 0.933; break;
-            case 'mediumspringgreen':
-                $r = 0.0;   $g = 0.980; $b = 0.604; break;
-            case 'mediumturquoise':
-                $r = 0.282; $g = 0.820; $b = 0.8;   break;
-            case 'mediumvioletred':
-                $r = 0.780; $g = 0.082; $b = 0.522; break;
-            case 'midnightblue':
-                $r = 0.098; $g = 0.098; $b = 0.439; break;
-            case 'mintcream':
-                $r = 0.961; $g = 1.0;   $b = 0.980; break;
-            case 'mistyrose':
-                $r = 1.0;   $g = 0.894; $b = 0.882; break;
-            case 'moccasin':
-                $r = 1.0;   $g = 0.894; $b = 0.710; break;
-            case 'navajowhite':
-                $r = 1.0;   $g = 0.871; $b = 0.678; break;
-            case 'oldlace':
-                $r = 0.992; $g = 0.961; $b = 0.902; break;
-            case 'olivedrab':
-                $r = 0.420; $g = 0.557; $b = 0.137; break;
-            case 'orange':
-                $r = 1.0;   $g = 0.647; $b = 0.0;   break;
-            case 'orangered':
-                $r = 1.0;   $g = 0.271; $b = 0.0;   break;
-            case 'orchid':
-                $r = 0.855; $g = 0.439; $b = 0.839; break;
-            case 'palegoldenrod':
-                $r = 0.933; $g = 0.910; $b = 0.667; break;
-            case 'palegreen':
-                $r = 0.596; $g = 0.984; $b = 0.596; break;
-            case 'paleturquoise':
-                $r = 0.686; $g = 0.933; $b = 0.933; break;
-            case 'palevioletred':
-                $r = 0.859; $g = 0.439; $b = 0.576; break;
-            case 'papayawhip':
-                $r = 1.0;   $g = 0.937; $b = 0.835; break;
-            case 'peachpuff':
-                $r = 1.0;   $g = 0.937; $b = 0.835; break;
-            case 'peru':
-                $r = 0.804; $g = 0.522; $b = 0.247; break;
-            case 'pink':
-                $r = 1.0;   $g = 0.753; $b = 0.796; break;
-            case 'plum':
-                $r = 0.867; $g = 0.627; $b = 0.867; break;
-            case 'powderblue':
-                $r = 0.690; $g = 0.878; $b = 0.902; break;
-            case 'rosybrown':
-                $r = 0.737; $g = 0.561; $b = 0.561; break;
-            case 'royalblue':
-                $r = 0.255; $g = 0.412; $b = 0.882; break;
-            case 'saddlebrown':
-                $r = 0.545; $g = 0.271; $b = 0.075; break;
-            case 'salmon':
-                $r = 0.980; $g = 0.502; $b = 0.447; break;
-            case 'sandybrown':
-                $r = 0.957; $g = 0.643; $b = 0.376; break;
-            case 'seagreen':
-                $r = 0.180; $g = 0.545; $b = 0.341; break;
-            case 'seashell':
-                $r = 1.0;   $g = 0.961; $b = 0.933; break;
-            case 'sienna':
-                $r = 0.627; $g = 0.322; $b = 0.176; break;
-            case 'skyblue':
-                $r = 0.529; $g = 0.808; $b = 0.922; break;
-            case 'slateblue':
-                $r = 0.416; $g = 0.353; $b = 0.804; break;
-            case 'slategray':
-                $r = 0.439; $g = 0.502; $b = 0.565; break;
-            case 'snow':
-                $r = 1.0;   $g = 0.980; $b = 0.980; break;
-            case 'springgreen':
-                $r = 0.0;   $g = 1.0;   $b = 0.498; break;
-            case 'steelblue':
-                $r = 0.275; $g = 0.510; $b = 0.706; break;
-            case 'tan':
-                $r = 0.824; $g = 0.706; $b = 0.549; break;
-            case 'thistle':
-                $r = 0.847; $g = 0.749; $b = 0.847; break;
-            case 'tomato':
-                $r = 0.992; $g = 0.388; $b = 0.278; break;
-            case 'turquoise':
-                $r = 0.251; $g = 0.878; $b = 0.816; break;
-            case 'violet':
-                $r = 0.933; $g = 0.510; $b = 0.933; break;
-            case 'wheat':
-                $r = 0.961; $g = 0.871; $b = 0.702; break;
-            case 'whitesmoke':
-                $r = 0.961; $g = 0.961; $b = 0.961; break;
-            case 'yellowgreen':
-                $r = 0.604; $g = 0.804; $b = 0.196; break;
-
-            default:
-                require_once 'Zend/Pdf/Exception.php';
-                throw new Zend_Pdf_Exception('Unknown color name: ' . $color);
-        }
-        if (($r == $g) && ($g == $b)) {
-            return new Zend_Pdf_Color_GrayScale($r);
-        } else {
-            return new Zend_Pdf_Color_Rgb($r, $g, $b);
-        }
-    }
-}
-
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

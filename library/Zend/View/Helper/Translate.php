@@ -1,178 +1,58 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_View
- * @subpackage Helper
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Translate.php 15766 2009-05-25 20:09:35Z thomas $
- */
-
-/** Zend_Locale */
-require_once 'Zend/Locale.php';
-
-/** Zend_View_Helper_Abstract.php */
-require_once 'Zend/View/Helper/Abstract.php';
-
-/**
- * Translation view helper
- *
- * @category  Zend
- * @package   Zend_View
- * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_View_Helper_Translate extends Zend_View_Helper_Abstract
-{
-    /**
-     * Translation object
-     *
-     * @var Zend_Translate_Adapter
-     */
-    protected $_translator;
-
-    /**
-     * Constructor for manually handling
-     *
-     * @param Zend_Translate|Zend_Translate_Adapter $translate Instance of Zend_Translate
-     */
-    public function __construct($translate = null)
-    {
-        if (empty($translate) === false) {
-            $this->setTranslator($translate);
-        }
-    }
-
-    /**
-     * Translate a message
-     * You can give multiple params or an array of params.
-     * If you want to output another locale just set it as last single parameter
-     * Example 1: translate('%1\$s + %2\$s', $value1, $value2, $locale);
-     * Example 2: translate('%1\$s + %2\$s', array($value1, $value2), $locale);
-     *
-     * @param  string $messageid Id of the message to be translated
-     * @return string Translated message
-     */
-    public function translate($messageid = null)
-    {
-        if ($messageid === null) {
-            return $this;
-        }
-
-        $translate = $this->getTranslator();
-        if ($translate === null) {
-            return $messageid;
-        }
-
-        $options = func_get_args();
-        array_shift($options);
-
-        $count  = count($options);
-        $locale = null;
-        if ($count > 0) {
-            if (Zend_Locale::isLocale($options[($count - 1)], null, false) !== false) {
-                $locale = array_pop($options);
-            }
-        }
-
-        if ((count($options) === 1) and (is_array($options[0]) === true)) {
-            $options = $options[0];
-        }
-
-        $message = $translate->translate($messageid, $locale);
-        if (count($options) === 0) {
-            return $message;
-        }
-
-        return vsprintf($message, $options);
-    }
-
-    /**
-     * Sets a translation Adapter for translation
-     *
-     * @param  Zend_Translate|Zend_Translate_Adapter $translate Instance of Zend_Translate
-     * @throws Zend_View_Exception When no or a false instance was set
-     * @return Zend_View_Helper_Translate
-     */
-    public function setTranslator($translate)
-    {
-        if ($translate instanceof Zend_Translate_Adapter) {
-            $this->_translator = $translate;
-        } else if ($translate instanceof Zend_Translate) {
-            $this->_translator = $translate->getAdapter();
-        } else {
-            require_once 'Zend/View/Exception.php';
-            throw new Zend_View_Exception('You must set an instance of Zend_Translate or Zend_Translate_Adapter');
-        }
-
-        return $this;
-    }
-
-    /**
-     * Retrieve translation object
-     *
-     * If none is currently registered, attempts to pull it from the registry
-     * using the key 'Zend_Translate'.
-     *
-     * @return Zend_Translate_Adapter|null
-     */
-    public function getTranslator()
-    {
-        if ($this->_translator === null) {
-            require_once 'Zend/Registry.php';
-            if (Zend_Registry::isRegistered('Zend_Translate') === true) {
-                $this->setTranslator(Zend_Registry::get('Zend_Translate'));
-            }
-        }
-
-        return $this->_translator;
-    }
-
-    /**
-     * Set's an new locale for all further translations
-     *
-     * @param  string|Zend_Locale $locale New locale to set
-     * @throws Zend_View_Exception When no Zend_Translate instance was set
-     * @return Zend_View_Helper_Translate
-     */
-    public function setLocale($locale = null)
-    {
-        $translate = $this->getTranslator();
-        if ($translate === null) {
-            require_once 'Zend/View/Exception.php';
-            throw new Zend_View_Exception('You must set an instance of Zend_Translate or Zend_Translate_Adapter');
-        }
-
-        $translate->setLocale($locale);
-        return $this;
-    }
-
-    /**
-     * Returns the set locale for translations
-     *
-     * @throws Zend_View_Exception When no Zend_Translate instance was set
-     * @return string|Zend_Locale
-     */
-    public function getLocale()
-    {
-        $translate = $this->getTranslator();
-        if ($translate === null) {
-            require_once 'Zend/View/Exception.php';
-            throw new Zend_View_Exception('You must set an instance of Zend_Translate or Zend_Translate_Adapter');
-        }
-
-        return $translate->getLocale();
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

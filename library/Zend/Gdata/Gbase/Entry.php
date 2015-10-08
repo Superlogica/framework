@@ -1,150 +1,53 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Gbase
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * @see Zend_Gdata_Entry
- */
-require_once 'Zend/Gdata/Entry.php';
-
-/**
- * @see Zend_Gdata_Gbase_Extension_BaseAttribute
- */
-require_once 'Zend/Gdata/Gbase/Extension/BaseAttribute.php';
-
-/**
- * Base class for working with Google Base entries.
- *
- * @link http://code.google.com/apis/base/
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Gbase
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Gdata_Gbase_Entry extends Zend_Gdata_Entry
-{
-
-    /**
-     * Name of the base class for Google Base entries
-     *
-     * var @string
-     */
-    protected $_entryClassName = 'Zend_Gdata_Gbase_Entry';
-
-    /**
-     * Google Base attribute elements in the 'g' namespace
-     *
-     * @var array
-     */
-    protected $_baseAttributes = array();
-
-    /**
-     * Constructs a new Zend_Gdata_Gbase_ItemEntry object.
-     * @param DOMElement $element (optional) The DOMElement on which to base this object.
-     */
-    public function __construct($element = null)
-    {
-        $this->registerAllNamespaces(Zend_Gdata_Gbase::$namespaces);
-        parent::__construct($element);
-    }
-
-    /**
-     * Retrieves a DOMElement which corresponds to this element and all
-     * child properties.  This is used to build an entry back into a DOM
-     * and eventually XML text for application storage/persistence.
-     *
-     * @param DOMDocument $doc The DOMDocument used to construct DOMElements
-     * @return DOMElement The DOMElement representing this element and all
-     *          child properties.
-     */
-    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
-    {
-        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
-        foreach ($this->_baseAttributes as $baseAttribute) {
-            $element->appendChild($baseAttribute->getDOM($element->ownerDocument));
-        }
-        return $element;
-    }
-
-    /**
-     * Creates individual Entry objects of the appropriate type and
-     * stores them as members of this entry based upon DOM data.
-     *
-     * @param DOMNode $child The DOMNode to process
-     */
-    protected function takeChildFromDOM($child)
-    {
-        $absoluteNodeName = $child->namespaceURI . ':' . $child->localName;
-
-        if (strstr($absoluteNodeName, $this->lookupNamespace('g') . ':')) {
-            $baseAttribute = new Zend_Gdata_Gbase_Extension_BaseAttribute();
-            $baseAttribute->transferFromDOM($child);
-            $this->_baseAttributes[] = $baseAttribute;
-        } else {
-            parent::takeChildFromDOM($child);
-        }
-    }
-
-    /**
-     * Get the value of the itme_type
-     *
-     * @return Zend_Gdata_Gbase_Extension_ItemType The requested object.
-     */
-    public function getItemType()
-    {
-        $itemType = $this->getGbaseAttribute('item_type');
-        if (is_object($itemType[0])) {
-          return $itemType[0];
-        } else {
-          return null;
-        }
-    }
-
-    /**
-     * Return all the Base attributes
-     * @return Zend_Gdata_Gbase_Extension_BaseAttribute
-     */
-    public function getGbaseAttributes() {
-        return $this->_baseAttributes;
-    }
-
-    /**
-     * Return an array of Base attributes that match the given attribute name
-     *
-     * @param string $name The name of the Base attribute to look for
-     * @return array $matches Array that contains the matching list of Base attributes
-     */
-    public function getGbaseAttribute($name)
-    {
-        $matches = array();
-        for ($i = 0; $i < count($this->_baseAttributes); $i++) {
-            $baseAttribute = $this->_baseAttributes[$i];
-            if ($baseAttribute->rootElement == $name &&
-                $baseAttribute->rootNamespaceURI == $this->lookupNamespace('g')) {
-                $matches[] = &$this->_baseAttributes[$i];
-            }
-        }
-        return $matches;
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

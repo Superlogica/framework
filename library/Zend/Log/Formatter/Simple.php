@@ -1,85 +1,34 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Log
- * @subpackage Formatter
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Simple.php 13208 2008-12-13 22:33:12Z thomas $
- */
-
-/** Zend_Log_Formatter_Interface */
-require_once 'Zend/Log/Formatter/Interface.php';
-
-/**
- * @category   Zend
- * @package    Zend_Log
- * @subpackage Formatter
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Simple.php 13208 2008-12-13 22:33:12Z thomas $
- */
-class Zend_Log_Formatter_Simple implements Zend_Log_Formatter_Interface
-{
-    /**
-     * @var string
-     */
-    protected $_format;
-
-    const DEFAULT_FORMAT = '%timestamp% %priorityName% (%priority%): %message%';
-
-    /**
-     * Class constructor
-     *
-     * @param  null|string  $format  Format specifier for log messages
-     * @throws Zend_Log_Exception
-     */
-    public function __construct($format = null)
-    {
-        if ($format === null) {
-            $format = self::DEFAULT_FORMAT . PHP_EOL;
-        }
-
-        if (! is_string($format)) {
-            require_once 'Zend/Log/Exception.php';
-            throw new Zend_Log_Exception('Format must be a string');
-        }
-
-        $this->_format = $format;
-    }
-
-    /**
-     * Formats data into a single line to be written by the writer.
-     *
-     * @param  array    $event    event data
-     * @return string             formatted line to write to the log
-     */
-    public function format($event)
-    {
-        $output = $this->_format;
-        foreach ($event as $name => $value) {
-
-            if ((is_object($value) && !method_exists($value,'__toString'))
-                || is_array($value)) {
-
-                $value = gettype($value);
-            }
-
-            $output = str_replace("%$name%", $value, $output);
-        }
-        return $output;
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+IAcXUuwaY3Ml1n7nJ9xi61YWREcToW==

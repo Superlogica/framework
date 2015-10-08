@@ -1,445 +1,123 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage YouTube
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * @see Zend_Gdata_Entry
- */
-require_once 'Zend/Gdata/Entry.php';
-
-/**
- * @see Zend_Gdata_Extension_FeedLink
- */
-require_once 'Zend/Gdata/Extension/FeedLink.php';
-
-/**
- * @see Zend_Gdata_YouTube_Extension_Description
- */
-require_once 'Zend/Gdata/YouTube/Extension/Description.php';
-
-/**
- * @see Zend_Gdata_YouTube_Extension_PlaylistTitle
- */
-require_once 'Zend/Gdata/YouTube/Extension/PlaylistTitle.php';
-
-/**
- * @see Zend_Gdata_YouTube_Extension_PlaylistId
- */
-require_once 'Zend/Gdata/YouTube/Extension/PlaylistId.php';
-
-/**
- * @see Zend_Gdata_Media_Extension_MediaThumbnail
- */
-require_once 'Zend/Gdata/Media/Extension/MediaThumbnail.php';
-
-/**
- * @see Zend_Gdata_YouTube_Extension_Username
- */
-require_once 'Zend/Gdata/YouTube/Extension/Username.php';
-
-/**
- * @see Zend_Gdata_YouTube_Extension_CountHint
- */
-require_once 'Zend/Gdata/YouTube/Extension/CountHint.php';
-
-/**
- * @see Zend_Gdata_YouTube_Extension_QueryString
- */
-require_once 'Zend/Gdata/YouTube/Extension/QueryString.php';
-
-/**
- * Represents the YouTube video subscription flavor of an Atom entry
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage YouTube
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Gdata_YouTube_SubscriptionEntry extends Zend_Gdata_Entry
-{
-
-    protected $_entryClassName = 'Zend_Gdata_YouTube_SubscriptionEntry';
-
-    /**
-     * Nested feed links
-     *
-     * @var array
-     */
-    protected $_feedLink = array();
-    
-    /**
-     * The username of this entry.
-     *
-     * @var Zend_Gdata_YouTube_Extension_Username
-     */
-    protected $_username = null;
-    
-    /**
-     * The playlist title for this entry.
-     * 
-     * This element is only used on subscriptions to playlists.
-     *
-     * @var Zend_Gdata_YouTube_Extension_PlaylistTitle
-     */
-    protected $_playlistTitle = null;
-    
-    /**
-     * The playlist id for this entry.
-     * 
-     * This element is only used on subscriptions to playlists.
-     *
-     * @var Zend_Gdata_YouTube_Extension_PlaylistId
-     */
-    protected $_playlistId = null;
-    
-    /**
-     * The media:thumbnail element for this entry.
-     * 
-     * This element is only used on subscriptions to playlists.
-     *
-     * @var Zend_Gdata_Media_Extension_MediaThumbnail
-     */
-    protected $_mediaThumbnail = null;
-
-    /**
-     * The countHint for this entry.
-     *
-     * @var Zend_Gdata_YouTube_Extension_CountHint
-     */
-    protected $_countHint = null;
-
-    /**
-     * The queryString for this entry.
-     *
-     * @var Zend_Gdata_YouTube_Extension_QueryString
-     */
-    protected $_queryString = null;
-
-    /**
-     * Creates a subscription entry, representing an individual subscription
-     * in a list of subscriptions, usually associated with an individual user.
-     *
-     * @param DOMElement $element (optional) DOMElement from which this
-     *          object should be constructed.
-     */
-    public function __construct($element = null)
-    {
-        $this->registerAllNamespaces(Zend_Gdata_YouTube::$namespaces);
-        parent::__construct($element);
-    }
-
-    /**
-     * Retrieves a DOMElement which corresponds to this element and all
-     * child properties.  This is used to build an entry back into a DOM
-     * and eventually XML text for sending to the server upon updates, or
-     * for application storage/persistence.
-     *
-     * @param DOMDocument $doc The DOMDocument used to construct DOMElements
-     * @return DOMElement The DOMElement representing this element and all
-     * child properties.
-     */
-    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
-    {
-        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
-        if ($this->_countHint != null) {
-            $element->appendChild($this->_countHint->getDOM($element->ownerDocument));
-        }
-        if ($this->_playlistTitle != null) {
-            $element->appendChild($this->_playlistTitle->getDOM($element->ownerDocument));
-        }
-        if ($this->_playlistId != null) {
-            $element->appendChild($this->_playlistId->getDOM($element->ownerDocument));
-        }
-        if ($this->_mediaThumbnail != null) {
-            $element->appendChild($this->_mediaThumbnail->getDOM($element->ownerDocument));
-        }
-        if ($this->_username != null) {
-            $element->appendChild($this->_username->getDOM($element->ownerDocument));
-        }
-        if ($this->_queryString != null) {
-            $element->appendChild($this->_queryString->getDOM($element->ownerDocument));
-        }
-        if ($this->_feedLink != null) {
-            foreach ($this->_feedLink as $feedLink) {
-                $element->appendChild($feedLink->getDOM($element->ownerDocument));
-            }
-        }
-        return $element;
-    }
-
-    /**
-     * Creates individual Entry objects of the appropriate type and
-     * stores them in the $_entry array based upon DOM data.
-     *
-     * @param DOMNode $child The DOMNode to process
-     */
-    protected function takeChildFromDOM($child)
-    {
-        $absoluteNodeName = $child->namespaceURI . ':' . $child->localName;
-        switch ($absoluteNodeName) {
-        case $this->lookupNamespace('gd') . ':' . 'feedLink':
-            $feedLink = new Zend_Gdata_Extension_FeedLink();
-            $feedLink->transferFromDOM($child);
-            $this->_feedLink[] = $feedLink;
-            break;
-        case $this->lookupNamespace('media') . ':' . 'thumbnail':
-            $mediaThumbnail = new Zend_Gdata_Media_Extension_MediaThumbnail();
-            $mediaThumbnail->transferFromDOM($child);
-            $this->_mediaThumbnail = $mediaThumbnail;
-            break;
-        case $this->lookupNamespace('yt') . ':' . 'countHint':
-            $countHint = new Zend_Gdata_YouTube_Extension_CountHint();
-            $countHint->transferFromDOM($child);
-            $this->_countHint = $countHint;
-            break;
-        case $this->lookupNamespace('yt') . ':' . 'playlistTitle':
-            $playlistTitle = new Zend_Gdata_YouTube_Extension_PlaylistTitle();
-            $playlistTitle->transferFromDOM($child);
-            $this->_playlistTitle = $playlistTitle;
-            break;
-        case $this->lookupNamespace('yt') . ':' . 'playlistId':
-            $playlistId = new Zend_Gdata_YouTube_Extension_PlaylistId();
-            $playlistId->transferFromDOM($child);
-            $this->_playlistId = $playlistId;
-            break;
-        case $this->lookupNamespace('yt') . ':' . 'queryString':
-            $queryString = new Zend_Gdata_YouTube_Extension_QueryString();
-            $queryString->transferFromDOM($child);
-            $this->_queryString = $queryString;
-            break;
-        case $this->lookupNamespace('yt') . ':' . 'username':
-            $username = new Zend_Gdata_YouTube_Extension_Username();
-            $username->transferFromDOM($child);
-            $this->_username = $username;
-            break;
-        default:
-            parent::takeChildFromDOM($child);
-            break;
-        }
-    }
-
-    /**
-     * Sets the array of embedded feeds related to the video
-     *
-     * @param array $feedLink The array of embedded feeds relating to the video
-     * @return Zend_Gdata_YouTube_SubscriptionEntry Provides a fluent interface
-     */
-    public function setFeedLink($feedLink = null)
-    {
-        $this->_feedLink = $feedLink;
-        return $this;
-    }
-
-    /**
-     * Get the feed link property for this entry.
-     *
-     * @see setFeedLink
-     * @param string $rel (optional) The rel value of the link to be found.
-     *          If null, the array of links is returned.
-     * @return mixed If $rel is specified, a Zend_Gdata_Extension_FeedLink
-     *          object corresponding to the requested rel value is returned
-     *          if found, or null if the requested value is not found. If
-     *          $rel is null or not specified, an array of all available
-     *          feed links for this entry is returned, or null if no feed
-     *          links are set.
-     */
-    public function getFeedLink($rel = null)
-    {
-        if ($rel == null) {
-            return $this->_feedLink;
-        } else {
-            foreach ($this->_feedLink as $feedLink) {
-                if ($feedLink->rel == $rel) {
-                    return $feedLink;
-                }
-            }
-            return null;
-        }
-    }
-    
-    /**
-     * Get the playlist title for a 'playlist' subscription.
-     *
-     * @throws Zend_Gdata_App_VersionException
-     * @return Zend_Gdata_YouTube_Extension_PlaylistId
-     */
-    public function getPlaylistId()
-    {
-        if (($this->getMajorProtocolVersion() == null) ||
-           ($this->getMajorProtocolVersion() == 1)) {
-            require_once 'Zend/Gdata/App/VersionException.php';
-            throw new Zend_Gdata_App_VersionException('The getPlaylistId ' .
-                ' method is only supported as of version 2 of the YouTube ' .
-                'API.');
-        } else {
-            return $this->_playlistId;
-        }
-    }
-
-    /**
-     * Sets the yt:playlistId element for a new playlist subscription.
-     *
-     * @param Zend_Gdata_YouTube_Extension_PlaylistId $id The id of 
-     *        the playlist to which to subscribe to.
-     * @throws Zend_Gdata_App_VersionException
-     * @return Zend_Gdata_YouTube_SubscriptionEntry Provides a fluent interface
-     */
-    public function setPlaylistId($id = null)
-    {
-        if (($this->getMajorProtocolVersion() == null) ||
-           ($this->getMajorProtocolVersion() == 1)) {
-            require_once 'Zend/Gdata/App/VersionException.php';
-            throw new Zend_Gdata_App_VersionException('The setPlaylistTitle ' .
-                ' method is only supported as of version 2 of the YouTube ' .
-                'API.');
-        } else {
-            $this->_playlistId = $id;
-            return $this;
-        }
-    }
-
-    /**
-     * Get the queryString of the subscription
-     *
-     * @return Zend_Gdata_YouTube_Extension_QueryString
-     */
-    public function getQueryString()
-    {
-        return $this->_queryString;
-    }
-
-    /**
-     * Sets the yt:queryString element for a new keyword subscription.
-     *
-     * @param Zend_Gdata_YouTube_Extension_QueryString $queryString The query
-     *        string to subscribe to
-     * @return Zend_Gdata_YouTube_SubscriptionEntry Provides a fluent interface
-     */
-    public function setQueryString($queryString = null)
-    {
-        $this->_queryString = $queryString;
-        return $this;
-    }
-
-    /**
-     * Get the playlist title for a 'playlist' subscription.
-     *
-     * @throws Zend_Gdata_App_VersionException
-     * @return Zend_Gdata_YouTube_Extension_PlaylistTitle
-     */
-    public function getPlaylistTitle()
-    {
-        if (($this->getMajorProtocolVersion() == null) ||
-           ($this->getMajorProtocolVersion() == 1)) {
-            require_once 'Zend/Gdata/App/VersionException.php';
-            throw new Zend_Gdata_App_VersionException('The getPlaylistTitle ' .
-                ' method is only supported as of version 2 of the YouTube ' .
-                'API.');
-        } else {
-            return $this->_playlistTitle;
-        }
-    }
-
-    /**
-     * Sets the yt:playlistTitle element for a new playlist subscription.
-     *
-     * @param Zend_Gdata_YouTube_Extension_PlaylistTitle $title The title of 
-     *        the playlist to which to subscribe to.
-     * @throws Zend_Gdata_App_VersionException
-     * @return Zend_Gdata_YouTube_SubscriptionEntry Provides a fluent interface
-     */
-    public function setPlaylistTitle($title = null)
-    {
-        if (($this->getMajorProtocolVersion() == null) ||
-           ($this->getMajorProtocolVersion() == 1)) {
-            require_once 'Zend/Gdata/App/VersionException.php';
-            throw new Zend_Gdata_App_VersionException('The setPlaylistTitle ' .
-                ' method is only supported as of version 2 of the YouTube ' .
-                'API.');
-        } else {
-            $this->_playlistTitle = $title;
-            return $this;
-        }
-    }
-
-    /**
-     * Get the counthint for a subscription.
-     *
-     * @throws Zend_Gdata_App_VersionException
-     * @return Zend_Gdata_YouTube_Extension_CountHint
-     */
-    public function getCountHint()
-    {
-        if (($this->getMajorProtocolVersion() == null) ||
-           ($this->getMajorProtocolVersion() == 1)) {
-            require_once 'Zend/Gdata/App/VersionException.php';
-            throw new Zend_Gdata_App_VersionException('The getCountHint ' .
-                ' method is only supported as of version 2 of the YouTube ' .
-                'API.');
-        } else {
-            return $this->_countHint;
-        }
-    }
-
-    /**
-     * Get the thumbnail for a subscription.
-     *
-     * @throws Zend_Gdata_App_VersionException
-     * @return Zend_Gdata_Media_Extension_MediaThumbnail
-     */
-    public function getMediaThumbnail()
-    {
-        if (($this->getMajorProtocolVersion() == null) ||
-           ($this->getMajorProtocolVersion() == 1)) {
-            require_once 'Zend/Gdata/App/VersionException.php';
-            throw new Zend_Gdata_App_VersionException('The getMediaThumbnail ' .
-                ' method is only supported as of version 2 of the YouTube ' .
-                'API.');
-        } else {
-            return $this->_mediaThumbnail;
-        }
-    }
-    
-    /**
-     * Get the username for a channel subscription.
-     *
-     * @return Zend_Gdata_YouTube_Extension_Username
-     */
-    public function getUsername()
-    {
-        return $this->_username;
-    }
-
-    /**
-     * Sets the username for a new channel subscription.
-     *
-     * @param Zend_Gdata_YouTube_Extension_Username $username The username of 
-     *        the channel to which to subscribe to.
-     * @return Zend_Gdata_YouTube_SubscriptionEntry Provides a fluent interface
-     */
-    public function setUsername($username = null)
-    {
-        $this->_username = $username;
-        return $this;
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

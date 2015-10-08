@@ -1,129 +1,36 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Filter
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: CamelCaseToUnderscore.php 6779 2007-11-08 15:10:41Z matthew $
- */
-
-/**
- * @see Zend_Filter_PregReplace
- */
-require_once 'Zend/Filter/PregReplace.php';
-
-/**
- * @category   Zend
- * @package    Zend_Filter
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Filter_Word_SeparatorToSeparator extends Zend_Filter_PregReplace
-{
-
-    protected $_searchSeparator = null;
-    protected $_replacementSeparator = null;
-
-    /**
-     * Constructor
-     * 
-     * @param  string  $searchSeparator      Seperator to search for
-     * @param  string  $replacementSeperator Seperator to replace with
-     * @return void
-     */
-    public function __construct($searchSeparator = ' ', $replacementSeparator = '-')
-    {
-        $this->setSearchSeparator($searchSeparator);
-        $this->setReplacementSeparator($replacementSeparator);
-    }
-
-    /**
-     * Sets a new seperator to search for
-     * 
-     * @param  string  $separator  Seperator to search for
-     * @return $this
-     */
-    public function setSearchSeparator($separator)
-    {
-        $this->_searchSeparator = $separator;
-        return $this;
-    }
-
-    /**
-     * Returns the actual set seperator to search for
-     * 
-     * @return  string
-     */
-    public function getSearchSeparator()
-    {
-        return $this->_searchSeparator;
-    }
-
-    /**
-     * Sets a new seperator which replaces the searched one
-     * 
-     * @param  string  $separator  Seperator which replaces the searched one
-     * @return $this
-     */
-    public function setReplacementSeparator($separator)
-    {
-        $this->_replacementSeparator = $separator;
-        return $this;
-    }
-
-    /**
-     * Returns the actual set seperator which replaces the searched one
-     * 
-     * @return  string
-     */
-    public function getReplacementSeparator()
-    {
-        return $this->_replacementSeparator;
-    }
-
-    /**
-     * Defined by Zend_Filter_Interface
-     *
-     * Returns the string $value, replacing the searched seperators with the defined ones
-     *
-     * @param  string $value
-     * @return string
-     */
-    public function filter($value)
-    {
-        return $this->_separatorToSeparatorFilter($value);
-    }
-
-    /**
-     * Do the real work, replaces the seperator to search for with the replacement seperator
-     *
-     * Returns the replaced string
-     *
-     * @param  string $value
-     * @return string
-     */
-    protected function _separatorToSeparatorFilter($value)
-    {
-        if ($this->_searchSeparator == null) {
-            require_once 'Zend/Filter/Exception.php';
-            throw new Zend_Filter_Exception('You must provide a search separator for this filter to work.');
-        }
-
-        $this->setMatchPattern('#' . preg_quote($this->_searchSeparator, '#') . '#');
-        $this->setReplacement($this->_replacementSeparator);
-        return parent::filter($value);
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+i0==

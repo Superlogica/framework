@@ -1,215 +1,51 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Service
- * @subpackage Simpy
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Note.php 8064 2008-02-16 10:58:39Z thomas $
- */
-
-
-/**
- * @category   Zend
- * @package    Zend_Service
- * @subpackage Simpy
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Service_Simpy_Note
-{
-    /**
-     * Private access type
-     *
-     * @var string
-     */
-    const ACCESSTYPE_PRIVATE = 'private';
-
-    /**
-     * Public access type
-     *
-     * @var string
-     */
-    const ACCESSTYPE_PUBLIC  = 'public';
-
-    /**
-     * Access type assigned to the note
-     *
-     * @var string
-     */
-    protected $_accessType;
-
-    /**
-     * ID of the note
-     *
-     * @var int
-     */
-    protected $_id;
-
-    /**
-     * URI of the note
-     *
-     * @var string
-     */
-    protected $_uri;
-
-    /**
-     * Date of the last modification made to the note
-     *
-     * @var string
-     */
-    protected $_modDate;
-
-    /**
-     * Date the note was added
-     *
-     * @var string
-     */
-    protected $_addDate;
-
-    /**
-     * Title of to the note
-     *
-     * @var string
-     */
-    protected $_title;
-
-    /**
-     * Tags assigned to the note
-     *
-     * @var array
-     */
-    protected $_tags;
-
-    /**
-     * Description of the note
-     *
-     * @var string
-     */
-    protected $_description;
-
-    /**
-     * Constructor to initialize the object with data
-     *
-     * @param  DOMNode $node Individual <link> node from a parsed response from
-     *                       a GetLinks operation
-     * @return void
-     */
-    public function __construct($node)
-    {
-        $this->_accessType = $node->attributes->getNamedItem('accessType')->nodeValue;
-
-        $doc = new DOMDocument();
-        $doc->appendChild($doc->importNode($node, true));
-        $xpath = new DOMXPath($doc);
-
-        $this->_uri = $xpath->evaluate('/note/uri')->item(0)->nodeValue;
-        $this->_id = substr($this->_uri, strrpos($this->_uri, '=') + 1);
-        $this->_modDate = trim($xpath->evaluate('/note/modDate')->item(0)->nodeValue);
-        $this->_addDate = trim($xpath->evaluate('/note/addDate')->item(0)->nodeValue);
-        $this->_title = $xpath->evaluate('/note/title')->item(0)->nodeValue;
-        $this->_description = $xpath->evaluate('/note/description')->item(0)->nodeValue;
-
-        $list = $xpath->query('/note/tags/tag');
-        $this->_tags = array();
-
-        for ($x = 0; $x < $list->length; $x++) {
-            $this->_tags[$x] = $list->item($x)->nodeValue;
-        }
-    }
-
-    /**
-     * Returns the access type assigned to the note
-     *
-     * @see    ACCESSTYPE_PRIVATE
-     * @see    ACCESSTYPE_PUBLIC
-     * @return string
-     */
-    public function getAccessType()
-    {
-        return $this->_accessType;
-    }
-
-    /**
-     * Returns the ID of the note
-     *
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->_id;
-    }
-
-    /**
-     * Returns the URI of the note
-     *
-     * @return string
-     */
-    public function getUri()
-    {
-        return $this->_uri;
-    }
-
-    /**
-     * Returns the date of the last modification made to the note
-     *
-     * @return string
-     */
-    public function getModDate()
-    {
-        return $this->_modDate;
-    }
-
-    /**
-     * Returns the date the note was added
-     *
-     * @return string
-     */
-    public function getAddDate()
-    {
-        return $this->_addDate;
-    }
-
-    /**
-     * Returns the title assigned to the note
-     *
-     * @return string
-     */
-    public function getTitle()
-    {
-        return $this->_title;
-    }
-
-    /**
-     * Returns the tags assigned to the note
-     *
-     * @return array
-     */
-    public function getTags()
-    {
-        return $this->_tags;
-    }
-
-    /**
-     * Returns the description assigned to the note
-     *
-     * @return string
-     */
-    public function getDescription()
-    {
-        return $this->_description;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

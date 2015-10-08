@@ -1,275 +1,79 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category  Zend
- * @package   Zend_Validate
- * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   http://framework.zend.com/license/new-bsd     New BSD License
- * @version   $Id: $
- */
-
-/**
- * @see Zend_Validate_Abstract
- */
-require_once 'Zend/Validate/Abstract.php';
-
-/**
- * Validator for counting all given files
- *
- * @category  Zend
- * @package   Zend_Validate
- * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Validate_File_Count extends Zend_Validate_Abstract
-{
-    /**#@+
-     * @const string Error constants
-     */
-    const TOO_MUCH = 'fileCountTooMuch';
-    const TOO_LESS = 'fileCountTooLess';
-    /**#@-*/
-
-    /**
-     * @var array Error message templates
-     */
-    protected $_messageTemplates = array(
-        self::TOO_MUCH => "Too much files, maximum '%max%' are allowed but '%count%' are given",
-        self::TOO_LESS => "Too less files, minimum '%min%' are expected but '%count%' are given"
-    );
-
-    /**
-     * @var array Error message template variables
-     */
-    protected $_messageVariables = array(
-        'min'   => '_min',
-        'max'   => '_max',
-        'count' => '_count'
-    );
-
-    /**
-     * Minimum file count
-     *
-     * If null, there is no minimum file count
-     *
-     * @var integer
-     */
-    protected $_min;
-
-    /**
-     * Maximum file count
-     *
-     * If null, there is no maximum file count
-     *
-     * @var integer|null
-     */
-    protected $_max;
-
-    /**
-     * Actual filecount
-     *
-     * @var integer
-     */
-    protected $_count;
-
-    /**
-     * Internal file array
-     * @var array
-     */
-    protected $_files;
-
-    /**
-     * Sets validator options
-     *
-     * Min limits the file count, when used with max=null it is the maximum file count
-     * It also accepts an array with the keys 'min' and 'max'
-     *
-     * If $options is a integer, it will be used as maximum file count
-     * As Array is accepts the following keys:
-     * 'min': Minimum filecount
-     * 'max': Maximum filecount
-     *
-     * @param  integer|array $options Options for the adapter
-     * @param  integer $max (Deprecated) Maximum value (implies $options is the minimum)
-     * @return void
-     */
-    public function __construct($options)
-    {
-        if ($options instanceof Zend_Config) {
-            $options = $options->toArray();
-        } elseif (is_string($options) || is_numeric($options)) {
-            $options = array('max' => $options);
-        } elseif (!is_array($options)) {
-            require_once 'Zend/Validate/Exception.php';
-            throw new Zend_Validate_Exception ('Invalid options to validator provided');
-        }
-
-        if (1 < func_num_args()) {
-            trigger_error('Multiple arguments are deprecated in favor of an array of named arguments', E_USER_NOTICE);
-            $options['min'] = func_get_arg(0);
-            $options['max'] = func_get_arg(1);
-        }
-
-        if (isset($options['min'])) {
-            $this->setMin($options);
-        }
-
-        if (isset($options['max'])) {
-            $this->setMax($options);
-        }
-    }
-
-    /**
-     * Returns the minimum file count
-     *
-     * @return integer
-     */
-    public function getMin()
-    {
-        return $this->_min;
-    }
-
-    /**
-     * Sets the minimum file count
-     *
-     * @param  integer|array $min The minimum file count
-     * @return Zend_Validate_File_Count Provides a fluent interface
-     * @throws Zend_Validate_Exception When min is greater than max
-     */
-    public function setMin($min)
-    {
-        if (is_array($min) and isset($min['min'])) {
-            $min = $min['min'];
-        }
-
-        if (!is_string($min) and !is_numeric($min)) {
-            require_once 'Zend/Validate/Exception.php';
-            throw new Zend_Validate_Exception ('Invalid options to validator provided');
-        }
-
-        $min = (integer) $min;
-        if (($this->_max !== null) && ($min > $this->_max)) {
-            require_once 'Zend/Validate/Exception.php';
-            throw new Zend_Validate_Exception("The minimum must be less than or equal to the maximum file count, but $min >"
-                                            . " {$this->_max}");
-        }
-
-        $this->_min = $min;
-        return $this;
-    }
-
-    /**
-     * Returns the maximum file count
-     *
-     * @return integer
-     */
-    public function getMax()
-    {
-        return $this->_max;
-    }
-
-    /**
-     * Sets the maximum file count
-     *
-     * @param  integer|array $max The maximum file count
-     * @return Zend_Validate_StringLength Provides a fluent interface
-     * @throws Zend_Validate_Exception When max is smaller than min
-     */
-    public function setMax($max)
-    {
-        if (is_array($max) and isset($max['max'])) {
-            $max = $max['max'];
-        }
-
-        if (!is_string($max) and !is_numeric($max)) {
-            require_once 'Zend/Validate/Exception.php';
-            throw new Zend_Validate_Exception ('Invalid options to validator provided');
-        }
-
-        $max = (integer) $max;
-        if (($this->_min !== null) && ($max < $this->_min)) {
-            require_once 'Zend/Validate/Exception.php';
-            throw new Zend_Validate_Exception("The maximum must be greater than or equal to the minimum file count, but "
-                                            . "$max < {$this->_min}");
-        }
-
-        $this->_max = $max;
-        return $this;
-    }
-
-    /**
-     * Adds a file for validation
-     *
-     * @param string|array $file
-     */
-    public function addFile($file)
-    {
-        if (is_string($file)) {
-            $file = array($file);
-        }
-
-        if (is_array($file)) {
-            foreach ($file as $name) {
-                if (!isset($this->_files[$name]) && !empty($name)) {
-                    $this->_files[$name] = $name;
-                }
-            }
-        }
-
-        return $this;
-    }
-
-    /**
-     * Defined by Zend_Validate_Interface
-     *
-     * Returns true if and only if the file count of all checked files is at least min and
-     * not bigger than max (when max is not null). Attention: When checking with set min you
-     * must give all files with the first call, otherwise you will get an false.
-     *
-     * @param  string|array $value Filenames to check for count
-     * @param  array        $file  File data from Zend_File_Transfer
-     * @return boolean
-     */
-    public function isValid($value, $file = null)
-    {
-        $this->addFile($value);
-        $this->_count = count($this->_files);
-        if (($this->_max !== null) && ($this->_count > $this->_max)) {
-            return $this->_throw($file, self::TOO_MUCH);
-        }
-
-        if (($this->_min !== null) && ($this->_count < $this->_min)) {
-            return $this->_throw($file, self::TOO_LESS);
-        }
-
-        return true;
-    }
-
-    /**
-     * Throws an error of the given type
-     *
-     * @param  string $file
-     * @param  string $errorType
-     * @return false
-     */
-    protected function _throw($file, $errorType)
-    {
-        if ($file !== null) {
-            $this->_value = $file['name'];
-        }
-
-        $this->_error($errorType);
-        return false;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

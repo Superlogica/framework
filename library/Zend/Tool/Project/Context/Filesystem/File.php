@@ -1,112 +1,32 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Tool
- * @subpackage Framework
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id$
- */
-
-/**
- * @see Zend_Tool_Project_Context_Filesystem_Abstract
- */
-require_once 'Zend/Tool/Project/Context/Filesystem/Abstract.php';
-
-/**
- * This class is the front most class for utilizing Zend_Tool_Project
- *
- * A profile is a hierarchical set of resources that keep track of
- * items within a specific project.
- * 
- * @category   Zend
- * @package    Zend_Tool
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-abstract class Zend_Tool_Project_Context_Filesystem_File extends Zend_Tool_Project_Context_Filesystem_Abstract 
-{
-    
-    /**
-     * init()
-     *
-     * @return Zend_Tool_Project_Context_Filesystem_File
-     */
-    public function init()
-    {
-        // @todo check to ensure that this 'file' resource has no children
-        parent::init();
-        return $this;
-    }
-    
-    /**
-     * setResource()
-     *
-     * @param unknown_type $resource
-     */
-    public function setResource(Zend_Tool_Project_Profile_Resource $resource)
-    {
-        $this->_resource = $resource;
-        $this->_resource->setAppendable(false);
-        return $this;
-    }
-
-    /**
-     * create()
-     *
-     * @return Zend_Tool_Project_Context_Filesystem_File
-     */
-    public function create()
-    {
-        // check to ensure the parent exists, if not, call it and create it
-        if (($parentResource = $this->_resource->getParentResource()) instanceof Zend_Tool_Project_Profile_Resource) {
-            if ((($parentContext = $parentResource->getContext()) instanceof Zend_Tool_Project_Context_Filesystem_Abstract)
-                && (!$parentContext->exists())) {
-                $parentResource->create();
-            }
-        }
-        
-        
-        if (file_exists($this->getPath())) {
-            // @todo propt user to determine if its ok to overwrite file
-        }
-        
-        file_put_contents($this->getPath(), $this->getContents());
-        return $this;
-    }
-    
-    /**
-     * delete()
-     *
-     * @return Zend_Tool_Project_Context_Filesystem_File
-     */
-    public function delete()
-    {
-        unlink($this->getPath());
-        $this->_resource->setDeleted(true);
-        return $this;
-    }
-    
-    /**
-     * getContents()
-     *
-     * @return null
-     */
-    public function getContents()
-    {
-        return null;
-    }
-    
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

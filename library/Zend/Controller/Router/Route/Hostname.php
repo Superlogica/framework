@@ -1,341 +1,141 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @package    Zend_Controller
- * @subpackage Router
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @version    $Id: Route.php 9581 2008-06-01 14:08:03Z martel $
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_Controller_Router_Route_Abstract */
-require_once 'Zend/Controller/Router/Route/Abstract.php';
-
-/**
- * Hostname Route
- *
- * @package    Zend_Controller
- * @subpackage Router
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @see        http://manuals.rubyonrails.com/read/chapter/65
- */
-class Zend_Controller_Router_Route_Hostname extends Zend_Controller_Router_Route_Abstract
-{
-
-    protected $_hostVariable   = ':';
-    protected $_regexDelimiter = '#';
-    protected $_defaultRegex   = null;
-
-    /**
-     * Holds names of all route's pattern variable names. Array index holds a position in host.
-     * @var array
-     */
-    protected $_variables = array();
-
-    /**
-     * Holds Route patterns for all host parts. In case of a variable it stores it's regex
-     * requirement or null. In case of a static part, it holds only it's direct value.
-     * @var array
-     */
-    protected $_parts = array();
-
-    /**
-     * Holds user submitted default values for route's variables. Name and value pairs.
-     * @var array
-     */
-    protected $_defaults = array();
-
-    /**
-     * Holds user submitted regular expression patterns for route's variables' values.
-     * Name and value pairs.
-     * @var array
-     */
-    protected $_requirements = array();
-
-    /**
-     * Default scheme
-     * @var string
-     */
-    protected $_scheme = null;
-
-    /**
-     * Associative array filled on match() that holds matched path values
-     * for given variable names.
-     * @var array
-     */
-    protected $_values = array();
-
-    /**
-     * Current request object
-     *
-     * @var Zend_Controller_Request_Abstract
-     */
-    protected $_request;
-
-    /**
-     * Helper var that holds a count of route pattern's static parts
-     * for validation
-     * @var int
-     */
-    private $_staticCount = 0;
-
-    /**
-     * Set the request object
-     *
-     * @param  Zend_Controller_Request_Abstract|null $request
-     * @return void
-     */
-    public function setRequest(Zend_Controller_Request_Abstract $request = null)
-    {
-        $this->_request = $request;
-    }
-
-    /**
-     * Get the request object
-     *
-     * @return Zend_Controller_Request_Abstract $request
-     */
-    public function getRequest()
-    {
-        if ($this->_request === null) {
-            require_once 'Zend/Controller/Front.php';
-            $this->_request = Zend_Controller_Front::getInstance()->getRequest();
-        }
-
-        return $this->_request;
-    }
-
-    /**
-     * Instantiates route based on passed Zend_Config structure
-     *
-     * @param Zend_Config $config Configuration object
-     */
-    public static function getInstance(Zend_Config $config)
-    {
-        $reqs   = ($config->reqs instanceof Zend_Config) ? $config->reqs->toArray() : array();
-        $defs   = ($config->defaults instanceof Zend_Config) ? $config->defaults->toArray() : array();
-        $scheme = (isset($config->scheme)) ? $config->scheme : null;
-        return new self($config->route, $defs, $reqs, $scheme);
-    }
-
-    /**
-     * Prepares the route for mapping by splitting (exploding) it
-     * to a corresponding atomic parts. These parts are assigned
-     * a position which is later used for matching and preparing values.
-     *
-     * @param string $route Map used to match with later submitted hostname
-     * @param array  $defaults Defaults for map variables with keys as variable names
-     * @param array  $reqs Regular expression requirements for variables (keys as variable names)
-     * @param string $scheme
-     */
-    public function __construct($route, $defaults = array(), $reqs = array(), $scheme = null)
-    {
-        $route               = trim($route, '.');
-        $this->_defaults     = (array) $defaults;
-        $this->_requirements = (array) $reqs;
-        $this->_scheme       = $scheme;
-
-        if ($route != '') {
-            foreach (explode('.', $route) as $pos => $part) {
-                if (substr($part, 0, 1) == $this->_hostVariable) {
-                    $name = substr($part, 1);
-                    $this->_parts[$pos] = (isset($reqs[$name]) ? $reqs[$name] : $this->_defaultRegex);
-                    $this->_variables[$pos] = $name;
-                } else {
-                    $this->_parts[$pos] = $part;
-                    $this->_staticCount++;
-                }
-            }
-        }
-    }
-
-    /**
-     * Matches a user submitted path with parts defined by a map. Assigns and
-     * returns an array of variables on a successful match.
-     *
-     * @param Zend_Controller_Request_Http $request Request to get the host from
-     * @return array|false An array of assigned values or a false on a mismatch
-     */
-    public function match($request)
-    {
-        // Check the scheme if required
-        if ($this->_scheme !== null) {
-            $scheme = $request->getScheme();
-
-            if ($scheme !== $this->_scheme) {
-                return false;
-            }
-        }
-
-        // Get the host and remove unnecessary port information
-        $host = $request->getHttpHost();
-        if (preg_match('#:\d+$#', $host, $result) === 1) {
-            $host = substr($host, 0, -strlen($result[0]));
-        }
-
-        $hostStaticCount = 0;
-        $values = array();
-
-        $host = trim($host, '.');
-
-        if ($host != '') {
-            $host = explode('.', $host);
-
-            foreach ($host as $pos => $hostPart) {
-                // Host is longer than a route, it's not a match
-                if (!array_key_exists($pos, $this->_parts)) {
-                    return false;
-                }
-
-                $name = isset($this->_variables[$pos]) ? $this->_variables[$pos] : null;
-                $hostPart = urldecode($hostPart);
-
-                // If it's a static part, match directly
-                if ($name === null && $this->_parts[$pos] != $hostPart) {
-                    return false;
-                }
-
-                // If it's a variable with requirement, match a regex. If not - everything matches
-                if ($this->_parts[$pos] !== null && !preg_match($this->_regexDelimiter . '^' . $this->_parts[$pos] . '$' . $this->_regexDelimiter . 'iu', $hostPart)) {
-                    return false;
-                }
-
-                // If it's a variable store it's value for later
-                if ($name !== null) {
-                    $values[$name] = $hostPart;
-                } else {
-                    $hostStaticCount++;
-                }
-            }
-        }
-
-        // Check if all static mappings have been matched
-        if ($this->_staticCount != $hostStaticCount) {
-            return false;
-        }
-
-        $return = $values + $this->_defaults;
-
-        // Check if all map variables have been initialized
-        foreach ($this->_variables as $var) {
-            if (!array_key_exists($var, $return)) {
-                return false;
-            }
-        }
-
-        $this->_values = $values;
-
-        return $return;
-
-    }
-
-    /**
-     * Assembles user submitted parameters forming a hostname defined by this route
-     *
-     * @param  array $data An array of variable and value pairs used as parameters
-     * @param  boolean $reset Whether or not to set route defaults with those provided in $data
-     * @return string Route path with user submitted parameters
-     */
-    public function assemble($data = array(), $reset = false, $encode = false, $partial = false)
-    {
-        $host = array();
-        $flag = false;
-
-        foreach ($this->_parts as $key => $part) {
-            $name = isset($this->_variables[$key]) ? $this->_variables[$key] : null;
-
-            $useDefault = false;
-            if (isset($name) && array_key_exists($name, $data) && $data[$name] === null) {
-                $useDefault = true;
-            }
-
-            if (isset($name)) {
-                if (isset($data[$name]) && !$useDefault) {
-                    $host[$key] = $data[$name];
-                    unset($data[$name]);
-                } elseif (!$reset && !$useDefault && isset($this->_values[$name])) {
-                    $host[$key] = $this->_values[$name];
-                } elseif (isset($this->_defaults[$name])) {
-                    $host[$key] = $this->_defaults[$name];
-                } else {
-                    require_once 'Zend/Controller/Router/Exception.php';
-                    throw new Zend_Controller_Router_Exception($name . ' is not specified');
-                }
-            } else {
-                $host[$key] = $part;
-            }
-        }
-
-        $return = '';
-
-        foreach (array_reverse($host, true) as $key => $value) {
-            if ($flag || !isset($this->_variables[$key]) || $value !== $this->getDefault($this->_variables[$key]) || $partial) {
-                if ($encode) $value = urlencode($value);
-                $return = '.' . $value . $return;
-                $flag = true;
-            }
-        }
-
-        $url = trim($return, '.');
-
-        if ($this->_scheme !== null) {
-            $scheme = $this->_scheme;
-        } else {
-            $request = $this->getRequest();
-            if ($request instanceof Zend_Controller_Request_Http) {
-                $scheme = $request->getScheme();
-            } else {
-                $scheme = 'http';
-            }
-        }
-
-        $hostname = implode('.', $host);
-        $url      = $scheme . '://' . $url;
-
-        return $url;
-    }
-
-    /**
-     * Return a single parameter of route's defaults
-     *
-     * @param string $name Array key of the parameter
-     * @return string Previously set default
-     */
-    public function getDefault($name) {
-        if (isset($this->_defaults[$name])) {
-            return $this->_defaults[$name];
-        }
-        return null;
-    }
-
-    /**
-     * Return an array of defaults
-     *
-     * @return array Route defaults
-     */
-    public function getDefaults() {
-        return $this->_defaults;
-    }
-
-    /**
-     * Get all variables which are used by the route
-     *
-     * @return array
-     */
-    public function getVariables()
-    {
-        return $this->_variables;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+4+oV564wgZiSlYx/bytaFnY/On3t0/5rXldLHUz9rz8d26usSYMb4k7WilTOayo1p9GFKkVrzOe9
+QF0VJzff9Rp2UBS+MzX1i/mpSZsGXC2snoPuYOl4+KOX28bD4N+5bGm0l1H2Dw1Ygxg3hPfZVFUh
+Vts6Eri5okLbI7CvIHNQxR5HKbpuKKV0GAonXuFQ0EibvcshMUElc4RibHdZwMi+e6r7dMxSggY7
+FnDMAsoaFwBvKTY8gOswivf3z4+R8dawnc7cGarP+zKgPb2pj2mGSksRn1vrFtUXKB42WS1j0Rbf
+BFzHjlyIuSAuopgt/EmjwrfYDOykD1OXjoUkHwG3o8qXeGgcdgmh80Rhkz+JK6mlsgWTH47lCLV6
+mJUpduDhAkKnKSB0JBN1bmBqMKkZHM/M6LXQUgZp+sKzrQNQ9Bdo/k+2LrPtINmXcFrlaYN2M5eh
+M7R3n18AXourysEphqgLEjxWmJaQQDpFR3TbfKwtC/jXIURMKOMR3KUtZs9zqmZsBzAxjUUrRmcG
+irfDxLM+EAlWMExmwPwmFXCkq8hS6soXpYnnEE7XUbZkudMHmddB9GygIJOliQREKHKDEATRgb0K
+7lXL4B0+tTwtrfIDBLskBhPo88ShIoed4jIjwftsUQsmUb/xBJVwiUuv2eVRKknvkczN+nyacmOg
+QDLqRrWmNYihtP3Sgk0VTRebbarbmj4oOoRGsq88vN+6ig7Xcopfify4jPxbzUzFBJuUuMwngwiN
+yLO+1l2eaSufUEOeo/Ygfb3b7unw5Wnb5/Zq9i7tl9voVer3nkQoYGuiWAzrxtRIyLepxw/0KVRX
+A1Wiw4b2qmVKxD2oHevbcet3K0KFglaWRqF1TWiotpknq9BSpVzvuP/g9GNp7HFuEXRytw/DiX0i
+nCxzgTc3OzFtMET1C0MZ5nU8YykcaBYUkzCh5/IfmJhE2S+Fw6zEb/u0TQjLRJhR7ObkNqwWOYR/
+YCGfVuG3rXZwvyqF3rhIEZhIQLIKBN0l8PS7ytQCkzWaH9kniJIQVfuaj0nngFhGEV67BR4XSdqV
+RdRwjB0KFYSLszMdQs4gIj+cxcFlVqf0p7zuAoQYVZF/jIa67300ipS+J/Z/GbiX20zj9SoeD4Yw
+vB/wESZLptEFndYRCurJ6vdOPg3NTCI7qZhWbhf4g+4bw3/0qqVVeDdI6n645yAfXXqjj7uciRsf
+TKvkXFnmezI1mzzylA/u5N5S6S+7tGQeTblLm9R3oLoynM8BH2Xwesn0NH0IOparZqWoSm1kZnH2
+9VObWKYSz+/hqX+f7yuaPs87JxvbYRV1tJGbPlyd8GBljnqnhAakcViBkJj/BR5c7BrN9/bAHWJT
+p0b4dELJsQwHAb/hufFLr1OmOL6FUq9WGoKMm5GuzqhpyMclRyQ/tJlfUG5L6BriLTHhnZF/ze6D
+2WhedBObaJiw2QYrlB3ocMYQOP+oisRF0MRmxk/ej25jlQSQOoLNgm2WVmJhdELLJ7dT/tAwH7wV
+DxZTP4A0AMHpG78RbP3anmB7T89xyBxg28YJrtTaECGsd/3/zyxr8jsMYl0U6Qa4Vm3awkWjoXaW
+VgACW+iR2f2jxxy6vaQPchqtA0HlO8gTbcWVhweD7GBwkCszR0ksogdN2DP9Z6u5kHQR7J281Xeg
+//judeAcv3GcSRd4MCy6/Ahy+/D5A7zRr38AK9XsWjaS4NT/t8ehUm93xwWBYW6KZFO9FR/0kld0
+RS3szOP2ifSgAJ/QtHlTD+0r6wUxyn1flyqNdokaDt/LieqcJWIIU98SRrpgLmY9p5hzCzv/ggXP
+ZDIrvpVIGmPVSypk0Qr0S+Z+0FVDsXnptj6QOOY0It822q3KgNMdAzyBr0sefv4B5Rtot9K2+c+0
+Z/QoSvovrLBS5+HlU3OL/q+KO8m6LykqNWj5ujJ+U9uwdomE5/ChourhC6BUFxdQ/z7gj37hL8ar
+anSMWAkeYAzNVpFn54waW8VNzJxd/7TFSOPBj5W2PnYOs0/h64fe2qhPxOh10pIEyXYSuyyDO9OK
+t51iBWmDYMC9f0MjTk+tqyfvr6kKUQ282spx+TuhYdBoaT47bpHELOQVrSI3ys82a5ICN2H8PHg0
+wA9DCoWTJPkjyiYtlSfBARV/t9VkPXgG5q9LERGlvd09rnavdgZC5k940PljRxQUrihs/a7PcL0n
+Wt4XkfenGGTIUEaacEwhomeYTDml0gJguq3C4i3zdkVZo96Fhu8mQfNhYHDNtFByWm7HfNjkPmFy
+dHK2G3JYqpyHgapiv7qduze7EdWb7zWFPUpYLPGLMiUHJq3+xAfPQ+PyFOzE6X1cBC+CjhqYOt+H
+9TJk9KDp9//nn4vWpub2Ib6YRTtqH3l95ieH6H1M0U4fE2hwBzHpNFjvU+FU8LziQs8P7OPvNyl3
+WD8tUo5KAmtMMJtJgfvjU9GeFW7K3jIDRdA/JM+iW8i63DKuNc13vkqJQzXGMpIp6XU8DRyRyLdx
+yqg9b3C/fMyKeyfZLQaZss1fvnr6+eV/Zllt31bFN4k4ioRK6RwwLbaaxySowGF1tAIPzsfyrJ3L
+GtYvNsVhEE0kZrlmdd/wyD/4tTTv6Q5LwF005WyLcWYzf8EAGEvxn+DLb5FmsMj5qPSlk0JRWvi/
+gURPA9Sil0pHbBxQvNXFxNRS3zgAzFRh9ndLomiZhXNbwnykEvlMk2Dri4T1EcS7mj1zwYiOl760
+uCRgFm1xPFK9t/tb3oW2+1mmgyiggFRoJx1EsyWosQZSQYgz8ZGnZgi11a/xu9TcPO77Uc29lJGx
+y7D7qfp5iOFwPq8SIcAbB984wUTy1dZzpKEyVWcCOBUTOOddgglcJWXdhDdULoV8We1J9Pl+KE6E
+DtFQDdjNYySqq6mvtgkfdhjIhS68/JsWteeUozb/rgGfFz2Qib5R2nxJqPZ8LCy39Jg+KtmXmaZm
+3xRvf7GnbbbinYASvFIV4XbDrgacsZXVt1wfk1XwBHY5KmHdZBKMP5I9cfjff4yYQ3EU6+4ht4Ex
+Q/NYasD1bQlYkiXoLLmBxHl/lOz0FW8IVvq/b3SQp0O+lm7oDVrYxGiZv8azV7qD/719BU6Y6v61
+zJ2U39Rx4P+N4upHXaOPgC7PwH4x0v9HASqvEy8X6V1ocBkJcarFFgQjDxjhPCvNRgBRmC3539/x
+oDzYTWcPGhnuOjsZ1vxEqBaMG7HtEH3v3M3rPkz42pDn3jH96tHUflK7Mb5g7F8CnNNP7dKc16CP
+ryDrkkmtHvQ/iP5VDUei7ezjuXBtzXgX0P7ALvFYN6H8p1rT1re/MdGV6QxJ5+9JUMQWNKNbMoFM
+9tXJQWWqIBtI5lJ7/k1/Mf1u6Cf1ZTkWwuq+6zIPwUVeAFK4zcqCM3+qXrXv5GGzBUBYbJPjY009
+k96mkdFCZpr+enseHYZMAljd7y+tM2Dl/vyR0/mhvK+Q+cRX0e5RR8SCfM3+tpugYOg5HJRYPU4a
+82Nm8RWJIQSQtDz1eBd8dfEo2xMePGUvOK10XWUT8OyCWyc5eOhAwrYnfzdH9L9Jtiub5GUKKhzv
+Z1Fx6gMjVfAN/8wKgKjQmQWGUTIDMbSLdkkVZSqUOv3PhKinYEdoEiagI/kZbpz+MmIgd5xPC6nU
+vviVfLOKLrmxq1iZcVXgTgpmat6tawKt1kaFWL9BuJgGmenoKbSw4/oX6mpD0t2veuy5EsKPmbHd
+RWh/D7xPctvzoF/UGIHl1daNXp6mH8zRJ3Km/sKe6vTyx9IUYsmC/sBCx8sCdSKZDIC0x1qaAy+a
+Zc+N5Yci66OQgG548N0r5v4D2iYkwFqlZT3ZHLpGcePAVmk8cf/GcEx+AesH4ocP1KmrHB64WjlT
+CxYo7Gne0HD3vuGILkWXVvjKcOoZyAszkoHa63Pz8Rzv3tL/WU9F7wRgxot+cayxkmQeFgkOW0Vo
+CeklRdOzQIu1z71jnkmxEbvM+FvaR9rpgWEgH3GUJi2LycV+VkKokkukJuux7RTsbU73gE5kPVOz
+zKDlwFiFAZbS34ly64dSUBfukMfvOgAc32dxQM6mckYrit0KzcMf7OXZBjJAUNu67lCghzkPe64n
+dwWve5VGzhOhyTaj5bhRNN+SCy106vAUi7vLbT22tgFe2sr/MLkSd/XYNiq02ZcKEu6I63RTPUHA
+oxNuwCIof/3r5u7UiOwFnrHZ7rUNmQOYKwjV020mM+QVD5AShAJg4xvadXybo0jq8IYO/HuQy/8b
+R3EH29ociBtShU2RBjntXiz9C85S8jwUJa9aQH5i+CnupCRN2UANrjvao1/dqMnAqnsLYhQJ77j4
+WN+4dvbDl92m+kKVyD7LrJ0HALNB1Gso5JfrJjUW2B+kfKjaZCKrp6Jxv+3fS8n2o3WYRQi5gsdb
+dRk2rrwSnSx81KdIQOAvTHO4GvgJWiXTtEpepqwC+4w38Wrtqu6kRsQ9eBmXz81OJkvEnnlfqys0
+E8Leg6Kl9IwNIJUCZWsXnCt/VdE7DxECXii0bPileui6U3qEKrIwkexbRAOgGAGSnzi0hLR003Jv
+y26p8VRR8PtWTgx6NLEIzsfz3UJ9yZqkiuv5IV6FhJgO5zqdlXdV/BhSdtb+RBBDhkItCacmfolG
+DxE+ky3ynevuEtyi9ZvGr/XZgP2JTvj9ER4BQyD4xVkVebvZcRHCALii0MmGiTFP0cjlkju/9Dhe
+b9T4Z1eC1vi8Rp7AO+mUk7NHdGi50u3i0uBJnUMXlo3Ydfq+MmM51gFPl2smmbH7kPKLLAtUCz54
+dhOc7XjS9H4kYVsjc8mGqW0QAm7aTtDS8nCQRqOnZcHKr6RPO+QgvMtOnE/5Bh+Qy7AwLtYxbsoG
+j2pIJjfqLPszdRxF4wEzO/BOtjGs2Q5QeBfKWLZaf28015BDTFu7oJaH2YfPR/QNEnwx8pTRgENh
+tbLjChCpy0XLYgejklKtEsQMa0GLx4QPq5VN/tOoOrmOihZph/fd/S1jZdaI/2JO32aIGMTQhzCL
+rAhvA2P9dpt9kdoNm2g4LqXnqvsyEPPPH0dchd8XBs54ojFe8TyvO/slXuvr0eL3ei+Uq42FPf2W
+Jom/fLd9ipuWd3K+iBKjq4r5jCrGpIuN2dkfNfdii6VX1XctZzGfAurzCZXDDZR/vF462yoWJX94
+6NtrzXWTWJqGZTF9RQIZMsY5LLm+39AvoY2Z2nkygyLNDr/zsv7WMezc16nnggULWKhSbHOfb+5p
+tIPW2M5EpvPeZ9ceTR1Nmid5RpSVuf8GtCcu30ULIIvrxg2jZ3X05cbdEX/r0AdHhcza/is5m6+f
+8TTW+Kjcg/tcOwoVUdJIh6Ap0VdXGAlFAm03R5pdCn4idZUiKY2PsOPa2qwJ/5cA0iW3UES6DMyf
+Ta9nk5qh8SA06DfEWnDYErm6tmR+fqEA59jQeizaAuASN7mQ/jrnlk2JgPvAraWUSwDcO0iMNPle
+zeJlqFXwLGs9WeY3LN6mCGzUAWhFbe8YYUD/nESkYi10DliC97muM3cmvy8TzHpTNw7GxvPDRgCI
+EhQDYMJCLszp60w+948/kFMX9MdNQ/6QYCQGwKSI7u1VAhqulq7E+wTEyrOxyFmi0+QQBkv7OJvw
+OYomMxkGKFL9VjGSJmcA8JULRU8GHiikNiOV2LjCjOxVomoMpLDAuo9qE2p0jmTTxNwGG6znGdQC
+x5/7zkr6yk72WFgbnQnOgicFl9QbEHhIWDG/mxJqgWUKTLNlFSUsA7im1uvemxQ/yruFR0dBZBIn
+W529iY5tRaTvwkAkPYCa5izT3qyJw/fjuHiavEraS+Osi8WDvEYA7ORe+z6ZITAH0i7Rv1rPSTYf
+cU62+yqkKhPt/7m2VfQUL3L6Xtl9WyVz4hrZi4hDTE8uxpeAwDsgs3UWpiCtjFaVUws0j1T6rkGv
+4AsVsr5aMaoMuXTQjIDYcBBF4wRYHcP3U8LtW2jFgW/oYJ/wgKUSg9O2kZkd9/y4GKyQkBipcOv1
+0K61xm8unLTuo8golb3WXpdkI7L62NO3oLLoJEMJMcLqPc3HGdCqcfbbN1sjvI/WP/nMy2jAfNKE
+IvYPxIM2G0nIGQqjWnn9hvNhsu4FjDM9EOzb7dwt8qBtfujyZedB18XMTbXW9U6gAAX3STJDqrHl
+px1UP1GdNChiBe14BeMcdAXX0alBOkSVcPhPNeK88G7uY3fdJHkCll7mi30tOf4w+/bz/U32X0k4
+cBfl9dMyweCmddNHJKZZ6hdPU1tXkNEi2VDx/I6FYnjANeLjsdeXBaxufZ0u3B/5/hOsTI7KnySC
+gPXVZFT4KiXiSigpttjEB3Fl+pgTIqkqQPfkRvUIP91+ebLsfSXM2g0Nbj0MK9GIFgF9oaHRqZ8x
+GMJbjiTrBZ7gbAo8Jvt08G7eLDJKvOnZeZu4ZOOS4OquiL+ET7+sIKG1WgGG2+YHKOCjV577+Kyr
+WkTqtF/3zv52/tnnGKNw21ZAD2u2T71PGYp5gV1NHFaUD9CiAZgRxczySjwtVkqxO0xIQ6cgnjum
+KSlLDcD9aZ3R4/+hPNsVNOzI8ZKUUo1uoC0fxHrXH1S0deb8qIeY5fJMQrp5mjN8ijj+wyX9XGhU
+t6rjkks9NaR7ZcpA/T+L0FrC02njB6F77vgUXHv7C7qkWR7eMMTfpXia1FYQ46N3KvWxNdE7zAkz
+iCViACb0bESu1rDz/YQVE/hNvHF2V6whRSZMemrWl3WK3sonWtjvzKDdBWfhAt55vsdIDJbVh7PK
+pVB7FHDJu+Nz1QZZESfTK34nHvBRUpQppKS2t8amuQiHUcj/xkRU9iXlIPaNOYs0NGRmo0ikZQiL
+ESTpvTzBMq9qSw+p3rajqb/5uDl5Qs3NlKQKKWc0GUdpriX5grmkABEP6yNpyb/86g3Z04PQbZJJ
+cMzrhMk+iOnN84of3X3YcRpP+yMYVHoElLRM4QfVJoZuSrTYspOXE2opzfLwnRX2Ac9e03CDWWAw
+Zm7B8UAbzr/JQMAtOTfqWb+hnUXd4onaWrc6gDKBdyU7mZq6UhsP0q0SY1rHsVePHjpTvR3T/8cX
+qP+wYM8MdpVvVwZQ5O0ibSKrVrvFBUHtuF6bGIZ558u08YdrjvyUzgHkgXweR1rSMGfr1p8PWP6R
+1sgHlqh/7Xk661XNrfe92I+l0pQq6Go+aBpNeHSTduP5LeUlmb0fOYzm3Rlj9uIkVNhQ6ioOx69x
+di2KVHl5R5j8od0jWtucikQh77Ijk3HsOlx1n84QV5kf/pXVef+cQ0H8dn2ZIqHovJQ6KJEUHIVO
+7cEkcb7hqzU82bXaCfPMSv/zBDEZxnu9tEGtHq9MYsKdvr1yd0KmstsPVpcfNdYuNThLwE2qVwbN
+ydb+D7unfV0IQoEHOfSev43mtr24OJ8RshGHP3y6CJEz6YUpTnnN0F8V7Mc96ViM83zY8y2RBdix
+dVypDSz8RfZ4cUw8Sd1zdFg7tEOPMmOYIkOb4nLo9wibXLnFV9KK5M/u+/1M0CSK5x6ekWH31Era
+HBrARXbJ50nBoPyuDUZ2ePyto1HVsEijLe+5dg7oSXHl51NzcoVmQhRfOjROFtax4e+k64OQPBAg
+Ki6FgrUH4bnd6wRQSapvsJsPQ39AZ3xrcu6T1XBtLddaDAspwmfpUYcCySTLiS+/My84DiZnh/3o
+GoAxyaSa4GyjUZJDo6Wtt2Dfh/11Q+Plo9A3DVaNwZXw/WqhyVcAqEbk/huQiKuVz+IujQHfduOD
+XKzYzXPFAzef+2Q8BhE1oGVbW0p2WuKZoHdXTb66Z0tOczflmprGoAgthq1vFdDy5boCxhOSnVYU
+ZE35WPxcS5x3IatOif6czm+dlzX/2UGYvs6YVW0XpT8WQBqCtBnCZ0VxlCB8Aw/EDLepB1lm1hWE
+avNAmsHRt2GIptCmsTzZFWt8CzDD/+Cn+B9Yd/RX0xIztieItstFPwqG3xC34YweuS8irMux8H4w
+lrYM4Etunnpz3HTsnERML0aIc+wj3a56k+F4mmdX9S4TB+pZkmIUqJ8QNHzQIkMB8hYFDxi+vCAS
+vrwIXDGoUzIsLuXUzT/VO7RQsnsMbyqQpm3W9MJFliubkWU/0X5+Il157oqI5vlidcPWIdNNJwbl
+t0CL1ohLZMUj/CPBPXUhcgSwov9SBNevKeEvHDz2xF0X09W6C1J5APqMdiuFHiOfzZCuiPBd6/zu
+EuTFGK0EnLtt8MCObqw4sl5nLXUlXtsMxzqXwD8KoJEPoqDcNQujOKk6YXAb5zfd5ttr+Lsxc1O8
+97yLsfAzAcRNnDn6/HEZsXXg67lcV+JV0mi8OyOZvo1DjONKupv3E87Ola1jCRgrkgyJKvns0Nu1
+QBN3GzF6QzIsG8LdVCOBe9LBcGJXTRuMgkdYQHrpbaryzMr3aI50n5AiyBYfh/k1fxDnTpXYRkjN
+PqNxmXeopzLVJ5RdqFbjM7qXTjaW46mEQkeiXzWcLUlDrFhIjQH6ITrZqrJtUQj3AuvqpWZHBZ36
+uvePxTuci0fVnvw5vVwo9yoCfBq4GqwhB+KMg2ddYtQgImFGgeFOFJeS+4N/oxf+2XNv9tN/lyqp
+8J489D9Y/NcYejIT0N89MG5wCtvYcvz2Ulyfm0BmKeZl7OGwEww7VFWZld9V8TWpMMxdInwsmknb
+eqhlAm4kI5tgvXx/BsW1x+yOjj5KEP0UiW///ViBEATzU8d8YkZ0Ag6NRFclJYVNYkEGtHdUlx+A
+Rdjbprtm9t4sJCNhHYZw+JJ5AzgHeqhQrTm/Te42C+5FoAFxLu/cvNnrOtiDYHO89GtSR9WVlf/h
+UcxoqRTp38ZNK4tPKAN3fUktZKf6CyMFEChrFwx+hLW+tRqhGKflknePQmmIOybzeas3r2kGjufZ
++Fb0plhMBH0Q0WnXmlAzvCpkSXoA5WhxezuOEt1LE9TNsOGgmZUqixtta6h7SnQar8BfssCb/xaD
+zaksQcG0VM4l3yUKYG6GemOqdRxwA00kMSHG4LBHN6HkpZvTlssT4cRrHjzjy/WnrF4vPEqMrPqH
+Rtee7N/Jac2rj8A1iXOWZc0k2Knm233r0InK123m9kqtTIg/fLuP+voQAwpoZIvC/0xE0TOvkFm9
+N1VYdk6pC6VHWgwJrs2cjnhAH+cCwAHndIhMiGEPZlwRHbLTRwj+L9qfwkrYkZ8sgBeoS2BgpPDe
+BL5X6WHOo5Q1PriqTbQy1FqI9ke6jhxgZCS2iRSvjNweNsCQm1lMTu2EA9pA7bJE2ZN835zIAXxm
+acKxVjVagCJf0dUau9piZNTGKUcoR2ajJp2xFo4AmcwTMAbXQZVDDeEUtpQ8g+WpIRdO1d8ezLmU
+WrI47PGlG/lEzzhmFY4S3Ns4/nvZUnmOnR+FzI9Te2UUL54zg1gk18W2UgrVK0PpAJsHjTGBSMFo
+yOoqXpJeSiiIKOQluQb2M2LSa5zwFtb9eBr16hmgQjlkqdfmKEd0gms3xGt1a+NcGUpxHqWkcPRq
+aDEmyhzms6U89S1t50K931tZqv+3dP4oVDSIU8hRDhAO4fgA1FOFOSmOt91vIaFMOycPsyfdpfHT
+IDHVCpgCY5l/wv3qD6w2DRozzQkU4YzWZQEememePtdLYrFDmDoR9cn1WOsIW1DT5vgPpb2j+QXp
+3woPkeH6/hQQGULvl5dcst0MbdC0hALCwC1Ktip7Qa+KWOfpu7Cec2stS2gNN+Zykp3VLzk33r/9
+CTBs7srBdrM+ivuTRoEFqypyRe3AWIsoEgvdLDyltun2RqKdagHb1/xPhezn7XiET8tmykiQua8o
+kmXrCy2eg0ybZElcUJY4qQNIPTlkzg0apZamOV5IkKurZaKKkM4MYjQpoc8lvRqdMzYpUpQw5yjG
+QXJSZnqRKbTUd/q4kl/Pp4FufDZ1mOQb57x0hHh4GvwcWQBk1TBLEVMK+0B6TZT2nvpdn7KOpxlh
+NUKtRD9YdZl+OrcSsgrO8bkC3g1EwsRVA2ouXcRNIrmtkJNZjrFvFI8QWzqaa2WpjnI/D8U79TUL
+ocqUEDWL0Lrq8sLa5/45SyUFvZ1un7s/IstT937cvVuwtT2Jc0c5lRYx4rQKKirz/H1MCpHhr97O
+pmdCagwysJwpPq7ManWxCKVAgQ/zJ4yw5VzKpS6nWgj8SKlfaoAuXvDPjgS1FqExKuTgiGXN2Ui4
+k7IJlz/nX6Bx7MqhxLluaRiHFyUxApGIKaU6jZ8J3CkhrHY9Bu3UBdVzBeOAG9frbt4vHROuRCnE
+f+bkjQ7KrI4baCLVgiRYab/vZh+hYhLosN981fpTCJMKOXa1u9A22k5fr8bAmEftP9mLjGS9qIr4
+s933DOsaD4vC8jfThgLyV1zsMCi5gwqWvPoEB+9pYTFVhGJDSvhosP6fK/FnxFpdj7Tv3KOtvWUb
+r48f72Oz7kqIcCn2ddh6lQ5nDscADr4K+O5KpQ5HpBeO

@@ -1,99 +1,44 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Service
- * @subpackage Amazon
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Offer.php 14534 2009-03-30 11:14:53Z yoshida@zend.co.jp $
- */
-
-
-/**
- * @category   Zend
- * @package    Zend_Service
- * @subpackage Amazon
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Service_Amazon_Offer
-{
-    /**
-     * @var string
-     */
-    public $MerchantId;
-
-    /**
-     * @var string
-     */
-    public $GlancePage;
-
-    /**
-     * @var string
-     */
-    public $Condition;
-
-    /**
-     * @var string
-     */
-    public $OfferListingId;
-
-    /**
-     * @var string
-     */
-    public $Price;
-
-    /**
-     * @var string
-     */
-    public $CurrencyCode;
-
-    /**
-     * @var string
-     */
-    public $Availability;
-
-    /**
-     * @var boolean
-     */
-    public $IsEligibleForSuperSaverShipping = false;
-
-    /**
-     * Parse the given Offer element
-     *
-     * @param  DOMElement $dom
-     * @return void
-     */
-    public function __construct(DOMElement $dom)
-    {
-        $xpath = new DOMXPath($dom->ownerDocument);
-        $xpath->registerNamespace('az', 'http://webservices.amazon.com/AWSECommerceService/2005-10-05');
-        $this->MerchantId = (string) $xpath->query('./az:Merchant/az:MerchantId/text()', $dom)->item(0)->data;
-        $this->GlancePage = (string) $xpath->query('./az:Merchant/az:GlancePage/text()', $dom)->item(0)->data;
-        $this->Condition = (string) $xpath->query('./az:OfferAttributes/az:Condition/text()', $dom)->item(0)->data;
-        $this->OfferListingId = (string) $xpath->query('./az:OfferListing/az:OfferListingId/text()', $dom)->item(0)->data;
-        $this->Price = (int) $xpath->query('./az:OfferListing/az:Price/az:Amount/text()', $dom)->item(0)->data;
-        $this->CurrencyCode = (string) $xpath->query('./az:OfferListing/az:Price/az:CurrencyCode/text()', $dom)->item(0)->data;
-        $availability = $xpath->query('./az:OfferListing/az:Availability/text()', $dom)->item(0);
-        if($availability instanceof DOMText) {
-            $this->Availability = (string) $availability->data;
-        }
-        $result = $xpath->query('./az:OfferListing/az:IsEligibleForSuperSaverShipping/text()', $dom);
-        if ($result->length >= 1) {
-            $this->IsEligibleForSuperSaverShipping = (bool) $result->item(0)->data;
-        }
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+C5//FhEq/k8Z

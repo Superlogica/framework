@@ -1,89 +1,40 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Dojo
- * @subpackage View
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: RadioButton.php 10091 2008-07-15 03:46:37Z matthew $
- */
-
-/** Zend_Dojo_View_Helper_Dijit */
-require_once 'Zend/Dojo/View/Helper/Dijit.php';
-
-/**
- * Dojo RadioButton dijit
- * 
- * @uses       Zend_Dojo_View_Helper_Dijit
- * @package    Zend_Dojo
- * @subpackage View
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
-  */
-class Zend_Dojo_View_Helper_RadioButton extends Zend_Dojo_View_Helper_Dijit
-{
-    /**
-     * Dijit being used
-     * @var string
-     */
-    protected $_dijit  = 'dijit.form.RadioButton';
-
-    /**
-     * Dojo module to use
-     * @var string
-     */
-    protected $_module = 'dijit.form.CheckBox';
-
-    /**
-     * dijit.form.RadioButton
-     * 
-     * @param  string $id 
-     * @param  string $value 
-     * @param  array $params  Parameters to use for dijit creation
-     * @param  array $attribs HTML attributes
-     * @param  array $options Array of radio options
-     * @param  string $listsep String with which to separate options
-     * @return string
-     */
-    public function radioButton(
-        $id, 
-        $value = null, 
-        array $params = array(), 
-        array $attribs = array(), 
-        array $options = null, 
-        $listsep = "<br />\n"
-    ) {
-        $attribs['name'] = $id;
-        if (!array_key_exists('id', $attribs)) {
-            $attribs['id'] = $id;
-        }
-        $attribs = $this->_prepareDijit($attribs, $params, 'element');
-
-        if (is_array($options) && $this->_useProgrammatic() && !$this->_useProgrammaticNoScript()) {
-            $baseId = $id;
-            if (array_key_exists('id', $attribs)) {
-                $baseId = $attribs['id'];
-            }
-            require_once 'Zend/Filter/Alnum.php';
-            $filter = new Zend_Filter_Alnum();
-            foreach (array_keys($options) as $key) {
-                $optId = $baseId . '-' . $filter->filter($key);
-                $this->_createDijit($this->_dijit, $optId, array());
-            }
-        }
-
-        return $this->view->formRadio($id, $value, $attribs, $options, $listsep);
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+d1cDSb55eliS0FMgxfToeYZtSoVDPQhXdP6T

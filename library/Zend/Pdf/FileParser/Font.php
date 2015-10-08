@@ -1,211 +1,49 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @package    Zend_Pdf
- * @subpackage FileParser
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_Pdf_FileParser */
-require_once 'Zend/Pdf/FileParser.php';
-
-/**
- * Abstract helper class for {@link Zend_Pdf_Font} that parses font files.
- *
- * Defines the public interface for concrete subclasses which are responsible
- * for parsing the raw binary data from the font file on disk. Also provides
- * a debug logging interface and a couple of shared utility methods.
- *
- * @package    Zend_Pdf
- * @subpackage FileParser
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-abstract class Zend_Pdf_FileParser_Font extends Zend_Pdf_FileParser
-{
-  /**** Instance Variables ****/
-
-
-    /**
-     * Array of parsed font properties. Used with {@link __get()} and
-     * {@link __set()}.
-     * @var array
-     */
-    private $_fontProperties = array();
-
-    /**
-     * Flag indicating whether or not debug logging is active.
-     * @var boolean
-     */
-    private $_debug = false;
-
-
-
-  /**** Public Interface ****/
-
-
-  /* Object Lifecycle */
-
-    /**
-     * Object constructor.
-     *
-     * Validates the data source and enables debug logging if so configured.
-     *
-     * @param Zend_Pdf_FileParserDataSource $dataSource
-     * @throws Zend_Pdf_Exception
-     */
-    public function __construct(Zend_Pdf_FileParserDataSource $dataSource)
-    {
-        parent::__construct($dataSource);
-        $this->fontType = Zend_Pdf_Font::TYPE_UNKNOWN;
-    }
-
-
-  /* Accessors */
-
-    /**
-     * Get handler
-     *
-     * @param string $property
-     * @return mixed
-     */
-    public function __get($property)
-    {
-        if (isset($this->_fontProperties[$property])) {
-            return $this->_fontProperties[$property];
-        } else {
-            return null;
-        }
-    }
-
-    /* NOTE: The set handler is defined below in the internal methods group. */
-
-
-  /* Parser Methods */
-
-    /**
-     * Reads the Unicode UTF-16-encoded string from the binary file at the
-     * current offset location. Overridden to fix return character set at UTF-16BE.
-     *
-     * @todo Deal with to-dos in the parent method.
-     *
-     * @param integer $byteCount Number of bytes (characters * 2) to return.
-     * @param integer $byteOrder (optional) Big- or little-endian byte order.
-     *   Use the BYTE_ORDER_ constants defined in {@link Zend_Pdf_FileParser}. If
-     *   omitted, uses big-endian.
-     * @param string $characterSet (optional) --Ignored--
-     * @return string
-     * @throws Zend_Pdf_Exception
-     */
-    public function readStringUTF16($byteCount,
-                                    $byteOrder = Zend_Pdf_FileParser::BYTE_ORDER_BIG_ENDIAN,
-                                    $characterSet = '')
-    {
-        return parent::readStringUTF16($byteCount, $byteOrder, 'UTF-16BE');
-    }
-
-    /**
-     * Reads the Mac Roman-encoded string from the binary file at the current
-     * offset location. Overridden to fix return character set at UTF-16BE.
-     *
-     * @param integer $byteCount Number of bytes (characters) to return.
-     * @param string $characterSet (optional) --Ignored--
-     * @return string
-     * @throws Zend_Pdf_Exception
-     */
-    public function readStringMacRoman($byteCount, $characterSet = '')
-    {
-        return parent::readStringMacRoman($byteCount, 'UTF-16BE');
-    }
-
-    /**
-     * Reads the Pascal string from the binary file at the current offset
-     * location. Overridden to fix return character set at UTF-16BE.
-     *
-     * @param string $characterSet (optional) --Ignored--
-     * @param integer $lengthBytes (optional) Number of bytes that make up the
-     *   length. Default is 1.
-     * @return string
-     * @throws Zend_Pdf_Exception
-     */
-    public function readStringPascal($characterSet = '', $lengthBytes = 1)
-    {
-        return parent::readStringPascal('UTF-16BE');
-    }
-
-
-  /* Utility Methods */
-
-    /**
-     * Writes the entire font properties array to STDOUT. Used only for debugging.
-     */
-    public function writeDebug()
-    {
-        print_r($this->_fontProperties);
-    }
-
-
-
-  /**** Internal Methods ****/
-
-
-  /* Internal Accessors */
-
-    /**
-     * Set handler
-     *
-     * NOTE: This method is protected. Other classes may freely interrogate
-     * the font properties, but only this and its subclasses may set them.
-     *
-     * @param string $property
-     * @param  mixed $value
-     */
-    public function __set($property, $value)
-    {
-        if ($value === null) {
-            unset($this->_fontProperties[$property]);
-        } else {
-            $this->_fontProperties[$property] = $value;
-        }
-    }
-
-
-  /* Internal Utility Methods */
-
-    /**
-     * If debug logging is enabled, writes the log message.
-     *
-     * The log message is a sprintf() style string and any number of arguments
-     * may accompany it as additional parameters.
-     *
-     * @param string $message
-     * @param mixed (optional, multiple) Additional arguments
-     */
-    protected function _debugLog($message)
-    {
-        if (! $this->_debug) {
-            return;
-        }
-        if (func_num_args() > 1) {
-            $args = func_get_args();
-            $message = array_shift($args);
-            $message = vsprintf($message, $args);
-        }
-
-        $logger = new Zend_Log();
-        $logger->log($message, Zend_Log::DEBUG);
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+z+eRGW2p4OnfGW==

@@ -1,129 +1,31 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Search_Lucene
- * @subpackage Document
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-
-/** Zend_Search_Lucene_Field */
-require_once 'Zend/Search/Lucene/Field.php';
-
-
-/**
- * A Document is a set of fields. Each field has a name and a textual value.
- *
- * @category   Zend
- * @package    Zend_Search_Lucene
- * @subpackage Document
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Search_Lucene_Document
-{
-
-    /**
-     * Associative array Zend_Search_Lucene_Field objects where the keys to the
-     * array are the names of the fields.
-     *
-     * @var array
-     */
-    protected $_fields = array();
-
-    /**
-     * Field boost factor
-     * It's not stored directly in the index, but affects on normalization factor
-     *
-     * @var float
-     */
-    public $boost = 1.0;
-
-    /**
-     * Proxy method for getFieldValue(), provides more convenient access to
-     * the string value of a field.
-     *
-     * @param  $offset
-     * @return string
-     */
-    public function __get($offset)
-    {
-        return $this->getFieldValue($offset);
-    }
-
-
-    /**
-     * Add a field object to this document.
-     *
-     * @param Zend_Search_Lucene_Field $field
-     * @return Zend_Search_Lucene_Document
-     */
-    public function addField(Zend_Search_Lucene_Field $field)
-    {
-        $this->_fields[$field->name] = $field;
-
-        return $this;
-    }
-
-
-    /**
-     * Return an array with the names of the fields in this document.
-     *
-     * @return array
-     */
-    public function getFieldNames()
-    {
-        return array_keys($this->_fields);
-    }
-
-
-    /**
-     * Returns Zend_Search_Lucene_Field object for a named field in this document.
-     *
-     * @param string $fieldName
-     * @return Zend_Search_Lucene_Field
-     */
-    public function getField($fieldName)
-    {
-        if (!array_key_exists($fieldName, $this->_fields)) {
-            throw new Zend_Search_Lucene_Exception("Field name \"$fieldName\" not found in document.");
-        }
-        return $this->_fields[$fieldName];
-    }
-
-
-    /**
-     * Returns the string value of a named field in this document.
-     *
-     * @see __get()
-     * @return string
-     */
-    public function getFieldValue($fieldName)
-    {
-        return $this->getField($fieldName)->value;
-    }
-
-    /**
-     * Returns the string value of a named field in UTF-8 encoding.
-     *
-     * @see __get()
-     * @return string
-     */
-    public function getFieldUtf8Value($fieldName)
-    {
-        return $this->getField($fieldName)->getUtf8Value();
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

@@ -1,113 +1,35 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category  Zend
- * @package   Zend_ProgressBar
- * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   http://framework.zend.com/license/new-bsd     New BSD License
- * @version   $Id: Adapter.php 14099 2009-02-17 15:16:15Z yoshida@zend.co.jp $
- */
-
-/**
- * Abstract class for Zend_ProgressBar_Adapters
- *
- * @category  Zend
- * @package   Zend_ProgressBar
- * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   http://framework.zend.com/license/new-bsd     New BSD License
- */
-abstract class Zend_ProgressBar_Adapter
-{
-    /**
-     * Option keys to skip when calling setOptions()
-     *
-     * @var array
-     */
-    protected $_skipOptions = array(
-        'options',
-        'config',
-    );
-
-    /**
-     * Create a new adapter
-     *
-     * $options may be either be an array or a Zend_Config object which
-     * specifies adapter related options.
-     *
-     * @param null|array|Zend_Config $options
-     */
-    public function __construct($options = null)
-    {
-        if (is_array($options)) {
-            $this->setOptions($options);
-        } elseif ($options instanceof Zend_Config) {
-            $this->setConfig($options);
-        }
-    }
-
-    /**
-     * Set options via a Zend_Config instance
-     *
-     * @param  Zend_Config $config
-     * @return Zend_ProgressBar_Adapter
-     */
-    public function setConfig(Zend_Config $config)
-    {
-        $this->setOptions($config->toArray());
-
-        return $this;
-    }
-
-    /**
-     * Set options via an array
-     *
-     * @param  array $options
-     * @return Zend_ProgressBar_Adapter
-     */
-    public function setOptions(array $options)
-    {
-        foreach ($options as $key => $value) {
-            if (in_array(strtolower($key), $this->_skipOptions)) {
-                continue;
-            }
-
-            $method = 'set' . ucfirst($key);
-            if (method_exists($this, $method)) {
-                $this->$method($value);
-            }
-        }
-
-        return $this;
-    }
-
-    /**
-     * Notify the adapter about an update
-     *
-     * @param  float   $current       Current progress value
-     * @param  float   $max           Max progress value
-     * @param  float   $percent       Current percent value
-     * @param  integer $timeTaken     Taken time in seconds
-     * @param  integer $timeRemaining Remaining time in seconds
-     * @param  string  $text          Status text
-     * @return void
-     */
-    abstract public function notify($current, $max, $percent, $timeTaken, $timeRemaining, $text);
-
-    /**
-     * Called when the progress is explicitly finished
-     *
-     * @return void
-     */
-    abstract public function finish();
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+DeS=

@@ -1,100 +1,39 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Search_Lucene
- * @subpackage Analysis
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_Search_Lucene_Analysis_TokenFilter */
-require_once 'Zend/Search/Lucene/Analysis/TokenFilter.php';
-
-/**
- * Token filter that removes stop words. These words must be provided as array (set), example:
- * $stopwords = array('the' => 1, 'an' => '1');
- *
- * We do recommend to provide all words in lowercase and concatenate this class after the lowercase filter.
- *
- * @category   Zend
- * @package    Zend_Search_Lucene
- * @subpackage Analysis
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-class Zend_Search_Lucene_Analysis_TokenFilter_StopWords extends Zend_Search_Lucene_Analysis_TokenFilter
-{
-    /**
-     * Stop Words
-     * @var array
-     */
-    private $_stopSet;
-
-    /**
-     * Constructs new instance of this filter.
-     *
-     * @param array $stopwords array (set) of words that will be filtered out
-     */
-    public function __construct($stopwords = array()) {
-        $this->_stopSet = array_flip($stopwords);
-    }
-
-    /**
-     * Normalize Token or remove it (if null is returned)
-     *
-     * @param Zend_Search_Lucene_Analysis_Token $srcToken
-     * @return Zend_Search_Lucene_Analysis_Token
-     */
-    public function normalize(Zend_Search_Lucene_Analysis_Token $srcToken) {
-        if (array_key_exists($srcToken->getTermText(), $this->_stopSet)) {
-            return null;
-        } else {
-            return $srcToken;
-        }
-    }
-
-    /**
-     * Fills stopwords set from a text file. Each line contains one stopword, lines with '#' in the first
-     * column are ignored (as comments).
-     *
-     * You can call this method one or more times. New stopwords are always added to current set.
-     *
-     * @param string $filepath full path for text file with stopwords
-     * @throws Zend_Search_Exception When the file doesn`t exists or is not readable.
-     */
-    public function loadFromFile($filepath = null) {
-        if (! $filepath || ! file_exists($filepath)) {
-            require_once 'Zend/Search/Lucene/Exception.php';
-            throw new Zend_Search_Lucene_Exception('You have to provide valid file path');
-        }
-        $fd = fopen($filepath, "r");
-        if (! $fd) {
-            require_once 'Zend/Search/Lucene/Exception.php';
-            throw new Zend_Search_Lucene_Exception('Cannot open file ' . $filepath);
-        }
-        while (!feof ($fd)) {
-            $buffer = trim(fgets($fd));
-            if (strlen($buffer) > 0 && $buffer[0] != '#') {
-                $this->_stopSet[$buffer] = 1;
-            }
-        }
-        if (!fclose($fd)) {
-            require_once 'Zend/Search/Lucene/Exception.php';
-            throw new Zend_Search_Lucene_Exception('Cannot close file ' . $filepath);
-        }
-    }
-}
-
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+YW==

@@ -1,125 +1,38 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage YouTube
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * @see Zend_Gdata_Extension
- */
-require_once 'Zend/Gdata/Extension.php';
-
-/**
- * Represents the yt:duration element used by the YouTube data API
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage YouTube
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Gdata_YouTube_Extension_Duration extends Zend_Gdata_Extension
-{
-
-    protected $_rootNamespace = 'yt';
-    protected $_rootElement = 'duration';
-    protected $_seconds = null;
-
-    /**
-     * Constructs a new Zend_Gdata_YouTube_Extension_Duration object.
-     * @param bool $seconds(optional) The seconds value of the element.
-     */
-    public function __construct($seconds = null)
-    {
-        $this->registerAllNamespaces(Zend_Gdata_YouTube::$namespaces);
-        parent::__construct();
-        $this->_seconds = $seconds;
-    }
-
-    /**
-     * Retrieves a DOMElement which corresponds to this element and all
-     * child properties.  This is used to build an entry back into a DOM
-     * and eventually XML text for sending to the server upon updates, or
-     * for application storage/persistence.
-     *
-     * @param DOMDocument $doc The DOMDocument used to construct DOMElements
-     * @return DOMElement The DOMElement representing this element and all
-     * child properties.
-     */
-    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
-    {
-        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
-        if ($this->_seconds !== null) {
-            $element->setAttribute('seconds', $this->_seconds);
-        }
-        return $element;
-    }
-
-    /**
-     * Given a DOMNode representing an attribute, tries to map the data into
-     * instance members.  If no mapping is defined, the name and valueare
-     * stored in an array.
-     *
-     * @param DOMNode $attribute The DOMNode attribute needed to be handled
-     */
-    protected function takeAttributeFromDOM($attribute)
-    {
-        switch ($attribute->localName) {
-        case 'seconds':
-            $this->_seconds = $attribute->nodeValue;
-            break;
-        default:
-            parent::takeAttributeFromDOM($attribute);
-        }
-    }
-
-    /**
-     * Get the value for this element's seconds attribute.
-     *
-     * @return int The value associated with this attribute.
-     */
-    public function getSeconds()
-    {
-        return $this->_seconds;
-    }
-
-    /**
-     * Set the value for this element's seconds attribute.
-     *
-     * @param int $value The desired value for this attribute.
-     * @return Zend_Gdata_YouTube_Extension_Duration The element being modified.
-     */
-    public function setSeconds($value)
-    {
-        $this->_seconds = $value;
-        return $this;
-    }
-
-    /**
-     * Magic toString method allows using this directly via echo
-     * Works best in PHP >= 4.2.0
-     *
-     * @return string The duration in seconds
-     */
-    public function __toString()
-    {
-        return $this->_seconds;
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+dqrvqqpLOtWpjrRCisvUROy=

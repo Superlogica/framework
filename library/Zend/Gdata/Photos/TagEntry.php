@@ -1,139 +1,46 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Photos
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * @see Zend_Gdata_Entry
- */
-require_once 'Zend/Gdata/Entry.php';
-
-/**
- * @see Zend_Gdata_Photos_Extension_Weight
- */
-require_once 'Zend/Gdata/Photos/Extension/Weight.php';
-
-/**
- * @see Zend_Gdata_App_Extension_Category
- */
-require_once 'Zend/Gdata/App/Extension/Category.php';
-
-/**
- * Data model class for a Tag Entry.
- *
- * To transfer user entries to and from the servers, including
- * creating new entries, refer to the service class,
- * Zend_Gdata_Photos.
- *
- * This class represents <atom:entry> in the Google Data protocol.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Photos
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Gdata_Photos_TagEntry extends Zend_Gdata_Entry
-{
-
-    protected $_entryClassName = 'Zend_Gdata_Photos_TagEntry';
-
-    protected $_gphotoWeight = null;
-
-    /**
-     * Create a new instance.
-     *
-     * @param DOMElement $element (optional) DOMElement from which this
-     *          object should be constructed.
-     */
-    public function __construct($element = null)
-    {
-        $this->registerAllNamespaces(Zend_Gdata_Photos::$namespaces);
-        parent::__construct($element);
-
-        $category = new Zend_Gdata_App_Extension_Category(
-            'http://schemas.google.com/photos/2007#tag',
-            'http://schemas.google.com/g/2005#kind');
-        $this->setCategory(array($category));
-    }
-
-    /**
-     * Retrieves a DOMElement which corresponds to this element and all
-     * child properties.  This is used to build an entry back into a DOM
-     * and eventually XML text for application storage/persistence.
-     *
-     * @param DOMDocument $doc The DOMDocument used to construct DOMElements
-     * @return DOMElement The DOMElement representing this element and all
-     *          child properties.
-     */
-    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
-    {
-        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
-        if ($this->_gphotoWeight !== null) {
-            $element->appendChild($this->_gphotoWeight->getDOM($element->ownerDocument));
-        }
-        return $element;
-    }
-
-    /**
-     * Creates individual Entry objects of the appropriate type and
-     * stores them as members of this entry based upon DOM data.
-     *
-     * @param DOMNode $child The DOMNode to process
-     */
-    protected function takeChildFromDOM($child)
-    {
-        $absoluteNodeName = $child->namespaceURI . ':' . $child->localName;
-
-        switch ($absoluteNodeName) {
-            case $this->lookupNamespace('gphoto') . ':' . 'weight';
-                $weight = new Zend_Gdata_Photos_Extension_Weight();
-                $weight->transferFromDOM($child);
-                $this->_gphotoWeight = $weight;
-                break;
-            default:
-                parent::takeChildFromDOM($child);
-                break;
-        }
-    }
-
-    /**
-     * Get the value for this element's gphoto:weight attribute.
-     *
-     * @see setGphotoWeight
-     * @return string The requested attribute.
-     */
-    public function getGphotoWeight()
-    {
-        return $this->_gphotoWeight;
-    }
-
-    /**
-     * Set the value for this element's gphoto:weight attribute.
-     *
-     * @param string $value The desired value for this attribute.
-     * @return Zend_Gdata_Photos_Extension_Weight The element being modified.
-     */
-    public function setGphotoWeight($value)
-    {
-        $this->_gphotoWeight = $value;
-        return $this;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

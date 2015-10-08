@@ -1,262 +1,78 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Tool
- * @subpackage Framework
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id$
- */
-
-/**
- * @see Zend_Tool_Framework_Provider_Signature
- */
-require_once 'Zend/Tool/Framework/Provider/Signature.php';
-
-/**
- * @see Zend_Tool_Framework_Registry_EnabledInterface
- */
-require_once 'Zend/Tool/Framework/Registry/EnabledInterface.php';
-
-/**
- * @category   Zend
- * @package    Zend_Tool
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Tool_Framework_Provider_Repository 
-    implements Zend_Tool_Framework_Registry_EnabledInterface, IteratorAggregate, Countable
-{
-    
-    /**
-     * @var Zend_Tool_Framework_Registry
-     */
-    protected $_registry = null;
-    
-    /**
-     * @var bool
-     */
-    protected $_processOnAdd = false;
-    
-    /**
-     * @var Zend_Tool_Framework_Provider_Interface[]
-     */
-    protected $_unprocessedProviders = array();
-    
-    /**
-     * @var Zend_Tool_Framework_Provider_Signature[]
-     */
-    protected $_providerSignatures = array();
-
-    /**
-     * @var array Array of Zend_Tool_Framework_Provider_Inteface
-     */
-    protected $_providers = array();
-    
-    /**
-     * setRegistry()
-     *
-     * @param Zend_Tool_Framework_Registry_Interface $registry
-     * @return unknown
-     */
-    public function setRegistry(Zend_Tool_Framework_Registry_Interface $registry)
-    {
-        $this->_registry = $registry;
-        return $this;
-    }
-    
-    /**
-     * Set the ProcessOnAdd flag
-     *
-     * @param unknown_type $processOnAdd
-     * @return unknown
-     */
-    public function setProcessOnAdd($processOnAdd = true)
-    {
-        $this->_processOnAdd = (bool) $processOnAdd;
-        return $this;
-    }
-    
-    /**
-     * Add a provider to the repository for processing
-     *
-     * @param Zend_Tool_Framework_Provider_Interface $provider
-     * @return Zend_Tool_Framework_Provider_Repository
-     */
-    public function addProvider(Zend_Tool_Framework_Provider_Interface $provider, $overwriteExistingProvider = false)
-    {
-        if ($provider instanceof Zend_Tool_Framework_Registry_EnabledInterface) {
-            $provider->setRegistry($this->_registry);
-        }
-        
-        if (method_exists($provider, 'getName')) {
-            $providerName = $provider->getName();
-        } else {
-            $providerName = $this->_parseName($provider);
-        }
-        
-        // if a provider by the given name already exist, and its not set as overwritable, throw exception
-        if (!$overwriteExistingProvider && 
-            (array_key_exists($providerName, $this->_unprocessedProviders) 
-                || array_key_exists($providerName, $this->_providers))) 
-        {
-            require_once 'Zend/Tool/Framework/Provider/Exception.php';
-            throw new Zend_Tool_Framework_Provider_Exception('A provider by the name ' . $providerName 
-                . ' is already registered and $overrideExistingProvider is set to false.');
-        }
-        
-        $this->_unprocessedProviders[$providerName] = $provider;
-        
-        // if process has already been called, process immediately.
-        if ($this->_processOnAdd) {
-            $this->process();
-        }
-        
-        return $this;
-    }
-
-    public function hasProvider($providerOrClassName, $processedOnly = true)
-    {
-        if ($providerOrClassName instanceof Zend_Tool_Framework_Provider_Interface) {
-            $targetProviderClassName = get_class($providerOrClassName);
-        } else {
-            $targetProviderClassName = (string) $providerOrClassName;
-        }
-        
-        if (!$processedOnly) {
-            foreach ($this->_unprocessedProviders as $unprocessedProvider) {
-                if (get_class($unprocessedProvider) == $targetProviderClassName) {
-                    return true;
-                }
-            }
-        }
-        
-        foreach ($this->_providers as $processedProvider) {
-            if (get_class($processedProvider) == $targetProviderClassName) {
-                return true;
-            }
-        }
-        
-        return false;
-    }
-    
-    /**
-     * Process all of the unprocessed providers
-     *
-     */
-    public function process()
-    {
-
-        // process all providers in the unprocessedProviders array
-        foreach ($this->_unprocessedProviders as $providerName => $provider) {
-
-            // create a signature for the provided provider
-            $providerSignature = new Zend_Tool_Framework_Provider_Signature($provider);
-            
-            if ($providerSignature instanceof Zend_Tool_Framework_Registry_EnabledInterface) {
-                $providerSignature->setRegistry($this->_registry);
-            }
-            
-            $providerSignature->process();
-            
-            // ensure the name is lowercased for easier searching
-            $providerName = strtolower($providerName);
-            
-            // add to the appropraite place
-            $this->_providerSignatures[$providerName] = $providerSignature;
-            $this->_providers[$providerName]          = $providerSignature->getProvider();
-            
-            // remove from unprocessed array
-            unset($this->_unprocessedProviders[$providerName]);
-        }
-        
-    }
-
-    /**
-     * getProviders() Get all the providers in the repository
-     *
-     * @return array
-     */
-    public function getProviders()
-    {
-        return $this->_providers;
-    }
-
-    /**
-     * getProviderSignatures() Get all the provider signatures
-     *
-     * @return array
-     */
-    public function getProviderSignatures()
-    {
-        return $this->_providerSignatures;
-    }
-    
-    /**
-     * getProvider()
-     *
-     * @param string $providerName
-     * @return Zend_Tool_Framework_Provider_Interface
-     */
-    public function getProvider($providerName)
-    {
-        return $this->_providers[strtolower($providerName)];
-    }
-
-    /**
-     * getProviderSignature()
-     *
-     * @param string $providerName
-     * @return Zend_Tool_Framework_Provider_Signature
-     */
-    public function getProviderSignature($providerName)
-    {
-        return $this->_providerSignatures[strtolower($providerName)];
-    }
-
-    /**
-     * count() - return the number of providers
-     *
-     * @return int
-     */
-    public function count()
-    {
-        return count($this->_providers);
-    }
-    
-    /**
-     * getIterator() - Required by the IteratorAggregate Interface
-     *
-     * @return ArrayIterator
-     */
-    public function getIterator()
-    {
-        return new ArrayIterator($this->getProviders());
-    }
-    
-    /**
-     * _parseName - internal method to determine the name of an action when one is not explicity provided.
-     *
-     * @param Zend_Tool_Framework_Action_Interface $action
-     * @return string
-     */
-    protected function _parseName(Zend_Tool_Framework_Provider_Interface $provider)
-    {
-        $className = get_class($provider);
-        $providerName = substr($className, strrpos($className, '_')+1);
-        return $providerName;
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+YO8=

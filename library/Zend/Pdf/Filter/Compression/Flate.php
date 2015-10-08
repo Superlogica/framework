@@ -1,97 +1,38 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @package    Zend_Pdf
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-
-/** Zend_Pdf_Filter_Compression */
-require_once 'Zend/Pdf/Filter/Compression.php';
-
-
-/**
- * Flate stream filter
- *
- * @package    Zend_Pdf
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Pdf_Filter_Compression_Flate extends Zend_Pdf_Filter_Compression
-{
-    /**
-     * Encode data
-     *
-     * @param string $data
-     * @param array $params
-     * @return string
-     * @throws Zend_Pdf_Exception
-     */
-    public static function encode($data, $params = null)
-    {
-        if ($params != null) {
-            $data = self::_applyEncodeParams($data, $params);
-        }
-
-        if (extension_loaded('zlib')) {
-            $trackErrors = ini_get( "track_errors");
-            ini_set('track_errors', '1');
-
-            if (($output = @gzcompress($data)) === false) {
-                ini_set('track_errors', $trackErrors);
-                throw new Zend_Pdf_Exception($php_errormsg);
-            }
-
-            ini_set('track_errors', $trackErrors);
-        } else {
-            throw new Zend_Pdf_Exception('Not implemented yet. You have to use zlib extension.');
-        }
-
-        return $output;
-    }
-
-    /**
-     * Decode data
-     *
-     * @param string $data
-     * @param array $params
-     * @return string
-     * @throws Zend_Pdf_Exception
-     */
-    public static function decode($data, $params = null)
-    {
-        global $php_errormsg;
-
-        if (extension_loaded('zlib')) {
-            $trackErrors = ini_get( "track_errors");
-            ini_set('track_errors', '1');
-
-            if (($output = @gzuncompress($data)) === false) {
-                ini_set('track_errors', $trackErrors);
-                throw new Zend_Pdf_Exception($php_errormsg);
-            }
-
-            ini_set('track_errors', $trackErrors);
-        } else {
-            throw new Zend_Pdf_Exception('Not implemented yet');
-        }
-
-        if ($params !== null) {
-            return self::_applyDecodeParams($output, $params);
-        } else {
-            return $output;
-        }
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+xwU/hGuoVmu=

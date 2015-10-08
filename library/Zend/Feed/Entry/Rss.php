@@ -1,122 +1,37 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Feed
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Rss.php 8064 2008-02-16 10:58:39Z thomas $
- */
-
-
-/**
- * @see Zend_Feed_Entry_Abstract
- */
-require_once 'Zend/Feed/Entry/Abstract.php';
-
-
-/**
- * Concrete class for working with RSS items.
- *
- * @category   Zend
- * @package    Zend_Feed
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Feed_Entry_Rss extends Zend_Feed_Entry_Abstract
-{
-    /**
-     * Root XML element for RSS items.
-     *
-     * @var string
-     */
-    protected $_rootElement = 'item';
-
-    /**
-     * Overwrites parent::_get method to enable read access
-     * to content:encoded element.
-     *
-     * @param  string $var The property to access.
-     * @return mixed
-     */
-    public function __get($var)
-    {
-        switch ($var) {
-            case 'content':
-                $prefix = $this->_element->lookupPrefix('http://purl.org/rss/1.0/modules/content/');
-                return parent::__get("$prefix:encoded");
-            default:
-                return parent::__get($var);
-        }
-    }
-
-    /**
-     * Overwrites parent::_set method to enable write access
-     * to content:encoded element.
-     *
-     * @param  string $var The property to change.
-     * @param  string $val The property's new value.
-     * @return void
-     */
-    public function __set($var, $value)
-    {
-        switch ($var) {
-            case 'content':
-                parent::__set('content:encoded', $value);
-                break;
-            default:
-                parent::__set($var, $value);
-        }
-    }
-
-    /**
-     * Overwrites parent::_isset method to enable access
-     * to content:encoded element.
-     *
-     * @param  string $var
-     * @return boolean
-     */
-    public function __isset($var)
-    {
-        switch ($var) {
-            case 'content':
-                // don't use other callback to prevent invalid returned value
-                return $this->content() !== null;
-            default:
-                return parent::__isset($var);
-        }
-    }
-    
-    /**
-     * Overwrites parent::_call method to enable read access
-     * to content:encoded element.
-     * Please note that method-style write access is not currently supported
-     * by parent method, consequently this method doesn't as well.
-     *
-     * @param  string $var    The element to get the string value of.
-     * @param  mixed  $unused This parameter is not used.
-     * @return mixed The node's value, null, or an array of nodes.
-     */
-    public function __call($var, $unused)
-    {
-        switch ($var) {
-            case 'content':
-                $prefix = $this->_element->lookupPrefix('http://purl.org/rss/1.0/modules/content/');
-                return parent::__call("$prefix:encoded", $unused);
-            default:
-                return parent::__call($var, $unused);
-        }
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

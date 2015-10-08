@@ -1,148 +1,38 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Photos
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * @see Zend_Gdata_Photos_UserQuery
- */
-require_once('Zend/Gdata/Photos/UserQuery.php');
-
-/**
- * Assists in constructing album queries for various entries.
- * Instances of this class can be provided in many places where a URL is
- * required.
- *
- * For information on submitting queries to a server, see the service
- * class, Zend_Gdata_Photos.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Photos
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Gdata_Photos_AlbumQuery extends Zend_Gdata_Photos_UserQuery
-{
-
-    /**
-     * The name of the album to query for. Mutually exclusive with AlbumId.
-     *
-     * @var string
-     */
-    protected $_albumName = null;
-
-    /**
-     * The ID of the album to query for. Mutually exclusive with AlbumName.
-     *
-     * @var string
-     */
-    protected $_albumId = null;
-
-    /**
-     * Set the album name to query for. When set, this album's photographs
-     * be returned. If not set or null, the default user's feed will be
-     * returned instead.
-     *
-     * NOTE: AlbumName and AlbumId are mutually exclusive. Setting one will
-     *       automatically set the other to null.
-     *
-     * @param string $value The name of the album to retrieve, or null to
-     *          clear.
-     * @return Zend_Gdata_Photos_AlbumQuery The query object.
-     */
-     public function setAlbumName($value)
-     {
-         $this->_albumId = null;
-         $this->_albumName = $value;
-         
-         return $this;
-     }
-
-    /**
-     * Get the album name which is to be returned.
-     *
-     * @see setAlbumName
-     * @return string The name of the album to retrieve.
-     */
-    public function getAlbumName()
-    {
-        return $this->_albumName;
-    }
-
-    /**
-     * Set the album ID to query for. When set, this album's photographs
-     * be returned. If not set or null, the default user's feed will be
-     * returned instead.
-     *
-     * NOTE: Album and AlbumId are mutually exclusive. Setting one will
-     *       automatically set the other to null.
-     *
-     * @param string $value The ID of the album to retrieve, or null to
-     *          clear.
-     * @return Zend_Gdata_Photos_AlbumQuery The query object.
-     */
-     public function setAlbumId($value)
-     {
-         $this->_albumName = null;
-         $this->_albumId = $value;
-         
-         return $this;
-     }
-
-    /**
-     * Get the album ID which is to be returned.
-     *
-     * @see setAlbum
-     * @return string The ID of the album to retrieve.
-     */
-    public function getAlbumId()
-    {
-        return $this->_albumId;
-    }
-
-    /**
-     * Returns the URL generated for this query, based on it's current
-     * parameters.
-     *
-     * @return string A URL generated based on the state of this query.
-     * @throws Zend_Gdata_App_InvalidArgumentException
-     */
-    public function getQueryUrl($incomingUri = '')
-    {
-        $uri = '';
-        if ($this->getAlbumName() !== null && $this->getAlbumId() === null) {
-            $uri .= '/album/' . $this->getAlbumName();
-        } elseif ($this->getAlbumName() === null && $this->getAlbumId() !== null) {
-            $uri .= '/albumid/' . $this->getAlbumId();
-        } elseif ($this->getAlbumName() !== null && $this->getAlbumId() !== null) {
-            require_once 'Zend/Gdata/App/InvalidArgumentException.php';
-            throw new Zend_Gdata_App_InvalidArgumentException(
-                    'AlbumName and AlbumId cannot both be non-null');
-        } else {
-            require_once 'Zend/Gdata/App/InvalidArgumentException.php';
-            throw new Zend_Gdata_App_InvalidArgumentException(
-                    'AlbumName and AlbumId cannot both be null');
-        }
-        $uri .= $incomingUri;
-        return parent::getQueryUrl($uri);
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+1o+9zHgh2Qd/SXwbB5c80OGFsXa6ZRjtM1Er

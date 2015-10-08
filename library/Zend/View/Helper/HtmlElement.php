@@ -1,141 +1,53 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_View
- * @subpackage Helper
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: HtmlElement.php 12477 2008-11-09 01:55:35Z yoshida@zend.co.jp $
- */
-
-/**
- * @see Zend_View_Helper_Abstract
- */
-require_once 'Zend/View/Helper/Abstract.php';
-
-/**
- * @category   Zend
- * @package    Zend_View
- * @subpackage Helper
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-abstract class Zend_View_Helper_HtmlElement extends Zend_View_Helper_Abstract
-{
-    /**
-     * EOL character
-     */
-    const EOL = "\n";
-
-    /**
-     * The tag closing bracket
-     *
-     * @var string
-     */
-    protected $_closingBracket = null;
-
-    /**
-     * Get the tag closing bracket
-     *
-     * @return string
-     */
-    public function getClosingBracket()
-    {
-        if (!$this->_closingBracket) {
-            if ($this->_isXhtml()) {
-                $this->_closingBracket = ' />';
-            } else {
-                $this->_closingBracket = '>';
-            }
-        }
-
-        return $this->_closingBracket;
-    }
-
-    /**
-     * Is doctype XHTML?
-     *
-     * @return boolean
-     */
-    protected function _isXhtml()
-    {
-        $doctype = $this->view->doctype();
-        return $doctype->isXhtml();
-    }
-
-    /**
-     * Converts an associative array to a string of tag attributes.
-     *
-     * @access public
-     *
-     * @param array $attribs From this array, each key-value pair is
-     * converted to an attribute name and value.
-     *
-     * @return string The XHTML for the attributes.
-     */
-    protected function _htmlAttribs($attribs)
-    {
-        $xhtml = '';
-        foreach ((array) $attribs as $key => $val) {
-            $key = $this->view->escape($key);
-
-            if (('on' == substr($key, 0, 2)) || ('constraints' == $key)) {
-                // Don't escape event attributes; _do_ substitute double quotes with singles
-                if (!is_scalar($val)) {
-                    // non-scalar data should be cast to JSON first
-                    require_once 'Zend/Json.php';
-                    $val = Zend_Json::encode($val);
-                }
-                $val = preg_replace('/"([^"]*)":/', '$1:', $val);
-            } else {
-                if (is_array($val)) {
-                    $val = implode(' ', $val);
-                }
-                $val = $this->view->escape($val);
-            }
-
-            if ('id' == $key) {
-                $val = $this->_normalizeId($val);
-            }
-
-            if (strpos($val, '"') !== false) {
-                $xhtml .= " $key='$val'";
-            } else {
-                $xhtml .= " $key=\"$val\"";
-            }
-            
-        }
-        return $xhtml;
-    }
-
-    /**
-     * Normalize an ID
-     * 
-     * @param  string $value 
-     * @return string
-     */
-    protected function _normalizeId($value)
-    {
-        if (strstr($value, '[')) {
-            if ('[]' == substr($value, -2)) {
-                $value = substr($value, 0, strlen($value) - 2);
-            }
-            $value = trim($value, ']');
-            $value = str_replace('][', '-', $value);
-            $value = str_replace('[', '-', $value);
-        }
-        return $value;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+7hpuBv1NMPwKiBRxDwW=

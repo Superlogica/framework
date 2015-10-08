@@ -1,159 +1,50 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Application
- * @subpackage Resource
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: ResourceAbstract.php 15556 2009-05-12 14:45:23Z matthew $
- */
-
-/**
- * @see Zend_Application_Resource_Resource
- */
-require_once 'Zend/Application/Resource/Resource.php';
-
-/**
- * Abstract class for bootstrap resources
- *
- * @uses       Zend_Application_Resource_Resource
- * @category   Zend
- * @package    Zend_Application
- * @subpackage Resource
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-abstract class Zend_Application_Resource_ResourceAbstract implements Zend_Application_Resource_Resource
-{
-    /**
-     * Parent bootstrap
-     * 
-     * @var Zend_Application_Bootstrap_Bootstrapper
-     */
-    protected $_bootstrap;
-
-    /**
-     * Options for the resource
-     * 
-     * @var array
-     */
-    protected $_options = array();
-
-    /**
-     * Option keys to skip when calling setOptions()
-     *
-     * @var array
-     */
-    protected $_skipOptions = array(
-        'options',
-        'config',
-    );
-
-    /**
-     * Create a instance with options
-     *
-     * @param mixed $options
-     */
-    public function __construct($options = null)
-    {
-        if (is_array($options)) {
-            $this->setOptions($options);
-        } else if ($options instanceof Zend_Config) {
-            $this->setOptions($options->toArray());
-        }
-    }
-
-    /**
-     * Set options from array
-     *
-     * @param  array $options Configuration for resource
-     * @return Zend_Application_Resource_ResourceAbstract
-     */
-    public function setOptions(array $options)
-    {
-        foreach ($options as $key => $value) {
-            if (in_array(strtolower($key), $this->_skipOptions)) {
-                continue;
-            }
-
-            $method = 'set' . strtolower($key);
-            if (method_exists($this, $method)) {
-                $this->$method($value);
-            }
-            if ('bootstrap' == $key) {
-                unset($options[$key]);
-            }
-        }
-        
-        $this->_options = $this->mergeOptions($this->_options, $options);
-
-        return $this;
-    }
-
-    /**
-     * Retrieve resource options
-     * 
-     * @return array
-     */
-    public function getOptions()
-    {
-        return $this->_options;
-    }
-
-    /**
-     * Merge options recursively
-     * 
-     * @param  array $array1 
-     * @param  mixed $array2 
-     * @return array
-     */
-    public function mergeOptions(array $array1, $array2 = null)
-    {
-        if (is_array($array2)) {
-            foreach ($array2 as $key => $val) {
-                if (is_array($array2[$key])) {
-                    $array1[$key] = (array_key_exists($key, $array1) && is_array($array1[$key]))
-                                  ? $this->mergeOptions($array1[$key], $array2[$key]) 
-                                  : $array2[$key];
-                } else {
-                    $array1[$key] = $val;
-                }
-            }
-        }
-        return $array1;
-    }
-
-    /**
-     * Set the bootstrap to which the resource is attached
-     * 
-     * @param  Zend_Application_Bootstrap_Bootstrapper $bootstrap 
-     * @return Zend_Application_Resource_Resource
-     */
-    public function setBootstrap(Zend_Application_Bootstrap_Bootstrapper $bootstrap)
-    {
-        $this->_bootstrap = $bootstrap;
-        return $this;
-    }
-
-    /**
-     * Retrieve the bootstrap to which the resource is attached
-     * 
-     * @return null|Zend_Application_Bootstrap_Bootstrapper
-     */
-    public function getBootstrap()
-    {
-        return $this->_bootstrap;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

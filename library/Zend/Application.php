@@ -1,367 +1,120 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Application
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Application.php 15556 2009-05-12 14:45:23Z matthew $
- */
-
-/**
- * @category   Zend
- * @package    Zend_Application
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Application
-{
-    /**
-     * Autoloader to use
-     * 
-     * @var Zend_Loader_Autoloader
-     */
-    protected $_autoloader;
-
-    /**
-     * Bootstrap
-     * 
-     * @var Zend_Application_Bootstrap_BootstrapAbstract
-     */
-    protected $_bootstrap;
-
-    /**
-     * Application environment
-     * 
-     * @var string
-     */
-    protected $_environment;
-
-    /**
-     * Options for Zend_Application
-     * 
-     * @var array
-     */
-    protected $_options = array();
-
-    /**
-     * Constructor
-     *
-     * Initialize application. Potentially initializes include_paths, PHP 
-     * settings, and bootstrap class.
-     * 
-     * @param  string                   $environment 
-     * @param  string|array|Zend_Config $options String path to configuration file, or array/Zend_Config of configuration options
-     * @throws Zend_Application_Exception When invalid options are provided
-     * @return void
-     */
-    public function __construct($environment, $options = null)
-    {
-        $this->_environment = (string) $environment;
-
-        require_once 'Zend/Loader/Autoloader.php';
-        $this->_autoloader = Zend_Loader_Autoloader::getInstance();
-
-        if (null !== $options) {
-            if (is_string($options)) {
-                $options = $this->_loadConfig($options);
-            } elseif ($options instanceof Zend_Config) {
-                $options = $options->toArray();
-            } elseif (!is_array($options)) {
-                throw new Zend_Application_Exception('Invalid options provided; must be location of config file, a config object, or an array');
-            }
-
-            $this->setOptions($options);
-        }
-    }
-
-    /**
-     * Retrieve current environment
-     * 
-     * @return string
-     */
-    public function getEnvironment()
-    {
-        return $this->_environment;
-    }
-
-    /**
-     * Retrieve autoloader instance
-     * 
-     * @return Zend_Loader_Autoloader
-     */
-    public function getAutoloader()
-    {
-        return $this->_autoloader;
-    }
-
-    /**
-     * Set application options
-     * 
-     * @param  array $options 
-     * @throws Zend_Application_Exception When no bootstrap path is provided
-     * @throws Zend_Application_Exception When invalid bootstrap information are provided
-     * @return Zend_Application
-     */
-    public function setOptions(array $options)
-    {
-        $options = array_change_key_case($options, CASE_LOWER);
-
-        if (!empty($options['config'])) {
-            $options = $this->mergeOptions($options, $this->_loadConfig($options['config']));
-        }
-        
-        $this->_options = $options;
-        
-        if (!empty($options['phpsettings'])) {
-            $this->setPhpSettings($options['phpsettings']);
-        }
-        
-        if (!empty($options['includepaths'])) {
-            $this->setIncludePaths($options['includepaths']);
-        }
-        
-        if (!empty($options['autoloadernamespaces'])) {
-            $this->setAutoloaderNamespaces($options['autoloadernamespaces']);
-        }
-        
-        if (!empty($options['bootstrap'])) {
-            $bootstrap = $options['bootstrap'];
-            
-            if (is_string($bootstrap)) {
-                $this->setBootstrap($bootstrap);
-            } elseif (is_array($bootstrap)) {
-                if (empty($bootstrap['path'])) {
-                    throw new Zend_Application_Exception('No bootstrap path provided');
-                }
-                
-                $path  = $bootstrap['path'];
-                $class = null;
-                
-                if (!empty($bootstrap['class'])) {
-                    $class = $bootstrap['class'];
-                }
-                
-                $this->setBootstrap($path, $class);
-            } else {
-                throw new Zend_Application_Exception('Invalid bootstrap information provided');
-            }
-        }
-
-        return $this;
-    }
-
-    /**
-     * Retrieve application options (for caching)
-     * 
-     * @return array
-     */
-    public function getOptions()
-    {
-        return $this->_options;
-    }
-
-    /**
-     * Is an option present?
-     * 
-     * @param  string $key 
-     * @return bool
-     */
-    public function hasOption($key)
-    {
-        return array_key_exists($key, $this->_options);
-    }
-
-    /**
-     * Retrieve a single option
-     * 
-     * @param  string $key 
-     * @return mixed
-     */
-    public function getOption($key)
-    {
-        if ($this->hasOption($key)) {
-            return $this->_options[$key];
-        }
-        return null;
-    }
-
-    /**
-     * Merge options recursively
-     * 
-     * @param  array $array1 
-     * @param  mixed $array2 
-     * @return array
-     */
-    public function mergeOptions(array $array1, $array2 = null)
-    {
-        if (is_array($array2)) {
-            foreach ($array2 as $key => $val) {
-                if (is_array($array2[$key])) {
-                    $array1[$key] = (array_key_exists($key, $array1) && is_array($array1[$key]))
-                                  ? $this->mergeOptions($array1[$key], $array2[$key]) 
-                                  : $array2[$key];
-                } else {
-                    $array1[$key] = $val;
-                }
-            }
-        }
-        return $array1;
-    }
-
-    /**
-     * Set PHP configuration settings
-     * 
-     * @param  array $settings 
-     * @param  string $prefix Key prefix to prepend to array values (used to map . separated INI values)
-     * @return Zend_Application
-     */
-    public function setPhpSettings(array $settings, $prefix = '')
-    {
-        foreach ($settings as $key => $value) {
-            $key = empty($prefix) ? $key : $prefix . $key;
-            if (is_scalar($value)) {
-                ini_set($key, $value);
-            } elseif (is_array($value)) {
-                $this->setPhpSettings($value, $key . '.');
-            }
-        }
-        
-        return $this;
-    }
-
-    /**
-     * Set include path
-     * 
-     * @param  array $paths 
-     * @return Zend_Application
-     */
-    public function setIncludePaths(array $paths)
-    {
-        $path = implode(PATH_SEPARATOR, $paths);
-        set_include_path($path . PATH_SEPARATOR . get_include_path());
-        return $this;
-    }
-
-    /**
-     * Set autoloader namespaces
-     * 
-     * @param  array $namespaces 
-     * @return Zend_Application
-     */
-    public function setAutoloaderNamespaces(array $namespaces)
-    {
-        $autoloader = $this->getAutoloader();
-        
-        foreach ($namespaces as $namespace) {
-            $autoloader->registerNamespace($namespace);
-        }
-        
-        return $this;
-    }
-
-    /**
-     * Set bootstrap path/class
-     * 
-     * @param  string $path 
-     * @param  string $class 
-     * @return Zend_Application
-     */
-    public function setBootstrap($path, $class = null)
-    {
-        // setOptions() can potentially send a null value; specify default 
-        // here
-        if (null === $class) {
-            $class = 'Bootstrap';
-        }
-
-        if (!class_exists($class, false)) {
-            require_once $path;
-        }
-        $this->_bootstrap = new $class($this);
-        
-        return $this;
-    }
-
-    /**
-     * Get bootstrap object
-     * 
-     * @return Zend_Application_Bootstrap_BootstrapAbstract
-     */
-    public function getBootstrap()
-    {
-        if (null === $this->_bootstrap) {
-            $this->_bootstrap = new Zend_Application_Bootstrap_Bootstrap($this);
-        }
-        return $this->_bootstrap;
-    }
-
-    /**
-     * Bootstrap application
-     * 
-     * @return Zend_Application
-     */
-    public function bootstrap()
-    {
-        $this->getBootstrap()->bootstrap();
-        return $this;
-    }
-
-    /**
-     * Run the application
-     * 
-     * @return void
-     */
-    public function run()
-    {
-        $this->getBootstrap()->run();
-    }
-
-    /**
-     * Load configuration file of options
-     * 
-     * @param  string $file
-     * @throws Zend_Application_Exception When invalid configuration file is provided 
-     * @return array
-     */
-    protected function _loadConfig($file)
-    {
-        $environment = $this->getEnvironment();
-        $suffix      = strtolower(pathinfo($file, PATHINFO_EXTENSION));
-        
-        switch ($suffix) {
-            case 'ini':
-                $config = new Zend_Config_Ini($file, $environment);
-                break;
-                
-            case 'xml':
-                $config = new Zend_Config_Xml($file, $environment);
-                break;
-                
-            case 'php':
-            case 'inc':
-                $config = include $file;
-                if (!is_array($config)) {
-                    throw new Zend_Application_Exception('Invalid configuration file provided; PHP file does not return array value');
-                }
-                return $config;
-                break;
-                
-            default:
-                throw new Zend_Application_Exception('Invalid configuration file provided; unknown config type');
-        }
-        
-        return $config->toArray();
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+Vd94C+9nV9/mQjTLMtEGrVFxkzs6Kwq=

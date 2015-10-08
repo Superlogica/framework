@@ -1,124 +1,42 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Feed
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Abstract.php 10383 2008-07-24 19:46:15Z matthew $
- */
-
-
-/**
- * @see Zend_Feed
- */
-require_once 'Zend/Feed.php';
-
-/**
- * @see Zend_Feed_Element
- */
-require_once 'Zend/Feed/Element.php';
-
-
-/**
- * Zend_Feed_Entry_Abstract represents a single entry in an Atom or RSS
- * feed.
- *
- * @category   Zend
- * @package    Zend_Feed
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-abstract class Zend_Feed_Entry_Abstract extends Zend_Feed_Element
-{
-    /**
-     * Root XML element for entries. Subclasses must define this to a
-     * non-null value.
-     *
-     * @var string
-     */
-    protected $_rootElement;
-
-    /**
-     * Root namespace for entries. Subclasses may define this to a
-     * non-null value.
-     *
-     * @var string
-     */
-    protected $_rootNamespace = null;
-
-
-    /**
-     * Zend_Feed_Entry_Abstract constructor
-     *
-     * The Zend_Feed_Entry_Abstract constructor takes the URI of the feed the entry
-     * is part of, and optionally an XML construct (usually a
-     * SimpleXMLElement, but it can be an XML string or a DOMNode as
-     * well) that contains the contents of the entry.
-     *
-     * @param  string $uri
-     * @param  SimpleXMLElement|DOMNode|string  $element
-     * @return void
-     * @throws Zend_Feed_Exception
-     */
-    public function __construct($uri = null, $element = null)
-    {
-        if (!($element instanceof DOMElement)) {
-            if ($element) {
-                // Load the feed as an XML DOMDocument object
-                @ini_set('track_errors', 1);
-                $doc = new DOMDocument();
-                $status = @$doc->loadXML($element);
-                @ini_restore('track_errors');
-
-                if (!$status) {
-                    // prevent the class to generate an undefined variable notice (ZF-2590)
-                    if (!isset($php_errormsg)) {
-                        if (function_exists('xdebug_is_enabled')) {
-                            $php_errormsg = '(error message not available, when XDebug is running)';
-                        } else {
-                            $php_errormsg = '(error message not available)';
-                        }
-                    }
-
-                    /** 
-                     * @see Zend_Feed_Exception
-                     */
-                    require_once 'Zend/Feed/Exception.php';
-                    throw new Zend_Feed_Exception("DOMDocument cannot parse XML: $php_errormsg");
-                }
-
-                $element = $doc->getElementsByTagName($this->_rootElement)->item(0);
-                if (!$element) {
-                    /** 
-                     * @see Zend_Feed_Exception
-                     */
-                    require_once 'Zend/Feed/Exception.php';
-                    throw new Zend_Feed_Exception('No root <' . $this->_rootElement . '> element found, cannot parse feed.');
-                }
-            } else {
-                $doc = new DOMDocument('1.0', 'utf-8');
-                if ($this->_rootNamespace !== null) {
-                    $element = $doc->createElementNS(Zend_Feed::lookupNamespace($this->_rootNamespace), $this->_rootElement);
-                } else {
-                    $element = $doc->createElement($this->_rootElement);
-                }
-            }
-        }
-
-        parent::__construct($element);
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

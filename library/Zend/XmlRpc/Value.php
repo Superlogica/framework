@@ -1,402 +1,140 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_XmlRpc
- * @subpackage Value
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Value.php 13223 2008-12-14 11:21:31Z thomas $
- */
-
-/** Zend_XmlRpc_Value_Scalar */
-require_once 'Zend/XmlRpc/Value/Scalar.php';
-
-/** Zend_XmlRpc_Value_Base64 */
-require_once 'Zend/XmlRpc/Value/Base64.php';
-
-/** Zend_XmlRpc_Value_Boolean */
-require_once 'Zend/XmlRpc/Value/Boolean.php';
-
-/** Zend_XmlRpc_Value_DateTime */
-require_once 'Zend/XmlRpc/Value/DateTime.php';
-
-/** Zend_XmlRpc_Value_Double */
-require_once 'Zend/XmlRpc/Value/Double.php';
-
-/** Zend_XmlRpc_Value_Integer */
-require_once 'Zend/XmlRpc/Value/Integer.php';
-
-/** Zend_XmlRpc_Value_String */
-require_once 'Zend/XmlRpc/Value/String.php';
-
-/** Zend_XmlRpc_Value_Nil */
-require_once 'Zend/XmlRpc/Value/Nil.php';
-
-/** Zend_XmlRpc_Value_Collection */
-require_once 'Zend/XmlRpc/Value/Collection.php';
-
-/** Zend_XmlRpc_Value_Array */
-require_once 'Zend/XmlRpc/Value/Array.php';
-
-/** Zend_XmlRpc_Value_Struct */
-require_once 'Zend/XmlRpc/Value/Struct.php';
-
-/**
- * Represent a native XML-RPC value entity, used as parameters for the methods
- * called by the Zend_XmlRpc_Client object and as the return value for those calls.
- *
- * This object as a very important static function Zend_XmlRpc_Value::getXmlRpcValue, this
- * function acts likes a factory for the Zend_XmlRpc_Value objects
- *
- * Using this function, users/Zend_XmlRpc_Client object can create the Zend_XmlRpc_Value objects
- * from PHP variables, XML string or by specifing the exact XML-RPC natvie type
- *
- * @package    Zend_XmlRpc
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-abstract class Zend_XmlRpc_Value
-{
-    /**
-     * The native XML-RPC representation of this object's value
-     *
-     * If the native type of this object is array or struct, this will be an array
-     * of Zend_XmlRpc_Value objects
-     */
-    protected $_value;
-
-    /**
-     * The native XML-RPC type of this object
-     * One of the XMLRPC_TYPE_* constants
-     */
-    protected $_type;
-
-    /**
-     * XML code representation of this object (will be calculated only once)
-     */
-    protected $_as_xml;
-
-    /**
-     * DOMElement representation of object (will be calculated only once)
-     */
-    protected $_as_dom;
-
-    /**
-     * Specify that the XML-RPC native type will be auto detected from a PHP variable type
-     */
-    const AUTO_DETECT_TYPE = 'auto_detect';
-
-    /**
-     * Specify that the XML-RPC value will be parsed out from a given XML code
-     */
-    const XML_STRING = 'xml';
-
-    /**
-     * All the XML-RPC native types
-     */
-    const XMLRPC_TYPE_I4       = 'i4';
-    const XMLRPC_TYPE_INTEGER  = 'int';
-    const XMLRPC_TYPE_DOUBLE   = 'double';
-    const XMLRPC_TYPE_BOOLEAN  = 'boolean';
-    const XMLRPC_TYPE_STRING   = 'string';
-    const XMLRPC_TYPE_DATETIME = 'dateTime.iso8601';
-    const XMLRPC_TYPE_BASE64   = 'base64';
-    const XMLRPC_TYPE_ARRAY    = 'array';
-    const XMLRPC_TYPE_STRUCT   = 'struct';
-    const XMLRPC_TYPE_NIL      = 'nil';
-
-
-    /**
-     * Get the native XML-RPC type (the type is one of the Zend_XmlRpc_Value::XMLRPC_TYPE_* constants)
-     *
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->_type;
-    }
-
-
-    /**
-     * Return the value of this object, convert the XML-RPC native value into a PHP variable
-     *
-     * @return mixed
-     */
-    abstract public function getValue();
-
-
-    /**
-     * Return the XML code that represent a native MXL-RPC value
-     *
-     * @return string
-     */
-    abstract public function saveXML();
-
-    /**
-     * Return DOMElement representation of object
-     *
-     * @return DOMElement
-     */
-    public function getAsDOM()
-    {
-        if (!$this->_as_dom) {
-            $doc = new DOMDocument('1.0');
-            $doc->loadXML($this->saveXML());
-            $this->_as_dom = $doc->documentElement;
-        }
-
-        return $this->_as_dom;
-    }
-
-    protected function _stripXmlDeclaration(DOMDocument $dom)
-    {
-        return preg_replace('/<\?xml version="1.0"( encoding="[^\"]*")?\?>\n/u', '', $dom->saveXML());
-    }
-
-    /**
-     * Creates a Zend_XmlRpc_Value* object, representing a native XML-RPC value
-     * A XmlRpcValue object can be created in 3 ways:
-     * 1. Autodetecting the native type out of a PHP variable
-     *    (if $type is not set or equal to Zend_XmlRpc_Value::AUTO_DETECT_TYPE)
-     * 2. By specifing the native type ($type is one of the Zend_XmlRpc_Value::XMLRPC_TYPE_* constants)
-     * 3. From a XML string ($type is set to Zend_XmlRpc_Value::XML_STRING)
-     *
-     * By default the value type is autodetected according to it's PHP type
-     *
-     * @param mixed $value
-     * @param Zend_XmlRpc_Value::constant $type
-     *
-     * @return Zend_XmlRpc_Value
-     * @static
-     */
-    public static function getXmlRpcValue($value, $type = self::AUTO_DETECT_TYPE)
-    {
-        switch ($type) {
-            case self::AUTO_DETECT_TYPE:
-                // Auto detect the XML-RPC native type from the PHP type of $value
-                return self::_phpVarToNativeXmlRpc($value);
-
-            case self::XML_STRING:
-                // Parse the XML string given in $value and get the XML-RPC value in it
-                return self::_xmlStringToNativeXmlRpc($value);
-
-            case self::XMLRPC_TYPE_I4:
-                // fall through to the next case
-            case self::XMLRPC_TYPE_INTEGER:
-                return new Zend_XmlRpc_Value_Integer($value);
-
-            case self::XMLRPC_TYPE_DOUBLE:
-                return new Zend_XmlRpc_Value_Double($value);
-
-            case self::XMLRPC_TYPE_BOOLEAN:
-                return new Zend_XmlRpc_Value_Boolean($value);
-
-            case self::XMLRPC_TYPE_STRING:
-                return new Zend_XmlRpc_Value_String($value);
-
-            case self::XMLRPC_TYPE_BASE64:
-                return new Zend_XmlRpc_Value_Base64($value);
-
-            case self::XMLRPC_TYPE_NIL:
-                return new Zend_XmlRpc_Value_Nil();
-
-            case self::XMLRPC_TYPE_DATETIME:
-                return new Zend_XmlRpc_Value_DateTime($value);
-
-            case self::XMLRPC_TYPE_ARRAY:
-                return new Zend_XmlRpc_Value_Array($value);
-
-            case self::XMLRPC_TYPE_STRUCT:
-                return new Zend_XmlRpc_Value_Struct($value);
-
-            default:
-                require_once 'Zend/XmlRpc/Value/Exception.php';
-                throw new Zend_XmlRpc_Value_Exception('Given type is not a '. __CLASS__ .' constant');
-        }
-    }
-
-
-    /**
-     * Transform a PHP native variable into a XML-RPC native value
-     *
-     * @param mixed $value The PHP variable for convertion
-     *
-     * @return Zend_XmlRpc_Value
-     * @static
-     */
-    private static function _phpVarToNativeXmlRpc($value)
-    {
-        switch (gettype($value)) {
-            case 'object':
-                // Check to see if it's an XmlRpc value
-                if ($value instanceof Zend_XmlRpc_Value) {
-                    return $value;
-                }
-
-                // Otherwise, we convert the object into a struct
-                $value = get_object_vars($value);
-                // Break intentionally omitted
-            case 'array':
-                // Default native type for a PHP array (a simple numeric array) is 'array'
-                $obj = 'Zend_XmlRpc_Value_Array';
-
-                // Determine if this is an associative array
-                if (!empty($value) && is_array($value) && (array_keys($value) !== range(0, count($value) - 1))) {
-                    $obj = 'Zend_XmlRpc_Value_Struct';
-                }
-                return new $obj($value);
-
-            case 'integer':
-                return new Zend_XmlRpc_Value_Integer($value);
-
-            case 'double':
-                return new Zend_XmlRpc_Value_Double($value);
-
-            case 'boolean':
-                return new Zend_XmlRpc_Value_Boolean($value);
-
-            case 'NULL':
-            case 'null':
-                return new Zend_XmlRpc_Value_Nil();
-
-            case 'string':
-                // Fall through to the next case
-            default:
-                // If type isn't identified (or identified as string), it treated as string
-                return new Zend_XmlRpc_Value_String($value);
-        }
-    }
-
-
-    /**
-     * Transform an XML string into a XML-RPC native value
-     *
-     * @param string|SimpleXMLElement $simple_xml A SimpleXMLElement object represent the XML string
-     *                                            It can be also a valid XML string for convertion
-     *
-     * @return Zend_XmlRpc_Value
-     * @static
-     */
-    private static function _xmlStringToNativeXmlRpc($simple_xml)
-    {
-        if (!$simple_xml instanceof SimpleXMLElement) {
-            try {
-                $simple_xml = @new SimpleXMLElement($simple_xml);
-            } catch (Exception $e) {
-                // The given string is not a valid XML
-                require_once 'Zend/XmlRpc/Value/Exception.php';
-                throw new Zend_XmlRpc_Value_Exception('Failed to create XML-RPC value from XML string: '.$e->getMessage(),$e->getCode());
-            }
-        }
-
-        // Get the key (tag name) and value from the simple xml object and convert the value to an XML-RPC native value
-        list($type, $value) = each($simple_xml);
-        if (!$type) {    // If no type was specified, the default is string
-            $type = self::XMLRPC_TYPE_STRING;
-        }
-
-        switch ($type) {
-            // All valid and known XML-RPC native values
-            case self::XMLRPC_TYPE_I4:
-                // Fall through to the next case
-            case self::XMLRPC_TYPE_INTEGER:
-                $xmlrpc_val = new Zend_XmlRpc_Value_Integer($value);
-                break;
-            case self::XMLRPC_TYPE_DOUBLE:
-                $xmlrpc_val = new Zend_XmlRpc_Value_Double($value);
-                break;
-            case self::XMLRPC_TYPE_BOOLEAN:
-                $xmlrpc_val = new Zend_XmlRpc_Value_Boolean($value);
-                break;
-            case self::XMLRPC_TYPE_STRING:
-                $xmlrpc_val = new Zend_XmlRpc_Value_String($value);
-                break;
-            case self::XMLRPC_TYPE_DATETIME:  // The value should already be in a iso8601 format
-                $xmlrpc_val = new Zend_XmlRpc_Value_DateTime($value);
-                break;
-            case self::XMLRPC_TYPE_BASE64:    // The value should already be base64 encoded
-                $xmlrpc_val = new Zend_XmlRpc_Value_Base64($value ,true);
-                break;
-            case self::XMLRPC_TYPE_NIL:    // The value should always be NULL
-                $xmlrpc_val = new Zend_XmlRpc_Value_Nil();
-                break;
-            case self::XMLRPC_TYPE_ARRAY:
-                // If the XML is valid, $value must be an SimpleXML element and contain the <data> tag
-                if (!$value instanceof SimpleXMLElement) {
-                    require_once 'Zend/XmlRpc/Value/Exception.php';
-                    throw new Zend_XmlRpc_Value_Exception('XML string is invalid for XML-RPC native '. self::XMLRPC_TYPE_ARRAY .' type');
-                }
-
-                // PHP 5.2.4 introduced a regression in how empty($xml->value)
-                // returns; need to look for the item specifically
-                $data = null;
-                foreach ($value->children() as $key => $value) {
-                    if ('data' == $key) {
-                        $data = $value;
-                        break;
-                    }
-                }
-
-                if (null === $data) {
-                    require_once 'Zend/XmlRpc/Value/Exception.php';
-                    throw new Zend_XmlRpc_Value_Exception('Invalid XML for XML-RPC native '. self::XMLRPC_TYPE_ARRAY .' type: ARRAY tag must contain DATA tag');
-                }
-                $values = array();
-                // Parse all the elements of the array from the XML string
-                // (simple xml element) to Zend_XmlRpc_Value objects
-                foreach ($data->value as $element) {
-                    $values[] = self::_xmlStringToNativeXmlRpc($element);
-                }
-                $xmlrpc_val = new Zend_XmlRpc_Value_Array($values);
-                break;
-            case self::XMLRPC_TYPE_STRUCT:
-                // If the XML is valid, $value must be an SimpleXML
-                if ((!$value instanceof SimpleXMLElement)) {
-                    require_once 'Zend/XmlRpc/Value/Exception.php';
-                    throw new Zend_XmlRpc_Value_Exception('XML string is invalid for XML-RPC native '. self::XMLRPC_TYPE_STRUCT .' type');
-                }
-                $values = array();
-                // Parse all the memebers of the struct from the XML string
-                // (simple xml element) to Zend_XmlRpc_Value objects
-                foreach ($value->member as $member) {
-                    // @todo? If a member doesn't have a <value> tag, we don't add it to the struct
-                    // Maybe we want to throw an exception here ?
-                    if ((!$member->value instanceof SimpleXMLElement)) {
-                        continue;
-                        //throw new Zend_XmlRpc_Value_Exception('Member of the '. self::XMLRPC_TYPE_STRUCT .' XML-RPC native type must contain a VALUE tag');
-                    }
-                    $values[(string)$member->name] = self::_xmlStringToNativeXmlRpc($member->value);
-                }
-                $xmlrpc_val = new Zend_XmlRpc_Value_Struct($values);
-                break;
-            default:
-                require_once 'Zend/XmlRpc/Value/Exception.php';
-                throw new Zend_XmlRpc_Value_Exception('Value type \''. $type .'\' parsed from the XML string is not a known XML-RPC native type');
-                break;
-        }
-        $xmlrpc_val->_setXML($simple_xml->asXML());
-
-        return $xmlrpc_val;
-    }
-
-
-    private function _setXML($xml)
-    {
-        $this->_as_xml = $xml;
-    }
-
-}
-
-
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+ERVJg05g

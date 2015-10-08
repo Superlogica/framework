@@ -1,155 +1,59 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Service_Amazon
- * @subpackage Ec2
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id$
- */
-
-require_once 'Zend/Service/Amazon/Ec2/Abstract.php';
-
-/**
- * An Amazon EC2 interface to allocate, associate, describe and release Elastic IP address
- * from your account.
- *
- * @category   Zend
- * @package    Zend_Service_Amazon
- * @subpackage Ec2
- * @copyright  Copyright (c) 22005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Service_Amazon_Ec2_Elasticip extends Zend_Service_Amazon_Ec2_Abstract
-{
-    /**
-     * Acquires an elastic IP address for use with your account
-     *
-     * @return string                           Returns the newly Allocated IP Address
-     */
-    public function allocate()
-    {
-        $params = array();
-        $params['Action'] = 'AllocateAddress';
-
-        $response = $this->sendRequest($params);
-
-        $xpath = $response->getXPath();
-        $ip = $xpath->evaluate('string(//ec2:publicIp/text())');
-
-        return $ip;
-    }
-
-    /**
-     * Lists elastic IP addresses assigned to your account.
-     *
-     * @param string|array $publicIp            Elastic IP or list of addresses to describe.
-     * @return array
-     */
-    public function describe($publicIp = null)
-    {
-        $params = array();
-        $params['Action'] = 'DescribeAddresses';
-
-        if(is_array($publicIp) && !empty($publicIp)) {
-            foreach($publicIp as $k=>$name) {
-                $params['PublicIp.' . ($k+1)] = $name;
-            }
-        } elseif($publicIp) {
-            $params['PublicIp.1'] = $publicIp;
-        }
-
-        $response = $this->sendRequest($params);
-
-        $xpath  = $response->getXPath();
-        $nodes  = $xpath->query('//ec2:item');
-
-        $return = array();
-        foreach ($nodes as $k => $node) {
-            $item = array();
-            $item['publicIp']  = $xpath->evaluate('string(ec2:publicIp/text())', $node);
-            $item['instanceId']   = $xpath->evaluate('string(ec2:instanceId/text())', $node);
-
-            $return[] = $item;
-            unset($item);
-        }
-
-        return $return;
-    }
-
-    /**
-     * Releases an elastic IP address that is associated with your account
-     *
-     * @param string $publicIp                  IP address that you are releasing from your account.
-     * @return boolean
-     */
-    public function release($publicIp)
-    {
-        $params = array();
-        $params['Action'] = 'ReleaseAddress';
-        $params['PublicIp'] = $publicIp;
-
-        $response = $this->sendRequest($params);
-        $xpath = $response->getXPath();
-
-        $return = $xpath->evaluate('string(//ec2:return/text())');
-
-        return ($return === "true");
-    }
-
-    /**
-     * Associates an elastic IP address with an instance
-     *
-     * @param string $instanceId                The instance to which the IP address is assigned
-     * @param string $publicIp                  IP address that you are assigning to the instance.
-     * @return boolean
-     */
-    public function associate($instanceId, $publicIp)
-    {
-        $params = array();
-        $params['Action'] = 'AssociateAddress';
-        $params['PublicIp'] = $publicIp;
-        $params['InstanceId'] = $instanceId;
-
-        $response = $this->sendRequest($params);
-        $xpath = $response->getXPath();
-
-        $return = $xpath->evaluate('string(//ec2:return/text())');
-
-        return ($return === "true");
-    }
-
-    /**
-     * Disassociates the specified elastic IP address from the instance to which it is assigned.
-     * This is an idempotent operation. If you enter it more than once, Amazon EC2 does not return an error.
-     *
-     * @param string $publicIp                  IP address that you are disassociating from the instance.
-     * @return boolean
-     */
-    public function disassocate($publicIp)
-    {
-        $params = array();
-        $params['Action'] = 'DisssociateAddress';
-        $params['PublicIp'] = $publicIp;
-
-        $response = $this->sendRequest($params);
-        $xpath = $response->getXPath();
-
-        $return = $xpath->evaluate('string(//ec2:return/text())');
-
-        return ($return === "true");
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+vp5UVYQsozxonfgpyA2eNx+P00==

@@ -1,187 +1,52 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Log
- * @subpackage Writer
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_Log */
-require_once 'Zend/Log.php';
-
-/** Zend_Log_Writer_Abstract */
-require_once 'Zend/Log/Writer/Abstract.php';
-
-/** Zend_Log_Formatter_Firebug */
-require_once 'Zend/Log/Formatter/Firebug.php';
-
-/** Zend_Wildfire_Plugin_FirePhp */
-require_once 'Zend/Wildfire/Plugin/FirePhp.php';
-
-/**
- * Writes log messages to the Firebug Console via FirePHP.
- * 
- * @category   Zend
- * @package    Zend_Log
- * @subpackage Writer
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Log_Writer_Firebug extends Zend_Log_Writer_Abstract
-{
-
-    /**
-     * Maps logging priorities to logging display styles
-     * @var array
-     */
-    protected $_priorityStyles = array(Zend_Log::EMERG  => Zend_Wildfire_Plugin_FirePhp::ERROR,
-                                       Zend_Log::ALERT  => Zend_Wildfire_Plugin_FirePhp::ERROR,
-                                       Zend_Log::CRIT   => Zend_Wildfire_Plugin_FirePhp::ERROR,
-                                       Zend_Log::ERR    => Zend_Wildfire_Plugin_FirePhp::ERROR,
-                                       Zend_Log::WARN   => Zend_Wildfire_Plugin_FirePhp::WARN,
-                                       Zend_Log::NOTICE => Zend_Wildfire_Plugin_FirePhp::INFO,
-                                       Zend_Log::INFO   => Zend_Wildfire_Plugin_FirePhp::INFO,
-                                       Zend_Log::DEBUG  => Zend_Wildfire_Plugin_FirePhp::LOG);
-    
-    /**
-     * The default logging style for un-mapped priorities
-     * @var string
-     */    
-    protected $_defaultPriorityStyle = Zend_Wildfire_Plugin_FirePhp::LOG;
-    
-    /**
-     * Flag indicating whether the log writer is enabled
-     * @var boolean
-     */
-    protected $_enabled = true;
-    
-    /**
-     * Class constructor
-     */
-    public function __construct()
-    {
-        if (php_sapi_name()=='cli') {
-            $this->setEnabled(false);
-        }
-        
-        $this->_formatter = new Zend_Log_Formatter_Firebug();
-    }
-    
-    /**
-     * Enable or disable the log writer.
-     * 
-     * @param boolean $enabled Set to TRUE to enable the log writer 
-     * @return boolean The previous value.
-     */
-    public function setEnabled($enabled)
-    {
-        $previous = $this->_enabled;
-        $this->_enabled = $enabled;
-        return $previous;
-    }
-    
-    /**
-     * Determine if the log writer is enabled.
-     * 
-     * @return boolean Returns TRUE if the log writer is enabled.
-     */
-    public function getEnabled()
-    {
-        return $this->_enabled;
-    }
-    
-    /**
-     * Set the default display style for user-defined priorities
-     * 
-     * @param string $style The default log display style
-     * @return string Returns previous default log display style
-     */    
-    public function setDefaultPriorityStyle($style)
-    {
-        $previous = $this->_defaultPriorityStyle;
-        $this->_defaultPriorityStyle = $style;
-        return $previous;
-    }
-    
-    /**
-     * Get the default display style for user-defined priorities
-     * 
-     * @return string Returns the default log display style
-     */    
-    public function getDefaultPriorityStyle()
-    {
-        return $this->_defaultPriorityStyle;
-    }
-    
-    /**
-     * Set a display style for a logging priority
-     * 
-     * @param int $priority The logging priority
-     * @param string $style The logging display style
-     * @return string|boolean The previous logging display style if defined or TRUE otherwise
-     */
-    public function setPriorityStyle($priority, $style)
-    {
-        $previous = true;
-        if (array_key_exists($priority,$this->_priorityStyles)) {
-            $previous = $this->_priorityStyles[$priority];
-        }
-        $this->_priorityStyles[$priority] = $style;
-        return $previous;
-    }
-
-    /**
-     * Get a display style for a logging priority
-     * 
-     * @param int $priority The logging priority
-     * @return string|boolean The logging display style if defined or FALSE otherwise
-     */
-    public function getPriorityStyle($priority)
-    {
-        if (array_key_exists($priority,$this->_priorityStyles)) {
-            return $this->_priorityStyles[$priority];
-        }
-        return false;
-    }
-
-    /**
-     * Log a message to the Firebug Console.
-     *
-     * @param array $event The event data
-     * @return void
-     */
-    protected function _write($event)
-    {
-        if (!$this->getEnabled()) {
-            return;
-        }
-      
-        if (array_key_exists($event['priority'],$this->_priorityStyles)) {
-            $type = $this->_priorityStyles[$event['priority']];
-        } else {
-            $type = $this->_defaultPriorityStyle;
-        }
-        
-        $message = $this->_formatter->format($event);
-        
-        $label = isset($event['firebugLabel'])?$event['firebugLabel']:null;
-
-        Zend_Wildfire_Plugin_FirePhp::getInstance()->send($message,
-                                                          $label,
-                                                          $type,
-                                                          array('traceOffset'=>6));
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+ZBwqUIo6rDyJ5hI5X//p86NKiP7UHWq=

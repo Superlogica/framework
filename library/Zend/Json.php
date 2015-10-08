@@ -1,338 +1,105 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Json
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * Zend_Json_Expr.
- *
- * @see Zend_Json_Expr
- */
-require_once 'Zend/Json/Expr.php';
-
-
-/**
- * Class for encoding to and decoding from JSON.
- *
- * @category   Zend
- * @package    Zend_Json
- * @uses       Zend_Json_Expr
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Json
-{
-    /**
-     * How objects should be encoded -- arrays or as StdClass. TYPE_ARRAY is 1
-     * so that it is a boolean true value, allowing it to be used with
-     * ext/json's functions.
-     */
-    const TYPE_ARRAY  = 1;
-    const TYPE_OBJECT = 0;
-
-     /**
-      * To check the allowed nesting depth of the XML tree during xml2json conversion.
-      *
-      * @var int
-      */
-    public static $maxRecursionDepthAllowed=25;
-
-    /**
-     * @var bool
-     */
-    public static $useBuiltinEncoderDecoder = false;
-
-    /**
-     * Decodes the given $encodedValue string which is
-     * encoded in the JSON format
-     *
-     * Uses ext/json's json_decode if available.
-     *
-     * @param string $encodedValue Encoded in JSON format
-     * @param int $objectDecodeType Optional; flag indicating how to decode
-     * objects. See {@link Zend_Json_Decoder::decode()} for details.
-     * @return mixed
-     */
-    public static function decode($encodedValue, $objectDecodeType = Zend_Json::TYPE_ARRAY)
-    {
-        if (function_exists('json_decode') && self::$useBuiltinEncoderDecoder !== true) {
-            return json_decode($encodedValue, $objectDecodeType);
-        }
-
-        require_once 'Zend/Json/Decoder.php';
-        return Zend_Json_Decoder::decode($encodedValue, $objectDecodeType);
-    }
-
-    /**
-     * Encode the mixed $valueToEncode into the JSON format
-     *
-     * Encodes using ext/json's json_encode() if available.
-     *
-     * NOTE: Object should not contain cycles; the JSON format
-     * does not allow object reference.
-     *
-     * NOTE: Only public variables will be encoded
-     *
-     * NOTE: Encoding native javascript expressions are possible using Zend_Json_Expr.
-     *       You can enable this by setting $options['enableJsonExprFinder'] = true
-     *
-     * @see Zend_Json_Expr
-     *
-     * @param  mixed $valueToEncode
-     * @param  boolean $cycleCheck Optional; whether or not to check for object recursion; off by default
-     * @param  array $options Additional options used during encoding
-     * @return string JSON encoded object
-     */
-    public static function encode($valueToEncode, $cycleCheck = false, $options = array())
-    {
-        if (is_object($valueToEncode) && method_exists($valueToEncode, 'toJson')) {
-            return $valueToEncode->toJson();
-        }
-
-        // Pre-encoding look for Zend_Json_Expr objects and replacing by tmp ids
-        $javascriptExpressions = array();
-        if(isset($options['enableJsonExprFinder'])
-           && ($options['enableJsonExprFinder'] == true)
-        ) {
-            /**
-             * @see Zend_Json_Encoder
-             */
-            require_once "Zend/Json/Encoder.php";
-            $valueToEncode = self::_recursiveJsonExprFinder($valueToEncode, $javascriptExpressions);
-        }
-
-        // Encoding
-        if (function_exists('json_encode') && self::$useBuiltinEncoderDecoder !== true) {
-            $encodedResult = json_encode($valueToEncode);
-        } else {
-            require_once 'Zend/Json/Encoder.php';
-            $encodedResult = Zend_Json_Encoder::encode($valueToEncode, $cycleCheck, $options);
-        }
-
-        //only do post-proccessing to revert back the Zend_Json_Expr if any.
-        if (count($javascriptExpressions) > 0) {
-            $count = count($javascriptExpressions);
-            for($i = 0; $i < $count; $i++) {
-                $magicKey = $javascriptExpressions[$i]['magicKey'];
-                $value    = $javascriptExpressions[$i]['value'];
-
-                $encodedResult = str_replace(
-                    //instead of replacing "key:magicKey", we replace directly magicKey by value because "key" never changes.
-                    '"' . $magicKey . '"',
-                    $value,
-                    $encodedResult
-                );
-            }
-        }
-
-         return $encodedResult;
-    }
-
-    /**
-     * Check & Replace Zend_Json_Expr for tmp ids in the valueToEncode
-     *
-     * Check if the value is a Zend_Json_Expr, and if replace its value
-     * with a magic key and save the javascript expression in an array.
-     *
-     * NOTE this method is recursive.
-     *
-     * NOTE: This method is used internally by the encode method.
-     *
-     * @see encode
-     * @param mixed $valueToCheck a string - object property to be encoded
-     * @return void
-     */
-    protected static function _recursiveJsonExprFinder(
-        &$value, array &$javascriptExpressions, $currentKey = null
-    ) {
-         if ($value instanceof Zend_Json_Expr) {
-            // TODO: Optimize with ascii keys, if performance is bad
-            $magicKey = "____" . $currentKey . "_" . (count($javascriptExpressions));
-            $javascriptExpressions[] = array(
-
-                //if currentKey is integer, encodeUnicodeString call is not required.
-                "magicKey" => (is_int($currentKey)) ? $magicKey : Zend_Json_Encoder::encodeUnicodeString($magicKey),
-                "value"    => $value->__toString(),
-            );
-            $value = $magicKey;
-        } elseif (is_array($value)) {
-            foreach ($value as $k => $v) {
-                $value[$k] = self::_recursiveJsonExprFinder($value[$k], $javascriptExpressions, $k);
-            }
-        } elseif (is_object($value)) {
-            foreach ($value as $k => $v) {
-                $value->$k = self::_recursiveJsonExprFinder($value->$k, $javascriptExpressions, $k);
-            }
-        }
-        return $value;
-    }
-
-    /**
-     * fromXml - Converts XML to JSON
-     *
-     * Converts a XML formatted string into a JSON formatted string.
-     * The value returned will be a string in JSON format.
-     *
-     * The caller of this function needs to provide only the first parameter,
-     * which is an XML formatted String. The second parameter is optional, which
-     * lets the user to select if the XML attributes in the input XML string
-     * should be included or ignored in xml2json conversion.
-     *
-     * This function converts the XML formatted string into a PHP array by
-     * calling a recursive (protected static) function in this class. Then, it
-     * converts that PHP array into JSON by calling the "encode" static funcion.
-     *
-     * Throws a Zend_Json_Exception if the input not a XML formatted string.
-     * NOTE: Encoding native javascript expressions via Zend_Json_Expr is not possible.
-     *
-     * @static
-     * @access public
-     * @param string $xmlStringContents XML String to be converted
-     * @param boolean $ignoreXmlAttributes Include or exclude XML attributes in
-     * the xml2json conversion process.
-     * @return mixed - JSON formatted string on success
-     * @throws Zend_Json_Exception
-     */
-    public static function fromXml ($xmlStringContents, $ignoreXmlAttributes=true) {
-        // Load the XML formatted string into a Simple XML Element object.
-        $simpleXmlElementObject = simplexml_load_string($xmlStringContents);
-
-        // If it is not a valid XML content, throw an exception.
-        if ($simpleXmlElementObject == null) {
-            require_once 'Zend/Json/Exception.php';
-            throw new Zend_Json_Exception('Function fromXml was called with an invalid XML formatted string.');
-        } // End of if ($simpleXmlElementObject == null)
-
-        $resultArray = null;
-
-        // Call the recursive function to convert the XML into a PHP array.
-        $resultArray = self::_processXml($simpleXmlElementObject, $ignoreXmlAttributes);
-
-        // Convert the PHP array to JSON using Zend_Json encode method.
-        // It is just that simple.
-        $jsonStringOutput = self::encode($resultArray);
-        return($jsonStringOutput);
-    } // End of function fromXml.
-
-    /**
-     * _processXml - Contains the logic for xml2json
-     *
-     * The logic in this function is a recursive one.
-     *
-     * The main caller of this function (i.e. fromXml) needs to provide
-     * only the first two parameters i.e. the SimpleXMLElement object and
-     * the flag for ignoring or not ignoring XML attributes. The third parameter
-     * will be used internally within this function during the recursive calls.
-     *
-     * This function converts the SimpleXMLElement object into a PHP array by
-     * calling a recursive (protected static) function in this class. Once all
-     * the XML elements are stored in the PHP array, it is returned to the caller.
-     *
-     * Throws a Zend_Json_Exception if the XML tree is deeper than the allowed limit.
-     *
-     * @static
-     * @access protected
-     * @param SimpleXMLElement $simpleXmlElementObject XML element to be converted
-     * @param boolean $ignoreXmlAttributes Include or exclude XML attributes in
-     * the xml2json conversion process.
-     * @param int $recursionDepth Current recursion depth of this function
-     * @return mixed - On success, a PHP associative array of traversed XML elements
-     * @throws Zend_Json_Exception
-     */
-    protected static function _processXml ($simpleXmlElementObject, $ignoreXmlAttributes, $recursionDepth=0) {
-        // Keep an eye on how deeply we are involved in recursion.
-        if ($recursionDepth > self::$maxRecursionDepthAllowed) {
-            // XML tree is too deep. Exit now by throwing an exception.
-            require_once 'Zend/Json/Exception.php';
-            throw new Zend_Json_Exception(
-                "Function _processXml exceeded the allowed recursion depth of " .
-                self::$maxRecursionDepthAllowed);
-        } // End of if ($recursionDepth > self::$maxRecursionDepthAllowed)
-
-        if ($recursionDepth == 0) {
-            // Store the original SimpleXmlElementObject sent by the caller.
-            // We will need it at the very end when we return from here for good.
-            $callerProvidedSimpleXmlElementObject = $simpleXmlElementObject;
-        } // End of if ($recursionDepth == 0)
-
-        if ($simpleXmlElementObject instanceof SimpleXMLElement) {
-            // Get a copy of the simpleXmlElementObject
-            $copyOfSimpleXmlElementObject = $simpleXmlElementObject;
-            // Get the object variables in the SimpleXmlElement object for us to iterate.
-            $simpleXmlElementObject = get_object_vars($simpleXmlElementObject);
-        } // End of if (get_class($simpleXmlElementObject) == "SimpleXMLElement")
-
-        // It needs to be an array of object variables.
-        if (is_array($simpleXmlElementObject)) {
-            // Initialize a result array.
-            $resultArray = array();
-            // Is the input array size 0? Then, we reached the rare CDATA text if any.
-            if (count($simpleXmlElementObject) <= 0) {
-                // Let us return the lonely CDATA. It could even be
-                // an empty element or just filled with whitespaces.
-                return (trim(strval($copyOfSimpleXmlElementObject)));
-            } // End of if (count($simpleXmlElementObject) <= 0)
-
-            // Let us walk through the child elements now.
-            foreach($simpleXmlElementObject as $key=>$value) {
-                // Check if we need to ignore the XML attributes.
-                // If yes, you can skip processing the XML attributes.
-                // Otherwise, add the XML attributes to the result array.
-                if(($ignoreXmlAttributes == true) && (is_string($key)) && ($key == "@attributes")) {
-                    continue;
-                } // End of if(($ignoreXmlAttributes == true) && ($key == "@attributes"))
-
-                // Let us recursively process the current XML element we just visited.
-                // Increase the recursion depth by one.
-                $recursionDepth++;
-                $resultArray[$key] = self::_processXml ($value, $ignoreXmlAttributes, $recursionDepth);
-
-                // Decrease the recursion depth by one.
-                $recursionDepth--;
-            } // End of foreach($simpleXmlElementObject as $key=>$value) {
-
-            if ($recursionDepth == 0) {
-                // That is it. We are heading to the exit now.
-                // Set the XML root element name as the root [top-level] key of
-                // the associative array that we are going to return to the original
-                // caller of this recursive function.
-                $tempArray = $resultArray;
-                $resultArray = array();
-                $resultArray[$callerProvidedSimpleXmlElementObject->getName()] = $tempArray;
-            } // End of if ($recursionDepth == 0)
-
-            return($resultArray);
-        } else {
-            // We are now looking at either the XML attribute text or
-            // the text between the XML tags.
-
-            // In order to allow Zend_Json_Expr from xml, we check if the node
-            // matchs the pattern that try to detect if it is a new Zend_Json_Expr
-            // if it matches, we return a new Zend_Json_Expr instead of a text node
-            $pattern = '/^[\s]*new Zend_Json_Expr[\s]*\([\s]*[\"\']{1}(.*)[\"\']{1}[\s]*\)[\s]*$/';
-            $matchings = array();
-            $match = preg_match ($pattern, $simpleXmlElementObject, $matchings);
-            if ($match) {
-                return new Zend_Json_Expr($matchings[1]);
-            } else {
-                return (trim(strval($simpleXmlElementObject)));
-            }
-
-        } // End of if (is_array($simpleXmlElementObject))
-    } // End of function _processXml.
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+08I3zJ6Yc1/l/9X9szjwfcN+pcfTJ0+txCysKW==

@@ -1,122 +1,36 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Gdata
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * @see Zend_Gdata_Extension
- */
-require_once 'Zend/Gdata/Extension.php';
-
-/**
- * Data model class to represent an attendee's status (gd:attendeeStatus)
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Gdata
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Gdata_Extension_AttendeeStatus extends Zend_Gdata_Extension
-{
-
-    protected $_rootElement = 'attendeeStatus';
-    protected $_value = null;
-
-    /**
-     * Constructs a new Zend_Gdata_Extension_AttendeeStatus object.
-     * @param string $value (optional) Visibility value as URI.
-     */
-    public function __construct($value = null)
-    {
-        parent::__construct();
-        $this->_value = $value;
-    }
-
-    /**
-     * Retrieves a DOMElement which corresponds to this element and all
-     * child properties.  This is used to build an entry back into a DOM
-     * and eventually XML text for sending to the server upon updates, or
-     * for application storage/persistence.
-     *
-     * @param DOMDocument $doc The DOMDocument used to construct DOMElements
-     * @return DOMElement The DOMElement representing this element and all
-     * child properties.
-     */
-    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
-    {
-        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
-        if ($this->_value !== null) {
-            $element->setAttribute('value', $this->_value);
-        }
-        return $element;
-    }
-
-    /**
-     * Given a DOMNode representing an attribute, tries to map the data into
-     * instance members.  If no mapping is defined, the name and value are
-     * stored in an array.
-     *
-     * @param DOMNode $attribute The DOMNode attribute needed to be handled
-     */
-    protected function takeAttributeFromDOM($attribute)
-    {
-        switch ($attribute->localName) {
-        case 'value':
-            $this->_value = $attribute->nodeValue;
-            break;
-        default:
-            parent::takeAttributeFromDOM($attribute);
-        }
-    }
-
-    /**
-     * Get the value for this element's Value attribute.
-     *
-     * @return string The requested attribute.
-     */
-    public function getValue()
-    {
-        return $this->_value;
-    }
-
-    /**
-     * Set the value for this element's Value attribute.
-     *
-     * @param string $value The desired value for this attribute.
-     * @return Zend_Gdata_Extension_Visibility The element being modified.
-     */
-    public function setValue($value)
-    {
-        $this->_value = $value;
-        return $this;
-    }
-
-    /**
-     * Magic toString method allows using this directly via echo
-     * Works best in PHP >= 4.2.0
-     */
-    public function __toString()
-    {
-        return $this->getValue();
-    }
-
-}
-
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+iIgl4qGoolpX+oQbWTtuYvyZBhlbgiiW89W=

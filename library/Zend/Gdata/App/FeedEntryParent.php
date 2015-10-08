@@ -1,680 +1,164 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage App
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * @see Zend_Gdata_App_Extension_Element
-*/
-require_once 'Zend/Gdata/App/Extension/Element.php';
-
-/**
- * @see Zend_Gdata_App_Extension_Author
-*/
-require_once 'Zend/Gdata/App/Extension/Author.php';
-
-/**
- * @see Zend_Gdata_App_Extension_Category
-*/
-require_once 'Zend/Gdata/App/Extension/Category.php';
-
-/**
- * @see Zend_Gdata_App_Extension_Contributor
-*/
-require_once 'Zend/Gdata/App/Extension/Contributor.php';
-
-/**
- * @see Zend_Gdata_App_Extension_Id
- */
-require_once 'Zend/Gdata/App/Extension/Id.php';
-
-/**
- * @see Zend_Gdata_App_Extension_Link
- */
-require_once 'Zend/Gdata/App/Extension/Link.php';
-
-/**
- * @see Zend_Gdata_App_Extension_Rights
- */
-require_once 'Zend/Gdata/App/Extension/Rights.php';
-
-/**
- * @see Zend_Gdata_App_Extension_Title
- */
-require_once 'Zend/Gdata/App/Extension/Title.php';
-
-/**
- * @see Zend_Gdata_App_Extension_Updated
- */
-require_once 'Zend/Gdata/App/Extension/Updated.php';
-
-/**
- * Zend_Version
- */
-require_once 'Zend/Version.php';
-
-/**
- * Abstract class for common functionality in entries and feeds
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage App
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-abstract class Zend_Gdata_App_FeedEntryParent extends Zend_Gdata_App_Base
-{
-    /**
-     * Service instance used to make network requests.
-     *
-     * @see setService(), getService()
-     */
-    protected $_service = null;
-
-    /**
-     * The HTTP ETag associated with this entry. Used for optimistic
-     * concurrency in protoco v2 or greater.
-     *
-     * @var string|null
-     */
-    protected $_etag = NULL;
-
-    protected $_author = array();
-    protected $_category = array();
-    protected $_contributor = array();
-    protected $_id = null;
-    protected $_link = array();
-    protected $_rights = null;
-    protected $_title = null;
-    protected $_updated = null;
-
-    /**
-      * Indicates the major protocol version that should be used.
-      * At present, recognized values are either 1 or 2. However, any integer
-      * value >= 1 is considered valid.
-      *
-      * @see setMajorProtocolVersion()
-      * @see getMajorProtocolVersion()
-      */
-    protected $_majorProtocolVersion = 1;
-
-    /**
-      * Indicates the minor protocol version that should be used. Can be set
-      * to either an integer >= 0, or NULL if no minor version should be sent
-      * to the server.
-      *
-      * @see setMinorProtocolVersion()
-      * @see getMinorProtocolVersion()
-      */
-    protected $_minorProtocolVersion = null;
-
-    /**
-     * Constructs a Feed or Entry
-     */
-    public function __construct($element = null)
-    {
-        if (!($element instanceof DOMElement)) {
-            if ($element) {
-                $this->transferFromXML($element);
-            }
-        } else {
-            $this->transferFromDOM($element);
-        }  
-    }
-
-    /**
-     * Set the HTTP client instance
-     *
-     * Sets the HTTP client object to use for retrieving the feed.
-     *
-     * @deprecated Deprecated as of Zend Framework 1.7. Use
-     *             setService() instead.
-     * @param  Zend_Http_Client $httpClient
-     * @return Zend_Gdata_App_Feed Provides a fluent interface
-     */
-    public function setHttpClient(Zend_Http_Client $httpClient)
-    {
-        if (!$this->_service) {
-            $this->_service = new Zend_Gdata_App();
-        }
-        $this->_service->setHttpClient($httpClient);
-        return $this;
-    }
-
-    /**
-     * Gets the HTTP client object. If none is set, a new Zend_Http_Client
-     * will be used.
-     *
-     * @deprecated Deprecated as of Zend Framework 1.7. Use
-     *             getService() instead.
-     * @return Zend_Http_Client_Abstract
-     */
-    public function getHttpClient()
-    {
-        if (!$this->_service) {
-            $this->_service = new Zend_Gdata_App();
-        }
-        $client = $this->_service->getHttpClient();
-        return $client;
-    }
-
-    /**
-     * Set the active service instance for this object. This will be used to
-     * perform network requests, such as when calling save() and delete().
-     *
-     * @param Zend_Gdata_App $instance The new service instance.
-     * @return Zend_Gdata_App_FeedEntryParent Provides a fluent interface.
-     */
-    public function setService($instance)
-    {
-        $this->_service = $instance;
-        return $this;
-    }
-
-    /**
-     * Get the active service instance for this object. This will be used to
-     * perform network requests, such as when calling save() and delete().
-     *
-     * @return Zend_Gdata_App|null The current service instance, or null if
-     *         not set.
-     */
-    public function getService()
-    {
-        return $this->_service;
-    }
-
-    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
-    {
-        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
-        foreach ($this->_author as $author) {
-            $element->appendChild($author->getDOM($element->ownerDocument));
-        }
-        foreach ($this->_category as $category) {
-            $element->appendChild($category->getDOM($element->ownerDocument));
-        }
-        foreach ($this->_contributor as $contributor) {
-            $element->appendChild($contributor->getDOM($element->ownerDocument));
-        }
-        if ($this->_id != null) {
-            $element->appendChild($this->_id->getDOM($element->ownerDocument));
-        }
-        foreach ($this->_link as $link) {
-            $element->appendChild($link->getDOM($element->ownerDocument));
-        }
-        if ($this->_rights != null) {
-            $element->appendChild($this->_rights->getDOM($element->ownerDocument));
-        }
-        if ($this->_title != null) {
-            $element->appendChild($this->_title->getDOM($element->ownerDocument));
-        }
-        if ($this->_updated != null) {
-            $element->appendChild($this->_updated->getDOM($element->ownerDocument));
-        }
-        return $element;
-    }
-
-    protected function takeChildFromDOM($child)
-    {
-        $absoluteNodeName = $child->namespaceURI . ':' . $child->localName;
-        switch ($absoluteNodeName) {
-        case $this->lookupNamespace('atom') . ':' . 'author':
-            $author = new Zend_Gdata_App_Extension_Author();
-            $author->transferFromDOM($child);
-            $this->_author[] = $author;
-            break;
-        case $this->lookupNamespace('atom') . ':' . 'category':
-            $category = new Zend_Gdata_App_Extension_Category();
-            $category->transferFromDOM($child);
-            $this->_category[] = $category;
-            break;
-        case $this->lookupNamespace('atom') . ':' . 'contributor':
-            $contributor = new Zend_Gdata_App_Extension_Contributor();
-            $contributor->transferFromDOM($child);
-            $this->_contributor[] = $contributor;
-            break;
-        case $this->lookupNamespace('atom') . ':' . 'id':
-            $id = new Zend_Gdata_App_Extension_Id();
-            $id->transferFromDOM($child);
-            $this->_id = $id;
-            break;
-        case $this->lookupNamespace('atom') . ':' . 'link':
-            $link = new Zend_Gdata_App_Extension_Link();
-            $link->transferFromDOM($child);
-            $this->_link[] = $link;
-            break;
-        case $this->lookupNamespace('atom') . ':' . 'rights':
-            $rights = new Zend_Gdata_App_Extension_Rights();
-            $rights->transferFromDOM($child);
-            $this->_rights = $rights;
-            break;
-        case $this->lookupNamespace('atom') . ':' . 'title':
-            $title = new Zend_Gdata_App_Extension_Title();
-            $title->transferFromDOM($child);
-            $this->_title = $title;
-            break;
-        case $this->lookupNamespace('atom') . ':' . 'updated':
-            $updated = new Zend_Gdata_App_Extension_Updated();
-            $updated->transferFromDOM($child);
-            $this->_updated = $updated;
-            break;
-        default:
-            parent::takeChildFromDOM($child);
-            break;
-        }
-    }
-
-    /**
-     * @return Zend_Gdata_App_Extension_Author
-     */
-    public function getAuthor()
-    {
-        return $this->_author;
-    }
-
-    /**
-     * Sets the list of the authors of this feed/entry.  In an atom feed, each
-     * author is represented by an atom:author element
-     *
-     * @param array $value
-     * @return Zend_Gdata_App_FeedEntryParent Provides a fluent interface
-     */
-    public function setAuthor($value)
-    {
-        $this->_author = $value;
-        return $this;
-    }
-
-    /**
-     * Returns the array of categories that classify this feed/entry.  Each
-     * category is represented in an atom feed by an atom:category element.
-     *
-     * @return array Array of Zend_Gdata_App_Extension_Category
-     */
-    public function getCategory()
-    {
-        return $this->_category;
-    }
-
-    /**
-     * Sets the array of categories that classify this feed/entry.  Each
-     * category is represented in an atom feed by an atom:category element.
-     *
-     * @param array $value Array of Zend_Gdata_App_Extension_Category
-     * @return Zend_Gdata_App_FeedEntryParent Provides a fluent interface
-     */
-    public function setCategory($value)
-    {
-        $this->_category = $value;
-        return $this;
-    }
-
-    /**
-     * Returns the array of contributors to this feed/entry.  Each contributor
-     * is represented in an atom feed by an atom:contributor XML element
-     *
-     * @return array An array of Zend_Gdata_App_Extension_Contributor
-     */
-    public function getContributor()
-    {
-        return $this->_contributor;
-    }
-
-    /**
-     * Sets the array of contributors to this feed/entry.  Each contributor
-     * is represented in an atom feed by an atom:contributor XML element
-     *
-     * @param array $value
-     * @return Zend_Gdata_App_FeedEntryParent Provides a fluent interface
-     */
-    public function setContributor($value)
-    {
-        $this->_contributor = $value;
-        return $this;
-    }
-
-    /**
-     * @return Zend_Gdata_App_Extension_Id
-     */
-    public function getId()
-    {
-        return $this->_id;
-    }
-
-    /**
-     * @param Zend_Gdata_App_Extension_Id $value
-     * @return Zend_Gdata_App_FeedEntryParent Provides a fluent interface
-     */
-    public function setId($value)
-    {
-        $this->_id = $value;
-        return $this;
-    }
-
-    /**
-     * Given a particular 'rel' value, this method returns a matching
-     * Zend_Gdata_App_Extension_Link element.  If the 'rel' value
-     * is not provided, the full array of Zend_Gdata_App_Extension_Link
-     * elements is returned.  In an atom feed, each link is represented
-     * by an atom:link element.  The 'rel' value passed to this function
-     * is the atom:link/@rel attribute.  Example rel values include 'self',
-     * 'edit', and 'alternate'.
-     *
-     * @param string $rel The rel value of the link to be found.  If null,
-     *     the array of Zend_Gdata_App_Extension_link elements is returned
-     * @return mixed Either a single Zend_Gdata_App_Extension_link element,
-     *     an array of the same or null is returned depending on the rel value
-     *     supplied as the argument to this function
-     */
-    public function getLink($rel = null)
-    {
-        if ($rel == null) {
-            return $this->_link;
-        } else {
-            foreach ($this->_link as $link) {
-                if ($link->rel == $rel) {
-                    return $link;
-                }
-            }
-            return null;
-        }
-    }
-
-    /**
-     * Returns the Zend_Gdata_App_Extension_Link element which represents
-     * the URL used to edit this resource.  This link is in the atom feed/entry
-     * as an atom:link with a rel attribute value of 'edit'.
-     *
-     * @return Zend_Gdata_App_Extension_Link The link, or null if not found
-     */
-    public function getEditLink()
-    {
-        return $this->getLink('edit');
-    }
-
-    /**
-     * Returns the Zend_Gdata_App_Extension_Link element which represents
-     * the URL used to retrieve the next chunk of results when paging through
-     * a feed.  This link is in the atom feed as an atom:link with a
-     * rel attribute value of 'next'.
-     *
-     * @return Zend_Gdata_App_Extension_Link The link, or null if not found
-     */
-    public function getNextLink()
-    {
-        return $this->getLink('next');
-    }
-
-    /**
-     * Returns the Zend_Gdata_App_Extension_Link element which represents
-     * the URL used to retrieve the previous chunk of results when paging
-     * through a feed.  This link is in the atom feed as an atom:link with a
-     * rel attribute value of 'previous'.
-     *
-     * @return Zend_Gdata_App_Extension_Link The link, or null if not found
-     */
-    public function getPreviousLink()
-    {
-        return $this->getLink('previous');
-    }
-
-    /**
-     * @return Zend_Gdata_App_Extension_Link
-     */
-    public function getLicenseLink()
-    {
-        return $this->getLink('license');
-    }
-
-    /**
-     * Returns the Zend_Gdata_App_Extension_Link element which represents
-     * the URL used to retrieve the entry or feed represented by this object
-     * This link is in the atom feed/entry as an atom:link with a
-     * rel attribute value of 'self'.
-     *
-     * @return Zend_Gdata_App_Extension_Link The link, or null if not found
-     */
-    public function getSelfLink()
-    {
-        return $this->getLink('self');
-    }
-
-    /**
-     * Returns the Zend_Gdata_App_Extension_Link element which represents
-     * the URL for an alternate view of the data represented by this feed or
-     * entry.  This alternate view is commonly a user-facing webpage, blog
-     * post, etc.  The MIME type for the data at the URL is available from the
-     * returned Zend_Gdata_App_Extension_Link element.
-     * This link is in the atom feed/entry as an atom:link with a
-     * rel attribute value of 'self'.
-     *
-     * @return Zend_Gdata_App_Extension_Link The link, or null if not found
-     */
-    public function getAlternateLink()
-    {
-        return $this->getLink('alternate');
-    }
-
-    /**
-     * @param array $value The array of Zend_Gdata_App_Extension_Link elements
-     * @return Zend_Gdata_App_FeedEntryParent Provides a fluent interface
-     */
-    public function setLink($value)
-    {
-        $this->_link = $value;
-        return $this;
-    }
-
-    /**
-     * @return Zend_Gdata_AppExtension_Rights
-     */
-    public function getRights()
-    {
-        return $this->_rights;
-    }
-
-    /**
-     * @param Zend_Gdata_App_Extension_Rights $value
-     * @return Zend_Gdata_App_FeedEntryParent Provides a fluent interface
-     */
-    public function setRights($value)
-    {
-        $this->_rights = $value;
-        return $this;
-    }
-
-    /**
-     * Returns the title of this feed or entry.  The title is an extremely
-     * short textual representation of this resource and is found as
-     * an atom:title element in a feed or entry
-     *
-     * @return Zend_Gdata_App_Extension_Title
-     */
-    public function getTitle()
-    {
-        return $this->_title;
-    }
-
-    /**
-     * Returns a string representation of the title of this feed or entry.
-     * The title is an extremely short textual representation of this
-     * resource and is found as an atom:title element in a feed or entry
-     *
-     * @return string
-     */
-    public function getTitleValue()
-    {
-        if (($titleObj = $this->getTitle()) != null) {
-            return $titleObj->getText();
-        } else {
-            return null;
-        }
-    }
-
-    /**
-     * Returns the title of this feed or entry.  The title is an extremely
-     * short textual representation of this resource and is found as
-     * an atom:title element in a feed or entry
-     *
-     * @param Zend_Gdata_App_Extension_Title $value
-     * @return Zend_Gdata_App_Feed_Entry_Parent Provides a fluent interface
-     */
-    public function setTitle($value)
-    {
-        $this->_title = $value;
-        return $this;
-    }
-
-    /**
-     * @return Zend_Gdata_App_Extension_Updated
-     */
-    public function getUpdated()
-    {
-        return $this->_updated;
-    }
-
-    /**
-     * @param Zend_Gdata_App_Extension_Updated $value
-     * @return Zend_Gdata_App_Feed_Entry_Parent Provides a fluent interface
-     */
-    public function setUpdated($value)
-    {
-        $this->_updated = $value;
-        return $this;
-    }
-
-    /**
-     * Set the Etag for the current entry to $value. Setting $value to null
-     * unsets the Etag.
-     *
-     * @param string|null $value
-     * @return Zend_Gdata_App_Entry Provides a fluent interface
-     */
-    public function setEtag($value) {
-        $this->_etag = $value;
-        return $this;
-    }
-
-    /**
-     * Return the Etag for the current entry, or null if not set.
-     *
-     * @return string|null
-     */
-    public function getEtag() {
-        return $this->_etag;
-    }
-
-    /**
-     * Set the major protocol version that should be used. Values < 1
-     * (excluding NULL) will cause a Zend_Gdata_App_InvalidArgumentException
-     * to be thrown.
-     *
-     * @see _majorProtocolVersion
-     * @param (int|NULL) $value The major protocol version to use.
-     * @throws Zend_Gdata_App_InvalidArgumentException
-     */
-    public function setMajorProtocolVersion($value)
-    {
-        if (!($value >= 1) && ($value !== null)) {
-            require_once('Zend/Gdata/App/InvalidArgumentException.php');
-            throw new Zend_Gdata_App_InvalidArgumentException(
-                    'Major protocol version must be >= 1');
-        }
-        $this->_majorProtocolVersion = $value;
-    }
-
-    /**
-     * Get the major protocol version that is in use.
-     *
-     * @see _majorProtocolVersion
-     * @return (int|NULL) The major protocol version in use.
-     */
-    public function getMajorProtocolVersion()
-    {
-        return $this->_majorProtocolVersion;
-    }
-
-    /**
-     * Set the minor protocol version that should be used. If set to NULL, no
-     * minor protocol version will be sent to the server. Values < 0 will
-     * cause a Zend_Gdata_App_InvalidArgumentException to be thrown.
-     *
-     * @see _minorProtocolVersion
-     * @param (int|NULL) $value The minor protocol version to use.
-     * @throws Zend_Gdata_App_InvalidArgumentException
-     */
-    public function setMinorProtocolVersion($value)
-    {
-        if (!($value >= 0)) {
-            require_once('Zend/Gdata/App/InvalidArgumentException.php');
-            throw new Zend_Gdata_App_InvalidArgumentException(
-                    'Minor protocol version must be >= 0 or null');
-        }
-        $this->_minorProtocolVersion = $value;
-    }
-
-    /**
-     * Get the minor protocol version that is in use.
-     *
-     * @see _minorProtocolVersion
-     * @return (int|NULL) The major protocol version in use, or NULL if no
-     *         minor version is specified.
-     */
-    public function getMinorProtocolVersion()
-    {
-        return $this->_minorProtocolVersion;
-    }
-
-    /**
-     * Get the full version of a namespace prefix
-     *
-     * Looks up a prefix (atom:, etc.) in the list of registered
-     * namespaces and returns the full namespace URI if
-     * available. Returns the prefix, unmodified, if it's not
-     * registered.
-     *
-     * The current entry or feed's version will be used when performing the
-     * namespace lookup unless overridden using $majorVersion and
-     * $minorVersion. If the entry/fee has a null version, then the latest
-     * protocol version will be used by default.
-     *
-     * @param string $prefix The namespace prefix to lookup.
-     * @param integer $majorVersion The major protocol version in effect.
-     *        Defaults to null (auto-select).
-     * @param integer $minorVersion The minor protocol version in effect.
-     *        Defaults to null (auto-select).
-     * @return string
-     */
-    public function lookupNamespace($prefix,
-                                    $majorVersion = null,
-                                    $minorVersion = null)
-    {
-        // Auto-select current version
-        if ($majorVersion === null) {
-            $majorVersion = $this->getMajorProtocolVersion();
-        }
-        if ($minorVersion === null) {
-            $minorVersion = $this->getMinorProtocolVersion();
-        }
-
-        // Perform lookup
-        return parent::lookupNamespace($prefix, $majorVersion, $minorVersion);
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+2AI0whLPq0cd/r4zXRW=

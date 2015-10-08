@@ -1,89 +1,36 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category    ZendX
- * @package     ZendX_JQuery
- * @subpackage  View
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
- * @license     http://framework.zend.com/license/new-bsd     New BSD License
- * @version     $Id: AutoComplete.php 20752 2010-01-29 11:31:30Z beberlei $
- */
-
-/**
- * @see ZendX_JQuery_View_Helper_UiWidget
- */
-require_once "ZendX/JQuery/View/Helper/UiWidget.php";
-
-/**
- * jQuery Autocomplete View Helper
- *
- * @uses 	   Zend_Json, Zend_View_Helper_FormText
- * @package    ZendX_JQuery
- * @subpackage View
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class ZendX_JQuery_View_Helper_AutoComplete extends ZendX_JQuery_View_Helper_UiWidget
-{
-    /**
-     * Builds an AutoComplete ready input field.
-     *
-     * This view helper builds an input field with the {@link Zend_View_Helper_FormText} FormText
-     * Helper and adds additional javascript to the jQuery stack to initialize an AutoComplete
-     * field. Make sure you have set one out of the two following options: $params['data'] or
-     * $params['url']. The first one accepts an array as data input to the autoComplete, the
-     * second accepts an url, where the autoComplete content is returned from. For the format
-     * see jQuery documentation.
-     *
-     * @link   http://docs.jquery.com/UI/Autocomplete
-     * @throws ZendX_JQuery_Exception
-     * @param  String $id
-     * @param  String $value
-     * @param  array $params
-     * @param  array $attribs
-     * @return String
-     */
-    public function autoComplete($id, $value = null, array $params = array(), array $attribs = array())
-    {
-        $attribs = $this->_prepareAttributes($id, $value, $attribs);
-
-        if (!isset($params['source'])) {
-            if (isset($params['url'])) {
-                $params['source'] = $params['url'];
-                unset($params['url']);
-            } else if (isset($params['data'])) {
-                $params['source'] = $params['data'];
-                unset($params['data']);
-            } else {
-                require_once "ZendX/JQuery/Exception.php";
-                throw new ZendX_JQuery_Exception(
-                    "Cannot construct AutoComplete field without specifying 'source' field, ".
-                    "either an url or an array of elements."
-                );
-            }
-        }
-
-        $params = ZendX_JQuery::encodeJson($params);
-
-        $js = sprintf('%s("#%s").autocomplete(%s);',
-                ZendX_JQuery_View_Helper_JQuery::getJQueryHandler(),
-                $attribs['id'],
-                $params
-        );
-
-        $this->jquery->addOnLoad($js);
-
-        return $this->view->formText($id, $value, $attribs);
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+RNqGytsxG3K+ktmMkmS=

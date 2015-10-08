@@ -1,304 +1,85 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Dojo
- * @subpackage Form_Element
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_Dojo_Form_Element_Dijit */
-require_once 'Zend/Dojo/Form/Element/Dijit.php';
-
-/**
- * CheckBox dijit
- *
- * Note: this would be easier with mixins or traits...
- * 
- * @uses       Zend_Dojo_Form_Element_Dijit
- * @package    Zend_Dojo
- * @subpackage Form_Element
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: DijitMulti.php 10646 2008-08-04 20:24:37Z matthew $
- */
-abstract class Zend_Dojo_Form_Element_DijitMulti extends Zend_Dojo_Form_Element_Dijit
-{
-    /**
-     * Array of options for multi-item
-     * @var array
-     */
-    public $options = array();
-
-    /**
-     * Flag: autoregister inArray validator?
-     * @var bool
-     */
-    protected $_registerInArrayValidator = true;
-
-    /**
-     * Separator to use between options; defaults to '<br />'.
-     * @var string
-     */
-    protected $_separator = '<br />';
-
-    /**
-     * Which values are translated already?
-     * @var array
-     */
-    protected $_translated = array();
-
-    /**
-     * Retrieve separator
-     *
-     * @return mixed
-     */
-    public function getSeparator()
-    {
-        return $this->_separator;
-    }
-
-    /**
-     * Set separator
-     *
-     * @param mixed $separator
-     * @return self
-     */
-    public function setSeparator($separator)
-    {
-        $this->_separator = $separator;
-        return $this;
-    }
-
-    /**
-     * Retrieve options array
-     * 
-     * @return array
-     */
-    protected function _getMultiOptions()
-    {
-        if (null === $this->options || !is_array($this->options)) {
-            $this->options = array();
-        }
-
-        return $this->options;
-    }
-
-    /**
-     * Add an option
-     * 
-     * @param  string $option 
-     * @param  string $value
-     * @return Zend_Form_Element_Multi
-     */
-    public function addMultiOption($option, $value = '')
-    {
-        $option  = (string) $option;
-        $this->_getMultiOptions();
-        if (!$this->_translateOption($option, $value)) {
-            $this->options[$option] = $value;
-        }
-
-        return $this;
-    }
-
-    /**
-     * Add many options at once
-     * 
-     * @param  array $options 
-     * @return Zend_Form_Element_Multi
-     */
-    public function addMultiOptions(array $options)
-    {
-        foreach ($options as $option => $value) {
-            if (is_array($value) 
-                && array_key_exists('key', $value)
-                && array_key_exists('value', $value)
-            ) {
-                $this->addMultiOption($value['key'], $value['value']);
-            } else {
-                $this->addMultiOption($option, $value);
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * Set all options at once (overwrites)
-     *
-     * @param  array $options
-     * @return Zend_Form_Element_Multi
-     */
-    public function setMultiOptions(array $options)
-    {
-        $this->clearMultiOptions();
-        return $this->addMultiOptions($options);
-    }
-
-    /**
-     * Retrieve single multi option
-     * 
-     * @param  string $option 
-     * @return mixed
-     */
-    public function getMultiOption($option)
-    {
-        $option  = (string) $option;
-        $this->_getMultiOptions();
-        if (isset($this->options[$option])) {
-            $this->_translateOption($option, $this->options[$option]);
-            return $this->options[$option];
-        }
-
-        return null;
-    }
-
-    /**
-     * Retrieve options
-     *
-     * @return array
-     */
-    public function getMultiOptions()
-    {
-        $this->_getMultiOptions();
-        foreach ($this->options as $option => $value) {
-            $this->_translateOption($option, $value);
-        }
-        return $this->options;
-    }
-
-    /**
-     * Remove a single multi option
-     * 
-     * @param  string $option 
-     * @return bool
-     */
-    public function removeMultiOption($option)
-    {
-        $option  = (string) $option;
-        $this->_getMultiOptions();
-        if (isset($this->options[$option])) {
-            unset($this->options[$option]);
-            if (isset($this->_translated[$option])) {
-                unset($this->_translated[$option]);
-            }
-            return true;
-        }
-
-        return false;
-    }
-
-    /**
-     * Clear all options
-     * 
-     * @return Zend_Form_Element_Multi
-     */
-    public function clearMultiOptions()
-    {
-        $this->options = array();
-        $this->_translated = array();
-        return $this;
-    }
-
-    /**
-     * Set flag indicating whether or not to auto-register inArray validator
-     * 
-     * @param  bool $flag 
-     * @return Zend_Form_Element_Multi
-     */
-    public function setRegisterInArrayValidator($flag)
-    {
-        $this->_registerInArrayValidator = (bool) $flag;
-        return $this;
-    }
-
-    /**
-     * Get status of auto-register inArray validator flag
-     * 
-     * @return bool
-     */
-    public function registerInArrayValidator()
-    {
-        return $this->_registerInArrayValidator;
-    }
-
-    /**
-     * Is the value provided valid?
-     *
-     * Autoregisters InArray validator if necessary.
-     * 
-     * @param  string $value 
-     * @param  mixed $context 
-     * @return bool
-     */
-    public function isValid($value, $context = null)
-    {
-        if ($this->registerInArrayValidator()) {
-            if (!$this->getValidator('InArray')) {
-                $options = $this->getMultiOptions();
-                $this->addValidator(
-                    'InArray',
-                    true,
-                    array(array_keys($options))
-                );
-            }
-        }
-        return parent::isValid($value, $context);
-    }
-
-    /**
-     * Translate an option
-     * 
-     * @param  string $option 
-     * @param  string $value
-     * @return bool
-     */
-    protected function _translateOption($option, $value)
-    {
-        if (!isset($this->_translated[$option])) {
-            $this->options[$option] = $this->_translateValue($value);
-            if ($this->options[$option] === $value) {
-                return false;
-            }
-            $this->_translated[$option] = true;
-            return true;
-        } 
-
-        return false;
-    }
-
-    /**
-     * Translate a value
-     * 
-     * @param  array|string $value 
-     * @return array|string
-     */
-    protected function _translateValue($value)
-    {
-        if (is_array($value)) {
-            foreach ($value as $key => $val) {
-                $value[$key] = $this->_translateValue($val);
-            }
-            return $value;
-        } else {
-            if (null !== ($translator = $this->getTranslator())) {
-                if ($translator->isTranslated($value)) {
-                    return $translator->translate($value);
-                }
-            }
-            return $value;
-        }
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+c6z7Zbwg9RYjcJ8l

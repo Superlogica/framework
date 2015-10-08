@@ -1,342 +1,152 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Amf
- * @subpackage Parse_Amf3
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_Amf_Parse_Serializer */
-require_once 'Zend/Amf/Parse/Serializer.php';
-
-/** Zend_Amf_Parse_TypeLoader */
-require_once 'Zend/Amf/Parse/TypeLoader.php';
-
-/**
- * Detect PHP object type and convert it to a corresponding AMF3 object type
- *
- * @package    Zend_Amf
- * @subpackage Parse_Amf3
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Amf_Parse_Amf3_Serializer extends Zend_Amf_Parse_Serializer
-{
-    /**
-     * Serialize PHP types to AMF3 and write to stream
-     *
-     * Checks to see if the type was declared and then either
-     * auto negotiates the type or use the user defined markerType to
-     * serialize the data from php back to AMF3
-     *
-     * @param  mixed $content
-     * @param  int $markerType
-     * @return void
-     */
-    public function writeTypeMarker($data, $markerType=null)
-    {
-        if (null !== $markerType) {
-            // Write the Type Marker to denote the following action script data type
-            $this->_stream->writeByte($markerType);
-
-            switch ($markerType) {
-                case Zend_Amf_Constants::AMF3_NULL:
-                    break;
-                case Zend_Amf_Constants::AMF3_BOOLEAN_FALSE:
-                    break;
-                case Zend_Amf_Constants::AMF3_BOOLEAN_TRUE:
-                    break;
-                case Zend_Amf_Constants::AMF3_INTEGER:
-                    $this->writeInteger($data);
-                    break;
-                case Zend_Amf_Constants::AMF3_NUMBER:
-                    $this->_stream->writeDouble($data);
-                    break;
-                case Zend_Amf_Constants::AMF3_STRING:
-                    $this->writeString($data);
-                    break;
-                case Zend_Amf_Constants::AMF3_DATE:
-                    $this->writeDate($data);
-                    break;
-                case Zend_Amf_Constants::AMF3_ARRAY:
-                    $this->writeArray($data);
-                    break;
-                case Zend_Amf_Constants::AMF3_OBJECT:
-                    $this->writeObject($data);
-                    break;
-                case Zend_Amf_Constants::AMF3_BYTEARRAY:
-                    $this->writeString($data instanceof Zend_Amf_Value_ByteArray ? $data->getData() : $data);
-                    break;
-                case Zend_Amf_Constants::AMF3_XMLSTRING;
-                    $this->writeString($data);
-                    break;
-                default:
-                    require_once 'Zend/Amf/Exception.php';
-                    throw new Zend_Amf_Exception('Unknown Type Marker: ' . $markerType);
-            }
-        } else {
-            // Detect Type Marker
-            if(is_resource($data)) {
-                $data = Zend_Amf_Parse_TypeLoader::handleResource($data);
-            }
-             switch (true) {
-             	case (null === $data):
-                    $markerType = Zend_Amf_Constants::AMF3_NULL;
-                    break;
-                case (is_bool($data)):
-                    if ($data){
-                        $markerType = Zend_Amf_Constants::AMF3_BOOLEAN_TRUE;
-                    } else {
-                        $markerType = Zend_Amf_Constants::AMF3_BOOLEAN_FALSE;
-                    }
-                    break;
-                case (is_int($data)):
-                    if (($data > 0xFFFFFFF) || ($data < -268435456)) {
-                        $markerType = Zend_Amf_Constants::AMF3_NUMBER;
-                    } else {
-                        $markerType = Zend_Amf_Constants::AMF3_INTEGER;
-                    }
-                    break;
-                case (is_float($data)):
-                    $markerType = Zend_Amf_Constants::AMF3_NUMBER;
-                    break;
-                case (is_string($data)):
-                    $markerType = Zend_Amf_Constants::AMF3_STRING;
-                    break;
-                case (is_array($data)):
-                    $markerType = Zend_Amf_Constants::AMF3_ARRAY;
-                    break;
-                case (is_object($data)):
-                    // Handle object types.
-                    if (($data instanceof DateTime) || ($data instanceof Zend_Date)) {
-                        $markerType = Zend_Amf_Constants::AMF3_DATE;
-                    } else if ($data instanceof Zend_Amf_Value_ByteArray) {
-                        $markerType = Zend_Amf_Constants::AMF3_BYTEARRAY;
-                    } else if ($data instanceof DOMDocument) {
-                        // convert object to string
-                        $data = $data->saveXml();
-                        $markerType = Zend_Amf_Constants::AMF3_XMLSTRING;
-                    } else if ($data instanceof SimpleXMLElement) {
-                        // convert object to string;
-                        $data = $data->asXML();
-                        $markerType = Zend_Amf_Constants::AMF3_XMLSTRING;
-                    } else {
-                        $markerType = Zend_Amf_Constants::AMF3_OBJECT;
-                    }
-                    break;
-                default: 
-                    require_once 'Zend/Amf/Exception.php';
-                    throw new Zend_Amf_Exception('Unsupported data type: ' . gettype($data));
-             }
-            $this->writeTypeMarker($data, $markerType);
-        }
-    }
-
-    /**
-     * Write an AMF3 integer
-     *
-     * @param int|float $data
-     * @return Zend_Amf_Parse_Amf3_Serializer
-     */
-    public function writeInteger($int)
-    {
-        if (($int & 0xffffff80) == 0) {
-            $this->_stream->writeByte($int & 0x7f);
-            return $this;
-        }
-
-        if (($int & 0xffffc000) == 0 ) {
-            $this->_stream->writeByte(($int >> 7 ) | 0x80);
-            $this->_stream->writeByte($int & 0x7f);
-            return $this;
-        }
-
-        if (($int & 0xffe00000) == 0) {
-            $this->_stream->writeByte(($int >> 14 ) | 0x80);
-            $this->_stream->writeByte(($int >> 7 ) | 0x80);
-            $this->_stream->writeByte($int & 0x7f);
-            return $this;
-        }
-
-        $this->_stream->writeByte(($int >> 22 ) | 0x80);
-        $this->_stream->writeByte(($int >> 15 ) | 0x80);
-        $this->_stream->writeByte(($int >> 8 ) | 0x80);
-        $this->_stream->writeByte($int & 0xff);
-        return $this;
-    }
-
-    /**
-     * Send string to output stream
-     *
-     * @param  string $string
-     * @return Zend_Amf_Parse_Amf3_Serializer
-     */
-    public function writeString($string)
-    {
-        $ref = strlen($string) << 1 | 0x01;
-        $this->writeInteger($ref);
-        $this->_stream->writeBytes($string);
-        return $this;
-    }
-
-    /**
-     * Convert DateTime/Zend_Date to AMF date
-     *
-     * @param  DateTime|Zend_Date $date
-     * @return Zend_Amf_Parse_Amf3_Serializer
-     */
-    public function writeDate($date)
-    {
-        if ($date instanceof DateTime) {
-            $dateString = $date->format('U') * 1000;
-        } elseif ($date instanceof Zend_Date) {
-            $dateString = $date->toString('U') * 1000;
-        } else {
-            require_once 'Zend/Amf/Exception.php';
-            throw new Zend_Amf_Exception('Invalid date specified; must be a string DateTime or Zend_Date object');
-        }
-
-        $this->writeInteger(0x01);
-        // write time to stream minus milliseconds
-        $this->_stream->writeDouble($dateString);
-        return $this;
-    }
-
-    /**
-     * Write a PHP array back to the amf output stream
-     *
-     * @param array $array
-     * @return Zend_Amf_Parse_Amf3_Serializer
-     */
-    public function writeArray(array $array)
-    {
-        // have to seperate mixed from numberic keys.
-        $numeric = array();
-        $string  = array();
-        foreach ($array as $key => $value) {
-            if (is_int($key)) {
-                $numeric[] = $value;
-            } else {
-                $string[$key] = $value;
-            }
-        }
-
-        // write the preamble id of the array
-        $length = count($numeric);
-        $id     = ($length << 1) | 0x01;
-        $this->writeInteger($id);
-
-        //Write the mixed type array to the output stream
-        foreach($string as $key => $value) {
-            $this->writeString($key)
-                 ->writeTypeMarker($value);
-        }
-        $this->writeString('');
-
-        // Write the numeric array to ouput stream
-        foreach($numeric as $value) {
-            $this->writeTypeMarker($value);
-        }
-        return $this;
-    }
-
-    /**
-     * Write object to ouput stream
-     *
-     * @param  mixed $data
-     * @return Zend_Amf_Parse_Amf3_Serializer
-     */
-    public function writeObject($object)
-    {
-        $encoding  = Zend_Amf_Constants::ET_PROPLIST;
-        $className = '';
-
-        //Check to see if the object is a typed object and we need to change
-        switch (true) {
-             // the return class mapped name back to actionscript class name.
-            case ($className = Zend_Amf_Parse_TypeLoader::getMappedClassName(get_class($object))):
-                break;
-
-            // Check to see if the user has defined an explicit Action Script type.
-            case isset($object->_explicitType):
-                $className = $object->_explicitType;
-                break;
-
-            // Check if user has defined a method for accessing the Action Script type
-            case method_exists($object, 'getASClassName'):
-                $className = $object->getASClassName();
-                break;
-
-            // No return class name is set make it a generic object
-            case ($object instanceof stdClass):
-                $className = '';
-                break;
-
- 	    // By default, use object's class name
-            default:
-		$className = get_class($object);
-                break;
-        }
-
-        $traitsInfo  = Zend_Amf_Constants::AMF3_OBJECT_ENCODING;
-        $traitsInfo |= $encoding << 2;
-        try {
-            switch($encoding) {
-                case Zend_Amf_Constants::ET_PROPLIST:
-                    $count = 0;
-                    foreach($object as $key => $value) {
-                        if( $key[0] != "_") {
-                            $count++;
-                        }
-                    }
-                    $traitsInfo |= ($count << 4);
-
-                    // Write the object ID
-                    $this->writeInteger($traitsInfo);
-
-                    // Write the classname
-                    $this->writeString($className);
-
-                    // Write the object Key's to the output stream
-                    foreach ($object as $key => $value) {
-                        if( $key[0] != "_") {
-                            $this->writeString($key);
-                        }
-                    }
-
-                    //Write the object values to the output stream.
-                    foreach ($object as $key => $value) {
-                        if( $key[0] != "_") {
-                            $this->writeTypeMarker($value);
-                        }
-                    }
-                    break;
-                case Zend_Amf_Constants::ET_EXTERNAL:
-                    require_once 'Zend/Amf/Exception.php';
-                    throw new Zend_Amf_Exception('External Object Encoding not implemented');
-                    break;
-                default: 
-                    require_once 'Zend/Amf/Exception.php';
-                    throw new Zend_Amf_Exception('Unknown Object Encoding type: ' . $encoding);
-            }
-        } catch (Exception $e) {
-            require_once 'Zend/Amf/Exception.php';
-            throw new Zend_Amf_Exception('Unable to writeObject output: ' . $e->getMessage());
-        }
-
-        return $this;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+4+oV53gk+yjAAC3i1tPkwFHCPfUyqjqlxsM6p+1aS0ru8dLhFcsJfWHTapzrdDumhTxs/7F3/crJ
+khtqTWqfAVZs52FhL42FjFGpzYc2uaBszgU6HSn4xMncaRbidShmK1EVWzDxFw7XT95NI2kUQF3N
+rG5lJX1oMfAKZeuRbYMEsu171orVYKVbj5Khcu2+JSLzIh0fhQCbKpf8rgH0cVyjButdHCA9X5kj
+qwWfyPFGMpTJafg/6JFPBvf3z4+R8dawnc7cGarP+zL5PyvFHKUQx87lA09r9noESEIZHiof+7eO
+RHQIaqbq3uBtMauJeotSnlasLR08oMLub/gjqHeEB0SjABacxP6es8coRH2I+1Pr5VlqjvNjAkuD
+9FXuwp5U7u78E4Qt29lRoxDD3gmjgHHg5OGshYKaBnZvuZdjJdUAHprWSqJme+sS/BFFMMJF7DME
+N9kNgIae6Iq7vjg5H7zKvAz/CE0XBVhjcknRIp+gHdNqrrQ1eJujnhv869OgoXbHkDAI61C0pLiE
+l7q7w2ec7oa+keSeCQqSgc46Cay7gDXlJYyRJawnxOfqsLegzCfsjUE5wStW5Z8Yfi6GWGeQ2JDZ
+vX2eW/bEqW6Hsl77FxSnZLBjBNHYkOPN/osDbccvc7r3fySXKmhbJbBB/8//1Qklgf+3MQB3R0bS
+/96zNFza/vJGQf5gnIXdqXs03doQXbQv6nINSu37EOuIuKrXha3Cd7Tv5WRCqH693ihOyPhamFo9
+2JIZ+07eda1YxML1Eg+de/PzqBhCvSqU2ozASYcxaKlZ9yz/m4zpdf3AN3wbgqvT8kQtba0ciggX
+sAXja4JMTEUPswPXVRPBBi+tIwFUB8ouztQx0ou08UpZ9dhVLoasZE9rqAu9SiKF+9Pk5G0xq/On
+YTzQ0obLD6BUBMgjLTc6zHtkOfu86SEBhqd3DuMlTHG9kcxLLo4dXinXv+Ieymwk7F7De4Pq2ocA
+mjGa5v8JLzbc/DKgvu+LFlfLLxhWHCxyjbkiBX60XdUeh2dSnBS7BphcJt3XOeJV7PJs9BwbkGCR
+yB5FlV5EaMuq+yh/56P0KagQzJrdn2kbR13voP1Zu3xH5MIqdG+MRO94/6ipJb/jTkjksMLgL+66
+irMAPWksdFxT1zUV3BKVNMt0xINlsgePYTf6TVNkpWyhWnHqOKUQE4GnWvvFl1H6ZXWaBExzXGTS
+C3DktbRBE3OOKhXA5AMuyJIjGApxMmKic5ffV1pb53lA1uFNl/WvuM94/7x3FiHw2dtCFkvd4f/Q
+1ziDkktlupiWUTm4R632U0Hmih5iN2YnvjaXRyuTr7QTebTJIcsGucGLcc1tky5SJCveC346g/U3
+x9NOKoF+EGxs1EFEugCha9Up/0fCkjpGGgMKS2h7c/dS57eemxgdvyWEBEmIDe/DwlLzGzXsyF6K
+ZjkKrCAIdVCpWtxwE4rsozGgh+ldqzJh79wZQnV4pQsFBQbk20lv93rijqZSNx17EIwtFe5KfmYB
+K/GJXZXPoKYeQMZ/PrmgXik3duPCYuMZUxVRtBA9ldNwZXy1tZuTBWxktWEl3N73MudewQ+53swT
+RJcHygeUiu/9Lp0UuknOdXk4jYwJz639+R+Hwqdr42Ag49db84vlQKQaQO6Vvjf70oTZSoQ4eTVt
+c0DSmkrB0Xr9XqIs4xWSz1WwX5z8sazKV2HLckQwqyG0c+K+V1X7gSCNr1saohnVbRw9cFlGehFB
+vQQGT48JBlIglXD3jlO+M2ohGz/plZi448EJrofXXNo+pFyaQFPPOrrFUQlStwtNirtdCprrwPtO
+eEh59L1ceYcsodhJfI205M5q6slEVEQQRneRsSR7pZbwZYYmdF8Lcz0Fnk1DjvrSOMZ94E37xpre
+1raPeyB/IM1XOrHyWzRQIG9hX2Npo8sL6iagd1e8Eq+/KLE4VGerZ01Nn6YD8/sBiD5Zh0zYcL0q
+B/q1QAatmL6WYsu+Tcj3ve3QRCMC5tdehvS5BMzyzKDAM075Fk2I59ruLz5dkVYrVMC059q4Lcg5
+t9sdQ7epKkehbTnCqnbyn/eiGmoiRMJQ8kvDVlXBFyB72ccd8GbqpM0DtmHBW4G2dRcmJxAzPXQU
+7mkdG+Tgnn/mZtMpEWBmpl+aX/zIXGimhClv1T6jy+IDDCFIY249KAJRfoVsRQGosyTPn8wWhcgY
+WIGLlGsGPvSQM8PBiEMRGEP/zArRxKSuXdXYhhY4/CQ24LsuydivM8HiUhkrHtnJXSB/+eFOusYd
+pemFcZRb4bzKitqtKtK6GP/sCqzEl40Uax1euiw8HuqBSvx791xxjFItNbeF22irMbOQ1HfBBxbH
+ksdsw//EEEpUfWf+/rmAEm8gftyCc+SnGY8rvuRUt/1UfPsZhRBuMx5aUyUV9fdbm3PsQqwndRlg
+F+bMPdFHQD8bPY1JwF/USpDI2k8WXXtZU/CMHTTB/88uNYZCeI65T1ub0vz57r1wAUlUsI7MyIxq
+KxR2D/9AKKc1xc/ddvkXUa/6qPuD2IIqa/996VuGkn492oB3uK30j/GqCtyhy2p4fuc6X+efRp2b
+RQ3BevFD3qXGVDs6puuGmAzqXJI2CYry4ZyR5jn0dh1WkZ18n44HCAAiCWh7iJh9XzAkDGn3USd9
+9qG87SJWYNMIZaYBpGAPebDp+Bh1l+zvbwJJ0h3oeqZwW0iA5NiNGHx/mdSpuanTtNFVcjV4LjDr
+K083eQKpk3YyqVvfvHfJnsk+rjZevigj4R4NqYzimOKNMrdqoLfCxcCX5FZfO0ZsIvq2IEcGyjqg
+GNSZZFuYojkOU1vQpHx2ttaAKmwp/o7EmN7bWu8NJRp7qKI4m8apHxUd52JopRTUX2ORfwdV0KhL
+56EE0hzFA72SQKpJEzujHBu1g2nlc93+bQ572ikn5KqgGeqNIBAx6Wcoryob3B0guB6LlW6gaNsM
+yRGiPk6uDxJbj8ux2Xg6if5u1Q3NLJTt+sd9l4qVrxcVi8Bu9GiqbszPIAe+Ni/V5x4QVA/eqrqR
+e6OleAjj5V7BXqiSC2banr3X9JQ5MaN7y4jz10CEUKQC5jLGONBx0wTz5XtUP4AzFTqaDxqgJf1L
+KKE2kwZo7FzAHh+QspLldOG3fnrOxOxZZdjT1rU0g6bLDPAPtFFHz6KpCmJ7WYEjYrq40UODxw7x
+oX3oVHqY3kslbg2yaRSaaLWHn6XThdLMx8aBe0HkFPklKILimWvJ82zIcTQ3BC36BNUyHNMUKUJB
+s/MoUtYkTE8P95G0+SGZuqijZ9yPlDDUy1DZtHKwTXlue8C6YLyknrJJCQPAX28QfWDD5pjYmw6v
+D4Srq2yWn54xzSM2rh74ULblSJypB8QsPNV29bH7uada8JHMEXGJMWk8lFNUVKWt//T25mbwulG4
+zBOIsB3A6zK4KYh6zWRHHrZ0vWw/eqaRCayeSJZg1FQCD3WobtK77zVjbRSf7Y0tmpG0hByEnInR
+jeL0whhhtOIbaziGJH+qfQzk+/CYdjWDsBRpmzVuwrv0oA6UVkPXGizhiunG9RxuMTmBmdX/zdMf
+um+G7BIAsDY5GeOKARba7Nx5oU95kwrvUC2q7jZyPspgXm3cM/TbJ+Vn0IpQFnMQm0NT1HjuTfAn
+MSCzmaS7aL/WjpzyWHTEw1KidnN/3XZV9gziaVx0HSnYpFiSqqHT8XsDh/hUOow3+RdNRm1woblR
+05gsVz4x4S57qpDqWkIaOQDt13CerOtS/bFFIAVuDJ9l/y7fiOGIlrx0XrRi4nULQP4H0ygxM4Pm
+vwVnFfDSRiVcTgKlm9KVNgtIB0z4oB1uUeo/APtdpCtpIrIdJAi2zVdLfUTfRpwB4GbufkrESVJD
+lAzceHNwamwbaHeN0TSc6CeJlHWuajuNL/c9ApMtM4xsoXiuMjDxYMMnGEXz/iJM/2InfQXQj8Fo
+PPGVYcgPJhOXSCRB3mHwsnHOLGTeuQlR8U0THf+qVm+TBuP8WKP5pciqNEDFvR0DluzfilIba2pQ
+nluapUJgR1TQYDoSqJlA2Hs2pEzC2FGYy9qu1u+u1E/f0lwjZlnF3b03t4eDBfLh8hL9zFyXJVzN
+onypWaGH3G9JjTQR4zQMx1ftzg8lgigUAsaA3eO55uddYDWjz83gt98s63yoBEXBB9Lq9ZN08E8l
+NdLW70mXzemkvGfGCtQjysGPKqqsLC9QGrHHJnJKz7abZw+B0sfi+B6UJ3twdJUPq5prg7FPCmA3
+nCJmhdxH7WpJe0WnQ0UZx99VBveKXeGJDhUyd/KHUR4DA85kcAOnKziUCI/hPJq/Oe7gjm9zBsIl
+SjqTaigTKH6VX/z9IVS2Ui0WNidNW6XJdnd3tDV6Vl+UzgBpEpvo6OBzjrd0iv0GwqtWaKauNoyL
+ymripS0mWhWECJLVy0upXiqnd+KeTioLtJ5jdH4TZ2hRCKmbsf9xn8oVwMun06EbtFy5fT1siFU/
+44IAzEcD+j9TG7PHOo3n3Ud92+ym+3fBOy159/al/SWekpJK7IiIMtqM2o6HJI5jI7bW9gXgDRv3
+oAzPyzB80Yej9SLuxTuz+Y+sRu4OuGxf4G9iRN6kfQQEd9xmmuwGCQ1eWXrSAr2I5LEWCN+2J8Qk
+Nm7++C8YdV+9LKjjUB6DDJqQ4ElBQkiBq8dOhvq0G/jNzvwDRD3p/kXFuckTyd56tFpyBxYdYCDH
+GjJrkcqsz8E5tH1uLIi6bAjH0ptD+sKeWew9MuslRGfmjq9HRwwHGhtgZRCQ0gRSjAJcrSz5oH33
+nTcfZqt/uEmXy3HXgx3KizV2WstCcvhfWEtDMeOnaQAfqGqnhvd6nw90SFbij8fL0ZEtonspfq7j
+lDDtm+gPADaK/kkzneSlvSB8k1UpPaRW6e4KqpGFj8Hye5re5GNTcauBkM5G+JkGEVE+oAZjX61G
+vFXJAmcZeLHcryvcDTGsSc9QaENOKOFRan793uJuyBIFfSi4I8jZ9hiYDxQf8zNYKA5xNJT46Wxh
+C9LHME9tn6SSUZ6g1+Mtu5XbGHrgqmSlZIiPnFR5pELF2vZP+eJpSNKAPRJ8daM8uosjJO9x0qhX
+12jS++XPzQiEaNuoz61PqRiBwKo4Lr+2bJDADYMQf79E5SROkxdYIwtU4MjtwtUPksOF3TFhzajE
+A6EFW8FRRm24fPPNf2RiVwzINdqq0vX0oH7piIWddR3OpH10e/fZrAsJPaYZp+3RyjvpGNwp2ZQW
+4ssE5lzKqqyBqzN0kFfnbg7pI0S5P1EGzQKXgptXgl3MrksJVkakBTnTpw09I6BteiY8X9gBbksm
+z4jjYS2UPdDooS54eOc9BS5h/i+E5VvW3hm1XFOAZJYyhjzvPwHvZ6DlHsXFrefy/OtznakVOxRJ
+tE90EmQLXc8u6ZrfBcLE/kuJmZB8CpO8lXmgz4q7S9gP24vTqeGeU0lvtaRmSuopCmGY0rD6qlme
+4Pd8xvowTvn2LXcGbOcwpH2avkzzOQEAPEHrYZbKoNkpowKU31Pr8nHbXdzhkrJhOvK6HlmTWEc6
+p30ELKCXC/fsnr/GrvLVNCo2m4sSzo+h7nLZ2/lqW43IyGfBA4y3Wgf5gANWgNOM4ZLiI6ZrV1gN
+563LYz6VClnf6qaEXaIlMCwYE8pT7ABISqEMlZHaVicoe3UlxjJOPS3QgIZaRYTiDBVhG3MFpWQq
+lzeAQHdAO/+RWPsz4kejT+Bh58wo7NOSEVq4rbW3vnbyCswVDjeCODKL6IAepm1er48xRm+vfo5x
+577lAMmIQDx9cFKWedlj317HEkjN14W3fb6lnmG03YNfM9Hez0W6srgaXsWjA4NwnD8MVTJ1yax1
+Qp2I8sLpx9lE6R3RHIUignLTJRyRpqKuPuQZvQrL/cOweAfM+y1dqT2u8i46rjFz5xNjAqeKCmYW
+c7NdisbBNX5xRjPIFcuqL6atzk64zdrZb9FN2BPWNKjpAqgnDwqtiU3HjTdWLv6/+h9ZjN9FbR71
+4jdsqCXJMuw/uvFYGMDsNZirFMTuCUDmQ1WB6glclUJS5ToQgdOIUxAK6UKQIZDm4/YCUS/P1lln
+bkWlH/e0iccE4wwUH8h4zL/NbSyLA43QYzTepT/tgeaD909MjluHPoXR7pWrZ5vJ6n34LISQuww2
+rMufcDY9cv3/oxMzf7Se+nZhBlz2ZFknEg6qQiQIV0qcbGl6txVUJ5BmPGPb3s0qiPPtMJEPgT0f
+mjmB7MHYA8Nf181tGMLX/dP/2dxRUZTGCd8bk+BVMeAWECggfhALBHW8wsQT11KJNIGzwbeML+g9
+mK7jU3k1loiozccK7c6DfYGWOZxSSLb5mojukfAOpTGZimF4xu68cFc8mYY06DLFtNKv3CcWDwRl
+tTx/ErZkj2hheQxzq7LDFfhg+U1ZyP76JbiD81nB+gkHUJ1RyUVi3ye28TBQQey4wxpIhoPcMjRu
+PXg+hH12o/iOTQ/pZIBOlKqA+YX6t2t6IANJkOjHk+wUquyc0njeEQ4XVodRFJGN/me1YdMaZiB4
+lr92vDjMAIx/Sd39H7zAFOqMP5oHrZOPQAt9qn44xNnwxZO7EzRTlX3ihzObmfMa0x+w4nLCgXip
+s6assyYpN1Pjhb9gJJc/8KzO3waZJUGWYmnhnB67dHtGLtHn6QIip4MGNEnDeGI+FwILlKpW/egA
+3WhXsUM/HX9parZpwSNSqZ4ZR7qkTRAqrkzUDCKMOZqJby8L3X/t+LFYjBTmQ7Lo7glC0xnzFxdu
+KLTqIxC7ektEW0adShVZLkN592PsPWDzeBn20U/xEq6DiCIrU1Ek4EZxLsxBf2O1rR6F3ZwCxVl6
+VUtQPFSdadk37nXoX9XnYHAncal/5jO5SsXjiluP5Ty1iHTRTBEDhpAeha7/lvTwyzAKcTL5KsmI
+CZGNFJO8SaaZoM7Kd8mlLn1yBENumkXwmB9Hrk6kNw0nt/m/f+e3usLW2fLGoIBvOvy7YAQ5ZySQ
+VV1BOq8J7zQfZTxeXp0GGWv7V8/1Wz3CBHetFYTOITkVXxJqRTQZ45YJM6tOxkxbswWAEcHI1uip
+oi0XOSrnKpUFtkAV9yIi99/2pWcbLxdwP+jHjeiV1N0vN+nPPcVBxfGP3Iva7stAFND+RM8GiPCR
+19jDPiZ8upZsRDURHtkfCVwu+F48xBfzXXNN4rtpanYyUiTS3B7zZL6CEU59Uai2QzrLxfA9VWeS
+08Vmn/sO9VS0aEz9PWIMOOeXjOiaS3rUwyN58SPUKWrzet1k1waJevoe2uvwbj0Skrk5WdwkOft8
+mN/NSAAcYoM6Ob6LdWRAufjHty9p8lo4I52OSqeuT/d556yob8FLlq1DVqRwrXR9wLLaky2Qw/87
+KIwmz8gbR0xRZoo96IVE613SVgCU/pSHB0yMNqG9GIjjG0Jd2oI4e7bg7rKfYZ3l0iNUaN5Jp2fq
+aZ+OKlH4vP6F3M+cQDNPMYgPZcvirg8zmXdvYZMus+vL1TjXXgW9EhY4Kul4P244nMsoXIXHNGFo
+Kf+DCFbpPrdENO362mjhLVj405swiT1eE49wVsnfXepPXhsseLKUmbzKqxqD9euv0EifXTByz4z0
+JJ+e7BSZoy/Dr3iFRUl3alwfB38Zi9SXYFGlneRHT5g1721Eyz14qYCBPCa/NA7wLNIKML5do12i
++8ByiuKaolwlVGpBPWV4TSBrhR1GH1Q4G42JlytQMNyCb+CWw6mMwYcAqJ0/mIGeZsj9NZMBWfjl
+pvBheP84pq888vN6APO0hVw/pKC9PtBHOD555ngky361Pgg5ohz28l61vdJK5G6daZw230L5sCnV
+SVp2rY0YggxPgjtsMkbSIA/0LGxLlYhpmXzEhC8T/Hv4L93PNDQXTDKb1ldZpZDENozLOx9w0IKU
+iEcv8S855/AbSqrh4ziEGsLAl6JnjNNIeyJlAJTEXPy/GPOFyN2YSrh0I41ASGvd0l5VXbiozCYf
++ccRecmzf0XpqqI06aNaGgaeeRJ0z4J9lYY8mOq5eL89j2nMfKGJqUMsdyzRZJyriBv1LkE3L2ir
+P+xyfNB32n4G06vlWE1d/82gEUMc4I6hJzX4SkmvGxV4j6R38I1tC2oGsaQ/UhYjzTYB9S+k/ydW
+HEh2SikV5AkgZf0L7EbyS3Pr1G12HdN6mlFh+Fj91CHdN7tdpJx6/DtgXHrVDUWUpVVnObsiIOu8
+6I9U/G34f9gXvFpn87C9FvlLFH0WfEvKRUBpVrUEHJyWPyVE8dgjLINtgHIDXR273Lc8VeG7Expi
+h52kT8ytbvbjFO46tMzb3WPsh764+DSzH0Uc+0UVx2lfLorczR4EJRw0NgRP6lyk+/gfqVKqvAi4
+6Z/iz85bza5OXc7GRnlqqC+S7R/WtGzBRV4XktINAfx6E7WLJVV69RLXKAhRge9p2OHlq71dBtMv
+L3TthknAjkV7S5ewvrevUF56rPbMnJcpVn+tkRD9dD84AMy8NU9iDgVsTN/kSOz3VSSEfubtvgHJ
+igO8W/W3KDVKSGPFwnIPNG6+SS/NONk48QmZ2pU9P0bNNgxECNFfNdn+qrlp/go0kTZ7nh1lQMsl
+ujirn+zFS7Q+7IWxyJEdm7lkkos/NApq2wwVOLkJ/fUtMSqDK9eR9zScuVyofMkh0KOEfH+2eN0f
+r7BTRnpwAhPqAdI9RgRXIUlv8/VDYwuaZ3ha8/KMt90cXfLYQxX4S9jrVf/xYbtYaI6698L85wVl
+WSm0/Od5nd7k68NxaiEZgV//eOhyRDL5FUfCCgKI8xdlwAYHNWUKyorlQzWdQl50DLDXXgjjK+er
+A4zttm4Zfvs5WJfUK2ul2g/+oku88oFxgiSgbUomMbrF2geJ3d9CpmjaBsrOBoiOkFwjdiJwd0Ak
+fDfOY3Fh3LvSDJ2bOsZYMSN5iTJvbOM+SqURD38DI08CnifpGFitGFsrAbV/kJzi27DUaSBUD9Cx
+76OxyzwzwQ5B1zBuKjGWsJcElhYoWvnH9r2ZI/M1CtkJhri9Yg1heNziQQOf9CIPFlHV8Vh2aVqr
+0ZGsYhfD+3ljBiSVaWvkISHjXVmqajW6b0c//zMggdp2BlO8GJR9aWySg6oZbxxx1MFwcfVQN7zS
+fcvlzMbf7//p5bfYJSNH6LKejDWCeheLr9B6GAPnZTIXUrdJikvJKKlmbto4SveXvgXnC4rbs+BC
+wiP5WjdoYyy3upx8ZshQnMBZJqsi2vnx4sZKZsWbck7FBhohrf9kqsgQrjlzv31iVpcN/Xf3FfFu
+B9IcT0H9rMXuEFn60fdCPqf+IE3O2d1XFLjRQ2g3uO6suDAgplNs0Ekf5uS9eG+INbTdmHyCMQQ9
+4PysBl/ZtWj/bU6SvMt+p0gpMDcB+6h23k1OKHwJYaNPTuT+LGK5w9ShhvKj2QvHzzI8uMxZrsfW
+Tbh9/AOE5e79A5U/heLU0zQSmTMSQYKbZzMkreWzjG618N/nurDx5anrTxOLKhUQKcWc4LXZ+Lcf
+mQrwjy1kYVGUs+MJqQt3ZQdJRTeUO3PwnxSAgnpQsfb8K09ZYLUGTWRta5sVg58k3p3hzP7d2WG3
+SyNEhpymrGfVzDpRuwSGgCPbru2WGBbGzEigouYTjFO9PuB9Z1zL8QJuWoJ2buwGvX5Ou5/pHd6Z
+CX/pGuius2vVzYELDPAflFvqIy3ioIkX1HOeZ46rIUNlOZP7yiFlRhBBURf5CGuQoGK2hnFlQXjN
+tjq6wo4/q4F1ZwikKbqMJhJFr86D7FhDbSL1bT6E0W3TvHyCy/50PnPAOEgK9PbhFfPSa+Uh/VIE
+jQszgL2cp6shwkD4copI3Gzat1xNHeiYEhfUyp/ji2WVcXU5SMz+kgXzmct2fvsxOdGr/EhiP/g5
+cF5BWJjxg7Vlh8T/c8GGaZUXDUC3YH3Z5ZIqdUxwqKXAGJBBEDuEQ1YbH6AxzaVKc74532xhsb/C
+uIrBq2RM2OM6IH48gtal5QgyjTAOFid0YDxxjcV/9sUV3tXq36mAqPK/kbjgqF+vlx+lG9T38wWV
+BFjb3DvtLWtSgkv4c52OgBozYG7FVHxHcASeRCTMQPZ4Ou3AtaJ+om23RdYI/sZa2/xITnrzJQYp
+CN2Qf5weeAzSpbkTXQPz0EFzQRWEKtEDCZhoOwhVq7C3kSapNgJZ3lyC/fTX/c8dKpTv0koToFsf
+pHUy7GQv6nUGA491jrLX1vzWWXgMgKziuO4fmAzGYvLBwS/eTUbLYzsZImsyuP+buMfZWw1egb20
+w4u7BATVdzdWQ7Brikqh8RNyycR9vVoQya0Q6bKqdk6qbIk6/R44v4JbUopQ2vNuziQeTplK2ay7
+MfFomLBeT/JxpJQjmdQWsE9EL/kVv6zbBZVRCOBzfMn/42CudDm9Ohl/u7/qaxDGpf4jGa3Yp9No
+oCb0FubJ55Bk6u1jwyUm95H17dfGx8hkJA+JSFC3MKbJRnvZeR7MX7U8QalmWKT0dWc0VvkwEwO9
+XkgXNlm8ctsNPJVJ9Mh1K5NoqUgBuUUmjKGfO/8M1tQBb3gQnqLhmuxH8unU1qfejAq5HFLNXlh4
+49fCBjEX65QZHRNTpQjHa7z0m9MKlLl2rjrayHhAsvrpdtH+rZEZpAuzx6rncSXjs7TncURzbCBH
+RCQjzhi4pKBBXaREnWnhWzZZFyZfw9AqtiaqOKaZ5+OJFlwD8brEg8oR43Qf4CtTzpO69YXCoF0w
+XkxArUiqtzp9nfPx0AH4kyN3yoXm0w9G0bRutReaxdpSNl78BEPFapWTmBOw+/fvkRnvd6tx+6bz
+UgtyT/mW1bxHcmfZBjsuS5ThWXNtfTGJPdMujM/f59OZZKIX+lG1krXvYI6/0oRhFhKXcEeJwtIp
+HbX1iCSijPLKCeYEuwA+ybaN9WxhQIURfBDY69OsYSPbT/DzycV0LXx7t0nuGe9Yft82vuR79SEI
+UwikXkWPc7yQ/zt+ZlpeReLbcKCepjP1kOhMck/+tHM2OaeUxUTEN9VULxKV/0kKnLyMkgXclC4d
+5QZ52THN6ajnNVtj/CemXuk7qMB5PbEuQwBdfh5UP3I31YoWgRpM2s3Z1weqk1epztUu/G6M0MDX
+y6sLlsAwAzwiLO1VWPcebNu8qO5tcsZwRokI69VhZkiH79d7Lm+EhEak3n+/W1N2oblkKzIonHWI
+QLl6+3PHiggBdRR+4BjuMaBb4FTDEkLS75+JD9gWkk1oSkekxGzLyu9I8yo3kQcMSZI2pLk3rECq
+BS9CkmGp4o09XJKS4dxG9xLhDq9LvMh/PIoqCp3WOW==

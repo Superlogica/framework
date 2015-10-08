@@ -1,178 +1,53 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage App
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * @see Zend_Gdata_App_MediaSource
- */
-require_once 'Zend/Gdata/App/MediaSource.php';
-
-/**
- * Concrete class to use a file handle as an attachment within a MediaEntry.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage App
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-abstract class Zend_Gdata_App_BaseMediaSource implements Zend_Gdata_App_MediaSource
-{
-
-    /**
-     * The content type for the attached file (example image/png)
-     *
-     * @var string
-     */
-    protected $_contentType = null;
-
-    /**
-     * The slug header value representing the attached file title, or null if
-     * no slug should be used.  The slug header is only necessary in some cases,
-     * usually when a multipart upload is not being performed.
-     *
-     * @var string
-     */
-    protected $_slug = null;
-
-    /**
-     * The content type for the attached file (example image/png)
-     *
-     * @return string The content type
-     */
-    public function getContentType()
-    {
-        return $this->_contentType;
-    }
-
-    /**
-     * Set the content type for the file attached (example image/png)
-     *
-     * @param string $value The content type
-     * @return Zend_Gdata_App_MediaFileSource Provides a fluent interface
-     */
-    public function setContentType($value)
-    {
-        $this->_contentType = $value;
-        return $this;
-    }
-
-    /**
-     * Returns the Slug header value.  Used by some services to determine the
-     * title for the uploaded file.  Returns null if no slug should be used.
-     *
-     * @return string
-     */
-    public function getSlug(){
-        return $this->_slug;
-    }
-
-    /**
-     * Sets the Slug header value.  Used by some services to determine the
-     * title for the uploaded file.  A null value indicates no slug header.
-     *
-     * @var string The slug value
-     * @return Zend_Gdata_App_MediaSource Provides a fluent interface
-     */
-    public function setSlug($value){
-        $this->_slug = $value;
-        return $this;
-    }
-
-
-    /**
-     * Magic getter to allow acces like $source->foo to call $source->getFoo()
-     * Alternatively, if no getFoo() is defined, but a $_foo protected variable
-     * is defined, this is returned.
-     *
-     * TODO Remove ability to bypass getFoo() methods??
-     *
-     * @param string $name The variable name sought
-     */
-    public function __get($name)
-    {
-        $method = 'get'.ucfirst($name);
-        if (method_exists($this, $method)) {
-            return call_user_func(array(&$this, $method));
-        } else if (property_exists($this, "_${name}")) {
-            return $this->{'_' . $name};
-        } else {
-            require_once 'Zend/Gdata/App/InvalidArgumentException.php';
-            throw new Zend_Gdata_App_InvalidArgumentException(
-                    'Property ' . $name . ' does not exist');
-        }
-    }
-
-    /**
-     * Magic setter to allow acces like $source->foo='bar' to call
-     * $source->setFoo('bar') automatically.
-     *
-     * Alternatively, if no setFoo() is defined, but a $_foo protected variable
-     * is defined, this is returned.
-     *
-     * @param string $name
-     * @param string $value
-     */
-    public function __set($name, $val)
-    {
-        $method = 'set'.ucfirst($name);
-        if (method_exists($this, $method)) {
-            return call_user_func(array(&$this, $method), $val);
-        } else if (isset($this->{'_' . $name}) || ($this->{'_' . $name} === null)) {
-            $this->{'_' . $name} = $val;
-        } else {
-            require_once 'Zend/Gdata/App/InvalidArgumentException.php';
-            throw new Zend_Gdata_App_InvalidArgumentException(
-                    'Property ' . $name . '  does not exist');
-        }
-    }
-
-    /**
-     * Magic __isset method
-     *
-     * @param string $name
-     */
-    public function __isset($name)
-    {
-        $rc = new ReflectionClass(get_class($this));
-        $privName = '_' . $name;
-        if (!($rc->hasProperty($privName))) {
-            require_once 'Zend/Gdata/App/InvalidArgumentException.php';
-            throw new Zend_Gdata_App_InvalidArgumentException(
-                    'Property ' . $name . ' does not exist');
-        } else {
-            if (isset($this->{$privName})) {
-                if (is_array($this->{$privName})) {
-                    if (count($this->{$privName}) > 0) {
-                        return true;
-                    } else {
-                        return false;
-                    }
-                } else {
-                    return true;
-                }
-            } else {
-                return false;
-            }
-        }
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+tWifaXnZeMNddTxjrAuD6sek

@@ -1,218 +1,53 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Dojo
- * @subpackage Form_Element
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_Dojo_Form_Element_TextBox */
-require_once 'Zend/Dojo/Form/Element/TextBox.php';
-
-/**
- * ValidationTextBox dijit
- * 
- * @uses       Zend_Dojo_Form_Element_TextBox
- * @package    Zend_Dojo
- * @subpackage Form_Element
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: ValidationTextBox.php 10079 2008-07-14 10:56:37Z matthew $
- */
-class Zend_Dojo_Form_Element_ValidationTextBox extends Zend_Dojo_Form_Element_TextBox
-{
-    /**
-     * Use ValidationTextBox dijit view helper
-     * @var string
-     */
-    public $helper = 'ValidationTextBox';
-
-    /**
-     * Set invalidMessage
-     *
-     * @param  string $message
-     * @return Zend_Dojo_Form_Element_ValidationTextBox
-     */
-    public function setInvalidMessage($message)
-    {
-        $this->setDijitParam('invalidMessage', (string) $message);
-        return $this;
-    }
-
-    /**
-     * Retrieve invalidMessage
-     *
-     * @return string|null
-     */
-    public function getInvalidMessage()
-    {
-        return $this->getDijitParam('invalidMessage');
-    }
-
-    /**
-     * Set promptMessage
-     *
-     * @param  string $message
-     * @return Zend_Dojo_Form_Element_ValidationTextBox
-     */
-    public function setPromptMessage($message)
-    {
-        $this->setDijitParam('promptMessage', (string) $message);
-        return $this;
-    }
-
-    /**
-     * Retrieve promptMessage
-     *
-     * @return string|null
-     */
-    public function getPromptMessage()
-    {
-        return $this->getDijitParam('promptMessage');
-    }
-
-    /**
-     * Set regExp
-     *
-     * @param  string $regexp
-     * @return Zend_Dojo_Form_Element_ValidationTextBox
-     */
-    public function setRegExp($regexp)
-    {
-        $this->setDijitParam('regExp', (string) $regexp);
-        return $this;
-    }
-
-    /**
-     * Retrieve regExp
-     *
-     * @return string|null
-     */
-    public function getRegExp()
-    {
-        return $this->getDijitParam('regExp');
-    }
-
-    /**
-     * Set an individual constraint
-     * 
-     * @param  string $key 
-     * @param  mixed $value 
-     * @return Zend_Dojo_Form_Element_ValidationTextBox
-     */
-    public function setConstraint($key, $value)
-    {
-        $constraints = $this->getConstraints();
-        $constraints[(string) $key] = $value;
-        $this->setConstraints($constraints);
-        return $this;
-    }
-
-    /**
-     * Set validation constraints
-     *
-     * Refer to Dojo dijit.form.ValidationTextBox documentation for valid 
-     * structure.
-     * 
-     * @param  array $constraints 
-     * @return Zend_Dojo_Form_Element_ValidationTextBox
-     */
-    public function setConstraints(array $constraints)
-    {
-        array_walk_recursive($constraints, array($this, '_castBoolToString'));
-        $this->setDijitParam('constraints', $constraints);
-        return $this;
-    }
-
-    /**
-     * Is the given constraint set?
-     * 
-     * @param  string $key 
-     * @return bool
-     */
-    public function hasConstraint($key)
-    {
-        $constraints = $this->getConstraints();
-        return array_key_exists((string)$key, $constraints);
-    }
-
-    /**
-     * Get an individual constraint
-     * 
-     * @param  string $key 
-     * @return mixed
-     */
-    public function getConstraint($key)
-    {
-        $key = (string) $key;
-        if (!$this->hasConstraint($key)) {
-            return null;
-        }
-        return $this->dijitParams['constraints'][$key];
-    }
-
-    /**
-     * Get constraints
-     * 
-     * @return array
-     */
-    public function getConstraints()
-    {
-        if ($this->hasDijitParam('constraints')) {
-            return $this->getDijitParam('constraints');
-        }
-        return array();
-    }
-
-    /**
-     * Remove a single constraint
-     * 
-     * @param  string $key 
-     * @return Zend_Dojo_Form_Element_ValidationTextBox
-     */
-    public function removeConstraint($key)
-    {
-        $key = (string) $key;
-        if ($this->hasConstraint($key)) {
-            unset($this->dijitParams['constraints'][$key]);
-        }
-        return $this;
-    }
-
-    /**
-     * Clear all constraints
-     * 
-     * @return Zend_Dojo_Form_Element_ValidationTextBox
-     */
-    public function clearConstraints()
-    {
-        return $this->removeDijitParam('constraints');
-    }
-
-    /**
-     * Cast a boolean value to a string
-     * 
-     * @param  mixed $item 
-     * @param  string $key 
-     * @return void
-     */
-    protected function _castBoolToString(&$item, $key)
-    {
-        if (is_bool($item)) {
-            $item = ($item) ? 'true' : 'false';
-        }
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+o6VACkYwG6riiv5mcGtpNVWP2ZNxwh7H/Zl/Q0==

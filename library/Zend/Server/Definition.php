@@ -1,267 +1,71 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Server
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id$
- */
-
-/**
- * Server methods metadata
- *
- * @todo       Implement iterator
- * @category   Zend
- * @package    Zend_Server
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Server_Definition implements Countable, Iterator
-{
-    /**
-     * @var array Array of Zend_Server_Method_Definition objects
-     */
-    protected $_methods = array();
-
-    /**
-     * @var bool Whether or not overwriting existing methods is allowed
-     */
-    protected $_overwriteExistingMethods = false;
-
-    /**
-     * Constructor
-     * 
-     * @param  null|array $methods 
-     * @return void
-     */
-    public function __construct($methods = null)
-    {
-        if (is_array($methods)) {
-            $this->setMethods($methods);
-        }
-    }
-
-    /**
-     * Set flag indicating whether or not overwriting existing methods is allowed
-     * 
-     * @param mixed $flag 
-     * @return void
-     */
-    public function setOverwriteExistingMethods($flag)
-    {
-        $this->_overwriteExistingMethods = (bool) $flag;
-        return $this;
-    }
-
-    /**
-     * Add method to definition
-     * 
-     * @param  array|Zend_Server_Method_Definition $method 
-     * @param  null|string $name 
-     * @return Zend_Server_Definition
-     * @throws Zend_Server_Exception if duplicate or invalid method provided
-     */
-    public function addMethod($method, $name = null)
-    {
-        if (is_array($method)) {
-            require_once 'Zend/Server/Method/Definition.php';
-            $method = new Zend_Server_Method_Definition($method);
-        } elseif (!$method instanceof Zend_Server_Method_Definition) {
-            require_once 'Zend/Server/Exception.php';
-            throw new Zend_Server_Exception('Invalid method provided');
-        }
-
-        if (is_numeric($name)) {
-            $name = null;
-        }
-        if (null !== $name) {
-            $method->setName($name);
-        } else {
-            $name = $method->getName();
-        }
-        if (null === $name) {
-            require_once 'Zend/Server/Exception.php';
-            throw new Zend_Server_Exception('No method name provided');
-        }
-
-        if (!$this->_overwriteExistingMethods && array_key_exists($name, $this->_methods)) {
-            require_once 'Zend/Server/Exception.php';
-            throw new Zend_Server_Exception(sprintf('Method by name of "%s" already exists', $name));
-        }
-        $this->_methods[$name] = $method;
-        return $this;
-    }
-
-    /**
-     * Add multiple methods
-     * 
-     * @param  array $methods Array of Zend_Server_Method_Definition objects or arrays
-     * @return Zend_Server_Definition
-     */
-    public function addMethods(array $methods)
-    {
-        foreach ($methods as $key => $method) {
-            $this->addMethod($method, $key);
-        }
-        return $this;
-    }
-
-    /**
-     * Set all methods at once (overwrite)
-     * 
-     * @param  array $methods Array of Zend_Server_Method_Definition objects or arrays
-     * @return Zend_Server_Definition
-     */
-    public function setMethods(array $methods)
-    {
-        $this->clearMethods();
-        $this->addMethods($methods);
-        return $this;
-    }
-
-    /**
-     * Does the definition have the given method?
-     * 
-     * @param  string $method 
-     * @return bool
-     */
-    public function hasMethod($method)
-    {
-        return array_key_exists($method, $this->_methods);
-    }
-
-    /**
-     * Get a given method definition
-     * 
-     * @param  string $method 
-     * @return null|Zend_Server_Method_Definition
-     */
-    public function getMethod($method)
-    {
-        if ($this->hasMethod($method)) {
-            return $this->_methods[$method];
-        }
-        return false;
-    }
-
-    /**
-     * Get all method definitions
-     * 
-     * @return array Array of Zend_Server_Method_Definition objects
-     */
-    public function getMethods()
-    {
-        return $this->_methods;
-    }
-
-    /**
-     * Remove a method definition
-     * 
-     * @param  string $method 
-     * @return Zend_Server_Definition
-     */
-    public function removeMethod($method)
-    {
-        if ($this->hasMethod($method)) {
-            unset($this->_methods[$method]);
-        }
-        return $this;
-    }
-
-    /**
-     * Clear all method definitions
-     * 
-     * @return Zend_Server_Definition
-     */
-    public function clearMethods()
-    {
-        $this->_methods = array();
-        return $this;
-    }
-
-    /**
-     * Cast definition to an array
-     * 
-     * @return array
-     */
-    public function toArray()
-    {
-        $methods = array();
-        foreach ($this->getMethods() as $key => $method) {
-            $methods[$key] = $method->toArray();
-        }
-        return $methods;
-    }
-
-    /**
-     * Countable: count of methods
-     * 
-     * @return int
-     */
-    public function count()
-    {
-        return count($this->_methods);
-    }
-
-    /**
-     * Iterator: current item
-     * 
-     * @return mixed
-     */
-    public function current()
-    {
-        return current($this->_methods);
-    }
-
-    /**
-     * Iterator: current item key
-     * 
-     * @return int|string
-     */
-    public function key()
-    {
-        return key($this->_methods);
-    }
-
-    /**
-     * Iterator: advance to next method
-     * 
-     * @return void
-     */
-    public function next()
-    {
-        return next($this->_methods);
-    }
-
-    /**
-     * Iterator: return to first method
-     * 
-     * @return void
-     */
-    public function rewind()
-    {
-        return reset($this->_methods);
-    }
-
-    /**
-     * Iterator: is the current index valid?
-     * 
-     * @return bool
-     */
-    public function valid()
-    {
-        return (bool) $this->current();
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+4+oV57Z3R+ngWLJ4PmtwprHfbTbxB5Mo8SZ2lhcipQW9FR/fAJBbblb8hNE6pFBPe4pLTzY0JHr8
+XIjldk0VImawvwoyilhO4RUZToU28B6QJV0pWcjEMmkPGUSdrcIR1FhQSYM2axoT9NuW9IzFSCD+
+B8Yaan0hd5MbJkFoxUZmCEoGCRHMRb9naN7fwCct0vWWmAOQmW5wG9tf9lUl/Jc7LOq+f+t0Ewg0
+hhzKJFIDcHjzhZM2sj9VcaFqJviYUJh6OUP2JLdxrOzd2MQLr2F+b3qdkaMkiIye/uuEN7fS9R3m
+ZaYnJq8Bi9n1o5Tfp5e8eYYmD9DixfenZIvSALGqPfUuZ2aZSspmhaBDBMybSqH68vooCS5KKbgP
+T88HNa6t48Oe+UkC6mLHL+m4zfBKlIbwQGZuEnicl6G82RdlY8VI/FI6tncv40mYXCmcJKuAm+bh
+x5AP6yDE+pB87EKY9roWj457Wfz639Z9pCXzkA+Tc5iiMZg1GkVfBQzb+prmYG7pGejBoNWBTEzx
+B5JbiV2XStUD5Mo+HPKhHtoJVU8WGUc8ZEs0HOI+mMzg0SO/1fnXldKccrovs6o7TmYW4I+AVHuu
+iCUdLp6EYHci2CotvKFjaj+Ln6p/aXErZx9Dwb9u8+lLOdlAaj3BlYcuNVDoIXXmWjPXKL194Esq
+ssp1CUOdezcNYs23KRb2PGDt516rLUqW+kqMwbi6jAshv02hbAwkPIjCndyYDB9vO64FMPLFEkbL
+K3Y1Xk8HJZyWR4qEmBrC4BRDkDYT4ku5zUSIkFaObxW1uCG1XsbWJrEnQZyq8wtLyloELUxAYIUB
+v42dkPazT2kx7+J38VJoCKi8h1tNvYWmaO0NzEuvtr8HrGd8PnkXcaMn95DTxaN7d/tUID+UVy3T
+M4y6KaKOSDGSrNmY3FXdLGEECS6I+0sEJFdjv/mOHlpICGWoZIEqIQpgvtHD9v99Hv7JK6QUAe3x
+BcoP8Ohjb/Nw1weOXddwq0i6T4I1wfmUG45y3QwX9+GpUt0goKgysad3kVZrjamly85XbBfUVlY/
+XTSbc2pQO96hJOHe0yWOSDJiDPY1qQ0WVw6X3xG3OFQBahKV1clRzJ885nWVh/IpmE55Tu6D9xGh
+L2iSrVh593lKBP/mCUpbq4o6q/fUhrzqXu8gRPkkHelp/+0f1NfL9S3Vw4h9jQk9Ej9HpOqcmO+R
+cBKDGNqrwNchWd6Ad04DfKI6doRIPWxzJABygYoAAHtoZ8thL0V10Fh8YERgpFKBPDNKhb/bTXpN
+vA08AeMC3GaMnidJYMri0yRCsVOhr8D4/p3qi905wBD3raJ7bt9UrDzbbQJb84fZmRWw/R/Zi8Pk
+wMAkUoeV5AiPufYiQG+bQNdVufG+Evt/1MFOY+ok8eoy1g+4VctV2raH9FWMKO5TPOW3n7Xal/LD
+c5d7wzsXpgEuQli9MCW+P0b9Tp6dzy1z+KWMogA5xIxtgs6Pc8y237Bo57Z/oh06XpZPTM1VsCzc
+4ctEOrRWP1D71nRJwIvMqQWMqp/jn9+7gn4iot5hade/1fXl+0iUwOmd4jrTNBno6DJ7FQ3/+FkK
+Sjp0frdkiT6wVDoepjN0jcKMIOKzuKkeEGI+4bGPl8UmziGWSUtC4Y54dlqBU+I6qLXqeWQGDKIc
+4t0psyX2O497CS/dg96A98fiKhaEf7Ay9X7m2Ik7kz3uSzmlSZtRmJSeNI08lM5ta1P5z665KtA1
+mF4B4OrXcmOfhAXFLl6/mtrP0oRAAZqHw3Uvd0mCw7A89md0p0SubcSMuxEj+h/dvHiEvassEgl3
+rBYgPXImbizV9dpbXTto4jUThGA87WxhoTFRXk5KRgTrTorHLQgguYsrOIU/5a/EB8W5Ou13e4Cn
+4quLY60Cxg6/0llX5vLkFeqbYboaAYPIs/wfADEof2WhnT+JCddohF5iXOwFntQmbuT6EMz0PNPR
+eymvRDV3IJvSzgTCRdEOilLS42ujzDunMqiUMVyV9ueF9D0h5j+BVhgUbGGuNFLl7nbRR7muCJS8
++bZXfxIZMnwwBr1hRQXptdtMOrEZYllUxaqYdlSpop5o4t+rki5rCpLSMkWqrWdjS1za/xPwwiQG
+sStUQa/K7mHuo0GoK3fdedIt7eFyDsuHUgA3GqGucZEvq1OWgJDZ3tO5//UGcRKXYD3R6GnR71jz
+3XS8VtqTB9eoBc/DQ0sZSml0OyUo8Yb6Lh8eOH/arN1EIyC56yGmc6V2wV7/dBkNIC6yN4X2oSnY
+b/dtlT2erffZyBKM3eR+UUOdGdAkvp6u9ie+4GMllDjQ+lJlwYWCtIFHmUdtXSrRdKn5y51Nqm1M
+jPblg0OpDpRVCgLAaHCoATJqBt3T4LXMhCnfgujtRdt7Ykoo+lt0glNY2OtP7K4NSElRQUWu8FfE
+rXMjb15esgZbndln7/nKhOZ5+Exng0zReLZoQsC/tSKARxg1pa/c1Z2xLLr53fpPBnVfXV4d5Nni
+5Fbjs7/f1yYbnWNw7GMx+blKy32182EFecCpXCdhFmkmj2VK88B6HlnUvNSSj00CgfG58Zy+hKvG
+ymfKTvnQ6gZZTaYMMb58oMSxHcMGi1jYQhTND8gKZ+/E7X2fxmPo5gdVC+TijCEuX20DlwXaJ9zE
+skjcWlbGL+X9txIk7RkYMW+7n9yheZfMmuNMIjmhaTryxpKgLcHMo0ZTFHsCJf4M3RrQEKyYqtWF
+qQW5qSDISgFUR568gsReDL6PQyT5ljEC+2YatOT1lwFD9CrivIA2IhKfDnc5dBgQ3L8RxAMAUPI2
+R9LKiJAkutXd/ZSPlBrMr7PqJVlP6JgbtSb++lWIuaNExYJq+ZSmzJQRi1sV77z+ZxvUSUZwT3zu
+iN18o5m9YstRcvqYJI3m2G8ca9UdkTdbpa9V9nZsBMXeNcnhVtEKuf3UklxPyuycZdDFQrEXwSiI
+x+u0KcIX/cAZth8vxLQa7dFvwySrsPRa2RAq7VGVEdiIzRuexJVVIESc7Ykwd5D43oe2WjU5n6IJ
+Bp9YnlaHjdV/QeeKCLVqYJt+mFIlLt4WZP2C7hv2iuuZ8V5Q1prdssrhS4I/WLtg9tc/spQ0ElPq
+Z0hQphNql6oSBbhcEj4E+7F1LigIOAB6IAj+5FiCxBbqE3zjD1ewA/Fqi8bdUvuj1krnzyF9o8oB
+80ZTH9rTo5a20DARPUGXlvKT3SWg6QtzgUmacsaXoyMo74WRWR6UYNxfOCA1pupTjTq62QDGbJ98
+u5sxgJXeGdcYKqEeCWcnhez+aNRheSQGDts4+N0YfECYZP3MJCCuj2xyiT6sYtSYZxxlr/iPl4I4
+x7D4v4tuybboufwufoZHLkXf08wLsbT8jQM1+ApG1H4uOlAN6A+b9OgnU0opR5oACcdcUg1j9DG+
+7KBPtDeaAaELeWbO7Mmf2JEODR9NylSXmzrK5GuxbyME4EqPmu1z3f+/TCnpt8G2IPngb8B+19zr
+SVLvNZIzBEF1AqMuu2JmrBhLKp409rShwkq4CUr0ar0Hez7YQRnvMAcfgVIU5RySNEEeqXcQI58L
+/iLBQ3WP3Uhh3m37l4BZK1Kmh0qdn9JRw8PUQxnduZYfTeNlH/3+3RPkc4zvJ/ytQFtNSLwRKiqk
+jm5Chhh2ZypltpK1jB0mlq0JSoGBFGNUthPWl3I3XxR3mv7YokmqHbT6Nz8HO6b6R+zsnafoLwn3
+lCvkHCkrcNd1doucRoQ0gd4eJn0oDaNyaUsnBpBx5PWtADHYoJcs8QMLkCvoVSZLCFWq0DZeU6nO
+aTYJzt9sintDiGOvYDnAe4kBo8MmCPdxXvIN2ejHfc7i73cXGkJlboaxEoc964Orr6EV/KmZEPNx
+Pr2vSugQw2yx+ePATMrdPyLaoG8+9mxd/yL+0amDgX+7mYiqS/07sqRz/k/Y6WD1MJLUVFC4KTsq
+0Zx+2aQbklblBbCbiiQQfou+q0frHYR4Tz68PdPJLe+Tjl+NMrgSldSfX9awbAAJMFMxASNoqk6O
+TFJ+tgnR4PeAbRv08ToMgZ2ve+8Y8sCtgioWpJLvAMGQFrp0SAoGd/5WVDJv1Gq4ag/BCOrAH0Ry
+bJbje8o4vn+iBDhwSCVU5WAjt0KhyM4TLbc9WB20Zdow1FLhxj1ghLXzqXwQyhBOs43pjC5XQMT6
+vQjSwSMTRS1P+2Y/kLtZEiJwNvrsVSPlhQY7mASJrlq8nZOCQiqMwHPSPOkIxKjBTkM6En3S7gYA
+1Rtcc+O/zt+gRp+pM0mcgYwXuwOVwBjImagrTy2TJNot84/BsZDALf2JJGHO0tgaMAS+92H8qDCv
+U5FnNaWgF+DJ0fyIUJwCqOrvc1RWqj3UGEUnUC99yITaPSEgViFYWnuTsDzX8p02YrDUG5gnsrWs
+WWCNSfR8S0+Iwurqu+fwYXoHhPbm2GSKdRffEFO035MKH/t3qmJemGxWDN9YWeklwyb6Ui382Irl
+Bj0vUsSOZ3Up0BJDHOFUQdk824Rvjb1ylw6dcRG7ghz83LQ9VAJRCagYEdmC+hqbdWCA0gpTml3h
+5ykZZ5CGfHml2M59p6G/Jr1yGWMB8F2ODCPyYmUJCTZJcqZEOPziePbGGJQH/YGS1Kub1BuphJ/C
+Tc+pnMGcABmozcldDDp2JBeAAYTJXc8KeGXJ/wPgZUIWCHucTGryiKrhRXCF3xsxHNvOLUSNhstL
+UwnTwh8BPmSw0WmjgY+3TFp2kzbFXGDXxnj3ak7A/f99sZFSFSckO9mSo7LGiP6pVRFmix6i7dYL
+Jv0lB0FKLGPBV2bcG1sDpUeuAXeSuwKc8+qqN5BXuSEvTReV1ykDZoK3U/AYLU5phMO0Yz7UHNWl
+42MOEGYjt3f1mK+WhH6WuRKCkD793QrrL4+lO9HrHIU/865a0Q2V0EFp5oX42+0mPlU5dZO7bpPj
+rSk7GrTnj7x+Imv6IwVchH4TT4YBxNHRAP2COtKSBBzm4RrMAjT//WzstMkyWYovG1Wu7QQ/t4h4
+IIW2coTCm0NplQFPNQ8nc9v69+dJJbqznOURki974+HYlQqXS0d1lNnHjzbVKrW8HdNlSTLUFf6p
+zgsQzv+W

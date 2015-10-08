@@ -1,96 +1,33 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Dojo
- * @subpackage View
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Form.php 10196 2008-07-18 22:01:18Z matthew $
- */
-
-/** Zend_Dojo_View_Helper_Dijit */
-require_once 'Zend/Dojo/View/Helper/Dijit.php';
-
-/**
- * Dojo Form dijit
- * 
- * @uses       Zend_Dojo_View_Helper_Dijit
- * @package    Zend_Dojo
- * @subpackage View
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
-  */
-class Zend_Dojo_View_Helper_Form extends Zend_Dojo_View_Helper_Dijit
-{
-    /**
-     * Dijit being used
-     * @var string
-     */
-    protected $_dijit  = 'dijit.form.Form';
-
-    /**
-     * Module being used
-     * @var string
-     */
-    protected $_module = 'dijit.form.Form';
-
-    /**
-     * @var Zend_View_Helper_Form
-     */
-    protected $_helper;
-
-    /**
-     * dijit.form.Form
-     * 
-     * @param  string $id 
-     * @param  null|array $attribs HTML attributes
-     * @param  false|string $content 
-     * @return string
-     */
-    public function form($id, $attribs = null, $content = false)
-    {
-        if (!is_array($attribs)) {
-            $attribs = (array) $attribs;
-        }
-        if (array_key_exists('id', $attribs)) {
-            $attribs['name'] = $id;
-        } else {
-            $attribs['id'] = $id;
-        }
-
-        if (false === $content) {
-            $content = '';
-        }
-
-        $attribs = $this->_prepareDijit($attribs, array(), 'layout');
-
-        return $this->getFormHelper()->form($id, $attribs, $content);
-    }
-
-    /**
-     * Get standard form helper
-     * 
-     * @return Zend_View_Helper_Form
-     */
-    public function getFormHelper()
-    {
-        if (null === $this->_helper) {
-            require_once 'Zend/View/Helper/Form.php';
-            $this->_helper = new Zend_View_Helper_Form;
-            $this->_helper->setView($this->view);
-        }
-        return $this->_helper;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+Fc/7HdMbEaVraDwW1ii7xm==

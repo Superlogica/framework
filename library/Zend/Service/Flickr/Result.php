@@ -1,195 +1,33 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Service
- * @subpackage Flickr
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Result.php 8064 2008-02-16 10:58:39Z thomas $
- */
-
-
-/**
- * @category   Zend
- * @package    Zend_Service
- * @subpackage Flickr
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Service_Flickr_Result
-{
-    /**
-     * The photo's Flickr ID.
-     *
-     * @var string
-     */
-    public $id;
-
-    /**
-     * The photo owner's NSID.
-     *
-     * @var string
-     */
-    public $owner;
-
-    /**
-     * A key used in URI construction.
-     *
-     * @var string
-     */
-    public $secret;
-
-    /**
-     * The servername to use for URI construction.
-     *
-     * @var string
-     */
-    public $server;
-
-    /**
-     * The photo's title.
-     *
-     * @var string
-     */
-    public $title;
-
-    /**
-     * Whether the photo is public.
-     *
-     * @var string
-     */
-    public $ispublic;
-
-    /**
-     * Whether the photo is visible to you because you are a friend of the owner.
-     *
-     * @var string
-     */
-    public $isfriend;
-
-    /**
-     * Whether the photo is visible to you because you are family of the owner.
-     *
-     * @var string
-     */
-    public $isfamily;
-
-    /**
-     * The license the photo is available under.
-     *
-     * @var string
-     */
-    public $license;
-
-    /**
-     * The date the photo was uploaded.
-     *
-     * @var string
-     */
-    public $dateupload;
-
-    /**
-     * The date the photo was taken.
-     *
-     * @var string
-     */
-    public $datetaken;
-
-    /**
-     * The screenname of the owner.
-     *
-     * @var string
-     */
-    public $ownername;
-
-    /**
-     * The server used in assembling icon URLs.
-     *
-     * @var string
-     */
-    public $iconserver;
-
-    /**
-     * A 75x75 pixel square thumbnail of the image.
-     *
-     * @var Zend_Service_Flickr_Image
-     */
-    public $Square;
-
-    /**
-     * A 100 pixel thumbnail of the image.
-     *
-     * @var Zend_Service_Flickr_Image
-     */
-    public $Thumbnail;
-
-    /**
-     * A 240 pixel version of the image.
-     *
-     * @var Zend_Service_Flickr_Image
-     */
-    public $Small;
-
-    /**
-     * A 500 pixel version of the image.
-     *
-     * @var Zend_Service_Flickr_Image
-     */
-    public $Medium;
-
-    /**
-     * A 640 pixel version of the image.
-     *
-     * @var Zend_Service_Flickr_Image
-     */
-    public $Large;
-
-    /**
-     * The original image.
-     *
-     * @var Zend_Service_Flickr_Image
-     */
-    public $Original;
-
-    /**
-     * Original Zend_Service_Flickr object.
-     *
-     * @var Zend_Service_Flickr
-     */
-    protected $_flickr;
-
-    /**
-     * Parse the Flickr Result
-     *
-     * @param  DOMElement          $image
-     * @param  Zend_Service_Flickr $flickr Original Zend_Service_Flickr object with which the request was made
-     * @return void
-     */
-    public function __construct(DOMElement $image, Zend_Service_Flickr $flickr)
-    {
-        $xpath = new DOMXPath($image->ownerDocument);
-
-        foreach ($xpath->query('./@*', $image) as $property) {
-            $this->{$property->name} = (string) $property->value;
-        }
-
-        $this->_flickr = $flickr;
-
-        foreach ($this->_flickr->getImageDetails($this->id) as $k => $v) {
-            $this->$k = $v;
-        }
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+dyQmrSTwjm==

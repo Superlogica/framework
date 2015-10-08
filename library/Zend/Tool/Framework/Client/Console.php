@@ -1,257 +1,79 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Tool
- * @subpackage Framework
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id$
- */
-
-/**
- * @see Zend_Loader
- */
-require_once 'Zend/Loader.php';
-
-/**
- * @see Zend_Tool_Framework_Client_Abstract
- */
-require_once 'Zend/Tool/Framework/Client/Abstract.php';
-
-/**
- * @see Zend_Tool_Framework_Client_Console_ArgumentParser
- */
-require_once 'Zend/Tool/Framework/Client/Console/ArgumentParser.php';
-
-/**
- * @see Zend_Tool_Framework_Client_Interactive_InputInterface
- */
-require_once 'Zend/Tool/Framework/Client/Interactive/InputInterface.php';
-
-/**
- * @see Zend_Tool_Framework_Client_Interactive_OutputInterface
- */
-require_once 'Zend/Tool/Framework/Client/Interactive/OutputInterface.php';
-
-/**
- * @see Zend_Tool_Framework_Client_Response_ContentDecorator_Separator
- */
-require_once 'Zend/Tool/Framework/Client/Response/ContentDecorator/Separator.php';
-
-/**
- * Zend_Tool_Framework_Client_Console - the CLI Client implementation for Zend_Tool_Framework
- *  
- * @category   Zend
- * @package    Zend_Tool
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Tool_Framework_Client_Console 
-    extends Zend_Tool_Framework_Client_Abstract
-    implements Zend_Tool_Framework_Client_Interactive_InputInterface,
-               Zend_Tool_Framework_Client_Interactive_OutputInterface 
-{
-
-    /**
-     * @var Zend_Filter_Word_CamelCaseToDash
-     */
-    protected $_filterToClientNaming = null;
-    
-    /**
-     * @var Zend_Filter_Word_DashToCamelCase
-     */
-    protected $_filterFromClientNaming = null;
-    
-    /**
-     * main() - This is typically called from zf.php. This method is a 
-     * self contained main() function.
-     *
-     */
-    public static function main()
-    {
-        ini_set('display_errors', true);
-        $cliClient = new self();
-        $cliClient->dispatch();
-    }
-
-    /**
-     * getName() - return the name of the client, in this case 'console'
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return 'console';
-    }
-    
-    /**
-     * _init() - Tasks processed before the constructor, generally setting up objects to use
-     *
-     */
-    protected function _preInit()
-    {
-        // support the changing of the current working directory, necessary for some providers
-        if (isset($_ENV['ZEND_TOOL_CURRENT_WORKING_DIRECTORY'])) {
-            chdir($_ENV['ZEND_TOOL_CURRENT_WORKING_DIRECTORY']);
-        }
-        
-        // support setting the loader from the environment
-        if (isset($_ENV['ZEND_TOOL_FRAMEWORK_LOADER_CLASS'])) {
-            if (class_exists($_ENV['ZEND_TOOL_FRAMEWORK_LOADER_CLASS'])
-                || Zend_Loader::loadClass($_ENV['ZEND_TOOL_FRAMEWORK_LOADER_CLASS'])
-            ) {
-                $this->_registry->setLoader(new $_ENV['ZEND_TOOL_FRAMEWORK_LOADER_CLASS']);
-            }
-        }
-
-        return;
-    }
-
-    /**
-     * _preDispatch() - Tasks handed after initialization but before dispatching
-     *
-     */
-    protected function _preDispatch()
-    {
-        $response = $this->_registry->getResponse();
-            
-        if (function_exists('posix_isatty')) {
-            require_once 'Zend/Tool/Framework/Client/Console/ResponseDecorator/Colorizer.php';
-            $response->addContentDecorator(new Zend_Tool_Framework_Client_Console_ResponseDecorator_Colorizer());
-        }
-
-        $response->addContentDecorator(new Zend_Tool_Framework_Client_Response_ContentDecorator_Separator())
-            ->setDefaultDecoratorOptions(array('separator' => true));
-        
-        $optParser = new Zend_Tool_Framework_Client_Console_ArgumentParser();
-        $optParser->setArguments($_SERVER['argv'])
-            ->setRegistry($this->_registry)
-            ->parse();
-            
-        return;
-    }
-
-    /**
-     * _postDispatch() - Tasks handled after dispatching
-     *
-     */
-    protected function _postDispatch()
-    {
-        $request = $this->_registry->getRequest();
-        $response = $this->_registry->getResponse();
-        
-        if ($response->isException()) {
-            require_once 'Zend/Tool/Framework/Client/Console/HelpSystem.php';
-            $helpSystem = new Zend_Tool_Framework_Client_Console_HelpSystem();
-            $helpSystem->setRegistry($this->_registry)
-                ->respondWithErrorMessage($response->getException()->getMessage(), $response->getException())
-                ->respondWithSpecialtyAndParamHelp(
-                    $request->getProviderName(),
-                    $request->getActionName()
-                    );
-        }
-        
-        echo PHP_EOL;
-        return;
-    }
-
-    /**
-     * handleInteractiveInputRequest() is required by the Interactive InputInterface
-     * 
-     *
-     * @param Zend_Tool_Framework_Client_Interactive_InputRequest $inputRequest
-     * @return string 
-     */
-    public function handleInteractiveInputRequest(Zend_Tool_Framework_Client_Interactive_InputRequest $inputRequest)
-    {
-        fwrite(STDOUT, $inputRequest->getContent() . PHP_EOL . 'zf> ');
-        $inputContent = fgets(STDIN);
-        return rtrim($inputContent); // remove the return from the end of the string
-    }
-    
-    /**
-     * handleInteractiveOutput() is required by the Interactive OutputInterface
-     * 
-     * This allows us to display output immediately from providers, rather
-     * than displaying it after the provider is done.
-     *
-     * @param string $output
-     */
-    public function handleInteractiveOutput($output)
-    {
-        echo $output;
-    }
-    
-    /**
-     * getMissingParameterPromptString() 
-     *
-     * @param Zend_Tool_Framework_Provider_Interface $provider
-     * @param Zend_Tool_Framework_Action_Interface $actionInterface
-     * @param string $missingParameterName
-     * @return string
-     */
-    public function getMissingParameterPromptString(Zend_Tool_Framework_Provider_Interface $provider, Zend_Tool_Framework_Action_Interface $actionInterface, $missingParameterName)
-    {
-        return 'Please provide a value for $' . $missingParameterName;
-    }
-
-    
-    /**
-     * convertToClientNaming()
-     * 
-     * Convert words to client specific naming, in this case is lower, dash separated
-     *
-     * Filters are lazy-loaded.
-     * 
-     * @param string $string
-     * @return string
-     */
-    public function convertToClientNaming($string)
-    {
-        if (!$this->_filterToClientNaming) {
-            require_once 'Zend/Filter.php';
-            require_once 'Zend/Filter/Word/CamelCaseToDash.php';
-            require_once 'Zend/Filter/StringToLower.php';
-            $filter = new Zend_Filter();
-            $filter->addFilter(new Zend_Filter_Word_CamelCaseToDash());
-            $filter->addFilter(new Zend_Filter_StringToLower());
-            
-            $this->_filterToClientNaming = $filter;
-        }
-        
-        return $this->_filterToClientNaming->filter($string);
-    }
-    
-    /**
-     * convertFromClientNaming()
-     *
-     * Convert words from client specific naming to code naming - camelcased
-     * 
-     * Filters are lazy-loaded.
-     * 
-     * @param string $string
-     * @return string
-     */
-    public function convertFromClientNaming($string)
-    {
-        if (!$this->_filterFromClientNaming) {
-            require_once 'Zend/Filter/Word/DashToCamelCase.php';
-            $this->_filterFromClientNaming = new Zend_Filter_Word_DashToCamelCase();
-        }
-        
-        return $this->_filterFromClientNaming->filter($string);
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

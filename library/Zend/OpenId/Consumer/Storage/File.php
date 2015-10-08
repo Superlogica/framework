@@ -1,460 +1,186 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_OpenId
- * @subpackage Zend_OpenId_Consumer
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: File.php 13522 2009-01-06 16:35:55Z thomas $
- */
-
-/**
- * @see Zend_OpenId_Consumer_Storage
- */
-require_once "Zend/OpenId/Consumer/Storage.php";
-
-/**
- * External storage implemmentation using serialized files
- *
- * @category   Zend
- * @package    Zend_OpenId
- * @subpackage Zend_OpenId_Consumer
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_OpenId_Consumer_Storage_File extends Zend_OpenId_Consumer_Storage
-{
-
-    /**
-     * Directory name to store data files in
-     *
-     * @var string $_dir
-     */
-    private $_dir;
-
-    /**
-     * Constructs storage object and creates storage directory
-     *
-     * @param string $dir directory name to store data files in
-     * @throws Zend_OpenId_Exception
-     */
-    public function __construct($dir = null)
-    {
-        if ($dir === null) {
-            $tmp = getenv('TMP');
-            if (empty($tmp)) {
-                $tmp = getenv('TEMP');
-                if (empty($tmp)) {
-                    $tmp = "/tmp";
-                }
-            }
-            $user = get_current_user();
-            if (is_string($user) && !empty($user)) {
-                $tmp .= '/' . $user;
-            }
-            $dir = $tmp . '/openid/consumer';
-        }
-        $this->_dir = $dir;
-        if (!is_dir($this->_dir)) {
-            if (!@mkdir($this->_dir, 0700, 1)) {
-                /**
-                 * @see Zend_OpenId_Exception
-                 */
-                require_once 'Zend/OpenId/Exception.php';
-                throw new Zend_OpenId_Exception(
-                    'Cannot access storage directory ' . $dir,
-                    Zend_OpenId_Exception::ERROR_STORAGE);
-            }
-        }
-        if (($f = fopen($this->_dir.'/assoc.lock', 'w+')) === null) {
-            /**
-             * @see Zend_OpenId_Exception
-             */
-            require_once 'Zend/OpenId/Exception.php';
-            throw new Zend_OpenId_Exception(
-                'Cannot create a lock file in the directory ' . $dir,
-                Zend_OpenId_Exception::ERROR_STORAGE);
-        }
-        fclose($f);
-        if (($f = fopen($this->_dir.'/discovery.lock', 'w+')) === null) {
-            /**
-             * @see Zend_OpenId_Exception
-             */
-            require_once 'Zend/OpenId/Exception.php';
-            throw new Zend_OpenId_Exception(
-                'Cannot create a lock file in the directory ' . $dir,
-                Zend_OpenId_Exception::ERROR_STORAGE);
-        }
-        fclose($f);
-        if (($f = fopen($this->_dir.'/nonce.lock', 'w+')) === null) {
-            /**
-             * @see Zend_OpenId_Exception
-             */
-            require_once 'Zend/OpenId/Exception.php';
-            throw new Zend_OpenId_Exception(
-                'Cannot create a lock file in the directory ' . $dir,
-                Zend_OpenId_Exception::ERROR_STORAGE);
-        }
-        fclose($f);
-    }
-
-    /**
-     * Stores information about association identified by $url/$handle
-     *
-     * @param string $url OpenID server URL
-     * @param string $handle assiciation handle
-     * @param string $macFunc HMAC function (sha1 or sha256)
-     * @param string $secret shared secret
-     * @param long $expires expiration UNIX time
-     * @return bool
-     */
-    public function addAssociation($url, $handle, $macFunc, $secret, $expires)
-    {
-        $name1 = $this->_dir . '/assoc_url_' . md5($url);
-        $name2 = $this->_dir . '/assoc_handle_' . md5($handle);
-        $lock = @fopen($this->_dir . '/assoc.lock', 'w+');
-        if ($lock === false) {
-            return false;
-        }
-        if (!flock($lock, LOCK_EX)) {
-            fclose($lock);
-            return false;
-        }
-        $f = @fopen($name1, 'w+');
-        if ($f === false) {
-            fclose($lock);
-            return false;
-        }
-        $data = serialize(array($url, $handle, $macFunc, $secret, $expires));
-        fwrite($f, $data);
-        if (function_exists('symlink')) {
-            @unlink($name2);
-            if (symlink($name1, $name2)) {
-                fclose($f);
-                fclose($lock);
-                return true;
-            }
-        }
-        $f2 = @fopen($name2, 'w+');
-        if ($f2) {
-            fwrite($f2, $data);
-            fclose($f2);
-            @unlink($name1);
-            $ret = true;
-        } else {
-            $ret = false;
-        }
-        fclose($f);
-        fclose($lock);
-        return $ret;
-    }
-
-    /**
-     * Gets information about association identified by $url
-     * Returns true if given association found and not expired and false
-     * otherwise
-     *
-     * @param string $url OpenID server URL
-     * @param string &$handle assiciation handle
-     * @param string &$macFunc HMAC function (sha1 or sha256)
-     * @param string &$secret shared secret
-     * @param long &$expires expiration UNIX time
-     * @return bool
-     */
-    public function getAssociation($url, &$handle, &$macFunc, &$secret, &$expires)
-    {
-        $name1 = $this->_dir . '/assoc_url_' . md5($url);
-        $lock = @fopen($this->_dir . '/assoc.lock', 'w+');
-        if ($lock === false) {
-            return false;
-        }
-        if (!flock($lock, LOCK_EX)) {
-            fclose($lock);
-            return false;
-        }
-        $f = @fopen($name1, 'r');
-        if ($f === false) {
-            fclose($lock);
-            return false;
-        }
-        $ret = false;
-        $data = stream_get_contents($f);
-        if (!empty($data)) {
-            list($storedUrl, $handle, $macFunc, $secret, $expires) = unserialize($data);
-            if ($url === $storedUrl && $expires > time()) {
-                $ret = true;
-            } else {
-                $name2 = $this->_dir . '/assoc_handle_' . md5($handle);
-                fclose($f);
-                @unlink($name2);
-                @unlink($name1);
-                fclose($lock);
-                return false;
-            }
-        }
-        fclose($f);
-        fclose($lock);
-        return $ret;
-    }
-
-    /**
-     * Gets information about association identified by $handle
-     * Returns true if given association found and not expired and false
-     * otherwise
-     *
-     * @param string $handle assiciation handle
-     * @param string &$url OpenID server URL
-     * @param string &$macFunc HMAC function (sha1 or sha256)
-     * @param string &$secret shared secret
-     * @param long &$expires expiration UNIX time
-     * @return bool
-     */
-    public function getAssociationByHandle($handle, &$url, &$macFunc, &$secret, &$expires)
-    {
-        $name2 = $this->_dir . '/assoc_handle_' . md5($handle);
-        $lock = @fopen($this->_dir . '/assoc.lock', 'w+');
-        if ($lock === false) {
-            return false;
-        }
-        if (!flock($lock, LOCK_EX)) {
-            fclose($lock);
-            return false;
-        }
-        $f = @fopen($name2, 'r');
-        if ($f === false) {
-            fclose($lock);
-            return false;
-        }
-        $ret = false;
-        $data = stream_get_contents($f);
-        if (!empty($data)) {
-            list($url, $storedHandle, $macFunc, $secret, $expires) = unserialize($data);
-            if ($handle === $storedHandle && $expires > time()) {
-                $ret = true;
-            } else {
-                fclose($f);
-                @unlink($name2);
-                $name1 = $this->_dir . '/assoc_url_' . md5($url);
-                @unlink($name1);
-                fclose($lock);
-                return false;
-            }
-        }
-        fclose($f);
-        fclose($lock);
-        return $ret;
-    }
-
-    /**
-     * Deletes association identified by $url
-     *
-     * @param string $url OpenID server URL
-     * @return bool
-     */
-    public function delAssociation($url)
-    {
-        $name1 = $this->_dir . '/assoc_url_' . md5($url);
-        $lock = @fopen($this->_dir . '/assoc.lock', 'w+');
-        if ($lock === false) {
-            return false;
-        }
-        if (!flock($lock, LOCK_EX)) {
-            fclose($lock);
-            return false;
-        }
-        $f = @fopen($name1, 'r');
-        if ($f === false) {
-            fclose($lock);
-            return false;
-        }
-        $data = stream_get_contents($f);
-        if (!empty($data)) {
-            list($storedUrl, $handle, $macFunc, $secret, $expires) = unserialize($data);
-            if ($url === $storedUrl) {
-                $name2 = $this->_dir . '/assoc_handle_' . md5($handle);
-                fclose($f);
-                @unlink($name2);
-                @unlink($name1);
-                fclose($lock);
-                return true;
-            }
-        }
-        fclose($f);
-        fclose($lock);
-        return true;
-    }
-
-    /**
-     * Stores information discovered from identity $id
-     *
-     * @param string $id identity
-     * @param string $realId discovered real identity URL
-     * @param string $server discovered OpenID server URL
-     * @param float $version discovered OpenID protocol version
-     * @param long $expires expiration UNIX time
-     * @return bool
-     */
-    public function addDiscoveryInfo($id, $realId, $server, $version, $expires)
-    {
-        $name = $this->_dir . '/discovery_' . md5($id);
-        $lock = @fopen($this->_dir . '/discovery.lock', 'w+');
-        if ($lock === false) {
-            return false;
-        }
-        if (!flock($lock, LOCK_EX)) {
-            fclose($lock);
-            return false;
-        }
-        $f = @fopen($name, 'w+');
-        if ($f === false) {
-            fclose($lock);
-            return false;
-        }
-        $data = serialize(array($id, $realId, $server, $version, $expires));
-        fwrite($f, $data);
-        fclose($f);
-        fclose($lock);
-        return true;
-    }
-
-    /**
-     * Gets information discovered from identity $id
-     * Returns true if such information exists and false otherwise
-     *
-     * @param string $id identity
-     * @param string &$realId discovered real identity URL
-     * @param string &$server discovered OpenID server URL
-     * @param float &$version discovered OpenID protocol version
-     * @param long &$expires expiration UNIX time
-     * @return bool
-     */
-    public function getDiscoveryInfo($id, &$realId, &$server, &$version, &$expires)
-    {
-        $name = $this->_dir . '/discovery_' . md5($id);
-        $lock = @fopen($this->_dir . '/discovery.lock', 'w+');
-        if ($lock === false) {
-            return false;
-        }
-        if (!flock($lock, LOCK_EX)) {
-            fclose($lock);
-            return false;
-        }
-        $f = @fopen($name, 'r');
-        if ($f === false) {
-            fclose($lock);
-            return false;
-        }
-        $ret = false;
-        $data = stream_get_contents($f);
-        if (!empty($data)) {
-            list($storedId, $realId, $server, $version, $expires) = unserialize($data);
-            if ($id === $storedId && $expires > time()) {
-                $ret = true;
-            } else {
-                fclose($f);
-                @unlink($name);
-                fclose($lock);
-                return false;
-            }
-        }
-        fclose($f);
-        fclose($lock);
-        return $ret;
-    }
-
-    /**
-     * Removes cached information discovered from identity $id
-     *
-     * @param string $id identity
-     * @return bool
-     */
-    public function delDiscoveryInfo($id)
-    {
-        $name = $this->_dir . '/discovery_' . md5($id);
-        $lock = @fopen($this->_dir . '/discovery.lock', 'w+');
-        if ($lock === false) {
-            return false;
-        }
-        if (!flock($lock, LOCK_EX)) {
-            fclose($lock);
-            return false;
-        }
-        @unlink($name);
-        fclose($lock);
-        return true;
-    }
-
-    /**
-     * The function checks the uniqueness of openid.response_nonce
-     *
-     * @param string $provider openid.openid_op_endpoint field from authentication response
-     * @param  string $nonce openid.response_nonce field from authentication response
-     * @return bool
-     */
-    public function isUniqueNonce($provider, $nonce)
-    {
-        $name = $this->_dir . '/nonce_' . md5($provider.';'.$nonce);
-        $lock = @fopen($this->_dir . '/nonce.lock', 'w+');
-        if ($lock === false) {
-            return false;
-        }
-        if (!flock($lock, LOCK_EX)) {
-            fclose($lock);
-            return false;
-        }
-        $f = @fopen($name, 'x');
-        if ($f === false) {
-            fclose($lock);
-            return false;
-        }
-        fwrite($f, $provider.';'.$nonce);
-        fclose($f);
-        fclose($lock);
-        return true;
-    }
-
-    /**
-     * Removes data from the uniqueness database that is older then given date
-     *
-     * @param mixed $date date of expired data
-     */
-    public function purgeNonces($date=null)
-    {
-        $lock = @fopen($this->_dir . '/nonce.lock', 'w+');
-        if ($lock !== false) {
-            flock($lock, LOCK_EX);
-        }
-        if (!is_int($date) && !is_string($date)) {
-            foreach (glob($this->_dir . '/nonce_*') as $name) {
-                @unlink($name);
-            }
-        } else {
-            if (is_string($date)) {
-                $time = time($date);
-            } else {
-                $time = $date;
-            }
-            foreach (glob($this->_dir . '/nonce_*') as $name) {
-                if (filemtime($name) < $time) {
-                    @unlink($name);
-                }
-            }
-        }
-        if ($lock !== false) {
-            fclose($lock);
-        }
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

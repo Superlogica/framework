@@ -1,108 +1,32 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Validate
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Float.php 13375 2008-12-19 14:16:40Z thomas $
- */
-
-/**
- * @see Zend_Validate_Abstract
- */
-require_once 'Zend/Validate/Abstract.php';
-
-/**
- * @see Zend_Locale_Format
- */
-require_once 'Zend/Locale/Format.php';
-
-/**
- * @category   Zend
- * @package    Zend_Validate
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Validate_Float extends Zend_Validate_Abstract
-{
-
-    const NOT_FLOAT = 'notFloat';
-
-    /**
-     * @var array
-     */
-    protected $_messageTemplates = array(
-        self::NOT_FLOAT => "'%value%' does not appear to be a float"
-    );
-
-    protected $_locale;
-
-    /**
-     * Constructor for the float validator
-     *
-     * @param string|Zend_Locale $locale
-     */
-    public function __construct($locale = null)
-    {
-        $this->setLocale($locale);
-    }
-
-    /**
-     * Returns the set locale
-     */
-    public function getLocale()
-    {
-        return $this->_locale;
-    }
-
-    /**
-     * Sets the locale to use
-     *
-     * @param string|Zend_Locale $locale
-     */
-    public function setLocale($locale = null)
-    {
-        require_once 'Zend/Locale.php';
-        $this->_locale = Zend_Locale::findLocale($locale);
-        return $this;
-    }
-
-    /**
-     * Defined by Zend_Validate_Interface
-     *
-     * Returns true if and only if $value is a floating-point value
-     *
-     * @param  string $value
-     * @return boolean
-     */
-    public function isValid($value)
-    {
-        $valueString = (string) $value;
-
-        $this->_setValue($valueString);
-
-        try {
-            if (!Zend_Locale_Format::isFloat($value, array('locale' => $this->_locale))) {
-                $this->_error();
-                return false;
-            }
-        } catch (Zend_Locale_Exception $e) {
-            $this->_error();
-            return false;
-        }
-
-        return true;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+s6dqEwYBBgF9ga6B

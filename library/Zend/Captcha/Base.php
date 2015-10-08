@@ -1,176 +1,46 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Captcha
- * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_Captcha_Adapter */
-require_once 'Zend/Captcha/Adapter.php';
-
-/** Zend_Validate_Abstract */
-require_once 'Zend/Validate/Abstract.php';
-
-/**
- * Base class for Captcha adapters
- * 
- * Provides some utility functionality to build on
- *
- * @category   Zend
- * @package    Zend_Captcha
- * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: $
- */
-abstract class Zend_Captcha_Base extends Zend_Validate_Abstract implements Zend_Captcha_Adapter 
-{
-    /**
-     * Element name
-     * 
-     * Useful to generate/check form fields
-     *
-     * @var string
-     */
-    protected $_name;
-
-    /**
-     * Captcha options 
-     * 
-     * @var array
-     */
-    protected $_options = array();
-
-    /**
-     * Options to skip when processing options
-     * @var array
-     */
-    protected $_skipOptions = array(
-        'options',
-        'config',
-    );
-    
-    /**
-     * Get name
-     * 
-     * @return string
-     */
-    public function getName() 
-    {
-        return $this->_name;
-    }
-    
-    /**
-     * Set name 
-     * 
-     * @param string $name
-     */
-    public function setName($name) 
-    {
-        $this->_name = $name;
-        return $this;
-    }
-
-    /**
-     * Constructor
-     *
-     * @param  array|Zend_Config $options 
-     * @return void
-     */
-    public function __construct($options = null)
-    {
-        // Set options
-        if (is_array($options)) {
-            $this->setOptions($options);
-        } else if ($options instanceof Zend_Config) {
-            $this->setConfig($options);
-        } 
-    } 
-    
-    /**
-     * Set single option for the object
-     *
-     * @param string $key
-     * @param string $value
-     * @return Zend_Form_Element
-     */
-    public function setOption($key, $value)
-    {
-        if (in_array(strtolower($key), $this->_skipOptions)) {
-            return $this;
-        }
-
-        $method = 'set' . ucfirst ($key);
-        if (method_exists ($this, $method)) {
-            // Setter exists; use it
-            $this->$method ($value);
-            $this->_options[$key] = $value;
-        } elseif (property_exists($this, $key)) {
-            // Assume it's metadata
-            $this->$key = $value;
-            $this->_options[$key] = $value;
-        }
-        return $this;
-    }
-    
-    /**
-     * Set object state from options array
-     * 
-     * @param  array $options 
-     * @return Zend_Form_Element
-     */
-    public function setOptions($options = null)
-    {
-        foreach ($options as $key => $value) {
-            $this->setOption($key, $value);
-        }
-        return $this;
-    }
-    
-    /**
-     * Retrieve options representing object state
-     * 
-     * @return array
-     */
-    public function getOptions()
-    {
-        return $this->_options;
-    }
-
-    /**
-     * Set object state from config object
-     * 
-     * @param  Zend_Config $config 
-     * @return Zend_Captcha_Base
-     */
-    public function setConfig(Zend_Config $config)
-    {
-        return $this->setOptions($config->toArray());
-    }
-
-    /**
-     * Get optional decorator
-     * 
-     * By default, return null, indicating no extra decorator needed.
-     *
-     * @return null
-     */
-    public function getDecorator() 
-    {
-        return null;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

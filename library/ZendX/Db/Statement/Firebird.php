@@ -1,369 +1,112 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   ZendX
- * @package    ZendX_Db
- * @subpackage Statement
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: $
- */
-
-/**
- * @see Zend_Db_Statement
- */
-require_once 'Zend/Db/Statement.php';
-
-/**
- * Extends for Firebird
- *
- * @category   ZendX
- * @package    ZendX_Db
- * @subpackage Statement
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class ZendX_Db_Statement_Firebird extends Zend_Db_Statement
-{
-
-    /**
-     * The firebird_stmtPrepared resource.
-     *
-     * @var firebird_stmtPrepared
-     */
-    protected $_stmtPrepared = null;
-
-    /**
-     * The firebird_stmtResult resource.
-     *
-     * @var firebird_result
-     */
-    protected $_stmtResult = null;
-
-    /**
-     * The firebird_stmtResult resource.
-     *
-     * @var firebird_result
-     */
-    protected $_stmtRowCount = 0;
-
-    /**
-     * The firebird_stmtResult resource.
-     *
-     * @var firebird_result
-     */
-    protected $_stmtColumnCount = 0;
-
-    /**
-     * Column names.
-     *
-     * @var array
-     */
-    protected $_keys = array();
-
-    /**
-     * Fetched result values.
-     *
-     * @var array
-     */
-    protected $_values = array();
-
-    /**
-     * @var array
-     */
-    protected $_meta = null;
-
-    /**
-     * @param  string $sql
-     * @return void
-     * @throws ZendX_Db_Statement_Firebird_Exception
-     */
-    public function _prepare($sql)
-    {
-        $this->_stmtRowCount = 0;
-        $this->_stmtColumnCount = 0;
-
-        $connection = $this->_adapter->getConnection();
-
-        if ($trans = $this->_adapter->getTransaction())
-            $this->_stmtPrepared = @ibase_prepare($connection, $trans, $sql);
-        else
-            $this->_stmtPrepared = @ibase_prepare($connection, $sql);
-
-        if ($this->_stmtPrepared === false) {
-            /**
-             * @see ZendX_Db_Statement_Firebird_Exception
-             */
-            require_once 'ZendX/Db/Statement/Firebird/Exception.php';
-            throw new ZendX_Db_Statement_Firebird_Exception("Firebird prepare error: " . ibase_errmsg());
-        }
-    }
-
-    /**
-     * Binds a parameter to the specified variable name.
-     *
-     * @param mixed $parameter Name the parameter, either integer or string.
-     * @param mixed $variable  Reference to PHP variable containing the value.
-     * @param mixed $type      OPTIONAL Datatype of SQL parameter.
-     * @param mixed $length    OPTIONAL Length of SQL parameter.
-     * @param mixed $options   OPTIONAL Other options.
-     * @return bool
-     * @throws ZendX_Db_Statement_Firebird_Exception
-     */
-    protected function _bindParam($parameter, &$variable, $type = null, $length = null, $options = null)
-    {
-        return true;
-    }
-
-    /**
-     * Closes the cursor and the statement.
-     *
-     * @return bool
-     */
-    public function close()
-    {
-        if ($stmt = $this->_stmtResult) {
-            @ibase_free_result($this->_stmtResult);
-            $this->_stmtResult = null;
-        }
-
-        if ($this->_stmtPrepared) {
-            $r = @ibase_free_query($this->_stmtPrepared);
-            $this->_stmtPrepared = null;
-            return $r;
-        }
-        return false;
-    }
-
-    /**
-     * Closes the cursor, allowing the statement to be executed again.
-     *
-     * @return bool
-     */
-    public function closeCursor()
-    {
-        if ($stmt = $this->_stmtResult) {
-            return @ibase_free_result($this->_stmtResult);
-        }
-        return false;
-    }
-
-    /**
-     * Returns the number of columns in the result set.
-     * Returns null if the statement has no result set metadata.
-     *
-     * @return int The number of columns.
-     */
-    public function columnCount()
-    {
-        return $this->_stmtColumnCount ? $this->_stmtColumnCount : 0;
-    }
-
-    /**
-     * Retrieves the error code, if any, associated with the last operation on
-     * the statement handle.
-     *
-     * @return string error code.
-     */
-    public function errorCode()
-    {
-        if ($this->_stmtPrepared || $this->_stmtResult) {
-            return ibase_errcode();
-        }
-        return false;        
-    }
-
-    /**
-     * Retrieves an array of error information, if any, associated with the
-     * last operation on the statement handle.
-     *
-     * @return array
-     */
-    public function errorInfo()
-    {
-        if (!$this->_stmtPrepared) {
-            return false;
-        }
-        return array(
-            ibase_errcode(),
-            ibase_errmsg()
-        );
-    }
-
-    /**
-     * Executes a prepared statement.
-     *
-     * @param array $params OPTIONAL Values to bind to parameter placeholders.
-     * @return bool
-     * @throws ZendX_Db_Statement_Firebird_Exception
-     */
-    public function _execute(array $params = null)
-    {
-        if (!$this->_stmtPrepared) {
-            return false;
-        }
-
-        // if no params were given as an argument to execute(),
-        // then default to the _bindParam array
-        if ($params === null) {
-            $params = $this->_bindParam;
-        }
-        // send $params as input parameters to the statement
-        if ($params) {
-            array_unshift($params, $this->_stmtPrepared);
-            $retval = @call_user_func_array(
-                'ibase_execute',
-                $params
-            );
-        } else
-            // execute the statement
-            $retval = @ibase_execute($this->_stmtPrepared);
-        $this->_stmtResult = $retval;
-
-        if ($retval === false) {
-            $last_error = ibase_errmsg();
-            $this->_stmtRowCount = 0;
-        }        
-        
-        //Firebird php ibase extension, auto-commit is not after each call, but at
-        //end of script. Disabled when transaction is active
-        if (!$this->_adapter->getTransaction())
-            ibase_commit_ret();
-            
-        if ($retval === false) {
-            /**
-             * @see ZendX_Db_Statement_Firebird_Exception
-             */
-            require_once 'ZendX/Db/Statement/Firebird/Exception.php';
-            throw new ZendX_Db_Statement_Firebird_Exception("Firebird statement execute error : " . $last_error);
-        }               
-
-        // statements that have no result set do not return metadata
-        if (is_resource($this->_stmtResult)) {
-
-            // get the column names that will result
-            $this->_keys = array();
-            $coln = ibase_num_fields($this->_stmtResult);
-            $this->_stmtColumnCount = $coln;
-            for ($i = 0; $i < $coln; $i++) {
-                $col_info = ibase_field_info($this->_stmtResult, $i);
-                $this->_keys[] = $this->_adapter->foldCase($col_info['name']);
-            }
-
-            // set up a binding space for result variables
-            $this->_values = array_fill(0, count($this->_keys), null);
-
-            // set up references to the result binding space.
-            // just passing $this->_values in the call_user_func_array()
-            // below won't work, you need references.
-            $refs = array();
-            foreach ($this->_values as $i => &$f) {
-                $refs[$i] = &$f;
-            }
-        }
-
-        if ($trans = $this->_adapter->getTransaction())
-            $this->_stmtRowCount = ibase_affected_rows($trans);
-        else
-            $this->_stmtRowCount = ibase_affected_rows($this->_adapter->getConnection());
-        return true;
-    }
-
-    /**
-     * Fetches a row from the result set.
-     *
-     * @param int $style  OPTIONAL Fetch mode for this fetch operation.
-     * @param int $cursor OPTIONAL Absolute, relative, or other.
-     * @param int $offset OPTIONAL Number for absolute or relative cursors.
-     * @return mixed Array, object, or scalar depending on fetch mode.
-     * @throws Zend_Db_Statement_Exception
-     */
-    public function fetch($style = null, $cursor = null, $offset = null)
-    {
-        if (!$this->_stmtResult) {
-            return false;
-        }
-
-        if ($style === null) {
-            $style = $this->_fetchMode;
-        }
-        
-        switch ($style) {
-            case Zend_Db::FETCH_NUM:
-                $row = ibase_fetch_row($this->_stmtResult, IBASE_TEXT);
-                break;
-            case Zend_Db::FETCH_ASSOC:
-                $row = ibase_fetch_assoc($this->_stmtResult, IBASE_TEXT);
-                break;
-            case Zend_Db::FETCH_BOTH:
-                $row = ibase_fetch_assoc($this->_stmtResult, IBASE_TEXT);
-                if ($row !== false)
-                    $row = array_merge($row, array_values($row));
-                break;
-            case Zend_Db::FETCH_OBJ:
-                $row = ibase_fetch_object($this->_stmtResult, IBASE_TEXT);
-                break;
-            case Zend_Db::FETCH_BOUND:
-                $row = ibase_fetch_assoc($this->_stmtResult, IBASE_TEXT);
-                if ($row !== false){
-                    $row = array_merge($row, array_values($row));
-                    $row = $this->_fetchBound($row);
-                }
-                break;
-            default:
-                /**
-                 * @see ZendX_Db_Adapter_Firebird_Exception
-                 */
-                require_once 'ZendX/Db/Statement/Firebird/Exception.php';
-                throw new ZendX_Db_Statement_Firebird_Exception(
-                    "Invalid fetch mode '$style' specified"
-                );
-                break;
-        }
-
-
-        return $row;
-    }
-
-    /**
-     * Retrieves the next rowset (result set) for a SQL statement that has
-     * multiple result sets.  An example is a stored procedure that returns
-     * the results of multiple queries.
-     *
-     * @return bool
-     * @throws ZendX_Db_Statement_Firebird_Exception
-     */
-    public function nextRowset()
-    {
-        /**
-         * @see ZendX_Db_Statement_Firebird_Exception
-         */
-        require_once 'ZendX/Db/Statement/Firebird/Exception.php';
-        throw new ZendX_Db_Statement_Firebird_Exception(__FUNCTION__.'() is not implemented');
-    }
-
-    /**
-     * Returns the number of rows affected by the execution of the
-     * last INSERT, DELETE, or UPDATE statement executed by this
-     * statement object.
-     *
-     * @return int     The number of rows affected.
-     * @throws Zend_Db_Statement_Exception
-     */
-    public function rowCount()
-    {
-        return $this->_stmtRowCount ? $this->_stmtRowCount : 0;
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

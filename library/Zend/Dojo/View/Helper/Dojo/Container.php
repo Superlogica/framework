@@ -1,1084 +1,272 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Dojo
- * @subpackage View
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @version    $Id: Container.php 14165 2009-02-25 17:56:01Z matthew $
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_Dojo */
-require_once 'Zend/Dojo.php';
-
-/**
- * Container for  Dojo View Helper
- *
- * 
- * @package    Zend_Dojo
- * @subpackage View
- * @copyright  Copyright (C) 2008 - Present, Zend Technologies, Inc.
- * @license    New BSD {@link http://framework.zend.com/license/new-bsd}
- */
-class Zend_Dojo_View_Helper_Dojo_Container
-{ 
-    /**
-     * @var Zend_View_Interface
-     */
-    public $view; 
-
-    /**
-     * addOnLoad capture lock
-     * @var bool
-     */
-    protected $_captureLock = false;
-
-    /**
-     * addOnLoad object on which to apply lambda
-     * @var string
-     */
-    protected $_captureObj;
-
-    /**
-     * Base CDN url to utilize
-     * @var string
-     */
-    protected $_cdnBase = Zend_Dojo::CDN_BASE_GOOGLE;
-
-    /**
-     * Path segment following version string of CDN path
-     * @var string
-     */
-    protected $_cdnDojoPath = Zend_Dojo::CDN_DOJO_PATH_GOOGLE;
-
-    /**
-     * Dojo version to use from CDN
-     * @var string
-     */
-    protected $_cdnVersion = '1.2.0';
-
-    /**
-     * Has the dijit loader been registered?
-     * @var bool
-     */
-    protected $_dijitLoaderRegistered = false;
-
-    /**
-     * Registered programmatic dijits
-     * @var array
-     */
-    protected $_dijits = array();
-
-    /**
-     * Dojo configuration
-     * @var array
-     */
-    protected $_djConfig = array();
-
-    /**
-     * Whether or not dojo is enabled
-     * @var bool
-     */
-    protected $_enabled = false;
-
-    /**
-     * Are we rendering as XHTML?
-     * @var bool
-     */
-    protected $_isXhtml = false;
-
-    /**
-     * Arbitrary javascript to include in dojo script
-     * @var array
-     */
-    protected $_javascriptStatements = array();
-
-    /**
-     * Dojo layers (custom builds) to use
-     * @var array
-     */
-    protected $_layers = array();
-
-    /**
-     * Relative path to dojo
-     * @var string
-     */
-    protected $_localPath = null;
-
-    /**
-     * Root of dojo where all dojo files are installed
-     * @var string
-     */
-    protected $_localRelativePath = null;
-
-    /**
-     * Modules to require
-     * @var array
-     */
-    protected $_modules = array();
-
-    /**
-     * Registered module paths
-     * @var array
-     */
-    protected $_modulePaths = array();
-
-    /**
-     * Actions to perform on window load
-     * @var array
-     */
-    protected $_onLoadActions = array();
-
-    /**
-     * Register the Dojo stylesheet?
-     * @var bool
-     */
-    protected $_registerDojoStylesheet = false;
-
-    /**
-     * Style sheet modules to load
-     * @var array
-     */
-    protected $_stylesheetModules = array();
-
-    /**
-     * Local stylesheets
-     * @var array
-     */
-    protected $_stylesheets = array();
-
-    /**
-     * Set view object
-     * 
-     * @param  Zend_Dojo_View_Interface $view 
-     * @return void
-     */
-    public function setView(Zend_View_Interface $view)
-    {
-        $this->view = $view;
-    }
-
-    /**
-     * Enable dojo
-     * 
-     * @return Zend_Dojo_View_Helper_Dojo_Container
-     */
-    public function enable()
-    {
-        $this->_enabled = true;
-        return $this;
-    }
-
-    /**
-     * Disable dojo
-     * 
-     * @return Zend_Dojo_View_Helper_Dojo_Container
-     */
-    public function disable()
-    {
-        $this->_enabled = false;
-        return $this;
-    }
-
-    /**
-     * Is dojo enabled?
-     * 
-     * @return bool
-     */
-    public function isEnabled()
-    {
-        return $this->_enabled;
-    }
- 
-    /**
-     * Specify a module to require
-     * 
-     * @param  string $module 
-     * @return Zend_Dojo_View_Helper_Dojo_Container
-     */
-    public function requireModule($module)
-    {
-        if (!is_string($module) && !is_array($module)) {
-            require_once 'Zend/Dojo/View/Exception.php';
-            throw new Zend_Dojo_View_Exception('Invalid module name specified; must be a string or an array of strings');
-        }
-
-        $module = (array) $module;
-
-        foreach ($module as $mod) {
-            if (!preg_match('/^[a-z][a-z0-9._-]+$/i', $mod)) {
-                require_once 'Zend/Dojo/View/Exception.php';
-                throw new Zend_Dojo_View_Exception(sprintf('Module name specified, "%s", contains invalid characters', (string) $mod));
-            }
-
-            if (!in_array($mod, $this->_modules)) {
-                $this->_modules[] = $mod;
-            }
-        }
-
-        return $this;
-    }
-
-    /**
-     * Retrieve list of modules to require
-     * 
-     * @return array
-     */
-    public function getModules()
-    {
-        return $this->_modules;
-    }
- 
-    /**
-     * Register a module path
-     * 
-     * @param  string $path 
-     * @return Zend_Dojo_View_Helper_Dojo_Container
-     */
-    public function registerModulePath($module, $path)
-    {
-        $path = (string) $path;
-        if (!in_array($module, $this->_modulePaths)) {
-            $this->_modulePaths[$module] = $path;
-        }
-
-        return $this;
-    }
-
-    /**
-     * List registered module paths
-     * 
-     * @return array
-     */
-    public function getModulePaths()
-    {
-        return $this->_modulePaths;
-    }
-
-    /**
-     * Add layer (custom build) path
-     * 
-     * @param  string $path 
-     * @return Zend_Dojo_View_Helper_Dojo_Container
-     */
-    public function addLayer($path)
-    {
-        $path = (string) $path;
-        if (!in_array($path, $this->_layers)) {
-            $this->_layers[] = $path;
-        }
-        return $this;
-    }
-
-    /**
-     * Get registered layers
-     * 
-     * @return array
-     */
-    public function getLayers()
-    {
-        return $this->_layers;
-    }
-
-    /**
-     * Remove a registered layer
-     * 
-     * @param  string $path 
-     * @return Zend_Dojo_View_Helper_Dojo_Container
-     */
-    public function removeLayer($path)
-    {
-        $path = (string) $path;
-        $layers = array_flip($this->_layers);
-        if (array_key_exists($path, $layers)) {
-            unset($layers[$path]);
-            $this->_layers = array_keys($layers);
-        }
-        return $this;
-    }
-
-    /**
-     * Clear all registered layers
-     * 
-     * @return Zend_Dojo_View_Helper_Dojo_Container
-     */
-    public function clearLayers()
-    {
-        $this->_layers = array();
-        return $this;
-    }
-
-    /**
-     * Set CDN base path
-     * 
-     * @param  string $url 
-     * @return Zend_Dojo_View_Helper_Dojo_Container
-     */
-    public function setCdnBase($url)
-    {
-        $this->_cdnBase = (string) $url;
-        return $this;
-    }
-
-    /**
-     * Return CDN base URL
-     * 
-     * @return string
-     */
-    public function getCdnBase()
-    {
-        return $this->_cdnBase;
-    }
- 
-    /**
-     * Use CDN, using version specified
-     * 
-     * @param  string $version 
-     * @return Zend_Dojo_View_Helper_Dojo_Container
-     */
-    public function setCdnVersion($version = null)
-    {
-        $this->enable();
-        if (preg_match('/^[1-9]\.[0-9](\.[0-9])?$/', $version)) {
-            $this->_cdnVersion = $version;
-        }
-        return $this;
-    }
- 
-    /**
-     * Get CDN version
-     * 
-     * @return string
-     */
-    public function getCdnVersion()
-    {
-        return $this->_cdnVersion;
-    }
-
-    /**
-     * Set CDN path to dojo (relative to CDN base + version)
-     * 
-     * @param  string $path 
-     * @return Zend_Dojo_View_Helper_Dojo_Container
-     */
-    public function setCdnDojoPath($path)
-    {
-        $this->_cdnDojoPath = (string) $path;
-        return $this;
-    }
-
-    /**
-     * Get CDN path to dojo (relative to CDN base + version)
-     * 
-     * @return string
-     */
-    public function getCdnDojoPath()
-    {
-        return $this->_cdnDojoPath;
-    }
-
-    /**
-     * Are we using the CDN?
-     * 
-     * @return bool
-     */
-    public function useCdn()
-    {
-        return !$this->useLocalPath();
-    }
- 
-    /**
-     * Set path to local dojo
-     * 
-     * @param  string $path 
-     * @return Zend_Dojo_View_Helper_Dojo_Container
-     */
-    public function setLocalPath($path)
-    {
-        $this->enable();
-        $this->_localPath = (string) $path;
-        return $this;
-    }
-
-    /**
-     * Get local path to dojo
-     * 
-     * @return string
-     */
-    public function getLocalPath()
-    {
-        return $this->_localPath;
-    }
-
-    /**
-     * Are we using a local path?
-     * 
-     * @return bool
-     */
-    public function useLocalPath()
-    {
-        return (null === $this->_localPath) ? false : true;
-    }
- 
-    /**
-     * Set Dojo configuration
-     * 
-     * @param  string $option 
-     * @param  mixed $value 
-     * @return Zend_Dojo_View_Helper_Dojo_Container
-     */
-    public function setDjConfig(array $config)
-    {
-        $this->_djConfig = $config;
-        return $this;
-    }
-
-    /**
-     * Set Dojo configuration option
-     * 
-     * @param  string $option 
-     * @param  mixed $value 
-     * @return Zend_Dojo_View_Helper_Dojo_Container
-     */
-    public function setDjConfigOption($option, $value)
-    {
-        $option = (string) $option;
-        $this->_djConfig[$option] = $value;
-        return $this;
-    }
-
-    /**
-     * Retrieve dojo configuration values
-     * 
-     * @return array
-     */
-    public function getDjConfig()
-    {
-        return $this->_djConfig;
-    }
-
-    /**
-     * Get dojo configuration value
-     * 
-     * @param  string $option 
-     * @param  mixed $default 
-     * @return mixed
-     */
-    public function getDjConfigOption($option, $default = null)
-    {
-        $option = (string) $option;
-        if (array_key_exists($option, $this->_djConfig)) {
-            return $this->_djConfig[$option];
-        }
-        return $default;
-    }
- 
-    /**
-     * Add a stylesheet by module name
-     * 
-     * @param  string $module 
-     * @return Zend_Dojo_View_Helper_Dojo_Container
-     */
-    public function addStylesheetModule($module)
-    {
-        if (!preg_match('/^[a-z0-9]+\.[a-z0-9_-]+(\.[a-z0-9_-]+)*$/i', $module)) {
-            require_once 'Zend/Dojo/View/Exception.php';
-            throw new Zend_Dojo_View_Exception('Invalid stylesheet module specified');
-        }
-        if (in_array($module, $this->_stylesheetModules)) {
-            return $this;
-        }
-        $this->_stylesheetModules[] = $module;
-        return $this;
-    }
-
-    /**
-     * Get all stylesheet modules currently registered
-     * 
-     * @return array
-     */
-    public function getStylesheetModules()
-    {
-        return $this->_stylesheetModules;
-    }
- 
-    /**
-     * Add a stylesheet
-     * 
-     * @param  string $path 
-     * @return Zend_Dojo_View_Helper_Dojo_Container
-     */
-    public function addStylesheet($path)
-    {
-        $path = (string) $path;
-        if (!in_array($path, $this->_stylesheets)) {
-            $this->_stylesheets[] = (string) $path;
-        }
-        return $this;
-    }
-
-    /**
-     * Register the dojo.css stylesheet?
-     *
-     * With no arguments, returns the status of the flag; with arguments, sets 
-     * the flag and returns the object.
-     * 
-     * @param  null|bool $flag
-     * @return Zend_Dojo_View_Helper_Dojo_Container|bool
-     */
-    public function registerDojoStylesheet($flag = null)
-    {
-        if (null === $flag) {
-             return $this->_registerDojoStylesheet;
-        }
-
-        $this->_registerDojoStylesheet = (bool) $flag;
-        return $this;
-    }
-
-    /**
-     * Retrieve registered stylesheets
-     * 
-     * @return array
-     */
-    public function getStylesheets()
-    {
-        return $this->_stylesheets;
-    }
-
-    /**
-     * Add a script to execute onLoad
-     *
-     * dojo.addOnLoad accepts:
-     * - function name
-     * - lambda
-     * 
-     * @param  string $callback Lambda
-     * @return Zend_Dojo_View_Helper_Dojo_Container
-     */
-    public function addOnLoad($callback)
-    {
-        if (!in_array($callback, $this->_onLoadActions, true)) {
-            $this->_onLoadActions[] = $callback;
-        }
-        return $this;
-    }
-
-    /**
-     * Prepend an onLoad event to the list of onLoad actions
-     * 
-     * @param  string $callback Lambda
-     * @return Zend_Dojo_View_Helper_Dojo_Container
-     */
-    public function prependOnLoad($callback)
-    {
-        if (!in_array($callback, $this->_onLoadActions, true)) {
-            array_unshift($this->_onLoadActions, $callback);
-        }
-        return $this;
-    }
-
-    /**
-     * Retrieve all registered onLoad actions
-     * 
-     * @return array
-     */
-    public function getOnLoadActions()
-    {
-        return $this->_onLoadActions;
-    }
-
-    /**
-     * Start capturing routines to run onLoad
-     * 
-     * @return bool
-     */
-    public function onLoadCaptureStart()
-    {
-        if ($this->_captureLock) {
-            require_once 'Zend/Dojo/View/Exception.php';
-            throw new Zend_Dojo_View_Exception('Cannot nest onLoad captures');
-        }
-
-        $this->_captureLock = true;
-        ob_start();
-        return;
-    }
-
-    /**
-     * Stop capturing routines to run onLoad
-     * 
-     * @return bool
-     */
-    public function onLoadCaptureEnd()
-    {
-        $data               = ob_get_clean();
-        $this->_captureLock = false;
-
-        $this->addOnLoad($data);
-        return true;
-    }
-
-    /**
-     * Add a programmatic dijit
-     * 
-     * @param  string $id 
-     * @param  array $params 
-     * @return Zend_Dojo_View_Helper_Dojo_Container
-     */
-    public function addDijit($id, array $params)
-    {
-        if (array_key_exists($id, $this->_dijits)) {
-            require_once 'Zend/Dojo/View/Exception.php';
-            throw new Zend_Dojo_View_Exception(sprintf('Duplicate dijit with id "%s" already registered', $id));
-        }
-
-        $this->_dijits[$id] = array(
-            'id'     => $id,
-            'params' => $params,
-        );
-
-        return $this;
-    }
-
-    /**
-     * Set a programmatic dijit (overwrites)
-     * 
-     * @param  string $id 
-     * @param  array $params 
-     * @return Zend_Dojo_View_Helper_Dojo_Container
-     */
-    public function setDijit($id, array $params)
-    {
-        $this->removeDijit($id);
-        return $this->addDijit($id, $params);
-    }
-
-    /**
-     * Add multiple dijits at once
-     *
-     * Expects an array of id => array $params pairs
-     * 
-     * @param  array $dijits 
-     * @return Zend_Dojo_View_Helper_Dojo_Container
-     */
-    public function addDijits(array $dijits)
-    {
-        foreach ($dijits as $id => $params) {
-            $this->addDijit($id, $params);
-        }
-        return $this;
-    }
-
-    /**
-     * Set multiple dijits at once (overwrites)
-     *
-     * Expects an array of id => array $params pairs
-     * 
-     * @param  array $dijits 
-     * @return Zend_Dojo_View_Helper_Dojo_Container
-     */
-    public function setDijits(array $dijits)
-    {
-        $this->clearDijits();
-        return $this->addDijits($dijits);
-    }
-
-    /**
-     * Is the given programmatic dijit already registered?
-     * 
-     * @param  string $id 
-     * @return bool
-     */
-    public function hasDijit($id)
-    {
-        return array_key_exists($id, $this->_dijits);
-    }
-
-    /**
-     * Retrieve a dijit by id
-     * 
-     * @param  string $id 
-     * @return array|null
-     */
-    public function getDijit($id)
-    {
-        if ($this->hasDijit($id)) {
-            return $this->_dijits[$id]['params'];
-        }
-        return null;
-    }
-
-    /**
-     * Retrieve all dijits
-     *
-     * Returns dijits as an array of assoc arrays
-     * 
-     * @return array
-     */
-    public function getDijits()
-    {
-        return array_values($this->_dijits);
-    }
-
-    /**
-     * Remove a programmatic dijit if it exists
-     * 
-     * @param  string $id 
-     * @return Zend_Dojo_View_Helper_Dojo_Container
-     */
-    public function removeDijit($id)
-    {
-        if (array_key_exists($id, $this->_dijits)) {
-            unset($this->_dijits[$id]);
-        }
-
-        return $this;
-    }
-
-    /**
-     * Clear all dijits
-     * 
-     * @return Zend_Dojo_View_Helper_Dojo_Container
-     */
-    public function clearDijits()
-    {
-        $this->_dijits = array();
-        return $this;
-    }
-
-    /**
-     * Render dijits as JSON structure
-     * 
-     * @return string
-     */
-    public function dijitsToJson()
-    {
-        require_once 'Zend/Json.php';
-        return Zend_Json::encode($this->getDijits());
-    }
-
-    /**
-     * Create dijit loader functionality
-     * 
-     * @return void
-     */
-    public function registerDijitLoader()
-    {
-        if (!$this->_dijitLoaderRegistered) {
-            $js =<<<EOJ
-function() {
-    dojo.forEach(zendDijits, function(info) {
-        var n = dojo.byId(info.id);
-        if (null != n) {
-            dojo.attr(n, dojo.mixin({ id: info.id }, info.params));
-        }
-    });
-    dojo.parser.parse();
-}
-EOJ;
-            $this->requireModule('dojo.parser');
-            $this->prependOnLoad($js);
-            $this->addJavascript('var zendDijits = ' . $this->dijitsToJson() . ';');
-            $this->_dijitLoaderRegistered = true;
-        }
-    }
-
-    /**
-     * Add arbitrary javascript to execute in dojo JS container
-     * 
-     * @param  string $js 
-     * @return Zend_Dojo_View_Helper_Dojo_Container
-     */
-    public function addJavascript($js)
-    {
-        $js = preg_replace('/^\s*(.*?)\s*$/s', '$1', $js);
-        if (!in_array(substr($js, -1), array(';', '}'))) {
-            $js .= ';';
-        }
-
-        if (in_array($js, $this->_javascriptStatements)) {
-            return $this;
-        }
-
-        $this->_javascriptStatements[] = $js;
-        return $this;
-    }
-
-    /**
-     * Return all registered javascript statements
-     * 
-     * @return array
-     */
-    public function getJavascript()
-    {
-        return $this->_javascriptStatements;
-    }
-
-    /**
-     * Clear arbitrary javascript stack
-     * 
-     * @return Zend_Dojo_View_Helper_Dojo_Container
-     */
-    public function clearJavascript()
-    {
-        $this->_javascriptStatements = array();
-        return $this;
-    }
-
-    /**
-     * Capture arbitrary javascript to include in dojo script
-     * 
-     * @return void
-     */
-    public function javascriptCaptureStart()
-    {
-        if ($this->_captureLock) {
-            require_once 'Zend/Dojo/View/Exception.php';
-            throw new Zend_Dojo_View_Exception('Cannot nest captures');
-        }
-
-        $this->_captureLock = true;
-        ob_start();
-        return;
-    }
-
-    /**
-     * Finish capturing arbitrary javascript to include in dojo script
-     * 
-     * @return true
-     */
-    public function javascriptCaptureEnd()
-    {
-        $data               = ob_get_clean();
-        $this->_captureLock = false;
-
-        $this->addJavascript($data);
-        return true;
-    }
-
-    /**
-     * String representation of dojo environment
-     * 
-     * @return string
-     */
-    public function __toString()
-    {
-        if (!$this->isEnabled()) {
-            return '';
-        }
-
-        $this->_isXhtml = $this->view->doctype()->isXhtml();
-
-        if (Zend_Dojo_View_Helper_Dojo::useDeclarative()) {
-            if (null === $this->getDjConfigOption('parseOnLoad')) {
-                $this->setDjConfigOption('parseOnLoad', true);
-            }
-        }
-
-        if (!empty($this->_dijits)) {
-            $this->registerDijitLoader();
-        }
-
-        $html  = $this->_renderStylesheets() . PHP_EOL
-               . $this->_renderDjConfig() . PHP_EOL
-               . $this->_renderDojoScriptTag() . PHP_EOL
-               . $this->_renderLayers() . PHP_EOL
-               . $this->_renderExtras();
-        return $html;
-    }
-
-    /**
-     * Retrieve local path to dojo resources for building relative paths
-     * 
-     * @return string
-     */
-    protected function _getLocalRelativePath()
-    {
-        if (null === $this->_localRelativePath) {
-            $localPath = $this->getLocalPath();
-            $localPath = preg_replace('|[/\\\\]dojo[/\\\\]dojo.js[^/\\\\]*$|i', '', $localPath);
-            $this->_localRelativePath = $localPath;
-        }
-        return $this->_localRelativePath;
-    }
-
-    /**
-     * Render dojo stylesheets
-     * 
-     * @return string
-     */
-    protected function _renderStylesheets()
-    {
-        if ($this->useCdn()) {
-            $base = $this->getCdnBase()
-                  . $this->getCdnVersion();
-        } else {
-            $base = $this->_getLocalRelativePath();
-        }
-
-        $registeredStylesheets = $this->getStylesheetModules();
-        foreach ($registeredStylesheets as $stylesheet) {
-            $themeName     = substr($stylesheet, strrpos($stylesheet, '.') + 1);
-            $stylesheet    = str_replace('.', '/', $stylesheet);
-            $stylesheets[] = $base . '/' . $stylesheet . '/' . $themeName . '.css';
-        }
-
-        foreach ($this->getStylesheets() as $stylesheet) {
-            $stylesheets[] = $stylesheet;
-        }
-
-        if ($this->_registerDojoStylesheet) {
-            $stylesheets[] = $base . '/dojo/resources/dojo.css';
-        }
-
-        if (empty($stylesheets)) {
-            return '';
-        }
-
-        array_reverse($stylesheets);
-        $style = '<style type="text/css">' . PHP_EOL
-               . (($this->_isXhtml) ? '<!--' : '<!--') . PHP_EOL;
-        foreach ($stylesheets as $stylesheet) {
-            $style .= '    @import "' . $stylesheet . '";' . PHP_EOL;
-        }
-        $style .= (($this->_isXhtml) ? '-->' : '-->') . PHP_EOL
-                . '</style>';
-
-        return $style;
-    }
-
-    /**
-     * Render DjConfig values
-     * 
-     * @return string
-     */
-    protected function _renderDjConfig()
-    {
-        $djConfigValues = $this->getDjConfig();
-        if (empty($djConfigValues)) {
-            return '';
-        }
-
-        require_once 'Zend/Json.php';
-        $scriptTag = '<script type="text/javascript">' . PHP_EOL
-                   . (($this->_isXhtml) ? '//<![CDATA[' : '//<!--') . PHP_EOL
-                   . '    var djConfig = ' . Zend_Json::encode($djConfigValues) . ';' . PHP_EOL
-                   . (($this->_isXhtml) ? '//]]>' : '//-->') . PHP_EOL
-                   . '</script>';
-
-        return $scriptTag;
-    }
-
-    /**
-     * Render dojo script tag
-     *
-     * Renders Dojo script tag by utilizing either local path provided or the 
-     * CDN. If any djConfig values were set, they will be serialized and passed 
-     * with that attribute.
-     * 
-     * @return string
-     */
-    protected function _renderDojoScriptTag()
-    {
-        if ($this->useCdn()) {
-            $source = $this->getCdnBase()
-                    . $this->getCdnVersion()
-                    . $this->getCdnDojoPath();
-        } else {
-            $source = $this->getLocalPath();
-        }
-
-        $scriptTag = '<script type="text/javascript" src="' . $source . '"></script>';
-        return $scriptTag;
-    }
-
-    /**
-     * Render layers (custom builds) as script tags
-     * 
-     * @return string
-     */
-    protected function _renderLayers()
-    {
-        $layers = $this->getLayers();
-        if (empty($layers)) {
-            return '';
-        }
-
-        $html = array();
-        foreach ($layers as $path) {
-            $html[] = sprintf(
-                '<script type="text/javascript" src="%s"></script>',
-                htmlentities($path, ENT_QUOTES)
-            );
-        }
-
-        return implode("\n", $html);
-    }
-
-    /**
-     * Render dojo module paths and requires
-     * 
-     * @return string
-     */
-    protected function _renderExtras()
-    {
-        $js = array();
-        $modulePaths = $this->getModulePaths();
-        if (!empty($modulePaths)) {
-            foreach ($modulePaths as $module => $path) {
-                $js[] =  'dojo.registerModulePath("' . $this->view->escape($module) . '", "' . $this->view->escape($path) . '");';
-            }
-        }
-
-        $modules = $this->getModules();
-        if (!empty($modules)) {
-            foreach ($modules as $module) {
-                $js[] = 'dojo.require("' . $this->view->escape($module) . '");';
-            }
-        }
-
-        $onLoadActions = array();
-        foreach ($this->getOnLoadActions() as $callback) {
-            $onLoadActions[] = 'dojo.addOnLoad(' . $callback . ');';
-        }
-
-        $javascript = implode("\n    ", $this->getJavascript());
-
-        $content = '';
-        if (!empty($js)) {
-            $content .= implode("\n    ", $js) . "\n";
-        }
-
-        if (!empty($onLoadActions)) {
-            $content .= implode("\n    ", $onLoadActions) . "\n";
-        }
-
-        if (!empty($javascript)) {
-            $content .= $javascript . "\n";
-        }
-
-        if (preg_match('/^\s*$/s', $content)) {
-            return '';
-        }
-
-        $html = '<script type="text/javascript">' . PHP_EOL
-              . (($this->_isXhtml) ? '//<![CDATA[' : '//<!--') . PHP_EOL
-              . $content
-              . (($this->_isXhtml) ? '//]]>' : '//-->') . PHP_EOL
-              . PHP_EOL . '</script>';
-        return $html;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

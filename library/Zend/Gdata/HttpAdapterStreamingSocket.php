@@ -1,107 +1,51 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Gdata
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * @see Zend_Http_Client_Adapter_Socket
- */
-require_once 'Zend/Http/Client/Adapter/Socket.php';
-
-/**
- * Extends the default HTTP adapter to handle streams instead of discrete body
- * strings.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Gdata
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Gdata_HttpAdapterStreamingSocket extends Zend_Http_Client_Adapter_Socket
-{
-
-    /**
-     * The amount read from a stream source at a time.
-     *
-     * @var integer
-     */
-    const CHUNK_SIZE = 1024;
-
-    /**
-     * Send request to the remote server with streaming support.
-     *
-     * @param string        $method
-     * @param Zend_Uri_Http $uri
-     * @param string        $http_ver
-     * @param array         $headers
-     * @param string        $body
-     * @return string Request as string
-     */
-    public function write($method, $uri, $http_ver = '1.1', $headers = array(),
-        $body = '')
-    {
-        // Make sure we're properly connected
-        if (! $this->socket) {
-            require_once 'Zend/Http/Client/Adapter/Exception.php';
-            throw new Zend_Http_Client_Adapter_Exception(
-                'Trying to write but we are not connected');
-        }
-
-        $host = $uri->getHost();
-        $host = (strtolower($uri->getScheme()) == 'https' ? $this->config['ssltransport'] : 'tcp') . '://' . $host;
-        if ($this->connected_to[0] != $host || $this->connected_to[1] != $uri->getPort()) {
-            require_once 'Zend/Http/Client/Adapter/Exception.php';
-            throw new Zend_Http_Client_Adapter_Exception(
-                'Trying to write but we are connected to the wrong host');
-        }
-
-        // Save request method for later
-        $this->method = $method;
-
-        // Build request headers
-        $path = $uri->getPath();
-        if ($uri->getQuery()) $path .= '?' . $uri->getQuery();
-        $request = "{$method} {$path} HTTP/{$http_ver}\r\n";
-        foreach ($headers as $k => $v) {
-            if (is_string($k)) $v = ucfirst($k) . ": $v";
-            $request .= "$v\r\n";
-        }
-
-        // Send the headers over
-        $request .= "\r\n";
-        if (! @fwrite($this->socket, $request)) {
-            require_once 'Zend/Http/Client/Adapter/Exception.php';
-            throw new Zend_Http_Client_Adapter_Exception(
-                'Error writing request to server');
-        }
-
-
-        //read from $body, write to socket
-        while ($body->hasData()) {
-            if (! @fwrite($this->socket, $body->read(self::CHUNK_SIZE))) {
-                require_once 'Zend/Http/Client/Adapter/Exception.php';
-                throw new Zend_Http_Client_Adapter_Exception(
-                    'Error writing request to server');
-            }
-        }
-        return 'Large upload, request is not cached.';
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

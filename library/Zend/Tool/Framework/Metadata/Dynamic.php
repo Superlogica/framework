@@ -1,107 +1,33 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Tool
- * @subpackage Framework
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id$
- */
-
-/**
- * @see Zend_Tool_Framework_Manifest_Metadata
- */
-require_once 'Zend/Tool/Framework/Manifest/Metadata.php';
-
-/**
- * @category   Zend
- * @package    Zend_Tool
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Tool_Framework_Metadata_Dynamic implements Zend_Tool_Framework_Metadata_Interface
-{
-    
-    /**
-     * @var string
-     */
-    protected $_type = 'Dynamic';
-    
-    /**
-     * @var array
-     */
-    protected $_dynamicAttributes = array();
-    
-    /**
-     * __isset()
-     * 
-     * Check if an attrbute is set
-     *
-     * @param string $name
-     * @return bool
-     */
-    public function __isset($name)
-    {
-        return isset($this->_dynamicAttributes[$name]);
-    }
-    
-    /**
-     * __unset()
-     *
-     * @param string $name
-     * @return null
-     */
-    public function __unset($name)
-    {
-        unset($this->_dynamicAttributes[$name]);
-        return;
-    }
-    
-    /**
-     * __get() - Get a property via property call $metadata->foo
-     *
-     * @param string $name
-     * @return mixed
-     */
-    public function __get($name)
-    {
-        if (method_exists($this, 'get' . $name)) {
-            return $this->{'get' . $name}();
-        } elseif (array_key_exists($name, $this->_dynamicAttributes)) {
-            return ;
-        } else {
-            require_once 'Zend/Tool/Framework/Registry/Exception.php';
-            throw new Zend_Tool_Framework_Registry_Exception('Property ' . $name . ' was not located in this metadata.');
-        }
-    }
-    
-    /**
-     * __set() - Set a property via the magic set $metadata->foo = 'foo'
-     *
-     * @param string $name
-     * @param mixed $value
-     */
-    public function __set($name, $value)
-    {
-        if (method_exists($this, 'set' . $name)) {
-            $this->{'set' . $name}($value);
-            return;
-        } else {
-            require_once 'Zend/Tool/Framework/Registry/Exception.php';
-            throw new Zend_Tool_Framework_Registry_Exception('Property ' . $name . ' was not located in this registry.');            
-        }
-    }
-    
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

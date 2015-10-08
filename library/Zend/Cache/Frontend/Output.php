@@ -1,105 +1,40 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Cache
- * @subpackage Zend_Cache_Frontend
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-
-/**
- * @see Zend_Cache_Core
- */
-require_once 'Zend/Cache/Core.php';
-
-
-/**
- * @package    Zend_Cache
- * @subpackage Zend_Cache_Frontend
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Cache_Frontend_Output extends Zend_Cache_Core
-{
-
-    private $_idStack = array();
-
-    /**
-     * Constructor
-     *
-     * @param  array $options Associative array of options
-     * @return void
-     */
-    public function __construct(array $options = array())
-    {
-        parent::__construct($options);
-        $this->_idStack = array();
-    }
-
-    /**
-     * Start the cache
-     *
-     * @param  string  $id                     Cache id
-     * @param  boolean $doNotTestCacheValidity If set to true, the cache validity won't be tested
-     * @param  boolean $echoData               If set to true, datas are sent to the browser if the cache is hit (simpy returned else)
-     * @return mixed True if the cache is hit (false else) with $echoData=true (default) ; string else (datas)
-     */
-    public function start($id, $doNotTestCacheValidity = false, $echoData = true)
-    {
-        $data = $this->load($id, $doNotTestCacheValidity);
-        if ($data !== false) {
-            if ( $echoData ) {
-                echo($data);
-                return true;
-            } else {
-                return $data;
-            }
-        }
-        ob_start();
-        ob_implicit_flush(false);
-        $this->_idStack[] = $id;
-        return false;
-    }
-
-    /**
-     * Stop the cache
-     *
-     * @param  array   $tags             Tags array
-     * @param  int     $specificLifetime If != false, set a specific lifetime for this cache record (null => infinite lifetime)
-     * @param  string  $forcedDatas      If not null, force written datas with this
-     * @param  boolean $echoData         If set to true, datas are sent to the browser
-     * @param  int     $priority         integer between 0 (very low priority) and 10 (maximum priority) used by some particular backends
-     * @return void
-     */
-    public function end($tags = array(), $specificLifetime = false, $forcedDatas = null, $echoData = true, $priority = 8)
-    {
-        if ($forcedDatas === null) {
-            $data = ob_get_contents();
-            ob_end_clean();
-        } else {
-            $data =& $forcedDatas;
-        }
-        $id = array_pop($this->_idStack);
-        if ($id === null) {
-            Zend_Cache::throwException('use of end() without a start()');
-        }
-        $this->save($data, $id, $tags, $specificLifetime, $priority);
-        if ($echoData) {
-            echo($data);
-        }
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+kBUYvhvebMQ3

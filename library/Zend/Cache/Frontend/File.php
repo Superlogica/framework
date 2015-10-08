@@ -1,208 +1,62 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Cache
- * @subpackage Zend_Cache_Frontend
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-
-/**
- * @see Zend_Cache_Core
- */
-require_once 'Zend/Cache/Core.php';
-
-
-/**
- * @package    Zend_Cache
- * @subpackage Zend_Cache_Frontend
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Cache_Frontend_File extends Zend_Cache_Core
-{
-	
-	/**
-	 * Consts for master_files_mode
-	 */
-	const MODE_AND = 'AND';
-	const MODE_OR  = 'OR';
-	
-    /**
-     * Available options
-     *
-     * ====> (string) master_file :
-     * - a complete path of the master file
-     * - deprecated (see master_files)
-     * 
-     * ====> (array) master_files :
-     * - an array of complete path of master files
-     * - this option has to be set !
-     * 
-     * ====> (string) master_files_mode :
-     * - Zend_Cache_Frontend_File::MODE_AND or Zend_Cache_Frontend_File::MODE_OR
-     * - if MODE_AND, then all master files have to be touched to get a cache invalidation
-     * - if MODE_OR (default), then a single touched master file is enough to get a cache invalidation
-     *
-     * ====> (boolean) ignore_missing_master_files
-     * - if set to true, missing master files are ignored silently 
-     * - if set to false (default), an exception is thrown if there is a missing master file
-     * @var array available options
-     */
-    protected $_specificOptions = array(
-    	'master_file' => null,
-        'master_files' => null,
-    	'master_files_mode' => 'OR',
-    	'ignore_missing_master_files' => false
-    );
-
-    /**
-     * Master file mtimes
-     *
-     * Array of int
-     * 
-     * @var array
-     */
-    private $_masterFile_mtimes = null;
-
-    /**
-     * Constructor
-     *
-     * @param  array $options Associative array of options
-     * @throws Zend_Cache_Exception
-     * @return void
-     */
-    public function __construct(array $options = array())
-    {
-        while (list($name, $value) = each($options)) {
-            $this->setOption($name, $value);
-        }
-        if (!isset($this->_specificOptions['master_files'])) {
-            Zend_Cache::throwException('master_files option must be set');
-        }
-    }
-    
-    /**
-     * Change the master_file option
-     * 
-     * @param string $masterFile the complete path and name of the master file
-     */
-    public function setMasterFiles($masterFiles)
-    {
-        clearstatcache();
-        $this->_specificOptions['master_file'] = $masterFiles[0]; // to keep a compatibility
-        $this->_specificOptions['master_files'] = $masterFiles;
-        $this->_masterFile_mtimes = array();
-        $i = 0;
-        foreach ($masterFiles as $masterFile) {
-        	$this->_masterFile_mtimes[$i] = @filemtime($masterFile);
-        	if ((!($this->_specificOptions['ignore_missing_master_files'])) && (!($this->_masterFile_mtimes[$i]))) {
-        		Zend_Cache::throwException('Unable to read master_file : '.$masterFile);     
-        	}
-        	$i++;
-        }
-    }
-    
-    /**
-     * Change the master_file option
-     * 
-     * To keep the compatibility 
-     * 
-     * @deprecated
-     * @param string $masterFile the complete path and name of the master file
-     */    
-    public function setMasterFile($masterFile)
-    {
-  		$this->setMasterFiles(array(0 => $masterFile));
-    }
-    
-    /**
-     * Public frontend to set an option
-     *
-     * Just a wrapper to get a specific behaviour for master_file
-     *
-     * @param  string $name  Name of the option
-     * @param  mixed  $value Value of the option
-     * @throws Zend_Cache_Exception
-     * @return void
-     */
-    public function setOption($name, $value)
-    {
-        if ($name == 'master_file') {
-            $this->setMasterFile($value);
-        } else if ($name == 'master_files') {
-        	$this->setMasterFiles($value);
-        } else {
-            parent::setOption($name, $value);
-        }
-    }
-
-    /**
-     * Test if a cache is available for the given id and (if yes) return it (false else)
-     *
-     * @param  string  $id                     Cache id
-     * @param  boolean $doNotTestCacheValidity If set to true, the cache validity won't be tested
-     * @param  boolean $doNotUnserialize       Do not serialize (even if automatic_serialization is true) => for internal use
-     * @return mixed|false Cached datas
-     */
-    public function load($id, $doNotTestCacheValidity = false, $doNotUnserialize = false)
-    {
-        if (!$doNotTestCacheValidity) {
-            if ($this->test($id)) {
-                return parent::load($id, true, $doNotUnserialize);
-            }
-            return false;
-        }
-        return parent::load($id, true, $doNotUnserialize);
-    }
-
-    /**
-     * Test if a cache is available for the given id
-     *
-     * @param  string $id Cache id
-     * @return boolean True is a cache is available, false else
-     */
-    public function test($id)
-    {
-        $lastModified = parent::test($id);
-        if ($lastModified) {
-        	if ($this->_specificOptions['master_files_mode'] == self::MODE_AND) {
-        		// MODE_AND
-        		foreach($this->_masterFile_mtimes as $masterFileMTime) {
-        			if ($masterFileMTime) {
-        				if ($lastModified > $masterFileMTime) {
-        					return $lastModified;
-        				}
-        			}
-        		}
-        	} else {
-        		// MODE_OR
-        		$res = true;
-        		foreach($this->_masterFile_mtimes as $masterFileMTime) {
-        			if ($masterFileMTime) {
-        				if ($lastModified <= $masterFileMTime) {
-        					return false;
-        				}
-        			}
-        		}
-        		return $lastModified;
-        	}
-        }
-        return false;
-    }
-
-}
-
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

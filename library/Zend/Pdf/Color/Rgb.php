@@ -1,101 +1,32 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Pdf
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_Pdf_Color */
-require_once 'Zend/Pdf/Color.php';
-
-/** Zend_Pdf_Element_Numeric */
-require_once 'Zend/Pdf/Element/Numeric.php';
-
-/**
- * RGB color implementation
- *
- * @category   Zend
- * @package    Zend_Pdf
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Pdf_Color_Rgb extends Zend_Pdf_Color
-{
-    /**
-     * Red level.
-     * 0.0 (zero concentration) - 1.0 (maximum concentration)
-     *
-     * @var Zend_Pdf_Element_Numeric
-     */
-    private $_r;
-
-    /**
-     * Green level.
-     * 0.0 (zero concentration) - 1.0 (maximum concentration)
-     *
-     * @var Zend_Pdf_Element_Numeric
-     */
-    private $_g;
-
-    /**
-     * Blue level.
-     * 0.0 (zero concentration) - 1.0 (maximum concentration)
-     *
-     * @var Zend_Pdf_Element_Numeric
-     */
-    private $_b;
-
-
-    /**
-     * Object constructor
-     *
-     * @param float $r
-     * @param float $g
-     * @param float $b
-     */
-    public function __construct($r, $g, $b)
-    {
-        /** Clamp values to legal limits. */
-        if ($r < 0) { $r = 0; }
-        if ($r > 1) { $r = 1; }
-
-        if ($g < 0) { $g = 0; }
-        if ($g > 1) { $g = 1; }
-
-        if ($b < 0) { $b = 0; }
-        if ($b > 1) { $b = 1; }
-
-        $this->_r = new Zend_Pdf_Element_Numeric($r);
-        $this->_g = new Zend_Pdf_Element_Numeric($g);
-        $this->_b = new Zend_Pdf_Element_Numeric($b);
-    }
-
-    /**
-     * Instructions, which can be directly inserted into content stream
-     * to switch color.
-     * Color set instructions differ for stroking and nonstroking operations.
-     *
-     * @param boolean $stroking
-     * @return string
-     */
-    public function instructions($stroking)
-    {
-        return $this->_r->toString() . ' '
-             . $this->_g->toString() . ' '
-             . $this->_b->toString() .     ($stroking? " RG\n" : " rg\n");
-    }
-}
-
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+dOEPbWi9xRoz6XoqCa0J7iouqQAxWm==

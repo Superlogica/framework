@@ -1,129 +1,50 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Controller
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * @see Zend_Controller_Response_Http
- */
-require_once 'Zend/Controller/Response/Http.php';
-
-/**
- * Zend_Controller_Response_HttpTestCase
- *
- * @uses Zend_Controller_Response_Http
- * @package Zend_Controller
- * @subpackage Request
- */
-class Zend_Controller_Response_HttpTestCase extends Zend_Controller_Response_Http
-{
-    /**
-     * "send" headers by returning array of all headers that would be sent
-     * 
-     * @return array
-     */
-    public function sendHeaders()
-    {
-        $headers = array();
-        foreach ($this->_headersRaw as $header) {
-            $headers[] = $header;
-        }
-        foreach ($this->_headers as $header) {
-            $name = $header['name'];
-            $key  = strtolower($name);
-            if (array_key_exists($name, $headers)) {
-                if ($header['replace']) {
-                    $headers[$key] = $header['name'] . ': ' . $header['value'];
-                }
-            } else {
-                $headers[$key] = $header['name'] . ': ' . $header['value'];
-            }
-        }
-        return $headers;
-    }
-
-    /**
-     * Can we send headers?
-     * 
-     * @param  bool $throw 
-     * @return void
-     */
-    public function canSendHeaders($throw = false)
-    {
-        return true;
-    }
-
-    /**
-     * Return the concatenated body segments
-     * 
-     * @return string
-     */
-    public function outputBody()
-    {
-        $fullContent = '';
-        foreach ($this->_body as $content) {
-            $fullContent .= $content;
-        }
-        return $fullContent;
-    }
-
-    /**
-     * Get body and/or body segments
-     * 
-     * @param  bool|string $spec 
-     * @return string|array|null
-     */
-    public function getBody($spec = false)
-    {
-        if (false === $spec) {
-            return $this->outputBody();
-        } elseif (true === $spec) {
-            return $this->_body;
-        } elseif (is_string($spec) && isset($this->_body[$spec])) {
-            return $this->_body[$spec];
-        }
-
-        return null;
-    }
-
-    /**
-     * "send" Response
-     *
-     * Concats all response headers, and then final body (separated by two 
-     * newlines)
-     * 
-     * @return string
-     */
-    public function sendResponse()
-    {
-        $headers = $this->sendHeaders();
-        $content = implode("\n", $headers) . "\n\n";
-
-        if ($this->isException() && $this->renderExceptions()) {
-            $exceptions = '';
-            foreach ($this->getException() as $e) {
-                $exceptions .= $e->__toString() . "\n";
-            }
-            $content .= $exceptions;
-        } else {
-            $content .= $this->outputBody();
-        }
-
-        return $content;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

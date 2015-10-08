@@ -1,236 +1,51 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- * 
- * @category   Zend
- * @package    Zend_Mail
- * @subpackage Storage
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Folder.php 9099 2008-03-30 19:35:47Z thomas $
- */
-
-
-/**
- * @category   Zend
- * @package    Zend_Mail
- * @subpackage Storage
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Mail_Storage_Folder implements RecursiveIterator
-{
-    /**
-     * subfolders of folder array(localName => Zend_Mail_Storage_Folder folder)
-     * @var array
-     */
-    protected $_folders;
-
-    /**
-     * local name (name of folder in parent folder)
-     * @var string
-     */
-    protected $_localName;
-
-    /**
-     * global name (absolute name of folder)
-     * @var string
-     */
-    protected $_globalName;
-
-    /**
-     * folder is selectable if folder is able to hold messages, else it's just a parent folder
-     * @var bool
-     */
-    protected $_selectable = true;
-
-    /**
-     * create a new mail folder instance
-     *
-     * @param string $localName  name of folder in current subdirectory
-     * @param string $globalName absolute name of folder
-     * @param bool   $selectable if true folder holds messages, if false it's just a parent for subfolders
-     * @param array  $folders    init with given instances of Zend_Mail_Storage_Folder as subfolders
-     */
-    public function __construct($localName, $globalName = '', $selectable = true, array $folders = array())
-    {
-        $this->_localName  = $localName;
-        $this->_globalName = $globalName ? $globalName : $localName;
-        $this->_selectable = $selectable;
-        $this->_folders    = $folders;
-    }
-
-    /**
-     * implements RecursiveIterator::hasChildren()
-     *
-     * @return bool current element has children
-     */
-    public function hasChildren()
-    {
-        $current = $this->current();
-        return $current && $current instanceof Zend_Mail_Storage_Folder && !$current->isLeaf();
-    }
-
-    /**
-     * implements RecursiveIterator::getChildren()
-     *
-     * @return Zend_Mail_Storage_Folder same as self::current()
-     */
-    public function getChildren()
-    {
-        return $this->current();
-    }
-
-    /**
-     * implements Iterator::valid()
-     *
-     * @return bool check if there's a current element
-     */
-    public function valid()
-    {
-        return key($this->_folders) !== null;
-    }
-
-    /**
-     * implements Iterator::next()
-     *
-     * @return null
-     */
-    public function next()
-    {
-        next($this->_folders);
-    }
-
-    /**
-     * implements Iterator::key()
-     *
-     * @return string key/local name of current element
-     */
-    public function key()
-    {
-        return key($this->_folders);
-    }
-
-    /**
-     * implements Iterator::current()
-     *
-     * @return Zend_Mail_Storage_Folder current folder
-     */
-    public function current()
-    {
-        return current($this->_folders);
-    }
-
-    /**
-     * implements Iterator::rewind()
-     *
-     * @return null
-     */
-    public function rewind()
-    {
-        reset($this->_folders);
-    }
-
-    /**
-     * get subfolder named $name
-     *
-     * @param  string $name wanted subfolder
-     * @return Zend_Mail_Storage_Folder folder named $folder
-     * @throws Zend_Mail_Storage_Exception
-     */
-    public function __get($name)
-    {
-        if (!isset($this->_folders[$name])) {
-            /**
-             * @see Zend_Mail_Storage_Exception
-             */
-            require_once 'Zend/Mail/Storage/Exception.php';
-            throw new Zend_Mail_Storage_Exception("no subfolder named $name");
-        }
-
-        return $this->_folders[$name];
-    }
-
-    /**
-     * add or replace subfolder named $name
-     *
-     * @param string $name local name of subfolder
-     * @param Zend_Mail_Storage_Folder $folder instance for new subfolder
-     * @return null
-     */
-    public function __set($name, Zend_Mail_Storage_Folder $folder)
-    {
-        $this->_folders[$name] = $folder;
-    }
-
-    /**
-     * remove subfolder named $name
-     *
-     * @param string $name local name of subfolder
-     * @return null
-     */
-    public function __unset($name)
-    {
-        unset($this->_folders[$name]);
-    }
-
-    /**
-     * magic method for easy output of global name
-     *
-     * @return string global name of folder
-     */
-    public function __toString()
-    {
-        return (string)$this->getGlobalName();
-    }
-
-    /**
-     * get local name
-     *
-     * @return string local name
-     */
-    public function getLocalName()
-    {
-        return $this->_localName;
-    }
-
-    /**
-     * get global name
-     *
-     * @return string global name
-     */
-    public function getGlobalName()
-    {
-        return $this->_globalName;
-    }
-
-    /**
-     * is this folder selectable?
-     *
-     * @return bool selectable
-     */
-    public function isSelectable()
-    {
-        return $this->_selectable;
-    }
-
-    /**
-     * check if folder has no subfolder
-     *
-     * @return bool true if no subfolders
-     */
-    public function isLeaf()
-    {
-        return empty($this->_folders);
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

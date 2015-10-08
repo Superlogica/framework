@@ -1,155 +1,57 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Form
- * @subpackage Decorator
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_Form_Decorator_Abstract */
-require_once 'Zend/Form/Decorator/Abstract.php';
-
-/**
- * Zend_Form_Decorator_Fieldset
- *
- * Any options passed will be used as HTML attributes of the fieldset tag.
- * 
- * @category   Zend
- * @package    Zend_Form
- * @subpackage Decorator
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Fieldset.php 10689 2008-08-05 17:00:54Z matthew $
- */
-class Zend_Form_Decorator_Fieldset extends Zend_Form_Decorator_Abstract
-{
-    /**
-     * Attribs that should be removed prior to rendering
-     * @var array
-     */
-    public $stripAttribs = array(
-        'action',
-        'enctype',
-        'helper',
-        'method',
-        'name',
-    );
-
-    /**
-     * Fieldset legend
-     * @var string
-     */
-    protected $_legend;
-
-    /**
-     * Default placement: surround content
-     * @var string
-     */
-    protected $_placement = null;
-
-    /**
-     * Get options
-     *
-     * Merges in element attributes as well.
-     * 
-     * @return array
-     */
-    public function getOptions()
-    {
-        $options = parent::getOptions();
-        if (null !== ($element = $this->getElement())) {
-            $attribs = $element->getAttribs();
-            $options = array_merge($options, $attribs);
-            $this->setOptions($options);
-        }
-        return $options;
-    }
-
-    /**
-     * Set legend
-     * 
-     * @param  string $value 
-     * @return Zend_Form_Decorator_Fieldset
-     */
-    public function setLegend($value)
-    {
-        $this->_legend = (string) $value;
-        return $this;
-    }
-
-    /**
-     * Get legend
-     * 
-     * @return string
-     */
-    public function getLegend()
-    {
-        $legend = $this->_legend;
-        if ((null === $legend) && (null !== ($element = $this->getElement()))) {
-            if (method_exists($element, 'getLegend')) {
-                $legend = $element->getLegend();
-                $this->setLegend($legend);
-            }
-        }
-        if ((null === $legend) && (null !== ($legend = $this->getOption('legend')))) {
-            $this->setLegend($legend);
-            $this->removeOption('legend');
-        }
-
-        return $legend;
-    }
-
-    /**
-     * Render a fieldset
-     * 
-     * @param  string $content 
-     * @return string
-     */
-    public function render($content)
-    {
-        $element = $this->getElement();
-        $view    = $element->getView();
-        if (null === $view) {
-            return $content;
-        }
-
-        $legend        = $this->getLegend();
-        $attribs       = $this->getOptions();
-        $name          = $element->getFullyQualifiedName();
-
-        $id = $element->getId();
-        if (!empty($id)) {
-            $attribs['id'] = 'fieldset-' . $id;
-        }
-
-        if (null !== $legend) {
-            if (null !== ($translator = $element->getTranslator())) {
-                $legend = $translator->translate($legend);
-            }
-
-            $attribs['legend'] = $legend;
-        }
-
-        foreach (array_keys($attribs) as $attrib) {
-            $testAttrib = strtolower($attrib);
-            if (in_array($testAttrib, $this->stripAttribs)) {
-                unset($attribs[$attrib]);
-            }
-        }
-
-        return $view->fieldset($name, $content, $attribs);
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+cDgozgArssGuWW==

@@ -1,145 +1,42 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Gapps
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * @see Zend_Gdata_Entry
- */
-require_once 'Zend/Gdata/Entry.php';
-
-/**
- * @see Zend_Gdata_Extension_Who
- */
-require_once 'Zend/Gdata/Extension/Who.php';
-
-/**
- * Data model class for a Google Apps Email List Recipient Entry.
- *
- * Each instance of this class represents a recipient of an email list
- * hosted on a Google Apps domain. Each email list may contain multiple
- * recipients. Email lists themselves are described by
- * Zend_Gdata_EmailListEntry. Multiple recipient entries are contained within
- * instances of Zend_Gdata_Gapps_EmailListRecipientFeed.
- *
- * To transfer email list recipients to and from the Google Apps servers,
- * including creating new recipients, refer to the Google Apps service class,
- * Zend_Gdata_Gapps.
- *
- * This class represents <atom:entry> in the Google Data protocol.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Gapps
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Gdata_Gapps_EmailListRecipientEntry extends Zend_Gdata_Entry
-{
-
-    protected $_entryClassName = 'Zend_Gdata_Gapps_EmailListRecipientEntry';
-
-    /**
-     * <gd:who> element used to store the email address of the current
-     * recipient. Only the email property of this element should be
-     * populated.
-     *
-     * @var Zend_Gdata_Extension_Who
-     */
-    protected $_who = null;
-
-    /**
-     * Create a new instance.
-     *
-     * @param DOMElement $element (optional) DOMElement from which this
-     *          object should be constructed.
-     */
-    public function __construct($element = null)
-    {
-        $this->registerAllNamespaces(Zend_Gdata_Gapps::$namespaces);
-        parent::__construct($element);
-    }
-
-    /**
-     * Retrieves a DOMElement which corresponds to this element and all
-     * child properties.  This is used to build an entry back into a DOM
-     * and eventually XML text for application storage/persistence.
-     *
-     * @param DOMDocument $doc The DOMDocument used to construct DOMElements
-     * @return DOMElement The DOMElement representing this element and all
-     *          child properties.
-     */
-    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
-    {
-        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
-        if ($this->_who !== null) {
-            $element->appendChild($this->_who->getDOM($element->ownerDocument));
-        }
-        return $element;
-    }
-
-    /**
-     * Creates individual Entry objects of the appropriate type and
-     * stores them as members of this entry based upon DOM data.
-     *
-     * @param DOMNode $child The DOMNode to process
-     */
-    protected function takeChildFromDOM($child)
-    {
-        $absoluteNodeName = $child->namespaceURI . ':' . $child->localName;
-
-        switch ($absoluteNodeName) {
-            case $this->lookupNamespace('gd') . ':' . 'who';
-                $who = new Zend_Gdata_Extension_Who();
-                $who->transferFromDOM($child);
-                $this->_who = $who;
-                break;
-            default:
-                parent::takeChildFromDOM($child);
-                break;
-        }
-    }
-
-    /**
-     * Get the value of the who property for this object.
-     *
-     * @see setWho
-     * @return Zend_Gdata_Extension_Who The requested object.
-     */
-    public function getWho()
-    {
-        return $this->_who;
-    }
-
-    /**
-     * Set the value of the who property for this object. This property
-     * is used to store the email address of the current recipient.
-     *
-     * @param Zend_Gdata_Extension_Who $value The desired value for this
-     *          instance's who property.
-     * @return Zend_Gdata_Gapps_EventEntry Provides a fluent interface.
-     */
-    public function setWho($value)
-    {
-        $this->_who = $value;
-        return $this;
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

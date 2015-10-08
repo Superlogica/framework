@@ -1,126 +1,34 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @package    Zend_Pdf
- * @subpackage FileParser
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_Pdf_FileParserDataSource */
-require_once 'Zend/Pdf/FileParserDataSource.php';
-
-
-/**
- * Concrete subclass of {@link Zend_Pdf_FileParserDataSource} that provides an
- * interface to binary strings.
- *
- * @package    Zend_Pdf
- * @subpackage FileParser
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Pdf_FileParserDataSource_String extends Zend_Pdf_FileParserDataSource
-{
-  /**** Instance Variables ****/
-
-
-    /**
-     * The string to parse.
-     * @var string
-     */
-    protected $_string = '';
-
-
-
-  /**** Public Interface ****/
-
-
-  /* Concrete Class Implementation */
-
-    /**
-     * Object constructor.
-     *
-     * Verifies that the string is not empty.
-     *
-     * @param string $string String to parse.
-     */
-    public function __construct($string)
-    {
-        if (empty($string)) {
-            throw new Zend_Pdf_Exception('String is empty',
-                                         Zend_Pdf_Exception::PARAMETER_VALUE_OUT_OF_RANGE);
-        }
-        $this->_size = strlen($string);
-        $this->_string = $string;
-    }
-
-    /**
-     * Object destructor.
-     */
-    public function __destruct()
-    {
-        $this->_string = '';
-    }
-
-    /**
-     * Returns the specified number of raw bytes from the string at the byte
-     * offset of the current read position.
-     *
-     * Advances the read position by the number of bytes read.
-     *
-     * Throws an exception if there is insufficient data to completely fulfill
-     * the request.
-     *
-     * @param integer $byteCount Number of bytes to read.
-     * @return string
-     * @throws Zend_Pdf_Exception
-     */
-    public function readBytes($byteCount)
-    {
-        if (($this->_offset + $byteCount) > $this->_size) {
-            throw new Zend_Pdf_Exception("Insufficient data to read $byteCount bytes",
-                                         Zend_Pdf_Exception::INSUFFICIENT_DATA);
-        }
-        $bytes = substr($this->_string, $this->_offset, $byteCount);
-        $this->_offset += $byteCount;
-        return $bytes;
-    }
-
-    /**
-     * Returns the entire string.
-     *
-     * Preserves the current read position.
-     *
-     * @return string
-     */
-    public function readAllBytes()
-    {
-        return $this->_string;
-    }
-
-
-  /* Object Magic Methods */
-
-    /**
-     * Returns a string containing the parsed string's length.
-     *
-     * @return string
-     */
-    public function __toString()
-    {
-        return "String ($this->_size bytes)";
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

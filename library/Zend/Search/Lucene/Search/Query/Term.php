@@ -1,226 +1,69 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Search_Lucene
- * @subpackage Search
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-
-/** Zend_Search_Lucene_Search_Query */
-require_once 'Zend/Search/Lucene/Search/Query.php';
-
-/** Zend_Search_Lucene_Search_Weight_Term */
-require_once 'Zend/Search/Lucene/Search/Weight/Term.php';
-
-
-/**
- * @category   Zend
- * @package    Zend_Search_Lucene
- * @subpackage Search
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Search_Lucene_Search_Query_Term extends Zend_Search_Lucene_Search_Query
-{
-    /**
-     * Term to find.
-     *
-     * @var Zend_Search_Lucene_Index_Term
-     */
-    private $_term;
-
-    /**
-     * Documents vector.
-     *
-     * @var array
-     */
-    private $_docVector = null;
-
-    /**
-     * Term freqs vector.
-     * array(docId => freq, ...)
-     *
-     * @var array
-     */
-    private $_termFreqs;
-
-
-    /**
-     * Zend_Search_Lucene_Search_Query_Term constructor
-     *
-     * @param Zend_Search_Lucene_Index_Term $term
-     * @param boolean $sign
-     */
-    public function __construct(Zend_Search_Lucene_Index_Term $term)
-    {
-        $this->_term = $term;
-    }
-
-    /**
-     * Re-write query into primitive queries in the context of specified index
-     *
-     * @param Zend_Search_Lucene_Interface $index
-     * @return Zend_Search_Lucene_Search_Query
-     */
-    public function rewrite(Zend_Search_Lucene_Interface $index)
-    {
-        if ($this->_term->field != null) {
-            return $this;
-        } else {
-            $query = new Zend_Search_Lucene_Search_Query_MultiTerm();
-            $query->setBoost($this->getBoost());
-
-            foreach ($index->getFieldNames(true) as $fieldName) {
-                $term = new Zend_Search_Lucene_Index_Term($this->_term->text, $fieldName);
-
-                $query->addTerm($term);
-            }
-
-            return $query->rewrite($index);
-        }
-    }
-
-    /**
-     * Optimize query in the context of specified index
-     *
-     * @param Zend_Search_Lucene_Interface $index
-     * @return Zend_Search_Lucene_Search_Query
-     */
-    public function optimize(Zend_Search_Lucene_Interface $index)
-    {
-        // Check, that index contains specified term
-        if (!$index->hasTerm($this->_term)) {
-            return new Zend_Search_Lucene_Search_Query_Empty();
-        }
-
-        return $this;
-    }
-
-
-    /**
-     * Constructs an appropriate Weight implementation for this query.
-     *
-     * @param Zend_Search_Lucene_Interface $reader
-     * @return Zend_Search_Lucene_Search_Weight
-     */
-    public function createWeight(Zend_Search_Lucene_Interface $reader)
-    {
-        $this->_weight = new Zend_Search_Lucene_Search_Weight_Term($this->_term, $this, $reader);
-        return $this->_weight;
-    }
-
-    /**
-     * Execute query in context of index reader
-     * It also initializes necessary internal structures
-     *
-     * @param Zend_Search_Lucene_Interface $reader
-     * @param Zend_Search_Lucene_Index_DocsFilter|null $docsFilter
-     */
-    public function execute(Zend_Search_Lucene_Interface $reader, $docsFilter = null)
-    {
-        $this->_docVector = array_flip($reader->termDocs($this->_term, $docsFilter));
-        $this->_termFreqs = $reader->termFreqs($this->_term, $docsFilter);
-
-        // Initialize weight if it's not done yet
-        $this->_initWeight($reader);
-    }
-
-    /**
-     * Get document ids likely matching the query
-     *
-     * It's an array with document ids as keys (performance considerations)
-     *
-     * @return array
-     */
-    public function matchedDocs()
-    {
-        return $this->_docVector;
-    }
-
-    /**
-     * Score specified document
-     *
-     * @param integer $docId
-     * @param Zend_Search_Lucene_Interface $reader
-     * @return float
-     */
-    public function score($docId, Zend_Search_Lucene_Interface $reader)
-    {
-        if (isset($this->_docVector[$docId])) {
-            return $reader->getSimilarity()->tf($this->_termFreqs[$docId]) *
-                   $this->_weight->getValue() *
-                   $reader->norm($docId, $this->_term->field) *
-                   $this->getBoost();
-        } else {
-            return 0;
-        }
-    }
-
-    /**
-     * Return query terms
-     *
-     * @return array
-     */
-    public function getQueryTerms()
-    {
-        return array($this->_term);
-    }
-
-    /**
-     * Return query term
-     *
-     * @return Zend_Search_Lucene_Index_Term
-     */
-    public function getTerm()
-    {
-        return $this->_term;
-    }
-
-    /**
-     * Query specific matches highlighting
-     *
-     * @param Zend_Search_Lucene_Search_Highlighter_Interface $highlighter  Highlighter object (also contains doc for highlighting)
-     */
-    protected function _highlightMatches(Zend_Search_Lucene_Search_Highlighter_Interface $highlighter)
-    {
-    	$highlighter->highlight($this->_term->text);
-    }
-
-    /**
-     * Print a query
-     *
-     * @return string
-     */
-    public function __toString()
-    {
-        // It's used only for query visualisation, so we don't care about characters escaping
-        if ($this->_term->field !== null) {
-        	$query = $this->_term->field . ':';
-        } else {
-        	$query = '';
-        }
-
-        $query .= $this->_term->text;
-
-        if ($this->getBoost() != 1) {
-            $query = $query . '^' . round($this->getBoost(), 4);
-        }
-
-        return $query;
-    }
-}
-
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+Kou+gDXwUBUe8jYBi0==

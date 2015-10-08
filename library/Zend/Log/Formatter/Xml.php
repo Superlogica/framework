@@ -1,90 +1,40 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Log
- * @subpackage Formatter
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Xml.php 12363 2008-11-07 10:45:22Z beberlei $
- */
-
-/** Zend_Log_Formatter_Interface */
-require_once 'Zend/Log/Formatter/Interface.php';
-
-/**
- * @category   Zend
- * @package    Zend_Log
- * @subpackage Formatter
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Xml.php 12363 2008-11-07 10:45:22Z beberlei $
- */
-class Zend_Log_Formatter_Xml implements Zend_Log_Formatter_Interface
-{
-    /**
-     * @var Relates XML elements to log data field keys.
-     */
-    protected $_rootElement;
-
-    /**
-     * @var Relates XML elements to log data field keys.
-     */
-    protected $_elementMap;
-
-    /**
-     * Class constructor
-     *
-     * @param array $elementMap
-     */
-    public function __construct($rootElement = 'logEntry', $elementMap = null)
-    {
-        $this->_rootElement = $rootElement;
-        $this->_elementMap  = $elementMap;
-    }
-
-    /**
-     * Formats data into a single line to be written by the writer.
-     *
-     * @param  array    $event    event data
-     * @return string             formatted line to write to the log
-     */
-    public function format($event)
-    {
-        if ($this->_elementMap === null) {
-            $dataToInsert = $event;
-        } else {
-            $dataToInsert = array();
-            foreach ($this->_elementMap as $elementName => $fieldKey) {
-                $dataToInsert[$elementName] = $event[$fieldKey];
-            }
-        }
-
-        $dom = new DOMDocument();
-        $elt = $dom->appendChild(new DOMElement($this->_rootElement));
-
-        foreach ($dataToInsert as $key => $value) {
-            if($key == "message") {
-                $value = htmlspecialchars($value);
-            }
-            $elt->appendChild(new DOMElement($key, $value));
-        }
-
-        $xml = $dom->saveXML();
-        $xml = preg_replace('/<\?xml version="1.0"( encoding="[^\"]*")?\?>\n/u', '', $xml);
-
-        return $xml . PHP_EOL;
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

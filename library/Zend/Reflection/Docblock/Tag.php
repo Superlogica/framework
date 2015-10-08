@@ -1,140 +1,41 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Reflection
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id$
- */
-
-/**
- * @category   Zend
- * @package    Zend_Reflection
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Reflection_Docblock_Tag implements Reflector
-{
-    /**
-     * @var array Array of Class names
-     */
-    protected static $_tagClasses = array(
-        'param'  => 'Zend_Reflection_Docblock_Tag_Param',
-        'return' => 'Zend_Reflection_Docblock_Tag_Return',
-        );
-
-    /**
-     * @var string
-     */
-    protected $_name = null;
-    
-    /**
-     * @var string
-     */
-    protected $_description = null;
-
-    /**
-     * Factory: Create the appropriate annotation tag object
-     *
-     * @param  string $tagDocblockLine
-     * @return Zend_Reflection_Docblock_Tag
-     */
-    public static function factory($tagDocblockLine)
-    {
-        $matches = array();
-        
-        if (!preg_match('#^@(\w+)\s#', $tagDocblockLine, $matches)) {
-            require_once 'Zend/Reflection/Exception.php';
-            throw new Zend_Reflection_Exception('No valid tag name found within provided docblock line.');
-        }
-
-        $tagName = $matches[1];
-        if (array_key_exists($tagName, self::$_tagClasses)) {
-            $tagClass = self::$_tagClasses[$tagName];
-            if (!class_exists($tagClass)) {
-                require_once 'Zend/Loader.php';
-                Zend_Loader::loadClass($tagClass);
-            }
-            return new $tagClass($tagDocblockLine);
-        }
-        return new self($tagDocblockLine);
-    }
-    
-    /**
-     * Export reflection
-     *
-     * Required by Reflector
-     *
-     * @todo   What should this do?
-     * @return void
-     */
-    public static function export()
-    {
-    }
-    
-    /**
-     * Serialize to string
-     *
-     * Required by Reflector
-     *
-     * @todo   What should this do?
-     * @return string
-     */
-    public function __toString()
-    {
-    }
-    
-    /**
-     * Constructor
-     *
-     * @param  string $tagDocblockLine
-     * @return void
-     */
-    public function __construct($tagDocblockLine)
-    {
-        $matches = array();
-
-        // find the line
-        if (!preg_match('#^@(\w+)\s(.*)?#', $tagDocblockLine, $matches)) {
-            require_once 'Zend/Reflection/Exception.php';
-            throw new Zend_Reflection_Exception('Provided docblock line does not contain a valid tag');
-        }
-
-        $this->_name = $matches[1];
-        if ($matches[2]) {
-            $this->_description = $matches[2];
-        }
-    }
-    
-    /**
-     * Get annotation tag name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->_name;
-    }
-    
-    /**
-     * Get annotation tag description
-     *
-     * @return string
-     */
-    public function getDescription()
-    {
-        return $this->_description;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+KsS=

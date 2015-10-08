@@ -1,775 +1,115 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @package    Zend_Pdf
- * @subpackage Fonts
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_Pdf_FileParserDataSource */
-require_once 'Zend/Pdf/FileParserDataSource.php';
-
-/** Zend_Pdf_FileParserDataSource_File */
-require_once 'Zend/Pdf/FileParserDataSource/File.php';
-
-/** Zend_Pdf_FileParserDataSource_String */
-require_once 'Zend/Pdf/FileParserDataSource/String.php';
-
-/** Zend_Pdf_FileParser_Font_OpenType_TrueType */
-require_once 'Zend/Pdf/FileParser/Font/OpenType/TrueType.php';
-
-/** Zend_Pdf_Resource_Font_Simple_Parsed_TrueType */
-require_once 'Zend/Pdf/Resource/Font/Simple/Parsed/TrueType.php';
-
-/** Zend_Pdf_Resource_Font_Type0 */
-require_once 'Zend/Pdf/Resource/Font/Type0.php';
-
-/** Zend_Pdf_Resource_Font_CidFont_TrueType */
-require_once 'Zend/Pdf/Resource/Font/CidFont/TrueType.php';
-
-/** Zend_Pdf_Resource_Font_Simple_Standard_Courier */
-require_once 'Zend/Pdf/Resource/Font/Simple/Standard/Courier.php';
-
-/** Zend_Pdf_Resource_Font_Simple_Standard_CourierBold */
-require_once 'Zend/Pdf/Resource/Font/Simple/Standard/CourierBold.php';
-
-/** Zend_Pdf_Resource_Font_Simple_Standard_CourierBoldOblique */
-require_once 'Zend/Pdf/Resource/Font/Simple/Standard/CourierBoldOblique.php';
-
-/** Zend_Pdf_Resource_Font_Simple_Standard_CourierOblique */
-require_once 'Zend/Pdf/Resource/Font/Simple/Standard/CourierOblique.php';
-
-/** Zend_Pdf_Resource_Font_Simple_Standard_Helvetica */
-require_once 'Zend/Pdf/Resource/Font/Simple/Standard/Helvetica.php';
-
-/** Zend_Pdf_Resource_Font_Simple_Standard_HelveticaBold */
-require_once 'Zend/Pdf/Resource/Font/Simple/Standard/HelveticaBold.php';
-
-/** Zend_Pdf_Resource_Font_Simple_Standard_HelveticaBoldOblique */
-require_once 'Zend/Pdf/Resource/Font/Simple/Standard/HelveticaBoldOblique.php';
-
-/** Zend_Pdf_Resource_Font_Simple_Standard_HelveticaOblique */
-require_once 'Zend/Pdf/Resource/Font/Simple/Standard/HelveticaOblique.php';
-
-/** Zend_Pdf_Resource_Font_Simple_Standard_Symbol */
-require_once 'Zend/Pdf/Resource/Font/Simple/Standard/Symbol.php';
-
-/** Zend_Pdf_Resource_Font_Simple_Standard_TimesBold */
-require_once 'Zend/Pdf/Resource/Font/Simple/Standard/TimesBold.php';
-
-/** Zend_Pdf_Resource_Font_Simple_Standard_TimesBoldItalic */
-require_once 'Zend/Pdf/Resource/Font/Simple/Standard/TimesBoldItalic.php';
-
-/** Zend_Pdf_Resource_Font_Simple_Standard_TimesItalic */
-require_once 'Zend/Pdf/Resource/Font/Simple/Standard/TimesItalic.php';
-
-/** Zend_Pdf_Resource_Font_Simple_Standard_TimesRoman */
-require_once 'Zend/Pdf/Resource/Font/Simple/Standard/TimesRoman.php';
-
-/** Zend_Pdf_Resource_Font_Simple_Standard_ZapfDingbats */
-require_once 'Zend/Pdf/Resource/Font/Simple/Standard/ZapfDingbats.php';
-
-/** Zend_Pdf_Resource_Font_Extracted */
-require_once 'Zend/Pdf/Resource/Font/Extracted.php';
-
-
-/**
- * Abstract factory class which vends {@link Zend_Pdf_Resource_Font} objects.
- *
- * Font objects themselves are normally instantiated through the factory methods
- * {@link fontWithName()} or {@link fontWithPath()}.
- *
- * This class is also the home for font-related constants because the name of
- * the true base class ({@link Zend_Pdf_Resource_Font}) is not intuitive for the
- * end user.
- *
- * @package    Zend_Pdf
- * @subpackage Fonts
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-abstract class Zend_Pdf_Font
-{
-  /**** Class Constants ****/
-
-
-  /* Font Types */
-
-    /**
-     * Unknown font type.
-     */
-    const TYPE_UNKNOWN = 0;
-
-    /**
-     * One of the standard 14 PDF fonts.
-     */
-    const TYPE_STANDARD = 1;
-
-    /**
-     * A PostScript Type 1 font.
-     */
-    const TYPE_TYPE_1 = 2;
-
-    /**
-     * A TrueType font or an OpenType font containing TrueType outlines.
-     */
-    const TYPE_TRUETYPE = 3;
-
-    /**
-     * Type 0 composite font.
-     */
-    const TYPE_TYPE_0 = 4;
-
-    /**
-     * CID font containing a PostScript Type 1 font.
-     * These fonts are used only to construct Type 0 composite fonts and can't be used directly
-     */
-    const TYPE_CIDFONT_TYPE_0 = 5;
-
-    /**
-     * CID font containing a TrueType font or an OpenType font containing TrueType outlines.
-     * These fonts are used only to construct Type 0 composite fonts and can't be used directly
-     */
-    const TYPE_CIDFONT_TYPE_2 = 6;
-
-
-  /* Names of the Standard 14 PDF Fonts */
-
-    /**
-     * Name of the standard PDF font Courier.
-     */
-    const FONT_COURIER = 'Courier';
-
-    /**
-     * Name of the bold style of the standard PDF font Courier.
-     */
-    const FONT_COURIER_BOLD = 'Courier-Bold';
-
-    /**
-     * Name of the italic style of the standard PDF font Courier.
-     */
-    const FONT_COURIER_OBLIQUE = 'Courier-Oblique';
-
-    /**
-     * Convenience constant for a common misspelling of
-     * {@link FONT_COURIER_OBLIQUE}.
-     */
-    const FONT_COURIER_ITALIC = 'Courier-Oblique';
-
-    /**
-     * Name of the bold and italic style of the standard PDF font Courier.
-     */
-    const FONT_COURIER_BOLD_OBLIQUE = 'Courier-BoldOblique';
-
-    /**
-     * Convenience constant for a common misspelling of
-     * {@link FONT_COURIER_BOLD_OBLIQUE}.
-     */
-    const FONT_COURIER_BOLD_ITALIC = 'Courier-BoldOblique';
-
-    /**
-     * Name of the standard PDF font Helvetica.
-     */
-    const FONT_HELVETICA = 'Helvetica';
-
-    /**
-     * Name of the bold style of the standard PDF font Helvetica.
-     */
-    const FONT_HELVETICA_BOLD = 'Helvetica-Bold';
-
-    /**
-     * Name of the italic style of the standard PDF font Helvetica.
-     */
-    const FONT_HELVETICA_OBLIQUE = 'Helvetica-Oblique';
-
-    /**
-     * Convenience constant for a common misspelling of
-     * {@link FONT_HELVETICA_OBLIQUE}.
-     */
-    const FONT_HELVETICA_ITALIC = 'Helvetica-Oblique';
-
-    /**
-     * Name of the bold and italic style of the standard PDF font Helvetica.
-     */
-    const FONT_HELVETICA_BOLD_OBLIQUE = 'Helvetica-BoldOblique';
-
-    /**
-     * Convenience constant for a common misspelling of
-     * {@link FONT_HELVETICA_BOLD_OBLIQUE}.
-     */
-    const FONT_HELVETICA_BOLD_ITALIC = 'Helvetica-BoldOblique';
-
-    /**
-     * Name of the standard PDF font Symbol.
-     */
-    const FONT_SYMBOL = 'Symbol';
-
-    /**
-     * Name of the standard PDF font Times.
-     */
-    const FONT_TIMES_ROMAN = 'Times-Roman';
-
-    /**
-     * Convenience constant for a common misspelling of
-     * {@link FONT_TIMES_ROMAN}.
-     */
-    const FONT_TIMES = 'Times-Roman';
-
-    /**
-     * Name of the bold style of the standard PDF font Times.
-     */
-    const FONT_TIMES_BOLD = 'Times-Bold';
-
-    /**
-     * Name of the italic style of the standard PDF font Times.
-     */
-    const FONT_TIMES_ITALIC = 'Times-Italic';
-
-    /**
-     * Name of the bold and italic style of the standard PDF font Times.
-     */
-    const FONT_TIMES_BOLD_ITALIC = 'Times-BoldItalic';
-
-    /**
-     * Name of the standard PDF font Zapf Dingbats.
-     */
-    const FONT_ZAPFDINGBATS = 'ZapfDingbats';
-
-
-  /* Font Name String Types */
-
-    /**
-     * Full copyright notice for the font.
-     */
-    const NAME_COPYRIGHT =  0;
-
-    /**
-     * Font family name. Used to group similar styles of fonts together.
-     */
-    const NAME_FAMILY =  1;
-
-    /**
-     * Font style within the font family. Examples: Regular, Italic, Bold, etc.
-     */
-    const NAME_STYLE =  2;
-
-    /**
-     * Unique font identifier.
-     */
-    const NAME_ID =  3;
-
-    /**
-     * Full font name. Usually a combination of the {@link NAME_FAMILY} and
-     * {@link NAME_STYLE} strings.
-     */
-    const NAME_FULL =  4;
-
-    /**
-     * Version number of the font.
-     */
-    const NAME_VERSION =  5;
-
-    /**
-     * PostScript name for the font. This is the name used to identify fonts
-     * internally and within the PDF file.
-     */
-    const NAME_POSTSCRIPT =  6;
-
-    /**
-     * Font trademark notice. This is distinct from the {@link NAME_COPYRIGHT}.
-     */
-    const NAME_TRADEMARK =  7;
-
-    /**
-     * Name of the font manufacturer.
-     */
-    const NAME_MANUFACTURER =  8;
-
-    /**
-     * Name of the designer of the font.
-     */
-    const NAME_DESIGNER =  9;
-
-    /**
-     * Description of the font. May contain revision information, usage
-     * recommendations, features, etc.
-     */
-    const NAME_DESCRIPTION = 10;
-
-    /**
-     * URL of the font vendor. Some fonts may contain a unique serial number
-     * embedded in this URL, which is used for licensing.
-     */
-    const NAME_VENDOR_URL = 11;
-
-    /**
-     * URL of the font designer ({@link NAME_DESIGNER}).
-     */
-    const NAME_DESIGNER_URL = 12;
-
-    /**
-     * Plain language licensing terms for the font.
-     */
-    const NAME_LICENSE = 13;
-
-    /**
-     * URL of more detailed licensing information for the font.
-     */
-    const NAME_LICENSE_URL = 14;
-
-    /**
-     * Preferred font family. Used by some fonts to work around a Microsoft
-     * Windows limitation where only four fonts styles can share the same
-     * {@link NAME_FAMILY} value.
-     */
-    const NAME_PREFERRED_FAMILY = 16;
-
-    /**
-     * Preferred font style. A more descriptive string than {@link NAME_STYLE}.
-     */
-    const NAME_PREFERRED_STYLE = 17;
-
-    /**
-     * Suggested text to use as a representative sample of the font.
-     */
-    const NAME_SAMPLE_TEXT = 19;
-
-    /**
-     * PostScript CID findfont name.
-     */
-    const NAME_CID_NAME = 20;
-
-
-  /* Font Weights */
-
-    /**
-     * Thin font weight.
-     */
-    const WEIGHT_THIN = 100;
-
-    /**
-     * Extra-light (Ultra-light) font weight.
-     */
-    const WEIGHT_EXTRA_LIGHT = 200;
-
-    /**
-     * Light font weight.
-     */
-    const WEIGHT_LIGHT = 300;
-
-    /**
-     * Normal (Regular) font weight.
-     */
-    const WEIGHT_NORMAL = 400;
-
-    /**
-     * Medium font weight.
-     */
-    const WEIGHT_MEDIUM = 500;
-
-    /**
-     * Semi-bold (Demi-bold) font weight.
-     */
-    const WEIGHT_SEMI_BOLD = 600;
-
-    /**
-     * Bold font weight.
-     */
-    const WEIGHT_BOLD = 700;
-
-    /**
-     * Extra-bold (Ultra-bold) font weight.
-     */
-    const WEIGHT_EXTRA_BOLD = 800;
-
-    /**
-     * Black (Heavy) font weight.
-     */
-    const WEIGHT_BLACK = 900;
-
-
-  /* Font Widths */
-
-    /**
-     * Ultra-condensed font width. Typically 50% of normal.
-     */
-    const WIDTH_ULTRA_CONDENSED = 1;
-
-    /**
-     * Extra-condensed font width. Typically 62.5% of normal.
-     */
-    const WIDTH_EXTRA_CONDENSED = 2;
-
-    /**
-     * Condensed font width. Typically 75% of normal.
-     */
-    const WIDTH_CONDENSED = 3;
-
-    /**
-     * Semi-condensed font width. Typically 87.5% of normal.
-     */
-    const WIDTH_SEMI_CONDENSED = 4;
-
-    /**
-     * Normal (Medium) font width.
-     */
-    const WIDTH_NORMAL = 5;
-
-    /**
-     * Semi-expanded font width. Typically 112.5% of normal.
-     */
-    const WIDTH_SEMI_EXPANDED = 6;
-
-    /**
-     * Expanded font width. Typically 125% of normal.
-     */
-    const WIDTH_EXPANDED = 7;
-
-    /**
-     * Extra-expanded font width. Typically 150% of normal.
-     */
-    const WIDTH_EXTRA_EXPANDED = 8;
-
-    /**
-     * Ultra-expanded font width. Typically 200% of normal.
-     */
-    const WIDTH_ULTRA_EXPANDED = 9;
-
-
-  /* Font Embedding Options */
-
-    /**
-     * Do not embed the font in the PDF document.
-     */
-    const EMBED_DONT_EMBED = 0x01;
-
-    /**
-     * Embed, but do not subset the font in the PDF document.
-     */
-    const EMBED_DONT_SUBSET = 0x02;
-
-    /**
-     * Embed, but do not compress the font in the PDF document.
-     */
-    const EMBED_DONT_COMPRESS = 0x04;
-
-    /**
-     * Suppress the exception normally thrown if the font cannot be embedded
-     * due to its copyright bits being set.
-     */
-    const EMBED_SUPPRESS_EMBED_EXCEPTION = 0x08;
-
-
-
-  /**** Class Variables ****/
-
-
-    /**
-     * Array whose keys are the unique PostScript names of instantiated fonts.
-     * The values are the font objects themselves.
-     * @var array
-     */
-    private static $_fontNames = array();
-
-    /**
-     * Array whose keys are the md5 hash of the full paths on disk for parsed
-     * fonts. The values are the font objects themselves.
-     * @var array
-     */
-    private static $_fontFilePaths = array();
-
-
-
-  /**** Public Interface ****/
-
-
-  /* Factory Methods */
-
-    /**
-     * Returns a {@link Zend_Pdf_Resource_Font} object by full name.
-     *
-     * This is the preferred method to obtain one of the standard 14 PDF fonts.
-     *
-     * The result of this method is cached, preventing unnecessary duplication
-     * of font objects. Repetitive calls for a font with the same name will
-     * return the same object.
-     *
-     * The $embeddingOptions parameter allows you to set certain flags related
-     * to font embedding. You may combine options by OR-ing them together. See
-     * the EMBED_ constants defined in {@link Zend_Pdf_Font} for the list of
-     * available options and their descriptions. Note that this value is only
-     * used when creating a font for the first time. If a font with the same
-     * name already exists, you will get that object and the options you specify
-     * here will be ignored. This is because fonts are only embedded within the
-     * PDF file once.
-     *
-     * If the font name supplied does not match the name of a previously
-     * instantiated object and it is not one of the 14 standard PDF fonts, an
-     * exception will be thrown.
-     *
-     * @param string $name Full PostScript name of font.
-     * @param integer $embeddingOptions (optional) Options for font embedding.
-     * @return Zend_Pdf_Resource_Font
-     * @throws Zend_Pdf_Exception
-     */
-    public static function fontWithName($name, $embeddingOptions = 0)
-        {
-        /* First check the cache. Don't duplicate font objects.
-         */
-        if (isset(Zend_Pdf_Font::$_fontNames[$name])) {
-            return Zend_Pdf_Font::$_fontNames[$name];
-        }
-
-        /**
-         * @todo It would be cool to be able to have a mapping of font names to
-         *   file paths in a configuration file for frequently used custom
-         *   fonts. This would allow a user to use custom fonts without having
-         *   to hard-code file paths all over the place. Table this idea until
-         *   {@link Zend_Config} is ready.
-         */
-
-        /* Not an existing font and no mapping in the config file. Check to see
-         * if this is one of the standard 14 PDF fonts.
-         */
-        switch ($name) {
-            case Zend_Pdf_Font::FONT_COURIER:
-                $font = new Zend_Pdf_Resource_Font_Simple_Standard_Courier();
-                break;
-
-            case Zend_Pdf_Font::FONT_COURIER_BOLD:
-                $font = new Zend_Pdf_Resource_Font_Simple_Standard_CourierBold();
-                break;
-
-            case Zend_Pdf_Font::FONT_COURIER_OBLIQUE:
-                $font = new Zend_Pdf_Resource_Font_Simple_Standard_CourierOblique();
-                break;
-
-            case Zend_Pdf_Font::FONT_COURIER_BOLD_OBLIQUE:
-                $font = new Zend_Pdf_Resource_Font_Simple_Standard_CourierBoldOblique();
-                break;
-
-            case Zend_Pdf_Font::FONT_HELVETICA:
-                $font = new Zend_Pdf_Resource_Font_Simple_Standard_Helvetica();
-                break;
-
-            case Zend_Pdf_Font::FONT_HELVETICA_BOLD:
-                $font = new Zend_Pdf_Resource_Font_Simple_Standard_HelveticaBold();
-                break;
-
-            case Zend_Pdf_Font::FONT_HELVETICA_OBLIQUE:
-                $font = new Zend_Pdf_Resource_Font_Simple_Standard_HelveticaOblique();
-                break;
-
-            case Zend_Pdf_Font::FONT_HELVETICA_BOLD_OBLIQUE:
-                $font = new Zend_Pdf_Resource_Font_Simple_Standard_HelveticaBoldOblique();
-                break;
-
-            case Zend_Pdf_Font::FONT_SYMBOL:
-                $font = new Zend_Pdf_Resource_Font_Simple_Standard_Symbol();
-                break;
-
-            case Zend_Pdf_Font::FONT_TIMES_ROMAN:
-                $font = new Zend_Pdf_Resource_Font_Simple_Standard_TimesRoman();
-                break;
-
-            case Zend_Pdf_Font::FONT_TIMES_BOLD:
-                $font = new Zend_Pdf_Resource_Font_Simple_Standard_TimesBold();
-                break;
-
-            case Zend_Pdf_Font::FONT_TIMES_ITALIC:
-                $font = new Zend_Pdf_Resource_Font_Simple_Standard_TimesItalic();
-                break;
-
-            case Zend_Pdf_Font::FONT_TIMES_BOLD_ITALIC:
-                $font = new Zend_Pdf_Resource_Font_Simple_Standard_TimesBoldItalic();
-                break;
-
-            case Zend_Pdf_Font::FONT_ZAPFDINGBATS:
-                $font = new Zend_Pdf_Resource_Font_Simple_Standard_ZapfDingbats();
-                break;
-
-            default:
-                throw new Zend_Pdf_Exception("Unknown font name: $name",
-                                             Zend_Pdf_Exception::BAD_FONT_NAME);
-        }
-
-        /* Add this new font to the cache array and return it for use.
-         */
-        Zend_Pdf_Font::$_fontNames[$name] = $font;
-        return $font;
-    }
-
-    /**
-     * Returns a {@link Zend_Pdf_Resource_Font} object by file path.
-     *
-     * The result of this method is cached, preventing unnecessary duplication
-     * of font objects. Repetitive calls for the font with the same path will
-     * return the same object.
-     *
-     * The $embeddingOptions parameter allows you to set certain flags related
-     * to font embedding. You may combine options by OR-ing them together. See
-     * the EMBED_ constants defined in {@link Zend_Pdf_Font} for the list of
-     * available options and their descriptions. Note that this value is only
-     * used when creating a font for the first time. If a font with the same
-     * name already exists, you will get that object and the options you specify
-     * here will be ignored. This is because fonts are only embedded within the
-     * PDF file once.
-     *
-     * If the file path supplied does not match the path of a previously
-     * instantiated object or the font type cannot be determined, an exception
-     * will be thrown.
-     *
-     * @param string $filePath Full path to the font file.
-     * @param integer $embeddingOptions (optional) Options for font embedding.
-     * @return Zend_Pdf_Resource_Font
-     * @throws Zend_Pdf_Exception
-     */
-    public static function fontWithPath($filePath, $embeddingOptions = 0)
-    {
-        /* First check the cache. Don't duplicate font objects.
-         */
-        $filePathKey = md5($filePath);
-        if (isset(Zend_Pdf_Font::$_fontFilePaths[$filePathKey])) {
-            return Zend_Pdf_Font::$_fontFilePaths[$filePathKey];
-        }
-
-        /* Create a file parser data source object for this file. File path and
-         * access permission checks are handled here.
-         */
-        $dataSource = new Zend_Pdf_FileParserDataSource_File($filePath);
-
-        /* Attempt to determine the type of font. We can't always trust file
-         * extensions, but try that first since it's fastest.
-         */
-        $fileExtension = strtolower(pathinfo($filePath, PATHINFO_EXTENSION));
-
-        /* If it turns out that the file is named improperly and we guess the
-         * wrong type, we'll get null instead of a font object.
-         */
-        switch ($fileExtension) {
-            case 'ttf':
-                $font = Zend_Pdf_Font::_extractTrueTypeFont($dataSource, $embeddingOptions);
-                break;
-
-            default:
-                /* Unrecognized extension. Try to determine the type by actually
-                 * parsing it below.
-                 */
-                $font = null;
-                break;
-        }
-
-
-        if ($font === null) {
-            /* There was no match for the file extension or the extension was
-             * wrong. Attempt to detect the type of font by actually parsing it.
-             * We'll do the checks in order of most likely format to try to
-             * reduce the detection time.
-             */
-
-            // OpenType
-
-            // TrueType
-            if (($font === null) && ($fileExtension != 'ttf')) {
-                $font = Zend_Pdf_Font::_extractTrueTypeFont($dataSource, $embeddingOptions);
-            }
-
-            // Type 1 PostScript
-
-            // Mac OS X dfont
-
-            // others?
-        }
-
-
-        /* Done with the data source object.
-         */
-        $dataSource = null;
-
-        if ($font !== null) {
-            /* Parsing was successful. Add this font instance to the cache arrays
-             * and return it for use.
-             */
-            $fontName = $font->getFontName(Zend_Pdf_Font::NAME_POSTSCRIPT, '', '');
-            Zend_Pdf_Font::$_fontNames[$fontName] = $font;
-            $filePathKey = md5($filePath);
-            Zend_Pdf_Font::$_fontFilePaths[$filePathKey] = $font;
-            return $font;
-
-        } else {
-            /* The type of font could not be determined. Give up.
-             */
-            throw new Zend_Pdf_Exception("Cannot determine font type: $filePath",
-                                         Zend_Pdf_Exception::CANT_DETERMINE_FONT_TYPE);
-         }
-
-    }
-
-
-
-  /**** Internal Methods ****/
-
-
-  /* Font Extraction Methods */
-
-    /**
-     * Attempts to extract a TrueType font from the data source.
-     *
-     * If the font parser throws an exception that suggests the data source
-     * simply doesn't contain a TrueType font, catches it and returns null. If
-     * an exception is thrown that suggests the TrueType font is corrupt or
-     * otherwise unusable, throws that exception. If successful, returns the
-     * font object.
-     *
-     * @param Zend_Pdf_FileParserDataSource $dataSource
-     * @param integer $embeddingOptions Options for font embedding.
-     * @return Zend_Pdf_Resource_Font_OpenType_TrueType May also return null if
-     *   the data source does not appear to contain a TrueType font.
-     * @throws Zend_Pdf_Exception
-     */
-    protected static function _extractTrueTypeFont($dataSource, $embeddingOptions)
-    {
-        try {
-            $fontParser = new Zend_Pdf_FileParser_Font_OpenType_TrueType($dataSource);
-
-            $fontParser->parse();
-            if ($fontParser->isAdobeLatinSubset) {
-                $font = new Zend_Pdf_Resource_Font_Simple_Parsed_TrueType($fontParser, $embeddingOptions);
-            } else {
-                /* Use Composite Type 0 font which supports Unicode character mapping */
-                $cidFont = new Zend_Pdf_Resource_Font_CidFont_TrueType($fontParser, $embeddingOptions);
-                $font    = new Zend_Pdf_Resource_Font_Type0($cidFont);
-            }
-        } catch (Zend_Pdf_Exception $exception) {
-            /* The following exception codes suggest that this isn't really a
-             * TrueType font. If we caught such an exception, simply return
-             * null. For all other cases, it probably is a TrueType font but has
-             * a problem; throw the exception again.
-             */
-            $fontParser = null;
-            switch ($exception->getCode()) {
-                case Zend_Pdf_Exception::WRONG_FONT_TYPE:    // break intentionally omitted
-                case Zend_Pdf_Exception::BAD_TABLE_COUNT:    // break intentionally omitted
-                case Zend_Pdf_Exception::BAD_MAGIC_NUMBER:
-                    return null;
-
-                default:
-                    throw $exception;
-            }
-        }
-        return $font;
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+l4AM

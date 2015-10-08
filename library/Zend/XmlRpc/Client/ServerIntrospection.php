@@ -1,160 +1,55 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_XmlRpc
- * @subpackage Client
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * Wraps the XML-RPC system.* introspection methods
- *
- * @category   Zend
- * @package    Zend_XmlRpc
- * @subpackage Client
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_XmlRpc_Client_ServerIntrospection
-{
-    /**
-     * @var Zend_XmlRpc_Client_ServerProxy
-     */
-    private $_system = null;
-
-
-    /**
-     * @param Zend_XmlRpc_Client $client
-     */
-    public function __construct(Zend_XmlRpc_Client $client)
-    {
-        $this->_system = $client->getProxy('system');
-    }
-
-    /**
-     * Returns the signature for each method on the server,
-     * autodetecting whether system.multicall() is supported and
-     * using it if so.
-     *
-     * @return array
-     */
-    public function getSignatureForEachMethod()
-    {
-        $methods = $this->listMethods();
-
-        require_once 'Zend/XmlRpc/Client/FaultException.php';
-        try {
-            $signatures = $this->getSignatureForEachMethodByMulticall($methods);
-        } catch (Zend_XmlRpc_Client_FaultException $e) {
-            // degrade to looping
-        }
-
-        if (empty($signatures)) {
-            $signatures = $this->getSignatureForEachMethodByLooping($methods);
-        }
-
-        return $signatures;
-    }
-
-    /**
-     * Attempt to get the method signatures in one request via system.multicall().
-     * This is a boxcar feature of XML-RPC and is found on fewer servers.  However,
-     * can significantly improve performance if present.
-     *
-     * @param  array $methods
-     * @return array array(array(return, param, param, param...))
-     */
-    public function getSignatureForEachMethodByMulticall($methods = null)
-    {
-        if ($methods === null) {
-            $methods = $this->listMethods();
-        }
-
-        $multicallParams = array();
-        foreach ($methods as $method) {
-            $multicallParams[] = array('methodName' => 'system.methodSignature',
-                                       'params'     => array($method));
-        }
-
-        $serverSignatures = $this->_system->multicall($multicallParams);
-
-        if (! is_array($serverSignatures)) {
-            $type = gettype($serverSignatures);
-            $error = "Multicall return is malformed.  Expected array, got $type";
-            require_once 'Zend/XmlRpc/Client/IntrospectException.php';
-            throw new Zend_XmlRpc_Client_IntrospectException($error);
-        }
-
-        if (count($serverSignatures) != count($methods)) {
-            $error = 'Bad number of signatures received from multicall';
-            require_once 'Zend/XmlRpc/Client/IntrospectException.php';
-            throw new Zend_XmlRpc_Client_IntrospectException($error);
-        }
-
-        // Create a new signatures array with the methods name as keys and the signature as value
-        $signatures = array();
-        foreach ($serverSignatures as $i => $signature) {
-            $signatures[$methods[$i]] = $signature;
-        }
-
-        return $signatures;
-    }
-
-    /**
-     * Get the method signatures for every method by
-     * successively calling system.methodSignature
-     *
-     * @param array $methods
-     * @return array
-     */
-    public function getSignatureForEachMethodByLooping($methods = null)
-    {
-        if ($methods === null) {
-            $methods = $this->listMethods();
-        }
-
-        $signatures = array();
-        foreach ($methods as $method) {
-            $signatures[$method] = $this->getMethodSignature($method);
-        }
-
-        return $signatures;
-    }
-
-    /**
-     * Call system.methodSignature() for the given method
-     *
-     * @param  array  $method
-     * @return array  array(array(return, param, param, param...))
-     */
-    public function getMethodSignature($method)
-    {
-        $signature = $this->_system->methodSignature($method);
-        return $signature;
-    }
-
-    /**
-     * Call system.listMethods()
-     *
-     * @param  array  $method
-     * @return array  array(method, method, method...)
-     */
-    public function listMethods()
-    {
-        return $this->_system->listMethods();
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

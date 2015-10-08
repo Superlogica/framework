@@ -1,678 +1,262 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Cache
- * @subpackage Zend_Cache_Backend
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-
-/**
- * @see Zend_Cache_Backend_Interface
- */
-require_once 'Zend/Cache/Backend/ExtendedInterface.php';
-
-/**
- * @see Zend_Cache_Backend
- */
-require_once 'Zend/Cache/Backend.php';
-
-/**
- * @package    Zend_Cache
- * @subpackage Zend_Cache_Backend
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Cache_Backend_Sqlite extends Zend_Cache_Backend implements Zend_Cache_Backend_ExtendedInterface
-{
-    /**
-     * Available options
-     *
-     * =====> (string) cache_db_complete_path :
-     * - the complete path (filename included) of the SQLITE database
-     *
-     * ====> (int) automatic_vacuum_factor :
-     * - Disable / Tune the automatic vacuum process
-     * - The automatic vacuum process defragment the database file (and make it smaller)
-     *   when a clean() or delete() is called
-     *     0               => no automatic vacuum
-     *     1               => systematic vacuum (when delete() or clean() methods are called)
-     *     x (integer) > 1 => automatic vacuum randomly 1 times on x clean() or delete()
-     *
-     * @var array Available options
-     */
-    protected $_options = array(
-        'cache_db_complete_path' => null,
-        'automatic_vacuum_factor' => 10
-    );
-
-    /**
-     * DB ressource
-     *
-     * @var mixed $_db
-     */
-    private $_db = null;
-
-    /**
-     * Boolean to store if the structure has benn checked or not
-     *
-     * @var boolean $_structureChecked
-     */
-    private $_structureChecked = false;
-
-    /**
-     * Constructor
-     *
-     * @param  array $options Associative array of options
-     * @throws Zend_cache_Exception
-     * @return void
-     */
-    public function __construct(array $options = array())
-    {
-        parent::__construct($options);
-        if ($this->_options['cache_db_complete_path'] === null) {
-            Zend_Cache::throwException('cache_db_complete_path option has to set');
-        }
-        if (!extension_loaded('sqlite')) {
-            Zend_Cache::throwException("Cannot use SQLite storage because the 'sqlite' extension is not loaded in the current PHP environment");
-        }
-        $this->_getConnection();
-    }
-
-    /**
-     * Destructor
-     *
-     * @return void
-     */
-    public function __destruct()
-    {
-        @sqlite_close($this->_getConnection());
-    }
-
-    /**
-     * Test if a cache is available for the given id and (if yes) return it (false else)
-     *
-     * @param  string  $id                     Cache id
-     * @param  boolean $doNotTestCacheValidity If set to true, the cache validity won't be tested
-     * @return string|false Cached datas
-     */
-    public function load($id, $doNotTestCacheValidity = false)
-    {
-        $this->_checkAndBuildStructure();
-        $sql = "SELECT content FROM cache WHERE id='$id'";
-        if (!$doNotTestCacheValidity) {
-            $sql = $sql . " AND (expire=0 OR expire>" . time() . ')';
-        }
-        $result = $this->_query($sql);
-        $row = @sqlite_fetch_array($result);
-        if ($row) {
-            return $row['content'];
-        }
-        return false;
-    }
-
-    /**
-     * Test if a cache is available or not (for the given id)
-     *
-     * @param string $id Cache id
-     * @return mixed|false (a cache is not available) or "last modified" timestamp (int) of the available cache record
-     */
-    public function test($id)
-    {
-        $this->_checkAndBuildStructure();
-        $sql = "SELECT lastModified FROM cache WHERE id='$id' AND (expire=0 OR expire>" . time() . ')';
-        $result = $this->_query($sql);
-        $row = @sqlite_fetch_array($result);
-        if ($row) {
-            return ((int) $row['lastModified']);
-        }
-        return false;
-    }
-
-    /**
-     * Save some string datas into a cache record
-     *
-     * Note : $data is always "string" (serialization is done by the
-     * core not by the backend)
-     *
-     * @param  string $data             Datas to cache
-     * @param  string $id               Cache id
-     * @param  array  $tags             Array of strings, the cache record will be tagged by each string entry
-     * @param  int    $specificLifetime If != false, set a specific lifetime for this cache record (null => infinite lifetime)
-     * @throws Zend_Cache_Exception
-     * @return boolean True if no problem
-     */
-    public function save($data, $id, $tags = array(), $specificLifetime = false)
-    {
-        $this->_checkAndBuildStructure();
-        $lifetime = $this->getLifetime($specificLifetime);
-        $data = @sqlite_escape_string($data);
-        $mktime = time();
-        if ($lifetime === null) {
-            $expire = 0;
-        } else {
-            $expire = $mktime + $lifetime;
-        }
-        $this->_query("DELETE FROM cache WHERE id='$id'");
-        $sql = "INSERT INTO cache (id, content, lastModified, expire) VALUES ('$id', '$data', $mktime, $expire)";
-        $res = $this->_query($sql);
-        if (!$res) {
-            $this->_log("Zend_Cache_Backend_Sqlite::save() : impossible to store the cache id=$id");
-            return false;
-        }
-        $res = true;
-        foreach ($tags as $tag) {
-            $res = $res && $this->_registerTag($id, $tag);
-        }
-        return $res;
-    }
-
-    /**
-     * Remove a cache record
-     *
-     * @param  string $id Cache id
-     * @return boolean True if no problem
-     */
-    public function remove($id)
-    {
-        $this->_checkAndBuildStructure();
-        $res = $this->_query("SELECT COUNT(*) AS nbr FROM cache WHERE id='$id'");
-        $result1 = @sqlite_fetch_single($res);
-        $result2 = $this->_query("DELETE FROM cache WHERE id='$id'");
-        $result3 = $this->_query("DELETE FROM tag WHERE id='$id'");
-        $this->_automaticVacuum();
-        return ($result1 && $result2 && $result3);
-    }
-
-    /**
-     * Clean some cache records
-     *
-     * Available modes are :
-     * Zend_Cache::CLEANING_MODE_ALL (default)    => remove all cache entries ($tags is not used)
-     * Zend_Cache::CLEANING_MODE_OLD              => remove too old cache entries ($tags is not used)
-     * Zend_Cache::CLEANING_MODE_MATCHING_TAG     => remove cache entries matching all given tags
-     *                                               ($tags can be an array of strings or a single string)
-     * Zend_Cache::CLEANING_MODE_NOT_MATCHING_TAG => remove cache entries not {matching one of the given tags}
-     *                                               ($tags can be an array of strings or a single string)
-     * Zend_Cache::CLEANING_MODE_MATCHING_ANY_TAG => remove cache entries matching any given tags
-     *                                               ($tags can be an array of strings or a single string)
-     *
-     * @param  string $mode Clean mode
-     * @param  array  $tags Array of tags
-     * @return boolean True if no problem
-     */
-    public function clean($mode = Zend_Cache::CLEANING_MODE_ALL, $tags = array())
-    {
-        $this->_checkAndBuildStructure();
-        $return = $this->_clean($mode, $tags);
-        $this->_automaticVacuum();
-        return $return;
-    }
-
-    /**
-     * Return an array of stored cache ids
-     *
-     * @return array array of stored cache ids (string)
-     */
-    public function getIds()
-    {
-        $this->_checkAndBuildStructure();
-        $res = $this->_query("SELECT id FROM cache WHERE (expire=0 OR expire>" . time() . ")");
-        $result = array();
-        while ($id = @sqlite_fetch_single($res)) {
-            $result[] = $id;
-        }
-        return $result;
-    }
-
-    /**
-     * Return an array of stored tags
-     *
-     * @return array array of stored tags (string)
-     */
-    public function getTags()
-    {
-        $this->_checkAndBuildStructure();
-        $res = $this->_query("SELECT DISTINCT(name) AS name FROM tag");
-        $result = array();
-        while ($id = @sqlite_fetch_single($res)) {
-            $result[] = $id;
-        }
-        return $result;
-    }
-
-    /**
-     * Return an array of stored cache ids which match given tags
-     *
-     * In case of multiple tags, a logical AND is made between tags
-     *
-     * @param array $tags array of tags
-     * @return array array of matching cache ids (string)
-     */
-    public function getIdsMatchingTags($tags = array())
-    {
-        $first = true;
-        $ids = array();
-        foreach ($tags as $tag) {
-            $res = $this->_query("SELECT DISTINCT(id) AS id FROM tag WHERE name='$tag'");
-            if (!$res) {
-                return array();
-            }
-            $rows = @sqlite_fetch_all($res, SQLITE_ASSOC);
-            $ids2 = array();
-            foreach ($rows as $row) {
-                $ids2[] = $row['id'];
-            }
-            if ($first) {
-                $ids = $ids2;
-                $first = false;
-            } else {
-                $ids = array_intersect($ids, $ids2);
-            }
-        }
-        $result = array();
-        foreach ($ids as $id) {
-            $result[] = $id;
-        }
-        return $result;
-    }
-
-    /**
-     * Return an array of stored cache ids which don't match given tags
-     *
-     * In case of multiple tags, a logical OR is made between tags
-     *
-     * @param array $tags array of tags
-     * @return array array of not matching cache ids (string)
-     */
-    public function getIdsNotMatchingTags($tags = array())
-    {
-        $res = $this->_query("SELECT id FROM cache");
-        $rows = @sqlite_fetch_all($res, SQLITE_ASSOC);
-        $result = array();
-        foreach ($rows as $row) {
-            $id = $row['id'];
-            $matching = false;
-            foreach ($tags as $tag) {
-                $res = $this->_query("SELECT COUNT(*) AS nbr FROM tag WHERE name='$tag' AND id='$id'");
-                if (!$res) {
-                    return array();
-                }
-                $nbr = (int) @sqlite_fetch_single($res);
-                if ($nbr > 0) {
-                    $matching = true;
-                }
-            }
-            if (!$matching) {
-                $result[] = $id;
-            }
-        }
-        return $result;
-    }
-
-    /**
-     * Return an array of stored cache ids which match any given tags
-     *
-     * In case of multiple tags, a logical AND is made between tags
-     *
-     * @param array $tags array of tags
-     * @return array array of any matching cache ids (string)
-     */
-    public function getIdsMatchingAnyTags($tags = array())
-    {
-        $first = true;
-        $ids = array();
-        foreach ($tags as $tag) {
-            $res = $this->_query("SELECT DISTINCT(id) AS id FROM tag WHERE name='$tag'");
-            if (!$res) {
-                return array();
-            }
-            $rows = @sqlite_fetch_all($res, SQLITE_ASSOC);
-            $ids2 = array();
-            foreach ($rows as $row) {
-                $ids2[] = $row['id'];
-            }
-            if ($first) {
-                $ids = $ids2;
-                $first = false;
-            } else {
-                $ids = array_merge($ids, $ids2);
-            }
-        }
-        $result = array();
-        foreach ($ids as $id) {
-            $result[] = $id;
-        }
-        return $result;
-    }
-
-    /**
-     * Return the filling percentage of the backend storage
-     *
-     * @throws Zend_Cache_Exception
-     * @return int integer between 0 and 100
-     */
-    public function getFillingPercentage()
-    {
-        $dir = dirname($this->_options['cache_db_complete_path']);
-        $free = disk_free_space($dir);
-        $total = disk_total_space($dir);
-        if ($total == 0) {
-            Zend_Cache::throwException('can\'t get disk_total_space');
-        } else {
-            if ($free >= $total) {
-                return 100;
-            }
-            return ((int) (100. * ($total - $free) / $total));
-        }
-    }
-
-    /**
-     * Return an array of metadatas for the given cache id
-     *
-     * The array must include these keys :
-     * - expire : the expire timestamp
-     * - tags : a string array of tags
-     * - mtime : timestamp of last modification time
-     *
-     * @param string $id cache id
-     * @return array array of metadatas (false if the cache id is not found)
-     */
-    public function getMetadatas($id)
-    {
-        $tags = array();
-        $res = $this->_query("SELECT name FROM tag WHERE id='$id'");
-        if ($res) {
-            $rows = @sqlite_fetch_all($res, SQLITE_ASSOC);
-            foreach ($rows as $row) {
-                $tags[] = $row['name'];
-            }
-        }
-        $this->_query('CREATE TABLE cache (id TEXT PRIMARY KEY, content BLOB, lastModified INTEGER, expire INTEGER)');
-        $res = $this->_query("SELECT lastModified,expire FROM cache WHERE id='$id'");
-        if (!$res) {
-            return false;
-        }
-        $row = @sqlite_fetch_array($res, SQLITE_ASSOC);
-        return array(
-            'tags' => $tags,
-            'mtime' => $row['lastModified'],
-            'expire' => $row['expire']
-        );
-    }
-
-    /**
-     * Give (if possible) an extra lifetime to the given cache id
-     *
-     * @param string $id cache id
-     * @param int $extraLifetime
-     * @return boolean true if ok
-     */
-    public function touch($id, $extraLifetime)
-    {
-        $sql = "SELECT expire FROM cache WHERE id='$id' AND (expire=0 OR expire>" . time() . ')';
-        $res = $this->_query($sql);
-        if (!$res) {
-            return false;
-        }
-        $expire = @sqlite_fetch_single($res);
-        $newExpire = $expire + $extraLifetime;
-        $res = $this->_query("UPDATE cache SET lastModified=" . time() . ", expire=$newExpire WHERE id='$id'");
-        if ($res) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    /**
-     * Return an associative array of capabilities (booleans) of the backend
-     *
-     * The array must include these keys :
-     * - automatic_cleaning (is automating cleaning necessary)
-     * - tags (are tags supported)
-     * - expired_read (is it possible to read expired cache records
-     *                 (for doNotTestCacheValidity option for example))
-     * - priority does the backend deal with priority when saving
-     * - infinite_lifetime (is infinite lifetime can work with this backend)
-     * - get_list (is it possible to get the list of cache ids and the complete list of tags)
-     *
-     * @return array associative of with capabilities
-     */
-    public function getCapabilities()
-    {
-        return array(
-            'automatic_cleaning' => true,
-            'tags' => true,
-            'expired_read' => true,
-            'priority' => false,
-            'infinite_lifetime' => true,
-            'get_list' => true
-        );
-    }
-
-    /**
-     * PUBLIC METHOD FOR UNIT TESTING ONLY !
-     *
-     * Force a cache record to expire
-     *
-     * @param string $id Cache id
-     */
-    public function ___expire($id)
-    {
-        $time = time() - 1;
-        $this->_query("UPDATE cache SET lastModified=$time, expire=$time WHERE id='$id'");
-    }
-
-    /**
-     * Return the connection resource
-     *
-     * If we are not connected, the connection is made
-     *
-     * @throws Zend_Cache_Exception
-     * @return resource Connection resource
-     */
-    private function _getConnection()
-    {
-        if (is_resource($this->_db)) {
-            return $this->_db;
-        } else {
-            $this->_db = @sqlite_open($this->_options['cache_db_complete_path']);
-            if (!(is_resource($this->_db))) {
-                Zend_Cache::throwException("Impossible to open " . $this->_options['cache_db_complete_path'] . " cache DB file");
-            }
-            return $this->_db;
-        }
-    }
-
-    /**
-     * Execute an SQL query silently
-     *
-     * @param string $query SQL query
-     * @return mixed|false query results
-     */
-    private function _query($query)
-    {
-        $db = $this->_getConnection();
-        if (is_resource($db)) {
-            $res = @sqlite_query($db, $query);
-            if ($res === false) {
-                return false;
-            } else {
-                return $res;
-            }
-        }
-        return false;
-    }
-
-    /**
-     * Deal with the automatic vacuum process
-     *
-     * @return void
-     */
-    private function _automaticVacuum()
-    {
-        if ($this->_options['automatic_vacuum_factor'] > 0) {
-            $rand = rand(1, $this->_options['automatic_vacuum_factor']);
-            if ($rand == 1) {
-                $this->_query('VACUUM');
-                @sqlite_close($this->_getConnection());
-            }
-        }
-    }
-
-    /**
-     * Register a cache id with the given tag
-     *
-     * @param  string $id  Cache id
-     * @param  string $tag Tag
-     * @return boolean True if no problem
-     */
-    private function _registerTag($id, $tag) {
-        $res = $this->_query("DELETE FROM TAG WHERE name='$tag' AND id='$id'");
-        $res = $this->_query("INSERT INTO tag (name, id) VALUES ('$tag', '$id')");
-        if (!$res) {
-            $this->_log("Zend_Cache_Backend_Sqlite::_registerTag() : impossible to register tag=$tag on id=$id");
-            return false;
-        }
-        return true;
-    }
-
-    /**
-     * Build the database structure
-     *
-     * @return false
-     */
-    private function _buildStructure()
-    {
-        $this->_query('DROP INDEX tag_id_index');
-        $this->_query('DROP INDEX tag_name_index');
-        $this->_query('DROP INDEX cache_id_expire_index');
-        $this->_query('DROP TABLE version');
-        $this->_query('DROP TABLE cache');
-        $this->_query('DROP TABLE tag');
-        $this->_query('CREATE TABLE version (num INTEGER PRIMARY KEY)');
-        $this->_query('CREATE TABLE cache (id TEXT PRIMARY KEY, content BLOB, lastModified INTEGER, expire INTEGER)');
-        $this->_query('CREATE TABLE tag (name TEXT, id TEXT)');
-        $this->_query('CREATE INDEX tag_id_index ON tag(id)');
-        $this->_query('CREATE INDEX tag_name_index ON tag(name)');
-        $this->_query('CREATE INDEX cache_id_expire_index ON cache(id, expire)');
-        $this->_query('INSERT INTO version (num) VALUES (1)');
-    }
-
-    /**
-     * Check if the database structure is ok (with the good version)
-     *
-     * @return boolean True if ok
-     */
-    private function _checkStructureVersion()
-    {
-        $result = $this->_query("SELECT num FROM version");
-        if (!$result) return false;
-        $row = @sqlite_fetch_array($result);
-        if (!$row) {
-            return false;
-        }
-        if (((int) $row['num']) != 1) {
-            // old cache structure
-            $this->_log('Zend_Cache_Backend_Sqlite::_checkStructureVersion() : old cache structure version detected => the cache is going to be dropped');
-            return false;
-        }
-        return true;
-    }
-
-    /**
-     * Clean some cache records
-     *
-     * Available modes are :
-     * Zend_Cache::CLEANING_MODE_ALL (default)    => remove all cache entries ($tags is not used)
-     * Zend_Cache::CLEANING_MODE_OLD              => remove too old cache entries ($tags is not used)
-     * Zend_Cache::CLEANING_MODE_MATCHING_TAG     => remove cache entries matching all given tags
-     *                                               ($tags can be an array of strings or a single string)
-     * Zend_Cache::CLEANING_MODE_NOT_MATCHING_TAG => remove cache entries not {matching one of the given tags}
-     *                                               ($tags can be an array of strings or a single string)
-     * Zend_Cache::CLEANING_MODE_MATCHING_ANY_TAG => remove cache entries matching any given tags
-     *                                               ($tags can be an array of strings or a single string)
-     *
-     * @param  string $mode Clean mode
-     * @param  array  $tags Array of tags
-     * @return boolean True if no problem
-     */
-    private function _clean($mode = Zend_Cache::CLEANING_MODE_ALL, $tags = array())
-    {
-        switch ($mode) {
-            case Zend_Cache::CLEANING_MODE_ALL:
-                $res1 = $this->_query('DELETE FROM cache');
-                $res2 = $this->_query('DELETE FROM tag');
-                return $res1 && $res2;
-                break;
-            case Zend_Cache::CLEANING_MODE_OLD:
-                $mktime = time();
-                $res1 = $this->_query("DELETE FROM tag WHERE id IN (SELECT id FROM cache WHERE expire>0 AND expire<=$mktime)");
-                $res2 = $this->_query("DELETE FROM cache WHERE expire>0 AND expire<=$mktime");
-                return $res1 && $res2;
-                break;
-            case Zend_Cache::CLEANING_MODE_MATCHING_TAG:
-                $ids = $this->getIdsMatchingTags($tags);
-                $result = true;
-                foreach ($ids as $id) {
-                    $result = $result && ($this->remove($id));
-                }
-                return $result;
-                break;
-            case Zend_Cache::CLEANING_MODE_NOT_MATCHING_TAG:
-                $ids = $this->getIdsNotMatchingTags($tags);
-                $result = true;
-                foreach ($ids as $id) {
-                    $result = $result && ($this->remove($id));
-                }
-                return $result;
-                break;
-            case Zend_Cache::CLEANING_MODE_MATCHING_ANY_TAG:
-                $ids = $this->getIdsMatchingAnyTags($tags);
-                $result = true;
-                foreach ($ids as $id) {
-                    $result = $result && ($this->remove($id));
-                }
-                return $result;
-                break;
-            default:
-                break;
-        }
-        return false;
-    }
-
-    /**
-     * Check if the database structure is ok (with the good version), if no : build it
-     *
-     * @throws Zend_Cache_Exception
-     * @return boolean True if ok
-     */
-    private function _checkAndBuildStructure()
-    {
-        if (!($this->_structureChecked)) {
-            if (!$this->_checkStructureVersion()) {
-                $this->_buildStructure();
-                if (!$this->_checkStructureVersion()) {
-                    Zend_Cache::throwException("Impossible to build cache structure in " . $this->_options['cache_db_complete_path']);
-                }
-            }
-            $this->_structureChecked = true;
-        }
-        return true;
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+rVUB5wH28T7G

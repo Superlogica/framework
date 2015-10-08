@@ -1,67 +1,29 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Dojo
- * @subpackage View
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: SubmitButton.php 12691 2008-11-18 20:16:06Z matthew $
- */
-
-/** Zend_Dojo_View_Helper_Button */
-require_once 'Zend/Dojo/View/Helper/Button.php';
-
-/**
- * Dojo Button dijit tied to submit input
- * 
- * @uses       Zend_Dojo_View_Helper_Button
- * @package    Zend_Dojo
- * @subpackage View
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
-  */
-class Zend_Dojo_View_Helper_SubmitButton extends Zend_Dojo_View_Helper_Button
-{
-    /**
-     * @var string Submit input
-     */
-    protected $_elementType = 'submit';
-
-    /**
-     * dijit.form.Button tied to submit input
-     * 
-     * @param  string $id 
-     * @param  string $value 
-     * @param  array $params  Parameters to use for dijit creation
-     * @param  array $attribs HTML attributes
-     * @return string
-     */
-    public function submitButton($id, $value = null, array $params = array(), array $attribs = array()) 
-    {
-        if (!array_key_exists('label', $params)) {
-            $params['label'] = $value;
-        }
-        if (empty($params['label']) && !empty($params['content'])) {
-            $params['label'] = $params['content'];
-            $value = $params['content'];
-        }
-        if (empty($params['label']) && !empty($attribs['content'])) {
-            $params['label'] = $attribs['content'];
-            $value = $attribs['content'];
-            unset($attribs['content']);
-        }
-        return $this->_createFormElement($id, $value, $params, $attribs);
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

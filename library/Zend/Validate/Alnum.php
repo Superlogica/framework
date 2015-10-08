@@ -1,140 +1,36 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Validate
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Alnum.php 14560 2009-03-31 14:41:22Z thomas $
- */
-
-/**
- * @see Zend_Validate_Abstract
- */
-require_once 'Zend/Validate/Abstract.php';
-
-/**
- * @category   Zend
- * @package    Zend_Validate
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Validate_Alnum extends Zend_Validate_Abstract
-{
-    /**
-     * Validation failure message key for when the value contains non-alphabetic or non-digit characters
-     */
-    const NOT_ALNUM = 'notAlnum';
-
-    /**
-     * Validation failure message key for when the value is an empty string
-     */
-    const STRING_EMPTY = 'stringEmpty';
-
-    /**
-     * Whether to allow white space characters; off by default
-     *
-     * @var boolean
-     * @depreciated
-     */
-    public $allowWhiteSpace;
-
-    /**
-     * Alphanumeric filter used for validation
-     *
-     * @var Zend_Filter_Alnum
-     */
-    protected static $_filter = null;
-
-    /**
-     * Validation failure message template definitions
-     *
-     * @var array
-     */
-    protected $_messageTemplates = array(
-        self::NOT_ALNUM    => "'%value%' has not only alphabetic and digit characters",
-        self::STRING_EMPTY => "'%value%' is an empty string"
-    );
-
-    /**
-     * Sets default option values for this instance
-     *
-     * @param  boolean $allowWhiteSpace
-     * @return void
-     */
-    public function __construct($allowWhiteSpace = false)
-    {
-        $this->allowWhiteSpace = (boolean) $allowWhiteSpace;
-    }
-
-    /**
-     * Returns the allowWhiteSpace option
-     *
-     * @return boolean
-     */
-    public function getAllowWhiteSpace()
-    {
-        return $this->allowWhiteSpace;
-    }
-
-    /**
-     * Sets the allowWhiteSpace option
-     *
-     * @param boolean $allowWhiteSpace
-     * @return Zend_Filter_Alnum Provides a fluent interface
-     */
-    public function setAllowWhiteSpace($allowWhiteSpace)
-    {
-        $this->allowWhiteSpace = (boolean) $allowWhiteSpace;
-        return $this;
-    }
-
-    /**
-     * Defined by Zend_Validate_Interface
-     *
-     * Returns true if and only if $value contains only alphabetic and digit characters
-     *
-     * @param  string $value
-     * @return boolean
-     */
-    public function isValid($value)
-    {
-        $valueString = (string) $value;
-
-        $this->_setValue($valueString);
-
-        if ('' === $valueString) {
-            $this->_error(self::STRING_EMPTY);
-            return false;
-        }
-
-        if (null === self::$_filter) {
-            /**
-             * @see Zend_Filter_Alnum
-             */
-            require_once 'Zend/Filter/Alnum.php';
-            self::$_filter = new Zend_Filter_Alnum();
-        }
-
-        self::$_filter->allowWhiteSpace = $this->allowWhiteSpace;
-
-        if ($valueString !== self::$_filter->filter($valueString)) {
-            $this->_error(self::NOT_ALNUM);
-            return false;
-        }
-
-        return true;
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
++aiGu42WhTVsPOtt7+6mYIQ8Fm==

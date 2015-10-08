@@ -1062,6 +1062,49 @@ var Superlogica_Js_Date = new Class({
         $stringDateValue = $stringDateValue + ( $dateValue == 1 ? '' : $stringDateValueSufix );
         
         return (!$dateValue) ? ('Poucos segundos'+$posfixo) : ($dateValue+ $stringDateValue +$posfixo);
+    },
+
+    /**
+     * Verifica 2 datas e retorna o melhor formato para elas, ex:
+     * Datas:
+     * 01/01/2011 e 31/12/2011 retorna : 2011;
+     * 01/01/2011 e 31/12/2013 retorna 2011 até 2013;
+     * 01/01/2011 e 31/01/2011 retorna: Jan/2011;
+     * 02/01/2011 e 31/01/2011 retorna: 02/01/2011 até 31/01/2011;
+     * 01/01/2011 e 01/01/2011 retorna: 01/01/2011;
+     *
+     * @param <Superlogica_Date> $dtFim data final.
+     * @return <string> Melhor formato encontrado para o período
+     *
+     * *atenção no if ($this->getDateTime() == $dtFim->getDateTime() ) precisei
+     * alterar para "em" porque não vi em nenhuma janela utilizada a necessidade
+     * de usar "de" se for necessário alterar favor falar com Adenilson.
+     */ 
+    formatarPeriodo : function ($dtFim){
+        var $de = " de ";
+        var $ate = " até ";
+        var $em = " em ";
+
+        if (this.timestamp == $dtFim.timestamp ){
+            return $em+this.toString();
+        }else if ( (this.toString('m/Y') == $dtFim.toString('m/Y') ) && ( (parseInt(this.toString('d')) == 1) && ( $dtFim.getUltimoDia() ==  $dtFim.toString('d')) ) ){
+            return $em+this.toString('M/Y');
+        }else if ( (this.toString('d/m') == '01/01')&& ( $dtFim.toString('d/m') == '31/12' ) ){
+            if ( this.toString('Y') == $dtFim.toString('Y') ){                
+                return $em+this.toString('Y');
+            }else{
+                return $de+this.toString('Y') + $ate + $dtFim.toString('Y');
+            }
+        }else if ( (parseInt(this.toString('d')) == 1) && (( $dtFim.getUltimoDia() ==  $dtFim.toString('d')) ) ){
+            if (this.toString('y') == $dtFim.toString('y') )
+                return $de+this.toString('M') + $ate + $dtFim.toString('M') + $de + this.toString('Y');
+            else
+                return $de+this.toString('M/Y')+ $ate +$dtFim.toString('M/Y');
+        }else if (this.toString('d/m/Y') == '01/01/1970'){
+            return $ate + $dtFim.toString();
+        }else{
+            return $de+this.toString() + $ate + $dtFim.toString();
+        }
     }
    
 });
@@ -1231,12 +1274,17 @@ Superlogica_Js_Date.mktime = function() {
     
 };
 
-Superlogica_Js_Date.getDayOfWeek = function(day, abreviado) {
+Superlogica_Js_Date.getDayOfWeek = function(day, abreviado, plural) {
     var arDiasSemana = ['Domingo', 'Segunda-Feira', 'Terça-Feira', 'Quarta-Feira','Quinta-Feira' ,'Sexta-Feira', 'Sabado'];
     var arDiasSemanaAbreviado = ['Dom', 'Seg', 'Ter', 'Quar','Quin' ,'Sex', 'Sab'];
+    var arDiasSemanaPlural = ['domingos', 'segundas-feiras', 'terças-feiras', 'quartas-feiras','quintas-feiras' ,'sextas-feiras', 'sábados'];
     
-    	
-    return abreviado ? arDiasSemanaAbreviado[day] : arDiasSemana[day];
+    if(abreviado)
+        return arDiasSemanaAbreviado[day];
+    else if(plural)
+        return arDiasSemanaPlural[day];
+    else
+    	return arDiasSemana[day];
     
 };
 

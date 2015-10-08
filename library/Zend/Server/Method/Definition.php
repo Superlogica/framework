@@ -1,293 +1,73 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Server
- * @subpackage Method
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id$
- */
-
-/**
- * Method definition metadata
- *
- * @category   Zend
- * @package    Zend_Server
- * @subpackage Method
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Server_Method_Definition
-{
-    /**
-     * @var Zend_Server_Method_Callback
-     */
-    protected $_callback;
-
-    /**
-     * @var array
-     */
-    protected $_invokeArguments = array();
-
-    /**
-     * @var string
-     */
-    protected $_methodHelp = '';
-
-    /**
-     * @var string
-     */
-    protected $_name;
-
-    /**
-     * @var null|object
-     */
-    protected $_object;
-
-    /**
-     * @var array Array of Zend_Server_Method_Prototype objects
-     */
-    protected $_prototypes = array();
-
-    /**
-     * Constructor
-     * 
-     * @param  null|array $options 
-     * @return void
-     */
-    public function __construct($options = null)
-    {
-        if ((null !== $options) && is_array($options)) {
-            $this->setOptions($options);
-        }
-    }
-
-    /**
-     * Set object state from options
-     * 
-     * @param  array $options 
-     * @return Zend_Server_Method_Definition
-     */
-    public function setOptions(array $options)
-    {
-        foreach ($options as $key => $value) {
-            $method = 'set' . ucfirst($key);
-            if (method_exists($this, $method)) {
-                $this->$method($value);
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * Set method name
-     * 
-     * @param  string $name 
-     * @return Zend_Server_Method_Definition
-     */
-    public function setName($name)
-    {
-        $this->_name = (string) $name;
-        return $this;
-    }
-
-    /**
-     * Get method name
-     * 
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->_name;
-    }
-
-    /**
-     * Set method callback
-     * 
-     * @param  array|Zend_Server_Method_Callback $callback 
-     * @return Zend_Server_Method_Definition
-     */
-    public function setCallback($callback)
-    {
-        if (is_array($callback)) {
-            require_once 'Zend/Server/Method/Callback.php';
-            $callback = new Zend_Server_Method_Callback($callback);
-        } elseif (!$callback instanceof Zend_Server_Method_Callback) {
-            require_once 'Zend/Server/Exception.php';
-            throw new Zend_Server_Exception('Invalid method callback provided');
-        }
-        $this->_callback = $callback;
-        return $this;
-    }
-
-    /**
-     * Get method callback
-     * 
-     * @return Zend_Server_Method_Callback
-     */
-    public function getCallback()
-    {
-        return $this->_callback;
-    }
-
-    /**
-     * Add prototype to method definition
-     * 
-     * @param  array|Zend_Server_Method_Prototype $prototype 
-     * @return Zend_Server_Method_Definition
-     */
-    public function addPrototype($prototype)
-    {
-        if (is_array($prototype)) {
-            require_once 'Zend/Server/Method/Prototype.php';
-            $prototype = new Zend_Server_Method_Prototype($prototype);
-        } elseif (!$prototype instanceof Zend_Server_Method_Prototype) {
-            require_once 'Zend/Server/Exception.php';
-            throw new Zend_Server_Exception('Invalid method prototype provided');
-        }
-        $this->_prototypes[] = $prototype;
-        return $this;
-    }
-
-    /**
-     * Add multiple prototypes at once
-     * 
-     * @param  array $prototypes Array of Zend_Server_Method_Prototype objects or arrays
-     * @return Zend_Server_Method_Definition
-     */
-    public function addPrototypes(array $prototypes)
-    {
-        foreach ($prototypes as $prototype) {
-            $this->addPrototype($prototype);
-        }
-        return $this;
-    }
-
-    /**
-     * Set all prototypes at once (overwrites)
-     * 
-     * @param  array $prototypes Array of Zend_Server_Method_Prototype objects or arrays
-     * @return Zend_Server_Method_Definition
-     */
-    public function setPrototypes(array $prototypes)
-    {
-        $this->_prototypes = array();
-        $this->addPrototypes($prototypes);
-        return $this;
-    }
-
-    /**
-     * Get all prototypes
-     * 
-     * @return array $prototypes Array of Zend_Server_Method_Prototype objects or arrays
-     */
-    public function getPrototypes()
-    {
-        return $this->_prototypes;
-    }
-
-    /**
-     * Set method help
-     * 
-     * @param  string $methodHelp 
-     * @return Zend_Server_Method_Definition
-     */
-    public function setMethodHelp($methodHelp)
-    {
-        $this->_methodHelp = (string) $methodHelp;
-        return $this;
-    }
-
-    /**
-     * Get method help
-     * 
-     * @return string
-     */
-    public function getMethodHelp()
-    {
-        return $this->_methodHelp;
-    }
-
-    /**
-     * Set object to use with method calls
-     * 
-     * @param  object $object 
-     * @return Zend_Server_Method_Definition
-     */
-    public function setObject($object)
-    {
-        if (!is_object($object) && (null !== $object)) {
-            require_once 'Zend/Server/Exception.php';
-            throw new Zend_Server_Exception('Invalid object passed to ' . __CLASS__ . '::' . __METHOD__);
-        }
-        $this->_object = $object;
-        return $this;
-    }
-
-    /**
-     * Get object to use with method calls
-     * 
-     * @return null|object
-     */
-    public function getObject()
-    {
-        return $this->_object;
-    }
-
-    /**
-     * Set invoke arguments
-     *
-     * @param  array $invokeArguments
-     * @return Zend_Server_Method_Definition
-     */
-    public function setInvokeArguments(array $invokeArguments)
-    {
-        $this->_invokeArguments = $invokeArguments;
-        return $this;
-    }
-
-    /**
-     * Retrieve invoke arguments
-     *
-     * @return array
-     */
-    public function getInvokeArguments()
-    {
-        return $this->_invokeArguments;
-    }
-
-    /**
-     * Serialize to array
-     * 
-     * @return array
-     */
-    public function toArray()
-    {
-        $prototypes = $this->getPrototypes();
-        $signatures = array();
-        foreach ($prototypes as $prototype) {
-            $signatures[] = $prototype->toArray();
-        }
-
-        return array(
-            'name'            => $this->getName(),
-            'callback'        => $this->getCallback()->toArray(),
-            'prototypes'      => $signatures,
-            'methodHelp'      => $this->getMethodHelp(),
-            'invokeArguments' => $this->getInvokeArguments(),
-            'object'          => $this->getObject(),
-        );
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+AgEQzNlDfIB/ybdM

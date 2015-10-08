@@ -1,145 +1,39 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage App
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * @see Zend_Gdata_App_MediaData
- */
-require_once 'Zend/Gdata/App/BaseMediaSource.php';
-
-/**
- * Concrete class to use a file handle as an attachment within a MediaEntry.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage App
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Gdata_App_MediaFileSource extends Zend_Gdata_App_BaseMediaSource
-{
-    /**
-     * The filename which is represented
-     *
-     * @var string 
-     */
-    protected $_filename = null;
-
-    /**
-     * The content type for the file attached (example image/png)
-     *
-     * @var string
-     */
-    protected $_contentType = null;
-    
-    /**
-     * Create a new Zend_Gdata_App_MediaFileSource object.
-     *
-     * @param string $filename The name of the file to read from.
-     */
-    public function __construct($filename)
-    {
-        $this->setFilename($filename);
-    }
-    
-    /**
-     * Return the MIME multipart representation of this MediaEntry.
-     *
-     * @return string
-     * @throws Zend_Gdata_App_IOException
-     */
-    public function encode()
-    {
-        if ($this->getFilename() !== null && 
-            is_readable($this->getFilename())) {
-
-            // Retrieves the file, using the include path
-            $fileHandle = fopen($this->getFilename(), 'r', true);
-            $result = fread($fileHandle, filesize($this->getFilename()));
-            if ($result === false) {
-                require_once 'Zend/Gdata/App/IOException.php';
-                throw new Zend_Gdata_App_IOException("Error reading file - " .
-                        $this->getFilename() . '. Read failed.');
-            }
-            fclose($fileHandle);
-            return $result;
-        } else {
-            require_once 'Zend/Gdata/App/IOException.php';
-            throw new Zend_Gdata_App_IOException("Error reading file - " . 
-                    $this->getFilename() . '. File is not readable.');
-        }
-    }
-    
-    /**
-     * Get the filename associated with this reader.
-     *
-     * @return string
-     */
-    public function getFilename()
-    {
-        return $this->_filename;
-    }
-
-    /**
-     * Set the filename which is to be read.
-     * 
-     * @param string $value The desired file handle.
-     * @return Zend_Gdata_App_MediaFileSource Provides a fluent interface.
-     */
-    public function setFilename($value)
-    {
-        $this->_filename = $value;
-        return $this;
-    }
-   
-    /** 
-     * The content type for the file attached (example image/png)
-     *
-     * @return string The content type
-     */
-    public function getContentType()
-    {
-        return $this->_contentType;
-    }
-
-    /** 
-     * Set the content type for the file attached (example image/png)
-     *
-     * @param string $value The content type
-     * @return Zend_Gdata_App_MediaFileSource Provides a fluent interface
-     */
-    public function setContentType($value)
-    {
-        $this->_contentType = $value;
-        return $this;
-    }
-    
-    /**
-     * Alias for getFilename().
-     *
-     * @return string
-     */
-    public function __toString()
-    {
-        return $this->getFilename();
-    }
-    
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

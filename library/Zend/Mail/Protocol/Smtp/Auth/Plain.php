@@ -1,96 +1,30 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- * 
- * @category   Zend
- * @package    Zend_Mail
- * @subpackage Protocol
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Plain.php 8064 2008-02-16 10:58:39Z thomas $
- */
-
-
-/**
- * @see Zend_Mail_Protocol_Smtp
- */
-require_once 'Zend/Mail/Protocol/Smtp.php';
-
-
-/**
- * Performs PLAIN authentication
- *
- * @category   Zend
- * @package    Zend_Mail
- * @subpackage Protocol
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Mail_Protocol_Smtp_Auth_Plain extends Zend_Mail_Protocol_Smtp
-{
-    /**
-     * PLAIN username
-     *
-     * @var string
-     */
-    protected $_username;
-
-
-    /**
-     * PLAIN password
-     *
-     * @var string
-     */
-    protected $_password;
-
-
-    /**
-     * Constructor.
-     *
-     * @param  string $host   (Default: 127.0.0.1)
-     * @param  int    $port   (Default: null)
-     * @param  array  $config Auth-specific parameters
-     * @return void
-     */
-    public function __construct($host = '127.0.0.1', $port = null, $config = null)
-    {
-        if (is_array($config)) {
-            if (isset($config['username'])) {
-                $this->_username = $config['username'];
-            }
-            if (isset($config['password'])) {
-                $this->_password = $config['password'];
-            }
-        }
-
-        parent::__construct($host, $port, $config);
-    }
-
-
-    /**
-     * Perform PLAIN authentication with supplied credentials
-     *
-     * @return void
-     */
-    public function auth()
-    {
-        // Ensure AUTH has not already been initiated.
-        parent::auth();
-
-        $this->_send('AUTH PLAIN');
-        $this->_expect(334);
-        $this->_send(base64_encode(chr(0) . $this->_username . chr(0) . $this->_password));
-        $this->_expect(235);
-        $this->_auth = true;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+evAkkMbky0==

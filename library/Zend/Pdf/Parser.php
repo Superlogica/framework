@@ -1,467 +1,243 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @package    Zend_Pdf
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_Pdf_Element */
-require_once 'Zend/Pdf/Element.php';
-
-/** Zend_Pdf_Element_Array */
-require_once 'Zend/Pdf/Element/Array.php';
-
-/** Zend_Pdf_Element_String_Binary */
-require_once 'Zend/Pdf/Element/String/Binary.php';
-
-/** Zend_Pdf_Element_Boolean */
-require_once 'Zend/Pdf/Element/Boolean.php';
-
-/** Zend_Pdf_Element_Dictionary */
-require_once 'Zend/Pdf/Element/Dictionary.php';
-
-/** Zend_Pdf_Element_Name */
-require_once 'Zend/Pdf/Element/Name.php';
-
-/** Zend_Pdf_Element_Numeric */
-require_once 'Zend/Pdf/Element/Numeric.php';
-
-/** Zend_Pdf_Element_Object */
-require_once 'Zend/Pdf/Element/Object.php';
-
-/** Zend_Pdf_Element_Reference */
-require_once 'Zend/Pdf/Element/Reference.php';
-
-/** Zend_Pdf_Element_Object_Stream */
-require_once 'Zend/Pdf/Element/Object/Stream.php';
-
-/** Zend_Pdf_Element_String */
-require_once 'Zend/Pdf/Element/String.php';
-
-/** Zend_Pdf_Element_Null */
-require_once 'Zend/Pdf/Element/Null.php';
-
-/** Zend_Pdf_Element_Reference_Context */
-require_once 'Zend/Pdf/Element/Reference/Context.php';
-
-/** Zend_Pdf_Element_Reference_Table */
-require_once 'Zend/Pdf/Element/Reference/Table.php';
-
-/** Zend_Pdf_Trailer_Keeper */
-require_once 'Zend/Pdf/Trailer/Keeper.php';
-
-/** Zend_Pdf_ElementFactory_Interface */
-require_once 'Zend/Pdf/ElementFactory/Interface.php';
-
-/** Zend_Pdf_PhpArray */
-require_once 'Zend/Pdf/PhpArray.php';
-
-/** Zend_Pdf_StringParser */
-require_once 'Zend/Pdf/StringParser.php';
-
-/** Zend_Pdf_Parser_Stream */
-require_once 'Zend/Pdf/Parser/Stream.php';
-
-
-/**
- * PDF file parser
- *
- * @package    Zend_Pdf
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Pdf_Parser
-{
-    /**
-     * String parser
-     *
-     * @var Zend_Pdf_StringParser
-     */
-    private $_stringParser;
-
-    /**
-     * Last PDF file trailer
-     *
-     * @var Zend_Pdf_Trailer_Keeper
-     */
-    private $_trailer;
-
-
-    /**
-     * Get length of source PDF
-     *
-     * @return integer
-     */
-    public function getPDFLength()
-    {
-        return strlen($this->_stringParser->data);
-    }
-
-    /**
-     * Get PDF String
-     *
-     * @return string
-     */
-    public function getPDFString()
-    {
-        return $this->_stringParser->data;
-    }
-
-    /**
-     * Load XReference table and referenced objects
-     *
-     * @param integer $offset
-     * @throws Zend_Pdf_Exception
-     * @return Zend_Pdf_Trailer_Keeper
-     */
-    private function _loadXRefTable($offset)
-    {
-        $this->_stringParser->offset = $offset;
-
-        $refTable = new Zend_Pdf_Element_Reference_Table();
-        $context  = new Zend_Pdf_Element_Reference_Context($this->_stringParser, $refTable);
-        $this->_stringParser->setContext($context);
-
-        $nextLexeme = $this->_stringParser->readLexeme();
-        if ($nextLexeme == 'xref') {
-            /**
-             * Common cross-reference table
-             */
-            $this->_stringParser->skipWhiteSpace();
-            while ( ($nextLexeme = $this->_stringParser->readLexeme()) != 'trailer' ) {
-                if (!ctype_digit($nextLexeme)) {
-                    throw new Zend_Pdf_Exception(sprintf('PDF file syntax error. Offset - 0x%X. Cross-reference table subheader values must contain only digits.', $this->_stringParser->offset-strlen($nextLexeme)));
-                }
-                $objNum = (int)$nextLexeme;
-
-                $refCount = $this->_stringParser->readLexeme();
-                if (!ctype_digit($refCount)) {
-                    throw new Zend_Pdf_Exception(sprintf('PDF file syntax error. Offset - 0x%X. Cross-reference table subheader values must contain only digits.', $this->_stringParser->offset-strlen($refCount)));
-                }
-
-                $this->_stringParser->skipWhiteSpace();
-                while ($refCount > 0) {
-                    $objectOffset = substr($this->_stringParser->data, $this->_stringParser->offset, 10);
-                    if (!ctype_digit($objectOffset)) {
-                        throw new Zend_Pdf_Exception(sprintf('PDF file cross-reference table syntax error. Offset - 0x%X. Offset must contain only digits.', $this->_stringParser->offset));
-                    }
-                    // Force $objectOffset to be treated as decimal instead of octal number
-                    for ($numStart = 0; $numStart < strlen($objectOffset)-1; $numStart++) {
-                        if ($objectOffset[$numStart] != '0') {
-                            break;
-                        }
-                    }
-                    $objectOffset = substr($objectOffset, $numStart);
-                    $this->_stringParser->offset += 10;
-
-                    if ( !Zend_Pdf_StringParser::isWhiteSpace(ord( $this->_stringParser->data[$this->_stringParser->offset] )) ) {
-                        throw new Zend_Pdf_Exception(sprintf('PDF file cross-reference table syntax error. Offset - 0x%X. Value separator must be white space.', $this->_stringParser->offset));
-                    }
-                    $this->_stringParser->offset++;
-
-                    $genNumber = substr($this->_stringParser->data, $this->_stringParser->offset, 5);
-                    if (!ctype_digit($objectOffset)) {
-                        throw new Zend_Pdf_Exception(sprintf('PDF file cross-reference table syntax error. Offset - 0x%X. Offset must contain only digits.', $this->_stringParser->offset));
-                    }
-                    // Force $objectOffset to be treated as decimal instead of octal number
-                    for ($numStart = 0; $numStart < strlen($genNumber)-1; $numStart++) {
-                        if ($genNumber[$numStart] != '0') {
-                            break;
-                        }
-                    }
-                    $genNumber = substr($genNumber, $numStart);
-                    $this->_stringParser->offset += 5;
-
-                    if ( !Zend_Pdf_StringParser::isWhiteSpace(ord( $this->_stringParser->data[$this->_stringParser->offset] )) ) {
-                        throw new Zend_Pdf_Exception(sprintf('PDF file cross-reference table syntax error. Offset - 0x%X. Value separator must be white space.', $this->_stringParser->offset));
-                    }
-                    $this->_stringParser->offset++;
-
-                    $inUseKey = $this->_stringParser->data[$this->_stringParser->offset];
-                    $this->_stringParser->offset++;
-
-                    switch ($inUseKey) {
-                        case 'f':
-                            // free entry
-                            unset( $this->_refTable[$objNum . ' ' . $genNumber . ' R'] );
-                            $refTable->addReference($objNum . ' ' . $genNumber . ' R',
-                                                    $objectOffset,
-                                                    false);
-                            break;
-
-                        case 'n':
-                            // in-use entry
-
-                            $refTable->addReference($objNum . ' ' . $genNumber . ' R',
-                                                    $objectOffset,
-                                                    true);
-                    }
-
-                    if ( !Zend_Pdf_StringParser::isWhiteSpace(ord( $this->_stringParser->data[$this->_stringParser->offset] )) ) {
-                        throw new Zend_Pdf_Exception(sprintf('PDF file cross-reference table syntax error. Offset - 0x%X. Value separator must be white space.', $this->_stringParser->offset));
-                    }
-                    $this->_stringParser->offset++;
-                    if ( !Zend_Pdf_StringParser::isWhiteSpace(ord( $this->_stringParser->data[$this->_stringParser->offset] )) ) {
-                        throw new Zend_Pdf_Exception(sprintf('PDF file cross-reference table syntax error. Offset - 0x%X. Value separator must be white space.', $this->_stringParser->offset));
-                    }
-                    $this->_stringParser->offset++;
-
-                    $refCount--;
-                    $objNum++;
-                }
-            }
-
-            $trailerDictOffset = $this->_stringParser->offset;
-            $trailerDict = $this->_stringParser->readElement();
-            if (!$trailerDict instanceof Zend_Pdf_Element_Dictionary) {
-                throw new Zend_Pdf_Exception(sprintf('PDF file syntax error. Offset - 0x%X.  Dictionary expected after \'trailer\' keyword.', $trailerDictOffset));
-            }
-        } else {
-            $xrefStream = $this->_stringParser->getObject($offset, $context);
-
-            if (!$xrefStream instanceof Zend_Pdf_Element_Object_Stream) {
-                throw new Zend_Pdf_Exception(sprintf('PDF file syntax error. Offset - 0x%X.  Cross-reference stream expected.', $offset));
-            }
-
-            $trailerDict = $xrefStream->dictionary;
-            if ($trailerDict->Type->value != 'XRef') {
-                throw new Zend_Pdf_Exception(sprintf('PDF file syntax error. Offset - 0x%X.  Cross-reference stream object must have /Type property assigned to /XRef.', $offset));
-            }
-            if ($trailerDict->W === null  || $trailerDict->W->getType() != Zend_Pdf_Element::TYPE_ARRAY) {
-                throw new Zend_Pdf_Exception(sprintf('PDF file syntax error. Offset - 0x%X. Cross reference stream dictionary doesn\'t have W entry or it\'s not an array.', $offset));
-            }
-
-            $entryField1Size = $trailerDict->W->items[0]->value;
-            $entryField2Size = $trailerDict->W->items[1]->value;
-            $entryField3Size = $trailerDict->W->items[2]->value;
-
-            if ($entryField2Size == 0 || $entryField3Size == 0) {
-                throw new Zend_Pdf_Exception(sprintf('PDF file syntax error. Offset - 0x%X. Wrong W dictionary entry. Only type field of stream entries has default value and could be zero length.', $offset));
-            }
-
-            $xrefStreamData = &$xrefStream->value;
-
-            if ($trailerDict->Index !== null) {
-                if ($trailerDict->Index->getType() != Zend_Pdf_Element::TYPE_ARRAY) {
-                    throw new Zend_Pdf_Exception(sprintf('PDF file syntax error. Offset - 0x%X. Cross reference stream dictionary Index entry must be an array.', $offset));
-                }
-                $sections = count($trailerDict->Index->items)/2;
-            } else {
-                $sections = 1;
-            }
-
-            $streamOffset = 0;
-
-            $size    = $entryField1Size + $entryField2Size + $entryField3Size;
-            $entries = strlen($xrefStreamData)/$size;
-
-            for ($count = 0; $count < $sections; $count++) {
-                if ($trailerDict->Index !== null) {
-                    $objNum  = $trailerDict->Index->items[$count*2    ]->value;
-                    $entries = $trailerDict->Index->items[$count*2 + 1]->value;
-                } else {
-                    $objNum  = 0;
-                    $entries = $trailerDict->Size->value;
-                }
-
-                for ($count2 = 0; $count2 < $entries; $count2++) {
-                    if ($entryField1Size == 0) {
-                        $type = 1;
-                    } else if ($entryField1Size == 1) { // Optimyze one-byte field case
-                        $type = ord($xrefStreamData[$streamOffset++]);
-                    } else {
-                        $type = Zend_Pdf_StringParser::parseIntFromStream($xrefStreamData, $streamOffset, $entryField1Size);
-                        $streamOffset += $entryField1Size;
-                    }
-
-                    if ($entryField2Size == 1) { // Optimyze one-byte field case
-                        $field2 = ord($xrefStreamData[$streamOffset++]);
-                    } else {
-                        $field2 = Zend_Pdf_StringParser::parseIntFromStream($xrefStreamData, $streamOffset, $entryField2Size);
-                        $streamOffset += $entryField2Size;
-                    }
-
-                    if ($entryField3Size == 1) { // Optimyze one-byte field case
-                        $field3 = ord($xrefStreamData[$streamOffset++]);
-                    } else {
-                        $field3 = Zend_Pdf_StringParser::parseIntFromStream($xrefStreamData, $streamOffset, $entryField3Size);
-                        $streamOffset += $entryField3Size;
-                    }
-
-                    switch ($type) {
-                        case 0:
-                            // Free object
-                            $refTable->addReference($objNum . ' ' . $field3 . ' R', $field2, false);
-                            // Debug output:
-                            // echo "Free object - $objNum $field3 R, next free - $field2\n";
-                            break;
-
-                        case 1:
-                            // In use object
-                            $refTable->addReference($objNum . ' ' . $field3 . ' R', $field2, true);
-                            // Debug output:
-                            // echo "In-use object - $objNum $field3 R, offset - $field2\n";
-                            break;
-
-                        case 2:
-                            // Object in an object stream
-                            // Debug output:
-                            // echo "Compressed object - $objNum 0 R, object stream - $field2 0 R, offset - $field3\n";
-                            break;
-                    }
-
-                    $objNum++;
-                }
-            }
-
-            // $streamOffset . ' ' . strlen($xrefStreamData) . "\n";
-            // "$entries\n";
-            throw new Zend_Pdf_Exception('Cross-reference streams are not supported yet.');
-        }
-
-
-        $trailerObj = new Zend_Pdf_Trailer_Keeper($trailerDict, $context);
-        if ($trailerDict->Prev instanceof Zend_Pdf_Element_Numeric ||
-            $trailerDict->Prev instanceof Zend_Pdf_Element_Reference ) {
-            $trailerObj->setPrev($this->_loadXRefTable($trailerDict->Prev->value));
-            $context->getRefTable()->setParent($trailerObj->getPrev()->getRefTable());
-        }
-
-        /**
-         * We set '/Prev' dictionary property to the current cross-reference section offset.
-         * It doesn't correspond to the actual data, but is true when trailer will be used
-         * as a trailer for next generated PDF section.
-         */
-        $trailerObj->Prev = new Zend_Pdf_Element_Numeric($offset);
-
-        return $trailerObj;
-    }
-
-
-    /**
-     * Get Trailer object
-     *
-     * @return Zend_Pdf_Trailer_Keeper
-     */
-    public function getTrailer()
-    {
-        return $this->_trailer;
-    }
-
-    /**
-     * Object constructor
-     *
-     * Note: PHP duplicates string, which is sent by value, only of it's updated.
-     * Thus we don't need to care about overhead
-     *
-     * @param mixed $source
-     * @param Zend_Pdf_ElementFactory_Interface $factory
-     * @param boolean $load
-     * @throws Zend_Exception
-     */
-    public function __construct($source, Zend_Pdf_ElementFactory_Interface $factory, $load)
-    {
-        if ($load) {
-            if (($pdfFile = @fopen($source, 'rb')) === false ) {
-                throw new Zend_Pdf_Exception( "Can not open '$source' file for reading." );
-            }
-
-            $byteCount = filesize($source);
-
-            $data = fread($pdfFile, $byteCount);
-            $byteCount -= strlen($data);
-            while ( $byteCount > 0 && ($nextBlock = fread($pdfFile, $byteCount)) != false ) {
-                $data .= $nextBlock;
-                $byteCount -= strlen($nextBlock);
-            }
-            fclose($pdfFile);
-
-            $this->_stringParser = new Zend_Pdf_StringParser($data, $factory);
-        } else {
-            $this->_stringParser = new Zend_Pdf_StringParser($source, $factory);
-        }
-
-        $pdfVersionComment = $this->_stringParser->readComment();
-        if (substr($pdfVersionComment, 0, 5) != '%PDF-') {
-            throw new Zend_Pdf_Exception('File is not a PDF.');
-        }
-
-        $pdfVersion = (float)substr($pdfVersionComment, 5);
-        if ($pdfVersion < 0.9 || $pdfVersion >= 1.61) {
-            /**
-             * @todo
-             * To support PDF versions 1.5 (Acrobat 6) and PDF version 1.7 (Acrobat 7)
-             * Stream compression filter must be implemented (for compressed object streams).
-             * Cross reference streams must be implemented
-             */
-            throw new Zend_Pdf_Exception(sprintf('Unsupported PDF version. Zend_Pdf supports PDF 1.0-1.4. Current version - \'%f\'', $pdfVersion));
-        }
-
-        $this->_stringParser->offset = strrpos($this->_stringParser->data, '%%EOF');
-        if ($this->_stringParser->offset === false ||
-            strlen($this->_stringParser->data) - $this->_stringParser->offset > 7) {
-            throw new Zend_Pdf_Exception('Pdf file syntax error. End-of-fle marker expected at the end of file.');
-        }
-
-        $this->_stringParser->offset--;
-        /**
-         * Go to end of cross-reference table offset
-         */
-        while (Zend_Pdf_StringParser::isWhiteSpace( ord($this->_stringParser->data[$this->_stringParser->offset]) )&&
-               ($this->_stringParser->offset > 0)) {
-            $this->_stringParser->offset--;
-        }
-        /**
-         * Go to the start of cross-reference table offset
-         */
-        while ( (!Zend_Pdf_StringParser::isWhiteSpace( ord($this->_stringParser->data[$this->_stringParser->offset]) ))&&
-               ($this->_stringParser->offset > 0)) {
-            $this->_stringParser->offset--;
-        }
-        /**
-         * Go to the end of 'startxref' keyword
-         */
-        while (Zend_Pdf_StringParser::isWhiteSpace( ord($this->_stringParser->data[$this->_stringParser->offset]) )&&
-               ($this->_stringParser->offset > 0)) {
-            $this->_stringParser->offset--;
-        }
-        /**
-         * Go to the white space (eol marker) before 'startxref' keyword
-         */
-        $this->_stringParser->offset -= 9;
-
-        $nextLexeme = $this->_stringParser->readLexeme();
-        if ($nextLexeme != 'startxref') {
-            throw new Zend_Pdf_Exception(sprintf('Pdf file syntax error. \'startxref\' keyword expected. Offset - 0x%X.', $this->_stringParser->offset-strlen($nextLexeme)));
-        }
-
-        $startXref = $this->_stringParser->readLexeme();
-        if (!ctype_digit($startXref)) {
-            throw new Zend_Pdf_Exception(sprintf('Pdf file syntax error. Cross-reference table offset must contain only digits. Offset - 0x%X.', $this->_stringParser->offset-strlen($nextLexeme)));
-        }
-
-        $this->_trailer = $this->_loadXRefTable($startXref);
-        $factory->setObjectCount($this->_trailer->Size->value);
-    }
-
-
-    /**
-     * Object destructor
-     */
-    public function __destruct()
-    {
-        $this->_stringParser->cleanUp();
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+M0U8WW==

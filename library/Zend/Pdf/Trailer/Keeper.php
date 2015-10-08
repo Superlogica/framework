@@ -1,145 +1,34 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @package    Zend_Pdf
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-
-/** Zend_Pdf_Trailer */
-require_once 'Zend/Pdf/Trailer.php';
-
-/** Zend_Pdf_Element_Reference_Context */
-require_once 'Zend/Pdf/Element/Reference/Context.php';
-
-
-/**
- * PDF file trailer.
- * Stores and provides access to the trailer parced from a PDF file
- *
- * @package    Zend_Pdf
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Pdf_Trailer_Keeper extends Zend_Pdf_Trailer
-{
-    /**
-     * Reference context
-     *
-     * @var Zend_Pdf_Element_Reference_Context
-     */
-    private $_context;
-
-    /**
-     * Previous trailer
-     *
-     * @var Zend_Pdf_Trailer
-     */
-    private $_prev;
-
-
-    /**
-     * Object constructor
-     *
-     * @param Zend_Pdf_Element_Dictionary $dict
-     * @param Zend_Pdf_Element_Reference_Context $context
-     * @param Zend_Pdf_Trailer $prev
-     */
-    public function __construct(Zend_Pdf_Element_Dictionary $dict,
-                                Zend_Pdf_Element_Reference_Context $context,
-                                $prev = null)
-    {
-        parent::__construct($dict);
-
-        $this->_context = $context;
-        $this->_prev    = $prev;
-    }
-
-    /**
-     * Setter for $this->_prev
-     *
-     * @param Zend_Pdf_Trailer_Keeper $prev
-     */
-    public function setPrev(Zend_Pdf_Trailer_Keeper $prev)
-    {
-        $this->_prev = $prev;
-    }
-
-    /**
-     * Getter for $this->_prev
-     *
-     * @return Zend_Pdf_Trailer
-     */
-    public function getPrev()
-    {
-        return $this->_prev;
-    }
-
-    /**
-     * Get length of source PDF
-     *
-     * @return string
-     */
-    public function getPDFLength()
-    {
-        return $this->_context->getParser()->getLength();
-    }
-
-    /**
-     * Get PDF String
-     *
-     * @return string
-     */
-    public function getPDFString()
-    {
-        return $this->_context->getParser()->getString();
-    }
-
-    /**
-     * Get reference table, which corresponds to the trailer.
-     * Proxy to the $_context member methad call
-     *
-     * @return Zend_Pdf_Element_Reference_Context
-     */
-    public function getRefTable()
-    {
-        return $this->_context->getRefTable();
-    }
-
-    /**
-     * Get header of free objects list
-     * Returns object number of last free object
-     *
-     * @throws Zend_Pdf_Exception
-     * @return integer
-     */
-    public function getLastFreeObject()
-    {
-        try {
-            $this->_context->getRefTable()->getNextFree('0 65535 R');
-        } catch (Zend_Pdf_Exception $e) {
-            if ($e->getMessage() == 'Object not found.') {
-                /**
-                 * Here is work around for some wrong generated PDFs.
-                 * We have not found reference to the header of free object list,
-                 * thus we treat it as there are no free objects.
-                 */
-                return 0;
-            }
-
-            throw $e;
-        }
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+1pLdVaAk/IcZ0+jUd0==

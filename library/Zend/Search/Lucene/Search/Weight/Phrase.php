@@ -1,107 +1,30 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Search_Lucene
- * @subpackage Search
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-
-/**
- * Zend_Search_Lucene_Search_Weight
- */
-require_once 'Zend/Search/Lucene/Search/Weight.php';
-
-
-/**
- * @category   Zend
- * @package    Zend_Search_Lucene
- * @subpackage Search
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Search_Lucene_Search_Weight_Phrase extends Zend_Search_Lucene_Search_Weight
-{
-    /**
-     * IndexReader.
-     *
-     * @var Zend_Search_Lucene_Interface
-     */
-    private $_reader;
-
-    /**
-     * The query that this concerns.
-     *
-     * @var Zend_Search_Lucene_Search_Query_Phrase
-     */
-    private $_query;
-
-    /**
-     * Score factor
-     *
-     * @var float
-     */
-    private $_idf;
-
-    /**
-     * Zend_Search_Lucene_Search_Weight_Phrase constructor
-     *
-     * @param Zend_Search_Lucene_Search_Query_Phrase $query
-     * @param Zend_Search_Lucene_Interface           $reader
-     */
-    public function __construct(Zend_Search_Lucene_Search_Query_Phrase $query,
-                                Zend_Search_Lucene_Interface           $reader)
-    {
-        $this->_query  = $query;
-        $this->_reader = $reader;
-    }
-
-    /**
-     * The sum of squared weights of contained query clauses.
-     *
-     * @return float
-     */
-    public function sumOfSquaredWeights()
-    {
-        // compute idf
-        $this->_idf = $this->_reader->getSimilarity()->idf($this->_query->getTerms(), $this->_reader);
-
-        // compute query weight
-        $this->_queryWeight = $this->_idf * $this->_query->getBoost();
-
-        // square it
-        return $this->_queryWeight * $this->_queryWeight;
-    }
-
-
-    /**
-     * Assigns the query normalization factor to this.
-     *
-     * @param float $queryNorm
-     */
-    public function normalize($queryNorm)
-    {
-        $this->_queryNorm = $queryNorm;
-
-        // normalize query weight
-        $this->_queryWeight *= $queryNorm;
-
-        // idf for documents
-        $this->_value = $this->_queryWeight * $this->_idf;
-    }
-}
-
-
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+fbjemPK=

@@ -163,16 +163,17 @@ var Superlogica_Js_Button = new Class({
         return this;
     },
     
-    addDropDown : function ( text, button, destaque ){
+    addDropDown : function ( text, button, destaque, atributos ){
         if(typeof destaque == 'undefined'){
             destaque = false
         }
 
         this._arButtons.push(
-                         {
+                        {
                            'text' : text,
                            'data' : button,
-                           'destaque' : destaque
+                           'destaque' : destaque,
+                           'atributos' : atributos
                         }
                      );
     },
@@ -182,14 +183,26 @@ var Superlogica_Js_Button = new Class({
      * @param type $text
      * @return string
      */
-    toDropDown : function (text, destaque ){
+    toDropDown : function (text, destaque, atributos ){
         if(typeof destaque == 'undefined'){
             destaque = false
         }
-
-        var classBtn = destaque ? "btn-success" : "btn-default";        
         
-        var html=  '<div class="btn-group"><button id="btnGroupDrop1" type="button" class="btn '+classBtn+' dropdown-toggle" data-toggle="dropdown">'+text+' <span class="caret"></span></button><ul class="dropdown-menu" role="menu" aria-labelledby="btnGroupDrop1">';
+        if ( typeof atributos != 'object') 
+            atributos = {};
+        
+        if ( typeof atributos.classe != 'string' )
+            atributos.classe = '';
+        
+        atributos.classe = 'btn ' + (destaque ? "btn-success" : "btn-default") + ' dropdown-toggle ' + atributos.classe;
+        var stAtributos = '';
+        Object.each( atributos, function(valor,atributo){
+            if ( atributo == 'classe')
+                atributo = 'class';
+            stAtributos += atributo+"='"+valor+"' ";
+        },stAtributos);
+        var idBtnDropdown = 'btnGroupDrop' + Superlogica_Js_String.numeroRandomico();
+        var html=  '<div class="btn-group"><button id="'+idBtnDropdown+'" type="button" '+stAtributos+' data-toggle="dropdown" comportamentos="redirecionarDropdown">'+text+' <span class="caret"></span></button><ul class="dropdown-menu dropdown-menu-recalcular-posicao" role="menu" aria-labelledby="'+idBtnDropdown+'">';
 
         Object.each( this._arButtons, function(button){
             var link = linkToJs( button['link'] );
@@ -214,7 +227,7 @@ var Superlogica_Js_Button = new Class({
         Object.each( this._arButtons, function(button,key){
             
             if ( typeof button.data == 'object' ){                
-                  stElements +=  button.data.toDropDown( button.text, button.destaque );
+                  stElements +=  button.data.toDropDown( button.text, button.destaque, button.atributos );
                   return;
             }
 
@@ -257,6 +270,14 @@ var Superlogica_Js_Button = new Class({
         }
         
         return stElements;
+    },
+    
+    /**
+     * Retorna o objeto do botão como um Superlogica_Js_Elemento
+     * @returns {Superlogica_Js_Elemento}
+     */
+    toElemento : function(){
+        return new Superlogica_Js_Elemento( this.toString() );
     }
 });
 
@@ -269,3 +290,44 @@ var Superlogica_Js_Button = new Class({
 function linkToJs ( link ){   
     return (typeof link != 'undefined' && link != '') ? link : "javascript:void(0);";
 };
+
+Superlogica_Js_Button.verificarProximidadeDropdown = function(){
+    var janela = new Superlogica_Js_Elemento(window);
+    janela.unbind('resize.verificarProximidadeDropdown')
+        .bind('resize.verificarProximidadeDropdown', function(){
+            var dropdowns = new Superlogica_Js_Elemento('.dropdown-menu-recalcular-posicao');
+            
+            if ( !dropdowns || dropdowns.contar() <= 0 || !dropdowns.eh(':visible') )
+                return true;
+            var larguraWindow = janela.largura();
+            dropdowns.emCadaElemento(function(){
+                var dropdown = this;
+                dropdown.removerClasse('pull-right pull-left');
+                var posicao = this.posicao();                
+                if ( posicao.esquerda < 0 ){
+                    dropdown.adicionarClasse('pull-left');
+                    return true;
+                }
+
+                var posicaoFinal = posicao.esquerda + this.largura();
+                
+                if ( posicaoFinal > larguraWindow ){
+                    dropdown.adicionarClasse('pull-right');
+                    return true;
+                }
+            });
+
+        });
+};
+
+Superlogica_Js_Elemento.implement({
+
+    __redirecionarDropdown : function(){
+        this.bind('click', function(){
+            Superlogica_Js_Button.verificarProximidadeDropdown();
+            new Superlogica_Js_Elemento(window).simularEvento('resize');    
+        });
+        
+    }
+
+});

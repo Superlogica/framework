@@ -1,230 +1,74 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Auth
- * @subpackage Zend_Auth_Adapter
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Digest.php 9668 2008-06-11 08:15:02Z doctorrock83 $
- */
-
-
-/**
- * @see Zend_Auth_Adapter_Interface
- */
-require_once 'Zend/Auth/Adapter/Interface.php';
-
-
-/**
- * @category   Zend
- * @package    Zend_Auth
- * @subpackage Zend_Auth_Adapter
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Auth_Adapter_Digest implements Zend_Auth_Adapter_Interface
-{
-    /**
-     * Filename against which authentication queries are performed
-     *
-     * @var string
-     */
-    protected $_filename;
-
-    /**
-     * Digest authentication realm
-     *
-     * @var string
-     */
-    protected $_realm;
-
-    /**
-     * Digest authentication user
-     *
-     * @var string
-     */
-    protected $_username;
-
-    /**
-     * Password for the user of the realm
-     *
-     * @var string
-     */
-    protected $_password;
-
-    /**
-     * Sets adapter options
-     *
-     * @param  mixed $filename
-     * @param  mixed $realm
-     * @param  mixed $username
-     * @param  mixed $password
-     * @return void
-     */
-    public function __construct($filename = null, $realm = null, $username = null, $password = null)
-    {
-        $options = array('filename', 'realm', 'username', 'password');
-        foreach ($options as $option) {
-            if (null !== $$option) {
-                $methodName = 'set' . ucfirst($option);
-                $this->$methodName($$option);
-            }
-        }
-    }
-
-    /**
-     * Returns the filename option value or null if it has not yet been set
-     *
-     * @return string|null
-     */
-    public function getFilename()
-    {
-        return $this->_filename;
-    }
-
-    /**
-     * Sets the filename option value
-     *
-     * @param  mixed $filename
-     * @return Zend_Auth_Adapter_Digest Provides a fluent interface
-     */
-    public function setFilename($filename)
-    {
-        $this->_filename = (string) $filename;
-        return $this;
-    }
-
-    /**
-     * Returns the realm option value or null if it has not yet been set
-     *
-     * @return string|null
-     */
-    public function getRealm()
-    {
-        return $this->_realm;
-    }
-
-    /**
-     * Sets the realm option value
-     *
-     * @param  mixed $realm
-     * @return Zend_Auth_Adapter_Digest Provides a fluent interface
-     */
-    public function setRealm($realm)
-    {
-        $this->_realm = (string) $realm;
-        return $this;
-    }
-
-    /**
-     * Returns the username option value or null if it has not yet been set
-     *
-     * @return string|null
-     */
-    public function getUsername()
-    {
-        return $this->_username;
-    }
-
-    /**
-     * Sets the username option value
-     *
-     * @param  mixed $username
-     * @return Zend_Auth_Adapter_Digest Provides a fluent interface
-     */
-    public function setUsername($username)
-    {
-        $this->_username = (string) $username;
-        return $this;
-    }
-
-    /**
-     * Returns the password option value or null if it has not yet been set
-     *
-     * @return string|null
-     */
-    public function getPassword()
-    {
-        return $this->_password;
-    }
-
-    /**
-     * Sets the password option value
-     *
-     * @param  mixed $password
-     * @return Zend_Auth_Adapter_Digest Provides a fluent interface
-     */
-    public function setPassword($password)
-    {
-        $this->_password = (string) $password;
-        return $this;
-    }
-
-    /**
-     * Defined by Zend_Auth_Adapter_Interface
-     *
-     * @throws Zend_Auth_Adapter_Exception
-     * @return Zend_Auth_Result
-     */
-    public function authenticate()
-    {
-        $optionsRequired = array('filename', 'realm', 'username', 'password');
-        foreach ($optionsRequired as $optionRequired) {
-            if (null === $this->{"_$optionRequired"}) {
-                /**
-                 * @see Zend_Auth_Adapter_Exception
-                 */
-                require_once 'Zend/Auth/Adapter/Exception.php';
-                throw new Zend_Auth_Adapter_Exception("Option '$optionRequired' must be set before authentication");
-            }
-        }
-
-        if (false === ($fileHandle = @fopen($this->_filename, 'r'))) {
-            /**
-             * @see Zend_Auth_Adapter_Exception
-             */
-            require_once 'Zend/Auth/Adapter/Exception.php';
-            throw new Zend_Auth_Adapter_Exception("Cannot open '$this->_filename' for reading");
-        }
-
-        $id       = "$this->_username:$this->_realm";
-        $idLength = strlen($id);
-
-        $result = array(
-            'code'  => Zend_Auth_Result::FAILURE,
-            'identity' => array(
-                'realm'    => $this->_realm,
-                'username' => $this->_username,
-                ),
-            'messages' => array()
-            );
-
-        while ($line = trim(fgets($fileHandle))) {
-            if (substr($line, 0, $idLength) === $id) {
-                if (substr($line, -32) === md5("$this->_username:$this->_realm:$this->_password")) {
-                    $result['code'] = Zend_Auth_Result::SUCCESS;
-                } else {
-                    $result['code'] = Zend_Auth_Result::FAILURE_CREDENTIAL_INVALID;
-                    $result['messages'][] = 'Password incorrect';
-                }
-                return new Zend_Auth_Result($result['code'], $result['identity'], $result['messages']);
-            }
-        }
-
-        $result['code'] = Zend_Auth_Result::FAILURE_IDENTITY_NOT_FOUND;
-        $result['messages'][] = "Username '$this->_username' and realm '$this->_realm' combination not found";
-        return new Zend_Auth_Result($result['code'], $result['identity'], $result['messages']);
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

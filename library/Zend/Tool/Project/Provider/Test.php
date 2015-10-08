@@ -1,174 +1,73 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Tool
- * @subpackage Framework
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id$
- */
-
-/**
- * @see Zend_Tool_Project_Provider_Abstract
- */
-require_once 'Zend/Tool/Project/Provider/Abstract.php';
-
-/**
- * @see Zend_Tool_Project_Provider_Exception
- */
-require_once 'Zend/Tool/Project/Provider/Exception.php';
-
-/**
- * @category   Zend
- * @package    Zend_Tool
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Tool_Project_Provider_Test extends Zend_Tool_Project_Provider_Abstract
-{
-    
-    protected $_specialties = array('Application', 'Library');
-    
-    /**
-     * isTestingEnabled()
-     *
-     * @param Zend_Tool_Project_Profile $profile
-     * @return bool
-     */
-    public static function isTestingEnabled(Zend_Tool_Project_Profile $profile)
-    {
-        $profileSearchParams = array('testsDirectory');
-        $testsDirectory = $profile->search($profileSearchParams);
-        
-        return $testsDirectory->isEnabled();
-    }
-    
-    /**
-     * createApplicationResource()
-     *
-     * @param Zend_Tool_Project_Profile $profile
-     * @param string $controllerName
-     * @param string $actionName
-     * @param string $moduleName
-     * @return Zend_Tool_Project_Profile_Resource
-     */
-    public static function createApplicationResource(Zend_Tool_Project_Profile $profile, $controllerName, $actionName, $moduleName = null)
-    {
-        if (!is_string($controllerName)) {
-            throw new Zend_Tool_Project_Provider_Exception('Zend_Tool_Project_Provider_View::createApplicationResource() expects \"controllerName\" is the name of a controller resource to create.');
-        }
-        
-        if (!is_string($actionName)) {
-            throw new Zend_Tool_Project_Provider_Exception('Zend_Tool_Project_Provider_View::createApplicationResource() expects \"actionName\" is the name of a controller resource to create.');
-        }
-        
-        $testsDirectoryResource = $profile->search('testsDirectory');
-        
-        if (($testAppDirectoryResource = $testsDirectoryResource->search('testApplicationDirectory')) === false) {
-            $testAppDirectoryResource = $testsDirectoryResource->createResource('testApplicationDirectory');
-        }
-        
-        if ($moduleName) {
-            //@todo $moduleName
-            $moduleName = '';
-        }
-        
-        if (($testAppControllerDirectoryResource = $testAppDirectoryResource->search('testApplicationControllerDirectory')) === false) {
-            $testAppControllerDirectoryResource = $testAppDirectoryResource->createResource('testApplicationControllerDirectory');
-        }
-        
-        $testAppControllerFileResource = $testAppControllerDirectoryResource->createResource('testApplicationControllerFile', array('forControllerName' => $controllerName));
-        
-        return $testAppControllerFileResource;
-    }
-
-    /**
-     * createLibraryResource()
-     *
-     * @param Zend_Tool_Project_Profile $profile
-     * @param string $libraryClassName
-     * @return Zend_Tool_Project_Profile_Resource
-     */
-    public static function createLibraryResource(Zend_Tool_Project_Profile $profile, $libraryClassName)
-    {
-        $testLibraryDirectoryResource = $profile->search(array('TestsDirectory', 'TestLibraryDirectory'));
-        
-        
-        $fsParts = explode('_', $libraryClassName);
-        
-        $currentDirectoryResource = $testLibraryDirectoryResource;
-        
-        while ($nameOrNamespacePart = array_shift($fsParts)) {
-
-            if (count($fsParts) > 0) {
-                
-                if (($libraryDirectoryResource = $currentDirectoryResource->search(array('TestLibraryNamespaceDirectory' => array('namespaceName' => $nameOrNamespacePart)))) === false) {
-                    $currentDirectoryResource = $currentDirectoryResource->createResource('TestLibraryNamespaceDirectory', array('namespaceName' => $nameOrNamespacePart));
-                } else {
-                    $currentDirectoryResource = $libraryDirectoryResource;
-                }
-
-                
-            } else {
-                
-                if (($libraryFileResource = $currentDirectoryResource->search(array('TestLibraryFile' => array('forClassName' => $libraryClassName)))) === false) {
-                    $libraryFileResource = $currentDirectoryResource->createResource('TestLibraryFile', array('forClassName' => $libraryClassName));
-                }
-                
-            }
-            
-        }
-        
-        return $libraryFileResource;
-    }
-    
-    public function enable()
-    {
-        
-    }
-    
-    public function disable()
-    {
-        
-    }
-    
-    /**
-     * create()
-     *
-     * @param unknown_type $libraryClassName
-     */
-    public function create($libraryClassName)
-    {
-        $profile = $this->_loadProfile();
-        
-        if (!self::isTestingEnabled($profile)) {
-            $this->_registry->getResponse()->appendContent('Testing is not enabled for this project.');
-        }
-        
-        $testLibraryResource = self::createLibraryResource($profile, $libraryClassName);
-        
-        $response = $this->_registry->getResponse();
-        
-        if ($this->_registry->getRequest()->isPretend()) {
-            $response->appendContent('Would create a library stub in location ' . $testLibraryResource->getContext()->getPath());
-        } else {
-            $response->appendContent('Creating a library stub in location ' . $testLibraryResource->getContext()->getPath());
-            $testLibraryResource->create();
-            $this->_storeProfile();
-        }
-        
-    }
-    
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

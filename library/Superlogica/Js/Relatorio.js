@@ -16,7 +16,9 @@ var Superlogica_Js_Relatorio = new Class({
 Superlogica_Js_Relatorio.imprimirPdf = function(relatorio, parametros){
              
     var formulario = new Superlogica_Js_Form( document );
-
+    if ( !parametros ){
+        parametros={};
+    }
     var instanciaForm = window.open( "", "_blank" );
     instanciaForm.document.writeln('<div>Gerando <img src="' + APPLICATION_CONF["APPLICATION_CLIENT_TEMA_URL"] + '/img/load.gif" /></div>');
 
@@ -26,7 +28,25 @@ Superlogica_Js_Relatorio.imprimirPdf = function(relatorio, parametros){
     if ( relatorio ){
         location.setController('relatorios').setAction('index').setId( relatorio );
     }   
-    location.setParam('render','pdf').setParam('getId', '1').setApi(true);  
+    
+    if ( typeof parametros != 'object'){
+        parametros = {};
+    }
+
+    // Caso exista o form de relatório na tela então concatena seus parametros na URL
+    var formRelatorio = new Superlogica_Js_Form(".formRelatorio form");
+    if ( formRelatorio.contar() ){
+        var dadosForm = formRelatorio.toJson();
+        parametros = Object.merge( 
+            (typeof parametros == 'object' ? parametros : {}), 
+            (typeof dadosForm == 'object' ? dadosForm : {})
+        );
+    }
+        
+    location.setApi(true);  
+    delete parametros['render'];
+    location.setParam('render', 'pdf').setParam('getId','1').viaProxy( parametros['viaProxy'] );
+    //location.setParam('render','pdf').setParam('getId', '1').setApi(true).viaProxy( parametros['viaProxy'] );
     var request = new Superlogica_Js_Request( location.toString(), typeof parametros != 'undefined' ? parametros: {} );
 
     var idTimeOut = setTimeout(function(){
@@ -34,6 +54,7 @@ Superlogica_Js_Relatorio.imprimirPdf = function(relatorio, parametros){
         location = new Superlogica_Js_Location();
         location.setParams({})
             .setController('impressoes')
+            .viaProxy(true)
             .setAction('index');
 
         formulario.getDados('janelaRelatorios').document
@@ -56,13 +77,16 @@ Superlogica_Js_Relatorio.imprimirPdf = function(relatorio, parametros){
                 .setController('impressoes')
                 .setAction('index')
                 .setId(dados.id_impressao)
+                .viaProxy(true)
                 .setParam('baixar',1);
 
             formulario.getDados('janelaRelatorios').location.href = location.toString();                                                
         }else{
 
+            location = new Superlogica_Js_Location();
             location.setParams({})
                 .setController('impressoes')
+                .viaProxy(true)
                 .setAction('index');
 
             formulario.getDados('janelaRelatorios').location.href = location.toString();

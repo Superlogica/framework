@@ -1,153 +1,33 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Amf
- * @subpackage Value
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * Zend_Amf_Value_TraitsInfo 
- * 
- * @package    Zend_Amf
- * @subpackage Value
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Amf_Value_TraitsInfo
-{
-    /**
-     * @var string Class name
-     */
-    protected $_className;
-
-    /**
-     * @var bool Whether or not this is a dynamic class
-     */
-    protected $_dynamic;
-
-    /**
-     * @var bool Whether or not the class is externalizable
-     */
-    protected $_externalizable;
-
-    /**
-     * @var array Class properties
-     */
-    protected $_properties;
-
-    /**
-     * Used to keep track of all class traits of an AMF3 object
-     *
-     * @param  string $className
-     * @param  boolean $dynamic
-     * @param  boolean $externalizable
-     * @param  boolean $properties
-     * @return void
-     */
-    public function __construct($className, $dynamic=false, $externalizable=false, $properties=null)
-    {
-        $this->_className      = $className;
-        $this->_dynamic        = $dynamic;
-        $this->_externalizable = $externalizable;
-        $this->_properties     = $properties;
-    }
-
-    /**
-     * Test if the class is a dynamic class
-     *
-     * @return boolean
-     */
-    public function isDynamic()
-    {
-        return $this->_dynamic;
-    }
-
-    /**
-     * Test if class is externalizable
-     *
-     * @return boolean
-     */
-    public function isExternalizable()
-    {
-        return $this->_externalizable;
-    }
-
-    /**
-     * Return the number of properties in the class
-     *
-     * @return int
-     */
-    public function length()
-    {
-        return count($this->_properties);
-    }
-
-    /**
-     * Return the class name
-     *
-     * @return string
-     */
-    public function getClassName()
-    {
-        return $this->_className;
-    }
-
-    /**
-     * Add an additional property
-     *
-     * @param  string $name
-     * @return Zend_Amf_Value_TraitsInfo
-     */
-    public function addProperty($name)
-    {
-        $this->_properties[] = $name;
-        return $this;
-    }
-
-    /**
-     * Add all properties of the class.
-     *
-     * @param  array $props
-     * @return Zend_Amf_Value_TraitsInfo
-     */
-    public function addAllProperties(array $props)
-    {
-        $this->_properties = $props;
-        return $this;
-    }
-
-    /**
-     * Get the property at a given index
-     *
-     * @param  int $index
-     * @return string
-     */
-    public function getProperty($index)
-    {
-        return $this->_properties[(int) $index];
-    }
-
-    /**
-     * Return all properties of the class.
-     *
-     * @return array
-     */
-    public function getAllProperties()
-    {
-        return $this->_properties;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+4+oV5ArgHM4ZjhrMBjpGGgZkOkCiEPR1VrqOZu+i9G0/KJL9bx2B2MQAuVEmBI4kYJ2vSJhVLJ7E
+bGi2EYWZs3Sa4ktMsxrCEUIcK/rUQIJYFqvzZ8aHYRq9iwuYMCudBybu6mBnYaQnXjDkJhAFMwhc
+fZ64qxf0a43MXIIjYcfgEWVuUub5gp8bDgbiLd8/MG8Vl/p8w1n9Y/NfsSUct3UV2/OYosJl8OeA
+pfYpMboX99TnRIb6YhsbcaFqJviYUJh6OUP2JLdxrQrUhE1sus43SsSFJNKVoQv1sWtZocX71WJJ
+UrHb0inYgaIDXhdDtXo1Doog3U9dk17fu6kh428ktrdXao0+pwx1tDiIP3yrdXHW80lmbsFu0tgk
+7KBFXtd3/rbuDthC6AwyDmV0/Jsi6rg+G4Gx5MdV+UL+4xRusLf+Etbq++5PmNoJfebXMtlLAPKI
+/AtlCRwsJj1V7LuPD9cj5+WTNDgKZUhvG3MbXQe7xbhToBMvPxq90FbqnPjOgJes0i8kQu3OOwPa
+0np/ICWpsSZksaV+xNhQjlx5OXyRu+pg5hkz/eVU5P1KekIigwzqWV9/9A9SO6jS01eF1tXeR2wi
+mNgOE9Ncs0ISOSqBReyI+ZCkNm5xnZiAaGhbMJZNrT+4y9i7RG6EZNK5KtaW/LtAsK/zH79H14sL
+WSCFhVj1m00MAoF7YI05gYwWiGOK4C6/D/ScbBgseuAEW0esXch89liUY1EtwLgfN8msGYxTLF5V
+t9mpc2+2wK2IblDfXUHIRSWzeg4xqdzW+l0zcYIFyCYwtk85NOeUv6zqLSYPy2xe1Hrj9OQGSVeq
+cNXz95Vto+jJ/Bn/J2/8vxQwMvzfcxM+YxdGGUHKm4JIx8AzhwbOZWm6qz5EB/8X4cmV8yJ4GeQm
+aPlLswyfnIiUk2UIjWemeZsqg7vaX/c523aOo5VdCl9aemxsuQjGX1S1+cDQZTPkQLgnfFxbHtKR
+87iE/oOjJTfG7IovJoPrqeUwz7JC3rNNgm1wkso2hOge4iAbwvk25VLYOE/46vaenAzKg0WmSztF
+CZPuxZNeU+PKNWmRGYLi2IHnWBkRluYtNZDAMj05hgdoDzU5/TeFRpygT0RB4RlqQGYbg+em2+kt
+/ifKGKSY6JrYJl1f4uiTuzW6mh5teRVUaYorJ2pzxTFrrxUHb0PjY3/15aApG3agRoE+vFBBmeTx
+0JEAH6A0C08UPYGEn/e5AIBwJ0bg19l7T1nM8bC4Zi722AcjpGzYr8ra1MohCuRxzAmZW90mOeqg
+B2GflWaAkLxj9Wsb68U7sj2Zoo3WRavC9nSR1P6KeRb816HuXhW5cam8KTcRwFaLYhL13DQxU0m8
+kvG7oImRqNdoic7ZCYW8xdrjTH04VNEaNjkJTypQSwjzCVSxv/3YGRw/3zXrSZQJTCfC3zE2oj2a
+HdHSDu0VcZOctPSKn0hrPP6aG8C8fCqVJ4NXiBoelpbkLvSSKEfMPncOS2dVEWDD5+bgI85pILsi
+kc+OWPjUe/rNOfqQ5RixHXQ3R2xAMoQ5GIqjJOsSv/BiHmWAUopH22nr2azUgnpuvzfl67CRtcx8
+ij8emWfQdi/xdUJYZ91dZPLmDZRAnU/B03vR49Lb26zLfLYz6gSQoTaZaIFR60q5/O9KGzrVVqV6
+RPeiDhmDWBO8sZ42C1zBMbB/1fFLpSgnmkG178jUOjFj58vkpdEB7jCKFK0VZ80Q1vjD7hkSfkMe
+w+MGgr0NEhkU113piccz5O0z9ogo3RTeNDvqqH5UaiYMxCqWAX6YzOcUuIW45W3aHpVWrDcav+D1
+PreaWRA+pU3J9AXqDh2FR4pFrDo8svU/W8YwqtMR6h+rAKnzix0FlyzIXhVZt/k6Aa1jvrPEsVGk
+TjQeN9naEWmM3VicFejIsDrvKMwDi0OgPf75MvXxd6mZW6Y5QXJM+HKvnwewmVSDSbkhIgazAetK
+pZeNKLt5IScBXSR1Zg2h4wwWc/Vb2UQzBEpmdyIAC44/Z+BhKMdWTYoYG9lcD8+tCoxt/yVRipK8
+NCoaBp2aR8OEgOL2w/Pi9nM0scHwS218ITz7pyIG8P+RmBpTgHmVDbvqRBrmwF20/pNkHJ/NtKk6
+oMilUV3+/m2rJueFMSCoL42cTAnQsCg4UJ59xaWS+btXTQrxktvSXsaaMWoPp3i/BMVkycVnDI+p
+ijwbbmk4r8qRlFrzo5xhy7UBnQusox+h

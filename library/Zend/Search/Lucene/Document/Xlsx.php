@@ -1,255 +1,120 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Search_Lucene
- * @subpackage Document
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-
-/** Zend_Search_Lucene_Document_OpenXml */
-require_once 'Zend/Search/Lucene/Document/OpenXml.php';
-
-if (class_exists('ZipArchive', false)) {
-
-/**
- * Xlsx document.
- *
- * @category   Zend
- * @package    Zend_Search_Lucene
- * @subpackage Document
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Search_Lucene_Document_Xlsx extends Zend_Search_Lucene_Document_OpenXml
-{
-    /**
-     * Xml Schema - SpreadsheetML
-     *
-     * @var string
-     */
-    const SCHEMA_SPREADSHEETML = 'http://schemas.openxmlformats.org/spreadsheetml/2006/main';
-
-    /**
-     * Xml Schema - DrawingML
-     *
-     * @var string
-     */
-    const SCHEMA_DRAWINGML = 'http://schemas.openxmlformats.org/drawingml/2006/main';
-
-    /**
-     * Xml Schema - Shared Strings
-     *
-     * @var string
-     */
-    const SCHEMA_SHAREDSTRINGS = 'http://schemas.openxmlformats.org/officeDocument/2006/relationships/sharedStrings';
-
-    /**
-     * Xml Schema - Worksheet relation
-     *
-     * @var string
-     */
-    const SCHEMA_WORKSHEETRELATION = 'http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet';
-
-    /**
-     * Xml Schema - Slide notes relation
-     *
-     * @var string
-     */
-    const SCHEMA_SLIDENOTESRELATION = 'http://schemas.openxmlformats.org/officeDocument/2006/relationships/notesSlide';
-
-    /**
-     * Object constructor
-     *
-     * @param string  $fileName
-     * @param boolean $storeContent
-     */
-    private function __construct($fileName, $storeContent)
-    {
-        // Document data holders
-        $sharedStrings = array();
-        $worksheets = array();
-        $documentBody = array();
-        $coreProperties = array();
-
-        // Open OpenXML package
-        $package = new ZipArchive();
-        $package->open($fileName);
-
-        // Read relations and search for officeDocument
-        $relations = simplexml_load_string($package->getFromName("_rels/.rels"));
-        foreach ($relations->Relationship as $rel) {
-            if ($rel["Type"] == Zend_Search_Lucene_Document_OpenXml::SCHEMA_OFFICEDOCUMENT) {
-                // Found office document! Read relations for workbook...
-                $workbookRelations = simplexml_load_string($package->getFromName( $this->absoluteZipPath(dirname($rel["Target"]) . "/_rels/" . basename($rel["Target"]) . ".rels")) );
-                $workbookRelations->registerXPathNamespace("rel", Zend_Search_Lucene_Document_OpenXml::SCHEMA_RELATIONSHIP);
-
-                // Read shared strings
-                $sharedStringsPath = $workbookRelations->xpath("rel:Relationship[@Type='" . Zend_Search_Lucene_Document_Xlsx::SCHEMA_SHAREDSTRINGS . "']");
-                $sharedStringsPath = (string)$sharedStringsPath[0]['Target'];
-                $xmlStrings = simplexml_load_string($package->getFromName( $this->absoluteZipPath(dirname($rel["Target"]) . "/" . $sharedStringsPath)) );
-                if (isset($xmlStrings) && isset($xmlStrings->si)) {
-                    foreach ($xmlStrings->si as $val) {
-                        if (isset($val->t)) {
-                            $sharedStrings[] = (string)$val->t;
-                        } elseif (isset($val->r)) {
-                            $sharedStrings[] = $this->_parseRichText($val);
-                        }
-                    }
-                }
-
-                // Loop relations for workbook and extract worksheets...
-                foreach ($workbookRelations->Relationship as $workbookRelation) {
-                    if ($workbookRelation["Type"] == Zend_Search_Lucene_Document_Xlsx::SCHEMA_WORKSHEETRELATION) {
-                        $worksheets[ str_replace( 'rId', '', (string)$workbookRelation["Id"]) ] = simplexml_load_string(
-                            $package->getFromName( $this->absoluteZipPath(dirname($rel["Target"]) . "/" . dirname($workbookRelation["Target"]) . "/" . basename($workbookRelation["Target"])) )
-                        );
-                    }
-                }
-
-                break;
-            }
-        }
-
-        // Sort worksheets
-        ksort($worksheets);
-
-        // Extract contents from worksheets
-        foreach ($worksheets as $sheetKey => $worksheet) {
-            foreach ($worksheet->sheetData->row as $row) {
-                foreach ($row->c as $c) {
-                    // Determine data type
-                    $dataType = (string)$c["t"];
-                    switch ($dataType) {
-                        case "s":
-                            // Value is a shared string
-                            if ((string)$c->v != '') {
-                                $value = $sharedStrings[intval($c->v)];
-                            } else {
-                                $value = '';
-                            }
-
-                            break;
-
-                        case "b":
-                            // Value is boolean
-                            $value = (string)$c->v;
-                            if ($value == '0') {
-                                $value = false;
-                            } else if ($value == '1') {
-                                $value = true;
-                            } else {
-                                $value = (bool)$c->v;
-                            }
-
-                            break;
-
-                        case "inlineStr":
-                            // Value is rich text inline
-                            $value = $this->_parseRichText($c->is);
-
-                            break;
-
-                        case "e":
-                            // Value is an error message
-                            if ((string)$c->v != '') {
-                                $value = (string)$c->v;
-                            } else {
-                                $value = '';
-                            }
-
-                            break;
-
-                        default:
-                            // Value is a string
-                            $value = (string)$c->v;
-
-                            // Check for numeric values
-                            if (is_numeric($value) && $dataType != 's') {
-                                if ($value == (int)$value) $value = (int)$value;
-                                elseif ($value == (float)$value) $value = (float)$value;
-                                elseif ($value == (double)$value) $value = (double)$value;
-                            }
-                    }
-
-                    $documentBody[] = $value;
-                }
-            }
-        }
-
-        // Read core properties
-        $coreProperties = $this->extractMetaData($package);
-
-        // Close file
-        $package->close();
-
-        // Store filename
-        $this->addField(Zend_Search_Lucene_Field::Text('filename', $fileName, 'UTF-8'));
-
-        // Store contents
-        if ($storeContent) {
-            $this->addField(Zend_Search_Lucene_Field::Text('body', implode(' ', $documentBody), 'UTF-8'));
-        } else {
-            $this->addField(Zend_Search_Lucene_Field::UnStored('body', implode(' ', $documentBody), 'UTF-8'));
-        }
-
-        // Store meta data properties
-        foreach ($coreProperties as $key => $value)
-        {
-            $this->addField(Zend_Search_Lucene_Field::Text($key, $value, 'UTF-8'));
-        }
-
-        // Store title (if not present in meta data)
-        if (!isset($coreProperties['title']))
-        {
-            $this->addField(Zend_Search_Lucene_Field::Text('title', $fileName, 'UTF-8'));
-        }
-    }
-
-    /**
-     * Parse rich text XML
-     *
-     * @param SimpleXMLElement $is
-     * @return string
-     */
-    private function _parseRichText($is = null) {
-        $value = array();
-
-        if (isset($is->t)) {
-            $value[] = (string)$is->t;
-        } else {
-            foreach ($is->r as $run) {
-                $value[] = (string)$run->t;
-            }
-        }
-
-        return implode('', $value);
-    }
-
-    /**
-     * Load Xlsx document from a file
-     *
-     * @param string  $fileName
-     * @param boolean $storeContent
-     * @return Zend_Search_Lucene_Document_Xlsx
-     */
-    public static function loadXlsxFile($fileName, $storeContent = false)
-    {
-        return new Zend_Search_Lucene_Document_Xlsx($fileName, $storeContent);
-    }
-}
-
-} // end if (class_exists('ZipArchive'))
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

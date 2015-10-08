@@ -492,8 +492,12 @@ var Superlogica_Js_Template = new Class({
      */
     getUltimoIndice : function(){
         var indices = this.getIndicesExistentes();
-        if ( typeof indices == 'object' )
+        if ( typeof indices == 'object' ){
+            if ( indices.length <= 0 ){
+                return null;
+            }
             return indices[ Object.getLength( indices )-1 ];
+        }        
         return 0;
     },
 
@@ -538,6 +542,13 @@ var Superlogica_Js_Template = new Class({
         this.removerLinha( indice, naoExecutarProcedimentosAposDesenhar );
         this._atualizarData( dados , indice );
         this._HTMLDesenharLinha( indice, fragment );
+        
+        var instTemplate = this
+        if ( typeof instTemplate['__'+instTemplate.atributo('aoAlterarNumLinhas')] == 'function'){
+            var formulario = instTemplate.maisProximo('form');
+            formulario = formulario && formulario.contar() ? new Superlogica_Js_Form(formulario) : null;
+            instTemplate['__'+instTemplate.atributo('aoAlterarNumLinhas')]( instTemplate, formulario );
+        }
         
         if ( !naoExecutarProcedimentosAposDesenhar && typeof this['_depoisDeDesenharLinha'] == 'function' ){
             this.commit();
@@ -715,6 +726,7 @@ var Superlogica_Js_Template = new Class({
         Object.each(
             [
                 [ "parse", {'indice' : index} ],
+                [ "parse", {'proximoindice' : (index+1) } ],
                 "_limparVarsVazias",
                 [ "parse",  {'template' : this._getTemplate()} ],
                 "_inserirDelimitadores"

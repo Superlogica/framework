@@ -1,978 +1,331 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category  Zend
- * @package   Zend_Locale
- * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   http://framework.zend.com/license/new-bsd     New BSD License
- * @version   $Id: Locale.php 15765 2009-05-25 19:59:45Z thomas $
- */
-
-/**
- * Base class for localization
- *
- * @category  Zend
- * @package   Zend_Locale
- * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Locale
-{
-    /**
-     * Class wide Locale Constants
-     *
-     * @var array $_localeData
-     */
-    private static $_localeData = array(
-        'root'  => true, 'aa_DJ' => true, 'aa_ER' => true, 'aa_ET' => true, 'aa'    => true,
-        'af_NA' => true, 'af_ZA' => true, 'af'    => true, 'ak_GH' => true, 'ak'    => true,
-        'am_ET' => true, 'am'    => true, 'ar_AE' => true, 'ar_BH' => true, 'ar_DZ' => true,
-        'ar_EG' => true, 'ar_IQ' => true, 'ar_JO' => true, 'ar_KW' => true, 'ar_LB' => true,
-        'ar_LY' => true, 'ar_MA' => true, 'ar_OM' => true, 'ar_QA' => true, 'ar_SA' => true,
-        'ar_SD' => true, 'ar_SY' => true, 'ar_TN' => true, 'ar_YE' => true, 'ar'    => true,
-        'as_IN' => true, 'as'    => true, 'az_AZ' => true, 'az'    => true, 'be_BY' => true,
-        'be'    => true, 'bg_BG' => true, 'bg'    => true, 'bn_BD' => true, 'bn_IN' => true,
-        'bn'    => true, 'bo_CN' => true, 'bo_IN' => true, 'bo'    => true, 'bs_BA' => true,
-        'bs'    => true, 'byn_ER'=> true, 'byn'   => true, 'ca_ES' => true, 'ca'    => true,
-        'cch_NG'=> true, 'cch'   => true, 'cop_EG'=> true, 'cop_US'=> true, 'cop'   => true,
-        'cs_CZ' => true, 'cs'    => true, 'cy_GB' => true, 'cy'    => true, 'da_DK' => true,
-        'da'    => true, 'de_AT' => true, 'de_BE' => true, 'de_CH' => true, 'de_DE' => true,
-        'de_LI' => true, 'de_LU' => true, 'de'    => true, 'dv_MV' => true, 'dv'    => true,
-        'dz_BT' => true, 'dz'    => true, 'ee_GH' => true, 'ee_TG' => true, 'ee'    => true,
-        'el_CY' => true, 'el_GR' => true, 'el'    => true, 'en_AS' => true, 'en_AU' => true,
-        'en_BE' => true, 'en_BW' => true, 'en_BZ' => true, 'en_CA' => true, 'en_GB' => true,
-        'en_GU' => true, 'en_HK' => true, 'en_IE' => true, 'en_IN' => true, 'en_JM' => true,
-        'en_MH' => true, 'en_MP' => true, 'en_MT' => true, 'en_NZ' => true, 'en_PH' => true,
-        'en_PK' => true, 'en_SG' => true, 'en_TT' => true, 'en_UM' => true, 'en_US' => true,
-        'en_VI' => true, 'en_ZA' => true, 'en_ZW' => true, 'en'    => true, 'eo'    => true,
-        'es_AR' => true, 'es_BO' => true, 'es_CL' => true, 'es_CO' => true, 'es_CR' => true,
-        'es_DO' => true, 'es_EC' => true, 'es_ES' => true, 'es_GT' => true, 'es_HN' => true,
-        'es_MX' => true, 'es_NI' => true, 'es_PA' => true, 'es_PE' => true, 'es_PR' => true,
-        'es_PY' => true, 'es_SV' => true, 'es_US' => true, 'es_UY' => true, 'es_VE' => true,
-        'es'    => true, 'et_EE' => true, 'et'    => true, 'eu_ES' => true, 'eu'    => true,
-        'fa_AF' => true, 'fa_IR' => true, 'fa'    => true, 'fi_FI' => true, 'fi'    => true,
-        'fil'   => true, 'fo_FO' => true, 'fo'    => true, 'fr_BE' => true, 'fr_CA' => true,
-        'fr_CH' => true, 'fr_FR' => true, 'fr_LU' => true, 'fr_MC' => true, 'fr'    => true,
-        'fur_IT'=> true, 'fur'   => true, 'ga_IE' => true, 'ga'    => true, 'gaa_GH'=> true,
-        'gaa'   => true, 'gez_ER'=> true, 'gez_ET'=> true, 'gez'   => true, 'gl_ES' => true,
-        'gl'    => true, 'gu_IN' => true, 'gu'    => true, 'gv_GB' => true, 'gv'    => true,
-        'ha_GH' => true, 'ha_NE' => true, 'ha_NG' => true, 'ha'    => true, 'haw_US'=> true,
-        'haw'   => true, 'he_IL' => true, 'he'    => true, 'hi_IN' => true, 'hi'    => true,
-        'hr_HR' => true, 'hr'    => true, 'hu_HU' => true, 'hu'    => true, 'hy_AM' => true,
-        'hy'    => true, 'ia'    => true, 'id_ID' => true, 'id'    => true, 'ig_NG' => true,
-        'ig'    => true, 'ii_CN' => true, 'ii'    => true, 'is_IS' => true, 'is'    => true,
-        'it_CH' => true, 'it_IT' => true, 'it'    => true, 'iu'    => true, 'ja_JP' => true,
-        'ja'    => true, 'ka_GE' => true, 'ka'    => true, 'kaj_NG'=> true, 'kaj'   => true,
-        'kam_KE'=> true, 'kam'   => true, 'kcg_NG'=> true, 'kcg'   => true, 'kfo_NG'=> true,
-        'kfo'   => true, 'kk_KZ' => true, 'kk'    => true, 'kl_GL' => true, 'kl'    => true,
-        'km_KH' => true, 'km'    => true, 'kn_IN' => true, 'kn'    => true, 'ko_KR' => true,
-        'ko'    => true, 'kok_IN'=> true, 'kok'   => true, 'kpe_GN'=> true, 'kpe_LR'=> true,
-        'kpe'   => true, 'ku_IQ' => true, 'ku_IR' => true, 'ku_SY' => true, 'ku_TR' => true,
-        'ku'    => true, 'kw_GB' => true, 'kw'    => true, 'ky_KG' => true, 'ky'    => true,
-        'ln_CD' => true, 'ln_CG' => true, 'ln'    => true, 'lo_LA' => true, 'lo'    => true,
-        'lt_LT' => true, 'lt'    => true, 'lv_LV' => true, 'lv'    => true, 'mk_MK' => true,
-        'mk'    => true, 'ml_IN' => true, 'ml'    => true, 'mn_MN' => true, 'mn'    => true,
-        'mr_IN' => true, 'mr'    => true, 'ms_BN' => true, 'ms_MY' => true, 'ms'    => true,
-        'mt_MT' => true, 'mt'    => true, 'my_MM' => true, 'my'    => true, 'nb_NO' => true,
-        'nb'    => true, 'ne_NP' => true, 'ne'    => true, 'nl_BE' => true, 'nl_NL' => true,
-        'nl'    => true, 'nn_NO' => true, 'nn'    => true, 'nr_ZA' => true, 'nr'    => true,
-        'nso_ZA'=> true, 'nso'   => true, 'ny_MW' => true, 'ny'    => true, 'om_ET' => true,
-        'om_KE' => true, 'om'    => true, 'or_IN' => true, 'or'    => true, 'pa_IN' => true,
-        'pa_PK' => true, 'pa'    => true, 'pl_PL' => true, 'pl'    => true, 'ps_AF' => true,
-        'ps'    => true, 'pt_BR' => true, 'pt_PT' => true, 'pt'    => true, 'ro_RO' => true,
-        'ro'    => true, 'ru_RU' => true, 'ru_UA' => true, 'ru'    => true, 'rw_RW' => true,
-        'rw'    => true, 'sa_IN' => true, 'sa'    => true, 'se_FI' => true, 'se_NO' => true,
-        'se'    => true, 'sh_BA' => true, 'sh_CS' => true, 'sh_YU' => true, 'sh'    => true,
-        'sid_ET'=> true, 'sid'   => true, 'sk_SK' => true, 'sk'    => true, 'sl_SI' => true,
-        'sl'    => true, 'so_DJ' => true, 'so_ET' => true, 'so_KE' => true, 'so_SO' => true,
-        'so'    => true, 'sq_AL' => true, 'sq'    => true, 'sr_BA' => true, 'sr_CS' => true,
-        'sr_ME' => true, 'sr_RS' => true, 'sr_YU' => true, 'sr'    => true, 'ss_ZA' => true,
-        'ss'    => true, 'ssy'   => true, 'st_ZA' => true, 'st'    => true, 'sv_FI' => true,
-        'sv_SE' => true, 'sv'    => true, 'sw_KE' => true, 'sw_TZ' => true, 'sw'    => true,
-        'syr_SY'=> true, 'syr'   => true, 'ta_IN' => true, 'ta'    => true, 'te_IN' => true,
-        'te'    => true, 'tg_TJ' => true, 'tg'    => true, 'th_TH' => true, 'th'    => true,
-        'ti_ER' => true, 'ti_ET' => true, 'ti'    => true, 'tig_ER'=> true, 'tig'   => true,
-        'tn_ZA' => true, 'tn'    => true, 'to_TO' => true, 'to'    => true, 'tr_TR' => true,
-        'tr'    => true, 'ts_ZA' => true, 'ts'    => true, 'tt_RU' => true, 'tt'    => true,
-        'ug'    => true, 'uk_UA' => true, 'uk'    => true, 'und_ZZ'=> true, 'und'   => true,
-        'ur_IN' => true, 'ur_PK' => true, 'ur'    => true, 'uz_AF' => true, 'uz_UZ' => true,
-        'uz'    => true, 've_ZA' => true, 've'    => true, 'vi_VN' => true, 'vi'    => true,
-        'wal_ET'=> true, 'wal'   => true, 'wo_SN' => true, 'wo'    => true, 'xh_ZA' => true,
-        'xh'    => true, 'yo_NG' => true, 'yo'    => true, 'zh_CN' => true, 'zh_HK' => true,
-        'zh_MO' => true, 'zh_SG' => true, 'zh_TW' => true, 'zh'    => true, 'zu_ZA' => true,
-        'zu'    => true
-    );
-
-    /**
-     * Autosearch constants
-     */
-    const BROWSER     = 'browser';
-    const ENVIRONMENT = 'environment';
-    const ZFDEFAULT   = 'default';
-
-    /**
-     * Defines if old behaviour should be supported
-     * Old behaviour throws notices and will be deleted in future releases
-     *
-     * @var boolean
-     */
-    public static $compatibilityMode = false;
-
-    /**
-     * Internal variable
-     *
-     * @var boolean
-     */
-    private static $_breakChain = false;
-
-    /**
-     * Actual set locale
-     *
-     * @var string Locale
-     */
-    protected $_locale;
-
-    /**
-     * Automatic detected locale
-     *
-     * @var string Locales
-     */
-    protected static $_auto;
-
-    /**
-     * Browser detected locale
-     *
-     * @var string Locales
-     */
-    protected static $_browser;
-
-    /**
-     * Environment detected locale
-     *
-     * @var string Locales
-     */
-    protected static $_environment;
-
-    /**
-     * Default locale
-     *
-     * @var string Locales
-     */
-    protected static $_default = array('en' => true);
-
-    /**
-     * Generates a locale object
-     * If no locale is given a automatic search is done
-     * Then the most probable locale will be automatically set
-     * Search order is
-     *  1. Given Locale
-     *  2. HTTP Client
-     *  3. Server Environment
-     *  4. Framework Standard
-     *
-     * @param  string|Zend_Locale $locale (Optional) Locale for parsing input
-     * @throws Zend_Locale_Exception When autodetection has been failed
-     */
-    public function __construct($locale = null)
-    {
-        $locale = self::_prepareLocale($locale);
-        $this->setLocale((string) $locale);
-    }
-
-    /**
-     * Serialization Interface
-     *
-     * @return string
-     */
-    public function serialize()
-    {
-        return serialize($this);
-    }
-
-    /**
-     * Returns a string representation of the object
-     *
-     * @return string
-     */
-    public function toString()
-    {
-        return (string) $this->_locale;
-    }
-
-    /**
-     * Returns a string representation of the object
-     * Alias for toString
-     *
-     * @return string
-     */
-    public function __toString()
-    {
-        return $this->toString();
-    }
-
-    /**
-     * Return the default locale
-     *
-     * @return array Returns an array of all locale string
-     */
-    public static function getDefault()
-    {
-        if ((self::$compatibilityMode === true) or (func_num_args() > 0)) {
-            if (!self::$_breakChain) {
-                self::$_breakChain = true;
-                trigger_error('You are running Zend_Locale in compatibility mode... please migrate your scripts', E_USER_NOTICE);
-                $params = func_get_args();
-                $param = null;
-                if (isset($params[0])) {
-                    $param = $params[0];
-                }
-                return self::getOrder($param);
-            }
-
-            self::$_breakChain = false;
-        }
-
-        return self::$_default;
-    }
-
-    /**
-     * Sets a new default locale
-     * If provided you can set a quality between 0 and 1 (or 2 and 100)
-     * which represents the percent of quality the browser
-     * requested within HTTP
-     *
-     * @param  string|Zend_Locale $locale  Locale to set
-     * @param  float              $quality The quality to set from 0 to 1
-     * @throws Zend_Locale_Exception When a autolocale was given
-     * @throws Zend_Locale_Exception When a unknown locale was given
-     * @return void
-     */
-    public static function setDefault($locale, $quality = 1)
-    {
-        if (($locale === 'auto') or ($locale === 'root') or ($locale === 'default') or
-            ($locale === 'environment') or ($locale === 'browser')) {
-            require_once 'Zend/Locale/Exception.php';
-            throw new Zend_Locale_Exception('Only full qualified locales can be used as default!');
-        }
-
-        if (($quality < 0.1) or ($quality > 100)) {
-            require_once 'Zend/Locale/Exception.php';
-            throw new Zend_Locale_Exception("Quality must be between 0.1 and 100");
-        }
-
-        if ($quality > 1) {
-            $quality /= 100;
-        }
-
-        if (isset(self::$_localeData[(string) $locale]) === true) {
-            self::$_default = array((string) $locale => $quality);
-        } else {
-            $locale = explode('_', (string) $locale);
-            if (isset(self::$_localeData[$locale[0]]) === true) {
-                self::$_default = array($locale[0] => $quality);
-            } else {
-                require_once 'Zend/Locale/Exception.php';
-                throw new Zend_Locale_Exception("Unknown locale '" . (string) $locale . "' can not be set as default!");
-            }
-        }
-    }
-
-    /**
-     * Expects the Systems standard locale
-     *
-     * For Windows:
-     * f.e.: LC_COLLATE=C;LC_CTYPE=German_Austria.1252;LC_MONETARY=C
-     * would be recognised as de_AT
-     *
-     * @return array
-     */
-    public static function getEnvironment()
-    {
-        if (self::$_environment !== null) {
-            return self::$_environment;
-        }
-
-        require_once 'Zend/Locale/Data/Translation.php';
-
-        $language      = setlocale(LC_ALL, 0);
-        $languages     = explode(';', $language);
-        $languagearray = array();
-
-        foreach ($languages as $locale) {
-            if (strpos($locale, '=') !== false) {
-                $language = substr($locale, strpos($locale, '='));
-                $language = substr($language, 1);
-            }
-
-            if ($language !== 'C') {
-                if (strpos($language, '.') !== false) {
-                    $language = substr($language, 0, (strpos($language, '.') - 1));
-                } else if (strpos($language, '@') !== false) {
-                    $language = substr($language, 0, (strpos($language, '@') - 1));
-                }
-
-                $splitted = explode('_', $language);
-                $language = (string) $language;
-                if (isset(self::$_localeData[$language]) === true) {
-                    $languagearray[$language] = 1;
-                    if (strlen($language) > 4) {
-                        $languagearray[substr($language, 0, 2)] = 1;
-                    }
-
-                    continue;
-                }
-
-                if (empty(Zend_Locale_Data_Translation::$localeTranslation[$splitted[0]]) === false) {
-                    if (empty(Zend_Locale_Data_Translation::$localeTranslation[$splitted[1]]) === false) {
-                        $languagearray[Zend_Locale_Data_Translation::$localeTranslation[$splitted[0]] . '_' .
-                        Zend_Locale_Data_Translation::$localeTranslation[$splitted[1]]] = 1;
-                    }
-
-                    $languagearray[Zend_Locale_Data_Translation::$localeTranslation[$splitted[0]]] = 1;
-                }
-            }
-        }
-
-        self::$_environment = $languagearray;
-        return $languagearray;
-    }
-
-    /**
-     * Return an array of all accepted languages of the client
-     * Expects RFC compilant Header !!
-     *
-     * The notation can be :
-     * de,en-UK-US;q=0.5,fr-FR;q=0.2
-     *
-     * @return array - list of accepted languages including quality
-     */
-    public static function getBrowser()
-    {
-        if (self::$_browser !== null) {
-            return self::$_browser;
-        }
-
-        $httplanguages = getenv('HTTP_ACCEPT_LANGUAGE');
-        $languages     = array();
-        if (empty($httplanguages) === true) {
-            return $languages;
-        }
-
-        $accepted = preg_split('/,\s*/', $httplanguages);
-
-        foreach ($accepted as $accept) {
-            $match  = null;
-            $result = preg_match('/^([a-z]{1,8}(?:[-_][a-z]{1,8})*)(?:;\s*q=(0(?:\.[0-9]{1,3})?|1(?:\.0{1,3})?))?$/i',
-                                 $accept, $match);
-
-            if ($result < 1) {
-                continue;
-            }
-
-            if (isset($match[2]) === true) {
-                $quality = (float) $match[2];
-            } else {
-                $quality = 1.0;
-            }
-
-            $countrys = explode('-', $match[1]);
-            $region   = array_shift($countrys);
-
-            $country2 = explode('_', $region);
-            $region   = array_shift($country2);
-
-            foreach ($countrys as $country) {
-                $languages[$region . '_' . strtoupper($country)] = $quality;
-            }
-
-            foreach ($country2 as $country) {
-                $languages[$region . '_' . strtoupper($country)] = $quality;
-            }
-
-            if ((isset($languages[$region]) === false) || ($languages[$region] < $quality)) {
-                $languages[$region] = $quality;
-            }
-        }
-
-        self::$_browser = $languages;
-        return $languages;
-    }
-
-    /**
-     * Sets a new locale
-     *
-     * @param  string|Zend_Locale $locale (Optional) New locale to set
-     * @return void
-     */
-    public function setLocale($locale = null)
-    {
-        $locale = self::_prepareLocale($locale);
-
-        if (isset(self::$_localeData[(string) $locale]) === false) {
-            $region = substr((string) $locale, 0, 3);
-            if (isset($region[2]) === true) {
-                if (($region[2] === '_') or ($region[2] === '-')) {
-                    $region = substr($region, 0, 2);
-                }
-            }
-
-            if (isset(self::$_localeData[(string) $region]) === true) {
-                $this->_locale = $region;
-            } else {
-                $this->_locale = 'root';
-            }
-        } else {
-            $this->_locale = $locale;
-        }
-    }
-
-    /**
-     * Returns the language part of the locale
-     *
-     * @return string Language
-     */
-    public function getLanguage()
-    {
-        $locale = explode('_', $this->_locale);
-        return $locale[0];
-    }
-
-    /**
-     * Returns the region part of the locale if available
-     *
-     * @return string|false - Regionstring
-     */
-    public function getRegion()
-    {
-        $locale = explode('_', $this->_locale);
-        if (isset($locale[1]) === true) {
-            return $locale[1];
-        }
-
-        return false;
-    }
-
-    /**
-     * Return the accepted charset of the client
-     *
-     * @return string
-     */
-    public static function getHttpCharset()
-    {
-        $httpcharsets = getenv('HTTP_ACCEPT_CHARSET');
-
-        $charsets = array();
-        if ($httpcharsets === false) {
-            return $charsets;
-        }
-
-        $accepted = preg_split('/,\s*/', $httpcharsets);
-        foreach ($accepted as $accept) {
-            if (empty($accept) === true) {
-                continue;
-            }
-
-            if (strpos($accept, ';') !== false) {
-                $quality        = (float) substr($accept, (strpos($accept, '=') + 1));
-                $pos            = substr($accept, 0, strpos($accept, ';'));
-                $charsets[$pos] = $quality;
-            } else {
-                $quality           = 1.0;
-                $charsets[$accept] = $quality;
-            }
-        }
-
-        return $charsets;
-    }
-
-    /**
-     * Returns true if both locales are equal
-     *
-     * @param  Zend_Locale $object Locale to check for equality
-     * @return boolean
-     */
-    public function equals(Zend_Locale $object)
-    {
-        if ($object->toString() === $this->toString()) {
-            return true;
-        }
-
-        return false;
-    }
-
-    /**
-     * Returns localized informations as array, supported are several
-     * types of informations.
-     * For detailed information about the types look into the documentation
-     *
-     * @param  string             $path   (Optional) Type of information to return
-     * @param  string|Zend_Locale $locale (Optional) Locale|Language for which this informations should be returned
-     * @param  string             $value  (Optional) Value for detail list
-     * @return array Array with the wished information in the given language
-     */
-    public static function getTranslationList($path = null, $locale = null, $value = null)
-    {
-        require_once 'Zend/Locale/Data.php';
-        $locale = self::_prepareLocale($locale);
-        $result = Zend_Locale_Data::getList($locale, $path, $value);
-        if (empty($result) === true) {
-            return false;
-        }
-
-        return $result;
-    }
-
-    /**
-     * Returns an array with the name of all languages translated to the given language
-     *
-     * @param  string|Zend_Locale $locale (Optional) Locale for language translation
-     * @return array
-     */
-    public static function getLanguageTranslationList($locale = null)
-    {
-        return self::getTranslationList('language', $locale);
-    }
-
-    /**
-     * Returns an array with the name of all scripts translated to the given language
-     *
-     * @param  string|Zend_Locale $locale (Optional) Locale for script translation
-     * @return array
-     */
-    public static function getScriptTranslationList($locale = null)
-    {
-        return self::getTranslationList('script', $locale);
-    }
-
-    /**
-     * Returns an array with the name of all countries translated to the given language
-     *
-     * @param  string|Zend_Locale $locale (Optional) Locale for country translation
-     * @return array
-     */
-    public static function getCountryTranslationList($locale = null)
-    {
-        return self::getTranslationList('territory', $locale, 2);
-    }
-
-    /**
-     * Returns an array with the name of all territories translated to the given language
-     * All territories contains other countries.
-     *
-     * @param  string|Zend_Locale $locale (Optional) Locale for territory translation
-     * @return array
-     */
-    public static function getTerritoryTranslationList($locale = null)
-    {
-        return self::getTranslationList('territory', $locale, 1);
-    }
-
-    /**
-     * Returns a localized information string, supported are several types of informations.
-     * For detailed information about the types look into the documentation
-     *
-     * @param  string             $value  Name to get detailed information about
-     * @param  string             $path   (Optional) Type of information to return
-     * @param  string|Zend_Locale $locale (Optional) Locale|Language for which this informations should be returned
-     * @return string|false The wished information in the given language
-     */
-    public static function getTranslation($value = null, $path = null, $locale = null)
-    {
-        require_once 'Zend/Locale/Data.php';
-        $locale = self::_prepareLocale($locale);
-        $result = Zend_Locale_Data::getContent($locale, $path, $value);
-        if (empty($result) === true) {
-            return false;
-        }
-
-        return $result;
-    }
-
-    /**
-     * Returns the localized language name
-     *
-     * @param  string $value  Name to get detailed information about
-     * @param  string $locale (Optional) Locale for language translation
-     * @return array
-     */
-    public static function getLanguageTranslation($value, $locale = null)
-    {
-        return self::getTranslation($value, 'language', $locale);
-    }
-
-    /**
-     * Returns the localized script name
-     *
-     * @param  string $value  Name to get detailed information about
-     * @param  string $locale (Optional) locale for script translation
-     * @return array
-     */
-    public static function getScriptTranslation($value, $locale = null)
-    {
-        return self::getTranslation($value, 'script', $locale);
-    }
-
-    /**
-     * Returns the localized country name
-     *
-     * @param  string             $value  Name to get detailed information about
-     * @param  string|Zend_Locale $locale (Optional) Locale for country translation
-     * @return array
-     */
-    public static function getCountryTranslation($value, $locale = null)
-    {
-        return self::getTranslation($value, 'country', $locale);
-    }
-
-    /**
-     * Returns the localized territory name
-     * All territories contains other countries.
-     *
-     * @param  string             $value  Name to get detailed information about
-     * @param  string|Zend_Locale $locale (Optional) Locale for territory translation
-     * @return array
-     */
-    public static function getTerritoryTranslation($value, $locale = null)
-    {
-        return self::getTranslation($value, 'territory', $locale);
-    }
-
-    /**
-     * Returns an array with translated yes strings
-     *
-     * @param  string|Zend_Locale $locale (Optional) Locale for language translation (defaults to $this locale)
-     * @return array
-     */
-    public static function getQuestion($locale = null)
-    {
-        require_once 'Zend/Locale/Data.php';
-        $locale            = self::_prepareLocale($locale);
-        $quest             = Zend_Locale_Data::getList($locale, 'question');
-        $yes               = explode(':', $quest['yes']);
-        $no                = explode(':', $quest['no']);
-        $quest['yes']      = $yes[0];
-        $quest['yesarray'] = $yes;
-        $quest['no']       = $no[0];
-        $quest['noarray']  = $no;
-        $quest['yesexpr']  = self::_prepareQuestionString($yes);
-        $quest['noexpr']   = self::_prepareQuestionString($no);
-
-        return $quest;
-    }
-
-    /**
-     * Internal function for preparing the returned question regex string
-     *
-     * @param  string $input Regex to parse
-     * @return string
-     */
-    private static function _prepareQuestionString($input)
-    {
-        $regex = '';
-        if (is_array($input) === true) {
-            $regex = '^';
-            $start = true;
-            foreach ($input as $row) {
-                if ($start === false) {
-                    $regex .= '|';
-                }
-
-                $start  = false;
-                $regex .= '(';
-                $one    = null;
-                if (strlen($row) > 2) {
-                    $one = true;
-                }
-
-                foreach (str_split($row, 1) as $char) {
-                    $regex .= '[' . $char;
-                    $regex .= strtoupper($char) . ']';
-                    if ($one === true) {
-                        $one    = false;
-                        $regex .= '(';
-                    }
-                }
-
-                if ($one === false) {
-                    $regex .= ')';
-                }
-
-                $regex .= '?)';
-            }
-        }
-
-        return $regex;
-    }
-
-    /**
-     * Checks if a locale identifier is a real locale or not
-     * Examples:
-     * "en_XX" refers to "en", which returns true
-     * "XX_yy" refers to "root", which returns false
-     *
-     * @param  string|Zend_Locale $locale     Locale to check for
-     * @param  boolean            $strict     (Optional) If true, no rerouting will be done when checking
-     * @param  boolean            $compatible (DEPRECIATED) Only for internal usage, brakes compatibility mode
-     * @return boolean If the locale is known dependend on the settings
-     */
-    public static function isLocale($locale, $strict = false, $compatible = true)
-    {
-        try {
-            $locale = self::_prepareLocale($locale, $strict);
-        } catch (Zend_Locale_Exception $e) {
-            return false;
-        }
-
-        if (($compatible === true) and (self::$compatibilityMode === true)) {
-            trigger_error('You are running Zend_Locale in compatibility mode... please migrate your scripts', E_USER_NOTICE);
-            if (isset(self::$_localeData[$locale]) === true) {
-                return $locale;
-            } else if (!$strict) {
-                $locale = explode('_', $locale);
-                if (isset(self::$_localeData[$locale[0]]) === true) {
-                    return $locale[0];
-                }
-            }
-        } else {
-            if (isset(self::$_localeData[$locale]) === true) {
-                return true;
-            } else if (!$strict) {
-                $locale = explode('_', $locale);
-                if (isset(self::$_localeData[$locale[0]]) === true) {
-                    return true;
-                }
-            }
-        }
-
-        return false;
-    }
-
-    /**
-     * Finds the proper locale based on the input
-     * Checks if it exists, degrades it when necessary
-     * Detects registry locale and when all fails tries to detect a automatic locale
-     * Returns the found locale as string
-     *
-     * @param string $locale
-     * @throws Zend_Locale_Exception When the given locale is no locale or the autodetection fails
-     * @return string
-     */
-    public static function findLocale($locale = null)
-    {
-        if ($locale === null) {
-            require_once 'Zend/Registry.php';
-            if (Zend_Registry::isRegistered('Zend_Locale')) {
-                $locale = Zend_Registry::get('Zend_Locale');
-            }
-        }
-
-        require_once 'Zend/Locale.php';
-        if ($locale === null) {
-            $locale = new Zend_Locale();
-        }
-
-        if (!Zend_Locale::isLocale($locale, true, false)) {
-            if (!Zend_Locale::isLocale($locale, false, false)) {
-                require_once 'Zend/Locale/Exception.php';
-                throw new Zend_Locale_Exception("The locale '$locale' is no known locale");
-            }
-
-            $locale = new Zend_Locale($locale);
-        }
-
-        if ($locale instanceof Zend_Locale) {
-            $locale = $locale->toString();
-        }
-
-        return $locale;
-    }
-
-    /**
-     * Returns a list of all known locales where the locale is the key
-     * Only real locales are returned, the internal locales 'root', 'auto', 'browser'
-     * and 'environment' are suppressed
-     *
-     * @return array List of all Locales
-     */
-    public static function getLocaleList()
-    {
-        $list = self::$_localeData;
-        unset($list['root']);
-        unset($list['auto']);
-        unset($list['browser']);
-        unset($list['environment']);
-        return $list;
-    }
-
-    /**
-     * Returns the set cache
-     *
-     * @return Zend_Cache_Core The set cache
-     */
-    public static function getCache()
-    {
-        require_once 'Zend/Locale/Data.php';
-        $cache = Zend_Locale_Data::getCache();
-
-        return $cache;
-    }
-
-    /**
-     * Sets a cache
-     *
-     * @param  Zend_Cache_Core $cache Cache to set
-     * @return void
-     */
-    public static function setCache(Zend_Cache_Core $cache)
-    {
-        require_once 'Zend/Locale/Data.php';
-        Zend_Locale_Data::setCache($cache);
-    }
-
-    /**
-     * Returns true when a cache is set
-     *
-     * @return boolean
-     */
-    public static function hasCache()
-    {
-        require_once 'Zend/Locale/Data.php';
-        return Zend_Locale_Data::hasCache();
-    }
-
-    /**
-     * Removes any set cache
-     *
-     * @return void
-     */
-    public static function removeCache()
-    {
-        require_once 'Zend/Locale/Data.php';
-        Zend_Locale_Data::removeCache();
-    }
-
-    /**
-     * Clears all set cache data
-     *
-     * @return void
-     */
-    public static function clearCache()
-    {
-        require_once 'Zend/Locale/Data.php';
-        Zend_Locale_Data::clearCache();
-    }
-
-    /**
-     * Disables the set cache
-     *
-     * @param  boolean $flag True disables any set cache, default is false
-     * @return void
-     */
-    public static function disableCache($flag)
-    {
-        require_once 'Zend/Locale/Data.php';
-        Zend_Locale_Data::disableCache($flag);
-    }
-
-    /**
-     * Internal function, returns a single locale on detection
-     *
-     * @param  string|Zend_Locale $locale (Optional) Locale to work on
-     * @param  boolean            $strict (Optional) Strict preparation
-     * @throws Zend_Locale_Exception When no locale is set which is only possible when the class was wrong extended
-     * @return string
-     */
-    private static function _prepareLocale($locale, $strict = false)
-    {
-        if ($locale instanceof Zend_Locale) {
-            $locale = $locale->toString();
-        }
-
-        if (is_array($locale)) {
-            return '';
-        }
-
-        if (empty(self::$_auto) === true) {
-            self::$_browser     = self::getBrowser();
-            self::$_environment = self::getEnvironment();
-            self::$_breakChain  = true;
-            self::$_auto        = self::getBrowser() + self::getEnvironment() + self::getDefault();
-        }
-
-        if (!$strict) {
-            if ($locale === 'browser') {
-                $locale = self::$_browser;
-            }
-
-            if ($locale === 'environment') {
-                $locale = self::$_environment;
-            }
-
-            if ($locale === 'default') {
-                $locale = self::$_default;
-            }
-
-            if (($locale === 'auto') or ($locale === null)) {
-                $locale = self::$_auto;
-            }
-
-            if (is_array($locale) === true) {
-                $locale = key($locale);
-            }
-        }
-
-        // This can only happen when someone extends Zend_Locale and erases the default
-        if ($locale === null) {
-            require_once 'Zend/Locale/Exception.php';
-            throw new Zend_Locale_Exception('Autodetection of Locale has been failed!');
-        }
-
-        if (strpos($locale, '-') !== false) {
-            $locale = strtr($locale, '-', '_');
-        }
-
-        return (string) $locale;
-    }
-
-    /**
-     * Search the locale automatically and return all used locales
-     * ordered by quality
-     *
-     * Standard Searchorder is Browser, Environment, Default
-     *
-     * @param  string  $searchorder (Optional) Searchorder
-     * @return array Returns an array of all detected locales
-     */
-    public static function getOrder($order = null)
-    {
-        switch ($order) {
-            case self::ENVIRONMENT:
-                self::$_breakChain = true;
-                $languages         = self::getEnvironment() + self::getBrowser() + self::getDefault();
-                break;
-
-            case self::ZFDEFAULT:
-                self::$_breakChain = true;
-                $languages         = self::getDefault() + self::getEnvironment() + self::getBrowser();
-                break;
-
-            default:
-                self::$_breakChain = true;
-                $languages         = self::getBrowser() + self::getEnvironment() + self::getDefault();
-                break;
-        }
-
-        return $languages;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+ar97YFGqQFOUsBN4yRyM

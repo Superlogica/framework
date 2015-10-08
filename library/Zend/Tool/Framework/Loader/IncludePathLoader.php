@@ -1,115 +1,46 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Tool
- * @subpackage Framework
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id$
- */
-
-/**
- * @see Zend_Tool_Framework_Loader_Abstract
- */
-require_once 'Zend/Tool/Framework/Loader/Abstract.php';
-
-/**
- * @see Zend_Tool_Framework_Loader_IncludePathLoader_RecursiveFilterIterator
- */
-require_once 'Zend/Tool/Framework/Loader/IncludePathLoader/RecursiveFilterIterator.php';
-
-/**
- * @category   Zend
- * @package    Zend_Tool
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Tool_Framework_Loader_IncludePathLoader extends Zend_Tool_Framework_Loader_Abstract 
-{
-    
-    /**
-     * _getFiles()
-     *
-     * @return array Array of files to load
-     */
-    protected function _getFiles()
-    {
-        $paths = explode(PATH_SEPARATOR, get_include_path());
-
-        // used for checking similarly named files
-        $relativeItems   = array();
-        $files           = array();
-        $isZendTraversed = false;
-                
-        foreach ($paths as $path) {
-
-            // default patterns to use
-            $filterDenyDirectoryPattern = '.*(/|\\\\).svn';
-            $filterAcceptFilePattern    = '.*(?:Manifest|Provider)\.php$';
-            
-            if (!file_exists($path) || $path[0] == '.') {
-                continue;
-            }
-            
-            $realIncludePath = realpath($path);
-            
-            // ensure that we only traverse a single version of Zend Framework on all include paths
-            if (file_exists($realIncludePath . '/Zend/Tool/Framework/Loader/IncludePathLoader.php')) {
-                if ($isZendTraversed === false) {
-                    $isZendTraversed = true;
-                } else {
-                    // use the deny directory pattern that includes the path to 'Zend', it will not be accepted
-                    $filterDenyDirectoryPattern = '.*((/|\\\\).svn|' . preg_quote($realIncludePath . DIRECTORY_SEPARATOR) . 'Zend)';
-                }
-            }
-            
-            // create recursive directory iterator
-            $rdi = new RecursiveDirectoryIterator($path);
-            
-            // pass in the RecursiveDirectoryIterator & the patterns
-            $filter = new Zend_Tool_Framework_Loader_IncludePathLoader_RecursiveFilterIterator(
-                $rdi,
-                $filterDenyDirectoryPattern,
-                $filterAcceptFilePattern
-                );
-
-            // build the rii with the filter
-            $iterator = new RecursiveIteratorIterator($filter);
-            
-            // iterate over the accepted items
-            foreach ($iterator as $item) {
-                
-                // ensure that the same named file from separate include_paths is not loaded
-                $relativeItem = preg_replace('#^' . preg_quote($realIncludePath . DIRECTORY_SEPARATOR, '#') . '#', '', $item->getRealPath());
-                
-                // no links allowed here for now
-                if ($item->isLink()) {
-                    continue;
-                }
-                
-                // no items that are relavitely the same are allowed
-                if (in_array($relativeItem, $relativeItems)) {
-                    continue;
-                }
-
-                $relativeItems[] = $relativeItem;
-                $files[] = $item->getRealPath();
-            }
-        }
-
-        return $files;
-    }
-    
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

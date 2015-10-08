@@ -1,300 +1,76 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Service
- * @subpackage Delicious
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: PostList.php 8064 2008-02-16 10:58:39Z thomas $
- */
-
-
-/**
- * List of posts retrived from the del.icio.us web service
- *
- * @category   Zend
- * @package    Zend_Service
- * @subpackage Delicious
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Service_Delicious_PostList implements Countable, Iterator, ArrayAccess
-{
-    /**
-     * @var array Array of Zend_Service_Delicious_Post
-     */
-    protected $_posts = array();
-
-    /**
-     * @var Zend_Service_Delicious Service that has downloaded the post list
-     */
-    protected $_service;
-
-    /**
-     * @var int Iterator key
-     */
-    protected $_iteratorKey = 0;
-
-    /**
-     * @param  Zend_Service_Delicious $service Service that has downloaded the post
-     * @param  DOMNodeList|array      $posts
-     * @return void
-     */
-    public function __construct(Zend_Service_Delicious $service, $posts = null)
-    {
-        $this->_service = $service;
-        if ($posts instanceof DOMNodeList) {
-            $this->_constructFromNodeList($posts);
-        } else if (is_array($posts)) {
-            $this->_constructFromArray($posts);
-        }
-    }
-
-    /**
-     * Transforms DOMNodeList to array of posts
-     *
-     * @param  DOMNodeList $nodeList
-     * @return void
-     */
-    private function _constructFromNodeList(DOMNodeList $nodeList)
-    {
-        for ($i = 0; $i < $nodeList->length; $i++) {
-            $curentNode = $nodeList->item($i);
-            if($curentNode->nodeName == 'post') {
-                $this->_addPost(new Zend_Service_Delicious_Post($this->_service, $curentNode));
-            }
-        }
-    }
-
-    /**
-     * Transforms the Array to array of posts
-     *
-     * @param  array $postList
-     * @return void
-     */
-    private function _constructFromArray(array $postList)
-    {
-        foreach ($postList as $f_post) {
-            $this->_addPost(new Zend_Service_Delicious_SimplePost($f_post));
-        }
-    }
-
-    /**
-     * Add a post
-     *
-     * @param  Zend_Service_Delicious_SimplePost $post
-     * @return Zend_Service_Delicious_PostList
-     */
-    protected function _addPost(Zend_Service_Delicious_SimplePost $post)
-    {
-        $this->_posts[] = $post;
-
-        return $this;
-    }
-
-    /**
-     * Filter list by list of tags
-     *
-     * @param  array $tags
-     * @return Zend_Service_Delicious_PostList
-     */
-    public function withTags(array $tags)
-    {
-        $postList = new self($this->_service);
-
-        foreach ($this->_posts as $post) {
-            if (count(array_diff($tags, $post->getTags())) == 0) {
-                $postList->_addPost($post);
-            }
-        }
-
-        return $postList;
-    }
-
-    /**
-     * Filter list by tag
-     *
-     * @param  string $tag
-     * @return Zend_Service_Delicious_PostList
-     */
-    public function withTag($tag)
-    {
-        return $this->withTags(func_get_args());
-    }
-
-    /**
-     * Filter list by urls matching a regular expression
-     *
-     * @param  string $regexp
-     * @return Zend_Service_Delicious_PostList
-     */
-    public function withUrl($regexp)
-    {
-        $postList = new self($this->_service);
-
-        foreach ($this->_posts as $post) {
-            if (preg_match($regexp, $post->getUrl())) {
-                $postList->_addPost($post);
-            }
-        }
-
-        return $postList;
-    }
-
-    /**
-     * Return number of posts
-     *
-     * Implement Countable::count()
-     *
-     * @return int
-     */
-    public function count()
-    {
-        return count($this->_posts);
-    }
-
-    /**
-     * Return the current element
-     *
-     * Implement Iterator::current()
-     *
-     * @return Zend_Service_Delicious_SimplePost
-     */
-    public function current()
-    {
-        return $this->_posts[$this->_iteratorKey];
-    }
-
-    /**
-     * Return the key of the current element
-     *
-     * Implement Iterator::key()
-     *
-     * @return int
-     */
-    public function key()
-    {
-        return $this->_iteratorKey;
-    }
-
-    /**
-     * Move forward to next element
-     *
-     * Implement Iterator::next()
-     *
-     * @return void
-     */
-    public function next()
-    {
-        $this->_iteratorKey += 1;
-    }
-
-    /**
-     * Rewind the Iterator to the first element
-     *
-     * Implement Iterator::rewind()
-     *
-     * @return void
-     */
-    public function rewind()
-    {
-        $this->_iteratorKey = 0;
-    }
-
-    /**
-     * Check if there is a current element after calls to rewind() or next()
-     *
-     * Implement Iterator::valid()
-     *
-     * @return bool
-     */
-    public function valid()
-    {
-        $numItems = $this->count();
-
-        if ($numItems > 0 && $this->_iteratorKey < $numItems) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    /**
-     * Whether the offset exists
-     *
-     * Implement ArrayAccess::offsetExists()
-     *
-     * @param   int     $offset
-     * @return  bool
-     */
-    public function offsetExists($offset)
-    {
-        return ($offset < $this->count());
-    }
-
-    /**
-     * Return value at given offset
-     *
-     * Implement ArrayAccess::offsetGet()
-     *
-     * @param   int     $offset
-     * @throws  OutOfBoundsException
-     * @return  Zend_Service_Delicious_SimplePost
-     */
-    public function offsetGet($offset)
-    {
-        if ($this->offsetExists($offset)) {
-            return $this->_posts[$offset];
-        } else {
-            throw new OutOfBoundsException('Illegal index');
-        }
-    }
-
-    /**
-     * Throws exception because all values are read-only
-     *
-     * Implement ArrayAccess::offsetSet()
-     *
-     * @param   int     $offset
-     * @param   string  $value
-     * @throws  Zend_Service_Delicious_Exception
-     */
-    public function offsetSet($offset, $value)
-    {
-        /**
-         * @see Zend_Service_Delicious_Exception
-         */
-        require_once 'Zend/Service/Delicious/Exception.php';
-        throw new Zend_Service_Delicious_Exception('You are trying to set read-only property');
-    }
-
-    /**
-     * Throws exception because all values are read-only
-     *
-     * Implement ArrayAccess::offsetUnset()
-     *
-     * @param   int     $offset
-     * @throws  Zend_Service_Delicious_Exception
-     */
-    public function offsetUnset($offset)
-    {
-        /**
-         * @see Zend_Service_Delicious_Exception
-         */
-        require_once 'Zend/Service/Delicious/Exception.php';
-        throw new Zend_Service_Delicious_Exception('You are trying to unset read-only property');
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

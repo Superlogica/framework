@@ -1,402 +1,77 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category  Zend
- * @package   Zend_Measure
- * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   http://framework.zend.com/license/new-bsd     New BSD License
- * @version   $Id: Volume.php 13209 2008-12-13 22:34:06Z thomas $
- */
-
-/**
- * Implement needed classes
- */
-require_once 'Zend/Measure/Abstract.php';
-require_once 'Zend/Locale.php';
-
-/**
- * Class for handling flow volume conversions
- *
- * @category   Zend
- * @package    Zend_Measure
- * @subpackage Zend_Measure_Flow_Volume
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Measure_Flow_Volume extends Zend_Measure_Abstract
-{
-    const STANDARD = 'CUBIC_METER_PER_SECOND';
-
-    const ACRE_FOOT_PER_DAY              = 'ACRE_FOOT_PER_DAY';
-    const ACRE_FOOT_PER_HOUR             = 'ACRE_FOOT_PER_HOUR';
-    const ACRE_FOOT_PER_MINUTE           = 'ACRE_FOOT_PER_MINUTE';
-    const ACRE_FOOT_PER_SECOND           = 'ACRE_FOOT_PER_SECOND';
-    const ACRE_FOOT_SURVEY_PER_DAY       = 'ACRE_FOOT_SURVEY_PER_DAY';
-    const ACRE_FOOT_SURVEY_PER_HOUR      = 'ACRE_FOOT_SURVEY_PER_HOUR';
-    const ACRE_FOOT_SURVEY_PER_MINUTE    = 'ACRE_FOOT_SURVEY_PER_MINUTE';
-    const ACRE_FOOT_SURVEY_PER_SECOND    = 'ACRE_FOOT_SURVEY_PER_SECOND';
-    const ACRE_INCH_PER_DAY              = 'ACRE_INCH_PER_DAY';
-    const ACRE_INCH_PER_HOUR             = 'ACRE_INCH_PER_HOUR';
-    const ACRE_INCH_PER_MINUTE           = 'ACRE_INCH_PER_MINUTE';
-    const ACRE_INCH_PER_SECOND           = 'ACRE_INCH_PER_SECOND';
-    const ACRE_INCH_SURVEY_PER_DAY       = 'ACRE_INCH_SURVEY_PER_DAY';
-    const ACRE_INCH_SURVEY_PER_HOUR      = 'ACRE_INCH_SURVEY_PER_HOUR';
-    const ACRE_INCH_SURVEY_PER_MINUTE    = 'ACRE_INCH_SURVEY_PER_MINUTE';
-    const ACRE_INCH_SURVEY_PER_SECOND    = 'ACRE_INCH_SURVEY_PER_SECOND';
-    const BARREL_PETROLEUM_PER_DAY       = 'BARREL_PETROLEUM_PER_DAY';
-    const BARREL_PETROLEUM_PER_HOUR      = 'BARREL_PETROLEUM_PER_HOUR';
-    const BARREL_PETROLEUM_PER_MINUTE    = 'BARREL_PETROLEUM_PER_MINUTE';
-    const BARREL_PETROLEUM_PER_SECOND    = 'BARREL_PETROLEUM_PER_SECOND';
-    const BARREL_PER_DAY                 = 'BARREL_PER_DAY';
-    const BARREL_PER_HOUR                = 'BARREL_PER_HOUR';
-    const BARREL_PER_MINUTE              = 'BARREL_PER_MINUTE';
-    const BARREL_PER_SECOND              = 'BARREL_PER_SECOND';
-    const BARREL_US_PER_DAY              = 'BARREL_US_PER_DAY';
-    const BARREL_US_PER_HOUR             = 'BARREL_US_PER_HOUR';
-    const BARREL_US_PER_MINUTE           = 'BARREL_US_PER_MINUTE';
-    const BARREL_US_PER_SECOND           = 'BARREL_US_PER_SECOND';
-    const BARREL_WINE_PER_DAY            = 'BARREL_WINE_PER_DAY';
-    const BARREL_WINE_PER_HOUR           = 'BARREL_WINE_PER_HOUR';
-    const BARREL_WINE_PER_MINUTE         = 'BARREL_WINE_PER_MINUTE';
-    const BARREL_WINE_PER_SECOND         = 'BARREL_WINE_PER_SECOND';
-    const BARREL_BEER_PER_DAY            = 'BARREL_BEER_PER_DAY';
-    const BARREL_BEER_PER_HOUR           = 'BARREL_BEER_PER_HOUR';
-    const BARREL_BEER_PER_MINUTE         = 'BARREL_BEER_PER_MINUTE';
-    const BARREL_BEER_PER_SECOND         = 'BARREL_BEER_PER_SECOND';
-    const BILLION_CUBIC_FOOT_PER_DAY     = 'BILLION_CUBIC_FOOT_PER_DAY';
-    const BILLION_CUBIC_FOOT_PER_HOUR    = 'BILLION_CUBIC_FOOT_PER_HOUR';
-    const BILLION_CUBIC_FOOT_PER_MINUTE  = 'BILLION_CUBIC_FOOT_PER_MINUTE';
-    const BILLION_CUBIC_FOOT_PER_SECOND  = 'BILLION_CUBIC_FOOT_PER_SECOND';
-    const CENTILITER_PER_DAY             = 'CENTILITER_PER_DAY';
-    const CENTILITER_PER_HOUR            = 'CENTILITER_PER_HOUR';
-    const CENTILITER_PER_MINUTE          = 'CENTILITER_PER_MINUTE';
-    const CENTILITER_PER_SECOND          = 'CENTILITER_PER_SECOND';
-    const CUBEM_PER_DAY                  = 'CUBEM_PER_DAY';
-    const CUBEM_PER_HOUR                 = 'CUBEM_PER_HOUR';
-    const CUBEM_PER_MINUTE               = 'CUBEM_PER_MINUTE';
-    const CUBEM_PER_SECOND               = 'CUBEM_PER_SECOND';
-    const CUBIC_CENTIMETER_PER_DAY       = 'CUBIC_CENTIMETER_PER_DAY';
-    const CUBIC_CENTIMETER_PER_HOUR      = 'CUBIC_CENTIMETER_PER_HOUR';
-    const CUBIC_CENTIMETER_PER_MINUTE    = 'CUBIC_CENTIMETER_PER_MINUTE';
-    const CUBIC_CENTIMETER_PER_SECOND    = 'CUBIC_CENTIMETER_PER_SECOND';
-    const CUBIC_DECIMETER_PER_DAY        = 'CUBIC_DECIMETER_PER_DAY';
-    const CUBIC_DECIMETER_PER_HOUR       = 'CUBIC_DECIMETER_PER_HOUR';
-    const CUBIC_DECIMETER_PER_MINUTE     = 'CUBIC_DECIMETER_PER_MINUTE';
-    const CUBIC_DECIMETER_PER_SECOND     = 'CUBIC_DECIMETER_PER_SECOND';
-    const CUBIC_DEKAMETER_PER_DAY        = 'CUBIC_DEKAMETER_PER_DAY';
-    const CUBIC_DEKAMETER_PER_HOUR       = 'CUBIC_DEKAMETER_PER_HOUR';
-    const CUBIC_DEKAMETER_PER_MINUTE     = 'CUBIC_DEKAMETER_PER_MINUTE';
-    const CUBIC_DEKAMETER_PER_SECOND     = 'CUBIC_DEKAMETER_PER_SECOND';
-    const CUBIC_FOOT_PER_DAY             = 'CUBIC_FOOT_PER_DAY';
-    const CUBIC_FOOT_PER_HOUR            = 'CUBIC_FOOT_PER_HOUR';
-    const CUBIC_FOOT_PER_MINUTE          = 'CUBIC_FOOT_PER_MINUTE';
-    const CUBIC_FOOT_PER_SECOND          = 'CUBIC_FOOT_PER_SECOND';
-    const CUBIC_INCH_PER_DAY             = 'CUBIC_INCH_PER_DAY';
-    const CUBIC_INCH_PER_HOUR            = 'CUBIC_INCH_PER_HOUR';
-    const CUBIC_INCH_PER_MINUTE          = 'CUBIC_INCH_PER_MINUTE';
-    const CUBIC_INCH_PER_SECOND          = 'CUBIC_INCH_PER_SECOND';
-    const CUBIC_KILOMETER_PER_DAY        = 'CUBIC_KILOMETER_PER_DAY';
-    const CUBIC_KILOMETER_PER_HOUR       = 'CUBIC_KILOMETER_PER_HOUR';
-    const CUBIC_KILOMETER_PER_MINUTE     = 'CUBIC_KILOMETER_PER_MINUTE';
-    const CUBIC_KILOMETER_PER_SECOND     = 'CUBIC_KILOMETER_PER_SECOND';
-    const CUBIC_METER_PER_DAY            = 'CUBIC_METER_PER_DAY';
-    const CUBIC_METER_PER_HOUR           = 'CUBIC_METER_PER_HOUR';
-    const CUBIC_METER_PER_MINUTE         = 'CUBIC_METER_PER_MINUTE';
-    const CUBIC_METER_PER_SECOND         = 'CUBIC_METER_PER_SECOND';
-    const CUBIC_MILE_PER_DAY             = 'CUBIC_MILE_PER_DAY';
-    const CUBIC_MILE_PER_HOUR            = 'CUBIC_MILE_PER_HOUR';
-    const CUBIC_MILE_PER_MINUTE          = 'CUBIC_MILE_PER_MINUTE';
-    const CUBIC_MILE_PER_SECOND          = 'CUBIC_MILE_PER_SECOND';
-    const CUBIC_MILLIMETER_PER_DAY       = 'CUBIC_MILLIMETER_PER_DAY';
-    const CUBIC_MILLIMETER_PER_HOUR      = 'CUBIC_MILLIMETER_PER_HOUR';
-    const CUBIC_MILLIMETER_PER_MINUTE    = 'CUBIC_MILLIMETER_PER_MINUTE';
-    const CUBIC_MILLIMETER_PER_SECOND    = 'CUBIC_MILLIMETER_PER_SECOND';
-    const CUBIC_YARD_PER_DAY             = 'CUBIC_YARD_PER_DAY';
-    const CUBIC_YARD_PER_HOUR            = 'CUBIC_YARD_PER_HOUR';
-    const CUBIC_YARD_PER_MINUTE          = 'CUBIC_YARD_PER_MINUTE';
-    const CUBIC_YARD_PER_SECOND          = 'CUBIC_YARD_PER_SECOND';
-    const CUSEC                          = 'CUSEC';
-    const DECILITER_PER_DAY              = 'DECILITER_PER_DAY';
-    const DECILITER_PER_HOUR             = 'DECILITER_PER_HOUR';
-    const DECILITER_PER_MINUTE           = 'DECILITER_PER_MINUTE';
-    const DECILITER_PER_SECOND           = 'DECILITER_PER_SECOND';
-    const DEKALITER_PER_DAY              = 'DEKALITER_PER_DAY';
-    const DEKALITER_PER_HOUR             = 'DEKALITER_PER_HOUR';
-    const DEKALITER_PER_MINUTE           = 'DEKALITER_PER_MINUTE';
-    const DEKALITER_PER_SECOND           = 'DEKALITER_PER_SECOND';
-    const GALLON_PER_DAY                 = 'GALLON_PER_DAY';
-    const GALLON_PER_HOUR                = 'GALLON_PER_HOUR';
-    const GALLON_PER_MINUTE              = 'GALLON_PER_MINUTE';
-    const GALLON_PER_SECOND              = 'GALLON_PER_SECOND';
-    const GALLON_US_PER_DAY              = 'GALLON_US_PER_DAY';
-    const GALLON_US_PER_HOUR             = 'GALLON_US_PER_HOUR';
-    const GALLON_US_PER_MINUTE           = 'GALLON_US_PER_MINUTE';
-    const GALLON_US_PER_SECOND           = 'GALLON_US_PER_SECOND';
-    const HECTARE_METER_PER_DAY          = 'HECTARE_METER_PER_DAY';
-    const HECTARE_METER_PER_HOUR         = 'HECTARE_METER_PER_HOUR';
-    const HECTARE_METER_PER_MINUTE       = 'HECTARE_METER_PER_MINUTE';
-    const HECTARE_METER_PER_SECOND       = 'HECTARE_METER_PER_SECOND';
-    const HECTOLITER_PER_DAY             = 'HECTOLITER_PER_DAY';
-    const HECTOLITER_PER_HOUR            = 'HECTOLITER_PER_HOUR';
-    const HECTOLITER_PER_MINUTE          = 'HECTOLITER_PER_MINUTE';
-    const HECTOLITER_PER_SECOND          = 'HECTOLITER_PER_SECOND';
-    const KILOLITER_PER_DAY              = 'KILOLITER_PER_DAY';
-    const KILOLITER_PER_HOUR             = 'KILOLITER_PER_HOUR';
-    const KILOLITER_PER_MINUTE           = 'KILOLITER_PER_MINUTE';
-    const KILOLITER_PER_SECOND           = 'KILOLITER_PER_SECOND';
-    const LAMBDA_PER_DAY                 = 'LAMBDA_PER_DAY';
-    const LAMBDA_PER_HOUR                = 'LAMBDA_PER_HOUR';
-    const LAMBDA_PER_MINUTE              = 'LAMBDA_PER_MINUTE';
-    const LAMBDA_PER_SECOND              = 'LAMBDA_PER_SECOND';
-    const LITER_PER_DAY                  = 'LITER_PER_DAY';
-    const LITER_PER_HOUR                 = 'LITER_PER_HOUR';
-    const LITER_PER_MINUTE               = 'LITER_PER_MINUTE';
-    const LITER_PER_SECOND               = 'LITER_PER_SECOND';
-    const MILLILITER_PER_DAY             = 'MILLILITER_PER_DAY';
-    const MILLILITER_PER_HOUR            = 'MILLILITER_PER_HOUR';
-    const MILLILITER_PER_MINUTE          = 'MILLILITER_PER_MINUTE';
-    const MILLILITER_PER_SECOND          = 'MILLILITER_PER_SECOND';
-    const MILLION_ACRE_FOOT_PER_DAY      = 'MILLION_ACRE_FOOT_PER_DAY';
-    const MILLION_ACRE_FOOT_PER_HOUR     = 'MILLION_ACRE_FOOT_PER_HOUR';
-    const MILLION_ACRE_FOOT_PER_MINUTE   = 'MILLION_ACRE_FOOT_PER_MINUTE';
-    const MILLION_ACRE_FOOT_PER_SECOND   = 'MILLION_ACRE_FOOT_PER_SECOND';
-    const MILLION_CUBIC_FOOT_PER_DAY     = 'MILLION_CUBIC_FOOT_PER_DAY';
-    const MILLION_CUBIC_FOOT_PER_HOUR    = 'MILLION_CUBIC_FOOT_PER_HOUR';
-    const MILLION_CUBIC_FOOT_PER_MINUTE  = 'MILLION_CUBIC_FOOT_PER_MINUTE';
-    const MILLION_CUBIC_FOOT_PER_SECOND  = 'MILLION_CUBIC_FOOT_PER_SECOND';
-    const MILLION_GALLON_PER_DAY         = 'MILLION_GALLON_PER_DAY';
-    const MILLION_GALLON_PER_HOUR        = 'MILLION_GALLON_PER_HOUR';
-    const MILLION_GALLON_PER_MINUTE      = 'MILLION_GALLON_PER_MINUTE';
-    const MILLION_GALLON_PER_SECOND      = 'MILLION_GALLON_PER_SECOND';
-    const MILLION_GALLON_US_PER_DAY      = 'MILLION_GALLON_US_PER_DAY';
-    const MILLION_GALLON_US_PER_HOUR     = 'MILLION_GALLON_US_PER_HOUR';
-    const MILLION_GALLON_US_PER_MINUTE   = 'MILLION_GALLON_US_PER_MINUTE';
-    const MILLION_GALLON_US_PER_SECOND   = 'MILLION_GALLON_US_PER_SECOND';
-    const MINERS_INCH_AZ                 = 'MINERS_INCH_AZ';
-    const MINERS_INCH_CA                 = 'MINERS_INCH_CA';
-    const MINERS_INCH_OR                 = 'MINERS_INCH_OR';
-    const MINERS_INCH_CO                 = 'MINERS_INCH_CO';
-    const MINERS_INCH_ID                 = 'MINERS_INCH_ID';
-    const MINERS_INCH_WA                 = 'MINERS_INCH_WA';
-    const MINERS_INCH_NM                 = 'MINERS_INCH_NM';
-    const OUNCE_PER_DAY                  = 'OUNCE_PER_DAY';
-    const OUNCE_PER_HOUR                 = 'OUNCE_PER_HOUR';
-    const OUNCE_PER_MINUTE               = 'OUNCE_PER_MINUTE';
-    const OUNCE_PER_SECOND               = 'OUNCE_PER_SECOND';
-    const OUNCE_US_PER_DAY               = 'OUNCE_US_PER_DAY';
-    const OUNCE_US_PER_HOUR              = 'OUNCE_US_PER_HOUR';
-    const OUNCE_US_PER_MINUTE            = 'OUNCE_US_PER_MINUTE';
-    const OUNCE_US_PER_SECOND            = 'OUNCE_US_PER_SECOND';
-    const PETROGRAD_STANDARD_PER_DAY     = 'PETROGRAD_STANDARD_PER_DAY';
-    const PETROGRAD_STANDARD_PER_HOUR    = 'PETROGRAD_STANDARD_PER_HOUR';
-    const PETROGRAD_STANDARD_PER_MINUTE  = 'PETROGRAD_STANDARD_PER_MINUTE';
-    const PETROGRAD_STANDARD_PER_SECOND  = 'PETROGRAD_STANDARD_PER_SECOND';
-    const STERE_PER_DAY                  = 'STERE_PER_DAY';
-    const STERE_PER_HOUR                 = 'STERE_PER_HOUR';
-    const STERE_PER_MINUTE               = 'STERE_PER_MINUTE';
-    const STERE_PER_SECOND               = 'STERE_PER_SECOND';
-    const THOUSAND_CUBIC_FOOT_PER_DAY    = 'THOUSAND_CUBIC_FOOT_PER_DAY';
-    const THOUSAND_CUBIC_FOOT_PER_HOUR   = 'THOUSAND_CUBIC_FOOT_PER_HOUR';
-    const THOUSAND_CUBIC_FOOT_PER_MINUTE = 'THOUSAND_CUBIC_FOOT_PER_MINUTE';
-    const THOUSAND_CUBIC_FOOT_PER_SECOND = 'THOUSAND_CUBIC_FOOT_PER_SECOND';
-    const TRILLION_CUBIC_FOOT_PER_DAY    = 'TRILLION_CUBIC_FOOT_PER_DAY';
-    const TRILLION_CUBIC_FOOT_PER_HOUR   = 'TRILLION_CUBIC_FOOT_PER_HOUR';
-    const TRILLION_CUBIC_FOOT_PER_MINUTE = 'TRILLION_CUBIC_FOOT_PER_MINUTE';
-    const TRILLION_CUBIC_FOOT_PER_SECOND = 'TRILLION_CUBIC_FOOT_PER_';
-
-    /**
-     * Calculations for all flow volume units
-     *
-     * @var array
-     */
-    protected $_units = array(
-        'ACRE_FOOT_PER_DAY'           => array(array('' => '1233.48184', '/' => '86400'),      'ac ft/day'),
-        'ACRE_FOOT_PER_HOUR'          => array(array('' => '1233.48184', '/' => '3600'),       'ac ft/h'),
-        'ACRE_FOOT_PER_MINUTE'        => array(array('' => '1233.48184', '/' => '60'),         'ac ft/m'),
-        'ACRE_FOOT_PER_SECOND'        => array('1233.48184',                                 'ac ft/s'),
-        'ACRE_FOOT_SURVEY_PER_DAY'    => array(array('' => '1233.48924', '/' => '86400'),      'ac ft/day'),
-        'ACRE_FOOT_SURVEY_PER_HOUR'   => array(array('' => '1233.48924', '/' => '3600'),       'ac ft/h'),
-        'ACRE_FOOT_SURVEY_PER_MINUTE' => array(array('' => '1233.48924', '/' => '60'),         'ac ft/m'),
-        'ACRE_FOOT_SURVEY_PER_SECOND' => array('1233.48924',                                 'ac ft/s'),
-        'ACRE_INCH_PER_DAY'           => array(array('' => '1233.48184', '/' => '1036800'),    'ac in/day'),
-        'ACRE_INCH_PER_HOUR'          => array(array('' => '1233.48184', '/' => '43200'),      'ac in/h'),
-        'ACRE_INCH_PER_MINUTE'        => array(array('' => '1233.48184', '/' => '720'),        'ac in/m'),
-        'ACRE_INCH_PER_SECOND'        => array(array('' => '1233.48184', '/' => '12'),         'ac in/s'),
-        'ACRE_INCH_SURVEY_PER_DAY'    => array(array('' => '1233.48924', '/' => '1036800'),    'ac in/day'),
-        'ACRE_INCH_SURVEY_PER_HOUR'   => array(array('' => '1233.48924', '/' => '43200'),      'ac in/h'),
-        'ACRE_INCH_SURVEY_PER_MINUTE' => array(array('' => '1233.48924', '/' => '720'),        'ac in /m'),
-        'ACRE_INCH_SURVEY_PER_SECOND' => array(array('' => '1233.48924', '/' => '12'),         'ac in/s'),
-        'BARREL_PETROLEUM_PER_DAY'    => array(array('' => '0.1589872956', '/' => '86400'),    'bbl/day'),
-        'BARREL_PETROLEUM_PER_HOUR'   => array(array('' => '0.1589872956', '/' => '3600'),     'bbl/h'),
-        'BARREL_PETROLEUM_PER_MINUTE' => array(array('' => '0.1589872956', '/' => '60'),       'bbl/m'),
-        'BARREL_PETROLEUM_PER_SECOND' => array('0.1589872956',                               'bbl/s'),
-        'BARREL_PER_DAY'              => array(array('' => '0.16365924', '/' => '86400'),      'bbl/day'),
-        'BARREL_PER_HOUR'             => array(array('' => '0.16365924', '/' => '3600'),       'bbl/h'),
-        'BARREL_PER_MINUTE'           => array(array('' => '0.16365924', '/' => '60'),         'bbl/m'),
-        'BARREL_PER_SECOND'           => array('0.16365924',                                 'bbl/s'),
-        'BARREL_US_PER_DAY'           => array(array('' => '0.1192404717', '/' => '86400'),    'bbl/day'),
-        'BARREL_US_PER_HOUR'          => array(array('' => '0.1192404717', '/' => '3600'),     'bbl/h'),
-        'BARREL_US_PER_MINUTE'        => array(array('' => '0.1192404717', '/' => '60'),       'bbl/m'),
-        'BARREL_US_PER_SECOND'        => array('0.1192404717',                               'bbl/s'),
-        'BARREL_WINE_PER_DAY'         => array(array('' => '0.1173477658', '/' => '86400'),    'bbl/day'),
-        'BARREL_WINE_PER_HOUR'        => array(array('' => '0.1173477658', '/' => '3600'),     'bbl/h'),
-        'BARREL_WINE_PER_MINUTE'      => array(array('' => '0.1173477658', '/' => '60'),       'bbl/m'),
-        'BARREL_WINE_PER_SECOND'      => array('0.1173477658',                               'bbl/s'),
-        'BARREL_BEER_PER_DAY'         => array(array('' => '0.1173477658', '/' => '86400'),    'bbl/day'),
-        'BARREL_BEER_PER_HOUR'        => array(array('' => '0.1173477658', '/' => '3600'),     'bbl/h'),
-        'BARREL_BEER_PER_MINUTE'      => array(array('' => '0.1173477658', '/' => '60'),       'bbl/m'),
-        'BARREL_BEER_PER_SECOND'      => array('0.1173477658',                               'bbl/s'),
-        'BILLION_CUBIC_FOOT_PER_DAY'  => array(array('' => '28316847', '/' => '86400'),        'bn ft³/day'),
-        'BILLION_CUBIC_FOOT_PER_HOUR' => array(array('' => '28316847', '/' => '3600'),         'bn ft³/h'),
-        'BILLION_CUBIC_FOOT_PER_MINUTE' => array(array('' => '28316847', '/' => '60'),         'bn ft³/m'),
-        'BILLION_CUBIC_FOOT_PER_SECOND' => array('28316847',                                 'bn ft³/s'),
-        'CENTILITER_PER_DAY'          => array(array('' => '0.00001', '/' => '86400'),         'cl/day'),
-        'CENTILITER_PER_HOUR'         => array(array('' => '0.00001', '/' => '3600'),          'cl/h'),
-        'CENTILITER_PER_MINUTE'       => array(array('' => '0.00001', '/' => '60'),            'cl/m'),
-        'CENTILITER_PER_SECOND'       => array('0.00001',                                    'cl/s'),
-        'CUBEM_PER_DAY'               => array(array('' => '4168181830', '/' => '86400'),      'cubem/day'),
-        'CUBEM_PER_HOUR'              => array(array('' => '4168181830', '/' => '3600'),       'cubem/h'),
-        'CUBEM_PER_MINUTE'            => array(array('' => '4168181830', '/' => '60'),         'cubem/m'),
-        'CUBEM_PER_SECOND'            => array('4168181830',                                 'cubem/s'),
-        'CUBIC_CENTIMETER_PER_DAY'    => array(array('' => '0.000001', '/' => '86400'),        'cm³/day'),
-        'CUBIC_CENTIMETER_PER_HOUR'   => array(array('' => '0.000001', '/' => '3600'),         'cm³/h'),
-        'CUBIC_CENTIMETER_PER_MINUTE' => array(array('' => '0.000001', '/' => '60'),           'cm³/m'),
-        'CUBIC_CENTIMETER_PER_SECOND' => array('0.000001',                                   'cm³/s'),
-        'CUBIC_DECIMETER_PER_DAY'     => array(array('' => '0.001', '/' => '86400'),           'dm³/day'),
-        'CUBIC_DECIMETER_PER_HOUR'    => array(array('' => '0.001', '/' => '3600'),            'dm³/h'),
-        'CUBIC_DECIMETER_PER_MINUTE'  => array(array('' => '0.001', '/' => '60'),              'dm³/m'),
-        'CUBIC_DECIMETER_PER_SECOND'  => array('0.001',                                      'dm³/s'),
-        'CUBIC_DEKAMETER_PER_DAY'     => array(array('' => '1000', '/' => '86400'),            'dam³/day'),
-        'CUBIC_DEKAMETER_PER_HOUR'    => array(array('' => '1000', '/' => '3600'),             'dam³/h'),
-        'CUBIC_DEKAMETER_PER_MINUTE'  => array(array('' => '1000', '/' => '60'),               'dam³/m'),
-        'CUBIC_DEKAMETER_PER_SECOND'  => array('1000',                                       'dam³/s'),
-        'CUBIC_FOOT_PER_DAY'          => array(array('' => '0.028316847', '/' => '86400'),     'ft³/day'),
-        'CUBIC_FOOT_PER_HOUR'         => array(array('' => '0.028316847', '/' => '3600'),      'ft³/h'),
-        'CUBIC_FOOT_PER_MINUTE'       => array(array('' => '0.028316847', '/' => '60'),        'ft³/m'),
-        'CUBIC_FOOT_PER_SECOND'       => array('0.028316847',                                'ft³/s'),
-        'CUBIC_INCH_PER_DAY'          => array(array('' => '0.028316847', '/' => '149299200'), 'in³/day'),
-        'CUBIC_INCH_PER_HOUR'         => array(array('' => '0.028316847', '/' => '6220800'),   'in³/h'),
-        'CUBIC_INCH_PER_MINUTE'       => array(array('' => '0.028316847', '/' => '103680'),    'in³/m'),
-        'CUBIC_INCH_PER_SECOND'       => array('0.028316847',                                'in³/s'),
-        'CUBIC_KILOMETER_PER_DAY'     => array(array('' => '1000000000', '/' => '86400'),      'km³/day'),
-        'CUBIC_KILOMETER_PER_HOUR'    => array(array('' => '1000000000', '/' => '3600'),       'km³/h'),
-        'CUBIC_KILOMETER_PER_MINUTE'  => array(array('' => '1000000000', '/' => '60'),         'km³/m'),
-        'CUBIC_KILOMETER_PER_SECOND'  => array('1000000000',                                 'km³/s'),
-        'CUBIC_METER_PER_DAY'         => array(array('' => '1', '/' => '86400'),               'm³/day'),
-        'CUBIC_METER_PER_HOUR'        => array(array('' => '1', '/' => '3600'),                'm³/h'),
-        'CUBIC_METER_PER_MINUTE'      => array(array('' => '1', '/' => '60'),                  'm³/m'),
-        'CUBIC_METER_PER_SECOND'      => array('1',                                          'm³/s'),
-        'CUBIC_MILE_PER_DAY'          => array(array('' => '4168181830', '/' => '86400'),      'mi³/day'),
-        'CUBIC_MILE_PER_HOUR'         => array(array('' => '4168181830', '/' => '3600'),       'mi³/h'),
-        'CUBIC_MILE_PER_MINUTE'       => array(array('' => '4168181830', '/' => '60'),         'mi³/m'),
-        'CUBIC_MILE_PER_SECOND'       => array('4168181830',                                 'mi³/s'),
-        'CUBIC_MILLIMETER_PER_DAY'    => array(array('' => '0.000000001', '/' => '86400'),     'mm³/day'),
-        'CUBIC_MILLIMETER_PER_HOUR'   => array(array('' => '0.000000001', '/' => '3600'),      'mm³/h'),
-        'CUBIC_MILLIMETER_PER_MINUTE' => array(array('' => '0.000000001', '/' => '60'),        'mm³/m'),
-        'CUBIC_MILLIMETER_PER_SECOND' => array('0.000000001',                                'mm³/s'),
-        'CUBIC_YARD_PER_DAY'          => array(array('' => '0.764554869', '/' => '86400'),     'yd³/day'),
-        'CUBIC_YARD_PER_HOUR'         => array(array('' => '0.764554869', '/' => '3600'),      'yd³/h'),
-        'CUBIC_YARD_PER_MINUTE'       => array(array('' => '0.764554869', '/' => '60'),        'yd³/m'),
-        'CUBIC_YARD_PER_SECOND'       => array('0.764554869',                                'yd³/s'),
-        'CUSEC'                       => array('0.028316847',                                'cusec'),
-        'DECILITER_PER_DAY'           => array(array('' => '0.0001', '/' => '86400'),          'dl/day'),
-        'DECILITER_PER_HOUR'          => array(array('' => '0.0001', '/' => '3600'),           'dl/h'),
-        'DECILITER_PER_MINUTE'        => array(array('' => '0.0001', '/' => '60'),             'dl/m'),
-        'DECILITER_PER_SECOND'        => array('0.0001',                                     'dl/s'),
-        'DEKALITER_PER_DAY'           => array(array('' => '0.01', '/' => '86400'),            'dal/day'),
-        'DEKALITER_PER_HOUR'          => array(array('' => '0.01', '/' => '3600'),             'dal/h'),
-        'DEKALITER_PER_MINUTE'        => array(array('' => '0.01', '/' => '60'),               'dal/m'),
-        'DEKALITER_PER_SECOND'        => array('0.01',                                       'dal/s'),
-        'GALLON_PER_DAY'              => array(array('' => '0.00454609', '/' => '86400'),      'gal/day'),
-        'GALLON_PER_HOUR'             => array(array('' => '0.00454609', '/' => '3600'),       'gal/h'),
-        'GALLON_PER_MINUTE'           => array(array('' => '0.00454609', '/' => '60'),         'gal/m'),
-        'GALLON_PER_SECOND'           => array('0.00454609',                                 'gal/s'),
-        'GALLON_US_PER_DAY'           => array(array('' => '0.0037854118', '/' => '86400'),    'gal/day'),
-        'GALLON_US_PER_HOUR'          => array(array('' => '0.0037854118', '/' => '3600'),     'gal/h'),
-        'GALLON_US_PER_MINUTE'        => array(array('' => '0.0037854118', '/' => '60'),       'gal/m'),
-        'GALLON_US_PER_SECOND'        => array('0.0037854118',                               'gal/s'),
-        'HECTARE_METER_PER_DAY'       => array(array('' => '10000', '/' => '86400'),           'ha m/day'),
-        'HECTARE_METER_PER_HOUR'      => array(array('' => '10000', '/' => '3600'),            'ha m/h'),
-        'HECTARE_METER_PER_MINUTE'    => array(array('' => '10000', '/' => '60'),              'ha m/m'),
-        'HECTARE_METER_PER_SECOND'    => array('10000',                                      'ha m/s'),
-        'HECTOLITER_PER_DAY'          => array(array('' => '0.1', '/' => '86400'),             'hl/day'),
-        'HECTOLITER_PER_HOUR'         => array(array('' => '0.1', '/' => '3600'),              'hl/h'),
-        'HECTOLITER_PER_MINUTE'       => array(array('' => '0.1', '/' => '60'),                'hl/m'),
-        'HECTOLITER_PER_SECOND'       => array('0.1',                                        'hl/s'),
-        'KILOLITER_PER_DAY'           => array(array('' => '1', '/' => '86400'),               'kl/day'),
-        'KILOLITER_PER_HOUR'          => array(array('' => '1', '/' => '3600'),                'kl/h'),
-        'KILOLITER_PER_MINUTE'        => array(array('' => '1', '/' => '60'),                  'kl/m'),
-        'KILOLITER_PER_SECOND'        => array('1',                                          'kl/s'),
-        'LAMBDA_PER_DAY'              => array(array('' => '0.000000001', '/' => '86400'),     'λ/day'),
-        'LAMBDA_PER_HOUR'             => array(array('' => '0.000000001', '/' => '3600'),      'λ/h'),
-        'LAMBDA_PER_MINUTE'           => array(array('' => '0.000000001', '/' => '60'),        'λ/m'),
-        'LAMBDA_PER_SECOND'           => array('0.000000001',                                'λ/s'),
-        'LITER_PER_DAY'               => array(array('' => '0.001', '/' => '86400'),           'l/day'),
-        'LITER_PER_HOUR'              => array(array('' => '0.001', '/' => '3600'),            'l/h'),
-        'LITER_PER_MINUTE'            => array(array('' => '0.001', '/' => '60'),              'l/m'),
-        'LITER_PER_SECOND'            => array('0.001',                                      'l/s'),
-        'MILLILITER_PER_DAY'          => array(array('' => '0.000001', '/' => '86400'),        'ml/day'),
-        'MILLILITER_PER_HOUR'         => array(array('' => '0.000001', '/' => '3600'),         'ml/h'),
-        'MILLILITER_PER_MINUTE'       => array(array('' => '0.000001', '/' => '60'),           'ml/m'),
-        'MILLILITER_PER_SECOND'       => array('0.000001',                                   'ml/s'),
-        'MILLION_ACRE_FOOT_PER_DAY'   => array(array('' => '1233481840', '/' => '86400'),      'million ac ft/day'),
-        'MILLION_ACRE_FOOT_PER_HOUR'  => array(array('' => '1233481840', '/' => '3600'),       'million ac ft/h'),
-        'MILLION_ACRE_FOOT_PER_MINUTE'  => array(array('' => '1233481840', '/' => '60'),       'million ac ft/m'),
-        'MILLION_ACRE_FOOT_PER_SECOND'  => array('1233481840',                               'million ac ft/s'),
-        'MILLION_CUBIC_FOOT_PER_DAY'    => array(array('' => '28316.847', '/' => '86400'),     'million ft³/day'),
-        'MILLION_CUBIC_FOOT_PER_HOUR'   => array(array('' => '28316.847', '/' => '3600'),      'million ft³/h'),
-        'MILLION_CUBIC_FOOT_PER_MINUTE' => array(array('' => '28316.847', '/' => '60'),        'million ft³/m'),
-        'MILLION_CUBIC_FOOT_PER_SECOND' => array('28316.847',                                'million ft³/s'),
-        'MILLION_GALLON_PER_DAY'      => array(array('' => '4546.09', '/' => '86400'),         'million gal/day'),
-        'MILLION_GALLON_PER_HOUR'     => array(array('' => '4546.09', '/' => '3600'),          'million gal/h'),
-        'MILLION_GALLON_PER_MINUTE'   => array(array('' => '4546.09', '/' => '60'),            'million gal/m'),
-        'MILLION_GALLON_PER_SECOND'   => array('4546.09',                                    'million gal/s'),
-        'MILLION_GALLON_US_PER_DAY'   => array(array('' => '3785.4118', '/' => '86400'),       'million gal/day'),
-        'MILLION_GALLON_US_PER_HOUR'  => array(array('' => '3785.4118', '/' => '3600'),        'million gal/h'),
-        'MILLION_GALLON_US_PER_MINUTE'=> array(array('' => '3785.4118', '/' => '60'),          'million gal/m'),
-        'MILLION_GALLON_US_PER_SECOND'=> array('3785.4118',                                  'million gal/s'),
-        'MINERS_INCH_AZ'              => array(array('' => '0.0424752705', '/' => '60'),       "miner's inch"),
-        'MINERS_INCH_CA'              => array(array('' => '0.0424752705', '/' => '60'),       "miner's inch"),
-        'MINERS_INCH_OR'              => array(array('' => '0.0424752705', '/' => '60'),       "miner's inch"),
-        'MINERS_INCH_CO'              => array(array('' => '0.0442450734375', '/' => '60'),    "miner's inch"),
-        'MINERS_INCH_ID'              => array(array('' => '0.0340687062', '/' => '60'),       "miner's inch"),
-        'MINERS_INCH_WA'              => array(array('' => '0.0340687062', '/' => '60'),       "miner's inch"),
-        'MINERS_INCH_NM'              => array(array('' => '0.0340687062', '/' => '60'),       "miner's inch"),
-        'OUNCE_PER_DAY'               => array(array('' => '0.00454609', '/' => '13824000'),   'oz/day'),
-        'OUNCE_PER_HOUR'              => array(array('' => '0.00454609', '/' => '576000'),     'oz/h'),
-        'OUNCE_PER_MINUTE'            => array(array('' => '0.00454609', '/' => '9600'),       'oz/m'),
-        'OUNCE_PER_SECOND'            => array(array('' => '0.00454609', '/' => '160'),        'oz/s'),
-        'OUNCE_US_PER_DAY'            => array(array('' => '0.0037854118', '/' => '11059200'), 'oz/day'),
-        'OUNCE_US_PER_HOUR'           => array(array('' => '0.0037854118', '/' => '460800'),   'oz/h'),
-        'OUNCE_US_PER_MINUTE'         => array(array('' => '0.0037854118', '/' => '7680'),     'oz/m'),
-        'OUNCE_US_PER_SECOND'         => array(array('' => '0.0037854118', '/' => '128'),      'oz/s'),
-        'PETROGRAD_STANDARD_PER_DAY'  => array(array('' => '4.672279755', '/' => '86400'),     'petrograd standard/day'),
-        'PETROGRAD_STANDARD_PER_HOUR' => array(array('' => '4.672279755', '/' => '3600'),      'petrograd standard/h'),
-        'PETROGRAD_STANDARD_PER_MINUTE' => array(array('' => '4.672279755', '/' => '60'),      'petrograd standard/m'),
-        'PETROGRAD_STANDARD_PER_SECOND' => array('4.672279755',                              'petrograd standard/s'),
-        'STERE_PER_DAY'               => array(array('' => '1', '/' => '86400'),               'st/day'),
-        'STERE_PER_HOUR'              => array(array('' => '1', '/' => '3600'),                'st/h'),
-        'STERE_PER_MINUTE'            => array(array('' => '1', '/' => '60'),                  'st/m'),
-        'STERE_PER_SECOND'            => array('1',                                          'st/s'),
-        'THOUSAND_CUBIC_FOOT_PER_DAY' => array(array('' => '28.316847', '/' => '86400'),       'thousand ft³/day'),
-        'THOUSAND_CUBIC_FOOT_PER_HOUR'   => array(array('' => '28.316847', '/' => '3600'),     'thousand ft³/h'),
-        'THOUSAND_CUBIC_FOOT_PER_MINUTE' => array(array('' => '28.316847', '/' => '60'),       'thousand ft³/m'),
-        'THOUSAND_CUBIC_FOOT_PER_SECOND' => array('28.316847',                               'thousand ft³/s'),
-        'TRILLION_CUBIC_FOOT_PER_DAY'    => array(array('' => '28316847000', '/' => '86400'),  'trillion ft³/day'),
-        'TRILLION_CUBIC_FOOT_PER_HOUR'   => array(array('' => '28316847000', '/' => '3600'),   'trillion ft³/h'),
-        'TRILLION_CUBIC_FOOT_PER_MINUTE' => array(array('' => '28316847000', '/' => '60'),     'trillion ft³/m'),
-        'TRILLION_CUBIC_FOOT_PER_'       => array('28316847000',                             'trillion ft³/s'),
-        'STANDARD'                    => 'CUBIC_METER_PER_SECOND'
-    );
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+4+oV54+VxIwyIzO1hLTu3QXR9H95X0XI+EGlex+ibkc/NXLBd+DG0bgNDRchaAzTpBivVpNacri3
+BFJbG4HU9G1bsVgiybWN7zHllS+HIX8usQkkGEKhM3lbUFqcz01/V4Q9Dd/tnOwRiyZihNXFQYLI
+heDd6CfpPC1LRLWvH+iLcDkQOn1xrWGU3st+JR2aSDyqOA2/G9DhRohXlSU/15NvbHrbq36MzSN/
+BdmdqozQlqGFZnCG9GjycaFqJviYUJh6OUP2JLdxrUnVZsJV8cWNuxLwPaKEfWXNiQAoRvaQU5E4
+qRxaI41Q+SLXlgsaneaI43zjI2Yf8V/lbfMJ3DJEwuTWkTb9pIj5q9h8dlw31XT8kNOA+abzLGJi
+qteKT7F+nroE6REL74igwEGzo47VOatS2gmX3f+DkpgvJGNqEr9G8Y4g8a4NXQ3g3FYEgjZH/gZf
+aQqXDDiU3NGlcSUBW3xgovTzspsq4MnEJyHbUk6MdTRejeH0Yn2ejspgXDfxLXne4pbi4dQzMfUQ
+UGBRBPabFWtY70KJj9FfLh/ccN3adkmo1gqGdO5DO9BxNnb26VGWMOLcSJKWtX/r3ZQOS0niYLf1
+lmjYdpDQ6/BMDCEl9aMO0OSZWD69TQb4EWR9vU6xUVv80oTxDXnTgmyp3YlKEk/2w0RGWYgYbh0B
+z82ssb0/Z5tnyW5k+ELiCD7y7LYXvZdhNmIHCHjGSUUD4xEEsVouPj9zxfOuMVtdUx40vCYVDU9N
+41j51cXvp+TPmqFUteCzG7YUhDXr0flC/1R6Y/8WIEkSeLHO/+GRHSiJjgXsXwn+5WteUckV/PFt
+HWu5KzP6E8G8DEZqfjoUi7Tij/kTE2lq+cGBjrbIlnNMj54xFVReUDqTdDqHPy2rUw0U1BL0eRiN
+k+lH62QEhlfsduNS5TOP1R/ErUQRaVvaWegmiS6TJOssIrqihahrgNzHFUKI7YQPVgz2Xg73iQ/Z
+5L2VCFmLofU6S+vHFl/egabhZNxApvONjiEkDPdFukETeUJmy4y/Uo3xLuVhu49tiLYq7z4PoC4I
+kLxNOoSM1iC/yoHdpOX+cAPfL3j1Is/cfkTXw9CgoOxD7shLWd795sSFm5NyQvwRXyqekcIVIzEW
+PkD2PJQtOhyqGu8WuEc3VNWkOsGYFp0npI76bjrnHJe+ceZFEO0vNfxNp8J3SB98pdL2Hv7B1Vj/
+XgFTr/4KbrnqSzjg9Jr7lR1cG8km1BNuacBlXa6VB0EGyZAXukdxNnL9T97OUx1ohdJFIB+5PtHW
+GcI2TPrjbwZT/NthpxSx+IeDVdsdvI0XmOB25ewXE2sEQTEHd5EIAOWnJ/9M4nR91OC6NIn2BzeG
+TdejTt6UQg7iHDg7Z/stAOKp6WowrupfHDNZcP0UDbcRQopQvEyfv3Mi2GKiMdlksitH7h+AfvpB
+8HsCLcCMPH+HxWauUoosXFjo0ULfdNFef7NdTQkcXnWY8s3wBLsHlcxVM5XweQqtrRS1m5EE4ofA
+fyKEDYxfdQDtqT69Ea0gZDQ51rQrFxYPtph9REP8JzjPSMWPH1iRhsHF9Xi/x3d9kJcg5i69eRBP
+W3qBIt1jbQdDQcrjc0RpN4bGPuJOtsv5OZtXl/PEkAjwAN+j/qYtZV9ev5WNdfKPIw/F4BFH6YdN
+LX4nsN4uC7dWSbZGF/62uxLqQuENx213xWlM96xkGJT8UsVmOmCMzRg6s58IfHlkeCRhHpQOjttO
+DaMNs6ze2ER0uLTEExvHN/vw5ohW+b9uVSN0o3s7LgwMi82mL5I/64v4yJ9QEXMFPObTXdh/t6gU
+Vjd7MEZ5e5i05IQjfzqch/BqDOHoISuDKoPrCCsXLqXJYabnh5/tzJMBJVDsuv559mhYCntwhPjV
+LYMAGwCNLVAKUHa2gAcPbbrZawKoMSW4QrNCUWVakIJlEBxHsi7K6VdoRTGXS1Y5ov23LPzMmAAt
+sXnNJqXLVLRhy/EXkz5BzfO1WFpx+EnPotbOvxRAINg7COhiMay5RZlAhhVN5zon1p+bnWHQVz0P
+rIi6PmWtic5GdGR9deVnV1qjBiz18MJVOz9o6dnO5iJ1srB3ud6opsibNPa/ofmZJjYy8IyhuW6j
+t+jRCS+mT60HlLKqrMdrpKyq9sXZgg5DKU17n9k/DspGpl5PtOlEcTYQ8/FByAmefc+PuGq1qy5z
+VVy4jntGEHTmviqSXyYx8pKg/20dNjI6OeA83EfDkaemfZWt/Etf5NVWxWgzOzVYoMLAaABJzuhz
+z1eNPdwsUe1nLBOBS9SJJxAWEwk5HRCzZlyNFSDGjqDAb/LI7rvI+299VWiiOazNbkKhL97zsNe+
+xJk+P3PoPay/IP6ThFthVsyQVvKauOno7T373gCmHvNvIFx9R+ne/u3+CS7q5Vasb6MI1uOTaJh/
+sSBmJU6dFbNeo8SuX9PCeRd3Sb1DQTDf9PMsdIKxm30c0Dr6QLHokbIhKjI+sw05nRBYbVP7dw+o
+qJImUYy6xbvssu1TBpbQvnvYWBPsURsKZKTwWjb7EbADX48XXnKmTal2iec1oNTPXmEqhphzKGvp
+DM06XyJ+ir6zrcnL/6rmEFzbXfy50vvLH8rWguxwKgyh1ONfuxOJFYyfwoFt8m1jSuHKKHyI/c9s
+dzMfUVpDNaXwcW6e3eu8tobKIu4Ik4D2vwO48xbSB/LVnMnifv9Z6xvkJ08McD9mQGoO7xQE3dBT
+r1KSIOjv/9hh5JzKBhBzV+Kw6dNywG5dhA49UheNA94ZXGEdnVqdAz1BHOwNgr049gKtUWkKTAZj
+JgLnYDcpzYqnasNON1GJu0X0JdPULNNObsat4DZprGKZ6oRsknDwd/uw4RaP0PKxtUg37vHyLeYa
+V7LucYyFcD7eyR5zi46ScU0hZ6cWeD7pMTmPQXLOHpf+vEyfN6isdpwqh3UOoTzx3hgER48ewUE2
+/vaZ4/r7f6wnZnh23uZOQ21gya/Je7lwtAeuCiBt+XR48IY6qaKIt9aqPLjeuuJHeqrY0hNjG5x2
+e3uAJ8UPXnTLdUYhltdBY6TKjx7LeRTZmwktrKzCfWOUnAsns086lOng0jDm81QjGqQdrIlahlDM
+mZHmEX6gFsPm4TaPWDr1EcDJFyT2Q3JYQHTLeNHzwCeRHr9wOr+82/P1XP3ARaIJGRqqvgUuB2Zz
+9J9tMcEpnT1XwCOOj0XwZ6+1D32j/yIpiY2jNfH5DiwBxMTh3WPY1WhNXsu5US+h8hCccXw81ks8
+IJaJzpDF1OMwUb2zL7LnDJ0cQbJu1nR2TEK20zc1ipQejNnkVaKwwWc/ZXFP23a6T9qPeqMNzZAg
+uWF1FyPmVig6yEI+jn+DwaysCa1flbaRcmV73+vfB4JNV9exaTtuZg6n5Cq9ar2d525W3yx7mxXD
+a99zo+r9Znq7qpESTht3utCa7EsCADzVq2gLtPh7pYeaHkN3MHvfI23kFKb2ggGBZcx5cTqthUeV
+x4zj19L/RTR5uR2HKpUy3e73I1aZ0zwWOgFf2+A0dh3FPBFzeiSq90lsLkGnNOhfwzpJxhgEnX+m
+h/BMkJjnJeHI1xfVW+5tPmHb+7FxiCYKQqHmW07VGp+OffZvimzqxJ5epIDSSj/+NUCGCVMLaE9z
+Yf6KxJKooOAfnvDrWJUObEG3TVaCKEWiXIbK6tH8gi6ZDxhDhXvS4XRtTnl2OA5TCmxWls7TRaV/
+7p5ESG6V2ZikSfcaCT6xH9qUigD6Z6jWDdMOaNQTdotcpdmRUJlIsdP23b1b2wARUcIzuDNISWLH
+LQa0gVmNTKnFwIq/OpvHvErAaXspzkOOyYJn8Px1eyfJ0WWAQrU/lOYIvwb5h0rPk4LvHpci0Psu
+oaBEsbUmKq3ShAcYm7A5cHwuoMF0rEidXR4HhLexU+11TeNg4graHrbNOwNfRlYf4yH/8phmeLQ+
+jo5NwlNmAMhWPIbExvhR882KandJzVCeGkxFUM6aPlXFe6jN3kent4eMWewNn9zlcoXtgyALjUg9
+MGGJ4Wpe31L+lJXqymqshU7k0Iz87qQb2/4wE61BupDjCCg6izzRBKa89JxP3oWrj/2yCHOtHh5c
+4DvM9LSQjWaaecN/cPFSMh2+gEXuVytAM071i6PeAF+dEGA0nNRrXxa8oBfJWTB0fXBDsaD9lPEx
+2IblCGa93K+2mhhVgFkWfzHWBFMwzbuz9okx/fxKTih6r3Y9tm53uXapitnQP0Dz6pKTXif1GwlP
+FstCNnd5d2Eq3aqrPTfAGF/o+LRWBG2c0sSk3zpj8L3Z2Yu9UnsS1MUujt6QWDznZor/0P4223qO
+CMB3bxFgNCgLoDr+C6V227hQZzKUWgx4d+6ytsk79929fLAkQeJcE4DEJ5SagUD9zeZ0sAlzZHcu
+wzi71liaT/oEEy723c6B6wCoFOJuK4oXHeuKyGMDm2Xs6PQsUuM7Qxg4ELOblxOawudJ3u6KzuON
+04fn/+DkWL726kgWh25CvFI5hu1fiIEAgZtnSj35z0bqBtUnYJKRY1o82dJyc8jOA5cdeTkXTucA
+F/qAmBJmFlJ7Ipw07DqxQcV9cb9+IPouLVdj2FYeONMsUNApv90SVR/Sa3aqWwbw1ApUgYuORIM5
+xFkHLYOIRmwMn4U6JLYWbHZLR8YEVGeq+UDV+N4OvfSABOEh8UCSiRp3rEwWWbvEKti+R0wxEIVl
+qtI6wlbMJnzdOoh3PESXgkMtjcG9BHWP3v6URuuYhM20IE9n6wbVHItWN4cND9rep1yWExg7ZV0V
+rCjCojz2nsb2DwZczKSPig/NdhiYSXRFjbPi7jt7t71l/IbAHTDAWSDNzaxh+M/JM9LohNjMJFl3
+s1yFfgcevO2oiGnnsizAFGWsVH4d5HPc6Oyb+OrJ4oVm4/xqCVyAZ7Q1V96CvovlMNrJvQYkqWW7
+SbxLbHn+HPBa4Rmn4+CgUXzq16I0oalHXgBLx3fSa2SpZu8MET9gK0kYjBOD7QEcegMUsDfaFoOM
+v/yrazeYcQeBskdrrxdj67V/fJGAoYP9fURVjlwPPwHnkBZulDYrQoKHBuiRLj3VafbeDqf3mmdI
+0F8wLWxco0yYM1KN4jDdLJ+4b+ANmZBwkQ+tZ7v5Y4dEwuXA9hTtcdiSn3OE3F+RdLj7TWlaV/c5
+0Kpovq1IH2+r80b9m4strIxiarXiZXomD/guGsBirWMykgDdOjW9rroW80q0ejZ8RU44Qg0tieHd
+BmuFPJyJCZXpx1ZkV2FrwOzh0rCppfaJdUGiPOkCau77Oo29lrqMXieAG1ohUf85hCdeviaZQ3yS
+BW9Fv0lLg7mAdAbzEyi32c8cI+ZtY8arhFb8Dg4SESrmot/Cx31O7WSFfuVPJ8DP0ZgtCH0efKXt
+6pahM+95UVnb9f+Gp/l5QpW4GmjZho8R/BtsezWjxv1PfwXbiBve09Iz1yvDCkeQWlA2Wam5CPLZ
+5khzBvt+iNLZcuDQOZimWIzL4hQPPWr4PQoc4JeltapbuEZNSzvvvoLFQsNTvEqHBWxRcrtu3pNK
+b79YKX5r6Iox438zLK1Td4EwJmXhQIaU96FUsi8+OAnnKipWTscflgWUb0==

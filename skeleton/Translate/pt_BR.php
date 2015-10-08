@@ -1,72 +1,42 @@
-<?php
-/**
- * Arquivo que contém as traduções das mensagens de erro do formulário para pt_BR
- */
-$portugues = array(
-        // Campo vazio
-        'isEmpty' => 'Este campo não pode ser vazio',
-        // AlNum 
-        'alnumNotAlnum' => '"%value%" contém caracteres não alfabéticos ou digitos.',
-        // Alpha
-        'alphaNotAlpha' => '"%value%" contém caracteres não alfabéticos.',
-        // Barcode_Ean13        
-        'barcode_Ean13Invalid' => '"%value%" não é um código de barras EAN-13 válido.',
-        'barcode_Ean13InvalidLength' => '"%value%" deve conter 13 caracteres.',
-        'barcode_Ean13NotNumeric' => '"%value%" só pode conter números.',
-        // Barcode_UpcA
-        'barcode_UpcAInvalid' => '"%value%" não é um código de barras UPC-A válido',
-        'barcode_UpcAInvalidLength' => '"%value%" deve conter 12 caracteres.',
-        // Between
-        'betweenNotBetween' => '"%value%" não está entre "%min%" e "%max%", inclusive.',
-        'betweenNotBetweenStrict' => '"%value%" não está entre "%min%" e "%max%" ',
-        // Captcha
-        'missingValue' => 'Valor do captcha vazio.',
-        'missingId' => 'Campo ID do captcha está vazio.',
-        'badCaptcha' => 'Valor do captcha incorreto.',
-        // Ccnum
-        'ccnumLength' => '"%value%" deve conter enter 13 e 19 digitos.',
-        'ccnumChecksum' => 'Algorítimo de Luhn (mod-10 checksum) falhou em "%value%".',
-        // Date         
-        'dateFalseFormat' => '"%value%" não está no formato necessário. DD/MM/AAAA',
-        'dateInvalidDate' => '"%value%" não é uma data válida.',
-        'dateNotYYYY-MM-DD' => '"%value%" não é uma data no formato AAAA-MM-DD.',
-        // DbAbstract
-        'dbAbstractErrorNoRecordFound' => 'Não foram localizados registros que iguais a "%value%".',
-        'dbAbstractErrorRecordFound' => 'Foi localizado valor igual a "%value%".',
-        // Digits       
-        'digitsNotDigits' => '"%value%" não contém somente dígitos.',
-        'digitsStringEmpty' => '"%value%" é um valor vazio.',
-        // EmailAdress
-        'emailAddressInvalidFormat' => '"%value%" não é um e-mail válido no formato nome@servidor.',
-        'emailAddressInvalid' => '"%value%"  não é um e-mail válido no formato básico nome@servidor.',
-        'emailAddressInvalidHostname' => '"%hostname%" não é um servidor válido para o e-mail "%value%".',
-        'emailAddressInvalidMxRecord' => '"%hostname%" não aparenta ter um valor MX válido para o e-mail "%value%".',
-        'emailAddressDotAtom' => '"%localPart%" não confere com formato dot-atom.',
-        'emailAddressQuotedString' => '"%localPart%" não confere com o formato quoted-string.',
-        'emailAddressInvalidLocalPart' => '"%localPart%" não é um nome válido para o e-mail "%value%".',
-        'emailAddressLengthExceeded' => '"%value%" excede o tamanho limite.',
-        // FileCount
-        'fileCountTooMuch' => 'Muitos arquivos, máximo "%max%" são permitidos, mas "%count%" foram enviados.',
-        'fileCountTooLess' => 'Poucos arquivos, mínimo "%min%" são esperados, mas "%count%" foram enviados.',
-        // Float
-        'floatNotFloat' => '""%value%"" não é um valor decimal válido.',
-        'floatInvalid' => 'Tipo inválido.',
-        // HostName
-        'hostnameInvalid' => 'Tipo inválido, valor deve ser um texto.',
-        'hostnameIpAddressNotAllowed' => '"%value%" aparenta ser um endereço IP, que não são permitidos.',
-        'hostnameUnknownTld' => '"%value%" é um DNS desconhecido do modelo TLD.',
-        'hostnameDashCharacter' => '"%value%" contém (-) em uma posição inválida.',
-        'hostnameInvalidHostnameSchema' => '"%value%" não confere com o modelo TLD "%tld%"',
-        'hostnameUndecipherableTld' => '"%value%" não tem um nome de servidor que pode ser extraído para o TLD.',
-        'hostnameInvalidHostname' => '"%value%" não tem a estrutura esperada para o nome de um servidor.',
-        'hostnameInvalidLocalName' => '"%value%" não é um nome de servidor local válido.',
-        'hostnameLocalNameNotAllowed' => '"%value%" é um servidor local, mas não são permitidos servidores locais.',
-        'hostnameCannotDecodePunycode' => '"%value%" não tem um código interpretável.',
-        // InArray      
-        'inArrayNotInArray' => '""%value%"" não foi encontrado nos valores permitidos.',
-        // Int
-        'notInt' => "'%value%' não é um valor válido.",
-        'stringLengthTooLong' => "Não pode ser maior que %max% caracteres"
-);
-
-return $portugues;
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

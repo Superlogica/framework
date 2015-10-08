@@ -1,107 +1,34 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Debug
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * Concrete class for generating debug dumps related to the output source.
- *
- * @category   Zend
- * @package    Zend_Debug
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-class Zend_Debug
-{
-
-    /**
-     * @var string
-     */
-    protected static $_sapi = null;
-
-    /**
-     * Get the current value of the debug output environment.
-     * This defaults to the value of PHP_SAPI.
-     *
-     * @return string;
-     */
-    public static function getSapi()
-    {
-        if (self::$_sapi === null) {
-            self::$_sapi = PHP_SAPI;
-        }
-        return self::$_sapi;
-    }
-
-    /**
-     * Set the debug ouput environment.
-     * Setting a value of null causes Zend_Debug to use PHP_SAPI.
-     *
-     * @param string $sapi
-     * @return void;
-     */
-    public static function setSapi($sapi)
-    {
-        self::$_sapi = $sapi;
-    }
-
-    /**
-     * Debug helper function.  This is a wrapper for var_dump() that adds
-     * the <pre /> tags, cleans up newlines and indents, and runs
-     * htmlentities() before output.
-     *
-     * @param  mixed  $var   The variable to dump.
-     * @param  string $label OPTIONAL Label to prepend to output.
-     * @param  bool   $echo  OPTIONAL Echo output if true.
-     * @return string
-     */
-    public static function dump($var, $label=null, $echo=true)
-    {
-        // format the label
-        $label = ($label===null) ? '' : rtrim($label) . ' ';
-
-        // var_dump the variable into a buffer and keep the output
-        ob_start();
-        var_dump($var);
-        $output = ob_get_clean();
-
-        // neaten the newlines and indents
-        $output = preg_replace("/\]\=\>\n(\s+)/m", "] => ", $output);
-        if (self::getSapi() == 'cli') {
-            $output = PHP_EOL . $label
-                    . PHP_EOL . $output
-                    . PHP_EOL;
-        } else {
-            if(!extension_loaded('xdebug')) {
-                $output = htmlspecialchars($output, ENT_QUOTES);
-            }
-
-            $output = '<pre>'
-                    . $label
-                    . $output
-                    . '</pre>';
-        }
-
-        if ($echo) {
-            echo($output);
-        }
-        return $output;
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

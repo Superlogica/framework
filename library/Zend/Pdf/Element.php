@@ -1,159 +1,43 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @package    Zend_Pdf
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-
-/** Zend_Pdf_Element */
-require_once 'Zend/Pdf/Element.php';
-
-/** Zend_Pdf_Element_Object */
-require_once 'Zend/Pdf/Element/Object.php';
-
-
-/**
- * PDF file element implementation
- *
- * @package    Zend_Pdf
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-abstract class Zend_Pdf_Element
-{
-    const TYPE_BOOL        = 1;
-    const TYPE_NUMERIC     = 2;
-    const TYPE_STRING      = 3;
-    const TYPE_NAME        = 4;
-    const TYPE_ARRAY       = 5;
-    const TYPE_DICTIONARY  = 6;
-    const TYPE_STREAM      = 7;
-    const TYPE_NULL        = 11;
-
-    /**
-     * Reference to the top level indirect object, which contains this element.
-     *
-     * @var Zend_Pdf_Element_Object
-     */
-    private $_parentObject = null;
-
-    /**
-     * Return type of the element.
-     * See ZPdfPDFConst for possible values
-     *
-     * @return integer
-     */
-    abstract public function getType();
-
-    /**
-     * Convert element to a string, which can be directly
-     * written to a PDF file.
-     *
-     * $factory parameter defines operation context.
-     *
-     * @param Zend_Pdf_Factory $factory
-     * @return string
-     */
-    abstract public function toString($factory = null);
-
-
-    /**
-     * Set top level parent indirect object.
-     *
-     * @param Zend_Pdf_Element_Object $parent
-     */
-    public function setParentObject(Zend_Pdf_Element_Object &$parent)
-    {
-        $this->_parentObject = &$parent;
-    }
-
-
-    /**
-     * Get top level parent indirect object.
-     *
-     * @return Zend_Pdf_Element_Object
-     */
-    public function getParentObject()
-    {
-        return $this->_parentObject;
-    }
-
-
-    /**
-     * Mark object as modified, to include it into new PDF file segment.
-     *
-     * We don't automate this action to keep control on PDF update process.
-     * All new objects are treated as "modified" automatically.
-     */
-    public function touch()
-    {
-        if ($this->_parentObject !== null) {
-            $this->_parentObject->touch();
-        }
-    }
-
-    /**
-     * Clean up resources, used by object
-     */
-    public function cleanUp()
-    {
-        // Do nothing
-    }
-
-    /**
-     * Convert PDF element to PHP type.
-     *
-     * @return mixed
-     */
-    public function toPhp()
-    {
-        return $this->value;
-    }
-
-    /**
-     * Convert PHP value into PDF element.
-     *
-     * @param mixed $input
-     * @return Zend_Pdf_Element
-     */
-    public static function phpToPdf($input)
-    {
-        if (is_numeric($input)) {
-            return new Zend_Pdf_Element_Numeric($input);
-        } else if (is_bool($input)) {
-            return new Zend_Pdf_Element_Boolean($input);
-        } else if (is_array($input)) {
-            $pdfElementsArray = array();
-            $isDictionary = false;
-
-            foreach ($input as $key => $value) {
-                if (is_string($key)) {
-                    $isDictionary = true;
-                }
-                $pdfElementsArray[$key] = Zend_Pdf_Element::phpToPdf($value);
-            }
-
-            if ($isDictionary) {
-                return new Zend_Pdf_Element_Dictionary($pdfElementsArray);
-            } else {
-                return new Zend_Pdf_Element_Array($pdfElementsArray);
-            }
-        } else {
-            return new Zend_Pdf_Element_String((string)$input);
-        }
-    }
-}
-
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+tXN7dBdKBaogmTe9dG==

@@ -1,93 +1,37 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Search_Lucene
- * @subpackage Index
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_Search_Lucene_Index_SegmentInfo */
-require_once 'Zend/Search/Lucene/Index/SegmentInfo.php';
-
-/** Zend_Search_Lucene_Index_SegmentWriter */
-require_once 'Zend/Search/Lucene/Index/SegmentWriter.php';
-
-/**
- * @category   Zend
- * @package    Zend_Search_Lucene
- * @subpackage Index
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Search_Lucene_Index_SegmentWriter_StreamWriter extends Zend_Search_Lucene_Index_SegmentWriter
-{
-    /**
-     * Object constructor.
-     *
-     * @param Zend_Search_Lucene_Storage_Directory $directory
-     * @param string $name
-     */
-    public function __construct(Zend_Search_Lucene_Storage_Directory $directory, $name)
-    {
-        parent::__construct($directory, $name);
-    }
-
-
-    /**
-     * Create stored fields files and open them for write
-     */
-    public function createStoredFieldsFiles()
-    {
-        $this->_fdxFile = $this->_directory->createFile($this->_name . '.fdx');
-        $this->_fdtFile = $this->_directory->createFile($this->_name . '.fdt');
-
-        $this->_files[] = $this->_name . '.fdx';
-        $this->_files[] = $this->_name . '.fdt';
-    }
-
-    public function addNorm($fieldName, $normVector)
-    {
-        if (isset($this->_norms[$fieldName])) {
-            $this->_norms[$fieldName] .= $normVector;
-        } else {
-            $this->_norms[$fieldName] = $normVector;
-        }
-    }
-
-    /**
-     * Close segment, write it to disk and return segment info
-     *
-     * @return Zend_Search_Lucene_Index_SegmentInfo
-     */
-    public function close()
-    {
-        if ($this->_docCount == 0) {
-            return null;
-        }
-
-        $this->_dumpFNM();
-        $this->_generateCFS();
-
-        return new Zend_Search_Lucene_Index_SegmentInfo($this->_directory,
-                                                        $this->_name,
-                                                        $this->_docCount,
-                                                        -1,
-                                                        null,
-                                                        true,
-                                                        true);
-    }
-}
-
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+NytudAmsoIWLtFcLqA52II8z

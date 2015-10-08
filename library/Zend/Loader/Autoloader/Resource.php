@@ -1,436 +1,141 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Loader
- * @subpackage Autoloader
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @version    $Id: Resource.php 14026 2009-02-09 19:03:22Z matthew $
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_Loader_Autoloader_Interface */
-require_once 'Zend/Loader/Autoloader/Interface.php';
-
-/**
- * Resource loader
- * 
- * @uses       Zend_Loader_Autoloader_Interface
- * @package    Zend_Loader
- * @subpackage Autoloader
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    New BSD {@link http://framework.zend.com/license/new-bsd}
- */
-class Zend_Loader_Autoloader_Resource implements Zend_Loader_Autoloader_Interface
-{
-    /**
-     * @var string Base path to resource classes
-     */
-    protected $_basePath;
-
-    /**
-     * @var array Components handled within this resource
-     */
-    protected $_components = array();
-
-    /**
-     * @var string Default resource/component to use when using object registry
-     */
-    protected $_defaultResourceType;
-
-    /**
-     * @var string Namespace of classes within this resource
-     */
-    protected $_namespace;
-
-    /**
-     * @var array Available resource types handled by this resource autoloader
-     */
-    protected $_resourceTypes = array();
-
-    /**
-     * Constructor
-     * 
-     * @param  array|Zend_Config $options Configuration options for resource autoloader
-     * @return void
-     */
-    public function __construct($options)
-    {
-        if ($options instanceof Zend_Config) {
-            $options = $options->toArray();
-        }
-        if (!is_array($options)) {
-            require_once 'Zend/Loader/Exception.php';
-            throw new Zend_Loader_Exception('Options must be passed to resource loader constructor');
-        }
-
-        $this->setOptions($options);
-
-        $namespace = $this->getNamespace();
-        if ((null === $namespace)
-            || (null === $this->getBasePath())
-        ) {
-            require_once 'Zend/Loader/Exception.php';
-            throw new Zend_Loader_Exception('Resource loader requires both a namespace and a base path for initialization');
-        }
-
-        Zend_Loader_Autoloader::getInstance()->unshiftAutoloader($this, $namespace);
-    }
-
-    /**
-     * Overloading: methods
-     *
-     * Allow retrieving concrete resource object instances using 'get<Resourcename>()' 
-     * syntax. Example:
-     * <code>
-     * $loader = new Zend_Loader_Autoloader_Resource(array(
-     *     'namespace' => 'Stuff_',
-     *     'basePath'  => '/path/to/some/stuff',
-     * ))
-     * $loader->addResourceType('Model', 'models', 'Model');
-     *
-     * $foo = $loader->getModel('Foo'); // get instance of Stuff_Model_Foo class
-     * </code>
-     * 
-     * @param  string $method 
-     * @param  array $args 
-     * @return mixed
-     * @throws Zend_Loader_Exception if method not beginning with 'get' or not matching a valid resource type is called
-     */
-    public function __call($method, $args)
-    {
-        if ('get' == substr($method, 0, 3)) {
-            $type  = strtolower(substr($method, 3));
-            if (!$this->hasResourceType($type)) {
-                require_once 'Zend/Loader/Exception.php';
-                throw new Zend_Loader_Exception("Invalid resource type $type; cannot load resource");
-            }
-            if (empty($args)) {
-                require_once 'Zend/Loader/Exception.php';
-                throw new Zend_Loader_Exception("Cannot load resources; no resource specified");
-            }
-            $resource = array_shift($args);
-            return $this->load($resource, $type);
-        }
-
-        require_once 'Zend/Loader/Exception.php';
-        throw new Zend_Loader_Exception("Method '$method' is not supported");
-    }
-
-    /**
-     * Attempt to autoload a class
-     * 
-     * @param  string $class 
-     * @return mixed False if not matched, otherwise result if include operation
-     */
-    public function autoload($class)
-    {
-        $segments          = explode('_', $class);
-        $namespaceTopLevel = $this->getNamespace();
-        $namespace         = '';
-
-        if (!empty($namespaceTopLevel)) {
-            $namespace = array_shift($segments);
-            if ($namespace != $this->getNamespace()) {
-                // wrong prefix? we're done
-                return false;
-            }
-        }
-
-        if (count($segments) < 2) {
-            // assumes all resources have a component and class name, minimum
-            return false;
-        }
-
-        $final     = array_pop($segments);
-        $component = $namespace;
-        $lastMatch = false;
-        do {
-            $segment    = array_shift($segments);
-            $component .= empty($component) ? $segment : '_' . $segment;
-            if (isset($this->_components[$component])) {
-                $lastMatch = $component;
-            }
-        } while (count($segments));
-
-        if (!$lastMatch) {
-            return false;
-        }
-
-        $final = substr($class, strlen($lastMatch));
-        $path = $this->_components[$lastMatch];
-        return include $path . '/' . str_replace('_', '/', $final) . '.php';
-    }
-
-    /**
-     * Set class state from options
-     * 
-     * @param  array $options 
-     * @return Zend_Loader_Autoloader_Resource
-     */
-    public function setOptions(array $options)
-    {
-        $methods = get_class_methods($this);
-        foreach ($options as $key => $value) {
-            $method = 'set' . ucfirst($key);
-            if (in_array($method, $methods)) {
-                $this->$method($value);
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * Set namespace that this autoloader handles
-     * 
-     * @param  string $namespace 
-     * @return Zend_Loader_Autoloader_Resource
-     */
-    public function setNamespace($namespace)
-    {
-        $this->_namespace = rtrim((string) $namespace, '_');
-        return $this;
-    }
-
-    /**
-     * Get namespace this autoloader handles
-     * 
-     * @return string
-     */
-    public function getNamespace()
-    {
-        return $this->_namespace;
-    }
-
-    /**
-     * Set base path for this set of resources
-     * 
-     * @param  string $path 
-     * @return Zend_Loader_Autoloader_Resource
-     */
-    public function setBasePath($path)
-    {
-        $this->_basePath = (string) $path;
-        return $this;
-    }
-    
-    /**
-     * Get base path to this set of resources
-     * 
-     * @return string
-     */
-    public function getBasePath()
-    {
-        return $this->_basePath;
-    }
-
-    /**
-     * Add resource type
-     * 
-     * @param  string $type identifier for the resource type being loaded
-     * @param  string $path path relative to resource base path containing the resource types
-     * @param  null|string $namespace sub-component namespace to append to base namespace that qualifies this resource type
-     * @return Zend_Loader_Autoloader_Resource
-     */
-    public function addResourceType($type, $path, $namespace = null)
-    {
-        $type = strtolower($type);
-        if (!isset($this->_resourceTypes[$type])) {
-            if (null === $namespace) {
-                require_once 'Zend/Loader/Exception.php';
-                throw new Zend_Loader_Exception('Initial definition of a resource type must include a namespace');
-            }
-            $namespaceTopLevel = $this->getNamespace();
-            $namespace = ucfirst(trim($namespace, '_'));
-            $this->_resourceTypes[$type] = array(
-                'namespace' => empty($namespaceTopLevel) ? $namespace : $namespaceTopLevel . '_' . $namespace,
-            );
-        }
-        if (!is_string($path)) {
-            require_once 'Zend/Loader/Exception.php';
-            throw new Zend_Loader_Exception('Invalid path specification provided; must be string');
-        }
-        $this->_resourceTypes[$type]['path'] = $this->getBasePath() . '/' . $path;
-
-        $component = $this->_resourceTypes[$type]['namespace'];
-        $this->_components[$component] = $this->_resourceTypes[$type]['path'];
-        return $this;
-    }
-
-    /**
-     * Add multiple resources at once
-     *
-     * $types should be an associative array of resource type => specification 
-     * pairs. Each specification should be an associative array containing 
-     * minimally the 'path' key (specifying the path relative to the resource 
-     * base path) and optionally the 'namespace' key (indicating the subcomponent 
-     * namespace to append to the resource namespace).
-     *
-     * As an example:
-     * <code>
-     * $loader->addResourceTypes(array(
-     *     'model' => array(
-     *         'path'      => 'models',
-     *         'namespace' => 'Model',
-     *     ),
-     *     'form' => array(
-     *         'path'      => 'forms',
-     *         'namespace' => 'Form',
-     *     ),
-     * ));
-     * </code>
-     * 
-     * @param  array $types 
-     * @return Zend_Loader_Autoloader_Resource
-     */
-    public function addResourceTypes(array $types)
-    {
-        foreach ($types as $type => $spec) {
-            if (!is_array($spec)) {
-                require_once 'Zend/Loader/Exception.php';
-                throw new Zend_Loader_Exception('addResourceTypes() expects an array of arrays');
-            }
-            if (!isset($spec['path'])) {
-                require_once 'Zend/Loader/Exception.php';
-                throw new Zend_Loader_Exception('addResourceTypes() expects each array to include a paths element');
-            }
-            $paths  = $spec['path'];
-            $namespace = null;
-            if (isset($spec['namespace'])) {
-                $namespace = $spec['namespace'];
-            }
-            $this->addResourceType($type, $paths, $namespace);
-        }
-        return $this;
-    }
-
-    /**
-     * Overwrite existing and set multiple resource types at once
-     * 
-     * @see    Zend_Loader_Autoloader_Resource::addResourceTypes()
-     * @param  array $types 
-     * @return Zend_Loader_Autoloader_Resource
-     */
-    public function setResourceTypes(array $types)
-    {
-        $this->clearResourceTypes();
-        return $this->addResourceTypes($types);
-    }
-
-    /**
-     * Retrieve resource type mappings
-     * 
-     * @return array
-     */
-    public function getResourceTypes()
-    {
-        return $this->_resourceTypes;
-    }
-
-    /**
-     * Is the requested resource type defined?
-     * 
-     * @param  string $type 
-     * @return bool
-     */
-    public function hasResourceType($type)
-    {
-        return isset($this->_resourceTypes[$type]);
-    }
-
-    /**
-     * Remove the requested resource type
-     * 
-     * @param  string $type 
-     * @return Zend_Loader_Autoloader_Resource
-     */
-    public function removeResourceType($type)
-    {
-        if ($this->hasResourceType($type)) {
-            $namespace = $this->_resourceTypes[$type]['namespace'];
-            unset($this->_components[$namespace]);
-            unset($this->_resourceTypes[$type]);
-        }
-        return $this;
-    }
-
-    /**
-     * Clear all resource types
-     * 
-     * @return Zend_Loader_Autoloader_Resource
-     */
-    public function clearResourceTypes()
-    {
-        $this->_resourceTypes = array();
-        $this->_components    = array();
-        return $this;
-    }
-
-    /**
-     * Set default resource type to use when calling load()
-     * 
-     * @param  string $type 
-     * @return Zend_Loader_Autoloader_Resource
-     */
-    public function setDefaultResourceType($type)
-    {
-        if ($this->hasResourceType($type)) {
-            $this->_defaultResourceType = $type;
-        }
-        return $this;
-    }
-
-    /**
-     * Get default resource type to use when calling load()
-     * 
-     * @return string|null
-     */
-    public function getDefaultResourceType()
-    {
-        return $this->_defaultResourceType;
-    }
-
-    /**
-     * Object registry and factory
-     *
-     * Loads the requested resource of type $type (or uses the default resource 
-     * type if none provided). If the resource has been loaded previously, 
-     * returns the previous instance; otherwise, instantiates it.
-     * 
-     * @param  string $resource 
-     * @param  string $type 
-     * @return object
-     * @throws Zend_Loader_Exception if resource type not specified or invalid
-     */
-    public function load($resource, $type = null)
-    {
-        if (null === $type) {
-            $type = $this->getDefaultResourceType();
-            if (empty($type)) {
-                require_once 'Zend/Loader/Exception.php';
-                throw new Zend_Loader_Exception('No resource type specified');
-            }
-        }
-        if (!$this->hasResourceType($type)) {
-            require_once 'Zend/Loader/Exception.php';
-            throw new Zend_Loader_Exception('Invalid resource type specified');
-        }
-        $namespace = $this->_resourceTypes[$type]['namespace'];
-        $class     = $namespace . '_' . ucfirst($resource);
-        if (!isset($this->_resources[$class])) {
-            $this->_resources[$class] = new $class;
-        }
-        return $this->_resources[$class];
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+mRv6rwRz/kIVbHEBn2Zb0QgWJfqz2m==

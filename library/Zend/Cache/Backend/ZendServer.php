@@ -1,208 +1,65 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Cache
- * @subpackage Zend_Cache_Backend
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-
-/** @see Zend_Cache_Backend_Interface */
-require_once 'Zend/Cache/Backend/Interface.php';
-
-/** @see Zend_Cache_Backend */
-require_once 'Zend/Cache/Backend.php';
-
-
-/**
- * @package    Zend_Cache
- * @subpackage Zend_Cache_Backend
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-abstract class Zend_Cache_Backend_ZendServer extends Zend_Cache_Backend implements Zend_Cache_Backend_Interface
-{
-    /**
-     * Available options
-     *
-     * =====> (string) namespace :
-     * Namespace to be used for chaching operations
-     *
-     * @var array available options
-     */
-    protected $_options = array(
-        'namespace' => 'zendframework'
-    );
-
-    /**
-     * Store data
-     *
-     * @var mixed  $data        Object to store
-     * @var string $id          Cache id
-     * @var int    $timeToLive  Time to live in seconds
-     * @throws Zend_Cache_Exception
-     */
-    abstract protected function _store($data, $id, $timeToLive);
-
-    /**
-     * Fetch data
-     *
-     * @var mixed  $data        Object to store
-     * @var string $id          Cache id
-     * @var int    $timeToLive  Time to live in seconds
-     * @throws Zend_Cache_Exception
-     */
-    abstract protected function _fetch($id);
-
-    /**
-     * Unset data
-     *
-     * @var string $id          Cache id
-     */
-    abstract protected function _unset($id);
-
-    /**
-     * Clear cache
-     */
-    abstract protected function _clear();
-
-    /**
-     * Test if a cache is available for the given id and (if yes) return it (false else)
-     *
-     * @param  string  $id                     cache id
-     * @param  boolean $doNotTestCacheValidity if set to true, the cache validity won't be tested
-     * @return string cached datas (or false)
-     */
-    public function load($id, $doNotTestCacheValidity = false)
-    {
-        $tmp = $this->_fetch($id);
-        if ($tmp !== null) {
-            return $tmp;
-        }
-        return false;
-    }
-
-    /**
-     * Test if a cache is available or not (for the given id)
-     *
-     * @param  string $id cache id
-     * @return mixed false (a cache is not available) or "last modified" timestamp (int) of the available cache record
-     * @throws Zend_Cache_Exception
-     */
-    public function test($id)
-    {
-        $tmp = $this->_fetch('internal-metadatas---' . $id);
-        if ($tmp !== null) {
-        	if (!is_array($tmp) || !isset($tmp['mtime'])) {
-        		Zend_Cache::throwException('Cache metadata for \'' . $id . '\' id is corrupted' );
-        	}
-            return $tmp['mtime'];
-        }
-        return false;
-    }
-
-    /**
-     * Compute & return the expire time
-     *
-     * @return int expire time (unix timestamp)
-     */
-    private function _expireTime($lifetime)
-    {
-        if ($lifetime === null) {
-            return 9999999999;
-        }
-        return time() + $lifetime;
-    }
-
-    /**
-     * Save some string datas into a cache record
-     *
-     * Note : $data is always "string" (serialization is done by the
-     * core not by the backend)
-     *
-     * @param string $data datas to cache
-     * @param string $id cache id
-     * @param array $tags array of strings, the cache record will be tagged by each string entry
-     * @param int $specificLifetime if != false, set a specific lifetime for this cache record (null => infinite lifetime)
-     * @return boolean true if no problem
-     */
-    public function save($data, $id, $tags = array(), $specificLifetime = false)
-    {
-        $lifetime = $this->getLifetime($specificLifetime);
-        $metadatas = array(
-            'mtime' => time(),
-            'expire' => $this->_expireTime($lifetime),
-        );
-
-        if (count($tags) > 0) {
-            $this->_log('Zend_Cache_Backend_ZendServer::save() : tags are unsupported by the ZendServer backends');
-        }
-
-        return  $this->_store($data, $id, $lifetime) &&
-                $this->_store($metadatas, 'internal-metadatas---' . $id, $lifetime);
-    }
-
-    /**
-     * Remove a cache record
-     *
-     * @param  string $id cache id
-     * @return boolean true if no problem
-     */
-    public function remove($id)
-    {
-    	$result1 = $this->_unset($id);
-    	$result2 = $this->_unset('internal-metadatas---' . $id);
-
-        return $result1 && $result2;
-    }
-
-    /**
-     * Clean some cache records
-     *
-     * Available modes are :
-     * 'all' (default)  => remove all cache entries ($tags is not used)
-     * 'old'            => unsupported
-     * 'matchingTag'    => unsupported
-     * 'notMatchingTag' => unsupported
-     * 'matchingAnyTag' => unsupported
-     *
-     * @param  string $mode clean mode
-     * @param  array  $tags array of tags
-     * @throws Zend_Cache_Exception
-     * @return boolean true if no problem
-     */
-    public function clean($mode = Zend_Cache::CLEANING_MODE_ALL, $tags = array())
-    {
-        switch ($mode) {
-            case Zend_Cache::CLEANING_MODE_ALL:
-            	$this->_clear();
-                return true;
-                break;
-            case Zend_Cache::CLEANING_MODE_OLD:
-                $this->_log("Zend_Cache_Backend_ZendServer::clean() : CLEANING_MODE_OLD is unsupported by the Zend Server backends.");
-                break;
-            case Zend_Cache::CLEANING_MODE_MATCHING_TAG:
-            case Zend_Cache::CLEANING_MODE_NOT_MATCHING_TAG:
-            case Zend_Cache::CLEANING_MODE_MATCHING_ANY_TAG:
-            	$this->_clear();
-                $this->_log('Zend_Cache_Backend_ZendServer::clean() : tags are unsupported by the Zend Server backends.');
-                break;
-            default:
-                Zend_Cache::throwException('Invalid mode for clean() method');
-                break;
-        }
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

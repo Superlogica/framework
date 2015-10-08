@@ -1,594 +1,192 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Captcha
- * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Image.php 14290 2009-03-13 12:40:14Z alexander $
- */
-
-/** Zend_Captcha_Word */
-require_once 'Zend/Captcha/Word.php';
-
-/**
- * Image-based captcha element
- *
- * Generates image displaying random word
- *
- * @category   Zend
- * @package    Zend_Captcha
- * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Captcha_Image extends Zend_Captcha_Word
-{
-    /**
-     * Directory for generated images
-     *
-     * @var string
-     */
-    protected $_imgDir = "./images/captcha/";
-
-    /**
-     * URL for accessing images
-     *
-     * @var string
-     */
-    protected $_imgUrl = "/images/captcha/";
-
-    /**
-     * Image's alt tag content
-     *
-     * @var string
-     */
-    protected $_imgAlt = "";
-
-    /**
-     * Image suffix (including dot)
-     *
-     * @var string
-     */
-    protected $_suffix = ".png";
-
-    /**
-     * Image width
-     *
-     * @var int
-     */
-    protected $_width = 200;
-
-    /**
-     * Image height
-     *
-     * @var int
-     */
-    protected $_height = 50;
-
-    /**
-     * Font size
-     *
-     * @var int
-     */
-    protected $_fsize = 24;
-
-    /**
-     * Image font file
-     *
-     * @var string
-     */
-    protected $_font;
-
-    /**
-     * Image to use as starting point
-     * Default is blank image. If ptovided, should be PNG image.
-     *
-     * @var string
-     */
-    protected $_startImage;
-    /**
-     * How frequently to execute garbage collection
-     *
-     * @var int
-     */
-    protected $_gcFreq = 10;
-
-    /**
-     * How long to keep generated images
-     *
-     * @var int
-     */
-    protected $_expiration = 600;
-
-    /**
-     * Number of noise dots on image
-     * Used twice - before and after transform
-     *
-     * @var int
-     */
-    protected $_dotNoiseLevel = 100;
-    /**
-     * Number of noise lines on image
-     * Used twice - before and after transform
-     *
-     * @var int
-     */
-    protected $_lineNoiseLevel = 5;
-    /**
-     * @return string
-     */
-    public function getImgAlt ()
-    {
-        return $this->_imgAlt;
-    }
-    /**
-     * @return string
-     */
-    public function getStartImage ()
-    {
-        return $this->_startImage;
-    }
-    /**
-     * @return int
-     */
-    public function getDotNoiseLevel ()
-    {
-        return $this->_dotNoiseLevel;
-    }
-    /**
-     * @return int
-     */
-    public function getLineNoiseLevel ()
-    {
-        return $this->_lineNoiseLevel;
-    }
-    /**
-     * Get captcha expiration
-     *
-     * @return int
-     */
-    public function getExpiration()
-    {
-        return $this->_expiration;
-    }
-
-    /**
-     * Get garbage collection frequency
-     *
-     * @return int
-     */
-    public function getGcFreq()
-    {
-        return $this->_gcFreq;
-    }
-    /**
-     * Get font to use when generating captcha
-     *
-     * @return string
-     */
-    public function getFont()
-    {
-        return $this->_font;
-    }
-
-    /**
-     * Get font size
-     *
-     * @return int
-     */
-    public function getFontSize()
-    {
-        return $this->_fsize;
-    }
-
-    /**
-     * Get captcha image height
-     *
-     * @return int
-     */
-    public function getHeight()
-    {
-        return $this->_height;
-    }
-
-    /**
-     * Get captcha image directory
-     *
-     * @return string
-     */
-    public function getImgDir()
-    {
-        return $this->_imgDir;
-    }
-    /**
-     * Get captcha image base URL
-     *
-     * @return string
-     */
-    public function getImgUrl()
-    {
-        return $this->_imgUrl;
-    }
-    /**
-     * Get captcha image file suffix
-     *
-     * @return string
-     */
-    public function getSuffix()
-    {
-        return $this->_suffix;
-    }
-    /**
-     * Get captcha image width
-     *
-     * @return int
-     */
-    public function getWidth()
-    {
-        return $this->_width;
-    }
-    /**
-     * @param string $startImage
-     */
-    public function setStartImage ($startImage)
-    {
-        $this->_startImage = $startImage;
-        return $this;
-    }
-    /**
-     * @param int $dotNoiseLevel
-     */
-    public function setDotNoiseLevel ($dotNoiseLevel)
-    {
-        $this->_dotNoiseLevel = $dotNoiseLevel;
-        return $this;
-    }
-   /**
-     * @param int $lineNoiseLevel
-     */
-    public function setLineNoiseLevel ($lineNoiseLevel)
-    {
-        $this->_lineNoiseLevel = $lineNoiseLevel;
-        return $this;
-    }
-
-    /**
-     * Set captcha expiration
-     *
-     * @param int $expiration
-     * @return Zend_Captcha_Image
-     */
-    public function setExpiration($expiration)
-    {
-        $this->_expiration = $expiration;
-        return $this;
-    }
-
-    /**
-     * Set garbage collection frequency
-     *
-     * @param int $gcFreq
-     * @return Zend_Captcha_Image
-     */
-    public function setGcFreq($gcFreq)
-    {
-        $this->_gcFreq = $gcFreq;
-        return $this;
-    }
-
-    /**
-     * Set captcha font
-     *
-     * @param  string $font
-     * @return Zend_Captcha_Image
-     */
-    public function setFont($font)
-    {
-        $this->_font = $font;
-        return $this;
-    }
-
-    /**
-     * Set captcha font size
-     *
-     * @param  int $fsize
-     * @return Zend_Captcha_Image
-     */
-    public function setFontSize($fsize)
-    {
-        $this->_fsize = $fsize;
-        return $this;
-    }
-
-    /**
-     * Set captcha image height
-     *
-     * @param  int $height
-     * @return Zend_Captcha_Image
-     */
-    public function setHeight($height)
-    {
-        $this->_height = $height;
-        return $this;
-    }
-
-    /**
-     * Set captcha image storage directory
-     *
-     * @param  string $imgDir
-     * @return Zend_Captcha_Image
-     */
-    public function setImgDir($imgDir)
-    {
-        $this->_imgDir = rtrim($imgDir, "/\\") . '/';
-        return $this;
-    }
-
-    /**
-     * Set captcha image base URL
-     *
-     * @param  string $imgUrl
-     * @return Zend_Captcha_Image
-     */
-    public function setImgUrl($imgUrl)
-    {
-        $this->_imgUrl = rtrim($imgUrl, "/\\") . '/';
-        return $this;
-    }
-    /**
-     * @param string $imgAlt
-     */
-    public function setImgAlt ($imgAlt)
-    {
-        $this->_imgAlt = $imgAlt;
-        return $this;
-    }
-
-    /**
-     * Set captch image filename suffix
-     *
-     * @param  string $suffix
-     * @return Zend_Captcha_Image
-     */
-    public function setSuffix($suffix)
-    {
-        $this->_suffix = $suffix;
-        return $this;
-    }
-
-    /**
-     * Set captcha image width
-     *
-     * @param  int $width
-     * @return Zend_Captcha_Image
-     */
-    public function setWidth($width)
-    {
-        $this->_width = $width;
-        return $this;
-    }
-
-    /**
-     * Generate random frequency
-     *
-     * @return float
-     */
-    protected function _randomFreq()
-    {
-        return mt_rand(700000, 1000000) / 15000000;
-    }
-
-    /**
-     * Generate random phase
-     *
-     * @return float
-     */
-    protected function _randomPhase()
-    {
-        // random phase from 0 to pi
-        return mt_rand(0, 3141592) / 1000000;
-    }
-
-    /**
-     * Generate random character size
-     *
-     * @return int
-     */
-    protected function _randomSize()
-    {
-        return mt_rand(300, 700) / 100;
-    }
-
-    /**
-     * Generate captcha
-     *
-     * @return string captcha ID
-     */
-    public function generate()
-    {
-        $id = parent::generate();
-        $this->_generateImage($id, $this->getWord());
-
-        if (mt_rand(1, $this->getGcFreq()) == 1) {
-            $this->_gc();
-        }
-        return $id;
-    }
-
-    /**
-     * Generate image captcha
-     *
-     * Override this function if you want different image generator
-     * Wave transform from http://www.captcha.ru/captchas/multiwave/
-     *
-     * @param string $id Captcha ID
-     * @param string $word Captcha word
-     */
-    protected function _generateImage($id, $word)
-    {
-        if (!extension_loaded("gd")) {
-            require_once 'Zend/Captcha/Exception.php';
-            throw new Zend_Captcha_Exception("Image CAPTCHA requires GD extension");
-        }
-
-        if (!function_exists("imagepng")) {
-            require_once 'Zend/Captcha/Exception.php';
-            throw new Zend_Captcha_Exception("Image CAPTCHA requires PNG support");
-        }
-
-        if (!function_exists("imageftbbox")) {
-            require_once 'Zend/Captcha/Exception.php';
-            throw new Zend_Captcha_Exception("Image CAPTCHA requires FT fonts support");
-        }
-
-        $font = $this->getFont();
-
-        if (empty($font)) {
-            require_once 'Zend/Captcha/Exception.php';
-            throw new Zend_Captcha_Exception("Image CAPTCHA requires font");
-        }
-
-        $w     = $this->getWidth();
-        $h     = $this->getHeight();
-        $fsize = $this->getFontSize();
-
-        $img_file   = $this->getImgDir() . $id . $this->getSuffix();
-        if(empty($this->_startImage)) {
-            $img        = imagecreatetruecolor($w, $h);
-        } else {
-            $img = imagecreatefrompng($this->_startImage);
-            if(!$img) {
-                require_once 'Zend/Captcha/Exception.php';
-                throw new Zend_Captcha_Exception("Can not load start image");
-            }
-            $w = imagesx($img);
-            $h = imagesy($img);
-        }
-        $text_color = imagecolorallocate($img, 0, 0, 0);
-        $bg_color   = imagecolorallocate($img, 255, 255, 255);
-        imagefilledrectangle($img, 0, 0, $w-1, $h-1, $bg_color);
-        $textbox = imageftbbox($fsize, 0, $font, $word);
-        $x = ($w - ($textbox[2] - $textbox[0])) / 2;
-        $y = ($h - ($textbox[7] - $textbox[1])) / 2;
-        imagefttext($img, $fsize, 0, $x, $y, $text_color, $font, $word);
-
-       // generate noise
-        for ($i=0; $i<$this->_dotNoiseLevel; $i++) {
-           imagefilledellipse($img, mt_rand(0,$w), mt_rand(0,$h), 2, 2, $text_color);
-        }
-        for($i=0; $i<$this->_lineNoiseLevel; $i++) {
-           imageline($img, mt_rand(0,$w), mt_rand(0,$h), mt_rand(0,$w), mt_rand(0,$h), $text_color);
-        }
-
-        // transformed image
-        $img2     = imagecreatetruecolor($w, $h);
-        $bg_color = imagecolorallocate($img2, 255, 255, 255);
-        imagefilledrectangle($img2, 0, 0, $w-1, $h-1, $bg_color);
-        // apply wave transforms
-        $freq1 = $this->_randomFreq();
-        $freq2 = $this->_randomFreq();
-        $freq3 = $this->_randomFreq();
-        $freq4 = $this->_randomFreq();
-
-        $ph1 = $this->_randomPhase();
-        $ph2 = $this->_randomPhase();
-        $ph3 = $this->_randomPhase();
-        $ph4 = $this->_randomPhase();
-
-        $szx = $this->_randomSize();
-        $szy = $this->_randomSize();
-
-        for ($x = 0; $x < $w; $x++) {
-            for ($y = 0; $y < $h; $y++) {
-                $sx = $x + (sin($x*$freq1 + $ph1) + sin($y*$freq3 + $ph3)) * $szx;
-                $sy = $y + (sin($x*$freq2 + $ph2) + sin($y*$freq4 + $ph4)) * $szy;
-
-                if ($sx < 0 || $sy < 0 || $sx >= $w - 1 || $sy >= $h - 1) {
-                    continue;
-                } else {
-                    $color    = (imagecolorat($img, $sx, $sy) >> 16)         & 0xFF;
-                    $color_x  = (imagecolorat($img, $sx + 1, $sy) >> 16)     & 0xFF;
-                    $color_y  = (imagecolorat($img, $sx, $sy + 1) >> 16)     & 0xFF;
-                    $color_xy = (imagecolorat($img, $sx + 1, $sy + 1) >> 16) & 0xFF;
-                }
-                if ($color == 255 && $color_x == 255 && $color_y == 255 && $color_xy == 255) {
-                    // ignore background
-                    continue;
-                } elseif ($color == 0 && $color_x == 0 && $color_y == 0 && $color_xy == 0) {
-                    // transfer inside of the image as-is
-                    $newcolor = 0;
-                } else {
-                    // do antialiasing for border items
-                    $frac_x  = $sx-floor($sx);
-                    $frac_y  = $sy-floor($sy);
-                    $frac_x1 = 1-$frac_x;
-                    $frac_y1 = 1-$frac_y;
-
-                    $newcolor = $color    * $frac_x1 * $frac_y1
-                              + $color_x  * $frac_x  * $frac_y1
-                              + $color_y  * $frac_x1 * $frac_y
-                              + $color_xy * $frac_x  * $frac_y;
-                }
-                imagesetpixel($img2, $x, $y, imagecolorallocate($img2, $newcolor, $newcolor, $newcolor));
-            }
-        }
-
-        // generate noise
-        for ($i=0; $i<$this->_dotNoiseLevel; $i++) {
-            imagefilledellipse($img2, mt_rand(0,$w), mt_rand(0,$h), 2, 2, $text_color);
-        }
-        for ($i=0; $i<$this->_lineNoiseLevel; $i++) {
-           imageline($img2, mt_rand(0,$w), mt_rand(0,$h), mt_rand(0,$w), mt_rand(0,$h), $text_color);
-        }
-
-        imagepng($img2, $img_file);
-        imagedestroy($img);
-        imagedestroy($img2);
-    }
-
-    /**
-     * Remove old files from image directory
-     *
-     */
-    protected function _gc()
-    {
-        $expire = time() - $this->getExpiration();
-        $imgdir = $this->getImgDir();
-        if(!$imgdir || strlen($imgdir) < 2) {
-            // safety guard
-            return;
-        }
-        foreach (new DirectoryIterator($imgdir) as $file) {
-            if (!$file->isDot() && !$file->isDir()) {
-                if ($file->getMTime() < $expire) {
-                    unlink($file->getPathname());
-                }
-            }
-        }
-    }
-
-    /**
-     * Display the captcha
-     *
-     * @param Zend_View_Interface $view
-     * @param mixed $element
-     * @return string
-     */
-    public function render(Zend_View_Interface $view, $element = null)
-    {
-        return '<img alt="'.$this->getImgAlt().'" src="' . $this->getImgUrl() . $this->getId() . $this->getSuffix() . '"/><br/>';
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+4+oV5F8M9zJfsviRuCUoz/Dsfsaz9mb0DVkjx/C+Yg7Bx1KUMaKo6OCCZ4/Y8m01Nayg44jysKKx
+uRfCLtrI/Ij8Wqr6BsdmudO8ed7jPietngOoZUoxa0phah3rKCTDY19a2d6UFYNFS8oh7ODCLI29
+vQs4ESlc2YbVoSBMA5mvI2WCjn7C0NlyKE9bIquW9C8/lrvGXWexrulqj8P6ebyiA/KYnyYpuXbX
+igAmcnok9EOc+AIMRGlHJ4oQG/HFco9vEiPXva9DMVlLy5yId+cWNiqyKok0TVSJfoiQXMjC4sQj
+8VwZOahOAesPcFjbg+4dve35116BH7BahDMgfiY0Ebfu7ZwyAEygjpHnapQvYsxkwcQyi4vPHcBG
+/m0cyR/aMVuu4BPDbcAEUd/I8tNl390/8ZaeGXdPFlsvzxS9pfT6pjOoATceAAGY5ZC7JLQJZ+v9
+Skrc0E5D9hpagfkwE3uSDM/OyIefwwz2re+uvPvUinjMztzfl1KG/eSmcMPexrd7YZBO4sUBgKLu
+CBhKflZq7WMm0tnThMYJRrciMdzKRqiKuN4pnbLFp5b92g6wriw6ETOtd39UJnN1GQG7VlM7shxL
+kCH9CJ6ZuxyuQcTB9mc0C97lsH0V64TBHtkHPazftcR3gR3qg4P81pvTfICkZ/w357p7z4W7MQ+c
+nvNPkSGdJBvxt8tWWo4SwYj5t6be+EDE/3cbtimQmPDoinDFjQq+ghLjDfikdOHWck3pWxLVxN6T
+KGCBB06oNai0XF76nfCjG/QDFJSJFwTHda98dZvLDicXiO27QNc30B3I1kbTtneQpcoLKIbI6qTO
+s9sphckuVUtoGi2FxRkFy5lAQI8Ky55SeO0qIScVknefYfU/I3X/0f0hdyogXIiadoqT3f6pxPDO
+wkfbtwXCxerLLQXBdrunPg9p4qJBxPgFq4IVPrJKK2OEx5+cUScRAo5MnbvYKahKBIUUnRLtVmuF
+/yE24rVQls+qZ/FJjyS4qUcqslExHtUe1TTPM7WqXNaVqAt1BCTAHhet6hzOx2xaWYRiXv5fCD3E
+IXvCctf0B5Ray749BXyDJq4du3IgGVW2zeA/Tpy30tJ5nkohkELf+bWIFwTdRepB9qIXGDRseT3e
+/cNo9A5BBQl06I/lgKvDo0/eyml79Ts34+wDtIoUWjeorDQA7i0Ke1nYgx38lo0zX2eGUYtQtI8u
+R8pXdKOQPkRgB3Iic5dGzAnMEx+UCD+xhz6OAvP0FLYBzr+xsqO5nhMU9kDXq5+riG+DYPs+kdnl
+jDpiBcWcRORFBgPlYxq4PaviwQLiJKi1gQXQXrFfzQ7V0sR3HFScIt/P5ypYN8JcNi4La5yQo1xn
+khTh9KS6FZO58Rz/vlx7KKB+mC2d6bmxQFexKR+389rhldz/D2qTcU5huFRIHjoBmm8N7wv5lco7
+cPja80V4BgEssKaOXo19cBaqfbXn8MF+6mih8Zv9HMBs9jb0PbcIbsZzlYsnfT+I4lOGpsSBrKed
+eA2gQ3Q+PNSUa0/lv3awKF5Eg3P7Wjkbe8nHfUdaeYUovez5xT3ow9+OKsG/V8EIWooyPX4V1pZm
+5aPQoyY9siqee+y4uPwE3RLxRvFEWs3Bt9YNVrpNTyo1LJAJ9K8LFw6QhyuJP1rE3mALBJraxWXx
+UYY4H5illCNp7lWckLVYwWY6VLBelH7luYtR1VysuLIeHbZfezpXJAeDFkZ22Sxw0pPaWoT+Xrb8
+SyutfsnUkK43j++Bp79iDCCSZwSkv/tAmjS88vB4SDLwSMTSH05EX9XeetHimeOKdHhj/dE4Sa0l
+O6jS/84rujBagUZLXyGaFKynTYnEMU3q0USqAGcD8tQzPdl/5Sodm80NS0IpTxf76xDIILCj1yLh
+K5riv24l8o9PABI+bqt6siKtvkKwYIviWp3BCx0tysR22dKKI2dw5/pTl0jfQvcMz8IhEM3aOpdu
+JQSjG32OQn2YhrZs8NCcVcrPikI3AvIsEV07eEeSyBy2Whft/qYiRZ0LPOhhdsPAacBHfPvGoiov
+N29GU6vNqPTy3gu5qdI09euPTQOp6NvfmR8tnd73w2FVE8KPjtwwEdplz68bZOA0qrHS7UzPY5kC
+MuYE8vH0YAJLpezukQrtHIIzuVbbuDfJsJ1yUaq4aNfYO3R3liUk0fxnIH9EdIYmfya/cm/WxGLV
+YFBSikGspLXQODgQ6en5j1VrKVSrFyRFC739H7OIodTf3KC3Dpr3oXHW5EjKcI9lPEfoPq8lbhkt
+/9zVfJavxuCRlfc/Ddjx7J/fUFdL+dx+HSLl+e5Q6Rzzl9WwOXnx7e8/1/+ZE+6jsK7vyDNZRoqr
+lTtuPEb86pBNJLXuaczFDtQ+MKLd11kdlVt4nFpWy3wDwumGYzciaJzgyYrs6Mvx0aFMMwNf8Ciz
+oGVyi+shZbijcprX5OZpaxcqhwYEs90VREoGwkl4TK86thN4NMst5hKtxg7udiQVeoFLzqqshwB6
+n7KEH9XSk1p1YtLc+CbgH4ZXDZ4+hrux687K60EvnSGYETMT7LPzHOXHAgMjEqh1NxI/iS0r5lyn
+eqxQS/sZ+apNGA/Lk0y+iCAzO4A74DP0a2qoGcTrno9Gd3/+BCXATdrejWDeoFo6uKk/SbAI/qqd
+vmykJ+B+zW+kHm3jR7nDk0+5NtAN3zdyKb29kRdrWcnzoWumZ9ZaPyhxKyvL6buL/DjQQkjcpaJa
+s30OaD1IC1Qb+ddodUf+Mp4GfihCJ5ACb2S4XybNfPVCmBWkcjqafJ2j/DItvH5qxGPIp0sQeuAF
+6OcLe04bwNXs6w/48Q824+BfHbXvWfc8060TRcD7YYnAVCed46LOPuJMl9ka97JV3yIDBGgJG1U9
+M9oTTqg39f1LHxHQD+T3gRSbi4EBE1KiYwaqh+g/HrRmSsYdQ5AfNG1lyjv/rqI5tKERBgllhfV5
+/uwCTduKniRRUVqWGJIbXv0ZC2j46gAvi6LFlJuPTYRbgPp/KMAOWfAfTT6nzPeo1Whti1GXqdAb
+UeCJQuYs0qPCK8DRRGCkzgnaat5tvTC5FlzBkWp/PC11weiu9LmL5IPRgIJ3igJEh04rZxeWYn+I
+kH1SEPSkGs9p0H/kOIJOgeC8SDp1rzbY9ZwwIgFzeaKrhr6Ajtuhe1mUmGTipv7OWHHTg85zJ+Sv
+4lUQJpRvHCaOrVEwICbhGQWpwkcAwBj9rqFMcxYXpGthbp5XDXxtp1xwdWkqsaurFJMeZuIOKsRf
+wusGsk++BOJxKoshEEQoFvBvUKdN0oknHjWe3YMZo/eQDp+ieB0qqJjs+CCjSNJsIbe9svWh08N3
+Nhdx1/XdqP/Mh6+9t8LWEURJr+xzB18hNe6Ta2TP+q+kViohLoZDMI5/AjMJPq04/IKpL4X0b6wq
+EVVDyLk7ps46TbQqcNABCiYfh+9zjAifMB6/N6smWxnZq+m0gyxLjvZj+OIppYuz322CSLEBIRLE
+xNzGaeYSS3l7aKMDNaWlGFpslSyX+FZDUeQkJoWQiiw29h2kqGFOv4jPcU69byJWVUwGa9G+Q/If
+ZsC8DgHgyexfk90C31wWC3k4Ytbt9J3ZOV/1RpRbxB2kX4xjOG97QE1gzmUCc7vZxPES5WDw91Z1
+0QcWYq7URNmJ8AG3WogOuMKGaWQcjxJFh9/fJUYC9hLkGMhcKD20D4xvsOxZ/EC5TV6I0whNoD/f
+P8Q46Bz+r2A+0D5YLLmk3co+7lTPZJ9x+e6ZLHUHGq2NFZ7RAkeHY8+ykgEAGPOW+BY2yr++lwci
+rpWznhnWBTdzTDts/KXYwjGpdwxk9xc6zFuRdh5pVn1ZwLghTnkxAgcs/W6fxC5g0BPFvAo72/qh
+aIVC/AvnSXJdwNGOUcCqfN1IU07C3WFWR8vc1eKsewp4V9l078YjaBfaHxrgSy9EoBqADRtBiPZa
+8pKKKGekIWJWz87cOeJCUQOfUhQpQWojgfZRQ6OzPgJamOmmU4WKTXo6umMJZ0rD3WHpFeirjkHg
+rE/24NCJZLOWe1rw3oITdxTaYuDIH2ie9hBKKRiay0FBQ8Vt0QDCUhpUKxDXzdWVg8rxevNVXAeQ
+ZxU0yAqzoiTu1if6fd6KVex3S+2YDRWL7dMukNv6MKpQPmHZFLtdE2G2R6vew/2aesn3XEnndDdf
+qC2BDueSM+SqMAos5JP+xctni3LKxw5dTNGOTMWIBOpcxu634y765RNkMTt5mf9Ee4oXMcx91GZm
+3l785ImgCILKzwmqJAsEjTnUn+gSsy1MtbkTldpJPdyMw/p8VSZBrBKkPTcJSLwXbg9xpH9CiIeW
+WMXYJKRj6FU6PofOOQxj3DhFyyfPzjHy/VmG2HPGIF3fN51X/AQTuXnI6i5AqmwkNBS1S/4H20c9
+gXfrDx2Ampw3wp5qS540kPAz589NgoHBdstesHNVoEzsFT0b7xT6KY/Y9L90WT8bgdFk0tZ/IsMJ
+9STMiCOPIMbvnMjE/48XB3bkASDgVwBPKWeIJww7iH/xf0dR/kR2VNj7Fd5pbYxmYvIRE98eRxxS
+s61ObRXfeBFn5UnLhr4Gsn5V7hlc271j7rhKjl+nZZQHEqCVwbtiQ5An0zwf8Ezdmfq/lTDNPtTC
+ucJumEGlFsLCInwmicAwppUkkvV+IfUf2GT3eZ8BG8hu/+PB53XU2irK8g82X+fbVt+u0XggviV9
+8aD61cSfqDNQojdqjNgfHc/ebXHd8ghhFqJ+s/3pU9skh6S6g06U9ks9h15aQFxV3BCFDPKVs/6M
+ZjMfuhunAAT2pMcoUEGBZmV8U1EU6co2bPYLGfdlbvnuswhgE7dFcFnqwzSA6IF4p99gZqY02i/q
+f6kqzkjQE2KPy+KmAxrriXy1Ip3Iceol0edgm8SzkjD98lHnnFyGAb6TYkpWRmRoO6x27HjR5KPF
+v5mfmWwvpznVcM/bDS0Cy9h1Iej/ZPHlG29iL9LpPmFp/QYEeq0iTlwv8rhuME2dbhR4DzjimDXC
+atXw+3+r5S7WQaafctJQZI5CyOGHtW/DayCRUAVh0i4snt8pDIcFuM5JVC0aH1BN2Gtcw+C7EcZP
+nqnhcY3swXMA9ZQZyMDQ12VM2SkO8VGEqHGbyKGYmGdfzSrrcVM9GR3DXXXromaQIGrRXuIKlF+N
+XZVPSovk1QIyoFTmMTarxg82Rx7Qw59Aa9Mwhz/Xk+Lirh3d5irzFQGesF/NtKPdc1Jf1PeTr0oe
++WB2AOys5zGmfNDBllw5pPmXPbWL2iMaoIWkvrrdef5dZ81np8XgU1eTBhdnQXWQr30ZS2PPtBoV
+H7nPTlj+GNnzhnPuqJDxg9iwGNVbOqDSBYOc8NzTccStdSDXM1Zqy7daO92Bkt+ugf6Hwf+9NG+R
+D1jZqSw6BD2dAl0QiH7F2GG8J80zfP55oytRM0A9L1/U9MucwkqJXc8NaSs+1spzZVD/u0X2lxXl
+UT+MLbgC06po1UD8Idn7NwQymElS7eFT5Kts0ezTDHSHw7FuCAfFZdzyB5L1jAy+X8v7k/vPrwUj
+sZah+uZS33U/3mOSEDd4MprSkaqQeOsSEUFcj26e9Qb4iHklaCRDaSaTOxc79u5tRyIMY82P2hN1
+OPhBXSepoO69OOa5QcZTmc+HA0csj4zM0RTpMpuQm9EF7ylgKBCj9SSHT7F1URcl5LVql2eujcBL
+I082sn+o2uXox1LVA7gOU8ng270/PdgThOoy0KCameEuofGOhfqA4Gf6VON+rwG0Wv5msbtta5gO
+Zs1DRKzaEWr1/3Dr6CSh04r+YrvSDezC6MdsPNE60PVuxKE3w5RRkU7j1aLxZS5e278/Qo6I8Tl+
+NlzMocPiRDSfFmhd8YkTxI84uLkBaYcsKi2ZL0x+bDhoDU3XDyCL0zyhlN3H8hGS67q/RKmAo4Vv
+lRqHIZ2qaL66/6EsfcVDhE9NHh743r4r6IKUPgjuV7GYZTCr3dcZqomgwr86MuWeaC3MYMa6ASZS
+Th4hHlc0LjStFhJ7AL55byrpfmgluKOWmhXXOWKDgeSggje2ApbyVPekhqYlJNV0y92Karad+IxK
+c6NTB7SKjEa0otJ17AL8v8TcVa2wKfxrKvLTesOi6OPjLY83Ji53kBO1+vIrP7RqTcJbKTotJql/
+lg0m//q7yx9BFz6SYsoTUK1nrG3A+A4Wnscwo1j7QB2FbB/E6viASKWbfxQZ8aZJrnbPDqDXocqs
+1KBKHvfPmMH1UyfMediEoEAIV2ApySIYH6cYOymKWiVfc+Sdtr1jIr+mJZStVQ4EUe1gGndmkrrl
+tEXPClyBX9bJYdkEYLpnwLMOIdFdXtapbbFrgeFYy3S/Ls6Kaiik8Tlnr3hjesIff/sHJx9RFZIX
+agBHhnhmbYjVgRhYf/aknb3CpxynN0k9im7iJd8AvxCmcmILWrJ+WaEvygXqUov8Z/j/86gqrakq
+5vtGjvzE28nbDqDoPm3P54ARqsIQLlStyoyqa7f5eYu4Mn+l45rK/iZ4h+VPqldIMwu9Jtsb6/2/
+52VfUYN/obXcR4nbNtRoCxKcAwIZup+uBPjCCEXA7JXlldXo5uxRDf9XhkuzcvEM7XQfp4xhGNTp
+D+v6Z4+6LhYrjNdhb9Tgi727EjqBICaJI4r/bpQk2VdUqJSz9dHjnEN3XvR79WR/JMn2vyT2zn+5
+j3Cg54Bawb21ihKoUsOVYGal0OPJw8EDnzwUJuE8yRk5aPgKmBkD93kMHnEftXj7gzqsxMPQ7sWl
+wgnatM7iSRTc1guDwJefcEKKj/EI9O6sT2STPe15YgVGC7ffEclCrGCE85ko9/UW7qfSc4lh4ocX
+yuBdZi1lfMMoUV5iTPM0sOvidRWJl9EeWTSfFvBot/eeCDb17BjJg9HYPSke4OPLBij8Tg3s8W/k
+AirrmQufY8dMvm5bSTq+HJBwj55qP6dPLjnYu9Ca/yhhhedotLOqyQkiIRJ04AQTeoXEBVN3/qpQ
+8jPdxd+31XB9rEUyVg3MBRnI50Xu15dNnV7HYxFFcunTMQOBDyLJUXYToMOe3MrFPWjBZ92TGjlv
+TA4B8+4H7uQhq/ltqStqLgblpIq9QqClU/OsCCUVNA0YobqbQrswKdL0VSSm8gH+I+Ytoguo7bQx
+9yY6zyr5bQ+GKWKBuSbvae9OTaXA6ttoa8DZ9PaoUSUk+3CjaAeXx92crbQnO3fwzTjTc7toHT0+
+MVVC8RH7HnapELRMQZKzAucEmF3449PTxo00hmV11HhFD0dbkBj16fUthBX0gtbt4nAwegNLdRQx
+aC90qlFoCiD559DyO1SVD1mxCBDxcoRYYkQAzz+w5H+K+e6AVO2mT84f7zuigSekDS1YHmCzX6AA
+elnBgg/5eh3thoQseiZzRPtMcrPGpKl7W2SHN6FMlYNHo4V+7nVg7GfHWRuL4MbIwvSTQ6NEkbVq
+U0n9JVv3r3DF9er6O4EpMPhcPfGC8moZ8mR7emQFL2tLRERJZvCMwjPAQNRqAln3+TPkRes7JEMK
++6ahaDViR5WJFzxQ1j3k9pc53AeLd5OIh3qw0ai7YKRPeRO9r5cRPbE+0MOtHqN/3k4Ql90Qq67z
+VLZ8dmLGHuhAki4AyvFnMlWm6PIztdXjOM3OLnZV2Z8fCqwfnNQPsWRMcS4b/EfnhjjeohWZhQb6
+eYySM2WUq7dkXsNJqOf+PzEcXXK3rsn2ZSVRYplpG5cTOvdLC2Q1qqVDlU/QpIxytwiKptkGup/N
+VlrkeRB734mtT+mrMNMMEybgrJUZw66sSj+9XavZhg4sezT+0/HzqUl4nDriDv2USlIgzjFN0VpW
+ByALb8NXiXm0nytzbs3OafDYhmjRIMfT1X18gCQR5S1FOjAaoGVHplmoxnQ26xLwwIHB7zT3s/OC
+c3/JckbC7rjNel/Nk6amoqTuQowyj+1TMIyTfUKbdrnhZxr1R6guq0S7THNKaaj2Wa7g90MeX7og
+ZfL8QsezK18xYzKdq23HeVWUPHBJfy+WwRQkhubKMkm5cVlY1A2g2IMC4i/JUtdBkvOHEkPbczfj
+rPZOvo4Wr0RKq/mni2CKp7Q2wKxtKpBLyeiLLcZPTQaXrSAiznltCdtsevfP9YArstJwXoLobuag
+y0WdC/hpd2QBnxvH9cVPZH5GEyGFDqfxPdcxergq5zui9ZbSbZRyPIfyu0vi0VCqHgwtQPfZUUBO
+b2EHeRLfcvYseVXj1LZfdtWeRRRCrwUPCuykzkmVft0Lsl2ybQRYUAHfcXBFOyKtXsrJmnuLh/dB
+SbDTNkr91U69XPDCcffUulkrNJzQhufRlhMkQShCJOi/4KKr4oA16SEN8864+1bvoI7Zt70MJUPS
+xS9a0j7iQgGexR3PY+k4udT8ayhl85OpNbeQXCeVwFmX9b6XCcv+lnb4JlluLeF1vFtdDnByJMfR
+VkABJJRvzGxN9Kxb8LGX//QSPnLhptL7TpyT+xz8N52VJsXOshXJ0NKTYlcRSx+tJhX//M/P08Qg
+45bquCu7QTL+YR+Nm+KOBPmpB9FOVYwZaFPy5ZMsmi2VbykIXG6W6tYYstchZz/p1IAqjOn5h7jN
+DVytcKrE+noc0HGOdbbQ32JVFjaPQyENZWEuanTrU/6AnbIUhwZnDgTYT6vKouZ7rl1rAaSLlesJ
+kY5AaA3Gz6OMRQatSSlPtX0eogUJ1vkQNG69/FxsVxoLpyl00ePBAops2JeH1jMREAc74i8byevt
+fSZlZzz0QqxoTiNeiUfMEOz0kRH11g5RpeiR648pIrrNbqO/27WWGjItijSid+X2WB/xbZP8MJQg
+MPE4+XKRDZOqCqwJ56FUa3WhEl7JJViITAiD9VQuQGnaWMvJVNBZ8HhyQzRSkSGQukv7OZ+u+gAt
+gvp+OS0laouW9PqdFNh6DiCqZa9h80dv6AV4Jo9UOOXg42VG0L7TCm9DvixFnKQjosZHtPvU6UtJ
+XTTcURn+0cXCtSZn0EhWfBscLyLE5KLsPvK8363CUvfitC26hAMbwKzciA81eyPaEjHZGwED607r
+fVXlE51eppbnNja5XBLJslvwBRcBaDv2YwhSZcQ28+/wCzDKrqm5gp+wTV0oQyUDggK7D+0kkeBc
+UPR6taK4LKvWpxAkPyu1C48jDO0PclGKy/cP4D3X20pz5HAeOZFGNtDQDnmSod4G0LZmEZ5e923o
+10lt5miLMZLRc8pyV8q0LWUgwv5ktt79CjmFkxE8ORXx7r2BRKJQ0pZfyZzogpq+ONzPtqTAj6qM
+lq+ObV87XT4/okGkWe2Mk3LV9gCSeU02vv+EJM8d1NlY9rT5tXe69ITSifoEbe8W0mE03BiDRSvj
+cz+jSBtB0CcObovyWcqFp2Ml1dI6143PC1IOAcVxCrUll9+i7JvlVPwKtaHnLk6FLvUH14Obk1bd
+uRfVJCNeJGwdz8hsCMvKMFkiCkOx0OPEVFUI2tV1NJlH3zsIco34WuHSNqv54Z/10o77A002WBzR
+V7jv9ysoQ36a+Xn/4XqEk30mFPAUCCrytO0N1Nnd+3Z7eUP3q4kJHKPwOz6hO+eCkFkOsperswhS
+D29eV1QbFRw38911ItBhbGVTTHe1IN2cY+FW4YehAm8uKua5cmuujaF+kIf+aSYobC1FXgU9kPgd
+Rmy+85PheXIuxKYCDJ8FM97XEdtT5trMOyl3hqt3aiTGxxH9sKDuHNRnwx4KSoTMNY+LgVsybmpN
+MroymKfG5QBiJ5zYeIO6Px2TZOGHY5duDgEJ+pKGiwkyjZ/es+cd/Wj55W0sr9B7+435Teg4LVNU
+z4eYiHkEZgJQEG38M3lhMML4CSmivxf/WFpZynEBIR6lxswH3QMS9Q9CT+MulAAtdinCLv9k1lRy
+QOWl7+au6GMirM2jqGDITAMRfR3XJ8q/Knme4M5UONJDpgjpkLkn3bANwR7UXcuCO374sk0Dm/M6
+HpHu1oCXa6eqfK9TlTGWzZJfeMVh+B0Wp1XBw/ZcZwjYqcokZQs96JhD+oerCl+Cr7UHfsSG33XU
+LAELUESVike0jCiI2nWhEfh1loS9nOsjw2mhFKwyCD79iabAlQUw+8op8NOYwhC4ceTkxiJyRowK
+rKeezufONsK+9nUeLelLMUFr3ohgaFrrMsL0chAPSFjzyB5L/4rqlgNhLDhGyDd4yalzFQa9KUAm
+4Knlhpuu7AM+9IPL/aNm/K4KS5kpHaHbScDPXxBQdDeQGW+t/3iVDbyfq1C0B2xeI4nRAdurZEYe
+U2EqJko7rTK9YNFLaOU9bPpvIr/wsnS7rVhr6rsC0WTFFNW8C0usLjjB19eKARsjVUU6hqzwI7Wq
+V7jC8Y5hz07BlUJWtID6OD9bwq9ZLRpZSnJHIuuew9bp5QkA6bRSX7gTA0K29ImS4hImvuIK65pq
+erGeIPEoyGgXlxKlZlcLja7Dzzjb5rqRAwmzlg7hpNhbIMownTNI7Q4uZ8HOGUreUlzI2o3RyuhG
+cjqSf5mpTZYBfT12oqFv6YTAPjOJpEBNY3h+gRxkmUxmKo0gQAS1PwPw4tmWrMQrLm4vYgRsHiyU
+CSy+t/02YbX6gLBpobOzTQkcE+Lu9ZF8Jo51sp8+UeqxP4iPLxMOuSKqqd9d47Is992BzuOZV7io
+bMHuWjMtx4iQ2x4w+fgGIZq1ATAM1WDtbgE5X0SJPbkOlYjWqzRfE5UCJ7x2+pWM05t/1PvdNDjG
+xMj9NeVkhv3q0A/ReVvs+ke0ISLEYz4KeXDD9YgBIUfDpJxdypwvHYcP+B9fwIjyL78sarKEhpC7
+55TROJkiIwMdUioeraOYFv4iQNvElyjXUiOk4QwGW9v8a8Avs34qzCaYWA60yuCL3SuY0lQgkxB6
+3PrRGsvh6ic4OgC8dVLY/m5D16zTZ7su5GLsMxgs+VyzDR3beWcKELgxSuDGXbLL8wVmuK99g/MK
+6wI1NH1AK8mkjqgNns4X2MJ76Y5E3LcBNaFzn9OJYsE7OKroMgJZyzAvpERwG0E5s1XB+rtS+maV
+eAPK77M1wBb4cjViGk+axiqrD9lJdeczEAUJpXN+W77wyMUvMIZgsCj1SgBdU6T1xtbXn2lXyfhG
+4MecNEjRCMYSZjc5dzIeooSofZxrtpKifddb2rrid0bp8Zr8wQm64lzunkH7SyIh/TXJm2y6PUcG
+q82j7CIY+otMVuAki/ZURf9vxIsldFGn2qzP20tXKQTQOUL634izSb4+XNVdcXofVg80Br8/lsBY
+dPnlAarWJIoKZOXDRPUBDkb264ZD7mvrCnVrYCGCGNSkztJ+k3RmPIUsP7aWQ0uVE5hZd68FKXJG
+LeJkSWv+wPotYt+ilGawmeyOZc/0lHg5xSDqW+ETG+WNVdCIB7wcrSI+0YxHBZ2hwfYdEJM1HGiK
+5BdSjtkqhkQPaxC1rtsGCm5/mrtebErswWAThZCeNMFzlDKemQ5vqhIPXgjY01r7QxrrXKU1TJzV
+/z6cMYbGP74+iF2OUg87+/hfR/oqNoDy0p8Ok+s6lxDF/XNZYLQNpdLFxsaW4gMxx6LOApj7KV8n
+402m5VuN+ssGUmPtlSRPEpkWFh0K5NXPRZfqoGf5FeKesmR7PkxwckoKNwODsfDon2ZuZikolPOj
+q3grGuY6gEU6VMWZaejN5q8G2miA4K6W0JVEii7F6wjnDmOQX6x/7atFeFHSxS1uiiJmIRaowmwP
+MnkQGMMwi2jpVj6iJDVyzufuotSIYTagI+ngo0zgaWN/ddaN5/gljsXw9UxJ4POR08wLzKGe7QNS
+zTI5G4JbBJUxJcQsfyb91668glGbuX9eY4NGhbTdI9PrNqAeel+sjv4ofh+8NGHfkoSYNXKaPFvG
+gQMMAGuhJMF6gzRQCaIBkztKVAkQJtLUZcvxtnGtE9QUZnWlmAmp0e6vwpF+p0vkyTaZ6R9495SF
+JaTNqSDURUAYEJ888/naRDrQWAhnM3qeJOmEGRFIg43/G6KxbFywn3zYzEHQSqTXwsapfNS/9BCX
+n7LiPJ1rx21ZkzJbdV/D19oaQ3+8GpDBhsRqvoCti7f9vsEGNOWs8d2hn5vH6ndlUSUG+vud6bKI
+2FVsPfPP6tH+hP2G0I/EXtQg0f3X4DaRxCxC/P2KmFFCVQ7vmPic8bQnfOsKLj/r/Z1IhYuqicE9
+9ZY86YXW2cq+MXCuNjh3vRPm01/odVPzhMaWbkS09AjPJu46zaR8OwvUtsU/dl4p0wshdE1VG+1T
+h159XLg26xfk2DuVcZENqyddqMpDNNZWj3TZYcks/YKWImm8N1ApJo26etLe6nv/BvN/2qec4R3b
+ZbaCWm3NWoRFJzEL2ILmE9oJSb/6wqsjpLrFvivazRvnPoEduL+o/JI1usGZKlxih+z3SXjJtsXn
+S4+8+qgmEX2SqO6z5OhWfRXboLdG+sS/rNghdPpx8DvFJW9iEx8+vSqp+ZAqHD31AkqfUAxCFocu
+3aHiUIC61FCkYLFdiTrnwj8jni86DxjRSaDYBdlf9jugR1nyQiK1Z70oJdT8VsQ5IHa3HEZiUJLX
+oF0ei1+MfOP0mMbVaunVwNMNwY9/EPhordXIfJigQkpw8niEgi20DMYMcW853DIPW9Q9qVDIObEs
+b79YbkR2ivBOOtIontL5E9SZbt4SXJ6XOBioUyqKTARg7/BIttpPEn+7U5lkC5FOSozqBhaXmUlc
+qQoXR9E6MGdDbxFKn4kFn+rS1j25dk9Fx76Y+8duP/eNPz5Of9a4nY5adT4CTsAWodhyhCzPmRKK
+J30tZdfWlJvV6IsiudYnZGIsBzeSAUQJHSrSfFzJaJKFE31Ceg/GWxLlgaXkPO3sPsUb+58g4ROO
+ILtTN0liM/s9DquaT8Lsi+aaR0ar2fyv/+tiewC2/iAz88qSFcLfawlmjPRXwcBdaoBcPplSkYF8
+uCQ5YxbQhT5r5k9NEuOKxsZcH3FNn8iEkRtn3jqFQLdQozn47hfRDftxOWV+o2bkpNg5m6ut8X2H
+FNV2cHdzwvOZ9M6C2hW7XUhUQBHcc2SEJNUpZmUCpFDa9qHWCkzDw4SiwIsHlQlBC0Vw2Uqa+NKI
+d4PxDlmDpFLXOSgR6ahmv+3WLe4Zwg1efo1ksm+GbD4gEzHLv5i7MO7yyAhnIgBBCKFeC+L4VZRe
+Bg1n+nXaf7UtbdLegJHIWKFPZyUzO/aUI5zLPREdCuFkEmtLjVlrKNhN9wyMggORANOz1Ef2N0cp
+SIB6B1Rg+VUhOWE6NbY39Qv5csqgLtdCZv+2XRAumWBzlQSVx/9LmPuPHebYZwDiFrThWHGidx/Q
+kqN0pQc1t54x1FijB7MMKhxvFG632x4poLbXIAT1k2wA++KNysEA/2zSpmxMW+1QnCYt175bZlMs
+PzQHnz4GBnkr7fBMEK4VkDj/aIWlptpUAODHPzc7YuwpTg8YyHqnXLRO0RToo2ncgJsHBD9d7JYq
+Uiw8a+r0aWjatfcY6jWYa4cUCRS2/vm7GQdyv4oYCxHWRXhsnTIMCvT81Fieto7aNoxSVIVBhV/2
+MFO74UuIu0ydlgK3UmPFHr7ozNRlAJ/sLmIFlmK5v0F5msb565eLmn0eEfchDNEjU/yvWzfO5GAe
+du3BrZNMe/hE3Ag1ujHPIE+fpqYMk9+S52mQAvbIUjvXuvLZXflWfaK7AECqGAwLl3BsHAT8WedP
+OW55n6I/TFEMb7CjefpnNy8gZNSJut19IrwQdyGxI950o/U5vaMsd8rtU9Hl5x6o+JX7RPV3KyuH
++P+meFVWaBYK3/Mcf2MoudVdP3Ow9ucnYmDQux5M502OAMYXRDv/v0HIRYJpfZIDgdLbwtziTn7l
+y7Dzc7XzQQZl8N92HODsSIWKpIHmOxJ2dcRHMeSB7oFXkqbFwA2SpyXcwTAvOAPOdxsgE+7pl92x
+9ZYcxvMIsPzUYMZ8u4qJpuVBaNif42g7KaMaEz50Q9p8ob1T2DYLOpEP1gG/G+M+vQH13bylIACP
+cHGhi8a9m9voazi5Ti5w+4cH9NdTlfamdp9hxatLXQxGiGylycxWzQWCtUSIoyLGp1hwWbUnNYqw
+R9hZ5ZLgi36X6pKneWvsGuQKEBErpRXITxo13wx+FpOTsyaDZeKeJGUuvgErtkRtRjyARFKdkJJO
+k2jA7QrCNiLn1yAPriq2i2aZfWG3fhHjE7CXpUbrIHXwtw9soBM8ASBXLH1abfmiZ0VciPGO82M+
+1owCsA8lJJEtdz73Upvo5SGHNiWMzJtbBI7YhgDWY5hFVlbdkJfaNlWvyetAQXyxZ+q5RJTP56Uk
+WRQhzQDVv6MH+P/U3rhbzHCsxHQqURKE5DNrfAPfReK=

@@ -1,132 +1,43 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Calendar
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * @see Zend_Gdata_Extension
- */
-require_once 'Zend/Gdata/Extension.php';
-
-/**
- * Represents the gCal:selected element used by the Calendar data API
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Calendar
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Gdata_Calendar_Extension_Selected extends Zend_Gdata_Extension
-{
-
-    protected $_rootNamespace = 'gCal';
-    protected $_rootElement = 'selected';
-    protected $_value = null;
-
-    /**
-     * Constructs a new Zend_Gdata_Calendar_Extension_Selected object.
-     * @param bool $value (optional) The value of the element.
-     */
-    public function __construct($value = null)
-    {
-        $this->registerAllNamespaces(Zend_Gdata_Calendar::$namespaces);
-        parent::__construct();
-        $this->_value = $value;
-    }
-
-    /**
-     * Retrieves a DOMElement which corresponds to this element and all
-     * child properties.  This is used to build an entry back into a DOM
-     * and eventually XML text for sending to the server upon updates, or
-     * for application storage/persistence.
-     *
-     * @param DOMDocument $doc The DOMDocument used to construct DOMElements
-     * @return DOMElement The DOMElement representing this element and all
-     * child properties.
-     */
-    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
-    {
-        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
-        if ($this->_value !== null) {
-            $element->setAttribute('value', ($this->_value ? "true" : "false"));
-        }
-        return $element;
-    }
-
-    /**
-     * Given a DOMNode representing an attribute, tries to map the data into
-     * instance members.  If no mapping is defined, the name and value are
-     * stored in an array.
-     *
-     * @param DOMNode $attribute The DOMNode attribute needed to be handled
-     */
-    protected function takeAttributeFromDOM($attribute)
-    {
-        switch ($attribute->localName) {
-        case 'value':
-            if ($attribute->nodeValue == "true") {
-                $this->_value = true;
-            }
-            else if ($attribute->nodeValue == "false") {
-                $this->_value = false;
-            }
-            else {
-                require_once 'Zend/Gdata/App/InvalidArgumentException.php';
-                throw new Zend_Gdata_App_InvalidArgumentException("Expected 'true' or 'false' for gCal:selected#value.");
-            }
-            break;
-        default:
-            parent::takeAttributeFromDOM($attribute);
-        }
-    }
-
-    /**
-     * Get the value for this element's value attribute.
-     *
-     * @return bool The value associated with this attribute.
-     */
-    public function getValue()
-    {
-        return $this->_value;
-    }
-
-    /**
-     * Set the value for this element's value attribute.
-     *
-     * @param bool $value The desired value for this attribute.
-     * @return Zend_Gdata_Calendar_Extension_Selected The element being modified.
-     */
-    public function setValue($value)
-    {
-        $this->_value = $value;
-        return $this;
-    }
-
-    /**
-     * Magic toString method allows using this directly via echo
-     * Works best in PHP >= 4.2.0
-     */
-    public function __toString()
-    {
-        return $this->_value;
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

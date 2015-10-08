@@ -1,362 +1,107 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @package    Zend_Db
- * @subpackage Statement
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * @see Zend_Db_Statement
- */
-require_once 'Zend/Db/Statement.php';
-
-/**
- * Extends for DB2 native adapter.
- *
- * @package    Zend_Db
- * @subpackage Statement
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Db_Statement_Db2 extends Zend_Db_Statement
-{
-    /**
-     * Statement resource handle.
-     */
-    protected $_stmt = null;
-
-    /**
-     * Column names.
-     */
-    protected $_keys;
-
-    /**
-     * Fetched result values.
-     */
-    protected $_values;
-
-    /**
-     * Prepare a statement handle.
-     *
-     * @param string $sql
-     * @return void
-     * @throws Zend_Db_Statement_Db2_Exception
-     */
-    public function _prepare($sql)
-    {
-        $connection = $this->_adapter->getConnection();
-
-        // db2_prepare on i5 emits errors, these need to be
-        // suppressed so that proper exceptions can be thrown
-        $this->_stmt = @db2_prepare($connection, $sql);
-
-        if (!$this->_stmt) {
-            /**
-             * @see Zend_Db_Statement_Db2_Exception
-             */
-            require_once 'Zend/Db/Statement/Db2/Exception.php';
-            throw new Zend_Db_Statement_Db2_Exception(
-                db2_stmt_errormsg(),
-                db2_stmt_error()
-            );
-        }
-    }
-
-    /**
-     * Binds a parameter to the specified variable name.
-     *
-     * @param mixed $parameter Name the parameter, either integer or string.
-     * @param mixed $variable  Reference to PHP variable containing the value.
-     * @param mixed $type      OPTIONAL Datatype of SQL parameter.
-     * @param mixed $length    OPTIONAL Length of SQL parameter.
-     * @param mixed $options   OPTIONAL Other options.
-     * @return bool
-     * @throws Zend_Db_Statement_Db2_Exception
-     */
-    public function _bindParam($parameter, &$variable, $type = null, $length = null, $options = null)
-    {
-        if ($type === null) {
-            $type = DB2_PARAM_IN;
-        }
-
-        if (isset($options['data-type'])) {
-            $datatype = $options['data-type'];
-        } else {
-            $datatype = DB2_CHAR;
-        }
-
-        if (!db2_bind_param($this->_stmt, $position, "variable", $type, $datatype)) {
-            /**
-             * @see Zend_Db_Statement_Db2_Exception
-             */
-            require_once 'Zend/Db/Statement/Db2/Exception.php';
-            throw new Zend_Db_Statement_Db2_Exception(
-                db2_stmt_errormsg(),
-                db2_stmt_error()
-            );
-        }
-
-        return true;
-    }
-
-    /**
-     * Closes the cursor, allowing the statement to be executed again.
-     *
-     * @return bool
-     */
-    public function closeCursor()
-    {
-        if (!$this->_stmt) {
-            return false;
-        }
-        db2_free_stmt($this->_stmt);
-        $this->_stmt = false;
-        return true;
-    }
-
-
-    /**
-     * Returns the number of columns in the result set.
-     * Returns null if the statement has no result set metadata.
-     *
-     * @return int The number of columns.
-     */
-    public function columnCount()
-    {
-        if (!$this->_stmt) {
-            return false;
-        }
-        return db2_num_fields($this->_stmt);
-    }
-
-    /**
-     * Retrieves the error code, if any, associated with the last operation on
-     * the statement handle.
-     *
-     * @return string error code.
-     */
-    public function errorCode()
-    {
-        if (!$this->_stmt) {
-            return false;
-        }
-
-        $error = db2_stmt_error();
-        if ($error === '') {
-        	return false;
-        }
-
-        return $error;
-    }
-
-    /**
-     * Retrieves an array of error information, if any, associated with the
-     * last operation on the statement handle.
-     *
-     * @return array
-     */
-    public function errorInfo()
-    {
-    	$error = $this->errorCode();
-    	if ($error === false){
-    		return false;
-    	}
-
-        /*
-         * Return three-valued array like PDO.  But DB2 does not distinguish
-         * between SQLCODE and native RDBMS error code, so repeat the SQLCODE.
-         */
-        return array(
-            $error,
-            $error,
-            db2_stmt_errormsg()
-        );
-    }
-
-    /**
-     * Executes a prepared statement.
-     *
-     * @param array $params OPTIONAL Values to bind to parameter placeholders.
-     * @return bool
-     * @throws Zend_Db_Statement_Db2_Exception
-     */
-    public function _execute(array $params = null)
-    {
-        if (!$this->_stmt) {
-            return false;
-        }
-
-        $retval = true;
-        if ($params !== null) {
-            $retval = @db2_execute($this->_stmt, $params);
-        } else {
-            $retval = @db2_execute($this->_stmt);
-        }
-
-        if ($retval === false) {
-            /**
-             * @see Zend_Db_Statement_Db2_Exception
-             */
-            require_once 'Zend/Db/Statement/Db2/Exception.php';
-            throw new Zend_Db_Statement_Db2_Exception(
-                db2_stmt_errormsg(),
-                db2_stmt_error());
-        }
-
-        $this->_keys = array();
-        if ($field_num = $this->columnCount()) {
-            for ($i = 0; $i < $field_num; $i++) {
-                $name = db2_field_name($this->_stmt, $i);
-                $this->_keys[] = $name;
-            }
-        }
-
-        $this->_values = array();
-        if ($this->_keys) {
-            $this->_values = array_fill(0, count($this->_keys), null);
-        }
-
-        return $retval;
-    }
-
-    /**
-     * Fetches a row from the result set.
-     *
-     * @param int $style  OPTIONAL Fetch mode for this fetch operation.
-     * @param int $cursor OPTIONAL Absolute, relative, or other.
-     * @param int $offset OPTIONAL Number for absolute or relative cursors.
-     * @return mixed Array, object, or scalar depending on fetch mode.
-     * @throws Zend_Db_Statement_Db2_Exception
-     */
-    public function fetch($style = null, $cursor = null, $offset = null)
-    {
-        if (!$this->_stmt) {
-            return false;
-        }
-
-        if ($style === null) {
-            $style = $this->_fetchMode;
-        }
-
-        switch ($style) {
-            case Zend_Db::FETCH_NUM :
-                $row = db2_fetch_array($this->_stmt);
-                break;
-            case Zend_Db::FETCH_ASSOC :
-                $row = db2_fetch_assoc($this->_stmt);
-                break;
-            case Zend_Db::FETCH_BOTH :
-                $row = db2_fetch_both($this->_stmt);
-                break;
-            case Zend_Db::FETCH_OBJ :
-                $row = db2_fetch_object($this->_stmt);
-                break;
-            case Zend_Db::FETCH_BOUND:
-                $row = db2_fetch_both($this->_stmt);
-                if ($row !== false) {
-                    return $this->_fetchBound($row);
-                }
-                break;
-            default:
-                /**
-                 * @see Zend_Db_Statement_Db2_Exception
-                 */
-                require_once 'Zend/Db/Statement/Db2/Exception.php';
-                throw new Zend_Db_Statement_Db2_Exception("Invalid fetch mode '$style' specified");
-                break;
-        }
-
-        return $row;
-    }
-
-    /**
-     * Fetches the next row and returns it as an object.
-     *
-     * @param string $class  OPTIONAL Name of the class to create.
-     * @param array  $config OPTIONAL Constructor arguments for the class.
-     * @return mixed One object instance of the specified class.
-     */
-    public function fetchObject($class = 'stdClass', array $config = array())
-    {
-        $obj = $this->fetch(Zend_Db::FETCH_OBJ);
-        return $obj;
-    }
-
-    /**
-     * Retrieves the next rowset (result set) for a SQL statement that has
-     * multiple result sets.  An example is a stored procedure that returns
-     * the results of multiple queries.
-     *
-     * @return bool
-     * @throws Zend_Db_Statement_Db2_Exception
-     */
-    public function nextRowset()
-    {
-        /**
-         * @see Zend_Db_Statement_Db2_Exception
-         */
-        require_once 'Zend/Db/Statement/Db2/Exception.php';
-        throw new Zend_Db_Statement_Db2_Exception(__FUNCTION__ . '() is not implemented');
-    }
-
-    /**
-     * Returns the number of rows affected by the execution of the
-     * last INSERT, DELETE, or UPDATE statement executed by this
-     * statement object.
-     *
-     * @return int     The number of rows affected.
-     */
-    public function rowCount()
-    {
-        if (!$this->_stmt) {
-            return false;
-        }
-
-        $num = @db2_num_rows($this->_stmt);
-
-        if ($num === false) {
-            return 0;
-        }
-
-        return $num;
-    }
-
-     /**
-     * Returns an array containing all of the result set rows.
-     *
-     * @param int $style OPTIONAL Fetch mode.
-     * @param int $col   OPTIONAL Column number, if fetch mode is by column.
-     * @return array Collection of rows, each in a format by the fetch mode.
-     *
-     * Behaves like parent, but if limit()
-     * is used, the final result removes the extra column
-     * 'zend_db_rownum'
-     */
-    public function fetchAll($style = null, $col = null)
-    {
-        $data = parent::fetchAll($style, $col);
-        $results = array();
-        $remove = $this->_adapter->foldCase('ZEND_DB_ROWNUM');
-
-        foreach ($data as $row) {
-            if (is_array($row) && array_key_exists($remove, $row)) {
-                unset($row[$remove]);
-            }
-            $results[] = $row;
-        }
-        return $results;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

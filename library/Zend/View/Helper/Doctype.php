@@ -1,194 +1,64 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @package    Zend_View
- * @subpackage Helper
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @version    $Id: Placeholder.php 7078 2007-12-11 14:29:33Z matthew $
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_Registry */
-require_once 'Zend/Registry.php';
-
-/** Zend_View_Helper_Abstract.php */
-require_once 'Zend/View/Helper/Abstract.php';
-
-/**
- * Helper for setting and retrieving the doctype
- *
- * @package    Zend_View
- * @subpackage Helper
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_View_Helper_Doctype extends Zend_View_Helper_Abstract
-{
-    /**#@+
-     * DocType constants
-     */
-    const XHTML11             = 'XHTML11';
-    const XHTML1_STRICT       = 'XHTML1_STRICT';
-    const XHTML1_TRANSITIONAL = 'XHTML1_TRANSITIONAL';
-    const XHTML1_FRAMESET     = 'XHTML1_FRAMESET';
-    const XHTML_BASIC1        = 'XHTML_BASIC1';
-    const HTML4_STRICT        = 'HTML4_STRICT';
-    const HTML4_LOOSE         = 'HTML4_LOOSE';
-    const HTML4_FRAMESET      = 'HTML4_FRAMESET';
-    const HTML5               = 'HTML5';
-    const CUSTOM_XHTML        = 'CUSTOM_XHTML';
-    const CUSTOM              = 'CUSTOM';
-    /**#@-*/
-
-    /**
-     * Default DocType
-     * @var string
-     */
-    protected $_defaultDoctype = self::HTML4_LOOSE;
-
-    /**
-     * Registry containing current doctype and mappings
-     * @var ArrayObject
-     */
-    protected $_registry;
-
-    /**
-     * Registry key in which helper is stored
-     * @var string
-     */
-    protected $_regKey = 'Zend_View_Helper_Doctype';
-
-    /**
-     * Constructor
-     *
-     * Map constants to doctype strings, and set default doctype
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        if (!Zend_Registry::isRegistered($this->_regKey)) {
-            $this->_registry = new ArrayObject(array(
-                'doctypes' => array(
-                    self::XHTML11             => '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">',
-                    self::XHTML1_STRICT       => '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">',
-                    self::XHTML1_TRANSITIONAL => '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">',
-                    self::XHTML1_FRAMESET     => '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">',
-                    self::XHTML_BASIC1        => '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.0//EN" "http://www.w3.org/TR/xhtml-basic/xhtml-basic10.dtd">',
-                    self::HTML4_STRICT        => '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">',
-                    self::HTML4_LOOSE         => '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">',
-                    self::HTML4_FRAMESET      => '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">',
-                    self::HTML5               => '<!DOCTYPE html>',
-                )
-            ));
-            Zend_Registry::set($this->_regKey, $this->_registry);
-            $this->setDoctype($this->_defaultDoctype);
-        } else {
-            $this->_registry = Zend_Registry::get($this->_regKey);
-        }
-    }
-
-    /**
-     * Set or retrieve doctype
-     *
-     * @param  string $doctype
-     * @return Zend_View_Helper_Doctype
-     */
-    public function doctype($doctype = null)
-    {
-        if (null !== $doctype) {
-            switch ($doctype) {
-                case self::XHTML11:
-                case self::XHTML1_STRICT:
-                case self::XHTML1_TRANSITIONAL:
-                case self::XHTML1_FRAMESET:
-                case self::XHTML_BASIC1:
-                case self::HTML4_STRICT:
-                case self::HTML4_LOOSE:
-                case self::HTML4_FRAMESET:
-                case self::HTML5:
-                    $this->setDoctype($doctype);
-                    break;
-                default:
-                    if (substr($doctype, 0, 9) != '<!DOCTYPE') {
-                        require_once 'Zend/View/Exception.php';
-                        throw new Zend_View_Exception('The specified doctype is malformed');
-                    }
-                    if (stristr($doctype, 'xhtml')) {
-                        $type = self::CUSTOM_XHTML;
-                    } else {
-                        $type = self::CUSTOM;
-                    }
-                    $this->setDoctype($type);
-                    $this->_registry['doctypes'][$type] = $doctype;
-                    break;
-            }
-        }
-
-        return $this;
-    }
-
-    /**
-     * Set doctype
-     *
-     * @param  string $doctype
-     * @return Zend_View_Helper_Doctype
-     */
-    public function setDoctype($doctype)
-    {
-        $this->_registry['doctype'] = $doctype;
-        return $this;
-    }
-
-    /**
-     * Retrieve doctype
-     *
-     * @return string
-     */
-    public function getDoctype()
-    {
-        return $this->_registry['doctype'];
-    }
-
-    /**
-     * Get doctype => string mappings
-     *
-     * @return array
-     */
-    public function getDoctypes()
-    {
-        return $this->_registry['doctypes'];
-    }
-
-    /**
-     * Is doctype XHTML?
-     *
-     * @return boolean
-     */
-    public function isXhtml()
-    {
-        return (stristr($this->getDoctype(), 'xhtml') ? true : false);
-    }
-
-    /**
-     * String representation of doctype
-     *
-     * @return string
-     */
-    public function __toString()
-    {
-        $doctypes = $this->getDoctypes();
-        return $doctypes[$this->getDoctype()];
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

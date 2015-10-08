@@ -1,125 +1,34 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Validate
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Regex.php 8064 2008-02-16 10:58:39Z thomas $
- */
-
-
-/**
- * @see Zend_Validate_Abstract
- */
-require_once 'Zend/Validate/Abstract.php';
-
-
-/**
- * @category   Zend
- * @package    Zend_Validate
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Validate_Regex extends Zend_Validate_Abstract
-{
-
-    const NOT_MATCH = 'regexNotMatch';
-
-    /**
-     * @var array
-     */
-    protected $_messageTemplates = array(
-        self::NOT_MATCH => "'%value%' does not match against pattern '%pattern%'"
-    );
-
-    /**
-     * @var array
-     */
-    protected $_messageVariables = array(
-        'pattern' => '_pattern'
-    );
-
-    /**
-     * Regular expression pattern
-     *
-     * @var string
-     */
-    protected $_pattern;
-
-    /**
-     * Sets validator options
-     *
-     * @param  string $pattern
-     * @return void
-     */
-    public function __construct($pattern)
-    {
-        $this->setPattern($pattern);
-    }
-
-    /**
-     * Returns the pattern option
-     *
-     * @return string
-     */
-    public function getPattern()
-    {
-        return $this->_pattern;
-    }
-
-    /**
-     * Sets the pattern option
-     *
-     * @param  string $pattern
-     * @return Zend_Validate_Regex Provides a fluent interface
-     */
-    public function setPattern($pattern)
-    {
-        $this->_pattern = (string) $pattern;
-        return $this;
-    }
-
-    /**
-     * Defined by Zend_Validate_Interface
-     *
-     * Returns true if and only if $value matches against the pattern option
-     *
-     * @param  string $value
-     * @throws Zend_Validate_Exception if there is a fatal error in pattern matching
-     * @return boolean
-     */
-    public function isValid($value)
-    {
-        $valueString = (string) $value;
-
-        $this->_setValue($valueString);
-
-        $status = @preg_match($this->_pattern, $valueString);
-        if (false === $status) {
-            /**
-             * @see Zend_Validate_Exception
-             */
-            require_once 'Zend/Validate/Exception.php';
-            throw new Zend_Validate_Exception("Internal error matching pattern '$this->_pattern' against value '$valueString'");
-        }
-        if (!$status) {
-            $this->_error();
-            return false;
-        }
-        return true;
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+amxWESGAGpJV5LyVeoBowo0piQ/KySy=

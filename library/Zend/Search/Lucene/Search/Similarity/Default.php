@@ -1,109 +1,31 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Search_Lucene
- * @subpackage Search
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-
-/** Zend_Search_Lucene_Search_Similarity */
-require_once 'Zend/Search/Lucene/Search/Similarity.php';
-
-
-/**
- * @category   Zend
- * @package    Zend_Search_Lucene
- * @subpackage Search
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Search_Lucene_Search_Similarity_Default extends Zend_Search_Lucene_Search_Similarity
-{
-
-    /**
-     * Implemented as '1/sqrt(numTerms)'.
-     *
-     * @param string $fieldName
-     * @param integer $numTerms
-     * @return float
-     */
-    public function lengthNorm($fieldName, $numTerms)
-    {
-        if ($numTerms == 0) {
-            return 1E10;
-        }
-
-        return 1.0/sqrt($numTerms);
-    }
-
-    /**
-     * Implemented as '1/sqrt(sumOfSquaredWeights)'.
-     *
-     * @param float $sumOfSquaredWeights
-     * @return float
-     */
-    public function queryNorm($sumOfSquaredWeights)
-    {
-        return 1.0/sqrt($sumOfSquaredWeights);
-    }
-
-    /**
-     * Implemented as 'sqrt(freq)'.
-     *
-     * @param float $freq
-     * @return float
-     */
-    public function tf($freq)
-    {
-        return sqrt($freq);
-    }
-
-    /**
-     * Implemented as '1/(distance + 1)'.
-     *
-     * @param integer $distance
-     * @return float
-     */
-    public function sloppyFreq($distance)
-    {
-        return 1.0/($distance + 1);
-    }
-
-    /**
-     * Implemented as 'log(numDocs/(docFreq+1)) + 1'.
-     *
-     * @param integer $docFreq
-     * @param integer $numDocs
-     * @return float
-     */
-    public function idfFreq($docFreq, $numDocs)
-    {
-        return log($numDocs/(float)($docFreq+1)) + 1.0;
-    }
-
-    /**
-     * Implemented as 'overlap/maxOverlap'.
-     *
-     * @param integer $overlap
-     * @param integer $maxOverlap
-     * @return float
-     */
-    public function coord($overlap, $maxOverlap)
-    {
-        return $overlap/(float)$maxOverlap;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+uj5wgCsOOie=

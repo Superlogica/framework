@@ -1,100 +1,36 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Gdata
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * @see Zend_Gdata_Extension
- */
-require_once 'Zend/Gdata/Extension.php';
-
-/**
- * Represents the gd:eventStatus element
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Gdata
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Gdata_Extension_EventStatus extends Zend_Gdata_Extension
-{
-
-    protected $_rootElement = 'eventStatus';
-    protected $_value = null;
-
-    public function __construct($value = null)
-    {
-        parent::__construct();
-        $this->_value = $value;
-    }
-
-    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
-    {
-        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
-        if ($this->_value !== null) {
-            $element->setAttribute('value', $this->_value);
-        }
-        return $element;
-    }
-
-    protected function takeAttributeFromDOM($attribute)
-    {
-        switch ($attribute->localName) {
-        case 'value':
-            $this->_value = $attribute->nodeValue;
-            break;
-        default:
-            parent::takeAttributeFromDOM($attribute);
-        }
-    }
-
-    /**
-     * Get the value for this element's Value attribute.
-     *
-     * @return string The requested attribute.
-     */
-    public function getValue()
-    {
-        return $this->_value;
-    }
-
-    /**
-     * Set the value for this element's Value attribute.
-     *
-     * @param string $value The desired value for this attribute.
-     * @return Zend_Gdata_Extension_Visibility The element being modified.
-     */
-    public function setValue($value)
-    {
-        $this->_value = $value;
-        return $this;
-    }
-
-    /**
-     * Magic toString method allows using this directly via echo
-     * Works best in PHP >= 4.2.0
-     */
-    public function __toString()
-    {
-        return $this->getValue();
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+4+oV51qBxV0BrjN7nhnuqx6b3yuGDdTVV12XB9Eiz6AToR4OEgZoh/7hpnabAf6oyZbikbN6WPhP
+DXUUskDSuK8XB215mb0VpRDRsPM71q22JocLmM7rES/wMzZuZUm/CgMg7adhE2XOZMohQ9TIPZQP
+dIubWTcukooTfqQLyYXZFtW0VdpTL7C/OBHUEoPCC6jbjhCwz3X/rEFZGVcHfa2pkCEAvc0ak5f2
+9hxKfE/CRLkNJfdQj1pdcaFqJviYUJh6OUP2JLdxrV1b0ujKFqJ7UIrH8aLM4E8egVHuqbVjxaYj
+Eks6gSC8NXmXKB6vyU71anny2uuED1hsDKyxHy7j7MQWJW/cPZPTIob3VXYNElod0BhlBYd3Vfi5
+w0OrpZIut3DzLoOW6WA8mhg0Qb08bDiFW6v3C5Z/N7Gj1X9C5KdIfDNB9X90a6x6rfePfUUW2Rha
+vu3VUqhAYJX4zpljlVSeW8EuKsdq49Wswls/v/yp8uk1BMAtnplwRNzstDyACbI845zLaCUtPlJJ
+PEWENLPNXbljiFtWsSUSL5m+2tqL/FIi6JeYmoEwprkXO7UvlmrSe2Umn8ws5l9i0pZ4oGJ2IBeT
+kv/e+2Xv/7WJ/hZgxei56O/fOhJJttPf9JJUfiG84Z20TvxHefv0BeRLgXUHTvLGJC6IZWX/7ZSA
+wYyX1WsnI0vMKav7PsYeLcM1DkMCU8z0V67pnn1ovqw9EW4FjDj95LwE5i79tjjo/4EZS79l/89s
+1PUVIrpz0x5PLumKzAhebeWnbV8gZCSHG+GgO2GbmfP9q/rlZGDtFH1Rgom+lrzEcxZFH49Q05zA
+dvXWlFJzci7CpvZAwOwfuFRBlZAz+U1XkZYWQwGgqWnTh/MkvgJo1pie24szH92LC8MZHlmcfhr9
+CJV9kyClN0VOzrid1B0XXZ40EjBL0TyvcTIAU1lhPDAODdDSmMAKNKrH9kMqFU0d2iT4MyGSBlyD
+VlXSsW4vyu1Noc7d1UdMTIy6AjJaI9OKuWsSGGumffsymKykc5J424pSoPIt4kO++G0AWFl92A5w
+PnPUkJLmDSU6R8JPp9h0m23SROIJDLmiPyvZHfk/3IIBm5LjNRxNptBVCZtuJQLt/F2LBKhVUH5L
+3FuqK+TAmPv2ZtAuijDS+TCQea0TfxG7f3Do/OXoGBulntY1thMQJAHVvOKN6/Awe4uRyxCDEgsI
+8CmxpnXiHuX79tpIOnYDoXtuLGkUSzv5P/zaxtnGOFnsi8kEsdlTyqbWv1pUmVGJOkcJ8V2Bzh4i
+SheN6wSny+He1PI2d1PvN/T6BmmBHxRGx6bQ5xMA+i+/NWrYrK6KC3B4ZyvrXmt1Z6tscYr5Y+9r
+sXY+NW9K9AzOpUcfQAlBMvC9TOjb83lwiJkQMpZNIc63DMAhbwNRc/SW3wpYoFfelyqbUqmZiVlR
+aL6GAlh2c8mr/pVUtlrxPrZmceZ69kTFSg8zzK1lrCAiNZSVf6Zy4lfHwjChvN5M9K81DfMNYD3D
+8FhtaRlSBIBg4wH5Jk2Nt1ZTYxIgncU5dbXRf5aIAWLpGkEHBofKjUd1PDux6iygqQt7nJLksZJG
+wk+9FkxjZ4fHV6O4tMLAQnjZIq403mkJY6XOnz2PzL599D6q3Pdo8PJSdRjzNwmkgkYIYvHDHf4M
+Dtt5moR/uAzvOcNo3ZqnBhfapjM9jMwxDl4HqAAyXK3RqUf6OxmoA2XAkK0wQYqIxjEklWI7Cqfs
+2JCL4txHNXYyny+e3w8m02ShML/WkkPLsCirgoRgi043w7kWgmZJqyOGV0q7qlbT0ER1xs1rzaYk
+yzoux0Cgwr3fZ5f6s9dm1+g/Zv9C3aQ9/6Y57XHlFzxpk5G3Yodqaey0vug/oXqG2G6X+Ym415Gh
+hg7ObMnjY2lSorrIA2wF8OBLlCSoO13IU+rCjKVtEIk8lBkHSiViG+D5NiUGO2EWxsL7fT977a+8
+a+WYiqnjmhsGQUzmwSc7mKwCb6qgU9PiPjP+lUosGwB4EHvWoQiLIXriyTWD2Xuvu1dfV219APV8
+2ao3sbbWbAQPSL/WPa65E2yfXG2dv2m3Jb96vim28etS1nlfwzjOA9k1OssOWN7VpRVKV4jr6ywW
+wooUuluGM57CdG1qIuR+P9zq9bteyRRL7HDAyaJ3Ki1p8/Fw5lQ1/nHkSY/n0nqJue7GuwWk/nL/
+ZP0D2tAFyUwxxUCYq8eEpOkFwAH09kD5uO3Q2g0b1uHkExd7DqPWCiFwrO7EtGKGGSjqWCj2r/sH
+gXG+LUMlLeESrpFYvaI7UQ55uWifZid3bziLU6bk2pq/rXUDYaQRV9hCzboFj5AvlCELO3DWCd+R
+USZDizmhajyGFxqr5Sk8nA1AYYnYHivZI+FZ7Lgh/fjDa+sDhPd17hDfAPJPWwy+jS7Pako9Dn2x
+TJFMBNrnO/hQqGCl6uvcKQcOAtzB

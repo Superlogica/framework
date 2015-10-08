@@ -1,279 +1,87 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Oauth
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Consumer.php 23484 2010-12-10 03:57:59Z mjh_ca $
- */
-
-/** Zend_Oauth */
-require_once 'Zend/Oauth.php';
-
-/** Zend_Uri */
-require_once 'Zend/Uri.php';
-
-/** Zend_Oauth_Http_RequestToken */
-require_once 'Zend/Oauth/Http/RequestToken.php';
-
-/** Zend_Oauth_Http_UserAuthorization */
-require_once 'Zend/Oauth/Http/UserAuthorization.php';
-
-/** Zend_Oauth_Http_AccessToken */
-require_once 'Zend/Oauth/Http/AccessToken.php';
-
-/** Zend_Oauth_Token_AuthorizedRequest */
-require_once 'Zend/Oauth/Token/AuthorizedRequest.php';
-
-/** Zend_Oauth_Config */
-require_once 'Zend/Oauth/Config.php';
-
-/**
- * @category   Zend
- * @package    Zend_Oauth
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Oauth_Consumer extends Zend_Oauth
-{
-    public $switcheroo = false; // replace later when this works
-
-    /**
-     * Request Token retrieved from OAuth Provider
-     *
-     * @var Zend_Oauth_Token_Request
-     */
-    protected $_requestToken = null;
-
-    /**
-     * Access token retrieved from OAuth Provider
-     *
-     * @var Zend_Oauth_Token_Access
-     */
-    protected $_accessToken = null;
-
-    /**
-     * @var Zend_Oauth_Config
-     */
-    protected $_config = null;
-
-    /**
-     * Constructor; create a new object with an optional array|Zend_Config
-     * instance containing initialising options.
-     *
-     * @param  array|Zend_Config $options
-     * @return void
-     */
-    public function __construct($options = null)
-    {
-        $this->_config = new Zend_Oauth_Config;
-        if ($options !== null) {
-            if ($options instanceof Zend_Config) {
-                $options = $options->toArray();
-            }
-            $this->_config->setOptions($options);
-        }
-    }
-
-    /**
-     * Attempts to retrieve a Request Token from an OAuth Provider which is
-     * later exchanged for an authorized Access Token used to access the
-     * protected resources exposed by a web service API.
-     *
-     * @param  null|array $customServiceParameters Non-OAuth Provider-specified parameters
-     * @param  null|string $httpMethod
-     * @param  null|Zend_Oauth_Http_RequestToken $request
-     * @return Zend_Oauth_Token_Request
-     */
-    public function getRequestToken(
-        array $customServiceParameters = null,
-        $httpMethod = null,
-        Zend_Oauth_Http_RequestToken $request = null
-    ) {
-        if ($request === null) {
-            $request = new Zend_Oauth_Http_RequestToken($this, $customServiceParameters);
-        } elseif($customServiceParameters !== null) {
-            $request->setParameters($customServiceParameters);
-        }
-        if ($httpMethod !== null) {
-            $request->setMethod($httpMethod);
-        } else {
-            $request->setMethod($this->getRequestMethod());
-        }
-        $this->_requestToken = $request->execute();
-        return $this->_requestToken;
-    }
-
-    /**
-     * After a Request Token is retrieved, the user may be redirected to the
-     * OAuth Provider to authorize the application's access to their
-     * protected resources - the redirect URL being provided by this method.
-     * Once the user has authorized the application for access, they are
-     * redirected back to the application which can now exchange the previous
-     * Request Token for a fully authorized Access Token.
-     *
-     * @param  null|array $customServiceParameters
-     * @param  null|Zend_Oauth_Token_Request $token
-     * @param  null|Zend_OAuth_Http_UserAuthorization $redirect
-     * @return string
-     */
-    public function getRedirectUrl(
-        array $customServiceParameters = null,
-        Zend_Oauth_Token_Request $token = null,
-        Zend_Oauth_Http_UserAuthorization $redirect = null
-    ) {
-        if ($redirect === null) {
-            $redirect = new Zend_Oauth_Http_UserAuthorization($this, $customServiceParameters);
-        } elseif($customServiceParameters !== null) {
-            $redirect->setParameters($customServiceParameters);
-        }
-        if ($token !== null) {
-            $this->_requestToken = $token;
-        }
-        return $redirect->getUrl();
-    }
-
-    /**
-     * Rather than retrieve a redirect URL for use, e.g. from a controller,
-     * one may perform an immediate redirect.
-     *
-     * Sends headers and exit()s on completion.
-     *
-     * @param  null|array $customServiceParameters
-     * @param  null|Zend_Oauth_Token_Request $token
-     * @param  null|Zend_Oauth_Http_UserAuthorization $request
-     * @return void
-     */
-    public function redirect(
-        array $customServiceParameters = null,
-        Zend_Oauth_Token_Request $token = null,
-        Zend_Oauth_Http_UserAuthorization $request = null
-    ) {
-        if ($token instanceof Zend_Oauth_Http_UserAuthorization) {
-            $request = $token;
-            $token = null;
-        }
-        $redirectUrl = $this->getRedirectUrl($customServiceParameters, $token, $request);
-        header('Location: ' . $redirectUrl);
-        exit(1);
-    }
-
-    /**
-     * Retrieve an Access Token in exchange for a previously received/authorized
-     * Request Token.
-     *
-     * @param  array $queryData GET data returned in user's redirect from Provider
-     * @param  Zend_Oauth_Token_Request Request Token information
-     * @param  string $httpMethod
-     * @param  Zend_Oauth_Http_AccessToken $request
-     * @return Zend_Oauth_Token_Access
-     * @throws Zend_Oauth_Exception on invalid authorization token, non-matching response authorization token, or unprovided authorization token
-     */
-    public function getAccessToken(
-        $queryData,
-        Zend_Oauth_Token_Request $token,
-        $httpMethod = null,
-        Zend_Oauth_Http_AccessToken $request = null
-    ) {
-        $authorizedToken = new Zend_Oauth_Token_AuthorizedRequest($queryData);
-        if (!$authorizedToken->isValid()) {
-            require_once 'Zend/Oauth/Exception.php';
-            throw new Zend_Oauth_Exception(
-                'Response from Service Provider is not a valid authorized request token');
-        }
-        if ($request === null) {
-            $request = new Zend_Oauth_Http_AccessToken($this);
-        }
-
-        // OAuth 1.0a Verifier
-        if ($authorizedToken->getParam('oauth_verifier') !== null) {
-            $params = array_merge($request->getParameters(), array(
-                'oauth_verifier' => $authorizedToken->getParam('oauth_verifier')
-            ));
-            $request->setParameters($params);
-        }
-        if ($httpMethod !== null) {
-            $request->setMethod($httpMethod);
-        } else {
-            $request->setMethod($this->getRequestMethod());
-        }
-        if (isset($token)) {
-            if ($authorizedToken->getToken() !== $token->getToken()) {
-                require_once 'Zend/Oauth/Exception.php';
-                throw new Zend_Oauth_Exception(
-                    'Authorized token from Service Provider does not match'
-                    . ' supplied Request Token details'
-                );
-            }
-        } else {
-            require_once 'Zend/Oauth/Exception.php';
-            throw new Zend_Oauth_Exception('Request token must be passed to method');
-        }
-        $this->_requestToken = $token;
-        $this->_accessToken = $request->execute();
-        return $this->_accessToken;
-    }
-
-    /**
-     * Return whatever the last Request Token retrieved was while using the
-     * current Consumer instance.
-     *
-     * @return Zend_Oauth_Token_Request
-     */
-    public function getLastRequestToken()
-    {
-        return $this->_requestToken;
-    }
-
-    /**
-     * Return whatever the last Access Token retrieved was while using the
-     * current Consumer instance.
-     *
-     * @return Zend_Oauth_Token_Access
-     */
-    public function getLastAccessToken()
-    {
-        return $this->_accessToken;
-    }
-
-    /**
-     * Alias to self::getLastAccessToken()
-     *
-     * @return Zend_Oauth_Token_Access
-     */
-    public function getToken()
-    {
-        return $this->_accessToken;
-    }
-
-    /**
-     * Simple Proxy to the current Zend_Oauth_Config method. It's that instance
-     * which holds all configuration methods and values this object also presents
-     * as it's API.
-     *
-     * @param  string $method
-     * @param  array $args
-     * @return mixed
-     * @throws Zend_Oauth_Exception if method does not exist in config object
-     */
-    public function __call($method, array $args)
-    {
-        if (!method_exists($this->_config, $method)) {
-            require_once 'Zend/Oauth/Exception.php';
-            throw new Zend_Oauth_Exception('Method does not exist: '.$method);
-        }
-        return call_user_func_array(array($this->_config,$method), $args);
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

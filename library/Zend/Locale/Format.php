@@ -1,1091 +1,580 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Locale
- * @subpackage Format
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @version    $Id: Format.php 15765 2009-05-25 19:59:45Z thomas $
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * include needed classes
- */
-require_once 'Zend/Locale/Data.php';
-
-/**
- * @category   Zend
- * @package    Zend_Locale
- * @subpackage Format
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Locale_Format
-{
-    const STANDARD   = 'auto';
-
-    private static $_options = array('date_format'   => null,
-                                     'number_format' => null,
-                                     'format_type'   => 'iso',
-                                     'fix_date'      => false,
-                                     'locale'        => null,
-                                     'cache'         => null,
-                                     'precision'     => null);
-
-    private static $_signs = array(
-        'Latn' => array('0', '1', '2', '3', '4', '5', '6', '7', '8', '9'), // Latn - default latin
-        'Arab' => array( '٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩'), // 0660 - 0669 arabic
-        'Deva' => array( '०', '१', '२', '३', '४', '५', '६', '७', '८', '९'), // 0966 - 096F devanagari
-        'Beng' => array( '০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'), // 09E6 - 09EF bengali
-        'Guru' => array( '੦', '੧', '੨', '੩', '੪', '੫', '੬', '੭', '੮', '੯'), // 0A66 - 0A6F gurmukhi
-        'Gujr' => array( '૦', '૧', '૨', '૩', '૪', '૫', '૬', '૭', '૮', '૯'), // 0AE6 - 0AEF gujarati
-        'Orya' => array( '୦', '୧', '୨', '୩', '୪', '୫', '୬', '୭', '୮', '୯'), // 0B66 - 0B6F orija
-        'Taml' => array( '௦', '௧', '௨', '௩', '௪', '௫', '௬', '௭', '௮', '௯'), // 0BE6 - 0BEF tamil
-        'Telu' => array( '౦', '౧', '౨', '౩', '౪', '౫', '౬', '౭', '౮', '౯'), // 0C66 - 0C6F telugu
-        'Knda' => array( '೦', '೧', '೨', '೩', '೪', '೫', '೬', '೭', '೮', '೯'), // 0CE6 - 0CEF kannada
-        'Mlym' => array( '൦', '൧', '൨', '൩', '൪', '൫', '൬', '൭', '൮', '൯ '), // 0D66 - 0D6F malayalam
-        'Tale' => array( '๐', '๑', '๒', '๓', '๔', '๕', '๖', '๗', '๘', '๙ '), // 0E50 - 0E59 thai
-        'Laoo' => array( '໐', '໑', '໒', '໓', '໔', '໕', '໖', '໗', '໘', '໙'), // 0ED0 - 0ED9 lao
-        'Tibt' => array( '༠', '༡', '༢', '༣', '༤', '༥', '༦', '༧', '༨', '༩ '), // 0F20 - 0F29 tibetan
-        'Mymr' => array( '၀', '၁', '၂', '၃', '၄', '၅', '၆', '၇', '၈', '၉'), // 1040 - 1049 myanmar
-        'Khmr' => array( '០', '១', '២', '៣', '៤', '៥', '៦', '៧', '៨', '៩'), // 17E0 - 17E9 khmer
-        'Mong' => array( '᠐', '᠑', '᠒', '᠓', '᠔', '᠕', '᠖', '᠗', '᠘', '᠙'), // 1810 - 1819 mongolian
-        'Limb' => array( '᥆', '᥇', '᥈', '᥉', '᥊', '᥋', '᥌', '᥍', '᥎', '᥏'), // 1946 - 194F limbu
-        'Talu' => array( '᧐', '᧑', '᧒', '᧓', '᧔', '᧕', '᧖', '᧗', '᧘', '᧙'), // 19D0 - 19D9 tailue
-        'Bali' => array( '᭐', '᭑', '᭒', '᭓', '᭔', '᭕', '᭖', '᭗', '᭘', '᭙'), // 1B50 - 1B59 balinese
-        'Nkoo' => array( '߀', '߁', '߂', '߃', '߄', '߅', '߆', '߇', '߈', '߉')  // 07C0 - 07C9 nko
-    );
-
-    /**
-     * Sets class wide options, if no option was given, the actual set options will be returned
-     * The 'precision' option of a value is used to truncate or stretch extra digits. -1 means not to touch the extra digits.
-     * The 'locale' option helps when parsing numbers and dates using separators and month names.
-     * The date format 'format_type' option selects between CLDR/ISO date format specifier tokens and PHP's date() tokens.
-     * The 'fix_date' option enables or disables heuristics that attempt to correct invalid dates.
-     * The 'number_format' option can be used to specify a default number format string
-     * The 'date_format' option can be used to specify a default date format string, but beware of using getDate(),
-     * checkDateFormat() and getTime() after using setOptions() with a 'format'.  To use these four methods
-     * with the default date format for a locale, use array('date_format' => null, 'locale' => $locale) for their options.
-     *
-     * @param  array  $options  Array of options, keyed by option name: format_type = 'iso' | 'php', fix_date = true | false,
-     *                          locale = Zend_Locale | locale string, precision = whole number between -1 and 30
-     * @throws Zend_Locale_Exception
-     * @return Options array if no option was given
-     */
-    public static function setOptions(array $options = array())
-    {
-        self::$_options = self::_checkOptions($options) + self::$_options;
-        return self::$_options;
-    }
-
-    /**
-     * Internal function for checking the options array of proper input values
-     * See {@link setOptions()} for details.
-     *
-     * @param  array  $options  Array of options, keyed by option name: format_type = 'iso' | 'php', fix_date = true | false,
-     *                          locale = Zend_Locale | locale string, precision = whole number between -1 and 30
-     * @throws Zend_Locale_Exception
-     * @return Options array if no option was given
-     */
-    private static function _checkOptions(array $options = array())
-    {
-        if (count($options) == 0) {
-            return self::$_options;
-        }
-        foreach ($options as $name => $value) {
-            $name  = strtolower($name);
-            if ($name !== 'locale') {
-                if (gettype($value) === 'string') {
-                    $value = strtolower($value);
-                }
-            }
-
-            switch($name) {
-                case 'number_format' :
-                    if ($value == Zend_Locale_Format::STANDARD) {
-                        $locale = self::$_options['locale'];
-                        if (isset($options['locale'])) {
-                            $locale = $options['locale'];
-                        }
-                        $options['number_format'] = Zend_Locale_Data::getContent($locale, 'decimalnumber');
-                    } else if ((gettype($value) !== 'string') and ($value !== NULL)) {
-                        require_once 'Zend/Locale/Exception.php';
-                        throw new Zend_Locale_Exception("Unknown number format type '" . gettype($value) . "'. "
-                            . "Format '$value' must be a valid number format string.");
-                    }
-                    break;
-
-                case 'date_format' :
-                    if ($value == Zend_Locale_Format::STANDARD) {
-                        $locale = self::$_options['locale'];
-                        if (isset($options['locale'])) {
-                            $locale = $options['locale'];
-                        }
-                        $options['date_format'] = Zend_Locale_Format::getDateFormat($locale);
-                    } else if ((gettype($value) !== 'string') and ($value !== NULL)) {
-                        require_once 'Zend/Locale/Exception.php';
-                        throw new Zend_Locale_Exception("Unknown dateformat type '" . gettype($value) . "'. "
-                            . "Format '$value' must be a valid ISO or PHP date format string.");
-                    } else {
-                        if (((isset($options['format_type']) === true) and ($options['format_type'] == 'php')) or
-                            ((isset($options['format_type']) === false) and (self::$_options['format_type'] == 'php'))) {
-                            $options['date_format'] = Zend_Locale_Format::convertPhpToIsoFormat($value);
-                        }
-                    }
-                    break;
-
-                case 'format_type' :
-                    if (($value != 'php') && ($value != 'iso')) {
-                        require_once 'Zend/Locale/Exception.php';
-                        throw new Zend_Locale_Exception("Unknown date format type '$value'. Only 'iso' and 'php'"
-                           . " are supported.");
-                    }
-                    break;
-
-                case 'fix_date' :
-                    if (($value !== true) && ($value !== false)) {
-                        require_once 'Zend/Locale/Exception.php';
-                        throw new Zend_Locale_Exception("Enabling correction of dates must be either true or false"
-                            . "(fix_date='$value').");
-                    }
-                    break;
-
-                case 'locale' :
-                    $options['locale'] = Zend_Locale::findLocale($value);
-                    break;
-
-                case 'cache' :
-                    if ($value instanceof Zend_Cache_Core) {
-                        Zend_Locale_Data::setCache($value);
-                    }
-                    break;
-
-                case 'disablecache' :
-                    Zend_Locale_Data::disableCache($value);
-                    break;
-
-                case 'precision' :
-                    if ($value === NULL) {
-                        $value = -1;
-                    }
-
-                    if (($value < -1) || ($value > 30)) {
-                        require_once 'Zend/Locale/Exception.php';
-                        throw new Zend_Locale_Exception("'$value' precision is not a whole number less than 30.");
-                    }
-                    break;
-
-                default:
-                    require_once 'Zend/Locale/Exception.php';
-                    throw new Zend_Locale_Exception("Unknown option: '$name' = '$value'");
-                    break;
-
-            }
-        }
-
-        return $options;
-    }
-
-    /**
-     * Changes the numbers/digits within a given string from one script to another
-     * 'Decimal' representated the stardard numbers 0-9, if a script does not exist
-     * an exception will be thrown.
-     *
-     * Examples for conversion from Arabic to Latin numerals:
-     *   convertNumerals('١١٠ Tests', 'Arab'); -> returns '100 Tests'
-     * Example for conversion from Latin to Arabic numerals:
-     *   convertNumerals('100 Tests', 'Latn', 'Arab'); -> returns '١١٠ Tests'
-     *
-     * @param  string  $input  String to convert
-     * @param  string  $from   Script to parse, see {@link Zend_Locale::getScriptList()} for details.
-     * @param  string  $to     OPTIONAL Script to convert to
-     * @return string  Returns the converted input
-     * @throws Zend_Locale_Exception
-     */
-    public static function convertNumerals($input, $from, $to = null)
-    {
-        if (is_string($from)) {
-            $from = ucfirst(strtolower($from));
-        }
-        if (isset(self::$_signs[$from]) === false) {
-            require_once 'Zend/Locale/Exception.php';
-            throw new Zend_Locale_Exception("Unknown script '$from'. Use 'Latn' for digits 0,1,2,3,4,5,6,7,8,9.");
-        }
-        if (is_string($to)) {
-            $to = ucfirst(strtolower($to));
-        }
-        if (($to !== null) and (isset(self::$_signs[$to]) === false)) {
-            require_once 'Zend/Locale/Exception.php';
-            throw new Zend_Locale_Exception("Unknown script '$to'. Use 'Latn' for digits 0,1,2,3,4,5,6,7,8,9.");
-        }
-
-        if (isset(self::$_signs[$from])) {
-            for ($X = 0; $X < 10; ++$X) {
-                $source[$X + 10] = "/" . self::$_signs[$from][$X] . "/u";
-            }
-        }
-
-        if (isset(self::$_signs[$to])) {
-            for ($X = 0; $X < 10; ++$X) {
-                $dest[$X + 10] = self::$_signs[$to][$X];
-            }
-        } else {
-            for ($X = 0; $X < 10; ++$X) {
-                $dest[$X + 10] = $X;
-            }
-        }
-
-        return preg_replace($source, $dest, $input);
-    }
-
-    /**
-     * Returns the first found number from an string
-     * Parsing depends on given locale (grouping and decimal)
-     *
-     * Examples for input:
-     * '  2345.4356,1234' = 23455456.1234
-     * '+23,3452.123' = 233452.123
-     * ' 12343 ' = 12343
-     * '-9456km' = -9456
-     * '0' = 0
-     * '(-){0,1}(\d+(\.){0,1})*(\,){0,1})\d+'
-     * '١١٠ Tests' = 110  call: getNumber($string, 'Arab');
-     *
-     * @param  string $input    Input string to parse for numbers
-     * @param  array  $options  Options: locale, precision. See {@link setOptions()} for details.
-     * @return string Returns the extracted number
-     * @throws Zend_Locale_Exception
-     */
-    public static function getNumber($input, array $options = array())
-    {
-        $options = self::_checkOptions($options) + self::$_options;
-        if (!is_string($input)) {
-            return $input;
-        }
-
-        // Get correct signs for this locale
-        $symbols = Zend_Locale_Data::getList($options['locale'],'symbols');
-
-        // Parse input locale aware
-        $regex = '/([' . $symbols['minus'] . '-]){0,1}(\d+(\\' . $symbols['group'] . '){0,1})*(\\' .
-                        $symbols['decimal'] . '){0,1}\d+/';
-        preg_match($regex, $input, $found);
-        if (!isset($found[0])) {
-            require_once 'Zend/Locale/Exception.php';
-            throw new Zend_Locale_Exception('No value in ' . $input . ' found');
-        }
-        $found = $found[0];
-        // Change locale input to be default number
-        if ($symbols['minus'] != "-")
-            $found = strtr($found,$symbols['minus'],'-');
-        $found = str_replace($symbols['group'],'', $found);
-
-        // Do precision
-        if (strpos($found, $symbols['decimal']) !== false) {
-            if ($symbols['decimal'] != '.') {
-                $found = str_replace($symbols['decimal'], ".", $found);
-            }
-
-            $pre = substr($found, strpos($found, '.') + 1);
-            if ($options['precision'] === null) {
-                $options['precision'] = strlen($pre);
-            }
-
-            if (strlen($pre) >= $options['precision']) {
-                $found = substr($found, 0, strlen($found) - strlen($pre) + $options['precision']);
-            }
-        }
-
-        return $found;
-    }
-
-    /**
-     * Returns a locale formatted number depending on the given options.
-     * The seperation and fraction sign is used from the set locale.
-     * ##0.#  -> 12345.12345 -> 12345.12345
-     * ##0.00 -> 12345.12345 -> 12345.12
-     * ##,##0.00 -> 12345.12345 -> 12,345.12
-     *
-     * @param   string  $input    Localized number string
-     * @param   array   $options  Options: number_format, locale, precision. See {@link setOptions()} for details.
-     * @return  string  locale formatted number
-     * @throws Zend_Locale_Exception
-     */
-    public static function toNumber($value, array $options = array())
-    {
-        // load class within method for speed
-        require_once 'Zend/Locale/Math.php';
-
-        $value             = Zend_Locale_Math::normalize($value);
-        $options           = self::_checkOptions($options) + self::$_options;
-        $options['locale'] = (string) $options['locale'];
-
-        // Get correct signs for this locale
-        $symbols = Zend_Locale_Data::getList($options['locale'], 'symbols');
-        iconv_set_encoding('internal_encoding', 'UTF-8');
-
-        // Get format
-        $format = $options['number_format'];
-        if ($format === null) {
-            $format  = Zend_Locale_Data::getContent($options['locale'], 'decimalnumber');
-            if (iconv_strpos($format, ';') !== false) {
-                if (call_user_func(Zend_Locale_Math::$comp, $value, 0, $options['precision']) < 0) {
-                    $format = iconv_substr($format, iconv_strpos($format, ';') + 1);
-                } else {
-                    $format = iconv_substr($format, 0, iconv_strpos($format, ';'));
-                }
-            }
-        } else {
-            // seperate negative format pattern when available
-            if (iconv_strpos($format, ';') !== false) {
-                if (call_user_func(Zend_Locale_Math::$comp, $value, 0, $options['precision']) < 0) {
-                    $format = iconv_substr($format, iconv_strpos($format, ';') + 1);
-                } else {
-                    $format = iconv_substr($format, 0, iconv_strpos($format, ';'));
-                }
-            }
-
-            if (strpos($format, '.')) {
-                if (is_numeric($options['precision'])) {
-                    $value = Zend_Locale_Math::round($value, $options['precision']);
-                } else {
-                    if (substr($format, strpos($format, '.') + 1, 3) == '###') {
-                        $options['precision'] = null;
-                    } else {
-                        $options['precision'] = strlen(substr($format, strpos($format, '.') + 1,
-                                                              strrpos($format, '0') - strpos($format, '.')));
-                        $format = substr($format, 0, strpos($format, '.') + 1) . '###'
-                                . substr($format, strrpos($format, '0') + 1);
-                    }
-                }
-            } else {
-                $value = Zend_Locale_Math::round($value, 0);
-                $options['precision'] = 0;
-            }
-            $value = Zend_Locale_Math::normalize($value);
-        }
-
-        if (strpos($format, '0') === false) {
-            require_once 'Zend/Locale/Exception.php';
-            throw new Zend_Locale_Exception('Wrong format... missing 0');
-        }
-
-        // get number parts
-        $pos = iconv_strpos($value, '.');
-        if ($pos !== false) {
-            if ($options['precision'] === null) {
-                $precstr = iconv_substr($value, $pos + 1);
-            } else {
-                $precstr = iconv_substr($value, $pos + 1, $options['precision']);
-                if (iconv_strlen($precstr) < $options['precision']) {
-                    $precstr = $precstr . str_pad("0", ($options['precision'] - iconv_strlen($precstr)), "0");
-                }
-            }
-        } else {
-            if ($options['precision'] > 0) {
-                $precstr = str_pad("0", ($options['precision']), "0");
-            }
-        }
-
-        if ($options['precision'] === null) {
-            if (isset($precstr)) {
-                $options['precision'] = iconv_strlen($precstr);
-            } else {
-                $options['precision'] = 0;
-            }
-        }
-
-        // get fraction and format lengths
-        if (strpos($value, '.') !== false) {
-            $number = substr((string) $value, 0, strpos($value, '.'));
-        } else {
-            $number = $value;
-        }
-
-        $prec = call_user_func(Zend_Locale_Math::$sub, $value, $number, $options['precision']);
-        $prec = Zend_Locale_Math::normalize($prec);
-        if (iconv_strpos($prec, '-') !== false) {
-            $prec = iconv_substr($prec, 1);
-        }
-
-        if (($prec == 0) and ($options['precision'] > 0)) {
-            $prec = "0.0";
-        }
-
-        if (($options['precision'] + 2) > iconv_strlen($prec)) {
-            $prec = str_pad((string) $prec, $options['precision'] + 2, "0", STR_PAD_RIGHT);
-        }
-
-        if (iconv_strpos($number, '-') !== false) {
-            $number = iconv_substr($number, 1);
-        }
-        $group  = iconv_strrpos($format, ',');
-        $group2 = iconv_strpos ($format, ',');
-        $point  = iconv_strpos ($format, '0');
-        // Add fraction
-        $rest = "";
-        if (($value < 0) && (strpos($format, '.'))) {
-            $rest   = substr(substr($format, strpos($format, '.') + 1), -1, 1);
-        }
-
-        if ($options['precision'] == '0') {
-            $format = iconv_substr($format, 0, $point) . iconv_substr($format, iconv_strrpos($format, '#') + 2);
-        } else {
-            $format = iconv_substr($format, 0, $point) . $symbols['decimal']
-                               . iconv_substr($prec, 2)
-                               . iconv_substr($format, iconv_strrpos($format, '#') + 1 + strlen($prec));
-        }
-
-        if (($value < 0) and ($rest != '0') and ($rest != '#')) {
-            $format .= $rest;
-        }
-
-        // Add seperation
-        if ($group == 0) {
-            // no seperation
-            $format = $number . iconv_substr($format, $point);
-        } else if ($group == $group2) {
-            // only 1 seperation
-            $seperation = ($point - $group);
-            for ($x = iconv_strlen($number); $x > $seperation; $x -= $seperation) {
-                if (iconv_substr($number, 0, $x - $seperation) !== "") {
-                    $number = iconv_substr($number, 0, $x - $seperation) . $symbols['group']
-                            . iconv_substr($number, $x - $seperation);
-                }
-            }
-            $format = iconv_substr($format, 0, iconv_strpos($format, '#')) . $number . iconv_substr($format, $point);
-        } else {
-
-            // 2 seperations
-            if (iconv_strlen($number) > ($point - $group)) {
-                $seperation = ($point - $group);
-                $number = iconv_substr($number, 0, iconv_strlen($number) - $seperation) . $symbols['group']
-                        . iconv_substr($number, iconv_strlen($number) - $seperation);
-
-                if ((iconv_strlen($number) - 1) > ($point - $group + 1)) {
-                    $seperation2 = ($group - $group2 - 1);
-                    for ($x = iconv_strlen($number) - $seperation2 - 2; $x > $seperation2; $x -= $seperation2) {
-                        $number = iconv_substr($number, 0, $x - $seperation2) . $symbols['group']
-                                . iconv_substr($number, $x - $seperation2);
-                    }
-                }
-
-            }
-            $format = iconv_substr($format, 0, iconv_strpos($format, '#')) . $number . iconv_substr($format, $point);
-        }
-        // set negative sign
-        if (call_user_func(Zend_Locale_Math::$comp, $value, 0, $options['precision']) < 0) {
-            if (iconv_strpos($format, '-') === false) {
-                $format = $symbols['minus'] . $format;
-            } else {
-                $format = str_replace('-', $symbols['minus'], $format);
-            }
-        }
-
-        return (string) $format;
-    }
-
-    /**
-     * Checks if the input contains a normalized or localized number
-     *
-     * @param   string  $input    Localized number string
-     * @param   array   $options  Options: locale. See {@link setOptions()} for details.
-     * @return  boolean           Returns true if a number was found
-     */
-    public static function isNumber($input, array $options = array())
-    {
-        $options = self::_checkOptions($options) + self::$_options;
-
-        // Get correct signs for this locale
-        $symbols = Zend_Locale_Data::getList($options['locale'],'symbols');
-
-        // Parse input locale aware
-        $regex = '/^[' . $symbols['minus'] . $symbols['plus'] . '-+]?'
-               . '\d(\d*(\\' . $symbols['group'] . ')?\d+)*'
-               . '((\\' . $symbols['decimal'] . ')\d*)?([' . $symbols['exponent'] . 'eE]'
-               . '([' . $symbols['minus'] . $symbols['plus'] . '+-])?\d+)?$/';
-        preg_match($regex, $input, $found);
-
-        if (!isset($found[0]))
-            return false;
-        return true;
-    }
-
-    /**
-     * Alias for getNumber
-     *
-     * @param   string  $value    Number to localize
-     * @param   array   $options  Options: locale, precision. See {@link setOptions()} for details.
-     * @return  float
-     */
-    public static function getFloat($input, array $options = array())
-    {
-        return floatval(self::getNumber($input, $options));
-    }
-
-    /**
-     * Returns a locale formatted integer number
-     * Alias for toNumber()
-     *
-     * @param   string  $value    Number to normalize
-     * @param   array   $options  Options: locale, precision. See {@link setOptions()} for details.
-     * @return  string  Locale formatted number
-     */
-    public static function toFloat($value, array $options = array())
-    {
-        $options['number_format'] = Zend_Locale_Format::STANDARD;
-        return self::toNumber($value, $options);
-    }
-
-    /**
-     * Returns if a float was found
-     * Alias for isNumber()
-     *
-     * @param   string  $input    Localized number string
-     * @param   array   $options  Options: locale. See {@link setOptions()} for details.
-     * @return  boolean           Returns true if a number was found
-     */
-    public static function isFloat($value, array $options = array())
-    {
-        return self::isNumber($value, $options);
-    }
-
-    /**
-     * Returns the first found integer from an string
-     * Parsing depends on given locale (grouping and decimal)
-     *
-     * Examples for input:
-     * '  2345.4356,1234' = 23455456
-     * '+23,3452.123' = 233452
-     * ' 12343 ' = 12343
-     * '-9456km' = -9456
-     * '0' = 0
-     * '(-){0,1}(\d+(\.){0,1})*(\,){0,1})\d+'
-     *
-     * @param   string   $input    Input string to parse for numbers
-     * @param   array    $options  Options: locale. See {@link setOptions()} for details.
-     * @return  integer            Returns the extracted number
-     */
-    public static function getInteger($input, array $options = array())
-    {
-        $options['precision'] = 0;
-        return intval(self::getFloat($input, $options));
-    }
-
-    /**
-     * Returns a localized number
-     *
-     * @param   string  $value    Number to normalize
-     * @param   array   $options  Options: locale. See {@link setOptions()} for details.
-     * @return  string            Locale formatted number
-     */
-    public static function toInteger($value, array $options = array())
-    {
-        $options['precision'] = 0;
-        $options['number_format'] = Zend_Locale_Format::STANDARD;
-        return self::toNumber($value, $options);
-    }
-
-    /**
-     * Returns if a integer was found
-     *
-     * @param   string  $input    Localized number string
-     * @param   array   $options  Options: locale. See {@link setOptions()} for details.
-     * @return  boolean           Returns true if a integer was found
-     */
-    public static function isInteger($value, array $options = array())
-    {
-        if (!self::isNumber($value, $options)) {
-            return false;
-        }
-
-        if (self::getInteger($value, $options) == self::getFloat($value, $options)) {
-            return true;
-        }
-
-        return false;
-    }
-
-    /**
-     * Converts a format string from PHP's date format to ISO format
-     * Remember that Zend Date always returns localized string, so a month name which returns the english
-     * month in php's date() will return the translated month name with this function... use 'en' as locale
-     * if you are in need of the original english names
-     *
-     * The conversion has the following restrictions:
-     * 'a', 'A' - Meridiem is not explicit upper/lowercase, you have to upper/lowercase the translated value yourself
-     *
-     * @param  string  $format  Format string in PHP's date format
-     * @return string           Format string in ISO format
-     */
-    public static function convertPhpToIsoFormat($format)
-    {
-        $convert = array('d' => 'dd'  , 'D' => 'EE'  , 'j' => 'd'   , 'l' => 'EEEE', 'N' => 'e'   , 'S' => 'SS'  ,
-                         'w' => 'eee' , 'z' => 'D'   , 'W' => 'ww'  , 'F' => 'MMMM', 'm' => 'MM'  , 'M' => 'MMM' ,
-                         'n' => 'M'   , 't' => 'ddd' , 'L' => 'l'   , 'o' => 'YYYY', 'Y' => 'yyyy', 'y' => 'yy'  ,
-                         'a' => 'a'   , 'A' => 'a'   , 'B' => 'B'   , 'g' => 'h'   , 'G' => 'H'   , 'h' => 'hh'  ,
-                         'H' => 'HH'  , 'i' => 'mm'  , 's' => 'ss'  , 'e' => 'zzzz', 'I' => 'I'   , 'O' => 'Z'   ,
-                         'P' => 'ZZZZ', 'T' => 'z'   , 'Z' => 'X'   , 'c' => 'yyyy-MM-ddTHH:mm:ssZZZZ',
-                         'r' => 'r'   , 'U' => 'U');
-        $values = str_split($format);
-        foreach ($values as $key => $value) {
-            if (isset($convert[$value]) === true) {
-                $values[$key] = $convert[$value];
-            }
-        }
-        return join($values);
-    }
-
-    /**
-     * Parse date and split in named array fields
-     *
-     * @param   string  $date     Date string to parse
-     * @param   array   $options  Options: format_type, fix_date, locale, date_format. See {@link setOptions()} for details.
-     * @return  array             Possible array members: day, month, year, hour, minute, second, fixed, format
-     */
-    private static function _parseDate($date, $options)
-    {
-        $options = self::_checkOptions($options) + self::$_options;
-        $test = array('h', 'H', 'm', 's', 'y', 'Y', 'M', 'd', 'D', 'E', 'S', 'l', 'B', 'I',
-                       'X', 'r', 'U', 'G', 'w', 'e', 'a', 'A', 'Z', 'z', 'v');
-
-        $format = $options['date_format'];
-        $number = $date; // working copy
-        $result['date_format'] = $format; // save the format used to normalize $number (convenience)
-        $result['locale'] = $options['locale']; // save the locale used to normalize $number (convenience)
-
-        $day   = iconv_strpos($format, 'd');
-        $month = iconv_strpos($format, 'M');
-        $year  = iconv_strpos($format, 'y');
-        $hour  = iconv_strpos($format, 'H');
-        $min   = iconv_strpos($format, 'm');
-        $sec   = iconv_strpos($format, 's');
-        $am    = null;
-        if ($hour === false) {
-            $hour = iconv_strpos($format, 'h');
-        }
-        if ($year === false) {
-            $year = iconv_strpos($format, 'Y');
-        }
-        if ($day === false) {
-            $day = iconv_strpos($format, 'E');
-            if ($day === false) {
-                $day = iconv_strpos($format, 'D');
-            }
-        }
-
-        if ($day !== false) {
-            $parse[$day]   = 'd';
-            if (!empty($options['locale']) && ($options['locale'] !== 'root') &&
-                (!is_object($options['locale']) || ((string) $options['locale'] !== 'root'))) {
-                // erase day string
-                    $daylist = Zend_Locale_Data::getList($options['locale'], 'day');
-                foreach($daylist as $key => $name) {
-                    if (iconv_strpos($number, $name) !== false) {
-                        $number = str_replace($name, "EEEE", $number);
-                        break;
-                    }
-                }
-            }
-        }
-        $position = false;
-
-        if ($month !== false) {
-            $parse[$month] = 'M';
-            if (!empty($options['locale']) && ($options['locale'] !== 'root') &&
-                (!is_object($options['locale']) || ((string) $options['locale'] !== 'root'))) {
-                    // prepare to convert month name to their numeric equivalents, if requested,
-                    // and we have a $options['locale']
-                    $position = self::_replaceMonth($number, Zend_Locale_Data::getList($options['locale'],
-                        'month'));
-                if ($position === false) {
-                    $position = self::_replaceMonth($number, Zend_Locale_Data::getList($options['locale'],
-                        'month', array('gregorian', 'format', 'abbreviated')));
-                }
-            }
-        }
-        if ($year !== false) {
-            $parse[$year]  = 'y';
-        }
-        if ($hour !== false) {
-            $parse[$hour] = 'H';
-        }
-        if ($min !== false) {
-            $parse[$min] = 'm';
-        }
-        if ($sec !== false) {
-            $parse[$sec] = 's';
-        }
-
-        if (empty($parse)) {
-            require_once 'Zend/Locale/Exception.php';
-            throw new Zend_Locale_Exception("Unknown date format, neither date nor time in '" . $format . "' found");
-        }
-        ksort($parse);
-
-        // get daytime
-        if (iconv_strpos($format, 'a') !== false) {
-            if (iconv_strpos(strtoupper($number), strtoupper(Zend_Locale_Data::getContent($options['locale'], 'am'))) !== false) {
-                $am = true;
-            } else if (iconv_strpos(strtoupper($number), strtoupper(Zend_Locale_Data::getContent($options['locale'], 'pm'))) !== false) {
-                $am = false;
-            }
-        }
-
-        // split number parts
-        $split = false;
-        preg_match_all('/\d+/u', $number, $splitted);
-
-        if (count($splitted[0]) == 0) {
-            require_once 'Zend/Locale/Exception.php';
-            throw new Zend_Locale_Exception("No date part in '$date' found.");
-        }
-        if (count($splitted[0]) == 1) {
-            $split = 0;
-        }
-        $cnt = 0;
-        foreach($parse as $key => $value) {
-
-            switch($value) {
-                case 'd':
-                    if ($split === false) {
-                        if (count($splitted[0]) > $cnt) {
-                            $result['day']    = $splitted[0][$cnt];
-                        }
-                    } else {
-                        $result['day'] = iconv_substr($splitted[0][0], $split, 2);
-                        $split += 2;
-                    }
-                    ++$cnt;
-                    break;
-                case 'M':
-                    if ($split === false) {
-                        if (count($splitted[0]) > $cnt) {
-                            $result['month']  = $splitted[0][$cnt];
-                        }
-                    } else {
-                        $result['month'] = iconv_substr($splitted[0][0], $split, 2);
-                        $split += 2;
-                    }
-                    ++$cnt;
-                    break;
-                case 'y':
-                    $length = 2;
-                    if ((iconv_substr($format, $year, 4) == 'yyyy')
-                     || (iconv_substr($format, $year, 4) == 'YYYY')) {
-                        $length = 4;
-                    }
-
-                    if ($split === false) {
-                        if (count($splitted[0]) > $cnt) {
-                            $result['year']   = $splitted[0][$cnt];
-                        }
-                    } else {
-                        $result['year']   = iconv_substr($splitted[0][0], $split, $length);
-                        $split += $length;
-                    }
-
-                    ++$cnt;
-                    break;
-                case 'H':
-                    if ($split === false) {
-                        if (count($splitted[0]) > $cnt) {
-                            $result['hour']   = $splitted[0][$cnt];
-                        }
-                    } else {
-                        $result['hour']   = iconv_substr($splitted[0][0], $split, 2);
-                        $split += 2;
-                    }
-                    ++$cnt;
-                    break;
-                case 'm':
-                    if ($split === false) {
-                        if (count($splitted[0]) > $cnt) {
-                            $result['minute'] = $splitted[0][$cnt];
-                        }
-                    } else {
-                        $result['minute'] = iconv_substr($splitted[0][0], $split, 2);
-                        $split += 2;
-                    }
-                    ++$cnt;
-                    break;
-                case 's':
-                    if ($split === false) {
-                        if (count($splitted[0]) > $cnt) {
-                            $result['second'] = $splitted[0][$cnt];
-                        }
-                    } else {
-                        $result['second'] = iconv_substr($splitted[0][0], $split, 2);
-                        $split += 2;
-                    }
-                    ++$cnt;
-                    break;
-            }
-        }
-
-        // AM/PM correction
-        if ($hour !== false) {
-            if (($am === true) and ($result['hour'] == 12)){
-                $result['hour'] = 0;
-            } else if (($am === false) and ($result['hour'] != 12)) {
-                $result['hour'] += 12;
-            }
-        }
-
-        if ($options['fix_date'] === true) {
-            $result['fixed'] = 0; // nothing has been "fixed" by swapping date parts around (yet)
-        }
-
-        if ($day !== false) {
-            // fix false month
-            if (isset($result['day']) and isset($result['month'])) {
-                if (($position !== false) and ((iconv_strpos($date, $result['day']) === false) or
-                                               (isset($result['year']) and (iconv_strpos($date, $result['year']) === false)))) {
-                    if ($options['fix_date'] !== true) {
-                        require_once 'Zend/Locale/Exception.php';
-                        throw new Zend_Locale_Exception("Unable to parse date '$date' using '" . $format
-                            . "' (false month, $position, $month)");
-                    }
-                    $temp = $result['day'];
-                    $result['day']   = $result['month'];
-                    $result['month'] = $temp;
-                    $result['fixed'] = 1;
-                }
-            }
-
-            // fix switched values d <> y
-            if (isset($result['day']) and isset($result['year'])) {
-                if ($result['day'] > 31) {
-                    if ($options['fix_date'] !== true) {
-                        require_once 'Zend/Locale/Exception.php';
-                        throw new Zend_Locale_Exception("Unable to parse date '$date' using '"
-                                                      . $format . "' (d <> y)");
-                    }
-                    $temp = $result['year'];
-                    $result['year'] = $result['day'];
-                    $result['day']  = $temp;
-                    $result['fixed'] = 2;
-                }
-            }
-
-            // fix switched values M <> y
-            if (isset($result['month']) and isset($result['year'])) {
-                if ($result['month'] > 31) {
-                    if ($options['fix_date'] !== true) {
-                        require_once 'Zend/Locale/Exception.php';
-                        throw new Zend_Locale_Exception("Unable to parse date '$date' using '"
-                                                      . $format . "' (M <> y)");
-                    }
-                    $temp = $result['year'];
-                    $result['year']  = $result['month'];
-                    $result['month'] = $temp;
-                    $result['fixed'] = 3;
-                }
-            }
-
-            // fix switched values M <> d
-            if (isset($result['month']) and isset($result['day'])) {
-                if ($result['month'] > 12) {
-                    if ($options['fix_date'] !== true || $result['month'] > 31) {
-                        require_once 'Zend/Locale/Exception.php';
-                        throw new Zend_Locale_Exception("Unable to parse date '$date' using '"
-                                                      . $format . "' (M <> d)");
-                    }
-                    $temp = $result['day'];
-                    $result['day']   = $result['month'];
-                    $result['month'] = $temp;
-                    $result['fixed'] = 4;
-                }
-            }
-        }
-
-        if (isset($result['year'])) {
-            if (((iconv_strlen($result['year']) == 2) && ($result['year'] < 10)) ||
-                (((iconv_strpos($format, 'yy') !== false) && (iconv_strpos($format, 'yyyy') === false)) ||
-                ((iconv_strpos($format, 'YY') !== false) && (iconv_strpos($format, 'YYYY') === false)))) {
-                if (($result['year'] >= 0) && ($result['year'] < 100)) {
-                    if ($result['year'] < 70) {
-                        $result['year'] = (int) $result['year'] + 100;
-                    }
-
-                    $result['year'] = (int) $result['year'] + 1900;
-                }
-            }
-        }
-
-        return $result;
-    }
-
-    /**
-     * Search $number for a month name found in $monthlist, and replace if found.
-     *
-     * @param  string  $number     Date string (modified)
-     * @param  array   $monthlist  List of month names
-     *
-     * @return int|false           Position of replaced string (false if nothing replaced)
-     */
-    protected static function _replaceMonth(&$number, $monthlist)
-    {
-        // If $locale was invalid, $monthlist will default to a "root" identity
-        // mapping for each month number from 1 to 12.
-        // If no $locale was given, or $locale was invalid, do not use this identity mapping to normalize.
-        // Otherwise, translate locale aware month names in $number to their numeric equivalents.
-        $position = false;
-        if ($monthlist && $monthlist[1] != 1) {
-            foreach($monthlist as $key => $name) {
-                if (($position = iconv_strpos($number, $name)) !== false) {
-                    $number   = str_ireplace($name, $key, $number);
-                    return $position;
-                }
-            }
-        }
-        return false;
-    }
-
-    /**
-     * Returns the default date format for $locale.
-     *
-     * @param  string|Zend_Locale  $locale  OPTIONAL Locale of $number, possibly in string form (e.g. 'de_AT')
-     * @return string  format
-     * @throws Zend_Locale_Exception  throws an exception when locale data is broken
-     */
-    public static function getDateFormat($locale = null)
-    {
-        $format = Zend_Locale_Data::getContent($locale, 'date');
-        if (empty($format)) {
-            require_once 'Zend/Locale/Exception.php';
-            throw new Zend_Locale_Exception("failed to receive data from locale $locale");
-        }
-        return $format;
-    }
-
-    /**
-     * Returns an array with the normalized date from an locale date
-     * a input of 10.01.2006 without a $locale would return:
-     * array ('day' => 10, 'month' => 1, 'year' => 2006)
-     * The 'locale' option is only used to convert human readable day
-     * and month names to their numeric equivalents.
-     * The 'format' option allows specification of self-defined date formats,
-     * when not using the default format for the 'locale'.
-     *
-     * @param   string  $date     Date string
-     * @param   array   $options  Options: format_type, fix_date, locale, date_format. See {@link setOptions()} for details.
-     * @return  array             Possible array members: day, month, year, hour, minute, second, fixed, format
-     */
-    public static function getDate($date, array $options = array())
-    {
-        $options = self::_checkOptions($options) + self::$_options;
-        if (empty($options['date_format'])) {
-            $options['format_type'] = 'iso';
-            $options['date_format'] = self::getDateFormat($options['locale']);
-        }
-        return self::_parseDate($date, $options);
-    }
-
-    /**
-     * Returns if the given datestring contains all date parts from the given format.
-     * If no format is given, the default date format from the locale is used
-     * If you want to check if the date is a proper date you should use Zend_Date::isDate()
-     *
-     * @param   string  $date     Date string
-     * @param   array   $options  Options: format_type, fix_date, locale, date_format. See {@link setOptions()} for details.
-     * @return  boolean
-     */
-    public static function checkDateFormat($date, array $options = array())
-    {
-        try {
-            $date = self::getDate($date, $options);
-        } catch (Exception $e) {
-            return false;
-        }
-
-        if (empty($options['date_format'])) {
-            $options['format_type'] = 'iso';
-            $options['date_format'] = self::getDateFormat($options['locale']);
-        }
-        $options = self::_checkOptions($options) + self::$_options;
-
-        // day expected but not parsed
-        if ((iconv_strpos($options['date_format'], 'd') !== false) and (!isset($date['day']) or ($date['day'] == ""))) {
-            return false;
-        }
-
-        // month expected but not parsed
-        if ((iconv_strpos($options['date_format'], 'M') !== false) and (!isset($date['month']) or ($date['month'] == ""))) {
-            return false;
-        }
-
-        // year expected but not parsed
-        if (((iconv_strpos($options['date_format'], 'Y') !== false) or
-             (iconv_strpos($options['date_format'], 'y') !== false)) and (!isset($date['year']) or ($date['year'] == ""))) {
-            return false;
-        }
-
-        // second expected but not parsed
-        if ((iconv_strpos($options['date_format'], 's') !== false) and (!isset($date['second']) or ($date['second'] == ""))) {
-            return false;
-        }
-
-        // minute expected but not parsed
-        if ((iconv_strpos($options['date_format'], 'm') !== false) and (!isset($date['minute']) or ($date['minute'] == ""))) {
-            return false;
-        }
-
-        // hour expected but not parsed
-        if (((iconv_strpos($options['date_format'], 'H') !== false) or
-             (iconv_strpos($options['date_format'], 'h') !== false)) and (!isset($date['hour']) or ($date['hour'] == ""))) {
-            return false;
-        }
-        return true;
-    }
-
-    /**
-     * Returns the default time format for $locale.
-     *
-     * @param  string|Zend_Locale  $locale  OPTIONAL Locale of $number, possibly in string form (e.g. 'de_AT')
-     * @return string  format
-     */
-    public static function getTimeFormat($locale = null)
-    {
-        $format = Zend_Locale_Data::getContent($locale, 'time');
-        if (empty($format)) {
-            require_once 'Zend/Locale/Exception.php';
-            throw new Zend_Locale_Exception("failed to receive data from locale $locale");
-        }
-        return $format;
-    }
-
-    /**
-     * Returns an array with 'hour', 'minute', and 'second' elements extracted from $time
-     * according to the order described in $format.  For a format of 'H:m:s', and
-     * an input of 11:20:55, getTime() would return:
-     * array ('hour' => 11, 'minute' => 20, 'second' => 55)
-     * The optional $locale parameter may be used to help extract times from strings
-     * containing both a time and a day or month name.
-     *
-     * @param   string  $time     Time string
-     * @param   array   $options  Options: format_type, fix_date, locale, date_format. See {@link setOptions()} for details.
-     * @return  array             Possible array members: day, month, year, hour, minute, second, fixed, format
-     */
-    public static function getTime($time, array $options = array())
-    {
-        $options = self::_checkOptions($options) + self::$_options;
-        if (empty($options['date_format'])) {
-            $options['format_type'] = 'iso';
-            $options['date_format'] = self::getTimeFormat($options['locale']);
-        }
-        return self::_parseDate($time, $options);
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

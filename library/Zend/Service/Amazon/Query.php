@@ -1,98 +1,33 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Service
- * @subpackage Amazon
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Query.php 8064 2008-02-16 10:58:39Z thomas $
- */
-
-
-/**
- * @see Zend_Service_Amazon
- */
-require_once 'Zend/Service/Amazon.php';
-
-
-/**
- * @category   Zend
- * @package    Zend_Service
- * @subpackage Amazon
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Service_Amazon_Query extends Zend_Service_Amazon
-{
-    /**
-     * Search parameters
-     *
-     * @var array
-     */
-    protected $_search = array();
-
-    /**
-     * Search index
-     *
-     * @var string
-     */
-    protected $_searchIndex = null;
-
-    /**
-     * Prepares query parameters
-     *
-     * @param  string $method
-     * @param  array  $args
-     * @throws Zend_Service_Exception
-     * @return Zend_Service_Amazon_Query Provides a fluent interface
-     */
-    public function __call($method, $args)
-    {
-        if (strtolower($method) === 'asin') {
-            $this->_searchIndex = 'asin';
-            $this->_search['ItemId'] = $args[0];
-            return $this;
-        }
-
-        if (strtolower($method) === 'category') {
-            $this->_searchIndex = $args[0];
-            $this->_search['SearchIndex'] = $args[0];
-        } else if (isset($this->_search['SearchIndex']) || $this->_searchIndex !== null || $this->_searchIndex === 'asin') {
-            $this->_search[$method] = $args[0];
-        } else {
-            /**
-             * @see Zend_Service_Exception
-             */
-            require_once 'Zend/Service/Exception.php';
-            throw new Zend_Service_Exception('You must set a category before setting the search parameters');
-        }
-
-        return $this;
-    }
-
-    /**
-     * Search using the prepared query
-     *
-     * @return Zend_Service_Amazon_Item|Zend_Service_Amazon_ResultSet
-     */
-    public function search()
-    {
-        if ($this->_searchIndex === 'asin') {
-            return $this->itemLookup($this->_search['ItemId'], $this->_search);
-        }
-        return $this->itemSearch($this->_search);
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

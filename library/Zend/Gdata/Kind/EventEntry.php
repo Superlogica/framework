@@ -1,427 +1,154 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Gdata
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * @see Zend_Gdata_Entry
- */
-require_once 'Zend/Gdata/Entry.php';
-
-/**
- * @see Zend_Gdata_App_Extension
- */
-require_once 'Zend/Gdata/App/Extension.php';
-
-/**
- * @see Zend_Gdata_Extension_Where
- */
-require_once 'Zend/Gdata/Extension/Where.php';
-
-/**
- * @see Zend_Gdata_Extension_When
- */
-require_once 'Zend/Gdata/Extension/When.php';
-
-/**
- * @see Zend_Gdata_Extension_Who
- */
-require_once 'Zend/Gdata/Extension/Who.php';
-
-/**
- * @see Zend_Gdata_Extension_Recurrence
- */
-require_once 'Zend/Gdata/Extension/Recurrence.php';
-
-/**
- * @see Zend_Gdata_Extension_EventStatus
- */
-require_once 'Zend/Gdata/Extension/EventStatus.php';
-
-/**
- * @see Zend_Gdata_Extension_Comments
- */
-require_once 'Zend/Gdata/Extension/Comments.php';
-
-/**
- * @see Zend_Gdata_Extension_Transparency
- */
-require_once 'Zend/Gdata/Extension/Transparency.php';
-
-/**
- * @see Zend_Gdata_Extension_Visibility
- */
-require_once 'Zend/Gdata/Extension/Visibility.php';
-
-/**
- * @see Zend_Gdata_Extension_ExtendedProperty
- */
-require_once 'Zend/Gdata/Extension/ExtendedProperty.php';
-
-/**
- * @see Zend_Gdata_Extension_OriginalEvent
- */
-require_once 'Zend/Gdata/Extension/OriginalEvent.php';
-
-/**
- * @see Zend_Gdata_Extension_EntryLink
- */
-require_once 'Zend/Gdata/Extension/EntryLink.php';
-
-/**
- * Data model for the Gdata Event "Kind".  Google Calendar has a separate
- * EventEntry class which extends this.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Gdata
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Gdata_Kind_EventEntry extends Zend_Gdata_Entry
-{
-    protected $_who = array();
-    protected $_when = array();
-    protected $_where = array();
-    protected $_recurrence = null;
-    protected $_eventStatus = null;
-    protected $_comments = null;
-    protected $_transparency = null;
-    protected $_visibility = null;
-    protected $_recurrenceException = array();
-    protected $_extendedProperty = array();
-    protected $_originalEvent = null;
-    protected $_entryLink = null;
-
-    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
-    {
-        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
-        if ($this->_who != null) {
-            foreach ($this->_who as $who) {
-                $element->appendChild($who->getDOM($element->ownerDocument));
-            }
-        }
-        if ($this->_when != null) {
-            foreach ($this->_when as $when) {
-                $element->appendChild($when->getDOM($element->ownerDocument));
-            }
-        }
-        if ($this->_where != null) {
-            foreach ($this->_where as $where) {
-                $element->appendChild($where->getDOM($element->ownerDocument));
-            }
-        }
-        if ($this->_recurrenceException != null) {
-            foreach ($this->_recurrenceException as $recurrenceException) {
-                $element->appendChild($recurrenceException->getDOM($element->ownerDocument));
-            }
-        }
-        if ($this->_extendedProperty != null) {
-            foreach ($this->_extendedProperty as $extProp) {
-                $element->appendChild($extProp->getDOM($element->ownerDocument));
-            }
-        }
-
-        if ($this->_recurrence != null) {
-            $element->appendChild($this->_recurrence->getDOM($element->ownerDocument));
-        }
-        if ($this->_eventStatus != null) {
-            $element->appendChild($this->_eventStatus->getDOM($element->ownerDocument));
-        }
-        if ($this->_comments != null) {
-            $element->appendChild($this->_comments->getDOM($element->ownerDocument));
-        }
-        if ($this->_transparency != null) {
-            $element->appendChild($this->_transparency->getDOM($element->ownerDocument));
-        }
-        if ($this->_visibility != null) {
-            $element->appendChild($this->_visibility->getDOM($element->ownerDocument));
-        }
-        if ($this->_originalEvent != null) {
-            $element->appendChild($this->_originalEvent->getDOM($element->ownerDocument));
-        }
-        if ($this->_entryLink != null) {
-            $element->appendChild($this->_entryLink->getDOM($element->ownerDocument));
-        }
-
-
-        return $element;
-    }
-
-    protected function takeChildFromDOM($child)
-    {
-        $absoluteNodeName = $child->namespaceURI . ':' . $child->localName;
-        switch ($absoluteNodeName) {
-        case $this->lookupNamespace('gd') . ':' . 'where';
-            $where = new Zend_Gdata_Extension_Where();
-            $where->transferFromDOM($child);
-            $this->_where[] = $where;
-            break;
-        case $this->lookupNamespace('gd') . ':' . 'when';
-            $when = new Zend_Gdata_Extension_When();
-            $when->transferFromDOM($child);
-            $this->_when[] = $when;
-            break;
-        case $this->lookupNamespace('gd') . ':' . 'who';
-            $who = new Zend_Gdata_Extension_Who();
-            $who ->transferFromDOM($child);
-            $this->_who[] = $who;
-            break;
-        case $this->lookupNamespace('gd') . ':' . 'recurrence';
-            $recurrence = new Zend_Gdata_Extension_Recurrence();
-            $recurrence->transferFromDOM($child);
-            $this->_recurrence = $recurrence;
-            break;
-        case $this->lookupNamespace('gd') . ':' . 'eventStatus';
-            $eventStatus = new Zend_Gdata_Extension_EventStatus();
-            $eventStatus->transferFromDOM($child);
-            $this->_eventStatus = $eventStatus;
-            break;
-        case $this->lookupNamespace('gd') . ':' . 'comments';
-            $comments = new Zend_Gdata_Extension_Comments();
-            $comments->transferFromDOM($child);
-            $this->_comments = $comments;
-            break;
-        case $this->lookupNamespace('gd') . ':' . 'transparency';
-            $transparency = new Zend_Gdata_Extension_Transparency();
-            $transparency ->transferFromDOM($child);
-            $this->_transparency = $transparency;
-            break;
-        case $this->lookupNamespace('gd') . ':' . 'visibility';
-            $visiblity = new Zend_Gdata_Extension_Visibility();
-            $visiblity ->transferFromDOM($child);
-            $this->_visibility = $visiblity;
-            break;
-        case $this->lookupNamespace('gd') . ':' . 'recurrenceException';
-            require_once 'Zend/Gdata/Extension/RecurrenceException.php';
-            $recurrenceException = new Zend_Gdata_Extension_RecurrenceException();
-            $recurrenceException ->transferFromDOM($child);
-            $this->_recurrenceException[] = $recurrenceException;
-            break;
-        case $this->lookupNamespace('gd') . ':' . 'originalEvent';
-            $originalEvent = new Zend_Gdata_Extension_OriginalEvent();
-            $originalEvent ->transferFromDOM($child);
-            $this->_originalEvent = $originalEvent;
-            break;
-        case $this->lookupNamespace('gd') . ':' . 'extendedProperty';
-            $extProp = new Zend_Gdata_Extension_ExtendedProperty();
-            $extProp->transferFromDOM($child);
-            $this->_extendedProperty[] = $extProp;
-            break;
-        case $this->lookupNamespace('gd') . ':' . 'entryLink':
-            $entryLink = new Zend_Gdata_Extension_EntryLink();
-            $entryLink->transferFromDOM($child);
-            $this->_entryLink = $entryLink;
-            break;
-
-        default:
-            parent::takeChildFromDOM($child);
-            break;
-        }
-    }
-
-    public function getWhen()
-    {
-        return $this->_when;
-    }
-
-    /**
-     * @param array $value
-     * @return Zend_Gdata_Kind_EventEntry Provides a fluent interface
-     */
-    public function setWhen($value)
-    {
-        $this->_when = $value;
-        return $this;
-    }
-
-    public function getWhere()
-    {
-        return $this->_where;
-    }
-
-    /**
-     * @param array $value
-     * @return Zend_Gdata_Kind_EventEntry Provides a fluent interface
-     */
-    public function setWhere($value)
-    {
-        $this->_where = $value;
-        return $this;
-    }
-
-    public function getWho()
-    {
-        return $this->_who;
-    }
-
-    /**
-     * @param array $value
-     * @return Zend_Gdata_Kind_EventEntry Provides a fluent interface
-     */
-    public function setWho($value)
-    {
-        $this->_who = $value;
-        return $this;
-    }
-
-    public function getRecurrence()
-    {
-        return $this->_recurrence;
-    }
-
-    /**
-     * @param array $value
-     * @return Zend_Gdata_Kind_EventEntry Provides a fluent interface
-     */
-    public function setRecurrence($value)
-    {
-        $this->_recurrence = $value;
-        return $this;
-    }
-
-    public function getEventStatus()
-    {
-        return $this->_eventStatus;
-    }
-
-    /**
-     * @param array $value
-     * @return Zend_Gdata_Kind_EventEntry Provides a fluent interface
-     */
-    public function setEventStatus($value)
-    {
-        $this->_eventStatus = $value;
-        return $this;
-    }
-
-    public function getComments()
-    {
-        return $this->_comments;
-    }
-
-    /**
-     * @param array $value
-     * @return Zend_Gdata_Kind_EventEntry Provides a fluent interface
-     */
-    public function setComments($value)
-    {
-        $this->_comments = $value;
-        return $this;
-    }
-
-    public function getTransparency()
-    {
-        return $this->_transparency;
-    }
-
-    /**
-     * @param Zend_Gdata_Transparency $value
-     * @return Zend_Gdata_Kind_EventEntry Provides a fluent interface
-     */
-    public function setTransparency($value)
-    {
-        $this->_transparency = $value;
-        return $this;
-    }
-
-    public function getVisibility()
-    {
-        return $this->_visibility;
-    }
-
-    /**
-     * @param Zend_Gdata_Visibility $value
-     * @return Zend_Gdata_Kind_EventEntry Provides a fluent interface
-     */
-    public function setVisibility($value)
-    {
-        $this->_visibility = $value;
-        return $this;
-    }
-
-    public function getRecurrenceExcption()
-    {
-        return $this->_recurrenceException;
-    }
-
-    /**
-     * @param array $value
-     * @return Zend_Gdata_Kind_EventEntry Provides a fluent interface
-     */
-    public function setRecurrenceException($value)
-    {
-        $this->_recurrenceException = $value;
-        return $this;
-    }
-
-    public function getExtendedProperty()
-    {
-        return $this->_extendedProperty;
-    }
-
-    /**
-     * @param array $value
-     * @return Zend_Gdata_Kind_EventEntry Provides a fluent interface
-     */
-    public function setExtendedProperty($value)
-    {
-        $this->_extendedProperty = $value;
-        return $this;
-    }
-
-    public function getOriginalEvent()
-    {
-        return $this->_originalEvent;
-    }
-
-    /**
-     * @param Zend_Gdata_Extension_OriginalEvent $value
-     * @return Zend_Gdata_Kind_EventEntry Provides a fluent interface
-     */
-    public function setOriginalEvent($value)
-    {
-        $this->_originalEvent = $value;
-        return $this;
-    }
-
-    /**
-     * Get this entry's EntryLink element.
-     *
-     * @return Zend_Gdata_Extension_EntryLink The requested entry.
-     */
-    public function getEntryLink()
-    {
-        return $this->_entryLink;
-    }
-
-    /**
-     * Set the child's EntryLink element.
-     *
-     * @param Zend_Gdata_Extension_EntryLink $value The desired value for this attribute.
-     * @return Zend_Gdata_Extension_Who The element being modified.
-     */
-    public function setEntryLink($value)
-    {
-        $this->_entryLink = $value;
-        return $this;
-    }
-
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

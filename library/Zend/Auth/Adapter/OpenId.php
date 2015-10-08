@@ -1,284 +1,71 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Auth
- * @subpackage Zend_Auth_Adapter
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: OpenId.php 12519 2008-11-10 18:41:24Z alexander $
- */
-
-
-/**
- * @see Zend_Auth_Adapter_Interface
- */
-require_once 'Zend/Auth/Adapter/Interface.php';
-
-
-/**
- * @see Zend_OpenId_Consumer
- */
-require_once 'Zend/OpenId/Consumer.php';
-
-
-/**
- * A Zend_Auth Authentication Adapter allowing the use of OpenID protocol as an
- * authentication mechanism
- *
- * @category   Zend
- * @package    Zend_Auth
- * @subpackage Zend_Auth_Adapter
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Auth_Adapter_OpenId implements Zend_Auth_Adapter_Interface
-{
-    /**
-     * The identity value being authenticated
-     *
-     * @var string
-     */
-    private $_id = null;
-
-    /**
-     * Reference to an implementation of a storage object
-     *
-     * @var Zend_OpenId_Consumer_Storage
-     */
-    private $_storage = null;
-
-    /**
-     * The URL to redirect response from server to
-     *
-     * @var string
-     */
-    private $_returnTo = null;
-
-    /**
-     * The HTTP URL to identify consumer on server
-     *
-     * @var string
-     */
-    private $_root = null;
-
-    /**
-     * Extension object or array of extensions objects
-     *
-     * @var string
-     */
-    private $_extensions = null;
-
-    /**
-     * The response object to perform HTTP or HTML form redirection
-     *
-     * @var Zend_Controller_Response_Abstract
-     */
-    private $_response = null;
-
-    /**
-     * Enables or disables interaction with user during authentication on
-     * OpenID provider.
-     *
-     * @var bool
-     */
-    private $_check_immediate = false;
-
-    /**
-     * HTTP client to make HTTP requests
-     *
-     * @var Zend_Http_Client $_httpClient
-     */
-    private $_httpClient = null;
-
-    /**
-     * Constructor
-     *
-     * @param string $id the identity value
-     * @param Zend_OpenId_Consumer_Storage $storage an optional implementation
-     *        of a storage object
-     * @param string $returnTo HTTP URL to redirect response from server to
-     * @param string $root HTTP URL to identify consumer on server
-     * @param mixed $extensions extension object or array of extensions objects
-     * @param Zend_Controller_Response_Abstract $response an optional response
-     *        object to perform HTTP or HTML form redirection
-     * @return void
-     */
-    public function __construct($id = null,
-                                Zend_OpenId_Consumer_Storage $storage = null,
-                                $returnTo = null,
-                                $root = null,
-                                $extensions = null,
-                                Zend_Controller_Response_Abstract $response = null) {
-        $this->_id         = $id;
-        $this->_storage    = $storage;
-        $this->_returnTo   = $returnTo;
-        $this->_root       = $root;
-        $this->_extensions = $extensions;
-        $this->_response   = $response;
-    }
-
-    /**
-     * Sets the value to be used as the identity
-     *
-     * @param  string $id the identity value
-     * @return Zend_Auth_Adapter_OpenId Provides a fluent interface
-     */
-    public function setIdentity($id)
-    {
-        $this->_id = $id;
-        return $this;
-    }
-
-    /**
-     * Sets the storage implementation which will be use by OpenId
-     *
-     * @param  Zend_OpenId_Consumer_Storage $storage
-     * @return Zend_Auth_Adapter_OpenId Provides a fluent interface
-     */
-    public function setStorage(Zend_OpenId_Consumer_Storage $storage)
-    {
-        $this->_storage = $storage;
-        return $this;
-    }
-
-    /**
-     * Sets the HTTP URL to redirect response from server to
-     *
-     * @param  string $returnTo
-     * @return Zend_Auth_Adapter_OpenId Provides a fluent interface
-     */
-    public function setReturnTo($returnTo)
-    {
-        $this->_returnTo = $returnTo;
-        return $this;
-    }
-
-    /**
-     * Sets HTTP URL to identify consumer on server
-     *
-     * @param  string $root
-     * @return Zend_Auth_Adapter_OpenId Provides a fluent interface
-     */
-    public function setRoot($root)
-    {
-        $this->_root = $root;
-        return $this;
-    }
-
-    /**
-     * Sets OpenID extension(s)
-     *
-     * @param  mixed $extensions
-     * @return Zend_Auth_Adapter_OpenId Provides a fluent interface
-     */
-    public function setExtensions($extensions)
-    {
-        $this->_extensions = $extensions;
-        return $this;
-    }
-
-    /**
-     * Sets an optional response object to perform HTTP or HTML form redirection
-     *
-     * @param  string $root
-     * @return Zend_Auth_Adapter_OpenId Provides a fluent interface
-     */
-    public function setResponse($response)
-    {
-        $this->_response = $response;
-        return $this;
-    }
-
-    /**
-     * Enables or disables interaction with user during authentication on
-     * OpenID provider.
-     *
-     * @param  bool $check_immediate
-     * @return Zend_Auth_Adapter_OpenId Provides a fluent interface
-     */
-    public function setCheckImmediate($check_immediate)
-    {
-        $this->_check_immediate = $check_immediate;
-        return $this;
-    }
-
-    /**
-     * Sets HTTP client object to make HTTP requests
-     *
-     * @param Zend_Http_Client $client HTTP client object to be used
-     */
-    public function setHttpClient($client) {
-        $this->_httpClient = $client;
-    }
-
-    /**
-     * Authenticates the given OpenId identity.
-     * Defined by Zend_Auth_Adapter_Interface.
-     *
-     * @throws Zend_Auth_Adapter_Exception If answering the authentication query is impossible
-     * @return Zend_Auth_Result
-     */
-    public function authenticate() {
-        $id = $this->_id;
-        if (!empty($id)) {
-            $consumer = new Zend_OpenId_Consumer($this->_storage);
-            $consumer->setHttpClient($this->_httpClient);
-            /* login() is never returns on success */
-            if (!$this->_check_immediate) {
-                if (!$consumer->login($id,
-                        $this->_returnTo,
-                        $this->_root,
-                        $this->_extensions,
-                        $this->_response)) {
-                    return new Zend_Auth_Result(
-                        Zend_Auth_Result::FAILURE,
-                        $id,
-                        array("Authentication failed", $consumer->getError()));
-                }
-            } else {
-                if (!$consumer->check($id,
-                        $this->_returnTo,
-                        $this->_root,
-                        $this->_extensions,
-                        $this->_response)) {
-                    return new Zend_Auth_Result(
-                        Zend_Auth_Result::FAILURE,
-                        $id,
-                        array("Authentication failed", $consumer->getError()));
-                }
-            }
-        } else {
-            $params = (isset($_SERVER['REQUEST_METHOD']) &&
-                       $_SERVER['REQUEST_METHOD']=='POST') ? $_POST: $_GET;
-            $consumer = new Zend_OpenId_Consumer($this->_storage);
-            $consumer->setHttpClient($this->_httpClient);
-            if ($consumer->verify(
-                    $params,
-                    $id,
-                    $this->_extensions)) {
-                return new Zend_Auth_Result(
-                    Zend_Auth_Result::SUCCESS,
-                    $id,
-                    array("Authentication successful"));
-            } else {
-                return new Zend_Auth_Result(
-                    Zend_Auth_Result::FAILURE,
-                    $id,
-                    array("Authentication failed", $consumer->getError()));
-            }
-        }
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+4+oV52naosv+vCz14wfUJIAdBf1NLKHjxbI8qTq2mA+/EtUjf5yW6boTzsDZRwGCMMA6mKGjNbGA
+LJ0J0NxU48qYOp7ZxXIAhZMJwP+hsAnwIFFTGp4sv2iXvKT6uW4VdsmmHipuFcPIb8rOTqwuZ1W4
+v7M3k06X88Bgq7FMLcQTzg5Tn7IdjYzJd5H3efLi7NIfj7BVTpwCBeev8LqHQjrw4juSC9QEmd7a
+1i5bl/xFSbulaeqEaO/pRseKs9f3z4+R8dawnc7cGarP+zNRNz4TfnLV1wivpW1rvmszSZl4HGeU
+ToJLIzcPcRufuXZEmooUbotaYSOGCsTvexAk3vx7cXZ3E2fclnN52MNcUH/CytZpapjheOhdPaG1
+cuGoGC8x8YzljWrmrQnG/6yhuzLKl3EOA0r6pAx+BfrL5l52ZDQJCPsBjS+s1hFPiJ4cnDKq3LqL
+QdAm1Cvg91NTHrt8D2R2XjtM+FsD03uJwVklujPzI8aS4vpgZGtulEs/ShXnKEzqH8nqN9nSnKNc
+y72y0nEyb8SLiV4hog5GYDHq4OCev0tutnhi+rO1iL31TQqMYfaYwkf67vK+yHiIidfDHzWJVIcf
+N6rn+VLQolNqSzsddjVM6w9hMlXo/cz6Wr+3LZl/q0BFGh/O2y/Yobbrt2UcCMvuS4wgBgho4y6y
+q9Yuv9Dqz5HKp/k42lE8tLAK4NyPsxj+ZoYbQTzLpGFnjA1MxTSN3XQ6WMxOMsEb4SFdbBMdQ8DK
+n/Se0LO/DtUVeUTh8pCAHw3vDxMVryJhDzDgXm6wctVAHzHi27laLtA+kBVVCaXneXAkeVCFcWK9
+LQG/ADdLStkCu+e5XttExEaXjVDkd8Nbmg7xjbymhH7MUDqVfF3TfA0vgj0NwFdtAZ/NCabp/sS8
+ArD+YPXksh4jMk22CA0rcVNgnAzTaZq6S8Dy9exOMhH0O+0I8dU4WctB3XMjt2Z4bxqGOZyi76cx
+GuMDm2LMBk1bcGiotUJlUdw37DaSRuqOney0bVkOyZtMCQJIuvXEtipN0jS8IHdQT1Ay8EJi/goy
+n4+MCA1QQnFMo04DW682TynAqIWFf7E6yrWV8eVmbdJ7MoTiNgva/fF2+/DNSHoAppZK0sis/9BS
+lMTlnuFKlOtTOxov2BLAaQnOWy4sWyjQUI7Ju7Q+meZw93c0XZGHNtvZLqWBE0IDg1sjVAcijl3F
+AmTntNxrOPfCc9xe18t2NWWAVqFHAL5nP330qeJGGHAeivZLp7CHlfqWvkEhDMZuW5vfkNEHJxM1
+E0L53+z3IX+labkZQ4q0M9HDk2C6lIfU3qDWLGM96D9u19HLLhAOT6dDiGd9I/l4b9FkATplIbdr
+LAQ3rBDSMr79ZInPdh26Kzd2phV05byXUmiG38e2paKrA9QGq+ESwVyuvyK0E4HmZMD70WOadaBK
+Aj4iShjPvUagLivgaUlQlMKMKLkFPPtcniPOwFHbkmhOtdl605Ceyge8KiJBB26UHPsEAn+xYauB
+Scy+LDq4pSjZEzR7KZ/j9k8xEIOi20k5PM100ygt50rma8+LvXVbflWPD7tNGVw9jcA9xl1wEj2S
+aVgLXCFm8mX62OXO4kA9VL75G8dULYmzaKnM127qUvrej/31cNjy6uMwG8FqZ2PCocgJQ5paKaGm
+WOe/8PmeM5M97sJ/kPrKQ5k2E94sGYTuwXu6MNmExgtC9gc9hVIF6AW9j5TE1hVSSGwQ+xcmXAX8
+nSuESIelTwWe5Iqi1fi9VEuK3lnxmA4CNBMbm54G4k/z5XQB72SO045FKGMOUS0Bw8R8A14gRHp2
+M3fLYVu+qPvUP3++fGPI7KNX+oiDbVnAY3+D4GS73Ncj8d+DvXqC6jC3jSTg6JM/7QQu0l7jBJ3v
+hrAWRhDc3Le4caRCJ0yWBY2UfYiCdNh5BVSFGlxAZH6h8UYLPBsGl6uobjqeNB6fyfJ9e8DNfv5D
+m0JqtegbugYBh71KkCOADwTE4WSVwDtN0AKMTAtQsjsgGei/cLu6MWJmJkUocev6n+QHmfcgwLpV
+C1+O3kDB5WmFOTSA/CXtWSIffXMyz7EMBzHCx1turYAGMiTATJFKHtSrPfVJWOKkrGJmpjE611Kr
+f77oGz70OYDOEhL/rCKPWIzjOgWhzOcdUv18oeznzyBgRyzXih9TeMWukRiIvSeci/j4Pjr6HSTk
+Gy5/YOT7tVhHK21yyWnMH2rwhbvGg1CVwM5IaiszGbKYEMbGrcq1vk1y4pbmP4mH599cPTUu+2or
+xW+nX+v/VXJsv4iBBeya3HwsHsY6xqioUirts7ak94i+1l+51l6dNbACC9tlYDRuzUXHccKClnFy
+8uVS1OpTrnYF9I3f6/reoo5U/rRgBrnZwmW8l1pD7sQB1IItZplU6Qg2teoQNJ+OBTNxpEC4hp8m
+tL7z3A7LOYPWQCSO8h++8qEafSNZfjHfIjfnDqHm4C3Hdb3r6f0OltYoM1VGnDn2k3TidHgJJrkL
+kPkmAs63gSDSOGaOFsWrWOYPdQ0p7WjHbjsPbiSg+MWvISki0vhk8vKYghprGKVWKALNasjedKYt
+FXN8WJVddCq7rnDA6lFD3zGbP/g0K2tkHJ56H95jogO5Fat6qfPOpLDk2m1lCHGNl2GAzOmmvrPH
+7yraQuROwBslhY5g3dk7Dkk0n4N+4w3in7+ksKqSJ489GLoXacEXDyIhj7h6+saudCRaO0o0hsya
+jVADO3sgAy2TRvsH2IL2RW899sCT/+JjahyR3wFB2Rq+6aTjOXvLhR5AZX3bLno9/3Y7Fi8IxFoR
+PFXE8FyvCK7UNa2jxCx6wGiWRciW22XLR7F/KOUXHX/KKN6rxM6OTDzgp8MXggVkrUq6+bA+o9MY
+lBr3DS0gDeepMMK6IhhTmHV2z3HftZET6qKxzgSsnqRuZFw2x4mZ0GknWdctBFbcejqieTD+z3LY
+8821+dbkyCLaVG9ZmJ9ac0WbFbkGeiQNCKS2MDQWIm3kf8x8US+CmDuV7qVoqR62ug2Xm9+nwgiB
+0RcisAaTOkE/sn6euy3Kz5EZDxmcYn5I8qkUkcEq0b/k8rc8vkzmdwcIsQbPqQgAtXOMTCVBbeJd
+tZq6AP94T4ftA4y9i+KuC3CwiU6ei/dBsOrfwUGT/B6FZPy0ARfrkxsD1W23IJ6p8YqU38J9cXqC
+VfOeOeCRBMehaqaTNc7JME9a+2nSgo3+ofovUoTVCXZjdqkpaV8q1goDDA7SdNrk5HzJ30CbFq5j
+Vuyed97Tnr1CGfRlSKwjwxvW56tqZa42l+1rXKLEHvaoaj4KICIuMwJ3WT9u1E7EO3HYbVpVv99a
+JjT2Vg5YOnAgDi7P2Q9oQGmPrJhcv0E5u50JGnCbAczBP6xs9KhC5adTWOW37yC8zS51CZ6yRU5C
+M7r4VVTJHfLIBDLRiBa511h2uXl2dPuU0sQiC0GbYIUAJGr7PdNo4p6MiqHZMzot9sgjNZBzoHuk
+dAlqQMEiMFjNzwCLt3jVbUD/dp4UnvM7k1+vYvHVx4ECeIuelcxtC9Q9alB/rdTAiDwzTzsyvTZs
+2m4pNerEGLAtlvBO5jAnVjoWp8u1YW4eV3x6aZbIySsclzM+SYC2Jts4piMa8lsbLFlCSvCRXdSf
+8GTN8iIyIlGsoWwEgoLQgbBhBxJqmeXZLYfDDZ8Xut+OWLMBYPgGR0hJIxfomhKXuCb4dzhONF/d
+LfPdVeM6xLda4jyPj76+ASv0ldYhMI0YJNoTQvpkf4QXAGa1afrxv9uWi+XGW25soXUKzi4cH8Ha
+YYMdD+zRhJqgtBVN6keV21bpHq6J8LfW2R1NUhvv6HMrAlZl2ESu17iS3XalpNq4mJNUo5TztYuP
+qZqFOQFw4BhZME5KzcX65LUAO+nnfM633nrLcfrx06m3h4Qih932kLbdscr4ckF/5ZMoFQhGAgWY
+qKGIgnblrSBj9mPWWNzFR5f+KDBLGiCDBNnEamOxL/ZEeOHeHTfumdxjpi+1NvatAmhmPuwgNNrO
+qYjeDLrRkQlEGrHzcIc4ilsayEjt8+cKtx+oD4sYaAuFcMvOyf8sOKwreo0MZHjvf/Va0fHRtjoS
+X3FBEsgCRyUOwt5NyRZBU7uF/iWRljpmYWeAevp2SMUe7n9tARBbg7Ax5nN8Ai93vjpneW+LDhG/
+4dB2PWC0iWWaa3GRRnXBIez0010e3JItO45jpsY1JkQANvh/Ms8+d0MGaI0mf+7FYIhhDrpznRGM
+qsurf4lQQ1kFCEBdD5x3yLg69XvFu/waAdOz9htuT9INwCP/wPLP80A7EZgCwvSdbWMHYmGSrUNh
+CU11MAvJtVbslz1YqvMVtShYmdOpXSQ3qTZsEed7/FaTYk2+QA40QFjv55BtAe1pyRhc6Pjd/4dC
+lyjtv/udRfbpmBqLEcqoq5kD+HCL48RJYewe5w0Q077+vv+rINC8mQ/cBl+OLkrKd0pYe+kfE4Qe
+ZWS9mrbHFRa8gbe49Qp2qPRiyPNrQgc8MxL4BteclooNEuPgZV36TWJVA2Ao98JRoN1qEgR62N75
+o1WId/UiKrSTXOMBpAf9Gj2sDFMaJphB8VIc5Bec2drXB2ouM8n+czfz4OjvlOYlKS+u2u/Y9msq
+f0S7wW+j/O2cuYLlmRPtjNERmghouDs5P9zIoxwKS9gfHd2wEaEf02Iwel/d4WNGeV8nNuJBqq35
+UCLc0uDRtlVQOhuO0r7QnXlvfwKSlPDcCPJe7MUclyx/E9q23jdm/W9V7V/wjHca4CNQSqbOGmSp
+vldjZJdTWqMr+PFzs99Fr58dh158YKodorsf2Nbjyg7TLc/lb9sJe+uZ7iGhbAGPCO8hmRO2lDLf
+7uOJ8vGXcJP71UocK489uI6d1z1nDpR5C/8bf9QJm/iCLLWrOmp+qLdCMGBj/X2nD4wfGWGQWd45
+ty7e/Hjz2ey6TI0IDwTnsVGKs/KpoMFb/58IX32opnhI39NfVq8+7Yfjr/UFpdEtebPM3jxiT//H
+JASK2AcKEygAvY1n/xcO9K5BoDp1ZPNbeGPEJFsjR97BsePqKZVcEROS0Xpn/gHo+t9P2ypHypRO
+Zz99728mXVNnYfFelGLR+obwFQoEvYpmaN2UZxZR7q6XRlyFo7S=

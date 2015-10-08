@@ -1,257 +1,100 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Db
- * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Mysql.php 14953 2009-04-17 00:56:16Z norm2782 $
- */
-
-
-/**
- * @see Zend_Db_Adapter_Pdo_Abstract
- */
-require_once 'Zend/Db/Adapter/Pdo/Abstract.php';
-
-
-/**
- * Class for connecting to MySQL databases and performing common operations.
- *
- * @category   Zend
- * @package    Zend_Db
- * @subpackage Adapter
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Db_Adapter_Pdo_Mysql extends Zend_Db_Adapter_Pdo_Abstract
-{
-
-    /**
-     * PDO type.
-     *
-     * @var string
-     */
-    protected $_pdoType = 'mysql';
-
-    /**
-     * Keys are UPPERCASE SQL datatypes or the constants
-     * Zend_Db::INT_TYPE, Zend_Db::BIGINT_TYPE, or Zend_Db::FLOAT_TYPE.
-     *
-     * Values are:
-     * 0 = 32-bit integer
-     * 1 = 64-bit integer
-     * 2 = float or decimal
-     *
-     * @var array Associative array of datatypes to values 0, 1, or 2.
-     */
-    protected $_numericDataTypes = array(
-        Zend_Db::INT_TYPE    => Zend_Db::INT_TYPE,
-        Zend_Db::BIGINT_TYPE => Zend_Db::BIGINT_TYPE,
-        Zend_Db::FLOAT_TYPE  => Zend_Db::FLOAT_TYPE,
-        'INT'                => Zend_Db::INT_TYPE,
-        'INTEGER'            => Zend_Db::INT_TYPE,
-        'MEDIUMINT'          => Zend_Db::INT_TYPE,
-        'SMALLINT'           => Zend_Db::INT_TYPE,
-        'TINYINT'            => Zend_Db::INT_TYPE,
-        'BIGINT'             => Zend_Db::BIGINT_TYPE,
-        'SERIAL'             => Zend_Db::BIGINT_TYPE,
-        'DEC'                => Zend_Db::FLOAT_TYPE,
-        'DECIMAL'            => Zend_Db::FLOAT_TYPE,
-        'DOUBLE'             => Zend_Db::FLOAT_TYPE,
-        'DOUBLE PRECISION'   => Zend_Db::FLOAT_TYPE,
-        'FIXED'              => Zend_Db::FLOAT_TYPE,
-        'FLOAT'              => Zend_Db::FLOAT_TYPE
-    );
-
-    /**
-     * Creates a PDO object and connects to the database.
-     *
-     * @return void
-     * @throws Zend_Db_Adapter_Exception
-     */
-    protected function _connect()
-    {
-        if ($this->_connection) {
-            return;
-        }
-
-        if (!empty($this->_config['charset'])) {
-            $initCommand = "SET NAMES '" . $this->_config['charset'] . "'";
-            $this->_config['driver_options'][PDO::MYSQL_ATTR_INIT_COMMAND] = $initCommand;
-        }
-
-        parent::_connect();
-    }
-
-    /**
-     * @return string
-     */
-    public function getQuoteIdentifierSymbol()
-    {
-        return "`";
-    }
-
-    /**
-     * Returns a list of the tables in the database.
-     *
-     * @return array
-     */
-    public function listTables()
-    {
-        return $this->fetchCol('SHOW TABLES');
-    }
-
-    /**
-     * Returns the column descriptions for a table.
-     *
-     * The return value is an associative array keyed by the column name,
-     * as returned by the RDBMS.
-     *
-     * The value of each array element is an associative array
-     * with the following keys:
-     *
-     * SCHEMA_NAME      => string; name of database or schema
-     * TABLE_NAME       => string;
-     * COLUMN_NAME      => string; column name
-     * COLUMN_POSITION  => number; ordinal position of column in table
-     * DATA_TYPE        => string; SQL datatype name of column
-     * DEFAULT          => string; default expression of column, null if none
-     * NULLABLE         => boolean; true if column can have nulls
-     * LENGTH           => number; length of CHAR/VARCHAR
-     * SCALE            => number; scale of NUMERIC/DECIMAL
-     * PRECISION        => number; precision of NUMERIC/DECIMAL
-     * UNSIGNED         => boolean; unsigned property of an integer type
-     * PRIMARY          => boolean; true if column is part of the primary key
-     * PRIMARY_POSITION => integer; position of column in primary key
-     * IDENTITY         => integer; true if column is auto-generated with unique values
-     *
-     * @param string $tableName
-     * @param string $schemaName OPTIONAL
-     * @return array
-     */
-    public function describeTable($tableName, $schemaName = null)
-    {
-        // @todo  use INFORMATION_SCHEMA someday when MySQL's
-        // implementation has reasonably good performance and
-        // the version with this improvement is in wide use.
-
-        if ($schemaName) {
-            $sql = 'DESCRIBE ' . $this->quoteIdentifier("$schemaName.$tableName", true);
-        } else {
-            $sql = 'DESCRIBE ' . $this->quoteIdentifier($tableName, true);
-        }
-        $stmt = $this->query($sql);
-
-        // Use FETCH_NUM so we are not dependent on the CASE attribute of the PDO connection
-        $result = $stmt->fetchAll(Zend_Db::FETCH_NUM);
-
-        $field   = 0;
-        $type    = 1;
-        $null    = 2;
-        $key     = 3;
-        $default = 4;
-        $extra   = 5;
-
-        $desc = array();
-        $i = 1;
-        $p = 1;
-        foreach ($result as $row) {
-            list($length, $scale, $precision, $unsigned, $primary, $primaryPosition, $identity)
-                = array(null, null, null, null, false, null, false);
-            if (preg_match('/unsigned/', $row[$type])) {
-                $unsigned = true;
-            }
-            if (preg_match('/^((?:var)?char)\((\d+)\)/', $row[$type], $matches)) {
-                $row[$type] = $matches[1];
-                $length = $matches[2];
-            } else if (preg_match('/^decimal\((\d+),(\d+)\)/', $row[$type], $matches)) {
-                $row[$type] = 'decimal';
-                $precision = $matches[1];
-                $scale = $matches[2];
-            } else if (preg_match('/^float\((\d+),(\d+)\)/', $row[$type], $matches)) {
-                $row[$type] = 'float';
-                $precision = $matches[1];
-                $scale = $matches[2];
-            } else if (preg_match('/^((?:big|medium|small|tiny)?int)\((\d+)\)/', $row[$type], $matches)) {
-                $row[$type] = $matches[1];
-                // The optional argument of a MySQL int type is not precision
-                // or length; it is only a hint for display width.
-            }
-            if (strtoupper($row[$key]) == 'PRI') {
-                $primary = true;
-                $primaryPosition = $p;
-                if ($row[$extra] == 'auto_increment') {
-                    $identity = true;
-                } else {
-                    $identity = false;
-                }
-                ++$p;
-            }
-            $desc[$this->foldCase($row[$field])] = array(
-                'SCHEMA_NAME'      => null, // @todo
-                'TABLE_NAME'       => $this->foldCase($tableName),
-                'COLUMN_NAME'      => $this->foldCase($row[$field]),
-                'COLUMN_POSITION'  => $i,
-                'DATA_TYPE'        => $row[$type],
-                'DEFAULT'          => $row[$default],
-                'NULLABLE'         => (bool) ($row[$null] == 'YES'),
-                'LENGTH'           => $length,
-                'SCALE'            => $scale,
-                'PRECISION'        => $precision,
-                'UNSIGNED'         => $unsigned,
-                'PRIMARY'          => $primary,
-                'PRIMARY_POSITION' => $primaryPosition,
-                'IDENTITY'         => $identity
-            );
-            ++$i;
-        }
-        return $desc;
-    }
-
-    /**
-     * Adds an adapter-specific LIMIT clause to the SELECT statement.
-     *
-     * @param  string $sql
-     * @param  integer $count
-     * @param  integer $offset OPTIONAL
-     * @throws Zend_Db_Adapter_Exception
-     * @return string
-     */
-     public function limit($sql, $count, $offset = 0)
-     {
-        $count = intval($count);
-        if ($count <= 0) {
-            /** @see Zend_Db_Adapter_Exception */
-            require_once 'Zend/Db/Adapter/Exception.php';
-            throw new Zend_Db_Adapter_Exception("LIMIT argument count=$count is not valid");
-        }
-
-        $offset = intval($offset);
-        if ($offset < 0) {
-            /** @see Zend_Db_Adapter_Exception */
-            require_once 'Zend/Db/Adapter/Exception.php';
-            throw new Zend_Db_Adapter_Exception("LIMIT argument offset=$offset is not valid");
-        }
-
-        $sql .= " LIMIT $count";
-        if ($offset > 0) {
-            $sql .= " OFFSET $offset";
-        }
-
-        return $sql;
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+4+oV5C2gnYQJ8Zi9VczJ1T3K/tksG7HnUpYVDDedsqh4tDZKLeBmFhbJWjI8fTQ+c59eOmxG4Dvb
+A3VEoM45L7GgCT89lOGoLsF2EXmP4klcDORQpqkxEFP0cMlMB0Z4qq3m2BZU2ZPIIgRao3ZkdGIv
+93gZgSTvIGim0mF2dqr6HKs0X8+O7rZUiUtvLo3mbtj2jRyndEDDsxvF11WViGd0kCOTKn+AozyF
+RILdg1eQuzJ/BTXRMG29iff3z4+R8dawnc7cGarP+zKtO9J6AEjaYgvaGfnrF/IGDXbsbDi59Se2
+oT31jbSSuecFhFZrW3NOEnLGbfPmrCwjickMp7RQjegLVRw3nJITof9lyQnsV1gn0aWEZkb+bGoX
+9T4mOB5ZQ8ISnRaWNcQRYu7XnDjVTB2t0C493ryAHXfeAOfSPT0G8u+iOr6IvCAO+MbdZfKx3yS9
++ktLc/80RFM0jhHnbh9ZcyBBgZkW+TSH3jbgwfG9TnIx4WNtRwQuPIN7JXGcR8iSLFHtDi9zOcCB
+dZAQw9ffbFTlA/vnj0ylNYcTd1zrXMWNpwLTscZuaodEDw6X6y8fK22DqfvgntD3TI2Zsf7WN7mS
+oHnJmexjaAmZ48V8drKzNaIrsnRDZAdA5DuE/ykUNJ6VnfRuGakV81klXn/a3ydDVnrep5FrZjRF
+MS/Gijo73Lu5mH8xf9DACgrLEaB8Hozou7bDDcXk61wcz6ZHRuN7+sDt5HkgTf/h5QLXOWLBuS7z
+rv9R0JZENKFw8aNEl/aiO9DiG3y2uG0NutPzmXTXONeHM1NTKrdo20DLcK8+TErD1Y1OmVXcFk+W
+X0GQHGI98hnQQcHRkrOAg20IKIVL+2A/rNRkdRMfTP6unwAeRoIYAxyuz08AEjoedm+M8u1OZlZa
+4kjjhBoWcxvdV3Jty61JwyUSPA8mNCn4GVg9U65pUDoxgGEkObZ3Ool4iSbVmsWs6wCpN9MaB7//
+nwHENp5aXWQrAK0wBf9WBx+pf5fjmQYx5yPCLp73ZChY3n7Sb/kB+65IWmSgOvcnhd5YhFa3ebSh
+TG1wRrXXL8Ht7wMHUzj5/SVLnUTiJ6Itoljei1Plb+pv8HAvwtJbHIAL615fXW5RkwSCbbPgiowS
+NvFTxbJxTzd6MFyUQYcs56Y9rgG+QvbGJkKk9pYFf/HjjWxjsqJTE4kb3tvLpwVGtmV158H4yy8g
+1rUAP2ISPBiEjSV4rI95rcCfquMPT4+nPgpb/qJtJx/Rl8U5MRHvD3IuKdFJ0ghKkJS0Wyl6R7wP
+v+FM69NjmBetuA1KJgTb2KAwLNbvPMnNAOGN9/+WUbuZ3wHAgIqsuMDdRRnnvsJeJPmEQ8zOzoZs
+UH+Ag47a1Q8kaK5xvn3cWohKPi8BxvyqUndOe7sz7J4ptRQe2YbLx6H1hE2snJLH6LOq3jx8vTLi
+dR8Ub/6FHLyjga4c7dJPUiJ4x/8wkmM20FweTuHXROuY3bTsMY3ObBIO5RtpGTYA08Lc/t44AH8U
+IevRRP8g06DvpAj7k4zOxGBAq79GE0+jFTyikM4E1yk2glLxsu1GQW6D5SsWRFAzrfnaBuocdgF/
+qg8IxML9RH1MBhebP5Zn9a35Y3M0sPVOe1q/e5b9l1fc2WcR5MGEkb0Ljrz1j2U/mkpbwtmrlUrF
+QkuI96VhV7DnBxF2hg22oB8prs9uQNNhNwonAPP4tSDMnZulVvLpJAwEL7Cs+sZD7aBFw8tuVHK1
+q56UhmIavpY3z6GkTTQpMYLI+VcywGtNsUfVkYPPT65wFViL3aIflthh1FJ9yV1Op2gFlmqp98zk
+z32AIQi21KoQSsNXxN3/Ks9/YiVAPIUF2aBxxDGQB/Yr4JTLlHwJp3rWx+cQP27xZPvu6G7NsjFi
+hnbDk4n4X0LGAdS4H96gEgsglrgOFaH6k4CzkD1n5xSIqa8idugg8lpWGYLxLYBmUnptoKAoOdBl
+FHPOXI9t42pkSUp3rQBrBvPot0CqdqIAWkwV7EUDt5qMHLrvH7GkaV/wO14HgdY04SXC/XCqfU5S
+fearowwdURbaZ8J4c0mp9S94Sg/mlCEyf5MlV9JMRT0S/UnmQ05qR56DeVPPxscxnNPMbvGN1ldB
+4vfhx10boH6IUpNZD+RWLtEAcW3amomLmuxyOnJ1WuLXA/EDakHWAHiqcsJykTPgzHpV2QS3y77d
+SZX6d4YXBN/zXAUJa5228JKVvsDtik611QXN4kHv/+MonDNp2jybuBEbhlxLqDjM5yfs9rArmdoh
+fYuWEg3cin6YrqQ7nyyOVB9mNkuNvik+/uINsWKc748xmRT35ImCMcAuJBJR7KQvCm+AC8CVguOz
+MAxKJT7AU8JmPDhg7WD3lnIUI4vVQmX0SB+B0VT9RUEoe4D5vZkW/A0l3MqUdukHxB3Xvj+DRUs/
+PmoUJ86WCRn3up+sAjPf8pbVawrM1uDxlgt7Z+B1BlOBFV5U7dM2izvOLpag4NVDGrVPD3tiZdAE
+v0IELpaP5DdsYlMutq8eD8hK3mkzV3BKVZxjzW8+X9bsD22bQPYzOU/Q73CYZwR+BSAwIb8XMfSI
+Y+z+VW6uO2l81fGjFM1v/nuPby+pIyrcbCLRbnr6GA0WqvweuLBAxvi1Fxh54XHWJqPJO+dNodgY
+/02qxnd/Kqio0iV24VLa082+HS/mT9y+fWl8lJe3PS59rQEQtoZ+HN3pRP8bxs1ZVEIVPy0BjhkZ
+sRgcLqBgRZIA4ECuP/JFD5YgMQFf+xbjMrgufmqI2LxZkxZDZXPveXhBkmqEEvWcWx9i9SmYLXoV
+5hU3bKlTHOt6Q8Z7MlxXsH5cbFBbRbVUIREujj4CxGPOIM5/lCNM/HIKt4kbBsXtGRS+5O27R/MK
+e7ZFx7feiVIGFcTzMDqfvM83M1jc1i2z/oAGGEVhGjviqND5cEGPsnAW4qMiasBZ/GoFTj1dlatU
+zbYvv1pLUd9aYtfCICnT86Bs1Pb/FHNHah4dawoI6bRX0yaxgNIrsHvdfC/eEc56TNdT29grjPdo
+mmJ2leYWv9SL3/bQvUBGUV9pI16dhi0hY94Mm63/TBj3CnxWJZ6sJ2+ZmPsOH6J/wOMiGKQK1cTY
+rQBGbJL6OuogPvRB6SKHMzuV6NxGpUola1NkzDlVuWudHvMS5x3OKKT6ulduN294/qgBYwFn0N92
+2UeJLipUHuFI3Sqh1KjAhREzlcagCbtC5a3PYxF/N/uAjbtZKw3gk9y1ZUtCZJGm3k79lqQRQOPn
+BjYkkIaeoF64TTimKBTwxrBUnuFDOm2o8Gm35V7D13UdOuTmGAIiUGFVXxhI1ghyOdw4U1ph5B1N
+TuRd4eUph2efslE+e7jKtcXX2OekPK3L9ybBm6eYUI+NRcuMiXVWmyP/r3wPh1VqZ9SfFnuYH+8s
+469k7wp71IeJOqPQM7tEWdKZiGTqJcHhxR3Zt1q6pw+BtcozIkba3aDeJ597rhUN1yzipNoU04xD
+zFupaB1jX9yE9jZ4qcg8Gol3g2M2zC2iq663XwRsA4ZDJ/ly8HsQh8xL/91xBvn6gcvt8bCwhjJp
+7oYQ2LUT9f0rbM9/UwU+r0joBX9CPQS0dFoVZk00HlJK9bGUG+vjh5rYm9qWqNmQNRJ12Yesjdlu
+EyzQdxWTsQdy6FMAbZgTV1VQ78/ZXkU28KnSbYDtADV/N1ER1iMfwW35OlCLeRn0wDUA7vbevs9p
+OEXZxD/NNROdj1hJsHdEh3AZlTfaPeh9l+JR5AuniqGp1KoScaujanHj2S0xW8/phXg49utP7EW2
+dQ84YfPjAVIvm1kGFe6EzjIT8NxY7ul1Sy6BLHhtMi2A1lMximItOhYjR9sZQ9yiQJuX+tYfKi30
+RFmbojZYPuVxPKtEtYVoXrcGnOGKjCiLLj3cPcHZW56cb/MjDwZX5SCSnlQnYPEG6qoa7yvH5s//
+wlC6UqvqaOY2pufnVSVmXCx3ovVUdRXRQCtkYaQXY/2XSb8+mTsFnNOSbIQn2prJNY/yn9kNZqf/
+TcoLJ3Hg8McyRLnwnCMf7+JdFss005ISOmVG4OZCogz67H6jlL1ZP/ENpdoY2563K+/yOSwwz+Dh
+oPOKd1uC1eZ7nqyByNdIXC1GUekrdz7KypN3xEn237qh7d/PlkhXTcJAWPdzQcVIBM09ytnvhYLf
+cJMy0kr+4jGW28FL9vdLekNBqxoIZe2lTpwsHHs5e+yMJi4ELKm+SJL/NmCABKE3sE97gRwdd2b5
+ubvEwCAO5VcGhAUaPKEMjjSqhJe767FnEJ+B+bnn4fHECsJyntomhVtT98IPomd+9Ner1xzgWtab
+xuZdrinlEN5kIaiSRyfjMHg2TbQtq9u0IPh0qdHJM/ISpzvbUYQLs4rNoE3a5vjHmWVlgg98cP1Y
+B36GFaIltNqwIaBkWSIIxTazOKZbfwblZtgiCQGWl1ABfA+6DrGzLK9LuUywB/27/zmewpzg4g8e
+WhlxKz2NwZ75SWkdHzE+CqoiXlNufCEiLlPaxrqh2MV2z5hNtuPnMctA+08SRcznZcwjWLs9oEzM
+h1jULwvCzh+BFw8XaqvGTU5AOx0hEfe66L44OesBC1eWljTt/o+5jj7vZ1NCphtXDuqUMfosQXX1
+QXT2cTS0b9qAaxU5GPi8XSAqD6fhzoRUDG5vj/cy73LUOi0UXaJyO5INpQ313ns6Pp1TuE47lzuf
+vwb40TYKzu4WTixNSBenLQUSZlLWEjbcjoKkvsApeczUYtQYFh7292YN5kUhmAMKH1CLFa12BU5O
+npcFiGOElHZCx/aPQ/Ejm3iaSJ88/pKUuuKwQHHnlSAJlCqEPKDHlAp9KvkLXdQxwE/2gaT1y6rY
+IJwEfH3vFIWRV3adQ0K+WRVrv4Av1LI2om0Ix2XNs4v0sFeD08bppWzuMwVYug8+TRr7ln8wat2Q
+5W/M23RG+OlTlIhYeJ12sCaH6tW37bW+opR2zyq1PY3R1lzT/Lz8+N8RckfIuZSeSFWsIaRlNExe
+egC6YWUoBwVdJ+0jrksghI9Arg3XD+0Pca0qn50qVoTM8cwbHkiJpyAfvYUAKpUsrJ1lRndihMJI
+8woufTqFCrGFkQGJWY8uXsfm58/Djkrp7gtwSauMuBM8YFSHCu+hyix30XCZsRPObsBkXwjj8FiN
+aXTwqJaZQXjzN8/Q0zn7Rnoh0vZrbIv5/HRfLE2udeDXn+WTPhvIVZDSR++01DX50BS6uD94nASl
+eyou6bNdjZYNVwgS70aLAG8ZaHIpTJ2O3wG6e1JSYnp+3R0N+MNnNo0Ugv3H+7pKgNgJ4HPIrcgS
+sPEumFqEDCYqaOQUtnW3ohvFJSEwMxB2Wk5zsZjh2TvsvL6eJ1E9+J3ya0VDvZETnXBAIbtaQgTS
+8Es21Ev6wmBgJETa+VYvLB6Zpm9V+fQIOziDIH2TPvcAZpFbQEFKmkvBKz9OTSu/H7bOmQ69qsDr
+g95Dr8AVJ100w91EqwZFB22hGftnGYPnOFyFiKaRx3xnolZ+jYUY/L1Em3MYR/0aPaos9VT21lbd
+E7yIfHp39HplvhdOBrkFuGcqRu8na87SdAL0j/YjGYfFFIDIoMHglfQihNa3DU17DVtBURpDf3Qz
+VwLHPo4Xn0bGGHPJBp9hwGF3eDqageqTS/DEgS5OaGti7XMHkuqHaM4ir/RXCNhqhjEEKzwh1mlW
+dUSjt+wJO3h/c7UjslJPc7vj8QICCTrclHv0Ubq8Hh2buiTN/xwz+fE5srmiy5fJ1X5lMYUbO3NK
+MB21MElZniF91u25LZAUnrX4f23VD0SHqWWbNpUzUtvSY61P8R7IT65tvc4U+Vcre5HI/gq1maai
+eOHpv8lYD0i2PNHCnBVHUoeCHAUMxuXnWfaZ90lKcTkiYO9XQcul8Y0nJU8RBkdlb5jbA029kiP7
+s/i24DYB1DgRAds7bYro3KfKC+7HOo8BqwCsc5FSuMzTyfolS8oZepyew+P4c9InO9bD3QUL5NJn
+yw/cKi8bG+F4494CQy4aae99AE0nPTICpymGbuafhlpuGRk/Qo6neDAqhBw/8B99NAplS2zratUY
+kIJ2mwz+qp231sl44hpD0dUMOgQYWR51ErA7Jw+dpTAoGS1T6eXz5qwKqAACiPKMFuMQnZfCCvbY
+BZ4eRYRIZ7MYEie5XsH5rOPpYzQGwSXNiFjnE06MP+qWRv34hCB32qB1uQKl25yDlEtstZkOGAgv
+vvRzMDpq8+GkjUW26wt2UuEkOulmDsgweEL1sp8N1agqK3ZSxKe5ldu7kbUaju/q/EL/y8bdXU9S
+A548YN/oL0d/yExCQO7dJ41szeOtYc6mVkHyzihuIZYumHdUFOvTnWPxHMGGBmd954EXPjbMqtNF
+dxN2RylPinC1ZL26e8XkTkvnH1ar/HPh7RU15wvLu+i+CYXMkX0qfn/321C26Esw/ym1+XFvJ2pr
+KgOR/sZebNJ9wNLSLuU3E0toNpzAbm9Z/Y31C+ZWcWFM5FCjfe/VyLs7tGOHuPSv7av7k7e6AlRP
+3x2yjMWj/rGeD4GX8mC75EKe50fP+c/MGpaAtabk0JGNFqNN0Xw2hvYkr+8qVU8izSTVXm+HNC0s
+N0R9Zk4tp4yVYUtxI/vcoLfctFpe8fyjAYD60FBy9kZUOyVfI97eLx/v8CYcVdc+Vs1DU+a+Ho/Z
+1RT8x6jMGsyFcZ+Lz/q8rbKWk3cTxN4qfrPExolhVM0PBP/2ZoBlAYZ+YgzRbhOqsQNqDYP5KWLS
+XOMobuaWVNakg613yicMdw9KQG3q8QHvnZJ1tDEno1v+rVpsKVnMV/bgANmHdji3uu4ghjLxOGhv
+t+B0f5zsEL/4VtcTutYM6l1SZCfdOZ12+PwjzcC5m9CAl29MGAajuWs5mT99Ov2zPJKfR3QYFLq3
+1EejnvUD0xp0fjolX/TZf+l5mPoxXBrvQfLCD/5md6sJwJMXojjni8LIEU/5KeWmD+ZHL5Zy6yaO
+Ies3c+yLoaE2R0YedXUn1w4WHZ/9OQ/a+n/6aK+wOY3TEv4Z+oCrAswVaMU8HR5ET1SvrYaSeiRv
+PMaMQypvb9V3FoxL3PkrWLhYAr7pKFdbOk0/cZcHf71XfVPfU32QPjTKdN9/WRO6XBAyBVgzMN1Z
+PQx8biYkMtY2JBiJZ8Ykj7t61OyJQWi+98Ic6sAA0Edagkbcx46nRAJx6Koi7dlx8xwxldDw+nI6
+kP1wHKonuiHLVZXsDV1ZfuUa2axArqdmQ2JE6pP+cyKdCkkUeuGb20T/RXJp4pI4MHefIOKxpTjT
+MMfy7EKqlGgOv9vKKnqrG5h6Ekue0Fx5DXbT9CIa2fZeks/88lIH8bvIJQYILu2B

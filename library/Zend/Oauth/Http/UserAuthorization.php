@@ -1,78 +1,30 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Oauth
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: UserAuthorization.php 20217 2010-01-12 16:01:57Z matthew $
- */
-
-/** Zend_Oauth_Http */
-require_once 'Zend/Oauth/Http.php';
-
-/** Zend_Uri_Http */
-require_once 'Zend/Uri/Http.php';
-
-/**
- * @category   Zend
- * @package    Zend_Oauth
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Oauth_Http_UserAuthorization extends Zend_Oauth_Http
-{
-    /**
-     * Generate a redirect URL from the allowable parameters and configured
-     * values.
-     *
-     * @return string
-     */
-    public function getUrl()
-    {
-        $params = $this->assembleParams();
-        $uri    = Zend_Uri_Http::fromString($this->_consumer->getUserAuthorizationUrl());
-
-        $uri->setQuery(
-            $this->_httpUtility->toEncodedQueryString($params)
-        );
-
-        return $uri->getUri();
-    }
-
-    /**
-     * Assemble all parameters for inclusion in a redirect URL.
-     *
-     * @return array
-     */
-    public function assembleParams()
-    {
-        $params = array(
-            'oauth_token' => $this->_consumer->getLastRequestToken()->getToken(),
-        );
-
-        if (!Zend_Oauth_Client::$supportsRevisionA) {
-            $callback = $this->_consumer->getCallbackUrl();
-            if (!empty($callback)) {
-                $params['oauth_callback'] = $callback;
-            }
-        }
-
-        if (!empty($this->_parameters)) {
-            $params = array_merge($params, $this->_parameters);
-        }
-
-        return $params;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

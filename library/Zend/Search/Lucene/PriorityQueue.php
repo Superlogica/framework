@@ -1,170 +1,48 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Search_Lucene
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-
-/**
- * Abstract Priority Queue
- *
- * It implements a priority queue.
- * Please go to "Data Structures and Algorithms",
- * Aho, Hopcroft, and Ullman, Addison-Wesley, 1983 (corrected 1987 edition),
- * for implementation details.
- *
- * It provides O(log(N)) time of put/pop operations, where N is a size of queue
- *
- * @category   Zend
- * @package    Zend_Search_Lucene
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-abstract class Zend_Search_Lucene_PriorityQueue
-{
-    /**
-     * Queue heap
-     *
-     * Heap contains balanced partial ordered binary tree represented in array
-     * [0] - top of the tree
-     * [1] - first child of [0]
-     * [2] - second child of [0]
-     * ...
-     * [2*n + 1] - first child of [n]
-     * [2*n + 2] - second child of [n]
-     *
-     * @var array
-     */
-    private $_heap = array();
-
-
-    /**
-     * Add element to the queue
-     *
-     * O(log(N)) time
-     *
-     * @param mixed $element
-     */
-    public function put($element)
-    {
-        $nodeId   = count($this->_heap);
-        $parentId = ($nodeId-1) >> 1;   // floor( ($nodeId-1)/2 )
-
-        while ($nodeId != 0  &&  $this->_less($element, $this->_heap[$parentId])) {
-            // Move parent node down
-            $this->_heap[$nodeId] = $this->_heap[$parentId];
-
-            // Move pointer to the next level of tree
-            $nodeId   = $parentId;
-            $parentId = ($nodeId-1) >> 1;   // floor( ($nodeId-1)/2 )
-        }
-
-        // Put new node into the tree
-        $this->_heap[$nodeId] = $element;
-    }
-
-
-    /**
-     * Return least element of the queue
-     *
-     * Constant time
-     *
-     * @return mixed
-     */
-    public function top()
-    {
-        if (count($this->_heap) == 0) {
-            return null;
-        }
-
-        return $this->_heap[0];
-    }
-
-
-    /**
-     * Removes and return least element of the queue
-     *
-     * O(log(N)) time
-     *
-     * @return mixed
-     */
-    public function pop()
-    {
-        if (count($this->_heap) == 0) {
-            return null;
-        }
-
-        $top = $this->_heap[0];
-        $lastId = count($this->_heap) - 1;
-
-        /**
-         * Find appropriate position for last node
-         */
-        $nodeId  = 0;     // Start from a top
-        $childId = 1;     // First child
-
-        // Choose smaller child
-        if ($lastId > 2  &&  $this->_less($this->_heap[2], $this->_heap[1])) {
-            $childId = 2;
-        }
-
-        while ($childId < $lastId  &&
-               $this->_less($this->_heap[$childId], $this->_heap[$lastId])
-          ) {
-            // Move child node up
-            $this->_heap[$nodeId] = $this->_heap[$childId];
-
-            $nodeId  = $childId;               // Go down
-            $childId = ($nodeId << 1) + 1;     // First child
-
-            // Choose smaller child
-            if (($childId+1) < $lastId  &&
-                $this->_less($this->_heap[$childId+1], $this->_heap[$childId])
-               ) {
-                $childId++;
-            }
-        }
-
-        // Move last element to the new position
-        $this->_heap[$nodeId] = $this->_heap[$lastId];
-        unset($this->_heap[$lastId]);
-
-        return $top;
-    }
-
-
-    /**
-     * Clear queue
-     */
-    public function clear()
-    {
-        $this->_heap = array();
-    }
-
-
-    /**
-     * Compare elements
-     *
-     * Returns true, if $el1 is less than $el2; else otherwise
-     *
-     * @param mixed $el1
-     * @param mixed $el2
-     * @return boolean
-     */
-    abstract protected function _less($el1, $el2);
-}
-
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+7/f5gwfj5j44skAFHq7IW1r5gmv/WJG=

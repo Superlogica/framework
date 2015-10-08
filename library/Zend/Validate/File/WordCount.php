@@ -1,101 +1,37 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category  Zend
- * @package   Zend_Validate
- * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   http://framework.zend.com/license/new-bsd     New BSD License
- * @version   $Id: $
- */
-
-/**
- * @see Zend_Validate_File_Count
- */
-require_once 'Zend/Validate/File/Count.php';
-
-/**
- * Validator for counting all words in a file
- *
- * @category  Zend
- * @package   Zend_Validate
- * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Validate_File_WordCount extends Zend_Validate_File_Count
-{
-    /**#@+
-     * @const string Error constants
-     */
-    const TOO_MUCH  = 'fileWordCountTooMuch';
-    const TOO_LESS  = 'fileWordCountTooLess';
-    const NOT_FOUND = 'fileWordCountNotFound';
-    /**#@-*/
-
-    /**
-     * @var array Error message templates
-     */
-    protected $_messageTemplates = array(
-        self::TOO_MUCH => "Too much words, maximum '%max%' are allowed but '%count%' were counted",
-        self::TOO_LESS => "Too less words, minimum '%min%' are expected but '%count%' were counted",
-        self::NOT_FOUND => "The file '%value%' could not be found"
-    );
-
-    /**
-     * Defined by Zend_Validate_Interface
-     *
-     * Returns true if and only if the counted words are at least min and
-     * not bigger than max (when max is not null).
-     *
-     * @param  string $value Filename to check for word count
-     * @param  array  $file  File data from Zend_File_Transfer
-     * @return boolean
-     */
-    public function isValid($value, $file = null)
-    {
-        // Is file readable ?
-        require_once 'Zend/Loader.php';
-        if (!Zend_Loader::isReadable($value)) {
-            return $this->_throw($file, self::NOT_FOUND);
-        }
-
-        $content = file_get_contents($value);
-        $this->_count = str_word_count($content);
-        if (($this->_max !== null) && ($this->_count > $this->_max)) {
-            return $this->_throw($file, self::TOO_MUCH);
-        }
-
-        if (($this->_min !== null) && ($this->_count < $this->_min)) {
-            return $this->_throw($file, self::TOO_LESS);
-        }
-
-        return true;
-    }
-
-    /**
-     * Throws an error of the given type
-     *
-     * @param  string $file
-     * @param  string $errorType
-     * @return false
-     */
-    protected function _throw($file, $errorType)
-    {
-        if ($file !== null) {
-            $this->_value = $file['name'];
-        }
-
-        $this->_error($errorType);
-        return false;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

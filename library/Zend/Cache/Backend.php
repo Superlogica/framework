@@ -1,269 +1,93 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Cache
- * @subpackage Zend_Cache_Backend
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-
-/**
- * @package    Zend_Cache
- * @subpackage Zend_Cache_Backend
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Cache_Backend
-{
-    /**
-     * Frontend or Core directives
-     *
-     * =====> (int) lifetime :
-     * - Cache lifetime (in seconds)
-     * - If null, the cache is valid forever
-     *
-     * =====> (int) logging :
-     * - if set to true, a logging is activated throw Zend_Log
-     *
-     * @var array directives
-     */
-    protected $_directives = array(
-        'lifetime' => 3600,
-        'logging'  => false,
-        'logger'   => null
-    );
-
-    /**
-     * Available options
-     *
-     * @var array available options
-     */
-    protected $_options = array();
-
-    /**
-     * Constructor
-     *
-     * @param  array $options Associative array of options
-     * @throws Zend_Cache_Exception
-     * @return void
-     */
-    public function __construct(array $options = array())
-    {
-        while (list($name, $value) = each($options)) {
-            $this->setOption($name, $value);
-        }
-    }
-
-    /**
-     * Set the frontend directives
-     *
-     * @param  array $directives Assoc of directives
-     * @throws Zend_Cache_Exception
-     * @return void
-     */
-    public function setDirectives($directives)
-    {
-        if (!is_array($directives)) Zend_Cache::throwException('Directives parameter must be an array');
-        while (list($name, $value) = each($directives)) {
-            if (!is_string($name)) {
-                Zend_Cache::throwException("Incorrect option name : $name");
-            }
-            $name = strtolower($name);
-            if (array_key_exists($name, $this->_directives)) {
-                $this->_directives[$name] = $value;
-            }
-
-        }
-
-        $this->_loggerSanity();
-    }
-
-    /**
-     * Set an option
-     *
-     * @param  string $name
-     * @param  mixed  $value
-     * @throws Zend_Cache_Exception
-     * @return void
-     */
-    public function setOption($name, $value)
-    {
-        if (!is_string($name)) {
-            Zend_Cache::throwException("Incorrect option name : $name");
-        }
-        $name = strtolower($name);
-        if (array_key_exists($name, $this->_options)) {
-            $this->_options[$name] = $value;
-        }
-    }
-
-    /**
-     * Get the life time
-     *
-     * if $specificLifetime is not false, the given specific life time is used
-     * else, the global lifetime is used
-     *
-     * @param  int $specificLifetime
-     * @return int Cache life time
-     */
-    public function getLifetime($specificLifetime)
-    {
-        if ($specificLifetime === false) {
-            return $this->_directives['lifetime'];
-        }
-        return $specificLifetime;
-    }
-
-    /**
-     * Return true if the automatic cleaning is available for the backend
-     *
-     * DEPRECATED : use getCapabilities() instead
-     *
-     * @deprecated
-     * @return boolean
-     */
-    public function isAutomaticCleaningAvailable()
-    {
-        return true;
-    }
-   
-    /**
-     * Determine system TMP directory and detect if we have read access
-     *
-     * inspired from Zend_File_Transfer_Adapter_Abstract 
-     *
-     * @return string
-     * @throws Zend_Cache_Exception if unable to determine directory
-     */
-    public function getTmpDir()
-    {
-    	$tmpdir = array();
-        foreach (array($_ENV, $_SERVER) as $tab) {
-        	foreach (array('TMPDIR', 'TEMP', 'TMP', 'windir', 'SystemRoot') as $key) {
-        		if (isset($tab[$key])) {
-        			if (($key == 'windir') or ($key == 'SystemRoot')) {
-                        $dir = realpath($tab[$key] . '\\temp');
-                    } else {
-                    	$dir = realpath($tab[$key]);
-                    }
-        			if ($this->_isGoodTmpDir($dir)) {
-        				return $dir;
-        			}
-        		}
-        	}
-        }
-        $upload = ini_get('upload_tmp_dir');
-        if ($upload) {
-            $dir = realpath($upload);
-        	if ($this->_isGoodTmpDir($dir)) {
-        		return $dir;
-        	}
-        }
-        if (function_exists('sys_get_temp_dir')) {
-            $dir = sys_get_temp_dir();
-        	if ($this->_isGoodTmpDir($dir)) {
-        		return $dir;
-        	}
-        }
-        // Attemp to detect by creating a temporary file
-        $tempFile = tempnam(md5(uniqid(rand(), TRUE)), '');
-        if ($tempFile) {
-        	$dir = realpath(dirname($tempFile));
-            unlink($tempFile);
-            return $dir;
-        }
-        if ($this->_isGoodTmpDir('/tmp')) {
-        	return '/tmp';
-        }
-        if ($this->_isGoodTmpDir('\\temp')) {
-        	return '\\temp';
-        }
-        Zend_Cache::throwException('Could not determine temp directory, please specify a cache_dir manually');
-    }
-    
-    /**
-     * Verify if the given temporary directory is readable and writable
-     * 
-     * @param $dir temporary directory
-     * @return boolean true if the directory is ok
-     */
-    protected function _isGoodTmpDir($dir)
-    {
-    	if (is_readable($dir)) {
-	    	if (is_writable($dir)) {
-	    		return true;
-	    	}
-    	}
-    	return false;
-    }
-
-    /**
-     * Make sure if we enable logging that the Zend_Log class
-     * is available.
-     * Create a default log object if none is set.
-     *
-     * @throws Zend_Cache_Exception
-     * @return void
-     */
-    protected function _loggerSanity()
-    {
-        if (!isset($this->_directives['logging']) || !$this->_directives['logging']) {
-            return;
-        }
-        try {
-            /**
-             * @see Zend_Log
-             */
-            require_once 'Zend/Log.php';
-        } catch (Zend_Exception $e) {
-            Zend_Cache::throwException('Logging feature is enabled but the Zend_Log class is not available');
-        }
-        if (isset($this->_directives['logger'])) {
-            if ($this->_directives['logger'] instanceof Zend_Log) {
-                return;
-            } else {
-                Zend_Cache::throwException('Logger object is not an instance of Zend_Log class.');
-            }
-        }
-        // Create a default logger to the standard output stream
-        require_once 'Zend/Log/Writer/Stream.php';
-        $logger = new Zend_Log(new Zend_Log_Writer_Stream('php://output'));
-        $this->_directives['logger'] = $logger;
-    }
-
-    /**
-     * Log a message at the WARN (4) priority.
-     *
-     * @param  string $message
-     * @throws Zend_Cache_Exception
-     * @return void
-     */
-    protected function _log($message, $priority = 4)
-    {
-        if (!$this->_directives['logging']) {
-            return;
-        }
-
-        if (!isset($this->_directives['logger'])) {
-        	Zend_Cache::throwException('Logging is enabled but logger is not set.');
-        }
-        $logger = $this->_directives['logger'];
-        if (!$logger instanceof Zend_Log) {
-            Zend_Cache::throwException('Logger object is not an instance of Zend_Log class.');
-        }
-        $logger->log($message, $priority);
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+qOqKbouJ1iikKdUgyh7/4cW36G==

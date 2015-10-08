@@ -1,200 +1,41 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Validate
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Between.php 8064 2008-02-16 10:58:39Z thomas $
- */
-
-
-/**
- * @see Zend_Validate_Abstract
- */
-require_once 'Zend/Validate/Abstract.php';
-
-
-/**
- * @category   Zend
- * @package    Zend_Validate
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Validate_Between extends Zend_Validate_Abstract
-{
-    /**
-     * Validation failure message key for when the value is not between the min and max, inclusively
-     */
-    const NOT_BETWEEN        = 'notBetween';
-
-    /**
-     * Validation failure message key for when the value is not strictly between the min and max
-     */
-    const NOT_BETWEEN_STRICT = 'notBetweenStrict';
-
-    /**
-     * Validation failure message template definitions
-     *
-     * @var array
-     */
-    protected $_messageTemplates = array(
-        self::NOT_BETWEEN        => "'%value%' is not between '%min%' and '%max%', inclusively",
-        self::NOT_BETWEEN_STRICT => "'%value%' is not strictly between '%min%' and '%max%'"
-    );
-
-    /**
-     * Additional variables available for validation failure messages
-     *
-     * @var array
-     */
-    protected $_messageVariables = array(
-        'min' => '_min',
-        'max' => '_max'
-    );
-
-    /**
-     * Minimum value
-     *
-     * @var mixed
-     */
-    protected $_min;
-
-    /**
-     * Maximum value
-     *
-     * @var mixed
-     */
-    protected $_max;
-
-    /**
-     * Whether to do inclusive comparisons, allowing equivalence to min and/or max
-     *
-     * If false, then strict comparisons are done, and the value may equal neither
-     * the min nor max options
-     *
-     * @var boolean
-     */
-    protected $_inclusive;
-
-    /**
-     * Sets validator options
-     *
-     * @param  mixed   $min
-     * @param  mixed   $max
-     * @param  boolean $inclusive
-     * @return void
-     */
-    public function __construct($min, $max, $inclusive = true)
-    {
-        $this->setMin($min)
-             ->setMax($max)
-             ->setInclusive($inclusive);
-    }
-
-    /**
-     * Returns the min option
-     *
-     * @return mixed
-     */
-    public function getMin()
-    {
-        return $this->_min;
-    }
-
-    /**
-     * Sets the min option
-     *
-     * @param  mixed $min
-     * @return Zend_Validate_Between Provides a fluent interface
-     */
-    public function setMin($min)
-    {
-        $this->_min = $min;
-        return $this;
-    }
-
-    /**
-     * Returns the max option
-     *
-     * @return mixed
-     */
-    public function getMax()
-    {
-        return $this->_max;
-    }
-
-    /**
-     * Sets the max option
-     *
-     * @param  mixed $max
-     * @return Zend_Validate_Between Provides a fluent interface
-     */
-    public function setMax($max)
-    {
-        $this->_max = $max;
-        return $this;
-    }
-
-    /**
-     * Returns the inclusive option
-     *
-     * @return boolean
-     */
-    public function getInclusive()
-    {
-        return $this->_inclusive;
-    }
-
-    /**
-     * Sets the inclusive option
-     *
-     * @param  boolean $inclusive
-     * @return Zend_Validate_Between Provides a fluent interface
-     */
-    public function setInclusive($inclusive)
-    {
-        $this->_inclusive = $inclusive;
-        return $this;
-    }
-
-    /**
-     * Defined by Zend_Validate_Interface
-     *
-     * Returns true if and only if $value is between min and max options, inclusively
-     * if inclusive option is true.
-     *
-     * @param  mixed $value
-     * @return boolean
-     */
-    public function isValid($value)
-    {
-        $this->_setValue($value);
-
-        if ($this->_inclusive) {
-            if ($this->_min > $value || $value > $this->_max) {
-                $this->_error(self::NOT_BETWEEN);
-                return false;
-            }
-        } else {
-            if ($this->_min >= $value || $value >= $this->_max) {
-                $this->_error(self::NOT_BETWEEN_STRICT);
-                return false;
-            }
-        }
-        return true;
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

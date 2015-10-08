@@ -1,385 +1,88 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- * 
- * @category   Zend
- * @package    Zend_Mail
- * @subpackage Protocol
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Abstract.php 12395 2008-11-07 23:58:38Z nico $
- */
-
-
-/**
- * @see Zend_Validate
- */
-require_once 'Zend/Validate.php';
-
-
-/**
- * @see Zend_Validate_Hostname
- */
-require_once 'Zend/Validate/Hostname.php';
-
-
-/**
- * Zend_Mail_Protocol_Abstract
- *
- * Provides low-level methods for concrete adapters to communicate with a remote mail server and track requests and responses.
- * 
- * @category   Zend
- * @package    Zend_Mail
- * @subpackage Protocol
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Abstract.php 12395 2008-11-07 23:58:38Z nico $
- * @todo Implement proxy settings
- */
-abstract class Zend_Mail_Protocol_Abstract
-{
-    /**
-     * Mail default EOL string
-     */
-    const EOL = "\r\n";
-
-
-    /**
-     * Default timeout in seconds for initiating session
-     */
-    const TIMEOUT_CONNECTION = 30;
-
-
-    /**
-     * Hostname or IP address of remote server
-     * @var string
-     */
-    protected $_host;
-
-
-    /**
-     * Port number of connection
-     * @var integer
-     */
-    protected $_port;
-
-
-    /**
-     * Instance of Zend_Validate to check hostnames
-     * @var Zend_Validate
-     */
-    protected $_validHost;
-
-
-    /**
-     * Socket connection resource
-     * @var resource
-     */
-    protected $_socket;
-
-
-    /**
-     * Last request sent to server
-     * @var string
-     */
-    protected $_request;
-
-
-    /**
-     * Array of server responses to last request
-     * @var array
-     */
-    protected $_response;
-
-
-    /**
-     * String template for parsing server responses using sscanf (default: 3 digit code and response string)
-     * @var resource
-     */
-    protected $_template = '%d%s';
-
-
-    /**
-     * Log of mail requests and server responses for a session
-     * @var string
-     */
-    private $_log;
-
-
-    /**
-     * Constructor.
-     *
-     * @param  string  $host OPTIONAL Hostname of remote connection (default: 127.0.0.1)
-     * @param  integer $port OPTIONAL Port number (default: null)
-     * @throws Zend_Mail_Protocol_Exception
-     * @return void
-     */
-    public function __construct($host = '127.0.0.1', $port = null)
-    {
-        $this->_validHost = new Zend_Validate();
-        $this->_validHost->addValidator(new Zend_Validate_Hostname(Zend_Validate_Hostname::ALLOW_ALL));
-
-        if (!$this->_validHost->isValid($host)) {
-            /**
-             * @see Zend_Mail_Protocol_Exception
-             */
-            require_once 'Zend/Mail/Protocol/Exception.php';
-            throw new Zend_Mail_Protocol_Exception(join(', ', $this->_validHost->getMessages()));
-        }
-
-        $this->_host = $host;
-        $this->_port = $port;
-    }
-
-
-    /**
-     * Class destructor to cleanup open resources
-     *
-     * @return void
-     */
-    public function __destruct()
-    {
-        $this->_disconnect();
-    }
-
-
-    /**
-     * Create a connection to the remote host
-     *
-     * Concrete adapters for this class will implement their own unique connect scripts, using the _connect() method to create the socket resource.
-     */
-    abstract public function connect();
-
-
-    /**
-     * Retrieve the last client request
-     *
-     * @return string
-     */
-    public function getRequest()
-    {
-        return $this->_request;
-    }
-
-
-    /**
-     * Retrieve the last server response
-     *
-     * @return array
-     */
-    public function getResponse()
-    {
-        return $this->_response;
-    }
-
-
-    /**
-     * Retrieve the transaction log
-     *
-     * @return string
-     */
-    public function getLog()
-    {
-        return $this->_log;
-    }
-
-
-    /**
-     * Reset the transaction log
-     *
-     * @return void
-     */
-    public function resetLog()
-    {
-        $this->_log = '';
-    }
-
-
-    /**
-     * Connect to the server using the supplied transport and target
-     *
-     * An example $remote string may be 'tcp://mail.example.com:25' or 'ssh://hostname.com:2222'
-     *
-     * @param  string $remote Remote
-     * @throws Zend_Mail_Protocol_Exception
-     * @return boolean
-     */
-    protected function _connect($remote)
-    {
-        $errorNum = 0;
-        $errorStr = '';
-
-        // open connection
-        $this->_socket = @stream_socket_client($remote, $errorNum, $errorStr, self::TIMEOUT_CONNECTION);
-
-        if ($this->_socket === false) {
-            if ($errorNum == 0) {
-                $errorStr = 'Could not open socket';
-            }
-            /**
-             * @see Zend_Mail_Protocol_Exception
-             */
-            require_once 'Zend/Mail/Protocol/Exception.php';
-            throw new Zend_Mail_Protocol_Exception($errorStr);
-        }
-
-        if (($result = stream_set_timeout($this->_socket, self::TIMEOUT_CONNECTION)) === false) {
-            /**
-             * @see Zend_Mail_Protocol_Exception
-             */
-            require_once 'Zend/Mail/Protocol/Exception.php';
-            throw new Zend_Mail_Protocol_Exception('Could not set stream timeout');
-        }
-
-        return $result;
-    }
-
-
-    /**
-     * Disconnect from remote host and free resource
-     *
-     * @return void
-     */
-    protected function _disconnect()
-    {
-        if (is_resource($this->_socket)) {
-            fclose($this->_socket);
-        }
-    }
-
-
-    /**
-     * Send the given request followed by a LINEEND to the server.
-     *
-     * @param  string $request
-     * @throws Zend_Mail_Protocol_Exception
-     * @return integer|boolean Number of bytes written to remote host
-     */
-    protected function _send($request)
-    {
-        if (!is_resource($this->_socket)) {
-            /**
-             * @see Zend_Mail_Protocol_Exception
-             */
-            require_once 'Zend/Mail/Protocol/Exception.php';
-            throw new Zend_Mail_Protocol_Exception('No connection has been established to ' . $this->_host);
-        }
-
-        $this->_request = $request;
-
-        $result = fwrite($this->_socket, $request . self::EOL);
-
-        // Save request to internal log
-        $this->_log .= $request . self::EOL;
-
-        if ($result === false) {
-            /**
-             * @see Zend_Mail_Protocol_Exception
-             */
-            require_once 'Zend/Mail/Protocol/Exception.php';
-            throw new Zend_Mail_Protocol_Exception('Could not send request to ' . $this->_host);
-        }
-
-        return $result;
-    }
-
-
-    /**
-     * Get a line from the stream.
-     *
-     * @var    integer $timeout Per-request timeout value if applicable
-     * @throws Zend_Mail_Protocol_Exception
-     * @return string
-     */
-    protected function _receive($timeout = null)
-    {
-        if (!is_resource($this->_socket)) {
-            /**
-             * @see Zend_Mail_Protocol_Exception
-             */
-            require_once 'Zend/Mail/Protocol/Exception.php';
-            throw new Zend_Mail_Protocol_Exception('No connection has been established to ' . $this->_host);
-        }
-
-        // Adapters may wish to supply per-commend timeouts according to appropriate RFC
-        if ($timeout !== null) {
-           stream_set_timeout($this->_socket, $timeout);
-        }
-
-        // Retrieve response
-        $reponse = fgets($this->_socket, 1024);
-
-        // Save request to internal log
-        $this->_log .= $reponse;
-
-        // Check meta data to ensure connection is still valid
-        $info = stream_get_meta_data($this->_socket);
-
-        if (!empty($info['timed_out'])) {
-            /**
-             * @see Zend_Mail_Protocol_Exception
-             */
-            require_once 'Zend/Mail/Protocol/Exception.php';
-            throw new Zend_Mail_Protocol_Exception($this->_host . ' has timed out');
-        }
-
-        if ($reponse === false) {
-            /**
-             * @see Zend_Mail_Protocol_Exception
-             */
-            require_once 'Zend/Mail/Protocol/Exception.php';
-            throw new Zend_Mail_Protocol_Exception('Could not read from ' . $this->_host);
-        }
-
-        return $reponse;
-    }
-
-
-    /**
-     * Parse server response for successful codes
-     *
-     * Read the response from the stream and check for expected return code.
-     * Throws a Zend_Mail_Protocol_Exception if an unexpected code is returned.
-     *
-     * @param  string|array $code One or more codes that indicate a successful response
-     * @throws Zend_Mail_Protocol_Exception
-     * @return string Last line of response string
-     */
-    protected function _expect($code, $timeout = null)
-    {
-        $this->_response = array();
-        $cmd = '';
-        $msg = '';
-
-        if (!is_array($code)) {
-            $code = array($code);
-        }
-
-        do {
-            $this->_response[] = $result = $this->_receive($timeout);
-            sscanf($result, $this->_template, $cmd, $msg);
-
-            if ($cmd === null || !in_array($cmd, $code)) {
-                /**
-                 * @see Zend_Mail_Protocol_Exception
-                 */
-                require_once 'Zend/Mail/Protocol/Exception.php';
-                throw new Zend_Mail_Protocol_Exception($result);
-            }
-
-        } while (strpos($msg, '-') === 0); // The '-' message prefix indicates an information string instead of a response string.
-
-        return $msg;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

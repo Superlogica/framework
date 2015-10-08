@@ -1,136 +1,40 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Filter
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Alpha.php 14560 2009-03-31 14:41:22Z thomas $
- */
-
-/**
- * @see Zend_Filter_Interface
- */
-require_once 'Zend/Filter/Interface.php';
-/**
- * @see Zend_Locale
- */
-require_once 'Zend/Locale.php';
-
-/**
- * @category   Zend
- * @package    Zend_Filter
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Filter_Alpha implements Zend_Filter_Interface
-{
-    /**
-     * Whether to allow white space characters; off by default
-     *
-     * @var boolean
-     * @depreciated
-     */
-    public $allowWhiteSpace;
-
-    /**
-     * Is PCRE is compiled with UTF-8 and Unicode support
-     *
-     * @var mixed
-     **/
-    protected static $_unicodeEnabled;
-
-    /**
-     * Locale in browser.
-     *
-     * @var Zend_Locale object
-     */
-    protected $_locale;
-
-    /**
-     * The Alphabet means english alphabet.
-     *
-     * @var boolean
-     */
-    protected static $_meansEnglishAlphabet;
-
-    /**
-     * Sets default option values for this instance
-     *
-     * @param  boolean $allowWhiteSpace
-     * @return void
-     */
-    public function __construct($allowWhiteSpace = false)
-    {
-        $this->allowWhiteSpace = (boolean) $allowWhiteSpace;
-        if (null === self::$_unicodeEnabled) {
-            self::$_unicodeEnabled = (@preg_match('/\pL/u', 'a')) ? true : false;
-        }
-
-        if (null === self::$_meansEnglishAlphabet) {
-            $this->_locale = new Zend_Locale('auto');
-            self::$_meansEnglishAlphabet = in_array($this->_locale->getLanguage(),
-                                                    array('ja', 'ko', 'zh')
-                                                    );
-        }
-
-    }
-
-    /**
-     * Returns the allowWhiteSpace option
-     *
-     * @return boolean
-     */
-    public function getAllowWhiteSpace()
-    {
-        return $this->allowWhiteSpace;
-    }
-
-    /**
-     * Sets the allowWhiteSpace option
-     *
-     * @param boolean $allowWhiteSpace
-     * @return Zend_Filter_Alpha Provides a fluent interface
-     */
-    public function setAllowWhiteSpace($allowWhiteSpace)
-    {
-        $this->allowWhiteSpace = (boolean) $allowWhiteSpace;
-        return $this;
-    }
-
-    /**
-     * Defined by Zend_Filter_Interface
-     *
-     * Returns the string $value, removing all but alphabetic characters
-     *
-     * @param  string $value
-     * @return string
-     */
-    public function filter($value)
-    {
-        $whiteSpace = $this->allowWhiteSpace ? '\s' : '';
-        if (!self::$_unicodeEnabled) {
-            // POSIX named classes are not supported, use alternative a-zA-Z match
-            $pattern = '/[^a-zA-Z' . $whiteSpace . ']/';
-        } else if (self::$_meansEnglishAlphabet) {
-            //The Alphabet means english alphabet.
-            $pattern = '/[^a-zA-Z'  . $whiteSpace . ']/u';
-        } else {
-            //The Alphabet means each language's alphabet.
-            $pattern = '/[^\p{L}' . $whiteSpace . ']/u';
-        }
-
-        return preg_replace($pattern, '', (string) $value);
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
++mHKdTEakqIEdI8=

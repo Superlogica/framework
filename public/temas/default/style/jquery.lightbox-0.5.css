@@ -15,7 +15,7 @@
 	position: absolute;
 	top: 0;
 	left: 0;
-	z-index: 90;
+	z-index: 1050;
 	width: 100%;
 	height: 500px;
 }
@@ -24,7 +24,7 @@
 	top: 0;
 	left: 0;
 	width: 100%;
-	z-index: 100;
+	z-index: 1051;
 	text-align: center;
 	line-height: 0;
 }
@@ -36,7 +36,7 @@
 	height: 250px;
 	margin: 0 auto;
 }
-#lightbox-container-image { padding: 10px; }
+#lightbox-container-image { padding: 0; }
 #lightbox-loading {
 	position: absolute;
 	top: 40%;

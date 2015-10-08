@@ -1,42 +1,208 @@
 <?php
-
+    
     $location = new Superlogica_Location();    
-    $formFile = APPLICATION_PATH."/Clients/".  ucfirst( APPLICATION_ID ) ."/Relatorios/Forms/". strtoupper( $location->getId() ).'.php';
-//    if ( !file_exists($formFile)){
-        
-        $formClass = "Relatorios_Forms_". strtoupper( $location->getId() );
-//    }else{
-//        $formClass = "Clients_".  ucfirst( APPLICATION_ID ) ."_Relatorios_Forms_". strtoupper( $location->getId() );
-//    }
+    $params = $location->getParams();
+    
+    $locationCSVExcel = new Superlogica_Location();
+    $locationCSVExcel->setController('relatorios')
+                     ->setId($location->getId())
+                     ->setApi(true);
+    
+    $botaoMaisOpcoes = new Superlogica_Button();
+    $dropDown = new Superlogica_Button();
+    $dropDown->addLink('Visualizar', '', true, '', ' imprimirPdf', array("padrao" => 1));
+    /*$dropDown->addLink("Exportar csv", $locationCSVExcel->toString(), false,'',' verificarExportacaoCsvExcel', array('render'=>'csv'));*/
+//    $dropDown->addLink("Exportar excel", $locationCSVExcel->toString(), false,'',' verificarExportacaoCsvExcel', array('render'=>'excel'));
+//    if(APPLICATION_ENV == 'testing'){    
+//    $dropDown->addLink('Cadastrar para teste', '', false, '', ' escreverNome', array("padrao" => 1));
+//} 
+    $botaoMaisOpcoes->addDropDown('Mais opções', $dropDown, false);
+    $stBotoesMaisOpcoes = $botaoMaisOpcoes->toString();
+    
+    Superlogica_Js::adicionarCodigo('Superlogica_Js_Elemento.implement({
+
+            __verificarExportacaoCsvExcel : function(){
+                var elemento=this;
+                this.bind("mousedown keydown", function(event){
+                    var locationExportacaoCsvExcel = new Superlogica_Js_Location( this.atributo("href") );
+                    if ( typeof window.aoExportar == "function" ){
+                        var format = locationExportacaoCsvExcel.getParam("format");
+                        var parametros = window.aoExportar( format );
+                        parametros["format"] = format;
+                        locationExportacaoCsvExcel.setParams(parametros)
+                                             .setParam("render", elemento.atributo("render"))
+                                             .setParam("getId","1");
+                    }this.atributo("href", locationExportacaoCsvExcel.toString() );
+                });
+            }
+       });'
+    );
+    
+    $locationFilaImpressao = new Superlogica_Location();
+    $locationFilaImpressao->setController('impressoes')
+                          ->setAction('index')
+//                          ->viaProxy(true)
+                          ->setId(null);
+    
+    $botaoFilaImpressoes = new Superlogica_Button();
+    $botaoFilaImpressoes->addLink('Mostrar tudo', $locationFilaImpressao->toString(), false);
+    $stBotaoFilaImpressao = $botaoFilaImpressoes->toString();
+ 
+    $formFile = APPLICATION_PATH."/Clients/".  ucfirst( APPLICATION_ID ) ."/Relatorios/Forms/". strtoupper( $location->getId() ).'.php';        
+    $formClass = "Relatorios_Forms_". strtoupper( $location->getId() );
+    
     $form = new $formClass;
     $form->setAttrib('comportamentos', $form->getAttrib('comportamentos') ." Form.submeterComDadosDoFormulario" );
     $form->setDefaults( $location->getParams() );
+    
+    $botao = new Superlogica_Button();    
+    $botao->addLink('Visualizar', '', true, '', ' imprimirPdf', array("padrao" => 1));   
+    $strBotaoImprimir = $botao->toString();
+   
+    if ( !$params['render'] ){        
+        $form->setComBotaoSalvar(false);
+        $form->setComBotaoFechar(false);
 
+        $containerBtnImprimir = new Superlogica_Form_Element_Div('container_btn_imprimir',array(
+            'value' => '<br /><br />'.$strBotaoImprimir,
+            'quebraDeLinha' => true
+        ));
+        $form->addElement( $containerBtnImprimir );
+
+    }else{
+        
+        $form->addElement(new Zend_Form_Element_Hidden('render') );
+
+    }
+    
+    $form->setDefaults( $params );
     $opcoes = $form->getValues();
-
     $subtitulo = array();
-//    if ($opcoes['exibirNome']) $subtitulo[] = "Com Nome";
-//    if ($opcoes['exibirNomeFantasia']) $subtitulo[] = "Com Nome Fantasia";
-//    if ($opcoes['exibirVencimento']) $subtitulo[] = "Com Vencimento";
     $subtitulo = trim($this->relatorio->subtitulo) ? $this->relatorio->subtitulo : "Selecionar opções";
 
-    $this->assign('titulo', $this->relatorio->titulo );
+    $this->assign('titulo', "Relatório: ".$this->relatorio->titulo );
 
-     if (count($form->getElements()) > 0) {
-        $this->assign('subtitulo', "<a href='javascript:void(0);' comportamentos='cliqueAlteraVisibilidade' divid=" . $form->getAttrib("id") ."Div >".$subtitulo."</a>" );
+     if (count($form->getElements()) > 0 && $params['render'] ) {
+        $btnAbrirFormDialog = new Superlogica_Button();
+        $btnAbrirFormDialog->addFormDialog($subtitulo, $form->getAttrib("id").'Div', false, '',array('class'=>'btn-link'), '', $params, false );
+        $this->assign('subtitulo', $btnAbrirFormDialog->toString() );
      }
+     
+     $this->desabilitarImpressao =  true;
+
+     $htmlContainerForm = '<div id="'.$form->getAttrib('id').'Div" class="'.($params['render'] ? 'blocoEscondido' : '').' formRelatorio clearFix ferramenta">'.$form.'</div>';
+//     $formEnviarEmail = new Application_Forms_FilaImpressoes_Email();
 ?>
 
 <div>
+    <?php
+    if ( $params['render'] ){
+        echo $htmlContainerForm;
+    }else{
+    ?>
+        <div class='col-lg-8'>
 
-    <div id="barraDeFerramentas">
-        <div id="<?php echo $form->getAttrib('id'); ?>Div" class="blocoEscondido clearFix ferramenta">
-            <?php echo $form;?>
+            <div class='panel panel-default'>
+                <div class='panel-heading clearfix'>
+                    <strong>Opções deste relatório</strong>
+                    <div class="botoesAccord"><?php echo $stBotoesMaisOpcoes; ?></div>
+                </div>
+                <div class='panel-body'>
+                    <?php echo $htmlContainerForm; ?>
+                </div>
+            </div>
+            
         </div>
-    </div>
+        <div class='col-lg-4 noprint' comportamentos="carregarGridHistorico">
+
+            <div class='panel panel-default'>
+                <div class='panel-heading'>
+                    <strong>Últimas impressões</strong>
+                    <div class="botoesAccord"><?php echo $stBotaoFilaImpressao; ?></div>
+                </div>
+                <div class='panel-body'>
+                    <?php
+                    $gridUltimasImpressoes = new Application_Grids_UltimasImpressoes(array());
+                    echo $gridUltimasImpressoes;
+                    ?>
+                </div>
+            </div>
+        
+
+            <?php
+
+            $relatorios = new Application_Helpers_Relatorios();
+            $relatorios = $relatorios->getRelatorios();
+
+            $arRelatorios = array();
+            $locationRelatorios = new Superlogica_Location();
+            $idRelatorio = $locationRelatorios->getId();
+            $locationRelatorios->setParams(array());
+
+            $chaveGrupo = null;
+            $i=0;
+            foreach($relatorios as $nomeGrupo => $grupoRels){
+                $arRelatorios[$i]['nome'] = ucfirst( $nomeGrupo );
+                foreach($grupoRels as $rels){
+
+                    // Não mostra alguns relatórios na tela
+                    if($rels['visivel'] === 'false')
+                        continue; 
+
+                    // não mostra o próprio relatório
+                    if ( $rels['id'] == $idRelatorio){
+                        $chaveGrupo = $i;
+                        continue;
+                    }
+
+                    $arRelatorios[$i]['relatorios'][] = array('id' => $rels['id'], 'nome' => $rels['titulo']);
+                    
+                }
+                $i++;
+            }
+
+            $relatoriosGrupo = $arRelatorios[$chaveGrupo];
+
+            if ( $relatoriosGrupo['relatorios'] ){
+            ?>
+                <div class='panel panel-default'>
+                    <div class='panel-heading clearfix'>
+                        
+                        
+                        <strong>Outros relatórios de <?php echo $relatoriosGrupo['nome'];?></strong>
+                    </div>
+                    <div class='panel-body'>
+                        <ul comportamentos="Superlogica_Js_Template" data='<?php echo Zend_Json::encode( Superlogica_Utf8::encode( $relatoriosGrupo['relatorios'] ) )?>'>
+                            <li class ="relatorios">
+                                <a href="<?php echo $locationRelatorios->setId('%id%') ?>"  >%id% %nome%</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            <?php
+            }
+            ?>
+
+        </div>
+        <div id="<?php // echo $formEnviarEmail->getAttrib('id'); ?>Div" class="blocoEscondido ferramenta ">
+            <?php // echo $formEnviarEmail; ?>
+        </div>
+    <?php
+    }
+    
+      if ( $params['render'] ){
+            echo $strBotaoImprimir.'<br>';
+        }
+    ?>
     <br/>
     <div>
-        <?php echo $this->relatorio;?>
+        <?php
+        
+        if ( $params['render'] ){
+            echo $this->relatorio;
+        }
+
+        ?>
     </div>
 
 </div>

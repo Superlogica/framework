@@ -1,330 +1,130 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Service_Amazon
- * @subpackage Ec2
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id$
- */
-
-require_once 'Zend/Service/Amazon/Ec2/Abstract.php';
-
-/**
- * An Amazon EC2 interface to register, describe and deregister Amamzon Machine Instances (AMI)
- *
- * @category   Zend
- * @package    Zend_Service_Amazon
- * @subpackage Ec2
- * @copyright  Copyright (c) 22005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Service_Amazon_Ec2_Image extends Zend_Service_Amazon_Ec2_Abstract
-{
-    /**
-     * Registers an AMI with Amazon EC2. Images must be registered before
-     * they can be launched.
-     *
-     * Each AMI is associated with an unique ID which is provided by the Amazon
-     * EC2 service through the RegisterImage operation. During registration, Amazon
-     * EC2 retrieves the specified image manifest from Amazon S3 and verifies that
-     * the image is owned by the user registering the image.
-     *
-     * The image manifest is retrieved once and stored within the Amazon EC2.
-     * Any modifications to an image in Amazon S3 invalidates this registration.
-     * If you make changes to an image, deregister the previous image and register
-     * the new image. For more information, see DeregisterImage.
-     *
-     * @param string $imageLocation         Full path to your AMI manifest in Amazon S3 storage.
-     * @return string                       The ami fro the newly registred image;
-     */
-    public function register($imageLocation)
-    {
-        $params                 = array();
-        $params['Action']       = 'RegisterImage';
-        $params['ImageLocation']= $imageLocation;
-
-        $response = $this->sendRequest($params);
-        $xpath = $response->getXPath();
-
-        $amiId = $xpath->evaluate('string(//ec2:imageId/text())');
-
-        return $amiId;
-    }
-
-    /**
-     * Returns information about AMIs, AKIs, and ARIs available to the user.
-     * Information returned includes image type, product codes, architecture,
-     * and kernel and RAM disk IDs. Images available to the user include public
-     * images available for any user to launch, private images owned by the user
-     * making the request, and private images owned by other users for which the
-     * user has explicit launch permissions.
-     *
-     * Launch permissions fall into three categories:
-     *      public: The owner of the AMI granted launch permissions for the AMI
-     *              to the all group. All users have launch permissions for these AMIs.
-     *      explicit: The owner of the AMI granted launch permissions to a specific user.
-     *      implicit: A user has implicit launch permissions for all AMIs he or she owns.
-     *
-     * The list of AMIs returned can be modified by specifying AMI IDs, AMI owners,
-     * or users with launch permissions. If no options are specified, Amazon EC2 returns
-     * all AMIs for which the user has launch permissions.
-     *
-     * If you specify one or more AMI IDs, only AMIs that have the specified IDs are returned.
-     * If you specify an invalid AMI ID, a fault is returned. If you specify an AMI ID for which
-     * you do not have access, it will not be included in the returned results.
-     *
-     * If you specify one or more AMI owners, only AMIs from the specified owners and for
-     * which you have access are returned. The results can include the account IDs of the
-     * specified owners, amazon for AMIs owned by Amazon or self for AMIs that you own.
-     *
-     * If you specify a list of executable users, only users that have launch permissions
-     * for the AMIs are returned. You can specify account IDs (if you own the AMI(s)), self
-     * for AMIs for which you own or have explicit permissions, or all for public AMIs.
-     *
-     * @param string|array $imageId             A list of image descriptions
-     * @param string|array $owner               Owners of AMIs to describe.
-     * @param string|array $executableBy        AMIs for which specified users have access.
-     * @return array
-     */
-    public function describe($imageId = null, $owner = null, $executableBy = null)
-    {
-        $params = array();
-        $params['Action'] = 'DescribeImages';
-
-        if(is_array($imageId) && !empty($imageId)) {
-            foreach($imageId as $k=>$name) {
-                $params['ImageId.' . ($k+1)] = $name;
-            }
-        } elseif($imageId) {
-            $params['ImageId.1'] = $imageId;
-        }
-
-        if(is_array($owner) && !empty($owner)) {
-            foreach($owner as $k=>$name) {
-                $params['Owner.' . ($k+1)] = $name;
-            }
-        } elseif($owner) {
-            $params['Owner.1'] = $owner;
-        }
-
-        if(is_array($executableBy) && !empty($executableBy)) {
-            foreach($executableBy as $k=>$name) {
-                $params['ExecutableBy.' . ($k+1)] = $name;
-            }
-        } elseif($executableBy) {
-            $params['ExecutableBy.1'] = $executableBy;
-        }
-
-        $response = $this->sendRequest($params);
-
-        $xpath  = $response->getXPath();
-        $nodes = $xpath->query('//ec2:imagesSet/ec2:item');
-
-        $return = array();
-        foreach ($nodes as $node) {
-            $item = array();
-
-            $item['imageId']        = $xpath->evaluate('string(ec2:imageId/text())', $node);
-            $item['imageLocation']  = $xpath->evaluate('string(ec2:imageLocation/text())', $node);
-            $item['imageState']     = $xpath->evaluate('string(ec2:imageState/text())', $node);
-            $item['imageOwnerId']   = $xpath->evaluate('string(ec2:imageOwnerId/text())', $node);
-            $item['isPublic']       = $xpath->evaluate('string(ec2:isPublic/text())', $node);
-            $item['architecture']   = $xpath->evaluate('string(ec2:architecture/text())', $node);
-            $item['imageType']      = $xpath->evaluate('string(ec2:imageType/text())', $node);
-            $item['kernelId']       = $xpath->evaluate('string(ec2:kernelId/text())', $node);
-            $item['ramdiskId']      = $xpath->evaluate('string(ec2:ramdiskId/text())', $node);
-            $item['platform']       = $xpath->evaluate('string(ec2:platform/text())', $node);
-
-            $return[] = $item;
-            unset($item, $node);
-        }
-
-        return $return;
-    }
-
-    /**
-     * Deregisters an AMI. Once deregistered, instances of the AMI can no longer be launched.
-     *
-     * @param string $imageId                   Unique ID of a machine image, returned by a call
-     *                                          to RegisterImage or DescribeImages.
-     * @return boolean
-     */
-    public function deregister($imageId)
-    {
-        $params                 = array();
-        $params['Action']       = 'DeregisterImage';
-        $params['ImageId']      = $imageId;
-
-        $response = $this->sendRequest($params);
-        $xpath = $response->getXPath();
-
-        $return = $xpath->evaluate('string(//ec2:return/text())');
-
-        return ($return === "true");
-    }
-
-    /**
-     * Modifies an attribute of an AMI.
-     *
-     * Valid Attributes:
-     *       launchPermission:  Controls who has permission to launch the AMI. Launch permissions
-     *                          can be granted to specific users by adding userIds.
-     *                          To make the AMI public, add the all group.
-     *       productCodes:      Associates a product code with AMIs. This allows developers to
-     *                          charge users for using AMIs. The user must be signed up for the
-     *                          product before they can launch the AMI. This is a write once attribute;
-     *                          after it is set, it cannot be changed or removed.
-     *
-     * @param string $imageId                   AMI ID to modify.
-     * @param string $attribute                 Specifies the attribute to modify. See the preceding
-     *                                          attributes table for supported attributes.
-     * @param string $operationType             Specifies the operation to perform on the attribute.
-     *                                          See the preceding attributes table for supported operations for attributes.
-     *                                          Valid Values: add | remove
-     *                                          Required for launchPermssion Attribute
-     *
-     * @param string|array $userId              User IDs to add to or remove from the launchPermission attribute.
-     *                                          Required for launchPermssion Attribute
-     * @param string|array $userGroup           User groups to add to or remove from the launchPermission attribute.
-     *                                          Currently, the all group is available, which will make it a public AMI.
-     *                                          Required for launchPermssion Attribute
-     * @param string $productCode               Attaches a product code to the AMI. Currently only one product code
-     *                                          can be associated with an AMI. Once set, the product code cannot be changed or reset.
-     *                                          Required for productCodes Attribute
-     * @return boolean
-     */
-    public function modifyAttribute($imageId, $attribute, $operationType = 'add', $userId = null, $userGroup = null, $productCode = null)
-    {
-        $params = array();
-        $params['Action'] = 'ModifyImageAttribute';
-        $parmas['ImageId'] = $imageId;
-        $params['Attribute'] = $attribute;
-
-        switch($attribute) {
-            case 'launchPermission':
-                // break left out
-            case 'launchpermission':
-                $params['Attribute'] = 'launchPermission';
-                $params['OperationType'] = $operationType;
-
-                if(is_array($userId) && !empty($userId)) {
-                    foreach($userId as $k=>$name) {
-                        $params['UserId.' . ($k+1)] = $name;
-                    }
-                } elseif($userId) {
-                    $params['UserId.1'] = $userId;
-                }
-
-                if(is_array($userGroup) && !empty($userGroup)) {
-                    foreach($userGroup as $k=>$name) {
-                        $params['UserGroup.' . ($k+1)] = $name;
-                    }
-                } elseif($userGroup) {
-                    $params['UserGroup.1'] = $userGroup;
-                }
-
-                break;
-            case 'productCodes':
-                // break left out
-            case 'productcodes':
-                $params['Attribute'] = 'productCodes';
-                $parmas['ProductCode.1'] = $productCode;
-                break;
-            default:
-                require_once 'Zend/Service/Amazon/Ec2/Exception.php';
-                throw new Zend_Service_Amazon_Ec2_Exception('Invalid Attribute Passed In.  Valid Image Attributes are launchPermission and productCode.');
-                break;
-        }
-
-        $response = $this->sendRequest($params);
-        $xpath = $response->getXPath();
-
-        $return = $xpath->evaluate('string(//ec2:return/text())');
-
-        return ($return === "true");
-    }
-
-    /**
-     * Returns information about an attribute of an AMI. Only one attribute can be specified per call.
-     *
-     * @param string $imageId                   ID of the AMI for which an attribute will be described.
-     * @param string $attribute                 Specifies the attribute to describe.  Valid Attributes are
-     *                                          launchPermission, productCodes
-     */
-    public function describeAttribute($imageId, $attribute)
-    {
-        $params = array();
-        $params['Action'] = 'DescribeImageAttribute';
-        $params['ImageId'] = $imageId;
-        $params['Attribute'] = $attribute;
-
-        $response = $this->sendRequest($params);
-        $xpath = $response->getXPath();
-
-        $return = array();
-        $return['imageId'] = $xpath->evaluate('string(//ec2:imageId/text())');
-
-        // check for launchPermission
-        if($attribute == 'launchPermission') {
-            $lPnodes = $xpath->query('//ec2:launchPermission/ec2:item');
-
-            if($lPnodes->length > 0) {
-                $return['launchPermission'] = array();
-                foreach($lPnodes as $node) {
-                    $return['launchPermission'][] = $xpath->evaluate('string(ec2:userId/text())', $node);
-                }
-            }
-        }
-
-        // check for product codes
-        if($attribute == 'productCodes') {
-            $pCnodes = $xpath->query('//ec2:productCodes/ec2:item');
-            if($pCnodes->length > 0) {
-                $return['productCodes'] = array();
-                foreach($pCnodes as $node) {
-                    $return['productCodes'][] = $xpath->evaluate('string(ec2:productCode/text())', $node);
-                }
-            }
-        }
-
-        return $return;
-
-    }
-
-    /**
-     * Resets an attribute of an AMI to its default value.  The productCodes attribute cannot be reset
-     *
-     * @param string $imageId                   ID of the AMI for which an attribute will be reset.
-     * @param String $attribute                 Specifies the attribute to reset. Currently, only launchPermission is supported.
-     *                                          In the case of launchPermission, all public and explicit launch permissions for
-     *                                          the AMI are revoked.
-     * @return boolean
-     */
-    public function resetAttribute($imageId, $attribute)
-    {
-        $params = array();
-        $params['Action'] = 'ResetImageAttribute';
-        $params['ImageId'] = $imageId;
-        $params['Attribute'] = $attribute;
-
-        $response = $this->sendRequest($params);
-        $xpath = $response->getXPath();
-
-        $return = $xpath->evaluate('string(//ec2:return/text())');
-
-        return ($return === "true");
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+gT4lXX8T7NLLw3Qziey4Rm==

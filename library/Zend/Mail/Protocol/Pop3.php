@@ -1,471 +1,146 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- * 
- * @category   Zend
- * @package    Zend_Mail
- * @subpackage Protocol
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Pop3.php 12539 2008-11-11 02:47:17Z yoshida@zend.co.jp $
- */
-
-
-/**
- * @category   Zend
- * @package    Zend_Mail
- * @subpackage Protocol
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Mail_Protocol_Pop3
-{
-    /**
-     * Default timeout in seconds for initiating session
-     */
-    const TIMEOUT_CONNECTION = 30;
-    
-    /**
-     * saves if server supports top
-     * @var null|bool
-     */
-    public $hasTop = null;
-
-    /**
-     * socket to pop3
-     * @var null|resource
-     */
-    protected $_socket;
-
-    /**
-     * greeting timestamp for apop
-     * @var null|string
-     */
-    protected $_timestamp;
-
-
-    /**
-     * Public constructor
-     *
-     * @param  string      $host  hostname of IP address of POP3 server, if given connect() is called
-     * @param  int|null    $port  port of POP3 server, null for default (110 or 995 for ssl)
-     * @param  bool|string $ssl   use ssl? 'SSL', 'TLS' or false
-     * @throws Zend_Mail_Protocol_Exception
-     */
-    public function __construct($host = '', $port = null, $ssl = false)
-    {
-        if ($host) {
-            $this->connect($host, $port, $ssl);
-        }
-    }
-
-
-    /**
-     * Public destructor
-     */
-    public function __destruct()
-    {
-        $this->logout();
-    }
-
-
-    /**
-     * Open connection to POP3 server
-     *
-     * @param  string      $host  hostname of IP address of POP3 server
-     * @param  int|null    $port  of POP3 server, default is 110 (995 for ssl)
-     * @param  string|bool $ssl   use 'SSL', 'TLS' or false
-     * @return string welcome message
-     * @throws Zend_Mail_Protocol_Exception
-     */
-    public function connect($host, $port = null, $ssl = false)
-    {
-        if ($ssl == 'SSL') {
-            $host = 'ssl://' . $host;
-        }
-
-        if ($port === null) {
-            $port = $ssl == 'SSL' ? 995 : 110;
-        }
-
-        $errno  =  0;
-        $errstr = '';
-        $this->_socket = @fsockopen($host, $port, $errno, $errstr, self::TIMEOUT_CONNECTION);
-        if (!$this->_socket) {
-            /**
-             * @see Zend_Mail_Protocol_Exception
-             */
-            require_once 'Zend/Mail/Protocol/Exception.php';
-            throw new Zend_Mail_Protocol_Exception('cannot connect to host : ' . $errno . ' : ' . $errstr);
-        }
-
-        $welcome = $this->readResponse();
-
-        strtok($welcome, '<');
-        $this->_timestamp = strtok('>');
-        if (!strpos($this->_timestamp, '@')) {
-            $this->_timestamp = null;
-        } else {
-            $this->_timestamp = '<' . $this->_timestamp . '>';
-        }
-
-        if ($ssl === 'TLS') {
-            $this->request('STLS');
-            $result = stream_socket_enable_crypto($this->_socket, true, STREAM_CRYPTO_METHOD_TLS_CLIENT);
-            if (!$result) {
-                /**
-                 * @see Zend_Mail_Protocol_Exception
-                 */
-                require_once 'Zend/Mail/Protocol/Exception.php';
-                throw new Zend_Mail_Protocol_Exception('cannot enable TLS');
-            }
-        }
-
-        return $welcome;
-    }
-
-
-    /**
-     * Send a request
-     *
-     * @param string $request your request without newline
-     * @return null
-     * @throws Zend_Mail_Protocol_Exception
-     */
-    public function sendRequest($request)
-    {
-        $result = @fputs($this->_socket, $request . "\r\n");
-        if (!$result) {
-            /**
-             * @see Zend_Mail_Protocol_Exception
-             */
-            require_once 'Zend/Mail/Protocol/Exception.php';
-            throw new Zend_Mail_Protocol_Exception('send failed - connection closed?');
-        }
-    }
-
-
-    /**
-     * read a response
-     *
-     * @param  boolean $multiline response has multiple lines and should be read until "<nl>.<nl>"
-     * @return string response
-     * @throws Zend_Mail_Protocol_Exception
-     */
-    public function readResponse($multiline = false)
-    {
-        $result = @fgets($this->_socket);
-        if (!is_string($result)) {
-            /**
-             * @see Zend_Mail_Protocol_Exception
-             */
-            require_once 'Zend/Mail/Protocol/Exception.php';
-            throw new Zend_Mail_Protocol_Exception('read failed - connection closed?');
-        }
-
-        $result = trim($result);
-        if (strpos($result, ' ')) {
-            list($status, $message) = explode(' ', $result, 2);
-        } else {
-            $status = $result;
-            $message = '';
-        }
-
-        if ($status != '+OK') {
-            /**
-             * @see Zend_Mail_Protocol_Exception
-             */
-            require_once 'Zend/Mail/Protocol/Exception.php';
-            throw new Zend_Mail_Protocol_Exception('last request failed');
-        }
-
-        if ($multiline) {
-            $message = '';
-            $line = fgets($this->_socket);
-            while ($line && rtrim($line, "\r\n") != '.') {
-                if ($line[0] == '.') {
-                    $line = substr($line, 1);
-                }
-                $message .= $line;
-                $line = fgets($this->_socket);
-            };
-        }
-
-        return $message;
-    }
-
-
-    /**
-     * Send request and get resposne
-     *
-     * @see sendRequest(), readResponse()
-     *
-     * @param  string $request    request
-     * @param  bool   $multiline  multiline response?
-     * @return string             result from readResponse()
-     * @throws Zend_Mail_Protocol_Exception
-     */
-    public function request($request, $multiline = false)
-    {
-        $this->sendRequest($request);
-        return $this->readResponse($multiline);
-    }
-
-
-    /**
-     * End communication with POP3 server (also closes socket)
-     *
-     * @return null
-     */
-    public function logout()
-    {
-        if (!$this->_socket) {
-            return;
-        }
-
-        try {
-            $this->request('QUIT');
-        } catch (Zend_Mail_Protocol_Exception $e) {
-            // ignore error - we're closing the socket anyway
-        }
-
-        fclose($this->_socket);
-        $this->_socket = null;
-    }
-
-
-    /**
-     * Get capabilities from POP3 server
-     *
-     * @return array list of capabilities
-     * @throws Zend_Mail_Protocol_Exception
-     */
-    public function capa()
-    {
-        $result = $this->request('CAPA', true);
-        return explode("\n", $result);
-    }
-
-
-    /**
-     * Login to POP3 server. Can use APOP
-     *
-     * @param  string $user      username
-     * @param  string $password  password
-     * @param  bool   $try_apop  should APOP be tried?
-     * @return void
-     * @throws Zend_Mail_Protocol_Exception
-     */
-    public function login($user, $password, $tryApop = true)
-    {
-        if ($tryApop && $this->_timestamp) {
-            try {
-                $this->request("APOP $user " . md5($this->_timestamp . $password));
-                return;
-            } catch (Zend_Mail_Protocol_Exception $e) {
-                // ignore
-            }
-        }
-
-        $result = $this->request("USER $user");
-        $result = $this->request("PASS $password");
-    }
-
-
-    /**
-     * Make STAT call for message count and size sum
-     *
-     * @param  int $messages  out parameter with count of messages
-     * @param  int $octets    out parameter with size in octects of messages
-     * @return void
-     * @throws Zend_Mail_Protocol_Exception
-     */
-    public function status(&$messages, &$octets)
-    {
-        $messages = 0;
-        $octets = 0;
-        $result = $this->request('STAT');
-
-        list($messages, $octets) = explode(' ', $result);
-    }
-
-
-    /**
-     * Make LIST call for size of message(s)
-     *
-     * @param  int|null $msgno number of message, null for all
-     * @return int|array size of given message or list with array(num => size)
-     * @throws Zend_Mail_Protocol_Exception
-     */
-    public function getList($msgno = null)
-    {
-        if ($msgno !== null) {
-            $result = $this->request("LIST $msgno");
-
-            list(, $result) = explode(' ', $result);
-            return (int)$result;
-        }
-
-        $result = $this->request('LIST', true);
-        $messages = array();
-        $line = strtok($result, "\n");
-        while ($line) {
-            list($no, $size) = explode(' ', trim($line));
-            $messages[(int)$no] = (int)$size;
-            $line = strtok("\n");
-        }
-
-        return $messages;
-    }
-
-
-    /**
-     * Make UIDL call for getting a uniqueid
-     *
-     * @param  int|null $msgno number of message, null for all
-     * @return string|array uniqueid of message or list with array(num => uniqueid)
-     * @throws Zend_Mail_Protocol_Exception
-     */
-    public function uniqueid($msgno = null)
-    {
-        if ($msgno !== null) {
-            $result = $this->request("UIDL $msgno");
-
-            list(, $result) = explode(' ', $result);
-            return $result;
-        }
-
-        $result = $this->request('UIDL', true);
-
-        $result = explode("\n", $result);
-        $messages = array();
-        foreach ($result as $line) {
-            if (!$line) {
-                continue;
-            }
-            list($no, $id) = explode(' ', trim($line), 2);
-            $messages[(int)$no] = $id;
-        }
-
-        return $messages;
-
-    }
-
-
-    /**
-     * Make TOP call for getting headers and maybe some body lines
-     * This method also sets hasTop - before it it's not known if top is supported
-     *
-     * The fallback makes normale RETR call, which retrieves the whole message. Additional
-     * lines are not removed.
-     *
-     * @param  int  $msgno    number of message
-     * @param  int  $lines    number of wanted body lines (empty line is inserted after header lines)
-     * @param  bool $fallback fallback with full retrieve if top is not supported
-     * @return string message headers with wanted body lines
-     * @throws Zend_Mail_Protocol_Exception
-     */
-    public function top($msgno, $lines = 0, $fallback = false)
-    {
-        if ($this->hasTop === false) {
-            if ($fallback) {
-                return $this->retrieve($msgno);
-            } else {
-                /**
-                 * @see Zend_Mail_Protocol_Exception
-                 */
-                require_once 'Zend/Mail/Protocol/Exception.php';
-                throw new Zend_Mail_Protocol_Exception('top not supported and no fallback wanted');
-            }
-        }
-        $this->hasTop = true;
-
-        $lines = (!$lines || $lines < 1) ? 0 : (int)$lines;
-
-        try {
-            $result = $this->request("TOP $msgno $lines", true);
-        } catch (Zend_Mail_Protocol_Exception $e) {
-            $this->hasTop = false;
-            if ($fallback) {
-                $result = $this->retrieve($msgno);
-            } else {
-                throw $e;
-            }
-        }
-
-        return $result;
-    }
-
-
-    /**
-     * Make a RETR call for retrieving a full message with headers and body
-     *
-     * @deprecated since 1.1.0; this method has a typo - please use retrieve()
-     * @param  int $msgno  message number
-     * @return string message
-     * @throws Zend_Mail_Protocol_Exception
-     */
-    public function retrive($msgno)
-    {
-        return $this->retrieve($msgno);
-    }
-
-
-    /**
-     * Make a RETR call for retrieving a full message with headers and body
-     *
-     * @param  int $msgno  message number
-     * @return string message
-     * @throws Zend_Mail_Protocol_Exception
-     */
-    public function retrieve($msgno)
-    {
-        $result = $this->request("RETR $msgno", true);
-        return $result;
-    }
-
-    /**
-     * Make a NOOP call, maybe needed for keeping the server happy
-     *
-     * @return null
-     * @throws Zend_Mail_Protocol_Exception
-     */
-    public function noop()
-    {
-        $this->request('NOOP');
-    }
-
-
-    /**
-     * Make a DELE count to remove a message
-     *
-     * @return null
-     * @throws Zend_Mail_Protocol_Exception
-     */
-    public function delete($msgno)
-    {
-        $this->request("DELE $msgno");
-    }
-
-
-    /**
-     * Make RSET call, which rollbacks delete requests
-     *
-     * @return null
-     * @throws Zend_Mail_Protocol_Exception
-     */
-    public function undelete()
-    {
-        $this->request('RSET');
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+izzNuF0=

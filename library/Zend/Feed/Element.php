@@ -1,408 +1,135 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Feed
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Element.php 8064 2008-02-16 10:58:39Z thomas $
- */
-
-
-/**
- * Wraps a DOMElement allowing for SimpleXML-like access to attributes.
- *
- * @category   Zend
- * @package    Zend_Feed
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Feed_Element implements ArrayAccess
-{
-
-    /**
-     * @var DOMElement
-     */
-    protected $_element;
-
-    /**
-     * @var Zend_Feed_Element
-     */
-    protected $_parentElement;
-
-    /**
-     * @var boolean
-     */
-    protected $_appended = true;
-
-
-    /**
-     * Zend_Feed_Element constructor.
-     *
-     * @param  DOMElement $element The DOM element we're encapsulating.
-     * @return void
-     */
-    public function __construct($element = null)
-    {
-        $this->_element = $element;
-    }
-
-
-    /**
-     * Get a DOM representation of the element
-     *
-     * Returns the underlying DOM object, which can then be
-     * manipulated with full DOM methods.
-     *
-     * @return DOMDocument
-     */
-    public function getDOM()
-    {
-        return $this->_element;
-    }
-
-
-    /**
-     * Update the object from a DOM element
-     *
-     * Take a DOMElement object, which may be originally from a call
-     * to getDOM() or may be custom created, and use it as the
-     * DOM tree for this Zend_Feed_Element.
-     *
-     * @param  DOMElement $element
-     * @return void
-     */
-    public function setDOM(DOMElement $element)
-    {
-        $this->_element = $this->_element->ownerDocument->importNode($element, true);
-    }
-
-    /**
-     * Set the parent element of this object to another
-     * Zend_Feed_Element.
-     *
-     * @param  Zend_Feed_Element $element
-     * @return void
-     */
-    public function setParent(Zend_Feed_Element $element)
-    {
-        $this->_parentElement = $element;
-        $this->_appended = false;
-    }
-
-
-    /**
-     * Appends this element to its parent if necessary.
-     *
-     * @return void
-     */
-    protected function ensureAppended()
-    {
-        if (!$this->_appended) {
-            $this->_parentElement->getDOM()->appendChild($this->_element);
-            $this->_appended = true;
-            $this->_parentElement->ensureAppended();
-        }
-    }
-
-
-    /**
-     * Get an XML string representation of this element
-     *
-     * Returns a string of this element's XML, including the XML
-     * prologue.
-     *
-     * @return string
-     */
-    public function saveXml()
-    {
-        // Return a complete document including XML prologue.
-        $doc = new DOMDocument($this->_element->ownerDocument->version,
-                               $this->_element->ownerDocument->actualEncoding);
-        $doc->appendChild($doc->importNode($this->_element, true));
-        return $doc->saveXML();
-    }
-
-
-    /**
-     * Get the XML for only this element
-     *
-     * Returns a string of this element's XML without prologue.
-     *
-     * @return string
-     */
-    public function saveXmlFragment()
-    {
-        return $this->_element->ownerDocument->saveXML($this->_element);
-    }
-
-
-    /**
-     * Map variable access onto the underlying entry representation.
-     *
-     * Get-style access returns a Zend_Feed_Element representing the
-     * child element accessed. To get string values, use method syntax
-     * with the __call() overriding.
-     *
-     * @param  string $var The property to access.
-     * @return mixed
-     */
-    public function __get($var)
-    {
-        $nodes = $this->_children($var);
-        $length = count($nodes);
-
-        if ($length == 1) {
-            return new Zend_Feed_Element($nodes[0]);
-        } elseif ($length > 1) {
-            return array_map(create_function('$e', 'return new Zend_Feed_Element($e);'), $nodes);
-        } else {
-            // When creating anonymous nodes for __set chaining, don't
-            // call appendChild() on them. Instead we pass the current
-            // element to them as an extra reference; the child is
-            // then responsible for appending itself when it is
-            // actually set. This way "if ($foo->bar)" doesn't create
-            // a phantom "bar" element in our tree.
-            if (strpos($var, ':') !== false) {
-                list($ns, $elt) = explode(':', $var, 2);
-                $node = $this->_element->ownerDocument->createElementNS(Zend_Feed::lookupNamespace($ns), $elt);
-            } else {
-                $node = $this->_element->ownerDocument->createElement($var);
-            }
-            $node = new self($node);
-            $node->setParent($this);
-            return $node;
-        }
-    }
-
-
-    /**
-     * Map variable sets onto the underlying entry representation.
-     *
-     * @param  string $var The property to change.
-     * @param  string $val The property's new value.
-     * @return void
-     * @throws Zend_Feed_Exception
-     */
-    public function __set($var, $val)
-    {
-        $this->ensureAppended();
-
-        $nodes = $this->_children($var);
-        if (!$nodes) {
-            if (strpos($var, ':') !== false) {
-                list($ns, $elt) = explode(':', $var, 2);
-                $node = $this->_element->ownerDocument->createElementNS(Zend_Feed::lookupNamespace($ns), $var, $val);
-                $this->_element->appendChild($node);
-            } else {
-                $node = $this->_element->ownerDocument->createElement($var, $val);
-                $this->_element->appendChild($node);
-            }
-        } elseif (count($nodes) > 1) {
-            /** 
-             * @see Zend_Feed_Exception
-             */
-            require_once 'Zend/Feed/Exception.php';
-            throw new Zend_Feed_Exception('Cannot set the value of multiple tags simultaneously.');
-        } else {
-            $nodes[0]->nodeValue = $val;
-        }
-    }
-
-
-    /**
-     * Map isset calls onto the underlying entry representation.
-     *
-     * @param  string $var
-     * @return boolean
-     */
-    public function __isset($var)
-    {
-        // Look for access of the form {ns:var}. We don't use
-        // _children() here because we can break out of the loop
-        // immediately once we find something.
-        if (strpos($var, ':') !== false) {
-            list($ns, $elt) = explode(':', $var, 2);
-            foreach ($this->_element->childNodes as $child) {
-                if ($child->localName == $elt && $child->prefix == $ns) {
-                    return true;
-                }
-            }
-        } else {
-            foreach ($this->_element->childNodes as $child) {
-                if ($child->localName == $var) {
-                    return true;
-                }
-            }
-        }
-    }
-
-
-    /**
-     * Get the value of an element with method syntax.
-     *
-     * Map method calls to get the string value of the requested
-     * element. If there are multiple elements that match, this will
-     * return an array of those objects.
-     *
-     * @param  string $var    The element to get the string value of.
-     * @param  mixed  $unused This parameter is not used.
-     * @return mixed The node's value, null, or an array of nodes.
-     */
-    public function __call($var, $unused)
-    {
-        $nodes = $this->_children($var);
-
-        if (!$nodes) {
-            return null;
-        } elseif (count($nodes) > 1) {
-            return $nodes;
-        } else {
-            return $nodes[0]->nodeValue;
-        }
-    }
-
-
-    /**
-     * Remove all children matching $var.
-     *
-     * @param  string $var
-     * @return void
-     */
-    public function __unset($var)
-    {
-        $nodes = $this->_children($var);
-        foreach ($nodes as $node) {
-            $parent = $node->parentNode;
-            $parent->removeChild($node);
-        }
-    }
-
-
-    /**
-     * Returns the nodeValue of this element when this object is used
-     * in a string context.
-     *
-     * @return string
-     */
-    public function __toString()
-    {
-        return $this->_element->nodeValue;
-    }
-
-
-    /**
-     * Finds children with tagnames matching $var
-     *
-     * Similar to SimpleXML's children() method.
-     *
-     * @param  string $var Tagname to match, can be either namespace:tagName or just tagName.
-     * @return array
-     */
-    protected function _children($var)
-    {
-        $found = array();
-
-        // Look for access of the form {ns:var}.
-        if (strpos($var, ':') !== false) {
-            list($ns, $elt) = explode(':', $var, 2);
-            foreach ($this->_element->childNodes as $child) {
-                if ($child->localName == $elt && $child->prefix == $ns) {
-                    $found[] = $child;
-                }
-            }
-        } else {
-            foreach ($this->_element->childNodes as $child) {
-                if ($child->localName == $var) {
-                    $found[] = $child;
-                }
-            }
-        }
-
-        return $found;
-    }
-
-
-    /**
-     * Required by the ArrayAccess interface.
-     *
-     * @param  string $offset
-     * @return boolean
-     */
-    public function offsetExists($offset)
-    {
-        if (strpos($offset, ':') !== false) {
-            list($ns, $attr) = explode(':', $offset, 2);
-            return $this->_element->hasAttributeNS(Zend_Feed::lookupNamespace($ns), $attr);
-        } else {
-            return $this->_element->hasAttribute($offset);
-        }
-    }
-
-
-    /**
-     * Required by the ArrayAccess interface.
-     *
-     * @param  string $offset
-     * @return string
-     */
-    public function offsetGet($offset)
-    {
-        if (strpos($offset, ':') !== false) {
-            list($ns, $attr) = explode(':', $offset, 2);
-            return $this->_element->getAttributeNS(Zend_Feed::lookupNamespace($ns), $attr);
-        } else {
-            return $this->_element->getAttribute($offset);
-        }
-    }
-
-
-    /**
-     * Required by the ArrayAccess interface.
-     *
-     * @param  string $offset
-     * @param  string $value
-     * @return string
-     */
-    public function offsetSet($offset, $value)
-    {
-        $this->ensureAppended();
-
-        if (strpos($offset, ':') !== false) {
-            list($ns, $attr) = explode(':', $offset, 2);
-            return $this->_element->setAttributeNS(Zend_Feed::lookupNamespace($ns), $attr, $value);
-        } else {
-            return $this->_element->setAttribute($offset, $value);
-        }
-    }
-
-
-    /**
-     * Required by the ArrayAccess interface.
-     *
-     * @param  string $offset
-     * @return boolean
-     */
-    public function offsetUnset($offset)
-    {
-        if (strpos($offset, ':') !== false) {
-            list($ns, $attr) = explode(':', $offset, 2);
-            return $this->_element->removeAttributeNS(Zend_Feed::lookupNamespace($ns), $attr);
-        } else {
-            return $this->_element->removeAttribute($offset);
-        }
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

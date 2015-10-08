@@ -1,399 +1,145 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Http
- * @subpackage CookieJar
- * @version    $Id: CookieJar.php 13641 2009-01-14 21:58:25Z doctorrock83 $
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com/)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-require_once "Zend/Uri.php";
-require_once "Zend/Http/Cookie.php";
-require_once "Zend/Http/Response.php";
-
-/**
- * A Zend_Http_CookieJar object is designed to contain and maintain HTTP cookies, and should
- * be used along with Zend_Http_Client in order to manage cookies across HTTP requests and
- * responses.
- *
- * The class contains an array of Zend_Http_Cookie objects. Cookies can be added to the jar
- * automatically from a request or manually. Then, the jar can find and return the cookies
- * needed for a specific HTTP request.
- *
- * A special parameter can be passed to all methods of this class that return cookies: Cookies
- * can be returned either in their native form (as Zend_Http_Cookie objects) or as strings -
- * the later is suitable for sending as the value of the "Cookie" header in an HTTP request.
- * You can also choose, when returning more than one cookie, whether to get an array of strings
- * (by passing Zend_Http_CookieJar::COOKIE_STRING_ARRAY) or one unified string for all cookies
- * (by passing Zend_Http_CookieJar::COOKIE_STRING_CONCAT).
- *
- * @link       http://wp.netscape.com/newsref/std/cookie_spec.html for some specs.
- * 
- * @category   Zend
- * @package    Zend_Http
- * @subpackage CookieJar
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com/)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Http_CookieJar implements Countable, IteratorAggregate 
-{
-    /**
-     * Return cookie(s) as a Zend_Http_Cookie object
-     *
-     */
-    const COOKIE_OBJECT = 0;
-
-    /**
-     * Return cookie(s) as a string (suitable for sending in an HTTP request)
-     *
-     */
-    const COOKIE_STRING_ARRAY = 1;
-
-    /**
-     * Return all cookies as one long string (suitable for sending in an HTTP request)
-     *
-     */
-    const COOKIE_STRING_CONCAT = 2;
-
-    /**
-     * Array storing cookies
-     *
-     * Cookies are stored according to domain and path:
-     * $cookies
-     *  + www.mydomain.com
-     *    + /
-     *      - cookie1
-     *      - cookie2
-     *    + /somepath
-     *      - othercookie
-     *  + www.otherdomain.net
-     *    + /
-     *      - alsocookie
-     *
-     * @var array
-     */
-    protected $cookies = array();
-
-    /**
-     * The Zend_Http_Cookie array
-     *
-     * @var array
-     */
-    protected $_rawCookies = array();
-
-    /**
-     * Construct a new CookieJar object
-     *
-     */
-    public function __construct()
-    { }
-
-    /**
-     * Add a cookie to the jar. Cookie should be passed either as a Zend_Http_Cookie object
-     * or as a string - in which case an object is created from the string.
-     *
-     * @param Zend_Http_Cookie|string $cookie
-     * @param Zend_Uri_Http|string    $ref_uri Optional reference URI (for domain, path, secure)
-     */
-    public function addCookie($cookie, $ref_uri = null)
-    {
-        if (is_string($cookie)) {
-            $cookie = Zend_Http_Cookie::fromString($cookie, $ref_uri);
-        }
-
-        if ($cookie instanceof Zend_Http_Cookie) {
-            $domain = $cookie->getDomain();
-            $path = $cookie->getPath();
-            if (! isset($this->cookies[$domain])) $this->cookies[$domain] = array();
-            if (! isset($this->cookies[$domain][$path])) $this->cookies[$domain][$path] = array();
-            $this->cookies[$domain][$path][$cookie->getName()] = $cookie;
-            $this->_rawCookies[] = $cookie;
-        } else {
-            require_once 'Zend/Http/Exception.php';
-            throw new Zend_Http_Exception('Supplient argument is not a valid cookie string or object');
-        }
-    }
-
-    /**
-     * Parse an HTTP response, adding all the cookies set in that response
-     * to the cookie jar.
-     *
-     * @param Zend_Http_Response $response
-     * @param Zend_Uri_Http|string $ref_uri Requested URI
-     */
-    public function addCookiesFromResponse($response, $ref_uri)
-    {
-        if (! $response instanceof Zend_Http_Response) {
-            require_once 'Zend/Http/Exception.php';        
-            throw new Zend_Http_Exception('$response is expected to be a Response object, ' .
-                gettype($response) . ' was passed');
-        }
-
-        $cookie_hdrs = $response->getHeader('Set-Cookie');
-
-        if (is_array($cookie_hdrs)) {
-            foreach ($cookie_hdrs as $cookie) {
-                $this->addCookie($cookie, $ref_uri);
-            }
-        } elseif (is_string($cookie_hdrs)) {
-            $this->addCookie($cookie_hdrs, $ref_uri);
-        }
-    }
-
-    /**
-     * Get all cookies in the cookie jar as an array
-     *
-     * @param int $ret_as Whether to return cookies as objects of Zend_Http_Cookie or as strings
-     * @return array|string
-     */
-    public function getAllCookies($ret_as = self::COOKIE_OBJECT)
-    {
-        $cookies = $this->_flattenCookiesArray($this->cookies, $ret_as);
-        return $cookies;
-    }
-
-    /**
-     * Return an array of all cookies matching a specific request according to the request URI,
-     * whether session cookies should be sent or not, and the time to consider as "now" when
-     * checking cookie expiry time.
-     *
-     * @param string|Zend_Uri_Http $uri URI to check against (secure, domain, path)
-     * @param boolean $matchSessionCookies Whether to send session cookies
-     * @param int $ret_as Whether to return cookies as objects of Zend_Http_Cookie or as strings
-     * @param int $now Override the current time when checking for expiry time
-     * @return array|string
-     */
-    public function getMatchingCookies($uri, $matchSessionCookies = true,
-        $ret_as = self::COOKIE_OBJECT, $now = null)
-    {
-        if (is_string($uri)) $uri = Zend_Uri::factory($uri);
-        if (! $uri instanceof Zend_Uri_Http) {
-            require_once 'Zend/Http/Exception.php';    
-            throw new Zend_Http_Exception("Invalid URI string or object passed");
-        }
-
-        // Set path
-        $path = $uri->getPath();
-        $path = substr($path, 0, strrpos($path, '/'));
-        if (! $path) $path = '/';
-
-        // First, reduce the array of cookies to only those matching domain and path
-        $cookies = $this->_matchDomain($uri->getHost());
-        $cookies = $this->_matchPath($cookies, $path);
-        $cookies = $this->_flattenCookiesArray($cookies, self::COOKIE_OBJECT);
-
-        // Next, run Cookie->match on all cookies to check secure, time and session mathcing
-        $ret = array();
-        foreach ($cookies as $cookie)
-            if ($cookie->match($uri, $matchSessionCookies, $now))
-                $ret[] = $cookie;
-
-        // Now, use self::_flattenCookiesArray again - only to convert to the return format ;)
-        $ret = $this->_flattenCookiesArray($ret, $ret_as);
-
-        return $ret;
-    }
-
-    /**
-     * Get a specific cookie according to a URI and name
-     *
-     * @param Zend_Uri_Http|string $uri The uri (domain and path) to match
-     * @param string $cookie_name The cookie's name
-     * @param int $ret_as Whether to return cookies as objects of Zend_Http_Cookie or as strings
-     * @return Zend_Http_Cookie|string
-     */
-    public function getCookie($uri, $cookie_name, $ret_as = self::COOKIE_OBJECT)
-    {
-        if (is_string($uri)) {
-            $uri = Zend_Uri::factory($uri);
-        }
-
-        if (! $uri instanceof Zend_Uri_Http) {
-            require_once 'Zend/Http/Exception.php';
-            throw new Zend_Http_Exception('Invalid URI specified');
-        }
-
-        // Get correct cookie path
-        $path = $uri->getPath();
-        $path = substr($path, 0, strrpos($path, '/'));
-        if (! $path) $path = '/';
-
-        if (isset($this->cookies[$uri->getHost()][$path][$cookie_name])) {
-            $cookie = $this->cookies[$uri->getHost()][$path][$cookie_name];
-
-            switch ($ret_as) {
-                case self::COOKIE_OBJECT:
-                    return $cookie;
-                    break;
-
-                case self::COOKIE_STRING_ARRAY:
-                case self::COOKIE_STRING_CONCAT:
-                    return $cookie->__toString();
-                    break;
-
-                default:
-                    require_once 'Zend/Http/Exception.php';
-                    throw new Zend_Http_Exception("Invalid value passed for \$ret_as: {$ret_as}");
-                    break;
-            }
-        } else {
-            return false;
-        }
-    }
-
-    /**
-     * Helper function to recursivly flatten an array. Shoud be used when exporting the
-     * cookies array (or parts of it)
-     *
-     * @param Zend_Http_Cookie|array $ptr
-     * @param int $ret_as What value to return
-     * @return array|string
-     */
-    protected function _flattenCookiesArray($ptr, $ret_as = self::COOKIE_OBJECT) {
-        if (is_array($ptr)) {
-            $ret = ($ret_as == self::COOKIE_STRING_CONCAT ? '' : array());
-            foreach ($ptr as $item) {
-                if ($ret_as == self::COOKIE_STRING_CONCAT) {
-                    $ret .= $this->_flattenCookiesArray($item, $ret_as);
-                } else {
-                    $ret = array_merge($ret, $this->_flattenCookiesArray($item, $ret_as));
-                }
-            }
-            return $ret;
-        } elseif ($ptr instanceof Zend_Http_Cookie) {
-            switch ($ret_as) {
-                case self::COOKIE_STRING_ARRAY:
-                    return array($ptr->__toString());
-                    break;
-
-                case self::COOKIE_STRING_CONCAT:
-                    return $ptr->__toString();
-                    break;
-
-                case self::COOKIE_OBJECT:
-                default:
-                    return array($ptr);
-                    break;
-            }
-        }
-
-        return null;
-    }
-
-    /**
-     * Return a subset of the cookies array matching a specific domain
-     *
-     * Returned array is actually an array of pointers to items in the $this->cookies array.
-     *
-     * @param string $domain
-     * @return array
-     */
-    protected function _matchDomain($domain) {
-        $ret = array();
-
-        foreach (array_keys($this->cookies) as $cdom) {
-            $regex = "/" . preg_quote($cdom, "/") . "$/i";
-            if (preg_match($regex, $domain)) $ret[$cdom] = &$this->cookies[$cdom];
-        }
-
-        return $ret;
-    }
-
-    /**
-     * Return a subset of a domain-matching cookies that also match a specified path
-     *
-     * Returned array is actually an array of pointers to items in the $passed array.
-     *
-     * @param array $dom_array
-     * @param string $path
-     * @return array
-     */
-    protected function _matchPath($domains, $path) {
-        $ret = array();
-        if (substr($path, -1) != '/') $path .= '/';
-
-        foreach ($domains as $dom => $paths_array) {
-            foreach (array_keys($paths_array) as $cpath) {
-                $regex = "|^" . preg_quote($cpath, "|") . "|i";
-                if (preg_match($regex, $path)) {
-                    if (! isset($ret[$dom])) $ret[$dom] = array();
-                    $ret[$dom][$cpath] = &$paths_array[$cpath];
-                }
-            }
-        }
-
-        return $ret;
-    }
-
-    /**
-     * Create a new CookieJar object and automatically load into it all the
-     * cookies set in an Http_Response object. If $uri is set, it will be
-     * considered as the requested URI for setting default domain and path
-     * of the cookie.
-     *
-     * @param Zend_Http_Response $response HTTP Response object
-     * @param Zend_Uri_Http|string $uri The requested URI
-     * @return Zend_Http_CookieJar
-     * @todo Add the $uri functionality.
-     */
-    public static function fromResponse(Zend_Http_Response $response, $ref_uri)
-    {
-        $jar = new self();
-        $jar->addCookiesFromResponse($response, $ref_uri);
-        return $jar;
-    }
-
-    /**
-     * Required by Countable interface
-     *
-     * @return int
-     */
-    public function count()
-    {
-        return count($this->_rawCookies);
-    }
-
-    /**
-     * Required by IteratorAggregate interface
-     *
-     * @return ArrayIterator
-     */
-    public function getIterator()
-    {
-        return new ArrayIterator($this->_rawCookies);
-    }
-
-    /**
-     * Tells if the jar is empty of any cookie
-     *
-     * @return bool
-     */
-    public function isEmpty()
-    {
-        return count($this) == 0;
-    }
-
-    /**
-     * Empties the cookieJar of any cookie
-     *
-     * @return Zend_Http_CookieJar
-     */
-    public function reset()
-    {
-        $this->cookies = $this->_rawCookies = array();
-        return $this;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

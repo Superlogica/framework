@@ -1,240 +1,86 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Tool
- * @subpackage Framework
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id$
- */
-
-/**
- * @see Zend_Tool_Project_Profile_FileParser_Xml
- */
-require_once 'Zend/Tool/Project/Profile/FileParser/Xml.php';
-
-/**
- * @see Zend_Tool_Project_Profile_Resource_Container
- */
-require_once 'Zend/Tool/Project/Profile/Resource/Container.php';
-
-/**
- * This class is the front most class for utilizing Zend_Tool_Project
- *
- * A profile is a hierarchical set of resources that keep track of
- * items within a specific project.
- * 
- * @category   Zend
- * @package    Zend_Tool
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Tool_Project_Profile extends Zend_Tool_Project_Profile_Resource_Container
-{
-
-    /**
-     * @var bool
-     */
-    protected static $_traverseEnabled = false;
-
-    /**
-     * @var array
-     */
-    protected $_attributes = array();
-
-    /**
-     * Constructor, standard usage would allow the setting of options
-     *
-     * @param array $options
-     * @return bool
-     */
-    public function __construct($options = null)
-    {
-        if ($options) {
-            $this->setOptions($options);
-        }
-
-        $this->_topResources = new Zend_Tool_Project_Profile_Resource_Container();
-    }
-
-    /**
-     * Process options and either set a profile property or
-     * set a profile 'attribute'
-     *
-     * @param array $options
-     */
-    public function setOptions(Array $options)
-    {
-        $this->setAttributes($options);
-    }
-
-    /**
-     * getIterator() - reqruied by the RecursiveIterator interface
-     *
-     * @return RecursiveIteratorIterator
-     */
-    public function getIterator()
-    {
-        require_once 'Zend/Tool/Project/Profile/Iterator/EnabledResourceFilter.php';
-
-        return new RecursiveIteratorIterator(
-            new Zend_Tool_Project_Profile_Iterator_EnabledResourceFilter($this),
-            RecursiveIteratorIterator::SELF_FIRST
-            );
-    }
-
-    /**
-     * loadFromData() - Load a profile from data provided by the 
-     * 'profilData' attribute
-     *
-     */
-    public function loadFromData()
-    {
-        if (!isset($this->_attributes['profileData'])) {
-            require_once 'Zend/Tool/Project/Exception.php';
-            throw new Zend_Tool_Project_Exception('loadFromData() must have "profileData" set.');
-        }
-
-        $profileFileParser = new Zend_Tool_Project_Profile_FileParser_Xml();
-        $profileFileParser->unserialize($this->_attributes['profileData'], $this);
-
-        $this->rewind();
-    }
-
-    /**
-     * isLoadableFromFile() - can a profile be loaded from a file 
-     * 
-     * wether or not a profile can be loaded from the
-     * file in attribute 'projectProfileFile', or from a file named
-     * '.zfproject.xml' inside a directory in key 'projectDirectory'
-     *
-     * @return bool
-     */
-    public function isLoadableFromFile()
-    {
-        if (!isset($this->_attributes['projectProfileFile']) && !isset($this->_attributes['projectDirectory'])) {
-            return false;
-        }
-
-        if (isset($this->_attributes['projectProfileFile'])) {
-            $projectProfileFilePath = $this->_attributes['projectProfileFile'];
-            if (!file_exists($projectProfileFilePath)) {
-                return false;
-            }
-        } else {
-            $projectProfileFilePath = rtrim($this->_attributes['projectDirectory'], '/\\') . '/.zfproject.xml';
-            if (!file_exists($projectProfileFilePath)) {
-                return false;
-            }
-        }
-
-        return true;
-    }
-
-    /**
-     * loadFromFile() - Load data from file
-     * 
-     * this attempts to load a project profile file from a variety of locations depending
-     * on what information the user provided vie $options or attributes, specifically the
-     * 'projectDirectory' or 'projectProfileFile'
-     *
-     */
-    public function loadFromFile()
-    {
-        // if no data is supplied, need either a projectProfileFile or a projectDirectory
-        if (!isset($this->_attributes['projectProfileFile']) && !isset($this->_attributes['projectDirectory'])) {
-            require_once 'Zend/Tool/Project/Exception.php';
-            throw new Zend_Tool_Project_Exception('loadFromFile() must have at least "projectProfileFile" or "projectDirectory" set.');
-        }
-
-        if (isset($this->_attributes['projectProfileFile'])) {
-            $projectProfileFilePath = $this->_attributes['projectProfileFile'];
-            if (!file_exists($projectProfileFilePath)) {
-                require_once 'Zend/Tool/Project/Exception.php';
-                throw new Zend_Tool_Project_Exception('"projectProfileFile" was supplied but file was not found at location ' . $projectProfileFilePath);
-            }
-        } else {
-            $projectProfileFilePath = rtrim($this->_attributes['projectDirectory'], '/\\') . '/.zfproject.xml';
-            if (!file_exists($projectProfileFilePath)) {
-                require_once 'Zend/Tool/Project/Exception.php';
-                throw new Zend_Tool_Project_Exception('"projectDirectory" was supplied but no profile file file was not found at location ' . $projectProfileFilePath);
-            }
-        }
-
-        $profileData = file_get_contents($projectProfileFilePath);
-
-        $profileFileParser = new Zend_Tool_Project_Profile_FileParser_Xml();
-        $profileFileParser->unserialize($profileData, $this);
-
-        $this->rewind();
-    }
-
-    /**
-     * storeToFile() - store the current profile to file
-     *
-     * This will store the profile in memory to a place on disk determined by the attributes
-     * available, specifically if the key 'projectProfileFile' is available
-     * 
-     */
-    public function storeToFile()
-    {
-        $file = null;
-
-        if (isset($this->_attributes['projectProfileFile'])) {
-            $file = $this->_attributes['projectProfileFile'];
-        }
-
-        if ($file == null) {
-            require_once 'Zend/Tool/Project/Exception.php';
-            throw new Zend_Tool_Project_Exception('storeToFile() must have a "projectProfileFile" attribute set.');
-        }
-
-        $parser = new Zend_Tool_Project_Profile_FileParser_Xml();
-        $xml = $parser->serialize($this);
-        file_put_contents($file, $xml);
-    }
-
-    /**
-     * storeToData() - create a string representation of the profile in memory 
-     *
-     * @return string
-     */
-    public function storeToData()
-    {
-        $parser = new Zend_Tool_Project_Profile_FileParser_Xml();
-        $xml = $parser->serialize($this);
-        return $xml;
-    }
-    
-    /**
-     * __toString() - cast this profile to string to be able to view it.
-     *
-     * @return string
-     */
-    public function __toString()
-    {
-        $string = '';
-        foreach ($this as $resource) {
-            $string .= $resource->getName() . PHP_EOL;
-            $rii = new RecursiveIteratorIterator($resource, RecursiveIteratorIterator::SELF_FIRST);
-            foreach ($rii as $item) {
-                $string .= str_repeat('  ', $rii->getDepth()+1) . $item->getName()
-                        . ((count($attributes = $item->getAttributes()) > 0) ? ' [' . http_build_query($attributes) . ']' : '')
-                        . PHP_EOL;
-            }
-        }
-        return $string;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+8dF22KXHM/VVuQag1qatxvQo0ghqdSrP

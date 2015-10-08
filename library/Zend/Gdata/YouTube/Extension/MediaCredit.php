@@ -1,188 +1,53 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Media
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * @see Zend_Gdata_App_Extension
- */
-require_once 'Zend/Gdata/App/Extension.php';
-
-/**
- * Represents the YouTube specific media:credit element
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Media
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Gdata_YouTube_Extension_MediaCredit extends Zend_Gdata_Extension
-{
-
-    protected $_rootElement = 'credit';
-    protected $_rootNamespace = 'media';
-
-    /**
-     * @var string
-     */
-    protected $_role = null;
-
-    /**
-     * @var string
-     */
-    protected $_scheme = null;
-
-    /**
-     * Represents the value of the yt:type attribute.
-     *
-     * Set to 'partner' if the uploader of this video is a YouTube
-     * partner.
-     *
-     * @var string
-     */
-    protected $_yttype = null;
-
-    /**
-     * Creates an individual MediaCredit object.
-     *
-     * @param string $text
-     * @param string $role
-     * @param string $scheme
-     */
-    public function __construct($text = null, $role = null,  $scheme = null,
-        $yttype = null)
-    {
-        $this->registerAllNamespaces(Zend_Gdata_Media::$namespaces);
-        parent::__construct();
-        $this->_text = $text;
-        $this->_role = $role;
-        $this->_scheme = $scheme;
-        $this->_yttype = $yttype;
-    }
-
-    /**
-     * Retrieves a DOMElement which corresponds to this element and all
-     * child properties.  This is used to build an entry back into a DOM
-     * and eventually XML text for sending to the server upon updates, or
-     * for application storage/persistence.
-     *
-     * @param DOMDocument $doc The DOMDocument used to construct DOMElements
-     * @return DOMElement The DOMElement representing this element and all
-     * child properties.
-     */
-    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
-    {
-        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
-        if ($this->_role !== null) {
-            $element->setAttribute('role', $this->_role);
-        }
-        if ($this->_scheme !== null) {
-            $element->setAttribute('scheme', $this->_scheme);
-        }
-        if ($this->_yttype !== null) {
-            $element->setAttributeNS('http://gdata.youtube.com/schemas/2007',
-                'yt:type', $this->_yttype);
-        }
-        return $element;
-    }
-
-    /**
-     * Given a DOMNode representing an attribute, tries to map the data into
-     * instance members.  If no mapping is defined, the name and value are
-     * stored in an array.
-     *
-     * @param DOMNode $attribute The DOMNode attribute needed to be handled
-     */
-    protected function takeAttributeFromDOM($attribute)
-    {
-        switch ($attribute->localName) {
-            case 'role':
-                $this->_role = $attribute->nodeValue;
-                break;
-            case 'scheme':
-                $this->_scheme = $attribute->nodeValue;
-                break;
-            case 'type':
-                $this->_yttype = $attribute->nodeValue;
-                break;
-            default:
-                parent::takeAttributeFromDOM($attribute);
-        }
-    }
-
-    /**
-     * @return string
-     */
-    public function getRole()
-    {
-        return $this->_role;
-    }
-
-    /**
-     * @param string $value
-     * @return Zend_Gdata_Media_Extension_MediaCredit Provides a fluent
-     *         interface
-     */
-    public function setRole($value)
-    {
-        $this->_role = $value;
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getScheme()
-    {
-        return $this->_scheme;
-    }
-
-    /**
-     * @param string $value
-     * @return Zend_Gdata_Media_Extension_MediaCredit Provides a fluent
-     *         interface
-     */
-    public function setScheme($value)
-    {
-        $this->_scheme = $value;
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getYTtype()
-    {
-        return $this->_yttype;
-    }
-
-    /**
-     * @param string $value
-     * @return Zend_Gdata_Media_Extension_MediaCredit Provides a fluent
-     *         interface
-     */
-    public function setYTtype($value)
-    {
-        $this->_yttype = $value;
-        return $this;
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+4BGwcOISR5C4ZbTeARA6yPd/bG==

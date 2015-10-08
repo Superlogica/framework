@@ -1,93 +1,37 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Application
- * @subpackage Resource
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Session.php 14957 2009-04-17 12:20:40Z matthew $
- */
-
-/**
- * Resource for setting session options
- *
- * @uses       Zend_Application_Resource_ResourceAbstract
- * @category   Zend
- * @package    Zend_Application
- * @subpackage Resource
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Application_Resource_Session extends Zend_Application_Resource_ResourceAbstract
-{
-    /**
-     * Save handler to use
-     *
-     * @var Zend_Session_SaveHandler_Interface
-     */
-    protected $_saveHandler = null;
-
-    /**
-     * Set session save handler
-     *
-     * @param  array|string|Zend_Session_SaveHandler_Interface $saveHandler
-     * @return Zend_Application_Resource_Session
-     * @throws Zend_Application_Resource_Exception When $saveHandler is no valid save handler
-     */
-    public function setSaveHandler($saveHandler)
-    {
-        if (is_array($saveHandler)) {
-            if (!array_key_exists('class', $saveHandler)) {
-                throw new Zend_Application_Resource_Exception('Session save handler class not provided in options');
-            }
-            if (array_key_exists('options', $saveHandler)) {
-                $options = $saveHandler['options'];
-            }
-            $saveHandler = $saveHandler['class'];
-            $saveHandler = new $saveHandler($options);
-        } elseif (is_string($saveHandler)) {
-            $saveHandler = new $saveHandler();
-        }
-
-        if (!$saveHandler instanceof Zend_Session_SaveHandler_Interface) {
-            throw new Zend_Application_Resource_Exception('Invalid session save handler');
-        }
-
-        $this->_saveHandler = $saveHandler;
-
-        return $this;
-    }
-
-    /**
-     * Defined by Zend_Application_Resource_Resource
-     *
-     * @return void
-     */
-    public function init()
-    {
-        $options = array_change_key_case($this->getOptions(), CASE_LOWER);
-        if (isset($options['savehandler'])) {
-            unset($options['savehandler']);
-        }
-
-        if (count($options) > 0) {
-            Zend_Session::setOptions($options);
-        }
-
-        if ($this->_saveHandler !== null) {
-            Zend_Session::setSaveHandler($this->_saveHandler);
-        }
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

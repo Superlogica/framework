@@ -1,217 +1,88 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Oauth
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Utility.php 23484 2010-12-10 03:57:59Z mjh_ca $
- */
-
-/** Zend_Oauth */
-require_once 'Zend/Oauth.php';
-
-/** Zend_Oauth_Http */
-require_once 'Zend/Oauth/Http.php';
-
-/**
- * @category   Zend
- * @package    Zend_Oauth
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Oauth_Http_Utility
-{
-    /**
-     * Assemble all parameters for a generic OAuth request - i.e. no special
-     * params other than the defaults expected for any OAuth query.
-     *
-     * @param  string $url
-     * @param  Zend_Oauth_Config_ConfigInterface $config
-     * @param  null|array $serviceProviderParams
-     * @return array
-     */
-    public function assembleParams(
-        $url,
-        Zend_Oauth_Config_ConfigInterface $config,
-        array $serviceProviderParams = null
-    ) {
-        $params = array(
-            'oauth_consumer_key'     => $config->getConsumerKey(),
-            'oauth_nonce'            => $this->generateNonce(),
-            'oauth_signature_method' => $config->getSignatureMethod(),
-            'oauth_timestamp'        => $this->generateTimestamp(),
-            'oauth_version'          => $config->getVersion(),
-        );
-
-        if ($config->getToken()->getToken() != null) {
-            $params['oauth_token'] = $config->getToken()->getToken();
-        }
-
-
-        if ($serviceProviderParams !== null) {
-            $params = array_merge($params, $serviceProviderParams);
-        }
-
-        $params['oauth_signature'] = $this->sign(
-            $params,
-            $config->getSignatureMethod(),
-            $config->getConsumerSecret(),
-            $config->getToken()->getTokenSecret(),
-            $config->getRequestMethod(),
-            $url
-        );
-
-        return $params;
-    }
-
-    /**
-     * Given both OAuth parameters and any custom parametere, generate an
-     * encoded query string. This method expects parameters to have been
-     * assembled and signed beforehand.
-     *
-     * @param array $params
-     * @param bool $customParamsOnly Ignores OAuth params e.g. for requests using OAuth Header
-     * @return string
-     */
-    public function toEncodedQueryString(array $params, $customParamsOnly = false)
-    {
-        if ($customParamsOnly) {
-            foreach ($params as $key=>$value) {
-                if (preg_match("/^oauth_/", $key)) {
-                    unset($params[$key]);
-                }
-            }
-        }
-        $encodedParams = array();
-        foreach ($params as $key => $value) {
-            $encodedParams[] = self::urlEncode($key)
-                             . '='
-                             . self::urlEncode($value);
-        }
-        return implode('&', $encodedParams);
-    }
-
-    /**
-     * Cast to authorization header
-     *
-     * @param  array $params
-     * @param  null|string $realm
-     * @param  bool $excludeCustomParams
-     * @return void
-     */
-    public function toAuthorizationHeader(array $params, $realm = null, $excludeCustomParams = true)
-    {
-        $headerValue = array(
-            'OAuth realm="' . $realm . '"',
-        );
-
-        foreach ($params as $key => $value) {
-            if ($excludeCustomParams) {
-                if (!preg_match("/^oauth_/", $key)) {
-                    continue;
-                }
-            }
-            $headerValue[] = self::urlEncode($key)
-                           . '="'
-                           . self::urlEncode($value) . '"';
-        }
-        return implode(",", $headerValue);
-    }
-
-    /**
-     * Sign request
-     *
-     * @param  array $params
-     * @param  string $signatureMethod
-     * @param  string $consumerSecret
-     * @param  null|string $tokenSecret
-     * @param  null|string $method
-     * @param  null|string $url
-     * @return string
-     */
-    public function sign(
-        array $params, $signatureMethod, $consumerSecret, $tokenSecret = null, $method = null, $url = null
-    ) {
-        $className = '';
-        $hashAlgo  = null;
-        $parts     = explode('-', $signatureMethod);
-        if (count($parts) > 1) {
-            $className = 'Zend_Oauth_Signature_' . ucfirst(strtolower($parts[0]));
-            $hashAlgo  = $parts[1];
-        } else {
-            $className = 'Zend_Oauth_Signature_' . ucfirst(strtolower($signatureMethod));
-        }
-
-        require_once str_replace('_', '/', $className) . '.php';
-        $signatureObject = new $className($consumerSecret, $tokenSecret, $hashAlgo);
-        return $signatureObject->sign($params, $method, $url);
-    }
-
-    /**
-     * Parse query string
-     *
-     * @param  mixed $query
-     * @return array
-     */
-    public function parseQueryString($query)
-    {
-        $params = array();
-        if (empty($query)) {
-            return array();
-        }
-
-        // Not remotely perfect but beats parse_str() which converts
-        // periods and uses urldecode, not rawurldecode.
-        $parts = explode('&', $query);
-        foreach ($parts as $pair) {
-            $kv = explode('=', $pair);
-            $params[rawurldecode($kv[0])] = rawurldecode($kv[1]);
-        }
-        return $params;
-    }
-
-    /**
-     * Generate nonce
-     *
-     * @return string
-     */
-    public function generateNonce()
-    {
-        return md5(uniqid(rand(), true));
-    }
-
-    /**
-     * Generate timestamp
-     *
-     * @return int
-     */
-    public function generateTimestamp()
-    {
-        return time();
-    }
-
-    /**
-     * urlencode a value
-     *
-     * @param  string $value
-     * @return string
-     */
-    public static function urlEncode($value)
-    {
-        $encoded = rawurlencode($value);
-        $encoded = str_replace('%7E', '~', $encoded);
-        return $encoded;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

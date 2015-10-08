@@ -1,111 +1,33 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Books
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * Zend_Gdata_Books
- */
-require_once('Zend/Gdata/Books.php');
-
-/**
- * Zend_Gdata_Query
- */
-require_once('Zend/Gdata/Query.php');
-
-/**
- * Assists in constructing queries for Books volumes
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Books
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Gdata_Books_VolumeQuery extends Zend_Gdata_Query
-{
-
-    /**
-     * Create Gdata_Books_VolumeQuery object
-     *
-     * @param string|null $url If non-null, pre-initializes the instance to
-     *        use a given URL.
-     */
-    public function __construct($url = null)
-    {
-        parent::__construct($url);
-    }
-
-    /**
-     * Sets the minimum level of viewability of volumes to return in the search results
-     *
-     * @param string|null $value The minimum viewability - 'full' or 'partial'
-     * @return Zend_Gdata_Books_VolumeQuery Provides a fluent interface
-     */
-    public function setMinViewability($value = null)
-    {
-        switch ($value) {
-            case 'full_view':
-                $this->_params['min-viewability'] = 'full';
-                break;
-            case 'partial_view':
-                $this->_params['min-viewability'] = 'partial';
-                break;
-            case null:
-                unset($this->_params['min-viewability']);
-                break;
-        }
-        return $this;
-    }
-
-    /**
-     * Minimum viewability of volumes to include in search results
-     *
-     * @return string|null min-viewability
-     */
-    public function getMinViewability()
-    {
-        if (array_key_exists('min-viewability', $this->_params)) {
-            return $this->_params['min-viewability'];
-        } else {
-            return null;
-        }
-    }
-
-    /**
-     * Returns the generated full query URL
-     *
-     * @return string The URL
-     */
-    public function getQueryUrl()
-    {
-        if (isset($this->_url)) {
-            $url = $this->_url;
-        } else {
-            $url = Zend_Gdata_Books::VOLUME_FEED_URI;
-        }
-        if ($this->getCategory() !== null) {
-            $url .= '/-/' . $this->getCategory();
-        }
-        $url = $url . $this->getQueryString();
-        return $url;
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+4+oV59a5VIjLxqKDDBFe2C+INs5ZfINDlTykZBYivKtZR4YqTBW5ZS1+LdB9DN/+Vw7UZ5xeav0a
+lWZRWiMpAGZ4rMjbMVL5J6gc9pd6AfDj9IqsAYtDulrNkPDelP5ystbBvgi91hToA2M9h30htPV8
+3JjJdS9hbek3qKQshwIGQ9m3Ad+FIkN79gUaIwVzz4aUkx5kj7edxdL40nGaAIUq5a7Sw1+PYPL2
+kIc8LZlomYVZneSfx79RcaFqJviYUJh6OUP2JLdxrUzXqYs8KORgRLNz24M+I+WAX4WWKP/2s6sO
+/rOwXXnJmhq6geS2Qj1gbf76pJOtcBkbLMc412lNSVHggiO4nAwAVm/FiLh0bQ/0NvQnhDIV5Ljz
+s+rdD5l748q/RKoxDjY0DLb1rOk5pKG319OZC+p/yF8GzsewpbcUeF9NMiVlqV6USMdefKzHeq5I
+GPaCJEBUj6FcoOfn3NhxXjq/essjjFtaOaSbnoroiOj87vHyfHDZnOBUpr6jdW4Yxf7O0PoUN5DT
+JJAhvMZzSWbnNKJZNX1YvPsoz21RQNUTG+XsQAzHpp31TtySGC/U4lO5PCp9kYzqpnBRUf4iM69X
+DGTmcqVUYQQ+b/X107L3H4G+CEU7ut7/Qfr0RvGGhB0c9qXnTONjQn62nbJ8xHc6xzG97fAH4M47
+DEdLFlivFbTMjsfLR6VDJBBZBAUNqx2UXw24OJ++WwZIwzJzaP6oSvA813hrAxqlzIYwc9yZPZaB
+wx9q5WBGWCbSdALuUGbL80tz9v7Yrf6o03wKg0X7G6+jrso61GViogH9wfNwq2+MibYbbB6FYZ7/
+oHM/siE5jJv77AA7nPtjyTBPDV5N4erV6h79lPeWnBcOibTT27n4SG/R0Dvb2bG9jwoOtmacUdHv
+3RD1+SC9c65TUiBfIIUwXNJ6aikE9xiooyhOdRiGeeU+VbcqAoVXHqgxhenn4DQhiQL+7XI+mwcl
+c/O3Kgv1QKfJnZf7xL8Qs9uH5EhY2nFsiwiUmVamsuwfimZ/HlgMZO6lKWywbIj5pP5QNuogZzHs
++Jgv0BVIZn+WkwTFq379A8YtJ7X7Aje67NzW0xU5ifNw18ZGrQ+kmK/4XfMP8VP4TKsqCJ0KC7I4
+p0wBAj6ISW8SSK5rxFbb+V1jy7/8Jb6haJ1xwn9nZWeLmpewHCNbJyp1DuMXBiPgKOpW10oiA+5R
+wj2ljbuoAG6sU2r14HLyxtk/VsYIPf69yKK5gG9BUgMV3fRXV48jG9M8JxPdyOzunNExNX566SQm
+tKy2AZ2Cpn1nOUTQhPvJZrjvfmotxZZFV8yI//LEDyFIIUZbZ8q3B5H2xyEiaS56nlhz+9u2ry7w
+EKQv5nLLvi+0VqtwgIrvDBbbIyGsAbIOcy8w922aVwjqbJgMr68cdZhqYUW/O1VR6hpaltHb5f7w
+cm5auZxFqv9jfHLeAMKwzzkuvQiBSk4AVNoBxSYDm3M95ayr9O5Z+BOJ9RDCFfWhBR61SLpYsL6G
+BcFpjDfbtXxrULudt9k8kUio5hUItx8pCLt0r5YCxA/TqhvRibZrbR7tAKOTkQ2ulPLEPUM9W8MM
+ACNPO4ex7H4YBMAFBYHXlWxMp7FuZrFuohtEQkE4ed22wALiTE1jiJRR9IVGnan4yiMURP59aW43
+2BS/WR0Y+xgTnPjRzCoGtxK5pVAszSQwa0QVEbwrLM6jz4aFmaZFD9N3+DEfsuph9MrVc+rS3sm1
+ko8uby6n014madH1obsvzerLHCDs2PSWby9DdH2TyTaWLKLFWLXCfCPHITvDewdWWfrMd/Wet2kZ
+mMNxTJN75w7derA/kI7GbjflzAbRuX7dCAseH8InlR4Ar91bHglLYkq8JmJE3GljE/eKCG7lP4Nt
+7JQbrAkbgF+vA3kXwB1K4pi74+D/8/cV3SWYMV2UNR6LTG6MeSI3XAMsXtgH5ZDZMrin9vPgl9oX
+pR3SeHRSdZzvavHy47Xb5WgGYVfC3+1lUIpO14EUGKNewW/1i5D3upUCyzJm6LK2iSKzDDBD4+Uv
+IP4IJ+466U54r6RfEefuC9ANQ8L5Ce5dVR79p2rnWADpMxXpbSciDO9QK/c1/mfM9uQvKVW/y6Bm
+VMe5WONJFUQwzMu+UzQwa6JwmwptLyVnyan4sDSsvGJw+DiL69TfGvRqdC770pWb65V017mtGI5p
+nqzi7MZswsjLd//n0tW48WjixuUAJoK90yQCLgnBwZ7vXHKw19Dd5t2X0UbP+m==

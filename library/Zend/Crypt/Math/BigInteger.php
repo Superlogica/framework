@@ -1,117 +1,40 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Crypt
- * @subpackage Math
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id$
- */
-
-/**
- * Support for arbitrary precision mathematics in PHP.
- *
- * Zend_Crypt_Math_BigInteger is a wrapper across three PHP extensions: bcmath, gmp
- * and big_int. Since each offer similar functionality, but availability of
- * each differs across installations of PHP, this wrapper attempts to select
- * the fastest option available and encapsulate a subset of its functionality
- * which all extensions share in common.
- *
- * This class requires one of the three extensions to be available. BCMATH
- * while the slowest, is available by default under Windows, and under Unix
- * if PHP is compiled with the flag "--enable-bcmath". GMP requires the gmp
- * library from http://www.swox.com/gmp/ and PHP compiled with the "--with-gmp"
- * flag. BIG_INT support is available from a big_int PHP library available from
- * only from PECL (a Windows port is not available).
- *
- * @category   Zend
- * @package    Zend_Crypt
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Crypt_Math_BigInteger
-{
-
-    /**
-     * Holds an instance of one of the three arbitrary precision wrappers.
-     *
-     * @var Zend_Crypt_Math_BigInteger_Interface
-     */
-    protected $_math = null;
-
-    /**
-     * Constructor; a Factory which detects a suitable PHP extension for
-     * arbitrary precision math and instantiates the suitable wrapper
-     * object.
-     *
-     * @param string $extension
-     * @throws  Zend_Crypt_Math_BigInteger_Exception
-     */
-    public function __construct($extension = null)
-    {
-        if (!is_null($extension) && !in_array($extension, array('bcmath', 'gmp', 'bigint'))) {
-            require_once('Zend/Crypt/Math/BigInteger/Exception.php');
-            throw new Zend_Crypt_Math_BigInteger_Exception('Invalid extension type; please use one of bcmath, gmp or bigint');
-        }
-        $this->_loadAdapter($extension);
-    }
-
-    /**
-     * Redirect all public method calls to the wrapped extension object.
-     *
-     * @param   string $methodName
-     * @param   array $args
-     * @throws  Zend_Crypt_Math_BigInteger_Exception
-     */
-    public function __call($methodName, $args)
-    {
-        if(!method_exists($this->_math, $methodName)) {
-            require_once 'Zend/Crypt/Math/BigInteger/Exception.php';
-            throw new Zend_Crypt_Math_BigInteger_Exception('invalid method call: ' . get_class($this->_math) . '::' . $methodName . '() does not exist');
-        }
-        return call_user_func_array(array($this->_math, $methodName), $args);
-    }
-
-    /**
-     * @param string $extension
-     * @throws  Zend_Crypt_Math_BigInteger_Exception
-     */
-    protected function _loadAdapter($extension = null)
-    {
-        if (is_null($extension)) {
-            if (extension_loaded('gmp')) {
-                $extension = 'gmp';
-            //} elseif (extension_loaded('big_int')) {
-            //    $extension = 'big_int';
-            } else {
-                $extension = 'bcmath';
-            }
-        }
-        if($extension == 'gmp' && extension_loaded('gmp')) {
-            require_once 'Zend/Crypt/Math/BigInteger/Gmp.php';
-            $this->_math = new Zend_Crypt_Math_BigInteger_Gmp();
-        //} elseif($extension == 'bigint' && extension_loaded('big_int')) {
-        //    require_once 'Zend/Crypt_Math/BigInteger/Bigint.php';
-        //    $this->_math = new Zend_Crypt_Math_BigInteger_Bigint();
-        } elseif ($extension == 'bcmath') {
-            require_once 'Zend/Crypt/Math/BigInteger/Bcmath.php';
-            $this->_math = new Zend_Crypt_Math_BigInteger_Bcmath();
-        } else {
-            require_once 'Zend/Crypt/Math/BigInteger/Exception.php';
-            throw new Zend_Crypt_Math_BigInteger_Exception($extension . ' big integer precision math support not detected');
-        }
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+x8QrFm==

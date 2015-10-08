@@ -1,119 +1,38 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage YouTube
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * @see Zend_Gdata_Media_Extension_MediaContent
- */
-require_once 'Zend/Gdata/Media/Extension/MediaContent.php';
-
-/**
- * Represents the media:content element of Media RSS.
- * Represents media objects.  Multiple media objects representing
- * the same content can be represented using a
- * media:group (Zend_Gdata_Media_Extension_MediaGroup) element.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage YouTube
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Gdata_YouTube_Extension_MediaContent extends Zend_Gdata_Media_Extension_MediaContent
-{
-    protected $_rootElement = 'content';
-    protected $_rootNamespace = 'media';
-
-    /*
-     * Format of the video
-     * Optional.
-     *
-     * @var int
-     */
-    protected $_format = null;
-
-
-    function __construct() {
-        $this->registerAllNamespaces(Zend_Gdata_YouTube::$namespaces);
-        parent::__construct();
-    }
-
-    /**
-     * Retrieves a DOMElement which corresponds to this element and all
-     * child properties.  This is used to build an entry back into a DOM
-     * and eventually XML text for sending to the server upon updates, or
-     * for application storage/persistence.
-     *
-     * @param DOMDocument $doc The DOMDocument used to construct DOMElements
-     * @return DOMElement The DOMElement representing this element and all
-     * child properties.
-     */
-    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
-    {
-        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
-        if ($this->_format!= null) {
-            $element->setAttributeNS($this->lookupNamespace('yt'), 'yt:format', $this->_format);
-        }
-        return $element;
-    }
-
-    /**
-     * Given a DOMNode representing an attribute, tries to map the data into
-     * instance members.  If no mapping is defined, the name and value are
-     * stored in an array.
-     *
-     * @param DOMNode $attribute The DOMNode attribute needed to be handled
-     */
-    protected function takeAttributeFromDOM($attribute)
-    {
-        $absoluteAttrName = $attribute->namespaceURI . ':' . $attribute->localName;
-        if ($absoluteAttrName == $this->lookupNamespace('yt') . ':' . 'format') {
-            $this->_format = $attribute->nodeValue;
-        } else {
-            parent::takeAttributeFromDOM($attribute);
-        }
-    }
-
-    /**
-     * Returns the format of the media
-     * Optional.
-     *
-     * @return int  The format of the media
-     */
-    public function getFormat()
-    {
-        return $this->_format;
-    }
-
-    /**
-     * Sets the format of the media
-     *
-     * @param int $value    Format of the media
-     * @return Zend_Gdata_YouTube_Extension_MediaContent  Provides a fluent interface
-     *
-     */
-    public function setFormat($value)
-    {
-        $this->_format = $value;
-        return $this;
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

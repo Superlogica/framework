@@ -1,199 +1,62 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Form
- * @subpackage Decorator
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_Form_Decorator_Abstract */
-require_once 'Zend/Form/Decorator/Abstract.php';
-
-/**
- * Zend_Form_Decorator_Description
- *
- * Accepts the options:
- * - separator: separator to use between label and content (defaults to PHP_EOL)
- * - placement: whether to append or prepend label to content (defaults to prepend)
- * - tag: if set, used to wrap the label in an additional HTML tag
- * - class: if set, override default class used with HTML tag
- * - escape: whether or not to escape description (true by default)
- *
- * Any other options passed will be used as HTML attributes of the HTML tag used.
- * 
- * @category   Zend
- * @package    Zend_Form
- * @subpackage Decorator
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Description.php 12328 2008-11-06 16:49:03Z matthew $
- */
-class Zend_Form_Decorator_Description extends Zend_Form_Decorator_Abstract
-{
-    /**
-     * Whether or not to escape the description
-     * @var bool
-     */
-    protected $_escape;
-
-    /**
-     * Default placement: append
-     * @var string
-     */
-    protected $_placement = 'APPEND';
-
-    /**
-     * HTML tag with which to surround description
-     * @var string
-     */
-    protected $_tag;
-
-    /**
-     * Set HTML tag with which to surround description
-     * 
-     * @param  string $tag 
-     * @return Zend_Form_Decorator_Description
-     */
-    public function setTag($tag)
-    {
-        $this->_tag = (string) $tag;
-        return $this;
-    }
-
-    /**
-     * Get HTML tag, if any, with which to surround description
-     * 
-     * @return string
-     */
-    public function getTag()
-    {
-        if (null === $this->_tag) {
-            $tag = $this->getOption('tag');
-            if (null !== $tag) {
-                $this->removeOption('tag');
-            } else {
-                $tag = 'p';
-            }
-
-            $this->setTag($tag);
-            return $tag;
-        }
-
-        return $this->_tag;
-    }
-
-    /**
-     * Get class with which to define description
-     *
-     * Defaults to 'hint'
-     * 
-     * @return string
-     */
-    public function getClass()
-    {
-        $class = $this->getOption('class');
-        if (null === $class) {
-            $class = 'hint';
-            $this->setOption('class', $class);
-        }
-
-        return $class;
-    }
-
-    /**
-     * Set whether or not to escape description
-     * 
-     * @param  bool $flag 
-     * @return Zend_Form_Decorator_Description
-     */
-    public function setEscape($flag)
-    {
-        $this->_escape = (bool) $flag;
-        return $this;
-    }
-
-    /**
-     * Get escape flag
-     * 
-     * @return true
-     */
-    public function getEscape()
-    {
-        if (null === $this->_escape) {
-            if (null !== ($escape = $this->getOption('escape'))) {
-                $this->setEscape($escape);
-                $this->removeOption('escape');
-            } else {
-                $this->setEscape(true);
-            }
-        }
-
-        return $this->_escape;
-    }
-
-    /**
-     * Render a description
-     * 
-     * @param  string $content 
-     * @return string
-     */
-    public function render($content)
-    {
-        $element = $this->getElement();
-        $view    = $element->getView();
-        if (null === $view) {
-            return $content;
-        }
-
-        $description = $element->getDescription();
-        $description = trim($description);
-
-        if (!empty($description) && (null !== ($translator = $element->getTranslator()))) {
-            $description = $translator->translate($description);
-        }
-
-        if (empty($description)) {
-            return $content;
-        }
-
-        $separator = $this->getSeparator();
-        $placement = $this->getPlacement();
-        $tag       = $this->getTag();
-        $class     = $this->getClass();
-        $escape    = $this->getEscape();
-
-        $options   = $this->getOptions();
-
-        if ($escape) {
-            $description = $view->escape($description);
-        }
-
-        if (!empty($tag)) {
-            require_once 'Zend/Form/Decorator/HtmlTag.php';
-            $options['tag'] = $tag;
-            $decorator = new Zend_Form_Decorator_HtmlTag($options);
-            $description = $decorator->render($description);
-        }
-
-        switch ($placement) {
-            case self::PREPEND:
-                return $description . $separator . $content;
-            case self::APPEND:
-            default:
-                return $content . $separator . $description;
-        }
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

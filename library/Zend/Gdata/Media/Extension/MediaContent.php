@@ -1,521 +1,128 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Media
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * @see Zend_Gdata_Extension
- */
-require_once 'Zend/Gdata/Extension.php';
-
-/**
- * Represents the media:content element of Media RSS.
- * Represents media objects.  Multiple media objects representing
- * the same content can be represented using a
- * media:group (Zend_Gdata_Media_Extension_MediaGroup) element.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Media
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Gdata_Media_Extension_MediaContent extends Zend_Gdata_Extension
-{
-    protected $_rootElement = 'content';
-    protected $_rootNamespace = 'media';
-
-    /**
-     * @var string
-     */
-    protected $_url = null;
-
-    /**
-     * @var int
-     */
-    protected $_fileSize = null;
-
-    /**
-     * @var string
-     */
-    protected $_type = null;
-
-    /**
-     * @var string
-     */
-    protected $_medium = null;
-
-    /**
-     * @var string
-     */
-    protected $_isDefault = null;
-
-    /**
-     * @var string
-     */
-    protected $_expression = null;
-
-    /**
-     * @var int
-     */
-    protected $_bitrate = null;
-
-    /**
-     * @var int
-     */
-    protected $_framerate = null;
-
-    /**
-     * @var int
-     */
-    protected $_samplingrate = null;
-
-    /**
-     * @var int
-     */
-    protected $_channels = null;
-
-    /**
-     * @var int
-     */
-    protected $_duration = null;
-
-    /**
-     * @var int
-     */
-    protected $_height = null;
-
-    /**
-     * @var int
-     */
-    protected $_width = null;
-
-    /**
-     * @var string
-     */
-    protected $_lang = null;
-
-    /**
-     * Creates an individual MediaContent object.
-     */
-    public function __construct($url = null, $fileSize = null, $type = null,
-            $medium = null, $isDefault = null, $expression = null,
-            $bitrate = null, $framerate = null, $samplingrate = null,
-            $channels = null, $duration = null, $height = null, $width = null,
-            $lang = null)
-    {
-        $this->registerAllNamespaces(Zend_Gdata_Media::$namespaces);
-        parent::__construct();
-        $this->_url = $url;
-        $this->_fileSize = $fileSize;
-        $this->_type = $type;
-        $this->_medium = $medium;
-        $this->_isDefault = $isDefault;
-        $this->_expression = $expression;
-        $this->_bitrate = $bitrate;
-        $this->_framerate = $framerate;
-        $this->_samplingrate = $samplingrate;
-        $this->_channels = $channels;
-        $this->_duration = $duration;
-        $this->_height = $height;
-        $this->_width = $width;
-        $this->_lang = $lang;
-    }
-
-
-    /**
-     * Retrieves a DOMElement which corresponds to this element and all
-     * child properties.  This is used to build an entry back into a DOM
-     * and eventually XML text for sending to the server upon updates, or
-     * for application storage/persistence.
-     *
-     * @param DOMDocument $doc The DOMDocument used to construct DOMElements
-     * @return DOMElement The DOMElement representing this element and all
-     * child properties.
-     */
-    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
-    {
-        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
-        if ($this->_url !== null) {
-            $element->setAttribute('url', $this->_url);
-        }
-        if ($this->_fileSize !== null) {
-            $element->setAttribute('fileSize', $this->_fileSize);
-        }
-        if ($this->_type !== null) {
-            $element->setAttribute('type', $this->_type);
-        }
-        if ($this->_medium !== null) {
-            $element->setAttribute('medium', $this->_medium);
-        }
-        if ($this->_isDefault !== null) {
-            $element->setAttribute('isDefault', $this->_isDefault);
-        }
-        if ($this->_expression !== null) {
-            $element->setAttribute('expression', $this->_expression);
-        }
-        if ($this->_bitrate !== null) {
-            $element->setAttribute('bitrate', $this->_bitrate);
-        }
-        if ($this->_framerate !== null) {
-            $element->setAttribute('framerate', $this->_framerate);
-        }
-        if ($this->_samplingrate !== null) {
-            $element->setAttribute('samplingrate', $this->_samplingrate);
-        }
-        if ($this->_channels !== null) {
-            $element->setAttribute('channels', $this->_channels);
-        }
-        if ($this->_duration !== null) {
-            $element->setAttribute('duration', $this->_duration);
-        }
-        if ($this->_height !== null) {
-            $element->setAttribute('height', $this->_height);
-        }
-        if ($this->_width !== null) {
-            $element->setAttribute('width', $this->_width);
-        }
-        if ($this->_lang !== null) {
-            $element->setAttribute('lang', $this->_lang);
-        }
-        return $element;
-    }
-
-    /**
-     * Given a DOMNode representing an attribute, tries to map the data into
-     * instance members.  If no mapping is defined, the name and value are
-     * stored in an array.
-     *
-     * @param DOMNode $attribute The DOMNode attribute needed to be handled
-     */
-    protected function takeAttributeFromDOM($attribute)
-    {
-        switch ($attribute->localName) {
-            case 'url':
-                $this->_url = $attribute->nodeValue;
-                break;
-            case 'fileSize':
-                $this->_fileSize = $attribute->nodeValue;
-                break;
-            case 'type':
-                $this->_type = $attribute->nodeValue;
-                break;
-            case 'medium':
-                $this->_medium = $attribute->nodeValue;
-                break;
-            case 'isDefault':
-                $this->_isDefault = $attribute->nodeValue;
-                break;
-            case 'expression':
-                $this->_expression = $attribute->nodeValue;
-                break;
-            case 'bitrate':
-                $this->_bitrate = $attribute->nodeValue;
-                break;
-            case 'framerate':
-                $this->_framerate = $attribute->nodeValue;
-                break;
-            case 'samplingrate':
-                $this->_samplingrate = $attribute->nodeValue;
-                break;
-            case 'channels':
-                $this->_channels = $attribute->nodeValue;
-                break;
-            case 'duration':
-                $this->_duration = $attribute->nodeValue;
-                break;
-            case 'height':
-                $this->_height = $attribute->nodeValue;
-                break;
-            case 'width':
-                $this->_width = $attribute->nodeValue;
-                break;
-            case 'lang':
-                $this->_lang = $attribute->nodeValue;
-                break;
-            default:
-                parent::takeAttributeFromDOM($attribute);
-        }
-    }
-
-    /**
-     * Returns the URL representing this MediaContent object
-     *
-     * @return string   The URL representing this MediaContent object.
-     */
-    public function __toString()
-    {
-        return $this->getUrl();
-    }
-
-    /**
-     * @return string   The direct URL to the media object
-     */
-    public function getUrl()
-    {
-        return $this->_url;
-    }
-
-    /**
-     * @param string $value     The direct URL to the media object
-     * @return Zend_Gdata_Media_Extension_MediaContent  Provides a fluent interface
-     */
-    public function setUrl($value)
-    {
-        $this->_url = $value;
-        return $this;
-    }
-
-    /**
-     * @return int  The size of the media in bytes
-     */
-    public function getFileSize()
-    {
-        return $this->_fileSize;
-    }
-
-    /**
-     * @param int $value
-     * @return Zend_Gdata_Media_Extension_MediaContent  Provides a fluent interface
-     */
-    public function setFileSize($value)
-    {
-        $this->_fileSize = $value;
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->_type;
-    }
-
-    /**
-     * @param string $value
-     * @return Zend_Gdata_Media_Extension_MediaContent  Provides a fluent interface
-     */
-    public function setType($value)
-    {
-        $this->_type = $value;
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getMedium()
-    {
-        return $this->_medium;
-    }
-
-    /**
-     * @param string $value
-     * @return Zend_Gdata_Media_Extension_MediaContent  Provides a fluent interface
-     */
-    public function setMedium($value)
-    {
-        $this->_medium = $value;
-        return $this;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getIsDefault()
-    {
-        return $this->_isDefault;
-    }
-
-    /**
-     * @param bool $value
-     * @return Zend_Gdata_Media_Extension_MediaContent  Provides a fluent interface
-     */
-    public function setIsDefault($value)
-    {
-        $this->_isDefault = $value;
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getExpression()
-    {
-        return $this->_expression;
-    }
-
-    /**
-     * @param string
-     * @return Zend_Gdata_Media_Extension_MediaContent  Provides a fluent interface
-     */
-    public function setExpression($value)
-    {
-        $this->_expression = $value;
-        return $this;
-    }
-
-    /**
-     * @return int
-     */
-    public function getBitrate()
-    {
-        return $this->_bitrate;
-    }
-
-    /**
-     * @param int
-     * @return Zend_Gdata_Media_Extension_MediaContent  Provides a fluent interface
-     */
-    public function setBitrate($value)
-    {
-        $this->_bitrate = $value;
-        return $this;
-    }
-
-    /**
-     * @return int
-     */
-    public function getFramerate()
-    {
-        return $this->_framerate;
-    }
-
-    /**
-     * @param int
-     * @return Zend_Gdata_Media_Extension_MediaContent  Provides a fluent interface
-     */
-    public function setFramerate($value)
-    {
-        $this->_framerate = $value;
-        return $this;
-    }
-
-    /**
-     * @return int
-     */
-    public function getSamplingrate()
-    {
-        return $this->_samplingrate;
-    }
-
-    /**
-     * @param int
-     * @return Zend_Gdata_Media_Extension_MediaContent  Provides a fluent interface
-     */
-    public function setSamplingrate($value)
-    {
-        $this->_samplingrate = $value;
-        return $this;
-    }
-
-    /**
-     * @return int
-     */
-    public function getChannels()
-    {
-        return $this->_channels;
-    }
-
-    /**
-     * @param int
-     * @return Zend_Gdata_Media_Extension_MediaContent  Provides a fluent interface
-     */
-    public function setChannels($value)
-    {
-        $this->_channels = $value;
-        return $this;
-    }
-
-    /**
-     * @return int
-     */
-    public function getDuration()
-    {
-        return $this->_duration;
-    }
-
-    /**
-     *
-     * @param int
-     * @return Zend_Gdata_Media_Extension_MediaContent  Provides a fluent interface
-     */
-    public function setDuration($value)
-    {
-        $this->_duration = $value;
-        return $this;
-    }
-
-    /**
-     * @return int
-     */
-    public function getHeight()
-    {
-        return $this->_height;
-    }
-
-    /**
-     * @param int
-     * @return Zend_Gdata_Media_Extension_MediaContent  Provides a fluent interface
-     */
-    public function setHeight($value)
-    {
-        $this->_height = $value;
-        return $this;
-    }
-
-    /**
-     * @return int
-     */
-    public function getWidth()
-    {
-        return $this->_width;
-    }
-
-    /**
-     * @param int
-     * @return Zend_Gdata_Media_Extension_MediaContent  Provides a fluent interface
-     */
-    public function setWidth($value)
-    {
-        $this->_width = $value;
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getLang()
-    {
-        return $this->_lang;
-    }
-
-    /**
-     * @param string
-     * @return Zend_Gdata_Media_Extension_MediaContent  Provides a fluent interface
-     */
-    public function setLang($value)
-    {
-        $this->_lang = $value;
-        return $this;
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

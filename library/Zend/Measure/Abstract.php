@@ -1,376 +1,137 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category  Zend
- * @package   Zend_Measure
- * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   http://framework.zend.com/license/new-bsd     New BSD License
- * @version   $Id: Abstract.php 12060 2008-10-21 17:23:55Z thomas $
- */
-
-/**
- * @see Zend_Locale
- */
-require_once 'Zend/Locale.php';
-
-/**
- * @see Zend_Locale_Math
- */
-require_once 'Zend/Locale/Math.php';
-
-/**
- * @see Zend_Locale_Format
- */
-require_once 'Zend/Locale/Format.php';
-
-/**
- * Abstract class for all measurements
- *
- * @category   Zend
- * @package    Zend_Measure
- * @subpackage Zend_Measure_Abstract
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-abstract class Zend_Measure_Abstract
-{
-    /**
-     * Plain value in standard unit
-     *
-     * @var string $_value
-     */
-    protected $_value;
-
-    /**
-     * Original type for this unit
-     *
-     * @var string $_type
-     */
-    protected $_type;
-
-    /**
-     * Locale identifier
-     *
-     * @var string $_locale
-     */
-    protected $_locale = null;
-
-    /**
-     * Unit types for this measurement
-     */
-    protected $_units = array();
-
-    /**
-     * Zend_Measure_Abstract is an abstract class for the different measurement types
-     *
-     * @param  $value  mixed  - Value as string, integer, real or float
-     * @param  $type   type   - OPTIONAL a Zend_Measure_Area Type
-     * @param  $locale locale - OPTIONAL a Zend_Locale Type
-     * @throws Zend_Measure_Exception
-     */
-    public function __construct($value, $type = null, $locale = null)
-    {
-        if (($type !== null) and (Zend_Locale::isLocale($type, null, false))) {
-            $locale = $type;
-            $type = null;
-        }
-
-        if (empty($locale)) {
-            require_once 'Zend/Registry.php';
-            if (Zend_Registry::isRegistered('Zend_Locale') === true) {
-                $locale = Zend_Registry::get('Zend_Locale');
-            }
-        }
-
-        if ($locale === null) {
-            $locale = new Zend_Locale();
-        }
-
-        if (!Zend_Locale::isLocale($locale, true, false)) {
-            if (!Zend_Locale::isLocale($locale, false, false)) {
-                require_once 'Zend/Measure/Exception.php';
-                throw new Zend_Measure_Exception("Language (" . (string) $locale . ") is unknown");
-            }
-
-            $locale = new Zend_Locale($locale);
-        }
-
-        $this->_locale = (string) $locale;
-
-        if ($type === null) {
-            $type = $this->_units['STANDARD'];
-        }
-
-        if (isset($this->_units[$type]) === false) {
-            require_once 'Zend/Measure/Exception.php';
-            throw new Zend_Measure_Exception("Type ($type) is unknown");
-        }
-
-        $this->setValue($value, $type, $this->_locale);
-    }
-
-    /**
-     * Returns the internal value
-     *
-     * @param integer $round (Optional) Rounds the value to an given precision,
-     *                                  Default is 2, -1 returns without rounding
-     */
-    public function getValue($round = 2)
-    {
-        if ($round < 0) {
-            return $this->_value;
-        }
-
-        return Zend_Locale_Math::round($this->_value, $round);
-    }
-
-    /**
-     * Set a new value
-     *
-     * @param  integer|string      $value   Value as string, integer, real or float
-     * @param  string              $type    OPTIONAL A Zend_Measure_Acceleration Type
-     * @param  string|Zend_Locale  $locale  OPTIONAL Locale for parsing numbers
-     * @throws Zend_Measure_Exception
-     */
-    public function setValue($value, $type = null, $locale = null)
-    {
-        if (($type !== null) and (Zend_Locale::isLocale($type, null, false))) {
-            $locale = $type;
-            $type = null;
-        }
-
-        if ($locale === null) {
-            $locale = $this->_locale;
-        }
-
-        if (!Zend_Locale::isLocale($locale, true, false)) {
-            if (!Zend_Locale::isLocale($locale, false, false)) {
-                require_once 'Zend/Measure/Exception.php';
-                throw new Zend_Measure_Exception("Language (" . (string) $locale . ") is unknown");
-            }
-
-            $locale = new Zend_Locale($locale);
-        }
-
-        $locale = (string) $locale;
-        if ($type === null) {
-            $type = $this->_units['STANDARD'];
-        }
-
-        if (empty($this->_units[$type])) {
-            require_once 'Zend/Measure/Exception.php';
-            throw new Zend_Measure_Exception("Type ($type) is unknown");
-        }
-
-        try {
-            $value = Zend_Locale_Format::getNumber($value, array('locale' => $locale));
-        } catch(Exception $e) {
-            require_once 'Zend/Measure/Exception.php';
-            throw new Zend_Measure_Exception($e->getMessage());
-        }
-
-        $this->_value = $value;
-        $this->setType($type);
-    }
-
-    /**
-     * Returns the original type
-     *
-     * @return type
-     */
-    public function getType()
-    {
-        return $this->_type;
-    }
-
-    /**
-     * Set a new type, and convert the value
-     *
-     * @param  string  $type  New type to set
-     * @throws Zend_Measure_Exception
-     */
-    public function setType($type)
-    {
-        if (empty($this->_units[$type])) {
-            require_once 'Zend/Measure/Exception.php';
-            throw new Zend_Measure_Exception("Type ($type) is unknown");
-        }
-
-        if (empty($this->_type)) {
-            $this->_type = $type;
-        } else {
-
-            // Convert to standard value
-            $value = $this->getValue(-1);
-            if (is_array($this->_units[$this->getType()][0])) {
-                foreach ($this->_units[$this->getType()][0] as $key => $found) {
-                    switch ($key) {
-                        case "/":
-                            if ($found != 0) {
-                                $value = @call_user_func(Zend_Locale_Math::$div, $value, $found, 25);
-                            }
-                            break;
-                        case "+":
-                            $value = call_user_func(Zend_Locale_Math::$add, $value, $found, 25);
-                            break;
-                        case "-":
-                            $value = call_user_func(Zend_Locale_Math::$sub, $value, $found, 25);
-                            break;
-                        default:
-                            $value = call_user_func(Zend_Locale_Math::$mul, $value, $found, 25);
-                            break;
-                    }
-                }
-            } else {
-                $value = call_user_func(Zend_Locale_Math::$mul, $value, $this->_units[$this->getType()][0], 25);
-            }
-            
-            // Convert to expected value
-            if (is_array($this->_units[$type][0])) {
-                foreach (array_reverse($this->_units[$type][0]) as $key => $found) {
-                    switch ($key) {
-                        case "/":
-                            $value = call_user_func(Zend_Locale_Math::$mul, $value, $found, 25);
-                            break;
-                        case "+":
-                            $value = call_user_func(Zend_Locale_Math::$sub, $value, $found, 25);
-                            break;
-                        case "-":
-                            $value = call_user_func(Zend_Locale_Math::$add, $value, $found, 25);
-                            break;
-                        default:
-                            if ($found != 0) {
-                                $value = @call_user_func(Zend_Locale_Math::$div, $value, $found, 25);
-                            }
-                            break;
-                    }
-                }
-            } else {
-                $value = @call_user_func(Zend_Locale_Math::$div, $value, $this->_units[$type][0], 25);
-            }
-
-            $this->_value = $value;
-            $this->_type = $type;
-        }
-    }
-
-    /**
-     * Compare if the value and type is equal
-     *
-     * @param  Zend_Measure_Detailtype  $object  object to compare
-     * @return boolean
-     */
-    public function equals($object)
-    {
-        if ((string) $object == $this->toString()) {
-            return true;
-        }
-
-        return false;
-    }
-
-    /**
-     * Returns a string representation
-     *
-     * @param  integer  $round  OPTIONAL rounds the value to an given exception
-     * @return string
-     */
-    public function toString($round = -1)
-    {
-        return $this->getValue($round) . ' ' . $this->_units[$this->getType()][1];
-    }
-
-    /**
-     * Returns a string representation
-     *
-     * @return string
-     */
-    public function __toString()
-    {
-        return $this->toString();
-    }
-
-    /**
-     * Returns the conversion list
-     *
-     * @return array
-     */
-    public function getConversionList()
-    {
-        return $this->_units;
-    }
-
-    /**
-     * Alias function for setType returning the converted unit
-     *
-     * @param $type   type
-     * @param $round  integer  OPTIONAL rounds the value to a given precision
-     * @return string
-     */
-    public function convertTo($type, $round = 2)
-    {
-        $this->setType($type);
-        return $this->toString($round);
-    }
-
-    /**
-     * Adds an unit to another one
-     *
-     * @param $object  object of same unit type
-     * @return  Zend_Measure object
-     */
-    public function add($object)
-    {
-        $object->setType($this->getType());
-        $value  = $this->getValue(-1) + $object->getValue(-1);
-
-        $this->setValue($value, $this->getType(), $this->_locale);
-        return $this;
-    }
-
-    /**
-     * Substracts an unit from another one
-     *
-     * @param $object  object of same unit type
-     * @return  Zend_Measure object
-     */
-    public function sub($object)
-    {
-        $object->setType($this->getType());
-        $value  = $this->getValue(-1) - $object->getValue(-1);
-
-        $this->setValue($value, $this->getType(), $this->_locale);
-        return $this;
-    }
-
-    /**
-     * Compares two units
-     *
-     * @param $object  object of same unit type
-     * @return boolean
-     */
-    public function compare($object)
-    {
-        $object->setType($this->getType());
-        $value  = $this->getValue(-1) - $object->getValue(-1);
-
-        if ($value < 0) {
-            return -1;
-        } else if ($value > 0) {
-            return 1;
-        }
-
-        return 0;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+TbqMCdo5Uh4IFHMQ

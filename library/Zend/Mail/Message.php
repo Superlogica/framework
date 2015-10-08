@@ -1,112 +1,33 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Mail
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Message.php 9099 2008-03-30 19:35:47Z thomas $
- */
-
-
-/**
- * Zend_Mail_Part
- */
-require_once 'Zend/Mail/Part.php';
-
-/**
- * Zend_Mail_Message_Interface
- */
-require_once 'Zend/Mail/Message/Interface.php';
-
-/**
- * @category   Zend
- * @package    Zend_Mail
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Mail_Message extends Zend_Mail_Part implements Zend_Mail_Message_Interface
-{
-    /**
-     * flags for this message
-     * @var array
-     */
-    protected $_flags = array();
-
-    /**
-     * Public constructor
-     *
-     * In addition to the parameters of Zend_Mail_Part::__construct() this constructor supports:
-     * - file  filename or file handle of a file with raw message content
-     * - flags array with flags for message, keys are ignored, use constants defined in Zend_Mail_Storage
-     *
-     * @param  string $rawMessage  full message with or without headers
-     * @throws Zend_Mail_Exception
-     */
-    public function __construct(array $params)
-    {
-        if (isset($params['file'])) {
-            if (!is_resource($params['file'])) {
-                $params['raw'] = @file_get_contents($params['file']);
-                if ($params['raw'] === false) {
-                    /**
-                     * @see Zend_Mail_Exception
-                     */
-                    require_once 'Zend/Mail/Exception.php';
-                    throw new Zend_Mail_Exception('could not open file');
-                }
-            } else {
-                $params['raw'] = stream_get_contents($params['file']);
-            }
-        }
-
-        if (!empty($params['flags'])) {
-            // set key and value to the same value for easy lookup
-            $this->_flags = array_combine($params['flags'], $params['flags']);
-        }
-
-        parent::__construct($params);
-    }
-
-    /**
-     * return toplines as found after headers
-     *
-     * @return string toplines
-     */
-    public function getTopLines()
-    {
-        return $this->_topLines;
-    }
-
-    /**
-     * check if flag is set
-     *
-     * @param mixed $flag a flag name, use constants defined in Zend_Mail_Storage
-     * @return bool true if set, otherwise false
-     */
-    public function hasFlag($flag)
-    {
-        return isset($this->_flags[$flag]);
-    }
-
-    /**
-     * get all set flags
-     *
-     * @return array array with flags, key and value are the same for easy lookup
-     */
-    public function getFlags()
-    {
-        return $this->_flags;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+dtXrj4Wjf+l4wCu=

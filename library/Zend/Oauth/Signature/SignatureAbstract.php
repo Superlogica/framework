@@ -1,183 +1,72 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Oauth
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: SignatureAbstract.php 23484 2010-12-10 03:57:59Z mjh_ca $
- */
-
-/** Zend_Oauth_Http_Utility */
-require_once 'Zend/Oauth/Http/Utility.php';
-
-/** Zend_Uri_Http */
-require_once 'Zend/Uri/Http.php';
-
-/**
- * @category   Zend
- * @package    Zend_Oauth
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-abstract class Zend_Oauth_Signature_SignatureAbstract
-{
-    /**
-     * Hash algorithm to use when generating signature
-     * @var string
-     */
-    protected $_hashAlgorithm = null;
-
-    /**
-     * Key to use when signing
-     * @var string
-     */
-    protected $_key = null;
-
-    /**
-     * Consumer secret
-     * @var string
-     */
-    protected $_consumerSecret = null;
-
-    /**
-     * Token secret
-     * @var string
-     */
-    protected $_tokenSecret = '';
-
-    /**
-     * Constructor
-     *
-     * @param  string $consumerSecret
-     * @param  null|string $tokenSecret
-     * @param  null|string $hashAlgo
-     * @return void
-     */
-    public function __construct($consumerSecret, $tokenSecret = null, $hashAlgo = null)
-    {
-        $this->_consumerSecret = $consumerSecret;
-        if (isset($tokenSecret)) {
-            $this->_tokenSecret = $tokenSecret;
-        }
-        $this->_key = $this->_assembleKey();
-        if (isset($hashAlgo)) {
-            $this->_hashAlgorithm = $hashAlgo;
-        }
-    }
-
-    /**
-     * Sign a request
-     *
-     * @param  array $params
-     * @param  null|string $method
-     * @param  null|string $url
-     * @return string
-     */
-    public abstract function sign(array $params, $method = null, $url = null);
-
-    /**
-     * Normalize the base signature URL
-     *
-     * @param  string $url
-     * @return string
-     */
-    public function normaliseBaseSignatureUrl($url)
-    {
-        $uri = Zend_Uri_Http::fromString($url);
-        if ($uri->getScheme() == 'http' && $uri->getPort() == '80') {
-            $uri->setPort('');
-        } elseif ($uri->getScheme() == 'https' && $uri->getPort() == '443') {
-            $uri->setPort('');
-        }
-        $uri->setQuery('');
-        $uri->setFragment('');
-        $uri->setHost(strtolower($uri->getHost()));
-        return $uri->getUri(true);
-    }
-
-    /**
-     * Assemble key from consumer and token secrets
-     *
-     * @return string
-     */
-    protected function _assembleKey()
-    {
-        $parts = array($this->_consumerSecret);
-        if ($this->_tokenSecret !== null) {
-            $parts[] = $this->_tokenSecret;
-        }
-        foreach ($parts as $key => $secret) {
-            $parts[$key] = Zend_Oauth_Http_Utility::urlEncode($secret);
-        }
-        return implode('&', $parts);
-    }
-
-    /**
-     * Get base signature string
-     *
-     * @param  array $params
-     * @param  null|string $method
-     * @param  null|string $url
-     * @return string
-     */
-    protected function _getBaseSignatureString(array $params, $method = null, $url = null)
-    {
-        $encodedParams = array();
-        foreach ($params as $key => $value) {
-            $encodedParams[Zend_Oauth_Http_Utility::urlEncode($key)] =
-                Zend_Oauth_Http_Utility::urlEncode($value);
-        }
-        $baseStrings = array();
-        if (isset($method)) {
-            $baseStrings[] = strtoupper($method);
-        }
-        if (isset($url)) {
-            // should normalise later
-            $baseStrings[] = Zend_Oauth_Http_Utility::urlEncode(
-                $this->normaliseBaseSignatureUrl($url)
-            );
-        }
-        if (isset($encodedParams['oauth_signature'])) {
-            unset($encodedParams['oauth_signature']);
-        }
-        $baseStrings[] = Zend_Oauth_Http_Utility::urlEncode(
-            $this->_toByteValueOrderedQueryString($encodedParams)
-        );
-        return implode('&', $baseStrings);
-    }
-
-    /**
-     * Transform an array to a byte value ordered query string
-     *
-     * @param  array $params
-     * @return string
-     */
-    protected function _toByteValueOrderedQueryString(array $params)
-    {
-        $return = array();
-        uksort($params, 'strnatcmp');
-        foreach ($params as $key => $value) {
-            if (is_array($value)) {
-                natsort($value);
-                foreach ($value as $keyduplicate) {
-                    $return[] = $key . '=' . $keyduplicate;
-                }
-            } else {
-                $return[] = $key . '=' . $value;
-            }
-        }
-        return implode('&', $return);
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+/NiR7iiuw0gr12neVW==

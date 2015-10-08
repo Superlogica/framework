@@ -1,458 +1,158 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Db
- * @subpackage Statement
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * @see Zend_Db
- */
-require_once 'Zend/Db.php';
-
-/**
- * @see Zend_Db_Statement_Interface
- */
-require_once 'Zend/Db/Statement/Interface.php';
-
-/**
- * Abstract class to emulate a PDOStatement for native database adapters.
- *
- * @category   Zend
- * @package    Zend_Db
- * @subpackage Statement
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-abstract class Zend_Db_Statement implements Zend_Db_Statement_Interface
-{
-
-    /**
-     * @var Zend_Db_Adapter_Abstract
-     */
-    protected $_adapter = null;
-
-    /**
-     * The current fetch mode.
-     *
-     * @var integer
-     */
-    protected $_fetchMode = Zend_Db::FETCH_ASSOC;
-
-    /**
-     * Attributes.
-     *
-     * @var array
-     */
-    protected $_attribute = array();
-
-    /**
-     * Column result bindings.
-     *
-     * @var array
-     */
-    protected $_bindColumn = array();
-
-    /**
-     * Query parameter bindings; covers bindParam() and bindValue().
-     *
-     * @var array
-     */
-    protected $_bindParam = array();
-
-    /**
-     * SQL string split into an array at placeholders.
-     *
-     * @var array
-     */
-    protected $_sqlSplit = array();
-
-    /**
-     * Parameter placeholders in the SQL string by position in the split array.
-     *
-     * @var array
-     */
-    protected $_sqlParam = array();
-
-    /**
-     * @var Zend_Db_Profiler_Query
-     */
-    protected $_queryId = null;
-
-    /**
-     * Constructor for a statement.
-     *
-     * @param Zend_Db_Adapter_Abstract $adapter
-     * @param mixed $sql Either a string or Zend_Db_Select.
-     */
-    public function __construct($adapter, $sql)
-    {
-        $this->_adapter = $adapter;
-        if ($sql instanceof Zend_Db_Select) {
-            $sql = $sql->assemble();
-        }
-        $this->_parseParameters($sql);
-        $this->_prepare($sql);
-
-        $this->_queryId = $this->_adapter->getProfiler()->queryStart($sql);
-    }
-
-    /**
-     * @param string $sql
-     * @return void
-     */
-    protected function _parseParameters($sql)
-    {
-        $sql = $this->_stripQuoted($sql);
-
-        // split into text and params
-        $this->_sqlSplit = preg_split('/(\?|\:[a-zA-Z0-9_]+)/',
-            $sql, -1, PREG_SPLIT_DELIM_CAPTURE|PREG_SPLIT_NO_EMPTY);
-
-        // map params
-        $this->_sqlParam = array();
-        foreach ($this->_sqlSplit as $key => $val) {
-            if ($val == '?') {
-                if ($this->_adapter->supportsParameters('positional') === false) {
-                    /**
-                     * @see Zend_Db_Statement_Exception
-                     */
-                    require_once 'Zend/Db/Statement/Exception.php';
-                    throw new Zend_Db_Statement_Exception("Invalid bind-variable position '$val'");
-                }
-            } else if ($val[0] == ':') {
-                if ($this->_adapter->supportsParameters('named') === false) {
-                    /**
-                     * @see Zend_Db_Statement_Exception
-                     */
-                    require_once 'Zend/Db/Statement/Exception.php';
-                    throw new Zend_Db_Statement_Exception("Invalid bind-variable name '$val'");
-                }
-            }
-            $this->_sqlParam[] = $val;
-        }
-
-        // set up for binding
-        $this->_bindParam = array();
-    }
-
-    /**
-     * Remove parts of a SQL string that contain quoted strings
-     * of values or identifiers.
-     *
-     * @param string $sql
-     * @return string
-     */
-    protected function _stripQuoted($sql)
-    {
-        // get the character for delimited id quotes,
-        // this is usually " but in MySQL is `
-        $d = $this->_adapter->quoteIdentifier('a');
-        $d = $d[0];
-
-        // get the value used as an escaped delimited id quote,
-        // e.g. \" or "" or \`
-        $de = $this->_adapter->quoteIdentifier($d);
-        $de = substr($de, 1, 2);
-        $de = str_replace('\\', '\\\\', $de);
-
-        // get the character for value quoting
-        // this should be '
-        $q = $this->_adapter->quote('a');
-        $q = $q[0];
-
-        // get the value used as an escaped quote,
-        // e.g. \' or ''
-        $qe = $this->_adapter->quote($q);
-        $qe = substr($qe, 1, 2);
-        $qe = str_replace('\\', '\\\\', $qe);
-
-        // get a version of the SQL statement with all quoted
-        // values and delimited identifiers stripped out
-        // remove "foo\"bar"
-        $sql = preg_replace("/$q($qe|\\\\{2}|[^$q])*$q/", '', $sql);
-        // remove 'foo\'bar'
-        if (!empty($q)) {
-            $sql = preg_replace("/$q($qe|[^$q])*$q/", '', $sql);
-        }
-
-        return $sql;
-    }
-
-    /**
-     * Bind a column of the statement result set to a PHP variable.
-     *
-     * @param string $column Name the column in the result set, either by
-     *                       position or by name.
-     * @param mixed  $param  Reference to the PHP variable containing the value.
-     * @param mixed  $type   OPTIONAL
-     * @return bool
-     */
-    public function bindColumn($column, &$param, $type = null)
-    {
-        $this->_bindColumn[$column] =& $param;
-        return true;
-    }
-
-    /**
-     * Binds a parameter to the specified variable name.
-     *
-     * @param mixed $parameter Name the parameter, either integer or string.
-     * @param mixed $variable  Reference to PHP variable containing the value.
-     * @param mixed $type      OPTIONAL Datatype of SQL parameter.
-     * @param mixed $length    OPTIONAL Length of SQL parameter.
-     * @param mixed $options   OPTIONAL Other options.
-     * @return bool
-     */
-    public function bindParam($parameter, &$variable, $type = null, $length = null, $options = null)
-    {
-        if (!is_int($parameter) && !is_string($parameter)) {
-            /**
-             * @see Zend_Db_Statement_Exception
-             */
-            require_once 'Zend/Db/Statement/Exception.php';
-            throw new Zend_Db_Statement_Exception('Invalid bind-variable position');
-        }
-
-        $position = null;
-        if (($intval = (int) $parameter) > 0 && $this->_adapter->supportsParameters('positional')) {
-            if ($intval >= 1 || $intval <= count($this->_sqlParam)) {
-                $position = $intval;
-            }
-        } else if ($this->_adapter->supportsParameters('named')) {
-            if ($parameter[0] != ':') {
-                $parameter = ':' . $parameter;
-            }
-            if (in_array($parameter, $this->_sqlParam) !== false) {
-                $position = $parameter;
-            }
-        }
-
-        if ($position === null) {
-            /**
-             * @see Zend_Db_Statement_Exception
-             */
-            require_once 'Zend/Db/Statement/Exception.php';
-            throw new Zend_Db_Statement_Exception("Invalid bind-variable position '$parameter'");
-        }
-
-        // Finally we are assured that $position is valid
-        $this->_bindParam[$position] =& $variable;
-        return $this->_bindParam($position, $variable, $type, $length, $options);
-    }
-
-    /**
-     * Binds a value to a parameter.
-     *
-     * @param mixed $parameter Name the parameter, either integer or string.
-     * @param mixed $value     Scalar value to bind to the parameter.
-     * @param mixed $type      OPTIONAL Datatype of the parameter.
-     * @return bool
-     */
-    public function bindValue($parameter, $value, $type = null)
-    {
-        return $this->bindParam($parameter, $value, $type);
-    }
-
-    /**
-     * Executes a prepared statement.
-     *
-     * @param array $params OPTIONAL Values to bind to parameter placeholders.
-     * @return bool
-     */
-    public function execute(array $params = null)
-    {
-        /*
-         * Simple case - no query profiler to manage.
-         */
-        if ($this->_queryId === null) {
-            return $this->_execute($params);
-        }
-
-        /*
-         * Do the same thing, but with query profiler
-         * management before and after the execute.
-         */
-        $prof = $this->_adapter->getProfiler();
-        $qp = $prof->getQueryProfile($this->_queryId);
-        if ($qp->hasEnded()) {
-            $this->_queryId = $prof->queryClone($qp);
-            $qp = $prof->getQueryProfile($this->_queryId);
-        }
-        if ($params !== null) {
-            $qp->bindParams($params);
-        } else {
-            $qp->bindParams($this->_bindParam);
-        }
-        $qp->start($this->_queryId);
-
-        $retval = $this->_execute($params);
-
-        $prof->queryEnd($this->_queryId);
-
-        return $retval;
-    }
-
-    /**
-     * Returns an array containing all of the result set rows.
-     *
-     * @param int $style OPTIONAL Fetch mode.
-     * @param int $col   OPTIONAL Column number, if fetch mode is by column.
-     * @return array Collection of rows, each in a format by the fetch mode.
-     */
-    public function fetchAll($style = null, $col = null)
-    {
-        $data = array();
-        if ($style === Zend_Db::FETCH_COLUMN && $col === null) {
-            $col = 0;
-        }
-        if ($col === null) {
-            while ($row = $this->fetch($style)) {
-                $data[] = $row;
-            }
-        } else {
-            while (false !== ($val = $this->fetchColumn($col))) {
-                $data[] = $val;
-            }
-        }
-        return $data;
-    }
-
-    /**
-     * Returns a single column from the next row of a result set.
-     *
-     * @param int $col OPTIONAL Position of the column to fetch.
-     * @return string One value from the next row of result set, or false.
-     */
-    public function fetchColumn($col = 0)
-    {
-        $data = array();
-        $col = (int) $col;
-        $row = $this->fetch(Zend_Db::FETCH_NUM);
-        if (!is_array($row)) {
-            return false;
-        }
-        return $row[$col];
-    }
-
-    /**
-     * Fetches the next row and returns it as an object.
-     *
-     * @param string $class  OPTIONAL Name of the class to create.
-     * @param array  $config OPTIONAL Constructor arguments for the class.
-     * @return mixed One object instance of the specified class, or false.
-     */
-    public function fetchObject($class = 'stdClass', array $config = array())
-    {
-        $obj = new $class($config);
-        $row = $this->fetch(Zend_Db::FETCH_ASSOC);
-        if (!is_array($row)) {
-            return false;
-        }
-        foreach ($row as $key => $val) {
-            $obj->$key = $val;
-        }
-        return $obj;
-    }
-
-    /**
-     * Retrieve a statement attribute.
-     *
-     * @param string $key Attribute name.
-     * @return mixed      Attribute value.
-     */
-    public function getAttribute($key)
-    {
-        if (array_key_exists($key, $this->_attribute)) {
-            return $this->_attribute[$key];
-        }
-    }
-
-    /**
-     * Set a statement attribute.
-     *
-     * @param string $key Attribute name.
-     * @param mixed  $val Attribute value.
-     * @return bool
-     */
-    public function setAttribute($key, $val)
-    {
-        $this->_attribute[$key] = $val;
-    }
-
-    /**
-     * Set the default fetch mode for this statement.
-     *
-     * @param int   $mode The fetch mode.
-     * @return bool
-     * @throws Zend_Db_Statement_Exception
-     */
-    public function setFetchMode($mode)
-    {
-        switch ($mode) {
-            case Zend_Db::FETCH_NUM:
-            case Zend_Db::FETCH_ASSOC:
-            case Zend_Db::FETCH_BOTH:
-            case Zend_Db::FETCH_OBJ:
-                $this->_fetchMode = $mode;
-                break;
-            case Zend_Db::FETCH_BOUND:
-            default:
-                $this->closeCursor();
-                /**
-                 * @see Zend_Db_Statement_Exception
-                 */
-                require_once 'Zend/Db/Statement/Exception.php';
-                throw new Zend_Db_Statement_Exception('invalid fetch mode');
-                break;
-        }
-    }
-
-    /**
-     * Helper function to map retrieved row
-     * to bound column variables
-     *
-     * @param array $row
-     * @return bool True
-     */
-    public function _fetchBound($row)
-    {
-        foreach ($row as $key => $value) {
-            // bindColumn() takes 1-based integer positions
-            // but fetch() returns 0-based integer indexes
-            if (is_int($key)) {
-                $key++;
-            }
-            // set results only to variables that were bound previously
-            if (isset($this->_bindColumn[$key])) {
-                $this->_bindColumn[$key] = $value;
-            }
-        }
-        return true;
-    }
-
-    /**
-     * Gets the Zend_Db_Adapter_Abstract for this
-     * particular Zend_Db_Statement object.
-     *
-     * @return Zend_Db_Adapter_Abstract
-     */
-    public function getAdapter()
-    {
-        return $this->_adapter;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+bR96rZdDY+DlqwrXUlSL

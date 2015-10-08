@@ -1,207 +1,65 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Gapps
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-
-/**
- * Zend_Exception
- */
-require_once 'Zend/Exception.php';
-
-/**
- * Zend_Gdata_Gapps_Error
- */
-require_once 'Zend/Gdata/Gapps/Error.php';
-
-/**
- * Gdata Gapps Exception class. This is thrown when an 
- * AppsForYourDomainErrors message is received from the Google Apps 
- * servers.
- *
- * Several different errors may be represented by this exception. For a list 
- * of error codes available, see getErrorCode.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Gapps
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Gdata_Gapps_ServiceException extends Zend_Exception
-{
-    
-    protected $_rootElement = "AppsForYourDomainErrors";
-    
-    /** 
-     * Array of Zend_Gdata_Error objects indexed by error code.
-     * 
-     * @var array
-     */
-    protected $_errors = array();
-    
-    /**
-     * Create a new ServiceException.
-     *
-     * @return array An array containing a collection of 
-     *          Zend_Gdata_Gapps_Error objects.
-     */
-    public function __construct($errors = null) {
-        parent::__construct("Server errors encountered");
-        if ($errors !== null) {
-            $this->setErrors($errors);
-        }
-    }
-    
-    /**
-     * Add a single Error object to the list of errors received by the 
-     * server.
-     * 
-     * @param Zend_Gdata_Gapps_Error $error An instance of an error returned 
-     *          by the server. The error's errorCode must be set.
-     * @throws Zend_Gdata_App_Exception
-     */
-    public function addError($error) {
-        // Make sure that we don't try to index an error that doesn't 
-        // contain an index value.
-        if ($error->getErrorCode() == null) {
-            require_once 'Zend/Gdata/App/Exception.php';
-            throw new Zend_Gdata_App_Exception("Error encountered without corresponding error code.");
-        }
-        
-        $this->_errors[$error->getErrorCode()] = $error;
-    }
-    
-    /**
-     * Set the list of errors as sent by the server inside of an 
-     * AppsForYourDomainErrors tag.
-     * 
-     * @param array $array An associative array containing a collection of 
-     *          Zend_Gdata_Gapps_Error objects. All errors must have their 
-     *          errorCode value set.
-     * @throws Zend_Gdata_App_Exception
-     */
-    public function setErrors($array) {
-        $this->_errors = array();
-        foreach ($array as $error) {
-            $this->addError($error);
-        }
-    }
-    
-    /**
-     * Get the list of errors as sent by the server inside of an 
-     * AppsForYourDomainErrors tag.
-     * 
-     * @return array An associative array containing a collection of 
-     *          Zend_Gdata_Gapps_Error objects, indexed by error code.
-     */
-    public function getErrors() {
-        return $this->_errors;
-    }
-    
-    /**
-     * Return the Error object associated with a specific error code.
-     *
-     * @return Zend_Gdata_Gapps_Error The Error object requested, or null 
-     *              if not found.
-     */
-    public function getError($errorCode) {
-        if (array_key_exists($errorCode, $this->_errors)) {
-            $result = $this->_errors[$errorCode];
-            return $result;
-        } else {
-            return null;
-        }
-    }
-    
-    /**
-     * Check whether or not a particular error code was returned by the 
-     * server.
-     *
-     * @param integer $errorCode The error code to check against.
-     * @return boolean Whether or not the supplied error code was returned 
-     *          by the server.
-     */
-    public function hasError($errorCode) {
-        return array_key_exists($errorCode, $this->_errors);
-    }
-    
-    /**
-     * Import an AppsForYourDomain error from XML.
-     * 
-     * @param string $string The XML data to be imported
-     * @return Zend_Gdata_Gapps_ServiceException Provides a fluent interface.
-     * @throws Zend_Gdata_App_Exception
-     */
-    public function importFromString($string) {
-        if ($string) {
-            // Check to see if an AppsForYourDomainError exists
-            //
-            // track_errors is temporarily enabled so that if an error 
-            // occurs while parsing the XML we can append it to an 
-            // exception by referencing $php_errormsg
-            @ini_set('track_errors', 1);
-            $doc = new DOMDocument();
-            $success = @$doc->loadXML($string);
-            @ini_restore('track_errors');
-            
-            if (!$success) {
-                require_once 'Zend/Gdata/App/Exception.php';
-                // $php_errormsg is automatically generated by PHP if 
-                // an error occurs while calling loadXML(), above.
-                throw new Zend_Gdata_App_Exception("DOMDocument cannot parse XML: $php_errormsg");
-            }
-            
-            // Ensure that the outermost node is an AppsForYourDomain error.
-            // If it isn't, something has gone horribly wrong.
-            $rootElement = $doc->getElementsByTagName($this->_rootElement)->item(0);
-            if (!$rootElement) {
-                require_once 'Zend/Gdata/App/Exception.php';
-                throw new Zend_Gdata_App_Exception('No root <' . $this->_rootElement . '> element found, cannot parse feed.');
-            }
-            
-            foreach ($rootElement->childNodes as $errorNode) {
-                if (!($errorNode instanceof DOMText)) {
-                    $error = new Zend_Gdata_Gapps_Error();
-                    $error->transferFromDom($errorNode);
-                    $this->addError($error);
-                }
-            }
-            return $this;
-        } else {
-            require_once 'Zend/Gdata/App/Exception.php';
-            throw new Zend_Gdata_App_Exception('XML passed to transferFromXML cannot be null');
-        }
-        
-    }
-    
-    /**
-     * Get a human readable version of this exception.
-     * 
-     * @return string
-     */
-    public function __toString() {
-        $result = "The server encountered the following errors processing the request:";
-        foreach ($this->_errors as $error) {
-            $result .= "\n" . $error->__toString();
-        }
-        return $result;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

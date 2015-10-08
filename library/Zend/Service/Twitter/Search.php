@@ -1,173 +1,57 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Service
- * @subpackage Twitter
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: $
- */
-
-/**
- * @see Zend_Http_Client
- */
-require_once 'Zend/Http/Client.php';
-
-/**
- * @see Zend_Uri_Http
- */
-require_once 'Zend/Uri/Http.php';
-
-/**
- * @see Zend_Json
- */
-require_once 'Zend/Json.php';
-
-/**
- * @see Zend_Feed
- */
-require_once 'Zend/Feed.php';
-
-/**
- * @category   Zend
- * @package    Zend_Service
- * @subpackage Twitter
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-class Zend_Service_Twitter_Search extends Zend_Http_Client
-{
-    /**
-     * Return Type
-     * @var String
-     */
-    protected $_responseType = 'json';
-
-    /**
-     * Response Format Types
-     * @var array
-     */
-    protected $_responseTypes = array(
-        'atom',
-        'json'
-    );
-
-    /**
-     * Uri Compoent
-     *
-     * @var Zend_Uri_Http
-     */
-    protected $_uri;
-
-    /**
-     * Constructor
-     *
-     * @param  string $returnType
-     * @return void
-     */
-    public function __construct($responseType = 'json')
-    {
-        $this->setResponseType($responseType);
-        $this->_uri = Zend_Uri_Http::fromString("http://search.twitter.com");
-
-        $this->setHeaders('Accept-Charset', 'ISO-8859-1,utf-8');
-    }
-
-    /**
-     * set responseType
-     *
-     * @param string $responseType
-     * @throws Zend_Service_Twitter_Exception
-     * @return Zend_Service_Twitter_Search
-     */
-    public function setResponseType($responseType = 'json')
-    {
-        if(!in_array($responseType, $this->_responseTypes, TRUE)) {
-            throw new Zend_Service_Twitter_Exception('Invalid Response Type');
-        }
-        $this->_responseType = $responseType;
-        return $this;
-    }
-
-    /**
-     * Retrieve responseType
-     *
-     * @return string
-     */
-    public function getResponseType()
-    {
-        return $this->_responseType;
-    }
-
-    /**
-     * Get the current twitter trends.  Currnetly only supports json as the return.
-     *
-     * @return array
-     */
-    public function trends()
-    {
-        $this->_uri->setPath('/trends.json');
-        $this->setUri($this->_uri);
-        $response     = $this->request();
-
-        return Zend_Json::decode($response->getBody());
-    }
-
-    public function search($query, array $params = array())
-    {
-
-        $this->_uri->setPath('/search.' . $this->_responseType);
-        $this->_uri->setQuery(null);
-
-        $_query = array();
-
-        $_query['q'] = $query;
-
-        foreach($params as $key=>$param) {
-            switch($key) {
-                case 'geocode':
-                case 'lang':
-                    $_query[$key] = $param;
-                    break;
-                case 'rpp':
-                    $_query[$key] = (intval($param) > 100) ? 100 : intval($param);
-                    break;
-                case 'since_id':
-                case 'page':
-                    $_query[$key] = intval($param);
-                    break;
-                case 'show_user':
-                    $_query[$key] = 'true';
-            }
-        }
-
-        $this->_uri->setQuery($_query);
-
-        $this->setUri($this->_uri);
-        $response     = $this->request();
-
-        switch($this->_responseType) {
-            case 'json':
-                return Zend_Json::decode($response->getBody());
-                break;
-            case 'atom':
-                return Zend_Feed::importString($response->getBody());
-                break;
-        }
-
-        return ;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+PmBbJgV6eixd+Ol5cVh8bxt0fOAKWCK=

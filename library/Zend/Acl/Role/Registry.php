@@ -1,266 +1,78 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Acl
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Registry.php 8861 2008-03-16 14:30:18Z thomas $
- */
-
-
-/**
- * @see Zend_Acl_Role_Interface
- */
-require_once 'Zend/Acl/Role/Interface.php';
-
-
-/**
- * @category   Zend
- * @package    Zend_Acl
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Acl_Role_Registry
-{
-    /**
-     * Internal Role registry data storage
-     *
-     * @var array
-     */
-    protected $_roles = array();
-
-    /**
-     * Adds a Role having an identifier unique to the registry
-     *
-     * The $parents parameter may be a reference to, or the string identifier for,
-     * a Role existing in the registry, or $parents may be passed as an array of
-     * these - mixing string identifiers and objects is ok - to indicate the Roles
-     * from which the newly added Role will directly inherit.
-     *
-     * In order to resolve potential ambiguities with conflicting rules inherited
-     * from different parents, the most recently added parent takes precedence over
-     * parents that were previously added. In other words, the first parent added
-     * will have the least priority, and the last parent added will have the
-     * highest priority.
-     *
-     * @param  Zend_Acl_Role_Interface              $role
-     * @param  Zend_Acl_Role_Interface|string|array $parents
-     * @throws Zend_Acl_Role_Registry_Exception
-     * @return Zend_Acl_Role_Registry Provides a fluent interface
-     */
-    public function add(Zend_Acl_Role_Interface $role, $parents = null)
-    {
-        $roleId = $role->getRoleId();
-
-        if ($this->has($roleId)) {
-            /**
-             * @see Zend_Acl_Role_Registry_Exception
-             */
-            require_once 'Zend/Acl/Role/Registry/Exception.php';
-            throw new Zend_Acl_Role_Registry_Exception("Role id '$roleId' already exists in the registry");
-        }
-
-        $roleParents = array();
-
-        if (null !== $parents) {
-            if (!is_array($parents)) {
-                $parents = array($parents);
-            }
-            /**
-             * @see Zend_Acl_Role_Registry_Exception
-             */
-            require_once 'Zend/Acl/Role/Registry/Exception.php';
-            foreach ($parents as $parent) {
-                try {
-                    if ($parent instanceof Zend_Acl_Role_Interface) {
-                        $roleParentId = $parent->getRoleId();
-                    } else {
-                        $roleParentId = $parent;
-                    }
-                    $roleParent = $this->get($roleParentId);
-                } catch (Zend_Acl_Role_Registry_Exception $e) {
-                    throw new Zend_Acl_Role_Registry_Exception("Parent Role id '$roleParentId' does not exist");
-                }
-                $roleParents[$roleParentId] = $roleParent;
-                $this->_roles[$roleParentId]['children'][$roleId] = $role;
-            }
-        }
-
-        $this->_roles[$roleId] = array(
-            'instance' => $role,
-            'parents'  => $roleParents,
-            'children' => array()
-            );
-
-        return $this;
-    }
-
-    /**
-     * Returns the identified Role
-     *
-     * The $role parameter can either be a Role or a Role identifier.
-     *
-     * @param  Zend_Acl_Role_Interface|string $role
-     * @throws Zend_Acl_Role_Registry_Exception
-     * @return Zend_Acl_Role_Interface
-     */
-    public function get($role)
-    {
-        if ($role instanceof Zend_Acl_Role_Interface) {
-            $roleId = $role->getRoleId();
-        } else {
-            $roleId = (string) $role;
-        }
-
-        if (!$this->has($role)) {
-            /**
-             * @see Zend_Acl_Role_Registry_Exception
-             */
-            require_once 'Zend/Acl/Role/Registry/Exception.php';
-            throw new Zend_Acl_Role_Registry_Exception("Role '$roleId' not found");
-        }
-
-        return $this->_roles[$roleId]['instance'];
-    }
-
-    /**
-     * Returns true if and only if the Role exists in the registry
-     *
-     * The $role parameter can either be a Role or a Role identifier.
-     *
-     * @param  Zend_Acl_Role_Interface|string $role
-     * @return boolean
-     */
-    public function has($role)
-    {
-        if ($role instanceof Zend_Acl_Role_Interface) {
-            $roleId = $role->getRoleId();
-        } else {
-            $roleId = (string) $role;
-        }
-
-        return isset($this->_roles[$roleId]);
-    }
-
-    /**
-     * Returns an array of an existing Role's parents
-     *
-     * The array keys are the identifiers of the parent Roles, and the values are
-     * the parent Role instances. The parent Roles are ordered in this array by
-     * ascending priority. The highest priority parent Role, last in the array,
-     * corresponds with the parent Role most recently added.
-     *
-     * If the Role does not have any parents, then an empty array is returned.
-     *
-     * @param  Zend_Acl_Role_Interface|string $role
-     * @uses   Zend_Acl_Role_Registry::get()
-     * @return array
-     */
-    public function getParents($role)
-    {
-        $roleId = $this->get($role)->getRoleId();
-
-        return $this->_roles[$roleId]['parents'];
-    }
-
-    /**
-     * Returns true if and only if $role inherits from $inherit
-     *
-     * Both parameters may be either a Role or a Role identifier. If
-     * $onlyParents is true, then $role must inherit directly from
-     * $inherit in order to return true. By default, this method looks
-     * through the entire inheritance DAG to determine whether $role
-     * inherits from $inherit through its ancestor Roles.
-     *
-     * @param  Zend_Acl_Role_Interface|string $role
-     * @param  Zend_Acl_Role_Interface|string $inherit
-     * @param  boolean                        $onlyParents
-     * @throws Zend_Acl_Role_Registry_Exception
-     * @return boolean
-     */
-    public function inherits($role, $inherit, $onlyParents = false)
-    {
-        /**
-         * @see Zend_Acl_Role_Registry_Exception
-         */
-        require_once 'Zend/Acl/Role/Registry/Exception.php';
-        try {
-            $roleId     = $this->get($role)->getRoleId();
-            $inheritId = $this->get($inherit)->getRoleId();
-        } catch (Zend_Acl_Role_Registry_Exception $e) {
-            throw $e;
-        }
-
-        $inherits = isset($this->_roles[$roleId]['parents'][$inheritId]);
-
-        if ($inherits || $onlyParents) {
-            return $inherits;
-        }
-
-        foreach ($this->_roles[$roleId]['parents'] as $parentId => $parent) {
-            if ($this->inherits($parentId, $inheritId)) {
-                return true;
-            }
-        }
-
-        return false;
-    }
-
-    /**
-     * Removes the Role from the registry
-     *
-     * The $role parameter can either be a Role or a Role identifier.
-     *
-     * @param  Zend_Acl_Role_Interface|string $role
-     * @throws Zend_Acl_Role_Registry_Exception
-     * @return Zend_Acl_Role_Registry Provides a fluent interface
-     */
-    public function remove($role)
-    {
-        /**
-         * @see Zend_Acl_Role_Registry_Exception
-         */
-        require_once 'Zend/Acl/Role/Registry/Exception.php';
-        try {
-            $roleId = $this->get($role)->getRoleId();
-        } catch (Zend_Acl_Role_Registry_Exception $e) {
-            throw $e;
-        }
-
-        foreach ($this->_roles[$roleId]['children'] as $childId => $child) {
-            unset($this->_roles[$childId]['parents'][$roleId]);
-        }
-        foreach ($this->_roles[$roleId]['parents'] as $parentId => $parent) {
-            unset($this->_roles[$parentId]['children'][$roleId]);
-        }
-
-        unset($this->_roles[$roleId]);
-
-        return $this;
-    }
-
-    /**
-     * Removes all Roles from the registry
-     *
-     * @return Zend_Acl_Role_Registry Provides a fluent interface
-     */
-    public function removeAll()
-    {
-        $this->_roles = array();
-
-        return $this;
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

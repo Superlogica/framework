@@ -1,345 +1,116 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Auth
- * @subpackage Zend_Auth_Adapter
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Ldap.php 14095 2009-02-16 22:17:54Z norm2782 $
- */
-
-/**
- * @see Zend_Auth_Adapter_Interface
- */
-require_once 'Zend/Auth/Adapter/Interface.php';
-
-/**
- * @category   Zend
- * @package    Zend_Auth
- * @subpackage Zend_Auth_Adapter
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Auth_Adapter_Ldap implements Zend_Auth_Adapter_Interface
-{
-
-    /**
-     * The Zend_Ldap context.
-     *
-     * @var Zend_Ldap
-     */
-    protected $_ldap = null;
-
-    /**
-     * The array of arrays of Zend_Ldap options passed to the constructor.
-     *
-     * @var array
-     */
-    protected $_options = null;
-
-    /**
-     * The username of the account being authenticated.
-     *
-     * @var string
-     */
-    protected $_username = null;
-
-    /**
-     * The password of the account being authenticated.
-     *
-     * @var string
-     */
-    protected $_password = null;
-
-    /**
-     * Constructor
-     *
-     * @param  array  $options  An array of arrays of Zend_Ldap options
-     * @param  string $username The username of the account being authenticated
-     * @param  string $password The password of the account being authenticated
-     * @return void
-     */
-    public function __construct(array $options = array(), $username = null, $password = null)
-    {
-        $this->setOptions($options);
-        if ($username !== null) {
-            $this->setUsername($username);
-        }
-        if ($password !== null) {
-            $this->setPassword($password);
-        }
-    }
-
-    /**
-     * Returns the array of arrays of Zend_Ldap options of this adapter.
-     *
-     * @return array|null
-     */
-    public function getOptions()
-    {
-        return $this->_options;
-    }
-
-    /**
-     * Sets the array of arrays of Zend_Ldap options to be used by
-     * this adapter.
-     *
-     * @param  array $options The array of arrays of Zend_Ldap options
-     * @return Zend_Auth_Adapter_Ldap Provides a fluent interface
-     */
-    public function setOptions($options)
-    {
-        $this->_options = is_array($options) ? $options : array();
-        return $this;
-    }
-
-    /**
-     * Returns the username of the account being authenticated, or
-     * NULL if none is set.
-     *
-     * @return string|null
-     */
-    public function getUsername()
-    {
-        return $this->_username;
-    }
-
-    /**
-     * Sets the username for binding
-     *
-     * @param  string $username The username for binding
-     * @return Zend_Auth_Adapter_Ldap Provides a fluent interface
-     */
-    public function setUsername($username)
-    {
-        $this->_username = (string) $username;
-        return $this;
-    }
-
-    /**
-     * Returns the password of the account being authenticated, or
-     * NULL if none is set.
-     *
-     * @return string|null
-     */
-    public function getPassword()
-    {
-        return $this->_password;
-    }
-
-    /**
-     * Sets the passwort for the account
-     *
-     * @param  string $password The password of the account being authenticated
-     * @return Zend_Auth_Adapter_Ldap Provides a fluent interface
-     */
-    public function setPassword($password)
-    {
-        $this->_password = (string) $password;
-        return $this;
-    }
-
-    /**
-     * Returns the LDAP Object
-     *
-     * @return Zend_Ldap The Zend_Ldap object used to authenticate the credentials
-     */
-    public function getLdap()
-    {
-        if ($this->_ldap === null) {
-            /**
-             * @see Zend_Ldap
-             */
-            require_once 'Zend/Ldap.php';
-            $this->_ldap = new Zend_Ldap();
-        }
-
-        return $this->_ldap;
-    }
-
-    /**
-     * Set an Ldap connection
-     *
-     * @param Zend_Ldap $ldap An existing Ldap object
-     * @return Zend_Auth_Adapter_Ldap Provides a fluent interface
-     */
-    public function setLdap(Zend_Ldap $ldap)
-    {
-        $this->_ldap = $ldap;
-
-        $this->setOptions(array($ldap->getOptions()));
-
-        return $this;
-    }
-
-    /**
-     * Returns a domain name for the current LDAP options. This is used
-     * for skipping redundant operations (e.g. authentications).
-     *
-     * @return string
-     */
-    protected function _getAuthorityName()
-    {
-        $options = $this->getLdap()->getOptions();
-        $name = $options['accountDomainName'];
-        if (!$name)
-            $name = $options['accountDomainNameShort'];
-        return $name ? $name : '';
-    }
-
-    /**
-     * Authenticate the user
-     *
-     * @throws Zend_Auth_Adapter_Exception
-     * @return Zend_Auth_Result
-     */
-    public function authenticate()
-    {
-        /**
-         * @see Zend_Ldap_Exception
-         */
-        require_once 'Zend/Ldap/Exception.php';
-
-        $messages = array();
-        $messages[0] = ''; // reserved
-        $messages[1] = ''; // reserved
-
-        $username = $this->_username;
-        $password = $this->_password;
-
-        if (!$username) {
-            $code = Zend_Auth_Result::FAILURE_IDENTITY_NOT_FOUND;
-            $messages[0] = 'A username is required';
-            return new Zend_Auth_Result($code, '', $messages);
-        }
-        if (!$password) {
-            /* A password is required because some servers will
-             * treat an empty password as an anonymous bind.
-             */
-            $code = Zend_Auth_Result::FAILURE_CREDENTIAL_INVALID;
-            $messages[0] = 'A password is required';
-            return new Zend_Auth_Result($code, '', $messages);
-        }
-
-        $ldap = $this->getLdap();
-
-        $code = Zend_Auth_Result::FAILURE;
-        $messages[0] = "Authority not found: $username";
-        $failedAuthorities = array();
-
-        /* Iterate through each server and try to authenticate the supplied
-         * credentials against it.
-         */
-        foreach ($this->_options as $name => $options) {
-
-            if (!is_array($options)) {
-                /**
-                 * @see Zend_Auth_Adapter_Exception
-                 */
-                require_once 'Zend/Auth/Adapter/Exception.php';
-                throw new Zend_Auth_Adapter_Exception('Adapter options array not in array');
-            }
-            $ldap->setOptions($options);
-            $dname = '';
-
-            try {
-                if ($messages[1])
-                    $messages[] = $messages[1];
-                $messages[1] = '';
-                $messages[] = $this->_optionsToString($options);
-
-                $dname = $this->_getAuthorityName();
-                if (isset($failedAuthorities[$dname])) {
-                    /* If multiple sets of server options for the same domain
-                     * are supplied, we want to skip redundant authentications
-                     * where the identity or credentials where found to be
-                     * invalid with another server for the same domain. The
-                     * $failedAuthorities array tracks this condition (and also
-                     * serves to supply the original error message).
-                     * This fixes issue ZF-4093.
-                     */
-                    $messages[1] = $failedAuthorities[$dname];
-                    $messages[] = "Skipping previously failed authority: $dname";
-                    continue;
-                }
-
-                $canonicalName = $ldap->getCanonicalAccountName($username);
-
-                $ldap->bind($canonicalName, $password);
-
-                $messages[0] = '';
-                $messages[1] = '';
-                $messages[] = "$canonicalName authentication successful";
-
-                return new Zend_Auth_Result(Zend_Auth_Result::SUCCESS, $canonicalName, $messages);
-            } catch (Zend_Ldap_Exception $zle) {
-
-                /* LDAP based authentication is notoriously difficult to diagnose. Therefore
-                 * we bend over backwards to capture and record every possible bit of
-                 * information when something goes wrong.
-                 */
-
-                $err = $zle->getCode();
-
-                if ($err == Zend_Ldap_Exception::LDAP_X_DOMAIN_MISMATCH) {
-                    /* This error indicates that the domain supplied in the
-                     * username did not match the domains in the server options
-                     * and therefore we should just skip to the next set of
-                     * server options.
-                     */
-                    continue;
-                } else if ($err == Zend_Ldap_Exception::LDAP_NO_SUCH_OBJECT) {
-                    $code = Zend_Auth_Result::FAILURE_IDENTITY_NOT_FOUND;
-                    $messages[0] = "Account not found: $username";
-                    $failedAuthorities[$dname] = $zle->getMessage();
-                } else if ($err == Zend_Ldap_Exception::LDAP_INVALID_CREDENTIALS) {
-                    $code = Zend_Auth_Result::FAILURE_CREDENTIAL_INVALID;
-                    $messages[0] = 'Invalid credentials';
-                    $failedAuthorities[$dname] = $zle->getMessage();
-                } else {
-                    $line = $zle->getLine();
-                    $messages[] = $zle->getFile() . "($line): " . $zle->getMessage();
-                    $messages[] = str_replace($password, '*****', $zle->getTraceAsString());
-                    $messages[0] = 'An unexpected failure occurred';
-                }
-                $messages[1] = $zle->getMessage();
-            }
-        }
-
-        $msg = isset($messages[1]) ? $messages[1] : $messages[0];
-        $messages[] = "$username authentication failed: $msg";
-
-        return new Zend_Auth_Result($code, $username, $messages);
-    }
-
-    /**
-     * Converts options to string
-     *
-     * @param  array $options
-     * @return string
-     */
-    private function _optionsToString(array $options)
-    {
-        $str = '';
-        foreach ($options as $key => $val) {
-            if ($key === 'password')
-                $val = '*****';
-            if ($str)
-                $str .= ',';
-            $str .= $key . '=' . $val;
-        }
-        return $str;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

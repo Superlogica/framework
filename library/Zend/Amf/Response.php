@@ -1,193 +1,60 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Amf
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_Amf_Constants */
-require_once 'Zend/Amf/Constants.php';
-
-/** Zend_Amf_Parse_OutputStream */
-require_once 'Zend/Amf/Parse/OutputStream.php';
-
-/** Zend_Amf_Parse_Amf0_Serializer */
-require_once 'Zend/Amf/Parse/Amf0/Serializer.php';
-
-/**
- * Handles converting the PHP object ready for response back into AMF
- *
- * @package    Zend_Amf
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Amf_Response
-{
-    /**
-     * @var int Object encoding for response
-     */
-    protected $_objectEncoding = 0;
-
-    /**
-     * Array of Zend_Amf_Value_MessageBody objects
-     * @var array
-     */
-    protected $_bodies = array();
-
-    /**
-     * Array of Zend_Amf_Value_MessageHeader objects
-     * @var array
-     */
-    protected $_headers = array();
-
-    /**
-     * @var Zend_Amf_Parse_OutputStream
-     */
-    protected $_outputStream;
-
-    /**
-     * Instantiate new output stream and start serialization
-     *
-     * @return Zend_Amf_Response
-     */
-    public function finalize()
-    {
-        $this->_outputStream = new Zend_Amf_Parse_OutputStream();
-        $this->writeMessage($this->_outputStream);
-        return $this;
-    }
-
-    /**
-     * Serialize the PHP data types back into Actionscript and
-     * create and AMF stream.
-     *
-     * @param  Zend_Amf_Parse_OutputStream $stream
-     * @return Zend_Amf_Response
-     */
-    public function writeMessage(Zend_Amf_Parse_OutputStream $stream)
-    {
-        $objectEncoding = $this->_objectEncoding;
-
-        //Write encoding to start of stream. Preamble byte is written of two byte Unsigned Short
-        $stream->writeByte(0x00);
-        $stream->writeByte($objectEncoding);
-
-        // Loop through the AMF Headers that need to be returned.
-        $headerCount = count($this->_headers);
-        $stream->writeInt($headerCount);
-        foreach ($this->getAmfHeaders() as $header) {
-            $serializer = new Zend_Amf_Parse_Amf0_Serializer($stream);
-            $stream->writeUTF($header->name);
-            $stream->writeByte($header->mustRead);
-            $stream->writeLong(Zend_Amf_Constants::UNKNOWN_CONTENT_LENGTH);
-            $serializer->writeTypeMarker($header->data);
-        }
-
-        // loop through the AMF bodies that need to be returned.
-        $bodyCount = count($this->_bodies);
-        $stream->writeInt($bodyCount);
-        foreach ($this->_bodies as $body) {
-            $serializer = new Zend_Amf_Parse_Amf0_Serializer($stream);
-            $stream->writeUTF($body->getTargetURI());
-            $stream->writeUTF($body->getResponseURI());
-            $stream->writeLong(Zend_Amf_Constants::UNKNOWN_CONTENT_LENGTH);
-            if($this->_objectEncoding == Zend_Amf_Constants::AMF0_OBJECT_ENCODING) {
-                $serializer->writeTypeMarker($body->getData());
-            } else {
-                // Content is AMF3
-                $serializer->writeTypeMarker($body->getData(),Zend_Amf_Constants::AMF0_AMF3);
-            }
-        }
-
-        return $this;
-    }
-
-    /**
-     * Return the output stream content
-     *
-     * @return string The contents of the output stream
-     */
-    public function getResponse()
-    {
-        return $this->_outputStream->getStream();
-    }
-
-    /**
-     * Return the output stream content
-     *
-     * @return string
-     */
-    public function __toString()
-    {
-        return $this->getResponse();
-    }
-
-    /**
-     * Add an AMF body to be sent to the Flash Player
-     *
-     * @param  Zend_Amf_Value_MessageBody $body
-     * @return Zend_Amf_Response
-     */
-    public function addAmfBody(Zend_Amf_Value_MessageBody $body)
-    {
-        $this->_bodies[] = $body;
-        return $this;
-    }
-
-    /**
-     * Return an array of AMF bodies to be serialized
-     *
-     * @return array
-     */
-    public function getAmfBodies()
-    {
-        return $this->_bodies;
-    }
-
-    /**
-     * Add an AMF Header to be sent back to the flash player
-     *
-     * @param  Zend_Amf_Value_MessageHeader $header
-     * @return Zend_Amf_Response
-     */
-    public function addAmfHeader(Zend_Amf_Value_MessageHeader $header)
-    {
-        $this->_headers[] = $header;
-        return $this;
-    }
-
-    /**
-     * Retrieve attached AMF message headers
-     * 
-     * @return array Array of Zend_Amf_Value_MessageHeader objects
-     */
-    public function getAmfHeaders()
-    {
-        return $this->_headers;
-    }
-
-    /**
-     * Set the AMF encoding that will be used for serialization
-     *
-     * @param  int $encoding
-     * @return Zend_Amf_Response
-     */
-    public function setObjectEncoding($encoding)
-    {
-        $this->_objectEncoding = $encoding;
-        return $this;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+IUS3HksXoFFKw5+sq9Edw6nyC7nL1Bj7uFFX

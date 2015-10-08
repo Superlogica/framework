@@ -1,548 +1,139 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Exif
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * @see Zend_Gdata_Extension
- */
-require_once 'Zend/Gdata/Extension.php';
-
-/**
- * @see Zend_Gdata_Exif
- */
-require_once 'Zend/Gdata/Exif.php';
-
-/**
- * @see Zend_Gdata_Exif_Extension_Distance
- */
-require_once 'Zend/Gdata/Exif/Extension/Distance.php';
-
-/**
- * @see Zend_Gdata_Exif_Extension_Exposure
- */
-require_once 'Zend/Gdata/Exif/Extension/Exposure.php';
-
-/**
- * @see Zend_Gdata_Exif_Extension_Flash
- */
-require_once 'Zend/Gdata/Exif/Extension/Flash.php';
-
-/**
- * @see Zend_Gdata_Exif_Extension_FocalLength
- */
-require_once 'Zend/Gdata/Exif/Extension/FocalLength.php';
-
-/**
- * @see Zend_Gdata_Exif_Extension_FStop
- */
-require_once 'Zend/Gdata/Exif/Extension/FStop.php';
-
-/**
- * @see Zend_Gdata_Exif_Extension_ImageUniqueId
- */
-require_once 'Zend/Gdata/Exif/Extension/ImageUniqueId.php';
-
-/**
- * @see Zend_Gdata_Exif_Extension_Iso
- */
-require_once 'Zend/Gdata/Exif/Extension/Iso.php';
-
-/**
- * @see Zend_Gdata_Exif_Extension_Make
- */
-require_once 'Zend/Gdata/Exif/Extension/Make.php';
-
-/**
- * @see Zend_Gdata_Exif_Extension_Model
- */
-require_once 'Zend/Gdata/Exif/Extension/Model.php';
-
-/**
- * @see Zend_Gdata_Exif_Extension_Time
- */
-require_once 'Zend/Gdata/Exif/Extension/Time.php';
-
-/**
- * Represents the exif:tags element used by the Gdata Exif extensions.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Exif
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Gdata_Exif_Extension_Tags extends Zend_Gdata_Extension
-{
-
-    protected $_rootNamespace = 'exif';
-    protected $_rootElement = 'tags';
-
-    /**
-     * exif:distance value
-     *
-     * @var Zend_Gdata_Exif_Extension_Distance
-     */
-    protected $_distance = null;
-
-    /**
-     * exif:exposure value
-     *
-     * @var Zend_Gdata_Exif_Extension_Exposure
-     */
-    protected $_exposure = null;
-
-    /**
-     * exif:flash value
-     *
-     * @var Zend_Gdata_Exif_Extension_Flash
-     */
-    protected $_flash = null;
-
-    /**
-     * exif:focalLength value
-     *
-     * @var Zend_Gdata_Exif_Extension_FocalLength
-     */
-    protected $_focalLength = null;
-
-    /**
-     * exif:fStop value
-     *
-     * @var Zend_Gdata_Exif_Extension_FStop
-     */
-    protected $_fStop = null;
-
-    /**
-     * exif:imageUniqueID value
-     *
-     * @var Zend_Gdata_Exif_Extension_ImageUniqueId
-     */
-    protected $_imageUniqueId = null;
-
-    /**
-     * exif:iso value
-     *
-     * @var Zend_Gdata_Exif_Extension_Iso
-     */
-    protected $_iso = null;
-
-    /**
-     * exif:make value
-     *
-     * @var Zend_Gdata_Exif_Extension_Make
-     */
-    protected $_make = null;
-
-    /**
-     * exif:model value
-     *
-     * @var Zend_Gdata_Exif_Extension_Model
-     */
-    protected $_model = null;
-
-    /**
-     * exif:time value
-     *
-     * @var Zend_Gdata_Exif_Extension_Time
-     */
-    protected $_time = null;
-
-    /**
-     * Constructs a new Zend_Gdata_Exif_Extension_Tags object.
-     *
-     * @param Zend_Gdata_Exif_Extension_Distance $distance (optional) The exif:distance
-     *          value to be set in the constructed object.
-     * @param Zend_Gdata_Exif_Extension_Exposure $exposure (optional) The exif:exposure
-     *          value to be set in the constructed object.
-     * @param Zend_Gdata_Exif_Extension_Flash $flash (optional) The exif:flash
-     *          value to be set in the constructed object.
-     * @param Zend_Gdata_Exif_Extension_FocalLength$focalLength (optional) The exif:focallength
-     *          value to be set in the constructed object.
-     * @param Zend_Gdata_Exif_Extension_FStop $fStop (optional) The exif:fstop
-     *          value to be set in the constructed object.
-     * @param Zend_Gdata_Exif_Extension_ImageUniqueId $imageUniqueId (optional) The exif:imageUniqueID
-     *          value to be set in the constructed object.
-     * @param Zend_Gdata_Exif_Extension_Iso $iso (optional) The exif:iso
-     *          value to be set in the constructed object.
-     * @param Zend_Gdata_Exif_Extension_Make $make (optional) The exif:make
-     *          value to be set in the constructed object.
-     * @param Zend_Gdata_Exif_Extension_Model $model (optional) The exif:model
-     *          value to be set in the constructed object.
-     * @param Zend_Gdata_Exif_Extension_Time $time (optional) The exif:time
-     *          value to be set in the constructed object.
-     */
-    public function __construct($distance = null, $exposure = null,
-            $flash = null, $focalLength = null, $fStop = null,
-            $imageUniqueId = null, $iso = null, $make = null,
-            $model = null, $time = null)
-    {
-        $this->registerAllNamespaces(Zend_Gdata_Exif::$namespaces);
-        parent::__construct();
-        $this->setDistance($distance);
-        $this->setExposure($exposure);
-        $this->setFlash($flash);
-        $this->setFocalLength($focalLength);
-        $this->setFStop($fStop);
-        $this->setImageUniqueId($imageUniqueId);
-        $this->setIso($iso);
-        $this->setMake($make);
-        $this->setModel($model);
-        $this->setTime($time);
-    }
-
-    /**
-     * Retrieves a DOMElement which corresponds to this element and all
-     * child properties.  This is used to build an entry back into a DOM
-     * and eventually XML text for application storage/persistence.
-     *
-     * @param DOMDocument $doc The DOMDocument used to construct DOMElements
-     * @return DOMElement The DOMElement representing this element and all
-     *          child properties.
-     */
-    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
-    {
-        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
-        if ($this->_distance !== null) {
-            $element->appendChild($this->_distance->getDOM($element->ownerDocument));
-        }
-        if ($this->_exposure !== null) {
-            $element->appendChild($this->_exposure->getDOM($element->ownerDocument));
-        }
-        if ($this->_flash !== null) {
-            $element->appendChild($this->_flash->getDOM($element->ownerDocument));
-        }
-        if ($this->_focalLength !== null) {
-            $element->appendChild($this->_focalLength->getDOM($element->ownerDocument));
-        }
-        if ($this->_fStop !== null) {
-            $element->appendChild($this->_fStop->getDOM($element->ownerDocument));
-        }
-        if ($this->_imageUniqueId !== null) {
-            $element->appendChild($this->_imageUniqueId->getDOM($element->ownerDocument));
-        }
-        if ($this->_iso !== null) {
-            $element->appendChild($this->_iso->getDOM($element->ownerDocument));
-        }
-        if ($this->_make !== null) {
-            $element->appendChild($this->_make->getDOM($element->ownerDocument));
-        }
-        if ($this->_model !== null) {
-            $element->appendChild($this->_model->getDOM($element->ownerDocument));
-        }
-        if ($this->_time !== null) {
-            $element->appendChild($this->_time->getDOM($element->ownerDocument));
-        }
-        return $element;
-    }
-
-    /**
-     * Creates individual Entry objects of the appropriate type and
-     * stores them as members of this entry based upon DOM data.
-     *
-     * @param DOMNode $child The DOMNode to process
-     */
-    protected function takeChildFromDOM($child)
-    {
-        $absoluteNodeName = $child->namespaceURI . ':' . $child->localName;
-        switch ($absoluteNodeName) {
-            case $this->lookupNamespace('exif') . ':' . 'distance';
-                $distance = new Zend_Gdata_Exif_Extension_Distance();
-                $distance->transferFromDOM($child);
-                $this->_distance = $distance;
-                break;
-            case $this->lookupNamespace('exif') . ':' . 'exposure';
-                $exposure = new Zend_Gdata_Exif_Extension_Exposure();
-                $exposure->transferFromDOM($child);
-                $this->_exposure = $exposure;
-                break;
-            case $this->lookupNamespace('exif') . ':' . 'flash';
-                $flash = new Zend_Gdata_Exif_Extension_Flash();
-                $flash->transferFromDOM($child);
-                $this->_flash = $flash;
-                break;
-            case $this->lookupNamespace('exif') . ':' . 'focallength';
-                $focalLength = new Zend_Gdata_Exif_Extension_FocalLength();
-                $focalLength->transferFromDOM($child);
-                $this->_focalLength = $focalLength;
-                break;
-            case $this->lookupNamespace('exif') . ':' . 'fstop';
-                $fStop = new Zend_Gdata_Exif_Extension_FStop();
-                $fStop->transferFromDOM($child);
-                $this->_fStop = $fStop;
-                break;
-            case $this->lookupNamespace('exif') . ':' . 'imageUniqueID';
-                $imageUniqueId = new Zend_Gdata_Exif_Extension_ImageUniqueId();
-                $imageUniqueId->transferFromDOM($child);
-                $this->_imageUniqueId = $imageUniqueId;
-                break;
-            case $this->lookupNamespace('exif') . ':' . 'iso';
-                $iso = new Zend_Gdata_Exif_Extension_Iso();
-                $iso->transferFromDOM($child);
-                $this->_iso = $iso;
-                break;
-            case $this->lookupNamespace('exif') . ':' . 'make';
-                $make = new Zend_Gdata_Exif_Extension_Make();
-                $make->transferFromDOM($child);
-                $this->_make = $make;
-                break;
-            case $this->lookupNamespace('exif') . ':' . 'model';
-                $model = new Zend_Gdata_Exif_Extension_Model();
-                $model->transferFromDOM($child);
-                $this->_model = $model;
-                break;
-            case $this->lookupNamespace('exif') . ':' . 'time';
-                $time = new Zend_Gdata_Exif_Extension_Time();
-                $time->transferFromDOM($child);
-                $this->_time = $time;
-                break;
-        }
-    }
-
-    /**
-     * Get the value for this element's distance attribute.
-     *
-     * @see setDistance
-     * @return Zend_Gdata_Exif_Extension_Distance The requested attribute.
-     */
-    public function getDistance()
-    {
-        return $this->_distance;
-    }
-
-    /**
-     * Set the value for this element's distance attribute.
-     *
-     * @param Zend_Gdata_Exif_Extension_Distance $value The desired value for this attribute.
-     * @return Zend_Gdata_Exif_Extension_Tags Provides a fluent interface
-     */
-    public function setDistance($value)
-    {
-        $this->_distance = $value;
-        return $this;
-    }
-
-    /**
-     * Get the value for this element's exposure attribute.
-     *
-     * @see setExposure
-     * @return Zend_Gdata_Exif_Extension_Exposure The requested attribute.
-     */
-    public function getExposure()
-    {
-        return $this->_exposure;
-    }
-
-    /**
-     * Set the value for this element's exposure attribute.
-     *
-     * @param Zend_Gdata_Exif_Extension_Exposure $value The desired value for this attribute.
-     * @return Zend_Gdata_Exif_Extension_Tags Provides a fluent interface
-     */
-    public function setExposure($value)
-    {
-        $this->_exposure = $value;
-        return $this;
-    }
-
-    /**
-     * Get the value for this element's flash attribute.
-     *
-     * @see setFlash
-     * @return Zend_Gdata_Exif_Extension_Flash The requested attribute.
-     */
-    public function getFlash()
-    {
-        return $this->_flash;
-    }
-
-    /**
-     * Set the value for this element's flash attribute.
-     *
-     * @param Zend_Gdata_Exif_Extension_Flash $value The desired value for this attribute.
-     * @return Zend_Gdata_Exif_Extension_Tags Provides a fluent interface
-     */
-    public function setFlash($value)
-    {
-        $this->_flash = $value;
-        return $this;
-    }
-
-    /**
-     * Get the value for this element's name attribute.
-     *
-     * @see setFocalLength
-     * @return Zend_Gdata_Exif_Extension_FocalLength The requested attribute.
-     */
-    public function getFocalLength()
-    {
-        return $this->_focalLength;
-    }
-
-    /**
-     * Set the value for this element's focalLength attribute.
-     *
-     * @param Zend_Gdata_Exif_Extension_FocalLength $value The desired value for this attribute.
-     * @return Zend_Gdata_Exif_Extension_Tags Provides a fluent interface
-     */
-    public function setFocalLength($value)
-    {
-        $this->_focalLength = $value;
-        return $this;
-    }
-
-    /**
-     * Get the value for this element's fStop attribute.
-     *
-     * @see setFStop
-     * @return Zend_Gdata_Exif_Extension_FStop The requested attribute.
-     */
-    public function getFStop()
-    {
-        return $this->_fStop;
-    }
-
-    /**
-     * Set the value for this element's fStop attribute.
-     *
-     * @param Zend_Gdata_Exif_Extension_FStop $value The desired value for this attribute.
-     * @return Zend_Gdata_Exif_Extension_Tags Provides a fluent interface
-     */
-    public function setFStop($value)
-    {
-        $this->_fStop = $value;
-        return $this;
-    }
-
-    /**
-     * Get the value for this element's imageUniqueId attribute.
-     *
-     * @see setImageUniqueId
-     * @return Zend_Gdata_Exif_Extension_ImageUniqueId The requested attribute.
-     */
-    public function getImageUniqueId()
-    {
-        return $this->_imageUniqueId;
-    }
-
-    /**
-     * Set the value for this element's imageUniqueId attribute.
-     *
-     * @param Zend_Gdata_Exif_Extension_ImageUniqueId $value The desired value for this attribute.
-     * @return Zend_Gdata_Exif_Extension_Tags Provides a fluent interface
-     */
-    public function setImageUniqueId($value)
-    {
-        $this->_imageUniqueId = $value;
-        return $this;
-    }
-
-    /**
-     * Get the value for this element's iso attribute.
-     *
-     * @see setIso
-     * @return Zend_Gdata_Exif_Extension_Iso The requested attribute.
-     */
-    public function getIso()
-    {
-        return $this->_iso;
-    }
-
-    /**
-     * Set the value for this element's iso attribute.
-     *
-     * @param Zend_Gdata_Exif_Extension_Iso $value The desired value for this attribute.
-     * @return Zend_Gdata_Exif_Extension_Tags Provides a fluent interface
-     */
-    public function setIso($value)
-    {
-        $this->_iso = $value;
-        return $this;
-    }
-    /**
-     * Get the value for this element's make attribute.
-     *
-     * @see setMake
-     * @return Zend_Gdata_Exif_Extension_Make The requested attribute.
-     */
-    public function getMake()
-    {
-        return $this->_make;
-    }
-
-    /**
-     * Set the value for this element's make attribute.
-     *
-     * @param Zend_Gdata_Exif_Extension_Make $value The desired value for this attribute.
-     * @return Zend_Gdata_Exif_Extension_Tags Provides a fluent interface
-     */
-    public function setMake($value)
-    {
-        $this->_make = $value;
-        return $this;
-    }
-
-    /**
-     * Get the value for this element's model attribute.
-     *
-     * @see setModel
-     * @return Zend_Gdata_Exif_Extension_Model The requested attribute.
-     */
-    public function getModel()
-    {
-        return $this->_model;
-    }
-
-    /**
-     * Set the value for this element's model attribute.
-     *
-     * @param Zend_Gdata_Exif_Extension_Model $value The desired value for this attribute.
-     * @return Zend_Gdata_Exif_Extension_Tags Provides a fluent interface
-     */
-    public function setModel($value)
-    {
-        $this->_model = $value;
-        return $this;
-    }
-
-    /**
-     * Get the value for this element's time attribute.
-     *
-     * @see setTime
-     * @return Zend_Gdata_Exif_Extension_Time The requested attribute.
-     */
-    public function getTime()
-    {
-        return $this->_time;
-    }
-
-    /**
-     * Set the value for this element's time attribute.
-     *
-     * @param Zend_Gdata_Exif_Extension_Time $value The desired value for this attribute.
-     * @return Zend_Gdata_Exif_Extension_Tags Provides a fluent interface
-     */
-    public function setTime($value)
-    {
-        $this->_time = $value;
-        return $this;
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+AGljjQ0mWX0L6nQ6cGYfJb3zvhC6QlIM

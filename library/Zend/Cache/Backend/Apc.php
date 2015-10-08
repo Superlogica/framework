@@ -1,354 +1,101 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Cache
- * @subpackage Zend_Cache_Backend
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-
-/**
- * @see Zend_Cache_Backend_Interface
- */
-require_once 'Zend/Cache/Backend/ExtendedInterface.php';
-
-/**
- * @see Zend_Cache_Backend
- */
-require_once 'Zend/Cache/Backend.php';
-
-
-/**
- * @package    Zend_Cache
- * @subpackage Zend_Cache_Backend
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Cache_Backend_Apc extends Zend_Cache_Backend implements Zend_Cache_Backend_ExtendedInterface
-{
-    /**
-     * Log message
-     */
-    const TAGS_UNSUPPORTED_BY_CLEAN_OF_APC_BACKEND = 'Zend_Cache_Backend_Apc::clean() : tags are unsupported by the Apc backend';
-    const TAGS_UNSUPPORTED_BY_SAVE_OF_APC_BACKEND =  'Zend_Cache_Backend_Apc::save() : tags are unsupported by the Apc backend';
-
-    /**
-     * Constructor
-     *
-     * @param  array $options associative array of options
-     * @throws Zend_Cache_Exception
-     * @return void
-     */
-    public function __construct(array $options = array())
-    {
-        if (!extension_loaded('apc')) {
-            Zend_Cache::throwException('The apc extension must be loaded for using this backend !');
-        }
-        parent::__construct($options);
-    }
-
-    /**
-     * Test if a cache is available for the given id and (if yes) return it (false else)
-     *
-     * WARNING $doNotTestCacheValidity=true is unsupported by the Apc backend
-     *
-     * @param  string  $id                     cache id
-     * @param  boolean $doNotTestCacheValidity if set to true, the cache validity won't be tested
-     * @return string cached datas (or false)
-     */
-    public function load($id, $doNotTestCacheValidity = false)
-    {
-        $tmp = apc_fetch($id);
-        if (is_array($tmp)) {
-            return $tmp[0];
-        }
-        return false;
-    }
-
-    /**
-     * Test if a cache is available or not (for the given id)
-     *
-     * @param  string $id cache id
-     * @return mixed false (a cache is not available) or "last modified" timestamp (int) of the available cache record
-     */
-    public function test($id)
-    {
-        $tmp = apc_fetch($id);
-        if (is_array($tmp)) {
-            return $tmp[1];
-        }
-        return false;
-    }
-
-    /**
-     * Save some string datas into a cache record
-     *
-     * Note : $data is always "string" (serialization is done by the
-     * core not by the backend)
-     *
-     * @param string $data datas to cache
-     * @param string $id cache id
-     * @param array $tags array of strings, the cache record will be tagged by each string entry
-     * @param int $specificLifetime if != false, set a specific lifetime for this cache record (null => infinite lifetime)
-     * @return boolean true if no problem
-     */
-    public function save($data, $id, $tags = array(), $specificLifetime = false)
-    {
-        $lifetime = $this->getLifetime($specificLifetime);
-        $result = apc_store($id, array($data, time(), $lifetime), $lifetime);
-        if (count($tags) > 0) {
-            $this->_log(self::TAGS_UNSUPPORTED_BY_SAVE_OF_APC_BACKEND);
-        }
-        return $result;
-    }
-
-    /**
-     * Remove a cache record
-     *
-     * @param  string $id cache id
-     * @return boolean true if no problem
-     */
-    public function remove($id)
-    {
-        return apc_delete($id);
-    }
-
-    /**
-     * Clean some cache records
-     *
-     * Available modes are :
-     * 'all' (default)  => remove all cache entries ($tags is not used)
-     * 'old'            => unsupported
-     * 'matchingTag'    => unsupported
-     * 'notMatchingTag' => unsupported
-     * 'matchingAnyTag' => unsupported
-     *
-     * @param  string $mode clean mode
-     * @param  array  $tags array of tags
-     * @throws Zend_Cache_Exception
-     * @return boolean true if no problem
-     */
-    public function clean($mode = Zend_Cache::CLEANING_MODE_ALL, $tags = array())
-    {
-        switch ($mode) {
-            case Zend_Cache::CLEANING_MODE_ALL:
-                return apc_clear_cache('user');
-                break;
-            case Zend_Cache::CLEANING_MODE_OLD:
-                $this->_log("Zend_Cache_Backend_Apc::clean() : CLEANING_MODE_OLD is unsupported by the Apc backend");
-                break;
-            case Zend_Cache::CLEANING_MODE_MATCHING_TAG:
-            case Zend_Cache::CLEANING_MODE_NOT_MATCHING_TAG:
-            case Zend_Cache::CLEANING_MODE_MATCHING_ANY_TAG:
-                $this->_log(self::TAGS_UNSUPPORTED_BY_CLEAN_OF_APC_BACKEND);
-                break;
-            default:
-                Zend_Cache::throwException('Invalid mode for clean() method');
-                break;
-        }
-    }
-
-    /**
-     * Return true if the automatic cleaning is available for the backend
-     *
-     * DEPRECATED : use getCapabilities() instead
-     * 
-     * @deprecated 
-     * @return boolean
-     */
-    public function isAutomaticCleaningAvailable()
-    {
-        return false;
-    }
-    
-    /**
-     * Return the filling percentage of the backend storage
-     * 
-     * @throws Zend_Cache_Exception
-     * @return int integer between 0 and 100
-     */
-    public function getFillingPercentage()
-    {
-        $mem = apc_sma_info(true);
-        $memSize    = $mem['num_seg'] * $mem['seg_size'];
-        $memAvailable= $mem['avail_mem'];
-        $memUsed = $memSize - $memAvailable;
-        if ($memSize == 0) {
-            Zend_Cache::throwException('can\'t get apc memory size');
-        }
-        if ($memUsed > $memSize) {
-            return 100;
-        }
-        return ((int) (100. * ($memUsed / $memSize)));
-    }
-    
-    /**
-     * Return an array of stored tags
-     *
-     * @return array array of stored tags (string)
-     */
-    public function getTags()
-    {   
-        $this->_log(self::TAGS_UNSUPPORTED_BY_SAVE_OF_APC_BACKEND);
-        return array();
-    }
-    
-    /**
-     * Return an array of stored cache ids which match given tags
-     * 
-     * In case of multiple tags, a logical AND is made between tags
-     *
-     * @param array $tags array of tags
-     * @return array array of matching cache ids (string)
-     */
-    public function getIdsMatchingTags($tags = array())
-    {
-        $this->_log(self::TAGS_UNSUPPORTED_BY_SAVE_OF_APC_BACKEND);
-        return array();               
-    }
-
-    /**
-     * Return an array of stored cache ids which don't match given tags
-     * 
-     * In case of multiple tags, a logical OR is made between tags
-     *
-     * @param array $tags array of tags
-     * @return array array of not matching cache ids (string)
-     */    
-    public function getIdsNotMatchingTags($tags = array())
-    {
-        $this->_log(self::TAGS_UNSUPPORTED_BY_SAVE_OF_APC_BACKEND);
-        return array();         
-    }
-    
-    /**
-     * Return an array of stored cache ids which match any given tags
-     * 
-     * In case of multiple tags, a logical AND is made between tags
-     *
-     * @param array $tags array of tags
-     * @return array array of any matching cache ids (string)
-     */
-    public function getIdsMatchingAnyTags($tags = array())
-    {
-        $this->_log(self::TAGS_UNSUPPORTED_BY_SAVE_OF_APC_BACKEND);
-        return array();         
-    }
-    
-    /**
-     * Return an array of stored cache ids
-     * 
-     * @return array array of stored cache ids (string)
-     */
-    public function getIds()
-    {
-        $res = array();
-        $array = apc_cache_info('user', false);
-        $records = $array['cache_list'];
-        foreach ($records as $record) {
-            $res[] = $record['info'];
-        }
-        return $res;
-    }
-    
-    /**
-     * Return an array of metadatas for the given cache id
-     *
-     * The array must include these keys :
-     * - expire : the expire timestamp
-     * - tags : a string array of tags
-     * - mtime : timestamp of last modification time
-     * 
-     * @param string $id cache id
-     * @return array array of metadatas (false if the cache id is not found)
-     */
-    public function getMetadatas($id)
-    {
-        $tmp = apc_fetch($id);
-        if (is_array($tmp)) {
-            $data = $tmp[0];
-            $mtime = $tmp[1];
-            if (!isset($tmp[2])) {
-                // because this record is only with 1.7 release
-                // if old cache records are still there...
-                return false;
-            }
-            $lifetime = $tmp[2];
-            return array(
-                'expire' => $mtime + $lifetime,
-                'tags' => array(),
-                'mtime' => $mtime
-            );
-        }
-        return false;  
-    }
-    
-    /**
-     * Give (if possible) an extra lifetime to the given cache id
-     *
-     * @param string $id cache id
-     * @param int $extraLifetime
-     * @return boolean true if ok
-     */
-    public function touch($id, $extraLifetime)
-    {
-        $tmp = apc_fetch($id);
-        if (is_array($tmp)) {
-            $data = $tmp[0];
-            $mtime = $tmp[1];
-            if (!isset($tmp[2])) {
-                // because this record is only with 1.7 release
-                // if old cache records are still there...
-                return false;
-            }
-            $lifetime = $tmp[2];
-            $newLifetime = $lifetime - (time() - $mtime) + $extraLifetime;
-            if ($newLifetime <=0) {
-                return false; 
-            }
-            apc_store($id, array($data, time(), $newLifetime), $newLifetime);
-            return true;
-        }
-        return false;
-    }
-    
-    /**
-     * Return an associative array of capabilities (booleans) of the backend
-     * 
-     * The array must include these keys :
-     * - automatic_cleaning (is automating cleaning necessary)
-     * - tags (are tags supported)
-     * - expired_read (is it possible to read expired cache records
-     *                 (for doNotTestCacheValidity option for example))
-     * - priority does the backend deal with priority when saving
-     * - infinite_lifetime (is infinite lifetime can work with this backend)
-     * - get_list (is it possible to get the list of cache ids and the complete list of tags)
-     * 
-     * @return array associative of with capabilities
-     */
-    public function getCapabilities()
-    {
-        return array(
-            'automatic_cleaning' => false,
-            'tags' => false,
-            'expired_read' => false,
-            'priority' => false,
-            'infinite_lifetime' => false,
-            'get_list' => true
-        );
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+XV69JCuOOv1ajHY/OLmdDjGIkDjZp8q=

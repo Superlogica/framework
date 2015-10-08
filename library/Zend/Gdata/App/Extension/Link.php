@@ -1,218 +1,69 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage App
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * @see Zend_Gdata_Extension
- */
-require_once 'Zend/Gdata/Extension.php';
-
-/**
- * Data model for representing an atom:link element
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage App
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Gdata_App_Extension_Link extends Zend_Gdata_App_Extension
-{
-
-    protected $_rootElement = 'link';
-    protected $_href = null;
-    protected $_rel = null;
-    protected $_type = null;
-    protected $_hrefLang = null;
-    protected $_title = null;
-    protected $_length = null;
-
-    public function __construct($href = null, $rel = null, $type = null,
-            $hrefLang = null, $title = null, $length = null)
-    {
-        parent::__construct();
-        $this->_href = $href;
-        $this->_rel = $rel;
-        $this->_type = $type;
-        $this->_hrefLang = $hrefLang;
-        $this->_title = $title;
-        $this->_length = $length;
-    }
-
-    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
-    {
-        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
-        if ($this->_href !== null) {
-            $element->setAttribute('href', $this->_href);
-        }
-        if ($this->_rel !== null) {
-            $element->setAttribute('rel', $this->_rel);
-        }
-        if ($this->_type !== null) {
-            $element->setAttribute('type', $this->_type);
-        }
-        if ($this->_hrefLang !== null) {
-            $element->setAttribute('hreflang', $this->_hrefLang);
-        }
-        if ($this->_title !== null) {
-            $element->setAttribute('title', $this->_title);
-        }
-        if ($this->_length !== null) {
-            $element->setAttribute('length', $this->_length);
-        }
-        return $element;
-    }
-
-    protected function takeAttributeFromDOM($attribute)
-    {
-        switch ($attribute->localName) {
-        case 'href':
-            $this->_href = $attribute->nodeValue;
-            break;
-        case 'rel':
-            $this->_rel = $attribute->nodeValue;
-            break;
-        case 'type':
-            $this->_type = $attribute->nodeValue;
-            break;
-        case 'hreflang':
-            $this->_hrefLang = $attribute->nodeValue;
-            break;
-        case 'title':
-            $this->_title = $attribute->nodeValue;
-            break;
-        case 'length':
-            $this->_length = $attribute->nodeValue;
-            break;
-        default:
-            parent::takeAttributeFromDOM($attribute);
-        }
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getHref()
-    {
-        return $this->_href;
-    }
-
-    /**
-     * @param string|null $value
-     * @return Zend_Gdata_App_Entry Provides a fluent interface
-     */
-    public function setHref($value)
-    {
-        $this->_href = $value;
-        return $this;
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getRel()
-    {
-        return $this->_rel;
-    }
-
-    /**
-     * @param string|null $value
-     * @return Zend_Gdata_App_Entry Provides a fluent interface
-     */
-    public function setRel($value)
-    {
-        $this->_rel = $value;
-        return $this;
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getType()
-    {
-        return $this->_type;
-    }
-
-    /**
-     * @param string|null $value
-     * @return Zend_Gdata_App_Entry Provides a fluent interface
-     */
-    public function setType($value)
-    {
-        $this->_type = $value;
-        return $this;
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getHrefLang()
-    {
-        return $this->_hrefLang;
-    }
-
-    /**
-     * @param string|null $value
-     * @return Zend_Gdata_App_Entry Provides a fluent interface
-     */
-    public function setHrefLang($value)
-    {
-        $this->_hrefLang = $value;
-        return $this;
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getTitle()
-    {
-        return $this->_title;
-    }
-
-    /**
-     * @param string|null $value
-     * @return Zend_Gdata_App_Entry Provides a fluent interface
-     */
-    public function setTitle($value)
-    {
-        $this->_title = $value;
-        return $this;
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getLength()
-    {
-        return $this->_length;
-    }
-
-    /**
-     * @param string|null $value
-     * @return Zend_Gdata_App_Entry Provides a fluent interface
-     */
-    public function setLength($value)
-    {
-        $this->_length = $value;
-        return $this;
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

@@ -1,174 +1,57 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Soap
- * @subpackage Wsdl
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id$
- */
-
-class Zend_Soap_Wsdl_Strategy_Composite implements Zend_Soap_Wsdl_Strategy_Interface
-{
-    /**
-     * Typemap of Complex Type => Strategy pairs.
-     *
-     * @var array
-     */
-    protected $_typeMap = array();
-
-    /**
-     * Default Strategy of this composite
-     *
-     * @var string|Zend_Soap_Wsdl_Strategy_Interface
-     */
-    protected $_defaultStrategy;
-
-    /**
-     * Context WSDL file that this composite serves
-     *
-     * @var Zend_Soap_Wsdl|null
-     */
-    protected $_context;
-
-    /**
-     * Construct Composite WSDL Strategy.
-     *
-     * @throws Zend_Soap_Wsdl_Exception
-     * @param array $typeMap
-     * @param string|Zend_Soap_Wsdl_Strategy_Interface $defaultStrategy
-     */
-    public function __construct(array $typeMap=array(), $defaultStrategy="Zend_Soap_Wsdl_Strategy_DefaultComplexType")
-    {
-        foreach($typeMap AS $type => $strategy) {
-            $this->connectTypeToStrategy($type, $strategy);
-        }
-        $this->_defaultStrategy = $defaultStrategy;
-    }
-
-    /**
-     * Connect a complex type to a given strategy.
-     *
-     * @throws Zend_Soap_Wsdl_Exception
-     * @param  string $type
-     * @param  string|Zend_Soap_Wsdl_Strategy_Interface $strategy
-     * @return Zend_Soap_Wsdl_Strategy_Composite
-     */
-    public function connectTypeToStrategy($type, $strategy)
-    {
-        if(!is_string($type)) {
-            /**
-             * @see Zend_Soap_Wsdl_Exception
-             */
-            require_once "Zend/Soap/Wsdl/Exception.php";
-            throw new Zend_Soap_Wsdl_Exception("Invalid type given to Composite Type Map.");
-        }
-        $this->_typeMap[$type] = $strategy;
-        return $this;
-    }
-
-    /**
-     * Return default strategy of this composite
-     *
-     * @throws Zend_Soap_Wsdl_Exception
-     * @param  string $type
-     * @return Zend_Soap_Wsdl_Strategy_Interface
-     */
-    public function getDefaultStrategy()
-    {
-        $strategy = $this->_defaultStrategy;
-        if(is_string($strategy) && class_exists($strategy)) {
-            $strategy = new $strategy;
-        }
-        if( !($strategy instanceof Zend_Soap_Wsdl_Strategy_Interface) ) {
-            /**
-             * @see Zend_Soap_Wsdl_Exception
-             */
-            require_once "Zend/Soap/Wsdl/Exception.php";
-            throw new Zend_Soap_Wsdl_Exception(
-                "Default Strategy for Complex Types is not a valid strategy object."
-            );
-        }
-        $this->_defaultStrategy = $strategy;
-        return $strategy;
-    }
-
-    /**
-     * Return specific strategy or the default strategy of this type.
-     *
-     * @throws Zend_Soap_Wsdl_Exception
-     * @param  string $type
-     * @return Zend_Soap_Wsdl_Strategy_Interface
-     */
-    public function getStrategyOfType($type)
-    {
-        if(isset($this->_typeMap[$type])) {
-            $strategy = $this->_typeMap[$type];
-
-            if(is_string($strategy) && class_exists($strategy)) {
-                $strategy = new $strategy();
-            }
-
-            if( !($strategy instanceof Zend_Soap_Wsdl_Strategy_Interface) ) {
-                /**
-                 * @see Zend_Soap_Wsdl_Exception
-                 */
-                require_once "Zend/Soap/Wsdl/Exception.php";
-                throw new Zend_Soap_Wsdl_Exception(
-                    "Strategy for Complex Type '".$type."' is not a valid strategy object."
-                );
-            }
-            $this->_typeMap[$type] = $strategy;
-        } else {
-            $strategy = $this->getDefaultStrategy();
-        }
-        return $strategy;
-    }
-
-    /**
-     * Method accepts the current WSDL context file.
-     *
-     * @param Zend_Soap_Wsdl $context
-     */
-    public function setContext(Zend_Soap_Wsdl $context)
-    {
-        $this->_context = $context;
-        return $this;
-    }
-
-    /**
-     * Create a complex type based on a strategy
-     *
-     * @throws Zend_Soap_Wsdl_Exception
-     * @param  string $type
-     * @return string XSD type
-     */
-    public function addComplexType($type)
-    {
-        if(!($this->_context instanceof Zend_Soap_Wsdl) ) {
-            /**
-             * @see Zend_Soap_Wsdl_Exception
-             */
-            require_once "Zend/Soap/Wsdl/Exception.php";
-            throw new Zend_Soap_Wsdl_Exception(
-                "Cannot add complex type '".$type."', no context is set for this composite strategy."
-            );
-        }
-
-        $strategy = $this->getStrategyOfType($type);
-        $strategy->setContext($this->_context);
-        return $strategy->addComplexType($type);
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

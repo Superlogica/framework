@@ -1,160 +1,93 @@
-<?php
-
-require_once 'Zend/Tool/Project/Context/System/Interface.php';
-require_once 'Zend/Tool/Project/Context/System/TopLevelRestrictable.php';
-require_once 'Zend/Tool/Project/Context/System/NotOverwritable.php';
-
-class Zend_Tool_Project_Context_Repository implements Countable
-{
-    
-    protected static $_instance = null;
-    protected static $_isInitialized = false;
-    
-    protected $_shortContextNames = array();
-    protected $_contexts          = array();
-    
-    /**
-     * Enter description here...
-     *
-     * @return Zend_Tool_Project_Context_Repository
-     */
-    public static function getInstance()
-    {
-        if (self::$_instance == null) {
-            self::$_instance = new self();
-        }
-        
-        return self::$_instance;
-    }
-    
-    public static function resetInstance()
-    {
-        self::$_instance = null;
-        self::$_isInitialized = false;
-    }
-    
-    protected function __construct()
-    {
-        if (self::$_isInitialized == false) {
-            $this->addContextClass('Zend_Tool_Project_Context_System_ProjectDirectory')
-                 ->addContextClass('Zend_Tool_Project_Context_System_ProjectProfileFile')
-                 ->addContextClass('Zend_Tool_Project_Context_System_ProjectProvidersDirectory');
-            self::$_isInitialized = true;
-        }
-    }
-    
-    public function addContextsFromDirectory($directory, $prefix)
-    {
-        $prefix = trim($prefix, '_') . '_';
-        foreach (new DirectoryIterator($directory) as $directoryItem) {
-            if ($directoryItem->isDot() || (substr($directoryItem->getFilename(), -4) !== '.php')) {
-                continue;
-            }
-            $class = $prefix . substr($directoryItem->getFilename(), 0, -4);
-            $this->addContextClass($class);
-        }
-    }
-    
-    
-    public function addContextClass($contextClass)
-    {
-        if (!class_exists($contextClass)) {
-            require_once 'Zend/Loader.php';
-            Zend_Loader::loadClass($contextClass);
-        }
-        $context = new $contextClass();
-        return $this->addContext($context);
-    }
-    
-    /**
-     * Enter description here...
-     *
-     * @param Zend_Tool_Project_Context_Interface $context
-     * @return Zend_Tool_Project_Context_Repository
-     */
-    public function addContext(Zend_Tool_Project_Context_Interface $context)
-    {
-        $isSystem       = ($context instanceof Zend_Tool_Project_Context_System_Interface);
-        $isTopLevel     = ($context instanceof Zend_Tool_Project_Context_System_TopLevelRestrictable);
-        $isOverwritable = !($context instanceof Zend_Tool_Project_Context_System_NotOverwritable);
-        
-        $index = (count($this->_contexts)) ? max(array_keys($this->_contexts)) + 1 : 1;
-        
-        $normalName = $this->_normalizeName($context->getName());
-        
-        if (isset($this->_shortContextNames[$normalName]) && ($this->_contexts[$this->_shortContextNames[$normalName]]['isOverwritable'] === false) ) {
-            require_once 'Zend/Tool/Project/Context/Exception.php';
-            throw new Zend_Tool_Project_Context_Exception('Context ' . $context->getName() . ' is not overwriteable.');
-        }
-        
-        $this->_shortContextNames[$normalName] = $index;
-        $this->_contexts[$index] = array(
-            'isTopLevel'     => $isTopLevel,
-            'isSystem'       => $isSystem,
-            'isOverwritable' => $isOverwritable,
-            'normalName'     => $normalName,
-            'context'        => $context
-            );
-        
-        return $this;
-    }
-    
-    public function getContext($name)
-    {        
-        if (!$this->hasContext($name)) {
-            require_once 'Zend/Tool/Project/Context/Exception.php';
-            throw new Zend_Tool_Project_Context_Exception('Context by name ' . $name . ' does not exist in the registry.');
-        }
-        
-        $name = $this->_normalizeName($name);
-        return clone $this->_contexts[$this->_shortContextNames[$name]]['context'];
-    }
-    
-    public function hasContext($name)
-    {
-        $name = $this->_normalizeName($name);
-        return (isset($this->_shortContextNames[$name]) ? true : false);
-    }
-    
-    public function isSystemContext($name)
-    {
-        if (!$this->hasContext($name)) {
-            return false;
-        }
-        
-        $name = $this->_normalizeName($name);
-        $index = $this->_shortContextNames[$name];
-        return $this->_contexts[$index]['isSystemContext'];
-    }
-    
-    public function isTopLevelContext($name)
-    {
-        if (!$this->hasContext($name)) {
-            return false;
-        }
-        $name = $this->_normalizeName($name);
-        $index = $this->_shortContextNames[$name];
-        return $this->_contexts[$index]['isTopLevel'];
-    }
-    
-    public function isOverwritableContext($name)
-    {
-        if (!$this->hasContext($name)) {
-            return false;
-        }
-        $name = $this->_normalizeName($name);
-        $index = $this->_shortContextNames[$name];
-        return $this->_contexts[$index]['isOverwritable'];
-    }
-    
-    public function count()
-    {
-        return count($this->_contexts);
-    }
-    
-    protected function _normalizeName($name)
-    {
-        return strtolower($name);
-    }
-    
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+SZ74yVlHBeJJl/q9Lw/nhufHDQ8=

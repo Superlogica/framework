@@ -1,250 +1,54 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category  Zend
- * @package   Zend_Measure
- * @copyright Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   http://framework.zend.com/license/new-bsd     New BSD License
- * @version   $Id: Pressure.php 13209 2008-12-13 22:34:06Z thomas $
- */
-
-/**
- * Implement needed classes
- */
-require_once 'Zend/Measure/Abstract.php';
-require_once 'Zend/Locale.php';
-
-/**
- * Class for handling pressure conversions
- *
- * @category   Zend
- * @package    Zend_Measure
- * @subpackage Zend_Measure_Pressure
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Measure_Pressure extends Zend_Measure_Abstract
-{
-    const STANDARD = 'NEWTON_PER_SQUARE_METER';
-
-    const ATMOSPHERE                           = 'ATMOSPHERE';
-    const ATMOSPHERE_TECHNICAL                 = 'ATMOSPHERE_TECHNICAL';
-    const ATTOBAR                              = 'ATTOBAR';
-    const ATTOPASCAL                           = 'ATTOPASCAL';
-    const BAR                                  = 'BAR';
-    const BARAD                                = 'BARAD';
-    const BARYE                                = 'BARYE';
-    const CENTIBAR                             = 'CENTIBAR';
-    const CENTIHG                              = 'CENTIHG';
-    const CENTIMETER_MERCURY_0C                = 'CENTIMETER_MERCURY_0C';
-    const CENTIMETER_WATER_4C                  = 'CENTIMETER_WATER_4C';
-    const CENTIPASCAL                          = 'CENTIPASCAL';
-    const CENTITORR                            = 'CENTITORR';
-    const DECIBAR                              = 'DECIBAR';
-    const DECIPASCAL                           = 'DECIPASCAL';
-    const DECITORR                             = 'DECITORR';
-    const DEKABAR                              = 'DEKABAR';
-    const DEKAPASCAL                           = 'DEKAPASCAL';
-    const DYNE_PER_SQUARE_CENTIMETER           = 'DYNE_PER_SQUARE_CENTIMETER';
-    const EXABAR                               = 'EXABAR';
-    const EXAPASCAL                            = 'EXAPASCAL';
-    const FEMTOBAR                             = 'FEMTOBAR';
-    const FEMTOPASCAL                          = 'FEMTOPASCAL';
-    const FOOT_AIR_0C                          = 'FOOT_AIR_0C';
-    const FOOT_AIR_15C                         = 'FOOT_AIR_15C';
-    const FOOT_HEAD                            = 'FOOT_HEAD';
-    const FOOT_MERCURY_0C                      = 'FOOT_MERCURY_0C';
-    const FOOT_WATER_4C                        = 'FOOT_WATER_4C';
-    const GIGABAR                              = 'GIGABAR';
-    const GIGAPASCAL                           = 'GIGAPASCAL';
-    const GRAM_FORCE_SQUARE_CENTIMETER         = 'GRAM_FORCE_SQUARE_CENTIMETER';
-    const HECTOBAR                             = 'HECTOBAR';
-    const HECTOPASCAL                          = 'HECTOPASCAL';
-    const INCH_AIR_0C                          = 'INCH_AIR_0C';
-    const INCH_AIR_15C                         = 'INCH_AIR_15C';
-    const INCH_MERCURY_0C                      = 'INCH_MERCURY_0C';
-    const INCH_WATER_4C                        = 'INCH_WATER_4C';
-    const KILOBAR                              = 'KILOBAR';
-    const KILOGRAM_FORCE_PER_SQUARE_CENTIMETER = 'KILOGRAM_FORCE_PER_SQUARE_CENTIMETER';
-    const KILOGRAM_FORCE_PER_SQUARE_METER      = 'KILOGRAM_FORCE_PER_SQUARE_METER';
-    const KILOGRAM_FORCE_PER_SQUARE_MILLIMETER = 'KILOGRAM_FORCE_PER_SQUARE_MILLIMETER';
-    const KILONEWTON_PER_SQUARE_METER          = 'KILONEWTON_PER_SQUARE_METER';
-    const KILOPASCAL                           = 'KILOPASCAL';
-    const KILOPOND_PER_SQUARE_CENTIMETER       = 'KILOPOND_PER_SQUARE_CENTIMETER';
-    const KILOPOND_PER_SQUARE_METER            = 'KILOPOND_PER_SQUARE_METER';
-    const KILOPOND_PER_SQUARE_MILLIMETER       = 'KILOPOND_PER_SQUARE_MILLIMETER';
-    const KIP_PER_SQUARE_FOOT                  = 'KIP_PER_SQUARE_FOOT';
-    const KIP_PER_SQUARE_INCH                  = 'KIP_PER_SQUARE_INCH';
-    const MEGABAR                              = 'MEGABAR';
-    const MEGANEWTON_PER_SQUARE_METER          = 'MEGANEWTON_PER_SQUARE_METER';
-    const MEGAPASCAL                           = 'MEGAPASCAL';
-    const METER_AIR_0C                         = 'METER_AIR_0C';
-    const METER_AIR_15C                        = 'METER_AIR_15C';
-    const METER_HEAD                           = 'METER_HEAD';
-    const MICROBAR                             = 'MICROBAR';
-    const MICROMETER_MERCURY_0C                = 'MICROMETER_MERCURY_0C';
-    const MICROMETER_WATER_4C                  = 'MICROMETER_WATER_4C';
-    const MICRON_MERCURY_0C                    = 'MICRON_MERCURY_0C';
-    const MICROPASCAL                          = 'MICROPASCAL';
-    const MILLIBAR                             = 'MILLIBAR';
-    const MILLIHG                              = 'MILLIHG';
-    const MILLIMETER_MERCURY_0C                = 'MILLIMETER_MERCURY_0C';
-    const MILLIMETER_WATER_4C                  = 'MILLIMETER_WATER_4C';
-    const MILLIPASCAL                          = 'MILLIPASCAL';
-    const MILLITORR                            = 'MILLITORR';
-    const NANOBAR                              = 'NANOBAR';
-    const NANOPASCAL                           = 'NANOPASCAL';
-    const NEWTON_PER_SQUARE_METER              = 'NEWTON_PER_SQUARE_METER';
-    const NEWTON_PER_SQUARE_MILLIMETER         = 'NEWTON_PER_SQUARE_MILLIMETER';
-    const OUNCE_PER_SQUARE_INCH                = 'OUNCE_PER_SQUARE_INCH';
-    const PASCAL                               = 'PASCAL';
-    const PETABAR                              = 'PETABAR';
-    const PETAPASCAL                           = 'PETAPASCAL';
-    const PICOBAR                              = 'PICOBAR';
-    const PICOPASCAL                           = 'PICOPASCAL';
-    const PIEZE                                = 'PIEZE';
-    const POUND_PER_SQUARE_FOOT                = 'POUND_PER_SQUARE_FOOT';
-    const POUND_PER_SQUARE_INCH                = 'POUND_PER_SQUARE_INCH';
-    const POUNDAL_PER_SQUARE_FOOT              = 'POUNDAL_PER_SQUARE_FOOT';
-    const STHENE_PER_SQUARE_METER              = 'STHENE_PER_SQUARE_METER';
-    const TECHNICAL_ATMOSPHERE                 = 'TECHNICAL_ATMOSPHERE';
-    const TERABAR                              = 'TERABAR';
-    const TERAPASCAL                           = 'TERAPASCAL';
-    const TON_PER_SQUARE_FOOT                  = 'TON_PER_SQUARE_FOOT';
-    const TON_PER_SQUARE_FOOT_SHORT            = 'TON_PER_SQUARE_FOOT_SHORT';
-    const TON_PER_SQUARE_INCH                  = 'TON_PER_SQUARE_INCH';
-    const TON_PER_SQUARE_INCH_SHORT            = 'TON_PER_SQUARE_INCH_SHORT';
-    const TON_PER_SQUARE_METER                 = 'TON_PER_SQUARE_METER';
-    const TORR                                 = 'TORR';
-    const WATER_COLUMN_CENTIMETER              = 'WATER_COLUMN_CENTIMETER';
-    const WATER_COLUMN_INCH                    = 'WATER_COLUMN_INCH';
-    const WATER_COLUMN_MILLIMETER              = 'WATER_COLUMN_MILLIMETER';
-    const YOCTOBAR                             = 'YOCTOBAR';
-    const YOCTOPASCAL                          = 'YOCTOPASCAL';
-    const YOTTABAR                             = 'YOTTABAR';
-    const YOTTAPASCAL                          = 'YOTTAPASCAL';
-    const ZEPTOBAR                             = 'ZEPTOBAR';
-    const ZEPTOPASCAL                          = 'ZEPTOPASCAL';
-    const ZETTABAR                             = 'ZETTABAR';
-    const ZETTAPASCAL                          = 'ZETTAPASCAL';
-
-    /**
-     * Calculations for all pressure units
-     *
-     * @var array
-     */
-    protected $_units = array(
-        'ATMOSPHERE'            => array('101325.01', 'atm'),
-        'ATMOSPHERE_TECHNICAL'  => array('98066.5',   'atm'),
-        'ATTOBAR'               => array('1.0e-13',   'ab'),
-        'ATTOPASCAL'            => array('1.0e-18',   'aPa'),
-        'BAR'                   => array('100000',    'b'),
-        'BARAD'                 => array('0.1',       'barad'),
-        'BARYE'                 => array('0.1',       'ba'),
-        'CENTIBAR'              => array('1000',      'cb'),
-        'CENTIHG'               => array('1333.2239', 'cHg'),
-        'CENTIMETER_MERCURY_0C' => array('1333.2239', 'cm mercury (0°C)'),
-        'CENTIMETER_WATER_4C'   => array('98.0665',   'cm water (4°C)'),
-        'CENTIPASCAL'           => array('0.01',      'cPa'),
-        'CENTITORR'             => array('1.3332237', 'cTorr'),
-        'DECIBAR'               => array('10000',     'db'),
-        'DECIPASCAL'            => array('0.1',       'dPa'),
-        'DECITORR'              => array('13.332237', 'dTorr'),
-        'DEKABAR'               => array('1000000',   'dab'),
-        'DEKAPASCAL'            => array('10',        'daPa'),
-        'DYNE_PER_SQUARE_CENTIMETER' => array('0.1',  'dyn/cm²'),
-        'EXABAR'                => array('1.0e+23',   'Eb'),
-        'EXAPASCAL'             => array('1.0e+18',   'EPa'),
-        'FEMTOBAR'              => array('1.0e-10',   'fb'),
-        'FEMTOPASCAL'           => array('1.0e-15',   'fPa'),
-        'FOOT_AIR_0C'           => array('3.8640888', 'ft air (0°C)'),
-        'FOOT_AIR_15C'          => array('3.6622931', 'ft air (15°C)'),
-        'FOOT_HEAD'             => array('2989.0669', 'ft head'),
-        'FOOT_MERCURY_0C'       => array('40636.664', 'ft mercury (0°C)'),
-        'FOOT_WATER_4C'         => array('2989.0669', 'ft water (4°C)'),
-        'GIGABAR'               => array('1.0e+14',   'Gb'),
-        'GIGAPASCAL'            => array('1.0e+9',    'GPa'),
-        'GRAM_FORCE_SQUARE_CENTIMETER' => array('98.0665', 'gf'),
-        'HECTOBAR'              => array('1.0e+7',    'hb'),
-        'HECTOPASCAL'           => array('100',       'hPa'),
-        'INCH_AIR_0C'           => array(array('' => '3.8640888', '/' => '12'), 'in air (0°C)'),
-        'INCH_AIR_15C'          => array(array('' => '3.6622931', '/' => '12'), 'in air (15°C)'),
-        'INCH_MERCURY_0C'       => array(array('' => '40636.664', '/' => '12'), 'in mercury (0°C)'),
-        'INCH_WATER_4C'         => array(array('' => '2989.0669', '/' => '12'), 'in water (4°C)'),
-        'KILOBAR'               => array('1.0e+8',    'kb'),
-        'KILOGRAM_FORCE_PER_SQUARE_CENTIMETER' => array('98066.5', 'kgf/cm²'),
-        'KILOGRAM_FORCE_PER_SQUARE_METER'      => array('9.80665', 'kgf/m²'),
-        'KILOGRAM_FORCE_PER_SQUARE_MILLIMETER' => array('9806650', 'kgf/mm²'),
-        'KILONEWTON_PER_SQUARE_METER'          => array('1000',    'kN/m²'),
-        'KILOPASCAL'            => array('1000',      'kPa'),
-        'KILOPOND_PER_SQUARE_CENTIMETER' => array('98066.5', 'kp/cm²'),
-        'KILOPOND_PER_SQUARE_METER'      => array('9.80665', 'kp/m²'),
-        'KILOPOND_PER_SQUARE_MILLIMETER' => array('9806650', 'kp/mm²'),
-        'KIP_PER_SQUARE_FOOT'   => array(array('' => '430.92233', '/' => '0.009'),   'kip/ft²'),
-        'KIP_PER_SQUARE_INCH'   => array(array('' => '62052.81552', '/' => '0.009'), 'kip/in²'),
-        'MEGABAR'               => array('1.0e+11',    'Mb'),
-        'MEGANEWTON_PER_SQUARE_METER' => array('1000000', 'MN/m²'),
-        'MEGAPASCAL'            => array('1000000',    'MPa'),
-        'METER_AIR_0C'          => array('12.677457',  'm air (0°C)'),
-        'METER_AIR_15C'         => array('12.015397',  'm air (15°C)'),
-        'METER_HEAD'            => array('9804.139432', 'm head'),
-        'MICROBAR'              => array('0.1',        'µb'),
-        'MICROMETER_MERCURY_0C' => array('0.13332239', 'µm mercury (0°C)'),
-        'MICROMETER_WATER_4C'   => array('0.00980665', 'µm water (4°C)'),
-        'MICRON_MERCURY_0C'     => array('0.13332239', 'µ mercury (0°C)'),
-        'MICROPASCAL'           => array('0.000001',   'µPa'),
-        'MILLIBAR'              => array('100',        'mb'),
-        'MILLIHG'               => array('133.32239',  'mHg'),
-        'MILLIMETER_MERCURY_0C' => array('133.32239',  'mm mercury (0°C)'),
-        'MILLIMETER_WATER_4C'   => array('9.80665',    'mm water (0°C)'),
-        'MILLIPASCAL'           => array('0.001',      'mPa'),
-        'MILLITORR'             => array('0.13332237', 'mTorr'),
-        'NANOBAR'               => array('0.0001',     'nb'),
-        'NANOPASCAL'            => array('1.0e-9',     'nPa'),
-        'NEWTON_PER_SQUARE_METER'      => array('1',   'N/m²'),
-        'NEWTON_PER_SQUARE_MILLIMETER' => array('1000000',   'N/mm²'),
-        'OUNCE_PER_SQUARE_INCH'        => array('430.92233', 'oz/in²'),
-        'PASCAL'                => array('1',          'Pa'),
-        'PETABAR'               => array('1.0e+20',    'Pb'),
-        'PETAPASCAL'            => array('1.0e+15',    'PPa'),
-        'PICOBAR'               => array('0.0000001',  'pb'),
-        'PICOPASCAL'            => array('1.0e-12',    'pPa'),
-        'PIEZE'                 => array('1000',       'pz'),
-        'POUND_PER_SQUARE_FOOT' => array(array('' => '430.92233', '/' => '9'), 'lb/ft²'),
-        'POUND_PER_SQUARE_INCH' => array('6894.75728', 'lb/in²'),
-        'POUNDAL_PER_SQUARE_FOOT' => array('1.4881639', 'pdl/ft²'),
-        'STHENE_PER_SQUARE_METER' => array('1000',     'sn/m²'),
-        'TECHNICAL_ATMOSPHERE'  => array('98066.5',    'at'),
-        'TERABAR'               => array('1.0e+17',    'Tb'),
-        'TERAPASCAL'            => array('1.0e+12',    'TPa'),
-        'TON_PER_SQUARE_FOOT'   => array(array('' => '120658.2524', '/' => '1.125'),      't/ft²'),
-        'TON_PER_SQUARE_FOOT_SHORT' => array(array('' => '430.92233', '/' => '0.0045'),   't/ft²'),
-        'TON_PER_SQUARE_INCH'   => array(array('' => '17374788.3456', '/' => '1.125'),    't/in²'),
-        'TON_PER_SQUARE_INCH_SHORT' => array(array('' => '62052.81552', '/' => '0.0045'), 't/in²'),
-        'TON_PER_SQUARE_METER'  => array('9806.65',    't/m²'),
-        'TORR'                  => array('133.32237',  'Torr'),
-        'WATER_COLUMN_CENTIMETER' => array('98.0665',  'WC (cm)'),
-        'WATER_COLUMN_INCH'       => array(array('' => '2989.0669', '/' => '12'), 'WC (in)'),
-        'WATER_COLUMN_MILLIMETER' => array('9.80665',  'WC (mm)'),
-        'YOCTOBAR'              => array('1.0e-19',    'yb'),
-        'YOCTOPASCAL'           => array('1.0e-24',    'yPa'),
-        'YOTTABAR'              => array('1.0e+29',    'Yb'),
-        'YOTTAPASCAL'           => array('1.0e+24',    'YPa'),
-        'ZEPTOBAR'              => array('1.0e-16',    'zb'),
-        'ZEPTOPASCAL'           => array('1.0e-21',    'zPa'),
-        'ZETTABAR'              => array('1.0e+26',    'Zb'),
-        'ZETTAPASCAL'           => array('1.0e+21',    'ZPa'),
-        'STANDARD'              => 'NEWTON_PER_SQUARE_METER'
-    );
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

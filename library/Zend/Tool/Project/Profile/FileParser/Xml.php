@@ -1,223 +1,88 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Tool
- * @subpackage Framework
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id$
- */
-
-require_once 'Zend/Tool/Project/Profile/FileParser/Interface.php';
-require_once 'Zend/Tool/Project/Context/Repository.php';
-require_once 'Zend/Tool/Project/Profile.php';
-require_once 'Zend/Tool/Project/Profile/Resource.php';
-
-/**
- * @category   Zend
- * @package    Zend_Tool
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Tool_Project_Profile_FileParser_Xml implements Zend_Tool_Project_Profile_FileParser_Interface
-{
-    
-    /**
-     * @var Zend_Tool_Project_Profile
-     */
-    protected $_profile = null;
-    
-    /**
-     * @var Zend_Tool_Project_Context_Repository
-     */
-    protected $_contextRepository = null;
-
-    /**
-     * __construct()
-     *
-     */
-    public function __construct()
-    {
-        $this->_contextRepository = Zend_Tool_Project_Context_Repository::getInstance();
-    }
-    
-    /**
-     * serialize()
-     * 
-     * create an xml string from the provided profile
-     *
-     * @param Zend_Tool_Project_Profile $profile
-     * @return string
-     */
-    public function serialize(Zend_Tool_Project_Profile $profile)
-    {
-
-        $profile = clone $profile;
-        
-        $this->_profile = $profile;
-        $xmlElement = new SimpleXMLElement('<projectProfile />');
-
-        self::_serializeRecurser($profile, $xmlElement);            
-        
-        $doc = new DOMDocument('1.0');
-        $doc->formatOutput = true;
-        $domnode = dom_import_simplexml($xmlElement);
-        $domnode = $doc->importNode($domnode, true);
-        $domnode = $doc->appendChild($domnode);
-        
-        return $doc->saveXML();
-    }
-    
-    /**
-     * unserialize() 
-     * 
-     * Create a structure in the object $profile from the structure specficied
-     * in the xml string provided
-     * 
-     * @param string xml data
-     * @param Zend_Tool_Project_Profile The profile to use as the top node
-     * @return Zend_Tool_Project_Profile
-     */
-    public function unserialize($data, Zend_Tool_Project_Profile $profile)
-    {
-        if ($data == null) {
-            throw new Exception('contents not available to unserialize.');
-        }
-
-        $this->_profile = $profile;
-        
-        $xmlDataIterator = new SimpleXMLIterator($data);
-
-        if ($xmlDataIterator->getName() != 'projectProfile') {
-            throw new Exception('Profiles must start with a projectProfile node');
-        }
-
-        
-        $this->_unserializeRecurser($xmlDataIterator);
-        
-        $this->_lazyLoadContexts();
-        
-        return $this->_profile;
-        
-    }
-
-    /**
-     * _serializeRecurser()
-     * 
-     * This method will be used to traverse the depths of the structure
-     * when *serializing* an xml structure into a string
-     *
-     * @param array $resources
-     * @param SimpleXmlElement $xmlNode
-     */
-    protected function _serializeRecurser($resources, SimpleXmlElement $xmlNode)
-    {
-        // @todo find a better way to handle concurrency.. if no clone, _position in node gets messed up
-        //if ($resources instanceof Zend_Tool_Project_Profile_Resource) {
-        //    $resources = clone $resources;
-        //}
-        
-        foreach ($resources as $resource) {
-            
-            if ($resource->isDeleted()) {
-                continue;
-            }
-            
-            $resourceName = $resource->getContext()->getName();
-            $resourceName[0] = strtolower($resourceName[0]);
-            
-            $newNode = $xmlNode->addChild($resourceName);
-
-            //$reflectionClass = new ReflectionClass($resource->getContext());
-
-            if ($resource->isEnabled() == false) {
-                $newNode->addAttribute('enabled', 'false');
-            }
-            
-            foreach ($resource->getPersistentAttributes() as $paramName => $paramValue) {
-                $newNode->addAttribute($paramName, $paramValue);
-            }
-
-            if ($resource->hasChildren()) {
-                self::_serializeRecurser($resource, $newNode);
-            }
-            
-        }
-
-    }
-    
-    
-    /**
-     * _unserializeRecurser()
-     * 
-     * This method will be used to traverse the depths of the structure
-     * as needed to *unserialize* the profile from an xmlIterator
-     *
-     * @param SimpleXMLIterator $xmlIterator
-     * @param Zend_Tool_Project_Profile_Resource $resource
-     */
-    protected function _unserializeRecurser(SimpleXMLIterator $xmlIterator, Zend_Tool_Project_Profile_Resource $resource = null)
-    {
-        
-        foreach ($xmlIterator as $resourceName => $resourceData) {
-            
-            $contextName = $resourceName;
-            $subResource = new Zend_Tool_Project_Profile_Resource($contextName);
-            $subResource->setProfile($this->_profile);
-
-            if ($resourceAttributes = $resourceData->attributes()) {
-                $attributes = array();
-                foreach ($resourceAttributes as $attrName => $attrValue) {
-                    $attributes[$attrName] = (string) $attrValue;
-                }
-                $subResource->setAttributes($attributes);
-            }
-            
-            if ($resource) {
-                $resource->append($subResource, false);
-            } else {
-                $this->_profile->append($subResource);
-            }
-
-            if ($this->_contextRepository->isOverwritableContext($contextName) == false) {
-                $subResource->initializeContext();
-            }
-            
-            if ($xmlIterator->hasChildren()) {
-                self::_unserializeRecurser($xmlIterator->getChildren(), $subResource);
-            }
-        }
-    }
-    
-    /**
-     * _lazyLoadContexts()
-     *
-     * This method will call initializeContext on the resources in a profile
-     * @todo determine if this method belongs inside the profile
-     * 
-     */
-    protected function _lazyLoadContexts()
-    {
-        
-        foreach ($this->_profile as $topResource) {
-            $rii = new RecursiveIteratorIterator($topResource, RecursiveIteratorIterator::SELF_FIRST);
-            foreach ($rii as $resource) {
-                $resource->initializeContext();
-            }
-        }
-
-    }
-    
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
++ChaAm==

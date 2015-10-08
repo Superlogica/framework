@@ -1,196 +1,62 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Crypt
- * @subpackage Math
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id$
- */
-
-/**
- * @see Zend_Crypt_Math_BigInteger_Interface
- */
-require_once 'Zend/Crypt/Math/BigInteger/Interface.php';
-
-/**
- * Support for arbitrary precision mathematics in PHP.
- *
- * Zend_Crypt_Math_BigInteger_Bcmath is a wrapper across the PHP BCMath
- * extension.
- *
- * @category   Zend
- * @package    Zend_Crypt
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Crypt_Math_BigInteger_Gmp implements Zend_Crypt_Math_BigInteger_Interface
-{
-
-    /**
-     * Initialise a big integer into an extension specific type.
-     * @param string $operand
-     * @param int $base
-     * @return string
-     */
-    public function init($operand, $base = 10)
-    {
-        return $operand;
-    }
-
-    /**
-     * Adds two arbitrary precision numbers
-     *
-     * @param string $left_operand
-     * @param string $right_operand
-     * @return string
-     */
-    public function add($left_operand, $right_operand)
-    {
-        $result = gmp_add($left_operand, $right_operand);
-        return gmp_strval($result);
-    }
-
-    /**
-     * @param string $left_operand
-     * @param string $right_operand
-     * @return string
-     */
-    public function subtract($left_operand, $right_operand)
-    {
-        $result = gmp_sub($left_operand, $right_operand);
-        return gmp_strval($result);
-    }
-
-    /**
-     * Compare two big integers and returns result as an integer where 0 means
-     * both are identical, 1 that left_operand is larger, or -1 that
-     * right_operand is larger.
-     * @param string $left_operand
-     * @param string $right_operand
-     * @return int
-     */
-    public function compare($left_operand, $right_operand)
-    {
-        $result = gmp_cmp($left_operand, $right_operand);
-        return gmp_strval($result);
-    }
-
-    /**
-     * Divide two big integers and return result or NULL if the denominator
-     * is zero.
-     * @param string $left_operand
-     * @param string $right_operand
-     * @return string|null
-     */
-    public function divide($left_operand, $right_operand)
-    {
-        $result = gmp_div($left_operand, $right_operand);
-        return gmp_strval($result);
-    }
-
-    /**
-     * @param string $left_operand
-     * @param string $right_operand
-     * @return string
-     */
-    public function modulus($left_operand, $modulus)
-    {
-        $result = gmp_mod($left_operand, $modulus);
-        return gmp_strval($result);
-    }
-
-    /**
-     * @param string $left_operand
-     * @param string $right_operand
-     * @return string
-     */
-    public function multiply($left_operand, $right_operand)
-    {
-        $result = gmp_mul($left_operand, $right_operand);
-        return gmp_strval($result);
-    }
-
-    /**
-     * @param string $left_operand
-     * @param string $right_operand
-     * @return string
-     */
-    public function pow($left_operand, $right_operand)
-    {
-        $result = gmp_pow($left_operand, $right_operand);
-        return gmp_strval($result);
-    }
-
-    /**
-     * @param string $left_operand
-     * @param string $right_operand
-     * @return string
-     */
-    public function powmod($left_operand, $right_operand, $modulus)
-    {
-        $result = gmp_powm($left_operand, $right_operand, $modulus);
-        return gmp_strval($result);
-    }
-
-    /**
-     * @param string $left_operand
-     * @param string $right_operand
-     * @return string
-     */
-    public function sqrt($operand)
-    {
-        $result = gmp_sqrt($operand);
-        return gmp_strval($result);
-    }
-
-
-    public function binaryToInteger($operand)
-    {
-        $result = '0';
-        while (strlen($operand)) {
-            $ord = ord(substr($operand, 0, 1));
-            $result = gmp_add(gmp_mul($result, 256), $ord);
-            $operand = substr($operand, 1);
-        }
-        return gmp_strval($result);
-    }
-
-
-    public function integerToBinary($operand)
-    {
-        $bigInt = gmp_strval($operand, 16);
-        if (strlen($bigInt) % 2 != 0) {
-            $bigInt = '0' . $bigInt;
-        } else if ($bigInt[0] > '7') {
-            $bigInt = '00' . $bigInt;
-        }
-        $return = pack("H*", $bigInt);
-        return $return;
-    }
-
-
-    public function hexToDecimal($operand)
-    {
-        $return = '0';
-        while(strlen($hex)) {
-            $hex = hexdec(substr($operand, 0, 4));
-            $dec = gmp_add(gmp_mul($return, 65536), $hex);
-            $operand = substr($operand, 4);
-        }
-        return $return;
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

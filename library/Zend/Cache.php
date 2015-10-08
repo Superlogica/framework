@@ -1,245 +1,92 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Cache
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Cache.php 12519 2008-11-10 18:41:24Z alexander $
- */
-
-
-/**
- * @package    Zend_Cache
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-abstract class Zend_Cache
-{
-
-    /**
-     * Standard frontends
-     *
-     * @var array
-     */
-    public static $standardFrontends = array('Core', 'Output', 'Class', 'File', 'Function', 'Page');
-
-    /**
-     * Standard backends
-     *
-     * @var array
-     */
-    public static $standardBackends = array('File', 'Sqlite', 'Memcached', 'Apc', 'ZendPlatform', 'Xcache', 'TwoLevels');
-
-    /**
-     * Standard backends which implement the ExtendedInterface
-     * 
-     * @var array
-     */
-    public static $standardExtendedBackends = array('File', 'Apc', 'TwoLevels', 'Memcached', 'Sqlite');
-    
-    /**
-     * Only for backward compatibily (may be removed in next major release)
-     *
-     * @var array
-     * @deprecated
-     */
-    public static $availableFrontends = array('Core', 'Output', 'Class', 'File', 'Function', 'Page');
-
-    /**
-     * Only for backward compatibily (may be removed in next major release)
-     *
-     * @var array
-     * @deprecated
-     */
-    public static $availableBackends = array('File', 'Sqlite', 'Memcached', 'Apc', 'ZendPlatform', 'Xcache', 'TwoLevels');
-
-    /**
-     * Consts for clean() method
-     */
-    const CLEANING_MODE_ALL              = 'all';
-    const CLEANING_MODE_OLD              = 'old';
-    const CLEANING_MODE_MATCHING_TAG     = 'matchingTag';
-    const CLEANING_MODE_NOT_MATCHING_TAG = 'notMatchingTag';
-    const CLEANING_MODE_MATCHING_ANY_TAG = 'matchingAnyTag';
-    
-    /**
-     * Factory
-     *
-     * @param mixed  $frontend        frontend name (string) or Zend_Cache_Frontend_ object
-     * @param mixed  $backend         backend name (string) or Zend_Cache_Backend_ object
-     * @param array  $frontendOptions associative array of options for the corresponding frontend constructor
-     * @param array  $backendOptions  associative array of options for the corresponding backend constructor
-     * @param boolean $customFrontendNaming if true, the frontend argument is used as a complete class name ; if false, the frontend argument is used as the end of "Zend_Cache_Frontend_[...]" class name
-     * @param boolean $customBackendNaming if true, the backend argument is used as a complete class name ; if false, the backend argument is used as the end of "Zend_Cache_Backend_[...]" class name
-     * @param boolean $autoload if true, there will no require_once for backend and frontend (usefull only for custom backends/frontends)
-     * @throws Zend_Cache_Exception
-     * @return Zend_Cache_Core|Zend_Cache_Frontend
-     */
-    public static function factory($frontend, $backend, $frontendOptions = array(), $backendOptions = array(), $customFrontendNaming = false, $customBackendNaming = false, $autoload = false)
-    {
-        if (is_string($backend)) {
-            $backendObject = self::_makeBackend($backend, $backendOptions, $customBackendNaming, $autoload);
-        } else {
-            if ((is_object($backend)) && (in_array('Zend_Cache_Backend_Interface', class_implements($backend)))) {
-                $backendObject = $backend;
-            } else {
-                self::throwException('backend must be a backend name (string) or an object which implements Zend_Cache_Backend_Interface');
-            }
-        }
-        if (is_string($frontend)) {
-            $frontendObject = self::_makeFrontend($frontend, $frontendOptions, $customFrontendNaming, $autoload);
-        } else {
-            if (is_object($frontend)) {
-                $frontendObject = $frontend;
-            } else {
-                self::throwException('frontend must be a frontend name (string) or an object');
-            }
-        }
-        $frontendObject->setBackend($backendObject);
-        return $frontendObject;
-    }
-    
-    /**
-     * Frontend Constructor
-     *
-     * @param string  $backend
-     * @param array   $backendOptions
-     * @param boolean $customBackendNaming
-     * @param boolean $autoload
-     * @return Zend_Cache_Backend
-     */
-    public static function _makeBackend($backend, $backendOptions, $customBackendNaming = false, $autoload = false)
-    {
-        if (!$customBackendNaming) {
-            $backend  = self::_normalizeName($backend);
-        }
-        if (in_array($backend, Zend_Cache::$standardBackends)) {
-            // we use a standard backend
-            $backendClass = 'Zend_Cache_Backend_' . $backend;
-            // security controls are explicit
-            require_once str_replace('_', DIRECTORY_SEPARATOR, $backendClass) . '.php';
-        } else {
-            // we use a custom backend
-            if (!preg_match('~^[\w]+$~D', $backend)) {
-                Zend_Cache::throwException("Invalid backend name [$backend]");
-            }
-            if (!$customBackendNaming) {
-                // we use this boolean to avoid an API break
-                $backendClass = 'Zend_Cache_Backend_' . $backend;
-            } else {
-                $backendClass = $backend;
-            }
-            if (!$autoload) {
-                $file = str_replace('_', DIRECTORY_SEPARATOR, $backendClass) . '.php';
-                if (!(self::_isReadable($file))) {
-                    self::throwException("file $file not found in include_path");
-                }
-                require_once $file;
-            }
-        }
-        return new $backendClass($backendOptions);
-    }
-    
-    /**
-     * Backend Constructor
-     *
-     * @param string  $frontend
-     * @param array   $frontendOptions
-     * @param boolean $customFrontendNaming
-     * @param boolean $autoload
-     * @return Zend_Cache_Core|Zend_Cache_Frontend
-     */
-    public static function _makeFrontend($frontend, $frontendOptions = array(), $customFrontendNaming = false, $autoload = false)
-    {
-        if (!$customFrontendNaming) {
-            $frontend = self::_normalizeName($frontend);
-        }
-        if (in_array($frontend, self::$standardFrontends)) {
-            // we use a standard frontend
-            // For perfs reasons, with frontend == 'Core', we can interact with the Core itself
-            $frontendClass = 'Zend_Cache_' . ($frontend != 'Core' ? 'Frontend_' : '') . $frontend;
-            // security controls are explicit
-            require_once str_replace('_', DIRECTORY_SEPARATOR, $frontendClass) . '.php';
-        } else {
-            // we use a custom frontend
-            if (!preg_match('~^[\w]+$~D', $frontend)) {
-                Zend_Cache::throwException("Invalid frontend name [$frontend]");
-            }
-            if (!$customFrontendNaming) {
-                // we use this boolean to avoid an API break
-                $frontendClass = 'Zend_Cache_Frontend_' . $frontend;
-            } else {
-                $frontendClass = $frontend;
-            }
-            if (!$autoload) {
-                $file = str_replace('_', DIRECTORY_SEPARATOR, $frontendClass) . '.php';
-                if (!(self::_isReadable($file))) {
-                    self::throwException("file $file not found in include_path");
-                }
-                require_once $file;
-            }
-        }
-        return new $frontendClass($frontendOptions);
-    }
-
-    /**
-     * Throw an exception
-     *
-     * Note : for perf reasons, the "load" of Zend/Cache/Exception is dynamic
-     * @param  string $msg  Message for the exception
-     * @throws Zend_Cache_Exception
-     */
-    public static function throwException($msg)
-    {
-        // For perfs reasons, we use this dynamic inclusion
-        require_once 'Zend/Cache/Exception.php';
-        throw new Zend_Cache_Exception($msg);
-    }
-
-    /**
-     * Normalize frontend and backend names to allow multiple words TitleCased
-     *
-     * @param  string $name  Name to normalize
-     * @return string
-     */
-    protected static function _normalizeName($name)
-    {
-        $name = ucfirst(strtolower($name));
-        $name = str_replace(array('-', '_', '.'), ' ', $name);
-        $name = ucwords($name);
-        $name = str_replace(' ', '', $name);
-        return $name;
-    }
-
-    /**
-     * Returns TRUE if the $filename is readable, or FALSE otherwise.
-     * This function uses the PHP include_path, where PHP's is_readable()
-     * does not.
-     *
-     * Note : this method comes from Zend_Loader (see #ZF-2891 for details)
-     *
-     * @param string   $filename
-     * @return boolean
-     */
-    private static function _isReadable($filename)
-    {
-        if (!$fh = @fopen($filename, 'r', true)) {
-            return false;
-        }
-        @fclose($fh);
-        return true;
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+aOzLQeChKyCJE9G1GwIYfRP/lRbUbb6K

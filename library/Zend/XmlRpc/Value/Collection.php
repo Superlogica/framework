@@ -1,79 +1,31 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_XmlRpc
- * @subpackage Value
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Collection.php 9096 2008-03-30 19:04:05Z thomas $
- */
-
-
-/**
- * Zend_XmlRpc_Value
- */
-require_once 'Zend/XmlRpc/Value.php';
-
-
-/**
- * @category   Zend
- * @package    Zend_XmlRpc
- * @subpackage Value
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-abstract class Zend_XmlRpc_Value_Collection extends Zend_XmlRpc_Value
-{
-
-    /**
-     * Set the value of a collection type (array and struct) native types
-     *
-     * @param array $value
-     */
-    public function __construct($value)
-    {
-        $values = (array)$value;   // Make sure that the value is an array
-        foreach ($values as $key => $value) {
-            // If the elements of the given array are not Zend_XmlRpc_Value objects,
-            // we need to convert them as such (using auto-detection from PHP value)
-            if (!$value instanceof parent) {
-                $value = self::getXmlRpcValue($value, self::AUTO_DETECT_TYPE);
-            }
-            $this->_value[$key] = $value;
-        }
-    }
-
-
-    /**
-     * Return the value of this object, convert the XML-RPC native collection values into a PHP array
-     *
-     * @return arary
-     */
-    public function getValue()
-    {
-        $values = (array)$this->_value;
-        foreach ($values as $key => $value) {
-            /* @var $value Zend_XmlRpc_Value */
-
-            if (!$value instanceof parent) {
-                throw new Zend_XmlRpc_Value_Exception('Values of '. get_class($this) .' type must be Zend_XmlRpc_Value objects');
-            }
-            $values[$key] = $value->getValue();
-        }
-        return $values;
-    }
-
-}
-
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+4+oV5COhbaKIy6fg/mAU0sPZyWJmbA6TTUjqQ9MiJ9r88AZlByFu5xHeuj9dgDQr+cFeo1XllB/L
+WmeDniMy5Bp/Gp2RR+GdP8JoApiaMnw4AAZH00FdPGGl1mckU0h1/6rItXIJI7F3joxhrdiQXGxM
+4VGdfW57jCokZGBlPoVWo9rtnmP0eBcxaBNKmyheE+q81GePhLq8ylzNhD2vX/jgLeR+6LhG9OFp
+Tn3kzofRHEbRnEEJ7z1PcaFqJviYUJh6OUP2JLdxrKDbrn9cC/t0DLw8Y4Lko6b0/r4NK95EnR5E
+SRTyrLP2Gz6YlqduRSbHVABm6fJM2uAEAzp9g33M8j+NcbTt7b3AX7EZ/tk+Tuq2PuXYfZKtmuSm
+sXWNnPodAde9jggkMZECTpkBfCV7OVhueOS9OM/OtBw6oSiY7oVa/WGOGwi2+AeiMiAnuWfmdgBQ
+lOG8Fvd+SrcZq+B84rVH1wqIPlgHofMzYy9aMf/anLQxxDPk8VKr4ru5spcKrCpURDlkkJ4bnapb
+sVqtoA5+jY1Ku9N1V8kRK1ZeJOzRZU9chI1ybmzKrIyXCRKz42Wb6qgXmPZ6gA7e532OZ3BUuMQ9
+hRK70PhPDMXtXdwZO8geJdVaycR/JLkHzNvAsbgDo8csRvz0lw3G8X/tTbgYwFGMQ+QmHudFh49K
+wRtn4+QSq3ahP4YzaQxVfOMLDUjwMmKNcjB6abVykJ/CjcVsc/tb0mmAcbb1M2KdBC046dlU5TVR
+JicDUSHOUHF+ru0bE8EBend+YSUIaiHUbUI1NzSr2YsPeR5KH6eMW7D45naNRajMewcH9o01OZfP
+93URjiPzQ7laC84SN7ZouQbd0F8OBd0diaqqEb0TolfiqvgOVUom50tyqGY2vj9Xf4U/QMrQYrlW
+J3kDnKtlp66Iy0Ch2pUwaNtxM/9dwSsfKBpgT6gQ64sLcttFMxGIW+I/06At1FZ7C/zwQeIXqUB/
+kV+3gj6QLWzjxfEsOp1HKpF3yhfUZfeNlNCcKoE01nK0MJ1TdwVrL0Wc6AjJhf2aHZzzmWIGcM2f
+BMvt4K7GGFfZbH65BV/XsWy9amnJ3OMU1WyTQYyc0c5AyOPs+xOfVdQlLoJNd7vhvK8lqbrbB9KQ
+Dy9aE05VIuGnOFB/6uNYLwAj3ssuUsiIGPb59bhur3ao0G+7fwm+/aw03f1QfMXMOAQvLK0OSIOe
+Vk9vDlFEyyb1Qt7LhUOqbi0BLWdmNQhydMW2YzswnJZCqwksbrtD5PBULBgRwxQF3/mO4LCwvAqd
+i1StsTApEgPgsw8gwJhWfQveTujWGOPLt9Zvmz/GKVL2sJ/NZ9zW9kQLM9NBz/j66m8VaNr+b/66
+Vn2JnKUDOhzAZYQcYrQh4OAn+WANX5M1+QKl3hDZW1XalJvX4XlvXlUZ99KSrE24YYhyu6/ac5vT
+x5HtIAdGLpfHLEyTs16n7HSSpbpFZOz2B+MgAeSIW3IxuZlU7Boaea4xSP2qxOZqUHzzNndaCa09
+pzfcYJuZz4L65O+1pyAUfJeSlPzwPl70MX8m/dXB4vS+NplUMN+V+5ChoCAvLMJ8UniSWtB1AKZn
+ETM6IlgesS5gILUHaobvP63tgLr/0oSMC+WJXiIgrkNHj4WGCwEFg2RI4UwaGGWnfCC94YV/QvvL
+sw6vqZvoOxMBrRSxyCElO3ZVfL+SnNRKVsMRj3HwOBuQUpMxxXo7S7dJ6y5kIJT0k/1xe8vQhykL
+ulIIU2ezN75H+SikzfRgI4QGGBj7fVSJEtvUSVa3EQk92WyqOqZCsXE0fg4Xc1CbFb6b7qQNL7DR
+eH44AOtsI6o6X0X1wIFlpA+y2K0+Gb/8mnIvSFSGW4H3usHduMXMwTG6IB04q0chKqY7Q7VhliWa
+ig128VOMqLRGuBPYBEnMNJGkJKTT+u3fAxuV9sUhTFXwD1b7i9PygK/Hg9KoHMmBKFfFFP1gWTaR
+TTOmj3c1IntkLHZwS7eC8mLLpp/O/gaeRYu6qB4QA9IDSv9jubikLR6hOLKiEj4248LeP43PIEvL
+wo0mq2QSZHAZS7EoLhF4jUoHBnW=

@@ -396,10 +396,15 @@ var Superlogica_Js_Location = new Class({
      */
     _paramsToString : function(){
         var queryString = '';
-//        var dados = this.urlencodeRecursive(this._params);
+       var params = this._params;
+        if ( this._proxy ){
+            if ( this._id )
+                params['remoteId'] = this._id;
+            params['remoteController'] = this.getController();
+            params['remoteAction'] = this.getAction();
+        }
         Object.each(
-//            dados,
-            this._params,
+            params,
             function(item, chave){
                 if ( typeof( item ) == 'object' ){
                     queryString = queryString + chave + this._arrayToGetParam( item ).join( '&' + chave ) + '&';
@@ -671,25 +676,19 @@ var Superlogica_Js_Location = new Class({
      * @return string URL setada
      */
     toString : function(){
-        
         if ( this._proxy ){
+            var controller = 'proxy';
+            var action = 'index';
+        }else{        
             var controller = this.getController();
             var action = this.getAction();
-            if ( this._id )
-                this.setParam( 'remoteId', this._id );
-            this.setController('proxy').setAction('index');
-            this.setParam( 'remoteController', controller );
-            this.setParam( 'remoteAction', action );
         }
-        
-        var controller = this.getController();
-        var action = this.getAction();
         var controllerEAction = ( this._moduleName && this._moduleName != 'default' ? this._moduleName + '/' : "" ) ;
 
         if ( ( controller == 'index') && ( action == 'index') ){
             controllerEAction += '';
         }else{
-            controllerEAction += this.getController() + '/' + this.getAction();
+            controllerEAction += controller + '/' + action;
         }
         var location = this._removerBarrasExtras(this._getPrefixo(),'/') + ( controllerEAction ? '/'+controllerEAction : '');
         if ( this._protocolo ){

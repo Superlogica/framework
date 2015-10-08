@@ -1,355 +1,79 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Tool
- * @subpackage Framework
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id$
- */
-
-/**
- * @see Zend_Tool_Framework_Registry_Interface
- */
-require_once 'Zend/Tool/Framework/Registry/Interface.php';
-
-/**
- * @category   Zend
- * @package    Zend_Tool
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Tool_Framework_Registry implements Zend_Tool_Framework_Registry_Interface
-{
-    /**
-     * @var Zend_Tool_Framework_Loader_Abstract
-     */
-    protected $_loader = null;
-    
-    /**
-     * @var Zend_Tool_Framework_Client_Abstract
-     */
-    protected $_client = null;
-    
-    /**
-     * @var Zend_Tool_Framework_Action_Repository
-     */
-    protected $_actionRepository = null;
-    
-    /**
-     * @var Zend_Tool_Framework_Provider_Repository
-     */
-    protected $_providerRepository = null;
-    
-    /**
-     * @var Zend_Tool_Framework_Manifest_Repository
-     */
-    protected $_manifestRepository = null;
-    
-    /**
-     * @var Zend_Tool_Framework_Client_Request
-     */
-    protected $_request = null;
-    
-    /**
-     * @var Zend_Tool_Framework_Client_Response
-     */
-    protected $_response = null;
-        
-    /**
-     * reset() - Reset all internal properties
-     *
-     */
-    public function reset()
-    {
-        unset($this->_client);
-        unset($this->_loader);
-        unset($this->_actionRepository);
-        unset($this->_providerRepository);
-        unset($this->_request);
-        unset($this->_response);
-    }
-    
-//    public function __construct()
-//    {
-//        // no instantiation from outside 
-//    }
-    
-    /**
-     * Enter description here...
-     *
-     * @param Zend_Tool_Framework_Client_Abstract $client
-     * @return Zend_Tool_Framework_Registry
-     */
-    public function setClient(Zend_Tool_Framework_Client_Abstract $client)
-    {
-        $this->_client = $client;
-        if ($this->isObjectRegistryEnablable($this->_client)) {
-            $this->enableRegistryOnObject($this->_client);
-        }
-        return $this;
-    }
-    
-    /**
-     * getClient() return the client in the registry
-     *
-     * @return Zend_Tool_Framework_Client_Abstract
-     */
-    public function getClient()
-    {
-        return $this->_client;
-    }
-    
-    /**
-     * setLoader() 
-     *
-     * @param Zend_Tool_Framework_Loader_Abstract $loader
-     * @return Zend_Tool_Framework_Registry
-     */
-    public function setLoader(Zend_Tool_Framework_Loader_Abstract $loader)
-    {
-        $this->_loader = $loader;
-        if ($this->isObjectRegistryEnablable($this->_loader)) {
-            $this->enableRegistryOnObject($this->_loader);
-        }
-        return $this;
-    }
-    
-    /**
-     * getLoader()
-     *
-     * @return Zend_Tool_Framework_Loader_Abstract
-     */
-    public function getLoader()
-    {
-        if ($this->_loader === null) {
-            require_once 'Zend/Tool/Framework/Loader/IncludePathLoader.php';
-            $this->setLoader(new Zend_Tool_Framework_Loader_IncludePathLoader());
-        }
-        
-        return $this->_loader;
-    }
-    
-    /**
-     * setActionRepository()
-     *
-     * @param Zend_Tool_Framework_Action_Repository $actionRepository
-     * @return Zend_Tool_Framework_Registry
-     */
-    public function setActionRepository(Zend_Tool_Framework_Action_Repository $actionRepository)
-    {
-        $this->_actionRepository = $actionRepository;
-        if ($this->isObjectRegistryEnablable($this->_actionRepository)) {
-            $this->enableRegistryOnObject($this->_actionRepository);
-        }
-        return $this;
-    }
-    
-    /**
-     * getActionRepository()
-     *
-     * @return Zend_Tool_Framework_Action_Repository
-     */
-    public function getActionRepository()
-    {
-        if ($this->_actionRepository == null) {
-            require_once 'Zend/Tool/Framework/Action/Repository.php';
-            $this->setActionRepository(new Zend_Tool_Framework_Action_Repository());
-        }
-        
-        return $this->_actionRepository;
-    }
-    
-    /**
-     * setProviderRepository()
-     *
-     * @param Zend_Tool_Framework_Provider_Repository $providerRepository
-     * @return Zend_Tool_Framework_Registry
-     */
-    public function setProviderRepository(Zend_Tool_Framework_Provider_Repository $providerRepository)
-    {
-        $this->_providerRepository = $providerRepository;
-        if ($this->isObjectRegistryEnablable($this->_providerRepository)) {
-            $this->enableRegistryOnObject($this->_providerRepository);
-        }
-        return $this;
-    }
-    
-    /**
-     * getProviderRepository()
-     *
-     * @return Zend_Tool_Framework_Provider_Repository
-     */
-    public function getProviderRepository()
-    {
-        if ($this->_providerRepository == null) {
-            require_once 'Zend/Tool/Framework/Provider/Repository.php';
-            $this->setProviderRepository(new Zend_Tool_Framework_Provider_Repository());
-        }
-        
-        return $this->_providerRepository;
-    }
-    
-    /**
-     * setManifestRepository()
-     *
-     * @param Zend_Tool_Framework_Manifest_Repository $manifestRepository
-     * @return Zend_Tool_Framework_Registry
-     */
-    public function setManifestRepository(Zend_Tool_Framework_Manifest_Repository $manifestRepository)
-    {
-        $this->_manifestRepository = $manifestRepository;
-        if ($this->isObjectRegistryEnablable($this->_manifestRepository)) {
-            $this->enableRegistryOnObject($this->_manifestRepository);
-        }
-        return $this;
-    }
-    
-    /**
-     * getManifestRepository()
-     *
-     * @return Zend_Tool_Framework_Manifest_Repository
-     */
-    public function getManifestRepository()
-    {
-        if ($this->_manifestRepository == null) {
-            require_once 'Zend/Tool/Framework/Manifest/Repository.php';
-            $this->setManifestRepository(new Zend_Tool_Framework_Manifest_Repository());
-        }
-        
-        return $this->_manifestRepository;
-    }
-    
-    /**
-     * setRequest()
-     *
-     * @param Zend_Tool_Framework_Client_Request $request
-     * @return Zend_Tool_Framework_Registry
-     */
-    public function setRequest(Zend_Tool_Framework_Client_Request $request)
-    {
-        $this->_request = $request;
-        return $this;
-    }
-    
-    /**
-     * getRequest()
-     *
-     * @return Zend_Tool_Framework_Client_Request
-     */
-    public function getRequest()
-    {
-        if ($this->_request == null) {
-            require_once 'Zend/Tool/Framework/Client/Request.php';
-            $this->setRequest(new Zend_Tool_Framework_Client_Request());
-        }
-        
-        return $this->_request;
-    }
-    
-    /**
-     * setResponse()
-     *
-     * @param Zend_Tool_Framework_Client_Response $response
-     * @return Zend_Tool_Framework_Registry
-     */
-    public function setResponse(Zend_Tool_Framework_Client_Response $response)
-    {
-        $this->_response = $response;
-        return $this;
-    }
-
-    /**
-     * getResponse()
-     *
-     * @return Zend_Tool_Framework_Client_Response
-     */
-    public function getResponse()
-    {
-        if ($this->_response == null) {
-            require_once 'Zend/Tool/Framework/Client/Response.php';
-            $this->setResponse(new Zend_Tool_Framework_Client_Response());
-        }
-        
-        return $this->_response;
-    }
-    
-    /**
-     * __get() - Get a property via property call $registry->foo
-     *
-     * @param string $name
-     * @return mixed
-     */
-    public function __get($name)
-    {
-        if (method_exists($this, 'get' . $name)) {
-            return $this->{'get' . $name}();
-        } else {
-            require_once 'Zend/Tool/Framework/Registry/Exception.php';
-            throw new Zend_Tool_Framework_Registry_Exception('Property ' . $name . ' was not located in this registry.');
-        }
-    }
-    
-    /**
-     * __set() - Set a property via the magic set $registry->foo = 'foo'
-     *
-     * @param string $name
-     * @param mixed $value
-     */
-    public function __set($name, $value)
-    {
-        if (method_exists($this, 'set' . $name)) {
-            $this->{'set' . $name}($value);
-            return;
-        } else {
-            require_once 'Zend/Tool/Framework/Registry/Exception.php';
-            throw new Zend_Tool_Framework_Registry_Exception('Property ' . $name . ' was not located in this registry.');            
-        }
-    }
-    
-    /**
-     * isObjectRegistryEnablable() - Check whether an object is registry enablable
-     *
-     * @param object $object
-     * @return bool
-     */
-    public function isObjectRegistryEnablable($object)
-    {
-        if (!is_object($object)) {
-            require_once 'Zend/Tool/Framework/Registry/Exception.php';
-            throw new Zend_Tool_Framework_Registry_Exception('isObjectRegistryEnablable() expects an object.');
-        }
-        
-        return ($object instanceof Zend_Tool_Framework_Registry_EnabledInterface);
-    }
-    
-    /**
-     * enableRegistryOnObject() - make an object registry enabled
-     *
-     * @param object $object
-     * @return Zend_Tool_Framework_Registry
-     */
-    public function enableRegistryOnObject($object)
-    {
-        if (!$this->isObjectRegistryEnablable($object)) {
-            require_once 'Zend/Tool/Framework/Registry/Exception.php';
-            throw new Zend_Tool_Framework_Registry_Exception('Object provided is not registry enablable, check first with Zend_Tool_Framework_Registry::isObjectRegistryEnablable()');
-        }
-        
-        $object->setRegistry($this);
-        return $this;
-    }
-    
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+6jm1x7h3PKMkcuJ4DOjKbVp5GZTwhqZLiOq=

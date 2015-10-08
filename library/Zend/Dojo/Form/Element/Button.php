@@ -1,121 +1,36 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Dojo
- * @subpackage Form_Element
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_Dojo_Form_Element_Dijit */
-require_once 'Zend/Dojo/Form/Element/Dijit.php';
-
-/**
- * Button dijit
- * 
- * @category   Zend
- * @package    Zend_Dojo
- * @subpackage Form_Element
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Button.php 10091 2008-07-15 03:46:37Z matthew $
- */
-class Zend_Dojo_Form_Element_Button extends Zend_Dojo_Form_Element_Dijit
-{
-    /**
-     * Use Button dijit view helper
-     * @var string
-     */
-    public $helper = 'Button';
-
-    /**
-     * Constructor
-     * 
-     * @param  string|array|Zend_Config $spec Element name or configuration
-     * @param  string|array|Zend_Config $options Element value or configuration
-     * @return void
-     */
-    public function __construct($spec, $options = null)
-    {
-        if (is_string($spec) && ((null !== $options) && is_string($options))) {
-            $options = array('label' => $options);
-        }
-
-        parent::__construct($spec, $options);
-    }
-
-    /**
-     * Return label
-     *
-     * If no label is present, returns the currently set name.
-     *
-     * If a translator is present, returns the translated label.
-     * 
-     * @return string
-     */
-    public function getLabel()
-    {
-        $value = parent::getLabel();
-
-        if (null === $value) {
-            $value = $this->getName();
-        }
-
-        if (null !== ($translator = $this->getTranslator())) {
-            return $translator->translate($value);
-        }
-
-        return $value;
-    }
-
-    /**
-     * Has this submit button been selected?
-     * 
-     * @return bool
-     */
-    public function isChecked()
-    {
-        $value = $this->getValue();
-
-        if (empty($value)) {
-            return false;
-        }
-        if ($value != $this->getLabel()) {
-            return false;
-        }
-
-        return true;
-    }
-
-    /**
-     * Default decorators
-     *
-     * Uses only 'DijitElement' and 'DtDdWrapper' decorators by default.
-     * 
-     * @return void
-     */
-    public function loadDefaultDecorators()
-    {
-        if ($this->loadDefaultDecoratorsIsDisabled()) {
-            return;
-        }
-
-        $decorators = $this->getDecorators();
-        if (empty($decorators)) {
-            $this->addDecorator('DijitElement')
-                 ->addDecorator('DtDdWrapper');
-        }
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

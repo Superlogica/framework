@@ -1,176 +1,45 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Dojo
- * @subpackage View
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @version    $Id: Dojo.php 10024 2008-07-10 14:04:33Z matthew $
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_Registry */
-require_once 'Zend/Registry.php';
-
-/**
- * Zend_Dojo_View_Helper_Dojo: Dojo View Helper
- *
- * Allows specifying stylesheets, path to dojo, module paths, and onLoad 
- * events. 
- * 
- * @package    Zend_Dojo
- * @subpackage View
- * @copyright  Copyright (C) 2008 - Present, Zend Technologies, Inc.
- * @license    New BSD {@link http://framework.zend.com/license/new-bsd}
- */
-class Zend_Dojo_View_Helper_Dojo 
-{ 
-    /**#@+
-     * @const Programmatic dijit creation style constants
-     */
-    const PROGRAMMATIC_SCRIPT = 1;
-    const PROGRAMMATIC_NOSCRIPT = -1;
-    /**#@-*/
-
-    /**
-     * @var Zend_View_Interface
-     */
-    public $view; 
-
-    /**
-     * @var Zend_Dojo_View_Helper_Dojo_Container
-     */
-    protected $_container;
-
-    /**
-     * @var bool Whether or not dijits should be declared programmatically
-     */
-    protected static $_useProgrammatic = true;
-
-    /**
-     * Initialize helper
-     *
-     * Retrieve container from registry or create new container and store in 
-     * registry.
-     * 
-     * @return void
-     */
-    public function __construct()
-    {
-        $registry = Zend_Registry::getInstance();
-        if (!isset($registry[__CLASS__])) {
-            require_once 'Zend/Dojo/View/Helper/Dojo/Container.php';
-            $container = new Zend_Dojo_View_Helper_Dojo_Container();
-            $registry[__CLASS__] = $container;
-        }
-        $this->_container = $registry[__CLASS__];
-    }
-
-    /**
-     * Set view object
-     * 
-     * @param  Zend_Dojo_View_Interface $view 
-     * @return void
-     */
-    public function setView(Zend_View_Interface $view)
-    {
-        $this->view = $view;
-        $this->_container->setView($view);
-    }
-
-    /**
-     * Return dojo container
-     * 
-     * @return Zend_Dojo_View_Helper_Dojo_Container
-     */
-    public function dojo()
-    {
-        return $this->_container;
-    }
-
-    /**
-     * Proxy to container methods
-     * 
-     * @param  string $method 
-     * @param  array $args 
-     * @return mixed
-     * @throws Zend_Dojo_View_Exception For invalid method calls
-     */
-    public function __call($method, $args)
-    {
-        if (!method_exists($this->_container, $method)) {
-            require_once 'Zend/Dojo/View/Exception.php';
-            throw new Zend_Dojo_View_Exception(sprintf('Invalid method "%s" called on dojo view helper', $method));
-        }
-
-        return call_user_func_array(array($this->_container, $method), $args);
-    }
-
-    /**
-     * Set whether or not dijits should be created declaratively
-     * 
-     * @return void
-     */
-    public static function setUseDeclarative()
-    {
-        self::$_useProgrammatic = false;
-    }
-
-    /**
-     * Set whether or not dijits should be created programmatically
-     *
-     * Optionally, specifiy whether or not dijit helpers should generate the 
-     * programmatic dojo.
-     * 
-     * @param  int $style 
-     * @return void
-     */
-    public static function setUseProgrammatic($style = self::PROGRAMMATIC_SCRIPT)
-    {
-        if (!in_array($style, array(self::PROGRAMMATIC_SCRIPT, self::PROGRAMMATIC_NOSCRIPT))) {
-            $style = self::PROGRAMMATIC_SCRIPT;
-        }
-        self::$_useProgrammatic = $style;
-    }
-
-    /**
-     * Should dijits be created declaratively?
-     * 
-     * @return bool
-     */
-    public static function useDeclarative()
-    {
-        return (false === self::$_useProgrammatic);
-    }
-
-    /**
-     * Should dijits be created programmatically?
-     * 
-     * @return bool
-     */
-    public static function useProgrammatic()
-    {
-        return (false !== self::$_useProgrammatic);
-    }
-
-    /**
-     * Should dijits be created programmatically but without scripts?
-     * 
-     * @return bool
-     */
-    public static function useProgrammaticNoScript()
-    {
-        return (self::PROGRAMMATIC_NOSCRIPT === self::$_useProgrammatic);
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

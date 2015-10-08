@@ -1,176 +1,51 @@
-<?php
-
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Calendar
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/**
- * @see Zend_Gdata_Extension
- */
-require_once 'Zend/Gdata/Extension.php';
-
-/**
- * Represents the gCal:webContent element used by the Calendar data API
- *
- * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Calendar
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Gdata_Calendar_Extension_WebContent extends Zend_Gdata_App_Extension
-{
-
-    protected $_rootNamespace = 'gCal';
-    protected $_rootElement = 'webContent';
-    protected $_url = null;
-    protected $_height = null;
-    protected $_width = null;
-
-    /**
-     * Constructs a new Zend_Gdata_Calendar_Extension_WebContent object.
-     * @param string $url (optional) The value for this element's URL attribute.
-     * @param string $height (optional) The value for this element's height attribute.
-     * @param string $width (optional) The value for this element's width attribute.
-     */
-    public function __construct($url = null, $height = null, $width = null)
-    {
-        $this->registerAllNamespaces(Zend_Gdata_Calendar::$namespaces);
-        parent::__construct();
-        $this->_url = $url;
-        $this->_height = $height;
-        $this->_width = $width;
-    }
-
-    /**
-     * Retrieves a DOMElement which corresponds to this element and all
-     * child properties.  This is used to build an entry back into a DOM
-     * and eventually XML text for sending to the server upon updates, or
-     * for application storage/persistence.
-     *
-     * @param DOMDocument $doc The DOMDocument used to construct DOMElements
-     * @return DOMElement The DOMElement representing this element and all
-     * child properties.
-     */
-    public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
-    {
-        $element = parent::getDOM($doc, $majorVersion, $minorVersion);
-        if ($this->url != null) {
-            $element->setAttribute('url', $this->_url);
-        }
-        if ($this->height != null) {
-            $element->setAttribute('height', $this->_height);
-        }
-        if ($this->width != null) {
-            $element->setAttribute('width', $this->_width);
-        }
-        return $element;
-    }
-
-    /**
-     * Given a DOMNode representing an attribute, tries to map the data into
-     * instance members.  If no mapping is defined, the name and value are
-     * stored in an array.
-     *
-     * @param DOMNode $attribute The DOMNode attribute needed to be handled
-     */
-    protected function takeAttributeFromDOM($attribute)
-    {
-        switch ($attribute->localName) {
-                case 'url':
-                        $this->_url = $attribute->nodeValue;
-                        break;
-                case 'height':
-                        $this->_height = $attribute->nodeValue;
-                        break;
-                case 'width':
-                        $this->_width = $attribute->nodeValue;
-                        break;
-        default:
-            parent::takeAttributeFromDOM($attribute);
-        }
-    }
-
-    /**
-     * Get the value for this element's URL attribute.
-     *
-     * @return string The desired value for this attribute.
-     */
-    public function getURL()
-    {
-        return $this->_url;
-    }
-
-    /**
-     * Set the value for this element's URL attribute.
-     *
-     * @param bool $value The desired value for this attribute.
-     * @return Zend_Gdata_Calendar_Extension_WebContent The element being modified.
-     */
-    public function setURL($value)
-    {
-        $this->_url = $value;
-        return $this;
-    }
-
-    /**
-     * Get the value for this element's height attribute.
-     *
-     * @return int The desired value for this attribute.
-     */
-    public function getHeight()
-    {
-        return $this->_height;
-    }
-
-    /**
-     * Set the value for this element's height attribute.
-     *
-     * @param int $value The desired value for this attribute.
-     * @return Zend_Gdata_Calendar_Extension_WebContent The element being modified.
-     */
-    public function setHeight($value)
-    {
-        $this->_height = $value;
-        return $this;
-    }
-
-    /**
-     * Get the value for this element's height attribute.
-     *
-     * @return int The desired value for this attribute.
-     */
-    public function getWidth()
-    {
-        return $this->_width;
-    }
-
-    /**
-     * Set the value for this element's height attribute.
-     *
-     * @param int $value The desired value for this attribute.
-     * @return Zend_Gdata_Calendar_Extension_WebContent The element being modified.
-     */
-    public function setWidth($value)
-    {
-        $this->_width = $value;
-        return $this;
-    }
-
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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

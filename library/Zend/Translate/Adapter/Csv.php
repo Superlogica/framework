@@ -1,99 +1,41 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Translate
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @version    $Id: Date.php 2498 2006-12-23 22:13:38Z thomas $
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-
-/** Zend_Locale */
-require_once 'Zend/Locale.php';
-
-/** Zend_Translate_Adapter */
-require_once 'Zend/Translate/Adapter.php';
-
-
-/**
- * @category   Zend
- * @package    Zend_Translate
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Translate_Adapter_Csv extends Zend_Translate_Adapter
-{
-    private $_data    = array();
-
-    /**
-     * Generates the adapter
-     *
-     * @param  string              $data     Translation data
-     * @param  string|Zend_Locale  $locale   OPTIONAL Locale/Language to set, identical with locale identifier,
-     *                                       see Zend_Locale for more information
-     * @param  array               $options  Options for this adapter
-     */
-    public function __construct($data, $locale = null, array $options = array())
-    {
-        $this->_options['delimiter'] = ";";
-        $this->_options['length']    = 0;
-        $this->_options['enclosure'] = '"';
-        parent::__construct($data, $locale, $options);
-    }
-
-    /**
-     * Load translation data
-     *
-     * @param  string|array  $filename  Filename and full path to the translation source
-     * @param  string        $locale    Locale/Language to add data for, identical with locale identifier,
-     *                                  see Zend_Locale for more information
-     * @param  array         $option    OPTIONAL Options to use
-     * @return array
-     */
-    protected function _loadTranslationData($filename, $locale, array $options = array())
-    {
-        $this->_data = array();
-        $options     = $options + $this->_options;
-        $this->_file = @fopen($filename, 'rb');
-        if (!$this->_file) {
-            require_once 'Zend/Translate/Exception.php';
-            throw new Zend_Translate_Exception('Error opening translation file \'' . $filename . '\'.');
-        }
-
-        while(($data = fgetcsv($this->_file, $options['length'], $options['delimiter'], $options['enclosure'])) !== false) {
-            if (substr($data[0], 0, 1) === '#') {
-                continue;
-            }
-
-            if (isset($data[1]) !== true) {
-                continue;
-            }
-
-            $this->_data[$locale][$data[0]] = $data[1];
-        }
-
-        return $this->_data;
-    }
-
-    /**
-     * returns the adapters name
-     *
-     * @return string
-     */
-    public function toString()
-    {
-        return "Csv";
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+reD3JHeA7h3zjDcwEhW=

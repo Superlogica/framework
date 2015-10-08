@@ -1,465 +1,175 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_CodeGenerator
- * @subpackage PHP
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id$
- */
-
-/**
- * @see Zend_CodeGenerator_Php_Abstract
- */
-require_once 'Zend/CodeGenerator/Php/Abstract.php';
-
-/**
- * @see Zend_CodeGenerator_Php_Class
- */
-require_once 'Zend/CodeGenerator/Php/Class.php';
-
-/**
- * @category   Zend
- * @package    Zend_CodeGenerator
- * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_CodeGenerator_Php_File extends Zend_CodeGenerator_Php_Abstract
-{
-    
-    /**
-     * @var array Array of Zend_CodeGenerator_Php_File
-     */
-    protected static $_fileCodeGenerators = array();
-    
-    /**#@+
-     * @var string
-     */
-    protected static $_markerDocblock = '/* Zend_CodeGenerator_Php_File-DocblockMarker */';
-    protected static $_markerRequire = '/* Zend_CodeGenerator_Php_File-RequireMarker: {?} */';
-    protected static $_markerClass = '/* Zend_CodeGenerator_Php_File-ClassMarker: {?} */';
-    /**#@-*/
-    
-    /**
-     * @var string
-     */
-    protected $_filename = null;
-    
-    /**
-     * @var Zend_CodeGenerator_Php_Docblock
-     */
-    protected $_docblock = null;
-    
-    /**
-     * @var array
-     */
-    protected $_requiredFiles = array();
-    
-    /**
-     * @var array
-     */
-    protected $_classes = array();
-    
-    /**
-     * @var string
-     */
-    protected $_body = null;
-
-    public static function registerFileCodeGenerator(Zend_CodeGenerator_Php_File $fileCodeGenerator, $fileName = null)
-    {
-        if ($fileName == null) {
-            $fileName = $fileCodeGenerator->getFilename();
-        }
-        
-        if ($fileName == '') {
-            require_once 'Zend/CodeGenerator/Php/Exception.php';
-            throw new Zend_CodeGenerator_Php_Exception('FileName does not exist.');
-        }
-        
-        // cannot use realpath since the file might not exist, but we do need to have the index
-        // in the same DIRECTORY_SEPARATOR that realpath would use:
-        $fileName = str_replace(array('\\', '/'), DIRECTORY_SEPARATOR, $fileName);
-        
-        self::$_fileCodeGenerators[$fileName] = $fileCodeGenerator;
-        
-    }
-    
-    /**
-     * fromReflectedFilePath() - use this if you intend on generating code generation objects based on the same file.
-     * This will keep previous changes to the file in tact during the same PHP process
-     *
-     * @param string $filePath
-     * @param bool $usePreviousCodeGeneratorIfItExists
-     * @param bool $includeIfNotAlreadyIncluded
-     * @return Zend_CodeGenerator_Php_File
-     */
-    public static function fromReflectedFileName($filePath, $usePreviousCodeGeneratorIfItExists = true, $includeIfNotAlreadyIncluded = true)
-    {
-        $realpath = realpath($filePath);
-        
-        if ($realpath === false) {
-            if ( ($realpath = Zend_Reflection_file::findRealpathInIncludePath($filePath)) === false) {
-                require_once 'Zend/CodeGenerator/Php/Exception.php';
-                throw new Zend_CodeGenerator_Php_Exception('No file for ' . $realpath . ' was found.');
-            }
-        }
-        
-        if ($usePreviousCodeGeneratorIfItExists && isset(self::$_fileCodeGenerators[$realpath])) {
-            return self::$_fileCodeGenerators[$realpath];
-        }
-        
-        if ($includeIfNotAlreadyIncluded && !in_array($realpath, get_included_files())) {
-            include $realpath;
-        }
-        
-        $codeGenerator = self::fromReflection(($fileReflector = new Zend_Reflection_File($realpath)));
-        
-        if (!isset(self::$_fileCodeGenerators[$fileReflector->getFileName()])) {
-            self::$_fileCodeGenerators[$fileReflector->getFileName()] = $codeGenerator;
-        }
-        
-        return $codeGenerator;
-    }
-    
-    /**
-     * fromReflection()
-     *
-     * @param Zend_Reflection_File $reflectionFile
-     * @return Zend_CodeGenerator_Php_File
-     */
-    public static function fromReflection(Zend_Reflection_File $reflectionFile)
-    {
-        $file = new self();
-        
-        $file->setSourceContent($reflectionFile->getContents());
-        $file->setSourceDirty(false);
-        
-        $body = $reflectionFile->getContents();
-        
-        // @todo this whole area needs to be reworked with respect to how body lines are processed
-        foreach ($reflectionFile->getClasses() as $class) {
-            $file->setClass(Zend_CodeGenerator_Php_Class::fromReflection($class));
-            $classStartLine = $class->getStartLine(true);
-            $classEndLine = $class->getEndLine();
-            
-            $bodyLines = explode("\n", $body);
-            $bodyReturn = array();
-            for ($lineNum = 1; $lineNum <= count($bodyLines); $lineNum++) {
-                if ($lineNum == $classStartLine) { 
-                    $bodyReturn[] = str_replace('?', $class->getName(), self::$_markerClass);  //'/* Zend_CodeGenerator_Php_File-ClassMarker: {' . $class->getName() . '} */';
-                    $lineNum = $classEndLine;
-                } else {
-                    $bodyReturn[] = $bodyLines[$lineNum - 1]; // adjust for index -> line conversion
-                }
-            }
-            $body = implode("\n", $bodyReturn);
-            unset($bodyLines, $bodyReturn, $classStartLine, $classEndLine);
-        }
-        
-        if (($reflectionFile->getDocComment() != '')) {
-            $docblock = $reflectionFile->getDocblock();
-            $file->setDocblock(Zend_CodeGenerator_Php_Docblock::fromReflection($docblock));
-            
-            $bodyLines = explode("\n", $body);
-            $bodyReturn = array();
-            for ($lineNum = 1; $lineNum <= count($bodyLines); $lineNum++) {
-                if ($lineNum == $docblock->getStartLine()) { 
-                    $bodyReturn[] = str_replace('?', $class->getName(), self::$_markerDocblock);  //'/* Zend_CodeGenerator_Php_File-ClassMarker: {' . $class->getName() . '} */';
-                    $lineNum = $docblock->getEndLine();
-                } else {
-                    $bodyReturn[] = $bodyLines[$lineNum - 1]; // adjust for index -> line conversion
-                }
-            }
-            $body = implode("\n", $bodyReturn);
-            unset($bodyLines, $bodyReturn, $classStartLine, $classEndLine);
-        }
-        
-        $file->setBody($body);
-        
-        return $file;
-    }
-    
-    /**
-     * setDocblock() Set the docblock
-     *
-     * @param Zend_CodeGenerator_Php_Docblock|array|string $docblock
-     * @return Zend_CodeGenerator_Php_File
-     */
-    public function setDocblock($docblock) 
-    {
-        if (is_string($docblock)) {
-            $docblock = array('shortDescription' => $docblock);
-        }
-        
-        if (is_array($docblock)) {
-            $docblock = new Zend_CodeGenerator_Php_Docblock($docblock);
-        } elseif (!$docblock instanceof Zend_CodeGenerator_Php_Docblock) {
-            require_once 'Zend/CodeGenerator/Php/Exception.php';
-            throw new Zend_CodeGenerator_Php_Exception('setDocblock() is expecting either a string, array or an instance of Zend_CodeGenerator_Php_Docblock');
-        }
-        
-        $this->_docblock = $docblock;
-        return $this;
-    }
-    
-    /**
-     * Get docblock
-     *
-     * @return Zend_CodeGenerator_Php_Docblock
-     */
-    public function getDocblock() 
-    {
-        return $this->_docblock;
-    }
-
-    /**
-     * setRequiredFiles
-     *
-     * @param array $requiredFiles
-     * @return Zend_CodeGenerator_Php_File
-     */
-    public function setRequiredFiles($requiredFiles)
-    {
-        $this->_requiredFiles = $requiredFiles;
-        return $this;
-    }
-    
-    /**
-     * getRequiredFiles()
-     *
-     * @return array
-     */
-    public function getRequiredFiles() 
-    {
-        return $this->_requiredFiles;
-    }
-
-    /**
-     * setClasses()
-     *
-     * @param array $classes
-     * @return Zend_CodeGenerator_Php_File
-     */
-    public function setClasses(Array $classes) 
-    {
-        foreach ($classes as $class) {
-            $this->setClass($class);
-        }
-        return $this;
-    }
-    
-    /**
-     * getClass()
-     *
-     * @param string $name
-     * @return Zend_CodeGenerator_Php_Class
-     */
-    public function getClass($name = null)
-    {
-        if ($name == null) {
-            reset($this->_classes);
-            return current($this->_classes);
-        }
-        
-        return $this->_classes[$name];
-    }
-    
-    /**
-     * setClass()
-     *
-     * @param Zend_CodeGenerator_Php_Class|array $class
-     * @return Zend_CodeGenerator_Php_File
-     */
-    public function setClass($class)
-    {
-        if (is_array($class)) {
-            $class = new Zend_CodeGenerator_Php_Class($class);
-            $className = $class->getName();
-        } elseif ($class instanceof Zend_CodeGenerator_Php_Class) {
-            $className = $class->getName();
-        } else {
-            require_once 'Zend/CodeGenerator/Php/Exception.php';
-            throw new Zend_CodeGenerator_Php_Exception('Expecting either an array or an instance of Zend_CodeGenerator_Php_Class');
-        }
-        
-        // @todo check for dup here 
-        
-        $this->_classes[$className] = $class;
-        return $this;
-    }
-    
-    /**
-     * setFilename()
-     *
-     * @param string $filename
-     * @return Zend_CodeGenerator_Php_File
-     */
-    public function setFilename($filename)
-    {
-        $this->_filename = $filename;
-        return $this;
-    }
-    
-    /**
-     * getFilename()
-     *
-     * @return string
-     */
-    public function getFilename()
-    {
-        return $this->_filename;
-    }
-    
-    /**
-     * getClasses()
-     *
-     * @return array Array of Zend_CodeGenerator_Php_Class
-     */
-    public function getClasses() 
-    {
-        return $this->_classes;
-    }
-
-    /**
-     * setBody()
-     *
-     * @param string $body
-     * @return Zend_CodeGenerator_Php_File
-     */
-    public function setBody($body)
-    {
-        $this->_body = $body;
-        return $this;
-    }
-    
-    /**
-     * getBody()
-     *
-     * @return string
-     */
-    public function getBody()
-    {
-        return $this->_body;
-    }
-    
-    /**
-     * isSourceDirty()
-     *
-     * @return bool
-     */
-    public function isSourceDirty()
-    {
-        if (($docblock = $this->getDocblock()) && $docblock->isSourceDirty()) {
-            return true;
-        }
-        
-        foreach ($this->_classes as $class) {
-            if ($class->isSourceDirty()) {
-                return true;
-            }
-        }
-        
-        return parent::isSourceDirty();
-    }
-    
-    /**
-     * generate()
-     *
-     * @return string
-     */
-    public function generate()
-    {
-        if ($this->isSourceDirty() === false) {
-            return $this->_sourceContent;
-        }
-        
-        $output = '';
-        
-        // start with the body (if there), or open tag
-        if (preg_match('#(?:\s*)<\?php#', $this->getBody()) == false) {
-            $output = '<?php' . PHP_EOL;
-        }
-        
-        // if there are markers, put the body into the output
-        $body = $this->getBody();
-        if (preg_match('#/\* Zend_CodeGenerator_Php_File-(.*?)Marker:#', $body)) {
-            $output .= $body;
-            $body    = '';
-        }
-        
-        // Add file docblock, if any
-        if (null !== ($docblock = $this->getDocblock())) {
-            $docblock->setIndentation('');
-            $regex = preg_quote(self::$_markerDocblock, '#');
-            if (preg_match('#'.$regex.'#', $output)) {
-                $output  = preg_replace('#'.$regex.'#', $docblock->generate(), $output, 1);
-            } else {
-                $output .= $docblock->generate() . PHP_EOL;
-            }
-        }
-        
-        // newline
-        $output .= PHP_EOL;
-        
-        // process required files
-        // @todo marker replacement for required files
-        $requiredFiles = $this->getRequiredFiles();
-        if (!empty($requiredFiles)) {
-            foreach ($requiredFiles as $requiredFile) {
-                $output .= 'require_once \'' . $requiredFile . '\';' . PHP_EOL;
-            }
-            
-            $output .= PHP_EOL;
-        }
-        
-        // process classes
-        $classes = $this->getClasses();
-        if (!empty($classes)) {
-            foreach ($classes as $class) {
-                $regex = str_replace('?', $class->getName(), self::$_markerClass);
-                $regex = preg_quote($regex, '#');
-                if (preg_match('#'.$regex.'#', $output)) {
-                    $output = preg_replace('#'.$regex.'#', $class->generate(), $output, 1);
-                } else {
-                    $output .= $class->generate() . PHP_EOL;
-                }
-            }
-            
-        }
-
-        if (!empty($body)) {
-
-            // add an extra space betwee clsses and 
-            if (!empty($classes)) {
-                $output .= PHP_EOL;
-            }
-        
-            $output .= $body;
-        }
-
-        return $output;
-    }
-    
-    public function write()
-    {
-        if ($this->_filename == '' || !is_writable(dirname($this->_filename))) {
-            require_once 'Zend/CodeGenerator/Php/Exception.php';
-            throw new Zend_CodeGenerator_Php_Exception('This code generator object is not writable.');
-        }
-        file_put_contents($this->_filename, $this->generate());
-        return $this;
-    }
-    
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+eWSjIv0fSQJuQw99aVI9

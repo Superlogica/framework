@@ -1,220 +1,111 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Translate
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @version    $Id: Date.php 2498 2006-12-23 22:13:38Z thomas $
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-
-/** Zend_Locale */
-require_once 'Zend/Locale.php';
-
-/** Zend_Translate_Adapter */
-require_once 'Zend/Translate/Adapter.php';
-
-
-/**
- * @category   Zend
- * @package    Zend_Translate
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Translate_Adapter_Xliff extends Zend_Translate_Adapter {
-    // Internal variables
-    private $_file        = false;
-    private $_cleared     = array();
-    private $_transunit   = null;
-    private $_source      = null;
-    private $_target      = null;
-    private $_scontent    = null;
-    private $_tcontent    = null;
-    private $_stag        = false;
-    private $_ttag        = false;
-    private $_data        = array();
-
-    /**
-     * Generates the xliff adapter
-     * This adapter reads with php's xml_parser
-     *
-     * @param  string              $data     Translation data
-     * @param  string|Zend_Locale  $locale   OPTIONAL Locale/Language to set, identical with locale identifier,
-     *                                       see Zend_Locale for more information
-     * @param  array               $options  OPTIONAL Options to set
-     */
-    public function __construct($data, $locale = null, array $options = array())
-    {
-        parent::__construct($data, $locale, $options);
-    }
-
-
-    /**
-     * Load translation data (XLIFF file reader)
-     *
-     * @param  string  $locale    Locale/Language to add data for, identical with locale identifier,
-     *                            see Zend_Locale for more information
-     * @param  string  $filename  XLIFF file to add, full path must be given for access
-     * @param  array   $option    OPTIONAL Options to use
-     * @throws Zend_Translation_Exception
-     * @return array
-     */
-    protected function _loadTranslationData($filename, $locale, array $options = array())
-    {
-        $this->_data = array();
-        if (!is_readable($filename)) {
-            require_once 'Zend/Translate/Exception.php';
-            throw new Zend_Translate_Exception('Translation file \'' . $filename . '\' is not readable.');
-        }
-
-        $encoding      = $this->_findEncoding($filename);
-        $this->_target = $locale;
-        $this->_file   = xml_parser_create($encoding);
-        xml_set_object($this->_file, $this);
-        xml_parser_set_option($this->_file, XML_OPTION_CASE_FOLDING, 0);
-        xml_set_element_handler($this->_file, "_startElement", "_endElement");
-        xml_set_character_data_handler($this->_file, "_contentElement");
-
-        if (!xml_parse($this->_file, file_get_contents($filename))) {
-            $ex = sprintf('XML error: %s at line %d',
-                          xml_error_string(xml_get_error_code($this->_file)),
-                          xml_get_current_line_number($this->_file));
-            xml_parser_free($this->_file);
-            require_once 'Zend/Translate/Exception.php';
-            throw new Zend_Translate_Exception($ex);
-        }
-
-        return $this->_data;
-    }
-
-    private function _startElement($file, $name, $attrib)
-    {
-        if ($this->_stag === true) {
-            $this->_scontent .= "<".$name;
-            foreach($attrib as $key => $value) {
-                $this->_scontent .= " $key=\"$value\"";
-            }
-            $this->_scontent .= ">";
-        } else if ($this->_ttag === true) {
-            $this->_tcontent .= "<".$name;
-            foreach($attrib as $key => $value) {
-                $this->_tcontent .= " $key=\"$value\"";
-            }
-            $this->_tcontent .= ">";
-        } else {
-            switch(strtolower($name)) {
-                case 'file':
-                    $this->_source = $attrib['source-language'];
-                    if (isset($attrib['target-language'])) {
-                        $this->_target = $attrib['target-language'];
-                    }
-
-                    if (!isset($this->_data[$this->_source])) {
-                        $this->_data[$this->_source] = array();
-                    }
-
-                    if (!isset($this->_data[$this->_target])) {
-                        $this->_data[$this->_target] = array();
-                    }
-
-                    break;
-                case 'trans-unit':
-                    $this->_transunit = true;
-                    break;
-                case 'source':
-                    if ($this->_transunit === true) {
-                        $this->_scontent = null;
-                        $this->_stag = true;
-                        $this->_ttag = false;
-                    }
-                    break;
-                case 'target':
-                    if ($this->_transunit === true) {
-                        $this->_tcontent = null;
-                        $this->_ttag = true;
-                        $this->_stag = false;
-                    }
-                    break;
-                default:
-                    break;
-            }
-        }
-    }
-
-    private function _endElement($file, $name)
-    {
-        if (($this->_stag === true) and ($name !== 'source')) {
-            $this->_scontent .= "</".$name.">";
-        } else if (($this->_ttag === true) and ($name !== 'target')) {
-            $this->_tcontent .= "</".$name.">";
-        } else {
-            switch (strtolower($name)) {
-                case 'trans-unit':
-                    $this->_transunit = null;
-                    $this->_scontent = null;
-                    $this->_tcontent = null;
-                    break;
-                case 'source':
-                    if (!empty($this->_scontent) and !empty($this->_tcontent) or
-                        (isset($this->_data[$this->_source][$this->_scontent]) === false)) {
-                        $this->_data[$this->_source][$this->_scontent] = $this->_scontent;
-                    }
-                    $this->_stag = false;
-                    break;
-                case 'target':
-                    if (!empty($this->_scontent) and !empty($this->_tcontent) or
-                        (isset($this->_data[$this->_source][$this->_scontent]) === false)) {
-                        $this->_data[$this->_target][$this->_scontent] = $this->_tcontent;
-                    }
-                    $this->_ttag = false;
-                    break;
-                default:
-                    break;
-            }
-        }
-    }
-
-    private function _contentElement($file, $data)
-    {
-        if (($this->_transunit !== null) and ($this->_source !== null) and ($this->_stag === true)) {
-            $this->_scontent .= $data;
-        }
-
-        if (($this->_transunit !== null) and ($this->_target !== null) and ($this->_ttag === true)) {
-            $this->_tcontent .= $data;
-        }
-    }
-
-    private function _findEncoding($filename)
-    {
-        $file = file_get_contents($filename, null, null, 0, 100);
-        if (strpos($file, "encoding") !== false) {
-            $encoding = substr($file, strpos($file, "encoding") + 9);
-            $encoding = substr($encoding, 1, strpos($encoding, $encoding[0], 1) - 1);
-            return $encoding;
-        }
-        return 'UTF-8';
-    }
-
-    /**
-     * Returns the adapter name
-     *
-     * @return string
-     */
-    public function toString()
-    {
-        return "Xliff";
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+gZ22zvxvg/1sTta=

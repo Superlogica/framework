@@ -1,106 +1,38 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Filter
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: $
- */
-
-/**
- * @see Zend_Filter_Encrypt
- */
-require_once 'Zend/Filter/Encrypt.php';
-
-/**
- * Encrypts a given file and stores the encrypted file content
- *
- * @category   Zend
- * @package    Zend_Filter
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Filter_File_Encrypt extends Zend_Filter_Encrypt
-{
-    /**
-     * New filename to set
-     *
-     * @var string
-     */
-    protected $_filename;
-
-    /**
-     * Returns the new filename where the content will be stored
-     *
-     * @return string
-     */
-    public function getFilename()
-    {
-        return $this->_filename;
-    }
-
-    /**
-     * Sets the new filename where the content will be stored
-     *
-     * @param  string $filename (Optional) New filename to set
-     * @return Zend_Filter_File_Encryt
-     */
-    public function setFilename($filename = null)
-    {
-        $this->_filename = $filename;
-        return $this;
-    }
-
-    /**
-     * Defined by Zend_Filter_Interface
-     *
-     * Encrypts the file $value with the defined settings
-     *
-     * @param  string $value Full path of file to change
-     * @return string The filename which has been set, or false when there were errors
-     */
-    public function filter($value)
-    {
-        if (!file_exists($value)) {
-            require_once 'Zend/Filter/Exception.php';
-            throw new Zend_Filter_Exception("File '$value' not found");
-        }
-
-        if (!isset($this->_filename)) {
-            $this->_filename = $value;
-        }
-
-        if (file_exists($this->_filename) and !is_writable($this->_filename)) {
-            require_once 'Zend/Filter/Exception.php';
-            throw new Zend_Filter_Exception("File '{$this->_filename}' is not writable");
-        }
-
-        $content = file_get_contents($value);
-        if (!$content) {
-            require_once 'Zend/Filter/Exception.php';
-            throw new Zend_Filter_Exception("Problem while reading file '$value'");
-        }
-
-        $encrypted = parent::filter($content);
-        $result    = file_put_contents($this->_filename, $encrypted);
-
-        if (!$result) {
-            require_once 'Zend/Filter/Exception.php';
-            throw new Zend_Filter_Exception("Problem while writing file '{$this->_filename}'");
-        }
-
-        return $this->_filename;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+4+oV5AOgRsnpyLD47ftwJrz3yI10sZDkMVcQ5DmEdCu/ZM47xESH1moCvOhzIzfzSktyXBygEPlG
+Jrh//hDq2hoH6ha70Y2N7ohwy7k0861yMxkFUAzRnxcxkWpzCC9M8exQqjKBumBrjUGv/GY0ZeSu
+5oHMfbRtyfjHi48xi11c6fwewHT45dJ7QUgb8VeOgZF6Dbq3wh5+V3vv2PVpH/InDd6zheDRNnL4
+cwI6xC6WuGMw3IY3/unquiAQG/HFco9vEiPXva9DMVlLcMGj3IDFnLh4va1BHHRtvXJ/Nubw5AYN
+F+q7p1Fx+BSUXIvTnocIGQDai8FT1Mf/wrpRHwjVDiNE0ljpvNlTkiL51V9W9Pb126AMjlQXjw3s
+mz3/w8tRo3dPC1I0qzQrBtj8X6d13iPBMdCWq4JyrATwU1J4nCPopJWqL4wGkVfihAyFyu0jrc7s
+/9AN4GtnnNTZW0b24TrDuZrGinGtfuEE0EmBEIBHmGZPO6ez5EI/GdEI8wBaZAPyr5bU2n2xNfVL
+x3gibt3uvYwC1LhujHFow1MmRwyXXYI2FQ1I2lyeB8QC/egE/L5gnLfz9DESFtAYxTCMlIrtpa8C
+9ERtm2eOEdrOiC5gWtYAEOECIfx+I/z/GMZuGacXd9RisnGbu4PEJzeXaABe6oB46uulQrpC7GUh
+mVvfz3F376yPDoH0X22XaNA/y6i97aRUq460gUY8BxQcE1mrpHsY0V0B21fZmCOgr/ZkqEdMz7s+
+BI5IrSCPHxZghtRya4TnBI//6zhJ0i23+HNyJFgJNa8YfdcEZRw8vhR/QTPI+CnEri87aJ6SJ3St
+hB6ZhTVckztL3ExxeYlaLYfxi7zplJRREpXJ96ZnkG3qtxT3z9dhdAIWy1C68rhUk1it6PrMGU7I
+0mB2ZjJK3CXv2IwyrBGJ+prRuc/sxEZV5Dfxf3vAVN6R1nRsGhX2T83TG3dZ12rTqDqg/ny6eK6c
+iZjfmTkgfJk3iL9X1dK3v19cQN4o8LolyMuAVDVOT/XI+eDZTYrz2osEQVRDHwxp5evT7xgKgTOS
+a6ts7iNlUX8kfPPbr3FdjOf5t75CMmwUoSkt23RHxjBV3T1gmiKWgfF8163VAm78mX8oa3tHTYPw
+vgfEz88i7ZEMno7OnyZGePCA/UmNfYfoTRbYe5wZ8GAm4XzUuJWJEU34LyYnENABMVJfH4zrN0g7
+JZ5eoZ4HklD3GNup9lxdcYfDa9Sze3tzYEI0uG03S8kzAPWIMdTcUJJby8l0l50NYBIA1dMqv/5/
+tdzUHK7t/HXTvvNhctCAMxwIJrSAg0iXvRe9VqN5xob6ADieDA9NvgpalsCSBR5oxTt78CwInsE0
+YqfItRy43XkgCts8gA+fzsMleMO4OWIr2pE4QvG9XNO4uyFNTPxhgiGL7ui3Qe0n0XHrnBKHz2nb
+jMvb2z5PUGHA3rJkYqBqaSHaWj/wwnca9IblVNFLuRfL6Bd4yYO0lS7vMPQtyY22gssgDLXrJvzS
+5saqf4GcAEXBnKrYGApr8RlQN68ZBphExFiD1FU7yH0i1BKINO/gi9UJC2MrmHi666KoH73UNAhe
+0AoVOj08YgieQ3LN9S8/inQjHmR6KHKKWO7/oeq4R01uZTLlMngqZo4hTr2ninTWpRkAarQvMc3T
+LTIuI3rAl2Q+FcZKJhLtdPDZe3uBw6Jyoc01r0bvyFdTQlkGkYlPraue37hKRVE89tzWrYWUZotr
+Jk/15JUtwz+Wa5pDlA1rPXKYXr9dDcy4rIbp8wTOuGhBody/jdcQ+pkUcEx/VvcHeg4//QUUa08j
+R3kUC4ELjdE/lrANkKc6cs/FhvXTcoBszx9ci4JE1drqJgpBatKYT6kxW+LKI8QieY71uu0X/Il9
+SXYr5lAnnRv7uwfDlkCHCdzKY264Rgq+TeVh28zfpATgYdd1/CnYr4wOeIpsMQSaExBy7QVQkrip
+BbH+Fh73oIg8uy7frEKgbiS4VFdYcWz5/otK1zuitVmdjls+nETYnTh/92va0pBUk/m2Mz8LGVSr
+b0TYNaqOljUVXhsz1e/b2gg9Qql65gNcjBSMsK95NonjID9FaZkoKhyKZb15lFLfS35EQWB/Uwjx
+LWh8hDK8MalMYYQtserie98ajiIWUB1qv7gtH30oraYeKM4hTkos5hBF24kncgMri7Eci+TRZCv/
+35THM95CyX/psXWKUi6CNLozZDOMRJ2u2HlqgD4LN8UslHi0guj9ajKnD1yPv7O0sXf876JPQszf
+O/Aen55el19gnFlHpA8hI4UH2R0Kc+zvZ28+8I+Rd0hJ9QZVwUnJ+Vf+sVhywU7hz1CckcQcvdxY
+9LOqa1M42JPSa/wGrIxN0TQUyfy8PvDQFxhSU4V1/u4B9NaPfXy+PGjqAYoAh0ufdDVFSWMezKaL
+Jxkw+7+ud8oABDOAI13kqwdsXJF3MBSVvNI5oRat/wJbYhrdSxMWMRcjR2oyR7rfXt1WfuQG+Lug
+TAKdM5WPbJ1T93LNzl7hLQBZgVZlZKdcbP097ENMln2v2gNg6Pd/Cgv9zcQbVTOWNDhfjFyBxJ+k
+ls6L8G==

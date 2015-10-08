@@ -1,129 +1,41 @@
-<?php
-/**
- * Zend Framework
- *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://framework.zend.com/license/new-bsd
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@zend.com so we can send you a copy immediately.
- *
- * @category   Zend
- * @package    Zend_Search_Lucene
- * @subpackage Search
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-
-/** Zend_Search_Lucene_Index_Term */
-require_once 'Zend/Search/Lucene/Index/Term.php';
-
-/** Zend_Search_Lucene_Search_QueryEntry */
-require_once 'Zend/Search/Lucene/Search/QueryEntry.php';
-
-/** Zend_Search_Lucene_Analysis_Analyzer */
-require_once 'Zend/Search/Lucene/Analysis/Analyzer.php';
-
-/**
- * @category   Zend
- * @package    Zend_Search_Lucene
- * @subpackage Search
- * @copyright  Copyright (c) 2005-2008 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- */
-class Zend_Search_Lucene_Search_QueryEntry_Term extends Zend_Search_Lucene_Search_QueryEntry
-{
-    /**
-     * Term value
-     *
-     * @var string
-     */
-    private $_term;
-
-    /**
-     * Field
-     *
-     * @var string|null
-     */
-    private $_field;
-
-
-    /**
-     * Fuzzy search query
-     *
-     * @var boolean
-     */
-    private $_fuzzyQuery = false;
-
-    /**
-     * Similarity
-     *
-     * @var float
-     */
-    private $_similarity = 1.;
-
-
-    /**
-     * Object constractor
-     *
-     * @param string $term
-     * @param string $field
-     */
-    public function __construct($term, $field)
-    {
-        $this->_term  = $term;
-        $this->_field = $field;
-    }
-
-    /**
-     * Process modifier ('~')
-     *
-     * @param mixed $parameter
-     */
-    public function processFuzzyProximityModifier($parameter = null)
-    {
-        $this->_fuzzyQuery = true;
-
-        if ($parameter !== null) {
-            $this->_similarity = $parameter;
-        } else {
-            $this->_similarity = Zend_Search_Lucene_Search_Query_Fuzzy::DEFAULT_MIN_SIMILARITY;
-        }
-    }
-
-    /**
-     * Transform entry to a subquery
-     *
-     * @param string $encoding
-     * @return Zend_Search_Lucene_Search_Query
-     * @throws Zend_Search_Lucene_Search_QueryParserException
-     */
-    public function getQuery($encoding)
-    {
-    	if ($this->_fuzzyQuery) {
-    		$query = new Zend_Search_Lucene_Search_Query_Preprocessing_Fuzzy($this->_term,
-    		                                                                 $encoding,
-    		                                                                 ($this->_field !== null)?
-                                                                                  iconv($encoding, 'UTF-8', $this->_field) :
-                                                                                  null,
-    		                                                                 $this->_similarity
-    		                                                                 );
-            $query->setBoost($this->_boost);
-            return $query;
-    	}
-
-
-    	$query = new Zend_Search_Lucene_Search_Query_Preprocessing_Term($this->_term,
-    	                                                                $encoding,
-    	                                                                ($this->_field !== null)?
-                                                                              iconv($encoding, 'UTF-8', $this->_field) :
-                                                                              null
-                                                                        );
-    	$query->setBoost($this->_boost);
-        return $query;
-    }
-}
+<?php //003ab
+if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+?>
+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
+ieYN4s9RRGF7QhDHTxVXli17
