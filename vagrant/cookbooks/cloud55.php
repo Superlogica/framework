@@ -15,7 +15,7 @@ exec_script("
     sudo php5enmod mcrypt
     sudo a2enmod rewrite
     sudo apt-get --yes --force-yes install apachetop
-    sudo apt-get --yes --force-yes install firebird2.1-super subversion git-core php5-interbase   
+    sudo apt-get --yes --force-yes install firebird2.5-super subversion git-core php5-interbase   
     sudo php5enmod interbase
     sudo apt-get -f install
     sudo rm /etc/php5/conf.d/timezone.ini
