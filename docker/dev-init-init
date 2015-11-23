@@ -11,6 +11,6 @@ sudo mkdir /opt/cloud-init
 sudo mkdir /opt/cloud-init/cloud
 sudo chmod 777 /opt/cloud-init/cloud
 cd /opt/cloud-init/cloud
-sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/docker/dev --no-check-certificate;
+sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/docker/dev-init --no-check-certificate;
 sudo chmod 777 /opt/cloud-init/cloud/cloud-init;
 sudo /opt/cloud-init/cloud/cloud-init $1
