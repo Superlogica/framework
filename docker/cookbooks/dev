@@ -1,0 +1,16 @@
+!/bin/bash
+sudo apt-get update
+sudo apt-get -y -q install php5-cli php5-dev php5-mcrypt php5-curl php5-gd
+sudo apt-get update
+sudo apt-get install mysql-server
+sudo apt-get update
+sudo apt-get install phpmyadmin
+sudo rm /opt/cloud-init/cloud-init
+sudo rm -Rf /opt/cloud-init/cloud
+sudo mkdir /opt/cloud-init
+sudo mkdir /opt/cloud-init/cloud
+sudo chmod 777 /opt/cloud-init/cloud
+cd /opt/cloud-init/cloud
+sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/docker/dev --no-check-certificate;
+sudo chmod 777 /opt/cloud-init/cloud/cloud-init;
+sudo /opt/cloud-init/cloud/cloud-init $1
