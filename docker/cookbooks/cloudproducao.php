@@ -1,8 +1,8 @@
 <?php
 function cloudproducao_init(){
 
-exec_script("sudo dev-init cloud
+exec_script("sudo cloud-init cloud
              cd /home; sudo git clone git@github.com:Superlogica/cloud.git
-             sudo dev-init cloud
-             sudo dev-init cloudini cloudteste");
+             sudo cloud-init cloud
+             sudo cloud-init cloudini cloudteste");
 }

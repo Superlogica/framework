@@ -3,7 +3,7 @@
 function cloud_init($php_version="5.4"){
 
 if ($php_version=="5.4"){
-exec_script("sudo dev-init php54atualizado");
+exec_script("sudo cloud-init php54atualizado");
 }
 
 if ($php_version=="5.5"){
@@ -54,9 +54,9 @@ else
 
  exec_script("sudo rm -Rf /var/www
             sudo ln -s /home/cloud  /var/www
-            sudo dev-init cloudini
-            sudo dev-init phpini
-            sudo dev-init varnish
+            sudo cloud-init cloudini
+            sudo cloud-init phpini
+            sudo cloud-init varnish
             sudo bash /home/cloud/conf/deploy.sh
             sudo mkdir /home/cloud/var; sudo chmod -R 777 /home/cloud/var
             sudo mkdir /home/cloud/public/scripts/min
