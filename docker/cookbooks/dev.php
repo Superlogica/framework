@@ -12,8 +12,6 @@ apt-cache policy docker-engine
 sudo apt-get update 
 sudo apt-get install docker-engine 
 sudo service docker start
-sudo apt-get update 
-sudo apt-get install phpmyadmin
 ");
 
 
