@@ -8,7 +8,7 @@ if (posix_getuid() != 0) {
 }
 
 // torna este script executável em qq diretório
-if (!is_file('/usr/sbin/cloud-init')) {
+if (!is_file('/usr/sbin/dev-init')) {
     @exec("sudo ln -s ".__FILE__." /usr/sbin");
 }
 

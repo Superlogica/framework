@@ -21,8 +21,8 @@ exec_script("
     sudo apt-get -y install tz-brasil;
     sudo dpkg-reconfigure tzdata;
     sudo chmod 444 /etc/init.d/postfix
-    sudo cloud-init cloudini 'plataforma'
-    sudo cloud-init phpini
+    sudo dev-init cloudini 'plataforma'
+    sudo dev-init phpini
     sudo rm /etc/php5/conf.d/timezone.ini
     sudo mkdir /home/apps/session; sudo chmod -R 777 /home/apps/session");
 	//fazer ioncube depois
