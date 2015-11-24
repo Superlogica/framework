@@ -1,23 +1,4 @@
 !/bin/bash
-sudo apt-get update;
-sudo apt-get --yes --force-yes install apache2 libapache2-mod-php5 php5-mysql php5-mcrypt lynx lynx-cur php5-curl php5-dev php5-gd php5-mcrypt php5-memcache php5-memcached php5-mysql;
-sudo a2enmod ssl;
-sudo php5enmod mcrypt;
-sudo a2enmod rewrite;
-sudo apt-get --yes --force-yes install apachetop;
-sudo apt-get --yes --force-yes install firebird2.5-super subversion git-core php5-interbase;
-sudo php5enmod interbase;
-sudo apt-get update; 
-sudo apt-get install phpmyadmin;
-sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D;
-cd /etc/apt/sources.list.d;
-sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/docker/docker.list;
-apt-get update;
-apt-get purge lxc-docker*;
-apt-cache policy docker-engine;
-sudo apt-get update;
-sudo apt-get install docker-engine;
-sudo service docker start;
 sudo rm /opt/cloud-init/cloud-init;
 sudo rm -Rf /opt/cloud-init/cloud;
 sudo mkdir /opt/cloud-init;
