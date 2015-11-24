@@ -13,7 +13,7 @@ exec_script(" sudo add-apt-repository ppa:ondrej/php5
 
 //pacotes
 exec_script("
-    sudo apt-get --yes --force-yes install apache2 libapache2-mod-php5 php5-mysql php5-mcrypt lynx lynx-cur php5-curl php5-dev php5-gd php5-mcrypt php5-memcache php5-memcached php5-mysql 
+    apt-get update && apt-get install -y php5-cli php5-fpm php5-mysql php5-intl php5-xdebug php5-recode php5-snmp php5-mcrypt php5-memcache php5-memcached php5-imagick php5-curl php5-xsl php5-snmp php5-dev php5-tidy php5-xmlrpc php5-gd php5-pspell php-pear php-apc
     sudo a2enmod ssl
     sudo php5enmod mcrypt
     sudo a2enmod rewrite
