@@ -17,7 +17,7 @@ function fb21_init(){
 		sudo apt-get -y -q install firebird$fb_ver-super$classic subversion git-core
                 sudo dpkg-reconfigure firebird2.1-super
 		");
-        time_zone();        
+        //time_zone();        
 //	exec("sudo fdisk /dev/sdc << EOF\nn\np\n1\n\n\nw\nEOF");
 ////        exec_script("sudo mkfs -t ext3 /dev/sdc1
 //             

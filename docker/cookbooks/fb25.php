@@ -45,7 +45,11 @@ function fb25_init(){
 		sudo chmod 444 /etc/init.d/postfix	
 		sudo chown firebird.firebird /usr/lib/firebird/$fb_ver/UDF/*.so
                 sudo ln -s /usr/lib/libfbclient.so.2.5.0 /usr/lib/libfbclient.so    
-	");       
+	");
+
+exec_script("
+         sudo ufw allow 3050
+");            
           
         firebird_tunning(); 
         firebird_restart();
