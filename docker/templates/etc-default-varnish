@@ -1,3 +1,5 @@
+START=yes
+
 # Configuration file for varnish
 #
 # /etc/init.d/varnish expects the variables $DAEMON_OPTS, $NFILES and $MEMLOCK
@@ -28,7 +30,7 @@ INSTANCE=$(uname -n)
 # 	     -b localhost:8080 \
 # 	     -u varnish -g varnish \
 #            -S /etc/varnish/secret \
-# 	     -s file,/var/lib/varnish/$INSTANCE/varnish_storage.bin,1G"
+# 	     -s file,/var/lib/varnish/default/varnish_storage.bin,1G"
 
 
 ## Alternative 2, Configuration with VCL
@@ -41,7 +43,7 @@ DAEMON_OPTS="-a :80 \
              -T localhost:6082 \
              -f /etc/varnish/default.vcl \
              -S /etc/varnish/secret \
-             -s file,/var/lib/varnish/$INSTANCE/varnish_storage.bin,1G"
+             -s file,/var/lib/varnish/default/varnish_storage.bin,1G"
 
 
 ## Alternative 3, Advanced configuration
