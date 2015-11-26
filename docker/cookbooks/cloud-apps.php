@@ -51,7 +51,7 @@ exec_script("
 
 
 //ativar app no apache
-exec_script("sudo rm /etc/apache2/sites-enabled/*; sudo ln -s /home/apps/conf/apps.superlogica.net /etc/apache2/sites-enabled/001apps");
+exec_script("sudo ln -s /home/apps/conf/apps.superlogica.net /etc/apache2/sites-enabled/001apps");
 
 deploy_action("apps");
 //deploy_action("plataforma");
