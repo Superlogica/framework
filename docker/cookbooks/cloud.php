@@ -53,9 +53,9 @@ else
 
 exec_script("sudo rm /etc/apache2/sites-enabled/*; sudo ln -s /home/cloud/conf/cloud.local.linux /etc/apache2/sites-enabled/001cloud.conf");
 
-exec_script("sudo rm /etc/apache2/sites-enabled/*; sudo ln -s /home/cloud/conf/cloud.superlogica.com_php55 /etc/apache2/sites-enabled/001cloud.conf");
-
- exec_script("sudo rm -Rf /var/www
+exec_script("
+            sudo chmod -R 777 /etc/apache2/sites-enabled
+            sudo rm -Rf /var/www
             sudo ln -s /home/cloud  /var/www
             sudo cloud-init cloudini
             sudo cloud-init phpini
