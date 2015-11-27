@@ -2,10 +2,8 @@
 
 
 exec_script("
-    sudo apt-get update
+    sudo apt-get update 
     sudo apt-get -y install mysql-server-5.5;
-	mysql -u root -p; 
-	set password for root@localhost=password(''); quit; 
 ");
         
 //pacotes
