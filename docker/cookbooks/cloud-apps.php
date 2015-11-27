@@ -1,4 +1,60 @@
 <?php
+function limparCachePHP(){
+  // Pastas a serem mantidas após processo de exclusão
+  // Será verificado dentro de cada pasta do sistema/versao e pular caso a pasta esteja neste array
+  $manterPastas = array(
+    'armazenamento'
+  );
+
+  $caminhoCache = realpath('/home/cloud/var/log/cache');
+  if ( !is_dir($caminhoCache) )
+    return -1;
+
+  $iterator = new DirectoryIterator( $caminhoCache );
+  foreach ( $iterator as $entry ) {
+    if( $entry->isDot() || !$entry->isDir() )
+      continue;
+
+    $iterator2 = new DirectoryIterator( $entry->getPathname() );
+    foreach ( $iterator2 as $entry2 ) {
+      if( $entry2->isDot() || !$entry2->isDir() )
+        continue;
+
+      $iterator3 = new DirectoryIterator( $entry2->getPathname() );
+      foreach ( $iterator3 as $entry3 ) {
+        if( $entry3->isDot() )
+          continue;
+
+        $caminhoDirOuArquivo = $entry3->getPathname();
+        if ( $entry3->isDir() && !in_array($entry3->getFilename(), $manterPastas))
+          shell_exec("sudo rm -f $caminhoDirOuArquivo -Rf"); // Deleta a pasta recursivamente
+        else if (is_file($caminhoDirOuArquivo))
+          unlink($caminhoDirOuArquivo);
+
+      }
+    }
+
+  }
+}
+
+/**
+ * Atualiza o cloud ini
+ */
+function atualizarCloudIni_action() {
+    global $conf;    
+
+    if (is_dir("/home/cloud/")) {
+        exec("sudo cp {$conf['basedir']}/templates/cloud.ini /home/cloud/configs/cloud.ini");
+    }
+    if (is_dir("/home/plataforma/")) {
+        exec("sudo cp {$conf['basedir']}/templates/cloud-apps.ini /home/plataforma/library/Application/Configs/cloud.ini");
+    }
+    if (is_dir("/home/subadquirente/")) {
+        exec("sudo cp {$conf['basedir']}/templates/cloud-subadquirente.ini /home/plataforma/library/Application/Configs/cloud.ini");
+    }    
+    
+    
+}
 
 function deploy_action($null='') {
     $apps_disponiveis = array('cloud','apps','plataforma','subadquirente','condoworks');
