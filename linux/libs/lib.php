@@ -31,7 +31,7 @@ if (is_file($destino)){
 if (is_file("/opt/cloud-init/cloud/templates/$basenome")){
    @unlink("/opt/cloud-init/cloud/templates/$basenome");
 }
-exec_script("cd /opt/cloud-init/cloud/templates/; sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/docker/templates/$nome --no-check-certificate;"); 
+exec_script("cd /opt/cloud-init/cloud/templates/; sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/linux/templates/$nome --no-check-certificate;"); 
 
 if (!is_file("/opt/cloud-init/cloud/templates/$basenome")){
     echo("\nTemplate '$nome' não encontrado.\n\n");
