@@ -33,14 +33,14 @@ if (!is_dir("/opt/cloud-init/cloud/libs")){
 if (is_file("/opt/cloud-init/cloud/libs/lib.php")){
    @unlink("/opt/cloud-init/cloud/libs/lib.php");
 }
-exec("cd /opt/cloud-init/cloud/libs; sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/docker/libs/lib.php --no-check-certificate;"); 
+exec("cd /opt/cloud-init/cloud/libs; sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/linux/libs/lib.php --no-check-certificate;"); 
 require_once "/opt/cloud-init/cloud/libs/lib.php";
 
 //executa
 if (is_file("/opt/cloud-init/cloud/$cookbook.php")){
    @unlink("/opt/cloud-init/cloud/$cookbook.php");
 }
-exec_script("cd /opt/cloud-init/cloud/; sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/docker/cookbooks/$cookbook.php --no-check-certificate;"); 
+exec_script("cd /opt/cloud-init/cloud/; sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/linux/cookbooks/$cookbook.php --no-check-certificate;"); 
 if (!is_file("/opt/cloud-init/cloud/$cookbook.php")){
     echo("\nCookbook '$cookbook' não encontrado.\n\n");
     exit(3);
