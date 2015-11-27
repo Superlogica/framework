@@ -8,7 +8,6 @@ function dev_init(){
 		sudo chmod 777 -R /etc/apache2
 		sudo chmod 777 -R /home/cloud
 		sudo chmod 777 -R /home/cloud-db
-		sudo cloud-init smartgit
 		sudo cloud-init idebancodedados
 		sudo cloud-init utilitarios
 	");
