@@ -43,7 +43,7 @@ Como criar ambientes dev para o Superlógica?
 
 - Executar cookbooks
 	- sudo cloud-init <nome_do_cookbook>
-	- ex: sudo cloud-init fb21
+	- ex: sudo cloud-init fb25
 
 - Firebird
 	- sudo /etc/init.d/firebird2.5-superclassic restart
