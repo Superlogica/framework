@@ -1,8 +1,8 @@
 <?php
 
-exec_script("
+exec_script("echo '-----Configurando apps-----'
     sudo mkdir /home/apps/session; sudo chmod -R 777 /home/apps/session
-    sudo ln -s /home/apps/conf/apps.superlogica.net /etc/apache2/sites-enabled/002apps.conf
+    sudo ln -s /home/apps/conf/apps.local.linux /etc/apache2/sites-enabled/001apps.conf
     sudo ln -s /home/plataforma/library /home/apps/library
     sudo chmod 777 -R /home/apps/public/scripts/min
 ");
