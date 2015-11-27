@@ -6,9 +6,9 @@ function deploy_action($null='') {
             $home = "/home/$app";
             if (is_dir($home)) {
                 echo "\n\nDeploy $app..\n";
-                exec_script("cd $home; sudo git reset --hard; sudo git pull;"); 
+                //exec_script("cd $home; sudo git reset --hard; sudo git pull;"); 
                 echo "cd $home";
-                exec_script("cd $home; sudo git status"); 
+                //exec_script("cd $home; sudo git status"); 
                 if ($app == "cloud"){
                     atualizarCloudIni_action();
                     limparCachePHP();
