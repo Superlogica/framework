@@ -1,8 +1,8 @@
 # PRÉ INSTALAÇÃO
-
-1. Liberar 100GB de espaço em seu HD
-2. Deixar como "Espaço livre" ( Diminuir partição do gerenciador de disco )
-3. Instalar Linux Ubuntu Desktop 14.04 LTS 64Bits nesta partição disponibilizada
+1. Link download Linux Ubuntu Desktop 14.04 LTS 64Bits http://www.ubuntu.com/download/desktop
+2. Liberar 100GB de espaço em seu HD
+3. Deixar como "Espaço livre" ( Diminuir partição do gerenciador de disco )
+4. Instalar Linux Ubuntu Desktop 14.04 LTS 64Bits nesta partição disponibilizada
 
 # INSTALACAO
 
