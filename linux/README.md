@@ -30,10 +30,10 @@ Como criar ambientes dev para o Superlógica?
 - Atom
 	- No terminal, execute o comando: sudo cloud-init atom
 
-- Firebird
+- Gerenciar banco de dados firebird
 	- Por padrão é baixado o FlameRobin automaticamente
 
-- MySql
+- Gerenciar banco de dados MySql
 	- Por padrão é baixado o MySql WorkBench automaticamente	
 
 # USO
