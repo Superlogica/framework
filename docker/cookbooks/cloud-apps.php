@@ -124,7 +124,7 @@ exec_script("
 
 
 //ativar app no apache
-exec_script("sudo ln -s /home/apps/conf/apps.superlogica.net /etc/apache2/sites-enabled/001apps");
+exec_script("sudo ln -s /home/apps/conf/apps.superlogica.net /etc/apache2/sites-enabled/001apps.conf");
 
 deploy_action("apps");
 apache_tunning();
