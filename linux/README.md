@@ -1,5 +1,3 @@
-Como criar ambientes dev para o Superlógica?
-
 # PRÉ INSTALAÇÃO
 
 1. Liberar 100GB de espaço em seu HD
