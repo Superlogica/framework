@@ -7,9 +7,11 @@ exec_script("
 	echo '####### varnish yes ##############'
 	sudo apt-get --yes --force-yes install varnish  
 	echo '####### FIM varnish yes ##############'	
-	sudo rm  /etc/default/varnish  
+	sudo rm  /etc/default/varnish 
+	sudo rm -rf /var/lib/varnish/default/  
 	sudo mkdir /var/lib/varnish/default/ 
 	sudo chmod 777 -R /var/lib/varnish 
+	sudo chmod 777 -R /etc/varnish 
 ");
 
 put_template('etc-default-varnish','/etc/default/varnish');
