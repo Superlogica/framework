@@ -22,37 +22,37 @@ Como criar ambientes dev para o Superlógica?
  
 #IDE's DE DESENVOLVIMENTO
 - NetBeans
-	Para uso, baixe direto do site com pacote e complemento que lhe for mais conveniente
+	- Para uso, baixe direto do site com pacote e complemento que lhe for mais conveniente
 
 - Sublime
-	No terminal, rode o comando: sudo cloud-init sublime
+	- No terminal, rode o comando: sudo cloud-init sublime
 
 - Atom
-	No terminal, rode o comando: sudo cloud-init atom
+	- No terminal, rode o comando: sudo cloud-init atom
 
 - Firebird
-	Por padrão é baixado o FlameRobin automaticamente
+	- Por padrão é baixado o FlameRobin automaticamente
 
 - MySql
-	Por padrão é baixado o MySql WorkBench automaticamente	
+	- Por padrão é baixado o MySql WorkBench automaticamente	
 
 # USO
 
 - Acessar servidor web: 
-	localhost:3059
+	- localhost:3059
 
 - Executar cookbooks
-	sudo cloud-init <nome_do_cookbook>
-	ex: sudo cloud-init fb21
+	- sudo cloud-init <nome_do_cookbook>
+	- ex: sudo cloud-init fb21
 
 - Firebird
-	sudo /etc/init.d/firebird2.5-superclassic restart
+	- sudo /etc/init.d/firebird2.5-superclassic restart
 
 - Apache
-	sudo /etc/init.d/apache2 restart
+	- sudo /etc/init.d/apache2 restart
 
 - Limpar cache
-	sudo /etc/init.d/varnish restart
+	- sudo /etc/init.d/varnish restart
  
 
 
