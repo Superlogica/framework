@@ -2,7 +2,7 @@
 
 1. Liberar 100GB de espaço em seu HD
 2. Deixar como "Espaço livre" ( Diminuir partição do gerenciador de disco )
-3. Instalar Linux Ubuntu Desktop 14.04 LTS 64Bits
+3. Instalar Linux Ubuntu Desktop 14.04 LTS 64Bits nesta partição disponibilizada
 
 # INSTALACAO
 
