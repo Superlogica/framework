@@ -4,16 +4,17 @@ function fb25_init(){
     //http://www.slideshare.net/mindthebird/firebird-on-linux
     //http://www.ibphoenix.com/resources/documents/search/doc_26
     
-       $fb_ver = "2.5" ;
-       $classic = "classic";
+     $fb_ver = "2.5" ;
+     $classic = "classic";
     //   exec_script("sudo add-apt-repository ppa:mapopa
     //            sudo apt-get update");
 
 	exec_script("
 		sudo sysctl -w net.ipv4.tcp_keepalive_time=60 net.ipv4.tcp_keepalive_probes=3 net.ipv4.tcp_keepalive_intvl=10
 		sudo apt-get -y -q install firebird$fb_ver-super$classic subversion git-core
-                sudo cp {$conf['basedir']}/firebird/*.so /usr/lib/firebird/$fb_ver/UDF
-                sudo dpkg-reconfigure firebird$fb_ver-super$classic");
+    sudo cp {$conf['basedir']}/firebird/*.so /usr/lib/firebird/$fb_ver/UDF
+    sudo dpkg-reconfigure firebird$fb_ver-super$classic
+  ");
         //time_zone();         
 //	exec("sudo fdisk /dev/sdc << EOF\nn\np\n1\n\n\nw\nEOF");
 ////        exec_script("sudo mkfs -t ext3 /dev/sdc1
@@ -39,12 +40,13 @@ function fb25_init(){
        }
        
        
-          exec_script("      
+          exec_script("
                 sudo mkdir /home/cloud-db
                 sudo mount /home/cloud-db
-		sudo chmod 444 /etc/init.d/postfix	
-		sudo chown firebird.firebird /usr/lib/firebird/$fb_ver/UDF/*.so
-                sudo ln -s /usr/lib/libfbclient.so.2.5.0 /usr/lib/libfbclient.so    
+                sudo chmod -R 777 /home/cloud-db
+            		sudo chmod 444 /etc/init.d/postfix
+            		sudo chown firebird.firebird /usr/lib/firebird/$fb_ver/UDF/*.so
+                sudo ln -s /usr/lib/libfbclient.so.2.5.0 /usr/lib/libfbclient.so
 	");
 
 exec_script("

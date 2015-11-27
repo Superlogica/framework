@@ -5,6 +5,7 @@ function utilitarios_init(){
 
 	exec_script("
 		echo '------Instalando Synaptic(Gerenciador de Pacotes)------'
+		sudo apt-get update
 		sudo apt-get install synaptic
 		echo '------Instalando Google Chromme------'
 		sudo apt-get update

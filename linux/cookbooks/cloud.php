@@ -2,29 +2,37 @@
 
 function cloud_init($php_version="5.4"){
 
-if ($php_version=="5.4"){
+/*if ($php_version=="5.4"){
 exec_script("sudo cloud-init php54atualizado");
 }
 
 if ($php_version=="5.5"){
 exec_script(" sudo add-apt-repository ppa:ondrej/php5
  sudo apt-get update");
-} 
+} */
+
+exec_script("
+    sudo apt-get update
+    sudo add-apt-repository ppa:ondrej/php5
+");
 
 //pacotes
 exec_script("
-    apt-get update && apt-get install -y php5-cli php5-fpm php5-mysql php5-intl php5-xdebug php5-recode php5-mcrypt php5-memcache php5-memcached php5-imagick php5-curl php5-xsl php5-dev php5-tidy php5-xmlrpc php5-gd php5-pspell php-pear libapache2-mod-php5 php-apc
+    apt-get update
+    apt-get install -y php5-cli php5-fpm php5-mysql php5-intl php5-xdebug php5-recode php5-mcrypt php5-memcache php5-memcached php5-imagick php5-curl php5-xsl php5-dev php5-tidy php5-xmlrpc php5-gd php5-pspell php-pear libapache2-mod-php5 php-apc
     sudo a2enmod ssl
     sudo php5enmod mcrypt
     sudo a2enmod rewrite
     sudo apt-get --yes --force-yes install apachetop
-    sudo apt-get --yes --force-yes install firebird2.5-super subversion git-core php5-interbase   
+    sudo apt-get --yes --force-yes install firebird2.5-super subversion git-core php5-interbase
     sudo php5enmod interbase
     sudo apt-get -f install
     sudo rm /etc/php5/conf.d/timezone.ini
-    sudo mkdir /home/session;sudo chmod -R 777 /home/session");
+    sudo mkdir /home/session;
+    sudo chmod -R 777 /home/session
+");
     //time_zone();
-	
+
 
 // ####################################################################################    
 // ###### COMENTADO POIS O XDEBUG NÃO FUNCIONA OS BREAKPOINTS     #####################
@@ -51,23 +59,26 @@ exec_script("
 else
 	exec_script("sudo rm /etc/apache2/sites-enabled/*; sudo ln -s /home/cloud/conf/cloud.superlogica.com /etc/apache2/sites-enabled/001cloud.conf");*/
 
-exec_script("sudo rm /etc/apache2/sites-enabled/*; sudo ln -s /home/cloud/conf/cloud.local.linux /etc/apache2/sites-enabled/001cloud.conf");
+exec_script("
+    sudo rm /etc/apache2/sites-enabled/*
+    sudo ln -s /home/cloud/conf/cloud.local.linux /etc/apache2/sites-enabled/001cloud.conf
+    sudo chmod -R 777 /etc/apache2/sites-enabled");
 
 exec_script("
-            sudo chmod -R 777 /etc/apache2/sites-enabled
             sudo rm -Rf /var/www
             sudo ln -s /home/cloud  /var/www
+            sudo chmod -R 777 /var/www
             sudo cloud-init cloudini
             sudo cloud-init phpini
             sudo cloud-init varnish
             sudo bash /home/cloud/conf/deploy.sh
-            sudo mkdir /home/cloud/var; sudo chmod -R 777 /home/cloud/var
+            sudo mkdir /home/cloud/var
+            sudo chmod -R 777 /home/cloud/var
             sudo mkdir /home/cloud/public/scripts/min
             sudo chmod -R 777 /home/cloud/public/scripts/min
 	        sudo update-rc.d apache2 defaults
          ");
- 
- 
+
  //cloud.lock
 @unlink("/home/cloud/cloud.lock");
 
