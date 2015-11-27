@@ -25,10 +25,10 @@ Como criar ambientes dev para o Superlógica?
 	- Para uso, baixe direto do site com pacote e complemento que lhe for mais conveniente
 
 - Sublime
-	- No terminal, rode o comando: sudo cloud-init sublime
+	- No terminal, execute o comando: sudo cloud-init sublime
 
 - Atom
-	- No terminal, rode o comando: sudo cloud-init atom
+	- No terminal, execute o comando: sudo cloud-init atom
 
 - Firebird
 	- Por padrão é baixado o FlameRobin automaticamente
