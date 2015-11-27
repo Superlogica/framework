@@ -1,5 +1,29 @@
 <?php
 
+function deploy_action($null='') {
+    $apps_disponiveis = array('cloud','apps','plataforma','subadquirente','condoworks');
+        foreach($apps_disponiveis as $app){
+            $home = "/home/$app";
+            if (is_dir($home)) {
+                echo "\n\nDeploy $app..\n";
+                exec_script("cd $home; sudo git reset --hard; sudo git pull;"); 
+                echo "cd $home";
+                exec_script("cd $home; sudo git status"); 
+                if ($app == "cloud"){
+                    atualizarCloudIni_action();
+                    limparCachePHP();
+                }
+                if (is_file("$home/conf/deploy.sh")){
+                    exec_script("sudo chmod 777 $home/conf/deploy.sh; sudo $home/conf/deploy.sh $home");
+                }
+            }
+        }        
+//    if (is_dir("/home/plataforma")) {
+//        exec_script("cd /home/plataforma; sudo git pull;"); // precisa testar sudo git reset --hard; 
+//    }
+    
+    return true;
+}
 
 exec_script("
     sudo apt-get install -y mysql-server-5.5
@@ -16,7 +40,6 @@ exec_script("
     sudo apt-get -y /home/apps/sessioninstall git-core;
     sudo chmod 444 /etc/init.d/postfix
     sudo cloud-init cloudini 'plataforma'
-    sudo cloud-init phpini
     sudo rm /etc/php5/conf.d/timezone.ini
     sudo mkdir /home/apps/session; sudo chmod -R 777 /home/apps/session");
 	//fazer ioncube depois
@@ -48,6 +71,7 @@ exec_script("
 exec_script("sudo ln -s /home/apps/conf/apps.superlogica.net /etc/apache2/sites-enabled/001apps");
 
 deploy_action("apps");
+apache_tunning();
 //deploy_action("plataforma");
-apachetunning_action();
+//apachetunning_action();
 //_newrelic();
