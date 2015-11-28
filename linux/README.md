@@ -30,6 +30,7 @@
 
 - Gerenciar banco de dados firebird
 	- Por padrão é baixado o FlameRobin automaticamente
+	- As bases devem ficar no diretorio /home/cloud-db/ (Se não conseguir acessar rode permissão na cloud-db)
 
 - Gerenciar banco de dados MySql
 	- Por padrão é baixado o MySql WorkBench automaticamente	
