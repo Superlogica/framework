@@ -17,15 +17,7 @@ function smartgit_init(){
 		sudo apt-get install -y git-core
 		sudo apt-get update
 		sudo add-apt-repository ppa:eugenesan/ppa
-    	sudo apt-get update
-	  	sudo apt-get install smartgithg
-	  	cd /home/cloud
-	  	git config core.fileMode false
-		cd /home/framework
-		git config core.fileMode false
-		cd /home/apps
-		git config core.fileMode false
-		cd /home/plataforma
-		git config core.fileMode false
+    sudo apt-get update
+	  sudo apt-get install smartgithg
 	");
 }
