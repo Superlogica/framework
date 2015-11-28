@@ -7,37 +7,37 @@
 # INSTALACAO
 
 1. Abra o terminal e execute a seguinte url:
- - cd /opt;sudo rm -rf /opt/cloud-init;sudo mkdir /opt/cloud-init;sudo chmod 777 /opt/cloud-init/;cd /opt/cloud-init; sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/linux/cloud-init-init --no-check-certificate sudo chmod 777 /opt/cloud-init/cloud-init-init;
+ - cd /opt;sudo rm -rf /opt/cloud-init;sudo mkdir /opt/cloud-init;sudo chmod 777 /opt/cloud-init/;cd /opt/cloud-init; sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/linux/cloud-init-init --no-check-certificate; sudo chmod 777 /opt/cloud-init/cloud-init-init;
 
 2. Instale SmartGit( execute no terminal ):
- - sudo cloud-init smartgit
+ - sudo /opt/cloud-init/cloud-init-init smartgit;
 
 3. A partir do SmartGit, clone os projetos que necessário dentro do diretório /home
 ( Obrigatório baixar inicialmente os projetos cloud, apps e plataforma )
 
 4. Após projetos clonados, instale o restante do projeto( execute no terminal)
  - sudo /opt/cloud-init/cloud-init-init cloudteste;
- 
+
 #IDE's DE DESENVOLVIMENTO
 - NetBeans
 	- Para uso, baixe direto do site com pacote e complemento que lhe for mais conveniente
 
 - Sublime
-	- No terminal, execute o comando: sudo cloud-init sublime
+	- No terminal, execute o comando: sudo /opt/cloud-init/cloud-init-init sublime
 
 - Atom
-	- No terminal, execute o comando: sudo cloud-init atom
+	- No terminal, execute o comando: sudo /opt/cloud-init/cloud-init-init atom
 
 - Gerenciar banco de dados firebird
 	- Por padrão é baixado o FlameRobin automaticamente
 	- As bases devem ficar no diretorio /home/cloud-db/ (Se não conseguir acessar rode permissão na cloud-db)
 
 - Gerenciar banco de dados MySql
-	- Por padrão é baixado o MySql WorkBench automaticamente	
+	- Por padrão é baixado o MySql WorkBench automaticamente
 
 # USO
 
-- Acessar servidor web: 
+- Acessar servidor web:
 	- localhost:3059
 
 - Executar cookbooks
@@ -52,8 +52,3 @@
 
 - Limpar cache
 	- sudo /etc/init.d/varnish restart
- 
-
-
-
-
