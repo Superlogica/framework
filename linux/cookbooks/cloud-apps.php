@@ -14,7 +14,6 @@ exec_script(
     sudo -- sh -c 'echo Servername localhost >> /etc/apache2/apache2.conf'
     sudo echo '---------Reiniciando Apache---------'
     sudo /etc/init.d/apache2 restart
-    sudo cloud-init mysql-apps
 ");
 // echo 'Include /etc/phpmyadmin/apache.conf' >> /etc/apache2/apache2.conf; 
 
