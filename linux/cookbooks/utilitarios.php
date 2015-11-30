@@ -6,7 +6,7 @@ function utilitarios_init(){
 	exec_script("
 		echo '------Instalando Synaptic(Gerenciador de Pacotes)------'
 		sudo apt-get update
-		sudo apt-get install synaptic
+		sudo apt-get install -y synaptic
 		echo '------Instalando Google Chromme------'
 		sudo apt-get update
 		sudo wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
@@ -16,6 +16,6 @@ function utilitarios_init(){
 		sudo apt-get update
 		sudo add-apt-repository ppa:notepadqq-team/notepadqq
 		sudo apt-get update
-		sudo apt-get install notepadqq
+		sudo apt-get install -y notepadqq
 	");
 }
