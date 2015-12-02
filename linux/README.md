@@ -38,20 +38,21 @@
 # USO
 
 - Acessar servidor web:
-	- localhost:3059
+	- localhost:3059 (Cloud)
+	- localhost:8080 (Apps)
 
 - Executar cookbooks
 	- sudo cloud-init <nome_do_cookbook>
 	- ex: sudo cloud-init fb25
 
-- Firebird
+- Firebird (Reiniciar)
 	- sudo /etc/init.d/firebird2.5-superclassic restart
 
-- Apache
+- Apache (Reiniciar)
 	- sudo /etc/init.d/apache2 restart
 
 - Limpar cache
 	- sudo /etc/init.d/varnish restart
 	
-- Permissão total
-        - sudo chmod 777 -R /home/cloud-db
+- Permissão bases
+	- sudo chmod 777 -R /home/cloud-db
