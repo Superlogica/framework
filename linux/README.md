@@ -52,3 +52,6 @@
 
 - Limpar cache
 	- sudo /etc/init.d/varnish restart
+	
+- Permissão total
+        - sudo chmod 777 -R /home/cloud-db
