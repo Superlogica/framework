@@ -11,5 +11,6 @@ function limparcache_init(){
 		sudo rm -rf /home/cloud/public/scripts/min
 		sudo mkdir /home/cloud/public/scripts/min
 		sudo chmod 777 -R /home/cloud/public/scripts/min
+		sudo /etc/init.d/varnish restart
 	");
 }
