@@ -1,0 +1,12 @@
+{
+	"color_scheme": "Packages/User/SublimeLinter/Monokai (SL).tmTheme",
+	"default_encoding": "Western (ISO 8859-1)",
+	"fallback_encoding": "Western (ISO 8859-1)",
+	"show_encoding": true,
+	"word_separators": "./\\()\"'-:,.;<>~!@#%^&*|+=[]{}`~?",
+	"ignored_packages":
+	[
+		"Vintage"
+	]
+
+}
