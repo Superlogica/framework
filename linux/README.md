@@ -51,8 +51,11 @@
 - Apache (Reiniciar)
 	- sudo /etc/init.d/apache2 restart
 
-- Limpar cache
+- Varnish (Reiniciar)
 	- sudo /etc/init.d/varnish restart
 	
 - Permissão bases
 	- sudo chmod 777 -R /home/cloud-db
+	
+- Limpar cash
+	- sudo cloud-init limparcash
