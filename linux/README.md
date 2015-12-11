@@ -58,4 +58,4 @@
 	- sudo chmod 777 -R /home/cloud-db
 	
 - Limpar cash
-	- sudo cloud-init limparcash
+	- sudo cloud-init limparcache
