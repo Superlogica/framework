@@ -8,7 +8,7 @@ function criarbkp_init(){
 		sudo mkdir /home/cloud-db/backup
 		sudo chmod 777 -R /home/cloud-db/backup
 		echo '------Iniciando criação------'
-		gbak -backup -v -garbage -limbo -user sysdba -password masterkey /home/cloud-db/backup/base.fdb 127.0.0.1:/home/cloud-db/backup/backup.gbk
+		gbak -backup -v -garbage -limbo -user sysdba -password masterkey 127.0.0.1:/home/cloud-db/backup/base.fdb /home/cloud-db/backup/backup.gbk
 		sudo chmod 777 -R /home/cloud-db
 	");
 }
