@@ -1,6 +1,6 @@
 <?php
 
-function smartgit_init(){
+function restaurarbkp_init(){
 
 
 	exec_script("
