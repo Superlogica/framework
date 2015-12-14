@@ -9,10 +9,12 @@ function smartgit_init(){
 		sudo mkdir /home/framework
 		sudo mkdir /home/apps
 		sudo mkdir /home/plataforma
+		sudo mkdir /home/backup
 		sudo chmod -R 777 /home/cloud
 		sudo chmod -R 777 /home/framework
 		sudo chmod -R 777 /home/apps
 		sudo chmod -R 777 /home/plataforma
+		sudo chmod -R 777 /home/backup
 		sudo apt-get update
 		sudo apt-get install -y git-core
 		sudo apt-get update
