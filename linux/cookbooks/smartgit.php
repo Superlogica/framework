@@ -20,8 +20,8 @@ function smartgit_init(){
 		sudo apt-get update
 		sudo apt-get install -y git-core
 		sudo apt-get update
-		sudo add-apt-repository ppa:eugenesan/ppa
+		sudo add-apt-repository -y ppa:eugenesan/ppa
     	sudo apt-get update
-	  	sudo apt-get install smartgithg
+	  	sudo apt-get install -y smartgithg
 	");
 }

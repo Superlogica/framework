@@ -14,7 +14,7 @@ function utilitarios_init(){
 	 	sudo apt-get -f install
 		echo '------Notepad++------'
 		sudo apt-get update
-		sudo add-apt-repository ppa:notepadqq-team/notepadqq
+		sudo add-apt-repository -y ppa:notepadqq-team/notepadqq
 		sudo apt-get update
 		sudo apt-get install -y notepadqq
 	");
