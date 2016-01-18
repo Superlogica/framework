@@ -3,6 +3,7 @@
 exec_script(
 	"echo '-----------Mysql Apps-----------'
 	sudo apt-get update
+	echo '---Quando pedir senha utilize root---'
     sudo apt-get install -y mysql-server
     sudo apt-get install -y phpmyadmin
     echo '---------Reiniciando Apache---------'
