@@ -17,5 +17,9 @@ function utilitarios_init(){
 		sudo add-apt-repository -y ppa:notepadqq-team/notepadqq
 		sudo apt-get update
 		sudo apt-get install -y notepadqq
+		echo '-------Remmina (RDP)-------'
+		sudo apt-add-repository -y ppa:remmina-ppa-team/remmina-next
+		sudo apt-get update
+		sudo apt-get install -y remmina remmina-plugin-rdp libfreerdp-plugins-standard
 	");
 }
