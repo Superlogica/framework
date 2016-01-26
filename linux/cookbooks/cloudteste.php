@@ -16,6 +16,9 @@ exec_script("
             sudo cloud-init fb25
             sudo cloud-init dev
             sudo cloud-init cloud-apps
-            sudo cloud-init mysql-apps"
+            sudo cloud-init mysql-apps
+            echo '-------------PROCESSO FINALIZADO-------------'
+            echo '---- CLOUD ACESSE http://localhost:3059/ ----'
+            echo '----- APPS ACESSE http://localhost:8080/ ----'"
             );
 }
