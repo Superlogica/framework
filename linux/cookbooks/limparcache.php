@@ -4,7 +4,7 @@ function limparcache_init(){
 
 
 	exec_script("
-		echo '------Limpando cache------'
+		echo '-----------Limpando cache-----------'
 		sudo rm -rf /home/cloud/var/log/cache
 		sudo mkdir /home/cloud/var/log/cache
 		sudo chmod 777 -R /home/cloud/var/log/cache
@@ -12,5 +12,6 @@ function limparcache_init(){
 		sudo mkdir /home/cloud/public/scripts/min
 		sudo chmod 777 -R /home/cloud/public/scripts/min
 		sudo /etc/init.d/varnish restart
+		echo '-------------Finalizado-------------'
 	");
 }
