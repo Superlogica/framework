@@ -17,7 +17,7 @@
 
 4. Após projetos clonados, instale o restante do projeto( execute no terminal)
  - sudo /opt/cloud-init/cloud-init-init cloudteste;
-
+	
 #IDE's DE DESENVOLVIMENTO
 - NetBeans
 	- Para uso, baixe direto do site com pacote e complemento que lhe for mais conveniente
@@ -34,6 +34,23 @@
 
 - Gerenciar banco de dados MySql
 	- Por padrão é baixado o MySql WorkBench automaticamente
+
+#Utilitários
+
+- Chrome
+	- sudo cloud-init chrome
+
+- Notepadd++
+ 	- Instalado por padrão
+
+- Remmina (Acesso RDP)
+ 	- Instalado por padrão
+ 
+- Synaptic (Gerenciador de pacotes)
+ 	- Instalado por padrão
+ 
+- Wine (Rodar programas do Windows .exe)
+	- sudo cloud-init wine
 
 # USO
 
@@ -57,5 +74,5 @@
 - Permissão bases
 	- sudo chmod 777 -R /home/cloud-db
 	
-- Limpar cash
+- Limpar cache do sistema
 	- sudo cloud-init limparcache
