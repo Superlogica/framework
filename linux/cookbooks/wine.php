@@ -8,6 +8,6 @@ function wine_init(){
 		sudo apt-get update;
 		sudo add-apt-repository ppa:ubuntu-wine/ppa
 		sudo apt-get update
-		sudo apt-get install wine1.7 winetricks
+		sudo apt-get install -y wine1.7 winetricks
 	");
 }
