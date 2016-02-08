@@ -1,0 +1,16 @@
+approve_by_comment: true
+approve_regex: ^Aprovado
+reject_regex: ^Rejeitado
+reset_on_push: false
+reviewers:
+  members:
+  - carlossuperlogica
+  - ademilson
+  - adenilsonoliveira
+  - alantavares
+  - dhenrique
+  - gutopolewacz
+  - isaqued
+  - luiscera
+  name: devs
+  required: 2
