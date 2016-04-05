@@ -9,6 +9,7 @@ function chavepublica_init(){
                 cd /home/$USER/.ssh
                 echo 'DIGITE SEU NOME'
                 read nome_user
-                scp id_dsa.pub 192.168.0.165:/home/temp/chaves/$nome_user.pub               
+                cp id_dsa.pub $nome_user.pub
+                smbclient //192.168.0.165/chaves -c 'put $nome_user.pub'               
 	");
 }
