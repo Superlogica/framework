@@ -10,6 +10,6 @@ function chavepublica_init(){
                 echo 'DIGITE SEU NOME'
                 read nome_user
                 cp id_dsa.pub $nome_user.pub
-                smbclient //192.168.0.165/chaves -c 'put $nome_user.pub'               
+                smbclient //SLNAS2/chaves -c 'put $nome_user.pub'               
 	");
 }
