@@ -1,8 +1,8 @@
 <?php
 function chavepublica_init(){
-	exec_script("
-		sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/linux/templates/ssh_config -O /etc/ssh/ssh_config
-                ssh-keygen -t dsa -N ''
-                cp \$HOME\/.ssh/id_dsa.pub \$USER\.pub");
-                echo "PRESSIONE ENTER PARA CONTINUAR";exec("smbclient //SLNAS2/chaves -c 'put '\$USER'.pub'");
-}                
+  	exec_script("
+  		sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/linux/templates/ssh_config -O /etc/ssh/ssh_config
+                  sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/linux/templates/chavepublica.sh -O chavepublica.sh
+                  sudo chmod +x chavepublica.sh;
+                  ./chavepublica.sh;");
+}
