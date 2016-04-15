@@ -5,4 +5,4 @@ function chavepublica_init(){
                 ssh-keygen -t dsa -N ''
                 cp \$HOME\/.ssh/id_dsa.pub \$USER\.pub");
                 echo "PRESSIONE ENTER PARA CONTINUAR";exec("smbclient //SLNAS2/chaves -c 'put '\$USER'.pub'");
-}               
+}       
