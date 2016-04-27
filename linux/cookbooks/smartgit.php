@@ -24,6 +24,7 @@ function smartgit_init(){
 		sudo chmod -R 777 /home/cloud-admin
 		sudo chmod -R 777 /home/subadquirente
 		sudo apt-get update
+		sudo apt-get install default-jdk
 		sudo apt-get install -y git-core
 		sudo apt-get update
 		sudo add-apt-repository -y ppa:eugenesan/ppa
