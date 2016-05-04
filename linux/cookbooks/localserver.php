@@ -9,19 +9,25 @@ function localserver_init(){
         apt-get install mysql-client
         apt-get install openssh-server
         apt-get install fail2ban
+        sudo apt-get install nginx
         apt-get install iptables-persistent
+        apt-get install sendmail
         iptables -A INPUT -i lo -j ACCEPT
         iptables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
         iptables -A INPUT -p tcp --dport 22 -j ACCEPT
         iptables -A INPUT -p tcp --dport 80 -j ACCEPT
         iptables -A INPUT -j DROP
         mv /etc/samba/smb.conf /etc/samba/smb.conf.original 
-        mkdir /home/ubuntu/infra
-        mkdir /home/ubuntu/temp
+        mkdir /home/infra
+        mkdir /home/temp
+        chmod 777 -R /home/infra
+        chmod 777 -R /home/temp
+        mkdir /home/temp/uploads
+        mkdir /home/temp/chaves
+        chmod -R 777 /home/temp/uploads
+        chmod -R 777 /home/temp/chaves
         addgroup infra
         addgroup usuarios
-        chmod 777 -R /home/ubuntu/infra
-        chmod 777 -R /home/ubuntu/temp
                               
 	");
 
