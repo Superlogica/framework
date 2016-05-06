@@ -15,6 +15,9 @@ reviewers:
             - gutopolewacz
             - isaqued
             - luiscera
+        conditions:
+            files:
+                - "!linux/*"            
     -
         name: infra
         required: 1
