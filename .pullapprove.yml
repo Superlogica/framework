@@ -17,7 +17,15 @@ reviewers:
             - luiscera
         conditions:
             files:
-                - "!linux/*"            
+                - "*.php"      
+                - "*.yml" 
+                - "*.sh" 
+                - "*.git*" 
+                - "public/*" 
+                - "library/*"    
+                - "conf/*"       
+                - "skeleton/*" 
+                - "exemplo/*"                
     -
         name: infra
         required: 1
