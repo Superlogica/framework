@@ -14,7 +14,7 @@ class Bootstrap extends Application_Bootstrap{
      */
     protected function _initFeriados(){
                 
-        Superlogica_Date::setPluginFeriado( "Helpers_Feriados" );
+        Superlogica_Date::setPluginFeriado( "Helpers_Feriados  ddfdd" );
     }        
     protected function _initAoAtualizarSkm(){
         Superlogica_Db_SchemaControl::adicionarPlugin( new Helpers_AtualizarSkm() );
