@@ -17,7 +17,6 @@ reviewers:
             - luiscera
         conditions:
             files:
-                - "*.php"      
                 - "*.yml" 
                 - "*.sh" 
                 - "*.git*" 
