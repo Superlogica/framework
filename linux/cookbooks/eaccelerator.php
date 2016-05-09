@@ -1,6 +1,11 @@
 <?php
 
 function eaccelerator_init(){
+	
+  if ( trim(shell_exec ("lsb_release -rs")) == '16.04' ){
+	 return false;	
+  }	
+	
 
 exec_script("
 	sudo apt-get install make;
