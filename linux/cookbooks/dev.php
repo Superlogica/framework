@@ -5,6 +5,7 @@ function dev_init(){
 
 	exec_script("
 		sudo chmod 777 -R /etc/php5
+		sudo chmod 777 -R /etc/php7.0
 		sudo chmod 777 -R /etc/apache2
 		sudo chmod 777 -R /home/cloud
 		sudo chmod 777 -R /home/cloud-db
