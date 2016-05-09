@@ -1,7 +1,9 @@
 <?php
 
 function smartgit_init(){
-
+        
+        echo "---------------- PROIBIDO USAR SMARTGIT --------------------";
+        return false;
 
 	exec_script("
 		echo '------Instalando SmartGit------'
