@@ -8,6 +8,7 @@ function localserver_init(){
         apt-get install vim
         apt-get install mysql-client
         apt-get install openssh-server
+        apt-get install openssh-client
         apt-get install fail2ban
         sudo apt-get install nginx
         apt-get install iptables-persistent
@@ -26,7 +27,7 @@ function localserver_init(){
         chmod -R 777 /home/temp/uploads
         chmod -R 777 /home/temp/chaves
         addgroup infra
-        addgroup usuarios
+        addgroup usuarios{}
                               
 	");
 

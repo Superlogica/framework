@@ -1,3 +1,4 @@
+<?php
 function usuario_init($usuario=''){
       
       if (!is_dir('/home/git/infra')){
