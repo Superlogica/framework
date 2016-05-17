@@ -1,31 +1,37 @@
 <?php
 
-function cloud_init($php_version="5.4"){
+function cloud_init($php_version="auto"){
 
-/*if ($php_version=="5.4"){
-exec_script("sudo cloud-init php54atualizado");
+if  ($php_version=="auto"){
+  if ( trim(shell_exec ("lsb_release -rs")) == '16.04' ){
+	 $php_version= '7.0';	
+  } else{
+  	$php_version= '5.5';	
+  }
+}
+if ($php_version=="5.4"){
+	exec_script("sudo cloud-init php54atualizado");
+	instalar_php5();
 }
 
 if ($php_version=="5.5"){
-exec_script(" sudo add-apt-repository ppa:ondrej/php5
- sudo apt-get update");
-} */
+	exec_script(" sudo add-apt-repository ppa:ondrej/php5");
+	instalar_php5();
+ 
+} 
 
-exec_script("
-    sudo apt-get update
-    sudo add-apt-repository ppa:ondrej/php5
-");
+
+if ($php_version=='7.0'){
+  	instalar_php7();	
+} 
 
 //pacotes
 exec_script("
-    apt-get update
-    apt-get install -y php5-cli php5-fpm php5-mysql php5-intl php5-xdebug php5-recode php5-mcrypt php5-memcache php5-memcached php5-imagick php5-curl php5-xsl php5-dev php5-tidy php5-xmlrpc php5-gd php5-pspell php-pear libapache2-mod-php5 php-apc
+    sudo apt-get --yes --force-yes install apache2
     sudo a2enmod ssl
-    sudo php5enmod mcrypt
     sudo a2enmod rewrite
     sudo apt-get --yes --force-yes install apachetop
-    sudo apt-get --yes --force-yes install firebird2.5-super subversion git-core php5-interbase
-    sudo php5enmod interbase
+    sudo apt-get --yes --force-yes install firebird2.5-super subversion git-core 
     sudo apt-get -f install
     sudo rm /etc/php5/conf.d/timezone.ini
     sudo mkdir /home/session;
@@ -86,3 +92,30 @@ exec_script("
   apache_tunning();
 
 }
+
+
+function instalar_php7(){
+
+exec_script("
+    apt-get update
+    apt-get install -y apache2
+    apt-get install -y php7.0-cli php7.0-fpm php7.0-mysql php7.0-intl php7.0-xdebug php7.0-recode php7.0-mcrypt php7.0-memcache php7.0-memcached php7.0-imagick php7.0-curl php7.0-xsl php7.0-dev php7.0-tidy php7.0-xmlrpc php7.0-gd php7.0-pspell libapache2-mod-php7.0  php7.0-interbase
+    apt-get install -y php-apc php-pear
+    sudo phpenmod mcrypt
+    sudo phpenmod interbase
+    ");	
+	
+}
+
+
+function instalar_php5(){
+exec_script("
+    apt-get update
+    apt-get install -y apache2
+    apt-get install -y php5-cli php5-fpm php5-mysql php5-intl php5-xdebug php5-recode php5-mcrypt php5-memcache php5-memcached php5-imagick php5-curl php5-xsl php5-dev php5-tidy php5-xmlrpc php5-gd php5-pspell php-pear libapache2-mod-php5 php-apc php5-interbase
+    sudo php5enmod mcrypt
+    sudo php5enmod interbase
+    ");		
+	
+}
+

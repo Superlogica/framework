@@ -1,7 +1,13 @@
-!/bin/bash
+#!/bin/bash
+versao_ubuntu_php7="16.04"
+versao_ubuntu=`lsb_release -sr`
 sudo apt-get update;
-sudo apt-get -y -q install php5-cli php5-dev php5-mcrypt php5-curl php5-gd;
-sudo apt-get update;
+if [ "$versao_ubuntu_php7" == "$versao_ubuntu" ]; then
+  sudo apt-get -y -q install php7.0-cli php7.0-dev php7.0-mcrypt php7.0-curl php7.0-gd;
+else
+  sudo apt-get -y -q install php5-cli php5-dev php5-mcrypt php5-curl php5-gd;
+fi
+
 sudo apt-get -y -q install git-core;
 sudo rm /opt/cloud-init/cloud-init;
 sudo rm -Rf /opt/cloud-init/cloud;
