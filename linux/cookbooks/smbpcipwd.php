@@ -1,8 +1,12 @@
 <?php
 function smbpcipwd_init(){
 exec_script("
-sudo samba-tool domain passwordsettings set –max-pwd-age=90
-sudo samba-tool domain passwordsettings set --min-pwd-length=8
-sudo samba-tool domain passwordsettings set --history-length=4
+sudo pdbedit -i smbpasswd -e tdbsam
+sudo pdbedit -P 'maximum password age' -C 7776000
+sudo pdbedit -P 'min password length' -C 8
+sudo pdbedit -P 'password history' -C 4
+sudo pdbedit -P 'bad lockout attempt' -C 3
+sudo pdbedit -P 'lockout duration' -C 900
+
 ");
 
