@@ -3,7 +3,7 @@
 function rsyslogserver_init(){
 
           
-    put_template("default_rsyslog","/etc/rsyslog.conf");
+    put_template("default_rsyslog","/etc/default/rsyslog");
     put_template("rsyslog_server","/etc/rsyslog.d/server.conf");
     exec_script("
       sudo apt-get install rsyslog
