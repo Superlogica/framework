@@ -8,6 +8,7 @@ function rsyslogserver_init(){
     exec_script("
       sudo apt-get install rsyslog
       sudo ufw allow 514
+      sudo ufw allow ssh 
       sudo yes | sudo ufw enable
       sudo invoke-rc.d rsyslog restart
       sudo netstat -putan | grep 514
