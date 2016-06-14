@@ -6,5 +6,5 @@ function localserver_init(){
         apt-get update
         apt-get -y install aide
     ");
-   put_template("local/aide.conf","/etc/aide/aide.conf");
+   put_template("aide.conf","/etc/aide/aide.conf");
 }
