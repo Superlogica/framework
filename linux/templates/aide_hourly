@@ -1,0 +1,1 @@
+12  *   *   *   *   /usr/bin/aide -c /etc/aide/aide.conf --compare > /var/log/aide/aide_check.log
