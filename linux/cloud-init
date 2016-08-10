@@ -1,5 +1,16 @@
 #!/usr/bin/php
 <?php
+/*
+Criacao : Legado 
+Revisao : 09/08/2016
+Author : Emerson Silva
+Teste e revisao : Jean Rodrigues
+*/
+
+// torna este script executável em qq diretório
+if (!is_file('/usr/sbin/cloud-init')) {
+    @exec("sudo ln -s ".__FILE__." /usr/sbin");
+}
 
 //parametros
 $args = $GLOBALS['argv'];
