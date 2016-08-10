@@ -33,10 +33,6 @@ if (!$cookbook){
     echo("\nEsse cookbook não roda no modo SUDO . Tente novamente !\n\n");
     exit(3);
 }
-// torna este script executável em qq diretório
-if (!is_file('/usr/sbin/cloud-init')) {
-    @exec("sudo ln -s ".__FILE__." /usr/sbin");
-}
 
 //cria diretorios
 if (!is_dir("/opt/cloud-init/cloud/libs")){
@@ -44,7 +40,6 @@ if (!is_dir("/opt/cloud-init/cloud/libs")){
       die('Falhou ao criar pastas.');
   }
 }
-
 
 //lib
 if (is_file("/opt/cloud-init/cloud/libs/lib.php")){
