@@ -4,6 +4,7 @@
 //parametros
 $args = $GLOBALS['argv'];
 $cookbook = $args[1];
+$cookbooks_que_nao_usam_sudo = Array("chavepublica","teste");
 array_shift($args);
 array_shift($args);
 
@@ -11,13 +12,16 @@ if (!$cookbook){
     echo("\nNão informou cookbook a ser executado.\n\n");
     exit(3);
 }
-
 // checa se root
- if ((posix_getuid() != 0) and ($cookbook != "chavepublica")) {
+ if ((posix_getuid() != 0) and (in_array($cookbook,$cookbooks_que_nao_usam_sudo) == false )) {
     echo("\nSó o root pode fazer isto. Use sudo.\n\n");
     exit(3);
 }
 
+ if ((posix_getuid() == 0) and (in_array($cookbook,$cookbooks_que_nao_usam_sudo))) {
+    echo("\nEsse cookbook não roda no modo SUDO . Tente novamente !\n\n");
+    exit(3);
+}
 // torna este script executável em qq diretório
 if (!is_file('/usr/sbin/cloud-init')) {
     @exec("sudo ln -s ".__FILE__." /usr/sbin");
@@ -45,7 +49,6 @@ if (is_file("/opt/cloud-init/cloud/$cookbook.php")){
 }
  
 exec_script("cd /opt/cloud-init/cloud/; sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/linux/cookbooks/$cookbook.php --no-check-certificate;"); 
-
 
 exec_script("cd /opt/cloud-init/cloud/;");
 
