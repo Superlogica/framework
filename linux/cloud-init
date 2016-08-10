@@ -15,7 +15,7 @@ if (!is_file('/usr/sbin/cloud-init')) {
 //parametros
 $args = $GLOBALS['argv'];
 $cookbook = $args[1];
-$cookbooks_que_nao_usam_sudo = Array("chavepublica","teste");
+$cookbooks_que_nao_usam_sudo = Array("chavepublica");
 array_shift($args);
 array_shift($args);
 

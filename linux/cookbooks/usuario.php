@@ -9,8 +9,10 @@ function usuario_init(){
 	// Valida os parametros recebidos
 	$parametro[0] = !empty($GLOBALS['argv'][2]) ? $GLOBALS['argv'][2]  : null ;
 	$parametro[1] = !empty($GLOBALS['argv'][3]) ? $GLOBALS['argv'][3] : null;
-	(($parametro[1] != null) and (strtoupper($parametro[1])) != "FORCE") ? $parametro_invalido = 1 : $parametro_invalido = 0;
-	if (($parametro_invalido == 1)or($parametro == null)) {
+	$parametro_invalido =	(($parametro[1] != null) and (strtoupper($parametro[1])) != "FORCE") ? 1 : 0;
+ // var_dump($parametro);die;
+
+	if (($parametro_invalido == 1)or(strtoupper($parametro[0]) == 'FORCE')) {
 		echo "\nParâmetro inválido ou login de usuário com formato errado/faltante !\n\n";
 		exit(3);
 	}
@@ -42,23 +44,16 @@ function usuario_init(){
 		}
 		// Verifica se pasta existe no servidor local
 		$caminho = "/home/$login/.ssh/";
-		file_exists($caminho) ? $pasta_local_existe = 1 : $pasta_local_existe = 0;
 		// Verifica se existe a chave publica
-		if ($pasta_local_existe == 1) {
-		file_exists($caminho."$login.pub") ? $chave_local_existe = 1 : $chave_local_existe = 0;
+		if (file_exists($caminho)) {
+		$chave_local_existe = file_exists($caminho."$login.pub") ? 1 : 0;
 			if ($chave_local_existe == 0){
-				if (file_exists("$login.pub")){
-				unlink("$login.pub");
-				}
+				@unlink("$login.pub");
 				captura_chave($caminho,$login);
 			}else{
 				if (strtoupper($parametro[1]) == "FORCE"){			
-				if (file_exists($caminho."$login.pub")){
-				unlink($caminho."$login.pub");
-				}
-				if (file_exists($caminho."authorized_keys")){
-				unlink($caminho."authorized_keys");
-				}
+				@unlink($caminho."$login.pub");
+				@unlink($caminho."authorized_keys");
 				captura_chave($caminho,$login);
 				}else{
 					echo "\nUsuario já possui chave publica cadastrada . Use o metodo FORCE caso deseje renovar\n\n";
@@ -72,9 +67,7 @@ function usuario_init(){
 			exec_script("sudo mkdir -m 0700 $caminho");
 			echo "\nForam criadas as pastas necessarias ao processo\n\n";
 			if (file_exists($caminho)){
-				if(file_exists("$login.pub")){
-				unlink("$login.pub");
-				}
+				@unlink("$login.pub");
 				captura_chave($caminho,$login);
 			}
 		}
@@ -82,13 +75,15 @@ function usuario_init(){
 }// Encerra a funcao usuario_init
 // Traz o arquivo do servidor externo para o local 
 function captura_chave($caminho,$login){
-	exec_script("yes 2>/dev/null | smbclient //SLNAS2/chaves -c 'get $login.pub'");
+	@exec_script("yes 2>/dev/null | smbclient //SLNAS2/chaves -c 'get $login.pub'");
 	sleep(1);				
-	exec_script("cp $login.pub /home/$login/.ssh/$login.pub;
-	sudo cat /home/$login/.ssh/$login.pub >> /home/$login/.ssh/authorized_keys;
-	sudo chmod +x /home/$login/.ssh/ -R ;");
+	@exec_script("cp $login.pub /home/$login/.ssh/$login.pub;");
 	if (file_exists($caminho."$login.pub")){
+		@exec_script("sudo cat /home/$login/.ssh/$login.pub >> /home/$login/.ssh/authorized_keys;
+		sudo chmod +x /home/$login/.ssh/ -R ;");
 		echo "\nArquivo gravado com sucesso no servidor\n\n";
-		unlink("$login.pub");
+		@unlink("$login.pub");
+	}else{
+		echo "\nNão tem arquivo no servidor.Procure o suporte\n\n";
 	}
 } // Encerra a funcao captura_chave
