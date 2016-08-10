@@ -1,8 +1,19 @@
 #!/usr/bin/php
 <?php
 
+//parametros
+$args = $GLOBALS['argv'];
+$cookbook = $args[1];
+array_shift($args);
+array_shift($args);
+
+if (!$cookbook){
+    echo("\nNão informou cookbook a ser executado.\n\n");
+    exit(3);
+}
+
 // checa se root
-if (posix_getuid() != 0) {
+ if ((posix_getuid() != 0) and ($cookbook != "chavepublica")) {
     echo("\nSó o root pode fazer isto. Use sudo.\n\n");
     exit(3);
 }
@@ -12,22 +23,13 @@ if (!is_file('/usr/sbin/cloud-init')) {
     @exec("sudo ln -s ".__FILE__." /usr/sbin");
 }
 
-//parametros
-$args = $GLOBALS['argv'];
-$cookbook = $args[1];
-array_shift($args);
-array_shift($args);
-if (!$cookbook){
-    echo("\nNão informou cookbook a ser executado.\n\n");
-    exit(3);
-}
-
 //cria diretorios
 if (!is_dir("/opt/cloud-init/cloud/libs")){
   if (!mkdir("/opt/cloud-init/cloud/libs", 0777, true)) {
       die('Falhou ao criar pastas.');
   }
 }
+
 
 //lib
 if (is_file("/opt/cloud-init/cloud/libs/lib.php")){
@@ -37,13 +39,21 @@ exec("cd /opt/cloud-init/cloud/libs; sudo wget https://raw.githubusercontent.com
 require_once "/opt/cloud-init/cloud/libs/lib.php";
 
 //executa
+
 if (is_file("/opt/cloud-init/cloud/$cookbook.php")){
    @unlink("/opt/cloud-init/cloud/$cookbook.php");
 }
+ 
 exec_script("cd /opt/cloud-init/cloud/; sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/linux/cookbooks/$cookbook.php --no-check-certificate;"); 
+
+
+exec_script("cd /opt/cloud-init/cloud/;");
+
 if (!is_file("/opt/cloud-init/cloud/$cookbook.php")){
     echo("\nCookbook '$cookbook' não encontrado.\n\n");
     exit(3);
 }
+
+
 require "/opt/cloud-init/cloud/$cookbook.php";
 call_user_func_array($cookbook."_init", $args);
