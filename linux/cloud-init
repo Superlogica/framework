@@ -24,16 +24,10 @@ if (!$cookbook){
     exit(3);
 }
 // checa se root
- if ((posix_getuid() != 0) and (in_array($cookbook,$cookbooks_que_nao_usam_sudo) == false )) {
-    echo("\nSó o root pode fazer isto. Use sudo.\n\n");
-    exit(3);
+if ((posix_getuid() != 0) and (!in_array($cookbook,$cookbooks_que_nao_usam_sudo)) or ((posix_getuid() == 0) and (in_array($cookbook,$cookbooks_que_nao_usam_sudo)))){
+	echo("\nEsse cookbook foi requisitado de forma errada.\nTente usar SUDO.\nCaso tenha usado o SUDO e essa mensagem apareceu , tente usar sem o SUDO.\n\n");
+	exit(3);
 }
-
- if ((posix_getuid() == 0) and (in_array($cookbook,$cookbooks_que_nao_usam_sudo))) {
-    echo("\nEsse cookbook não roda no modo SUDO . Tente novamente !\n\n");
-    exit(3);
-}
-
 //cria diretorios
 if (!is_dir("/opt/cloud-init/cloud/libs")){
   if (!mkdir("/opt/cloud-init/cloud/libs", 0777, true)) {
@@ -48,7 +42,7 @@ if (is_file("/opt/cloud-init/cloud/libs/lib.php")){
 exec("cd /opt/cloud-init/cloud/libs; sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/linux/libs/lib.php --no-check-certificate;"); 
 require_once "/opt/cloud-init/cloud/libs/lib.php";
 
-//executa
+//executa 
 
 if (is_file("/opt/cloud-init/cloud/$cookbook.php")){
    @unlink("/opt/cloud-init/cloud/$cookbook.php");
@@ -56,13 +50,10 @@ if (is_file("/opt/cloud-init/cloud/$cookbook.php")){
  
 exec_script("cd /opt/cloud-init/cloud/; sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/linux/cookbooks/$cookbook.php --no-check-certificate;"); 
 
-exec_script("cd /opt/cloud-init/cloud/;");
-
 if (!is_file("/opt/cloud-init/cloud/$cookbook.php")){
     echo("\nCookbook '$cookbook' não encontrado.\n\n");
     exit(3);
 }
-
 
 require "/opt/cloud-init/cloud/$cookbook.php";
 call_user_func_array($cookbook."_init", $args);

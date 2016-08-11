@@ -5,19 +5,17 @@ Funcao : Criar usuarios em servidor e habilitar chave publica no servidor
 Teste e revisao : Jean Rodrigues
 */
 
-function usuario_init(){
+function usuario_init($login,$acao=null){
 	// Valida os parametros recebidos
-	$parametro[0] = !empty($GLOBALS['argv'][2]) ? $GLOBALS['argv'][2]  : null ;
-	$parametro[1] = !empty($GLOBALS['argv'][3]) ? $GLOBALS['argv'][3] : null;
-	$parametro_invalido =	(($parametro[1] != null) and (strtoupper($parametro[1])) != "FORCE") ? 1 : 0;
- // var_dump($parametro);die;
-
-	if (($parametro_invalido == 1)or(strtoupper($parametro[0]) == 'FORCE')) {
+	$login = strtolower($login);
+	$acao = !is_null($acao)?strtolower($acao):null;
+	$parametro_invalido = (($acao != null) and ($acao != 'force'));
+	if ($parametro_invalido or ($login == 'force')) {
 		echo "\nParâmetro inválido ou login de usuário com formato errado/faltante !\n\n";
 		exit(3);
 	}
 	// Gera o help
-	if (strtoupper($parametro[0]) == 'HELP'){
+	if ($login == 'help'){
 		echo "\n\n======> Bem-vindo ao HELP do cookbook usuarios ! <======\n
 		      \nA estrutura do cookbook é : sudo cloud-init usuario\n
 		      \nExemplo : sudo cloud-init emerson\n
@@ -28,48 +26,33 @@ function usuario_init(){
 	}else{
 		// Validacao do usuario
 		//Validacao da composicao do login e seus caracteres
-		$login = strtolower($parametro[0]);
-		if (preg_match("/[a-z]/",substr($login,0,1)) != 1){
-			echo "\nO primeiro caracter precisa ser uma letra válida\n\n";
+		if (!(bool)preg_match("/[a-z]/",substr($login,0,1)) or ((bool)preg_match("/[ç:;?+=!@#$%&*><éáíóúÁÉÍÓÚ]/",$login))){
+//		if (!(bool)preg_match("/[a-z]/",substr($login,0,1))){
+			echo "\nCaracter invalido no inicio ou no meio do login\n\n";
 			exit(3); 
 
 		}
-		if (preg_match("/[ç:;?+=!@#$%&*><éáíóúÁÉÍÓÚ]/",$login) == 1){
-			echo "\nCaracter inválido no login.\n\n";
-			exit(3); 
-		}
-		if (preg_match("/[a-z]{3,}[0-9\-_]?(\.{0,1}?)/",$login) == 0){
+		if (!(bool)preg_match("/[a-z]{3,}[0-9\-_]?(\.{0,1}?)/",$login)){
 			echo "\nRegra de formação do login inconsistente !\n\n";
 			exit(3);
 		}
 		// Verifica se pasta existe no servidor local
 		$caminho = "/home/$login/.ssh/";
-		// Verifica se existe a chave publica
-		if (file_exists($caminho)) {
-		$chave_local_existe = file_exists($caminho."$login.pub") ? 1 : 0;
-			if ($chave_local_existe == 0){
-				@unlink("$login.pub");
-				captura_chave($caminho,$login);
-			}else{
-				if (strtoupper($parametro[1]) == "FORCE"){			
+		//Administra o parametro force para evitar erro
+		if ((file_exists($caminho) and ($acao == 'force'))) {
 				@unlink($caminho."$login.pub");
 				@unlink($caminho."authorized_keys");
 				captura_chave($caminho,$login);
-				}else{
-					echo "\nUsuario já possui chave publica cadastrada . Use o metodo FORCE caso deseje renovar\n\n";
-					exit(3);
-				}
-			}	
+				exit(3);
 		}
-		else{ // Processamento se pasta local não existir
+		if (!file_exists($caminho)){
 			exec_script("sudo useradd -g usuarios -s /bin/bash -m $login;");
 			sleep(1);
 			exec_script("sudo mkdir -m 0700 $caminho");
 			echo "\nForam criadas as pastas necessarias ao processo\n\n";
-			if (file_exists($caminho)){
 				@unlink("$login.pub");
 				captura_chave($caminho,$login);
-			}
+				exit(3);
 		}
 	}
 }// Encerra a funcao usuario_init
@@ -84,6 +67,6 @@ function captura_chave($caminho,$login){
 		echo "\nArquivo gravado com sucesso no servidor\n\n";
 		@unlink("$login.pub");
 	}else{
-		echo "\nNão tem arquivo no servidor.Procure o suporte\n\n";
-	}
+		echo "\nNão tem arquivo no servidor ou rede instavel.Procure o suporte\n\n";
+	}	
 } // Encerra a funcao captura_chave

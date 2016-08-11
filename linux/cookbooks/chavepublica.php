@@ -5,9 +5,9 @@ Data : 04/08/2016
 Teste e validacao : Jean Rodrigues
 */
 
-function chavepublica_init(){
-	$parametro = !empty($GLOBALS['argv'][2]) ? $GLOBALS['argv'][2]  : null ;
-	if (strtoupper($parametro) == 'HELP'){
+function chavepublica_init($parametro){
+	$parametro = strtolower($parametro);
+	if ($parametro == 'help'){
 		echo "\n\n======> Bem-vindo ao HELP do cookbook chavepublica ! <======\n
 		      \nA estrutura do cookbook é : cloud-init chavepublica <parametro>\n
 		      \nExemplo 1 : cloud-init chavepublica\n
@@ -22,7 +22,7 @@ function chavepublica_init(){
 		$usuario = posix_getlogin();
 		$caminho = "/home/$usuario/.ssh/";
 	// Apaga os arquivos atuais
-		if(((file_exists($caminho.$usuario.".pub")) and (strtoupper($parametro) == 'FORCE'))or(!file_exists($caminho.$usuario.".pub"))) {
+		if(((file_exists($caminho.$usuario.".pub")) and ($parametro == 'force'))or(!file_exists($caminho.$usuario.".pub"))) {
 			@unlink($caminho.$usuario);
 			@unlink($caminho.$usuario.".pub");
 			@unlink($caminho."id_rsa");
