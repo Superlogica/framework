@@ -4,7 +4,6 @@ Script revisado por : Emerson Silva
 Data : 04/08/2016 
 Teste e validacao : Jean Rodrigues
 */
-
 function chavepublica_init($parametro=null){
 $parametro = strtolower($parametro);
     if ($parametro == 'help'){
