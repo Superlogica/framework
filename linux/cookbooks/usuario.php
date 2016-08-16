@@ -4,7 +4,6 @@ Autor : Emerson Silva - 05/08/2016
 Funcao : Criar usuarios em servidor e habilitar chave publica no servidor
 Teste e revisao : Jean Rodrigues
 */
-
 function usuario_init($login,$grupo="usuarios",$acao=null){
 // Valida os parametros recebidos
 $login = strtolower($login);
@@ -44,7 +43,6 @@ $parametro_invalido = (($acao != null) and ($acao != 'force'));
 // Insere apenas um usuario
 processa_usuario($login,$grupo,$acao);
 }// Encerra a funcao usuario_init
-
 // Traz o arquivo do servidor externo para o local 
 function captura_chave($caminho,$login){
 	@exec_script("sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/linux/templates/publickeys/$login.pub --no-check-certificate;");
@@ -59,7 +57,6 @@ function captura_chave($caminho,$login){
             echo "\nNão tem arquivo no servidor ou rede instavel.Procure o suporte\n\n";
 	}	
 } // Encerra a funcao captura_chave
-
 // Funcao para processamento dos usuarios
 function processa_usuario($login,$grupo,$acao,$todos=false){
 // Validacao do grupo usuarios . Funções PHP só traz dados do usuario corrente.

@@ -5,7 +5,6 @@ Data : 11/08/2016
 Funcao : Efetuar/Restaurar o bloqueio de acessos aos servidores 
 Testado e revisado por Jean Rodrigues
 */
-
 function bloqueio_init($login=null,$modo=null){
 // Valida os parametros recebidos
 $login = strtolower($login);
