@@ -45,7 +45,7 @@ processa_usuario($login,$grupo,$acao);
 
 // Traz o arquivo do servidor externo para o local 
 function captura_chave($caminho,$login){
-    @exec_script("yes 2>/dev/null | smbclient //SLNAS2/chaves -c 'get $login.pub'");
+	@exec_script("sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/linux/templates/publickeys/$login.pub --no-check-certificate;");
     sleep(1);				
     @exec_script("cp $login.pub /home/$login/.ssh/$login.pub;");
     if (file_exists($caminho."$login.pub")){
@@ -99,9 +99,9 @@ $caminho = "/home/$login/.ssh/";
 	}
 //Gerar acrescenta novo usuario / grupo no arquivo de backup
     if (!$todos){
-        @exec_script("yes 2>/dev/null | smbclient //SLNAS2/chaves -c 'get outline';");
+        @exec_script("sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/linux/templates/publickeys/outline --no-check-certificate;");
 	$conteudo = @file("outline");
-	if (!in_array(trim("$login;$grupo"),array_map('trim',$conteudo))){
+	if (!@in_array(trim("$login;$grupo"),@array_map('trim',$conteudo))){
             @file_put_contents("outline",base64_encode(trim("$login;$grupo"))."\n",FILE_APPEND);
             exec_script("sudo yes 2>/dev/null | smbclient //SLNAS2/chaves -c 'put outline';");
             sleep(1);

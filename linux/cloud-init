@@ -54,6 +54,7 @@ if (is_file("/opt/cloud-init/cloud/$cookbook.php")){
 }
 exec_script("cd /opt/cloud-init/cloud/; sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/linux/cookbooks/$cookbook.php --no-check-certificate;"); 
 
+
 if (!is_file("/opt/cloud-init/cloud/$cookbook.php")){
 echo("\nCookbook '$cookbook' não encontrado.\n\n");
 exit(3);
