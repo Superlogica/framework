@@ -35,11 +35,13 @@ $parametro_invalido = (($acao != null) and ($acao != 'force'));
         @exec_script("sudo rm -rf outline;yes 2>/dev/null | smbclient //SLNAS2/chaves -c 'get outline';");
         $conteudo = @file("outline");
         foreach ($conteudo as $linha){
+            //Insere todos usuarios presentes no outline
         processa_usuario((trim(explode(";",base64_decode($linha))[0])),(trim(explode(";",base64_decode($linha))[1])),$acao,true);
         }
     @exec_script("sudo rm -rf outline ;");
     return;
 }
+// Insere apenas um usuario
 processa_usuario($login,$grupo,$acao);
 }// Encerra a funcao usuario_init
 
@@ -71,11 +73,17 @@ $grupos_server = file("group");
         echo "\nGrupo $grupo não existe neste servidor.Tente novamente ou contate o suporte !\n\n";
 	exit(3);
 	}
-//Validacao da composicao do login e seus caracteres
-    if (!(bool)preg_match("/[a-z]/",substr($login,0,1)) or ((bool)preg_match("/[ç:;?+=!@#$%&*><éáíóúÁÉÍÓÚ]/",$login))){
-        echo "\nCaracter invalido no inicio ou no meio do login\n\n";
+    //Valida primeiro caracter do login
+    if (!(bool)preg_match("/[a-z]/",substr($login,0,1))){
+        echo "\nCaracter invalido no inicio, use somente letras sem acentua��o\n\n";
 	exit(3); 
 	}
+    //Valida se tem caracteres invalidos no meio do login
+    if ((bool)preg_match("/[ç:;?+=!@#$%&*><éáíóúÁÉÍÓÚ]/",$login)){
+        echo "\nCaracter invalido no meio do login\n\n";
+	exit(3); 
+	}
+    // Valida se login segue modelo de formatacao
     if (!(bool)preg_match("/[a-z]{3,}[0-9\-_]?(\.{0,1}?)/",$login)){
         echo "\nRegra de formação do login inconsistente !\n\n";
 	exit(3);
