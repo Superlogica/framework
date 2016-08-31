@@ -47,5 +47,4 @@ function processa_bloqueio($login,$modo){
     return;
     }
 echo "\nUsuário $login inapto para acao ou inexistente\n\n";
-
 } // Final da processa_bloqueio 

@@ -30,7 +30,6 @@ $parametro_invalido = (($acao != null) and ($acao != 'force'));
 	      \nAcao : Ira gerar um novo usuario somente se ele for novo e se existir uma chavepublica gerada pelo cookbook chavepublica.\nUse o modo FORCE para forçar o processo \n\n";
 	return;
 	}
-
 // Insere apenas um usuario
 processa_usuario($login,$grupo,$acao);
 }// Encerra a funcao usuario_init
