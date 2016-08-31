@@ -24,22 +24,20 @@ $caminho = "/home/$usuario/.ssh/";
 // Apaga os arquivos atuais
     if(((file_exists($caminho.$usuario.".pub")) and ($parametro == 'force'))or(!file_exists($caminho.$usuario.".pub"))) {
         @unlink($caminho.$usuario);
-	@unlink($caminho.$usuario.".pub");
-	@unlink($caminho."id_rsa");
-	echo "\n\nAperte ENTER no proximo passo e aguarde a resposta ...\n\n";  
-	// Gerar chaves do tipo rsa - usar criptografia
+		@unlink($caminho.$usuario.".pub");
+		@unlink($caminho."id_rsa");
+		echo "\n\nAperte ENTER no proximo passo e aguarde a resposta ...\n\n";  
+		// Gerar chaves do tipo rsa - usar criptografia
             if(!file_exists($caminho."id_rsa.pub")){
-            exec_script("ssh-keygen -t rsa -N ''");
+        	    exec_script("ssh-keygen -t rsa -N ''");
             }else{
-            @unlink($caminho."id_rsa");
-            @unlink($caminho."id_rsa.pub");
-            exec_script("ssh-keygen -t rsa -N ''");
-        }
+            	@unlink($caminho."id_rsa");
+            	@unlink($caminho."id_rsa.pub");
+            	exec_script("ssh-keygen -t rsa -N ''");
+        	}
 	// Renomeia os arquivos de chave
-	echo (rename($caminho."id_rsa.pub",$caminho."$usuario.pub")) ? "\nChaves publicas e privadas geradas corretamente. Obrigado!\n" : "\nFalha na geracao da chave , tente novamente ou acione o suporte!\n";
-        // Gera copia local e envia ao servidor SLNAS2
-	exec_script("cp /home/$usuario/.ssh/$usuario.pub $usuario.pub");
-	exec_script("yes 2>/dev/null | smbclient //SLNAS2/chaves -c 'put $usuario.pub'");
+	echo (rename($caminho."id_rsa.pub",$caminho."$usuario.pub")) ? "\nChaves publicas e privadas geradas corretamente\nSua chave publica esta em : $caminho$usuario.pub\n\n" : "\nFalha na geracao da chave , tente novamente ou acione o suporte!\n";
+	exec_script("sudo rm -rf chavepublica.php.*;");
 	@unlink($usuario.".pub");
 	return;
     }

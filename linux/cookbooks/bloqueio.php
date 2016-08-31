@@ -19,33 +19,33 @@ if ($login == 'help'){
     \nAcao : Esse cookbook pode bloquear ou liberar um usuario ou todos bloqueando o acesso às chaves publicas do usuário.\n\n";
     return;
 }
-// Processa todos usuarios
- $usuario = posix_getlogin();
  // Processa um usuario por vez e impede um auto bloqueio
-if (($login != "all") and ($login != $usuario)){ 
+if ($login != "all") { 
     processa_bloqueio($login,$modo);
     return;
 }
 // Varre o diretorio home do servidor usando a classe directory para ver os usuarios criados
  $d = dir("/home/");
     while (false !== ($entry = $d->read())) {
-       if (($entry != '.') and ($entry != '..') and ($entry != $usuario)){
+       if (($entry != '.') and ($entry != '..')){
        processa_bloqueio($entry,$modo);
        }	
     }
  $d->close();
 }// Final do bloqueio_init
 function processa_bloqueio($login,$modo){
-    if(file_exists("/home/$login/.ssh/authorized_keys")){
+// Valida se o login e usuário são os mesmos . Não deve ser processado caso seja o mesmo  
+    if(file_exists("/home/$login/.ssh/authorized_keys") and (posix_getlogin() != $login)){
         if (empty($modo)){
-        @exec_script("sudo chmod 000 /home/$login/.ssh/ -R ;");
+        @exec_script("sudo chmod 000 -R /home/$login/.ssh/ -R ;");
         echo "\nBloqueio do usuario $login feito com sucesso\n\n";
         }
         if ($modo == 'liberar'){
-        @exec_script("sudo chmod 444 /home/$login/.ssh/ -R ;");
+        @exec_script("sudo chmod 500 -R /home/$login/.ssh/ -R ;");
         echo "\nLiberacao do usuario $login feita com sucesso\n\n";
         }
     return;
     }
-echo "\nUsuário inapto ou inexistente\n\n";
+echo "\nUsuário $login inapto para acao ou inexistente\n\n";
+
 } // Final da processa_bloqueio 
