@@ -61,7 +61,7 @@ function processa_usuario($login,$grupo,$acao,$todos=false){
 		@exec_script("sudo groupadd $grupo;");
 	}
 	//Valida primeiro caracter do login
-	if (!(bool)preg_match("/^[a-z{1}][a-z0-9._\-]{1,}[^\][}{|\/Ã§:;,?+=!@#$%&*°ºª À-Úà-ú]$/",$login)){
+	if (!(bool)preg_match("/^[a-z]{1}[a-z0-9._\-]{1,}[^\][}{|\/Ã§:;,?+=!@#$%&*°ºª À-Úà-ú]$/",$login)){
 		echo "\nTamanho / caracter invalido no uso do login do usuario, revise e tente novamente\n\n";
 		exit(3); 
 	}
