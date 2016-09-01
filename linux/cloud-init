@@ -1,49 +1,55 @@
 #!/usr/bin/php
 <?php
-
-// checa se root
-if (posix_getuid() != 0) {
-    echo("\nSó o root pode fazer isto. Use sudo.\n\n");
-    exit(3);
-}
-
+/*
+ Criacao : Legado 
+ Revisao : 09/08/2016
+ Author : Emerson Silva
+ Teste e revisao : Jean Rodrigues
+*/
 // torna este script executável em qq diretório
-if (!is_file('/usr/sbin/cloud-init')) {
-    @exec("sudo ln -s ".__FILE__." /usr/sbin");
+if (!is_file('/usr/sbin/cloud-init')){
+ @exec("sudo ln -s ".__FILE__." /usr/sbin");
 }
-
 //parametros
 $args = $GLOBALS['argv'];
 $cookbook = $args[1];
+$cookbooks_que_nao_usam_sudo = Array("chavepublica");
 array_shift($args);
 array_shift($args);
 if (!$cookbook){
-    echo("\nNão informou cookbook a ser executado.\n\n");
-    exit(3);
+ echo("\nNão informou cookbook a ser executado.\n\n");
+ exit(3);
 }
-
-//cria diretorios
+// checa se usuario é root e se o cookbook não faz parte dos que rodam sem SUDO 
+if ((posix_getuid() != 0) and (!in_array($cookbook,$cookbooks_que_nao_usam_sudo))) {
+ echo("\nSó o root pode fazer isto. Use sudo.\n\n");
+ exit(3);
+}
+// Se o SUDO foi admitido ele verifica se o cookbook não é bloqueado para SUDO
+if ((posix_getuid() == 0) and (in_array($cookbook,$cookbooks_que_nao_usam_sudo))) {
+ echo("\nEsse cookbook não roda no modo SUDO . Tente novamente !\n\n");
+ exit(3);
+}
+// Cria diretorios 
 if (!is_dir("/opt/cloud-init/cloud/libs")){
-  if (!mkdir("/opt/cloud-init/cloud/libs", 0777, true)) {
-      die('Falhou ao criar pastas.');
-  }
+ if (!mkdir("/opt/cloud-init/cloud/libs", 0777, true)) {
+  die('Falhou ao criar pastas.');
+ }
 }
-
 //lib
 if (is_file("/opt/cloud-init/cloud/libs/lib.php")){
-   @unlink("/opt/cloud-init/cloud/libs/lib.php");
+ @unlink("/opt/cloud-init/cloud/libs/lib.php");
 }
 exec("cd /opt/cloud-init/cloud/libs; sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/linux/libs/lib.php --no-check-certificate;"); 
 require_once "/opt/cloud-init/cloud/libs/lib.php";
-
 //executa
 if (is_file("/opt/cloud-init/cloud/$cookbook.php")){
-   @unlink("/opt/cloud-init/cloud/$cookbook.php");
+ @unlink("/opt/cloud-init/cloud/$cookbook.php");
 }
 exec_script("cd /opt/cloud-init/cloud/; sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/linux/cookbooks/$cookbook.php --no-check-certificate;"); 
 if (!is_file("/opt/cloud-init/cloud/$cookbook.php")){
-    echo("\nCookbook '$cookbook' não encontrado.\n\n");
-    exit(3);
+ echo("\nCookbook '$cookbook' não encontrado.\n\n");
+ exit(3);
 }
 require "/opt/cloud-init/cloud/$cookbook.php";
 call_user_func_array($cookbook."_init", $args);
