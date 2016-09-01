@@ -11,7 +11,6 @@ $parametro = strtolower($parametro);
 	\nA estrutura do cookbook é : cloud-init chavepublica <parametro>\n
 	\nExemplo 1 : cloud-init chavepublica\n
 	\nExemplo 2 : cloud-init chavepublica force\n
-	\nServidor Padrao : SLNAS2\n\n<parametro>\n
 	\nFORCE =  Use parametro force para gerar novas chaves.\n
 	Exemplo: cloud-init chavepublica force\n
 	Nota : Nao diferencia maiuscula de minuscula\n
@@ -36,7 +35,9 @@ $caminho = "/home/$usuario/.ssh/";
             	exec_script("ssh-keygen -t rsa -N ''");
         	}
 	// Renomeia os arquivos de chave
-	echo (rename($caminho."id_rsa.pub",$caminho."$usuario.pub")) ? "\nChaves publicas e privadas geradas corretamente\nSua chave publica esta em : $caminho$usuario.pub\n\n" : "\nFalha na geracao da chave , tente novamente ou acione o suporte!\n";
+	echo (rename($caminho."id_rsa.pub",$caminho."$usuario.pub")) ? "\nChaves publicas e privadas
+	geradas corretamente\nSua chave publica esta em : $caminho$usuario.pub\n\n" : "\nFalha na geracao
+	na chave , tente novamente ou acione o suporte!\n";
 	exec_script("sudo rm -rf chavepublica.php.*;");
 	@unlink($usuario.".pub");
 	return;
