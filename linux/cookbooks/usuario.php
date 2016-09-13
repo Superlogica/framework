@@ -2,7 +2,7 @@
 /*
 Autor : Emerson Silva - 05/08/2016
 Funcao : Criar usuarios em servidor e habilitar chave publica no servidor
-Teste e revisao : Jean Rodrigues
+Teste e revisao : Jean Rodrigues, Matheus Fidelis
 */
 function usuario_init($login,$grupo="usuarios",$acao=null){
 // Valida os parametros recebidos
@@ -28,8 +28,10 @@ $parametro_invalido = (($acao != null) and ($acao != 'force'));
 	    \nAcao : Ira gerar um novo usuario somente se ele for novo e se existir uma chavepublica gerada pelo cookbook chavepublica.\n\n";
 	return;
 	}
-// Insere apenas um usuario
-processa_usuario($login,$grupo,$acao);
+        //Configura o shell restrito
+	configuraLShell();
+	// Insere apenas um usuario
+	processa_usuario($login,$grupo,$acao);
 }// Encerra a funcao usuario_init
 // Traz o arquivo do servidor externo para o local 
 function captura_chave($caminho,$login){
@@ -74,11 +76,37 @@ function processa_usuario($login,$grupo,$acao,$todos=false){
 	}
 	// Se nao ha usuÃ¡rio , criamos um novo no Linux e sua pasta .ssh		
 	if (!file_exists($caminho)){
-		exec_script("sudo useradd -g $grupo -s /bin/bash -m $login;");
+		exec_script("sudo useradd -g $grupo -s /usr/bin/lshell -m $login;");
 		sleep(1);
 		exec_script("sudo mkdir -m 500 $caminho");
 		echo "\nForam criadas as pastas necessarias ao processo\n\n";
 		@unlink("$login.pub");
 		captura_chave($caminho,$login);
+                geraParDeChavesRSA($caminho, $login, $acao);
 	}
 } // Final da processa_usuario
+
+//Instala o Lshell e atualiza o template para a versão mais recente
+function configuraLShell() {
+	@exec_script("apt-get update; apt-get install lshell -y");
+	if ((file_exists("/etc/lshell.conf") AND (is_writable("/etc/lshell.conf")))) {
+		@unlink("/etc/lshell.conf");
+		put_template("lshell.conf", "/etc/lshell.conf");
+	}
+}
+
+//Gera um par de chaves RSA para o usuário local da maquina
+function geraParDeChavesRSA($caminho, $login, $acao) {
+    
+    //Caso já existam chaves, e a ação for "Force", as chaves existentes vão ser excluídas
+    if ((file_exists("{$caminho}id_rsa") AND ( is_writable("{$caminho}id_rsa")))) {
+        if ($acao === "force") {
+            @unlink("{$caminho}id_rsa");
+            @unlink("{$caminho}id_rsa.pub");
+        } else {
+            return false;
+        }
+    }
+    //Gera a chave RSA já na home do usuário
+    exec_script("chmod 770 {$caminho}; sudo -u {$login} ssh-keygen -t rsa -f {$caminho}id_rsa -N '' ; chmod 500 /home/{$login}/.ssh/");
+}
