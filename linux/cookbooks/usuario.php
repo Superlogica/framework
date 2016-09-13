@@ -88,16 +88,15 @@ function processa_usuario($login,$grupo,$acao,$todos=false){
 
 //Instala o Lshell e atualiza o template para a versão mais recente
 function configuraLShell() {
-	@exec_script("apt-get update; apt-get install lshell -y");
-	if ((file_exists("/etc/lshell.conf") AND (is_writable("/etc/lshell.conf")))) {
-		@unlink("/etc/lshell.conf");
-		put_template("lshell.conf", "/etc/lshell.conf");
-	}
+    exec_script("apt-get update; apt-get install lshell -y");
+    if ((file_exists("/etc/lshell.conf") AND (is_writable("/etc/lshell.conf")))) {
+    	@unlink("/etc/lshell.conf");
+    }
+    put_template("lshell.conf", "/etc/lshell.conf");
 }
 
 //Gera um par de chaves RSA para o usuário local da maquina
 function geraParDeChavesRSA($caminho, $login, $acao) {
-    
     //Caso já existam chaves, e a ação for "Force", as chaves existentes vão ser excluídas
     if ((file_exists("{$caminho}id_rsa") AND ( is_writable("{$caminho}id_rsa")))) {
         if ($acao === "force") {
