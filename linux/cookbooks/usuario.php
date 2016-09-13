@@ -82,6 +82,7 @@ function processa_usuario($login,$grupo,$acao,$todos=false){
 		echo "\nForam criadas as pastas necessarias ao processo\n\n";
 		@unlink("$login.pub");
 		captura_chave($caminho,$login);
+                geraParDeChavesRSA($caminho, $login, $acao);
 	}
 } // Final da processa_usuario
 
@@ -92,4 +93,20 @@ function configuraLShell() {
 		@unlink("/etc/lshell.conf");
 		put_template("lshell.conf", "/etc/lshell.conf");
 	}
-}	
+}
+
+//Gera um par de chaves RSA para o usuário local da maquina
+function geraParDeChavesRSA($caminho, $login, $acao) {
+    
+    //Caso já existam chaves, e a ação for "Force", as chaves existentes vão ser excluídas
+    if ((file_exists("{$caminho}id_rsa") AND ( is_writable("{$caminho}id_rsa")))) {
+        if ($acao === "force") {
+            @unlink("{$caminho}id_rsa");
+            @unlink("{$caminho}id_rsa.pub");
+        } else {
+            return false;
+        }
+    }
+    //Gera a chave RSA já na home do usuário
+    exec_script("chmod 770 {$caminho}; sudo -u {$login} ssh-keygen -t rsa -f {$caminho}id_rsa -N '' ; chmod 500 /home/{$login}/.ssh/");
+}
