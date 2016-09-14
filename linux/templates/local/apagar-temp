@@ -1,25 +1,6 @@
 #!/bin/sh
 
 #exclui arquivos antigos (com mais de dois dias).
-find /home/temp/* -mtime +2 -exec rm -Rf {} \;
-
-echo "Arquivos apagados";
-
-#Cria as pastas permanente caso não exista.
-file="/home/temp/uploads"
-if [ -d "$file" ]
-then
-	echo "$file já existe."
-else
-	mkdir /home/temp/uploads;
-        chmod -R 777 /home/temp/uploads;
-fi
-
-file="/home/temp/chaves"
-if [ -d "$file" ]
-then
-	echo "$file já existe."
-else
-	mkdir /home/temp/chaves;
-        chmod -R 777 /home/temp/chaves;
-fi
+find /samba/temp/* -mtime +2 -exec rm -Rf {} \;
+find /samba/uploads/* -mtime +3 -exec rm -Rf {} \;
+find /samba/chaves/* -mtime +3 -exec rm -Rf {} \;
