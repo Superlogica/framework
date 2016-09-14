@@ -1,0 +1,28 @@
+#!/bin/sh
+
+# Permissões para todos
+chmod -R 775 /home;
+chmod -R 777 /home/temp -R;
+
+chgrp -R usuarios /home/programas;
+chgrp -R usuarios /home/temp;
+chgrp -R usuarios /home/uploads;
+chgrp -R usuarios /home/chaves;
+
+#departamentos chmod
+chmod -R 770 /home/configs;
+chmod -R 770 /home/configs/scripts;
+chmod -R 770 /home/infra;
+chmod -R 777 /home/temp;
+chmod -R 777 /home/uploads;
+chmod -R 770 /home/chaves;
+chmod -R 775 /home/programas;
+
+#departamentos grupos
+chgrp -R infra /home/infra
+
+
+#exclui arquivos antigos (com mais de dois dias).
+find /samba/temp/* -mtime +2 -exec rm -Rf {} \;
+find /samba/uploads/* -mtime +3 -exec rm -Rf {} \;
+find /samba/chaves/* -mtime +3 -exec rm -Rf {} \;

@@ -10,6 +10,5 @@ function crserver_init(){
 	
  put_template("local/smb-cr.conf","/etc/samba/smb.conf");
  put_template("local/sshd_config","/etc/ssh/sshd_config");
- put_template("local/jail.local","/etc/fail2ban/jail.local");
     
  }
