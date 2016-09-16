@@ -6,28 +6,28 @@ function slsambaserver_init(){
 	exec_script("
 		#Instalação e configuração
 
-		sudo /opt/cloud-init/cloud-init-init localserver;
-		sudo apt-get install samba;
-		sudo apt-get install openssh-server;
+		sudo cloud-init localserver;
+		sudo apt-get install samba -y;
+		sudo apt-get install openssh-server -y;
 		mv /etc/samba/smb.conf /etc/samba/smb.conf.original;
 
 		#Diretórios e permissões
 
-		mkdir /home/configs/scripts -p;
-		mkdir /home/infra;
-		mkdir /home/temp;
-		mkdir /home/uploads;
-		mkdir /home/chaves;
-		mkdir /home/programas;
-		chmod -R 770 /home/configs;
-		chmod -R 770 /home/configs/scripts;
-		chmod -R 770 /home/infra;
-		chmod -R 777 /home/temp;
-		chmod -R 777 /home/uploads;
-		chmod -R 770 /home/chaves;
-		chmod -R 775 /home/programas;
-		chmod +x /etc/cron.daily/seguranca;
-		sudo -u root echo 'export PATH=/home/configs/scripts/:$PATH' >> /etc/profile;
+		sudo mkdir /home/configs/scripts -p;
+		sudo mkdir /home/infra;
+		sudo mkdir /home/temp;
+		sudo mkdir /home/uploads;
+		sudo mkdir /home/chaves;
+		sudo mkdir /home/programas;
+		sudo chmod -R 770 /home/configs;
+		sudo chmod -R 770 /home/configs/scripts;
+		sudo chmod -R 770 /home/infra;
+		sudo chmod -R 777 /home/temp;
+		sudo chmod -R 777 /home/uploads;
+		sudo chmod -R 770 /home/chaves;
+		sudo chmod -R 775 /home/programas;
+		sudo chmod +x /etc/cron.daily/seguranca;
+		sudo -u root echo 'export PATH=/home/configs/scripts/:\$PATH' >> /etc/profile;
 		
 		#Criação de grupos
 
