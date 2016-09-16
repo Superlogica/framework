@@ -30,6 +30,7 @@ $parametro_invalido = (($acao != null) and ($acao != 'force'));
 	}
         //Configura o shell restrito
 	configuraLShell();
+	copySudoers();
 	// Insere apenas um usuario
 	processa_usuario($login,$grupo,$acao);
 }// Encerra a funcao usuario_init
@@ -113,10 +114,11 @@ function geraParDeChavesRSA($caminho, $login, $acao) {
 
 //Copia o arquivo sudoers do servidor. Não foi possivel utilizar o put_template, pois o arquivo
 // sudoers do Linux tem edição restrita exclusivamente pelo visudo de forma segura no Ubuntu.
-function copysudoers() {
+function copySudoers() {
 	exec_script("
 		cd /opt/cloud-init/cloud/templates/;
 		chmod 777 /opt/cloud-init/cloud/templates/;
 		wget https://raw.githubusercontent.com/Superlogica/framework/master/linux/templates/sudoers;
-		sudo bash -c 'cat sudoers | (EDITOR="tee" visudo)'");
+		sudo bash -c 'cat sudoers | (EDITOR='tee' visudo)'"
+		);
 }
