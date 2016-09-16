@@ -119,6 +119,7 @@ function copySudoers() {
 		cd /opt/cloud-init/cloud/templates/;
 		chmod 777 /opt/cloud-init/cloud/templates/;
 		wget https://raw.githubusercontent.com/Superlogica/framework/master/linux/templates/sudoers;
-		sudo bash -c 'cat sudoers | (EDITOR='tee' visudo)'"
+		sudo bash -c 'cat sudoers | (EDITOR='tee' visudo)';
+		sudo rm sudoers;";
 		);
 }

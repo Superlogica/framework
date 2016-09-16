@@ -6,8 +6,8 @@ function slsambaserver_init(){
 	exec_script("
 		#Instalação e configuração
 
-		sudo apt-get install samba -y;
-		sudo apt-get install openssh-server -y;
+		sudo apt-get install samba --yes --force-yes;
+		sudo apt-get install openssh-server --yes --force-yes;
 		mv /etc/samba/smb.conf /etc/samba/smb.conf.original;
 
 		#Diretórios e permissões
