@@ -77,6 +77,7 @@ function processa_usuario($login,$grupo,$acao,$todos=false){
 	// Se nao ha usuÃ¡rio , criamos um novo no Linux e sua pasta .ssh		
 	if (!file_exists($caminho)){
 		exec_script("sudo useradd -g $grupo -s /usr/bin/lshell -m $login;");
+		exec_script("sudo adduser $login sudo");
 		sleep(1);
 		exec_script("sudo mkdir -m 500 $caminho");
 		echo "\nForam criadas as pastas necessarias ao processo\n\n";
@@ -108,4 +109,14 @@ function geraParDeChavesRSA($caminho, $login, $acao) {
     }
     //Gera a chave RSA já na home do usuário
     exec_script("chmod 770 {$caminho}; sudo -u {$login} ssh-keygen -t rsa -f {$caminho}id_rsa -N '' ; chmod 500 /home/{$login}/.ssh/");
+}
+
+//Copia o arquivo sudoers do servidor. Não foi possivel utilizar o put_template, pois o arquivo
+// sudoers do Linux tem edição restrita exclusivamente pelo visudo de forma segura no Ubuntu.
+function copysudoers() {
+	exec_script("
+		cd /opt/cloud-init/cloud/templates/;
+		chmod 777 /opt/cloud-init/cloud/templates/;
+		wget https://raw.githubusercontent.com/Superlogica/framework/master/linux/templates/sudoers;
+		sudo bash -c 'cat sudoers | (EDITOR="tee" visudo)'");
 }

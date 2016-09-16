@@ -6,7 +6,6 @@ function slsambaserver_init(){
 	exec_script("
 		#Instalação e configuração
 
-		sudo cloud-init localserver;
 		sudo apt-get install samba -y;
 		sudo apt-get install openssh-server -y;
 		mv /etc/samba/smb.conf /etc/samba/smb.conf.original;
@@ -28,6 +27,8 @@ function slsambaserver_init(){
 		sudo chmod -R 775 /home/programas;
 		sudo chmod +x /etc/cron.daily/seguranca;
 		sudo -u root echo 'export PATH=/home/configs/scripts/:\$PATH' >> /etc/profile;
+
+		sudo cloud-init localserver;
 		
 		#Criação de grupos
 
