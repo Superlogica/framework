@@ -1,21 +1,19 @@
 <?php
-function sambaserver_init(){
+function slsambaserver_init(){
 	//Configurações do servidor samba
 	put_template("local/seguranca","/etc/cron.daily/seguranca");
 
 	exec_script("
 		#Instalação e configuração
 
-		sudo cloud-init localserver;
-		apt-get update && apt-get upgrade;
-		apt-get install samba;
-		apt-get install openssh-server;
+		sudo /opt/cloud-init/cloud-init-init localserver;
+		sudo apt-get install samba;
+		sudo apt-get install openssh-server;
 		mv /etc/samba/smb.conf /etc/samba/smb.conf.original;
 
 		#Diretórios e permissões
 
-		mkdir /home/configs;
-		mkdir /home/configs/scripts;
+		mkdir /home/configs/scripts -p;
 		mkdir /home/infra;
 		mkdir /home/temp;
 		mkdir /home/uploads;
@@ -29,7 +27,7 @@ function sambaserver_init(){
 		chmod -R 770 /home/chaves;
 		chmod -R 775 /home/programas;
 		chmod +x /etc/cron.daily/seguranca;
-		echo "export PATH=/home/configs/scripts/$PATH" >> /etc/profile;
+		sudo -u root echo 'export PATH=/home/configs/scripts/:$PATH' >> /etc/profile;
 		
 		#Criação de grupos
 
@@ -39,8 +37,7 @@ function sambaserver_init(){
 		addgroup dev-admin;
 		addgroup suporte;
 		addgroup suporte-admin;
-		
-		
+				
 		#Criação de usuarios
 
 		sudo cloud-init usuario emersonrodrigues;
@@ -52,5 +49,5 @@ function sambaserver_init(){
 
     put_template("local/smb.conf","/etc/samba/smb.conf");
     put_template("local/sshd_config","/etc/ssh/sshd_config");
-    
+
 }
