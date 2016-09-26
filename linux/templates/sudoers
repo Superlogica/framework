@@ -8,7 +8,7 @@
 #
 Defaults        env_reset
 Defaults        mail_badpass
-Defaults        secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+Defaults        secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/configs/scripts/"
 
 # Host alias specification
 
@@ -32,10 +32,13 @@ ALL ALL=NOPASSWD: /usr/bin/ssh ssh
 
 #includedir /etc/sudoers.d
 
-%usuarios ALL=NOPASSWD: /usr/bin/who /bin/ls
+%usuarios ALL=NOPASSWD: /bin/ls, /usr/bin/who, /home/configs/scripts/deployestagio
 
-%dev ALL=NOPASSWD: /usr/bin/who /bin/ls
-%dev-admin ALL=NOPASSWD: /usr/bin/who /bin/ls
+%dev ALL=NOPASSWD:  /bin/ls, /usr/bin/who, /home/configs/scripts/deployestagio
 
-%suporte ALL=NOPASSWD: /usr/bin/who /bin/ls
-%suporte-admin ALL=NOPASSWD: /usr/bin/who /bin/ls
+%dev-admin ALL=NOPASSWD:  /bin/ls, /usr/bin/who, /home/configs/scripts/deployestagio
+
+%suporte ALL=NOPASSWD:  /bin/ls, /usr/bin/who, /home/configs/scripts/deployestagio
+
+%suporte-admin ALL=NOPASSWD:  /bin/ls, /usr/bin/who, /home/configs/scripts/deployestagio
+
