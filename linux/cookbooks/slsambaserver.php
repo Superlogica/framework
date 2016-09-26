@@ -50,3 +50,4 @@ function slsambaserver_init(){
     put_template("local/sshd_config","/etc/ssh/sshd_config");
 
 }
+
