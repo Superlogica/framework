@@ -15,14 +15,14 @@ function slsambaserver_init(){
 		sudo mkdir /home/configs/scripts -p;
 		sudo mkdir /home/infra;
 		sudo mkdir /home/temp;
-		sudo mkdir /home/uploads;
+		sudo mkdir /home/temp/uploads -p;
 		sudo mkdir /home/chaves;
 		sudo mkdir /home/programas;
-		sudo chmod -R 770 /home/configs;
-		sudo chmod -R 770 /home/configs/scripts;
+		sudo chmod -R 777 /home/configs;
+		sudo chmod -R 777 /home/configs/scripts;
 		sudo chmod -R 770 /home/infra;
 		sudo chmod -R 777 /home/temp;
-		sudo chmod -R 777 /home/uploads;
+		sudo chmod -R 777 /home/temp/uploads;
 		sudo chmod -R 770 /home/chaves;
 		sudo chmod -R 775 /home/programas;
 		sudo chmod +x /etc/cron.daily/seguranca;
@@ -43,7 +43,6 @@ function slsambaserver_init(){
 
 		sudo cloud-init usuario emersonrodrigues;
 		sudo cloud-init usuario jeanrodrigues infra;
-		sudo cloud-init usuario marcos;
 		sudo cloud-init usuario matheus;
         
     ");
