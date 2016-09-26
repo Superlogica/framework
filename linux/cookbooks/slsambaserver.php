@@ -25,7 +25,7 @@ function slsambaserver_init(){
 		sudo chmod -R 770 /home/chaves;
 		sudo chmod -R 775 /home/programas;
 		sudo chmod +x /etc/cron.daily/seguranca;
-		sudo -u root echo 'export PATH=/home/configs/scripts/:\$PATH' >> /etc/profile;
+		sudo -u root echo PATH='/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/configs/scripts/' > /etc/environment;
 
 		sudo cloud-init localserver;
 		

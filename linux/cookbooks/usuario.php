@@ -95,6 +95,7 @@ function configuraLShell() {
     	@unlink("/etc/lshell.conf");
     }
     put_template("lshell.conf", "/etc/lshell.conf");
+    exec_script("chmod 777 /var/log/lshell/ -R");
 }
 
 //Gera um par de chaves RSA para o usuário local da maquina
