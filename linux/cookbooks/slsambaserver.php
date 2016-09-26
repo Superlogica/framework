@@ -7,7 +7,6 @@ function slsambaserver_init(){
 		#Instalação e configuração
 
 		sudo apt-get install samba --yes --force-yes;
-		sudo apt-get install openssh-server --yes --force-yes;
 		mv /etc/samba/smb.conf /etc/samba/smb.conf.original;
 
 		#Diretórios e permissões
@@ -51,3 +50,4 @@ function slsambaserver_init(){
     put_template("local/sshd_config","/etc/ssh/sshd_config");
 
 }
+

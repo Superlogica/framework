@@ -12,3 +12,4 @@ function localserver_init(){
    
    put_template("local/jail.local","/etc/fail2ban/jail.local");
 }
+
