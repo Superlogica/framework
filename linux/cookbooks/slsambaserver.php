@@ -47,19 +47,19 @@ function slsambaserver_init(){
 
     put_template("local/smb.conf","/etc/samba/smb.conf");
     put_template("local/sshd_config","/etc/ssh/sshd_config");
-    put_template("scripts/appsdeploy","/home/configs/scripts");
-    put_template("scripts/conectarappsmaster","/home/configs/scripts");
-    put_template("scripts/conectarappsestagio","/home/configs/scripts");
-    put_template("scripts/conectarsubadmaster","/home/configs/scripts");
-    put_template("scripts/deploysubad","/home/configs/scripts");
-    put_template("scripts/estagiodeploy","/home/configs/scripts");
-    put_template("scripts/isql","/home/configs/scripts");
-    put_template("scripts/masterdeploy","/home/configs/scripts");
-    put_template("scripts/novaestagio","/home/configs/scripts");
-    put_template("scripts/suporte","/home/configs/scripts");
-    put_template("scripts/upload","/home/configs/scripts");
-    put_template("scripts/uploadmysql","/home/configs/scripts");
-    put_template("scripts/execute","/home/configs/scripts");
+    put_template("scripts/appsdeploy","/home/configs/scriptsappsdeploy/");
+    put_template("scripts/conectarappsmaster","/home/configs/scriptsconectarappsmaster/");
+    put_template("scripts/conectarappsestagio","/home/configs/scriptsconectarappsestagio/");
+    put_template("scripts/conectarsubadmaster","/home/configs/scriptsconectarsubadmaster/");
+    put_template("scripts/deploysubad","/home/configs/scripts/deploysubad");
+    put_template("scripts/estagiodeploy","/home/configs/scripts/estagiodeploy/");
+    put_template("scripts/isql","/home/configs/scriptsisql/");
+    put_template("scripts/masterdeploy","/home/configs/scripts/masterdeploy/");
+    put_template("scripts/novaestagio","/home/configs/scripts/novaestagio");
+    put_template("scripts/suporte","/home/configs/scripts/suporte");
+    put_template("scripts/upload","/home/configs/scripts/upload");
+    put_template("scripts/uploadmysql","/home/configs/scripts/uploadmysql");
+    put_template("scripts/execute","/home/configs/scripts/execute");
 
     exec_script("
     	chmod +x -R /home/configs/scripts/*;
