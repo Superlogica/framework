@@ -32,13 +32,21 @@ ALL ALL=NOPASSWD: /usr/bin/ssh ssh
 
 #includedir /etc/sudoers.d
 
-%usuarios ALL=NOPASSWD: /bin/ls, /usr/bin/who, /home/configs/scripts/deployestagio
+#GRUPO PADRÃO DO SISTEMA
+%usuarios ALL=NOPASSWD: /bin/ls, /usr/bin/who
 
-%dev ALL=NOPASSWD:  /bin/ls, /usr/bin/who, /home/configs/scripts/deployestagio
+#GRUPO DE USUARIOS DEV
+%dev ALL=NOPASSWD:  /bin/ls, /usr/bin/who, /home/configs/scripts/estagiodeploy, /home/configs/scripts/appsdeploy
 
-%dev-admin ALL=NOPASSWD:  /bin/ls, /usr/bin/who, /home/configs/scripts/deployestagio
+#GRUPO DE USUARIOS DEV-ADMIN
+%dev-admin ALL=NOPASSWD:  /bin/ls, /usr/bin/who, /home/configs/scripts/estagiodeploy, /home/configs/scripts/masterdeploy,  /home/configs/scripts/appsdeploy,  /home/configs/scripts/isql,  /home/configs/scripts/suporte,  /home/configs/scripts/appsdeploy,  /home/configs/scripts/uploadmysql,  /home/configs/scripts/conectarappsmaster, /home/configs/scripts/conectarappsestagio
 
-%suporte ALL=NOPASSWD:  /bin/ls, /usr/bin/who, /home/configs/scripts/deployestagio
-
+#GRUPO DE USUARIOS SUPORTE
 %suporte-admin ALL=NOPASSWD:  /bin/ls, /usr/bin/who, /home/configs/scripts/deployestagio
+
+#GRUPO DE USUARIOS INFRA
+%infra ALL=NOPASSWD: /usr/bin/ssh, /home/configs/scripts/execute*
+
+#GRUPO DE USUARIOS SUBADQUIRENTE 
+%subad-admin ALL=NOPASSWD: /home/configs/scripts/conectarsubadsmaster, /home/configs/scripts/deploysubad
 
