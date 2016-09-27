@@ -1,5 +1,5 @@
 <?php
-function slsambaserver_init(){
+function sljumpserver_init(){
 	//Configurações do servidor samba
 	put_template("local/seguranca","/etc/cron.daily/seguranca");
 
