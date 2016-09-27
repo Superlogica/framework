@@ -1,5 +1,5 @@
 <?php
-function slsambaserver_init(){
+function sljumpserver_init(){
 	//Configurações do servidor samba
 	put_template("local/seguranca","/etc/cron.daily/seguranca");
 
@@ -39,14 +39,13 @@ function slsambaserver_init(){
 				
 		#Criação de usuarios
 
-		sudo cloud-init usuario emersonrodrigues;
+		sudo cloud-init usuario emersonrodrigues dev;
 		sudo cloud-init usuario jeanrodrigues infra;
-		sudo cloud-init usuario matheus;
+		sudo cloud-init usuario matheus dev-admin;
         
     ");
 
     put_template("local/smb.conf","/etc/samba/smb.conf");
-    put_template("local/sshd_config","/etc/ssh/sshd_config");
     put_template("scripts/appsdeploy","/home/configs/scripts/appsdeploy");
     put_template("scripts/conectarappsmaster","/home/configs/scripts/conectarappsmaster");
     put_template("scripts/conectarappsestagio","/home/configs/scripts/conectarappsestagio");
