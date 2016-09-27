@@ -3,6 +3,7 @@
 # Permissões para todos
 chmod -R 775 /home;
 chmod -R 777 /home/temp -R;
+chmod -R +x /home/configs/scripts/*;
 
 chgrp -R usuarios /home/programas;
 chgrp -R usuarios /home/temp;

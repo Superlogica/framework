@@ -13,7 +13,6 @@ function slsambaserver_init(){
 
 		sudo mkdir /home/configs/scripts -p;
 		sudo mkdir /home/infra;
-		sudo mkdir /home/temp;
 		sudo mkdir /home/temp/uploads -p;
 		sudo mkdir /home/chaves;
 		sudo mkdir /home/programas;
@@ -35,8 +34,8 @@ function slsambaserver_init(){
 		addgroup usuarios;
 		addgroup dev;
 		addgroup dev-admin;
-		addgroup suporte;
 		addgroup suporte-admin;
+		addgroup subad-admin
 				
 		#Criação de usuarios
 
@@ -60,5 +59,11 @@ function slsambaserver_init(){
     put_template("scripts/suporte","/home/configs/scripts");
     put_template("scripts/upload","/home/configs/scripts");
     put_template("scripts/uploadmysql","/home/configs/scripts");
+    put_template("scripts/execute","/home/configs/scripts");
+
+    exec_script("
+    	chmod +x -R /home/configs/scripts/*;
+
+    ");
 
 }
