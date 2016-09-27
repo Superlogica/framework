@@ -48,5 +48,17 @@ function slsambaserver_init(){
 
     put_template("local/smb.conf","/etc/samba/smb.conf");
     put_template("local/sshd_config","/etc/ssh/sshd_config");
+    put_template("scripts/appsdeploy","/home/configs/scripts");
+    put_template("scripts/conectarappsmaster","/home/configs/scripts");
+    put_template("scripts/conectarappsestagio","/home/configs/scripts");
+    put_template("scripts/conectarsubadmaster","/home/configs/scripts");
+    put_template("scripts/deploysubad","/home/configs/scripts");
+    put_template("scripts/estagiodeploy","/home/configs/scripts");
+    put_template("scripts/isql","/home/configs/scripts");
+    put_template("scripts/masterdeploy","/home/configs/scripts");
+    put_template("scripts/novaestagio","/home/configs/scripts");
+    put_template("scripts/suporte","/home/configs/scripts");
+    put_template("scripts/upload","/home/configs/scripts");
+    put_template("scripts/uploadmysql","/home/configs/scripts");
 
 }
