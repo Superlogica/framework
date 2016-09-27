@@ -1,0 +1,205 @@
+#!/bin/bash
+
+#############################################################
+#execute                                                    #
+#                                                           #
+#USO: Executa comandos de rotinas da infra                  #
+#                                                           #
+#EXEMPLO:      execute $comando                             #
+#                                                           #
+#AUTOR: Jean Rodrigues 17/08/2016                           #
+#                                                           #
+#OBS: Lista de comandos no fim do arquivo                   #
+#                                                           #
+#                                                           #
+#                                                           #
+#                                                           #
+#-Correções de bugs                                         #
+#-Adicionada a opção deploy no subad. master e estagio      #
+#-Adicionada a opção conectar na estagio de apps            #
+#                                                           #
+#                                                           #
+#############################################################
+
+#[SERVIDORES]
+
+firebirdtrial1963=""
+
+admin1967=""
+
+firebirdtrial4079=""
+
+estagio=""
+
+appsmaster=""
+
+appsmaster2=""
+
+appsestagio=""
+
+subadquirentemaster=""
+
+subadquirenteestagio=""
+
+
+#[DEPLOYS] [INFRA, DEVS E DEV-ADMIN]
+
+case "$1" in
+	masterdeploy)
+
+	sudo ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 root@"$admin1967" 'sudo cloud todossemesperar cloud% deploy' 1>&2
+	echo -e " \033[0;32m FIM DO SCRIPT \033[0m"
+	sleep 2; clear; exit 0
+;;
+
+estagiodeploy)
+
+	sudo ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 root@$admin1967 'sudo cloud todos cloudex8735 deploy' 1>&2
+	echo -e " \033[0;32m FIM DO SCRIPT \033[0m"
+	sleep 2; clear; exit 0
+;;
+
+appsdeploy)
+
+    sudo ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 root@$admin1967 'sudo cloud todossemesperar apps% deploy apps' 1>&2
+    echo -e " \033[0;32m FIM DO SCRIPT \033[0m"1>&2
+    sleep 2; clear; exit 0
+;;
+deploysubad)
+
+	sudo ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 root@$subadquirentemaster 'sudo cloud deploy' 1>&2
+	sudo ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 root@$subadquirenteestagio 'sudo cloud deploy' 1>&2
+	echo -e " \033[0;32m FIM DO SCRIPT \033[0m"
+	sleep 2; clear; exit 0
+;;
+#[SUPORTE] [INFRA E TODOS ADMIN]
+
+suporte)
+
+    sudo ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 root@$admin1967 '
+
+    echo "DIGITE O NOME DA LICENÇA";
+    read licenca;
+    sudo cloud ativarSuporte "$licenca";' 1>&2
+
+	echo -e " \033[0;32m FIM DO SCRIPT \033[0m"
+    sleep 2; clear; exit 0
+;;
+#[UPLOAD] [INFRA E DEV-ADMIN]
+
+upload)
+
+    sudo ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 root@$firebirdtrial1963 '
+
+    echo "DIGITE O NOME DA LICENÇA";
+	read licenca;
+	sudo cloud upload "$licenca";' 1>&2
+
+    echo -e " \033[0;32m FIM DO SCRIPT \033[0m"
+    sleep 2; clear; exit 0
+;;
+
+#[ISQL] [INFRA E DEV-ADMIN]
+
+isql)
+
+    sudo ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 root@$firebirdtrial1963 '
+
+    echo "DIGITE O NOME DA LICENÇA";
+	read licenca;
+	sudo cloud isql "$licenca";' 1>&2
+
+    echo -e " \033[0;32m FIM DO SCRIPT \033[0m"
+    sleep 2; clear; exit 0
+;;
+#[MYSQL DE APPS] [INFRA E DEV-ADMIN]
+
+uploadmysql)
+
+    sudo ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 root@$appsmaster '
+
+    echo "DIGITE O NOME DO APP";
+	read licenca;
+	sudo cloud upload "$licenca";' 1>&2
+
+    echo -e " \033[0;32m FIM DO SCRIPT \033[0m"
+    sleep 2; clear; exit 0
+;;
+
+conectarappsmaster)
+
+    sudo ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 root@$appsmaster 1>&2
+    echo -e " \033[0;32m FIM DO SCRIPT \033[0m"
+    sleep 2; clear; exit 0
+
+;;
+
+conectarappsestagio)
+
+    sudo ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 root@$appsestagio 1>&2
+    echo -e " \033[0;32m FIM DO SCRIPT \033[0m"
+    sleep 2; clear; exit 0
+
+;;
+
+#[MASTER SUBADQUIRENTE] [INFRA E DEV-ADMIN]
+
+conectarsubadmaster)
+
+    sudo ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 root@$subadquirentemaster 1>&2
+    echo -e " \033[0;32m FIM DO SCRIPT \033[0m"
+    sleep 2; clear; exit 0
+
+;;
+#INFRA [INFRA E DEV-ADMIN]
+
+novaestagio)
+
+    sudo ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 root@$estagio '
+
+	cd /home/cloud/;
+	sudo cloud deploy;
+ 	echo "DIGITE O NOVO NOME DA ESTÁGIO";
+    read nome_estagio;
+    sudo git checkout "$nome_estagio";
+    sudo cloud deploy;
+    git status;' 1>&2
+
+	echo -e " \033[0;32m FIM DO SCRIPT \033[0m"
+	sleep 2; clear; exit 0
+
+;;
+
+conectaradmin)
+
+    sudo ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 root@$admin1967 1>&2
+    echo -e " \033[0;32m FIM DO SCRIPT \033[0m"
+    sleep 2; clear; exit 0
+;;
+
+#[COMANDOS AJUDA][TODOS]
+-help)
+	
+	
+	echo "masterdeploy [EXECUTA DEPLOY NO SERVIDOR MASTER, PILOTO E ESTAGIO]\n
+	estagiodeploy [EXECUTA DEPLOY NO SERVIDOR ESTAGIO]\n
+	appsdeploy [EXECUTA DEPLOY NO SERVIDOR APPS MASTER E ESTAGIO]\n
+	deploysubad [EXECUTA DEPLOY NO SERVIDOR MASTER E ESTAGIO DO SUBADQUIRENTE]\n
+	suporte [LIBERA USUARIO SUPORTE]\n
+	upload [BAIXA BASES FIREBIRD  E SALVA O ARQUIVO EM (SLNAS) //192.168.0.40/temp...][USE COM SABEDORIA]\n
+    isql [EXECUTA SELECT, UPDATE, INSERT NO FIREBIRD] [USE COM MUITA SABEDORIA]\n
+	uploadmysql [BAIXA BASES MYSQL DE APPS]\n
+	conectarappsmaster [CONECTA NO SERVIODR MASTER MYSQL DE APPS]\n
+	conectarappsestagio [CONECTA NO SERVIODR ESTAGIO DO MYSQL DE APPS]\n
+	conectarsubadmaster [CONECTA NO SERVIODR MASTER DO SUBADQUIRENTE]\n
+	conectaradmin [CONECTA NO SERVIODR ADMIN1967]\n
+	-help [EXIBE TODOS OS COMANDOS E SUAS FUNCIONALIDADES]"
+	exit 1
+;;
+#[MENSAGEM OPÇÃO INVÁLIDA]
+*)
+	echo -e " \033[0;32m OPÇÃO INVÁLIDA \033[0m"
+	sleep 2; clear; exit 0
+;;
+esac
+done
