@@ -13,7 +13,7 @@ function localserver_init(){
 
    //Gera a chave RSA para o usuário root
    exec_script("
-        sudo ssh-keygen -t rsa -f /root/.ssh/id_rsa -N; 
+        sudo ssh-keygen -t rsa -f /root/.ssh/id_rsa -N ''; 
     ");
    
    put_template("local/jail.local","/etc/fail2ban/jail.local");
