@@ -18,11 +18,11 @@ function sljumpserver_init(){
 		sudo mkdir /home/programas;
 		sudo chmod -R 777 /home/configs;
 		sudo chmod -R 777 /home/configs/scripts;
-		sudo chmod -R 770 /home/infra;
+		sudo chmod -R 777 /home/infra;
 		sudo chmod -R 777 /home/temp;
 		sudo chmod -R 777 /home/temp/uploads;
-		sudo chmod -R 770 /home/chaves;
-		sudo chmod -R 775 /home/programas;
+		sudo chmod -R 777 /home/chaves;
+		sudo chmod -R 777 /home/programas;
 		sudo chmod +x /etc/cron.daily/seguranca;
 		sudo -u root echo PATH='/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/configs/scripts/' > /etc/environment;
 
