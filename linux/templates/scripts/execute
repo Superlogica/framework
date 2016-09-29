@@ -1,26 +1,5 @@
 #!/bin/bash
 
-#############################################################
-#execute                                                    #
-#                                                           #
-#USO: Executa comandos de rotinas da infra                  #
-#                                                           #
-#EXEMPLO:      execute $comando                             #
-#                                                           #
-#AUTOR: Jean Rodrigues 17/08/2016                           #
-#                                                           #
-#OBS: Lista de comandos no fim do arquivo                   #
-#                                                           #
-#                                                           #
-#                                                           #
-#                                                           #
-#-Correções de bugs                                         #
-#-Adicionada a opção deploy no subad. master e estagio      #
-#-Adicionada a opção conectar na estagio de apps            #
-#                                                           #
-#                                                           #
-#############################################################
-
 #[SERVIDORES]
 
 firebirdtrial1963=""
@@ -182,7 +161,7 @@ conectaradmin)
 	
 	
 	echo -e " \033[0;32m
-#	                   LISTA DE COMANDOS
+#	               LISTA DE COMANDOS
 #	
 #	masterdeploy [EXECUTA DEPLOY NO SERVIDOR MASTER, PILOTO E ESTAGIO]
 #

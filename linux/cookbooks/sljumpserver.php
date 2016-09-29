@@ -47,9 +47,6 @@ function sljumpserver_init(){
 
     put_template("local/smb.conf","/etc/samba/smb.conf");
     put_template("scripts/appsdeploy","/home/configs/scripts/appsdeploy");
-    put_template("scripts/conectarappsmaster","/home/configs/scripts/conectarappsmaster");
-    put_template("scripts/conectarappsestagio","/home/configs/scripts/conectarappsestagio");
-    put_template("scripts/conectarsubadmaster","/home/configs/scripts/conectarsubadmaster");
     put_template("scripts/deploysubad","/home/configs/scripts/deploysubad");
     put_template("scripts/estagiodeploy","/home/configs/scripts/estagiodeploy");
     put_template("scripts/isql","/home/configs/scripts/isql");
@@ -58,6 +55,7 @@ function sljumpserver_init(){
     put_template("scripts/suporte","/home/configs/scripts/suporte");
     put_template("scripts/upload","/home/configs/scripts/upload");
     put_template("scripts/uploadmysql","/home/configs/scripts/uploadmysql");
+    put_template("scripts/conectaradmin","/home/configs/scripts/conectaradmin");
     put_template("scripts/execute","/home/configs/scripts/execute");
 
     exec_script("
