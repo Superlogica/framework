@@ -47,28 +47,28 @@ subadquirenteestagio=""
 case "$1" in
 	masterdeploy)
 
-	sudo ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 root@"$admin1967" 'sudo cloud todossemesperar cloud% deploy' 1>&2
+	sudo ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 sljumpserver@"$admin1967" 'sudo cloud todossemesperar cloud% deploy' 1>&2
 	echo -e " \033[0;32m FIM DO SCRIPT \033[0m"
 	sleep 2; clear; exit 0
 ;;
 
 estagiodeploy)
 
-	sudo ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 root@$admin1967 'sudo cloud todos cloudex8735 deploy' 1>&2
+	sudo ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 sljumpserver@$admin1967 'sudo cloud todos cloudex8735 deploy' 1>&2
 	echo -e " \033[0;32m FIM DO SCRIPT \033[0m"
 	sleep 2; clear; exit 0
 ;;
 
 appsdeploy)
 
-    sudo ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 root@$admin1967 'sudo cloud todossemesperar apps% deploy apps' 1>&2
+    sudo ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 sljumpserver@$admin1967 'sudo cloud todossemesperar apps% deploy apps' 1>&2
     echo -e " \033[0;32m FIM DO SCRIPT \033[0m"1>&2
     sleep 2; clear; exit 0
 ;;
 deploysubad)
 
-	sudo ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 root@$subadquirentemaster 'sudo cloud deploy' 1>&2
-	sudo ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 root@$subadquirenteestagio 'sudo cloud deploy' 1>&2
+	sudo ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 sljumpserver@$subadquirentemaster 'sudo cloud deploy' 1>&2
+	sudo ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 sljumpserver@$subadquirenteestagio 'sudo cloud deploy' 1>&2
 	echo -e " \033[0;32m FIM DO SCRIPT \033[0m"
 	sleep 2; clear; exit 0
 ;;
@@ -76,7 +76,7 @@ deploysubad)
 
 suporte)
 
-    sudo ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 root@$admin1967 '
+    sudo ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 sljumpserver@$admin1967 '
 
     echo "DIGITE O NOME DA LICENÇA";
     read licenca;
@@ -89,7 +89,7 @@ suporte)
 
 upload)
 
-    sudo ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 root@$firebirdtrial1963 '
+    sudo ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 sljumpserver@$firebirdtrial1963 '
 
     echo "DIGITE O NOME DA LICENÇA";
 	read licenca;
@@ -103,7 +103,7 @@ upload)
 
 isql)
 
-    sudo ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 root@$firebirdtrial1963 '
+    sudo ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 sljumpserver@$firebirdtrial1963 '
 
     echo "DIGITE O NOME DA LICENÇA";
 	read licenca;
@@ -116,7 +116,7 @@ isql)
 
 uploadmysql)
 
-    sudo ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 root@$appsmaster '
+    sudo ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 sljumpserver@$appsmaster '
 
     echo "DIGITE O NOME DO APP";
 	read licenca;
@@ -128,7 +128,7 @@ uploadmysql)
 
 conectarappsmaster)
 
-    sudo ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 root@$appsmaster 1>&2
+    sudo ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 sljumpserver@$appsmaster 1>&2
     echo -e " \033[0;32m FIM DO SCRIPT \033[0m"
     sleep 2; clear; exit 0
 
@@ -136,7 +136,7 @@ conectarappsmaster)
 
 conectarappsestagio)
 
-    sudo ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 root@$appsestagio 1>&2
+    sudo ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 sljumpserver@$appsestagio 1>&2
     echo -e " \033[0;32m FIM DO SCRIPT \033[0m"
     sleep 2; clear; exit 0
 
@@ -146,7 +146,7 @@ conectarappsestagio)
 
 conectarsubadmaster)
 
-    sudo ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 root@$subadquirentemaster 1>&2
+    sudo ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 sljumpserver@$subadquirentemaster 1>&2
     echo -e " \033[0;32m FIM DO SCRIPT \033[0m"
     sleep 2; clear; exit 0
 
@@ -155,7 +155,7 @@ conectarsubadmaster)
 
 novaestagio)
 
-    sudo ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 root@$estagio '
+    sudo ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 sljumpserver@$estagio '
 
 	cd /home/cloud/;
 	sudo cloud deploy;
@@ -172,7 +172,7 @@ novaestagio)
 
 conectaradmin)
 
-    sudo ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 root@$admin1967 1>&2
+    sudo ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 sljumpserver@$admin1967 1>&2
     echo -e " \033[0;32m FIM DO SCRIPT \033[0m"
     sleep 2; clear; exit 0
 ;;
@@ -181,19 +181,35 @@ conectaradmin)
 -help)
 	
 	
-	echo "masterdeploy [EXECUTA DEPLOY NO SERVIDOR MASTER, PILOTO E ESTAGIO]\n
-	estagiodeploy [EXECUTA DEPLOY NO SERVIDOR ESTAGIO]\n
-	appsdeploy [EXECUTA DEPLOY NO SERVIDOR APPS MASTER E ESTAGIO]\n
-	deploysubad [EXECUTA DEPLOY NO SERVIDOR MASTER E ESTAGIO DO SUBADQUIRENTE]\n
-	suporte [LIBERA USUARIO SUPORTE]\n
-	upload [BAIXA BASES FIREBIRD  E SALVA O ARQUIVO EM (SLNAS) //192.168.0.40/temp...][USE COM SABEDORIA]\n
-    isql [EXECUTA SELECT, UPDATE, INSERT NO FIREBIRD] [USE COM MUITA SABEDORIA]\n
-	uploadmysql [BAIXA BASES MYSQL DE APPS]\n
-	conectarappsmaster [CONECTA NO SERVIODR MASTER MYSQL DE APPS]\n
-	conectarappsestagio [CONECTA NO SERVIODR ESTAGIO DO MYSQL DE APPS]\n
-	conectarsubadmaster [CONECTA NO SERVIODR MASTER DO SUBADQUIRENTE]\n
-	conectaradmin [CONECTA NO SERVIODR ADMIN1967]\n
-	-help [EXIBE TODOS OS COMANDOS E SUAS FUNCIONALIDADES]"
+	echo -e " \033[0;32m
+#	                   LISTA DE COMANDOS
+#	
+#	masterdeploy [EXECUTA DEPLOY NO SERVIDOR MASTER, PILOTO E ESTAGIO]
+#
+#	estagiodeploy [EXECUTA DEPLOY NO SERVIDOR ESTAGIO]
+#
+#	appsdeploy [EXECUTA DEPLOY NO SERVIDOR APPS MASTER E ESTAGIO]
+#
+#	deploysubad [EXECUTA DEPLOY NO SERVIDOR MASTER E ESTAGIO DO SUBADQUIRENTE]
+#
+#	suporte [LIBERA USUARIO SUPORTE]
+#
+#	upload [BAIXA BASES FIREBIRD  E SALVA O ARQUIVO EM (SLNAS) //192.168.0.40/temp...][USE COM SABEDORIA]
+#   
+#   isql [EXECUTA SELECT, UPDATE, INSERT NO FIREBIRD] [USE COM MUITA SABEDORIA]
+#	
+#	uploadmysql [BAIXA BASES MYSQL DE APPS]
+#	
+#	conectarappsmaster [CONECTA NO SERVIODR MASTER MYSQL DE APPS]
+#	
+#	conectarappsestagio [CONECTA NO SERVIODR ESTAGIO DO MYSQL DE APPS]
+#	
+#	conectarsubadmaster [CONECTA NO SERVIODR MASTER DO SUBADQUIRENTE]
+#	
+#	conectaradmin [CONECTA NO SERVIODR ADMIN1967]
+#	
+#	-help [EXIBE TODOS OS COMANDOS E SUAS FUNCIONALIDADES]
+#\033[0m"
 	exit 1
 ;;
 #[MENSAGEM OPÇÃO INVÁLIDA]
