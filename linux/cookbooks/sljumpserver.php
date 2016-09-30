@@ -39,9 +39,12 @@ function sljumpserver_init(){
 				
 		#Criação de usuarios
 
-		sudo cloud-init usuario emersonrodrigues dev;
+		sudo cloud-init usuario sljumpserver infra;
 		sudo cloud-init usuario jeanrodrigues infra;
+		sudo cloud-init usuario marlon infra;
 		sudo cloud-init usuario matheus dev-admin;
+		sudo cloud-init usuario luis infra;
+		sudo cloud-init usuario carlos infra;
         
     ");
 

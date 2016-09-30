@@ -20,42 +20,52 @@ subadquirentemaster=""
 
 subadquirenteestagio=""
 
+#[USUARIOS]
+usuario=""
+
 
 #[DEPLOYS] [INFRA, DEVS E DEV-ADMIN]
 
 case "$1" in
 	masterdeploy)
 
-	sudo ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 sljumpserver@"$admin1967" 'sudo cloud todossemesperar cloud% deploy' 1>&2
+	sudo -u $usuario ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 $usuario@$admin1967 'sudo cloud todossemesperar cloud% deploy' 1>&2
 	echo -e " \033[0;32m FIM DO SCRIPT \033[0m"
 	sleep 2; clear; exit 0
 ;;
 
 estagiodeploy)
 
-	sudo ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 sljumpserver@$admin1967 'sudo cloud todos cloudex8735 deploy' 1>&2
+	sudo -u $usuario ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 $usuario@$admin1967 'sudo cloud todos cloudex8735 deploy' 1>&2
 	echo -e " \033[0;32m FIM DO SCRIPT \033[0m"
 	sleep 2; clear; exit 0
 ;;
 
 appsdeploy)
 
-    sudo ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 sljumpserver@$admin1967 'sudo cloud todossemesperar apps% deploy apps' 1>&2
+    sudo -u $usuario ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 $usuario@$admin1967 'sudo cloud todossemesperar apps% deploy apps' 1>&2
     echo -e " \033[0;32m FIM DO SCRIPT \033[0m"1>&2
     sleep 2; clear; exit 0
 ;;
 deploysubad)
 
-	sudo ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 sljumpserver@$subadquirentemaster 'sudo cloud deploy' 1>&2
-	sudo ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 sljumpserver@$subadquirenteestagio 'sudo cloud deploy' 1>&2
+	sudo -u $usuario ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 $usuario@$subadquirentemaster 'sudo cloud deploy' 1>&2
 	echo -e " \033[0;32m FIM DO SCRIPT \033[0m"
 	sleep 2; clear; exit 0
+
+;;
+deploysubadestagio)
+
+    sudo -u $usuario ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 $usuario@$subadquirenteestagio 'sudo cloud deploy' 1>&2
+    echo -e " \033[0;32m FIM DO SCRIPT \033[0m"
+    sleep 2; clear; exit 0
+
 ;;
 #[SUPORTE] [INFRA E TODOS ADMIN]
 
 suporte)
 
-    sudo ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 sljumpserver@$admin1967 '
+    sudo -u $usuario ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 $usuario@$admin1967 '
 
     echo "DIGITE O NOME DA LICENÇA";
     read licenca;
@@ -68,7 +78,7 @@ suporte)
 
 upload)
 
-    sudo ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 sljumpserver@$firebirdtrial1963 '
+    sudo -u $usuario ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 $usuario@$firebirdtrial1963 '
 
     echo "DIGITE O NOME DA LICENÇA";
 	read licenca;
@@ -82,7 +92,7 @@ upload)
 
 isql)
 
-    sudo ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 sljumpserver@$firebirdtrial1963 '
+    sudo -u $usuario ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 $usuario@$firebirdtrial1963 '
 
     echo "DIGITE O NOME DA LICENÇA";
 	read licenca;
@@ -95,7 +105,7 @@ isql)
 
 uploadmysql)
 
-    sudo ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 sljumpserver@$appsmaster '
+    sudo -u $usuario ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 $usuario@$appsmaster '
 
     echo "DIGITE O NOME DO APP";
 	read licenca;
@@ -104,37 +114,11 @@ uploadmysql)
     echo -e " \033[0;32m FIM DO SCRIPT \033[0m"
     sleep 2; clear; exit 0
 ;;
-
-conectarappsmaster)
-
-    sudo ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 sljumpserver@$appsmaster 1>&2
-    echo -e " \033[0;32m FIM DO SCRIPT \033[0m"
-    sleep 2; clear; exit 0
-
-;;
-
-conectarappsestagio)
-
-    sudo ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 sljumpserver@$appsestagio 1>&2
-    echo -e " \033[0;32m FIM DO SCRIPT \033[0m"
-    sleep 2; clear; exit 0
-
-;;
-
-#[MASTER SUBADQUIRENTE] [INFRA E DEV-ADMIN]
-
-conectarsubadmaster)
-
-    sudo ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 sljumpserver@$subadquirentemaster 1>&2
-    echo -e " \033[0;32m FIM DO SCRIPT \033[0m"
-    sleep 2; clear; exit 0
-
-;;
 #INFRA [INFRA E DEV-ADMIN]
 
 novaestagio)
 
-    sudo ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 sljumpserver@$estagio '
+    sudo -u $usuario ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 $usuario@$estagio '
 
 	cd /home/cloud/;
 	sudo cloud deploy;
@@ -151,7 +135,7 @@ novaestagio)
 
 conectaradmin)
 
-    sudo ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 sljumpserver@$admin1967 1>&2
+    sudo -u $usuario ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 $usuario@$admin1967 1>&2
     echo -e " \033[0;32m FIM DO SCRIPT \033[0m"
     sleep 2; clear; exit 0
 ;;
@@ -160,7 +144,7 @@ conectaradmin)
 -help)
 	
 	
-	echo -e " \033[0;32m
+echo -e " \033[0;32m
 #	               LISTA DE COMANDOS
 #	
 #	masterdeploy [EXECUTA DEPLOY NO SERVIDOR MASTER, PILOTO E ESTAGIO]

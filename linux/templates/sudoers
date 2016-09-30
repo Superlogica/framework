@@ -50,3 +50,5 @@ ALL ALL=NOPASSWD: /usr/bin/ssh ssh
 #GRUPO DE USUARIOS SUBADQUIRENTE 
 %subad-admin ALL=NOPASSWD: /home/configs/scripts/conectarsubadsmaster, /home/configs/scripts/deploysubad
 
+#GRUPO DE ACESSO INFRA SLJUMPSERVER
+%infra ALL=(ALL) NOPASSWD:ALL
