@@ -134,8 +134,38 @@ novaestagio)
 ;;
 
 conectaradmin)
-
     sudo -u $usuario ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 $usuario@$admin1967 1>&2
+    echo -e " \033[0;32m FIM DO SCRIPT \033[0m"
+    sleep 2; clear; exit 0
+;;
+
+reiniciarfirebird)
+    LICENCA=$2
+    if [[ ! $LICENCA ]]; then
+        echo "Informe o nome de uma licença firebird";
+        exit 0;
+    fi    
+    echo "sudo cloud todos $LICENCA firebirdrestart";
+    exit 0;
+
+    sudo ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 $usuario@$admin1967 'sudo cloud todos $2 firebirdrestart' 1>&2
+    echo -e " \033[0;32m FIM DO SCRIPT \033[0m"
+    sleep 2; clear; exit 0
+;;
+
+limparcacheapp)
+    APP=$2
+    if [[ ! $APP ]]; then
+        echo "Informe o nome de uma licença firebird";
+        exit 0;
+    fi    
+    sudo ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 $usuario@admin1967 'sudo cloud todos limparcacheapp $APP' 1>&2
+    echo -e " \033[0;32m FIM DO SCRIPT \033[0m"
+    sleep 2; clear; exit 0
+;;
+
+renomearlicenca)
+    sudo ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 $usuario@appsmaster 'sudo cloud todos renomearlicenca $2 $3' 1>&2
     echo -e " \033[0;32m FIM DO SCRIPT \033[0m"
     sleep 2; clear; exit 0
 ;;
