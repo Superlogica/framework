@@ -16,4 +16,20 @@ function jumpserver_init(){
 	addgroup subad-admin
   ");
     
+    put_template("scripts/appsdeploy","/home/configs/scripts/appsdeploy");
+    put_template("scripts/deploysubad","/home/configs/scripts/deploysubad");
+    put_template("scripts/estagiodeploy","/home/configs/scripts/estagiodeploy");
+    put_template("scripts/isql","/home/configs/scripts/isql");
+    put_template("scripts/masterdeploy","/home/configs/scripts/masterdeploy");
+    put_template("scripts/novaestagio","/home/configs/scripts/novaestagio");
+    put_template("scripts/suporte","/home/configs/scripts/suporte");
+    put_template("scripts/upload","/home/configs/scripts/upload");
+    put_template("scripts/uploadmysql","/home/configs/scripts/uploadmysql");
+    put_template("scripts/conectaradmin","/home/configs/scripts/conectaradmin");
+    put_template("scripts/execute","/home/configs/scripts/execute");
+
+    exec_script("
+    	chmod +x -R /home/configs/scripts/*;
+
+    ");
  }

@@ -9,12 +9,12 @@ function usuariosinfraamazon_init(){
 						
 		#Criação de usuarios
 
-		sudo cloud-init usuario sljumpserver infra;
-		sudo cloud-init usuario marlon infra;
-		sudo cloud-init usuario jeanrodrigues infra;
-		sudo cloud-init usuario matheus infra;
-		sudo cloud-init usuario luis infra;
-		sudo cloud-init usuario carlos infra;
+		sudo cloud-init usuario sljumpserver amazon;
+		sudo cloud-init usuario marlon amazon;
+		sudo cloud-init usuario jeanrodrigues amazon;
+		sudo cloud-init usuario matheus amazon;
+		sudo cloud-init usuario luis amazon;
+		sudo cloud-init usuario carlos amazon;
 
 		#Adicionar ao sudo
 
