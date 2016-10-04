@@ -134,7 +134,40 @@ novaestagio)
 ;;
 
 conectaradmin)
+<<<<<<< Updated upstream
     sudo -u $usuario ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 $usuario@$admin1967 1>&2
+=======
+
+    sudo -u $USER ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 $USER@$admin1967 1>&2
+    echo -e " \033[0;32m FIM DO SCRIPT \033[0m"
+    sleep 2; clear; exit 0
+;;
+
+conectarappsmaster)
+
+    sudo -u $USER ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 $USER@$appsmaster 1>&2
+    echo -e " \033[0;32m FIM DO SCRIPT \033[0m"
+    sleep 2; clear; exit 0
+;;
+
+conectarappsmaster2)
+
+    sudo -u $USER ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 $USER@$appsmaster2 1>&2
+    echo -e " \033[0;32m FIM DO SCRIPT \033[0m"
+    sleep 2; clear; exit 0
+;;
+
+conectarappsestagio)
+
+    sudo -u $USER ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 $USER@$appsestagio 1>&2
+    echo -e " \033[0;32m FIM DO SCRIPT \033[0m"
+    sleep 2; clear; exit 0
+;;
+
+conectarsubadmaster)
+
+    sudo -u $USER ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 $USER@$subadquirentemaster 1>&2
+>>>>>>> Stashed changes
     echo -e " \033[0;32m FIM DO SCRIPT \033[0m"
     sleep 2; clear; exit 0
 ;;
@@ -183,7 +216,9 @@ echo -e " \033[0;32m
 #
 #	appsdeploy [EXECUTA DEPLOY NO SERVIDOR APPS MASTER E ESTAGIO]
 #
-#	deploysubad [EXECUTA DEPLOY NO SERVIDOR MASTER E ESTAGIO DO SUBADQUIRENTE]
+#	deploysubad [EXECUTA DEPLOY NO SERVIDOR MASTER DO SUBADQUIRENTE]
+#
+#   deploysubadestagio [EXECUTA DEPLOY NO SERVIDOR ESTAGIO DO SUBADQUIRENTE]
 #
 #	suporte [LIBERA USUARIO SUPORTE]
 #
