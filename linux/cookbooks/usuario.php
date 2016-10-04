@@ -133,3 +133,4 @@ function copySudoers() {
 		sudo rm sudoers;"
 		);
 }
+ 
