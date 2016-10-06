@@ -10,11 +10,20 @@ $login = strtolower($login);
 // Nao inverter ordem da acao e grupo abaixo	
 $acao = ($grupo == "force") ? "force"  :strtolower($acao);
 $grupo = ($grupo == "force") ? "usuarios" :  strtolower($grupo);
+$repositorio = "publickeys";
+
+if (trim($grupo) === "amazon") {
+	$repositorio = "publickeys/admin";
+	$grupo = "infra";
+}
+
 $parametro_invalido = (($acao != null) and ($acao != 'force'));
     if ($parametro_invalido or ($login == 'force')) {
         echo "\nParâmetro inválido ou login de usuário com formato errado/faltante !\n\n";
 	exit(3);
 	}
+
+
     // Gera o help
     if ($login == 'help'){
         echo "\n\n======> Bem-vindo ao HELP do cookbook usuarios ! <======\n
@@ -36,7 +45,7 @@ $parametro_invalido = (($acao != null) and ($acao != 'force'));
 }// Encerra a funcao usuario_init
 // Traz o arquivo do servidor externo para o local 
 function captura_chave($caminho,$login){
-	put_template("publickeys/$login.pub","/home/$login/.ssh/$login.pub");  
+	put_template("$repositorio/$login.pub","/home/$login/.ssh/$login.pub");  
 	if (file_exists($caminho."$login.pub")){
         @exec_script("sudo cat /home/$login/.ssh/$login.pub >> /home/$login/.ssh/authorized_keys;
 		sudo chmod 500 /home/$login/.ssh/ -R ;
@@ -124,3 +133,4 @@ function copySudoers() {
 		sudo rm sudoers;"
 		);
 }
+ 
