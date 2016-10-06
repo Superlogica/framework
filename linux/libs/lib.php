@@ -111,6 +111,13 @@ function apache_restart(){
     return true;
 }
 
+function atualizar() {
+  exec_script("
+    sudo apt-get update;
+    sudo apt-get upgrade -y --force-yes;
+    ");
+}
+
 
 function time_zone(){
     put_template("timezone","/etc/timezone"); 
