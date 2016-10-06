@@ -48,6 +48,14 @@ function fail2ban_init($arg) {
 		case 'liberar':
 			liberaraqui();
 			break;
+
+		case 'listar':
+			listaraqui();
+			break;
+
+		case 'listaremtodos':
+			listaremtodos();
+			break;
 		
 		default:
 			helper();
@@ -64,6 +72,13 @@ function helper() {
 	 \nA estrutura do cookbook é : sudo cloud-init modsecurity <modo>
 	 \nModos disponíveis: 
 	 \n'instalar'=>	Instala o Fail2Ban
+	 \n'instalaremtodos' => Instala o Fail2Ban em todos os servidores do Cloud (CUIDADO)
+	 \n'banir' => Bane o IP informado 
+	 \n'baniremtodos' => Bane o IP informado em todos os servidores do Cloud (CUIDADO)
+	 \n'liberar' => Libera o IP informado no servidor local
+	 \n'liberaremtodos' => Libera o ip informado em todos os servidores do Cloud (CUIDADO)
+	 \n'listar' => Lista os IP's banidos no servidor local
+	 \n'listaremtodos' => lista os IP's banidos em todos os cloud
 	 \n'logauth' => Anexa o log de autenticação do sistema
 	 \n'logjail' => Anexa o log da jail do fail2ban\n";
 }
@@ -125,7 +140,7 @@ function baniraqui() {
 */
 function baniremtodos() {
 	$ip = trim($GLOBALS['argv'][3]);
-	$command = "sudo cloud todos cloud fail2ban banir {$ip}";
+	$command = "sudo cloud todos cloud% 'fail2ban banir {$ip}'";
 	exec_script($command);
 }
 
@@ -152,6 +167,25 @@ function liberaraqui() {
 */
 function liberaemtodos() {
 	$ip = trim($GLOBALS['argv'][3]);
-	$command = "sudo cloud todos cloud fail2ban liberar {$ip}";
+	$command = "sudo cloud todos cloud% 'fail2ban liberar {$ip}'";
+	exec_script($command);
+}
+
+/**
+* Lista os IP's banidos no servidor
+* @return none
+*/
+function listaraqui() {
+	$command = "sudo iptables -L -n";
+	exec_script($command);
+}
+
+
+/**
+* Lista os IP's banidos entre todos os cloud
+* @return none
+*/
+function listaremtodos() {
+	$command = "sudo cloud todos cloud% 'fail2ban listar'";
 	exec_script($command);
 }
