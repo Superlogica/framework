@@ -130,7 +130,7 @@ function baniraqui() {
 		echo "BANINDO REQUISIÇÕES NO SSH: ";
 		exec_script("sudo fail2ban-client set ssh banip {$ip}");
 	} else {
-		echo "FORNEÇA UM IP"
+		echo "FORNEÇA UM IP";
 	}
 }
 
@@ -157,7 +157,7 @@ function liberaraqui() {
 		echo "LIBERANDO REQUISIÇÕES NO SSH: ";
 		exec_script("sudo fail2ban-client set ssh unbanip {$ip}");
 	} else {
-		echo "FORNEÇA UM IP"
+		echo "FORNEÇA UM IP";
 	}
 }
 
