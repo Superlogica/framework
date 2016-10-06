@@ -10,11 +10,21 @@ $login = strtolower($login);
 // Nao inverter ordem da acao e grupo abaixo	
 $acao = ($grupo == "force") ? "force"  :strtolower($acao);
 $grupo = ($grupo == "force") ? "usuarios" :  strtolower($grupo);
+
+if (trim($grupo) === "amazon") {
+	$repositorio = "publickeys/admin";
+	$grupo = "infra"; 
+} else {
+	$repositorio = "publickeys";
+}
+
 $parametro_invalido = (($acao != null) and ($acao != 'force'));
     if ($parametro_invalido or ($login == 'force')) {
         echo "\nParâmetro inválido ou login de usuário com formato errado/faltante !\n\n";
 	exit(3);
 	}
+
+
     // Gera o help
     if ($login == 'help'){
         echo "\n\n======> Bem-vindo ao HELP do cookbook usuarios ! <======\n
@@ -32,11 +42,11 @@ $parametro_invalido = (($acao != null) and ($acao != 'force'));
 	configuraLShell();
 	copySudoers();
 	// Insere apenas um usuario
-	processa_usuario($login,$grupo,$acao);
+	processa_usuario($login,$grupo,$acao,$repositorio);
 }// Encerra a funcao usuario_init
 // Traz o arquivo do servidor externo para o local 
-function captura_chave($caminho,$login){
-	put_template("publickeys/$login.pub","/home/$login/.ssh/$login.pub");  
+function captura_chave($caminho,$login,$repositorio){
+	put_template("$repositorio/$login.pub","/home/$login/.ssh/$login.pub");  
 	if (file_exists($caminho."$login.pub")){
         @exec_script("sudo cat /home/$login/.ssh/$login.pub >> /home/$login/.ssh/authorized_keys;
 		sudo chmod 500 /home/$login/.ssh/ -R ;
@@ -48,7 +58,7 @@ function captura_chave($caminho,$login){
 	}	
 } // Encerra a funcao captura_chave
 // Funcao para processamento dos usuarios
-function processa_usuario($login,$grupo,$acao,$todos=false){
+function processa_usuario($login,$grupo,$acao,$repositorio,$todos=false){
 	// Valida usuario logado
 	if (posix_getlogin() == $login){
 		echo "\nUsuario logado - processo não permitido\n\n";
@@ -83,8 +93,8 @@ function processa_usuario($login,$grupo,$acao,$todos=false){
 		exec_script("sudo mkdir -m 500 $caminho");
 		echo "\nForam criadas as pastas necessarias ao processo\n\n";
 		@unlink("$login.pub");
-		captura_chave($caminho,$login);
-                geraParDeChavesRSA($caminho, $login, $acao);
+		captura_chave($caminho,$login,$repositorio);
+        geraParDeChavesRSA($caminho, $login, $acao);
 	}
 } // Final da processa_usuario
 
@@ -124,3 +134,4 @@ function copySudoers() {
 		sudo rm sudoers;"
 		);
 }
+ 
