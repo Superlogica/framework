@@ -131,7 +131,7 @@ function permissao_seguranca($login) {
 		chmod go-w /home/$login;
 		chmod 700  /home/$login/.ssh;
 		chmod 600  /home/$login/.ssh/authorized_keys;
-		")
+		");
 }
 
 //Copia o arquivo sudoers do servidor. Não foi possivel utilizar o put_template, pois o arquivo
