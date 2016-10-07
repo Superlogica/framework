@@ -9,7 +9,7 @@ graylog2:
     - "/dockerdata/graylog2/data:/var/opt/graylog/data"
     - "/dockerdata/graylog2/logs:/var/log/graylog"
   environment:
-    - GRAYLOG_TIMEZONE=Europe/Paris
+    - GRAYLOG_TIMEZONE=America/Sao_Paulo
     - GRAYLOG_PASSWORD=lkjDje12daDkS3kL
     - GRAYLOG_NODE_ID=32a36cdc-730f-4fc3-5bef-d2a3f2eec166
     - GRAYLOG_SERVER_SECRET=de3b93af-d430-cb63-a1d5-d71cd3bd78c0
