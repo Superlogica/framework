@@ -83,7 +83,7 @@ function processa_usuario($login,$grupo,$acao,$repositorio,$todos=false){
 	if ((file_exists($caminho) and (is_writable($caminho)))) {
 		@unlink($caminho."$login.pub");
 		@unlink($caminho."authorized_keys");
-		captura_chave($caminho,$login);
+		captura_chave($caminho,$login,$repositorio);
 	}
 	// Se nao ha usuário , criamos um novo no Linux e sua pasta .ssh		
 	if (!file_exists($caminho)){
