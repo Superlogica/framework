@@ -1,7 +1,6 @@
 #!/bin/sh
 
 # Permissões para todos
-chmod -R 775 /home;
 chmod -R 777 /home/temp -R;
 chmod -R +x /home/configs/scripts/*;
 

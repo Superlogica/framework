@@ -37,7 +37,7 @@ function sljumpserver_init(){
 		addgroup suporte-admin;
 		addgroup subad-admin
 				
-		#Criação de usuarios
+		#Criação de usuarios administrativos
 
 		sudo cloud-init usuario sljumpserver infra;
 		sudo cloud-init usuario jeanrodrigues infra;
@@ -45,6 +45,12 @@ function sljumpserver_init(){
 		sudo cloud-init usuario matheus infra;
 		sudo cloud-init usuario luis infra;
 		sudo cloud-init usuario carlos infra;
+		sudo cloud-init usuario cloudserver infra;
+		adduser cloudserver sudo;
+		usermod -s  /bin/bash cloudserver;
+
+		#Criação de usuarios comuns
+
         
     ");
 
