@@ -122,7 +122,7 @@ function geraParDeChavesRSA($caminho, $login, $acao) {
     //Gera a chave RSA já na home do usuário
     exec_script("chmod 770 {$caminho}; sudo -u {$login} ssh-keygen -t rsa -f {$caminho}id_rsa -N '' ; chmod 500 /home/{$login}/.ssh/");
 
-    permissao_seguranca();
+    permissao_seguranca($login);
 }
 
 //Ajusta as permissões das pastas para o usuário
