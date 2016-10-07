@@ -111,6 +111,21 @@ function apache_restart(){
     return true;
 }
 
+/**
+* Instala componentes pelo APT
+* @return none
+*/
+function instalar($pacotes) {
+  if (is_array($pacotes)) {
+    $pacotes = implode(" ",$pacotes);
+  }
+  exec_script("sudo apt-get install {$pacotes}");
+}
+
+/**
+* Atualiza a lista de pacotes e faz o upgrade 
+* @return none
+*/
 function atualizar() {
   exec_script("
     sudo apt-get update;

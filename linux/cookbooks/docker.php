@@ -24,6 +24,9 @@ function docker_init($arg)  {
 			install_compose();
 			break;
 
+		case 'destroi':
+			mata_imagens();
+
 		default:
 			todos();
 			break;
@@ -41,6 +44,8 @@ function install_docker() {
 		sudo usermod -aG docker ubuntu;
 		systemctl enable docker;
 		/etc/init.d/docker start;");
+
+	instalar("zram-config");
 }
 
 /**
@@ -61,6 +66,18 @@ function install_compose() {
 function todos() {
 	install_docker();
 	install_compose();
+}
+
+
+/**
+* Remove todas as imagens e todos os containers
+* @return none
+*/
+function mata_imagens() {
+	exec_script("
+		docker rm $(docker ps -a -q);
+		docker rmi $(docker images -q)
+		");
 }
 
 /**

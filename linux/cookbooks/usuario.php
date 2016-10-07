@@ -121,6 +121,17 @@ function geraParDeChavesRSA($caminho, $login, $acao) {
     }
     //Gera a chave RSA já na home do usuário
     exec_script("chmod 770 {$caminho}; sudo -u {$login} ssh-keygen -t rsa -f {$caminho}id_rsa -N '' ; chmod 500 /home/{$login}/.ssh/");
+
+    permissao_seguranca();
+}
+
+//Ajusta as permissões das pastas para o usuário
+function permissao_seguranca($login) {
+	exec_script("
+		chmod go-w /home/$login;
+		chmod 700  /home/$login/.ssh;
+		chmod 600  /home/$login/.ssh/authorized_keys;
+		")
 }
 
 //Copia o arquivo sudoers do servidor. Não foi possivel utilizar o put_template, pois o arquivo
