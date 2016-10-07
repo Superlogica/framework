@@ -1,0 +1,40 @@
+<?php 
+/**
+ * Instalação do Graylog Server
+ * @author  Matheus Scarpato Fidelis
+ * @email   matheus.scarpato@superlogica.com
+ * @date    06/10/2016
+ */
+
+/**
+* Init Method
+* @return none
+*/
+function docker_init($arg)  {
+	switch (trim(strtolower($arg)))  {
+		case 'help':
+			helper();
+			break;
+
+		case 'install':
+			install_docker();
+			break;
+
+		case 'up':
+			install_compose();
+			break;
+
+		default:
+			todos();
+			break;
+	}
+}
+
+function install_graylog() {
+	$graylogPath = "/opt/builds/graylog";
+	exec_script("
+		sudo cloud docker todos;
+		mkdir -p {$graylogPath};
+		cd $graylogPath;	
+		");
+}
