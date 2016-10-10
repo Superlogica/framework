@@ -1,0 +1,12 @@
+[Unit]
+Description=Graylog Superlogica Server
+Requires=docker.service
+After=docker.service
+
+[Service]
+Restart=always
+ExecStart=/usr/local/bin/docker-compose -f /opt/builds/graylog/docker-compose.yml -d up 
+ExecStop=/usr/bin/docker stop 
+
+[Install]
+WantedBy=default.target

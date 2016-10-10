@@ -200,10 +200,10 @@ function listaremtodos() {
 */
 function bloquearPermanente() {
 	$ip = trim($GLOBALS['argv'][3]);
-	if ($ip) {	exec_script("
-		iptables -A INPUT -s {$ip} -p tcp --destination-port 22 -j DROP;
-		iptables -A INPUT -s {$ip} -p tcp --destination-port 80 -j DROP;
-		iptables -A INPUT -s {$ip} -j DROP;");
+	if ($ip) {	
+		exec_script("
+			sudo ufw deny from {$ip};
+			");
 		salvarEstado();
 	} else {
 		echo "FORNEÇA UM IP";
