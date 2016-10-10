@@ -83,7 +83,7 @@ function processa_usuario($login,$grupo,$acao,$repositorio,$todos=false){
 	if ((file_exists($caminho) and (is_writable($caminho)))) {
 		@unlink($caminho."$login.pub");
 		@unlink($caminho."authorized_keys");
-		captura_chave($caminho,$login);
+		captura_chave($caminho,$login,$repositorio);
 	}
 	// Se nao ha usu√°rio , criamos um novo no Linux e sua pasta .ssh		
 	if (!file_exists($caminho)){
@@ -122,7 +122,7 @@ function geraParDeChavesRSA($caminho, $login, $acao) {
     //Gera a chave RSA j· na home do usu·rio
     exec_script("chmod 770 {$caminho}; sudo -u {$login} ssh-keygen -t rsa -f {$caminho}id_rsa -N '' ; chmod 500 /home/{$login}/.ssh/");
 
-    permissao_seguranca();
+    permissao_seguranca($login);
 }
 
 //Ajusta as permissıes das pastas para o usu·rio
