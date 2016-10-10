@@ -180,7 +180,7 @@ function liberaemtodos() {
 * @return none
 */
 function listaraqui() {
-	$command = "sudo iptables -L -n";
+	$command = "sudo iptables -L -n ; ufw status" ;
 	exec_script($command);
 }
 
