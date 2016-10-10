@@ -168,6 +168,17 @@ conectarsubadmaster)
     sleep 2; clear; exit 0
 ;;
 
+reiniciarfirebird)
+    SERVIDOR=$2
+    if [[ ! $SERVIDOR ]]; then
+        echo "Informe a label de um servidor";
+        exit 0;
+    fi 
+    sudo -u $usuario ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 $usuario@$admin1967 'sudo cloud todos $SERVIDOR firebirdrestart' 1>&2
+    echo -e " \033[0;32m FIM DO SCRIPT \033[0m"
+    sleep 2; clear; exit 0
+;;
+
 #[COMANDOS AJUDA][TODOS]
 -help)
 	

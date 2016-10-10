@@ -56,6 +56,10 @@ function fail2ban_init($arg) {
 		case 'listaremtodos':
 			listaremtodos();
 			break;
+
+		case 'bloquearpermanente':
+			bloquearPermanente();
+			break;
 		
 		default:
 			helper();
@@ -90,7 +94,7 @@ function helper() {
 */
 function instalacao_fail2ban() {
 	exec_script("
-		sudo apt-get install fail2ban");
+		sudo apt-get install fail2ban iptables-persistent");
 
 		//Arquivo de configuração do Fail2ban
 		$jailFile = "/etc/fail2ban/jail.conf";
@@ -188,4 +192,30 @@ function listaraqui() {
 function listaremtodos() {
 	$command = "sudo cloud todos cloud% 'fail2ban listar'";
 	exec_script($command);
+}
+
+/**
+* Bloquear permanentemente o IP informado
+* @return none
+*/
+function bloquearPermanente() {
+	$ip = trim($GLOBALS['argv'][3]);
+	if ($ip) {	exec_script("
+		iptables -A INPUT -s {$ip} -p tcp --destination-port 22 -j DROP;
+		iptables -A INPUT -s {$ip} -p tcp --destination-port 80 -j DROP;
+		iptables -A INPUT -s {$ip} -j DROP;");
+		salvarEstado();
+	} else {
+		echo "FORNEÇA UM IP";
+	}
+}
+
+/**
+* Salva o estado do netfilter
+* @return none
+*/
+function salvarEstado() {
+	exec_script("
+	sudo netfilter-persistent save;
+	sudo netfilter-persistent reload;");
 }
