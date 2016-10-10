@@ -94,7 +94,7 @@ function helper() {
 */
 function instalacao_fail2ban() {
 	exec_script("
-		sudo apt-get install fail2ban iptables-persistent");
+		sudo apt-get install fail2ban");
 
 		//Arquivo de configuração do Fail2ban
 		$jailFile = "/etc/fail2ban/jail.conf";
@@ -204,18 +204,7 @@ function bloquearPermanente() {
 		exec_script("
 			sudo ufw deny from {$ip};
 			");
-		salvarEstado();
 	} else {
 		echo "FORNEÇA UM IP";
 	}
-}
-
-/**
-* Salva o estado do netfilter
-* @return none
-*/
-function salvarEstado() {
-	exec_script("
-	sudo netfilter-persistent save;
-	sudo netfilter-persistent reload;");
 }
