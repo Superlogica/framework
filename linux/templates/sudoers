@@ -36,7 +36,8 @@ ALL ALL=NOPASSWD: /usr/bin/ssh ssh
 %usuarios ALL=NOPASSWD: /bin/ls, /usr/bin/who
 
 #GRUPO DE USUARIOS DEV
-%dev ALL=NOPASSWD:  /bin/ls, /usr/bin/who, /home/configs/scripts/estagiodeploy, /home/configs/scripts/appsdeploy
+%dev ALL=NOPASSWD:  /bin/ls, /usr/bin/who, /home/configs/scripts/estagiodeploy, /
+home/configs/scripts/appsdeploy, /home/configs/scripts/suporte
 
 #GRUPO DE USUARIOS DEV-ADMIN
 %dev-admin ALL=NOPASSWD:  /bin/ls, /usr/bin/who, /home/configs/scripts/estagiodeploy, /home/configs/scripts/masterdeploy,  /home/configs/scripts/appsdeploy,  /home/configs/scripts/isql,  /home/configs/scripts/suporte,  /home/configs/scripts/appsdeploy,  /home/configs/scripts/uploadmysql,  /home/configs/scripts/conectarappsmaster, /home/configs/scripts/conectarappsestagio, /home/configs/scripts/suporte
