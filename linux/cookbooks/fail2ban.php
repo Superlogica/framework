@@ -56,6 +56,10 @@ function fail2ban_init($arg) {
 		case 'listaremtodos':
 			listaremtodos();
 			break;
+
+		case 'bloquearpermanente':
+			bloquearPermanente();
+			break;
 		
 		default:
 			helper();
@@ -176,7 +180,7 @@ function liberaemtodos() {
 * @return none
 */
 function listaraqui() {
-	$command = "sudo iptables -L -n";
+	$command = "sudo iptables -L -n ; ufw status" ;
 	exec_script($command);
 }
 
@@ -188,4 +192,19 @@ function listaraqui() {
 function listaremtodos() {
 	$command = "sudo cloud todos cloud% 'fail2ban listar'";
 	exec_script($command);
+}
+
+/**
+* Bloquear permanentemente o IP informado
+* @return none
+*/
+function bloquearPermanente() {
+	$ip = trim($GLOBALS['argv'][3]);
+	if ($ip) {	
+		exec_script("
+			sudo ufw deny from {$ip};
+			");
+	} else {
+		echo "FORNEÇA UM IP";
+	}
 }

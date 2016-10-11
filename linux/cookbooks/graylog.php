@@ -21,7 +21,7 @@ function docker_init($arg)  {
 			break;
 
 		case 'up':
-			install_compose();
+			up_graylog();
 			break;
 
 		default:
@@ -30,11 +30,26 @@ function docker_init($arg)  {
 	}
 }
 
+/**
+* Instala o Graylog no sistema
+* @return none
+*/
 function install_graylog() {
-	$graylogPath = "/opt/builds/graylog";
+	$graylogPath = "/opt/builds/graylog/docker-compose.yml";
 	exec_script("
 		sudo cloud docker todos;
-		mkdir -p {$graylogPath};
-		cd $graylogPath;	
-		");
+		mkdir -p {$graylogPath};");
+
+	put_template("docker/graylog/docker-compose.yml", $graylogPath);
+}
+
+/**
+* Inicia o Graylog
+* @return none
+*/
+function up_graylog() {
+	$graylogPath = "/opt/builds/graylog";
+	exec_script("
+		cd {$graylogPath};
+		docker-compose up -d;");
 }
