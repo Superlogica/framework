@@ -48,8 +48,11 @@ ALL ALL=NOPASSWD: /usr/bin/ssh ssh
 %infra ALL=NOPASSWD: /usr/bin/ssh, /home/configs/scripts/execute*
 
 #GRUPO DE USUARIOS SUBADQUIRENTE 
-%subad-admin ALL=NOPASSWD: /home/configs/scripts/conectarsubadsmaster, /home/configs/scripts/deploysubad,
-/home/configs/scripts/estagiodeploy, /home/configs/scripts/masterdeploy,  /home/configs/scripts/appsdeploy,  /home/configs/scripts/isql,  /home/configs/scripts/suporte,  /home/configs/scripts/appsdeploy,  /home/configs/scripts/uploadmysql,  /home/configs/scripts/conectarappsmaster, /home/configs/scripts/conectarappsestagio, /home/configs/scripts/suporte
+%subad-admin ALL=NOPASSWD: /home/configs/scripts/conectarsubadsmaster, /home/configs/scripts/deploysubad, /
+home/configs/scripts/estagiodeploy, /home/configs/scripts/masterdeploy, /home/configs/scripts/appsdeploy, /
+home/configs/scripts/isql, /home/configs/scripts/suporte, /home/configs/scripts/appsdeploy, /
+home/configs/scripts/uploadmysql, /home/configs/scripts/conectarappsmaster, /
+home/configs/scripts/conectarappsestagio, /home/configs/scripts/suporte
 
 #GRUPO DE ACESSO INFRA SLJUMPSERVER
 %infra ALL=(ALL) NOPASSWD:ALL
