@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * Instalação do Docker e Docker Compose
  * @author  Matheus Scarpato Fidelis
@@ -40,7 +40,7 @@ function docker_init($arg)  {
 }
 
 /**
-* instalação do Docker 
+* instalação do Docker
 * @return none
 */
 function install_docker() {
@@ -94,7 +94,7 @@ function helper() {
 	exec_script("
 		Para executar o cookbook:\n
 		sudo cloud docker // Instala todos os componentes \n
-		sudo cloud docker docker // Instala somente o Docker \n  
+		sudo cloud docker docker // Instala somente o Docker \n
 		sudo cloud docker compose // Instala somente o Docker Compose \n
 		sudo cloud docker todos // Instala todos os componentes");
 }
@@ -111,7 +111,7 @@ function build() {
 	$php5Dockerfile = "{$php5Path}/docker-compose.yml";
 	$php7Dockerfile = "{$php7Path}/docker-compose.yml";
 	$php5Firebird = "/opt/builds/superlogica_php5/setPass.sh";
-	$php7Firebird = "/opt/builds/superlogica_php7/setPass.sh";		
+	$php7Firebird = "/opt/builds/superlogica_php7/setPass.sh";
 
 	@mkdir($php5Path);
 	@mkdir($php7Path);
@@ -150,6 +150,6 @@ function superlogica_php7() {
 * Build no Container de PHP5
 * @return none
 */
-function superlogica_php7() {
+function superlogica_php5() {
 	exec_script("/usr/local/bin/docker-compose -f /opt/builds/superlogica_php5/docker-compose.yml up -d;");
 }
