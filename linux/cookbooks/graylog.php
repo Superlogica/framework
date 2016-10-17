@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * Instalação do Graylog Server
  * @author  Matheus Scarpato Fidelis
@@ -17,7 +17,7 @@ function docker_init($arg)  {
 			break;
 
 		case 'install':
-			install_docker();
+			install_graylog();
 			break;
 
 		case 'up':
