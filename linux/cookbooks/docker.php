@@ -27,6 +27,12 @@ function docker_init($arg)  {
 		case 'destroi':
 			mata_imagens();
 
+		case 'php7':
+			superlogica_php7();
+
+		case 'php5':
+			superlogica_php5();
+
 		default:
 			todos();
 			break;
@@ -91,4 +97,59 @@ function helper() {
 		sudo cloud docker docker // Instala somente o Docker \n  
 		sudo cloud docker compose // Instala somente o Docker Compose \n
 		sudo cloud docker todos // Instala todos os componentes");
+}
+
+/**
+* Helper do Cookbook
+* @return none
+*/
+function build() {
+	$php5Path = "/opt/builds/superlogica_php5";
+	$php7Path = "/opt/builds/superlogica_php7";
+	$php5Compose = "{$php5Path}/docker-compose.yml";
+	$php7Compose = "{$php7Path}/docker-compose.yml";
+	$php5Dockerfile = "{$php5Path}/docker-compose.yml";
+	$php7Dockerfile = "{$php7Path}/docker-compose.yml";
+	$php5Firebird = "/opt/builds/superlogica_php5/setPass.sh";
+	$php7Firebird = "/opt/builds/superlogica_php7/setPass.sh";		
+
+	@mkdir($php5Path);
+	@mkdir($php7Path);
+
+	put_template("docker/cloud-php5/docker-compose.yml", $php5Compose);
+	put_template("docker/cloud-php7/docker-compose.yml", $php7Compose);
+	put_template("docker/cloud-php5/Dockerfile", $php5Dockerfile);
+	put_template("docker/cloud-php7/Dockerfile", $php7Dockerfile);
+	put_template("docker/cloud-php5/setPass.sh", $php5Firebird);
+	put_template("docker/cloud-php7/setPass.sh", $php7Firebird);
+	run("superlogica_php5", $php5Path);
+	run("superlogica/php7", $php7Path);
+}
+
+/**
+* Constroi Containers
+* @return none
+*/
+function run($path, $name) {
+	if (!is_dir($path)) {
+		@mkdir($path);
+	}
+	$command = "/usr/bin/docker build -t {$name} {$path}";
+	exec_script($command);
+}
+
+/**
+* Build no Container de PHP7
+* @return none
+*/
+function superlogica_php7() {
+	exec_script("/usr/local/bin/docker-compose -f /opt/builds/superlogica_php7/docker-compose.yml up -d;");
+}
+
+/**
+* Build no Container de PHP5
+* @return none
+*/
+function superlogica_php7() {
+	exec_script("/usr/local/bin/docker-compose -f /opt/builds/superlogica_php5/docker-compose.yml up -d;");
 }
