@@ -1,6 +1,6 @@
-<?php 
+<?php
 /**
- * Instalação e configuração do Modsecurity Web Application Firewall 
+ * Instalação e configuração do Modsecurity Web Application Firewall
  * no Apache
  * @author  Matheus Scarpato Fidelis
  * @email   matheus.scarpato@superlogica.com
@@ -12,7 +12,7 @@
 * @return none
 */
 function modsecurity_init($arg) {
-	
+
 	switch (strtolower($arg)) {
 		case 'help':
 			helper();
@@ -24,13 +24,13 @@ function modsecurity_init($arg) {
 			break;
 
 		case 'seguro':
-			instalacao_comum();
+			instalacao_segura();
 			reiniciar_apache();
 			break;
 
 		case 'visualizarlog':
-			anexa_logs():
-		
+			anexa_logs();
+
 		default:
 			helper();
 			break;
@@ -44,7 +44,7 @@ function modsecurity_init($arg) {
 function helper() {
 	echo "\n\n======> Cookbook do Modsecurity - Web Application Firewall <======
 	 \nA estrutura do cookbook é : sudo cloud-init modsecurity <modo>
-	 \nModos disponíveis: 
+	 \nModos disponíveis:
 	 \n'deteccao' => Modo passivo Detection Only do Modsecurity. Apenas gera os logs das tentativas de invasão
 	 \n'seguro' => Modo ativo SecEngine. Bloqueia todas as requisições suspeitas com 403 Forbidden\n";
 }
@@ -63,12 +63,22 @@ function instalar_dependencias() {
 * @return none
 */
 function instalar_modsecurity() {
+
+	//Regras que vão ser instaladas.
+	$regras = array(
+		'modsecurity_crs_41_xss_attacks.conf', // XSS
+		'modsecurity_crs_41_sql_injection_attacks.conf', // SQL Injection
+		'modsecurity_crs_40_generic_attacks.data', // SCANS, REMOVE FILE INCLUSIONS E ETC
+		'modsecurity_35_scanners.data', // DATABASE DE FINGERPRINTS DE SCANNERS
+		'modsecurity_40_generic_attacks.conf', // GENERIC ATTACKS DATABASE
+		'modsecurity_crs_45_trojans.conf' // PROTEÇÃO ATIVA CONTRA TROJANS ENVIADOS POR REQUEST E RESPONSE
+	);
+
 	//Bibliotecas auxiliares
 	exec_script("
 		sudo apt-get install zip libapache2-mod-security2 libxml2 libxml2-dev libxml2-utils libaprutil1 libaprutil1-dev");
 
-	//Baixa e instala as regras de bloqueio da comunidade - Teste
-	//Testar os links simbólicos
+	//Baixa e instala as regras de bloqueio da comunidade
 	exec_script("
 		mv /etc/modsecurity/modsecurity.conf-recommended /etc/modsecurity/modsecurity.conf;
 		cd /tmp; wget https://github.com/SpiderLabs/owasp-modsecurity-crs/archive/master.zip;
@@ -76,16 +86,20 @@ function instalar_modsecurity() {
 		cp -R owasp-modsecurity-crs-master/* /etc/modsecurity/ ;
 		mv /etc/modsecurity/modsecurity_crs_10_setup.conf.example /etc/modsecurity/modsecurity_crs_10_setup.conf;
 		cd /etc/modsecurity;
+		rm -r /etc/modsecurity/base_rules/* ;");
 
-		for f in * ; do ln -s /etc/modsecurity/base_rules/$f /etc/modsecurity/activated_rules/$f ; done ;
-		for f in * ; do ln -s /etc/modsecurity/optional_rules/$f /etc/modsecurity/activated_rules/$f ; done ;");
+		foreach ($regras as $regra) {
+			$remote = "/modsecurity-rules/{$regra}";
+			$local = "/etc/modsecurity/base_rules/{$regra}";
+			put_template($remote, $local);
+		}
 
 		//Arquivo que inclui as rules do modsecurity
 		$security2File = "/etc/apache2/mods-available/security2.conf";
 		if (file_exists($security2File)) {
 			@unlink($security2File);
 		}
-		put_template("security2.conf", $security2File);  
+		put_template("security2.conf", $security2File);
 }
 
 /**
@@ -93,7 +107,7 @@ function instalar_modsecurity() {
 * @return none
 */
 function anexa_logs() {
-	exec_script("tail -f /var/log/apache2/modsec_audit.");
+	exec_script("tail -f /var/log/apache2/modsec_audit.log ");
 }
 
 /**
@@ -107,10 +121,24 @@ function reiniciar_apache() {
 }
 
 /**
-* Instalação default entre as duas versões do modsecurity
+* Instalação do Modo DetectionOnly
 * @return none
 */
 function instalacao_comum() {
 	instalar_dependencias();
 	instalar_modsecurity();
+
+	put_template('modsecurity-detecao.conf', '/etc/modsecurity/modsecurity.conf');
+}
+
+/**
+* Instalação do Modo Sec Engine
+* @return none
+*/
+function instalacao_segura() {
+	instalar_dependencias();
+	instalar_modsecurity();
+
+	put_template('modsecurity-seguro.conf', '/etc/modsecurity/modsecurity.conf');
+
 }
