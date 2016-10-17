@@ -55,7 +55,7 @@ function helper() {
 */
 function instalar_dependencias() {
 	exec_script("
-		sudo apt-get install apache2-threaded-dev libxml2-dev libcurl4-gnutls-dev liblua5.1-0 liblua5.1-0-dev build-essential php5-cli libghc-pcre-light-dev");
+		sudo apt-get install apache2-threaded-dev libxml2-dev libcurl4-gnutls-dev liblua5.1-0 liblua5.1-0-dev build-essential php5-cli libghc-pcre-light-dev -y");
 }
 
 /**
@@ -68,7 +68,7 @@ function instalar_modsecurity() {
 	$regras = array(
 		'modsecurity_crs_41_xss_attacks.conf', // XSS
 		'modsecurity_crs_41_sql_injection_attacks.conf', // SQL Injection
-		'modsecurity_crs_40_generic_attacks.data', // SCANS, REMOVE FILE INCLUSIONS E ETC
+		'modsecurity_40_generic_attacks.data', // SCANS, REMOVE FILE INCLUSIONS E ETC
 		'modsecurity_35_scanners.data', // DATABASE DE FINGERPRINTS DE SCANNERS
 		'modsecurity_40_generic_attacks.conf', // GENERIC ATTACKS DATABASE
 		'modsecurity_crs_45_trojans.conf' // PROTEÇÃO ATIVA CONTRA TROJANS ENVIADOS POR REQUEST E RESPONSE
@@ -76,7 +76,7 @@ function instalar_modsecurity() {
 
 	//Bibliotecas auxiliares
 	exec_script("
-		sudo apt-get install zip libapache2-mod-security2 libxml2 libxml2-dev libxml2-utils libaprutil1 libaprutil1-dev");
+		sudo apt-get install zip libapache2-mod-security2 libxml2 libxml2-dev libxml2-utils libaprutil1 libaprutil1-dev -y");
 
 	//Baixa e instala as regras de bloqueio da comunidade
 	exec_script("
@@ -89,7 +89,7 @@ function instalar_modsecurity() {
 		rm -r /etc/modsecurity/base_rules/* ;");
 
 		foreach ($regras as $regra) {
-			$remote = "/modsecurity-rules/{$regra}";
+			$remote = "modsecurity-rules/{$regra}";
 			$local = "/etc/modsecurity/base_rules/{$regra}";
 			put_template($remote, $local);
 		}
