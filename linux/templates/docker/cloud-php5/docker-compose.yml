@@ -1,0 +1,29 @@
+version: 1
+services:
+  superlogica_php7:
+    container_name: superlogica_php7
+    restart: always
+    image: superlogica/php7
+    ports:
+      - 80:80
+      - 3059:3059
+      - 8080:8080
+    volumes:
+      - "/home/apps:/home/apps"
+      - "/home/cloud:/home/cloud"
+      - "/home/plataforma:/home/plataforma"
+      - "/home/framework:/home/framework"
+      - "/home/cloud-db:/home/cloud-db"
+      - "/home/session:/home/session"
+      - "/home/cloud-admin:/home/cloud-admin"
+      - "/home/subadquirente:/home/subadquirente"
+
+  db:
+    image: mysql:5.7
+     volumes:
+       - "./data/db:/var/lib/mysql"
+     restart: always
+     environment:
+       MYSQL_ROOT_PASSWORD: root
+       MYSQL_USER: root
+       MYSQL_PASSWORD: root
