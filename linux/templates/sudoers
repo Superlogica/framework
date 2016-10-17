@@ -6,9 +6,9 @@
 #
 # See the man page for details on how to write a sudoers file.
 #
-Defaults        env_reset
-Defaults        mail_badpass
-Defaults        secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/configs/scripts/"
+Defaults    env_reset
+Defaults    mail_badpass
+Defaults    secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/configs/scripts/"
 
 # Host alias specification
 
@@ -17,7 +17,7 @@ Defaults        secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/
 # Cmnd alias specification
 
 # User privilege specification
-root    ALL=(ALL:ALL) ALL
+root  ALL=(ALL:ALL) ALL
 
 #Seta o Sudo para o SSH em todos os usuários
 ALL ALL=NOPASSWD: /usr/bin/ssh ssh
@@ -26,7 +26,7 @@ ALL ALL=NOPASSWD: /usr/bin/ssh ssh
 %admin ALL=(ALL) ALL
 
 # Allow members of group sudo to execute any command
-%sudo   ALL=(ALL:ALL) ALL
+%sudo  ALL=(ALL:ALL) ALL
 
 # See sudoers(5) for more information on "#include" directives:
 
@@ -36,19 +36,19 @@ ALL ALL=NOPASSWD: /usr/bin/ssh ssh
 %usuarios ALL=NOPASSWD: /bin/ls, /usr/bin/who
 
 #GRUPO DE USUARIOS DEV
-%dev ALL=NOPASSWD:  /bin/ls, /usr/bin/who, /home/configs/scripts/estagiodeploy, /home/configs/scripts/appsdeploy
+%dev ALL=NOPASSWD: /bin/ls, /usr/bin/who, /home/configs/scripts/estagiodeploy, /home/configs/scripts/appsdeploy, /home/configs/scripts/suporte
 
 #GRUPO DE USUARIOS DEV-ADMIN
-%dev-admin ALL=NOPASSWD:  /bin/ls, /usr/bin/who, /home/configs/scripts/estagiodeploy, /home/configs/scripts/masterdeploy,  /home/configs/scripts/appsdeploy,  /home/configs/scripts/isql,  /home/configs/scripts/suporte,  /home/configs/scripts/appsdeploy,  /home/configs/scripts/uploadmysql,  /home/configs/scripts/conectarappsmaster, /home/configs/scripts/conectarappsestagio
+%dev-admin ALL=NOPASSWD: /bin/ls, /usr/bin/who, /home/configs/scripts/estagiodeploy, /home/configs/scripts/masterdeploy, /home/configs/scripts/appsdeploy, /home/configs/scripts/isql, /home/configs/scripts/suporte, /home/configs/scripts/appsdeploy, /home/configs/scripts/uploadmysql, /home/configs/scripts/conectarappsmaster, /home/configs/scripts/conectarappsestagio, /home/configs/scripts/suporte
 
 #GRUPO DE USUARIOS SUPORTE
-%suporte-admin ALL=NOPASSWD:  /bin/ls, /usr/bin/who, /home/configs/scripts/deployestagio
+%suporte-admin ALL=NOPASSWD: /bin/ls, /usr/bin/who, /home/configs/scripts/suporte
 
 #GRUPO DE USUARIOS INFRA
 %infra ALL=NOPASSWD: /usr/bin/ssh, /home/configs/scripts/execute*
 
 #GRUPO DE USUARIOS SUBADQUIRENTE 
-%subad-admin ALL=NOPASSWD: /home/configs/scripts/conectarsubadsmaster, /home/configs/scripts/deploysubad
+%subad-admin ALL=NOPASSWD: /home/configs/scripts/conectarsubadsmaster, /home/configs/scripts/deploysubad, /home/configs/scripts/estagiodeploy, /home/configs/scripts/masterdeploy, /home/configs/scripts/appsdeploy, /home/configs/scripts/isql, /home/configs/scripts/suporte, /home/configs/scripts/appsdeploy, /home/configs/scripts/uploadmysql, /home/configs/scripts/conectarappsmaster, /home/configs/scripts/conectarappsestagio
 
 #GRUPO DE ACESSO INFRA SLJUMPSERVER
 %infra ALL=(ALL) NOPASSWD:ALL

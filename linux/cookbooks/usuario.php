@@ -87,7 +87,7 @@ function processa_usuario($login,$grupo,$acao,$repositorio,$todos=false){
 	}
 	// Se nao ha usuário , criamos um novo no Linux e sua pasta .ssh		
 	if (!file_exists($caminho)){
-		exec_script("sudo useradd -g $grupo -G usuarios -s /usr/bin/lshell -m $login;");
+		exec_script("sudo useradd -g $grupo -G $grupo -s /usr/bin/lshell -m $login;");
 		exec_script("sudo adduser $login sudo");
 		sleep(1);
 		exec_script("sudo mkdir -m 500 $caminho");
