@@ -39,7 +39,7 @@ ALL ALL=NOPASSWD: /usr/bin/ssh ssh
 %dev ALL=NOPASSWD: /bin/ls, /usr/bin/who, /home/configs/scripts/estagiodeploy, /home/configs/scripts/appsdeploy, /home/configs/scripts/suporte
 
 #GRUPO DE USUARIOS DEV-ADMIN
-%dev-admin ALL=NOPASSWD: /bin/ls, /usr/bin/who, /home/configs/scripts/estagiodeploy, /home/configs/scripts/masterdeploy, /home/configs/scripts/appsdeploy, /home/configs/scripts/isql, /home/configs/scripts/suporte, /home/configs/scripts/appsdeploy, /home/configs/scripts/uploadmysql, /home/configs/scripts/conectarappsmaster, /home/configs/scripts/conectarappsestagio, /home/configs/scripts/suporte
+%dev-admin ALL=NOPASSWD: /bin/ls, /usr/bin/who, /home/configs/scripts/estagiodeploy, /home/configs/scripts/masterdeploy, /home/configs/scripts/appsdeploy, /home/configs/scripts/isql, /home/configs/scripts/suporte, /home/configs/scripts/appsdeploy, /home/configs/scripts/uploadmysql, /home/configs/scripts/conectarappsmaster, /home/configs/scripts/conectarappsestagio, /home/configs/scripts/suporte, /home/configs/scripts/upload
 
 #GRUPO DE USUARIOS SUPORTE
 %suporte-admin ALL=NOPASSWD: /bin/ls, /usr/bin/who, /home/configs/scripts/suporte
@@ -48,7 +48,7 @@ ALL ALL=NOPASSWD: /usr/bin/ssh ssh
 %infra ALL=NOPASSWD: /usr/bin/ssh, /home/configs/scripts/execute*
 
 #GRUPO DE USUARIOS SUBADQUIRENTE 
-%subad-admin ALL=NOPASSWD: /home/configs/scripts/conectarsubadsmaster, /home/configs/scripts/deploysubad, /home/configs/scripts/estagiodeploy, /home/configs/scripts/masterdeploy, /home/configs/scripts/appsdeploy, /home/configs/scripts/isql, /home/configs/scripts/suporte, /home/configs/scripts/appsdeploy, /home/configs/scripts/uploadmysql, /home/configs/scripts/conectarappsmaster, /home/configs/scripts/conectarappsestagio
+%subad-admin ALL=NOPASSWD: /home/configs/scripts/conectarsubadsmaster, /home/configs/scripts/deploysubad, /home/configs/scripts/estagiodeploy, /home/configs/scripts/masterdeploy, /home/configs/scripts/appsdeploy, /home/configs/scripts/isql, /home/configs/scripts/suporte, /home/configs/scripts/appsdeploy, /home/configs/scripts/uploadmysql, /home/configs/scripts/conectarappsmaster, /home/configs/scripts/conectarappsestagio, /home/configs/scripts/upload
 
 #GRUPO DE ACESSO INFRA SLJUMPSERVER
 %infra ALL=(ALL) NOPASSWD:ALL
