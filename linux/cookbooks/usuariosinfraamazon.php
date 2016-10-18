@@ -13,7 +13,7 @@ function usuariosinfraamazon_init(){
 		sudo cloud-init usuario marlon amazon;
 		sudo cloud-init usuario jeanrodrigues amazon;
 		sudo cloud-init usuario matheus amazon;
-		sudo cloud-init usuario luis amazon;
+		sudo cloud-init usuario luiscera amazon;
 		sudo cloud-init usuario carlos amazon;
 
 		#Adicionar ao sudo
@@ -22,7 +22,7 @@ function usuariosinfraamazon_init(){
 		adduser jeanrodrigues sudo;
 		adduser marlon sudo;
 		adduser matheus sudo;
-		adduser luis sudo;
+		adduser luiscera sudo;
 		adduser carlos sudo;
 
 		#Adicionar ao bash
@@ -30,7 +30,7 @@ function usuariosinfraamazon_init(){
 		usermod -s  /bin/bash jeanrodrigues;
 		usermod -s  /bin/bash marlon;
 		usermod -s  /bin/bash matheus;
-		usermod -s  /bin/bash luis;
+		usermod -s  /bin/bash luiscera;
 		usermod -s  /bin/bash carlos;
 
 
