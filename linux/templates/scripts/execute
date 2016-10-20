@@ -10,6 +10,8 @@ firebirdtrial4079=""
 
 estagio=""
 
+estagiophp7=""
+
 appsmaster=""
 
 appsmaster2=""
@@ -129,6 +131,7 @@ novaestagio)
     git status;"
 
     sudo -u $usuario ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 $usuario@$estagio "$command"
+    sudo -u $usuario ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 $usuario@$estagiophp7 "$command"
 
 	echo -e " \033[0;32m FIM DO SCRIPT \033[0m"
 	sleep 2; clear; exit 0
