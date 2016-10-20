@@ -37,7 +37,8 @@ case "$1" in
 estagiodeploy)
 
 	sudo -u $usuario ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 $usuario@$admin1967 'sudo cloud todos cloudex8735 deploy' 1>&2
-	echo -e " \033[0;32m FIM DO SCRIPT \033[0m"
+	sudo -u $usuario ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 $usuario@$admin1967 'sudo cloud todos cloudex10717 deploy' 1>&2
+    echo -e " \033[0;32m FIM DO SCRIPT \033[0m"
 	sleep 2; clear; exit 0
 ;;
 
