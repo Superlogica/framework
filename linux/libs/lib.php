@@ -116,6 +116,7 @@ function apache_restart(){
 * @return none
 */
 function instalar($pacotes) {
+  atualizar_listas();
   if (is_array($pacotes)) {
     $pacotes = implode(" ",$pacotes);
   }
@@ -131,6 +132,10 @@ function atualizar() {
     sudo apt-get update;
     sudo apt-get upgrade -y --force-yes;
     ");
+}
+
+function atualizar_listas() {
+  exec_script("sudo apt-get update;");
 }
 
 
