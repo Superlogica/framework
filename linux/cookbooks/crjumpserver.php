@@ -8,15 +8,15 @@ function crjumpserver_init(){
     #Diretórios e permissões
 
 	sudo mkdir /home/configs/scripts -p;
-    sudo chmod -R 777 /home/configs;
-    sudo chmod -R 777 /home/configs/scripts;
+        sudo chmod -R 777 /home/configs;
+        sudo chmod -R 777 /home/configs/scripts;
 	sudo -u root echo PATH='/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/configs/scripts/' > /etc/environment;
 
 	#Criação de grupos
 
 	addgroup infra;
-    addgroup usuarios;
-    addgroup subad;
+        addgroup usuarios;
+        addgroup subad;
 	addgroup subad-admin
 
     #Criação de usuarios
