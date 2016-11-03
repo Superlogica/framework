@@ -47,7 +47,8 @@ function crjumpserver_init(){
     put_template("scripts/upload","/home/configs/scripts/upload");
     put_template("scripts/uploadmysql","/home/configs/scripts/uploadmysql");
     put_template("scripts/conectaradmin","/home/configs/scripts/conectaradmin");
-    put_template("scripts/execute","/home/configs/scripts/execute");
+    put_template("scripts/execute-cr","/home/configs/scripts/execute");
+    put_template("scripts/conectarsubadmaster","/home/configs/scripts/conectarsubadmaster");
     put_template("scripts/deploysubadestagio","/home/configs/scripts/deploysubadestagio");
 
     exec_script("

@@ -1,0 +1,49 @@
+#!/bin/bash
+
+#[SERVIDORES]
+
+
+subadquirentemaster=""
+
+subadquirentemaster2=""
+
+subadquirenteestagio=""
+
+#[USUARIOS]
+usuario=""
+
+
+#[DEPLOYS] [INFRA, DEVS E DEV-ADMIN]
+
+case "$1" in
+        deploysubad)
+
+        sudo -u $usuario ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 root@$subadquirentemaster 'sudo cloud deploy' 1>&2
+        sudo -u $usuario ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 root@$subadquirentemaster2 'sudo cloud deploy' 1>&2
+        echo -e " \033[0;32m FIM DO SCRIPT \033[0m"
+        sleep 2; clear; exit 0
+
+;;
+deploysubadestagio)
+
+    sudo -u $usuario ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 root@$subadquirenteestagio 'sudo cloud deploy' 1>&2
+    echo -e " \033[0;32m FIM DO SCRIPT \033[0m"
+    sleep 2; clear; exit 0
+
+;;
+
+conectarsubadmaster)
+
+   sudo -u $usuario ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 root@$subadquirentemaster 1>&2
+    echo -e " \033[0;32m FIM DO SCRIPT \033[0m"
+    sleep 2; clear; exit 0
+;;
+
+
+#[MENSAGEM OPCAO INVALIDA]
+*)
+        echo -e " \033[0;32m OPCAO INVALIDA \033[0m"
+        sleep 2; clear; exit 0
+;;
+esac
+
