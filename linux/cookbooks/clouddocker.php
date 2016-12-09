@@ -1,6 +1,6 @@
 <?php
 
-function cloudteste_init(){
+function clouddocker_init(){
 
 
 exec_script("
