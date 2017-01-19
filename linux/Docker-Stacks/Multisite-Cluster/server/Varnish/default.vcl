@@ -5,8 +5,8 @@ import directors;
 
 # COLOQUE OS BACKENDS AQUI
 
-backend blog1 { 
-  .host = "blog1";    
+backend blog { 
+  .host = "blog";    
   .port = "80";           
   .max_connections = 300; 
 
@@ -32,8 +32,84 @@ backend blog1 {
 
 
 
-backend blog2 { 
-  .host = "blog2";    
+backend labs { 
+  .host = "labs";    
+  .port = "80";           
+  .max_connections = 300; 
+
+  .probe = {
+
+    .request =
+      "HEAD / HTTP/1.1"
+      "Host: localhost"
+      "Connection: close"
+      "User-Agent: Varnish Health Probe";
+
+    #CHECA A SAÚDE DO HOST  
+    .interval  = 5s; 
+    .timeout   = 1s; 
+    .window    = 5;  
+    .threshold = 3;
+  }
+
+  .first_byte_timeout     = 300s;   
+  .connect_timeout        = 5s;     
+  .between_bytes_timeout  = 2s;    
+}
+
+backend next { 
+  .host = "next";    
+  .port = "80";           
+  .max_connections = 300; 
+
+  .probe = {
+
+    .request =
+      "HEAD / HTTP/1.1"
+      "Host: localhost"
+      "Connection: close"
+      "User-Agent: Varnish Health Probe";
+
+    #CHECA A SAÚDE DO HOST  
+    .interval  = 5s; 
+    .timeout   = 1s; 
+    .window    = 5;  
+    .threshold = 3;
+  }
+
+  .first_byte_timeout     = 300s;   
+  .connect_timeout        = 5s;     
+  .between_bytes_timeout  = 2s;    
+}
+
+
+backend xperience { 
+  .host = "xperience";    
+  .port = "80";           
+  .max_connections = 300; 
+
+  .probe = {
+
+    .request =
+      "HEAD / HTTP/1.1"
+      "Host: localhost"
+      "Connection: close"
+      "User-Agent: Varnish Health Probe";
+
+    #CHECA A SAÚDE DO HOST  
+    .interval  = 5s; 
+    .timeout   = 1s; 
+    .window    = 5;  
+    .threshold = 3;
+  }
+
+  .first_byte_timeout     = 300s;   
+  .connect_timeout        = 5s;     
+  .between_bytes_timeout  = 2s;    
+}
+
+backend seujaime { 
+  .host = "seujaime";    
   .port = "80";           
   .max_connections = 300; 
 
@@ -68,9 +144,12 @@ acl purge {
 sub vcl_init {
   new vdir = directors.round_robin();
 
-  # ADICIONAR OS BACKENDS CRIADOS AQUI
-  vdir.add_backend(blog1);
-  vdir.add_backend(blog2);
+  #ADICIONAR OS BACKENDS CRIADOS AQUI
+  vdir.add_backend(blog);
+  vdir.add_backend(next);
+  vdir.add_backend(labs);
+  vdir.add_backend(xperience);
+  vdir.add_backend(seujaime);
 }
 
 # Chamado depois que o request é parseado. Aqui aplicamos as regras de cacheamento. 
@@ -79,17 +158,23 @@ sub vcl_recv {
   //set req.backend_hint = vdir.backend(); 
 
   # DEFINE OS BACKENDS
-  if (req.http.host ~ "local.blog1.com") {
-      set req.backend_hint = blog1;
-  } elsif (req.http.host ~ "local.blog2.com") {
-      set req.backend_hint = blog2;
+  
+  if (req.http.host ~ "blog.superlogica.com") { #SUPERLOGICA BLOG
+    set req.backend_hint = blog;
+  } elseif (req.http.host ~ "xperience.superlogica.com" && req.http.host ~ "experience.superlogica.com") { #EXPERIENCE  
+    set req.backend_hint = xperience;
+  } elseif (req.http.host ~ "labs.superlogica.com" || req.http.host ~ "supergrowth.com.br") { # SUPERLOGICA LABS    
+    set req.backend_hint = labs;
+  } elseif (req.http.host ~ "next.superlogica.com") { #NEXT
+    set req.backend_hint = next;
+  } elseif (req.http.host ~ "seujaime.com.br") {  #SEU JAIME
+    set req.backend_hint = seujaime;
   }
 
   set req.http.Host = regsub(req.http.Host, ":[0-9]+", "");
   unset req.http.proxy;
 
   set req.url = std.querysort(req.url);
-
 
   if (req.method == "PURGE") {
     if (!client.ip ~ purge) {
