@@ -1,11 +1,11 @@
 <?php
 
-function smartgit_init(){
-
-
-	exec_script("
-		echo '------Instalando SmartGit------'
-		sudo mkdir /home/cloud
+/**
+ * Instalação padrão do Git
+ */
+function git_init() {
+    exec_script("
+        sudo mkdir /home/cloud
 		sudo mkdir /home/framework
 		sudo mkdir /home/apps
 		sudo mkdir /home/plataforma
@@ -14,6 +14,7 @@ function smartgit_init(){
 		sudo mkdir /home/layouts
 		sudo mkdir /home/cloud-admin
 		sudo mkdir /home/subadquirente
+		
 		sudo chmod -R 777 /home/cloud
 		sudo chmod -R 777 /home/framework
 		sudo chmod -R 777 /home/apps
@@ -23,12 +24,8 @@ function smartgit_init(){
 		sudo chmod -R 777 /home/layouts
 		sudo chmod -R 777 /home/cloud-admin
 		sudo chmod -R 777 /home/subadquirente
-		sudo apt-get update
-		sudo apt-get install default-jdk
+		
 		sudo apt-get install -y git-core
-		sudo apt-get update
-		sudo add-apt-repository -y ppa:eugenesan/ppa
-    	sudo apt-get update
-	  	sudo apt-get install -y smartgithg
-	");
+    ");
 }
+
