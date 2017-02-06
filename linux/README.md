@@ -9,11 +9,13 @@
 1. Abra o terminal e execute a seguinte url:
  - cd /opt;sudo rm -rf /opt/cloud-init;sudo mkdir /opt/cloud-init;sudo chmod 777 /opt/cloud-init/;cd /opt/cloud-init; sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/linux/cloud-init-init --no-check-certificate; sudo chmod 777 /opt/cloud-init/cloud-init-init;
 
-2. Instale SmartGit( execute no terminal ):
- - sudo /opt/cloud-init/cloud-init-init smartgit;
+2. Instale Git( execute no terminal ):
+ - sudo /opt/cloud-init/cloud-init-init git;
 
-3. A partir do SmartGit, clone os projetos que necessário dentro do diretório /home
+3. A partir do Git, clone os projetos que necessário dentro do diretório /home por meio de SSH
 ( Obrigatório baixar inicialmente os projetos cloud, apps e plataforma )
+
+    - git clone (link para o repositório)
 
 4. Após projetos clonados, instale o restante do projeto( execute no terminal)
  - sudo /opt/cloud-init/cloud-init-init cloudteste;
