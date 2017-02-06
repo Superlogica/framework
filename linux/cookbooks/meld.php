@@ -23,6 +23,8 @@ function meld_init() {
 
     if ($meld_src) {
         put_template('git-meld.pl', $meld_src);
+        exec_script("chmod +x {$meld_src}");
+        exec_script("git config --global alias.meld '!{$meld_src}'");
     }
 
     help();
