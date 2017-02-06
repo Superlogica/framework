@@ -1,4 +1,4 @@
 public/scripts/min/
 application/Data/cache
 /nbproject/
-/idea/
+.idea
