@@ -8,15 +8,15 @@ function crjumpserver_init(){
     #Diretórios e permissões
 
 	sudo mkdir /home/configs/scripts -p;
-    sudo chmod -R 777 /home/configs;
-    sudo chmod -R 777 /home/configs/scripts;
+        sudo chmod -R 777 /home/configs;
+        sudo chmod -R 777 /home/configs/scripts;
 	sudo -u root echo PATH='/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/configs/scripts/' > /etc/environment;
 
 	#Criação de grupos
 
 	addgroup infra;
-    addgroup usuarios;
-    addgroup subad;
+        addgroup usuarios;
+        addgroup subad;
 	addgroup subad-admin
 
     #Criação de usuarios
@@ -47,7 +47,8 @@ function crjumpserver_init(){
     put_template("scripts/upload","/home/configs/scripts/upload");
     put_template("scripts/uploadmysql","/home/configs/scripts/uploadmysql");
     put_template("scripts/conectaradmin","/home/configs/scripts/conectaradmin");
-    put_template("scripts/execute","/home/configs/scripts/execute");
+    put_template("scripts/execute-cr","/home/configs/scripts/execute");
+    put_template("scripts/conectarsubadmaster","/home/configs/scripts/conectarsubadmaster");
     put_template("scripts/deploysubadestagio","/home/configs/scripts/deploysubadestagio");
 
     exec_script("

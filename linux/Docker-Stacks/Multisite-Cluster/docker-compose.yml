@@ -1,0 +1,26 @@
+blog1:
+  build: ./server/Apache/
+  volumes:
+    - ./sites/blog1/project:/var/www/html/blog1
+    - ./sites/blog1/vhost.conf:/etc/apache2/sites-enabled/vhost.conf
+  ports:
+    - "80"
+
+blog2:
+  build: ./server/Apache/
+  volumes:
+    - ./sites/blog2/project:/var/www/html/blog2
+    - ./sites/blog2/vhost.conf:/etc/apache2/sites-enabled/vhost.conf
+  ports:
+    - "80"
+
+varnish:
+  build: ./server/Varnish/
+  volumes:
+    -  ./server/Varnish/default.vcl:/etc/varnish/default.vcl
+  links:
+    - blog1:blog1
+    - blog2:blog2
+
+  ports:
+    - 80:80
