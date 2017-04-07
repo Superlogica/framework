@@ -12,20 +12,34 @@
 2. Instale Git( execute no terminal ):
  - sudo /opt/cloud-init/cloud-init-init git;
 
-3. A partir do Git, clone os projetos que necessário dentro do diretório /home por meio de SSH
+3. Gere a chave publica com o comando:
+- cloud-init chavepublica
+
+Nesse processo, será solicitado uma senha para adicionar mais uma camada de segurança na autenticação. É possível deixar em branco, mas sério, não deixem. Coloquem uma senha maneira aí. Fidelis-Raj.
+
+Será gerado alguns arquivos dentro da pasta oculta .ssh, um deles com extensão .pub será sua chave pública.
+
+execute este comando para ver o conteudo da sua chave pública:
+
+- find  /home/$USER/.ssh -name '*.pub' -exec cat {} \;
+
+O conteúdo exibido pode não parecer, mas é apenas uma linha. Então copie o mesmo evitando as quebras. 
+
+No Github, vá em Settings, SSH and GPG Keys, clique em New SSH Key, cole o conteúdo da chave e salve.
+
+
+4. A partir do Git, clone os projetos que necessário dentro do diretório /home por meio de SSH
 ( Obrigatório baixar inicialmente os projetos cloud, apps e plataforma )
 
+    - cd /home	
     - git clone (link para o repositório)
 
-4. Após projetos clonados, instale o restante do projeto( execute no terminal)
+5. Após projetos clonados, instale o restante do projeto( execute no terminal)
  - sudo /opt/cloud-init/cloud-init-init cloudteste;
 	
 #IDE's DE DESENVOLVIMENTO
 - NetBeans
 	- Para uso, baixe direto do site com pacote e complemento que lhe for mais conveniente
-
-- Sublime
-	- No terminal, execute o comando: sudo /opt/cloud-init/cloud-init-init sublime
 
 - Atom
 	- No terminal, execute o comando: sudo /opt/cloud-init/cloud-init-init atom
