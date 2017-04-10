@@ -15,7 +15,7 @@
 function phpunit_init()  {
     
     exec_script("
-	wget https://phar.phpunit.de/phpunit-5.7.19.phar -O /usr/local/bin/phpunit;
+	wget https://phar.phpunit.de/phpunit-5.6.phar -O /usr/local/bin/phpunit;
 	chmod +x /usr/local/bin/phpunit;
 	");
     
