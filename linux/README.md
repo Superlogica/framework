@@ -21,7 +21,7 @@ Será gerado alguns arquivos dentro da pasta oculta .ssh, um deles com extensão
 
 execute este comando para ver o conteudo da sua chave pública:
 
-find  /home/$USER/.ssh -name '*.pub' -exec cat {} \;
+- cat /home/$USER/.ssh/*.pub
 
 O conteúdo exibido pode não parecer, mas é apenas uma linha. Então copie o mesmo evitando as quebras. 
 
