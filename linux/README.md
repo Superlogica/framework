@@ -19,9 +19,9 @@ Nesse processo, será solicitado uma senha para adicionar mais uma camada de seg
 
 Será gerado alguns arquivos dentro da pasta oculta .ssh, um deles com extensão .pub será sua chave pública.
 
-execute este comando para ver o conteudo da sua chave pública:
+execute este comando SEM AS ASPAS para ver o conteudo da sua chave pública:
 
-- find  /home/$USER/.ssh -name '*.pub' -exec cat {} \;
+- "find  /home/$USER/.ssh -name '*.pub' -exec cat {} \;"
 
 O conteúdo exibido pode não parecer, mas é apenas uma linha. Então copie o mesmo evitando as quebras. 
 
