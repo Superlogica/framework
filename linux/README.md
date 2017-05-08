@@ -60,8 +60,8 @@ sudo /opt/cloud-init/cloud-init-init cloudteste;
 - Atom
 	- No terminal, execute o comando:
   
-  ```
-  sudo /opt/cloud-init/cloud-init-init atom
+```
+sudo /opt/cloud-init/cloud-init-init atom
 ```
 
 - Gerenciar banco de dados firebird:
