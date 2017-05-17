@@ -68,6 +68,12 @@ Descompacte o dmg e instale normalmente.
 
 ## Rodando o projeto em PHP 7 
 
+Faça o Download do docker-compose-php7 na RAIZ da pasta onde estão os projetos
+
+```bash
+$ wget https://raw.githubusercontent.com/Superlogica/framework/master/linux/superlogica-docker/docker-compose-php7.yml
+```
+
 Para rodar o projeto utilizando em PHP 7.0, entre na pasta do projeto e execute 
 
 ```
