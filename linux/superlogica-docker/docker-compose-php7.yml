@@ -1,0 +1,25 @@
+superlogica:
+        image: superlogica/apache-aio
+
+        volumes:
+                - ./cloud:/home/cloud
+                - ./plataforma:/home/plataforma
+                - ./cloud-db:/home/cloud-db
+                - ./session:/home/session
+                - ./apps:/home/apps
+                - ./cloud-db/mysql/db:/var/lib/mysql
+        ports:
+                - "80:80"
+                - "8080:8080"
+                - "3059:3059"
+                - "3050:3050"
+                - "3306:3306"
+
+        environment:
+                - APACHE_RUN_USER=www-data
+                - APACHE_RUN_GROUP=www-data
+                - APACHE_LOG_DIR=/var/log/apache2
+                - APACHE_LOCK_DIR=/var/lock/apache2
+                - APACHE_PID_FILE=/var/run/apache2.pid
+
+        command: bash -c "/usr/local/bin/superlogica-run"
