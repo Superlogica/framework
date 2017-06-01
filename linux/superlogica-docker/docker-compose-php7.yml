@@ -9,8 +9,7 @@ superlogica:
                 - ./apps:/home/apps
                 - ./cloud-db/mysql/db:/var/lib/mysql
         ports:
-                - "80:80"
-                - "8080:8080"
+                - "80:8080"
                 - "3059:3059"
                 - "3050:3050"
                 - "3306:3306"
