@@ -8,7 +8,6 @@ reviewers:
         required: 2
         members:
             - carlossuperlogica
-            - ademilson
             - adenilsonoliveira
             - alantavares
             - dhenrique
@@ -30,7 +29,6 @@ reviewers:
         required: 1
         members:
             - carlossuperlogica
-            - ademilson
             - adenilsonoliveira
             - alantavares
             - dhenrique
