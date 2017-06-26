@@ -3,7 +3,7 @@ versao_ubuntu_php7="16.04"
 versao_ubuntu=`lsb_release -sr`
 sudo apt-get update;
 if [ "$versao_ubuntu_php7" == "$versao_ubuntu" ]; then
-  sudo apt-get -y -q install php7.0-cli php7.0-dev php7.0-mcrypt php7.0-curl php7.0-gd;
+  sudo apt-get -y -q install php7.0-cli php7.0-dev php7.0-mcrypt php7.0-curl php7.0-gd php7.0-interbase php7.0-soap;
 else
   sudo apt-get -y -q install php5-cli php5-dev php5-mcrypt php5-curl php5-gd;
 fi
