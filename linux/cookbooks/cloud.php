@@ -101,6 +101,7 @@ exec_script("
     apt-get install -y apache2
     apt-get install -y php7.0-cli php7.0-fpm php7.0-mysql php7.0-intl php7.0-xdebug php7.0-recode php7.0-mcrypt php7.0-memcache php7.0-memcached php7.0-imagick php7.0-curl php7.0-xsl php7.0-dev php7.0-tidy php7.0-xmlrpc php7.0-gd php7.0-pspell libapache2-mod-php7.0  php7.0-interbase
     apt-get install -y php-apc php-pear
+    apt-get install -y php7.0-bcmath
     sudo phpenmod mcrypt
     sudo phpenmod interbase
     ");	
