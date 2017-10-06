@@ -65,6 +65,15 @@ $ sudo chmod +x  /usr/local/bin/docker-compose
 
 Descompacte o dmg e instale normalmente. 
 
+* Edite seu arquivo de configuração `/etc/hosts` e adicione o alias do `apps`
+
+```
+vim /etc/hosts
+```
+
+```
+127.0.0.1       apps.superlogica.com.br
+```
 
 ## Rodando o projeto em PHP 7 
 
