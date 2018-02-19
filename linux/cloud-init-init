@@ -1,5 +1,5 @@
 #!/bin/bash
-versao_ubuntu_php7="18.04"
+versao_ubuntu_php7="16.04"
 versao_ubuntu=`lsb_release -sr`
 sudo apt-get update;
 if [ "$versao_ubuntu_php7" == "$versao_ubuntu" ]; then
