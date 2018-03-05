@@ -32,7 +32,9 @@ reviewers:
             - alantavares
             - gutopolewacz
             - isaqued
-            - luiscera            
+            - luiscera          
+            - jhoncf
+            - msfidelis
         conditions:
             files:
                 - "linux/*"
