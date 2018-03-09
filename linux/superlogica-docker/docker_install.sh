@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # Script para instalação do projeto Superlógica usando Docker no Ubuntu (testado em 16.04, mas deve funcionar em qualquer versão mais nova).
 # Desenvolvido por: Vinícius Silva <viniciusls>
 
