@@ -5,7 +5,7 @@
 * [Docker](https://www.docker.com/community-edition)
 * [MySQL Workbench] (https://dev.mysql.com/downloads/workbench/)
 
-### Restaurando bases .fdb de dentro do docker 
+### Restaurando bases .fdb e .sql de dentro do docker 
 
 No terminal, de dentro da pasta onde está seu projeto:
 ```bash
@@ -80,10 +80,21 @@ drop database SUABASE;
 * Ao configurar o db, você deve utilizar host configurado como 0.0.0.0 ao invés de localhost
 
 
+### Firebird erro Database shutdown
 
+Se tiver algum problema de database shutdown quando estiver tentando visualizar o DB pelo Dbeaver, vá no container do docker e execute o comando para fazer a base ficar online:
 
+```
+gfix  -user "SYSDBA" -password "masterkey"  -online SUABASE.FDB
+```
 
+Se precisar, o comando abaixo força o db como shutdown:
+```
+gfix  -user "SYSDBA" -password "masterkey"   -shut -force 0 SUABASE.FDB
+```
 
+link para referência:
+https://stackoverflow.com/questions/14617099/firebird-database-file-shutdown-error-message
 
 
 
