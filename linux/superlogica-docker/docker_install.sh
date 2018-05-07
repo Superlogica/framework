@@ -36,7 +36,7 @@ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 echo "Adicionando repositório do Docker no apt";
 sudo add-apt-repository \
    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-   $(lsb_release -cs) \
+   artful \
    stable"
 
 echo "Atualizando repositórios";
@@ -52,10 +52,10 @@ echo "Atualizando permissões do docker-compose";
 sudo chmod +x /usr/local/bin/docker-compose;
 
 echo "Entrando em /home e baixando o script docker-compose da Superlogica";
-cd /home;
+#cd /home;
 sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/linux/superlogica-docker/docker-compose-php7.yml;
 
-desligarProgramasDesenvolvimento;
+#desligarProgramasDesenvolvimento;
 
 echo "Instalando a imagem da Superlogica e iniciando o container";
 sudo docker-compose -f docker-compose-php7.yml up;
