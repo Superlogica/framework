@@ -3,7 +3,7 @@
 function cloud_init($php_version="auto"){
 
 if  ($php_version=="auto"){
-  if ( trim(shell_exec ("lsb_release -rs")) == '16.04' ){
+  if( ( trim(shell_exec ("lsb_release -rs")) == '16.04' ) || ( trim(shell_exec ("lsb_release -rs")) == '18.04' ) ){
 	 $php_version= '7.0';	
   } else{
   	$php_version= '5.5';	
