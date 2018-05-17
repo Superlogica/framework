@@ -28,6 +28,9 @@ sudo apt-get update;
 echo "Instalando Docker-CE";
 sudo apt-get install -fy docker-ce;
 
+echo "Adicionando usuário atual ao grupo docker para execução de comandos no Docker Daemon sem sudo";
+sudo usermod -aG docker $USER
+
 echo "Instalando Docker-compose (ATENÇÃO: funciona somente no Bash)";
 sudo curl -L https://github.com/docker/compose/releases/download/1.19.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose;
 
@@ -40,6 +43,3 @@ sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/linux/s
 
 echo "Instalando a imagem da Superlogica e iniciando o container";
 sudo docker-compose -f docker-compose-php7.yml up;
-
-echo "Adicionando usuário atual ao grupo docker para execução de comandos no Docker Daemon sem sudo";
-sudo usermod -aG docker $USER
