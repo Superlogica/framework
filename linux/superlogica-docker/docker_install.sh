@@ -40,3 +40,6 @@ sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/linux/s
 
 echo "Instalando a imagem da Superlogica e iniciando o container";
 sudo docker-compose -f docker-compose-php7.yml up;
+
+echo "Adicionando usuário atual ao grupo docker para execução de comandos no Docker Daemon sem sudo";
+sudo usermod -aG docker $USER
