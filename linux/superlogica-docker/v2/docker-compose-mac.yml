@@ -1,0 +1,37 @@
+version: "3"
+services: 
+  superlogica-mysql:
+    volumes:
+      - mysql_volume_sync:/var/lib/mysql:rw
+
+  superlogica-cloud:
+    volumes:
+      - cloud_volume_sync:/home/cloud:rw
+
+  superlogica-apps:
+    volumes:
+      - apps_volume_sync:/home/apps:rw
+      - plataforma_volume_sync:/home/plataforma:rw
+
+  superlogica-firebird:
+    volumes:
+      - firebird_volume_sync:/home/cloud-db:rw
+
+volumes:
+  cloud_volume_sync:
+    external: true 
+
+  apps_volume_sync:
+    external: true    
+
+  plataforma_volume_sync:
+    external: true   
+
+  mysql_volume_sync:
+    external: true   
+
+  firebird_volume_sync:
+    external: true       
+
+  # logs_volume_sync:
+  #   external: true                                 
