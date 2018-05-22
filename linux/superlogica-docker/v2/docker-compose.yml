@@ -24,7 +24,7 @@ services:
       - developer      
 
   superlogica-firebird:
-    image: dev-firebird-legacy25
+    image: superlogica/dev-firebird-legacy25
     hostname: superlogica-firebird     
     ports:
       - "3050:3050"
@@ -42,9 +42,8 @@ services:
       - developer
 
   superlogica-cloud:
-    image: dev-cloud-php7.0
+    image: superlogica/dev-cloud-php7.0
     hostname: superlogica-cloud  
-    #image: superlogica/dev-cloud-php7.0
     ports:
       - "3059:3059"   
     volumes:
@@ -65,9 +64,8 @@ services:
       - developer
       
   superlogica-apps:
-    image: dev-apps-php7.0
+    image: superlogica/dev-apps-php7.0
     hostname: superlogica-apps 
-    #image: superlogica/dev-apps-php7.0
     ports:
       - "8080:8080"  
       - "80:80" 
