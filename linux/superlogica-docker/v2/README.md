@@ -23,8 +23,8 @@ A estrutura de diretórios deve ficar dessa forma:
 ├── plataforma
 └── tmp
     ├── logs
-    │   ├── apps
-    │   └── cloud
+    │   ├── apps (Logs do apache do container de apps)
+    │   └── cloud (Logs do apache do container de cloud)
     └── mysql
 ```
 
@@ -95,7 +95,7 @@ wget https://raw.githubusercontent.com/Superlogica/framework/master/linux/superl
 docker-compose up
 ```
 
-#### Opção 2: com o docker-sync (recomendado)
+#### Opção 2: com o docker-sync
 
 Essa opção vai demorar alguns minutos da primeira vez
 
