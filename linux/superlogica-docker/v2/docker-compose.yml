@@ -16,13 +16,6 @@ services:
     networks:
       - developer
 
-  superlogica-memcached:
-    image: memcached:1.5.7-alpine
-    ports:
-      - "11211:11211"
-    networks:
-      - developer      
-
   superlogica-firebird:
     image: superlogica/dev-firebird-legacy25
     hostname: superlogica-firebird     
