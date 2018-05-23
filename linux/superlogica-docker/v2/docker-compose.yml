@@ -11,7 +11,7 @@ services:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=superlogica-seed
     volumes:
-      - /tmp/mysql:/var/lib/mysql:rw
+      - ./tmp/mysql:/var/lib/mysql:rw
     command: "--sql-mode='TRADITIONAL'"
     networks:
       - developer
