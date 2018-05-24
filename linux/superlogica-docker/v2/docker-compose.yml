@@ -42,6 +42,7 @@ services:
     volumes:
       - ./cloud:/home/cloud
       - ./tmp/logs/cloud:/var/log/apache2
+      - ./cloud-db:/home/cloud-db:rw
     environment:
       - DOCKER_ENV=DOCKER_DEV
       - APACHE_RUN_USER=www-data
