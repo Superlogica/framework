@@ -16,6 +16,18 @@ services:
     networks:
       - developer
 
+  superlogica-phpmyadmin:
+   image: phpmyadmin/phpmyadmin:latest
+   ports:
+     - 8000:80
+   environment:
+     - PMA_HOST=superlogica-mysql
+     - PMA_USER=root
+     - PMA_PASSWORD=root
+     - PMA_ARBITRARY=1
+   networks:
+     - developer
+
   superlogica-firebird:
     image: superlogica/dev-firebird-legacy25
     hostname: superlogica-firebird     
