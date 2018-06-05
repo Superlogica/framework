@@ -1,0 +1,80 @@
+version: "3"
+services: 
+
+  superlogica-mysql:
+    image: mysql:5.7
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_USER=sysdba
+      - MYSQL_PASSWORD=masterkey
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=superlogica-seed
+    volumes:
+      - ./tmp/mysql:/var/lib/mysql:rw
+    command: "--sql-mode='TRADITIONAL'"
+    networks:
+      - developer
+
+  superlogica-firebird:
+    image: superlogica/dev-firebird-legacy25
+    hostname: superlogica-firebird     
+    ports:
+      - "3050:3050"
+    volumes:
+      - ./cloud-db:/home/cloud-db:rw
+    command: "start-firebird"
+    networks:
+      - developer
+
+  superlogica-memcached:
+    image: memcached:1.5.7-alpine
+    ports:
+      - "11211:11211"      
+    networks:
+      - developer
+
+  superlogica-cloud:
+    image: superlogica/dev-cloud-php7.0
+    hostname: superlogica-cloud  
+    ports:
+      - "3059:3059"   
+    volumes:
+      - ./cloud:/home/cloud
+      - ./tmp/logs/cloud:/var/log/apache2
+    environment:
+      - DOCKER_ENV=DOCKER_DEV
+      - APACHE_RUN_USER=www-data
+      - APACHE_RUN_GROUP=www-data
+      - APACHE_LOG_DIR=/var/log/apache2
+      - APACHE_LOCK_DIR=/var/lock/apache2
+      - APACHE_PID_FILE=/var/run/apache2.pid
+    depends_on:
+      - superlogica-mysql
+      - superlogica-memcached 
+      - superlogica-apps    
+    networks:
+      - developer
+      
+  superlogica-apps:
+    image: superlogica/dev-apps-php7.0
+    hostname: superlogica-apps 
+    ports:
+      - "8080:8080"  
+      - "80:80" 
+    volumes:
+      - ./apps:/home/apps
+      - ./plataforma:/home/plataforma
+      - ./tmp/logs/apps:/var/log/apache2
+    environment:
+      - DOCKER_ENV=DOCKER_DEV
+      - APACHE_RUN_USER=www-data
+      - APACHE_RUN_GROUP=www-data
+      - APACHE_LOG_DIR=/var/log/apache2
+      - APACHE_LOCK_DIR=/var/lock/apache2
+      - APACHE_PID_FILE=/var/run/apache2.pid
+    networks:
+      - developer
+
+networks:
+  developer:

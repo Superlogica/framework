@@ -1,0 +1,24 @@
+version: '2'
+options:
+  compose-file-path: 'docker-compose.yml'
+  compose-dev-file-path: 'docker-compose-mac.yml'
+syncs:
+  cloud_volume_sync:
+    src: 'cloud/'
+    sync_strategy: 'native_osx'
+    sync_excludes: ['.git']
+  apps_volume_sync:
+    src: 'apps/'
+    sync_strategy: 'native_osx'
+    sync_excludes: ['.git']
+  plataforma_volume_sync:
+    src: './plataforma'
+    sync_strategy: 'native_osx'
+    sync_excludes: ['.git', 'exemplo', 'skeleton']
+  mysql_volume_sync:
+    src: './tmp/mysql'
+    sync_strategy: 'native_osx'
+    sync_excludes: ['.git']
+  firebird_volume_sync:
+    src: 'cloud-db/'
+    sync_strategy: 'native_osx'
