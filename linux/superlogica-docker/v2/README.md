@@ -106,3 +106,29 @@ docker-sync-stack start
 ## Windows
 
 1) Se vira, brother.
+
+# Considerações
+
+## SQL Mode 
+
+Para alterar o SQL Mode, basta editar o arquito `docker-compose.yml` e trocar o `command` do container `superlogica-mysql`.
+Para remover o modo TRADITIONAL, basta alterar de `--sql-mode='TRADITIONAL'` para `--sql-mode=''`
+
+
+```
+  superlogica-mysql:
+    image: mysql:5.7
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_USER=sysdba
+      - MYSQL_PASSWORD=masterkey
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=superlogica-seed
+    volumes:
+      - ./tmp/mysql:/var/lib/mysql:rw
+    command: "--sql-mode='TRADITIONAL'" <------- AQUI
+    networks:
+      - developer
+
+```
