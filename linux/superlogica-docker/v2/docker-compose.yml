@@ -27,6 +27,17 @@ services:
     networks:
       - developer
 
+  superlogica-dynamodb:
+    image: cnadiminti/dynamodb-local
+    ports:
+      - "8000:8000"
+    environment:
+      - JAVA_OPTS=-Xmx256m
+    volumes:
+      - ./cloud-db:/dynamodb_local_db
+    networks:
+      - developer
+
   superlogica-memcached:
     image: memcached:1.5.7-alpine
     ports:
