@@ -76,5 +76,15 @@ services:
     networks:
       - developer
 
+  superlogica-redis:
+    image: 'redis:5-alpine'
+    command: redis-server --appendonly yes
+    volumes:
+      - ./cloud-db/redis:/data:rw
+    ports:
+      - 6379:6379
+    networks:
+      - developer
+
 networks:
   developer:
