@@ -4,37 +4,12 @@ reject_regex: ^Rejected
 reset_on_push: false
 reviewers:
     -
-        name: devs
-        required: 2
-        members:
-            - carlossuperlogica
-            - adenilsonoliveira
-            - alantavares
-            - gutopolewacz
-            - isaqued
-            - luiscera
-        conditions:
-            files:
-                - "*.yml" 
-                - "*.sh" 
-                - "*.git*" 
-                - "public/*" 
-                - "library/*"    
-                - "conf/*"       
-                - "skeleton/*" 
-                - "exemplo/*"                
-    -
         name: infra
         required: 1
         members:
             - carlossuperlogica
-            - adenilsonoliveira
-            - alantavares
-            - gutopolewacz
-            - isaqued
-            - luiscera          
-            - jhoncf
+            - luiscera
             - msfidelis
-        conditions:
-            files:
-                - "linux/*"
+            - leandropanhan
+            - jhoncf
+        
