@@ -66,20 +66,6 @@ services:
       - ./apps:/home/apps
       - ./plataforma:/home/plataforma
       - ./tmp/logs/apps:/var/log/apache2
-    environment:
-      - DOCKER_ENV=DOCKER_DEV
-      - APACHE_RUN_USER=www-data
-      - APACHE_RUN_GROUP=www-data
-      - APACHE_LOG_DIR=/var/log/apache2
-      - APACHE_LOCK_DIR=/var/lock/apache2
-      - APACHE_PID_FILE=/var/run/apache2.pid
-    networks:
-      - developer
-
-  subadquirente:
-    build: subadquirente
-    hostname: subadquirente
-    volumes:
       - ./subaquirente:/home/subadquirente
     environment:
       - DOCKER_ENV=DOCKER_DEV
@@ -90,5 +76,20 @@ services:
       - APACHE_PID_FILE=/var/run/apache2.pid
     networks:
       - developer
+
+  # subadquirente:
+  #   build: subadquirente
+  #   hostname: subadquirente
+  #   volumes:
+  #     - ./subaquirente:/home/subadquirente
+  #   environment:
+  #     - DOCKER_ENV=DOCKER_DEV
+  #     - APACHE_RUN_USER=www-data
+  #     - APACHE_RUN_GROUP=www-data
+  #     - APACHE_LOG_DIR=/var/log/apache2
+  #     - APACHE_LOCK_DIR=/var/lock/apache2
+  #     - APACHE_PID_FILE=/var/run/apache2.pid
+  #   networks:
+  #     - developer
 networks:
   developer:
