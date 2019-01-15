@@ -16,17 +16,6 @@ services:
     networks:
       - developer
 
-  superlogica-firebird:
-    image: superlogica/dev-firebird-legacy25
-    hostname: superlogica-firebird     
-    ports:
-      - "3050"
-    volumes:
-      - ./cloud-db:/home/cloud-db:rw
-    command: "start-firebird"
-    networks:
-      - developer
-
   superlogica-memcached:
     image: memcached:1.5.7-alpine
     ports:
