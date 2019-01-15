@@ -19,6 +19,3 @@ syncs:
     src: './tmp/mysql'
     sync_strategy: 'native_osx'
     sync_excludes: ['.git']
-  firebird_volume_sync:
-    src: 'cloud-db/'
-    sync_strategy: 'native_osx'
