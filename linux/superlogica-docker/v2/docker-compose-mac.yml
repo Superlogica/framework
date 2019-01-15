@@ -13,10 +13,6 @@ services:
       - apps_volume_sync:/home/apps:rw
       - plataforma_volume_sync:/home/plataforma:rw
 
-  superlogica-firebird:
-    volumes:
-      - firebird_volume_sync:/home/cloud-db:rw
-
 volumes:
   cloud_volume_sync:
     external: true 
@@ -30,8 +26,6 @@ volumes:
   mysql_volume_sync:
     external: true   
 
-  firebird_volume_sync:
-    external: true       
 
   # logs_volume_sync:
   #   external: true                                 
