@@ -91,7 +91,7 @@ function superlogica-docker () {
 	configurarProjeto;
 	echo "Entrando em /home e baixando o script docker-compose da Superlogica";
 	cd /home;
-	sudo wget https://raw.githubusercontent.com/Superlogica/superlogica-ambientes/master/ambiente-docker/cloud/docker-compose.yml?token=AFUY2fj4c-nae-k7Wt76TajETxmTTV5Tks5cbbHgwA -O docker-compose.yml;
+	sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/linux/superlogica-docker/v2/v2.1/cloud/docker-compose.yml -O docker-compose.yml;
 	echo "Subindo o projeto";
 	sudo docker-compose up;
 	clear; echo "Concluído!"; sleep 3; clear, Menu
@@ -109,7 +109,7 @@ function subadquirente-docker () {
 	sudo chmod 777 subadquirente;
 	git clone git@github.com:Superlogica/subadquirente.git;
 	echo "Entrando em /home e baixando o script docker-compose da Superlogica";
-	sudo wget https://raw.githubusercontent.com/Superlogica/superlogica-ambientes/master/ambiente-docker/subadquirente/docker-compose.yml?token=AFUY2WdS9jT-wms0L2Z_Fp_YEybNkTExks5cbbIswA -O docker-compose.yml;
+	sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/linux/superlogica-docker/v2/v2.1/subadquirente/docker-compose.yml -O docker-compose.yml;
 	echo "Subindo o projeto";
 	sudo docker-compose up;
 	clear; echo "Concluído!"; sleep 3; clear, Menu
