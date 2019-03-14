@@ -27,6 +27,7 @@ services:
   superlogica-cloud:
     image: superlogica/dev-cloud-php7.0
     hostname: superlogica-cloud  
+    container_name: superlogica-cloud
     ports:
       - "3059:3059"   
     volumes:
@@ -91,6 +92,20 @@ services:
      - 9080:80
     volumes:
      - /sessions
+    networks:
+      - developer
+
+  chrome:
+    image: selenium/standalone-chrome-debug
+    container_name: selenium-chrome
+    hostname: selenium-chrome
+    depends_on:
+      - superlogica-cloud
+    volumes:
+      - /dev/shm:/dev/shm
+    ports:
+      - 4444:4444
+      - 5900:5900
     networks:
       - developer
 
