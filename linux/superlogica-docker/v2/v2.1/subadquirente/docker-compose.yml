@@ -90,6 +90,7 @@ services:
     restart: always
     ports:
      - 9080:80
+     - 10000:9000
     volumes:
      - /sessions
     networks:
