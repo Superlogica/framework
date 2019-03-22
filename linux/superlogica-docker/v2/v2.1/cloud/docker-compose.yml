@@ -76,5 +76,19 @@ services:
     networks:
       - developer
 
+  chrome:
+    image: selenium/standalone-chrome-debug
+    container_name: selenium-chrome
+    hostname: selenium-chrome
+    depends_on:
+      - superlogica-cloud
+    volumes:
+      - /dev/shm:/dev/shm
+    ports:
+      - 4444:4444
+      - 5900:5900
+    networks:
+      - developer
+
 networks:
   developer:
