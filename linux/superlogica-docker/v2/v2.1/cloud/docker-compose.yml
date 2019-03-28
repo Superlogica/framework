@@ -3,6 +3,8 @@ services:
 
   superlogica-mysql:
     image: mysql:5.7
+    hostname: superlogica-mysql
+    container_name: superlogica-mysql
     ports:
       - "3306:3306"
     environment:
