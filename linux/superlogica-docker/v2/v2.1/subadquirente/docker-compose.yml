@@ -2,8 +2,8 @@ version: "3"
 services: 
   superlogica-mysql:
     image: mysql:5.7
-    hostname: mysql-subadquirente
-    container_name: mysql-subadquirente
+    hostname: superlogica-mysql
+    container_name: superlogica-mysql
     ports:
       - "3306:3306"
     environment:
@@ -43,18 +43,20 @@ services:
     depends_on:
       - superlogica-mysql
       - superlogica-memcached 
-      - subadquirente-subadquirente
+      - superlogica-subadquirente
       - superlogica-redis
     networks:
        - developer
   
-  subadquirente-subadquirente:
+  superlogica-subadquirente:
     image: superlogica/dev-subadquirente-php7.0
-    hostname: superlogica-apps
+    hostname: superlogica-subadquirente  
+    container_name: superlogica-subadquirente
     ports:
       - "8080:8080"
       - "80:80"
     volumes:
+      - ./cloud:/home/cloud
       - ./plataforma:/home/plataforma
       - ./tmp/logs/apps:/var/log/apache2
       - ./subadquirente:/home/subadquirente
@@ -83,7 +85,7 @@ services:
     image: phpmyadmin/phpmyadmin
     container_name: phpmyadmin
     environment:
-     - PMA_HOST=mysql-subadquirente
+     - PMA_HOST=superlogica-mysql
      - PMA_ARBITRARY=1
      - PMA_USER=root
      - PMA_PASSWORD=root
