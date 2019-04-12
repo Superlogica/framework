@@ -12,9 +12,9 @@ Menu(){
    echo -e "        Instalar projeto com Docker V 2.1           "
    echo -e "----------------------------------------------------"
    echo -e ""
-   echo "[ 1 ] Superlogica Docker - Para dev's Superlógica e verticais"
-   echo "[ 2 ] Subadquirente Docker - Para dev's PJBank"
-   echo "[ 0 ] Sair"
+   echo "[1] Superlogica Docker - Para dev's Superlógica e verticais (instala o ambiente Superlógica)"
+   echo "[2] Subadquirente Docker - Para dev's PJBank (instala o ambiente Superlógica e Pjbank)"
+   echo "[0] Sair"
    echo
    echo -n "Digite a opcão desejada:   "
    read opcao;
@@ -99,6 +99,13 @@ function superlogica-docker () {
 
 function subadquirente-docker () {
 	
+	clear;
+    echo -e " \033[1;33m  **ATIVE A AUTENTICAÇÃO EM DUAS ETAPAS DA CHAVE (PUBLICA/PRIVADA)** \033[1;31m  **OBRIGATÓRIO PARA CONTINUAR** \033[0m"
+    echo ""
+    echo -e " \033[1;33m                 PRESSIONE ENTER PARA CONTINUAR \033[0m";
+    read x
+    echo -e " \033[1;34m  **INSIRA UMA SENHA ABAIXO** \033[0m";
+    ssh-keygen -p -f ~/.ssh/id_rsa
 	echo "Criando alias uteis"
 	echo "alias comandos='bash /home/subadquirente/Tests/comandos.sh'" >> ~/.bashrc
 	echo "" >> ~/.bashrc
