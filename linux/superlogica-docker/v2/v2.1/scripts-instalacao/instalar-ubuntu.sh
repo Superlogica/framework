@@ -99,6 +99,10 @@ function superlogica-docker () {
 
 function subadquirente-docker () {
 	
+	echo "Criando alias uteis"
+	echo "alias comandos='bash /home/subadquirente/Tests/comandos.sh'" >> ~/.bashrc
+	echo "" >> ~/.bashrc
+	configurarProjeto;
 	clear;
     echo -e " \033[1;33m  **ATIVE A AUTENTICAÇÃO EM DUAS ETAPAS DA CHAVE (PUBLICA/PRIVADA)** \033[1;31m  **OBRIGATÓRIO PARA CONTINUAR** \033[0m"
     echo ""
@@ -106,10 +110,6 @@ function subadquirente-docker () {
     read x
     echo -e " \033[1;34m  **INSIRA UMA SENHA ABAIXO** \033[0m";
     ssh-keygen -p -f ~/.ssh/id_rsa
-	echo "Criando alias uteis"
-	echo "alias comandos='bash /home/subadquirente/Tests/comandos.sh'" >> ~/.bashrc
-	echo "" >> ~/.bashrc
-	configurarProjeto;
 	echo "Entrando em /home e baixando o projeto subadquirente";
 	cd /home;
 	sudo mkdir subadquirente;
