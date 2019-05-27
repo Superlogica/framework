@@ -75,6 +75,18 @@ services:
       - 6379:6379
     networks:
       - developer
+      
+  superlogica-hydra:
+    build: ./moedor-superlogica
+    command: npm run dev
+    environment:
+      - NODE_ENV=dockerlocal
+    depends_on:
+      - superlogica-redis
+    ports:
+      - 3060:3060
+    networks:
+      - developer
 
 networks:
   developer:
