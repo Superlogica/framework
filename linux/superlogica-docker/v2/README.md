@@ -5,13 +5,13 @@
 1) Crie a estrutura inicial dos projetos
 
 ```bash
-mkdir {cloud-db,tmp}
+mkdir {cloud-db,tmp,moedor-superlogica}
 mkdir -p tmp/{mysql,logs}
 mkdir -p tmp/logs/{apps,cloud}
 chmod -R 777 tmp
 ```
 
-2) Clone os projetos Superlógica dentro de qualquer diretório. 
+2) Clone os projetos Superlógica dentro do respectivo diretório. 
 
 A estrutura de diretórios deve ficar dessa forma: 
 
@@ -20,6 +20,7 @@ A estrutura de diretórios deve ficar dessa forma:
 ├── apps
 ├── cloud
 ├── cloud-db
+├── moedor-superlogica
 ├── plataforma
 └── tmp
     ├── logs
@@ -114,7 +115,6 @@ docker-sync-stack start
 Para alterar o SQL Mode, basta editar o arquito `docker-compose.yml` e trocar o `command` do container `superlogica-mysql`.
 Para remover o modo TRADITIONAL, basta alterar de `--sql-mode='TRADITIONAL'` para `--sql-mode=''`
 
-
 ```
   superlogica-mysql:
     image: mysql:5.7
@@ -135,7 +135,6 @@ Para remover o modo TRADITIONAL, basta alterar de `--sql-mode='TRADITIONAL'` par
 
 ## COMANDOS ÚTEIS 
 
-
 1. **COMANDOS BÁSICOS DOCKER**
 
     - Iniciar/Reiniciar o docker**
@@ -148,60 +147,25 @@ Para remover o modo TRADITIONAL, basta alterar de `--sql-mode='TRADITIONAL'` par
         
     - **Conectar em um container**
 
-    `docker exec -it home_superlogica-firebird_1 bash`
+    `docker exec -it home_superlogica-cloud_1 bash`
     
     - **Reiniciar memcached**
      
      `	docker restart home_superlogica-memcached_1`
 
-
-    
-2. **RESTAURAR BACKUP FIREBIRD** 
-
-     *Criar uma pasta "backup" em /home/cloud-db/*
-   
-     *Colocar a base com o nome backup.gbk em /home/cloud-db/backup*
-   
-     *Executar:*
-
-    `docker exec -it home_superlogica-firebird_1  cloud-init restaurarbkp`
-
-  - **CORRIGIR ERRO DE NAO EXIBIR TABELAS FIREBIRD**
-
-      *Precisa parar o serviço do firebird:*
-
-      `docker exec -it home_superlogica-firebird_1 /etc/init.d/firebird2.5-superclassic stop`
-
-      *Executar o comando gfix no banco FDB:*
-
-      `docker exec -it home_superlogica-firebird_1  gfix -user SYSDBA -password masterkey -online /home/cloud-db/NOME_DA_BASE-001.fdb`
-
-      *Iniciar firebird:*
-
-      `docker exec -it home_superlogica-firebird_1 /etc/init.d/firebird2.5-superclassic start`
-
-
-3. **CONECTAR NO MYSQL:**
+2. **CONECTAR NO MYSQL:**
 
     `docker exec -it home_superlogica-mysql_1 mysql --user=root --password=root`
 
-4. **DROP DATABASE E SOURCE **- Requer mysql-client instalado ou execute dentro do container.
-
+3. **DROP DATABASE E SOURCE** - Requer mysql-client instalado ou execute dentro do container.
 
   -  `mysql -u root -proot -h 127.0.0.1 -e  "DROP DATABASE IF EXISTS NOMEDABASE;"`
     
   -  `mysql -u root -proot -h 127.0.0.1 < /home/cloud-db/NOMEDABASE.sql;`
 
 
-5. AUMENTAR MEMÓRIA DO MYSQL** - Melhora performance e evita erros ao importar bases grande.
-
-  
+4. **AUMENTAR MEMÓRIA DO MYSQL** - Melhora performance e evita erros ao importar bases grandes
     
   -  `mysql --user=root --password=root -e "set @@global.max_allowed_packet=1048576000;"`
 
-
   -  `mysql --user=root --password=root -e "select @@global.max_allowed_packet;`
-
-
-
-
