@@ -157,14 +157,14 @@ Para remover o modo TRADITIONAL, basta alterar de `--sql-mode='TRADITIONAL'` par
 
     `docker exec -it home_superlogica-mysql_1 mysql --user=root --password=root`
 
-3. **DROP DATABASE E SOURCE **- Requer mysql-client instalado ou execute dentro do container.
+3. **DROP DATABASE E SOURCE** - Requer mysql-client instalado ou execute dentro do container.
 
   -  `mysql -u root -proot -h 127.0.0.1 -e  "DROP DATABASE IF EXISTS NOMEDABASE;"`
     
   -  `mysql -u root -proot -h 127.0.0.1 < /home/cloud-db/NOMEDABASE.sql;`
 
 
-4. AUMENTAR MEMÓRIA DO MYSQL** - Melhora performance e evita erros ao importar bases grandes
+4. **AUMENTAR MEMÓRIA DO MYSQL** - Melhora performance e evita erros ao importar bases grandes
     
   -  `mysql --user=root --password=root -e "set @@global.max_allowed_packet=1048576000;"`
 
