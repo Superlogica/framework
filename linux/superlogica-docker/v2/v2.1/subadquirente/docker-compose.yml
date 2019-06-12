@@ -1,5 +1,5 @@
 version: "3"
-services: 
+services:
   superlogica-mysql:
     image: mysql:5.7
     hostname: superlogica-mysql
@@ -20,16 +20,16 @@ services:
   superlogica-memcached:
     image: memcached:1.5.7-alpine
     ports:
-      - "11211:11211"      
+      - "11211:11211"
     networks:
       - developer
 
   superlogica-cloud:
     image: superlogica/dev-cloud-php7.0
-    hostname: superlogica-cloud  
+    hostname: superlogica-cloud
     container_name: superlogica-cloud
     ports:
-      - "3059:3059"   
+      - "3059:3059"
     volumes:
       - ./cloud:/home/cloud
       - ./tmp/logs/cloud:/var/log/apache2
@@ -42,15 +42,15 @@ services:
       - APACHE_PID_FILE=/var/run/apache2.pid
     depends_on:
       - superlogica-mysql
-      - superlogica-memcached 
+      - superlogica-memcached
       - superlogica-subadquirente
       - superlogica-redis
     networks:
        - developer
-  
+
   superlogica-subadquirente:
     image: superlogica/dev-subadquirente-php7.0
-    hostname: superlogica-subadquirente  
+    hostname: superlogica-subadquirente
     container_name: superlogica-subadquirente
     ports:
       - "8080:8080"
@@ -69,7 +69,7 @@ services:
       - APACHE_PID_FILE=/var/run/apache2.pid
       - APPLICATION_ENV_DOCKER=development
     networks:
-      - developer      
+      - developer
 
   superlogica-redis:
     image: 'redis:5-alpine'
@@ -114,3 +114,5 @@ services:
 
 networks:
   developer:
+    external:
+      name: developer
