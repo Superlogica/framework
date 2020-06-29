@@ -10,6 +10,8 @@ firebirdtrial4079=""
 
 estagio=""
 
+estagiophp7=""
+
 appsmaster=""
 
 appsmaster2=""
@@ -37,7 +39,8 @@ case "$1" in
 estagiodeploy)
 
 	sudo -u $usuario ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 $usuario@$admin1967 'sudo cloud todos cloudex8735 deploy' 1>&2
-	echo -e " \033[0;32m FIM DO SCRIPT \033[0m"
+	sudo -u $usuario ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 $usuario@$admin1967 'sudo cloud todos cloudex10717 deploy' 1>&2
+    echo -e " \033[0;32m FIM DO SCRIPT \033[0m"
 	sleep 2; clear; exit 0
 ;;
 
@@ -118,15 +121,17 @@ uploadmysql)
 
 novaestagio)
 
-    sudo -u $usuario ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 $usuario@$estagio '
-
-	cd /home/cloud/;
-	sudo cloud deploy;
- 	echo "DIGITE O NOVO NOME DA ESTÁGIO";
+    echo "DIGITE O NOVO NOME DA ESTÁGIO";
     read nome_estagio;
-    sudo git checkout "$nome_estagio";
+
+    command="cd /home/cloud/;
     sudo cloud deploy;
-    git status;' 1>&2
+    sudo git checkout $nome_estagio;
+    sudo cloud deploy;
+    git status;"
+
+    sudo -u $usuario ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 $usuario@$estagio "$command"
+    sudo -u $usuario ssh -t -o 'StrictHostKeyChecking no' -o ConnectTimeout=10 $usuario@$estagiophp7 "$command"
 
 	echo -e " \033[0;32m FIM DO SCRIPT \033[0m"
 	sleep 2; clear; exit 0
