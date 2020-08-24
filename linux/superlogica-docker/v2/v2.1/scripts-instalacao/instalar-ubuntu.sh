@@ -94,7 +94,7 @@ function superlogica-docker () {
 	sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/linux/superlogica-docker/v2/v2.1/cloud/docker-compose.yml -O docker-compose.yml;
 	echo "Subindo o projeto";
 	sudo docker-compose up;
-	clear; echo "Concluído!"; sleep 3; clear, Menu
+	clear; echo "Concluído!"; sleep 3; clear; Menu
 }
 
 function subadquirente-docker () {
@@ -119,7 +119,7 @@ function subadquirente-docker () {
 	sudo wget https://raw.githubusercontent.com/Superlogica/framework/master/linux/superlogica-docker/v2/v2.1/subadquirente/docker-compose.yml -O docker-compose.yml;
 	echo "Subindo o projeto";
 	sudo docker-compose up;
-	clear; echo "Concluído!"; sleep 3; clear, Menu
+	clear; echo "Concluído!"; sleep 3; clear; Menu
 }
 
 if [ "$(id -u)" = "0" ]; then
