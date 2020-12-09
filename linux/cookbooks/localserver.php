@@ -16,4 +16,13 @@ function localserver_init(){
         sudo ssh-keygen -t rsa -f /root/.ssh/id_rsa -N ''; 
     ");
    
+   //Instalação do Clamav
+   exec_script("
+      sudo apt-get install clamav clamav-daemon -y;
+      sudo touch /var/lib/clamav/clamd-socket;
+      sudo chmod 755 /var/log/clamav;
+      sudo rm -r /var/log/clamav/freshclam.log;
+      sudo freshclam -v;
+   ");
+   
 }
