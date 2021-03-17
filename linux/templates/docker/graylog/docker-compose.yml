@@ -3,11 +3,15 @@ graylog2:
   restart: always
   image: graylog2/allinone
   ports:
-    - 9000:9000
+    - 80:9000
     - 12201:12201/udp
+    - 514:514/udp
+    - 5555:5555/udp
+    - 12900:12202
+
   volumes:
-    - "/dockerdata/graylog2/data:/var/opt/graylog/data"
-    - "/dockerdata/graylog2/logs:/var/log/graylog"
+    - "./dockerdata/graylog2/data:/var/opt/graylog/data"
+    - "./dockerdata/graylog2/logs:/var/log/graylog"
   environment:
     - GRAYLOG_TIMEZONE=America/Sao_Paulo
     - GRAYLOG_PASSWORD=lkjDje12daDkS3kL
