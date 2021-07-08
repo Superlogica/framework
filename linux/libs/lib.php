@@ -61,6 +61,10 @@ function firebird_restart(){
    exec("sudo /etc/init.d/firebird2.5-super restart 1>&2");
    return true;
  }
+if (is_file("/etc/init.d/firebird3.0")){   
+   exec("sudo /etc/init.d/firebird3.0 restart 1>&2");
+   return true;
+ }
  
  return false;
 
