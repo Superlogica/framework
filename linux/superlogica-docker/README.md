@@ -7,7 +7,15 @@
 * Clone os projetos da Superlógica em qualquer pasta
 * Na raiz desta pasta, baixe o arquivo docker-compose.yml
 
+## Configuração do Vhost
 
+* edite seu arquivo de hosts e adicione a seguinte linha:
+
+```
+$ sudo vim /etc/hosts
+```
+
+> 127.0.0.1   apps.superlogica.com.br
 
 ## Setup do Docker 
 
